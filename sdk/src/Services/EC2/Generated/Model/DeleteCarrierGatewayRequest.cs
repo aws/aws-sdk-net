@@ -29,28 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeAvailabilityZones operation.
+    /// Container for the parameters to the DeleteCarrierGateway operation.
+    /// Deletes a carrier gateway.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// If you do not delete the route that contains the carrier gateway as the Target, the
+    /// route is a blackhole route. For information about how to delete a route, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRoute.html">DeleteRoute</a>.
+    /// </para>
+    ///  </important>
     /// </summary>
-    public partial class DescribeAvailabilityZonesResponse : AmazonWebServiceResponse
+    public partial class DeleteCarrierGatewayRequest : AmazonEC2Request
     {
-        private List<AvailabilityZone> _availabilityZones = new List<AvailabilityZone>();
+        private string _carrierGatewayId;
 
         /// <summary>
-        /// Gets and sets the property AvailabilityZones. 
+        /// Gets and sets the property CarrierGatewayId. 
         /// <para>
-        /// Information about the Availability Zones, Local Zones, and Wavelength Zones.
+        /// The ID of the carrier gateway.
         /// </para>
         /// </summary>
-        public List<AvailabilityZone> AvailabilityZones
+        [AWSProperty(Required=true)]
+        public string CarrierGatewayId
         {
-            get { return this._availabilityZones; }
-            set { this._availabilityZones = value; }
+            get { return this._carrierGatewayId; }
+            set { this._carrierGatewayId = value; }
         }
 
-        // Check to see if AvailabilityZones property is set
-        internal bool IsSetAvailabilityZones()
+        // Check to see if CarrierGatewayId property is set
+        internal bool IsSetCarrierGatewayId()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._carrierGatewayId != null;
         }
 
     }

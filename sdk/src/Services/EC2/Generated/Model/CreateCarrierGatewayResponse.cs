@@ -29,28 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeAvailabilityZones operation.
+    /// This is the response object from the CreateCarrierGateway operation.
     /// </summary>
-    public partial class DescribeAvailabilityZonesResponse : AmazonWebServiceResponse
+    public partial class CreateCarrierGatewayResponse : AmazonWebServiceResponse
     {
-        private List<AvailabilityZone> _availabilityZones = new List<AvailabilityZone>();
+        private CarrierGateway _carrierGateway;
 
         /// <summary>
-        /// Gets and sets the property AvailabilityZones. 
+        /// Gets and sets the property CarrierGateway. 
         /// <para>
-        /// Information about the Availability Zones, Local Zones, and Wavelength Zones.
+        /// Information about the carrier gateway.
         /// </para>
         /// </summary>
-        public List<AvailabilityZone> AvailabilityZones
+        public CarrierGateway CarrierGateway
         {
-            get { return this._availabilityZones; }
-            set { this._availabilityZones = value; }
+            get { return this._carrierGateway; }
+            set { this._carrierGateway = value; }
         }
 
-        // Check to see if AvailabilityZones property is set
-        internal bool IsSetAvailabilityZones()
+        // Check to see if CarrierGateway property is set
+        internal bool IsSetCarrierGateway()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._carrierGateway != null;
         }
 
     }

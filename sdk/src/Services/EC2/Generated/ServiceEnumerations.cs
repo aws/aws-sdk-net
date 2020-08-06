@@ -1425,6 +1425,64 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type CarrierGatewayState.
+    /// </summary>
+    public class CarrierGatewayState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for CarrierGatewayState
+        /// </summary>
+        public static readonly CarrierGatewayState Available = new CarrierGatewayState("available");
+        /// <summary>
+        /// Constant Deleted for CarrierGatewayState
+        /// </summary>
+        public static readonly CarrierGatewayState Deleted = new CarrierGatewayState("deleted");
+        /// <summary>
+        /// Constant Deleting for CarrierGatewayState
+        /// </summary>
+        public static readonly CarrierGatewayState Deleting = new CarrierGatewayState("deleting");
+        /// <summary>
+        /// Constant Pending for CarrierGatewayState
+        /// </summary>
+        public static readonly CarrierGatewayState Pending = new CarrierGatewayState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CarrierGatewayState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CarrierGatewayState FindValue(string value)
+        {
+            return FindValue<CarrierGatewayState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CarrierGatewayState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClientCertificateRevocationListStatusCode.
     /// </summary>
     public class ClientCertificateRevocationListStatusCode : ConstantClass

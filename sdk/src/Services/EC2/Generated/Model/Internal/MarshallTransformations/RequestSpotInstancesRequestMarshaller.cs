@@ -179,6 +179,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         int publicRequestLaunchSpecificationlistValueIndex = 1;
                         foreach(var publicRequestLaunchSpecificationlistValue in publicRequest.LaunchSpecification.NetworkInterfaces)
                         {
+                            if(publicRequestLaunchSpecificationlistValue.IsSetAssociateCarrierIpAddress())
+                            {
+                                request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "AssociateCarrierIpAddress", StringUtils.FromBool(publicRequestLaunchSpecificationlistValue.AssociateCarrierIpAddress));
+                            }
                             if(publicRequestLaunchSpecificationlistValue.IsSetAssociatePublicIpAddress())
                             {
                                 request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "AssociatePublicIpAddress", StringUtils.FromBool(publicRequestLaunchSpecificationlistValue.AssociatePublicIpAddress));

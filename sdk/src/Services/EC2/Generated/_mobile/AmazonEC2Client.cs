@@ -589,6 +589,12 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// You can allocate a carrier IP address which is a public IP address from a telecommunication
+        /// carrier, to a network interface which resides in a subnet in a Wavelength Zone (for
+        /// example an EC2 instance). 
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -634,6 +640,12 @@ namespace Amazon.EC2
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can allocate a carrier IP address which is a public IP address from a telecommunication
+        /// carrier, to a network interface which resides in a subnet in a Wavelength Zone (for
+        /// example an EC2 instance). 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateAddress service method.</param>
@@ -845,8 +857,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Associates an Elastic IP address with an instance or a network interface. Before you
-        /// can use an Elastic IP address, you must allocate it to your account.
+        /// Associates an Elastic IP address, or carrier IP address (for instances that are in
+        /// subnets in Wavelength Zones) with an instance or a network interface. Before you can
+        /// use an Elastic IP address, you must allocate it to your account.
         /// 
         ///  
         /// <para>
@@ -869,6 +882,11 @@ namespace Amazon.EC2
         /// already associated with a different instance or a network interface, you get an error
         /// unless you allow reassociation. You cannot associate an Elastic IP address with an
         /// instance or network interface that has an existing Elastic IP address.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Subnets in Wavelength Zones] You can associate an IP address from the telecommunication
+        /// carrier to the instance or network interface. 
         /// </para>
         ///  
         /// <para>
@@ -2221,6 +2239,41 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = CreateCapacityReservationResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateCapacityReservationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCarrierGateway
+
+        internal virtual CreateCarrierGatewayResponse CreateCarrierGateway(CreateCarrierGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCarrierGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCarrierGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCarrierGatewayResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a carrier gateway. For more information about carrier gateways, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier
+        /// gateways</a> in the <i>AWS Wavelength Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCarrierGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCarrierGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway">REST API Reference for CreateCarrierGateway Operation</seealso>
+        public virtual Task<CreateCarrierGatewayResponse> CreateCarrierGatewayAsync(CreateCarrierGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCarrierGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCarrierGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCarrierGatewayResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4807,6 +4860,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteCarrierGateway
+
+        internal virtual DeleteCarrierGatewayResponse DeleteCarrierGateway(DeleteCarrierGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCarrierGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCarrierGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCarrierGatewayResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a carrier gateway.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If you do not delete the route that contains the carrier gateway as the Target, the
+        /// route is a blackhole route. For information about how to delete a route, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRoute.html">DeleteRoute</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCarrierGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCarrierGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCarrierGateway">REST API Reference for DeleteCarrierGateway Operation</seealso>
+        public virtual Task<DeleteCarrierGatewayResponse> DeleteCarrierGatewayAsync(DeleteCarrierGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCarrierGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCarrierGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCarrierGatewayResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteClientVpnEndpoint
 
         internal virtual DeleteClientVpnEndpointResponse DeleteClientVpnEndpoint(DeleteClientVpnEndpointRequest request)
@@ -7030,14 +7124,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Availability Zones and Local Zones that are available to you. If there
-        /// is an event impacting an Availability Zone or Local Zone, you can use this request
-        /// to view the state and any provided messages for that Availability Zone or Local Zone.
+        /// Describes the Availability Zones, Local Zones, and Wavelength Zones that are available
+        /// to you. If there is an event impacting a zone, you can use this request to view the
+        /// state and any provided messages for that zone.
         /// 
         ///  
         /// <para>
-        /// For more information about Availability Zones and Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
-        /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about Availability Zones, Local Zones, and Wavelength Zones,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions,
+        /// Zones and Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -7054,14 +7149,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Availability Zones and Local Zones that are available to you. If there
-        /// is an event impacting an Availability Zone or Local Zone, you can use this request
-        /// to view the state and any provided messages for that Availability Zone or Local Zone.
+        /// Describes the Availability Zones, Local Zones, and Wavelength Zones that are available
+        /// to you. If there is an event impacting a zone, you can use this request to view the
+        /// state and any provided messages for that zone.
         /// 
         ///  
         /// <para>
-        /// For more information about Availability Zones and Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
-        /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about Availability Zones, Local Zones, and Wavelength Zones,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions,
+        /// Zones and Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAvailabilityZones service method.</param>
@@ -7224,6 +7320,40 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeCapacityReservationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeCapacityReservationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCarrierGateways
+
+        internal virtual DescribeCarrierGatewaysResponse DescribeCarrierGateways(DescribeCarrierGatewaysRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCarrierGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCarrierGatewaysResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCarrierGatewaysResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes one or more of your carrier gateways.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCarrierGateways service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCarrierGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCarrierGateways">REST API Reference for DescribeCarrierGateways Operation</seealso>
+        public virtual Task<DescribeCarrierGatewaysResponse> DescribeCarrierGatewaysAsync(DescribeCarrierGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCarrierGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCarrierGatewaysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCarrierGatewaysResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -14665,7 +14795,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Enables or disables an Availability Zone group for your account.
+        /// Changes the opt-in status of the Local Zone and Wavelength Zone group for your account.
         /// 
         ///  
         /// <para>

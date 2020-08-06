@@ -33,9 +33,28 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class InstanceNetworkInterfaceAssociation
     {
+        private string _carrierIp;
         private string _ipOwnerId;
         private string _publicDnsName;
         private string _publicIp;
+
+        /// <summary>
+        /// Gets and sets the property CarrierIp. 
+        /// <para>
+        /// The carrier IP address associated with the network interface.
+        /// </para>
+        /// </summary>
+        public string CarrierIp
+        {
+            get { return this._carrierIp; }
+            set { this._carrierIp = value; }
+        }
+
+        // Check to see if CarrierIp property is set
+        internal bool IsSetCarrierIp()
+        {
+            return this._carrierIp != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IpOwnerId. 

@@ -114,7 +114,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkBorderGroup. 
         /// <para>
-        /// The name of the location from which we advertise the IPV6 CIDR block.
+        /// The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones
+        /// from which AWS advertises IP addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.
         /// </para>
         /// </summary>
         public string NetworkBorderGroup

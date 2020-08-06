@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("carrierGatewayId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CarrierGatewayId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("destinationCidrBlock", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

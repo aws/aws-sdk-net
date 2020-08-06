@@ -66,6 +66,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateRouteRequest : AmazonEC2Request
     {
+        private string _carrierGatewayId;
         private string _destinationCidrBlock;
         private string _destinationIpv6CidrBlock;
         private string _destinationPrefixListId;
@@ -78,6 +79,29 @@ namespace Amazon.EC2.Model
         private string _routeTableId;
         private string _transitGatewayId;
         private string _vpcPeeringConnectionId;
+
+        /// <summary>
+        /// Gets and sets the property CarrierGatewayId. 
+        /// <para>
+        /// The ID of the carrier gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only use this option when the VPC contains a subnet which is associated with
+        /// a Wavelength Zone.
+        /// </para>
+        /// </summary>
+        public string CarrierGatewayId
+        {
+            get { return this._carrierGatewayId; }
+            set { this._carrierGatewayId = value; }
+        }
+
+        // Check to see if CarrierGatewayId property is set
+        internal bool IsSetCarrierGatewayId()
+        {
+            return this._carrierGatewayId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DestinationCidrBlock. 

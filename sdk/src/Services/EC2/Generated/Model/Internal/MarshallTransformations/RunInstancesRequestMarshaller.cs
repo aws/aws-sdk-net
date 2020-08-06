@@ -336,6 +336,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.NetworkInterfaces)
                     {
+                        if(publicRequestlistValue.IsSetAssociateCarrierIpAddress())
+                        {
+                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "AssociateCarrierIpAddress", StringUtils.FromBool(publicRequestlistValue.AssociateCarrierIpAddress));
+                        }
                         if(publicRequestlistValue.IsSetAssociatePublicIpAddress())
                         {
                             request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "AssociatePublicIpAddress", StringUtils.FromBool(publicRequestlistValue.AssociatePublicIpAddress));

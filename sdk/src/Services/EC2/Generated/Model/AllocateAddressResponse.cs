@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class AllocateAddressResponse : AmazonWebServiceResponse
     {
         private string _allocationId;
+        private string _carrierIp;
         private string _customerOwnedIp;
         private string _customerOwnedIpv4Pool;
         private DomainType _domain;
@@ -58,6 +59,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetAllocationId()
         {
             return this._allocationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CarrierIp. 
+        /// <para>
+        /// The carrier IP address. This option is only available for network interfaces which
+        /// reside in a subnet in a Wavelength Zone (for example an EC2 instance). 
+        /// </para>
+        /// </summary>
+        public string CarrierIp
+        {
+            get { return this._carrierIp; }
+            set { this._carrierIp = value; }
+        }
+
+        // Check to see if CarrierIp property is set
+        internal bool IsSetCarrierIp()
+        {
+            return this._carrierIp != null;
         }
 
         /// <summary>
@@ -118,7 +138,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkBorderGroup. 
         /// <para>
-        /// The location from which the IP address is advertised.
+        /// The set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises
+        /// IP addresses.
         /// </para>
         /// </summary>
         public string NetworkBorderGroup

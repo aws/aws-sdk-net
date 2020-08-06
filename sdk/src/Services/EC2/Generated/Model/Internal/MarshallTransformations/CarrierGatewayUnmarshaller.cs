@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NetworkInterfaceAssociation Object
+    /// Response Unmarshaller for CarrierGateway Object
     /// </summary>  
-    public class NetworkInterfaceAssociationUnmarshaller : IUnmarshaller<NetworkInterfaceAssociation, XmlUnmarshallerContext>, IUnmarshaller<NetworkInterfaceAssociation, JsonUnmarshallerContext>
+    public class CarrierGatewayUnmarshaller : IUnmarshaller<CarrierGateway, XmlUnmarshallerContext>, IUnmarshaller<CarrierGateway, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NetworkInterfaceAssociation Unmarshall(XmlUnmarshallerContext context)
+        public CarrierGateway Unmarshall(XmlUnmarshallerContext context)
         {
-            NetworkInterfaceAssociation unmarshalledObject = new NetworkInterfaceAssociation();
+            CarrierGateway unmarshalledObject = new CarrierGateway();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,40 +54,35 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("allocationId", targetDepth))
+                    if (context.TestExpression("carrierGatewayId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AllocationId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CarrierGatewayId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("associationId", targetDepth))
+                    if (context.TestExpression("ownerId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AssociationId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("carrierIp", targetDepth))
+                    if (context.TestExpression("state", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CarrierIp = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ipOwnerId", targetDepth))
+                    if (context.TestExpression("tagSet/item", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.IpOwnerId = unmarshaller.Unmarshall(context);
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("publicDnsName", targetDepth))
+                    if (context.TestExpression("vpcId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.PublicDnsName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("publicIp", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.PublicIp = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -105,18 +100,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NetworkInterfaceAssociation Unmarshall(JsonUnmarshallerContext context)
+        public CarrierGateway Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static NetworkInterfaceAssociationUnmarshaller _instance = new NetworkInterfaceAssociationUnmarshaller();        
+        private static CarrierGatewayUnmarshaller _instance = new CarrierGatewayUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NetworkInterfaceAssociationUnmarshaller Instance
+        public static CarrierGatewayUnmarshaller Instance
         {
             get
             {

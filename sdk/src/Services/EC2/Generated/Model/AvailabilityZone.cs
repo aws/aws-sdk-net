@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a Zone.
+    /// Describes Availability Zones, Local Zones, and Wavelength Zones.
     /// </summary>
     public partial class AvailabilityZone
     {
@@ -54,6 +54,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// For Local Zones, the name of the associated group, for example <code>us-west-2-lax-1</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// For Wavelength Zones, the name of the associated group, for example <code>us-east-1-wl1-bos-wlz-1</code>.
+        /// </para>
         /// </summary>
         public string GroupName
         {
@@ -70,7 +74,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Messages. 
         /// <para>
-        /// Any messages about the Zone.
+        /// Any messages about the Availability Zone, Local Zone, or Wavelength Zone.
         /// </para>
         /// </summary>
         public List<AvailabilityZoneMessage> Messages
@@ -88,7 +92,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkBorderGroup. 
         /// <para>
-        /// The name of the location from which the address is advertised.
+        /// The name of the network border group.
         /// </para>
         /// </summary>
         public string NetworkBorderGroup
@@ -106,12 +110,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OptInStatus. 
         /// <para>
-        ///  For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.
+        /// For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.
         /// </para>
         ///  
         /// <para>
-        /// For Local Zones, this parameter is the opt in status. The possible values are <code>opted-in</code>,
-        /// and <code>not-opted-in</code>.
+        /// For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible
+        /// values are <code>opted-in</code>, and <code>not-opted-in</code>.
         /// </para>
         /// </summary>
         public AvailabilityZoneOptInStatus OptInStatus
@@ -129,8 +133,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ParentZoneId. 
         /// <para>
-        /// The ID of the zone that handles some of the Local Zone control plane operations, such
-        /// as API calls.
+        /// The ID of the zone that handles some of the Local Zone or Wavelength Zone control
+        /// plane operations, such as API calls.
         /// </para>
         /// </summary>
         public string ParentZoneId
@@ -148,8 +152,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ParentZoneName. 
         /// <para>
-        /// The name of the zone that handles some of the Local Zone control plane operations,
-        /// such as API calls.
+        /// The name of the zone that handles some of the Local Zone or Wavelength Zone control
+        /// plane operations, such as API calls.
         /// </para>
         /// </summary>
         public string ParentZoneName
@@ -185,7 +189,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the Zone.
+        /// The state of the Availability Zone, Local Zone, or Wavelength Zone.
         /// </para>
         /// </summary>
         public AvailabilityZoneState State
@@ -203,7 +207,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ZoneId. 
         /// <para>
-        /// The ID of the Zone.
+        /// The ID of the Availability Zone, Local Zone, or Wavelength Zone.
         /// </para>
         /// </summary>
         public string ZoneId
@@ -221,7 +225,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ZoneName. 
         /// <para>
-        /// The name of the Zone.
+        /// The name of the Availability Zone, Local Zone, or Wavelength Zone.
         /// </para>
         /// </summary>
         public string ZoneName
@@ -239,7 +243,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ZoneType. 
         /// <para>
-        /// The type of zone. The valid values are <code>availability-zone</code> and <code>local-zone</code>.
+        /// The type of zone. The valid values are <code>availability-zone</code>, <code>local-zone</code>,
+        /// and <code>wavelength-zone</code>.
         /// </para>
         /// </summary>
         public string ZoneType

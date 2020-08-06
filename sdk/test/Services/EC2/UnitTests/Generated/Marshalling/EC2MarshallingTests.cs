@@ -1023,6 +1023,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void CreateCarrierGatewayMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateCarrierGateway");
+
+            var request = InstantiateClassGenerator.Execute<CreateCarrierGatewayRequest>();
+            var marshaller = new CreateCarrierGatewayRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateCarrierGatewayResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateCarrierGatewayResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void CreateClientVpnEndpointMarshallTest()
         {
             var operation = service_model.FindOperation("CreateClientVpnEndpoint");
@@ -2271,6 +2295,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = CreateVpnGatewayResponseUnmarshaller.Instance.Unmarshall(context)
                 as CreateVpnGatewayResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DeleteCarrierGatewayMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteCarrierGateway");
+
+            var request = InstantiateClassGenerator.Execute<DeleteCarrierGatewayRequest>();
+            var marshaller = new DeleteCarrierGatewayRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteCarrierGatewayResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteCarrierGatewayResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -3606,6 +3654,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DescribeCapacityReservationsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeCapacityReservationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeCarrierGatewaysMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeCarrierGateways");
+
+            var request = InstantiateClassGenerator.Execute<DescribeCarrierGatewaysRequest>();
+            var marshaller = new DescribeCarrierGatewaysRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeCarrierGatewaysResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeCarrierGatewaysResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

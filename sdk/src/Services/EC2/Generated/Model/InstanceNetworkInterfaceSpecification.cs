@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class InstanceNetworkInterfaceSpecification
     {
+        private bool? _associateCarrierIpAddress;
         private bool? _associatePublicIpAddress;
         private bool? _deleteOnTermination;
         private string _description;
@@ -46,6 +47,30 @@ namespace Amazon.EC2.Model
         private List<PrivateIpAddressSpecification> _privateIpAddresses = new List<PrivateIpAddressSpecification>();
         private int? _secondaryPrivateIpAddressCount;
         private string _subnetId;
+
+        /// <summary>
+        /// Gets and sets the property AssociateCarrierIpAddress. 
+        /// <para>
+        /// Indicates whether to assign a carrier IP address to the network interface.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only assign a carrier IP address to a network interface that is in a subnet
+        /// in a Wavelength Zone. For more information about carrier IP addresses, see Carrier
+        /// IP addresses in the AWS Wavelength Developer Guide.
+        /// </para>
+        /// </summary>
+        public bool AssociateCarrierIpAddress
+        {
+            get { return this._associateCarrierIpAddress.GetValueOrDefault(); }
+            set { this._associateCarrierIpAddress = value; }
+        }
+
+        // Check to see if AssociateCarrierIpAddress property is set
+        internal bool IsSetAssociateCarrierIpAddress()
+        {
+            return this._associateCarrierIpAddress.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AssociatePublicIpAddress. 

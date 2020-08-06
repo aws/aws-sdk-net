@@ -382,6 +382,12 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// You can allocate a carrier IP address which is a public IP address from a telecommunication
+        /// carrier, to a network interface which resides in a subnet in a Wavelength Zone (for
+        /// example an EC2 instance). 
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the AllocateAddress service method, as returned by EC2.</returns>
@@ -419,6 +425,12 @@ namespace Amazon.EC2
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can allocate a carrier IP address which is a public IP address from a telecommunication
+        /// carrier, to a network interface which resides in a subnet in a Wavelength Zone (for
+        /// example an EC2 instance). 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateAddress service method.</param>
@@ -660,8 +672,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Associates an Elastic IP address with an instance or a network interface. Before you
-        /// can use an Elastic IP address, you must allocate it to your account.
+        /// Associates an Elastic IP address, or carrier IP address (for instances that are in
+        /// subnets in Wavelength Zones) with an instance or a network interface. Before you can
+        /// use an Elastic IP address, you must allocate it to your account.
         /// 
         ///  
         /// <para>
@@ -684,6 +697,11 @@ namespace Amazon.EC2
         /// already associated with a different instance or a network interface, you get an error
         /// unless you allow reassociation. You cannot associate an Elastic IP address with an
         /// instance or network interface that has an existing Elastic IP address.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Subnets in Wavelength Zones] You can associate an IP address from the telecommunication
+        /// carrier to the instance or network interface. 
         /// </para>
         ///  
         /// <para>
@@ -2233,6 +2251,47 @@ namespace Amazon.EC2
         /// <returns>Returns a  CreateCapacityReservationResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation">REST API Reference for CreateCapacityReservation Operation</seealso>
         CreateCapacityReservationResponse EndCreateCapacityReservation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateCarrierGateway
+
+
+        /// <summary>
+        /// Creates a carrier gateway. For more information about carrier gateways, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier
+        /// gateways</a> in the <i>AWS Wavelength Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCarrierGateway service method.</param>
+        /// 
+        /// <returns>The response from the CreateCarrierGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway">REST API Reference for CreateCarrierGateway Operation</seealso>
+        CreateCarrierGatewayResponse CreateCarrierGateway(CreateCarrierGatewayRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCarrierGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCarrierGateway operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCarrierGateway
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway">REST API Reference for CreateCarrierGateway Operation</seealso>
+        IAsyncResult BeginCreateCarrierGateway(CreateCarrierGatewayRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCarrierGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCarrierGateway.</param>
+        /// 
+        /// <returns>Returns a  CreateCarrierGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway">REST API Reference for CreateCarrierGateway Operation</seealso>
+        CreateCarrierGatewayResponse EndCreateCarrierGateway(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5125,6 +5184,53 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteCarrierGateway
+
+
+        /// <summary>
+        /// Deletes a carrier gateway.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If you do not delete the route that contains the carrier gateway as the Target, the
+        /// route is a blackhole route. For information about how to delete a route, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRoute.html">DeleteRoute</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCarrierGateway service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCarrierGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCarrierGateway">REST API Reference for DeleteCarrierGateway Operation</seealso>
+        DeleteCarrierGatewayResponse DeleteCarrierGateway(DeleteCarrierGatewayRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCarrierGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCarrierGateway operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCarrierGateway
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCarrierGateway">REST API Reference for DeleteCarrierGateway Operation</seealso>
+        IAsyncResult BeginDeleteCarrierGateway(DeleteCarrierGatewayRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCarrierGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCarrierGateway.</param>
+        /// 
+        /// <returns>Returns a  DeleteCarrierGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCarrierGateway">REST API Reference for DeleteCarrierGateway Operation</seealso>
+        DeleteCarrierGatewayResponse EndDeleteCarrierGateway(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteClientVpnEndpoint
 
 
@@ -7638,14 +7744,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Availability Zones and Local Zones that are available to you. If there
-        /// is an event impacting an Availability Zone or Local Zone, you can use this request
-        /// to view the state and any provided messages for that Availability Zone or Local Zone.
+        /// Describes the Availability Zones, Local Zones, and Wavelength Zones that are available
+        /// to you. If there is an event impacting a zone, you can use this request to view the
+        /// state and any provided messages for that zone.
         /// 
         ///  
         /// <para>
-        /// For more information about Availability Zones and Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
-        /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about Availability Zones, Local Zones, and Wavelength Zones,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions,
+        /// Zones and Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -7654,14 +7761,15 @@ namespace Amazon.EC2
         DescribeAvailabilityZonesResponse DescribeAvailabilityZones();
 
         /// <summary>
-        /// Describes the Availability Zones and Local Zones that are available to you. If there
-        /// is an event impacting an Availability Zone or Local Zone, you can use this request
-        /// to view the state and any provided messages for that Availability Zone or Local Zone.
+        /// Describes the Availability Zones, Local Zones, and Wavelength Zones that are available
+        /// to you. If there is an event impacting a zone, you can use this request to view the
+        /// state and any provided messages for that zone.
         /// 
         ///  
         /// <para>
-        /// For more information about Availability Zones and Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
-        /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about Availability Zones, Local Zones, and Wavelength Zones,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions,
+        /// Zones and Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAvailabilityZones service method.</param>
@@ -7848,6 +7956,46 @@ namespace Amazon.EC2
         /// <returns>Returns a  DescribeCapacityReservationsResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservations">REST API Reference for DescribeCapacityReservations Operation</seealso>
         DescribeCapacityReservationsResponse EndDescribeCapacityReservations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeCarrierGateways
+
+
+        /// <summary>
+        /// Describes one or more of your carrier gateways.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCarrierGateways service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCarrierGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCarrierGateways">REST API Reference for DescribeCarrierGateways Operation</seealso>
+        DescribeCarrierGatewaysResponse DescribeCarrierGateways(DescribeCarrierGatewaysRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCarrierGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCarrierGateways operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCarrierGateways
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCarrierGateways">REST API Reference for DescribeCarrierGateways Operation</seealso>
+        IAsyncResult BeginDescribeCarrierGateways(DescribeCarrierGatewaysRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCarrierGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCarrierGateways.</param>
+        /// 
+        /// <returns>Returns a  DescribeCarrierGatewaysResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCarrierGateways">REST API Reference for DescribeCarrierGateways Operation</seealso>
+        DescribeCarrierGatewaysResponse EndDescribeCarrierGateways(IAsyncResult asyncResult);
 
         #endregion
         
@@ -15909,7 +16057,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Enables or disables an Availability Zone group for your account.
+        /// Changes the opt-in status of the Local Zone and Wavelength Zone group for your account.
         /// 
         ///  
         /// <para>

@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class LaunchTemplateInstanceNetworkInterfaceSpecification
     {
+        private bool? _associateCarrierIpAddress;
         private bool? _associatePublicIpAddress;
         private bool? _deleteOnTermination;
         private string _description;
@@ -46,6 +47,31 @@ namespace Amazon.EC2.Model
         private List<PrivateIpAddressSpecification> _privateIpAddresses = new List<PrivateIpAddressSpecification>();
         private int? _secondaryPrivateIpAddressCount;
         private string _subnetId;
+
+        /// <summary>
+        /// Gets and sets the property AssociateCarrierIpAddress. 
+        /// <para>
+        /// Indicates whether to associate a Carrier IP address with eth0 for a new network interface.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this option when you launch an instance in a Wavelength Zone and want to associate
+        /// a Carrier IP address with the network interface. For more information about Carrier
+        /// IP addresses, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier
+        /// IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool AssociateCarrierIpAddress
+        {
+            get { return this._associateCarrierIpAddress.GetValueOrDefault(); }
+            set { this._associateCarrierIpAddress = value; }
+        }
+
+        // Check to see if AssociateCarrierIpAddress property is set
+        internal bool IsSetAssociateCarrierIpAddress()
+        {
+            return this._associateCarrierIpAddress.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AssociatePublicIpAddress. 

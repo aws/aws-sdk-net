@@ -29,12 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes an Elastic IP address.
+    /// Describes an Elastic IP address, or a carrier IP address.
     /// </summary>
     public partial class Address
     {
         private string _allocationId;
         private string _associationId;
+        private string _carrierIp;
         private string _customerOwnedIp;
         private string _customerOwnedIpv4Pool;
         private DomainType _domain;
@@ -81,6 +82,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetAssociationId()
         {
             return this._associationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CarrierIp. 
+        /// <para>
+        /// The carrier IP address associated. This option is only available for network interfaces
+        /// which reside in a subnet in a Wavelength Zone (for example an EC2 instance). 
+        /// </para>
+        /// </summary>
+        public string CarrierIp
+        {
+            get { return this._carrierIp; }
+            set { this._carrierIp = value; }
+        }
+
+        // Check to see if CarrierIp property is set
+        internal bool IsSetCarrierIp()
+        {
+            return this._carrierIp != null;
         }
 
         /// <summary>
@@ -159,7 +179,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkBorderGroup. 
         /// <para>
-        /// The name of the location from which the IP address is advertised.
+        /// The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones
+        /// from which AWS advertises IP addresses. 
         /// </para>
         /// </summary>
         public string NetworkBorderGroup

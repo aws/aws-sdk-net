@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ReplaceRouteRequest : AmazonEC2Request
     {
+        private string _carrierGatewayId;
         private string _destinationCidrBlock;
         private string _destinationIpv6CidrBlock;
         private string _destinationPrefixListId;
@@ -56,6 +57,24 @@ namespace Amazon.EC2.Model
         private string _routeTableId;
         private string _transitGatewayId;
         private string _vpcPeeringConnectionId;
+
+        /// <summary>
+        /// Gets and sets the property CarrierGatewayId. 
+        /// <para>
+        /// [IPv4 traffic only] The ID of a carrier gateway.
+        /// </para>
+        /// </summary>
+        public string CarrierGatewayId
+        {
+            get { return this._carrierGatewayId; }
+            set { this._carrierGatewayId = value; }
+        }
+
+        // Check to see if CarrierGatewayId property is set
+        internal bool IsSetCarrierGatewayId()
+        {
+            return this._carrierGatewayId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DestinationCidrBlock. 

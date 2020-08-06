@@ -61,6 +61,12 @@ namespace Amazon.EC2.Model
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
     /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    /// You can allocate a carrier IP address which is a public IP address from a telecommunication
+    /// carrier, to a network interface which resides in a subnet in a Wavelength Zone (for
+    /// example an EC2 instance). 
+    /// </para>
     /// </summary>
     public partial class AllocateAddressRequest : AmazonEC2Request
     {
@@ -135,14 +141,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkBorderGroup. 
         /// <para>
-        /// The location from which the IP address is advertised. Use this parameter to limit
-        /// the address to this location.
-        /// </para>
-        ///  
-        /// <para>
-        /// A network border group is a unique set of Availability Zones or Local Zones from where
-        /// AWS advertises IP addresses and limits the addresses to the group. IP addresses cannot
-        /// move between network border groups.
+        ///  A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS
+        /// advertises IP addresses. Use this parameter to limit the IP address to this location.
+        /// IP addresses cannot move between network border groups.
         /// </para>
         ///  
         /// <para>

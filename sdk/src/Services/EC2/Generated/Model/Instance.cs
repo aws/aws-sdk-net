@@ -675,7 +675,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PublicIpAddress. 
         /// <para>
-        /// The public IPv4 address assigned to the instance, if applicable.
+        /// The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.
+        /// </para>
+        ///  
+        /// <para>
+        /// A Carrier IP address only applies to an instance launched in a subnet associated with
+        /// a Wavelength Zone.
         /// </para>
         /// </summary>
         public string PublicIpAddress

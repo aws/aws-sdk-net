@@ -61,6 +61,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.AllocationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("carrierIp", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.CarrierIp = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("customerOwnedIp", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

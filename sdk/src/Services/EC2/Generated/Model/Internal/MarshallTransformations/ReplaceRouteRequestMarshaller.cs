@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetCarrierGatewayId())
+                {
+                    request.Parameters.Add("CarrierGatewayId", StringUtils.FromString(publicRequest.CarrierGatewayId));
+                }
                 if(publicRequest.IsSetDestinationCidrBlock())
                 {
                     request.Parameters.Add("DestinationCidrBlock", StringUtils.FromString(publicRequest.DestinationCidrBlock));

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a message about a Zone.
+    /// Describes a message about an Availability Zone, Local Zone, or Wavelength Zone.
     /// </summary>
     public partial class AvailabilityZoneMessage
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The message about the Zone.
+        /// The message about the Availability Zone, Local Zone, or Wavelength Zone.
         /// </para>
         /// </summary>
         public string Message

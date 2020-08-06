@@ -32,84 +32,77 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InstanceNetworkInterfaceAssociation Object
+    /// Response Unmarshaller for DescribeCarrierGateways operation
     /// </summary>  
-    public class InstanceNetworkInterfaceAssociationUnmarshaller : IUnmarshaller<InstanceNetworkInterfaceAssociation, XmlUnmarshallerContext>, IUnmarshaller<InstanceNetworkInterfaceAssociation, JsonUnmarshallerContext>
+    public class DescribeCarrierGatewaysResponseUnmarshaller : EC2ResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
+        /// </summary>
         /// <param name="context"></param>
         /// <returns></returns>
-        public InstanceNetworkInterfaceAssociation Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            InstanceNetworkInterfaceAssociation unmarshalledObject = new InstanceNetworkInterfaceAssociation();
+            DescribeCarrierGatewaysResponse response = new DescribeCarrierGatewaysResponse();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
+               targetDepth = 2;
+
             while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("carrierIp", targetDepth))
+
+                    if (context.TestExpression("carrierGatewaySet/item", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CarrierIp = unmarshaller.Unmarshall(context);
+                        var unmarshaller = CarrierGatewayUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.CarrierGateways.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("ipOwnerId", targetDepth))
+                    if (context.TestExpression("nextToken", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.IpOwnerId = unmarshaller.Unmarshall(context);
+                        response.NextToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("publicDnsName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.PublicDnsName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("publicIp", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.PublicIp = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
+                } 
             }
 
-            return unmarshalledObject;
+            return response;
         }
 
         /// <summary>
         /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public InstanceNetworkInterfaceAssociation Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            return null;
+            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+        private static DescribeCarrierGatewaysResponseUnmarshaller _instance = new DescribeCarrierGatewaysResponseUnmarshaller();        
 
-
-        private static InstanceNetworkInterfaceAssociationUnmarshaller _instance = new InstanceNetworkInterfaceAssociationUnmarshaller();        
+        internal static DescribeCarrierGatewaysResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InstanceNetworkInterfaceAssociationUnmarshaller Instance
+        public static DescribeCarrierGatewaysResponseUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
+
     }
 }
