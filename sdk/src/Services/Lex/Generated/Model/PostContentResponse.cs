@@ -33,18 +33,44 @@ namespace Amazon.Lex.Model
     /// </summary>
     public partial class PostContentResponse : AmazonWebServiceResponse, IDisposable
     {
+        private string _alternativeIntents;
         private Stream _audioStream;
+        private string _botVersion;
         private string _contentType;
         private DialogState _dialogState;
         private string _inputTranscript;
         private string _intentName;
         private string _message;
         private MessageFormatType _messageFormat;
+        private string _nluIntentConfidence;
         private string _sentimentResponse;
         private string _sessionAttributes;
         private string _sessionId;
         private string _slots;
         private string _slotToElicit;
+
+        /// <summary>
+        /// Gets and sets the property AlternativeIntents. 
+        /// <para>
+        /// One to four alternative intents that may be applicable to the user's intent.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each alternative includes a score that indicates how confident Amazon Lex is that
+        /// the intent matches the user's intent. The intents are sorted by the confidence score.
+        /// </para>
+        /// </summary>
+        public string AlternativeIntents
+        {
+            get { return this._alternativeIntents; }
+            set { this._alternativeIntents = value; }
+        }
+
+        // Check to see if AlternativeIntents property is set
+        internal bool IsSetAlternativeIntents()
+        {
+            return this._alternativeIntents != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AudioStream. 
@@ -68,6 +94,37 @@ namespace Amazon.Lex.Model
         internal bool IsSetAudioStream()
         {
             return this._audioStream != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BotVersion. 
+        /// <para>
+        /// The version of the bot that responded to the conversation. You can use this information
+        /// to help determine if one version of a bot is performing better than another version.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have enabled the new natural language understanding (NLU) model, you can use
+        /// this to determine if the improvement is due to changes to the bot or changes to the
+        /// NLU.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about enabling the new NLU, see the <a href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements">enableModelImprovements</a>
+        /// parameter of the <code>PutBot</code> operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string BotVersion
+        {
+            get { return this._botVersion; }
+            set { this._botVersion = value; }
+        }
+
+        // Check to see if BotVersion property is set
+        internal bool IsSetBotVersion()
+        {
+            return this._botVersion != null;
         }
 
         /// <summary>
@@ -287,9 +344,33 @@ namespace Amazon.Lex.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NluIntentConfidence. 
+        /// <para>
+        /// Provides a score that indicates how confident Amazon Lex is that the returned intent
+        /// is the one that matches the user's intent. The score is between 0.0 and 1.0.
+        /// </para>
+        ///  
+        /// <para>
+        /// The score is a relative score, not an absolute score. The score may change based on
+        /// improvements to the Amazon Lex NLU.
+        /// </para>
+        /// </summary>
+        public string NluIntentConfidence
+        {
+            get { return this._nluIntentConfidence; }
+            set { this._nluIntentConfidence = value; }
+        }
+
+        // Check to see if NluIntentConfidence property is set
+        internal bool IsSetNluIntentConfidence()
+        {
+            return this._nluIntentConfidence != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SentimentResponse. 
         /// <para>
-        /// The sentiment expressed in and utterance.
+        /// The sentiment expressed in an utterance.
         /// </para>
         ///  
         /// <para>

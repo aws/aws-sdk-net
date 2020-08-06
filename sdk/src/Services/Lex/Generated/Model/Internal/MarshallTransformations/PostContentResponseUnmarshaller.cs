@@ -48,6 +48,13 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             PostContentResponse response = new PostContentResponse();
 
             response.AudioStream = context.Stream;
+            if (context.ResponseData.IsHeaderPresent("x-amz-lex-alternative-intents"))
+            {
+                var headerBytes = Convert.FromBase64String(context.ResponseData.GetHeaderValue("x-amz-lex-alternative-intents"));
+                response.AlternativeIntents = Encoding.UTF8.GetString(headerBytes, 0, headerBytes.Length);
+            }
+            if (context.ResponseData.IsHeaderPresent("x-amz-lex-bot-version"))
+                response.BotVersion = context.ResponseData.GetHeaderValue("x-amz-lex-bot-version");
             if (context.ResponseData.IsHeaderPresent("Content-Type"))
                 response.ContentType = context.ResponseData.GetHeaderValue("Content-Type");
             if (context.ResponseData.IsHeaderPresent("x-amz-lex-dialog-state"))
@@ -60,6 +67,11 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
                 response.Message = context.ResponseData.GetHeaderValue("x-amz-lex-message");
             if (context.ResponseData.IsHeaderPresent("x-amz-lex-message-format"))
                 response.MessageFormat = context.ResponseData.GetHeaderValue("x-amz-lex-message-format");
+            if (context.ResponseData.IsHeaderPresent("x-amz-lex-nlu-intent-confidence"))
+            {
+                var headerBytes = Convert.FromBase64String(context.ResponseData.GetHeaderValue("x-amz-lex-nlu-intent-confidence"));
+                response.NluIntentConfidence = Encoding.UTF8.GetString(headerBytes, 0, headerBytes.Length);
+            }
             if (context.ResponseData.IsHeaderPresent("x-amz-lex-sentiment"))
                 response.SentimentResponse = context.ResponseData.GetHeaderValue("x-amz-lex-sentiment");
             if (context.ResponseData.IsHeaderPresent("x-amz-lex-session-attributes"))
