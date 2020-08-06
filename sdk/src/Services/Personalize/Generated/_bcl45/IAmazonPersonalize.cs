@@ -667,7 +667,8 @@ namespace Amazon.Personalize
         /// Creates a job that imports training data from your data source (an Amazon S3 bucket)
         /// to an Amazon Personalize dataset. To allow Amazon Personalize to import the training
         /// data, you must specify an AWS Identity and Access Management (IAM) role that has permission
-        /// to read from the data source.
+        /// to read from the data source, as Amazon Personalize makes a copy of your data and
+        /// processes it in an internal AWS system.
         /// 
         ///  <important> 
         /// <para>
@@ -736,7 +737,8 @@ namespace Amazon.Personalize
         /// Creates a job that imports training data from your data source (an Amazon S3 bucket)
         /// to an Amazon Personalize dataset. To allow Amazon Personalize to import the training
         /// data, you must specify an AWS Identity and Access Management (IAM) role that has permission
-        /// to read from the data source.
+        /// to read from the data source, as Amazon Personalize makes a copy of your data and
+        /// processes it in an internal AWS system.
         /// 
         ///  <important> 
         /// <para>
@@ -978,8 +980,8 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Creates a recommendation filter. For more information, see Using Filters with Amazon
-        /// Personalize.
+        /// Creates a recommendation filter. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
+        /// Filters with Amazon Personalize</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFilter service method.</param>
         /// 
@@ -1002,8 +1004,8 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Creates a recommendation filter. For more information, see Using Filters with Amazon
-        /// Personalize.
+        /// Creates a recommendation filter. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
+        /// Filters with Amazon Personalize</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFilter service method.</param>
         /// <param name="cancellationToken">
@@ -1378,6 +1380,9 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
         /// Provide a valid value for the field or parameter.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
         /// The specified resource is in use.
         /// </exception>
@@ -1452,6 +1457,9 @@ namespace Amazon.Personalize
         /// <returns>The response from the CreateSolutionVersion service method, as returned by Personalize.</returns>
         /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
         /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
         /// The specified resource is in use.
@@ -1700,6 +1708,9 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
         /// Provide a valid value for the field or parameter.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
         /// </exception>
@@ -1719,6 +1730,9 @@ namespace Amazon.Personalize
         /// <returns>The response from the DeleteFilter service method, as returned by Personalize.</returns>
         /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
         /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.

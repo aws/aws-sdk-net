@@ -74,6 +74,17 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CampaignArn);
                 }
 
+                if(publicRequest.IsSetCampaignConfig())
+                {
+                    context.Writer.WritePropertyName("campaignConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CampaignConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CampaignConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMinProvisionedTPS())
                 {
                     context.Writer.WritePropertyName("minProvisionedTPS");

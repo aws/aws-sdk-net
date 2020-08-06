@@ -34,12 +34,28 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class CampaignUpdateSummary
     {
+        private CampaignConfig _campaignConfig;
         private DateTime? _creationDateTime;
         private string _failureReason;
         private DateTime? _lastUpdatedDateTime;
         private int? _minProvisionedTPS;
         private string _solutionVersionArn;
         private string _status;
+
+        /// <summary>
+        /// Gets and sets the property CampaignConfig.
+        /// </summary>
+        public CampaignConfig CampaignConfig
+        {
+            get { return this._campaignConfig; }
+            set { this._campaignConfig = value; }
+        }
+
+        // Check to see if CampaignConfig property is set
+        internal bool IsSetCampaignConfig()
+        {
+            return this._campaignConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreationDateTime. 

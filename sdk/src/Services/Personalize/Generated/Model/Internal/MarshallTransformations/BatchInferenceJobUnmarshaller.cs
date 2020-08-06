@@ -70,6 +70,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.BatchInferenceJobArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("batchInferenceJobConfig", targetDepth))
+                {
+                    var unmarshaller = BatchInferenceJobConfigUnmarshaller.Instance;
+                    unmarshalledObject.BatchInferenceJobConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("creationDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

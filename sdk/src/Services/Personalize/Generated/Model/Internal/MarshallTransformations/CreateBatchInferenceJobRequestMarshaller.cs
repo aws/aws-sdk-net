@@ -68,6 +68,17 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBatchInferenceJobConfig())
+                {
+                    context.Writer.WritePropertyName("batchInferenceJobConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BatchInferenceJobConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.BatchInferenceJobConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetFilterArn())
                 {
                     context.Writer.WritePropertyName("filterArn");

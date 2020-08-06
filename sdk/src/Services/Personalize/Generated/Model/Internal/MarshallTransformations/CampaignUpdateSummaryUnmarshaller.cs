@@ -64,6 +64,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("campaignConfig", targetDepth))
+                {
+                    var unmarshaller = CampaignConfigUnmarshaller.Instance;
+                    unmarshalledObject.CampaignConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("creationDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
