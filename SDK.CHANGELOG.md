@@ -1,3 +1,22 @@
+### 3.3.792.0 (2020-08-06 18:18 UTC)
+* EC2 (3.3.196.0)
+	* This release supports Wavelength resources, including carrier gateways, and carrier IP addresses.
+* Lex (3.3.105.0)
+	* Amazon Lex supports intent classification confidence scores along with a list of the top five intents.
+* LexModelBuildingService (3.3.106.0)
+	* Amazon Lex supports the option to enable accuracy improvements and specify an intent classification confidence score threshold.
+* Personalize (3.3.106.0)
+	* Add 'exploration' functionality
+* PersonalizeEvents (3.3.101.0)
+	* Adds support implicit and explicit impression input
+* PersonalizeRuntime (3.3.106.0)
+	* Adds support for implicit impressions
+* Core 3.3.107.36
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.791.0 (2020-08-05 18:55 UTC)
 * AppSync (3.3.106.0)
 	* AWS AppSync releases support for Direct Lambda Resolvers.
