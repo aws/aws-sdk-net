@@ -36,7 +36,11 @@ namespace Amazon.PersonalizeEvents.Model
     {
         private string _eventId;
         private string _eventType;
+        private float? _eventValue;
+        private List<string> _impression = new List<string>();
+        private string _itemId;
         private string _properties;
+        private string _recommendationId;
         private DateTime? _sentAt;
 
         /// <summary>
@@ -82,11 +86,71 @@ namespace Amazon.PersonalizeEvents.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EventValue. 
+        /// <para>
+        /// The event value that corresponds to the <code>EVENT_VALUE</code> field of the Interactions
+        /// schema.
+        /// </para>
+        /// </summary>
+        public float EventValue
+        {
+            get { return this._eventValue.GetValueOrDefault(); }
+            set { this._eventValue = value; }
+        }
+
+        // Check to see if EventValue property is set
+        internal bool IsSetEventValue()
+        {
+            return this._eventValue.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Impression. 
+        /// <para>
+        /// A list of item IDs that represents the sequence of items you have shown the user.
+        /// For example, <code>["itemId1", "itemId2", "itemId3"]</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public List<string> Impression
+        {
+            get { return this._impression; }
+            set { this._impression = value; }
+        }
+
+        // Check to see if Impression property is set
+        internal bool IsSetImpression()
+        {
+            return this._impression != null && this._impression.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ItemId. 
+        /// <para>
+        /// The item ID key that corresponds to the <code>ITEM_ID</code> field of the Interactions
+        /// schema.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ItemId
+        {
+            get { return this._itemId; }
+            set { this._itemId = value; }
+        }
+
+        // Check to see if ItemId property is set
+        internal bool IsSetItemId()
+        {
+            return this._itemId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Properties. 
         /// <para>
         /// A string map of event-specific data that you might choose to record. For example,
-        /// if a user rates a movie on your site, you might send the movie ID and rating, and
-        /// the number of movie ratings made by the user.
+        /// if a user rates a movie on your site, other than movie ID (<code>itemId</code>) and
+        /// rating (<code>eventValue</code>) , you might also send the number of movie ratings
+        /// made by the user.
         /// </para>
         ///  
         /// <para>
@@ -94,26 +158,16 @@ namespace Amazon.PersonalizeEvents.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{"itemId": "movie1"}</code> 
+        ///  <code>{"numberOfRatings": "12"}</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>{"itemId": "movie2", "eventValue": "4.5"}</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>{"itemId": "movie3", "eventValue": "3", "numberOfRatings": "12"}</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The keys use camel case names that match the fields in the Interactions schema. The
-        /// <code>itemId</code> and <code>eventValue</code> keys correspond to the <code>ITEM_ID</code>
-        /// and <code>EVENT_VALUE</code> fields. In the above example, the <code>eventType</code>
-        /// might be 'MovieRating' with <code>eventValue</code> being the rating. The <code>numberOfRatings</code>
-        /// would match the 'NUMBER_OF_RATINGS' field defined in the Interactions schema.
+        /// The keys use camel case names that match the fields in the Interactions schema. In
+        /// the above example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS'
+        /// field defined in the Interactions schema.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=1024)]
         public string Properties
         {
             get { return this._properties; }
@@ -127,9 +181,28 @@ namespace Amazon.PersonalizeEvents.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RecommendationId. 
+        /// <para>
+        /// The ID of the recommendation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=40)]
+        public string RecommendationId
+        {
+            get { return this._recommendationId; }
+            set { this._recommendationId = value; }
+        }
+
+        // Check to see if RecommendationId property is set
+        internal bool IsSetRecommendationId()
+        {
+            return this._recommendationId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SentAt. 
         /// <para>
-        /// The timestamp on the client side when the event occurred.
+        /// The timestamp (in Unix time) on the client side when the event occurred.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
