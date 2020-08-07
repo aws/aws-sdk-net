@@ -466,6 +466,14 @@ namespace Amazon.Organizations
         /// Constant INVALID_EMAIL for CreateAccountFailureReason
         /// </summary>
         public static readonly CreateAccountFailureReason INVALID_EMAIL = new CreateAccountFailureReason("INVALID_EMAIL");
+        /// <summary>
+        /// Constant MISSING_BUSINESS_VALIDATION for CreateAccountFailureReason
+        /// </summary>
+        public static readonly CreateAccountFailureReason MISSING_BUSINESS_VALIDATION = new CreateAccountFailureReason("MISSING_BUSINESS_VALIDATION");
+        /// <summary>
+        /// Constant MISSING_PAYMENT_INSTRUMENT for CreateAccountFailureReason
+        /// </summary>
+        public static readonly CreateAccountFailureReason MISSING_PAYMENT_INSTRUMENT = new CreateAccountFailureReason("MISSING_PAYMENT_INSTRUMENT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

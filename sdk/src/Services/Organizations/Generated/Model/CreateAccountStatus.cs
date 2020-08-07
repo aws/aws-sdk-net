@@ -116,6 +116,10 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account
         /// with that email address already exists.
         /// </para>
@@ -138,6 +142,16 @@ namespace Amazon.Organizations.Model
         /// <para>
         /// INTERNAL_FAILURE: The account could not be created because of an internal failure.
         /// Try again later. If the problem persists, contact Customer Support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has not received
+        /// Business Validation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  MISSING_PAYMENT_INSTRUMENT: You must configure the master account with a valid payment
+        /// method, such as a credit card.
         /// </para>
         ///  </li> </ul>
         /// </summary>
