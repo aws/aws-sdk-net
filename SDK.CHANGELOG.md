@@ -1,3 +1,18 @@
+### 3.3.793.0 (2020-08-07 22:16 UTC)
+* Glue (3.3.125.0)
+	* AWS Glue now adds support for Network connection type enabling you to access resources inside your VPC using Glue crawlers and Glue ETL jobs.
+* Organizations (3.3.109.0)
+	* Documentation updates for some new error reasons.
+* S3 (3.3.112.0)
+	* Updates Amazon S3 API reference documentation. 
+* ServerMigrationService (3.3.101.0)
+	* In this release, AWS Server Migration Service (SMS) has added new features: 1. APIs to work with application and instance level validation 2. Import application catalog from AWS Application Discovery Service 3. For an application you can start on-demand replication
+* Core 3.3.107.37
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.792.0 (2020-08-06 18:18 UTC)
 * EC2 (3.3.196.0)
 	* This release supports Wavelength resources, including carrier gateways, and carrier IP addresses.
