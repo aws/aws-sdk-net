@@ -141,7 +141,7 @@ namespace SDKDocGenerator.Writers
                 // the page title for now
                 writer.WriteLine("<meta name=\"description\" content=\"{0}\">", GetTitle());
                 writer.WriteLine("<title>{0} | AWS SDK for .NET V3</title>", GetTitle());                
-                writer.WriteLine("<script type=\"text/javascript\" src=\"/assets/js/awsdocs-boot.js\" defer></script>");
+                writer.WriteLine("<script type=\"text/javascript\" src=\"/assets/js/awsdocs-boot.js\"></script>");
                 writer.WriteLine("<link rel=\"canonical\" href=\"http://docs.aws.amazon.com/sdkfornet/v3/apidocs/index.html?page={0}&tocid={1}\"/>",
                                 FilenameGenerator.Escape(this.GenerateFilename()),
                                 FilenameGenerator.Escape(this.GetTOCID()));
@@ -321,8 +321,14 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("});");            
             writer.WriteLine("</script>");
             writer.WriteLine("<!-- END-SECTION -->");
-            
-            writer.WriteLine(SiteCatalystSnippet);                        
+            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shCore.js\"></script>", RootRelativePath);
+            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shBrushCSharp.js\"></script>", RootRelativePath);
+            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shBrushPlain.js\"></script>", RootRelativePath);
+            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shBrushXml.js\"></script>", RootRelativePath);
+
+            writer.WriteLine(SiteCatalystSnippet);
+
+            writer.WriteLine("<script type=\"text/javascript\">SyntaxHighlighter.all()</script>");
         }
 
         protected string FormatParameters(IList<ParameterInfoWrapper> infos)
