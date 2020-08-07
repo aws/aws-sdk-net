@@ -40,7 +40,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property LaunchOrder. 
         /// <para>
-        /// Launch order of servers in the server group.
+        /// The launch order of servers in the server group.
         /// </para>
         /// </summary>
         public int LaunchOrder
@@ -58,7 +58,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerGroupId. 
         /// <para>
-        /// Identifier of the server group the launch configuration is associated with.
+        /// The ID of the server group with which the launch configuration is associated.
         /// </para>
         /// </summary>
         public string ServerGroupId
@@ -76,7 +76,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerLaunchConfigurations. 
         /// <para>
-        /// Launch configuration for servers in the server group.
+        /// The launch configuration for servers in the server group.
         /// </para>
         /// </summary>
         public List<ServerLaunchConfiguration> ServerLaunchConfigurations

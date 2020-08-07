@@ -39,7 +39,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerGroupId. 
         /// <para>
-        /// Identifier of the server group this replication configuration is associated with.
+        /// The ID of the server group with which this replication configuration is associated.
         /// </para>
         /// </summary>
         public string ServerGroupId
@@ -57,7 +57,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerReplicationConfigurations. 
         /// <para>
-        /// Replication configuration for servers in the server group.
+        /// The replication configuration for servers in the server group.
         /// </para>
         /// </summary>
         public List<ServerReplicationConfiguration> ServerReplicationConfigurations

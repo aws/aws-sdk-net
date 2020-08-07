@@ -39,7 +39,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Stage. 
         /// <para>
-        /// String describing the current stage of a replication run.
+        /// The current stage of a replication run.
         /// </para>
         /// </summary>
         public string Stage
@@ -57,7 +57,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property StageProgress. 
         /// <para>
-        /// String describing the progress of the current stage of a replication run.
+        /// The progress of the current stage of a replication run.
         /// </para>
         /// </summary>
         public string StageProgress

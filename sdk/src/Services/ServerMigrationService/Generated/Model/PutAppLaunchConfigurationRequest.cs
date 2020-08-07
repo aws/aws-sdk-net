@@ -30,18 +30,19 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the PutAppLaunchConfiguration operation.
-    /// Creates a launch configuration for an application.
+    /// Creates or updates the launch configuration for the specified application.
     /// </summary>
     public partial class PutAppLaunchConfigurationRequest : AmazonServerMigrationServiceRequest
     {
         private string _appId;
+        private bool? _autoLaunch;
         private string _roleName;
         private List<ServerGroupLaunchConfiguration> _serverGroupLaunchConfigurations = new List<ServerGroupLaunchConfiguration>();
 
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// ID of the application associated with the launch configuration.
+        /// The ID of the application.
         /// </para>
         /// </summary>
         public string AppId
@@ -57,9 +58,28 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AutoLaunch. 
+        /// <para>
+        /// Indicates whether the application is configured to launch automatically after replication
+        /// is complete.
+        /// </para>
+        /// </summary>
+        public bool AutoLaunch
+        {
+            get { return this._autoLaunch.GetValueOrDefault(); }
+            set { this._autoLaunch = value; }
+        }
+
+        // Check to see if AutoLaunch property is set
+        internal bool IsSetAutoLaunch()
+        {
+            return this._autoLaunch.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// Name of service role in the customer's account that Amazon CloudFormation uses to
+        /// The name of service role in the customer's account that AWS CloudFormation uses to
         /// launch the application.
         /// </para>
         /// </summary>
@@ -78,7 +98,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerGroupLaunchConfigurations. 
         /// <para>
-        /// Launch configurations for server groups in the application.
+        /// Information about the launch configurations for server groups in the application.
         /// </para>
         /// </summary>
         public List<ServerGroupLaunchConfiguration> ServerGroupLaunchConfigurations

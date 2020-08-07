@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
-    /// Replication parameters for replicating a server.
+    /// The replication parameters for replicating a server.
     /// </summary>
     public partial class ServerReplicationParameters
     {
@@ -44,8 +44,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// When true, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code>
-        /// below.
+        /// Indicates whether the replication job produces encrypted AMIs.
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -63,7 +62,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Frequency. 
         /// <para>
-        /// Frequency of creating replication jobs for the server.
+        /// The frequency of creating replication jobs for the server.
         /// </para>
         /// </summary>
         public int Frequency
@@ -79,10 +78,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KmsKeyId.  
+        /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
-        /// 
+        /// The ID of the KMS key for replication jobs that produce encrypted AMIs. This value
+        /// can be any of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -94,16 +93,16 @@ namespace Amazon.ServerMigrationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ARN referring to KMS key ID
+        /// ARN referring to the KMS key ID
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ARN referring to KMS key alias
+        /// ARN referring to the KMS key alias
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default
-        /// KMS key for EBS is used. 
+        /// If encrypted is enabled but a KMS key ID is not specified, the customer's default
+        /// KMS key for Amazon EBS is used.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -121,7 +120,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property LicenseType. 
         /// <para>
-        /// License type for creating a replication job for the server.
+        /// The license type for creating a replication job for the server.
         /// </para>
         /// </summary>
         public LicenseType LicenseType
@@ -139,7 +138,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property NumberOfRecentAmisToKeep. 
         /// <para>
-        /// Number of recent AMIs to keep when creating a replication job for this server.
+        /// The number of recent AMIs to keep when creating a replication job for this server.
         /// </para>
         /// </summary>
         public int NumberOfRecentAmisToKeep
@@ -155,7 +154,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RunOnce.
+        /// Gets and sets the property RunOnce. 
+        /// <para>
+        /// Indicates whether to run the replication job one time.
+        /// </para>
         /// </summary>
         public bool RunOnce
         {
@@ -172,7 +174,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property SeedTime. 
         /// <para>
-        /// Seed time for creating a replication job for the server.
+        /// The seed time for creating a replication job for the server.
         /// </para>
         /// </summary>
         public DateTime SeedTime

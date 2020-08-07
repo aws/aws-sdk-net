@@ -34,13 +34,14 @@ namespace Amazon.ServerMigrationService.Model
     public partial class GetAppLaunchConfigurationResponse : AmazonWebServiceResponse
     {
         private string _appId;
+        private bool? _autoLaunch;
         private string _roleName;
         private List<ServerGroupLaunchConfiguration> _serverGroupLaunchConfigurations = new List<ServerGroupLaunchConfiguration>();
 
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// ID of the application associated with the launch configuration.
+        /// The ID of the application.
         /// </para>
         /// </summary>
         public string AppId
@@ -56,9 +57,28 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AutoLaunch. 
+        /// <para>
+        /// Indicates whether the application is configured to launch automatically after replication
+        /// is complete.
+        /// </para>
+        /// </summary>
+        public bool AutoLaunch
+        {
+            get { return this._autoLaunch.GetValueOrDefault(); }
+            set { this._autoLaunch = value; }
+        }
+
+        // Check to see if AutoLaunch property is set
+        internal bool IsSetAutoLaunch()
+        {
+            return this._autoLaunch.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// Name of the service role in the customer's account that Amazon CloudFormation uses
+        /// The name of the service role in the customer's account that AWS CloudFormation uses
         /// to launch the application.
         /// </para>
         /// </summary>
@@ -77,7 +97,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerGroupLaunchConfigurations. 
         /// <para>
-        /// List of launch configurations for server groups in this application.
+        /// The launch configurations for server groups in this application.
         /// </para>
         /// </summary>
         public List<ServerGroupLaunchConfiguration> ServerGroupLaunchConfigurations

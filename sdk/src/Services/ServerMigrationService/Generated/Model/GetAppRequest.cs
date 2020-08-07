@@ -30,7 +30,7 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetApp operation.
-    /// Retrieve information about an application.
+    /// Retrieve information about the specified application.
     /// </summary>
     public partial class GetAppRequest : AmazonServerMigrationServiceRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// ID of the application whose information is being retrieved.
+        /// The ID of the application.
         /// </para>
         /// </summary>
         public string AppId

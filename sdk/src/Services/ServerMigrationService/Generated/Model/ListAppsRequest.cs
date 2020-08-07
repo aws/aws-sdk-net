@@ -30,7 +30,7 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListApps operation.
-    /// Returns a list of summaries for all applications.
+    /// Retrieves summaries for all applications.
     /// </summary>
     public partial class ListAppsRequest : AmazonServerMigrationServiceRequest
     {
@@ -39,7 +39,10 @@ namespace Amazon.ServerMigrationService.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property AppIds.
+        /// Gets and sets the property AppIds. 
+        /// <para>
+        /// The unique application IDs.
+        /// </para>
         /// </summary>
         public List<string> AppIds
         {
@@ -56,7 +59,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single call. The default value is 50.
+        /// The maximum number of results to return in a single call. The default value is 100.
         /// To retrieve the remaining results, make another call with the returned <code>NextToken</code>
         /// value. 
         /// </para>

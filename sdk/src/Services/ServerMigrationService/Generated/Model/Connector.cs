@@ -83,7 +83,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ConnectorId. 
         /// <para>
-        /// The identifier of the connector.
+        /// The ID of the connector.
         /// </para>
         /// </summary>
         public string ConnectorId
@@ -173,7 +173,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property VmManagerId. 
         /// <para>
-        /// The identifier of the VM manager.
+        /// The ID of the VM manager.
         /// </para>
         /// </summary>
         public string VmManagerId

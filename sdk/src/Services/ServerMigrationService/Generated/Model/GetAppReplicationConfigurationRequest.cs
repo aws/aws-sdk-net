@@ -30,7 +30,8 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAppReplicationConfiguration operation.
-    /// Retrieves an application replication configuration associatd with an application.
+    /// Retrieves the application replication configuration associated with the specified
+    /// application.
     /// </summary>
     public partial class GetAppReplicationConfigurationRequest : AmazonServerMigrationServiceRequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// ID of the application associated with the replication configuration.
+        /// The ID of the application.
         /// </para>
         /// </summary>
         public string AppId

@@ -73,8 +73,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Whether the replication job should produce encrypted AMIs or not. See also <code>KmsKeyId</code>
-        /// below.
+        /// Indicates whether the replication job should produce encrypted AMIs.
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -110,8 +109,8 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
-        /// 
+        /// The ID of the KMS key for replication jobs that produce encrypted AMIs. This value
+        /// can be any of the following: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -123,16 +122,16 @@ namespace Amazon.ServerMigrationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ARN referring to KMS key ID
+        /// ARN referring to the KMS key ID
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ARN referring to KMS key alias
+        /// ARN referring to the KMS key alias
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default
-        /// KMS key for EBS is used. 
+        /// If encrypted is enabled but a KMS key ID is not specified, the customer's default
+        /// KMS key for Amazon EBS is used.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -204,8 +203,8 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property NumberOfRecentAmisToKeep. 
         /// <para>
-        /// Number of recent AMIs to keep in the customer's account for a replication job. By
-        /// default the value is set to zero, meaning that all AMIs are kept.
+        /// The number of recent AMIs to keep in the customer's account for a replication job.
+        /// By default, the value is set to zero, meaning that all AMIs are kept.
         /// </para>
         /// </summary>
         public int NumberOfRecentAmisToKeep
@@ -223,7 +222,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationJobId. 
         /// <para>
-        /// The identifier of the replication job.
+        /// The ID of the replication job.
         /// </para>
         /// </summary>
         public string ReplicationJobId
@@ -259,7 +258,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// The name of the IAM role to be used by the Server Migration Service.
+        /// The name of the IAM role to be used by AWS SMS.
         /// </para>
         /// </summary>
         public string RoleName
@@ -275,7 +274,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RunOnce.
+        /// Gets and sets the property RunOnce. 
+        /// <para>
+        /// Indicates whether to run the replication job one time.
+        /// </para>
         /// </summary>
         public bool RunOnce
         {
@@ -310,7 +312,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// The identifier of the server.
+        /// The ID of the server.
         /// </para>
         /// </summary>
         public string ServerId

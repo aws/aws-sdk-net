@@ -70,10 +70,28 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssociatePublicIpAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("configureScript", targetDepth))
+                {
+                    var unmarshaller = S3LocationUnmarshaller.Instance;
+                    unmarshalledObject.ConfigureScript = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("configureScriptType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConfigureScriptType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ec2KeyName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Ec2KeyName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("iamInstanceProfileName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IamInstanceProfileName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("instanceType", targetDepth))

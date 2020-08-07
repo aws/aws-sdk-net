@@ -30,7 +30,7 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAppReplicationConfiguration operation.
-    /// Deletes existing replication configuration for an application.
+    /// Deletes the replication configuration for the specified application.
     /// </summary>
     public partial class DeleteAppReplicationConfigurationRequest : AmazonServerMigrationServiceRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// ID of the application associated with the replication configuration.
+        /// The ID of the application.
         /// </para>
         /// </summary>
         public string AppId

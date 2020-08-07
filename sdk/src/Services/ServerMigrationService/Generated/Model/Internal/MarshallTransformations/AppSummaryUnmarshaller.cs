@@ -82,6 +82,12 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("importedAppId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImportedAppId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastModified", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -92,6 +98,12 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.LatestReplicationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("launchConfigurationStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LaunchConfigurationStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("launchDetails", targetDepth))
@@ -116,6 +128,12 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("replicationConfigurationStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReplicationConfigurationStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("replicationStatus", targetDepth))

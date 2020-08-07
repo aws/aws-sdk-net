@@ -84,7 +84,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property VmServerAddressList. 
         /// <para>
-        /// List of <code>VmServerAddress</code> objects
+        /// The server addresses.
         /// </para>
         /// </summary>
         public List<VmServerAddress> VmServerAddressList

@@ -30,7 +30,7 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApp operation.
-    /// Updates an application.
+    /// Updates the specified application.
     /// </summary>
     public partial class UpdateAppRequest : AmazonServerMigrationServiceRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// ID of the application to update.
+        /// The ID of the application.
         /// </para>
         /// </summary>
         public string AppId
@@ -62,7 +62,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// New description of the application.
+        /// The new description of the application.
         /// </para>
         /// </summary>
         public string Description
@@ -80,7 +80,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// New name of the application.
+        /// The new name of the application.
         /// </para>
         /// </summary>
         public string Name
@@ -98,7 +98,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// Name of the service role in the customer's account used by AWS SMS.
+        /// The name of the service role in the customer's account used by AWS SMS.
         /// </para>
         /// </summary>
         public string RoleName
@@ -116,7 +116,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerGroups. 
         /// <para>
-        /// List of server groups in the application to update.
+        /// The server groups in the application to update.
         /// </para>
         /// </summary>
         public List<ServerGroup> ServerGroups
@@ -134,7 +134,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// List of tags to associate with the application.
+        /// The tags to associate with the application.
         /// </para>
         /// </summary>
         public List<Tag> Tags

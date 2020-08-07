@@ -38,7 +38,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationRunId. 
         /// <para>
-        /// The identifier of the replication run.
+        /// The ID of the replication run.
         /// </para>
         /// </summary>
         public string ReplicationRunId

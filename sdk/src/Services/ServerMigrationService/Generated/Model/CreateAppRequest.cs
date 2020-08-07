@@ -45,8 +45,8 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier you provide to ensure idempotency of application
-        /// creation.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// application creation.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -64,7 +64,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of the new application
+        /// The description of the new application
         /// </para>
         /// </summary>
         public string Description
@@ -82,7 +82,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the new application.
+        /// The name of the new application.
         /// </para>
         /// </summary>
         public string Name
@@ -100,7 +100,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// Name of service role in customer's account to be used by AWS SMS.
+        /// The name of the service role in the customer's account to be used by AWS SMS.
         /// </para>
         /// </summary>
         public string RoleName
@@ -118,7 +118,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerGroups. 
         /// <para>
-        /// List of server groups to include in the application.
+        /// The server groups to include in the application.
         /// </para>
         /// </summary>
         public List<ServerGroup> ServerGroups
@@ -136,7 +136,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// List of tags to be associated with the application.
+        /// The tags to be associated with the application.
         /// </para>
         /// </summary>
         public List<Tag> Tags

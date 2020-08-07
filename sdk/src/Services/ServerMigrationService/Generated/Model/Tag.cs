@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
-    /// A label that can be assigned to an application.
+    /// Key/value pair that can be assigned to an application.
     /// </summary>
     public partial class Tag
     {
@@ -39,7 +39,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// Tag key.
+        /// The tag key.
         /// </para>
         /// </summary>
         public string Key
@@ -57,7 +57,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Tag value.
+        /// The tag value.
         /// </para>
         /// </summary>
         public string Value

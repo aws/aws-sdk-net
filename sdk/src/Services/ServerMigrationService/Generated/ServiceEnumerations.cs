@@ -25,6 +25,56 @@ namespace Amazon.ServerMigrationService
 {
 
     /// <summary>
+    /// Constants used for properties of type AppLaunchConfigurationStatus.
+    /// </summary>
+    public class AppLaunchConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONFIGURED for AppLaunchConfigurationStatus
+        /// </summary>
+        public static readonly AppLaunchConfigurationStatus CONFIGURED = new AppLaunchConfigurationStatus("CONFIGURED");
+        /// <summary>
+        /// Constant NOT_CONFIGURED for AppLaunchConfigurationStatus
+        /// </summary>
+        public static readonly AppLaunchConfigurationStatus NOT_CONFIGURED = new AppLaunchConfigurationStatus("NOT_CONFIGURED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppLaunchConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppLaunchConfigurationStatus FindValue(string value)
+        {
+            return FindValue<AppLaunchConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppLaunchConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AppLaunchStatus.
     /// </summary>
     public class AppLaunchStatus : ConstantClass
@@ -62,6 +112,10 @@ namespace Amazon.ServerMigrationService
         /// Constant LAUNCHED for AppLaunchStatus
         /// </summary>
         public static readonly AppLaunchStatus LAUNCHED = new AppLaunchStatus("LAUNCHED");
+        /// <summary>
+        /// Constant PARTIALLY_LAUNCHED for AppLaunchStatus
+        /// </summary>
+        public static readonly AppLaunchStatus PARTIALLY_LAUNCHED = new AppLaunchStatus("PARTIALLY_LAUNCHED");
         /// <summary>
         /// Constant READY_FOR_CONFIGURATION for AppLaunchStatus
         /// </summary>
@@ -123,6 +177,56 @@ namespace Amazon.ServerMigrationService
 
 
     /// <summary>
+    /// Constants used for properties of type AppReplicationConfigurationStatus.
+    /// </summary>
+    public class AppReplicationConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONFIGURED for AppReplicationConfigurationStatus
+        /// </summary>
+        public static readonly AppReplicationConfigurationStatus CONFIGURED = new AppReplicationConfigurationStatus("CONFIGURED");
+        /// <summary>
+        /// Constant NOT_CONFIGURED for AppReplicationConfigurationStatus
+        /// </summary>
+        public static readonly AppReplicationConfigurationStatus NOT_CONFIGURED = new AppReplicationConfigurationStatus("NOT_CONFIGURED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppReplicationConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppReplicationConfigurationStatus FindValue(string value)
+        {
+            return FindValue<AppReplicationConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppReplicationConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AppReplicationStatus.
     /// </summary>
     public class AppReplicationStatus : ConstantClass
@@ -148,6 +252,10 @@ namespace Amazon.ServerMigrationService
         /// Constant DELTA_REPLICATION_IN_PROGRESS for AppReplicationStatus
         /// </summary>
         public static readonly AppReplicationStatus DELTA_REPLICATION_IN_PROGRESS = new AppReplicationStatus("DELTA_REPLICATION_IN_PROGRESS");
+        /// <summary>
+        /// Constant PARTIALLY_REPLICATED for AppReplicationStatus
+        /// </summary>
+        public static readonly AppReplicationStatus PARTIALLY_REPLICATED = new AppReplicationStatus("PARTIALLY_REPLICATED");
         /// <summary>
         /// Constant READY_FOR_CONFIGURATION for AppReplicationStatus
         /// </summary>
@@ -291,6 +399,52 @@ namespace Amazon.ServerMigrationService
 
 
     /// <summary>
+    /// Constants used for properties of type AppValidationStrategy.
+    /// </summary>
+    public class AppValidationStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SSM for AppValidationStrategy
+        /// </summary>
+        public static readonly AppValidationStrategy SSM = new AppValidationStrategy("SSM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppValidationStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppValidationStrategy FindValue(string value)
+        {
+            return FindValue<AppValidationStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppValidationStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectorCapability.
     /// </summary>
     public class ConnectorCapability : ConstantClass
@@ -304,6 +458,10 @@ namespace Amazon.ServerMigrationService
         /// Constant SCVMM for ConnectorCapability
         /// </summary>
         public static readonly ConnectorCapability SCVMM = new ConnectorCapability("SCVMM");
+        /// <summary>
+        /// Constant SMS_OPTIMIZED for ConnectorCapability
+        /// </summary>
+        public static readonly ConnectorCapability SMS_OPTIMIZED = new ConnectorCapability("SMS_OPTIMIZED");
         /// <summary>
         /// Constant SNAPSHOT_BATCHING for ConnectorCapability
         /// </summary>
@@ -693,6 +851,56 @@ namespace Amazon.ServerMigrationService
 
 
     /// <summary>
+    /// Constants used for properties of type ScriptType.
+    /// </summary>
+    public class ScriptType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant POWERSHELL_SCRIPT for ScriptType
+        /// </summary>
+        public static readonly ScriptType POWERSHELL_SCRIPT = new ScriptType("POWERSHELL_SCRIPT");
+        /// <summary>
+        /// Constant SHELL_SCRIPT for ScriptType
+        /// </summary>
+        public static readonly ScriptType SHELL_SCRIPT = new ScriptType("SHELL_SCRIPT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScriptType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScriptType FindValue(string value)
+        {
+            return FindValue<ScriptType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScriptType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ServerCatalogStatus.
     /// </summary>
     public class ServerCatalogStatus : ConstantClass
@@ -794,6 +1002,114 @@ namespace Amazon.ServerMigrationService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServerValidationStrategy.
+    /// </summary>
+    public class ServerValidationStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant USERDATA for ServerValidationStrategy
+        /// </summary>
+        public static readonly ServerValidationStrategy USERDATA = new ServerValidationStrategy("USERDATA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServerValidationStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServerValidationStrategy FindValue(string value)
+        {
+            return FindValue<ServerValidationStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServerValidationStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ValidationStatus.
+    /// </summary>
+    public class ValidationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ValidationStatus
+        /// </summary>
+        public static readonly ValidationStatus FAILED = new ValidationStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ValidationStatus
+        /// </summary>
+        public static readonly ValidationStatus IN_PROGRESS = new ValidationStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING for ValidationStatus
+        /// </summary>
+        public static readonly ValidationStatus PENDING = new ValidationStatus("PENDING");
+        /// <summary>
+        /// Constant READY_FOR_VALIDATION for ValidationStatus
+        /// </summary>
+        public static readonly ValidationStatus READY_FOR_VALIDATION = new ValidationStatus("READY_FOR_VALIDATION");
+        /// <summary>
+        /// Constant SUCCEEDED for ValidationStatus
+        /// </summary>
+        public static readonly ValidationStatus SUCCEEDED = new ValidationStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValidationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationStatus FindValue(string value)
+        {
+            return FindValue<ValidationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationStatus(string value)
         {
             return FindValue(value);
         }

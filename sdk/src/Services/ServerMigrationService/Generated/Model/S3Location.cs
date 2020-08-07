@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
-    /// Location of the Amazon S3 object in the customer's account.
+    /// Location of an Amazon S3 object.
     /// </summary>
     public partial class S3Location
     {
@@ -39,9 +39,10 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// Amazon S3 bucket name.
+        /// The Amazon S3 bucket name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=63)]
         public string Bucket
         {
             get { return this._bucket; }
@@ -57,9 +58,10 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// Amazon S3 bucket key.
+        /// The Amazon S3 bucket key.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Key
         {
             get { return this._key; }

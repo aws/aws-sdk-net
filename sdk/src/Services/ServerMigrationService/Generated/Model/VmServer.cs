@@ -114,7 +114,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property VmServerAddress. 
         /// <para>
-        /// Information about the VM server location.
+        /// The VM server location.
         /// </para>
         /// </summary>
         public VmServerAddress VmServerAddress

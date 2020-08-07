@@ -39,7 +39,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Apps. 
         /// <para>
-        /// A list of application summaries.
+        /// The application summaries.
         /// </para>
         /// </summary>
         public List<AppSummary> Apps
