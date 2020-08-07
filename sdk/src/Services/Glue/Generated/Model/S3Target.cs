@@ -33,8 +33,28 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class S3Target
     {
+        private string _connectionName;
         private List<string> _exclusions = new List<string>();
         private string _path;
+
+        /// <summary>
+        /// Gets and sets the property ConnectionName. 
+        /// <para>
+        /// The name of a connection which allows a job or crawler to access data in Amazon S3
+        /// within an Amazon Virtual Private Cloud environment (Amazon VPC).
+        /// </para>
+        /// </summary>
+        public string ConnectionName
+        {
+            get { return this._connectionName; }
+            set { this._connectionName = value; }
+        }
+
+        // Check to see if ConnectionName property is set
+        internal bool IsSetConnectionName()
+        {
+            return this._connectionName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Exclusions. 

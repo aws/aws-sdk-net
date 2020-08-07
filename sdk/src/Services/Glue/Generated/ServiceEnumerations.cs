@@ -401,6 +401,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionType MONGODB = new ConnectionType("MONGODB");
         /// <summary>
+        /// Constant NETWORK for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType NETWORK = new ConnectionType("NETWORK");
+        /// <summary>
         /// Constant SFTP for ConnectionType
         /// </summary>
         public static readonly ConnectionType SFTP = new ConnectionType("SFTP");
