@@ -4,7 +4,8 @@
 * Organizations (3.3.109.0)
 	* Documentation updates for some new error reasons.
 * S3 (3.3.112.0)
-	* Updates Amazon S3 API reference documentation. 
+	* Updates Amazon S3 API reference documentation.
+	* Add obsolete tag with notice of interfaces entering maintenance mode.
 * ServerMigrationService (3.3.101.0)
 	* In this release, AWS Server Migration Service (SMS) has added new features: 1. APIs to work with application and instance level validation 2. Import application catalog from AWS Application Discovery Service 3. For an application you can start on-demand replication
 * Core 3.3.107.37
