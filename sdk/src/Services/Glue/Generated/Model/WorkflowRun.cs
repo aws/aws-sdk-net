@@ -34,6 +34,7 @@ namespace Amazon.Glue.Model
     public partial class WorkflowRun
     {
         private DateTime? _completedOn;
+        private string _errorMessage;
         private WorkflowGraph _graph;
         private string _name;
         private string _previousRunId;
@@ -59,6 +60,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetCompletedOn()
         {
             return this._completedOn.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorMessage. 
+        /// <para>
+        /// This error message describes any error that may have occurred in starting the workflow
+        /// run. Currently the only error message is "Concurrent runs exceeded for workflow: <code>foo</code>."
+        /// </para>
+        /// </summary>
+        public string ErrorMessage
+        {
+            get { return this._errorMessage; }
+            set { this._errorMessage = value; }
+        }
+
+        // Check to see if ErrorMessage property is set
+        internal bool IsSetErrorMessage()
+        {
+            return this._errorMessage != null;
         }
 
         /// <summary>

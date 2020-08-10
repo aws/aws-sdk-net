@@ -2181,6 +2181,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly WorkflowRunStatus COMPLETED = new WorkflowRunStatus("COMPLETED");
         /// <summary>
+        /// Constant ERROR for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus ERROR = new WorkflowRunStatus("ERROR");
+        /// <summary>
         /// Constant RUNNING for WorkflowRunStatus
         /// </summary>
         public static readonly WorkflowRunStatus RUNNING = new WorkflowRunStatus("RUNNING");

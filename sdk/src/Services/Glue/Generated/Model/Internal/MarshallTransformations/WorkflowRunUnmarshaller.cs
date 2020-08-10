@@ -70,6 +70,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.CompletedOn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ErrorMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Graph", targetDepth))
                 {
                     var unmarshaller = WorkflowGraphUnmarshaller.Instance;

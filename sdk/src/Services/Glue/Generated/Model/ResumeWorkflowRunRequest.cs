@@ -30,7 +30,9 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the ResumeWorkflowRun operation.
-    /// Restarts any completed nodes in a workflow run and resumes the run execution.
+    /// Restarts selected nodes of a previous partially completed workflow run and resumes
+    /// the workflow run. The selected nodes and all nodes that are downstream from the selected
+    /// nodes are run.
     /// </summary>
     public partial class ResumeWorkflowRunRequest : AmazonGlueRequest
     {
@@ -61,7 +63,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property NodeIds. 
         /// <para>
         /// A list of the node IDs for the nodes you want to restart. The nodes that are to be
-        /// restarted must have an execution attempt in the original run.
+        /// restarted must have a run attempt in the original run.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
