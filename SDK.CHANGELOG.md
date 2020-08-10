@@ -1,3 +1,16 @@
+### 3.3.794.0 (2020-08-10 18:14 UTC)
+* EC2 (3.3.197.0)
+	* Remove CoIP Auto-Assign feature references.
+* Glue (3.3.126.0)
+	* Starting today, you can further control orchestration of your ETL workloads in AWS Glue by specifying the maximum number of concurrent runs for a Glue workflow.
+* SavingsPlans (3.3.103.0)
+	* Updates to the list of services supported by this API.
+* Core 3.3.107.38
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.793.0 (2020-08-07 22:16 UTC)
 * Glue (3.3.125.0)
 	* AWS Glue now adds support for Network connection type enabling you to access resources inside your VPC using Glue crawlers and Glue ETL jobs.
