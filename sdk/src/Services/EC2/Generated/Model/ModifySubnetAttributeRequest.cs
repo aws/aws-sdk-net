@@ -35,8 +35,6 @@ namespace Amazon.EC2.Model
     public partial class ModifySubnetAttributeRequest : AmazonEC2Request
     {
         private bool? _assignIpv6AddressOnCreation;
-        private string _customerOwnedIpv4Pool;
-        private bool? _mapCustomerOwnedIpOnLaunch;
         private bool? _mapPublicIpOnLaunch;
         private string _subnetId;
 
@@ -65,52 +63,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetAssignIpv6AddressOnCreation()
         {
             return this._assignIpv6AddressOnCreation.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property CustomerOwnedIpv4Pool. 
-        /// <para>
-        /// The customer-owned IPv4 address pool associated with the subnet.
-        /// </para>
-        ///  
-        /// <para>
-        /// You must set this value when you specify <code>true</code> for <code>MapCustomerOwnedIpOnLaunch</code>.
-        /// </para>
-        /// </summary>
-        public string CustomerOwnedIpv4Pool
-        {
-            get { return this._customerOwnedIpv4Pool; }
-            set { this._customerOwnedIpv4Pool = value; }
-        }
-
-        // Check to see if CustomerOwnedIpv4Pool property is set
-        internal bool IsSetCustomerOwnedIpv4Pool()
-        {
-            return this._customerOwnedIpv4Pool != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MapCustomerOwnedIpOnLaunch. 
-        /// <para>
-        /// Specify <code>true</code> to indicate that network interfaces attached to instances
-        /// created in the specified subnet should be assigned a customer-owned IPv4 address.
-        /// </para>
-        ///  
-        /// <para>
-        /// When this value is <code>true</code>, you must specify the customer-owned IP pool
-        /// using <code>CustomerOwnedIpv4Pool</code>.
-        /// </para>
-        /// </summary>
-        public bool MapCustomerOwnedIpOnLaunch
-        {
-            get { return this._mapCustomerOwnedIpOnLaunch.GetValueOrDefault(); }
-            set { this._mapCustomerOwnedIpOnLaunch = value; }
-        }
-
-        // Check to see if MapCustomerOwnedIpOnLaunch property is set
-        internal bool IsSetMapCustomerOwnedIpOnLaunch()
-        {
-            return this._mapCustomerOwnedIpOnLaunch.HasValue; 
         }
 
         /// <summary>
