@@ -1,3 +1,13 @@
+### 3.3.795.0 (2020-08-11 19:16 UTC)
+* EC2 (3.3.198.0)
+	* This release rolls back the EC2 On-Demand Capacity Reservations (ODCRs) release 1.11.831 published on 2020-07-30, which was deployed in error.
+* Lambda (3.3.111.0)
+	* Support Managed Streaming for Kafka as an Event Source. Support retry until record expiration for Kinesis and Dynamodb streams event source mappings.
+* Organizations (3.3.109.2)
+	* Minor documentation update for AWS Organizations
+* S3 (3.3.113.0)
+	* Add support for in-region CopyObject and UploadPartCopy through S3 Access Points
+
 ### 3.3.794.0 (2020-08-10 18:14 UTC)
 * EC2 (3.3.197.0)
 	* Remove CoIP Auto-Assign feature references.
