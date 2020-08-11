@@ -143,6 +143,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StartingPositionTimestamp);
                 }
 
+                if(publicRequest.IsSetTopics())
+                {
+                    context.Writer.WritePropertyName("Topics");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTopicsListValue in publicRequest.Topics)
+                    {
+                            context.Writer.Write(publicRequestTopicsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

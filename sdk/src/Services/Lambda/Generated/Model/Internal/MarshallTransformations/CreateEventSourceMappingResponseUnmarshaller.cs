@@ -129,6 +129,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.StateTransitionReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Topics", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.Topics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UUID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

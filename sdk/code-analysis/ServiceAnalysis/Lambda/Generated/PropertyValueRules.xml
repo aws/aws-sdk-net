@@ -130,12 +130,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateEventSourceMappingRequest.MaximumRecordAgeInSeconds</property>
-    <min>60</min>
+    <min>-1</min>
     <max>604800</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateEventSourceMappingRequest.MaximumRetryAttempts</property>
-    <min>0</min>
+    <min>-1</min>
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
@@ -163,12 +163,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateEventSourceMappingResponse.MaximumRecordAgeInSeconds</property>
-    <min>60</min>
+    <min>-1</min>
     <max>604800</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateEventSourceMappingResponse.MaximumRetryAttempts</property>
-    <min>0</min>
+    <min>-1</min>
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
@@ -288,12 +288,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteEventSourceMappingResponse.MaximumRecordAgeInSeconds</property>
-    <min>60</min>
+    <min>-1</min>
     <max>604800</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteEventSourceMappingResponse.MaximumRetryAttempts</property>
-    <min>0</min>
+    <min>-1</min>
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
@@ -402,12 +402,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetEventSourceMappingResponse.MaximumRecordAgeInSeconds</property>
-    <min>60</min>
+    <min>-1</min>
     <max>604800</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetEventSourceMappingResponse.MaximumRetryAttempts</property>
-    <min>0</min>
+    <min>-1</min>
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
@@ -1008,12 +1008,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateEventSourceMappingRequest.MaximumRecordAgeInSeconds</property>
-    <min>60</min>
+    <min>-1</min>
     <max>604800</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateEventSourceMappingRequest.MaximumRetryAttempts</property>
-    <min>0</min>
+    <min>-1</min>
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
@@ -1041,12 +1041,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateEventSourceMappingResponse.MaximumRecordAgeInSeconds</property>
-    <min>60</min>
+    <min>-1</min>
     <max>604800</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateEventSourceMappingResponse.MaximumRetryAttempts</property>
-    <min>0</min>
+    <min>-1</min>
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>

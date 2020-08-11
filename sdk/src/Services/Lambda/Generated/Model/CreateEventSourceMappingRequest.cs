@@ -52,6 +52,11 @@ namespace Amazon.Lambda.Model
     ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS Lambda
     /// with Amazon SQS</a> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS Lambda
+    /// with Amazon MSK</a> 
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// The following error handling options are only available for stream sources (DynamoDB
@@ -70,12 +75,13 @@ namespace Amazon.Lambda.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified
-    /// age.
+    /// age. Default -1 (infinite). Minimum 60. Maximum 604800.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
-    /// retries.
+    /// retries. Default -1 (infinite). Minimum 0. Maximum 10000. When infinite, failed records
+    /// will be retried until the record expires.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -97,6 +103,7 @@ namespace Amazon.Lambda.Model
         private int? _parallelizationFactor;
         private EventSourcePosition _startingPosition;
         private DateTime? _startingPositionTimestamp;
+        private List<string> _topics = new List<string>();
 
         /// <summary>
         /// Gets and sets the property BatchSize. 
@@ -114,6 +121,10 @@ namespace Amazon.Lambda.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -169,7 +180,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Disables the event source mapping to pause polling and invocation.
+        /// If true, the event source mapping is active. Set to false to pause polling and invocation.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -200,6 +211,10 @@ namespace Amazon.Lambda.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -281,10 +296,11 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRecordAgeInSeconds. 
         /// <para>
-        /// (Streams) The maximum age of a record that Lambda sends to a function for processing.
+        /// (Streams) Discard records older than the specified age. The default value is infinite
+        /// (-1).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=60, Max=604800)]
+        [AWSProperty(Min=-1, Max=604800)]
         public int MaximumRecordAgeInSeconds
         {
             get { return this._maximumRecordAgeInSeconds.GetValueOrDefault(); }
@@ -300,10 +316,12 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRetryAttempts. 
         /// <para>
-        /// (Streams) The maximum number of times to retry when the function returns an error.
+        /// (Streams) Discard records after the specified number of retries. The default value
+        /// is infinite (-1). When set to infinite (-1), failed records will be retried until
+        /// the record expires.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10000)]
+        [AWSProperty(Min=-1, Max=10000)]
         public int MaximumRetryAttempts
         {
             get { return this._maximumRetryAttempts.GetValueOrDefault(); }
@@ -338,9 +356,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property StartingPosition. 
         /// <para>
-        /// The position in a stream from which to start reading. Required for Amazon Kinesis
-        /// and Amazon DynamoDB Streams sources. <code>AT_TIMESTAMP</code> is only supported for
-        /// Amazon Kinesis streams.
+        /// The position in a stream from which to start reading. Required for Amazon Kinesis,
+        /// Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only
+        /// supported for Amazon Kinesis streams.
         /// </para>
         /// </summary>
         public EventSourcePosition StartingPosition
@@ -372,6 +390,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetStartingPositionTimestamp()
         {
             return this._startingPositionTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Topics. 
+        /// <para>
+        ///  (MSK) The name of the Kafka topic. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> Topics
+        {
+            get { return this._topics; }
+            set { this._topics = value; }
+        }
+
+        // Check to see if Topics property is set
+        internal bool IsSetTopics()
+        {
+            return this._topics != null && this._topics.Count > 0; 
         }
 
     }
