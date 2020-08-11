@@ -10329,8 +10329,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> 
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called from any account in the organization.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHandshakesForAccount service method.</param>
