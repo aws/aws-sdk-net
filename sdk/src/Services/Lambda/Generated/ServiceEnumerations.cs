@@ -441,6 +441,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly Runtime Java8 = new Runtime("java8");
         /// <summary>
+        /// Constant Java8Al2 for Runtime
+        /// </summary>
+        public static readonly Runtime Java8Al2 = new Runtime("java8.al2");
+        /// <summary>
         /// Constant Nodejs for Runtime
         /// </summary>
         public static readonly Runtime Nodejs = new Runtime("nodejs");
@@ -472,6 +476,10 @@ namespace Amazon.Lambda
         /// Constant Provided for Runtime
         /// </summary>
         public static readonly Runtime Provided = new Runtime("provided");
+        /// <summary>
+        /// Constant ProvidedAl2 for Runtime
+        /// </summary>
+        public static readonly Runtime ProvidedAl2 = new Runtime("provided.al2");
         /// <summary>
         /// Constant Python27 for Runtime
         /// </summary>
