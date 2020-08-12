@@ -34,6 +34,7 @@ namespace Amazon.Cloud9.Model
     public partial class Environment
     {
         private string _arn;
+        private ConnectionType _connectionType;
         private string _description;
         private string _id;
         private EnvironmentLifecycle _lifecycle;
@@ -57,6 +58,24 @@ namespace Amazon.Cloud9.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionType. 
+        /// <para>
+        /// The connection type used for connecting to an Amazon EC2 environment.
+        /// </para>
+        /// </summary>
+        public ConnectionType ConnectionType
+        {
+            get { return this._connectionType; }
+            set { this._connectionType = value; }
+        }
+
+        // Check to see if ConnectionType property is set
+        internal bool IsSetConnectionType()
+        {
+            return this._connectionType != null;
         }
 
         /// <summary>

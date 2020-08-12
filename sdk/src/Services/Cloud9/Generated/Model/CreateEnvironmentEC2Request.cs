@@ -37,6 +37,7 @@ namespace Amazon.Cloud9.Model
     {
         private int? _automaticStopTimeMinutes;
         private string _clientRequestToken;
+        private ConnectionType _connectionType;
         private string _description;
         private string _instanceType;
         private string _name;
@@ -86,6 +87,24 @@ namespace Amazon.Cloud9.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionType. 
+        /// <para>
+        /// The connection type used for connecting to an Amazon EC2 environment.
+        /// </para>
+        /// </summary>
+        public ConnectionType ConnectionType
+        {
+            get { return this._connectionType; }
+            set { this._connectionType = value; }
+        }
+
+        // Check to see if ConnectionType property is set
+        internal bool IsSetConnectionType()
+        {
+            return this._connectionType != null;
         }
 
         /// <summary>

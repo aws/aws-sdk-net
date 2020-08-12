@@ -989,6 +989,9 @@ namespace Amazon.Cloud9
         /// <exception cref="Amazon.Cloud9.Model.BadRequestException">
         /// The target request is invalid.
         /// </exception>
+        /// <exception cref="Amazon.Cloud9.Model.ConcurrentAccessException">
+        /// A concurrent access issue occurred.
+        /// </exception>
         /// <exception cref="Amazon.Cloud9.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
@@ -1051,6 +1054,9 @@ namespace Amazon.Cloud9
         /// <returns>The response from the UntagResource service method, as returned by Cloud9.</returns>
         /// <exception cref="Amazon.Cloud9.Model.BadRequestException">
         /// The target request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Cloud9.Model.ConcurrentAccessException">
+        /// A concurrent access issue occurred.
         /// </exception>
         /// <exception cref="Amazon.Cloud9.Model.InternalServerErrorException">
         /// An internal server error occurred.
