@@ -42,29 +42,30 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property AutoImportPolicy. 
         /// <para>
-        ///  (Optional) When you create your file system, your existing S3 objects appear as file
-        /// and directory listings. Use this property to choose how Amazon FSx keeps your file
-        /// and directory listing up to date as you add or modify objects in your linked S3 bucket.
-        /// <code>AutoImportPolicy</code> can have the following values:
+        ///  (Optional) Use this property to configure the AutoImport feature on the file system's
+        /// linked Amazon S3 data repository. You use AutoImport to update the contents of your
+        /// FSx for Lustre file system automatically with changes that occur in the linked S3
+        /// data repository. <code>AutoImportPolicy</code> can have the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates file and
-        /// directory listings from the linked S3 bucket when the file system is created. FSx
-        /// does not update the file and directory listing for any new or changed objects after
-        /// choosing this option.
+        ///  <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository
+        /// are not reflected on the FSx file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory listings
-        /// of any new objects added to the linked S3 bucket that do not currently exist in the
-        /// FSx file system. 
+        ///  <code>NEW</code> - AutoImport is on. New files in the linked data repository that
+        /// do not currently exist in the FSx file system are automatically imported. Updates
+        /// to existing FSx files are not imported to the FSx file system. Files deleted from
+        /// the linked data repository are not deleted from the FSx file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file
-        /// and directory listings of any new objects added to the S3 bucket and any existing
-        /// objects that are changed in the S3 bucket after you choose this option. 
+        ///  <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository
+        /// that do not currently exist in the FSx file system are automatically imported. Changes
+        /// to existing FSx files in the linked repository are also automatically imported to
+        /// the FSx file system. Files deleted from the linked data repository are not deleted
+        /// from the FSx file system. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -87,7 +88,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property AutomaticBackupRetentionDays.
         /// </summary>
-        [AWSProperty(Min=0, Max=35)]
+        [AWSProperty(Min=0, Max=90)]
         public int AutomaticBackupRetentionDays
         {
             get { return this._automaticBackupRetentionDays.GetValueOrDefault(); }
@@ -119,9 +120,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property WeeklyMaintenanceStartTime. 
         /// <para>
-        /// (Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM
-        /// in the UTC time zone. d is the weekday number, from 1 through 7, beginning with Monday
-        /// and ending with Sunday.
+        /// The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
+        /// time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending
+        /// with Sunday.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=7)]

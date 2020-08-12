@@ -38,6 +38,7 @@ namespace Amazon.FSx.Model
         private string _dailyAutomaticBackupStartTime;
         private DataRepositoryConfiguration _dataRepositoryConfiguration;
         private LustreDeploymentType _deploymentType;
+        private DriveCacheType _driveCacheType;
         private string _mountName;
         private int? _perUnitStorageThroughput;
         private string _weeklyMaintenanceStartTime;
@@ -45,7 +46,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property AutomaticBackupRetentionDays.
         /// </summary>
-        [AWSProperty(Min=0, Max=35)]
+        [AWSProperty(Min=0, Max=90)]
         public int AutomaticBackupRetentionDays
         {
             get { return this._automaticBackupRetentionDays.GetValueOrDefault(); }
@@ -146,6 +147,31 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DriveCacheType. 
+        /// <para>
+        /// The type of drive cache used by PERSISTENT_1 file systems that are provisioned with
+        /// HDD storage devices. This parameter is required when storage type is HDD. Set to <code>READ</code>,
+        /// improve the performance for frequently accessed files and allows 20% of the total
+        /// storage capacity of the file system to be cached. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is required when <code>StorageType</code> is set to HDD.
+        /// </para>
+        /// </summary>
+        public DriveCacheType DriveCacheType
+        {
+            get { return this._driveCacheType; }
+            set { this._driveCacheType = value; }
+        }
+
+        // Check to see if DriveCacheType property is set
+        internal bool IsSetDriveCacheType()
+        {
+            return this._driveCacheType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MountName. 
         /// <para>
         /// You use the <code>MountName</code> value when mounting the file system.
@@ -176,11 +202,15 @@ namespace Amazon.FSx.Model
         ///  Per unit storage throughput represents the megabytes per second of read or write
         /// throughput per 1 tebibyte of storage provisioned. File system throughput capacity
         /// is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). This option
-        /// is only valid for <code>PERSISTENT_1</code> deployment types. Valid values are 50,
-        /// 100, 200. 
+        /// is only valid for <code>PERSISTENT_1</code> deployment types. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values for SSD storage: 50, 100, 200. Valid values for HDD storage: 12, 40.
+        /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=50, Max=200)]
+        [AWSProperty(Min=12, Max=200)]
         public int PerUnitStorageThroughput
         {
             get { return this._perUnitStorageThroughput.GetValueOrDefault(); }

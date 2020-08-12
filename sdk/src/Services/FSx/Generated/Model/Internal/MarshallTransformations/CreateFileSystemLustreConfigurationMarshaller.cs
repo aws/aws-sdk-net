@@ -75,6 +75,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DeploymentType);
             }
 
+            if(requestObject.IsSetDriveCacheType())
+            {
+                context.Writer.WritePropertyName("DriveCacheType");
+                context.Writer.Write(requestObject.DriveCacheType);
+            }
+
             if(requestObject.IsSetExportPath())
             {
                 context.Writer.WritePropertyName("ExportPath");

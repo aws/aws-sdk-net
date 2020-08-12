@@ -38,6 +38,7 @@ namespace Amazon.FSx.Model
         private bool? _copyTagsToBackups;
         private string _dailyAutomaticBackupStartTime;
         private LustreDeploymentType _deploymentType;
+        private DriveCacheType _driveCacheType;
         private string _exportPath;
         private int? _importedFileChunkSize;
         private string _importPath;
@@ -47,29 +48,30 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property AutoImportPolicy. 
         /// <para>
-        ///  (Optional) When you create your file system, your existing S3 objects appear as file
-        /// and directory listings. Use this property to choose how Amazon FSx keeps your file
-        /// and directory listings up to date as you add or modify objects in your linked S3 bucket.
-        /// <code>AutoImportPolicy</code> can have the following values:
+        ///  (Optional) Use this property to configure the AutoImport feature on the file system's
+        /// linked Amazon S3 data repository. You use AutoImport to update the contents of your
+        /// FSx for Lustre file system automatically with changes that occur in the linked S3
+        /// data repository. <code>AutoImportPolicy</code> can have the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates file and
-        /// directory listings from the linked S3 bucket when the file system is created. FSx
-        /// does not update file and directory listings for any new or changed objects after choosing
-        /// this option.
+        ///  <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository
+        /// are not reflected on the FSx file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory listings
-        /// of any new objects added to the linked S3 bucket that do not currently exist in the
-        /// FSx file system. 
+        ///  <code>NEW</code> - AutoImport is on. New files in the linked data repository that
+        /// do not currently exist in the FSx file system are automatically imported. Updates
+        /// to existing FSx files are not imported to the FSx file system. Files deleted from
+        /// the linked data repository are not deleted from the FSx file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file
-        /// and directory listings of any new objects added to the S3 bucket and any existing
-        /// objects that are changed in the S3 bucket after you choose this option. 
+        ///  <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository
+        /// that do not currently exist in the FSx file system are automatically imported. Changes
+        /// to existing FSx files in the linked repository are also automatically imported to
+        /// the FSx file system. Files deleted from the linked data repository are not deleted
+        /// from the FSx file system. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -92,7 +94,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property AutomaticBackupRetentionDays.
         /// </summary>
-        [AWSProperty(Min=0, Max=35)]
+        [AWSProperty(Min=0, Max=90)]
         public int AutomaticBackupRetentionDays
         {
             get { return this._automaticBackupRetentionDays.GetValueOrDefault(); }
@@ -108,11 +110,10 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToBackups. 
         /// <para>
-        /// (Optional) Not available to use with file systems that are linked to a data repository.
         /// A boolean flag indicating whether tags for the file system should be copied to backups.
-        /// The default value is false. If it's set to true, all file system tags are copied to
-        /// all automatic and user-initiated backups when the user doesn't specify any backup-specific
-        /// tags. If this value is true, and you specify one or more backup tags, only the specified
+        /// This value defaults to false. If it's set to true, all tags for the file system are
+        /// copied to all automatic and user-initiated backups where the user doesn't specify
+        /// tags. If this value is true, and you specify one or more tags, only the specified
         /// tags are copied to backups. If you specify one or more tags when creating a user-initiated
         /// backup, no tags are copied from the file system, regardless of this value.
         /// </para>
@@ -188,6 +189,31 @@ namespace Amazon.FSx.Model
         internal bool IsSetDeploymentType()
         {
             return this._deploymentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DriveCacheType. 
+        /// <para>
+        /// The type of drive cache used by PERSISTENT_1 file systems that are provisioned with
+        /// HDD storage devices. This parameter is required when storage type is HDD. Set to <code>READ</code>,
+        /// improve the performance for frequently accessed files and allows 20% of the total
+        /// storage capacity of the file system to be cached. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is required when <code>StorageType</code> is set to HDD.
+        /// </para>
+        /// </summary>
+        public DriveCacheType DriveCacheType
+        {
+            get { return this._driveCacheType; }
+            set { this._driveCacheType = value; }
+        }
+
+        // Check to see if DriveCacheType property is set
+        internal bool IsSetDriveCacheType()
+        {
+            return this._driveCacheType != null;
         }
 
         /// <summary>
@@ -287,10 +313,10 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values are 50, 100, 200.
+        /// Valid values for SSD storage: 50, 100, 200. Valid values for HDD storage: 12, 40.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=50, Max=200)]
+        [AWSProperty(Min=12, Max=200)]
         public int PerUnitStorageThroughput
         {
             get { return this._perUnitStorageThroughput.GetValueOrDefault(); }
@@ -306,9 +332,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property WeeklyMaintenanceStartTime. 
         /// <para>
-        /// (Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM
-        /// in the UTC time zone, where d is the weekday number, from 1 through 7, beginning with
-        /// Monday and ending with Sunday.
+        /// The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
+        /// time zone, where d is the weekday number, from 1 through 7, beginning with Monday
+        /// and ending with Sunday.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=7)]

@@ -94,6 +94,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeploymentType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DriveCacheType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DriveCacheType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MountName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

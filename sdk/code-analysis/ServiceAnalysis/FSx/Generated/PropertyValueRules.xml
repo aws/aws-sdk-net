@@ -275,7 +275,7 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemLustreConfiguration.AutomaticBackupRetentionDays</property>
     <min>0</min>
-    <max>35</max>
+    <max>90</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemLustreConfiguration.DailyAutomaticBackupStartTime</property>
@@ -302,7 +302,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemLustreConfiguration.PerUnitStorageThroughput</property>
-    <min>50</min>
+    <min>12</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
@@ -320,7 +320,7 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemWindowsConfiguration.AutomaticBackupRetentionDays</property>
     <min>0</min>
-    <max>35</max>
+    <max>90</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemWindowsConfiguration.DailyAutomaticBackupStartTime</property>
@@ -467,7 +467,7 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.LustreFileSystemConfiguration.AutomaticBackupRetentionDays</property>
     <min>0</min>
-    <max>35</max>
+    <max>90</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.LustreFileSystemConfiguration.DailyAutomaticBackupStartTime</property>
@@ -483,7 +483,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.LustreFileSystemConfiguration.PerUnitStorageThroughput</property>
-    <min>50</min>
+    <min>12</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
@@ -591,7 +591,7 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateFileSystemLustreConfiguration.AutomaticBackupRetentionDays</property>
     <min>0</min>
-    <max>35</max>
+    <max>90</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateFileSystemLustreConfiguration.DailyAutomaticBackupStartTime</property>
@@ -608,7 +608,7 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateFileSystemWindowsConfiguration.AutomaticBackupRetentionDays</property>
     <min>0</min>
-    <max>35</max>
+    <max>90</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateFileSystemWindowsConfiguration.DailyAutomaticBackupStartTime</property>
@@ -636,7 +636,7 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.WindowsFileSystemConfiguration.AutomaticBackupRetentionDays</property>
     <min>0</min>
-    <max>35</max>
+    <max>90</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.WindowsFileSystemConfiguration.DailyAutomaticBackupStartTime</property>
