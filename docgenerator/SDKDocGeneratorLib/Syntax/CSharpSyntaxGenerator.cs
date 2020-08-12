@@ -20,6 +20,8 @@ namespace SDKDocGenerator.Syntax
         {
             var syntax = new SyntaxWriter(this._version);
 
+            syntax.WriteAttributes(type);
+
             if (type.IsPublic)
                 syntax.WriteToken("public");
 

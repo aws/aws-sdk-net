@@ -254,6 +254,62 @@ namespace SDKDocGenerator
         }
     }
 
+    public class AttributeWrapper : AbstractWrapper
+    {
+        private CustomAttributeData _data;
+
+        public AttributeWrapper(CustomAttributeData data, string docId) : base(docId)
+        {
+            _data = data;
+        }
+
+        private string _name;
+        public string Name
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_name))
+                {
+                    var attributeLastIndex = _data.AttributeType.Name.LastIndexOf("Attribute", StringComparison.Ordinal);
+                    if (attributeLastIndex != -1)
+                    {
+                        _name = _data.AttributeType.Name.Substring(0, attributeLastIndex);
+                    }
+                    else
+                    {
+                        _name = _data.AttributeType.Name;
+
+                    }
+                }
+                return _name;
+            }
+        }
+
+        private IEnumerable<string> _arguments;
+        public IEnumerable<string> Arguments
+        {
+            get
+            {
+                if (_arguments == null)
+                {
+                    _arguments = _data.ConstructorArguments.Select(argument =>
+                    {
+                        switch(argument.ArgumentType.FullName)
+                        {
+                            case "System.String":
+                                return $"\"{argument.Value}\"";
+                            case "System.Boolean":
+                                return argument.Value.ToString().ToLower();
+                            default:
+                                throw new NotImplementedException($"{argument.ArgumentType.FullName} is not implemented");
+                        }
+                    }).ToList();
+                }
+                return _arguments;
+            }
+        }
+    }
+
     public class TypeWrapper : AbstractWrapper
     {
         readonly Type _type;
@@ -328,6 +384,20 @@ namespace SDKDocGenerator
 
                 return _fullName;
             }
+        }
+
+        private IEnumerable<AttributeWrapper> _attributes;
+        public IEnumerable<AttributeWrapper> Attributes {
+            get 
+            {
+                if (_attributes == null)
+                {
+                    _attributes = _type.CustomAttributes.Where(attribute => attribute.AttributeType.FullName.Equals("System.ObsoleteAttribute"))
+                        .Select(customAttribute => new AttributeWrapper(customAttribute, DocId))
+                        .ToList();
+                }
+                return _attributes;
+            } 
         }
 
         public string ManifestModuleName
