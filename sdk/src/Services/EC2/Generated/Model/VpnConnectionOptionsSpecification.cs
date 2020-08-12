@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     {
         private bool? _enableAcceleration;
         private bool? _staticRoutesOnly;
+        private TunnelInsideIpVersion _tunnelInsideIpVersion;
         private List<VpnTunnelOptionsSpecification> _tunnelOptions = new List<VpnTunnelOptionsSpecification>();
 
         /// <summary>
@@ -81,6 +82,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetStaticRoutesOnly()
         {
             return this._staticRoutesOnly.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TunnelInsideIpVersion. 
+        /// <para>
+        /// Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>ipv4</code> 
+        /// </para>
+        /// </summary>
+        public TunnelInsideIpVersion TunnelInsideIpVersion
+        {
+            get { return this._tunnelInsideIpVersion; }
+            set { this._tunnelInsideIpVersion = value; }
+        }
+
+        // Check to see if TunnelInsideIpVersion property is set
+        internal bool IsSetTunnelInsideIpVersion()
+        {
+            return this._tunnelInsideIpVersion != null;
         }
 
         /// <summary>

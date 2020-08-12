@@ -72,6 +72,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Options" + "." + "StaticRoutesOnly", StringUtils.FromBool(publicRequest.Options.StaticRoutesOnly));
                     }
+                    if(publicRequest.Options.IsSetTunnelInsideIpVersion())
+                    {
+                        request.Parameters.Add("Options" + "." + "TunnelInsideIpVersion", StringUtils.FromString(publicRequest.Options.TunnelInsideIpVersion));
+                    }
                     if(publicRequest.Options.IsSetTunnelOptions())
                     {
                         int publicRequestOptionslistValueIndex = 1;
@@ -192,6 +196,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             if(publicRequestOptionslistValue.IsSetTunnelInsideCidr())
                             {
                                 request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "TunnelInsideCidr", StringUtils.FromString(publicRequestOptionslistValue.TunnelInsideCidr));
+                            }
+                            if(publicRequestOptionslistValue.IsSetTunnelInsideIpv6Cidr())
+                            {
+                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "TunnelInsideIpv6Cidr", StringUtils.FromString(publicRequestOptionslistValue.TunnelInsideIpv6Cidr));
                             }
                             publicRequestOptionslistValueIndex++;
                         }

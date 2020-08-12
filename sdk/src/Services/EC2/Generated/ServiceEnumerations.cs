@@ -11453,6 +11453,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type TunnelInsideIpVersion.
+    /// </summary>
+    public class TunnelInsideIpVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ipv4 for TunnelInsideIpVersion
+        /// </summary>
+        public static readonly TunnelInsideIpVersion Ipv4 = new TunnelInsideIpVersion("ipv4");
+        /// <summary>
+        /// Constant Ipv6 for TunnelInsideIpVersion
+        /// </summary>
+        public static readonly TunnelInsideIpVersion Ipv6 = new TunnelInsideIpVersion("ipv6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TunnelInsideIpVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TunnelInsideIpVersion FindValue(string value)
+        {
+            return FindValue<TunnelInsideIpVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TunnelInsideIpVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type UnlimitedSupportedInstanceFamily.
     /// </summary>
     public class UnlimitedSupportedInstanceFamily : ConstantClass

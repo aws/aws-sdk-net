@@ -66,6 +66,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.StaticRoutesOnly = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("tunnelInsideIpVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TunnelInsideIpVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("tunnelOptionSet/item", targetDepth))
                     {
                         var unmarshaller = TunnelOptionUnmarshaller.Instance;

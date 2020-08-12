@@ -157,6 +157,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.TunnelInsideCidr = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("tunnelInsideIpv6Cidr", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TunnelInsideIpv6Cidr = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

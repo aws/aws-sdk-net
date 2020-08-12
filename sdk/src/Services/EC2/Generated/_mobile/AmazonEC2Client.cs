@@ -4728,8 +4728,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a VPN connection between an existing virtual private gateway and a VPN customer
-        /// gateway. The supported connection type is <code>ipsec.1</code>.
+        /// Creates a VPN connection between an existing virtual private gateway or transit gateway
+        /// and a customer gateway. The supported connection type is <code>ipsec.1</code>.
         /// 
         ///  
         /// <para>
@@ -4739,7 +4739,8 @@ namespace Amazon.EC2
         ///  <important> 
         /// <para>
         /// We strongly recommend that you use HTTPS when calling this operation because the response
-        /// contains sensitive cryptographic information for configuring your customer gateway.
+        /// contains sensitive cryptographic information for configuring your customer gateway
+        /// device.
         /// </para>
         ///  </important> 
         /// <para>
