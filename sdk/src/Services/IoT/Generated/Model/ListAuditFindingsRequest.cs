@@ -37,6 +37,7 @@ namespace Amazon.IoT.Model
     {
         private string _checkName;
         private DateTime? _endTime;
+        private bool? _listSuppressedFindings;
         private int? _maxResults;
         private string _nextToken;
         private ResourceIdentifier _resourceIdentifier;
@@ -78,6 +79,26 @@ namespace Amazon.IoT.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ListSuppressedFindings. 
+        /// <para>
+        ///  Boolean flag indicating whether only the suppressed findings or the unsuppressed
+        /// findings should be listed. If this parameter isn't provided, the response will list
+        /// both suppressed and unsuppressed findings. 
+        /// </para>
+        /// </summary>
+        public bool ListSuppressedFindings
+        {
+            get { return this._listSuppressedFindings.GetValueOrDefault(); }
+            set { this._listSuppressedFindings = value; }
+        }
+
+        // Check to see if ListSuppressedFindings property is set
+        internal bool IsSetListSuppressedFindings()
+        {
+            return this._listSuppressedFindings.HasValue; 
         }
 
         /// <summary>

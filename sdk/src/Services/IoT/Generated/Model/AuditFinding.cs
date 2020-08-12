@@ -36,6 +36,7 @@ namespace Amazon.IoT.Model
         private string _checkName;
         private string _findingId;
         private DateTime? _findingTime;
+        private bool? _isSuppressed;
         private NonCompliantResource _nonCompliantResource;
         private string _reasonForNonCompliance;
         private string _reasonForNonComplianceCode;
@@ -98,6 +99,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetFindingTime()
         {
             return this._findingTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsSuppressed. 
+        /// <para>
+        ///  Indicates whether the audit finding was suppressed or not during reporting. 
+        /// </para>
+        /// </summary>
+        public bool IsSuppressed
+        {
+            get { return this._isSuppressed.GetValueOrDefault(); }
+            set { this._isSuppressed = value; }
+        }
+
+        // Check to see if IsSuppressed property is set
+        internal bool IsSetIsSuppressed()
+        {
+            return this._isSuppressed.HasValue; 
         }
 
         /// <summary>

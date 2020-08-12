@@ -138,6 +138,16 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.CreateAuditSuppressionRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateAuditSuppressionRequest.Description</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.CreateAuthorizerRequest.AuthorizerName</property>
     <min>1</min>
     <max>128</max>
@@ -741,6 +751,10 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeAuditSuppressionResponse.Description</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.DescribeAuditTaskRequest.TaskId</property>
     <min>1</min>
     <max>40</max>
@@ -1261,6 +1275,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListAuditMitigationActionsTasksRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListAuditSuppressionsRequest.MaxResults</property>
     <min>1</min>
     <max>250</max>
   </property-value-rule>
@@ -1916,6 +1935,10 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateAuditSuppressionRequest.Description</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.UpdateAuthorizerRequest.AuthorizerName</property>
     <min>1</min>
     <max>128</max>
@@ -2234,6 +2257,10 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.AuditNotificationTarget.TargetArn</property>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.AuditSuppression.Description</property>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.AuditTaskMetadata.TaskId</property>

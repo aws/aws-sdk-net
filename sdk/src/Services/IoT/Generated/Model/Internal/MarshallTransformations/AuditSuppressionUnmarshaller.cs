@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AuditCheckDetails Object
+    /// Response Unmarshaller for AuditSuppression Object
     /// </summary>  
-    public class AuditCheckDetailsUnmarshaller : IUnmarshaller<AuditCheckDetails, XmlUnmarshallerContext>, IUnmarshaller<AuditCheckDetails, JsonUnmarshallerContext>
+    public class AuditSuppressionUnmarshaller : IUnmarshaller<AuditSuppression, XmlUnmarshallerContext>, IUnmarshaller<AuditSuppression, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AuditCheckDetails IUnmarshaller<AuditCheckDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AuditSuppression IUnmarshaller<AuditSuppression, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,45 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AuditCheckDetails Unmarshall(JsonUnmarshallerContext context)
+        public AuditSuppression Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AuditCheckDetails unmarshalledObject = new AuditCheckDetails();
+            AuditSuppression unmarshalledObject = new AuditSuppression();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("checkCompliant", targetDepth))
+                if (context.TestExpression("checkName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CheckName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("expirationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ExpirationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resourceIdentifier", targetDepth))
+                {
+                    var unmarshaller = ResourceIdentifierUnmarshaller.Instance;
+                    unmarshalledObject.ResourceIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("suppressIndefinitely", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.CheckCompliant = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("checkRunStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CheckRunStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("errorCode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("message", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("nonCompliantResourcesCount", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.NonCompliantResourcesCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("suppressedNonCompliantResourcesCount", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.SuppressedNonCompliantResourcesCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("totalResourcesCount", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.TotalResourcesCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SuppressIndefinitely = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +100,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static AuditCheckDetailsUnmarshaller _instance = new AuditCheckDetailsUnmarshaller();        
+        private static AuditSuppressionUnmarshaller _instance = new AuditSuppressionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AuditCheckDetailsUnmarshaller Instance
+        public static AuditSuppressionUnmarshaller Instance
         {
             get
             {

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListAuditFindings Request Marshaller
+    /// DeleteAuditSuppression Request Marshaller
     /// </summary>       
-    public class ListAuditFindingsRequestMarshaller : IMarshaller<IRequest, ListAuditFindingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteAuditSuppressionRequestMarshaller : IMarshaller<IRequest, DeleteAuditSuppressionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListAuditFindingsRequest)input);
+            return this.Marshall((DeleteAuditSuppressionRequest)input);
         }
 
         /// <summary>
@@ -52,14 +52,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListAuditFindingsRequest publicRequest)
+        public IRequest Marshall(DeleteAuditSuppressionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/audit/findings";
+            request.ResourcePath = "/audit/suppressions/delete";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -70,30 +70,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("checkName");
                     context.Writer.Write(publicRequest.CheckName);
-                }
-
-                if(publicRequest.IsSetEndTime())
-                {
-                    context.Writer.WritePropertyName("endTime");
-                    context.Writer.Write(publicRequest.EndTime);
-                }
-
-                if(publicRequest.IsSetListSuppressedFindings())
-                {
-                    context.Writer.WritePropertyName("listSuppressedFindings");
-                    context.Writer.Write(publicRequest.ListSuppressedFindings);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
                 }
 
                 if(publicRequest.IsSetResourceIdentifier())
@@ -107,18 +83,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("startTime");
-                    context.Writer.Write(publicRequest.StartTime);
-                }
-
-                if(publicRequest.IsSetTaskId())
-                {
-                    context.Writer.WritePropertyName("taskId");
-                    context.Writer.Write(publicRequest.TaskId);
-                }
-
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -128,9 +92,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListAuditFindingsRequestMarshaller _instance = new ListAuditFindingsRequestMarshaller();        
+        private static DeleteAuditSuppressionRequestMarshaller _instance = new DeleteAuditSuppressionRequestMarshaller();        
 
-        internal static ListAuditFindingsRequestMarshaller GetInstance()
+        internal static DeleteAuditSuppressionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -138,7 +102,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListAuditFindingsRequestMarshaller Instance
+        public static DeleteAuditSuppressionRequestMarshaller Instance
         {
             get
             {

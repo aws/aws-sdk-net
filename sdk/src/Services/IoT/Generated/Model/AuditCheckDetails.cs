@@ -38,6 +38,7 @@ namespace Amazon.IoT.Model
         private string _errorCode;
         private string _message;
         private long? _nonCompliantResourcesCount;
+        private long? _suppressedNonCompliantResourcesCount;
         private long? _totalResourcesCount;
 
         /// <summary>
@@ -132,6 +133,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetNonCompliantResourcesCount()
         {
             return this._nonCompliantResourcesCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuppressedNonCompliantResourcesCount. 
+        /// <para>
+        ///  Describes how many of the non-compliant resources created during the evaluation of
+        /// an audit check were marked as suppressed. 
+        /// </para>
+        /// </summary>
+        public long SuppressedNonCompliantResourcesCount
+        {
+            get { return this._suppressedNonCompliantResourcesCount.GetValueOrDefault(); }
+            set { this._suppressedNonCompliantResourcesCount = value; }
+        }
+
+        // Check to see if SuppressedNonCompliantResourcesCount property is set
+        internal bool IsSetSuppressedNonCompliantResourcesCount()
+        {
+            return this._suppressedNonCompliantResourcesCount.HasValue; 
         }
 
         /// <summary>

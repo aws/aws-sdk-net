@@ -29,48 +29,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// The output from the ListThings operation.
+    /// Container for the parameters to the DescribeAuditSuppression operation.
+    /// Gets information about a Device Defender audit suppression.
     /// </summary>
-    public partial class ListThingsResponse : AmazonWebServiceResponse
+    public partial class DescribeAuditSuppressionRequest : AmazonIoTRequest
     {
-        private string _nextMarker;
-        private List<ThingAttribute> _things = new List<ThingAttribute>();
+        private string _checkName;
+        private ResourceIdentifier _resourceIdentifier;
 
         /// <summary>
-        /// Gets and sets the property NextMarker. 
-        /// <para>
-        /// The token used to get the next set of results. Will not be returned if operation has
-        /// returned all results.
-        /// </para>
+        /// Gets and sets the property CheckName.
         /// </summary>
-        public string NextMarker
+        [AWSProperty(Required=true)]
+        public string CheckName
         {
-            get { return this._nextMarker; }
-            set { this._nextMarker = value; }
+            get { return this._checkName; }
+            set { this._checkName = value; }
         }
 
-        // Check to see if NextMarker property is set
-        internal bool IsSetNextMarker()
+        // Check to see if CheckName property is set
+        internal bool IsSetCheckName()
         {
-            return this._nextMarker != null;
+            return this._checkName != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Things. 
-        /// <para>
-        /// The things.
-        /// </para>
+        /// Gets and sets the property ResourceIdentifier.
         /// </summary>
-        public List<ThingAttribute> Things
+        [AWSProperty(Required=true)]
+        public ResourceIdentifier ResourceIdentifier
         {
-            get { return this._things; }
-            set { this._things = value; }
+            get { return this._resourceIdentifier; }
+            set { this._resourceIdentifier = value; }
         }
 
-        // Check to see if Things property is set
-        internal bool IsSetThings()
+        // Check to see if ResourceIdentifier property is set
+        internal bool IsSetResourceIdentifier()
         {
-            return this._things != null && this._things.Count > 0; 
+            return this._resourceIdentifier != null;
         }
 
     }

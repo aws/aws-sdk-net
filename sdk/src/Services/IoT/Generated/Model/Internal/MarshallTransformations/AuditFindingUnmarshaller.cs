@@ -82,6 +82,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.FindingTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isSuppressed", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsSuppressed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("nonCompliantResource", targetDepth))
                 {
                     var unmarshaller = NonCompliantResourceUnmarshaller.Instance;

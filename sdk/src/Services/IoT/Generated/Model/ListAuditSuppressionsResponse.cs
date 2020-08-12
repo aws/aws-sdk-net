@@ -29,48 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// The output from the ListThings operation.
+    /// This is the response object from the ListAuditSuppressions operation.
     /// </summary>
-    public partial class ListThingsResponse : AmazonWebServiceResponse
+    public partial class ListAuditSuppressionsResponse : AmazonWebServiceResponse
     {
-        private string _nextMarker;
-        private List<ThingAttribute> _things = new List<ThingAttribute>();
+        private string _nextToken;
+        private List<AuditSuppression> _suppressions = new List<AuditSuppression>();
 
         /// <summary>
-        /// Gets and sets the property NextMarker. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token used to get the next set of results. Will not be returned if operation has
-        /// returned all results.
+        ///  A token that can be used to retrieve the next set of results, or <code>null</code>
+        /// if there are no additional results. 
         /// </para>
         /// </summary>
-        public string NextMarker
+        public string NextToken
         {
-            get { return this._nextMarker; }
-            set { this._nextMarker = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if NextMarker property is set
-        internal bool IsSetNextMarker()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._nextMarker != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Things. 
+        /// Gets and sets the property Suppressions. 
         /// <para>
-        /// The things.
+        ///  List of audit suppressions. 
         /// </para>
         /// </summary>
-        public List<ThingAttribute> Things
+        public List<AuditSuppression> Suppressions
         {
-            get { return this._things; }
-            set { this._things = value; }
+            get { return this._suppressions; }
+            set { this._suppressions = value; }
         }
 
-        // Check to see if Things property is set
-        internal bool IsSetThings()
+        // Check to see if Suppressions property is set
+        internal bool IsSetSuppressions()
         {
-            return this._things != null && this._things.Count > 0; 
+            return this._suppressions != null && this._suppressions.Count > 0; 
         }
 
     }

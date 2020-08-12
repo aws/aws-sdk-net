@@ -33,7 +33,15 @@ namespace Amazon.IoT.Model
     /// Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters
     /// to filter your things. For example, calling <code>ListThings</code> with attributeName=Color
     /// and attributeValue=Red retrieves all things in the registry that contain an attribute
-    /// <b>Color</b> with the value <b>Red</b>.
+    /// <b>Color</b> with the value <b>Red</b>. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// You will not be charged for calling this API if an <code>Access denied</code> error
+    /// is returned. You will also not be charged if no attributes or pagination token was
+    /// provided in request and no pagination token and no results were returned.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListThingsRequest : AmazonIoTRequest
     {
