@@ -98,7 +98,7 @@ namespace Amazon.Transfer.Model
         ///  <note> 
         /// <para>
         /// If the target of a logical directory entry does not exist in Amazon S3, the entry
-        /// will be ignored. As a workaround, you can use the Amazon S3 api to create 0 byte objects
+        /// will be ignored. As a workaround, you can use the Amazon S3 API to create 0 byte objects
         /// as place holders for your directory. If using the CLI, use the <code>s3api</code>
         /// call instead of <code>s3</code> so you can use the put-object operation. For example,
         /// you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>.
@@ -228,13 +228,13 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// A unique string that identifies a user and is associated with a file transfer protocol-enabled
-        /// server as specified by the <code>ServerId</code>. This is the string that will be
-        /// used by your user when they log in to your server. This user name is a minimum of
-        /// 3 and a maximum of 32 characters long. The following are valid characters: a-z, A-Z,
-        /// 0-9, underscore, and hyphen. The user name can't start with a hyphen.
+        /// server as specified by the <code>ServerId</code>. This user name must be a minimum
+        /// of 3 and a maximum of 100 characters long. The following are valid characters: a-z,
+        /// A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't
+        /// start with a hyphen, period, and at sign.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=32)]
+        [AWSProperty(Required=true, Min=3, Max=100)]
         public string UserName
         {
             get { return this._userName; }

@@ -64,7 +64,7 @@ namespace Amazon.Transfer.Model
         /// server instance that was specified in the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=32)]
+        [AWSProperty(Required=true, Min=3, Max=100)]
         public string UserName
         {
             get { return this._userName; }

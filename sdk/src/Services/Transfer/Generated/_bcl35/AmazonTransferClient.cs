@@ -36,14 +36,14 @@ namespace Amazon.Transfer
     /// Implementation for accessing Transfer
     ///
     /// AWS Transfer Family is a fully managed service that enables the transfer of files
-    /// over the the File Transfer Protocol (FTP), File Transfer Protocol over SSL (FTPS),
-    /// or Secure Shell (SSH) File Transfer Protocol (SFTP) directly into and out of Amazon
-    /// Simple Storage Service (Amazon S3). AWS helps you seamlessly migrate your file transfer
-    /// workflows to AWS Transfer Family by integrating with existing authentication systems,
-    /// and providing DNS routing with Amazon Route 53 so nothing changes for your customers
-    /// and partners, or their applications. With your data in Amazon S3, you can use it with
-    /// AWS services for processing, analytics, machine learning, and archiving. Getting started
-    /// with AWS Transfer Family is easy since there is no infrastructure to buy and set up.
+    /// over the File Transfer Protocol (FTP), File Transfer Protocol over SSL (FTPS), or
+    /// Secure Shell (SSH) File Transfer Protocol (SFTP) directly into and out of Amazon Simple
+    /// Storage Service (Amazon S3). AWS helps you seamlessly migrate your file transfer workflows
+    /// to AWS Transfer Family by integrating with existing authentication systems, and providing
+    /// DNS routing with Amazon Route 53 so nothing changes for your customers and partners,
+    /// or their applications. With your data in Amazon S3, you can use it with AWS services
+    /// for processing, analytics, machine learning, and archiving. Getting started with AWS
+    /// Transfer Family is easy since there is no infrastructure to buy and set up.
     /// </summary>
     public partial class AmazonTransferClient : AmazonServiceClient, IAmazonTransfer
     {
@@ -628,6 +628,75 @@ namespace Amazon.Transfer
 
         #endregion
         
+        #region  DescribeSecurityPolicy
+
+        /// <summary>
+        /// Describes the security policy that is attached to your file transfer protocol-enabled
+        /// server. The response contains a description of the security policy's properties. For
+        /// more information about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
+        /// with security policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSecurityPolicy service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the AWS Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the AWS Transfer Family service is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy">REST API Reference for DescribeSecurityPolicy Operation</seealso>
+        public virtual DescribeSecurityPolicyResponse DescribeSecurityPolicy(DescribeSecurityPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSecurityPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSecurityPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSecurityPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSecurityPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityPolicy operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSecurityPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy">REST API Reference for DescribeSecurityPolicy Operation</seealso>
+        public virtual IAsyncResult BeginDescribeSecurityPolicy(DescribeSecurityPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSecurityPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSecurityPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSecurityPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSecurityPolicy.</param>
+        /// 
+        /// <returns>Returns a  DescribeSecurityPolicyResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy">REST API Reference for DescribeSecurityPolicy Operation</seealso>
+        public virtual DescribeSecurityPolicyResponse EndDescribeSecurityPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeSecurityPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeServer
 
         /// <summary>
@@ -855,6 +924,73 @@ namespace Amazon.Transfer
         public virtual ImportSshPublicKeyResponse EndImportSshPublicKey(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportSshPublicKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSecurityPolicies
+
+        /// <summary>
+        /// Lists the security policies that are attached to your file transfer protocol-enabled
+        /// servers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListSecurityPolicies service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the AWS Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the AWS Transfer Family service is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies">REST API Reference for ListSecurityPolicies Operation</seealso>
+        public virtual ListSecurityPoliciesResponse ListSecurityPolicies(ListSecurityPoliciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSecurityPoliciesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSecurityPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityPolicies operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSecurityPolicies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies">REST API Reference for ListSecurityPolicies Operation</seealso>
+        public virtual IAsyncResult BeginListSecurityPolicies(ListSecurityPoliciesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityPoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSecurityPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSecurityPolicies.</param>
+        /// 
+        /// <returns>Returns a  ListSecurityPoliciesResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies">REST API Reference for ListSecurityPolicies Operation</seealso>
+        public virtual ListSecurityPoliciesResponse EndListSecurityPolicies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSecurityPoliciesResponse>(asyncResult);
         }
 
         #endregion

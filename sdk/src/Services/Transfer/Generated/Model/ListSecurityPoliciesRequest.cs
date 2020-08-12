@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListServers operation.
-    /// Lists the file transfer protocol-enabled servers that are associated with your AWS
-    /// account.
+    /// Container for the parameters to the ListSecurityPolicies operation.
+    /// Lists the security policies that are attached to your file transfer protocol-enabled
+    /// servers.
     /// </summary>
-    public partial class ListServersRequest : AmazonTransferRequest
+    public partial class ListSecurityPoliciesRequest : AmazonTransferRequest
     {
         private int? _maxResults;
         private string _nextToken;
@@ -41,8 +41,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Specifies the number of file transfer protocol-enabled servers to return as a response
-        /// to the <code>ListServers</code> query.
+        /// Specifies the number of security policies to return as a response to the <code>ListSecurityPolicies</code>
+        /// query.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -61,10 +61,10 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When additional results are obtained from the <code>ListServers</code> command, a
-        /// <code>NextToken</code> parameter is returned in the output. You can then pass the
+        /// When additional results are obtained from the <code>ListSecurityPolicies</code> command,
+        /// a <code>NextToken</code> parameter is returned in the output. You can then pass the
         /// <code>NextToken</code> parameter in a subsequent command to continue listing additional
-        /// file transfer protocol-enabled servers.
+        /// security policies.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]

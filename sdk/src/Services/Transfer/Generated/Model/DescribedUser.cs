@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Returns properties of the user that you want to describe.
+    /// Describes the properties of a user that was specified.
     /// </summary>
     public partial class DescribedUser
     {
@@ -229,7 +229,7 @@ namespace Amazon.Transfer.Model
         /// when they log in to your file transfer protocol-enabled server.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=32)]
+        [AWSProperty(Min=3, Max=100)]
         public string UserName
         {
             get { return this._userName; }

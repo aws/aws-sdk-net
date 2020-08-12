@@ -45,6 +45,7 @@ namespace Amazon.Transfer.Model
         private IdentityProviderType _identityProviderType;
         private string _loggingRole;
         private List<string> _protocols = new List<string>();
+        private string _securityPolicyName;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -282,8 +283,8 @@ namespace Amazon.Transfer.Model
         ///  </li> </ul> <note> 
         /// <para>
         /// If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate
-        /// Manager (ACM) which will be used to identify your server when clients connect to it
-        /// over FTPS.
+        /// Manager (ACM) which will be used to identify your file transfer protocol-enabled server
+        /// when clients connect to it over FTPS.
         /// </para>
         ///  
         /// <para>
@@ -315,6 +316,25 @@ namespace Amazon.Transfer.Model
         internal bool IsSetProtocols()
         {
             return this._protocols != null && this._protocols.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityPolicyName. 
+        /// <para>
+        /// Specifies the name of the security policy that is attached to the server.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=100)]
+        public string SecurityPolicyName
+        {
+            get { return this._securityPolicyName; }
+            set { this._securityPolicyName = value; }
+        }
+
+        // Check to see if SecurityPolicyName property is set
+        internal bool IsSetSecurityPolicyName()
+        {
+            return this._securityPolicyName != null;
         }
 
         /// <summary>

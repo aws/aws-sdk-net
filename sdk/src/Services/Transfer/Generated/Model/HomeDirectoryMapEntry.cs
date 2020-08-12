@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Represents an object that contains entries and a targets for <code>HomeDirectoryMappings</code>.
+    /// Represents an object that contains entries and targets for <code>HomeDirectoryMappings</code>.
     /// </summary>
     public partial class HomeDirectoryMapEntry
     {

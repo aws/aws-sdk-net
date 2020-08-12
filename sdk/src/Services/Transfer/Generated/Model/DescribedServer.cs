@@ -30,10 +30,6 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Describes the properties of a file transfer protocol-enabled server that was specified.
-    /// Information returned includes the following: the server Amazon Resource Name (ARN),
-    /// the certificate ARN (if the FTPS protocol was selected), the endpoint type and details,
-    /// the authentication configuration and type, the logging role, the file transfer protocol
-    /// or protocols, the server ID and state, and assigned tags or metadata.
     /// </summary>
     public partial class DescribedServer
     {
@@ -46,6 +42,7 @@ namespace Amazon.Transfer.Model
         private IdentityProviderType _identityProviderType;
         private string _loggingRole;
         private List<string> _protocols = new List<string>();
+        private string _securityPolicyName;
         private string _serverId;
         private State _state;
         private List<Tag> _tags = new List<Tag>();
@@ -54,8 +51,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Specifies the unique Amazon Resource Name (ARN) for a file transfer protocol-enabled
-        /// server to be described.
+        /// Specifies the unique Amazon Resource Name (ARN) of the file transfer protocol-enabled
+        /// server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1600)]
@@ -245,6 +242,25 @@ namespace Amazon.Transfer.Model
         internal bool IsSetProtocols()
         {
             return this._protocols != null && this._protocols.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityPolicyName. 
+        /// <para>
+        /// Specifies the name of the security policy that is attached to the server.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=100)]
+        public string SecurityPolicyName
+        {
+            get { return this._securityPolicyName; }
+            set { this._securityPolicyName = value; }
+        }
+
+        // Check to see if SecurityPolicyName property is set
+        internal bool IsSetSecurityPolicyName()
+        {
+            return this._securityPolicyName != null;
         }
 
         /// <summary>

@@ -125,6 +125,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetSecurityPolicyName())
+                {
+                    context.Writer.WritePropertyName("SecurityPolicyName");
+                    context.Writer.Write(publicRequest.SecurityPolicyName);
+                }
+
                 if(publicRequest.IsSetServerId())
                 {
                     context.Writer.WritePropertyName("ServerId");

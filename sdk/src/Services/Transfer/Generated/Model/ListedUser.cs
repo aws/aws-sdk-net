@@ -149,7 +149,7 @@ namespace Amazon.Transfer.Model
         /// purposes.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=32)]
+        [AWSProperty(Min=3, Max=100)]
         public string UserName
         {
             get { return this._userName; }
