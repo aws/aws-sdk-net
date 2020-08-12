@@ -1663,6 +1663,9 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
