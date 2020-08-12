@@ -1,3 +1,21 @@
+### 3.3.796.0 (2020-08-12 18:17 UTC)
+* Cloud9 (3.3.103.0)
+	* Add ConnectionType input parameter to CreateEnvironmentEC2 endpoint. New parameter enables creation of environments with SSM connection.
+* Comprehend (3.3.110.0)
+	* Amazon Comprehend Custom Entity Recognition now supports Spanish, German, French, Italian and Portuguese and up to 25 entity types per model.
+* EC2 (3.3.199.0)
+	* Introduces support for IPv6-in-IPv4 IPsec tunnels. A user can now send traffic from their on-premise IPv6 network to AWS VPCs that have IPv6 support enabled.
+* FSx (3.3.109.0)
+	* This release adds the capability to create persistent file systems for throughput-intensive workloads using Hard Disk Drive (HDD) storage and an optional read-only Solid-State Drive (SSD) cache.
+* IoT (3.3.112.0)
+	* Audit finding suppressions: Device Defender enables customers to turn off non-compliant findings for specific resources on a per check basis.
+* Lambda (3.3.112.0)
+	* Support for creating Lambda Functions using 'java8.al2' and 'provided.al2'
+* Transfer (3.3.108.0)
+	* Adds security policies to control cryptographic algorithms advertised by your server, additional characters in usernames and length increase, and FIPS compliant endpoints in the US and Canada regions.
+* WorkSpaces (3.3.110.0)
+	* Adds optional EnableWorkDocs property to WorkspaceCreationProperties in the ModifyWorkspaceCreationProperties API
+
 ### 3.3.795.0 (2020-08-11 19:16 UTC)
 * EC2 (3.3.198.0)
 	* This release rolls back the EC2 On-Demand Capacity Reservations (ODCRs) release 1.11.831 published on 2020-07-30, which was deployed in error.

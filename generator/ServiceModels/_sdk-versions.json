@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.795.0",
+    "ProductVersion" : "3.3.796.0",
     "CoreVersion"    : "3.3.107.38",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.198.0",
+            "Version" : "3.3.199.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.38"
@@ -241,7 +241,7 @@
             "InPreview"               : false
         },
         "Lambda"               : {
-            "Version" : "3.3.111.0",
+            "Version" : "3.3.112.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.38"
@@ -385,7 +385,7 @@
             "InPreview"               : false
         },
         "WorkSpaces"                : {
-            "Version" : "3.3.109.9",
+            "Version" : "3.3.110.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.38"
@@ -465,7 +465,7 @@
             "InPreview"               : false
         },
         "IoT"                             : {
-            "Version" : "3.3.111.27",
+            "Version" : "3.3.112.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.38"
@@ -961,7 +961,7 @@
             "InPreview"               : false
         },
         "Comprehend"                      : {
-            "Version" : "3.3.109.14",
+            "Version" : "3.3.110.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.38"
@@ -1017,7 +1017,7 @@
             "InPreview"               : false
         },
         "Cloud9"                          : {
-            "Version" : "3.3.102.87",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.38"
@@ -1257,7 +1257,7 @@
             "InPreview"               : false
         },
         "Transfer"                        : {
-            "Version" : "3.3.107.28",
+            "Version" : "3.3.108.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.38"
@@ -1297,7 +1297,7 @@
             "InPreview"               : false
         },
         "FSx"                             : {
-            "Version" : "3.3.108.11",
+            "Version" : "3.3.109.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.38"
