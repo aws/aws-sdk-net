@@ -62,6 +62,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AssignIpv6AddressOnCreation.Value", StringUtils.FromBool(publicRequest.AssignIpv6AddressOnCreation));
                 }
+                if(publicRequest.IsSetCustomerOwnedIpv4Pool())
+                {
+                    request.Parameters.Add("CustomerOwnedIpv4Pool", StringUtils.FromString(publicRequest.CustomerOwnedIpv4Pool));
+                }
+                if(publicRequest.IsSetMapCustomerOwnedIpOnLaunch())
+                {
+                    request.Parameters.Add("MapCustomerOwnedIpOnLaunch.Value", StringUtils.FromBool(publicRequest.MapCustomerOwnedIpOnLaunch));
+                }
                 if(publicRequest.IsSetMapPublicIpOnLaunch())
                 {
                     request.Parameters.Add("MapPublicIpOnLaunch.Value", StringUtils.FromBool(publicRequest.MapPublicIpOnLaunch));
