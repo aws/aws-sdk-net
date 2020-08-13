@@ -63,6 +63,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Backup.CodeAnalysis" Path="|AWSSDK.Backup.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Batch.CodeAnalysis" Path="|AWSSDK.Batch.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Batch.CodeAnalysis" Path="|AWSSDK.Batch.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Braket.CodeAnalysis" Path="|AWSSDK.Braket.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Braket.CodeAnalysis" Path="|AWSSDK.Braket.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Budgets.CodeAnalysis" Path="|AWSSDK.Budgets.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Budgets.CodeAnalysis" Path="|AWSSDK.Budgets.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CertificateManager.CodeAnalysis" Path="|AWSSDK.CertificateManager.CodeAnalysis|"/>

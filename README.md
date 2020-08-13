@@ -123,6 +123,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Backup is a fully managed backup service that makes it easy to centralize and automate the back up of data across AWS services in the cloud as well as on-premises.
 * [AWSSDK.Batch](https://www.nuget.org/packages/AWSSDK.Batch/)
 	* AWS Batch enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS. 
+* [AWSSDK.Braket](https://www.nuget.org/packages/AWSSDK.Braket/)
+	* Amazon Braket general availability with Device and Quantum Task operations.
 * [AWSSDK.Budgets](https://www.nuget.org/packages/AWSSDK.Budgets/)
 	* AWS Budget service will provide create/get/list/update/delete budgets for cost management. 
 * [AWSSDK.CertificateManager](https://www.nuget.org/packages/AWSSDK.CertificateManager/)

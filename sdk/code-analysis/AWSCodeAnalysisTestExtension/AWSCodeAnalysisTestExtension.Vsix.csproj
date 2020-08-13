@@ -148,6 +148,10 @@
       <Project>{766DB0E1-0CBD-4AED-961A-A895900EC931}</Project>
       <Name>AWSSDK.Batch.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Braket/AWSSDK.Braket.CodeAnalysis.csproj">
+      <Project>{779E41EE-7E66-4A69-A705-9A583A872184}</Project>
+      <Name>AWSSDK.Braket.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Budgets/AWSSDK.Budgets.CodeAnalysis.csproj">
       <Project>{F756095D-4D76-41D2-B852-B73913FDAFFC}</Project>
       <Name>AWSSDK.Budgets.CodeAnalysis</Name>
