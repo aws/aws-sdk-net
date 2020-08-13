@@ -66,13 +66,6 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior
         /// to determine the recovery method where SMS is preferred over email.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Starting February 1, 2020, the value of <code>AccountRecoverySetting</code> will default
-        /// to <code>verified_email</code> first and <code>verified_phone_number</code> as the
-        /// second option for newly created user pools if no value is provided.
-        /// </para>
-        ///  </note>
         /// </summary>
         public AccountRecoverySettingType AccountRecoverySetting
         {
@@ -406,7 +399,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// You can choose to set case sensitivity on the username input for the selected sign-in
         /// option. For example, when this is set to <code>False</code>, users will be able to
         /// sign in using either "username" or "Username". This configuration is immutable once
-        /// it has been set. For more information, see .
+        /// it has been set. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.
         /// </para>
         /// </summary>
         public UsernameConfigurationType UsernameConfiguration

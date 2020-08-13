@@ -148,24 +148,26 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code>
         /// (required), <code>SECRET_HASH</code> (required if the app client is configured with
-        /// a client secret), <code>DEVICE_KEY</code> 
+        /// a client secret), <code>DEVICE_KEY</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
         /// <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
-        /// <code>DEVICE_KEY</code> 
+        /// <code>DEVICE_KEY</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code>
         /// (if app client is configured with client secret), <code>PASSWORD</code> (required),
-        /// <code>DEVICE_KEY</code> 
+        /// <code>DEVICE_KEY</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code>
-        /// (if app client is configured with client secret), <code>DEVICE_KEY</code> 
+        /// (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start
+        /// the authentication flow with password verification, include <code>ChallengeName: SRP_A</code>
+        /// and <code>SRP_A: (The SRP_A Value)</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -68,7 +68,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  <i>This response parameter is no longer supported.</i> It provides information only
         /// about SMS MFA configurations. It doesn't provide information about TOTP software token
         /// MFA configurations. To look up information about either type of MFA configuration,
-        /// use the <a>AdminGetUserResponse$UserMFASettingList</a> response instead.
+        /// use UserMFASettingList instead.
         /// </para>
         /// </summary>
         public List<MFAOptionType> MFAOptions

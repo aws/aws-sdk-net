@@ -68,6 +68,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccessTokenValidity())
+                {
+                    context.Writer.WritePropertyName("AccessTokenValidity");
+                    context.Writer.Write(publicRequest.AccessTokenValidity);
+                }
+
                 if(publicRequest.IsSetAllowedOAuthFlows())
                 {
                     context.Writer.WritePropertyName("AllowedOAuthFlows");
@@ -147,6 +153,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GenerateSecret);
                 }
 
+                if(publicRequest.IsSetIdTokenValidity())
+                {
+                    context.Writer.WritePropertyName("IdTokenValidity");
+                    context.Writer.Write(publicRequest.IdTokenValidity);
+                }
+
                 if(publicRequest.IsSetLogoutURLs())
                 {
                     context.Writer.WritePropertyName("LogoutURLs");
@@ -190,6 +202,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestSupportedIdentityProvidersListValue);
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetTokenValidityUnits())
+                {
+                    context.Writer.WritePropertyName("TokenValidityUnits");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TokenValidityUnitsTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TokenValidityUnits, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetUserPoolId())

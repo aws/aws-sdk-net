@@ -25,30 +25,27 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// Container for the parameters to the SetUserSettings operation.
-    /// <i>This action is no longer supported.</i> You can use it to configure only SMS MFA.
-    /// You can't use it to configure TOTP software token MFA. To configure either type of
-    /// MFA, use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>
-    /// instead.
+    /// The data type for TokenValidityUnits that specifics the time measurements for token
+    /// validity.
     /// </summary>
-    public partial class SetUserSettingsRequest : AmazonCognitoIdentityProviderRequest
+    public partial class TokenValidityUnitsType
     {
-        private string _accessToken;
-        private List<MFAOptionType> _mfaOptions = new List<MFAOptionType>();
+        private TimeUnitsType _accessToken;
+        private TimeUnitsType _idToken;
+        private TimeUnitsType _refreshToken;
 
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// The access token for the set user settings request.
+        ///  A time unit in “seconds”, “minutes”, “hours” or “days” for the value in AccessTokenValidity,
+        /// defaults to hours.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string AccessToken
+        public TimeUnitsType AccessToken
         {
             get { return this._accessToken; }
             set { this._accessToken = value; }
@@ -61,31 +58,42 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MFAOptions. 
+        /// Gets and sets the property IdToken. 
         /// <para>
-        /// You can use this parameter only to set an SMS configuration that uses SMS for delivery.
+        /// A time unit in “seconds”, “minutes”, “hours” or “days” for the value in IdTokenValidity,
+        /// defaults to hours.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<MFAOptionType> MFAOptions
+        public TimeUnitsType IdToken
         {
-            get { return this._mfaOptions; }
-            set { this._mfaOptions = value; }
+            get { return this._idToken; }
+            set { this._idToken = value; }
         }
 
-        // Check to see if MFAOptions property is set
-        internal bool IsSetMFAOptions()
+        // Check to see if IdToken property is set
+        internal bool IsSetIdToken()
         {
-            return this._mfaOptions != null && this._mfaOptions.Count > 0; 
+            return this._idToken != null;
         }
 
         /// <summary>
-        /// Get the signer to use for this request.
+        /// Gets and sets the property RefreshToken. 
+        /// <para>
+        /// A time unit in “seconds”, “minutes”, “hours” or “days” for the value in RefreshTokenValidity,
+        /// defaults to days.
+        /// </para>
         /// </summary>
-        /// <returns>A signer for this request.</returns>
-        override protected AbstractAWSSigner CreateSigner()
+        public TimeUnitsType RefreshToken
         {
-            return new NullSigner();
+            get { return this._refreshToken; }
+            set { this._refreshToken = value; }
         }
+
+        // Check to see if RefreshToken property is set
+        internal bool IsSetRefreshToken()
+        {
+            return this._refreshToken != null;
+        }
+
     }
 }

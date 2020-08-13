@@ -35,7 +35,8 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// user, they are not permitted to use their password to sign-in. If the user to disable
     /// is a linked external IdP user, any link between that user and an existing user is
     /// removed. The next time the external user (no longer attached to the previously linked
-    /// <code>DestinationUser</code>) signs in, they must create a new user account. See .
+    /// <code>DestinationUser</code>) signs in, they must create a new user account. See <a
+    /// href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
     /// 
     ///  
     /// <para>
@@ -65,10 +66,11 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// For de-linking a SAML identity, there are two scenarios. If the linked identity has
     /// not yet been used to sign-in, the <code>ProviderAttributeName</code> and <code>ProviderAttributeValue</code>
     /// must be the same values that were used for the <code>SourceUser</code> when the identities
-    /// were originally linked in the call. (If the linking was done with <code>ProviderAttributeName</code>
-    /// set to <code>Cognito_Subject</code>, the same applies here). However, if the user
-    /// has already signed in, the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>
-    /// and <code>ProviderAttributeValue</code> must be the subject of the SAML assertion.
+    /// were originally linked using <code> AdminLinkProviderForUser</code> call. (If the
+    /// linking was done with <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>,
+    /// the same applies here). However, if the user has already signed in, the <code>ProviderAttributeName</code>
+    /// must be <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must
+    /// be the subject of the SAML assertion.
     /// </para>
     /// </summary>
     public partial class AdminDisableProviderForUserRequest : AmazonCognitoIdentityProviderRequest

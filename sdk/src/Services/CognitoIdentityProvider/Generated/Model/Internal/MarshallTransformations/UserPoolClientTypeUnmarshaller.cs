@@ -64,6 +64,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AccessTokenValidity", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.AccessTokenValidity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AllowedOAuthFlows", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -130,6 +136,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExplicitAuthFlows = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IdTokenValidity", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.IdTokenValidity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModifiedDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -164,6 +176,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SupportedIdentityProviders = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TokenValidityUnits", targetDepth))
+                {
+                    var unmarshaller = TokenValidityUnitsTypeUnmarshaller.Instance;
+                    unmarshalledObject.TokenValidityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UserPoolId", targetDepth))

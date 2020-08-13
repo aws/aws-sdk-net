@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Container for the parameters to the UpdateUserPool operation.
     /// Updates the specified user pool with the specified attributes. You can get a list
-    /// of the current user pool settings with .
+    /// of the current user pool settings using <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
     /// 
     ///  <important> 
     /// <para>
