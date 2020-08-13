@@ -1,3 +1,19 @@
+### 3.3.797.0 (2020-08-13 18:12 UTC)
+* AppSync (3.3.106.4)
+	* Documentation update for AWS AppSync support for Direct Lambda Resolvers.
+* Braket (3.3.100.0)
+	* Amazon Braket general availability with Device and Quantum Task operations.
+* CognitoIdentityProvider (3.3.112.0)
+	* Adding ability to customize expiry for Refresh, Access and ID tokens.
+* EC2 (3.3.200.0)
+	* Added MapCustomerOwnedIpOnLaunch and CustomerOwnedIpv4Pool to ModifySubnetAttribute to allow CoIP auto assign. Fields are returned in DescribeSubnets and DescribeNetworkInterfaces responses.
+* EKS (3.3.111.0)
+	* Adding support for customer provided EC2 launch templates and AMIs to EKS Managed Nodegroups. Also adds support for Arm-based instances to EKS Managed Nodegroups.
+* Macie2 (3.3.103.10)
+	* This release of the Amazon Macie API includes miscellaneous updates and improvements to the documentation.
+* RDS (3.3.128.0)
+	* This release allows customers to specify a replica mode when creating or modifying a Read Replica, for DB engines which support this feature.
+
 ### 3.3.796.0 (2020-08-12 18:17 UTC)
 * Cloud9 (3.3.103.0)
 	* Add ConnectionType input parameter to CreateEnvironmentEC2 endpoint. New parameter enables creation of environments with SSM connection.

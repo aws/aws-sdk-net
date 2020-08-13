@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.796.0",
+    "ProductVersion" : "3.3.797.0",
     "CoreVersion"    : "3.3.107.38",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.199.0",
+            "Version" : "3.3.200.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.38"
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.127.8",
+            "Version" : "3.3.128.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.38"
@@ -537,7 +537,7 @@
             "InPreview"               : false
         },
         "CognitoIdentityProvider"         : {
-            "Version" : "3.3.111.19",
+            "Version" : "3.3.112.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.38"
@@ -921,7 +921,7 @@
             "InPreview"               : false
         },
         "AppSync"                         : {
-            "Version" : "3.3.106.3",
+            "Version" : "3.3.106.4",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.38"
@@ -1137,7 +1137,7 @@
             "InPreview"               : false
         },
         "EKS"                             : {
-            "Version" : "3.3.110.72",
+            "Version" : "3.3.111.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.38"
@@ -1777,7 +1777,7 @@
             "InPreview"               : false
         },
         "Macie2"                          : {
-            "Version" : "3.3.103.9",
+            "Version" : "3.3.103.10",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.38"
@@ -1802,6 +1802,14 @@
         },
         "IVS"                             : {
             "Version" : "3.3.101.8",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.107.38"
+            },
+            "InPreview"               : false
+        },
+        "Braket"                          : {
+            "Version" : "3.3.100.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.38"
