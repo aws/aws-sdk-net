@@ -305,7 +305,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property SamplingPercentage. 
         /// <para>
-        /// The sampling depth, as a percentage, that the job applies when it processes objects.
+        /// The sampling depth, as a percentage, that determines the number of objects that the
+        /// job processes.
         /// </para>
         /// </summary>
         public int SamplingPercentage

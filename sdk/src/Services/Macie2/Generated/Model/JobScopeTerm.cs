@@ -57,10 +57,10 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagScopeTerm. 
+        /// Gets and sets the property TagScopeTerm.  
         /// <para>
-        /// A tag-based condition that defines the operator and a tag key or tag keys and values
-        /// for including or excluding an object from the job.
+        /// A tag-based condition that defines an operator and a tag key and value for including
+        /// or excluding an object from the job.
         /// </para>
         /// </summary>
         public TagScopeTerm TagScopeTerm

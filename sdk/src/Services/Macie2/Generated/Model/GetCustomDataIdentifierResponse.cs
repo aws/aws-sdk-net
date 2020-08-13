@@ -143,7 +143,7 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// An array that lists specific character sequences (ignore words) to exclude from the
         /// results. If the text matched by the regular expression is the same as any string in
-        /// this array, Amazon Macie ignores it.
+        /// this array, Amazon Macie ignores it. Ignore words are case sensitive.
         /// </para>
         /// </summary>
         public List<string> IgnoreWords
@@ -162,7 +162,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Keywords. 
         /// <para>
         /// An array that lists specific character sequences (keywords), one of which must be
-        /// within proximity (maximumMatchDistance) of the regular expression to match.
+        /// within proximity (maximumMatchDistance) of the regular expression to match. Keywords
+        /// aren't case sensitive.
         /// </para>
         /// </summary>
         public List<string> Keywords

@@ -93,7 +93,7 @@ namespace Amazon.Macie2.Model
         /// An array that lists specific character sequences (ignore words) to exclude from the
         /// results. If the text matched by the regular expression is the same as any string in
         /// this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words.
-        /// Each ignore word can contain 4 - 90 characters.
+        /// Each ignore word can contain 4 - 90 characters. Ignore words are case sensitive.
         /// </para>
         /// </summary>
         public List<string> IgnoreWords
@@ -113,7 +113,8 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// An array that lists specific character sequences (keywords), one of which must be
         /// within proximity (maximumMatchDistance) of the regular expression to match. The array
-        /// can contain as many as 50 keywords. Each keyword can contain 4 - 90 characters.
+        /// can contain as many as 50 keywords. Each keyword can contain 4 - 90 characters. Keywords
+        /// aren't case sensitive.
         /// </para>
         /// </summary>
         public List<string> Keywords
@@ -201,8 +202,8 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  
         /// <para>
-        /// A custom data identifier can have a maximum of 50 tags. Each tag consists of a required
-        /// tag key and an associated tag value. The maximum length of a tag key is 128 characters.
+        /// A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag
+        /// key and an associated tag value. The maximum length of a tag key is 128 characters.
         /// The maximum length of a tag value is 256 characters.
         /// </para>
         /// </summary>

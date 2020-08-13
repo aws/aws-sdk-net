@@ -190,9 +190,9 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property SamplingPercentage. 
         /// <para>
         /// The sampling depth, as a percentage, to apply when processing objects. This value
-        /// determines the percentage of eligible objects that the job analyzes. If the value
-        /// is less than 100, Amazon Macie randomly selects the objects to analyze, up to the
-        /// specified percentage.
+        /// determines the percentage of eligible objects that the job analyzes. If this value
+        /// is less than 100, Amazon Macie selects the objects to analyze at random, up to the
+        /// specified percentage, and analyzes all the data in those objects.
         /// </para>
         /// </summary>
         public int SamplingPercentage
@@ -233,9 +233,9 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  
         /// <para>
-        /// A job can have a maximum of 50 tags. Each tag consists of a required tag key and an
-        /// associated tag value. The maximum length of a tag key is 128 characters. The maximum
-        /// length of a tag value is 256 characters.
+        /// A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated
+        /// tag value. The maximum length of a tag key is 128 characters. The maximum length of
+        /// a tag value is 256 characters.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
