@@ -238,7 +238,9 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The current status of the endpoint. One of: <code>creating</code>, <code>available</code>,
-        /// <code>deleting</code>, <code>modifying</code>.
+        /// <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code>
+        /// state applies to an endpoint that can't be used for a certain kind of cluster, such
+        /// as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.
         /// </para>
         /// </summary>
         public string Status

@@ -90,6 +90,7 @@ namespace Amazon.RDS.Model
         private List<string> _readReplicaDBClusterIdentifiers = new List<string>();
         private List<string> _readReplicaDBInstanceIdentifiers = new List<string>();
         private string _readReplicaSourceDBInstanceIdentifier;
+        private ReplicaMode _replicaMode;
         private string _secondaryAvailabilityZone;
         private List<DBInstanceStatusInfo> _statusInfos = new List<DBInstanceStatusInfo>();
         private bool? _storageEncrypted;
@@ -1130,6 +1131,31 @@ namespace Amazon.RDS.Model
         internal bool IsSetReadReplicaSourceDBInstanceIdentifier()
         {
             return this._readReplicaSourceDBInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaMode. 
+        /// <para>
+        /// The open mode of an Oracle read replica. The default is <code>open-read-only</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+        /// with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This attribute is only supported in RDS for Oracle.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ReplicaMode ReplicaMode
+        {
+            get { return this._replicaMode; }
+            set { this._replicaMode = value; }
+        }
+
+        // Check to see if ReplicaMode property is set
+        internal bool IsSetReplicaMode()
+        {
+            return this._replicaMode != null;
         }
 
         /// <summary>

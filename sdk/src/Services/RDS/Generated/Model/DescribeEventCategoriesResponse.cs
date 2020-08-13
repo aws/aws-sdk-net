@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Data returned from the <b>DescribeEventCategories</b> action.
+    /// Data returned from the <code>DescribeEventCategories</code> operation.
     /// </summary>
     public partial class DescribeEventCategoriesResponse : AmazonWebServiceResponse
     {

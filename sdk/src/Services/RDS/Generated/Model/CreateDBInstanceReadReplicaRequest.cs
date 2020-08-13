@@ -79,6 +79,7 @@ namespace Amazon.RDS.Model
         private string _preSignedUrl;
         private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
         private bool? _publiclyAccessible;
+        private ReplicaMode _replicaMode;
         private string _sourceDBInstanceIdentifier;
         private string _storageType;
         private List<Tag> _tags = new List<Tag>();
@@ -343,21 +344,14 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The Active Directory directory ID to create the DB instance in.
+        /// The Active Directory directory ID to create the DB instance in. Currently, only MySQL,
+        /// Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+        /// Directory Domain.
         /// </para>
         ///  
         /// <para>
-        /// For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate
-        /// users that connect to the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-        /// Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS
-        /// User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to
-        /// authenticate users that connect to the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-        /// Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL
-        /// Server</a> in the <i>Amazon RDS User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+        /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         public string Domain
@@ -827,6 +821,41 @@ namespace Amazon.RDS.Model
         internal bool IsSetPubliclyAccessible()
         {
             return this._publiclyAccessible.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaMode. 
+        /// <para>
+        /// The open mode of the replica database: mounted or read-only.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is only supported for Oracle DB instances.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for
+        /// mounted replicas is cross-Region disaster recovery. The primary database doesn't use
+        /// Active Data Guard to transmit information to the mounted replica. Because it doesn't
+        /// accept user connections, a mounted replica can't serve a read-only workload.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can create a combination of mounted and read-only DB replicas for the same primary
+        /// DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+        /// with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ReplicaMode ReplicaMode
+        {
+            get { return this._replicaMode; }
+            set { this._replicaMode = value; }
+        }
+
+        // Check to see if ReplicaMode property is set
+        internal bool IsSetReplicaMode()
+        {
+            return this._replicaMode != null;
         }
 
         /// <summary>

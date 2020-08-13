@@ -95,7 +95,8 @@ namespace Amazon.RDS.Model
         /// <code>writer</code>, <code>custom</code>. <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code>
         /// filter can be one or more of: <code>reader</code>, <code>any</code>. <code>Values</code>
         /// for the <code>db-cluster-endpoint-status</code> filter can be one or more of: <code>available</code>,
-        /// <code>creating</code>, <code>deleting</code>, <code>modifying</code>. 
+        /// <code>creating</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>.
+        /// 
         /// </para>
         /// </summary>
         public List<Filter> Filters

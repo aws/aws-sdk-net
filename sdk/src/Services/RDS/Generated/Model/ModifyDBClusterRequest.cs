@@ -342,6 +342,11 @@ namespace Amazon.RDS.Model
         /// to remove the cluster from its current domain. The domain must be created prior to
         /// this operation. 
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+        /// Authentication</a> in the <i>Amazon Aurora User Guide</i>. 
+        /// </para>
         /// </summary>
         public string Domain
         {

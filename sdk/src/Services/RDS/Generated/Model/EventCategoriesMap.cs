@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Contains the results of a successful invocation of the <code>DescribeEventCategories</code>
-    /// action.
+    /// operation.
     /// </summary>
     public partial class EventCategoriesMap
     {

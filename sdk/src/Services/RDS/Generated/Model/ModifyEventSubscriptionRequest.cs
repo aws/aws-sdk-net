@@ -37,9 +37,10 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// You can see a list of the event categories for a given SourceType in the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
-    /// topic in the <i>Amazon RDS User Guide</i> or by using the <b>DescribeEventCategories</b>
-    /// action.
+    /// You can see a list of the event categories for a given source type (<code>SourceType</code>)
+    /// in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+    /// in the <i>Amazon RDS User Guide</i> or by using the <code>DescribeEventCategories</code>
+    /// operation.
     /// </para>
     /// </summary>
     public partial class ModifyEventSubscriptionRequest : AmazonRDSRequest
@@ -71,10 +72,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EventCategories. 
         /// <para>
-        ///  A list of event categories for a SourceType that you want to subscribe to. You can
-        /// see a list of the categories for a given SourceType in the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
-        /// topic in the <i>Amazon RDS User Guide</i> or by using the <b>DescribeEventCategories</b>
-        /// action. 
+        ///  A list of event categories for a source type (<code>SourceType</code>) that you want
+        /// to subscribe to. You can see a list of the categories for a given source type in <a
+        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+        /// in the <i>Amazon RDS User Guide</i> or by using the <code>DescribeEventCategories</code>
+        /// operation. 
         /// </para>
         /// </summary>
         public List<string> EventCategories
@@ -117,7 +119,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
+        /// Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code>
+        /// | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
+        /// 
         /// </para>
         /// </summary>
         public string SourceType

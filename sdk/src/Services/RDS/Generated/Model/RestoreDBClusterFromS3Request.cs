@@ -30,11 +30,11 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreDBClusterFromS3 operation.
-    /// Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon
-    /// RDS must be authorized to access the Amazon S3 bucket and the data must be created
-    /// using the Percona XtraBackup utility as described in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.html">
-    /// Migrating Data to an Amazon Aurora MySQL DB Cluster</a> in the <i>Amazon Aurora User
-    /// Guide</i>.
+    /// Creates an Amazon Aurora DB cluster from MySQL data stored in an Amazon S3 bucket.
+    /// Amazon RDS must be authorized to access the Amazon S3 bucket and the data must be
+    /// created using the Percona XtraBackup utility as described in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.ExtMySQL.html#AuroraMySQL.Migrating.ExtMySQL.S3">
+    /// Migrating Data from MySQL by Using an Amazon S3 Bucket</a> in the <i>Amazon Aurora
+    /// User Guide</i>.
     /// 
     ///  <note> 
     /// <para>
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// This action only applies to Aurora DB clusters.
+    /// This action only applies to Aurora DB clusters. The source DB engine must be MySQL.
     /// </para>
     ///  </note>
     /// </summary>
@@ -438,11 +438,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the database engine to be used for the restored DB cluster.
+        /// The name of the database engine to be used for this DB cluster.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> 
+        /// Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code>
+        /// (for MySQL 5.7-compatible Aurora), and <code>aurora-postgresql</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -842,7 +843,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>5.6.40</code> 
+        /// Example: <code>5.6.40</code>, <code>5.7.28</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
