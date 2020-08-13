@@ -40,6 +40,7 @@ namespace Amazon.EKS.Model
         private NodegroupHealth _health;
         private List<string> _instanceTypes = new List<string>();
         private Dictionary<string, string> _labels = new Dictionary<string, string>();
+        private LaunchTemplateSpecification _launchTemplate;
         private DateTime? _modifiedAt;
         private string _nodegroupArn;
         private string _nodegroupName;
@@ -56,10 +57,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property AmiType. 
         /// <para>
-        /// The AMI type associated with your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code>
-        /// AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU
-        /// instances should use the <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized
-        /// Linux AMI.
+        /// If the node group was deployed using a launch template with a custom AMI, then this
+        /// is <code>CUSTOM</code>. For node groups that weren't deployed using a launch template,
+        /// this is the AMI type that was specified in the node group configuration.
         /// </para>
         /// </summary>
         public AMITypes AmiType
@@ -113,8 +113,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property DiskSize. 
         /// <para>
-        /// The root device disk size (in GiB) for your node group instances. The default disk
-        /// size is 20 GiB.
+        /// If the node group wasn't deployed with a launch template, then this is the disk size
+        /// in the node group configuration. If the node group was deployed with a launch template,
+        /// then <code>diskSize</code> is <code>null</code>.
         /// </para>
         /// </summary>
         public int DiskSize
@@ -151,7 +152,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property InstanceTypes. 
         /// <para>
-        /// The instance types associated with your node group.
+        /// If the node group wasn't deployed with a launch template, then this is the instance
+        /// type that is associated with the node group. If the node group was deployed with a
+        /// launch template, then <code>instanceTypes</code> is <code>null</code>.
         /// </para>
         /// </summary>
         public List<string> InstanceTypes
@@ -188,6 +191,25 @@ namespace Amazon.EKS.Model
         internal bool IsSetLabels()
         {
             return this._labels != null && this._labels.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchTemplate. 
+        /// <para>
+        /// If a launch template was used to create the node group, then this is the launch template
+        /// that was used.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateSpecification LaunchTemplate
+        {
+            get { return this._launchTemplate; }
+            set { this._launchTemplate = value; }
+        }
+
+        // Check to see if LaunchTemplate property is set
+        internal bool IsSetLaunchTemplate()
+        {
+            return this._launchTemplate != null;
         }
 
         /// <summary>
@@ -249,11 +271,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code>
         /// daemon makes calls to AWS APIs on your behalf. Worker nodes receive permissions for
-        /// these API calls through an IAM instance profile and associated policies. Before you
-        /// can launch worker nodes and register them into a cluster, you must create an IAM role
-        /// for those worker nodes to use when they are launched. For more information, see <a
-        /// href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon
-        /// EKS Worker Node IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+        /// these API calls through an IAM instance profile and associated policies.
         /// </para>
         /// </summary>
         public string NodeRole
@@ -271,8 +289,10 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ReleaseVersion. 
         /// <para>
-        /// The AMI version of the managed node group. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-        /// EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.
+        /// If the node group was deployed using a launch template with a custom AMI, then this
+        /// is the AMI ID that was specified in the launch template. For node groups that weren't
+        /// deployed using a launch template, this is the version of the Amazon EKS-optimized
+        /// AMI that the node group was deployed with.
         /// </para>
         /// </summary>
         public string ReleaseVersion
@@ -290,7 +310,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property RemoteAccess. 
         /// <para>
-        /// The remote access (SSH) configuration that is associated with the node group.
+        /// If the node group wasn't deployed with a launch template, then this is the remote
+        /// access configuration that is associated with the node group. If the node group was
+        /// deployed with a launch template, then <code>remoteAccess</code> is <code>null</code>.
         /// </para>
         /// </summary>
         public RemoteAccessConfig RemoteAccess
@@ -364,9 +386,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// The subnets allowed for the Auto Scaling group that is associated with your node group.
-        /// These subnets must have the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>,
-        /// where <code>CLUSTER_NAME</code> is replaced with the name of your cluster.
+        /// The subnets that were specified for the Auto Scaling group that is associated with
+        /// your node group.
         /// </para>
         /// </summary>
         public List<string> Subnets

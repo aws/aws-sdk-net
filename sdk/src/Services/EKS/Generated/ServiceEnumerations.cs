@@ -31,6 +31,10 @@ namespace Amazon.EKS
     {
 
         /// <summary>
+        /// Constant AL2_ARM_64 for AMITypes
+        /// </summary>
+        public static readonly AMITypes AL2_ARM_64 = new AMITypes("AL2_ARM_64");
+        /// <summary>
         /// Constant AL2_x86_64 for AMITypes
         /// </summary>
         public static readonly AMITypes AL2_x86_64 = new AMITypes("AL2_x86_64");

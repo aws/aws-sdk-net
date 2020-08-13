@@ -89,6 +89,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Force);
                 }
 
+                if(publicRequest.IsSetLaunchTemplate())
+                {
+                    context.Writer.WritePropertyName("launchTemplate");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LaunchTemplateSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LaunchTemplate, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetReleaseVersion())
                 {
                     context.Writer.WritePropertyName("releaseVersion");

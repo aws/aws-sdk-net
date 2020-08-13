@@ -106,6 +106,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Labels = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("launchTemplate", targetDepth))
+                {
+                    var unmarshaller = LaunchTemplateSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.LaunchTemplate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("modifiedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

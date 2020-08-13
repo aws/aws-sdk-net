@@ -30,7 +30,8 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// An object representing the scaling configuration details for the Auto Scaling group
-    /// that is associated with your node group.
+    /// that is associated with your node group. If you specify a value for any property,
+    /// then you must specify values for all of the properties.
     /// </summary>
     public partial class NodegroupScalingConfig
     {
