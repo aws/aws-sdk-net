@@ -43,8 +43,8 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values are entries from the <code>$context.identity</code> and <code>$context.arguments</code>
-        /// maps.
+        /// Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>,
+        /// and <code>$context.identity</code> maps.
         /// </para>
         /// </summary>
         public List<string> CachingKeys
