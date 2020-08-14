@@ -162,6 +162,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetStreamView())
+                {
+                    context.Writer.WritePropertyName("StreamView");
+                    context.Writer.Write(publicRequest.StreamView);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

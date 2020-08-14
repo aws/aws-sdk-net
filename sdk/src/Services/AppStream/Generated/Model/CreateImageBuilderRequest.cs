@@ -177,7 +177,7 @@ namespace Amazon.AppStream.Model
         /// a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code>
         /// API operation and passes the ARN of the role to use. The operation creates a new session
         /// with temporary credentials. AppStream 2.0 retrieves the temporary credentials and
-        /// creates the <b>AppStream_Machine_Role</b> credential profile on the instance.
+        /// creates the <b>appstream_machine_role</b> credential profile on the instance.
         /// </para>
         ///  
         /// <para>
@@ -291,6 +291,30 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// stream.memory.z1d.large
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.z1d.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.z1d.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.z1d.3xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.z1d.6xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.z1d.12xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// stream.graphics-design.large
         /// </para>
         ///  </li> <li> 
@@ -308,6 +332,30 @@ namespace Amazon.AppStream.Model
         ///  </li> <li> 
         /// <para>
         /// stream.graphics-desktop.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g4dn.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g4dn.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g4dn.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g4dn.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g4dn.12xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g4dn.16xlarge
         /// </para>
         ///  </li> <li> 
         /// <para>

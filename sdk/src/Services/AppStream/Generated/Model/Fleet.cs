@@ -51,6 +51,7 @@ namespace Amazon.AppStream.Model
         private int? _maxUserDurationInSeconds;
         private string _name;
         private FleetState _state;
+        private StreamView _streamView;
         private VpcConfig _vpcConfig;
 
         /// <summary>
@@ -263,7 +264,7 @@ namespace Amazon.AppStream.Model
         /// The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet
         /// instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation
         /// and passes the ARN of the role to use. The operation creates a new session with temporary
-        /// credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>AppStream_Machine_Role</b>
+        /// credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b>
         /// credential profile on the instance.
         /// </para>
         ///  
@@ -421,6 +422,30 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// stream.memory.z1d.large
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.z1d.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.z1d.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.z1d.3xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.z1d.6xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.memory.z1d.12xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// stream.graphics-design.large
         /// </para>
         ///  </li> <li> 
@@ -438,6 +463,30 @@ namespace Amazon.AppStream.Model
         ///  </li> <li> 
         /// <para>
         /// stream.graphics-desktop.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g4dn.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g4dn.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g4dn.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g4dn.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g4dn.12xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g4dn.16xlarge
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -528,6 +577,31 @@ namespace Amazon.AppStream.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamView. 
+        /// <para>
+        /// The AppStream 2.0 view that is displayed to your users when they stream from the fleet.
+        /// When <code>APP</code> is specified, only the windows of applications opened by users
+        /// display. When <code>DESKTOP</code> is specified, the standard desktop that is provided
+        /// by the operating system displays.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>APP</code>.
+        /// </para>
+        /// </summary>
+        public StreamView StreamView
+        {
+            get { return this._streamView; }
+            set { this._streamView = value; }
+        }
+
+        // Check to see if StreamView property is set
+        internal bool IsSetStreamView()
+        {
+            return this._streamView != null;
         }
 
         /// <summary>

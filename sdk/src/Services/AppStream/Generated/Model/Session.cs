@@ -223,7 +223,7 @@ namespace Amazon.AppStream.Model
         /// The identifier of the user for whom the session was created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=32)]
+        [AWSProperty(Required=true, Min=2, Max=128)]
         public string UserId
         {
             get { return this._userId; }
