@@ -32,12 +32,12 @@ namespace Amazon.SageMaker.Model
     /// Container for the parameters to the CreateWorkforce operation.
     /// Use this operation to create a workforce. This operation will return an error if a
     /// workforce already exists in the AWS Region that you specify. You can only create one
-    /// workforce in each AWS Region.
+    /// workforce in each AWS Region per AWS account.
     /// 
     ///  
     /// <para>
-    /// If you want to create a new workforce in an AWS Region where the a workforce already
-    /// exists, use the API operation to delete the existing workforce and then use this operation
+    /// If you want to create a new workforce in an AWS Region where a workforce already exists,
+    /// use the API operation to delete the existing workforce and then use <code>CreateWorkforce</code>
     /// to create a new workforce.
     /// </para>
     ///  
@@ -50,8 +50,9 @@ namespace Amazon.SageMaker.Model
     ///  
     /// <para>
     /// To create a private workforce using your own OIDC Identity Provider (IdP), specify
-    /// your IdP configuration in <code>OidcConfig</code>. You must create a OIDC IdP workforce
-    /// using this API operation. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private-oidc.html">
+    /// your IdP configuration in <code>OidcConfig</code>. Your OIDC IdP must support <i>groups</i>
+    /// because groups are used by Ground Truth and Amazon A2I to create work teams. For more
+    /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private-oidc.html">
     /// Create a Private Workforce (OIDC IdP)</a>.
     /// </para>
     /// </summary>
@@ -91,6 +92,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property OidcConfig. 
         /// <para>
         /// Use this parameter to configure a private workforce using your own OIDC Identity Provider.
+        /// </para>
+        ///  
+        /// <para>
         /// Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.
         /// </para>
         /// </summary>

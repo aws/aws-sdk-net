@@ -773,6 +773,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AutoMLMetricEnum Accuracy = new AutoMLMetricEnum("Accuracy");
         /// <summary>
+        /// Constant AUC for AutoMLMetricEnum
+        /// </summary>
+        public static readonly AutoMLMetricEnum AUC = new AutoMLMetricEnum("AUC");
+        /// <summary>
         /// Constant F1 for AutoMLMetricEnum
         /// </summary>
         public static readonly AutoMLMetricEnum F1 = new AutoMLMetricEnum("F1");
@@ -5182,6 +5186,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RecordWrapper(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RepositoryAccessMode.
+    /// </summary>
+    public class RepositoryAccessMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Platform for RepositoryAccessMode
+        /// </summary>
+        public static readonly RepositoryAccessMode Platform = new RepositoryAccessMode("Platform");
+        /// <summary>
+        /// Constant Vpc for RepositoryAccessMode
+        /// </summary>
+        public static readonly RepositoryAccessMode Vpc = new RepositoryAccessMode("Vpc");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RepositoryAccessMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RepositoryAccessMode FindValue(string value)
+        {
+            return FindValue<RepositoryAccessMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RepositoryAccessMode(string value)
         {
             return FindValue(value);
         }

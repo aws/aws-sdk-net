@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Defines the Amazon Cognito user group that is part of a work team.
+    /// Defines an Amazon Cognito or your own OIDC IdP user group that is part of a work team.
     /// </summary>
     public partial class MemberDefinition
     {

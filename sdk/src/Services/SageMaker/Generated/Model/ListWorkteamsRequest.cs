@@ -30,8 +30,9 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the ListWorkteams operation.
-    /// Gets a list of work teams that you have defined in a region. The list may be empty
-    /// if no work team satisfies the filter specified in the <code>NameContains</code> parameter.
+    /// Gets a list of private work teams that you have defined in a region. The list may
+    /// be empty if no work team satisfies the filter specified in the <code>NameContains</code>
+    /// parameter.
     /// </summary>
     public partial class ListWorkteamsRequest : AmazonSageMakerRequest
     {

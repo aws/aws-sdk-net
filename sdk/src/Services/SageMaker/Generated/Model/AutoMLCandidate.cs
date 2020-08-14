@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// An AutoPilot job will return recommendations, or candidates. Each candidate has futher
+    /// An Autopilot job returns recommendations, or candidates. Each candidate has futher
     /// details about the steps involed, and the status.
     /// </summary>
     public partial class AutoMLCandidate

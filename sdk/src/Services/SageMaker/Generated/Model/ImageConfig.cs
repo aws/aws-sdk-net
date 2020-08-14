@@ -29,34 +29,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A list of user groups that exist in your OIDC Identity Provider (IdP). One to ten
-    /// groups can be used to create a single private work team. When you add a user group
-    /// to the list of <code>Groups</code>, you can add that user group to one or more private
-    /// work teams. If you add a user group to a private work team, all workers in that user
-    /// group are added to the work team.
+    /// Specifies whether the model container is in Amazon ECR or a private Docker registry
+    /// in your Amazon Virtual Private Cloud (VPC).
     /// </summary>
-    public partial class OidcMemberDefinition
+    public partial class ImageConfig
     {
-        private List<string> _groups = new List<string>();
+        private RepositoryAccessMode _repositoryAccessMode;
 
         /// <summary>
-        /// Gets and sets the property Groups. 
+        /// Gets and sets the property RepositoryAccessMode. 
         /// <para>
-        /// A list of comma seperated strings that identifies user groups in your OIDC IdP. Each
-        /// user group is made up of a group of private workers.
+        /// Set this to one of the following values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Platform</code> - The model image is hosted in Amazon ECR.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VPC</code> - The model image is hosted in a private Docker registry in your
+        /// VPC.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
-        public List<string> Groups
+        [AWSProperty(Required=true)]
+        public RepositoryAccessMode RepositoryAccessMode
         {
-            get { return this._groups; }
-            set { this._groups = value; }
+            get { return this._repositoryAccessMode; }
+            set { this._repositoryAccessMode = value; }
         }
 
-        // Check to see if Groups property is set
-        internal bool IsSetGroups()
+        // Check to see if RepositoryAccessMode property is set
+        internal bool IsSetRepositoryAccessMode()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._repositoryAccessMode != null;
         }
 
     }

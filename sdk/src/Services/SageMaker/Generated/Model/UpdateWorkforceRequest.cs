@@ -30,21 +30,38 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateWorkforce operation.
-    /// Restricts access to tasks assigned to workers in the specified workforce to those
-    /// within specific ranges of IP addresses. You specify allowed IP addresses by creating
-    /// a list of up to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
+    /// Use this operation to update your workforce. You can use this operation to require
+    /// that workers use specific IP addresses to work on tasks and to update your OpenID
+    /// Connect (OIDC) Identity Provider (IdP) workforce configuration.
     /// 
     ///  
     /// <para>
+    ///  Use <code>SourceIpConfig</code> to restrict worker access to tasks to a specific
+    /// range of IP addresses. You specify allowed IP addresses by creating a list of up to
+    /// ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
     /// By default, a workforce isn't restricted to specific IP addresses. If you specify
     /// a range of IP addresses, workers who attempt to access tasks using any IP address
-    /// outside the specified range are denied access and get a <code>Not Found</code> error
-    /// message on the worker portal. After restricting access with this operation, you can
-    /// see the allowed IP values for a private workforce with the operation.
+    /// outside the specified range are denied and get a <code>Not Found</code> error message
+    /// on the worker portal.
+    /// </para>
+    ///  
+    /// <para>
+    /// Use <code>OidcConfig</code> to update the configuration of a workforce created using
+    /// your own OIDC IdP. 
     /// </para>
     ///  <important> 
     /// <para>
-    /// This operation applies only to private workforces.
+    /// You can only update your OIDC IdP configuration when there are no work teams associated
+    /// with your workforce. You can delete work teams using the operation.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// After restricting access to a range of IP addresses or updating your OIDC IdP configuration
+    /// with this operation, you can view details about your update workforce using the operation.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// This operation only applies to private workforces.
     /// </para>
     ///  </important>
     /// </summary>
@@ -99,9 +116,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property WorkforceName. 
         /// <para>
-        /// The name of the private workforce whose access you want to restrict. <code>WorkforceName</code>
-        /// is automatically set to <code>default</code> when a workforce is created and cannot
-        /// be modified. 
+        /// The name of the private workforce that you want to update. You can find your workforce
+        /// name by using the operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

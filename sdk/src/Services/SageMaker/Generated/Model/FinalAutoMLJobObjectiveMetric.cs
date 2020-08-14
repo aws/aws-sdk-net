@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The candidate result from a job.
+    /// The best candidate result from an AutoML training job.
     /// </summary>
     public partial class FinalAutoMLJobObjectiveMetric
     {
@@ -40,7 +40,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// The name of the metric.
+        /// The name of the metric with the best result. For a description of the possible objective
+        /// metrics, see <a>AutoMLJobObjective$MetricName</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +60,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The metric type used.
+        /// The type of metric with the best result.
         /// </para>
         /// </summary>
         public AutoMLJobObjectiveType Type
@@ -77,7 +78,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the metric.
+        /// The value of the metric with the best result.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

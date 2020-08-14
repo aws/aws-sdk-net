@@ -109,9 +109,18 @@ namespace Amazon.SageMaker.Model
         /// indicates that input data files are not split, and request payloads contain the entire
         /// contents of an input object. Set the value of this parameter to <code>Line</code>
         /// to split records on a newline character boundary. <code>SplitType</code> also supports
-        /// a number of record-oriented binary data formats.
+        /// a number of record-oriented binary data formats. Currently, the supported record formats
+        /// are:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// RecordIO
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TFRecord
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// When splitting is enabled, the size of a mini-batch depends on the values of the <code>BatchStrategy</code>
         /// and <code>MaxPayloadInMB</code> parameters. When the value of <code>BatchStrategy</code>

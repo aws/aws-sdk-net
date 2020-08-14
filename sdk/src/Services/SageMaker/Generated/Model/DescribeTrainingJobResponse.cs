@@ -542,7 +542,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum
+        ///  <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum
         /// allowed wait time.
         /// </para>
         ///  </li> <li> 

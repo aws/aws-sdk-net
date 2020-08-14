@@ -140,7 +140,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end time.
+        /// The end time of an AutoML job.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -158,7 +158,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The failure reason.
+        /// The failure reason of a job.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

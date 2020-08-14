@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TargetObjectiveMetricValue. 
         /// <para>
-        /// The objective metric's value.
+        /// The value of the objective metric.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

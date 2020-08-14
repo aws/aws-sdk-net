@@ -71,6 +71,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Image);
             }
 
+            if(requestObject.IsSetImageConfig())
+            {
+                context.Writer.WritePropertyName("ImageConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ImageConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ImageConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMode())
             {
                 context.Writer.WritePropertyName("Mode");
