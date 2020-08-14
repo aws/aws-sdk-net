@@ -25,6 +25,9 @@ using Amazon.DynamoDBv2.Model;
 
 using Amazon.Util.Internal;
 using System.Globalization;
+#if AWS_ASYNC_API
+using System.Threading.Tasks;
+#endif
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -118,24 +121,73 @@ namespace Amazon.DynamoDBv2.DataModel
             return table;
         }
 
+#if AWS_ASYNC_API
+        internal async Task<Table> GetTargetTableAsync(ItemStorageConfig storageConfig, DynamoDBFlatConfig flatConfig,
+            Table.DynamoDBConsumer consumer = Table.DynamoDBConsumer.DataModel)
+        {
+            if (flatConfig == null)
+                throw new ArgumentNullException("flatConfig");
+
+            string tableName = GetTableName(storageConfig.TableName, flatConfig);
+            var unconfiguredTable = await GetUnconfiguredTableAsync(tableName);
+            ValidateConfigAgainstTable(storageConfig, unconfiguredTable);
+
+            var tableConfig = new TableConfig(tableName, flatConfig.Conversion, consumer,
+                storageConfig.AttributesToStoreAsEpoch, flatConfig.IsEmptyStringValueEnabled);
+            var table = unconfiguredTable.Copy(tableConfig);
+            return table;
+        }
+#endif
+
         // Retrieves Config-less Table from cache or constructs it on cache-miss
         // This Table should not be used for data operations.
         // To use for data operations, Copy with a TableConfig first.
         internal Table GetUnconfiguredTable(string tableName)
         {
             Table table;
-            lock (tablesMapLock)
+            tablesMapLock.WaitOne();
+            bool tableExists = tablesMap.TryGetValue(tableName, out table);
+            tablesMapLock.Release();
+
+            if (!tableExists)
             {
-                if (!tablesMap.TryGetValue(tableName, out table))
-                {
-                    var emptyConfig = new TableConfig(tableName, conversion: null, consumer: Table.DynamoDBConsumer.DataModel,
-                        storeAsEpoch: null, isEmptyStringValueEnabled: false);
-                    table = Table.LoadTable(Client, emptyConfig);
-                    tablesMap[tableName] = table;
-                }
+                var emptyConfig = new TableConfig(tableName, conversion: null, consumer: Table.DynamoDBConsumer.DataModel,
+                    storeAsEpoch: null, isEmptyStringValueEnabled: false);
+                table = Table.LoadTable(Client, emptyConfig);
+
+                tablesMapLock.WaitOne();
+                tablesMap[tableName] = table;
+                tablesMapLock.Release();
             }
             return table;
         }
+
+#if AWS_ASYNC_API
+        // Retrieves Config-less Table from cache or constructs it on cache-miss
+        // This Table should not be used for data operations.
+        // To use for data operations, Copy with a TableConfig first.
+        internal async Task<Table> GetUnconfiguredTableAsync(string tableName)
+        {
+            Table table;
+            tablesMapLock.WaitOne();
+            bool tableExists = tablesMap.TryGetValue(tableName, out table);
+            tablesMapLock.Release();
+
+
+            if (tableExists) 
+                return table;
+
+            var emptyConfig = new TableConfig(tableName, conversion: null, consumer: Table.DynamoDBConsumer.DataModel,
+                storeAsEpoch: null, isEmptyStringValueEnabled: false);
+            table = await Table.LoadTableAsync(Client, emptyConfig);
+
+            tablesMapLock.WaitOne();
+            tablesMap[tableName] = table;
+            tablesMapLock.Release();
+
+            return table;
+        }
+#endif
 
         internal static string GetTableName(string baseTableName, DynamoDBFlatConfig flatConfig)
         {
@@ -173,9 +225,9 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        #endregion
+#endregion
 
-        #region Marshalling/unmarshalling
+#region Marshalling/unmarshalling
 
         // Check if DynamoDBEntry is supported
         private static bool ShouldSave(DynamoDBEntry entry, bool ignoreNullValues)
@@ -985,9 +1037,9 @@ namespace Amazon.DynamoDBv2.DataModel
             cs.Search.Reset();
         }
 
-        #endregion
+#endregion
 
-        #region Scan/Query
+#region Scan/Query
 
         private ContextSearch ConvertScan<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig)
         {
@@ -1078,6 +1130,6 @@ namespace Amazon.DynamoDBv2.DataModel
             return new AsyncSearch<T>(this, contextSearch);
         }
 
-        #endregion
+#endregion
     }
 }

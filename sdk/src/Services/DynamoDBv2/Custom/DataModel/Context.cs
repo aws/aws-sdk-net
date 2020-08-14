@@ -36,7 +36,7 @@ namespace Amazon.DynamoDBv2.DataModel
         private bool ownClient;
         internal IAmazonDynamoDB Client { get; private set; }
         private Dictionary<string, Table> tablesMap;
-        private readonly object tablesMapLock = new object();
+        private readonly Semaphore tablesMapLock = new Semaphore(1, 1);
         internal DynamoDBContextConfig Config { get; private set; }
         internal ItemStorageConfigCache StorageConfigCache { get; private set; }
 
@@ -340,12 +340,12 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
 #if AWS_ASYNC_API 
-        private Task<T> LoadHelperAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
+        private async Task<T> LoadHelperAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
-            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
+            ItemStorageConfig storageConfig = await StorageConfigCache.GetConfigAsync<T>(flatConfig);
             Key key = MakeKey(hashKey, rangeKey, storageConfig, flatConfig);
-            return LoadHelperAsync<T>(key, flatConfig, storageConfig, cancellationToken);
+            return await LoadHelperAsync<T>(key, flatConfig, storageConfig, cancellationToken);
         }
 #endif
 
@@ -358,12 +358,12 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
 #if AWS_ASYNC_API 
-        private Task<T> LoadHelperAsync<T>(T keyObject, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
+        private async Task<T> LoadHelperAsync<T>(T keyObject, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
-            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
+            ItemStorageConfig storageConfig = await StorageConfigCache.GetConfigAsync<T>(flatConfig);
             Key key = MakeKey<T>(keyObject, storageConfig, flatConfig);
-            return LoadHelperAsync<T>(key, flatConfig, storageConfig, cancellationToken);
+            return await LoadHelperAsync<T>(key, flatConfig, storageConfig, cancellationToken);
         }
 #endif
 
@@ -392,7 +392,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 AttributesToGet = storageConfig.AttributesToGet
             };
 
-            Table table = GetTargetTable(storageConfig, flatConfig);
+            Table table = await GetTargetTableAsync(storageConfig, flatConfig);
             ItemStorage storage = new ItemStorage(storageConfig);
             storage.Document = await table.GetItemHelperAsync(key, getConfig, cancellationToken).ConfigureAwait(false);
 
