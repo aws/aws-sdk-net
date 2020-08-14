@@ -292,7 +292,9 @@ namespace Amazon.Runtime.Internal.Util
 #region Private members
 
         private Dictionary<TKey, CacheItem<TValue>> Contents;
-        private readonly Semaphore CacheLock = new Semaphore(1, 1);
+#if AWS_ASYNC_API
+                private readonly SemaphoreSlim CacheLock = new SemaphoreSlim(1, 1);
+#endif
 
 #endregion
 
@@ -336,30 +338,76 @@ namespace Amazon.Runtime.Internal.Util
         {
             return GetValueHelper(key, out isStaleItem, creator);
         }
+
+#if AWS_ASYNC_API
         public void Clear(TKey key)
         {
-            CacheLock.WaitOne();
+            CacheLock.Wait();
             Contents.Remove(key);
             CacheLock.Release();
         }
+        
+        
         public void Clear()
         {
-            CacheLock.WaitOne();
+            CacheLock.Wait();
             Contents.Clear();
             LastCacheClean = GetCorrectedLocalTime();
             CacheLock.Release();
+        }
+        
+        public List<TKey> Keys
+        {
+            get
+            {
+                CacheLock.Wait();
+                var list = Contents.Keys.ToList();
+                CacheLock.Release();
+                return list;
+            }
+        }
+        
+        public int ItemCount
+        {
+            get
+            {
+                CacheLock.Wait();
+                var contentCount = Contents.Count;
+                CacheLock.Release();
+        
+                return contentCount;
+            }
+        }
+        
+#elif !AWS_ASYNC_API
+        public void Clear(TKey key)
+        {
+            Contents.Remove(key);
+        }
+        
+        
+        public void Clear()
+        {
+            Contents.Clear();
+            LastCacheClean = GetCorrectedLocalTime();
         }
         public List<TKey> Keys
         {
             get
             {
-                CacheLock.WaitOne();
-                var keyList = Contents.Keys.ToList();
-                CacheLock.Release();
-
-                return keyList;
+                return Contents.Keys.ToList();
             }
         }
+        
+        public int ItemCount
+        {
+            get
+            {
+                return Contents.Count;
+            }
+        }
+#endif
+       
 
         private TimeSpan maximumItemLifespan;
         public TimeSpan MaximumItemLifespan
@@ -382,18 +430,6 @@ namespace Amazon.Runtime.Internal.Util
                 if (value < TimeSpan.Zero)
                     throw new ArgumentOutOfRangeException("value");
                 cacheClearPeriod = value;
-            }
-        }
-
-        public int ItemCount
-        {
-            get
-            {
-                CacheLock.WaitOne();
-                var contentCount = Contents.Count;
-                CacheLock.Release();
-        
-                return contentCount;
             }
         }
 
@@ -440,11 +476,7 @@ namespace Amazon.Runtime.Internal.Util
             CacheItem<TValue> item = null;
             if (AWSConfigs.UseSdkCache)
             {
-                CacheLock.WaitOne();
-                bool exists = Contents.TryGetValue(key, out item);
-                CacheLock.Release();
-
-                if (!exists || !IsValidItem(item))
+                if (!Contents.TryGetValue(key, out item) || !IsValidItem(item))
                 {
                     if (creator == null)
                         throw new InvalidOperationException("Unable to calculate value for key " + key);
@@ -453,9 +485,7 @@ namespace Amazon.Runtime.Internal.Util
                     isStaleItem = false;
                     item = new CacheItem<TValue>(value);
 
-                    CacheLock.WaitOne();
                     Contents[key] = item;
-                    CacheLock.Release();
 
                     RemoveOldItems_Locked();
                 }
@@ -482,7 +512,7 @@ namespace Amazon.Runtime.Internal.Util
             CacheItem<TValue> item = null;
             if (AWSConfigs.UseSdkCache)
             {
-                CacheLock.WaitOne();
+                await CacheLock.WaitAsync();
                 bool exists = Contents.TryGetValue(key, out item);
                 CacheLock.Release();
 
@@ -494,7 +524,7 @@ namespace Amazon.Runtime.Internal.Util
                     var value = await creator(key);
                     item = new CacheItem<TValue>(value);
 
-                    CacheLock.WaitOne();
+                    await CacheLock.WaitAsync();
                     Contents[key] = item;
                     CacheLock.Release();
 
@@ -540,7 +570,9 @@ namespace Amazon.Runtime.Internal.Util
 
             var keysToRemove = new List<TKey>();
 
-            CacheLock.WaitOne();
+#if AWS_ASYNC_API
+            CacheLock.Wait();
+#endif
             foreach (var kvp in Contents)
             {
                 var key = kvp.Key;
@@ -552,8 +584,10 @@ namespace Amazon.Runtime.Internal.Util
 
             foreach (var key in keysToRemove)
                 Contents.Remove(key);
+            
+#if AWS_ASYNC_API
             CacheLock.Release();
-
+#endif
             LastCacheClean = GetCorrectedLocalTime();
         }
 
@@ -591,8 +625,11 @@ namespace Amazon.Runtime.Internal.Util
 
         public void Dispose()
         {
+#if AWS_ASYNC_API
             CacheLock.Dispose();
+#endif
         }
+        
 
 #endregion
     }

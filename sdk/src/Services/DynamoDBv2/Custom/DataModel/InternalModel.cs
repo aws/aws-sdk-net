@@ -592,13 +592,15 @@ namespace Amazon.DynamoDBv2.DataModel
             public string BaseTableName { get; private set; }
         }
 
-        private Semaphore CacheSemaphore;
+#if AWS_ASYNC_API
+        private SemaphoreSlim CacheSemaphore= new SemaphoreSlim(1, 1);
+#endif
+        
         private Dictionary<Type, ConfigTableCache> Cache;
         private DynamoDBContext Context;
 
         public ItemStorageConfigCache(DynamoDBContext context)
         {
-            CacheSemaphore = new Semaphore(1, 1);
             Cache = new Dictionary<Type, ConfigTableCache>();
             Context = context;
         }
@@ -619,14 +621,20 @@ namespace Amazon.DynamoDBv2.DataModel
 
         public async Task<ItemStorageConfig> GetConfigAsync(Type type, DynamoDBFlatConfig flatConfig, bool conversionOnly = false)
         {
-            CacheSemaphore.WaitOne();
-
             ConfigTableCache tableCache;
-            if (!Cache.TryGetValue(type, out tableCache))
+
+            await CacheSemaphore.WaitAsync();
+            var tableExists = Cache.TryGetValue(type, out tableCache);
+            CacheSemaphore.Release();
+
+            if (!tableExists)
             {
                 var baseStorageConfig = await CreateStorageConfigAsync(type, actualTableName: null);
                 tableCache = new ConfigTableCache(baseStorageConfig);
+                
+                await CacheSemaphore.WaitAsync();
                 Cache[type] = tableCache;
+                CacheSemaphore.Release();
             }
 
             // If this type is only used for conversion, do not attempt to populate the config from the table
@@ -639,11 +647,9 @@ namespace Amazon.DynamoDBv2.DataModel
             if (!tableCache.Cache.TryGetValue(actualTableName, out config))
             {
                 config = await CreateStorageConfigAsync(type, actualTableName);
+                
                 tableCache.Cache[actualTableName] = config;
             }
-
-
-            CacheSemaphore.Release();
             return config;
         }
 
@@ -684,8 +690,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         public ItemStorageConfig GetConfig(Type type, DynamoDBFlatConfig flatConfig, bool conversionOnly = false)
         {
-            CacheSemaphore.WaitOne();
-
             ConfigTableCache tableCache;
             if (!Cache.TryGetValue(type, out tableCache))
             {
@@ -707,8 +711,6 @@ namespace Amazon.DynamoDBv2.DataModel
                 tableCache.Cache[actualTableName] = config;
             }
 
-
-            CacheSemaphore.Release();
             return config;
         }
 
@@ -978,7 +980,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
         public void Dispose()
         {
+#if AWS_ASYNC_API
             CacheSemaphore.Dispose();
+
+#endif
             Context.Dispose();
         }
     }

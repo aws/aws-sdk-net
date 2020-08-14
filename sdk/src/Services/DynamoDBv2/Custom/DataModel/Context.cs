@@ -36,7 +36,11 @@ namespace Amazon.DynamoDBv2.DataModel
         private bool ownClient;
         internal IAmazonDynamoDB Client { get; private set; }
         private Dictionary<string, Table> tablesMap;
-        private readonly Semaphore tablesMapLock = new Semaphore(1, 1);
+        
+#if AWS_ASYNC_API
+        private readonly SemaphoreSlim tablesMapLock = new SemaphoreSlim(1, 1);
+#endif
+        
         internal DynamoDBContextConfig Config { get; private set; }
         internal ItemStorageConfigCache StorageConfigCache { get; private set; }
 

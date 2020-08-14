@@ -145,20 +145,15 @@ namespace Amazon.DynamoDBv2.DataModel
         internal Table GetUnconfiguredTable(string tableName)
         {
             Table table;
-            tablesMapLock.WaitOne();
-            bool tableExists = tablesMap.TryGetValue(tableName, out table);
-            tablesMapLock.Release();
-
-            if (!tableExists)
+            if (!tablesMap.TryGetValue(tableName, out table))
             {
                 var emptyConfig = new TableConfig(tableName, conversion: null, consumer: Table.DynamoDBConsumer.DataModel,
                     storeAsEpoch: null, isEmptyStringValueEnabled: false);
                 table = Table.LoadTable(Client, emptyConfig);
 
-                tablesMapLock.WaitOne();
                 tablesMap[tableName] = table;
-                tablesMapLock.Release();
             }
+            
             return table;
         }
 
@@ -169,10 +164,10 @@ namespace Amazon.DynamoDBv2.DataModel
         internal async Task<Table> GetUnconfiguredTableAsync(string tableName)
         {
             Table table;
-            tablesMapLock.WaitOne();
+            
+            await tablesMapLock.WaitAsync();
             bool tableExists = tablesMap.TryGetValue(tableName, out table);
             tablesMapLock.Release();
-
 
             if (tableExists) 
                 return table;
@@ -181,7 +176,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 storeAsEpoch: null, isEmptyStringValueEnabled: false);
             table = await Table.LoadTableAsync(Client, emptyConfig);
 
-            tablesMapLock.WaitOne();
+            await tablesMapLock.WaitAsync();
             tablesMap[tableName] = table;
             tablesMapLock.Release();
 
