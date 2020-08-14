@@ -39,7 +39,12 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ProductInformationFilterList. 
         /// <para>
-        /// Product information filters. The following filters and logical operators are supported:
+        /// Product information filters.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following filters and logical operators are supported when the resource type is
+        /// <code>SSM_MANAGED</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -67,8 +72,25 @@ namespace Amazon.LicenseManager.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>License Included</code> - The type of license included. Logical operators are
-        /// <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code>
+        /// <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code>
         /// | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following filters and logical operators are supported when the resource type is
+        /// <code>RDS</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Engine Edition</code> - The edition of the database engine. Logical operator
+        /// is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code>
+        /// | <code>oracle-se1</code> | <code>oracle-se2</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>.
+        /// Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> |
+        /// <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -88,7 +110,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Resource type. The value is <code>SSM_MANAGED</code>.
+        /// Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

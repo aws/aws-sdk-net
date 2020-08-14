@@ -31,16 +31,6 @@ namespace Amazon.LicenseManager.Model
     /// <summary>
     /// Container for the parameters to the UpdateLicenseConfiguration operation.
     /// Modifies the attributes of an existing license configuration.
-    /// 
-    ///  
-    /// <para>
-    /// A license configuration is an abstraction of a customer license agreement that can
-    /// be consumed and enforced by License Manager. Components include specifications for
-    /// the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared
-    /// tenancy, Dedicated Instance, Dedicated Host, or all of these), host affinity (how
-    /// long a VM must be associated with a host), and the number of licenses purchased and
-    /// used.
-    /// </para>
     /// </summary>
     public partial class UpdateLicenseConfigurationRequest : AmazonLicenseManagerRequest
     {
@@ -147,7 +137,8 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseRules. 
         /// <para>
-        /// New license rules.
+        /// New license rule. The only rule that you can add after you create a license configuration
+        /// is licenseAffinityToHost.
         /// </para>
         /// </summary>
         public List<string> LicenseRules
