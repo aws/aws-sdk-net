@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the GetArtifactUrl operation.
-    /// Retrieves artifact info that corresponds to a artifactId.
+    /// Returns the artifact info that corresponds to an artifact id.
     /// </summary>
     public partial class GetArtifactUrlRequest : AmazonAmplifyRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ArtifactId. 
         /// <para>
-        ///  Unique Id for a artifact. 
+        ///  The unique ID for an artifact. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

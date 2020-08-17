@@ -58,7 +58,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Frequency value.
+        /// Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for
+        /// downlink and 2025 to 2120 MHz for uplink.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

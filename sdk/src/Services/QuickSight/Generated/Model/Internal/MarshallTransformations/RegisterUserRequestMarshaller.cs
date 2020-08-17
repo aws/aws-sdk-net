@@ -72,6 +72,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCustomPermissionsName())
+                {
+                    context.Writer.WritePropertyName("CustomPermissionsName");
+                    context.Writer.Write(publicRequest.CustomPermissionsName);
+                }
+
                 if(publicRequest.IsSetEmail())
                 {
                     context.Writer.WritePropertyName("Email");

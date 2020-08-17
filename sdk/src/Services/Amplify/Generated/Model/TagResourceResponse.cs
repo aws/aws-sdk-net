@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Response for tag resource.
+    /// The response for the tag resource request.
     /// </summary>
     public partial class TagResourceResponse : AmazonWebServiceResponse
     {

@@ -142,6 +142,17 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetKendraConfiguration())
+                {
+                    context.Writer.WritePropertyName("kendraConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KendraConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.KendraConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetParentIntentSignature())
                 {
                     context.Writer.WritePropertyName("parentIntentSignature");

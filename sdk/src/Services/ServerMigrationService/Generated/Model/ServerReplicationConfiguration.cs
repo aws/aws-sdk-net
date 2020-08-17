@@ -39,7 +39,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Server. 
         /// <para>
-        /// Identifier of the server this replication configuration is associated with.
+        /// The ID of the server with which this replication configuration is associated.
         /// </para>
         /// </summary>
         public Server Server
@@ -57,7 +57,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerReplicationParameters. 
         /// <para>
-        /// Parameters for replicating the server.
+        /// The parameters for replicating the server.
         /// </para>
         /// </summary>
         public ServerReplicationParameters ServerReplicationParameters

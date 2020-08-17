@@ -47,10 +47,13 @@ namespace Amazon.ServiceCatalog.Model
     {
         private string _acceptLanguage;
         private string _pathId;
+        private string _pathName;
         private string _productId;
+        private string _productName;
         private string _provisionedProductId;
         private string _provisionedProductName;
         private string _provisioningArtifactId;
+        private string _provisioningArtifactName;
         private List<UpdateProvisioningParameter> _provisioningParameters = new List<UpdateProvisioningParameter>();
         private UpdateProvisioningPreferences _provisioningPreferences;
         private List<Tag> _tags = new List<Tag>();
@@ -91,8 +94,9 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PathId. 
         /// <para>
-        /// The new path identifier. This value is optional if the product has a default path,
-        /// and required if the product has more than one path.
+        /// The path identifier. This value is optional if the product has a default path, and
+        /// required if the product has more than one path. You must provide the name or ID, but
+        /// not both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -109,9 +113,28 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PathName. 
+        /// <para>
+        /// The name of the path. You must provide the name or ID, but not both.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string PathName
+        {
+            get { return this._pathName; }
+            set { this._pathName = value; }
+        }
+
+        // Check to see if PathName property is set
+        internal bool IsSetPathName()
+        {
+            return this._pathName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProductId. 
         /// <para>
-        /// The identifier of the product.
+        /// The identifier of the product. You must provide the name or ID, but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -128,10 +151,29 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProductName. 
+        /// <para>
+        /// The name of the product. You must provide the name or ID, but not both.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=8191)]
+        public string ProductName
+        {
+            get { return this._productName; }
+            set { this._productName = value; }
+        }
+
+        // Check to see if ProductName property is set
+        internal bool IsSetProductName()
+        {
+            return this._productName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProvisionedProductId. 
         /// <para>
-        /// The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
-        /// and <code>ProvisionedProductId</code>.
+        /// The identifier of the provisioned product. You must provide the name or ID, but not
+        /// both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -184,6 +226,25 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetProvisioningArtifactId()
         {
             return this._provisioningArtifactId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisioningArtifactName. 
+        /// <para>
+        /// The name of the provisioning artifact. You must provide the name or ID, but not both.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=8192)]
+        public string ProvisioningArtifactName
+        {
+            get { return this._provisioningArtifactName; }
+            set { this._provisioningArtifactName = value; }
+        }
+
+        // Check to see if ProvisioningArtifactName property is set
+        internal bool IsSetProvisioningArtifactName()
+        {
+            return this._provisioningArtifactName != null;
         }
 
         /// <summary>

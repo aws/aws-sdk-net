@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Subdomain for the Domain Association.
+    /// The subdomain for the domain association.
     /// </summary>
     public partial class SubDomain
     {
@@ -40,7 +40,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property DnsRecord. 
         /// <para>
-        ///  DNS record for the Subdomain. 
+        ///  The DNS record for the subdomain. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
@@ -59,7 +59,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property SubDomainSetting. 
         /// <para>
-        ///  Setting structure for the Subdomain. 
+        ///  Describes the settings for the subdomain. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -78,7 +78,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Verified. 
         /// <para>
-        ///  Verified status of the Subdomain 
+        ///  The verified status of the subdomain 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

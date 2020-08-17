@@ -47,7 +47,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property AccessGroupId. 
         /// <para>
         /// The ID of the group to grant access to, for example, the Active Directory group or
-        /// identity provider (IdP) group.
+        /// identity provider (IdP) group. Required if <code>AuthorizeAllGroups</code> is <code>false</code>
+        /// or not specified.
         /// </para>
         /// </summary>
         public string AccessGroupId
@@ -65,8 +66,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AuthorizeAllGroups. 
         /// <para>
-        /// Indicates whether to grant access to all clients. Use <code>true</code> to grant all
-        /// clients who successfully establish a VPN connection access to the network.
+        /// Indicates whether to grant access to all clients. Specify <code>true</code> to grant
+        /// all clients who successfully establish a VPN connection access to the network. Must
+        /// be set to <code>true</code> if <code>AccessGroupId</code> is not specified.
         /// </para>
         /// </summary>
         public bool AuthorizeAllGroups

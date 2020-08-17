@@ -617,6 +617,11 @@
     <pattern>.*\{####\}.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientRequest.AccessTokenValidity</property>
+    <min>1</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientRequest.ClientName</property>
     <min>1</min>
     <max>128</max>
@@ -629,9 +634,14 @@
     <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientRequest.IdTokenValidity</property>
+    <min>1</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientRequest.RefreshTokenValidity</property>
     <min>0</min>
-    <max>3650</max>
+    <max>315360000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientRequest.UserPoolId</property>
@@ -1388,6 +1398,11 @@
     <pattern>[\w-]+_[0-9a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UpdateUserPoolClientRequest.AccessTokenValidity</property>
+    <min>1</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.UpdateUserPoolClientRequest.ClientId</property>
     <min>1</min>
     <max>128</max>
@@ -1406,9 +1421,14 @@
     <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UpdateUserPoolClientRequest.IdTokenValidity</property>
+    <min>1</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.UpdateUserPoolClientRequest.RefreshTokenValidity</property>
     <min>0</min>
-    <max>3650</max>
+    <max>315360000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.UpdateUserPoolClientRequest.UserPoolId</property>
@@ -1868,6 +1888,11 @@
     <pattern>[\w-]+_[0-9a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UserPoolClientType.AccessTokenValidity</property>
+    <min>1</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.UserPoolClientType.ClientId</property>
     <min>1</min>
     <max>128</max>
@@ -1892,9 +1917,14 @@
     <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UserPoolClientType.IdTokenValidity</property>
+    <min>1</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.UserPoolClientType.RefreshTokenValidity</property>
     <min>0</min>
-    <max>3650</max>
+    <max>315360000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.UserPoolClientType.UserPoolId</property>

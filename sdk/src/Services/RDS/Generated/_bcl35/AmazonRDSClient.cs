@@ -764,7 +764,7 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action only applies to Aurora DB clusters.
+        /// This action only applies to Aurora MySQL DB clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2147,15 +2147,7 @@ namespace Amazon.RDS
         #region  CreateDBProxy
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Creates a new DB proxy.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBProxy service method.</param>
         /// 
@@ -2437,20 +2429,23 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// You can specify the type of source (SourceType) you want to be notified of, provide
-        /// a list of RDS sources (SourceIds) that triggers the events, and provide a list of
-        /// event categories (EventCategories) for events you want to be notified of. For example,
-        /// you can specify SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2
-        /// and EventCategories = Availability, Backup.
+        /// You can specify the type of source (<code>SourceType</code>) that you want to be notified
+        /// of and provide a list of RDS sources (<code>SourceIds</code>) that triggers the events.
+        /// You can also provide a list of event categories (<code>EventCategories</code>) for
+        /// events that you want to be notified of. For example, you can specify <code>SourceType</code>
+        /// = <code>db-instance</code>, <code>SourceIds</code> = <code>mydbinstance1</code>, <code>mydbinstance2</code>
+        /// and <code>EventCategories</code> = <code>Availability</code>, <code>Backup</code>.
         /// </para>
         ///  
         /// <para>
-        /// If you specify both the SourceType and SourceIds, such as SourceType = db-instance
-        /// and SourceIdentifier = myDBInstance1, you are notified of all the db-instance events
-        /// for the specified source. If you specify a SourceType but do not specify a SourceIdentifier,
-        /// you receive notice of the events for that source type for all your RDS sources. If
-        /// you don't specify either the SourceType or the SourceIdentifier, you are notified
-        /// of events generated from all RDS sources belonging to your customer account.
+        /// If you specify both the <code>SourceType</code> and <code>SourceIds</code>, such as
+        /// <code>SourceType</code> = <code>db-instance</code> and <code>SourceIdentifier</code>
+        /// = <code>myDBInstance1</code>, you are notified of all the <code>db-instance</code>
+        /// events for the specified source. If you specify a <code>SourceType</code> but do not
+        /// specify a <code>SourceIdentifier</code>, you receive notice of the events for that
+        /// source type for all your RDS sources. If you don't specify either the SourceType or
+        /// the <code>SourceIdentifier</code>, you are notified of events generated from all RDS
+        /// sources belonging to your customer account.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2532,12 +2527,11 @@ namespace Amazon.RDS
         #region  CreateGlobalCluster
 
         /// <summary>
-        /// <para>
-        ///  Creates an Aurora global database spread across multiple regions. The global database
+        /// Creates an Aurora global database spread across multiple regions. The global database
         /// contains a single primary cluster with read-write capability, and a read-only secondary
         /// cluster that receives data from the primary cluster through high-speed replication
         /// performed by the Aurora storage subsystem. 
-        /// </para>
+        /// 
         ///  
         /// <para>
         ///  You can create a global database that is initially empty, and then add a primary
@@ -3286,15 +3280,7 @@ namespace Amazon.RDS
         #region  DeleteDBProxy
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Deletes an existing proxy.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBProxy service method.</param>
         /// 
@@ -3802,16 +3788,8 @@ namespace Amazon.RDS
         #region  DeregisterDBProxyTargets
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Remove the association between one or more <code>DBProxyTarget</code> data structures
         /// and a <code>DBProxyTargetGroup</code>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterDBProxyTargets service method.</param>
         /// 
@@ -4095,7 +4073,7 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action only applies to Aurora DB clusters.
+        /// This action only applies to Aurora MySQL DB clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4979,15 +4957,7 @@ namespace Amazon.RDS
         #region  DescribeDBProxies
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns information about DB proxies.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxies service method.</param>
         /// 
@@ -5045,16 +5015,8 @@ namespace Amazon.RDS
         #region  DescribeDBProxyTargetGroups
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code>
         /// data structures.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyTargetGroups service method.</param>
         /// 
@@ -5119,15 +5081,7 @@ namespace Amazon.RDS
         #region  DescribeDBProxyTargets
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns information about <code>DBProxyTarget</code> objects. This API supports pagination.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBProxyTargets service method.</param>
         /// 
@@ -5617,8 +5571,8 @@ namespace Amazon.RDS
         /// <summary>
         /// Displays a list of categories for all event source types, or, if specified, for a
         /// specified source type. You can see a list of the event categories and source types
-        /// in the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-        /// Events</a> topic in the <i>Amazon RDS User Guide.</i>
+        /// in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
+        /// Events</a> in the <i>Amazon RDS User Guide.</i>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEventCategories service method, as returned by RDS.</returns>
@@ -5631,8 +5585,8 @@ namespace Amazon.RDS
         /// <summary>
         /// Displays a list of categories for all event source types, or, if specified, for a
         /// specified source type. You can see a list of the event categories and source types
-        /// in the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-        /// Events</a> topic in the <i>Amazon RDS User Guide.</i>
+        /// in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
+        /// Events</a> in the <i>Amazon RDS User Guide.</i>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventCategories service method.</param>
         /// 
@@ -5686,9 +5640,10 @@ namespace Amazon.RDS
         #region  DescribeEvents
 
         /// <summary>
-        /// Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter
-        /// groups for the past 14 days. Events specific to a particular DB instance, DB security
-        /// group, database snapshot, or DB parameter group can be obtained by providing the name
+        /// Returns events related to DB instances, DB clusters, DB parameter groups, DB security
+        /// groups, DB snapshots, and DB cluster snapshots for the past 14 days. Events specific
+        /// to a particular DB instances, DB clusters, DB parameter groups, DB security groups,
+        /// DB snapshots, and DB cluster snapshots group can be obtained by providing the name
         /// as a parameter. By default, the past hour of events are returned.
         /// </summary>
         /// 
@@ -5700,9 +5655,10 @@ namespace Amazon.RDS
         }
 
         /// <summary>
-        /// Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter
-        /// groups for the past 14 days. Events specific to a particular DB instance, DB security
-        /// group, database snapshot, or DB parameter group can be obtained by providing the name
+        /// Returns events related to DB instances, DB clusters, DB parameter groups, DB security
+        /// groups, DB snapshots, and DB cluster snapshots for the past 14 days. Events specific
+        /// to a particular DB instances, DB clusters, DB parameter groups, DB security groups,
+        /// DB snapshots, and DB cluster snapshots group can be obtained by providing the name
         /// as a parameter. By default, the past hour of events are returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
@@ -5758,12 +5714,12 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Lists all the subscription descriptions for a customer account. The description for
-        /// a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID,
-        /// CreationTime, and Status.
+        /// a subscription includes <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>,
+        /// <code>SourceType</code>, <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
         /// 
         ///  
         /// <para>
-        /// If you specify a SubscriptionName, lists the description for that subscription.
+        /// If you specify a <code>SubscriptionName</code>, lists the description for that subscription.
         /// </para>
         /// </summary>
         /// 
@@ -5779,12 +5735,12 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Lists all the subscription descriptions for a customer account. The description for
-        /// a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID,
-        /// CreationTime, and Status.
+        /// a subscription includes <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>,
+        /// <code>SourceType</code>, <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
         /// 
         ///  
         /// <para>
-        /// If you specify a SubscriptionName, lists the description for that subscription.
+        /// If you specify a <code>SubscriptionName</code>, lists the description for that subscription.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventSubscriptions service method.</param>
@@ -7289,18 +7245,24 @@ namespace Amazon.RDS
         /// as the <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to
         /// add a list of IDs of the AWS accounts that are authorized to restore the manual DB
         /// cluster snapshot. Use the value <code>all</code> to make the manual DB cluster snapshot
-        /// public, which means that it can be copied or restored by all AWS accounts. Do not
-        /// add the <code>all</code> value for any manual DB cluster snapshots that contain private
-        /// information that you don't want available to all AWS accounts. If a manual DB cluster
-        /// snapshot is encrypted, it can be shared, but only by specifying a list of authorized
-        /// AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code>
-        /// as a value for that parameter in this case.
+        /// public, which means that it can be copied or restored by all AWS accounts.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Don't add the <code>all</code> value for any manual DB cluster snapshots that contain
+        /// private information that you don't want available to all AWS accounts.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// If a manual DB cluster snapshot is encrypted, it can be shared, but only by specifying
+        /// a list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You
+        /// can't use <code>all</code> as a value for that parameter in this case.
         /// </para>
         ///  
         /// <para>
         /// To view which AWS accounts have access to copy or restore a manual DB cluster snapshot,
-        /// or whether a manual DB cluster snapshot public or private, use the <code>DescribeDBClusterSnapshotAttributes</code>
-        /// API action.
+        /// or whether a manual DB cluster snapshot is public or private, use the <a>DescribeDBClusterSnapshotAttributes</a>
+        /// API action. The accounts are returned as values for the <code>restore</code> attribute.
         /// </para>
         ///  <note> 
         /// <para>
@@ -7415,6 +7377,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
         /// </exception>
@@ -7424,6 +7389,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// The DB subnet group doesn't cover all Availability Zones after it's created because
         /// of users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an AWS KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -7573,15 +7541,7 @@ namespace Amazon.RDS
         #region  ModifyDBProxy
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Changes the settings for an existing DB proxy.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxy service method.</param>
         /// 
@@ -7646,15 +7606,7 @@ namespace Amazon.RDS
         #region  ModifyDBProxyTargetGroup
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Modifies the properties of a <code>DBProxyTargetGroup</code>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBProxyTargetGroup service method.</param>
         /// 
@@ -7791,17 +7743,24 @@ namespace Amazon.RDS
         /// as the <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to
         /// add a list of IDs of the AWS accounts that are authorized to restore the manual DB
         /// snapshot. Uses the value <code>all</code> to make the manual DB snapshot public, which
-        /// means it can be copied or restored by all AWS accounts. Do not add the <code>all</code>
-        /// value for any manual DB snapshots that contain private information that you don't
-        /// want available to all AWS accounts. If the manual DB snapshot is encrypted, it can
-        /// be shared, but only by specifying a list of authorized AWS account IDs for the <code>ValuesToAdd</code>
-        /// parameter. You can't use <code>all</code> as a value for that parameter in this case.
+        /// means it can be copied or restored by all AWS accounts.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Don't add the <code>all</code> value for any manual DB snapshots that contain private
+        /// information that you don't want available to all AWS accounts.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// If the manual DB snapshot is encrypted, it can be shared, but only by specifying a
+        /// list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You
+        /// can't use <code>all</code> as a value for that parameter in this case.
         /// </para>
         ///  
         /// <para>
         /// To view which AWS accounts have access to copy or restore a manual DB snapshot, or
-        /// whether a manual DB snapshot public or private, use the <code>DescribeDBSnapshotAttributes</code>
-        /// API action.
+        /// whether a manual DB snapshot public or private, use the <a>DescribeDBSnapshotAttributes</a>
+        /// API action. The accounts are returned as values for the <code>restore</code> attribute.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshotAttribute service method.</param>
@@ -7946,9 +7905,10 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// You can see a list of the event categories for a given SourceType in the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
-        /// topic in the <i>Amazon RDS User Guide</i> or by using the <b>DescribeEventCategories</b>
-        /// action.
+        /// You can see a list of the event categories for a given source type (<code>SourceType</code>)
+        /// in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+        /// in the <i>Amazon RDS User Guide</i> or by using the <code>DescribeEventCategories</code>
+        /// operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyEventSubscription service method.</param>
@@ -8429,15 +8389,7 @@ namespace Amazon.RDS
         #region  RegisterDBProxyTargets
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-        /// It is subject to change.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterDBProxyTargets service method.</param>
         /// 
@@ -9015,11 +8967,11 @@ namespace Amazon.RDS
         #region  RestoreDBClusterFromS3
 
         /// <summary>
-        /// Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon
-        /// RDS must be authorized to access the Amazon S3 bucket and the data must be created
-        /// using the Percona XtraBackup utility as described in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.html">
-        /// Migrating Data to an Amazon Aurora MySQL DB Cluster</a> in the <i>Amazon Aurora User
-        /// Guide</i>.
+        /// Creates an Amazon Aurora DB cluster from MySQL data stored in an Amazon S3 bucket.
+        /// Amazon RDS must be authorized to access the Amazon S3 bucket and the data must be
+        /// created using the Percona XtraBackup utility as described in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.ExtMySQL.html#AuroraMySQL.Migrating.ExtMySQL.S3">
+        /// Migrating Data from MySQL by Using an Amazon S3 Bucket</a> in the <i>Amazon Aurora
+        /// User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -9036,7 +8988,7 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action only applies to Aurora DB clusters.
+        /// This action only applies to Aurora DB clusters. The source DB engine must be MySQL.
         /// </para>
         ///  </note>
         /// </summary>

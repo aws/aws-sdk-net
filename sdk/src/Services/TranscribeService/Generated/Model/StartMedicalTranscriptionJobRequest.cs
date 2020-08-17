@@ -30,7 +30,7 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the StartMedicalTranscriptionJob operation.
-    /// Start a batch job to transcribe medical speech to text.
+    /// Starts a batch job to transcribe medical speech to text.
     /// </summary>
     public partial class StartMedicalTranscriptionJobRequest : AmazonTranscribeServiceRequest
     {
@@ -129,10 +129,11 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MedicalTranscriptionJobName. 
         /// <para>
-        /// The name of the medical transcription job. You can't use the strings "." or ".." by
-        /// themselves as the job name. The name must also be unique within an AWS account. If
-        /// you try to create a medical transcription job with the same name as a previous medical
-        /// transcription job you will receive a <code>ConflictException</code> error.
+        /// The name of the medical transcription job. You can't use the strings "<code>.</code>"
+        /// or "<code>..</code>" by themselves as the job name. The name must also be unique within
+        /// an AWS account. If you try to create a medical transcription job with the same name
+        /// as a previous medical transcription job, you get a <code>ConflictException</code>
+        /// error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

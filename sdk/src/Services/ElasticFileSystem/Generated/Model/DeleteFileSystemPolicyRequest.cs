@@ -51,7 +51,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Specifies the EFS file system for which to delete the <code>FileSystemPolicy</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=128)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }

@@ -34,6 +34,7 @@ namespace Amazon.GroundStation.Model
     public partial class DataflowEndpoint
     {
         private SocketAddress _address;
+        private int? _mtu;
         private string _name;
         private EndpointStatus _status;
 
@@ -53,6 +54,25 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetAddress()
         {
             return this._address != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mtu. 
+        /// <para>
+        /// Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1400, Max=1500)]
+        public int Mtu
+        {
+            get { return this._mtu.GetValueOrDefault(); }
+            set { this._mtu = value; }
+        }
+
+        // Check to see if Mtu property is set
+        internal bool IsSetMtu()
+        {
+            return this._mtu.HasValue; 
         }
 
         /// <summary>

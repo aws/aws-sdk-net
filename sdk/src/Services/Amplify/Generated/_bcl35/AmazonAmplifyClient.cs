@@ -35,8 +35,12 @@ namespace Amazon.Amplify
     /// <summary>
     /// Implementation for accessing Amplify
     ///
-    /// Amplify is a fully managed continuous deployment and hosting service for modern web
-    /// apps.
+    /// Amplify enables developers to develop and deploy cloud-powered mobile and web apps.
+    /// The Amplify Console provides a continuous delivery and hosting service for web applications.
+    /// For more information, see the <a href="https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html">Amplify
+    /// Console User Guide</a>. The Amplify Framework is a comprehensive set of SDKs, libraries,
+    /// tools, and documentation for client app development. For more information, see the
+    /// <a href="https://docs.amplify.aws/">Amplify Framework.</a>
     /// </summary>
     public partial class AmazonAmplifyClient : AmazonServiceClient, IAmazonAmplify
     {
@@ -240,26 +244,25 @@ namespace Amazon.Amplify
         #region  CreateApp
 
         /// <summary>
-        /// Creates a new Amplify App.
+        /// Creates a new Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApp service method.</param>
         /// 
         /// <returns>The response from the CreateApp service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
-        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// An operation failed because a dependent service threw an exception.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
-        /// Exception thrown when a resource could not be created because of service limits.
+        /// A resource could not be created because service quotas were exceeded.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateApp">REST API Reference for CreateApp Operation</seealso>
         public virtual CreateAppResponse CreateApp(CreateAppRequest request)
@@ -310,26 +313,25 @@ namespace Amazon.Amplify
         #region  CreateBackendEnvironment
 
         /// <summary>
-        /// Creates a new backend environment for an Amplify App.
+        /// Creates a new backend environment for an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBackendEnvironment service method.</param>
         /// 
         /// <returns>The response from the CreateBackendEnvironment service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
-        /// Exception thrown when a resource could not be created because of service limits.
+        /// A resource could not be created because service quotas were exceeded.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBackendEnvironment">REST API Reference for CreateBackendEnvironment Operation</seealso>
         public virtual CreateBackendEnvironmentResponse CreateBackendEnvironment(CreateBackendEnvironmentRequest request)
@@ -380,29 +382,28 @@ namespace Amazon.Amplify
         #region  CreateBranch
 
         /// <summary>
-        /// Creates a new Branch for an Amplify App.
+        /// Creates a new branch for an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBranch service method.</param>
         /// 
         /// <returns>The response from the CreateBranch service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
-        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// An operation failed because a dependent service threw an exception.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
-        /// Exception thrown when a resource could not be created because of service limits.
+        /// A resource could not be created because service quotas were exceeded.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBranch">REST API Reference for CreateBranch Operation</seealso>
         public virtual CreateBranchResponse CreateBranch(CreateBranchRequest request)
@@ -453,23 +454,23 @@ namespace Amazon.Amplify
         #region  CreateDeployment
 
         /// <summary>
-        /// Create a deployment for manual deploy apps. (Apps are not connected to repository)
+        /// Creates a deployment for a manually deployed Amplify app. Manually deployed apps
+        /// are not connected to a repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeployment service method.</param>
         /// 
         /// <returns>The response from the CreateDeployment service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
-        /// Exception thrown when a resource could not be created because of service limits.
+        /// A resource could not be created because service quotas were exceeded.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
@@ -520,29 +521,29 @@ namespace Amazon.Amplify
         #region  CreateDomainAssociation
 
         /// <summary>
-        /// Create a new DomainAssociation on an App
+        /// Creates a new domain association for an Amplify app. This action associates a custom
+        /// domain with the Amplify app
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomainAssociation service method.</param>
         /// 
         /// <returns>The response from the CreateDomainAssociation service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
-        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// An operation failed because a dependent service threw an exception.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
-        /// Exception thrown when a resource could not be created because of service limits.
+        /// A resource could not be created because service quotas were exceeded.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDomainAssociation">REST API Reference for CreateDomainAssociation Operation</seealso>
         public virtual CreateDomainAssociationResponse CreateDomainAssociation(CreateDomainAssociationRequest request)
@@ -593,29 +594,28 @@ namespace Amazon.Amplify
         #region  CreateWebhook
 
         /// <summary>
-        /// Create a new webhook on an App.
+        /// Creates a new webhook on an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebhook service method.</param>
         /// 
         /// <returns>The response from the CreateWebhook service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
-        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// An operation failed because a dependent service threw an exception.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
-        /// Exception thrown when a resource could not be created because of service limits.
+        /// A resource could not be created because service quotas were exceeded.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateWebhook">REST API Reference for CreateWebhook Operation</seealso>
         public virtual CreateWebhookResponse CreateWebhook(CreateWebhookRequest request)
@@ -666,26 +666,25 @@ namespace Amazon.Amplify
         #region  DeleteApp
 
         /// <summary>
-        /// Delete an existing Amplify App by appId.
+        /// Deletes an existing Amplify app specified by an app ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApp service method.</param>
         /// 
         /// <returns>The response from the DeleteApp service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
-        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// An operation failed because a dependent service threw an exception.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         public virtual DeleteAppResponse DeleteApp(DeleteAppRequest request)
@@ -736,26 +735,25 @@ namespace Amazon.Amplify
         #region  DeleteBackendEnvironment
 
         /// <summary>
-        /// Delete backend environment for an Amplify App.
+        /// Deletes a backend environment for an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBackendEnvironment service method.</param>
         /// 
         /// <returns>The response from the DeleteBackendEnvironment service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
-        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// An operation failed because a dependent service threw an exception.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBackendEnvironment">REST API Reference for DeleteBackendEnvironment Operation</seealso>
         public virtual DeleteBackendEnvironmentResponse DeleteBackendEnvironment(DeleteBackendEnvironmentRequest request)
@@ -806,26 +804,25 @@ namespace Amazon.Amplify
         #region  DeleteBranch
 
         /// <summary>
-        /// Deletes a branch for an Amplify App.
+        /// Deletes a branch for an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBranch service method.</param>
         /// 
         /// <returns>The response from the DeleteBranch service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
-        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// An operation failed because a dependent service threw an exception.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBranch">REST API Reference for DeleteBranch Operation</seealso>
         public virtual DeleteBranchResponse DeleteBranch(DeleteBranchRequest request)
@@ -876,26 +873,25 @@ namespace Amazon.Amplify
         #region  DeleteDomainAssociation
 
         /// <summary>
-        /// Deletes a DomainAssociation.
+        /// Deletes a domain association for an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomainAssociation service method.</param>
         /// 
         /// <returns>The response from the DeleteDomainAssociation service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
-        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// An operation failed because a dependent service threw an exception.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteDomainAssociation">REST API Reference for DeleteDomainAssociation Operation</seealso>
         public virtual DeleteDomainAssociationResponse DeleteDomainAssociation(DeleteDomainAssociationRequest request)
@@ -946,26 +942,25 @@ namespace Amazon.Amplify
         #region  DeleteJob
 
         /// <summary>
-        /// Delete a job, for an Amplify branch, part of Amplify App.
+        /// Deletes a job for a branch of an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteJob service method.</param>
         /// 
         /// <returns>The response from the DeleteJob service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
-        /// Exception thrown when a resource could not be created because of service limits.
+        /// A resource could not be created because service quotas were exceeded.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
         public virtual DeleteJobResponse DeleteJob(DeleteJobRequest request)
@@ -1022,20 +1017,19 @@ namespace Amazon.Amplify
         /// 
         /// <returns>The response from the DeleteWebhook service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
-        /// Exception thrown when a resource could not be created because of service limits.
+        /// A resource could not be created because service quotas were exceeded.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
         public virtual DeleteWebhookResponse DeleteWebhook(DeleteWebhookRequest request)
@@ -1086,23 +1080,22 @@ namespace Amazon.Amplify
         #region  GenerateAccessLogs
 
         /// <summary>
-        /// Retrieve website access logs for a specific time range via a pre-signed URL.
+        /// Returns the website access logs for a specific time range using a presigned URL.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateAccessLogs service method.</param>
         /// 
         /// <returns>The response from the GenerateAccessLogs service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GenerateAccessLogs">REST API Reference for GenerateAccessLogs Operation</seealso>
         public virtual GenerateAccessLogsResponse GenerateAccessLogs(GenerateAccessLogsRequest request)
@@ -1153,23 +1146,22 @@ namespace Amazon.Amplify
         #region  GetApp
 
         /// <summary>
-        /// Retrieves an existing Amplify App by appId.
+        /// Returns an existing Amplify app by appID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApp service method.</param>
         /// 
         /// <returns>The response from the GetApp service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetApp">REST API Reference for GetApp Operation</seealso>
         public virtual GetAppResponse GetApp(GetAppRequest request)
@@ -1220,26 +1212,25 @@ namespace Amazon.Amplify
         #region  GetArtifactUrl
 
         /// <summary>
-        /// Retrieves artifact info that corresponds to a artifactId.
+        /// Returns the artifact info that corresponds to an artifact id.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetArtifactUrl service method.</param>
         /// 
         /// <returns>The response from the GetArtifactUrl service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
-        /// Exception thrown when a resource could not be created because of service limits.
+        /// A resource could not be created because service quotas were exceeded.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetArtifactUrl">REST API Reference for GetArtifactUrl Operation</seealso>
         public virtual GetArtifactUrlResponse GetArtifactUrl(GetArtifactUrlRequest request)
@@ -1290,23 +1281,22 @@ namespace Amazon.Amplify
         #region  GetBackendEnvironment
 
         /// <summary>
-        /// Retrieves a backend environment for an Amplify App.
+        /// Returns a backend environment for an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBackendEnvironment service method.</param>
         /// 
         /// <returns>The response from the GetBackendEnvironment service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBackendEnvironment">REST API Reference for GetBackendEnvironment Operation</seealso>
         public virtual GetBackendEnvironmentResponse GetBackendEnvironment(GetBackendEnvironmentRequest request)
@@ -1357,23 +1347,22 @@ namespace Amazon.Amplify
         #region  GetBranch
 
         /// <summary>
-        /// Retrieves a branch for an Amplify App.
+        /// Returns a branch for an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBranch service method.</param>
         /// 
         /// <returns>The response from the GetBranch service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBranch">REST API Reference for GetBranch Operation</seealso>
         public virtual GetBranchResponse GetBranch(GetBranchRequest request)
@@ -1424,23 +1413,22 @@ namespace Amazon.Amplify
         #region  GetDomainAssociation
 
         /// <summary>
-        /// Retrieves domain info that corresponds to an appId and domainName.
+        /// Returns the domain information for an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDomainAssociation service method.</param>
         /// 
         /// <returns>The response from the GetDomainAssociation service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetDomainAssociation">REST API Reference for GetDomainAssociation Operation</seealso>
         public virtual GetDomainAssociationResponse GetDomainAssociation(GetDomainAssociationRequest request)
@@ -1491,26 +1479,25 @@ namespace Amazon.Amplify
         #region  GetJob
 
         /// <summary>
-        /// Get a job for a branch, part of an Amplify App.
+        /// Returns a job for a branch of an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJob service method.</param>
         /// 
         /// <returns>The response from the GetJob service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
-        /// Exception thrown when a resource could not be created because of service limits.
+        /// A resource could not be created because service quotas were exceeded.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetJob">REST API Reference for GetJob Operation</seealso>
         public virtual GetJobResponse GetJob(GetJobRequest request)
@@ -1561,26 +1548,25 @@ namespace Amazon.Amplify
         #region  GetWebhook
 
         /// <summary>
-        /// Retrieves webhook info that corresponds to a webhookId.
+        /// Returns the webhook information that corresponds to a specified webhook ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWebhook service method.</param>
         /// 
         /// <returns>The response from the GetWebhook service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
-        /// Exception thrown when a resource could not be created because of service limits.
+        /// A resource could not be created because service quotas were exceeded.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetWebhook">REST API Reference for GetWebhook Operation</seealso>
         public virtual GetWebhookResponse GetWebhook(GetWebhookRequest request)
@@ -1631,20 +1617,19 @@ namespace Amazon.Amplify
         #region  ListApps
 
         /// <summary>
-        /// Lists existing Amplify Apps.
+        /// Returns a list of the existing Amplify apps.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApps service method.</param>
         /// 
         /// <returns>The response from the ListApps service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListApps">REST API Reference for ListApps Operation</seealso>
         public virtual ListAppsResponse ListApps(ListAppsRequest request)
@@ -1695,23 +1680,22 @@ namespace Amazon.Amplify
         #region  ListArtifacts
 
         /// <summary>
-        /// List artifacts with an app, a branch, a job and an artifact type.
+        /// Returns a list of artifacts for a specified app, branch, and job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListArtifacts service method.</param>
         /// 
         /// <returns>The response from the ListArtifacts service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
-        /// Exception thrown when a resource could not be created because of service limits.
+        /// A resource could not be created because service quotas were exceeded.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListArtifacts">REST API Reference for ListArtifacts Operation</seealso>
         public virtual ListArtifactsResponse ListArtifacts(ListArtifactsRequest request)
@@ -1762,20 +1746,19 @@ namespace Amazon.Amplify
         #region  ListBackendEnvironments
 
         /// <summary>
-        /// Lists backend environments for an Amplify App.
+        /// Lists the backend environments for an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBackendEnvironments service method.</param>
         /// 
         /// <returns>The response from the ListBackendEnvironments service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBackendEnvironments">REST API Reference for ListBackendEnvironments Operation</seealso>
         public virtual ListBackendEnvironmentsResponse ListBackendEnvironments(ListBackendEnvironmentsRequest request)
@@ -1826,20 +1809,19 @@ namespace Amazon.Amplify
         #region  ListBranches
 
         /// <summary>
-        /// Lists branches for an Amplify App.
+        /// Lists the branches of an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBranches service method.</param>
         /// 
         /// <returns>The response from the ListBranches service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBranches">REST API Reference for ListBranches Operation</seealso>
         public virtual ListBranchesResponse ListBranches(ListBranchesRequest request)
@@ -1890,20 +1872,19 @@ namespace Amazon.Amplify
         #region  ListDomainAssociations
 
         /// <summary>
-        /// List domains with an app
+        /// Returns the domain associations for an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDomainAssociations service method.</param>
         /// 
         /// <returns>The response from the ListDomainAssociations service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListDomainAssociations">REST API Reference for ListDomainAssociations Operation</seealso>
         public virtual ListDomainAssociationsResponse ListDomainAssociations(ListDomainAssociationsRequest request)
@@ -1954,23 +1935,22 @@ namespace Amazon.Amplify
         #region  ListJobs
 
         /// <summary>
-        /// List Jobs for a branch, part of an Amplify App.
+        /// Lists the jobs for a branch of an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// 
         /// <returns>The response from the ListJobs service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
-        /// Exception thrown when a resource could not be created because of service limits.
+        /// A resource could not be created because service quotas were exceeded.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual ListJobsResponse ListJobs(ListJobsRequest request)
@@ -2021,20 +2001,19 @@ namespace Amazon.Amplify
         #region  ListTagsForResource
 
         /// <summary>
-        /// List tags for resource.
+        /// Returns a list of tags for a specified Amazon Resource Name (ARN).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.ResourceNotFoundException">
-        /// Exception thrown when an operation fails due to non-existent resource.
+        /// An operation failed due to a non-existent resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -2085,23 +2064,22 @@ namespace Amazon.Amplify
         #region  ListWebhooks
 
         /// <summary>
-        /// List webhooks with an app.
+        /// Returns a list of webhooks for an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWebhooks service method.</param>
         /// 
         /// <returns>The response from the ListWebhooks service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
-        /// Exception thrown when a resource could not be created because of service limits.
+        /// A resource could not be created because service quotas were exceeded.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListWebhooks">REST API Reference for ListWebhooks Operation</seealso>
         public virtual ListWebhooksResponse ListWebhooks(ListWebhooksRequest request)
@@ -2152,26 +2130,26 @@ namespace Amazon.Amplify
         #region  StartDeployment
 
         /// <summary>
-        /// Start a deployment for manual deploy apps. (Apps are not connected to repository)
+        /// Starts a deployment for a manually deployed app. Manually deployed apps are not connected
+        /// to a repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDeployment service method.</param>
         /// 
         /// <returns>The response from the StartDeployment service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
-        /// Exception thrown when a resource could not be created because of service limits.
+        /// A resource could not be created because service quotas were exceeded.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartDeployment">REST API Reference for StartDeployment Operation</seealso>
         public virtual StartDeploymentResponse StartDeployment(StartDeploymentRequest request)
@@ -2222,26 +2200,25 @@ namespace Amazon.Amplify
         #region  StartJob
 
         /// <summary>
-        /// Starts a new job for a branch, part of an Amplify App.
+        /// Starts a new job for a branch of an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartJob service method.</param>
         /// 
         /// <returns>The response from the StartJob service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
-        /// Exception thrown when a resource could not be created because of service limits.
+        /// A resource could not be created because service quotas were exceeded.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartJob">REST API Reference for StartJob Operation</seealso>
         public virtual StartJobResponse StartJob(StartJobRequest request)
@@ -2292,26 +2269,25 @@ namespace Amazon.Amplify
         #region  StopJob
 
         /// <summary>
-        /// Stop a job that is in progress, for an Amplify branch, part of Amplify App.
+        /// Stops a job that is in progress for a branch of an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopJob service method.</param>
         /// 
         /// <returns>The response from the StopJob service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
-        /// Exception thrown when a resource could not be created because of service limits.
+        /// A resource could not be created because service quotas were exceeded.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StopJob">REST API Reference for StopJob Operation</seealso>
         public virtual StopJobResponse StopJob(StopJobRequest request)
@@ -2362,20 +2338,19 @@ namespace Amazon.Amplify
         #region  TagResource
 
         /// <summary>
-        /// Tag resource with tag key and value.
+        /// Tags the resource with a tag key and value.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.ResourceNotFoundException">
-        /// Exception thrown when an operation fails due to non-existent resource.
+        /// An operation failed due to a non-existent resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -2426,20 +2401,19 @@ namespace Amazon.Amplify
         #region  UntagResource
 
         /// <summary>
-        /// Untag resource with resourceArn.
+        /// Untags a resource with a specified Amazon Resource Name (ARN).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.ResourceNotFoundException">
-        /// Exception thrown when an operation fails due to non-existent resource.
+        /// An operation failed due to a non-existent resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -2490,23 +2464,22 @@ namespace Amazon.Amplify
         #region  UpdateApp
 
         /// <summary>
-        /// Updates an existing Amplify App.
+        /// Updates an existing Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApp service method.</param>
         /// 
         /// <returns>The response from the UpdateApp service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
         public virtual UpdateAppResponse UpdateApp(UpdateAppRequest request)
@@ -2557,26 +2530,25 @@ namespace Amazon.Amplify
         #region  UpdateBranch
 
         /// <summary>
-        /// Updates a branch for an Amplify App.
+        /// Updates a branch for an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBranch service method.</param>
         /// 
         /// <returns>The response from the UpdateBranch service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
-        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// An operation failed because a dependent service threw an exception.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateBranch">REST API Reference for UpdateBranch Operation</seealso>
         public virtual UpdateBranchResponse UpdateBranch(UpdateBranchRequest request)
@@ -2627,26 +2599,25 @@ namespace Amazon.Amplify
         #region  UpdateDomainAssociation
 
         /// <summary>
-        /// Create a new DomainAssociation on an App
+        /// Creates a new domain association for an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainAssociation service method.</param>
         /// 
         /// <returns>The response from the UpdateDomainAssociation service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
-        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// An operation failed because a dependent service threw an exception.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateDomainAssociation">REST API Reference for UpdateDomainAssociation Operation</seealso>
         public virtual UpdateDomainAssociationResponse UpdateDomainAssociation(UpdateDomainAssociationRequest request)
@@ -2697,26 +2668,25 @@ namespace Amazon.Amplify
         #region  UpdateWebhook
 
         /// <summary>
-        /// Update a webhook.
+        /// Updates a webhook.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWebhook service method.</param>
         /// 
         /// <returns>The response from the UpdateWebhook service method, as returned by Amplify.</returns>
         /// <exception cref="Amazon.Amplify.Model.BadRequestException">
-        /// Exception thrown when a request contains unexpected data.
+        /// A request contains unexpected data.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
-        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// An operation failed because a dependent service threw an exception.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
-        /// Exception thrown when the service fails to perform an operation due to an internal
-        /// issue.
+        /// The service failed to perform an operation due to an internal issue.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.NotFoundException">
-        /// Exception thrown when an entity has not been found during an operation.
+        /// An entity was not found during an operation.
         /// </exception>
         /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
-        /// Exception thrown when an operation fails due to a lack of access.
+        /// An operation failed due to a lack of access.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateWebhook">REST API Reference for UpdateWebhook Operation</seealso>
         public virtual UpdateWebhookResponse UpdateWebhook(UpdateWebhookRequest request)

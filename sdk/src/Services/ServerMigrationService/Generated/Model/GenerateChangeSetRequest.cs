@@ -41,7 +41,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// ID of the application associated with the change set.
+        /// The ID of the application associated with the change set.
         /// </para>
         /// </summary>
         public string AppId
@@ -59,7 +59,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ChangesetFormat. 
         /// <para>
-        /// Format for the change set.
+        /// The format for the change set.
         /// </para>
         /// </summary>
         public OutputFormat ChangesetFormat

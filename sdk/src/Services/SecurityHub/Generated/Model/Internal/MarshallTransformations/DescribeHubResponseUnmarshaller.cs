@@ -51,6 +51,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AutoEnableControls", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.AutoEnableControls = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("HubArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -32,7 +32,15 @@ namespace Amazon.ConfigService.Model
     /// Container for the parameters to the PutRemediationExceptions operation.
     /// A remediation exception is when a specific resource is no longer considered for auto-remediation.
     /// This API adds a new exception or updates an exisiting exception for a specific resource
-    /// with a specific AWS Config rule.
+    /// with a specific AWS Config rule. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// AWS Config generates a remediation exception when a problem occurs executing a remediation
+    /// action to a specific resource. Remediation exceptions blocks auto-remediation until
+    /// the exception is cleared.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class PutRemediationExceptionsRequest : AmazonConfigServiceRequest
     {

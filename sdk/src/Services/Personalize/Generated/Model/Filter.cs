@@ -129,8 +129,9 @@ namespace Amazon.Personalize.Model
         /// </para>
         ///  
         /// <para>
-        /// Where "EVENT_TYPE" is the type of event to filter out. For more information, see Using
-        /// Filters with Amazon Personalize.
+        /// Where "EVENT_TYPE" is the type of event to filter out. For more information, see <a
+        /// href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters
+        /// with Amazon Personalize</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2500)]

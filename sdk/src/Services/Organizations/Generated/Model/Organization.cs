@@ -67,19 +67,16 @@ namespace Amazon.Organizations.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AvailablePolicyTypes. 
+        /// Gets and sets the property AvailablePolicyTypes. <important> 
         /// <para>
-        /// A list of policy types that are enabled for this organization. For example, if your
-        /// organization has all features enabled, then service control policies (SCPs) are included
-        /// in the list.
+        /// Do not use. This field is deprecated and doesn't provide complete information about
+        /// the policies in your organization.
         /// </para>
-        ///  <note> 
+        ///  </important> 
         /// <para>
-        /// Even if a policy type is shown as available in the organization, you can separately
-        /// enable and disable them at the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>.
-        /// Use <a>ListRoots</a> to see the status of a policy type in that root.
+        /// To determine the policies that are enabled and available for use in your organization,
+        /// use the <a>ListRoots</a> operation instead.
         /// </para>
-        ///  </note>
         /// </summary>
         public List<PolicyTypeSummary> AvailablePolicyTypes
         {
@@ -193,6 +190,7 @@ namespace Amazon.Organizations.Model
         /// string requires exactly 12 digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=12)]
         public string MasterAccountId
         {
             get { return this._masterAccountId; }

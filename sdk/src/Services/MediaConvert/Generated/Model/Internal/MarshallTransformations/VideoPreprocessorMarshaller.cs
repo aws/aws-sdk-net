@@ -100,6 +100,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPartnerWatermarking())
+            {
+                context.Writer.WritePropertyName("partnerWatermarking");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PartnerWatermarkingMarshaller.Instance;
+                marshaller.Marshall(requestObject.PartnerWatermarking, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTimecodeBurnin())
             {
                 context.Writer.WritePropertyName("timecodeBurnin");

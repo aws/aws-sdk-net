@@ -37,11 +37,12 @@ namespace Amazon.FraudDetector.Model
     public partial class PutExternalModelRequest : AmazonFraudDetectorRequest
     {
         private ModelInputConfiguration _inputConfiguration;
+        private string _invokeModelEndpointRoleArn;
         private string _modelEndpoint;
         private ModelEndpointStatus _modelEndpointStatus;
         private ModelSource _modelSource;
         private ModelOutputConfiguration _outputConfiguration;
-        private Role _role;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property InputConfiguration. 
@@ -63,12 +64,31 @@ namespace Amazon.FraudDetector.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InvokeModelEndpointRoleArn. 
+        /// <para>
+        /// The IAM role used to invoke the model endpoint.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string InvokeModelEndpointRoleArn
+        {
+            get { return this._invokeModelEndpointRoleArn; }
+            set { this._invokeModelEndpointRoleArn = value; }
+        }
+
+        // Check to see if InvokeModelEndpointRoleArn property is set
+        internal bool IsSetInvokeModelEndpointRoleArn()
+        {
+            return this._invokeModelEndpointRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ModelEndpoint. 
         /// <para>
         /// The model endpoints name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string ModelEndpoint
         {
             get { return this._modelEndpoint; }
@@ -139,22 +159,22 @@ namespace Amazon.FraudDetector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Role. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The IAM role used to invoke the model endpoint.
+        /// A collection of key and value pairs.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public Role Role
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
         {
-            get { return this._role; }
-            set { this._role = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if Role property is set
-        internal bool IsSetRole()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._role != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

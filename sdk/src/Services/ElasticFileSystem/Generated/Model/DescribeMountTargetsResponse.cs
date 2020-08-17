@@ -44,6 +44,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// this field.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Marker
         {
             get { return this._marker; }
@@ -83,6 +84,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// next set of mount targets.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string NextMarker
         {
             get { return this._nextMarker; }

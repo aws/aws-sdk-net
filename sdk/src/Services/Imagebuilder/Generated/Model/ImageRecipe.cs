@@ -44,6 +44,7 @@ namespace Amazon.Imagebuilder.Model
         private Platform _platform;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _version;
+        private string _workingDirectory;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -246,6 +247,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetVersion()
         {
             return this._version != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkingDirectory. 
+        /// <para>
+        /// The working directory to be used during build and test workflows.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string WorkingDirectory
+        {
+            get { return this._workingDirectory; }
+            set { this._workingDirectory = value; }
+        }
+
+        // Check to see if WorkingDirectory property is set
+        internal bool IsSetWorkingDirectory()
+        {
+            return this._workingDirectory != null;
         }
 
     }

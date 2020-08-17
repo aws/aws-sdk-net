@@ -42,6 +42,7 @@ namespace Amazon.ElasticFileSystem.Model
         private string _networkInterfaceId;
         private string _ownerId;
         private string _subnetId;
+        private string _vpcId;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZoneId. 
@@ -90,7 +91,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the file system for which the mount target is intended.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=128)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
@@ -109,6 +110,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Address at which the file system can be mounted by using the mount target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=15)]
         public string IpAddress
         {
             get { return this._ipAddress; }
@@ -146,7 +148,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// System-assigned mount target ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=13, Max=45)]
         public string MountTargetId
         {
             get { return this._mountTargetId; }
@@ -184,6 +186,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// AWS account ID that owns the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=14)]
         public string OwnerId
         {
             get { return this._ownerId; }
@@ -202,7 +205,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the mount target's subnet.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=15, Max=47)]
         public string SubnetId
         {
             get { return this._subnetId; }
@@ -213,6 +216,24 @@ namespace Amazon.ElasticFileSystem.Model
         internal bool IsSetSubnetId()
         {
             return this._subnetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The Virtual Private Cloud (VPC) ID that the mount target is configured in.
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
         }
 
     }

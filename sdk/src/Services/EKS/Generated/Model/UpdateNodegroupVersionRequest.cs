@@ -34,10 +34,19 @@ namespace Amazon.EKS.Model
     /// 
     ///  
     /// <para>
-    /// You can update to the latest available AMI version of a node group's current Kubernetes
-    /// version by not specifying a Kubernetes version in the request. You can update to the
-    /// latest AMI version of your cluster's current Kubernetes version by specifying your
-    /// cluster's Kubernetes version in the request. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
+    /// You can update a node group using a launch template only if the node group was originally
+    /// deployed with a launch template. If you need to update a custom AMI in a node group
+    /// that was deployed with a launch template, then update your custom AMI, specify the
+    /// new ID in a new version of the launch template, and then update the node group to
+    /// the new version of the launch template.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you update without a launch template, then you can update to the latest available
+    /// AMI version of a node group's current Kubernetes version by not specifying a Kubernetes
+    /// version in the request. You can update to the latest AMI version of your cluster's
+    /// current Kubernetes version by specifying your cluster's Kubernetes version in the
+    /// request. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
     /// EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>.
     /// </para>
     ///  
@@ -57,6 +66,7 @@ namespace Amazon.EKS.Model
         private string _clientRequestToken;
         private string _clusterName;
         private bool? _force;
+        private LaunchTemplateSpecification _launchTemplate;
         private string _nodegroupName;
         private string _releaseVersion;
         private string _version;
@@ -122,6 +132,26 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LaunchTemplate. 
+        /// <para>
+        /// An object representing a node group's launch template specification. You can only
+        /// update a node group using a launch template if the node group was originally deployed
+        /// with a launch template.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateSpecification LaunchTemplate
+        {
+            get { return this._launchTemplate; }
+            set { this._launchTemplate = value; }
+        }
+
+        // Check to see if LaunchTemplate property is set
+        internal bool IsSetLaunchTemplate()
+        {
+            return this._launchTemplate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NodegroupName. 
         /// <para>
         /// The name of the managed node group to update.
@@ -146,7 +176,11 @@ namespace Amazon.EKS.Model
         /// The AMI version of the Amazon EKS-optimized AMI to use for the update. By default,
         /// the latest available AMI version for the node group's Kubernetes version is used.
         /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-        /// EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.
+        /// EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>. If you
+        /// specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then
+        /// don't specify <code>releaseVersion</code>, or the node group update will fail. For
+        /// more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+        /// template support</a> in the Amazon EKS User Guide.
         /// </para>
         /// </summary>
         public string ReleaseVersion
@@ -167,7 +201,11 @@ namespace Amazon.EKS.Model
         /// The Kubernetes version to update to. If no version is specified, then the Kubernetes
         /// version of the node group does not change. You can specify the Kubernetes version
         /// of the cluster to update the node group to the latest AMI version of the cluster's
-        /// Kubernetes version.
+        /// Kubernetes version. If you specify <code>launchTemplate</code>, and your launch template
+        /// uses a custom AMI, then don't specify <code>version</code>, or the node group update
+        /// will fail. For more information about using launch templates with Amazon EKS, see
+        /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+        /// template support</a> in the Amazon EKS User Guide.
         /// </para>
         /// </summary>
         public string Version

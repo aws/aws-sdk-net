@@ -121,7 +121,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property ForecastTypes. 
         /// <para>
-        /// The quantiles at which proababilistic forecasts were generated.
+        /// The quantiles at which probabilistic forecasts were generated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

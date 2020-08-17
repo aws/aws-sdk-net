@@ -173,8 +173,19 @@ namespace Amazon.AppSync.Model
         /// <para>
         /// The new request mapping template.
         /// </para>
+        ///  
+        /// <para>
+        /// A resolver uses a request mapping template to convert a GraphQL expression into a
+        /// format that a data source can understand. Mapping templates are written in Apache
+        /// Velocity Template Language (VTL).
+        /// </para>
+        ///  
+        /// <para>
+        /// VTL request mapping templates are optional when using a Lambda data source. For all
+        /// other data sources, VTL request and response mapping templates are required.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=65536)]
+        [AWSProperty(Min=1, Max=65536)]
         public string RequestMappingTemplate
         {
             get { return this._requestMappingTemplate; }

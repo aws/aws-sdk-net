@@ -133,6 +133,60 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type AutoImportPolicyType.
+    /// </summary>
+    public class AutoImportPolicyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NEW for AutoImportPolicyType
+        /// </summary>
+        public static readonly AutoImportPolicyType NEW = new AutoImportPolicyType("NEW");
+        /// <summary>
+        /// Constant NEW_CHANGED for AutoImportPolicyType
+        /// </summary>
+        public static readonly AutoImportPolicyType NEW_CHANGED = new AutoImportPolicyType("NEW_CHANGED");
+        /// <summary>
+        /// Constant NONE for AutoImportPolicyType
+        /// </summary>
+        public static readonly AutoImportPolicyType NONE = new AutoImportPolicyType("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoImportPolicyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoImportPolicyType FindValue(string value)
+        {
+            return FindValue<AutoImportPolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoImportPolicyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BackupLifecycle.
     /// </summary>
     public class BackupLifecycle : ConstantClass
@@ -154,6 +208,10 @@ namespace Amazon.FSx
         /// Constant FAILED for BackupLifecycle
         /// </summary>
         public static readonly BackupLifecycle FAILED = new BackupLifecycle("FAILED");
+        /// <summary>
+        /// Constant TRANSFERRING for BackupLifecycle
+        /// </summary>
+        public static readonly BackupLifecycle TRANSFERRING = new BackupLifecycle("TRANSFERRING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -234,6 +292,68 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BackupType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataRepositoryLifecycle.
+    /// </summary>
+    public class DataRepositoryLifecycle : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for DataRepositoryLifecycle
+        /// </summary>
+        public static readonly DataRepositoryLifecycle AVAILABLE = new DataRepositoryLifecycle("AVAILABLE");
+        /// <summary>
+        /// Constant CREATING for DataRepositoryLifecycle
+        /// </summary>
+        public static readonly DataRepositoryLifecycle CREATING = new DataRepositoryLifecycle("CREATING");
+        /// <summary>
+        /// Constant DELETING for DataRepositoryLifecycle
+        /// </summary>
+        public static readonly DataRepositoryLifecycle DELETING = new DataRepositoryLifecycle("DELETING");
+        /// <summary>
+        /// Constant MISCONFIGURED for DataRepositoryLifecycle
+        /// </summary>
+        public static readonly DataRepositoryLifecycle MISCONFIGURED = new DataRepositoryLifecycle("MISCONFIGURED");
+        /// <summary>
+        /// Constant UPDATING for DataRepositoryLifecycle
+        /// </summary>
+        public static readonly DataRepositoryLifecycle UPDATING = new DataRepositoryLifecycle("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataRepositoryLifecycle(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataRepositoryLifecycle FindValue(string value)
+        {
+            return FindValue<DataRepositoryLifecycle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataRepositoryLifecycle(string value)
         {
             return FindValue(value);
         }
@@ -396,6 +516,56 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataRepositoryTaskType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DriveCacheType.
+    /// </summary>
+    public class DriveCacheType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for DriveCacheType
+        /// </summary>
+        public static readonly DriveCacheType NONE = new DriveCacheType("NONE");
+        /// <summary>
+        /// Constant READ for DriveCacheType
+        /// </summary>
+        public static readonly DriveCacheType READ = new DriveCacheType("READ");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DriveCacheType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DriveCacheType FindValue(string value)
+        {
+            return FindValue<DriveCacheType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DriveCacheType(string value)
         {
             return FindValue(value);
         }
@@ -582,6 +752,10 @@ namespace Amazon.FSx
         /// Constant FileSystemId for FilterName
         /// </summary>
         public static readonly FilterName FileSystemId = new FilterName("file-system-id");
+        /// <summary>
+        /// Constant FileSystemType for FilterName
+        /// </summary>
+        public static readonly FilterName FileSystemType = new FilterName("file-system-type");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

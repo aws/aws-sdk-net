@@ -51,6 +51,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AccountId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BackupSizeInBytes", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -97,6 +103,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RecoveryPointArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResourceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RestoreJobId", targetDepth))

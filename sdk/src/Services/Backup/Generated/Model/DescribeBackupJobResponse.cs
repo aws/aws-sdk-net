@@ -33,6 +33,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class DescribeBackupJobResponse : AmazonWebServiceResponse
     {
+        private string _accountId;
         private string _backupJobId;
         private long? _backupSizeInBytes;
         private string _backupVaultArn;
@@ -50,6 +51,24 @@ namespace Amazon.Backup.Model
         private DateTime? _startBy;
         private BackupJobState _state;
         private string _statusMessage;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// Returns the account ID that owns the backup job.
+        /// </para>
+        /// </summary>
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BackupJobId. 
@@ -149,7 +168,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CompletionDate. 
         /// <para>
         /// The date and time that a job to create a backup job is completed, in Unix format and
-        /// Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate
+        /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate
         /// to milliseconds. For example, the value 1516925490.087 represents Friday, January
         /// 26, 2018 12:11:30.087 AM.
         /// </para>

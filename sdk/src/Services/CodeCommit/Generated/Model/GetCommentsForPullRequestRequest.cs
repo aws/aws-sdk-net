@@ -31,6 +31,13 @@ namespace Amazon.CodeCommit.Model
     /// <summary>
     /// Container for the parameters to the GetCommentsForPullRequest operation.
     /// Returns comments made on a pull request.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Reaction counts might include numbers from user identities who were deleted after
+    /// the reaction was made. For a count of reactions from active identities, use GetCommentReactions.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetCommentsForPullRequestRequest : AmazonCodeCommitRequest
     {

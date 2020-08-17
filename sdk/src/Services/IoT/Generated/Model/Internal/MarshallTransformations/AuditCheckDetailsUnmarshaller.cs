@@ -94,6 +94,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.NonCompliantResourcesCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("suppressedNonCompliantResourcesCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.SuppressedNonCompliantResourcesCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("totalResourcesCount", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

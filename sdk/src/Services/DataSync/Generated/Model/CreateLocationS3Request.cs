@@ -138,7 +138,7 @@ namespace Amazon.DataSync.Model
         /// value can be an empty string. We recommend using tags to name your resources.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=55)]
+        [AWSProperty(Min=0, Max=50)]
         public List<TagListEntry> Tags
         {
             get { return this._tags; }

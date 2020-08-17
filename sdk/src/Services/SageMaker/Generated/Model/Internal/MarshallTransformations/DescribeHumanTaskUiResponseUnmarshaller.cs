@@ -69,6 +69,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.HumanTaskUiName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HumanTaskUiStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.HumanTaskUiStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UiTemplate", targetDepth))
                 {
                     var unmarshaller = UiTemplateInfoUnmarshaller.Instance;

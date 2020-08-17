@@ -1541,6 +1541,9 @@ namespace Amazon.AlexaForBusiness
         /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice">REST API Reference for RegisterAVSDevice Operation</seealso>
         Task<RegisterAVSDeviceResponse> RegisterAVSDeviceAsync(RegisterAVSDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 

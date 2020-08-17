@@ -82,6 +82,12 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
                     unmarshalledObject.Limits = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProactiveEngagementStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProactiveEngagementStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

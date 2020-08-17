@@ -100,7 +100,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserBucket. 
         /// <para>
-        /// The S3 bucket for the disk image.
+        /// The Amazon S3 bucket for the disk image.
         /// </para>
         /// </summary>
         public UserBucket UserBucket

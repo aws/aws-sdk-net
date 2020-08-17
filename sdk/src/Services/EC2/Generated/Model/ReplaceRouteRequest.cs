@@ -43,8 +43,10 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ReplaceRouteRequest : AmazonEC2Request
     {
+        private string _carrierGatewayId;
         private string _destinationCidrBlock;
         private string _destinationIpv6CidrBlock;
+        private string _destinationPrefixListId;
         private string _egressOnlyInternetGatewayId;
         private string _gatewayId;
         private string _instanceId;
@@ -55,6 +57,24 @@ namespace Amazon.EC2.Model
         private string _routeTableId;
         private string _transitGatewayId;
         private string _vpcPeeringConnectionId;
+
+        /// <summary>
+        /// Gets and sets the property CarrierGatewayId. 
+        /// <para>
+        /// [IPv4 traffic only] The ID of a carrier gateway.
+        /// </para>
+        /// </summary>
+        public string CarrierGatewayId
+        {
+            get { return this._carrierGatewayId; }
+            set { this._carrierGatewayId = value; }
+        }
+
+        // Check to see if CarrierGatewayId property is set
+        internal bool IsSetCarrierGatewayId()
+        {
+            return this._carrierGatewayId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DestinationCidrBlock. 
@@ -92,6 +112,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDestinationIpv6CidrBlock()
         {
             return this._destinationIpv6CidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationPrefixListId. 
+        /// <para>
+        /// The ID of the prefix list for the route.
+        /// </para>
+        /// </summary>
+        public string DestinationPrefixListId
+        {
+            get { return this._destinationPrefixListId; }
+            set { this._destinationPrefixListId = value; }
+        }
+
+        // Check to see if DestinationPrefixListId property is set
+        internal bool IsSetDestinationPrefixListId()
+        {
+            return this._destinationPrefixListId != null;
         }
 
         /// <summary>

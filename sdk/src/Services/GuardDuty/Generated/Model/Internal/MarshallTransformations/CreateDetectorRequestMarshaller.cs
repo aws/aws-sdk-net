@@ -77,6 +77,17 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetDataSources())
+                {
+                    context.Writer.WritePropertyName("dataSources");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataSourceConfigurationsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DataSources, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEnable())
                 {
                     context.Writer.WritePropertyName("enable");

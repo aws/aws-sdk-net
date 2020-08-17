@@ -125,6 +125,76 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type ColumnStatisticsType.
+    /// </summary>
+    public class ColumnStatisticsType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BINARY for ColumnStatisticsType
+        /// </summary>
+        public static readonly ColumnStatisticsType BINARY = new ColumnStatisticsType("BINARY");
+        /// <summary>
+        /// Constant BOOLEAN for ColumnStatisticsType
+        /// </summary>
+        public static readonly ColumnStatisticsType BOOLEAN = new ColumnStatisticsType("BOOLEAN");
+        /// <summary>
+        /// Constant DATE for ColumnStatisticsType
+        /// </summary>
+        public static readonly ColumnStatisticsType DATE = new ColumnStatisticsType("DATE");
+        /// <summary>
+        /// Constant DECIMAL for ColumnStatisticsType
+        /// </summary>
+        public static readonly ColumnStatisticsType DECIMAL = new ColumnStatisticsType("DECIMAL");
+        /// <summary>
+        /// Constant DOUBLE for ColumnStatisticsType
+        /// </summary>
+        public static readonly ColumnStatisticsType DOUBLE = new ColumnStatisticsType("DOUBLE");
+        /// <summary>
+        /// Constant LONG for ColumnStatisticsType
+        /// </summary>
+        public static readonly ColumnStatisticsType LONG = new ColumnStatisticsType("LONG");
+        /// <summary>
+        /// Constant STRING for ColumnStatisticsType
+        /// </summary>
+        public static readonly ColumnStatisticsType STRING = new ColumnStatisticsType("STRING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ColumnStatisticsType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ColumnStatisticsType FindValue(string value)
+        {
+            return FindValue<ColumnStatisticsType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ColumnStatisticsType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Comparator.
     /// </summary>
     public class Comparator : ConstantClass
@@ -249,6 +319,18 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionPropertyKey KAFKA_BOOTSTRAP_SERVERS = new ConnectionPropertyKey("KAFKA_BOOTSTRAP_SERVERS");
         /// <summary>
+        /// Constant KAFKA_CUSTOM_CERT for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_CUSTOM_CERT = new ConnectionPropertyKey("KAFKA_CUSTOM_CERT");
+        /// <summary>
+        /// Constant KAFKA_SKIP_CUSTOM_CERT_VALIDATION for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SKIP_CUSTOM_CERT_VALIDATION = new ConnectionPropertyKey("KAFKA_SKIP_CUSTOM_CERT_VALIDATION");
+        /// <summary>
+        /// Constant KAFKA_SSL_ENABLED for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SSL_ENABLED = new ConnectionPropertyKey("KAFKA_SSL_ENABLED");
+        /// <summary>
         /// Constant PASSWORD for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey PASSWORD = new ConnectionPropertyKey("PASSWORD");
@@ -318,6 +400,10 @@ namespace Amazon.Glue
         /// Constant MONGODB for ConnectionType
         /// </summary>
         public static readonly ConnectionType MONGODB = new ConnectionType("MONGODB");
+        /// <summary>
+        /// Constant NETWORK for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType NETWORK = new ConnectionType("NETWORK");
         /// <summary>
         /// Constant SFTP for ConnectionType
         /// </summary>
@@ -576,6 +662,56 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DeleteBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EnableHybridValues.
+    /// </summary>
+    public class EnableHybridValues : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FALSE for EnableHybridValues
+        /// </summary>
+        public static readonly EnableHybridValues FALSE = new EnableHybridValues("FALSE");
+        /// <summary>
+        /// Constant TRUE for EnableHybridValues
+        /// </summary>
+        public static readonly EnableHybridValues TRUE = new EnableHybridValues("TRUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EnableHybridValues(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnableHybridValues FindValue(string value)
+        {
+            return FindValue<EnableHybridValues>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnableHybridValues(string value)
         {
             return FindValue(value);
         }
@@ -1136,6 +1272,56 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PrincipalType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceShareType.
+    /// </summary>
+    public class ResourceShareType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ResourceShareType
+        /// </summary>
+        public static readonly ResourceShareType ALL = new ResourceShareType("ALL");
+        /// <summary>
+        /// Constant FOREIGN for ResourceShareType
+        /// </summary>
+        public static readonly ResourceShareType FOREIGN = new ResourceShareType("FOREIGN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceShareType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceShareType FindValue(string value)
+        {
+            return FindValue<ResourceShareType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceShareType(string value)
         {
             return FindValue(value);
         }
@@ -1994,6 +2180,10 @@ namespace Amazon.Glue
         /// Constant COMPLETED for WorkflowRunStatus
         /// </summary>
         public static readonly WorkflowRunStatus COMPLETED = new WorkflowRunStatus("COMPLETED");
+        /// <summary>
+        /// Constant ERROR for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus ERROR = new WorkflowRunStatus("ERROR");
         /// <summary>
         /// Constant RUNNING for WorkflowRunStatus
         /// </summary>

@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Tag resource with tag key and value.
+    /// Tags the resource with a tag key and value.
     /// </summary>
     public partial class TagResourceRequest : AmazonAmplifyRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  Resource arn used to tag resource. 
+        ///  The Amazon Resource Name (ARN) to use to tag a resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  Tags used to tag resource. 
+        ///  The tags used to tag the resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

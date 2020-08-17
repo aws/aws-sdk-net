@@ -143,6 +143,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ExtraConnectionAttributes);
                 }
 
+                if(publicRequest.IsSetIBMDb2Settings())
+                {
+                    context.Writer.WritePropertyName("IBMDb2Settings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IBMDb2SettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IBMDb2Settings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetKafkaSettings())
                 {
                     context.Writer.WritePropertyName("KafkaSettings");
@@ -171,6 +182,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KmsKeyId);
                 }
 
+                if(publicRequest.IsSetMicrosoftSQLServerSettings())
+                {
+                    context.Writer.WritePropertyName("MicrosoftSQLServerSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MicrosoftSQLServerSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MicrosoftSQLServerSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMongoDbSettings())
                 {
                     context.Writer.WritePropertyName("MongoDbSettings");
@@ -178,6 +200,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
                     var marshaller = MongoDbSettingsMarshaller.Instance;
                     marshaller.Marshall(publicRequest.MongoDbSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMySQLSettings())
+                {
+                    context.Writer.WritePropertyName("MySQLSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MySQLSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MySQLSettings, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -193,6 +226,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOracleSettings())
+                {
+                    context.Writer.WritePropertyName("OracleSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OracleSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OracleSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPassword())
                 {
                     context.Writer.WritePropertyName("Password");
@@ -203,6 +247,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Port");
                     context.Writer.Write(publicRequest.Port);
+                }
+
+                if(publicRequest.IsSetPostgreSQLSettings())
+                {
+                    context.Writer.WritePropertyName("PostgreSQLSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PostgreSQLSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PostgreSQLSettings, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetRedshiftSettings())
@@ -243,6 +298,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("SslMode");
                     context.Writer.Write(publicRequest.SslMode);
+                }
+
+                if(publicRequest.IsSetSybaseSettings())
+                {
+                    context.Writer.WritePropertyName("SybaseSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SybaseSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SybaseSettings, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetTags())

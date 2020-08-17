@@ -34,9 +34,58 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class DataRepositoryConfiguration
     {
+        private AutoImportPolicyType _autoImportPolicy;
         private string _exportPath;
+        private DataRepositoryFailureDetails _failureDetails;
         private int? _importedFileChunkSize;
         private string _importPath;
+        private DataRepositoryLifecycle _lifecycle;
+
+        /// <summary>
+        /// Gets and sets the property AutoImportPolicy. 
+        /// <para>
+        /// Describes the file system's linked S3 data repository's <code>AutoImportPolicy</code>.
+        /// The AutoImportPolicy configures how your FSx for Lustre file system automatically
+        /// updates its contents with changes that occur in the linked S3 data repository. <code>AutoImportPolicy</code>
+        /// can have the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository
+        /// are not reflected on the FSx file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NEW</code> - AutoImport is on. New files in the linked data repository that
+        /// do not currently exist in the FSx file system are automatically imported. Updates
+        /// to existing FSx files are not imported to the FSx file system. Files deleted from
+        /// the linked data repository are not deleted from the FSx file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository
+        /// that do not currently exist in the FSx file system are automatically imported. Changes
+        /// to existing FSx files in the linked repository are also automatically imported to
+        /// the FSx file system. Files deleted from the linked data repository are not deleted
+        /// from the FSx file system. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
+        /// import updates from your S3 bucket</a>.
+        /// </para>
+        /// </summary>
+        public AutoImportPolicyType AutoImportPolicy
+        {
+            get { return this._autoImportPolicy; }
+            set { this._autoImportPolicy = value; }
+        }
+
+        // Check to see if AutoImportPolicy property is set
+        internal bool IsSetAutoImportPolicy()
+        {
+            return this._autoImportPolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExportPath. 
@@ -56,6 +105,21 @@ namespace Amazon.FSx.Model
         internal bool IsSetExportPath()
         {
             return this._exportPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureDetails.
+        /// </summary>
+        public DataRepositoryFailureDetails FailureDetails
+        {
+            get { return this._failureDetails; }
+            set { this._failureDetails = value; }
+        }
+
+        // Check to see if FailureDetails property is set
+        internal bool IsSetFailureDetails()
+        {
+            return this._failureDetails != null;
         }
 
         /// <summary>
@@ -105,6 +169,47 @@ namespace Amazon.FSx.Model
         internal bool IsSetImportPath()
         {
             return this._importPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Lifecycle. 
+        /// <para>
+        /// Describes the state of the file system's S3 durable data repository, if it is configured
+        /// with an S3 repository. The lifecycle can have the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATING</code> - The data repository configuration between the FSx file system
+        /// and the linked S3 data repository is being created. The data repository is unavailable.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AVAILABLE</code> - The data repository is available for use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from
+        /// the S3 bucket until the data repository configuration is corrected. For more information,
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository">Troubleshooting
+        /// a Misconfigured linked S3 bucket</a>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATING</code> - The data repository is undergoing a customer initiated update
+        /// and availability may be impacted.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public DataRepositoryLifecycle Lifecycle
+        {
+            get { return this._lifecycle; }
+            set { this._lifecycle = value; }
+        }
+
+        // Check to see if Lifecycle property is set
+        internal bool IsSetLifecycle()
+        {
+            return this._lifecycle != null;
         }
 
     }

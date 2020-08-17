@@ -78,6 +78,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EndTime);
                 }
 
+                if(publicRequest.IsSetListSuppressedFindings())
+                {
+                    context.Writer.WritePropertyName("listSuppressedFindings");
+                    context.Writer.Write(publicRequest.ListSuppressedFindings);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");

@@ -36,6 +36,7 @@ namespace Amazon.ElasticFileSystem.Model
         private DateTime? _creationTime;
         private string _creationToken;
         private bool? _encrypted;
+        private string _fileSystemArn;
         private string _fileSystemId;
         private string _kmsKeyId;
         private LifeCycleState _lifeCycleState;
@@ -105,12 +106,32 @@ namespace Amazon.ElasticFileSystem.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FileSystemArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+        /// </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+        /// 
+        /// </para>
+        /// </summary>
+        public string FileSystemArn
+        {
+            get { return this._fileSystemArn; }
+            set { this._fileSystemArn = value; }
+        }
+
+        // Check to see if FileSystemArn property is set
+        internal bool IsSetFileSystemArn()
+        {
+            return this._fileSystemArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
         /// The ID of the file system, assigned by Amazon EFS.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=128)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
@@ -130,7 +151,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// used to protect the encrypted file system.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -210,7 +231,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// IAM user, the parent account to which the user belongs is the owner.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=14)]
         public string OwnerId
         {
             get { return this._ownerId; }

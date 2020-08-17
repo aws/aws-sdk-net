@@ -35,7 +35,7 @@ namespace Amazon.WorkSpaces.Model
     ///  
     /// <para>
     /// You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>,
-    /// <code>UNHEALTHY</code>, or <code>STOPPED</code>.
+    /// <code>UNHEALTHY</code>, <code>STOPPED</code>, or <code>REBOOTING</code>.
     /// </para>
     ///  
     /// <para>

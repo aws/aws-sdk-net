@@ -31,8 +31,8 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the AddCache operation.
     /// Configures one or more gateway local disks as cache for a gateway. This operation
-    /// is only supported in the cached volume, tape and file gateway type (see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
-    /// Gateway Concepts</a>).
+    /// is only supported in the cached volume, tape, and file gateway type (see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">How
+    /// AWS Storage Gateway works (architecture)</a>.
     /// 
     ///  
     /// <para>

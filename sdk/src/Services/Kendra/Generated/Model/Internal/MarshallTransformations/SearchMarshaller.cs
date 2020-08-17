@@ -63,6 +63,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Searchable);
             }
 
+            if(requestObject.IsSetSortable())
+            {
+                context.Writer.WritePropertyName("Sortable");
+                context.Writer.Write(requestObject.Sortable);
+            }
+
         }
 
         /// <summary>

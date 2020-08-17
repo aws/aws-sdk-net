@@ -65,18 +65,24 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _externalId;
         private string _externalTableDefinition;
         private string _extraConnectionAttributes;
+        private IBMDb2Settings _ibmDb2Settings;
         private KafkaSettings _kafkaSettings;
         private KinesisSettings _kinesisSettings;
         private string _kmsKeyId;
+        private MicrosoftSQLServerSettings _microsoftSQLServerSettings;
         private MongoDbSettings _mongoDbSettings;
+        private MySQLSettings _mySQLSettings;
         private NeptuneSettings _neptuneSettings;
+        private OracleSettings _oracleSettings;
         private int? _port;
+        private PostgreSQLSettings _postgreSQLSettings;
         private RedshiftSettings _redshiftSettings;
         private S3Settings _s3Settings;
         private string _serverName;
         private string _serviceAccessRoleArn;
         private DmsSslModeValue _sslMode;
         private string _status;
+        private SybaseSettings _sybaseSettings;
         private string _username;
 
         /// <summary>
@@ -165,7 +171,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DynamoDbSettings. 
         /// <para>
-        /// The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+        /// The settings for the DynamoDB target endpoint. For more information, see the <code>DynamoDBSettings</code>
         /// structure.
         /// </para>
         /// </summary>
@@ -283,7 +289,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
         /// <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
         /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-        /// and <code>"sqlserver"</code>.
+        /// <code>"sqlserver"</code>, and <code>"neptune"</code>.
         /// </para>
         /// </summary>
         public string EngineName
@@ -355,6 +361,25 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IBMDb2Settings. 
+        /// <para>
+        /// The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code>
+        /// structure. 
+        /// </para>
+        /// </summary>
+        public IBMDb2Settings IBMDb2Settings
+        {
+            get { return this._ibmDb2Settings; }
+            set { this._ibmDb2Settings = value; }
+        }
+
+        // Check to see if IBMDb2Settings property is set
+        internal bool IsSetIBMDb2Settings()
+        {
+            return this._ibmDb2Settings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KafkaSettings. 
         /// <para>
         /// The settings for the Apache Kafka target endpoint. For more information, see the <code>KafkaSettings</code>
@@ -422,6 +447,25 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MicrosoftSQLServerSettings. 
+        /// <para>
+        /// The settings for the Microsoft SQL Server source and target endpoint. For more information,
+        /// see the <code>MicrosoftSQLServerSettings</code> structure.
+        /// </para>
+        /// </summary>
+        public MicrosoftSQLServerSettings MicrosoftSQLServerSettings
+        {
+            get { return this._microsoftSQLServerSettings; }
+            set { this._microsoftSQLServerSettings = value; }
+        }
+
+        // Check to see if MicrosoftSQLServerSettings property is set
+        internal bool IsSetMicrosoftSQLServerSettings()
+        {
+            return this._microsoftSQLServerSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MongoDbSettings. 
         /// <para>
         /// The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code>
@@ -441,10 +485,29 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MySQLSettings. 
+        /// <para>
+        /// The settings for the MySQL source and target endpoint. For more information, see the
+        /// <code>MySQLSettings</code> structure.
+        /// </para>
+        /// </summary>
+        public MySQLSettings MySQLSettings
+        {
+            get { return this._mySQLSettings; }
+            set { this._mySQLSettings = value; }
+        }
+
+        // Check to see if MySQLSettings property is set
+        internal bool IsSetMySQLSettings()
+        {
+            return this._mySQLSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NeptuneSettings. 
         /// <para>
-        /// The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
-        /// structure.
+        /// The settings for the Amazon Neptune target endpoint. For more information, see the
+        /// <code>NeptuneSettings</code> structure.
         /// </para>
         /// </summary>
         public NeptuneSettings NeptuneSettings
@@ -457,6 +520,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetNeptuneSettings()
         {
             return this._neptuneSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OracleSettings. 
+        /// <para>
+        /// The settings for the Oracle source and target endpoint. For more information, see
+        /// the <code>OracleSettings</code> structure.
+        /// </para>
+        /// </summary>
+        public OracleSettings OracleSettings
+        {
+            get { return this._oracleSettings; }
+            set { this._oracleSettings = value; }
+        }
+
+        // Check to see if OracleSettings property is set
+        internal bool IsSetOracleSettings()
+        {
+            return this._oracleSettings != null;
         }
 
         /// <summary>
@@ -475,6 +557,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PostgreSQLSettings. 
+        /// <para>
+        /// The settings for the PostgreSQL source and target endpoint. For more information,
+        /// see the <code>PostgreSQLSettings</code> structure.
+        /// </para>
+        /// </summary>
+        public PostgreSQLSettings PostgreSQLSettings
+        {
+            get { return this._postgreSQLSettings; }
+            set { this._postgreSQLSettings = value; }
+        }
+
+        // Check to see if PostgreSQLSettings property is set
+        internal bool IsSetPostgreSQLSettings()
+        {
+            return this._postgreSQLSettings != null;
         }
 
         /// <summary>
@@ -584,6 +685,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SybaseSettings. 
+        /// <para>
+        /// The settings for the SAP ASE source and target endpoint. For more information, see
+        /// the <code>SybaseSettings</code> structure.
+        /// </para>
+        /// </summary>
+        public SybaseSettings SybaseSettings
+        {
+            get { return this._sybaseSettings; }
+            set { this._sybaseSettings = value; }
+        }
+
+        // Check to see if SybaseSettings property is set
+        internal bool IsSetSybaseSettings()
+        {
+            return this._sybaseSettings != null;
         }
 
         /// <summary>

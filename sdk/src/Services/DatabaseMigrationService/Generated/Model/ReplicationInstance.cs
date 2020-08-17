@@ -115,7 +115,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DnsNameServers. 
         /// <para>
-        /// The DNS name servers for the replication instance.
+        /// The DNS name servers supported for the replication instance to access your on-premise
+        /// source or target database.
         /// </para>
         /// </summary>
         public string DnsNameServers
@@ -310,12 +311,14 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationInstanceClass. 
         /// <para>
-        /// The compute and memory capacity of the replication instance.
+        /// The compute and memory capacity of the replication instance as defined for the specified
+        /// replication instance class.
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-        /// dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> 
+        /// For more information on the settings and capacities for the available replication
+        /// instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+        /// Selecting the right AWS DMS replication instance for your migration</a>. 
         /// </para>
         /// </summary>
         public string ReplicationInstanceClass
@@ -341,7 +344,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
+        /// Must contain 1-63 alphanumeric characters or hyphens.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -445,8 +448,61 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationInstanceStatus. 
         /// <para>
-        /// The status of the replication instance.
+        /// The status of the replication instance. The possible return values include:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>"available"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"creating"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"deleted"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"deleting"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"failed"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"modifying"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"upgrading"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"rebooting"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"resetting-master-credentials"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"storage-full"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"incompatible-credentials"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"incompatible-network"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"maintenance"</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ReplicationInstanceStatus
         {

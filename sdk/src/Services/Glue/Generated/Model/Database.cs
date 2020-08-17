@@ -34,12 +34,33 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class Database
     {
+        private string _catalogId;
         private List<PrincipalPermissions> _createTableDefaultPermissions = new List<PrincipalPermissions>();
         private DateTime? _createTime;
         private string _description;
         private string _locationUri;
         private string _name;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private DatabaseIdentifier _targetDatabase;
+
+        /// <summary>
+        /// Gets and sets the property CatalogId. 
+        /// <para>
+        /// The ID of the Data Catalog in which the database resides.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string CatalogId
+        {
+            get { return this._catalogId; }
+            set { this._catalogId = value; }
+        }
+
+        // Check to see if CatalogId property is set
+        internal bool IsSetCatalogId()
+        {
+            return this._catalogId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreateTableDefaultPermissions. 
@@ -151,6 +172,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetDatabase. 
+        /// <para>
+        /// A <code>DatabaseIdentifier</code> structure that describes a target database for resource
+        /// linking.
+        /// </para>
+        /// </summary>
+        public DatabaseIdentifier TargetDatabase
+        {
+            get { return this._targetDatabase; }
+            set { this._targetDatabase = value; }
+        }
+
+        // Check to see if TargetDatabase property is set
+        internal bool IsSetTargetDatabase()
+        {
+            return this._targetDatabase != null;
         }
 
     }

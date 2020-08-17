@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     public partial class DeleteResourcePolicyRequest : AmazonGlueRequest
     {
         private string _policyHashCondition;
+        private string _resourceArn;
 
         /// <summary>
         /// Gets and sets the property PolicyHashCondition. 
@@ -53,6 +54,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetPolicyHashCondition()
         {
             return this._policyHashCondition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The ARN of the AWS Glue resource for the resource policy to be deleted.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10240)]
+        public string ResourceArn
+        {
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
+        }
+
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
+        {
+            return this._resourceArn != null;
         }
 
     }

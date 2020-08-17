@@ -63,7 +63,7 @@ namespace Amazon.FraudDetector.Model
         /// The ID of the detector version to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public string DetectorVersionId
         {
             get { return this._detectorVersionId; }

@@ -33,9 +33,29 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class DescribeDetectorResponse : AmazonWebServiceResponse
     {
+        private string _arn;
         private string _detectorId;
         private List<DetectorVersionSummary> _detectorVersionSummaries = new List<DetectorVersionSummary>();
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The detector ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DetectorId. 

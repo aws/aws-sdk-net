@@ -228,7 +228,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code>
+        /// The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code>
         /// can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>)
         /// and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
         /// </para>
@@ -315,7 +315,7 @@ namespace Amazon.SQS.Model
         /// <para>
         /// Currently, the only supported message system attribute is <code>AWSTraceHeader</code>.
         /// Its type must be <code>String</code> and its value must be a correctly formatted AWS
-        /// X-Ray trace string.
+        /// X-Ray trace header string.
         /// </para>
         ///  </li> <li> 
         /// <para>

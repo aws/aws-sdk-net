@@ -31,7 +31,8 @@ namespace Amazon.SimpleEmailV2.Model
     /// <summary>
     /// Container for the parameters to the GetEmailIdentity operation.
     /// Provides information about a specific identity, including the identity's verification
-    /// status, its DKIM authentication status, and its custom Mail-From settings.
+    /// status, sending authorization policies, its DKIM authentication status, and its custom
+    /// Mail-From settings.
     /// </summary>
     public partial class GetEmailIdentityRequest : AmazonSimpleEmailServiceV2Request
     {
@@ -43,7 +44,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// The email identity that you want to retrieve details for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public string EmailIdentity
         {
             get { return this._emailIdentity; }

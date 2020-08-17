@@ -1650,6 +1650,104 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  DeleteColumnStatisticsForPartition
+
+        internal virtual DeleteColumnStatisticsForPartitionResponse DeleteColumnStatisticsForPartition(DeleteColumnStatisticsForPartitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteColumnStatisticsForPartitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteColumnStatisticsForPartitionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteColumnStatisticsForPartitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete the partition column statistics of a column.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteColumnStatisticsForPartition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteColumnStatisticsForPartition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForPartition">REST API Reference for DeleteColumnStatisticsForPartition Operation</seealso>
+        public virtual Task<DeleteColumnStatisticsForPartitionResponse> DeleteColumnStatisticsForPartitionAsync(DeleteColumnStatisticsForPartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteColumnStatisticsForPartitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteColumnStatisticsForPartitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteColumnStatisticsForPartitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteColumnStatisticsForTable
+
+        internal virtual DeleteColumnStatisticsForTableResponse DeleteColumnStatisticsForTable(DeleteColumnStatisticsForTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteColumnStatisticsForTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteColumnStatisticsForTableResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteColumnStatisticsForTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves table statistics of columns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteColumnStatisticsForTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteColumnStatisticsForTable service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForTable">REST API Reference for DeleteColumnStatisticsForTable Operation</seealso>
+        public virtual Task<DeleteColumnStatisticsForTableResponse> DeleteColumnStatisticsForTableAsync(DeleteColumnStatisticsForTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteColumnStatisticsForTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteColumnStatisticsForTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteColumnStatisticsForTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteConnection
 
         internal virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
@@ -2439,6 +2537,104 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = GetClassifiersResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetClassifiersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetColumnStatisticsForPartition
+
+        internal virtual GetColumnStatisticsForPartitionResponse GetColumnStatisticsForPartition(GetColumnStatisticsForPartitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetColumnStatisticsForPartitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetColumnStatisticsForPartitionResponseUnmarshaller.Instance;
+
+            return Invoke<GetColumnStatisticsForPartitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves partition statistics of columns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetColumnStatisticsForPartition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetColumnStatisticsForPartition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForPartition">REST API Reference for GetColumnStatisticsForPartition Operation</seealso>
+        public virtual Task<GetColumnStatisticsForPartitionResponse> GetColumnStatisticsForPartitionAsync(GetColumnStatisticsForPartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetColumnStatisticsForPartitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetColumnStatisticsForPartitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetColumnStatisticsForPartitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetColumnStatisticsForTable
+
+        internal virtual GetColumnStatisticsForTableResponse GetColumnStatisticsForTable(GetColumnStatisticsForTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetColumnStatisticsForTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetColumnStatisticsForTableResponseUnmarshaller.Instance;
+
+            return Invoke<GetColumnStatisticsForTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves table statistics of columns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetColumnStatisticsForTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetColumnStatisticsForTable service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForTable">REST API Reference for GetColumnStatisticsForTable Operation</seealso>
+        public virtual Task<GetColumnStatisticsForTableResponse> GetColumnStatisticsForTableAsync(GetColumnStatisticsForTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetColumnStatisticsForTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetColumnStatisticsForTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetColumnStatisticsForTableResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3560,6 +3756,60 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = GetPlanResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetPlanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetResourcePolicies
+
+        internal virtual GetResourcePoliciesResponse GetResourcePolicies(GetResourcePoliciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePoliciesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the security configurations for the resource policies set on individual
+        /// resources, and also the account-level policy.
+        /// 
+        ///  
+        /// <para>
+        /// This operation also returns the Data Catalog resource policy. However, if you enabled
+        /// metadata encryption in Data Catalog settings, and you do not have permission on the
+        /// AWS KMS key, the operation can't return the Data Catalog resource policy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePolicies service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicies">REST API Reference for GetResourcePolicies Operation</seealso>
+        public virtual Task<GetResourcePoliciesResponse> GetResourcePoliciesAsync(GetResourcePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetResourcePoliciesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4858,6 +5108,60 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ResumeWorkflowRun
+
+        internal virtual ResumeWorkflowRunResponse ResumeWorkflowRun(ResumeWorkflowRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeWorkflowRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeWorkflowRunResponseUnmarshaller.Instance;
+
+            return Invoke<ResumeWorkflowRunResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Restarts selected nodes of a previous partially completed workflow run and resumes
+        /// the workflow run. The selected nodes and all nodes that are downstream from the selected
+        /// nodes are run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeWorkflowRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResumeWorkflowRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentRunsExceededException">
+        /// Too many jobs are being run concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalWorkflowStateException">
+        /// The workflow is in an invalid state to perform a requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResumeWorkflowRun">REST API Reference for ResumeWorkflowRun Operation</seealso>
+        public virtual Task<ResumeWorkflowRunResponse> ResumeWorkflowRunAsync(ResumeWorkflowRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeWorkflowRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeWorkflowRunResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResumeWorkflowRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SearchTables
 
         internal virtual SearchTablesResponse SearchTables(SearchTablesRequest request)
@@ -5761,6 +6065,104 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = UpdateClassifierResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateClassifierResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateColumnStatisticsForPartition
+
+        internal virtual UpdateColumnStatisticsForPartitionResponse UpdateColumnStatisticsForPartition(UpdateColumnStatisticsForPartitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateColumnStatisticsForPartitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateColumnStatisticsForPartitionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateColumnStatisticsForPartitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates or updates partition statistics of columns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateColumnStatisticsForPartition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateColumnStatisticsForPartition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForPartition">REST API Reference for UpdateColumnStatisticsForPartition Operation</seealso>
+        public virtual Task<UpdateColumnStatisticsForPartitionResponse> UpdateColumnStatisticsForPartitionAsync(UpdateColumnStatisticsForPartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateColumnStatisticsForPartitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateColumnStatisticsForPartitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateColumnStatisticsForPartitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateColumnStatisticsForTable
+
+        internal virtual UpdateColumnStatisticsForTableResponse UpdateColumnStatisticsForTable(UpdateColumnStatisticsForTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateColumnStatisticsForTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateColumnStatisticsForTableResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateColumnStatisticsForTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates or updates table statistics of columns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateColumnStatisticsForTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateColumnStatisticsForTable service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForTable">REST API Reference for UpdateColumnStatisticsForTable Operation</seealso>
+        public virtual Task<UpdateColumnStatisticsForTableResponse> UpdateColumnStatisticsForTableAsync(UpdateColumnStatisticsForTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateColumnStatisticsForTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateColumnStatisticsForTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateColumnStatisticsForTableResponse>(request, options, cancellationToken);
         }
 
         #endregion

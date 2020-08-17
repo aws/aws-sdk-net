@@ -45,6 +45,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAwsAutoScalingAutoScalingGroup())
+            {
+                context.Writer.WritePropertyName("AwsAutoScalingAutoScalingGroup");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsAutoScalingAutoScalingGroupDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsAutoScalingAutoScalingGroup, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsCloudFrontDistribution())
             {
                 context.Writer.WritePropertyName("AwsCloudFrontDistribution");
@@ -96,6 +107,28 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsEc2SecurityGroupDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsEc2SecurityGroup, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsEc2Volume())
+            {
+                context.Writer.WritePropertyName("AwsEc2Volume");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEc2VolumeDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEc2Volume, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsEc2Vpc())
+            {
+                context.Writer.WritePropertyName("AwsEc2Vpc");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEc2VpcDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEc2Vpc, context);
 
                 context.Writer.WriteObjectEnd();
             }

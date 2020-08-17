@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// A JSON object containing a .
+    /// A JSON object containing the following fields:
     /// </summary>
     public partial class DescribeChapCredentialsResponse : AmazonWebServiceResponse
     {

@@ -36,12 +36,15 @@ namespace Amazon.CodeGuruProfiler.Model
     {
         private AgentOrchestrationConfig _agentOrchestrationConfig;
         private string _clientToken;
+        private ComputePlatform _computePlatform;
         private string _profilingGroupName;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property AgentOrchestrationConfig. 
         /// <para>
-        /// The agent orchestration configuration.
+        ///  Specifies whether profiling is enabled or disabled for the created profiling group.
+        /// 
         /// </para>
         /// </summary>
         public AgentOrchestrationConfig AgentOrchestrationConfig
@@ -59,13 +62,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.
-        /// </para>
-        ///  
-        /// <para>
-        /// This parameter specifies a unique identifier for the new profiling group that helps
-        /// ensure idempotency.
+        ///  Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent
+        /// the accidental creation of duplicate profiling groups if there are failures and retries.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -82,9 +81,30 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ComputePlatform. 
+        /// <para>
+        ///  The compute platform of the profiling group. Use <code>AWSLambda</code> if your application
+        /// runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute
+        /// platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server,
+        /// or a different platform. If not specified, <code>Default</code> is used. 
+        /// </para>
+        /// </summary>
+        public ComputePlatform ComputePlatform
+        {
+            get { return this._computePlatform; }
+            set { this._computePlatform = value; }
+        }
+
+        // Check to see if ComputePlatform property is set
+        internal bool IsSetComputePlatform()
+        {
+            return this._computePlatform != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProfilingGroupName. 
         /// <para>
-        /// The name of the profiling group.
+        /// The name of the profiling group to create.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -98,6 +118,24 @@ namespace Amazon.CodeGuruProfiler.Model
         internal bool IsSetProfilingGroupName()
         {
             return this._profilingGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  A list of tags to add to the created profiling group. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

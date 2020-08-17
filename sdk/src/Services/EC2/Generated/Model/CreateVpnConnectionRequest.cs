@@ -30,8 +30,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVpnConnection operation.
-    /// Creates a VPN connection between an existing virtual private gateway and a VPN customer
-    /// gateway. The supported connection type is <code>ipsec.1</code>.
+    /// Creates a VPN connection between an existing virtual private gateway or transit gateway
+    /// and a customer gateway. The supported connection type is <code>ipsec.1</code>.
     /// 
     ///  
     /// <para>
@@ -41,7 +41,8 @@ namespace Amazon.EC2.Model
     ///  <important> 
     /// <para>
     /// We strongly recommend that you use HTTPS when calling this operation because the response
-    /// contains sensitive cryptographic information for configuring your customer gateway.
+    /// contains sensitive cryptographic information for configuring your customer gateway
+    /// device.
     /// </para>
     ///  </important> 
     /// <para>
@@ -64,6 +65,7 @@ namespace Amazon.EC2.Model
     {
         private string _customerGatewayId;
         private VpnConnectionOptionsSpecification _options;
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private string _transitGatewayId;
         private string _type;
         private string _vpnGatewayId;
@@ -121,6 +123,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetOptions()
         {
             return this._options != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to apply to the VPN connection.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
         /// <summary>

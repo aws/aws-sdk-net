@@ -110,6 +110,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetFeatureActivations())
+            {
+                context.Writer.WritePropertyName("featureActivations");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FeatureActivationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.FeatureActivations, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetGlobalConfiguration())
             {
                 context.Writer.WritePropertyName("globalConfiguration");

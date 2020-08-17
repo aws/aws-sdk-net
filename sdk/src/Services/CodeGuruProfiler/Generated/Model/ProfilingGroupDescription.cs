@@ -29,19 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// The description of a profiling group.
+    /// Contains information about a profiling group.
     /// </summary>
     public partial class ProfilingGroupDescription
     {
         private AgentOrchestrationConfig _agentOrchestrationConfig;
         private string _arn;
+        private ComputePlatform _computePlatform;
         private DateTime? _createdAt;
         private string _name;
         private ProfilingStatus _profilingStatus;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private DateTime? _updatedAt;
 
         /// <summary>
-        /// Gets and sets the property AgentOrchestrationConfig.
+        /// Gets and sets the property AgentOrchestrationConfig. 
+        /// <para>
+        ///  An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentOrchestrationConfig.html">
+        /// <code>AgentOrchestrationConfig</code> </a> object that indicates if the profiling
+        /// group is enabled for profiled or not. 
+        /// </para>
         /// </summary>
         public AgentOrchestrationConfig AgentOrchestrationConfig
         {
@@ -58,7 +65,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) identifying the profiling group.
+        /// The Amazon Resource Name (ARN) identifying the profiling group resource.
         /// </para>
         /// </summary>
         public string Arn
@@ -74,9 +81,33 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ComputePlatform. 
+        /// <para>
+        ///  The compute platform of the profiling group. If it is set to <code>AWSLambda</code>,
+        /// then the profiled application runs on AWS Lambda. If it is set to <code>Default</code>,
+        /// then the profiled application runs on a compute platform that is not AWS Lambda, such
+        /// an Amazon EC2 instance, an on-premises server, or a different platform. The default
+        /// is <code>Default</code>. 
+        /// </para>
+        /// </summary>
+        public ComputePlatform ComputePlatform
+        {
+            get { return this._computePlatform; }
+            set { this._computePlatform = value; }
+        }
+
+        // Check to see if ComputePlatform property is set
+        internal bool IsSetComputePlatform()
+        {
+            return this._computePlatform != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time, in milliseconds since the epoch, when the profiling group was created.
+        /// The time when the profiling group was created. Specify using the ISO 8601 format.
+        /// For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02
+        /// PM UTC. 
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -113,7 +144,10 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property ProfilingStatus. 
         /// <para>
-        /// The status of the profiling group.
+        ///  A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingStatus.html">
+        /// <code>ProfilingStatus</code> </a> object that includes information about the last
+        /// time a profile agent pinged back, the last time a profile was received, and the aggregation
+        /// period and start time for the most recent aggregated profile. 
         /// </para>
         /// </summary>
         public ProfilingStatus ProfilingStatus
@@ -129,9 +163,29 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  A list of the tags that belong to this profiling group. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The time, in milliseconds since the epoch, when the profiling group was last updated.
+        ///  The date and time when the profiling group was last updated. Specify using the ISO
+        /// 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June
+        /// 1, 2020 1:15:02 PM UTC. 
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

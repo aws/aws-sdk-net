@@ -72,6 +72,11 @@ namespace Amazon.QLDB.Model
         /// The name of the ledger that you want to create. The name must be unique among all
         /// of your ledgers in the current AWS Region.
         /// </para>
+        ///  
+        /// <para>
+        /// Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas
+        /// in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
         public string Name

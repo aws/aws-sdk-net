@@ -51,10 +51,16 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
+                    response.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("externalEventsDetail", targetDepth))
+                {
+                    var unmarshaller = ExternalEventsDetailUnmarshaller.Instance;
+                    response.ExternalEventsDetail = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("modelId", targetDepth))
@@ -81,6 +87,18 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("trainingDataSchema", targetDepth))
+                {
+                    var unmarshaller = TrainingDataSchemaUnmarshaller.Instance;
+                    response.TrainingDataSchema = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("trainingDataSource", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TrainingDataSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
@@ -104,6 +122,10 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                {
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -111,10 +133,6 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
-                {
-                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {

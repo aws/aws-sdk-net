@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Result structure for the generate access logs request.
+    /// The result structure for the generate access logs request.
     /// </summary>
     public partial class GenerateAccessLogsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property LogUrl. 
         /// <para>
-        ///  Pre-signed URL for the requested access logs. 
+        ///  The pre-signed URL for the requested access logs. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]

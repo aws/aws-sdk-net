@@ -32,15 +32,35 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the ListStackInstances operation.
     /// Returns summary information about stack instances that are associated with the specified
     /// stack set. You can filter for stack instances that are associated with a specific
-    /// AWS account name or Region.
+    /// AWS account name or Region, or that have a specific status.
     /// </summary>
     public partial class ListStackInstancesRequest : AmazonCloudFormationRequest
     {
+        private List<StackInstanceFilter> _filters = new List<StackInstanceFilter>();
         private int? _maxResults;
         private string _nextToken;
         private string _stackInstanceAccount;
         private string _stackInstanceRegion;
         private string _stackSetName;
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// The status that stack instances are filtered by.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<StackInstanceFilter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

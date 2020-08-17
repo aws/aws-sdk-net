@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2020-05-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -91,6 +91,13 @@ namespace Amazon.CloudFront.Model
         /// The number of times that CloudFront attempts to connect to the origin. The minimum
         /// number is 1, the maximum is 3, and the default (if you don’t specify otherwise) is
         /// 3.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a custom origin (including an Amazon S3 bucket that’s configured with static website
+        /// hosting), this value also specifies the number of times that CloudFront attempts to
+        /// get a response from the origin, in the case of an <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
+        /// Response Timeout</a>.
         /// </para>
         ///  
         /// <para>
@@ -211,8 +218,8 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// Use this value to specify the <code>TargetOriginId</code> in a <a>CacheBehavior</a>
-        /// or <a>DefaultCacheBehavior</a>.
+        /// Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code>
+        /// or <code>DefaultCacheBehavior</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

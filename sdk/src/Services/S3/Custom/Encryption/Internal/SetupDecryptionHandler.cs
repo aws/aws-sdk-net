@@ -269,10 +269,7 @@ namespace Amazon.S3.Encryption.Internal
                             getObjectResponse.Key, getObjectResponse.BucketName), ace);
                     }
 
-                    if (EncryptionUtils.IsEncryptionInfoInInstructionFile(instructionFileResponse) == true)
-                    {
-                        DecryptObjectUsingInstructionFile(getObjectResponse, instructionFileResponse);
-                    }
+                    DecryptObjectUsingInstructionFile(getObjectResponse, instructionFileResponse);
                 }
             }
 

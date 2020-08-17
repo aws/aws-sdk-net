@@ -31,8 +31,9 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Container for the parameters to the GetPlatformApplicationAttributes operation.
     /// Retrieves the attributes of the platform application object for the supported push
-    /// notification services, such as APNS and FCM. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-    /// Amazon SNS Mobile Push Notifications</a>.
+    /// notification services, such as APNS and GCM (Firebase Cloud Messaging). For more information,
+    /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+    /// SNS Mobile Push Notifications</a>.
     /// </summary>
     public partial class GetPlatformApplicationAttributesRequest : AmazonSimpleNotificationServiceRequest
     {

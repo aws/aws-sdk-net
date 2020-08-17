@@ -100,6 +100,10 @@ namespace Amazon.CodeGuruReviewer
         /// Constant GitHub for ProviderType
         /// </summary>
         public static readonly ProviderType GitHub = new ProviderType("GitHub");
+        /// <summary>
+        /// Constant GitHubEnterpriseServer for ProviderType
+        /// </summary>
+        public static readonly ProviderType GitHubEnterpriseServer = new ProviderType("GitHubEnterpriseServer");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

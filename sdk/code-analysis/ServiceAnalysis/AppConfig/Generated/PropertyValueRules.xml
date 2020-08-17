@@ -47,7 +47,7 @@
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileRequest.RetrievalRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):(iam)::\d{12}:role[/].*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.ApplicationId</property>
@@ -76,7 +76,7 @@
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.RetrievalRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):(iam)::\d{12}:role[/].*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateDeploymentStrategyRequest.DeploymentDurationInMinutes</property>
@@ -165,6 +165,42 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionRequest.ApplicationId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionRequest.ConfigurationProfileId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionRequest.ContentType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionRequest.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionResponse.ApplicationId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionResponse.ConfigurationProfileId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionResponse.ContentType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionResponse.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.DeleteApplicationRequest.ApplicationId</property>
     <pattern>[a-z0-9]{4,7}</pattern>
   </property-value-rule>
@@ -178,7 +214,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeleteDeploymentStrategyRequest.DeploymentStrategyId</property>
-    <pattern>([a-z0-9]{4,7}|arn:aws.*)</pattern>
+    <pattern>(^[a-z0-9]{4,7}$|^AppConfig\.[A-Za-z0-9]{9,40}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeleteEnvironmentRequest.ApplicationId</property>
@@ -186,6 +222,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeleteEnvironmentRequest.EnvironmentId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.DeleteHostedConfigurationVersionRequest.ApplicationId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.DeleteHostedConfigurationVersionRequest.ConfigurationProfileId</property>
     <pattern>[a-z0-9]{4,7}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -214,7 +258,7 @@
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetConfigurationRequest.ClientConfigurationVersion</property>
     <min>1</min>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetConfigurationRequest.ClientId</property>
@@ -234,7 +278,7 @@
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetConfigurationResponse.ConfigurationVersion</property>
     <min>1</min>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetConfigurationProfileRequest.ApplicationId</property>
@@ -271,7 +315,7 @@
     <property>Amazon.AppConfig.Model.GetConfigurationProfileResponse.RetrievalRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):(iam)::\d{12}:role[/].*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentRequest.ApplicationId</property>
@@ -302,7 +346,7 @@
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentResponse.ConfigurationVersion</property>
     <min>1</min>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentResponse.DeploymentDurationInMinutes</property>
@@ -339,7 +383,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentStrategyRequest.DeploymentStrategyId</property>
-    <pattern>([a-z0-9]{4,7}|arn:aws.*)</pattern>
+    <pattern>(^[a-z0-9]{4,7}$|^AppConfig\.[A-Za-z0-9]{9,40}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentStrategyResponse.DeploymentDurationInMinutes</property>
@@ -395,6 +439,32 @@
     <property>Amazon.AppConfig.Model.GetEnvironmentResponse.Name</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionRequest.ApplicationId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionRequest.ConfigurationProfileId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionResponse.ApplicationId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionResponse.ConfigurationProfileId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionResponse.ContentType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionResponse.Description</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListApplicationsRequest.MaxResults</property>
@@ -488,6 +558,29 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListHostedConfigurationVersionsRequest.ApplicationId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListHostedConfigurationVersionsRequest.ConfigurationProfileId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListHostedConfigurationVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListHostedConfigurationVersionsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListHostedConfigurationVersionsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
@@ -504,11 +597,11 @@
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentRequest.ConfigurationVersion</property>
     <min>1</min>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentRequest.DeploymentStrategyId</property>
-    <pattern>([a-z0-9]{4,7}|arn:aws.*)</pattern>
+    <pattern>(^[a-z0-9]{4,7}$|^AppConfig\.[A-Za-z0-9]{9,40}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentRequest.Description</property>
@@ -540,7 +633,7 @@
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.ConfigurationVersion</property>
     <min>1</min>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.DeploymentDurationInMinutes</property>
@@ -604,7 +697,7 @@
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.ConfigurationVersion</property>
     <min>1</min>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.DeploymentDurationInMinutes</property>
@@ -701,7 +794,7 @@
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileRequest.RetrievalRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):(iam)::\d{12}:role[/].*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.ApplicationId</property>
@@ -730,7 +823,7 @@
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.RetrievalRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):(iam)::\d{12}:role[/].*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateDeploymentStrategyRequest.DeploymentDurationInMinutes</property>
@@ -739,7 +832,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateDeploymentStrategyRequest.DeploymentStrategyId</property>
-    <pattern>([a-z0-9]{4,7}|arn:aws.*)</pattern>
+    <pattern>(^[a-z0-9]{4,7}$|^AppConfig\.[A-Za-z0-9]{9,40}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateDeploymentStrategyRequest.Description</property>
@@ -832,7 +925,7 @@
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ValidateConfigurationRequest.ConfigurationVersion</property>
     <min>1</min>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ConfigurationProfileSummary.ApplicationId</property>
@@ -865,7 +958,7 @@
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeploymentSummary.ConfigurationVersion</property>
     <min>1</min>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeploymentSummary.DeploymentDurationInMinutes</property>
@@ -888,6 +981,24 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.HostedConfigurationVersionSummary.ApplicationId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.HostedConfigurationVersionSummary.ConfigurationProfileId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.HostedConfigurationVersionSummary.ContentType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.HostedConfigurationVersionSummary.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.Monitor.AlarmArn</property>
     <min>20</min>
     <max>2048</max>
@@ -897,7 +1008,7 @@
     <property>Amazon.AppConfig.Model.Monitor.AlarmRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):(iam)::\d{12}:role[/].*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.Validator.Content</property>

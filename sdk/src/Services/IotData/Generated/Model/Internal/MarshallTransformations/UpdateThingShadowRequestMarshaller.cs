@@ -62,12 +62,16 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetThingName())
                 throw new AmazonIotDataException("Request object does not have required field ThingName set");
             request.AddPathResource("{thingName}", StringUtils.FromString(publicRequest.ThingName));
+            
+            if (publicRequest.IsSetShadowName())
+                request.Parameters.Add("name", StringUtils.FromString(publicRequest.ShadowName));
             request.ResourcePath = "/things/{thingName}/shadow";
             request.MarshallerVersion = 2;
             request.ContentStream =  publicRequest.Payload ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
+            request.UseQueryString = true;
 
             return request;
         }

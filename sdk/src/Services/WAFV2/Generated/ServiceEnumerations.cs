@@ -1129,6 +1129,110 @@ namespace Amazon.WAFV2
 
 
     /// <summary>
+    /// Constants used for properties of type FallbackBehavior.
+    /// </summary>
+    public class FallbackBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MATCH for FallbackBehavior
+        /// </summary>
+        public static readonly FallbackBehavior MATCH = new FallbackBehavior("MATCH");
+        /// <summary>
+        /// Constant NO_MATCH for FallbackBehavior
+        /// </summary>
+        public static readonly FallbackBehavior NO_MATCH = new FallbackBehavior("NO_MATCH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FallbackBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FallbackBehavior FindValue(string value)
+        {
+            return FindValue<FallbackBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FallbackBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ForwardedIPPosition.
+    /// </summary>
+    public class ForwardedIPPosition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANY for ForwardedIPPosition
+        /// </summary>
+        public static readonly ForwardedIPPosition ANY = new ForwardedIPPosition("ANY");
+        /// <summary>
+        /// Constant FIRST for ForwardedIPPosition
+        /// </summary>
+        public static readonly ForwardedIPPosition FIRST = new ForwardedIPPosition("FIRST");
+        /// <summary>
+        /// Constant LAST for ForwardedIPPosition
+        /// </summary>
+        public static readonly ForwardedIPPosition LAST = new ForwardedIPPosition("LAST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ForwardedIPPosition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ForwardedIPPosition FindValue(string value)
+        {
+            return FindValue<ForwardedIPPosition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ForwardedIPPosition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IPAddressVersion.
     /// </summary>
     public class IPAddressVersion : ConstantClass
@@ -1205,6 +1309,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField EXCLUDED_RULE = new ParameterExceptionField("EXCLUDED_RULE");
         /// <summary>
+        /// Constant FALLBACK_BEHAVIOR for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField FALLBACK_BEHAVIOR = new ParameterExceptionField("FALLBACK_BEHAVIOR");
+        /// <summary>
         /// Constant FIELD_TO_MATCH for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField FIELD_TO_MATCH = new ParameterExceptionField("FIELD_TO_MATCH");
@@ -1213,9 +1321,17 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField FIREWALL_MANAGER_STATEMENT = new ParameterExceptionField("FIREWALL_MANAGER_STATEMENT");
         /// <summary>
+        /// Constant FORWARDED_IP_CONFIG for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField FORWARDED_IP_CONFIG = new ParameterExceptionField("FORWARDED_IP_CONFIG");
+        /// <summary>
         /// Constant GEO_MATCH_STATEMENT for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField GEO_MATCH_STATEMENT = new ParameterExceptionField("GEO_MATCH_STATEMENT");
+        /// <summary>
+        /// Constant HEADER_NAME for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField HEADER_NAME = new ParameterExceptionField("HEADER_NAME");
         /// <summary>
         /// Constant IP_ADDRESS for ParameterExceptionField
         /// </summary>
@@ -1228,6 +1344,10 @@ namespace Amazon.WAFV2
         /// Constant IP_SET for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField IP_SET = new ParameterExceptionField("IP_SET");
+        /// <summary>
+        /// Constant IP_SET_FORWARDED_IP_CONFIG for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField IP_SET_FORWARDED_IP_CONFIG = new ParameterExceptionField("IP_SET_FORWARDED_IP_CONFIG");
         /// <summary>
         /// Constant IP_SET_REFERENCE_STATEMENT for ParameterExceptionField
         /// </summary>
@@ -1256,6 +1376,10 @@ namespace Amazon.WAFV2
         /// Constant OVERRIDE_ACTION for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField OVERRIDE_ACTION = new ParameterExceptionField("OVERRIDE_ACTION");
+        /// <summary>
+        /// Constant POSITION for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField POSITION = new ParameterExceptionField("POSITION");
         /// <summary>
         /// Constant RATE_BASED_STATEMENT for ParameterExceptionField
         /// </summary>
@@ -1440,6 +1564,10 @@ namespace Amazon.WAFV2
     public class RateBasedStatementAggregateKeyType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant FORWARDED_IP for RateBasedStatementAggregateKeyType
+        /// </summary>
+        public static readonly RateBasedStatementAggregateKeyType FORWARDED_IP = new RateBasedStatementAggregateKeyType("FORWARDED_IP");
         /// <summary>
         /// Constant IP for RateBasedStatementAggregateKeyType
         /// </summary>

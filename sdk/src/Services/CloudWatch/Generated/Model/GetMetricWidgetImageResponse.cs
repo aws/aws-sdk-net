@@ -38,7 +38,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MetricWidgetImage. 
         /// <para>
-        /// The image of the graph, in the output format specified.
+        /// The image of the graph, in the output format specified. The output is base64-encoded.
         /// </para>
         /// </summary>
         public MemoryStream MetricWidgetImage

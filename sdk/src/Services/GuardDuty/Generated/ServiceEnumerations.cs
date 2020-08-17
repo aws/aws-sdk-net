@@ -75,6 +75,114 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type DataSource.
+    /// </summary>
+    public class DataSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOUD_TRAIL for DataSource
+        /// </summary>
+        public static readonly DataSource CLOUD_TRAIL = new DataSource("CLOUD_TRAIL");
+        /// <summary>
+        /// Constant DNS_LOGS for DataSource
+        /// </summary>
+        public static readonly DataSource DNS_LOGS = new DataSource("DNS_LOGS");
+        /// <summary>
+        /// Constant FLOW_LOGS for DataSource
+        /// </summary>
+        public static readonly DataSource FLOW_LOGS = new DataSource("FLOW_LOGS");
+        /// <summary>
+        /// Constant S3_LOGS for DataSource
+        /// </summary>
+        public static readonly DataSource S3_LOGS = new DataSource("S3_LOGS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataSource FindValue(string value)
+        {
+            return FindValue<DataSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataSourceStatus.
+    /// </summary>
+    public class DataSourceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for DataSourceStatus
+        /// </summary>
+        public static readonly DataSourceStatus DISABLED = new DataSourceStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for DataSourceStatus
+        /// </summary>
+        public static readonly DataSourceStatus ENABLED = new DataSourceStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataSourceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataSourceStatus FindValue(string value)
+        {
+            return FindValue<DataSourceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataSourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DestinationType.
     /// </summary>
     public class DestinationType : ConstantClass
@@ -744,6 +852,64 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ThreatIntelSetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UsageStatisticType.
+    /// </summary>
+    public class UsageStatisticType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SUM_BY_ACCOUNT for UsageStatisticType
+        /// </summary>
+        public static readonly UsageStatisticType SUM_BY_ACCOUNT = new UsageStatisticType("SUM_BY_ACCOUNT");
+        /// <summary>
+        /// Constant SUM_BY_DATA_SOURCE for UsageStatisticType
+        /// </summary>
+        public static readonly UsageStatisticType SUM_BY_DATA_SOURCE = new UsageStatisticType("SUM_BY_DATA_SOURCE");
+        /// <summary>
+        /// Constant SUM_BY_RESOURCE for UsageStatisticType
+        /// </summary>
+        public static readonly UsageStatisticType SUM_BY_RESOURCE = new UsageStatisticType("SUM_BY_RESOURCE");
+        /// <summary>
+        /// Constant TOP_RESOURCES for UsageStatisticType
+        /// </summary>
+        public static readonly UsageStatisticType TOP_RESOURCES = new UsageStatisticType("TOP_RESOURCES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UsageStatisticType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UsageStatisticType FindValue(string value)
+        {
+            return FindValue<UsageStatisticType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UsageStatisticType(string value)
         {
             return FindValue(value);
         }

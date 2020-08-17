@@ -7,7 +7,19 @@
     <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FMS.Model.DeleteAppsListRequest.ListId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-z0-9A-Z-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FMS.Model.DeletePolicyRequest.PolicyId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-z0-9A-Z-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.DeleteProtocolsListRequest.ListId</property>
     <min>36</min>
     <max>36</max>
     <pattern>^[a-z0-9A-Z-]{36}$</pattern>
@@ -17,6 +29,18 @@
     <min>1</min>
     <max>1024</max>
     <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.GetAppsListRequest.ListId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-z0-9A-Z-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.GetAppsListResponse.AppsListArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.GetComplianceDetailRequest.MemberAccount</property>
@@ -90,6 +114,59 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FMS.Model.GetProtocolsListRequest.ListId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-z0-9A-Z-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.GetProtocolsListResponse.ProtocolsListArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.GetViolationDetailsRequest.MemberAccount</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.GetViolationDetailsRequest.PolicyId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-z0-9A-Z-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.GetViolationDetailsRequest.ResourceId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.GetViolationDetailsRequest.ResourceType</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ListAppsListsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ListAppsListsRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ListAppsListsResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FMS.Model.ListComplianceStatusRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -147,7 +224,30 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FMS.Model.ListProtocolsListsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ListProtocolsListsRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ListProtocolsListsResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FMS.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.PutAppsListResponse.AppsListArn</property>
     <min>1</min>
     <max>1024</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
@@ -171,6 +271,12 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FMS.Model.PutProtocolsListResponse.ProtocolsListArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FMS.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1024</max>
@@ -181,6 +287,82 @@
     <min>1</min>
     <max>1024</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.App.AppName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.App.Port</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.App.Protocol</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.AppsListData.ListId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-z0-9A-Z-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.AppsListData.ListName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.AppsListData.ListUpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.AppsListDataSummary.ListArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.AppsListDataSummary.ListId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-z0-9A-Z-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.AppsListDataSummary.ListName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.AwsEc2InstanceViolation.ViolationTarget</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.AwsEc2NetworkInterfaceViolation.ViolationTarget</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.AwsVPCSecurityGroupViolation.ViolationTarget</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.AwsVPCSecurityGroupViolation.ViolationTargetDescription</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.ComplianceViolator.ResourceId</property>
@@ -289,6 +471,42 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FMS.Model.ProtocolsListData.ListId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-z0-9A-Z-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ProtocolsListData.ListName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ProtocolsListData.ListUpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ProtocolsListDataSummary.ListArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ProtocolsListDataSummary.ListId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-z0-9A-Z-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ProtocolsListDataSummary.ListName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FMS.Model.ResourceTag.Key</property>
     <min>1</min>
     <max>128</max>
@@ -298,6 +516,45 @@
     <property>Amazon.FMS.Model.ResourceTag.Value</property>
     <max>256</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.SecurityGroupRemediationAction.Description</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.SecurityGroupRuleDescription.FromPort</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.SecurityGroupRuleDescription.IPV4Range</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[a-f0-9:./]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.SecurityGroupRuleDescription.IPV6Range</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[a-f0-9:./]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.SecurityGroupRuleDescription.PrefixListId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.SecurityGroupRuleDescription.Protocol</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.SecurityGroupRuleDescription.ToPort</property>
+    <min>0</min>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.SecurityServicePolicyData.ManagedServiceData</property>
@@ -315,6 +572,35 @@
     <property>Amazon.FMS.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ViolationDetail.MemberAccount</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ViolationDetail.PolicyId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-z0-9A-Z-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ViolationDetail.ResourceDescription</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ViolationDetail.ResourceId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ViolationDetail.ResourceType</property>
+    <min>1</min>
+    <max>128</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
 </property-value-rules>

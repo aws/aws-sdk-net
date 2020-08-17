@@ -29,16 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Shield.Model
 {
     /// <summary>
-    /// Contact information that the DRT can use to contact you during a suspected attack.
+    /// Contact information that the DRT can use to contact you if you have proactive engagement
+    /// enabled, for escalations to the DRT and to initiate proactive customer support.
     /// </summary>
     public partial class EmergencyContact
     {
+        private string _contactNotes;
         private string _emailAddress;
+        private string _phoneNumber;
+
+        /// <summary>
+        /// Gets and sets the property ContactNotes. 
+        /// <para>
+        /// Additional notes regarding the contact. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string ContactNotes
+        {
+            get { return this._contactNotes; }
+            set { this._contactNotes = value; }
+        }
+
+        // Check to see if ContactNotes property is set
+        internal bool IsSetContactNotes()
+        {
+            return this._contactNotes != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// An email address that the DRT can use to contact you during a suspected attack.
+        /// The email address for the contact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=150)]
@@ -52,6 +74,25 @@ namespace Amazon.Shield.Model
         internal bool IsSetEmailAddress()
         {
             return this._emailAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PhoneNumber. 
+        /// <para>
+        /// The phone number for the contact.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=16)]
+        public string PhoneNumber
+        {
+            get { return this._phoneNumber; }
+            set { this._phoneNumber = value; }
+        }
+
+        // Check to see if PhoneNumber property is set
+        internal bool IsSetPhoneNumber()
+        {
+            return this._phoneNumber != null;
         }
 
     }

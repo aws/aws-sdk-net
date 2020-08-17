@@ -104,6 +104,10 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 {
                     return InvalidNetworkSettingsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPerUnitStorageThroughput"))
+                {
+                    return InvalidPerUnitStorageThroughputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("MissingFileSystemConfiguration"))
                 {
                     return MissingFileSystemConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

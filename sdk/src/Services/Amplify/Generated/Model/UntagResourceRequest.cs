@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Untag resource with resourceArn.
+    /// Untags a resource with a specified Amazon Resource Name (ARN).
     /// </summary>
     public partial class UntagResourceRequest : AmazonAmplifyRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  Resource arn used to untag resource. 
+        ///  The Amazon Resource Name (ARN) to use to untag a resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        ///  Tag keys used to untag resource. 
+        ///  The tag keys to use to untag a resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

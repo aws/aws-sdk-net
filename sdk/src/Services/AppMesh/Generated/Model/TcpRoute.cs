@@ -34,6 +34,7 @@ namespace Amazon.AppMesh.Model
     public partial class TcpRoute
     {
         private TcpRouteAction _action;
+        private TcpTimeout _timeout;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -52,6 +53,24 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timeout. 
+        /// <para>
+        /// An object that represents types of timeouts. 
+        /// </para>
+        /// </summary>
+        public TcpTimeout Timeout
+        {
+            get { return this._timeout; }
+            set { this._timeout = value; }
+        }
+
+        // Check to see if Timeout property is set
+        internal bool IsSetTimeout()
+        {
+            return this._timeout != null;
         }
 
     }

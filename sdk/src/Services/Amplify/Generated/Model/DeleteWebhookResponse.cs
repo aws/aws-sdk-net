@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Result structure for the delete webhook request.
+    /// The result structure for the delete webhook request.
     /// </summary>
     public partial class DeleteWebhookResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Webhook. 
         /// <para>
-        ///  Webhook structure. 
+        ///  Describes a webhook that connects repository events to an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

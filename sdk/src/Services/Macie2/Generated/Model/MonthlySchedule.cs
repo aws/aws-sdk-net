@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Run the job once a month, on a specific day of the month. This value can be an integer
-    /// from 1 through 30.
+    /// Specifies a monthly recurrence pattern for running a classification job.
     /// </summary>
     public partial class MonthlySchedule
     {
@@ -39,8 +38,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property DayOfMonth. 
         /// <para>
-        /// Run the job once a month, on a specific day of the month. This value can be an integer
-        /// from 1 through 30.
+        /// The numeric day of the month when Amazon Macie runs the job. This value can be an
+        /// integer from 1 through 30.
         /// </para>
         /// </summary>
         public int DayOfMonth

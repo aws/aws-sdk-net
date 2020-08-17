@@ -31,7 +31,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Container for the parameters to the FailoverGlobalReplicationGroup operation.
     /// Used to failover the primary region to a selected secondary region. The selected secondary
-    /// region will be come primary, and all other clusters will become secondary.
+    /// region will become primary, and all other clusters will become secondary.
     /// </summary>
     public partial class FailoverGlobalReplicationGroupRequest : AmazonElastiCacheRequest
     {

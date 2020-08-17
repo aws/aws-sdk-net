@@ -36,6 +36,7 @@ namespace Amazon.CodeBuild.Model
         private string _arn;
         private ProjectArtifacts _artifacts;
         private ProjectBadge _badge;
+        private ProjectBuildBatchConfig _buildBatchConfig;
         private ProjectCache _cache;
         private DateTime? _created;
         private string _description;
@@ -112,6 +113,25 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BuildBatchConfig. 
+        /// <para>
+        /// A <a>ProjectBuildBatchConfig</a> object that defines the batch build options for the
+        /// project.
+        /// </para>
+        /// </summary>
+        public ProjectBuildBatchConfig BuildBatchConfig
+        {
+            get { return this._buildBatchConfig; }
+            set { this._buildBatchConfig = value; }
+        }
+
+        // Check to see if BuildBatchConfig property is set
+        internal bool IsSetBuildBatchConfig()
+        {
+            return this._buildBatchConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Cache. 
         /// <para>
         /// Information about the cache for the build project.
@@ -174,7 +194,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  You can use a cross-account KMS key to encrypt the build output artifacts if your
+        /// You can use a cross-account KMS key to encrypt the build output artifacts if your
         /// service role has permission to that key. 
         /// </para>
         ///  </note> 
@@ -256,7 +276,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property LogsConfig. 
         /// <para>
-        ///  Information about logs for the build project. A project can create logs in Amazon
+        /// Information about logs for the build project. A project can create logs in Amazon
         /// CloudWatch Logs, an S3 bucket, or both. 
         /// </para>
         /// </summary>
@@ -294,7 +314,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property QueuedTimeoutInMinutes. 
         /// <para>
-        ///  The number of minutes a build is allowed to be queued before it times out. 
+        /// The number of minutes a build is allowed to be queued before it times out. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=480)]
@@ -313,7 +333,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SecondaryArtifacts. 
         /// <para>
-        ///  An array of <code>ProjectArtifacts</code> objects. 
+        /// An array of <code>ProjectArtifacts</code> objects. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=12)]
@@ -332,7 +352,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SecondarySources. 
         /// <para>
-        ///  An array of <code>ProjectSource</code> objects. 
+        /// An array of <code>ProjectSource</code> objects. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=12)]
@@ -351,7 +371,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SecondarySourceVersions. 
         /// <para>
-        ///  An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code>
+        /// An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code>
         /// is specified at the build level, then they take over these <code>secondarySourceVersions</code>
         /// (at the project level). 
         /// </para>
@@ -438,12 +458,12 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  If <code>sourceVersion</code> is specified at the build level, then that version
-        /// takes precedence over this <code>sourceVersion</code> (at the project level). 
+        /// If <code>sourceVersion</code> is specified at the build level, then that version takes
+        /// precedence over this <code>sourceVersion</code> (at the project level). 
         /// </para>
         ///  
         /// <para>
-        ///  For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+        /// For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
         /// Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. 
         /// </para>
         /// </summary>

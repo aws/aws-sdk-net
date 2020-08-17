@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Run the job once a day, every day. If specified, this is an empty object.
+    /// Specifies that a classification job runs once a day, every day. This is an empty object.
     /// </summary>
     public partial class DailySchedule
     {

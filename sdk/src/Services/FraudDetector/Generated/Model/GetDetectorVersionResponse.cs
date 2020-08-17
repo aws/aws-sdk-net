@@ -33,6 +33,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class GetDetectorVersionResponse : AmazonWebServiceResponse
     {
+        private string _arn;
         private string _createdTime;
         private string _description;
         private string _detectorId;
@@ -43,6 +44,25 @@ namespace Amazon.FraudDetector.Model
         private RuleExecutionMode _ruleExecutionMode;
         private List<Rule> _rules = new List<Rule>();
         private DetectorVersionStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The detector version ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedTime. 
@@ -106,7 +126,7 @@ namespace Amazon.FraudDetector.Model
         /// The detector version ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=5)]
         public string DetectorVersionId
         {
             get { return this._detectorVersionId; }

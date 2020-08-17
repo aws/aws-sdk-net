@@ -77,6 +77,10 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 {
                     return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OperationDisabledException"))
+                {
+                    return OperationDisabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonEventBridgeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }

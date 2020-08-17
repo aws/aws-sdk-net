@@ -38,7 +38,10 @@ namespace Amazon.CodeGuruProfiler.Model
         private string _profilingGroupName;
 
         /// <summary>
-        /// Gets and sets the property AgentOrchestrationConfig.
+        /// Gets and sets the property AgentOrchestrationConfig. 
+        /// <para>
+        ///  Specifies whether profiling is enabled or disabled for a profiling group. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AgentOrchestrationConfig AgentOrchestrationConfig

@@ -368,6 +368,76 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  CancelReplicationTaskAssessmentRun
+
+        /// <summary>
+        /// Cancels a single premigration assessment run.
+        /// 
+        ///  
+        /// <para>
+        /// This operation prevents any individual assessments from running if they haven't started
+        /// running. It also attempts to cancel any individual assessments that are currently
+        /// running.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelReplicationTaskAssessmentRun service method.</param>
+        /// 
+        /// <returns>The response from the CancelReplicationTaskAssessmentRun service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelReplicationTaskAssessmentRun">REST API Reference for CancelReplicationTaskAssessmentRun Operation</seealso>
+        public virtual CancelReplicationTaskAssessmentRunResponse CancelReplicationTaskAssessmentRun(CancelReplicationTaskAssessmentRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelReplicationTaskAssessmentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelReplicationTaskAssessmentRunResponseUnmarshaller.Instance;
+
+            return Invoke<CancelReplicationTaskAssessmentRunResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelReplicationTaskAssessmentRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelReplicationTaskAssessmentRun operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelReplicationTaskAssessmentRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelReplicationTaskAssessmentRun">REST API Reference for CancelReplicationTaskAssessmentRun Operation</seealso>
+        public virtual IAsyncResult BeginCancelReplicationTaskAssessmentRun(CancelReplicationTaskAssessmentRunRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelReplicationTaskAssessmentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelReplicationTaskAssessmentRunResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelReplicationTaskAssessmentRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelReplicationTaskAssessmentRun.</param>
+        /// 
+        /// <returns>Returns a  CancelReplicationTaskAssessmentRunResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelReplicationTaskAssessmentRun">REST API Reference for CancelReplicationTaskAssessmentRun Operation</seealso>
+        public virtual CancelReplicationTaskAssessmentRunResponse EndCancelReplicationTaskAssessmentRun(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CancelReplicationTaskAssessmentRunResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateEndpoint
 
         /// <summary>
@@ -1222,6 +1292,76 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DeleteReplicationTaskAssessmentRun
+
+        /// <summary>
+        /// Deletes the record of a single premigration assessment run.
+        /// 
+        ///  
+        /// <para>
+        /// This operation removes all metadata that AWS DMS maintains about this assessment run.
+        /// However, the operation leaves untouched all information about this assessment run
+        /// that is stored in your Amazon S3 bucket.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationTaskAssessmentRun service method.</param>
+        /// 
+        /// <returns>The response from the DeleteReplicationTaskAssessmentRun service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTaskAssessmentRun">REST API Reference for DeleteReplicationTaskAssessmentRun Operation</seealso>
+        public virtual DeleteReplicationTaskAssessmentRunResponse DeleteReplicationTaskAssessmentRun(DeleteReplicationTaskAssessmentRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReplicationTaskAssessmentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReplicationTaskAssessmentRunResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteReplicationTaskAssessmentRunResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReplicationTaskAssessmentRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationTaskAssessmentRun operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReplicationTaskAssessmentRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTaskAssessmentRun">REST API Reference for DeleteReplicationTaskAssessmentRun Operation</seealso>
+        public virtual IAsyncResult BeginDeleteReplicationTaskAssessmentRun(DeleteReplicationTaskAssessmentRunRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReplicationTaskAssessmentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReplicationTaskAssessmentRunResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteReplicationTaskAssessmentRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteReplicationTaskAssessmentRun.</param>
+        /// 
+        /// <returns>Returns a  DeleteReplicationTaskAssessmentRunResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTaskAssessmentRun">REST API Reference for DeleteReplicationTaskAssessmentRun Operation</seealso>
+        public virtual DeleteReplicationTaskAssessmentRunResponse EndDeleteReplicationTaskAssessmentRun(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteReplicationTaskAssessmentRunResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeAccountAttributes
 
         /// <summary>
@@ -1283,6 +1423,94 @@ namespace Amazon.DatabaseMigrationService
         public virtual DescribeAccountAttributesResponse EndDescribeAccountAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAccountAttributesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeApplicableIndividualAssessments
+
+        /// <summary>
+        /// Provides a list of individual assessments that you can specify for a new premigration
+        /// assessment run, given one or more parameters.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify an existing migration task, this operation provides the default individual
+        /// assessments you can specify for that task. Otherwise, the specified parameters model
+        /// elements of a possible migration task on which to base a premigration assessment run.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use these migration task modeling parameters, you must specify an existing replication
+        /// instance, a source database engine, a target database engine, and a migration type.
+        /// This combination of parameters potentially limits the default individual assessments
+        /// available for an assessment run created for a corresponding migration task.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify no parameters, this operation provides a list of all possible individual
+        /// assessments that you can specify for an assessment run. If you specify any one of
+        /// the task modeling parameters, you must specify all of them or the operation cannot
+        /// provide a list of individual assessments. The only parameter that you can specify
+        /// alone is for an existing migration task. The specified task definition then determines
+        /// the default list of individual assessments that you can specify in an assessment run
+        /// for the task.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicableIndividualAssessments service method.</param>
+        /// 
+        /// <returns>The response from the DescribeApplicableIndividualAssessments service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeApplicableIndividualAssessments">REST API Reference for DescribeApplicableIndividualAssessments Operation</seealso>
+        public virtual DescribeApplicableIndividualAssessmentsResponse DescribeApplicableIndividualAssessments(DescribeApplicableIndividualAssessmentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApplicableIndividualAssessmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicableIndividualAssessmentsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeApplicableIndividualAssessmentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeApplicableIndividualAssessments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicableIndividualAssessments operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeApplicableIndividualAssessments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeApplicableIndividualAssessments">REST API Reference for DescribeApplicableIndividualAssessments Operation</seealso>
+        public virtual IAsyncResult BeginDescribeApplicableIndividualAssessments(DescribeApplicableIndividualAssessmentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApplicableIndividualAssessmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicableIndividualAssessmentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeApplicableIndividualAssessments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeApplicableIndividualAssessments.</param>
+        /// 
+        /// <returns>Returns a  DescribeApplicableIndividualAssessmentsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeApplicableIndividualAssessments">REST API Reference for DescribeApplicableIndividualAssessments Operation</seealso>
+        public virtual DescribeApplicableIndividualAssessmentsResponse EndDescribeApplicableIndividualAssessments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeApplicableIndividualAssessmentsResponse>(asyncResult);
         }
 
         #endregion
@@ -2091,6 +2319,138 @@ namespace Amazon.DatabaseMigrationService
         public virtual DescribeReplicationTaskAssessmentResultsResponse EndDescribeReplicationTaskAssessmentResults(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeReplicationTaskAssessmentResultsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeReplicationTaskAssessmentRuns
+
+        /// <summary>
+        /// Returns a paginated list of premigration assessment runs based on filter settings.
+        /// 
+        ///  
+        /// <para>
+        /// These filter settings can specify a combination of premigration assessment runs, migration
+        /// tasks, replication instances, and assessment run status values.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation doesn't return information about individual assessments. For this information,
+        /// see the <code>DescribeReplicationTaskIndividualAssessments</code> operation. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationTaskAssessmentRuns service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReplicationTaskAssessmentRuns service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentRuns">REST API Reference for DescribeReplicationTaskAssessmentRuns Operation</seealso>
+        public virtual DescribeReplicationTaskAssessmentRunsResponse DescribeReplicationTaskAssessmentRuns(DescribeReplicationTaskAssessmentRunsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationTaskAssessmentRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationTaskAssessmentRunsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReplicationTaskAssessmentRunsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReplicationTaskAssessmentRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationTaskAssessmentRuns operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReplicationTaskAssessmentRuns
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentRuns">REST API Reference for DescribeReplicationTaskAssessmentRuns Operation</seealso>
+        public virtual IAsyncResult BeginDescribeReplicationTaskAssessmentRuns(DescribeReplicationTaskAssessmentRunsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationTaskAssessmentRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationTaskAssessmentRunsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeReplicationTaskAssessmentRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReplicationTaskAssessmentRuns.</param>
+        /// 
+        /// <returns>Returns a  DescribeReplicationTaskAssessmentRunsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentRuns">REST API Reference for DescribeReplicationTaskAssessmentRuns Operation</seealso>
+        public virtual DescribeReplicationTaskAssessmentRunsResponse EndDescribeReplicationTaskAssessmentRuns(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeReplicationTaskAssessmentRunsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeReplicationTaskIndividualAssessments
+
+        /// <summary>
+        /// Returns a paginated list of individual assessments based on filter settings.
+        /// 
+        ///  
+        /// <para>
+        /// These filter settings can specify a combination of premigration assessment runs, migration
+        /// tasks, and assessment status values.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationTaskIndividualAssessments service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReplicationTaskIndividualAssessments service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskIndividualAssessments">REST API Reference for DescribeReplicationTaskIndividualAssessments Operation</seealso>
+        public virtual DescribeReplicationTaskIndividualAssessmentsResponse DescribeReplicationTaskIndividualAssessments(DescribeReplicationTaskIndividualAssessmentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationTaskIndividualAssessmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationTaskIndividualAssessmentsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReplicationTaskIndividualAssessmentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReplicationTaskIndividualAssessments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationTaskIndividualAssessments operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReplicationTaskIndividualAssessments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskIndividualAssessments">REST API Reference for DescribeReplicationTaskIndividualAssessments Operation</seealso>
+        public virtual IAsyncResult BeginDescribeReplicationTaskIndividualAssessments(DescribeReplicationTaskIndividualAssessmentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationTaskIndividualAssessmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationTaskIndividualAssessmentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeReplicationTaskIndividualAssessments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReplicationTaskIndividualAssessments.</param>
+        /// 
+        /// <returns>Returns a  DescribeReplicationTaskIndividualAssessmentsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskIndividualAssessments">REST API Reference for DescribeReplicationTaskIndividualAssessments Operation</seealso>
+        public virtual DescribeReplicationTaskIndividualAssessmentsResponse EndDescribeReplicationTaskIndividualAssessments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeReplicationTaskIndividualAssessmentsResponse>(asyncResult);
         }
 
         #endregion
@@ -3154,6 +3514,107 @@ namespace Amazon.DatabaseMigrationService
         public virtual StartReplicationTaskAssessmentResponse EndStartReplicationTaskAssessment(IAsyncResult asyncResult)
         {
             return EndInvoke<StartReplicationTaskAssessmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartReplicationTaskAssessmentRun
+
+        /// <summary>
+        /// Starts a new premigration assessment run for one or more individual assessments of
+        /// a migration task.
+        /// 
+        ///  
+        /// <para>
+        /// The assessments that you can specify depend on the source and target database engine
+        /// and the migration type defined for the given task. To run this operation, your migration
+        /// task must already be created. After you run this operation, you can review the status
+        /// of each individual assessment. You can also run the migration task manually after
+        /// the assessment run and its individual assessments complete.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartReplicationTaskAssessmentRun service method.</param>
+        /// 
+        /// <returns>The response from the StartReplicationTaskAssessmentRun service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSAccessDeniedException">
+        /// The ciphertext references a key that doesn't exist or that the DMS account doesn't
+        /// have access to.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSDisabledException">
+        /// The specified master key (CMK) isn't enabled.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSException">
+        /// An AWS Key Management Service (AWS KMS) error is preventing access to AWS KMS.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSInvalidStateException">
+        /// The state of the specified AWS KMS resource isn't valid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// AWS DMS cannot access the AWS KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSNotFoundException">
+        /// The specified AWS KMS entity or resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3AccessDeniedException">
+        /// Insufficient privileges are preventing access to an Amazon S3 object.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3ResourceNotFoundException">
+        /// A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessmentRun">REST API Reference for StartReplicationTaskAssessmentRun Operation</seealso>
+        public virtual StartReplicationTaskAssessmentRunResponse StartReplicationTaskAssessmentRun(StartReplicationTaskAssessmentRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartReplicationTaskAssessmentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplicationTaskAssessmentRunResponseUnmarshaller.Instance;
+
+            return Invoke<StartReplicationTaskAssessmentRunResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartReplicationTaskAssessmentRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartReplicationTaskAssessmentRun operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartReplicationTaskAssessmentRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessmentRun">REST API Reference for StartReplicationTaskAssessmentRun Operation</seealso>
+        public virtual IAsyncResult BeginStartReplicationTaskAssessmentRun(StartReplicationTaskAssessmentRunRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartReplicationTaskAssessmentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplicationTaskAssessmentRunResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartReplicationTaskAssessmentRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartReplicationTaskAssessmentRun.</param>
+        /// 
+        /// <returns>Returns a  StartReplicationTaskAssessmentRunResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessmentRun">REST API Reference for StartReplicationTaskAssessmentRun Operation</seealso>
+        public virtual StartReplicationTaskAssessmentRunResponse EndStartReplicationTaskAssessmentRun(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartReplicationTaskAssessmentRunResponse>(asyncResult);
         }
 
         #endregion

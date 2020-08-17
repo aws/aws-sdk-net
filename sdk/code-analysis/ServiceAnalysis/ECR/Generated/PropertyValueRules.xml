@@ -538,6 +538,11 @@
     <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.EncryptionConfiguration.KmsKey</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.Image.ImageManifest</property>
     <min>1</min>
     <max>4194304</max>

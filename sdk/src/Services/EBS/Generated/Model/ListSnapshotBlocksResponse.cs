@@ -119,6 +119,7 @@ namespace Amazon.EBS.Model
         /// The size of the volume in GB.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public long VolumeSize
         {
             get { return this._volumeSize.GetValueOrDefault(); }

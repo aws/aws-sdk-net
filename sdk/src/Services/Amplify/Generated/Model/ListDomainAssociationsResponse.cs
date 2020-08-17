@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Result structure for the list Domain Association request.
+    /// The result structure for the list domain association request.
     /// </summary>
     public partial class ListDomainAssociationsResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property DomainAssociations. 
         /// <para>
-        ///  List of Domain Associations. 
+        ///  A list of domain associations. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -58,8 +58,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Pagination token. If non-null pagination token is returned in a result, then pass
-        /// its value in another request to fetch more entries. 
+        ///  A pagination token. If non-null, a pagination token is returned in a result. Pass
+        /// its value in another request to retrieve more entries. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2000)]

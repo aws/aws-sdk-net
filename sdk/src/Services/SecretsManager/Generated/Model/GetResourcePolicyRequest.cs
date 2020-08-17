@@ -30,8 +30,8 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourcePolicy operation.
-    /// Retrieves the JSON text of the resource-based policy document that's attached to the
-    /// specified secret. The JSON request string input and response output are shown formatted
+    /// Retrieves the JSON text of the resource-based policy document attached to the specified
+    /// secret. The JSON request string input and response output displays formatted code
     /// with white space and line breaks for better readability. Submit your input as a single
     /// line JSON string.
     /// 
@@ -57,7 +57,7 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To delete the resource-based policy that's attached to a secret, use <a>DeleteResourcePolicy</a>.
+    /// To delete the resource-based policy attached to a secret, use <a>DeleteResourcePolicy</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -86,8 +86,15 @@ namespace Amazon.SecretsManager.Model
         /// (before Secrets Manager adds the hyphen and six characters to the ARN) and you try
         /// to use that as a partial ARN, then those characters cause Secrets Manager to assume
         /// that you’re specifying a complete ARN. This confusion can cause unexpected results.
-        /// To avoid this situation, we recommend that you don’t create secret names that end
-        /// with a hyphen followed by six characters.
+        /// To avoid this situation, we recommend that you don’t create secret names ending with
+        /// a hyphen followed by six characters.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an incomplete ARN without the random suffix, and instead provide the
+        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include
+        /// the random suffix added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+        /// or an <i>AccessDeniedException</i> error, depending on your permissions.
         /// </para>
         ///  </note>
         /// </summary>

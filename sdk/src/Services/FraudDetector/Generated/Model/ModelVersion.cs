@@ -33,14 +33,34 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class ModelVersion
     {
+        private string _arn;
         private string _modelId;
         private ModelTypeEnum _modelType;
         private string _modelVersionNumber;
 
         /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The model version ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The parent model ID.
+        /// The model ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -78,7 +98,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property ModelVersionNumber. 
         /// <para>
-        /// The model version.
+        /// The model version number.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

@@ -140,7 +140,9 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// The principal.
+        /// The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>),
+        /// thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>)
+        /// and CognitoId (<i>region</i>:<i>id</i>).
         /// </para>
         /// </summary>
         public string Principal

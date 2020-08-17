@@ -329,7 +329,7 @@ namespace AWSSDK.UnitTests
             var internalRequest = RunMockRequest(request, CopyObjectRequestMarshaller.Instance);
             Assert.AreEqual(new Uri("https://destinationpoint-000011112222.s3-accesspoint.us-east-1.amazonaws.com"), internalRequest.Endpoint);
             Assert.AreEqual("/dest.txt", internalRequest.ResourcePath);
-            Assert.AreEqual("/arn:aws:s3:us-east-1:000011112222:accesspoint/sourcepoint/source.txt", internalRequest.Headers["x-amz-copy-source"]);
+            Assert.AreEqual("arn%3Aaws%3As3%3Aus-east-1%3A000011112222%3Aaccesspoint%2Fsourcepoint%2Fobject%2Fsource.txt", internalRequest.Headers["x-amz-copy-source"]);
         }
 
 

@@ -445,6 +445,56 @@ namespace Amazon.DataSync
 
 
     /// <summary>
+    /// Constants used for properties of type ObjectStorageServerProtocol.
+    /// </summary>
+    public class ObjectStorageServerProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HTTP for ObjectStorageServerProtocol
+        /// </summary>
+        public static readonly ObjectStorageServerProtocol HTTP = new ObjectStorageServerProtocol("HTTP");
+        /// <summary>
+        /// Constant HTTPS for ObjectStorageServerProtocol
+        /// </summary>
+        public static readonly ObjectStorageServerProtocol HTTPS = new ObjectStorageServerProtocol("HTTPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ObjectStorageServerProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObjectStorageServerProtocol FindValue(string value)
+        {
+            return FindValue<ObjectStorageServerProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObjectStorageServerProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OverwriteMode.
     /// </summary>
     public class OverwriteMode : ConstantClass
@@ -994,6 +1044,56 @@ namespace Amazon.DataSync
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TaskStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TransferMode.
+    /// </summary>
+    public class TransferMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for TransferMode
+        /// </summary>
+        public static readonly TransferMode ALL = new TransferMode("ALL");
+        /// <summary>
+        /// Constant CHANGED for TransferMode
+        /// </summary>
+        public static readonly TransferMode CHANGED = new TransferMode("CHANGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransferMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransferMode FindValue(string value)
+        {
+            return FindValue<TransferMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransferMode(string value)
         {
             return FindValue(value);
         }

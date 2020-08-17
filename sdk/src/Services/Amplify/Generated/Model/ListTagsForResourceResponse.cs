@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Response for list tags.
+    /// The response for the list tags for resource request.
     /// </summary>
     public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  Tags result for response. 
+        ///  A list of tags for the specified The Amazon Resource Name (ARN). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

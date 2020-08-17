@@ -45,6 +45,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SpotProvisioningSpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAllocationStrategy())
+            {
+                context.Writer.WritePropertyName("AllocationStrategy");
+                context.Writer.Write(requestObject.AllocationStrategy);
+            }
+
             if(requestObject.IsSetBlockDurationMinutes())
             {
                 context.Writer.WritePropertyName("BlockDurationMinutes");

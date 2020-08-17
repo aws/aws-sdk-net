@@ -37,6 +37,10 @@ namespace Amazon.ServiceCatalog.Model
     /// You cannot delete a portfolio if it was shared with you or if it has associated products,
     /// users, constraints, or shared accounts.
     /// </para>
+    ///  
+    /// <para>
+    /// A delegated admin is authorized to invoke this command.
+    /// </para>
     /// </summary>
     public partial class DeletePortfolioRequest : AmazonServiceCatalogRequest
     {

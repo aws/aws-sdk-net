@@ -50,6 +50,7 @@ namespace Amazon.CodeBuild.Model
     public partial class CreateWebhookRequest : AmazonCodeBuildRequest
     {
         private string _branchFilter;
+        private WebhookBuildType _buildType;
         private List<List<WebhookFilter>> _filterGroups = new List<List<WebhookFilter>>();
         private string _projectName;
 
@@ -62,7 +63,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.
+        /// It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.
         /// 
         /// </para>
         ///  </note>
@@ -80,15 +81,33 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BuildType. 
+        /// <para>
+        /// Specifies the type of build this webhook will trigger.
+        /// </para>
+        /// </summary>
+        public WebhookBuildType BuildType
+        {
+            get { return this._buildType; }
+            set { this._buildType = value; }
+        }
+
+        // Check to see if BuildType property is set
+        internal bool IsSetBuildType()
+        {
+            return this._buildType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FilterGroups. 
         /// <para>
-        ///  An array of arrays of <code>WebhookFilter</code> objects used to determine which
-        /// webhooks are triggered. At least one <code>WebhookFilter</code> in the array must
-        /// specify <code>EVENT</code> as its <code>type</code>. 
+        /// An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks
+        /// are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code>
+        /// as its <code>type</code>. 
         /// </para>
         ///  
         /// <para>
-        ///  For a build to be triggered, at least one filter group in the <code>filterGroups</code>
+        /// For a build to be triggered, at least one filter group in the <code>filterGroups</code>
         /// array must pass. For a filter group to pass, each of its filters must pass. 
         /// </para>
         /// </summary>

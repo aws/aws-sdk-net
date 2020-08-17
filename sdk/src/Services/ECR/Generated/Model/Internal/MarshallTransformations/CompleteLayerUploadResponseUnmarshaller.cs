@@ -110,6 +110,10 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("KmsException"))
+                {
+                    return KmsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("LayerAlreadyExistsException"))
                 {
                     return LayerAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

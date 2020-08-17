@@ -62,7 +62,7 @@ namespace Amazon.Organizations.Model
         /// requires "h-" followed by from 8 to 32 lowercase letters or digits.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=34)]
         public string HandshakeId
         {
             get { return this._handshakeId; }

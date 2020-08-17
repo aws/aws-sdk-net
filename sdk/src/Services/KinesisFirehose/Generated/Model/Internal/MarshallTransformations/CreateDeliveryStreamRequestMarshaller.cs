@@ -113,6 +113,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetHttpEndpointDestinationConfiguration())
+                {
+                    context.Writer.WritePropertyName("HttpEndpointDestinationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = HttpEndpointDestinationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.HttpEndpointDestinationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetKinesisStreamSourceConfiguration())
                 {
                     context.Writer.WritePropertyName("KinesisStreamSourceConfiguration");

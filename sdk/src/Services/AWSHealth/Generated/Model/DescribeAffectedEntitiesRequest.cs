@@ -41,6 +41,12 @@ namespace Amazon.AWSHealth.Model
     /// At least one event ARN is required. Results are sorted by the <code>lastUpdatedTime</code>
     /// of the entity, starting with the most recent.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
+    /// the next request to return more results.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeAffectedEntitiesRequest : AmazonAWSHealthRequest
     {

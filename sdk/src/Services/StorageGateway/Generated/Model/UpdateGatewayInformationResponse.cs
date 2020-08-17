@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// A JSON object containing the ARN of the gateway that was updated.
+    /// A JSON object containing the Amazon Resource Name (ARN) of the gateway that was updated.
     /// </summary>
     public partial class UpdateGatewayInformationResponse : AmazonWebServiceResponse
     {

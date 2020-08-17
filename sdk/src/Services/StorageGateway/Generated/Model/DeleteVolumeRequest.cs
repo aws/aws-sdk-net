@@ -34,7 +34,7 @@ namespace Amazon.StorageGateway.Model
     /// or <a>CreateStorediSCSIVolume</a> API. This operation is only supported in the cached
     /// volume and stored volume types. For stored volume gateways, the local disk that was
     /// configured as the storage volume is not deleted. You can reuse the local disk to create
-    /// another storage volume. 
+    /// another storage volume.
     /// 
     ///  
     /// <para>

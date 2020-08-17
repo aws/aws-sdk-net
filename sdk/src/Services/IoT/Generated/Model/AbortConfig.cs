@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Details of abort criteria to abort the job.
+    /// The criteria that determine when and how a job abort takes place.
     /// </summary>
     public partial class AbortConfig
     {
@@ -38,7 +38,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property CriteriaList. 
         /// <para>
-        /// The list of abort criteria to define rules to abort the job.
+        /// The list of criteria that determine when and how to abort the job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

@@ -35,8 +35,35 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class DetectEntitiesRequest : AmazonComprehendRequest
     {
+        private string _endpointArn;
         private LanguageCode _languageCode;
         private string _text;
+
+        /// <summary>
+        /// Gets and sets the property EndpointArn. 
+        /// <para>
+        /// The Amazon Resource Name of an endpoint that is associated with a custom entity recognition
+        /// model. Provide an endpoint if you want to detect entities by using your own custom
+        /// model instead of the default model that is used by Amazon Comprehend.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an endpoint, Amazon Comprehend uses the language of your custom model,
+        /// and it ignores any language code that you provide in your request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string EndpointArn
+        {
+            get { return this._endpointArn; }
+            set { this._endpointArn = value; }
+        }
+
+        // Check to see if EndpointArn property is set
+        internal bool IsSetEndpointArn()
+        {
+            return this._endpointArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LanguageCode. 
@@ -44,8 +71,13 @@ namespace Amazon.Comprehend.Model
         /// The language of the input documents. You can specify any of the primary languages
         /// supported by Amazon Comprehend. All documents must be in the same language.
         /// </para>
+        ///  
+        /// <para>
+        /// If your request includes the endpoint for a custom entity recognition model, Amazon
+        /// Comprehend uses the language of your custom model, and it ignores any language code
+        /// that you specify here.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public LanguageCode LanguageCode
         {
             get { return this._languageCode; }

@@ -78,6 +78,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTimeout())
+            {
+                context.Writer.WritePropertyName("timeout");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GrpcTimeoutMarshaller.Instance;
+                marshaller.Marshall(requestObject.Timeout, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

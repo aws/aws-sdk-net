@@ -98,7 +98,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// The current status of the job. Possible value are:
+        /// The current status of the job. Possible values are:
         /// </para>
         ///  <ul><li>
         /// <para>
@@ -141,7 +141,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property JobType. 
         /// <para>
-        /// The schedule for running the job. Possible value are:
+        /// The schedule for running the job. Possible values are:
         /// </para>
         ///  <ul><li>
         /// <para>

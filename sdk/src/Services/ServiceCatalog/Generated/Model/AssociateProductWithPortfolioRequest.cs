@@ -31,6 +31,11 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Container for the parameters to the AssociateProductWithPortfolio operation.
     /// Associates the specified product with the specified portfolio.
+    /// 
+    ///  
+    /// <para>
+    /// A delegated admin is authorized to invoke this command.
+    /// </para>
     /// </summary>
     public partial class AssociateProductWithPortfolioRequest : AmazonServiceCatalogRequest
     {

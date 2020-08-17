@@ -47,6 +47,7 @@ namespace Amazon.AutoScaling.Model
         private string _keyName;
         private string _launchConfigurationARN;
         private string _launchConfigurationName;
+        private InstanceMetadataOptions _metadataOptions;
         private string _placementTenancy;
         private string _ramdiskId;
         private List<string> _securityGroups = new List<string>();
@@ -369,6 +370,25 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetLaunchConfigurationName()
         {
             return this._launchConfigurationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataOptions. 
+        /// <para>
+        /// The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+        /// Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// </para>
+        /// </summary>
+        public InstanceMetadataOptions MetadataOptions
+        {
+            get { return this._metadataOptions; }
+            set { this._metadataOptions = value; }
+        }
+
+        // Check to see if MetadataOptions property is set
+        internal bool IsSetMetadataOptions()
+        {
+            return this._metadataOptions != null;
         }
 
         /// <summary>

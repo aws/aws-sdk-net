@@ -83,7 +83,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property CustomPatterns. 
         /// <para>
         /// Optional custom grok patterns defined by this classifier. For more information, see
-        /// custom patterns in <a href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+        /// custom patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
         /// Custom Classifiers</a>.
         /// </para>
         /// </summary>
@@ -104,7 +104,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property GrokPattern. 
         /// <para>
         /// The grok pattern applied to a data store by this classifier. For more information,
-        /// see built-in patterns in <a href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+        /// see built-in patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
         /// Custom Classifiers</a>.
         /// </para>
         /// </summary>

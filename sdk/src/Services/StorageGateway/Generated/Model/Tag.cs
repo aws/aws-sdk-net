@@ -31,7 +31,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// A key-value pair that helps you manage, filter, and search for your resource. Allowed
     /// characters: letters, white space, and numbers, representable in UTF-8, and the following
-    /// characters: + - = . _ : /
+    /// characters: + - = . _ : /.
     /// </summary>
     public partial class Tag
     {
@@ -41,7 +41,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// Tag key (String). The key can't start with aws:. 
+        /// Tag key. The key can't start with aws:.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

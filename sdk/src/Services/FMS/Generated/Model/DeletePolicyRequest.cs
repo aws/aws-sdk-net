@@ -98,8 +98,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
-        /// The ID of the policy that you want to delete. <code>PolicyId</code> is returned by
-        /// <code>PutPolicy</code> and by <code>ListPolicies</code>.
+        /// The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code>
+        /// and <code>ListPolicies</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

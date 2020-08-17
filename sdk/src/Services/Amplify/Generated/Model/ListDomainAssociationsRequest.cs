@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDomainAssociations operation.
-    /// List domains with an app
+    /// Returns the domain associations for an Amplify app.
     /// </summary>
     public partial class ListDomainAssociationsRequest : AmazonAmplifyRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  Unique Id for an Amplify App. 
+        ///  The unique ID for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -60,7 +60,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  Maximum number of records to list in a single response. 
+        ///  The maximum number of records to list in a single response. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -79,8 +79,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Pagination token. Set to null to start listing Apps from start. If non-null pagination
-        /// token is returned in a result, then pass its value in here to list more projects.
+        ///  A pagination token. Set to null to start listing apps from the start. If non-null,
+        /// a pagination token is returned in a result. Pass its value in here to list more projects.
         /// 
         /// </para>
         /// </summary>

@@ -122,6 +122,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxPayloadInMB);
                 }
 
+                if(publicRequest.IsSetModelClientConfig())
+                {
+                    context.Writer.WritePropertyName("ModelClientConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ModelClientConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ModelClientConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetModelName())
                 {
                     context.Writer.WritePropertyName("ModelName");

@@ -30,7 +30,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListImages operation.
-    /// Returns the list of image build versions for the specified semantic version.
+    /// Returns the list of images that you have access to.
     /// </summary>
     public partial class ListImagesRequest : AmazonImagebuilderRequest
     {

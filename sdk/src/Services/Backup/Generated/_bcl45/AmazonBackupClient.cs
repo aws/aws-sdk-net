@@ -1381,11 +1381,11 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns the current service opt-in settings for the region. If the service has a value
-        /// set to true, AWS Backup will attempt to protect that service's resources in this region,
-        /// when included in an on-demand backup or scheduled backup plan. If the value is set
-        /// to false for a service, AWS Backup will not attempt to protect that service's resources
-        /// in this region.
+        /// Returns the current service opt-in settings for the Region. If the service has a value
+        /// set to <code>true</code>, AWS Backup attempts to protect that service's resources
+        /// in this Region, when included in an on-demand backup or scheduled backup plan. If
+        /// the value is set to <code>false</code> for a service, AWS Backup does not attempt
+        /// to protect that service's resources in this Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRegionSettings service method.</param>
         /// 
@@ -1405,11 +1405,11 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns the current service opt-in settings for the region. If the service has a value
-        /// set to true, AWS Backup will attempt to protect that service's resources in this region,
-        /// when included in an on-demand backup or scheduled backup plan. If the value is set
-        /// to false for a service, AWS Backup will not attempt to protect that service's resources
-        /// in this region.
+        /// Returns the current service opt-in settings for the Region. If the service has a value
+        /// set to <code>true</code>, AWS Backup attempts to protect that service's resources
+        /// in this Region, when included in an on-demand backup or scheduled backup plan. If
+        /// the value is set to <code>false</code> for a service, AWS Backup does not attempt
+        /// to protect that service's resources in this Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRegionSettings service method.</param>
         /// <param name="cancellationToken">
@@ -2115,10 +2115,6 @@ namespace Amazon.Backup
         /// Indicates that something is wrong with a parameter's value. For example, the value
         /// is out of range.
         /// </exception>
-        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
-        /// Indicates that something is wrong with the input to the request. For example, a parameter
-        /// is of the wrong type.
-        /// </exception>
         /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
         /// The request failed due to a temporary failure of the server.
         /// </exception>
@@ -2145,10 +2141,6 @@ namespace Amazon.Backup
         /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
         /// Indicates that something is wrong with a parameter's value. For example, the value
         /// is out of range.
-        /// </exception>
-        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
-        /// Indicates that something is wrong with the input to the request. For example, a parameter
-        /// is of the wrong type.
         /// </exception>
         /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
         /// The request failed due to a temporary failure of the server.
@@ -3668,11 +3660,11 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Updates the current service opt-in settings for the region. If the service has a value
-        /// set to true, AWS Backup will attempt to protect that service's resources in this region,
-        /// when included in an on-demand backup or scheduled backup plan. If the value is set
-        /// to false for a service, AWS Backup will not attempt to protect that service's resources
-        /// in this region.
+        /// Updates the current service opt-in settings for the Region. If the service has a value
+        /// set to <code>true</code>, AWS Backup attempts to protect that service's resources
+        /// in this Region, when included in an on-demand backup or scheduled backup plan. If
+        /// the value is set to <code>false</code> for a service, AWS Backup does not attempt
+        /// to protect that service's resources in this Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRegionSettings service method.</param>
         /// 
@@ -3699,11 +3691,11 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Updates the current service opt-in settings for the region. If the service has a value
-        /// set to true, AWS Backup will attempt to protect that service's resources in this region,
-        /// when included in an on-demand backup or scheduled backup plan. If the value is set
-        /// to false for a service, AWS Backup will not attempt to protect that service's resources
-        /// in this region.
+        /// Updates the current service opt-in settings for the Region. If the service has a value
+        /// set to <code>true</code>, AWS Backup attempts to protect that service's resources
+        /// in this Region, when included in an on-demand backup or scheduled backup plan. If
+        /// the value is set to <code>false</code> for a service, AWS Backup does not attempt
+        /// to protect that service's resources in this Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRegionSettings service method.</param>
         /// <param name="cancellationToken">

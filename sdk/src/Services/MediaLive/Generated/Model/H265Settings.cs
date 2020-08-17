@@ -40,6 +40,7 @@ namespace Amazon.MediaLive.Model
         private int? _bufSize;
         private H265ColorMetadata _colorMetadata;
         private H265ColorSpaceSettings _colorSpaceSettings;
+        private H265FilterSettings _filterSettings;
         private FixedAfd _fixedAfd;
         private H265FlickerAq _flickerAq;
         private int? _framerateDenominator;
@@ -176,6 +177,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetColorSpaceSettings()
         {
             return this._colorSpaceSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterSettings. Optional filters that you can apply to
+        /// an encode.
+        /// </summary>
+        public H265FilterSettings FilterSettings
+        {
+            get { return this._filterSettings; }
+            set { this._filterSettings = value; }
+        }
+
+        // Check to see if FilterSettings property is set
+        internal bool IsSetFilterSettings()
+        {
+            return this._filterSettings != null;
         }
 
         /// <summary>
@@ -440,7 +457,10 @@ namespace Amazon.MediaLive.Model
         /// the specified quality level except when it is constrained by themaximum bitrate. 
         /// Recommended if you or your viewers pay for bandwidth.CBR: Quality varies, depending
         /// on the video complexity. Recommended only if you distributeyour assets to devices
-        /// that cannot handle variable bitrates.
+        /// that cannot handle variable bitrates.Multiplex: This rate control mode is only supported
+        /// (and is required) when the video is beingdelivered to a MediaLive Multiplex in which
+        /// case the rate control configuration is controlledby the properties within the Multiplex
+        /// Program.
         /// </summary>
         public H265RateControlMode RateControlMode
         {

@@ -48,22 +48,33 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must
+        /// If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must
         /// be supplied.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is a DB security group, a <code>DBSecurityGroupName</code> must
+        /// If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must
         /// be supplied.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must
+        /// If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value
+        /// must be supplied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source type is a DB security group, a <code>DBSecurityGroupName</code> value
+        /// must be supplied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must
         /// be supplied.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.
+        /// If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code>
+        /// value must be supplied.
         /// </para>
         ///  </li> </ul>
         /// </summary>

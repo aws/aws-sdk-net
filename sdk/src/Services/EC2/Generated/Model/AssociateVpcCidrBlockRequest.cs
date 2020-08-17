@@ -120,7 +120,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv6CidrBlockNetworkBorderGroup. 
         /// <para>
         /// The name of the location from which we advertise the IPV6 CIDR block. Use this parameter
-        /// to limit the CiDR block to this location.
+        /// to limit the CIDR block to this location.
         /// </para>
         ///  
         /// <para>

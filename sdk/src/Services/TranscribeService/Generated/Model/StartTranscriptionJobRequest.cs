@@ -40,6 +40,7 @@ namespace Amazon.TranscribeService.Model
         private Media _media;
         private MediaFormat _mediaFormat;
         private int? _mediaSampleRateHertz;
+        private ModelSettings _modelSettings;
         private string _outputBucketName;
         private string _outputEncryptionKMSKeyId;
         private Settings _settings;
@@ -166,6 +167,24 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelSettings. 
+        /// <para>
+        /// Choose the custom language model you use for your transcription job in this parameter.
+        /// </para>
+        /// </summary>
+        public ModelSettings ModelSettings
+        {
+            get { return this._modelSettings; }
+            set { this._modelSettings = value; }
+        }
+
+        // Check to see if ModelSettings property is set
+        internal bool IsSetModelSettings()
+        {
+            return this._modelSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OutputBucketName. 
         /// <para>
         /// The location where the transcription is stored.
@@ -288,10 +307,10 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptionJobName. 
         /// <para>
-        /// The name of the job. Note that you can't use the strings "." or ".." by themselves
-        /// as the job name. The name must also be unique within an AWS account. If you try to
-        /// create a transcription job with the same name as a previous transcription job you
-        /// will receive a <code>ConflictException</code> error.
+        /// The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>"
+        /// by themselves as the job name. The name must also be unique within an AWS account.
+        /// If you try to create a transcription job with the same name as a previous transcription
+        /// job, you get a <code>ConflictException</code> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

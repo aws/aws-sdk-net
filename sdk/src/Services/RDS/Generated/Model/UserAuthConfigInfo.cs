@@ -29,16 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-    /// It is subject to change.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Returns the details of authentication used by a proxy to log in as a specific database
     /// user.
-    /// </para>
     /// </summary>
     public partial class UserAuthConfigInfo
     {

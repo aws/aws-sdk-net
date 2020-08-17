@@ -82,6 +82,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.DvbSubDestinationSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ebuTtDDestinationSettings", targetDepth))
+                {
+                    var unmarshaller = EbuTtDDestinationSettingsUnmarshaller.Instance;
+                    unmarshalledObject.EbuTtDDestinationSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("embeddedDestinationSettings", targetDepth))
                 {
                     var unmarshaller = EmbeddedDestinationSettingsUnmarshaller.Instance;

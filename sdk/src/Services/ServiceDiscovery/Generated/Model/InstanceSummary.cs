@@ -62,24 +62,31 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS_INSTANCE_CNAME</code>: For a CNAME record, the domain name that Route 53
-        /// returns in response to DNS queries, for example, <code>example.com</code>.
+        ///  <code>AWS_EC2_INSTANCE_ID</code>: (HTTP namespaces only) The Amazon EC2 instance
+        /// ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified,
+        /// then the <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4
+        /// address.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS_INSTANCE_IPV4</code>: For an A record, the IPv4 address that Route 53 returns
-        /// in response to DNS queries, for example, <code>192.0.2.44</code>.
+        ///  <code>AWS_INSTANCE_CNAME</code>: For a <code>CNAME</code> record, the domain name
+        /// that Route 53 returns in response to DNS queries, for example, <code>example.com</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS_INSTANCE_IPV6</code>: For an AAAA record, the IPv6 address that Route 53
-        /// returns in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+        ///  <code>AWS_INSTANCE_IPV4</code>: For an <code>A</code> record, the IPv4 address that
+        /// Route 53 returns in response to DNS queries, for example, <code>192.0.2.44</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS_INSTANCE_PORT</code>: For an SRV record, the value that Route 53 returns
-        /// for the port. In addition, if the service includes <code>HealthCheckConfig</code>,
-        /// the port on the endpoint that Route 53 sends requests to.
+        ///  <code>AWS_INSTANCE_IPV6</code>: For an <code>AAAA</code> record, the IPv6 address
+        /// that Route 53 returns in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS_INSTANCE_PORT</code>: For an <code>SRV</code> record, the value that Route 53
+        /// returns for the port. In addition, if the service includes <code>HealthCheckConfig</code>,
+        /// the port on the endpoint that Route 53 sends requests to.
         /// </para>
         ///  </li> </ul>
         /// </summary>

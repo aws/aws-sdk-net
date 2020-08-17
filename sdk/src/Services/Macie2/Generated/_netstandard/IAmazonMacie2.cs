@@ -31,7 +31,13 @@ namespace Amazon.Macie2
     /// <summary>
     /// Interface for accessing Macie2
     ///
-    /// Amazon Macie
+    /// Amazon Macie is a fully managed data security and data privacy service that uses machine
+    /// learning and pattern matching to discover and protect your sensitive data in AWS.
+    /// Macie automates the discovery of sensitive data, such as PII and intellectual property,
+    /// to provide you with insight into the data that your organization stores in AWS. Macie
+    /// also provides an inventory of your Amazon S3 buckets, which it continually monitors
+    /// for you. If Macie detects sensitive data or potential data access issues, it generates
+    /// detailed findings for you to review and act upon as necessary.
     /// </summary>
     public partial interface IAmazonMacie2 : IAmazonService, IDisposable
     {
@@ -78,51 +84,6 @@ namespace Amazon.Macie2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
         Task<AcceptInvitationResponse> AcceptInvitationAsync(AcceptInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
-        #region  ArchiveFindings
-
-
-
-        /// <summary>
-        /// Archives one or more findings.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ArchiveFindings service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ArchiveFindings service method, as returned by Macie2.</returns>
-        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
-        /// Provides information about an error that occurred due to insufficient access to a
-        /// specified resource.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ConflictException">
-        /// Provides information about an error that occurred due to a versioning conflict for
-        /// a specified resource.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
-        /// Provides information about an error that occurred due to an unknown internal server
-        /// error, exception, or failure.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
-        /// Provides information about an error that occurred because a specified resource wasn't
-        /// found.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
-        /// Provides information about an error that occurred due to one or more service quotas
-        /// for an account.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
-        /// Provides information about an error that occurred because too many requests were sent
-        /// during a certain amount of time.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ValidationException">
-        /// Provides information about an error that occurred due to a syntax error in a request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
-        Task<ArchiveFindingsResponse> ArchiveFindingsAsync(ArchiveFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -491,7 +452,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Deletes a custom data identifier.
+        /// Soft deletes a custom data identifier.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomDataIdentifier service method.</param>
         /// <param name="cancellationToken">
@@ -1123,7 +1084,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves the configuration settings for exporting data classification results.
+        /// Retrieves the configuration settings for storing data classification results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetClassificationExportConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1621,8 +1582,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves information about the status and settings for one or more classification
-        /// jobs.
+        /// Retrieves a subset of information about one or more classification jobs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListClassificationJobs service method.</param>
         /// <param name="cancellationToken">
@@ -1959,7 +1919,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Creates or updates the configuration settings for exporting data classification results.
+        /// Creates or updates the configuration settings for storing data classification results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutClassificationExportConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -2060,51 +2020,6 @@ namespace Amazon.Macie2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TestCustomDataIdentifier">REST API Reference for TestCustomDataIdentifier Operation</seealso>
         Task<TestCustomDataIdentifierResponse> TestCustomDataIdentifierAsync(TestCustomDataIdentifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
-        #region  UnarchiveFindings
-
-
-
-        /// <summary>
-        /// Reactivates (unarchives) one or more findings.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UnarchiveFindings service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the UnarchiveFindings service method, as returned by Macie2.</returns>
-        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
-        /// Provides information about an error that occurred due to insufficient access to a
-        /// specified resource.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ConflictException">
-        /// Provides information about an error that occurred due to a versioning conflict for
-        /// a specified resource.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
-        /// Provides information about an error that occurred due to an unknown internal server
-        /// error, exception, or failure.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
-        /// Provides information about an error that occurred because a specified resource wasn't
-        /// found.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
-        /// Provides information about an error that occurred due to one or more service quotas
-        /// for an account.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
-        /// Provides information about an error that occurred because too many requests were sent
-        /// during a certain amount of time.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ValidationException">
-        /// Provides information about an error that occurred due to a syntax error in a request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
-        Task<UnarchiveFindingsResponse> UnarchiveFindingsAsync(UnarchiveFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

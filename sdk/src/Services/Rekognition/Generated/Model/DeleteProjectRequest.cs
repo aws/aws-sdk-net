@@ -31,8 +31,7 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Container for the parameters to the DeleteProject operation.
     /// Deletes an Amazon Rekognition Custom Labels project. To delete a project you must
-    /// first delete all versions of the model associated with the project. To delete a version
-    /// of a model, see <a>DeleteProjectVersion</a>.
+    /// first delete all models associated with the project. To delete a model, see <a>DeleteProjectVersion</a>.
     /// 
     ///  
     /// <para>

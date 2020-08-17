@@ -45,6 +45,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OutputConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCompilerOptions())
+            {
+                context.Writer.WritePropertyName("CompilerOptions");
+                context.Writer.Write(requestObject.CompilerOptions);
+            }
+
             if(requestObject.IsSetS3OutputLocation())
             {
                 context.Writer.WritePropertyName("S3OutputLocation");
@@ -55,6 +61,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("TargetDevice");
                 context.Writer.Write(requestObject.TargetDevice);
+            }
+
+            if(requestObject.IsSetTargetPlatform())
+            {
+                context.Writer.WritePropertyName("TargetPlatform");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TargetPlatformMarshaller.Instance;
+                marshaller.Marshall(requestObject.TargetPlatform, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

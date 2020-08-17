@@ -58,7 +58,7 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// To retrieve the resource policy that's attached to a secret, use <a>GetResourcePolicy</a>.
+    /// To retrieve the resource policy attached to a secret, use <a>GetResourcePolicy</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -72,8 +72,28 @@ namespace Amazon.SecretsManager.Model
     /// </summary>
     public partial class PutResourcePolicyRequest : AmazonSecretsManagerRequest
     {
+        private bool? _blockPublicPolicy;
         private string _resourcePolicy;
         private string _secretId;
+
+        /// <summary>
+        /// Gets and sets the property BlockPublicPolicy. 
+        /// <para>
+        /// Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad
+        /// access to your secret.
+        /// </para>
+        /// </summary>
+        public bool BlockPublicPolicy
+        {
+            get { return this._blockPublicPolicy.GetValueOrDefault(); }
+            set { this._blockPublicPolicy = value; }
+        }
+
+        // Check to see if BlockPublicPolicy property is set
+        internal bool IsSetBlockPublicPolicy()
+        {
+            return this._blockPublicPolicy.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ResourcePolicy. 
@@ -114,8 +134,15 @@ namespace Amazon.SecretsManager.Model
         /// (before Secrets Manager adds the hyphen and six characters to the ARN) and you try
         /// to use that as a partial ARN, then those characters cause Secrets Manager to assume
         /// that you’re specifying a complete ARN. This confusion can cause unexpected results.
-        /// To avoid this situation, we recommend that you don’t create secret names that end
-        /// with a hyphen followed by six characters.
+        /// To avoid this situation, we recommend that you don’t create secret names ending with
+        /// a hyphen followed by six characters.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an incomplete ARN without the random suffix, and instead provide the
+        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include
+        /// the random suffix added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+        /// or an <i>AccessDeniedException</i> error, depending on your permissions.
         /// </para>
         ///  </note>
         /// </summary>

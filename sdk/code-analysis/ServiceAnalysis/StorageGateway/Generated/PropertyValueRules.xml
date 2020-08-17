@@ -181,6 +181,7 @@
     <property>Amazon.StorageGateway.Model.CreateCachediSCSIVolumeRequest.KMSKey</property>
     <min>7</min>
     <max>2048</max>
+    <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateCachediSCSIVolumeRequest.NetworkInterfaceId</property>
@@ -222,6 +223,11 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.FileShareName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.GatewayARN</property>
     <min>50</min>
     <max>500</max>
@@ -230,16 +236,18 @@
     <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.KMSKey</property>
     <min>7</min>
     <max>2048</max>
+    <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.LocationARN</property>
     <min>16</min>
-    <max>310</max>
+    <max>1400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.Role</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::([0-9]+):role/(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.Squash</property>
@@ -271,6 +279,11 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.FileShareName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.GatewayARN</property>
     <min>50</min>
     <max>500</max>
@@ -279,16 +292,18 @@
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.KMSKey</property>
     <min>7</min>
     <max>2048</max>
+    <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.LocationARN</property>
     <min>16</min>
-    <max>310</max>
+    <max>1400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.Role</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::([0-9]+):role/(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareResponse.FileShareARN</property>
@@ -347,6 +362,7 @@
     <property>Amazon.StorageGateway.Model.CreateStorediSCSIVolumeRequest.KMSKey</property>
     <min>7</min>
     <max>2048</max>
+    <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateStorediSCSIVolumeRequest.NetworkInterfaceId</property>
@@ -386,6 +402,7 @@
     <property>Amazon.StorageGateway.Model.CreateTapesRequest.KMSKey</property>
     <min>7</min>
     <max>2048</max>
+    <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateTapesRequest.NumTapesToCreate</property>
@@ -412,6 +429,7 @@
     <property>Amazon.StorageGateway.Model.CreateTapeWithBarcodeRequest.KMSKey</property>
     <min>7</min>
     <max>2048</max>
+    <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateTapeWithBarcodeRequest.PoolId</property>
@@ -599,6 +617,16 @@
     <max>562</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DescribeGatewayInformationResponse.DeprecationDate</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DescribeGatewayInformationResponse.EndpointType</property>
+    <min>4</min>
+    <max>8</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeGatewayInformationResponse.GatewayARN</property>
     <min>50</min>
     <max>500</max>
@@ -630,6 +658,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeGatewayInformationResponse.NextUpdateAvailabilityDate</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DescribeGatewayInformationResponse.SoftwareUpdatesEndDate</property>
     <min>1</min>
     <max>25</max>
   </property-value-rule>
@@ -1285,9 +1318,15 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.FileShareName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.KMSKey</property>
     <min>7</min>
     <max>2048</max>
+    <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.Squash</property>
@@ -1314,9 +1353,15 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateSMBFileShareRequest.FileShareName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateSMBFileShareRequest.KMSKey</property>
     <min>7</min>
     <max>2048</max>
+    <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateSMBFileShareResponse.FileShareARN</property>
@@ -1398,6 +1443,7 @@
     <property>Amazon.StorageGateway.Model.CachediSCSIVolume.KMSKey</property>
     <min>7</min>
     <max>2048</max>
+    <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CachediSCSIVolume.SourceSnapshotId</property>
@@ -1552,6 +1598,11 @@
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareInfo.FileShareName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.NFSFileShareInfo.FileShareStatus</property>
     <min>3</min>
     <max>50</max>
@@ -1565,16 +1616,18 @@
     <property>Amazon.StorageGateway.Model.NFSFileShareInfo.KMSKey</property>
     <min>7</min>
     <max>2048</max>
+    <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.NFSFileShareInfo.LocationARN</property>
     <min>16</min>
-    <max>310</max>
+    <max>1400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.NFSFileShareInfo.Role</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::([0-9]+):role/(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.NFSFileShareInfo.Squash</property>
@@ -1606,6 +1659,11 @@
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SMBFileShareInfo.FileShareName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.SMBFileShareInfo.FileShareStatus</property>
     <min>3</min>
     <max>50</max>
@@ -1619,21 +1677,24 @@
     <property>Amazon.StorageGateway.Model.SMBFileShareInfo.KMSKey</property>
     <min>7</min>
     <max>2048</max>
+    <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.SMBFileShareInfo.LocationARN</property>
     <min>16</min>
-    <max>310</max>
+    <max>1400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.SMBFileShareInfo.Role</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::([0-9]+):role/(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.StorediSCSIVolume.KMSKey</property>
     <min>7</min>
     <max>2048</max>
+    <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.StorediSCSIVolume.SourceSnapshotId</property>
@@ -1689,6 +1750,7 @@
     <property>Amazon.StorageGateway.Model.Tape.KMSKey</property>
     <min>7</min>
     <max>2048</max>
+    <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.Tape.PoolId</property>
@@ -1716,6 +1778,7 @@
     <property>Amazon.StorageGateway.Model.TapeArchive.KMSKey</property>
     <min>7</min>
     <max>2048</max>
+    <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.TapeArchive.PoolId</property>

@@ -92,6 +92,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFilterSettings())
+            {
+                context.Writer.WritePropertyName("filterSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = H265FilterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.FilterSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFixedAfd())
             {
                 context.Writer.WritePropertyName("fixedAfd");

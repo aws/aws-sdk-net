@@ -90,6 +90,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.StackId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("StackInstanceStatus", targetDepth))
+                    {
+                        var unmarshaller = StackInstanceComprehensiveStatusUnmarshaller.Instance;
+                        unmarshalledObject.StackInstanceStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("StackSetId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

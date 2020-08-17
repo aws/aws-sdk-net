@@ -176,6 +176,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("TunnelOptions" + "." + "TunnelInsideCidr", StringUtils.FromString(publicRequest.TunnelOptions.TunnelInsideCidr));
                     }
+                    if(publicRequest.TunnelOptions.IsSetTunnelInsideIpv6Cidr())
+                    {
+                        request.Parameters.Add("TunnelOptions" + "." + "TunnelInsideIpv6Cidr", StringUtils.FromString(publicRequest.TunnelOptions.TunnelInsideIpv6Cidr));
+                    }
                 }
                 if(publicRequest.IsSetVpnConnectionId())
                 {

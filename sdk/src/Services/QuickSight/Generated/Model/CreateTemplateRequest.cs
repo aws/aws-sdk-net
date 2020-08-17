@@ -114,9 +114,19 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SourceEntity. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the source entity from which this template is being
-        /// created. Currently, you can create a template from an analysis or another template.
-        /// If the ARN is for an analysis, include its dataset references. 
+        /// The entity that you are using as a source when you create the template. In <code>SourceEntity</code>,
+        /// you specify the type of object you're using as source: <code>SourceTemplate</code>
+        /// for a template or <code>SourceAnalysis</code> for an analysis. Both of these require
+        /// an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of
+        /// the source template. For <code>SourceAnalysis</code>, specify the ARN of the source
+        /// analysis. The <code>SourceTemplate</code> ARN can contain any AWS Account and any
+        /// QuickSight-supported AWS Region. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
+        /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders
+        /// listed in the original. The schema in each dataset must match its placeholder. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

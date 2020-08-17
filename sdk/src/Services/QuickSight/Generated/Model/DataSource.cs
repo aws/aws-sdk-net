@@ -33,6 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class DataSource
     {
+        private List<DataSourceParameters> _alternateDataSourceParameters = new List<DataSourceParameters>();
         private string _arn;
         private DateTime? _createdTime;
         private string _dataSourceId;
@@ -44,6 +45,33 @@ namespace Amazon.QuickSight.Model
         private ResourceStatus _status;
         private DataSourceType _type;
         private VpcConnectionProperties _vpcConnectionProperties;
+
+        /// <summary>
+        /// Gets and sets the property AlternateDataSourceParameters. 
+        /// <para>
+        /// A set of alternate data source parameters that you want to share for the credentials
+        /// stored with this data source. The credentials are applied in tandem with the data
+        /// source parameters when you copy a data source by using a create or update request.
+        /// The API compares the <code>DataSourceParameters</code> structure that's in the request
+        /// with the structures in the <code>AlternateDataSourceParameters</code> allowlist. If
+        /// the structures are an exact match, the request is allowed to use the credentials from
+        /// this existing data source. If the <code>AlternateDataSourceParameters</code> list
+        /// is null, the <code>Credentials</code> originally used with this <code>DataSourceParameters</code>
+        /// are automatically allowed.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<DataSourceParameters> AlternateDataSourceParameters
+        {
+            get { return this._alternateDataSourceParameters; }
+            set { this._alternateDataSourceParameters = value; }
+        }
+
+        // Check to see if AlternateDataSourceParameters property is set
+        internal bool IsSetAlternateDataSourceParameters()
+        {
+            return this._alternateDataSourceParameters != null && this._alternateDataSourceParameters.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 

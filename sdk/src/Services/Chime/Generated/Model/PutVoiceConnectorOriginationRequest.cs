@@ -31,6 +31,13 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the PutVoiceConnectorOrigination operation.
     /// Adds origination settings for the specified Amazon Chime Voice Connector.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If emergency calling is configured for the Amazon Chime Voice Connector, it must be
+    /// deleted prior to turning off origination settings.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class PutVoiceConnectorOriginationRequest : AmazonChimeRequest
     {

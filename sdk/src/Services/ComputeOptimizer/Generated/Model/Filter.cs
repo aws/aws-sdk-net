@@ -43,12 +43,13 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>Finding</code> to filter the results to a specific findings classification.
+        /// Specify <code>Finding</code> to return recommendations with a specific findings classification
+        /// (e.g., <code>Overprovisioned</code>).
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>RecommendationSourceType</code> to filter the results to a specific
-        /// resource type.
+        /// Specify <code>RecommendationSourceType</code> to return recommendations of a specific
+        /// resource type (e.g., <code>AutoScalingGroup</code>).
         /// </para>
         /// </summary>
         public FilterName Name
@@ -70,20 +71,20 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify the <code>name</code> parameter as <code>Finding</code>, and you're
+        /// If you specify the <code>name</code> parameter as <code>Finding</code>, and you request
         /// recommendations for an <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
         /// <code>Overprovisioned</code>, <code>NotOptimized</code>, or <code>Optimized</code>.
         /// </para>
         ///  
         /// <para>
-        /// If you specify the <code>name</code> parameter as <code>Finding</code>, and you're
+        /// If you specify the <code>name</code> parameter as <code>Finding</code>, and you request
         /// recommendations for an <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>,
         /// or <code>NotOptimized</code>.
         /// </para>
         ///  
         /// <para>
         /// If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>,
-        /// then the valid values are <code>EC2Instance</code>, or <code>AutoScalingGroup</code>.
+        /// then the valid values are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
         /// </para>
         /// </summary>
         public List<string> Values

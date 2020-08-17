@@ -30,44 +30,55 @@ namespace Amazon.FraudDetector.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateModelVersion operation.
-    /// Updates a model version. You can update the description and status attributes using
-    /// this action. You can perform the following status updates: 
-    /// 
-    ///  <ol> <li> 
-    /// <para>
-    /// Change the <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Change <code>ACTIVE</code> back to <code>TRAINING_COMPLETE</code> 
-    /// </para>
-    ///  </li> </ol>
+    /// Updates a model version. Updating a model version retrains an existing model version
+    /// using updated training data and produces a new minor version of the model. You can
+    /// update the training data set location and data access role attributes using this action.
+    /// This action creates and trains a new minor version of the model, for example version
+    /// 1.01, 1.02, 1.03.
     /// </summary>
     public partial class UpdateModelVersionRequest : AmazonFraudDetectorRequest
     {
-        private string _description;
+        private ExternalEventsDetail _externalEventsDetail;
+        private string _majorVersionNumber;
         private string _modelId;
         private ModelTypeEnum _modelType;
-        private string _modelVersionNumber;
-        private ModelVersionStatus _status;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property ExternalEventsDetail. 
         /// <para>
-        /// The model description.
+        /// The event details.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Description
+        public ExternalEventsDetail ExternalEventsDetail
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._externalEventsDetail; }
+            set { this._externalEventsDetail = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if ExternalEventsDetail property is set
+        internal bool IsSetExternalEventsDetail()
         {
-            return this._description != null;
+            return this._externalEventsDetail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MajorVersionNumber. 
+        /// <para>
+        /// The major version number.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=5)]
+        public string MajorVersionNumber
+        {
+            get { return this._majorVersionNumber; }
+            set { this._majorVersionNumber = value; }
+        }
+
+        // Check to see if MajorVersionNumber property is set
+        internal bool IsSetMajorVersionNumber()
+        {
+            return this._majorVersionNumber != null;
         }
 
         /// <summary>
@@ -109,41 +120,22 @@ namespace Amazon.FraudDetector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ModelVersionNumber. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The model version.
+        /// A collection of key and value pairs.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
-        public string ModelVersionNumber
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
         {
-            get { return this._modelVersionNumber; }
-            set { this._modelVersionNumber = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if ModelVersionNumber property is set
-        internal bool IsSetModelVersionNumber()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._modelVersionNumber != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The new model status.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public ModelVersionStatus Status
-        {
-            get { return this._status; }
-            set { this._status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this._status != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

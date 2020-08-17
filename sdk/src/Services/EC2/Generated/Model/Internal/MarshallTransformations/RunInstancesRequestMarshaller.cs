@@ -125,6 +125,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("CapacityReservationSpecification" + "." + "CapacityReservationTarget" + "." + "CapacityReservationId", StringUtils.FromString(publicRequest.CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationId));
                         }
+                        if(publicRequest.CapacityReservationSpecification.CapacityReservationTarget.IsSetCapacityReservationResourceGroupArn())
+                        {
+                            request.Parameters.Add("CapacityReservationSpecification" + "." + "CapacityReservationTarget" + "." + "CapacityReservationResourceGroupArn", StringUtils.FromString(publicRequest.CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationResourceGroupArn));
+                        }
                     }
                 }
                 if(publicRequest.IsSetClientToken())
@@ -332,6 +336,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.NetworkInterfaces)
                     {
+                        if(publicRequestlistValue.IsSetAssociateCarrierIpAddress())
+                        {
+                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "AssociateCarrierIpAddress", StringUtils.FromBool(publicRequestlistValue.AssociateCarrierIpAddress));
+                        }
                         if(publicRequestlistValue.IsSetAssociatePublicIpAddress())
                         {
                             request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "AssociatePublicIpAddress", StringUtils.FromBool(publicRequestlistValue.AssociatePublicIpAddress));

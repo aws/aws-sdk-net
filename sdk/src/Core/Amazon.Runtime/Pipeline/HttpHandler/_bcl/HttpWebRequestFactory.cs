@@ -284,10 +284,10 @@ namespace Amazon.Runtime.Internal
                 int bytesRead = 0;
                 int bytesToRead = buffer.Length;
 
-                while ((bytesRead = await contentStream.ReadAsync(buffer, 0, bytesToRead, requestContext.CancellationToken)) > 0)
+                while ((bytesRead = await contentStream.ReadAsync(buffer, 0, bytesToRead, requestContext.CancellationToken).ConfigureAwait(false)) > 0)
                 {
                     requestContext.CancellationToken.ThrowIfCancellationRequested();
-                    await requestContent.WriteAsync(buffer, 0, bytesRead, requestContext.CancellationToken);
+                    await requestContent.WriteAsync(buffer, 0, bytesRead, requestContext.CancellationToken).ConfigureAwait(false);
                 }
             }
             catch
@@ -322,12 +322,12 @@ namespace Amazon.Runtime.Internal
         /// <param name="requestContent">The destination where the content stream is written.</param>
         /// <param name="content">The content stream to be written.</param>
         /// <param name="contentHeaders">HTTP content headers.</param>
-        public async Task WriteToRequestBodyAsync(Stream requestContent, byte[] content, IDictionary<string, string> contentHeaders, CancellationToken cancellationToken = default)
+        public async Task WriteToRequestBodyAsync(Stream requestContent, byte[] content, IDictionary<string, string> contentHeaders, CancellationToken cancellationToken = default(CancellationToken))
         {
             cancellationToken.ThrowIfCancellationRequested();
             using (requestContent)
             {
-                await requestContent.WriteAsync(content, 0, content.Length, cancellationToken);
+                await requestContent.WriteAsync(content, 0, content.Length, cancellationToken).ConfigureAwait(false);
             }
         }
 
@@ -337,7 +337,7 @@ namespace Amazon.Runtime.Internal
         /// <returns></returns>
         public async Task<Stream> GetRequestContentAsync()
         {
-            return await GetRequestContentAsync(CancellationToken.None);
+            return await GetRequestContentAsync(CancellationToken.None).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -352,7 +352,7 @@ namespace Amazon.Runtime.Internal
             {
                 try
                 {
-                    return await _request.GetRequestStreamAsync();
+                    return await _request.GetRequestStreamAsync().ConfigureAwait(false);
                 }
                 catch (WebException webException)
                 {

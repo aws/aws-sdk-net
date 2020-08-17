@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Provides information about sensitive data that was detected by managed data identifiers
-    /// and produced a finding.
+    /// and produced a sensitive data finding.
     /// </summary>
     public partial class DefaultDetection
     {

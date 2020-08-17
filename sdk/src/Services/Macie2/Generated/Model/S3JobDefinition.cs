@@ -58,8 +58,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Scoping. 
         /// <para>
-        /// A JobScopeTerm object that specifies conditions for including or excluding objects
-        /// from the job.
+        /// The property- and tag-based conditions that determine which objects to include or
+        /// exclude from the analysis.
         /// </para>
         /// </summary>
         public Scoping Scoping

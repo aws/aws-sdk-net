@@ -35,11 +35,13 @@ namespace Amazon.CodeBuild.Model
     {
         private string _arn;
         private BuildArtifacts _artifacts;
+        private string _buildBatchArn;
         private bool? _buildComplete;
         private long? _buildNumber;
         private StatusType _buildStatus;
         private ProjectCache _cache;
         private string _currentPhase;
+        private DebugSession _debugSession;
         private string _encryptionKey;
         private DateTime? _endTime;
         private ProjectEnvironment _environment;
@@ -99,6 +101,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetArtifacts()
         {
             return this._artifacts != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BuildBatchArn. 
+        /// <para>
+        /// The ARN of the batch build that this build is a member of, if applicable.
+        /// </para>
+        /// </summary>
+        public string BuildBatchArn
+        {
+            get { return this._buildBatchArn; }
+            set { this._buildBatchArn = value; }
+        }
+
+        // Check to see if BuildBatchArn property is set
+        internal bool IsSetBuildBatchArn()
+        {
+            return this._buildBatchArn != null;
         }
 
         /// <summary>
@@ -217,6 +237,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetCurrentPhase()
         {
             return this._currentPhase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DebugSession. 
+        /// <para>
+        /// Contains information about the debug session for this build.
+        /// </para>
+        /// </summary>
+        public DebugSession DebugSession
+        {
+            get { return this._debugSession; }
+            set { this._debugSession = value; }
+        }
+
+        // Check to see if DebugSession property is set
+        internal bool IsSetDebugSession()
+        {
+            return this._debugSession != null;
         }
 
         /// <summary>

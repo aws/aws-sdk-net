@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeHumanTaskUi operation.
-    /// Returns information about the requested human task user interface.
+    /// Returns information about the requested human task user interface (worker task template).
     /// </summary>
     public partial class DescribeHumanTaskUiRequest : AmazonSageMakerRequest
     {
@@ -39,7 +39,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HumanTaskUiName. 
         /// <para>
-        /// The name of the human task user interface you want information about.
+        /// The name of the human task user interface (worker task template) you want information
+        /// about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

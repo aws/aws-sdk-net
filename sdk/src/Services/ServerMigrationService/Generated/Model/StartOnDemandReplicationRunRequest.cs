@@ -35,8 +35,8 @@ namespace Amazon.ServerMigrationService.Model
     /// 
     ///  
     /// <para>
-    /// There is a limit on the number of on-demand replications runs you can request in a
-    /// 24-hour period.
+    /// There is a limit on the number of on-demand replications runs that you can request
+    /// in a 24-hour period.
     /// </para>
     /// </summary>
     public partial class StartOnDemandReplicationRunRequest : AmazonServerMigrationServiceRequest
@@ -65,7 +65,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationJobId. 
         /// <para>
-        /// The identifier of the replication job.
+        /// The ID of the replication job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

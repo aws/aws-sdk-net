@@ -122,6 +122,11 @@ namespace Amazon.OpsWorksCM
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/opsworks-service.html">AWS
+    /// OpsWorks endpoints and quotas</a> in the AWS General Reference.
+    /// </para>
+    ///  
+    /// <para>
     ///  <b>Throttling limits</b> 
     /// </para>
     ///  
@@ -158,7 +163,7 @@ namespace Amazon.OpsWorksCM
         /// </para>
         ///  
         /// <para>
-        ///  Example (Chef): <code>aws opsworks-cm associate-node --server-name <i>MyServer</i>
+        ///  Example (Puppet): <code>aws opsworks-cm associate-node --server-name <i>MyServer</i>
         /// --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>PUPPET_NODE_CSR</i>,Value=<i>csr-pem</i>"</code>
         /// 
         /// </para>

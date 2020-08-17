@@ -29,11 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Structure for Domain Association, which associates a custom domain with an Amplify
-    /// App.
+    /// Describes a domain association that associates a custom domain with an Amplify app.
     /// </summary>
     public partial class DomainAssociation
     {
+        private List<string> _autoSubDomainCreationPatterns = new List<string>();
+        private string _autoSubDomainIAMRole;
         private string _certificateVerificationDNSRecord;
         private string _domainAssociationArn;
         private string _domainName;
@@ -43,9 +44,47 @@ namespace Amazon.Amplify.Model
         private List<SubDomain> _subDomains = new List<SubDomain>();
 
         /// <summary>
+        /// Gets and sets the property AutoSubDomainCreationPatterns. 
+        /// <para>
+        ///  Sets branch patterns for automatic subdomain creation. 
+        /// </para>
+        /// </summary>
+        public List<string> AutoSubDomainCreationPatterns
+        {
+            get { return this._autoSubDomainCreationPatterns; }
+            set { this._autoSubDomainCreationPatterns = value; }
+        }
+
+        // Check to see if AutoSubDomainCreationPatterns property is set
+        internal bool IsSetAutoSubDomainCreationPatterns()
+        {
+            return this._autoSubDomainCreationPatterns != null && this._autoSubDomainCreationPatterns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoSubDomainIAMRole. 
+        /// <para>
+        ///  The required AWS Identity and Access Management (IAM) service role for the Amazon
+        /// Resource Name (ARN) for automatically creating subdomains. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1000)]
+        public string AutoSubDomainIAMRole
+        {
+            get { return this._autoSubDomainIAMRole; }
+            set { this._autoSubDomainIAMRole = value; }
+        }
+
+        // Check to see if AutoSubDomainIAMRole property is set
+        internal bool IsSetAutoSubDomainIAMRole()
+        {
+            return this._autoSubDomainIAMRole != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CertificateVerificationDNSRecord. 
         /// <para>
-        ///  DNS Record for certificate verification. 
+        ///  The DNS record for certificate verification. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -64,7 +103,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property DomainAssociationArn. 
         /// <para>
-        ///  ARN for the Domain Association. 
+        ///  The Amazon Resource Name (ARN) for the domain association. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
@@ -83,7 +122,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        ///  Name of the domain. 
+        ///  The name of the domain. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -102,7 +141,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property DomainStatus. 
         /// <para>
-        ///  Status fo the Domain Association. 
+        ///  The current status of the domain association. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -121,8 +160,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnableAutoSubDomain. 
         /// <para>
-        ///  Enables automated creation of Subdomains for branches. (Currently not supported)
-        /// 
+        ///  Enables the automated creation of subdomains for branches. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -141,7 +179,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        ///  Reason for the current status of the Domain Association. 
+        ///  The reason for the current status of the domain association. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
@@ -160,7 +198,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property SubDomains. 
         /// <para>
-        ///  Subdomains for the Domain Association. 
+        ///  The subdomains for the domain association. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

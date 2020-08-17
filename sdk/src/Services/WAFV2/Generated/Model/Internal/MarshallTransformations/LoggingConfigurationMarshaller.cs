@@ -56,6 +56,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetManagedByFirewallManager())
+            {
+                context.Writer.WritePropertyName("ManagedByFirewallManager");
+                context.Writer.Write(requestObject.ManagedByFirewallManager);
+            }
+
             if(requestObject.IsSetRedactedFields())
             {
                 context.Writer.WritePropertyName("RedactedFields");

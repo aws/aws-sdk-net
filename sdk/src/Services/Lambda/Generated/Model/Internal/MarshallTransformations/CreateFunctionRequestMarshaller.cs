@@ -105,6 +105,22 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetFileSystemConfigs())
+                {
+                    context.Writer.WritePropertyName("FileSystemConfigs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFileSystemConfigsListValue in publicRequest.FileSystemConfigs)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FileSystemConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFileSystemConfigsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetFunctionName())
                 {
                     context.Writer.WritePropertyName("FunctionName");

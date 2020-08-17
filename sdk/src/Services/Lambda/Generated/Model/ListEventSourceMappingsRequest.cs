@@ -57,6 +57,10 @@ namespace Amazon.Lambda.Model
         /// <para>
         ///  <b>Amazon Simple Queue Service</b> - The ARN of the queue.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string EventSourceArn

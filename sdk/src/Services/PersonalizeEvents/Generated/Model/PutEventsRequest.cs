@@ -30,7 +30,7 @@ namespace Amazon.PersonalizeEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the PutEvents operation.
-    /// Records user interaction event data.
+    /// Records user interaction event data. For more information see <a>event-record-api</a>.
     /// </summary>
     public partial class PutEventsRequest : AmazonPersonalizeEventsRequest
     {
@@ -61,7 +61,10 @@ namespace Amazon.PersonalizeEvents.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// The session ID associated with the user's visit.
+        /// The session ID associated with the user's visit. Your application generates the sessionId
+        /// when a user first visits your website or uses your application. Amazon Personalize
+        /// uses the sessionId to associate events with the user before they log in. For more
+        /// information see <a>event-record-api</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

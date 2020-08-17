@@ -39,7 +39,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The ARN of the secret that the resource-based policy was retrieved for.
+        /// The ARN of the secret retrieved by the resource-based policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -58,7 +58,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name of the secret that the resource-based policy was retrieved for.
+        /// The friendly name of the secret that the retrieved by the resource-based policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

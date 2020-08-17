@@ -84,6 +84,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// (Optional) The name of the plugin for which you want detailed results. If the document
         /// contains only one plugin, the name can be omitted and the details will be returned.
         /// </para>
+        ///  
+        /// <para>
+        /// Plugin names are also referred to as step names in Systems Manager documents.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=4)]
         public string PluginName

@@ -73,6 +73,8 @@ namespace Amazon.RDS.Model
         private string _engine;
         private string _engineMode;
         private string _engineVersion;
+        private bool? _globalWriteForwardingRequested;
+        private WriteForwardingStatus _globalWriteForwardingStatus;
         private string _hostedZoneId;
         private bool? _httpEndpointEnabled;
         private bool? _iamDatabaseAuthenticationEnabled;
@@ -743,6 +745,46 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalWriteForwardingRequested. 
+        /// <para>
+        /// Specifies whether you have requested to enable write forwarding for a secondary cluster
+        /// in an Aurora global database. Because write forwarding takes time to enable, check
+        /// the value of <code>GlobalWriteForwardingStatus</code> to confirm that the request
+        /// has completed before using the write forwarding feature for this cluster.
+        /// </para>
+        /// </summary>
+        public bool GlobalWriteForwardingRequested
+        {
+            get { return this._globalWriteForwardingRequested.GetValueOrDefault(); }
+            set { this._globalWriteForwardingRequested = value; }
+        }
+
+        // Check to see if GlobalWriteForwardingRequested property is set
+        internal bool IsSetGlobalWriteForwardingRequested()
+        {
+            return this._globalWriteForwardingRequested.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalWriteForwardingStatus. 
+        /// <para>
+        /// Specifies whether a secondary cluster in an Aurora global database has write forwarding
+        /// enabled, not enabled, or is in the process of enabling it.
+        /// </para>
+        /// </summary>
+        public WriteForwardingStatus GlobalWriteForwardingStatus
+        {
+            get { return this._globalWriteForwardingStatus; }
+            set { this._globalWriteForwardingStatus = value; }
+        }
+
+        // Check to see if GlobalWriteForwardingStatus property is set
+        internal bool IsSetGlobalWriteForwardingStatus()
+        {
+            return this._globalWriteForwardingStatus != null;
         }
 
         /// <summary>

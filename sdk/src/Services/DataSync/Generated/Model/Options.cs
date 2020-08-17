@@ -54,6 +54,7 @@ namespace Amazon.DataSync.Model
         private PreserveDeletedFiles _preserveDeletedFiles;
         private PreserveDevices _preserveDevices;
         private TaskQueueing _taskQueueing;
+        private TransferMode _transferMode;
         private Uid _uid;
         private VerifyMode _verifyMode;
 
@@ -155,10 +156,12 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LogLevel. 
         /// <para>
-        /// A value that determines the type of logs DataSync will deliver to your AWS CloudWatch
-        /// Logs file. If set to <code>OFF</code>, no logs will be delivered. <code>BASIC</code>
-        /// will deliver a few logs per transfer operation and <code>TRANSFER</code> will deliver
-        /// a verbose log that contains logs for every file that is transferred.
+        /// A value that determines the type of logs that DataSync publishes to a log stream in
+        /// the Amazon CloudWatch log group that you provide. For more information about providing
+        /// a log group for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn">CloudWatchLogGroupArn</a>.
+        /// If set to <code>OFF</code>, no logs are published. <code>BASIC</code> publishes logs
+        /// on errors for individual files transferred, and <code>TRANSFER</code> publishes logs
+        /// for every file or object that is transferred and integrity checked.
         /// </para>
         /// </summary>
         public LogLevel LogLevel
@@ -358,8 +361,8 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use the same agent to run multiple tasks you can enable the tasks to run in
-        /// series. For more information see <a>queue-task-execution</a>.
+        /// If you use the same agent to run multiple tasks, you can enable the tasks to run in
+        /// series. For more information, see <a>queue-task-execution</a>.
         /// </para>
         /// </summary>
         public TaskQueueing TaskQueueing
@@ -372,6 +375,27 @@ namespace Amazon.DataSync.Model
         internal bool IsSetTaskQueueing()
         {
             return this._taskQueueing != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransferMode. 
+        /// <para>
+        /// TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or
+        /// "delta sync", it compares file modification time between source and destination to
+        /// determine which files need to be transferred. ALL skips destination inventory and
+        /// transfers all files discovered on the source.
+        /// </para>
+        /// </summary>
+        public TransferMode TransferMode
+        {
+            get { return this._transferMode; }
+            set { this._transferMode = value; }
+        }
+
+        // Check to see if TransferMode property is set
+        internal bool IsSetTransferMode()
+        {
+            return this._transferMode != null;
         }
 
         /// <summary>
@@ -409,7 +433,7 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// A value that determines whether a data integrity verification should be performed
         /// at the end of a task execution after all data and metadata have been transferred.
-        /// 
+        /// For more information, see <a>create-task</a> 
         /// </para>
         ///  
         /// <para>
@@ -417,15 +441,20 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// POINT_IN_TIME_CONSISTENT: Perform verification (recommended). 
+        /// ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were
+        /// transferred. 
         /// </para>
         ///  
         /// <para>
-        /// ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
+        /// POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end
+        /// of the transfer to verify that source and destination are fully synchronized. This
+        /// option isn't supported when transferring to S3 Glacier or S3 Glacier Deep Archive
+        /// storage classes.
         /// </para>
         ///  
         /// <para>
-        /// NONE: Skip verification.
+        /// NONE: No additional verification is done at the end of the transfer, but all data
+        /// transmissions are integrity-checked with checksum verification during the transfer.
         /// </para>
         /// </summary>
         public VerifyMode VerifyMode

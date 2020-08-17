@@ -34,6 +34,7 @@ namespace Amazon.MQ.Model
     /// </summary>
     public partial class CreateBrokerRequest : AmazonMQRequest
     {
+        private AuthenticationStrategy _authenticationStrategy;
         private bool? _autoMinorVersionUpgrade;
         private string _brokerName;
         private ConfigurationId _configuration;
@@ -43,6 +44,7 @@ namespace Amazon.MQ.Model
         private EngineType _engineType;
         private string _engineVersion;
         private string _hostInstanceType;
+        private LdapServerMetadataInput _ldapServerMetadata;
         private Logs _logs;
         private WeeklyStartTime _maintenanceWindowStartTime;
         private bool? _publiclyAccessible;
@@ -51,6 +53,22 @@ namespace Amazon.MQ.Model
         private List<string> _subnetIds = new List<string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private List<User> _users = new List<User>();
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationStrategy. The authentication strategy used
+        /// to secure the broker.
+        /// </summary>
+        public AuthenticationStrategy AuthenticationStrategy
+        {
+            get { return this._authenticationStrategy; }
+            set { this._authenticationStrategy = value; }
+        }
+
+        // Check to see if AuthenticationStrategy property is set
+        internal bool IsSetAuthenticationStrategy()
+        {
+            return this._authenticationStrategy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. Required. Enables automatic upgrades
@@ -196,6 +214,22 @@ namespace Amazon.MQ.Model
         internal bool IsSetHostInstanceType()
         {
             return this._hostInstanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LdapServerMetadata. The metadata of the LDAP server used
+        /// to authenticate and authorize connections to the broker.
+        /// </summary>
+        public LdapServerMetadataInput LdapServerMetadata
+        {
+            get { return this._ldapServerMetadata; }
+            set { this._ldapServerMetadata = value; }
+        }
+
+        // Check to see if LdapServerMetadata property is set
+        internal bool IsSetLdapServerMetadata()
+        {
+            return this._ldapServerMetadata != null;
         }
 
         /// <summary>

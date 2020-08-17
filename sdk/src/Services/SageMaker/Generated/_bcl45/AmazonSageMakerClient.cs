@@ -441,11 +441,10 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a running App for the specified UserProfile. Supported Apps are JupyterServer,
-        /// KernelGateway, and TensorBoard. This operation is automatically invoked by Amazon
-        /// SageMaker Studio upon access to the associated Domain, and when new kernel configurations
-        /// are selected by the user. A user may have multiple Apps active simultaneously. UserProfiles
-        /// are limited to 5 concurrently running Apps at a time.
+        /// Creates a running App for the specified UserProfile. Supported Apps are JupyterServer
+        /// and KernelGateway. This operation is automatically invoked by Amazon SageMaker Studio
+        /// upon access to the associated Domain, and when new kernel configurations are selected
+        /// by the user. A user may have multiple Apps active simultaneously.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApp service method.</param>
         /// 
@@ -469,11 +468,10 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a running App for the specified UserProfile. Supported Apps are JupyterServer,
-        /// KernelGateway, and TensorBoard. This operation is automatically invoked by Amazon
-        /// SageMaker Studio upon access to the associated Domain, and when new kernel configurations
-        /// are selected by the user. A user may have multiple Apps active simultaneously. UserProfiles
-        /// are limited to 5 concurrently running Apps at a time.
+        /// Creates a running App for the specified UserProfile. Supported Apps are JupyterServer
+        /// and KernelGateway. This operation is automatically invoked by Amazon SageMaker Studio
+        /// upon access to the associated Domain, and when new kernel configurations are selected
+        /// by the user. A user may have multiple Apps active simultaneously.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApp service method.</param>
         /// <param name="cancellationToken">
@@ -673,8 +671,8 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker assumes
-        /// to perform the model compilation job</code> 
+        /// The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker assumes to perform
+        /// the model compilation job. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -740,8 +738,8 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker assumes
-        /// to perform the model compilation job</code> 
+        /// The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker assumes to perform
+        /// the model compilation job. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1194,7 +1192,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates an Amazon SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i>
+        /// Creates an SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i>
         /// that are observed, compared and evaluated as a group. A trial is a set of steps, called
         /// <i>trial components</i>, that produce a machine learning model.
         /// 
@@ -1249,7 +1247,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates an Amazon SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i>
+        /// Creates an SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i>
         /// that are observed, compared and evaluated as a group. A trial is a set of steps, called
         /// <i>trial components</i>, that produce a machine learning model.
         /// 
@@ -2958,6 +2956,93 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateWorkforce
+
+
+        /// <summary>
+        /// Use this operation to create a workforce. This operation will return an error if a
+        /// workforce already exists in the AWS Region that you specify. You can only create one
+        /// workforce in each AWS Region.
+        /// 
+        ///  
+        /// <para>
+        /// If you want to create a new workforce in an AWS Region where the a workforce already
+        /// exists, use the API operation to delete the existing workforce and then use this operation
+        /// to create a new workforce.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a private workforce using Amazon Cognito, you must specify a Cognito user
+        /// pool in <code>CognitoConfig</code>. You can also create an Amazon Cognito workforce
+        /// using the Amazon SageMaker console. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">
+        /// Create a Private Workforce (Amazon Cognito)</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a private workforce using your own OIDC Identity Provider (IdP), specify
+        /// your IdP configuration in <code>OidcConfig</code>. You must create a OIDC IdP workforce
+        /// using this API operation. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private-oidc.html">
+        /// Create a Private Workforce (OIDC IdP)</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkforce service method.</param>
+        /// 
+        /// <returns>The response from the CreateWorkforce service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateWorkforce">REST API Reference for CreateWorkforce Operation</seealso>
+        public virtual CreateWorkforceResponse CreateWorkforce(CreateWorkforceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkforceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkforceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorkforceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Use this operation to create a workforce. This operation will return an error if a
+        /// workforce already exists in the AWS Region that you specify. You can only create one
+        /// workforce in each AWS Region.
+        /// 
+        ///  
+        /// <para>
+        /// If you want to create a new workforce in an AWS Region where the a workforce already
+        /// exists, use the API operation to delete the existing workforce and then use this operation
+        /// to create a new workforce.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a private workforce using Amazon Cognito, you must specify a Cognito user
+        /// pool in <code>CognitoConfig</code>. You can also create an Amazon Cognito workforce
+        /// using the Amazon SageMaker console. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">
+        /// Create a Private Workforce (Amazon Cognito)</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a private workforce using your own OIDC Identity Provider (IdP), specify
+        /// your IdP configuration in <code>OidcConfig</code>. You must create a OIDC IdP workforce
+        /// using this API operation. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private-oidc.html">
+        /// Create a Private Workforce (OIDC IdP)</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkforce service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWorkforce service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateWorkforce">REST API Reference for CreateWorkforce Operation</seealso>
+        public virtual Task<CreateWorkforceResponse> CreateWorkforceAsync(CreateWorkforceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkforceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkforceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateWorkforceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateWorkteam
 
 
@@ -3401,6 +3486,9 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the DeleteFlowDefinition service method.</param>
         /// 
         /// <returns>The response from the DeleteFlowDefinition service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
         /// </exception>
@@ -3424,6 +3512,9 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the DeleteFlowDefinition service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
         /// </exception>
@@ -3435,6 +3526,65 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DeleteFlowDefinitionResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteFlowDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteHumanTaskUi
+
+
+        /// <summary>
+        /// Use this operation to delete a human task user interface (worker task template).
+        /// 
+        ///  
+        /// <para>
+        ///  To see a list of human task user interfaces (work task templates) in your account,
+        /// use . When you delete a worker task template, it no longer appears when you call <code>ListHumanTaskUis</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHumanTaskUi service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHumanTaskUi service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHumanTaskUi">REST API Reference for DeleteHumanTaskUi Operation</seealso>
+        public virtual DeleteHumanTaskUiResponse DeleteHumanTaskUi(DeleteHumanTaskUiRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHumanTaskUiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHumanTaskUiResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHumanTaskUiResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Use this operation to delete a human task user interface (worker task template).
+        /// 
+        ///  
+        /// <para>
+        ///  To see a list of human task user interfaces (work task templates) in your account,
+        /// use . When you delete a worker task template, it no longer appears when you call <code>ListHumanTaskUis</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHumanTaskUi service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteHumanTaskUi service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHumanTaskUi">REST API Reference for DeleteHumanTaskUi Operation</seealso>
+        public virtual Task<DeleteHumanTaskUiResponse> DeleteHumanTaskUiAsync(DeleteHumanTaskUiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHumanTaskUiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHumanTaskUiResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteHumanTaskUiResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3906,6 +4056,61 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteUserProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteWorkforce
+
+
+        /// <summary>
+        /// Use this operation to delete a workforce.
+        /// 
+        ///  
+        /// <para>
+        /// If you want to create a new workforce in an AWS Region where the a workforce already
+        /// exists, use this operation to delete the existing workforce and then use to create
+        /// a new workforce.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkforce service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWorkforce service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteWorkforce">REST API Reference for DeleteWorkforce Operation</seealso>
+        public virtual DeleteWorkforceResponse DeleteWorkforce(DeleteWorkforceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkforceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkforceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkforceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Use this operation to delete a workforce.
+        /// 
+        ///  
+        /// <para>
+        /// If you want to create a new workforce in an AWS Region where the a workforce already
+        /// exists, use this operation to delete the existing workforce and then use to create
+        /// a new workforce.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkforce service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWorkforce service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteWorkforce">REST API Reference for DeleteWorkforce Operation</seealso>
+        public virtual Task<DeleteWorkforceResponse> DeleteWorkforceAsync(DeleteWorkforceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkforceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkforceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteWorkforceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4423,7 +4628,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Returns information about the requested human task user interface.
+        /// Returns information about the requested human task user interface (worker task template).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHumanTaskUi service method.</param>
         /// 
@@ -4443,7 +4648,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Returns information about the requested human task user interface.
+        /// Returns information about the requested human task user interface (worker task template).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHumanTaskUi service method.</param>
         /// <param name="cancellationToken">
@@ -6668,6 +6873,49 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListWorkforces
+
+
+        /// <summary>
+        /// Use this operation to list all private and vendor workforces in an AWS Region. Note
+        /// that you can only have one private workforce per AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkforces service method.</param>
+        /// 
+        /// <returns>The response from the ListWorkforces service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListWorkforces">REST API Reference for ListWorkforces Operation</seealso>
+        public virtual ListWorkforcesResponse ListWorkforces(ListWorkforcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkforcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkforcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkforcesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Use this operation to list all private and vendor workforces in an AWS Region. Note
+        /// that you can only have one private workforce per AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkforces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorkforces service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListWorkforces">REST API Reference for ListWorkforces Operation</seealso>
+        public virtual Task<ListWorkforcesResponse> ListWorkforcesAsync(ListWorkforcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkforcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkforcesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListWorkforcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListWorkteams
 
 
@@ -6720,6 +6968,9 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the RenderUiTemplate service method.</param>
         /// 
         /// <returns>The response from the RenderUiTemplate service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RenderUiTemplate">REST API Reference for RenderUiTemplate Operation</seealso>
         public virtual RenderUiTemplateResponse RenderUiTemplate(RenderUiTemplateRequest request)
         {
@@ -6740,6 +6991,9 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the RenderUiTemplate service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RenderUiTemplate">REST API Reference for RenderUiTemplate Operation</seealso>
         public virtual Task<RenderUiTemplateResponse> RenderUiTemplateAsync(RenderUiTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -8081,7 +8335,7 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Restricts access to tasks assigned to workers in the specified workforce to those
         /// within specific ranges of IP addresses. You specify allowed IP addresses by creating
-        /// a list of up to four <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
+        /// a list of up to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
         /// 
         ///  
         /// <para>
@@ -8114,7 +8368,7 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Restricts access to tasks assigned to workers in the specified workforce to those
         /// within specific ranges of IP addresses. You specify allowed IP addresses by creating
-        /// a list of up to four <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
+        /// a list of up to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
         /// 
         ///  
         /// <para>

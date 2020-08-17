@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
-    /// A logical grouping of servers.
+    /// Logical grouping of servers.
     /// </summary>
     public partial class ServerGroup
     {
@@ -40,7 +40,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of a server group.
+        /// The name of a server group.
         /// </para>
         /// </summary>
         public string Name
@@ -58,7 +58,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerGroupId. 
         /// <para>
-        /// Identifier of a server group.
+        /// The ID of a server group.
         /// </para>
         /// </summary>
         public string ServerGroupId
@@ -76,7 +76,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerList. 
         /// <para>
-        /// List of servers belonging to a server group.
+        /// The servers that belong to a server group.
         /// </para>
         /// </summary>
         public List<Server> ServerList

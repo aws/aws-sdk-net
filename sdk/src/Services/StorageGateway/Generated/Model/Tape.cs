@@ -66,11 +66,11 @@ namespace Amazon.StorageGateway.Model
         /// The ID of the pool that contains tapes that will be archived. The tapes in this pool
         /// are archived in the S3 storage class that is associated with the pool. When you use
         /// your backup application to eject the tape, the tape is archived directly into the
-        /// storage class (S3 Glacier or S# Glacier Deep Archive) that corresponds to the pool.
+        /// storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: "GLACIER", "DEEP_ARCHIVE"
+        /// Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

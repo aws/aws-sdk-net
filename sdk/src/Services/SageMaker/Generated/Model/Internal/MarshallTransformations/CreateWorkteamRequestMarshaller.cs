@@ -117,6 +117,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetWorkforceName())
+                {
+                    context.Writer.WritePropertyName("WorkforceName");
+                    context.Writer.Write(publicRequest.WorkforceName);
+                }
+
                 if(publicRequest.IsSetWorkteamName())
                 {
                     context.Writer.WritePropertyName("WorkteamName");

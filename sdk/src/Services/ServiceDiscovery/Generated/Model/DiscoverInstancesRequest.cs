@@ -68,7 +68,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// AWS Cloud Map returns up to 100 instances.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

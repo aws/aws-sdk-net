@@ -108,6 +108,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetHttpEndpointDestinationUpdate())
+                {
+                    context.Writer.WritePropertyName("HttpEndpointDestinationUpdate");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = HttpEndpointDestinationUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.HttpEndpointDestinationUpdate, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRedshiftDestinationUpdate())
                 {
                     context.Writer.WritePropertyName("RedshiftDestinationUpdate");

@@ -532,6 +532,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Must begin with a letter. Subsequent characters can be letters, underscores, or digits
+        /// (0-9).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Can't be a word reserved by the specified database engine
         /// </para>
         ///  </li> </ul> 
@@ -550,6 +555,11 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         /// Must contain 1 to 64 letters or numbers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must begin with a letter. Subsequent characters can be letters, underscores, or digits
+        /// (0-9).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -574,8 +584,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must begin with a letter or an underscore. Subsequent characters can be letters, underscores,
-        /// or digits (0-9).
+        /// Must begin with a letter. Subsequent characters can be letters, underscores, or digits
+        /// (0-9).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -761,22 +771,14 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The Active Directory directory ID to create the DB instance in. Currently, only Microsoft
-        /// SQL Server and Oracle DB instances can be created in an Active Directory Domain.
+        /// The Active Directory directory ID to create the DB instance in. Currently, only MySQL,
+        /// Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+        /// Directory Domain.
         /// </para>
         ///  
         /// <para>
-        /// For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to
-        /// authenticate users that connect to the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-        /// Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL
-        /// Server</a> in the <i>Amazon RDS User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
-        /// users that connect to the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-        /// Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS
-        /// User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+        /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         public string Domain
@@ -1812,11 +1814,20 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// A value that indicates whether the DB instance is publicly accessible. When the DB
-        /// instance is publicly accessible, it is an Internet-facing instance with a publicly
-        /// resolvable DNS name, which resolves to a public IP address. When the DB instance isn't
-        /// publicly accessible, it is an internal instance with a DNS name that resolves to a
-        /// private IP address.
+        /// A value that indicates whether the DB instance is publicly accessible.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the DB instance is publicly accessible, its DNS endpoint resolves to the private
+        /// IP address from within the DB instance's VPC, and to the public IP address from outside
+        /// of the DB instance's VPC. Access to the DB instance is ultimately controlled by the
+        /// security group it uses, and that public access is not permitted if the security group
+        /// assigned to the DB instance doesn't permit it.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the DB instance isn't publicly accessible, it is an internal DB instance with
+        /// a DNS name that resolves to a private IP address.
         /// </para>
         ///  
         /// <para>

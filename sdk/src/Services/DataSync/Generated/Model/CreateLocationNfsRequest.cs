@@ -31,7 +31,7 @@ namespace Amazon.DataSync.Model
     /// <summary>
     /// Container for the parameters to the CreateLocationNfs operation.
     /// Defines a file system on a Network File System (NFS) server that can be read from
-    /// or written to
+    /// or written to.
     /// </summary>
     public partial class CreateLocationNfsRequest : AmazonDataSyncRequest
     {
@@ -63,7 +63,12 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property OnPremConfig. 
         /// <para>
         /// Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect
-        /// to an NFS server.
+        /// to an NFS server. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are copying data to or from your AWS Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
+        /// Server on AWS Snowcone</a> for more information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,6 +90,11 @@ namespace Amazon.DataSync.Model
         /// The name of the NFS server. This value is the IP address or Domain Name Service (DNS)
         /// name of the NFS server. An agent that is installed on-premises uses this host name
         /// to mount the NFS server in a network. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are copying data to or from your AWS Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
+        /// Server on AWS Snowcone</a> for more information.
         /// </para>
         ///  <note> 
         /// <para>
@@ -130,6 +140,11 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
+        /// If you are copying data to or from your AWS Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
+        /// Server on AWS Snowcone</a> for more information.
+        /// </para>
+        ///  
+        /// <para>
         /// For information about NFS export configuration, see 18.7. The /etc/exports Configuration
         /// File in the Red Hat Enterprise Linux documentation.
         /// </para>
@@ -154,7 +169,7 @@ namespace Amazon.DataSync.Model
         /// value can be an empty string. We recommend using tags to name your resources.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=55)]
+        [AWSProperty(Min=0, Max=50)]
         public List<TagListEntry> Tags
         {
             get { return this._tags; }

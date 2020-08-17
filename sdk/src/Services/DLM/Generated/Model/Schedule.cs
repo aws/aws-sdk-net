@@ -122,7 +122,7 @@ namespace Amazon.DLM.Model
         /// The name of the schedule.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Min=0, Max=120)]
         public string Name
         {
             get { return this._name; }

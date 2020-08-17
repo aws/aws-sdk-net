@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2020-05-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -206,6 +206,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return MissingBodyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchCachePolicy"))
+                {
+                    return NoSuchCachePolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchFieldLevelEncryptionConfig"))
                 {
                     return NoSuchFieldLevelEncryptionConfigExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -213,6 +217,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchOrigin"))
                 {
                     return NoSuchOriginExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchOriginRequestPolicy"))
+                {
+                    return NoSuchOriginRequestPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyCacheBehaviors"))
                 {
@@ -230,9 +238,17 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return TooManyDistributionCNAMEsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsAssociatedToCachePolicy"))
+                {
+                    return TooManyDistributionsAssociatedToCachePolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsAssociatedToFieldLevelEncryptionConfig"))
                 {
                     return TooManyDistributionsAssociatedToFieldLevelEncryptionConfigExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsAssociatedToOriginRequestPolicy"))
+                {
+                    return TooManyDistributionsAssociatedToOriginRequestPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributions"))
                 {
@@ -241,6 +257,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsWithLambdaAssociations"))
                 {
                     return TooManyDistributionsWithLambdaAssociationsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsWithSingleFunctionARN"))
+                {
+                    return TooManyDistributionsWithSingleFunctionARNExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyHeadersInForwardedValues"))
                 {

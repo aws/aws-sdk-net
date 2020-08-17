@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// A backup of an Amazon FSx for Windows File Server file system. You can create a new
-    /// file system from a backup to protect against data loss.
+    /// A backup of an Amazon FSx for file system.
     /// </summary>
     public partial class Backup
     {
@@ -238,7 +237,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the backup.
+        /// The type of the file system backup.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -86,7 +86,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
         /// <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
         /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-        /// and <code>"sqlserver"</code>.
+        /// <code>"sqlserver"</code>, and <code>"neptune"</code>.
         /// </para>
         /// </summary>
         public string EngineName

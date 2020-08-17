@@ -36,6 +36,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class ComputeLimits
     {
         private int? _maximumCapacityUnits;
+        private int? _maximumCoreCapacityUnits;
         private int? _maximumOnDemandCapacityUnits;
         private int? _minimumCapacityUnits;
         private ComputeLimitsUnitType _unitType;
@@ -63,13 +64,33 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaximumCoreCapacityUnits. 
+        /// <para>
+        ///  The upper boundary of EC2 units for core node type in a cluster. It is measured through
+        /// VCPU cores or instances for instance groups and measured through units for instance
+        /// fleets. The core units are not allowed to scale beyond this boundary. The parameter
+        /// is used to split capacity allocation between core and task nodes. 
+        /// </para>
+        /// </summary>
+        public int MaximumCoreCapacityUnits
+        {
+            get { return this._maximumCoreCapacityUnits.GetValueOrDefault(); }
+            set { this._maximumCoreCapacityUnits = value; }
+        }
+
+        // Check to see if MaximumCoreCapacityUnits property is set
+        internal bool IsSetMaximumCoreCapacityUnits()
+        {
+            return this._maximumCoreCapacityUnits.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MaximumOnDemandCapacityUnits. 
         /// <para>
-        ///  The upper boundary of on-demand EC2 units. It is measured through VCPU cores or instances
-        /// for instance groups and measured through units for instance fleets. The on-demand
-        /// units are not allowed to scale beyond this boundary. The limit only applies to the
-        /// core and task nodes. The master node cannot be scaled after initial configuration.
-        /// 
+        ///  The upper boundary of On-Demand EC2 units. It is measured through VCPU cores or instances
+        /// for instance groups and measured through units for instance fleets. The On-Demand
+        /// units are not allowed to scale beyond this boundary. The parameter is used to split
+        /// capacity allocation between On-Demand and Spot instances. 
         /// </para>
         /// </summary>
         public int MaximumOnDemandCapacityUnits

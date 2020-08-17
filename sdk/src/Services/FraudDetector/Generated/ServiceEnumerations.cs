@@ -485,37 +485,13 @@ namespace Amazon.FraudDetector
     {
 
         /// <summary>
-        /// Constant ACTIVATE_IN_PROGRESS for ModelVersionStatus
-        /// </summary>
-        public static readonly ModelVersionStatus ACTIVATE_IN_PROGRESS = new ModelVersionStatus("ACTIVATE_IN_PROGRESS");
-        /// <summary>
-        /// Constant ACTIVATE_REQUESTED for ModelVersionStatus
-        /// </summary>
-        public static readonly ModelVersionStatus ACTIVATE_REQUESTED = new ModelVersionStatus("ACTIVATE_REQUESTED");
-        /// <summary>
         /// Constant ACTIVE for ModelVersionStatus
         /// </summary>
         public static readonly ModelVersionStatus ACTIVE = new ModelVersionStatus("ACTIVE");
         /// <summary>
-        /// Constant ERROR for ModelVersionStatus
-        /// </summary>
-        public static readonly ModelVersionStatus ERROR = new ModelVersionStatus("ERROR");
-        /// <summary>
-        /// Constant INACTIVATE_IN_PROGRESS for ModelVersionStatus
-        /// </summary>
-        public static readonly ModelVersionStatus INACTIVATE_IN_PROGRESS = new ModelVersionStatus("INACTIVATE_IN_PROGRESS");
-        /// <summary>
         /// Constant INACTIVE for ModelVersionStatus
         /// </summary>
         public static readonly ModelVersionStatus INACTIVE = new ModelVersionStatus("INACTIVE");
-        /// <summary>
-        /// Constant TRAINING_COMPLETE for ModelVersionStatus
-        /// </summary>
-        public static readonly ModelVersionStatus TRAINING_COMPLETE = new ModelVersionStatus("TRAINING_COMPLETE");
-        /// <summary>
-        /// Constant TRAINING_IN_PROGRESS for ModelVersionStatus
-        /// </summary>
-        public static readonly ModelVersionStatus TRAINING_IN_PROGRESS = new ModelVersionStatus("TRAINING_IN_PROGRESS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -596,6 +572,52 @@ namespace Amazon.FraudDetector
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RuleExecutionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrainingDataSourceEnum.
+    /// </summary>
+    public class TrainingDataSourceEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXTERNAL_EVENTS for TrainingDataSourceEnum
+        /// </summary>
+        public static readonly TrainingDataSourceEnum EXTERNAL_EVENTS = new TrainingDataSourceEnum("EXTERNAL_EVENTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrainingDataSourceEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrainingDataSourceEnum FindValue(string value)
+        {
+            return FindValue<TrainingDataSourceEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrainingDataSourceEnum(string value)
         {
             return FindValue(value);
         }

@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("carrierIp", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CarrierIp = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ipOwnerId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

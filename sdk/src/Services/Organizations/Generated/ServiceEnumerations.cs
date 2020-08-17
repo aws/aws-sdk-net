@@ -333,6 +333,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE = new ConstraintViolationExceptionReason("MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE");
         /// <summary>
+        /// Constant MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE = new ConstraintViolationExceptionReason("MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE");
+        /// <summary>
         /// Constant MASTER_ACCOUNT_MISSING_CONTACT_INFO for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason MASTER_ACCOUNT_MISSING_CONTACT_INFO = new ConstraintViolationExceptionReason("MASTER_ACCOUNT_MISSING_CONTACT_INFO");
@@ -462,6 +466,14 @@ namespace Amazon.Organizations
         /// Constant INVALID_EMAIL for CreateAccountFailureReason
         /// </summary>
         public static readonly CreateAccountFailureReason INVALID_EMAIL = new CreateAccountFailureReason("INVALID_EMAIL");
+        /// <summary>
+        /// Constant MISSING_BUSINESS_VALIDATION for CreateAccountFailureReason
+        /// </summary>
+        public static readonly CreateAccountFailureReason MISSING_BUSINESS_VALIDATION = new CreateAccountFailureReason("MISSING_BUSINESS_VALIDATION");
+        /// <summary>
+        /// Constant MISSING_PAYMENT_INSTRUMENT for CreateAccountFailureReason
+        /// </summary>
+        public static readonly CreateAccountFailureReason MISSING_PAYMENT_INSTRUMENT = new CreateAccountFailureReason("MISSING_PAYMENT_INSTRUMENT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -558,6 +570,14 @@ namespace Amazon.Organizations
     public class EffectivePolicyType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AISERVICES_OPT_OUT_POLICY for EffectivePolicyType
+        /// </summary>
+        public static readonly EffectivePolicyType AISERVICES_OPT_OUT_POLICY = new EffectivePolicyType("AISERVICES_OPT_OUT_POLICY");
+        /// <summary>
+        /// Constant BACKUP_POLICY for EffectivePolicyType
+        /// </summary>
+        public static readonly EffectivePolicyType BACKUP_POLICY = new EffectivePolicyType("BACKUP_POLICY");
         /// <summary>
         /// Constant TAG_POLICY for EffectivePolicyType
         /// </summary>
@@ -1152,6 +1172,14 @@ namespace Amazon.Organizations
     public class PolicyType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AISERVICES_OPT_OUT_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType AISERVICES_OPT_OUT_POLICY = new PolicyType("AISERVICES_OPT_OUT_POLICY");
+        /// <summary>
+        /// Constant BACKUP_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType BACKUP_POLICY = new PolicyType("BACKUP_POLICY");
         /// <summary>
         /// Constant SERVICE_CONTROL_POLICY for PolicyType
         /// </summary>

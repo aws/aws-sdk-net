@@ -88,7 +88,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AutoMLJobArn.
+        /// Gets and sets the property AutoMLJobArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an AutoML job.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string AutoMLJobArn

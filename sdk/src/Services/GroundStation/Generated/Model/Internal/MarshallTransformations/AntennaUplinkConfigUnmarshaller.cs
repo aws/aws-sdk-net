@@ -76,6 +76,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     unmarshalledObject.TargetEirp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("transmitDisabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.TransmitDisabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

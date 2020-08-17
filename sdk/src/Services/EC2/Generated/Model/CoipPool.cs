@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class CoipPool
     {
         private string _localGatewayRouteTableId;
+        private string _poolArn;
         private List<string> _poolCidrs = new List<string>();
         private string _poolId;
         private List<Tag> _tags = new List<Tag>();
@@ -54,6 +55,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetLocalGatewayRouteTableId()
         {
             return this._localGatewayRouteTableId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PoolArn. 
+        /// <para>
+        /// The ARN of the address pool.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1283)]
+        public string PoolArn
+        {
+            get { return this._poolArn; }
+            set { this._poolArn = value; }
+        }
+
+        // Check to see if PoolArn property is set
+        internal bool IsSetPoolArn()
+        {
+            return this._poolArn != null;
         }
 
         /// <summary>

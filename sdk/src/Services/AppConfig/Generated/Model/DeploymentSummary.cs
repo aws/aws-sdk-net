@@ -88,7 +88,7 @@ namespace Amazon.AppConfig.Model
         /// The version of the configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=1024)]
         public string ConfigurationVersion
         {
             get { return this._configurationVersion; }

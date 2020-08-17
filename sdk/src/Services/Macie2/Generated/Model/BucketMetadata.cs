@@ -125,9 +125,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ClassifiableObjectCount. 
         /// <para>
-        /// The total number of objects that Amazon Macie can monitor and analyze in the bucket.
-        /// These objects use a file format, file extension, or content type that Amazon Macie
-        /// supports.
+        /// The total number of objects that Amazon Macie can analyze in the bucket. These objects
+        /// use a file format, file extension, or content type that Amazon Macie supports.
         /// </para>
         /// </summary>
         public long ClassifiableObjectCount
@@ -184,7 +183,7 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// The total number of objects that are in the bucket, grouped by server-side encryption
         /// type. This includes a grouping that reports the total number of objects that aren't
-        /// encrypted.
+        /// encrypted or use client-side encryption.
         /// </para>
         /// </summary>
         public ObjectCountByEncryptionType ObjectCountByEncryptionType
@@ -259,18 +258,17 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property SharedAccess. 
         /// <para>
-        /// Specifies whether the bucket is shared with another AWS account or configured to support
-        /// cross-origin resource sharing (CORS). Valid values are:
+        /// Specifies whether the bucket is shared with another AWS account. Valid values are:
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon
+        /// EXTERNAL - The bucket is shared with an AWS account that isn’t part of the same Amazon
         /// Macie organization.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie
-        /// organization.
+        /// INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon
+        /// Macie organization.
         /// </para>
         /// </li> <li>
         /// <para>

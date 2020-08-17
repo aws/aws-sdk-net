@@ -127,6 +127,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "CapacityReservationSpecification" + "." + "CapacityReservationTarget" + "." + "CapacityReservationId", StringUtils.FromString(publicRequest.LaunchTemplateData.CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationId));
                             }
+                            if(publicRequest.LaunchTemplateData.CapacityReservationSpecification.CapacityReservationTarget.IsSetCapacityReservationResourceGroupArn())
+                            {
+                                request.Parameters.Add("LaunchTemplateData" + "." + "CapacityReservationSpecification" + "." + "CapacityReservationTarget" + "." + "CapacityReservationResourceGroupArn", StringUtils.FromString(publicRequest.LaunchTemplateData.CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationResourceGroupArn));
+                            }
                         }
                     }
                     if(publicRequest.LaunchTemplateData.IsSetCpuOptions())
@@ -290,6 +294,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         int publicRequestLaunchTemplateDatalistValueIndex = 1;
                         foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.NetworkInterfaces)
                         {
+                            if(publicRequestLaunchTemplateDatalistValue.IsSetAssociateCarrierIpAddress())
+                            {
+                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "AssociateCarrierIpAddress", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.AssociateCarrierIpAddress));
+                            }
                             if(publicRequestLaunchTemplateDatalistValue.IsSetAssociatePublicIpAddress())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "AssociatePublicIpAddress", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.AssociatePublicIpAddress));

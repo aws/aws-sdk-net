@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// Information about an AWS CodeCommit repository.
+    /// Information about an AWS CodeCommit repository. The CodeCommit repository must be
+    /// in the same AWS Region and AWS account where its CodeGuru Reviewer code reviews are
+    /// configured.
     /// </summary>
     public partial class CodeCommitRepository
     {
@@ -38,7 +40,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the AWS CodeCommit repository.
+        /// The name of the AWS CodeCommit repository. For more information, see <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a>
+        /// in the <i>AWS CodeCommit API Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

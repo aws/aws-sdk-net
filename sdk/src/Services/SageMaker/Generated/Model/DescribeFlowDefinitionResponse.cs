@@ -64,7 +64,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FailureReason.
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        /// The reason your flow definition failed.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
         public string FailureReason

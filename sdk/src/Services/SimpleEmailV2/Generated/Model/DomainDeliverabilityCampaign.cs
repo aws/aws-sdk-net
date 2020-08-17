@@ -134,6 +134,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// The verified email address that the email message was sent from.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string FromAddress
         {
             get { return this._fromAddress; }

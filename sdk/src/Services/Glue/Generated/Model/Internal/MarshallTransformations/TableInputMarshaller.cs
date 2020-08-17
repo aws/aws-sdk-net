@@ -128,6 +128,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TableType);
             }
 
+            if(requestObject.IsSetTargetTable())
+            {
+                context.Writer.WritePropertyName("TargetTable");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TableIdentifierMarshaller.Instance;
+                marshaller.Marshall(requestObject.TargetTable, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetViewExpandedText())
             {
                 context.Writer.WritePropertyName("ViewExpandedText");

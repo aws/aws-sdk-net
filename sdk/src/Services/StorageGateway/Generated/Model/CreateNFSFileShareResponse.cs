@@ -38,7 +38,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property FileShareARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the newly created file share. 
+        /// The Amazon Resource Name (ARN) of the newly created file share.
         /// </para>
         /// </summary>
         [AWSProperty(Min=50, Max=500)]

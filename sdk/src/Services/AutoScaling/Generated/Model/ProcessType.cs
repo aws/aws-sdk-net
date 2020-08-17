@@ -72,6 +72,10 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>InstanceRefresh</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>ReplaceUnhealthy</code> 
         /// </para>
         ///  </li> <li> 

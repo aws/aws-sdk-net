@@ -118,6 +118,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     unmarshalledObject.MediaSampleRateHertz = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelSettings", targetDepth))
+                {
+                    var unmarshaller = ModelSettingsUnmarshaller.Instance;
+                    unmarshalledObject.ModelSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Settings", targetDepth))
                 {
                     var unmarshaller = SettingsUnmarshaller.Instance;

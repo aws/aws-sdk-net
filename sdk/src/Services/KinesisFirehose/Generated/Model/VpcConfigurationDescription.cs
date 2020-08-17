@@ -41,8 +41,48 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The ARN of the IAM role that you want the delivery stream uses to create endpoints
-        /// in the destination VPC.
+        /// The ARN of the IAM role that the delivery stream uses to create endpoints in the destination
+        /// VPC. You can use your existing Kinesis Data Firehose delivery role or you can specify
+        /// a new role. In either case, make sure that the role trusts the Kinesis Data Firehose
+        /// service principal and that it grants the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ec2:DescribeVpcs</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:DescribeVpcAttribute</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:DescribeSubnets</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:DescribeSecurityGroups</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:DescribeNetworkInterfaces</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:CreateNetworkInterface</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:CreateNetworkInterfacePermission</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:DeleteNetworkInterface</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you revoke these permissions after you create the delivery stream, Kinesis Data
+        /// Firehose can't scale out by creating more ENIs when necessary. You might therefore
+        /// see a degradation in performance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -62,7 +102,14 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
         /// The IDs of the security groups that Kinesis Data Firehose uses when it creates ENIs
-        /// in the VPC of the Amazon ES destination.
+        /// in the VPC of the Amazon ES destination. You can use the same security group that
+        /// the Amazon ES domain uses or different ones. If you specify different security groups,
+        /// ensure that they allow outbound HTTPS traffic to the Amazon ES domain's security group.
+        /// Also ensure that the Amazon ES domain's security group allows HTTPS traffic from the
+        /// security groups specified here. If you use the same security group for both your delivery
+        /// stream and the Amazon ES domain, make sure the security group inbound rule allows
+        /// HTTPS traffic. For more information about security group rules, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security
+        /// group rules</a> in the Amazon VPC documentation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

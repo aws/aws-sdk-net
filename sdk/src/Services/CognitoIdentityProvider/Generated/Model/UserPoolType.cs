@@ -595,7 +595,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// You can choose to enable case sensitivity on the username input for the selected sign-in
         /// option. For example, when this is set to <code>False</code>, users will be able to
         /// sign in using either "username" or "Username". This configuration is immutable once
-        /// it has been set. For more information, see .
+        /// it has been set. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.
         /// </para>
         /// </summary>
         public UsernameConfigurationType UsernameConfiguration

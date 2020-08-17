@@ -549,6 +549,10 @@ namespace Amazon.AlexaForBusiness
         /// </summary>
         public static readonly DeviceStatusDetailCode AUTHENTICATION_FAILURE = new DeviceStatusDetailCode("AUTHENTICATION_FAILURE");
         /// <summary>
+        /// Constant CERTIFICATE_AUTHORITY_ACCESS_DENIED for DeviceStatusDetailCode
+        /// </summary>
+        public static readonly DeviceStatusDetailCode CERTIFICATE_AUTHORITY_ACCESS_DENIED = new DeviceStatusDetailCode("CERTIFICATE_AUTHORITY_ACCESS_DENIED");
+        /// <summary>
         /// Constant CERTIFICATE_ISSUING_LIMIT_EXCEEDED for DeviceStatusDetailCode
         /// </summary>
         public static readonly DeviceStatusDetailCode CERTIFICATE_ISSUING_LIMIT_EXCEEDED = new DeviceStatusDetailCode("CERTIFICATE_ISSUING_LIMIT_EXCEEDED");
@@ -588,6 +592,10 @@ namespace Amazon.AlexaForBusiness
         /// Constant NETWORK_PROFILE_NOT_FOUND for DeviceStatusDetailCode
         /// </summary>
         public static readonly DeviceStatusDetailCode NETWORK_PROFILE_NOT_FOUND = new DeviceStatusDetailCode("NETWORK_PROFILE_NOT_FOUND");
+        /// <summary>
+        /// Constant PASSWORD_MANAGER_ACCESS_DENIED for DeviceStatusDetailCode
+        /// </summary>
+        public static readonly DeviceStatusDetailCode PASSWORD_MANAGER_ACCESS_DENIED = new DeviceStatusDetailCode("PASSWORD_MANAGER_ACCESS_DENIED");
         /// <summary>
         /// Constant PASSWORD_NOT_FOUND for DeviceStatusDetailCode
         /// </summary>

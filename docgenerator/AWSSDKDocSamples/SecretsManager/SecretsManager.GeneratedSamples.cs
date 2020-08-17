@@ -418,6 +418,32 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
             #endregion
         }
 
+        public void SecretsManagerValidateResourcePolicy()
+        {
+            #region to-validate-the-resource-policy-of-a-secret-1524000138629
+
+            var response = client.ValidateResourcePolicy(new ValidateResourcePolicyRequest 
+            {
+                ResourcePolicy = "{
+\"Version\":\"2012-10-17\",
+\"Statement\":[{
+\"Effect\":\"Allow\",
+\"Principal\":{
+\"AWS\":\"arn:aws:iam::123456789012:root\"
+},
+\"Action\":\"secretsmanager:GetSecretValue\",
+\"Resource\":\"*\"
+}]
+}",
+                SecretId = "MyTestDatabaseSecret"
+            });
+
+            bool policyValidationPassed = response.PolicyValidationPassed;
+            List<ValidationErrorsEntry> validationErrors = response.ValidationErrors;
+
+            #endregion
+        }
+
         
         # region ISample Members
         public virtual void Run()

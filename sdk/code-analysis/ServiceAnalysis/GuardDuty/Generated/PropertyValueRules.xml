@@ -266,6 +266,11 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMemberDetectorsRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.GetMembersRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
@@ -294,6 +299,16 @@
     <property>Amazon.GuardDuty.Model.GetThreatIntelSetResponse.Status</property>
     <min>1</min>
     <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetUsageStatisticsRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetUsageStatisticsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.InviteMembersRequest.DetectorId</property>
@@ -453,6 +468,11 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.UpdateMemberDetectorsRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.UpdateOrganizationConfigurationRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
@@ -493,6 +513,11 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CloudTrailConfigurationResult.Status</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.Destination.DestinationType</property>
     <min>1</min>
     <max>300</max>
@@ -503,9 +528,19 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.DNSLogsConfigurationResult.Status</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.Finding.Type</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.FlowLogsConfigurationResult.Status</property>
+    <min>1</min>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.Invitation.AccountId</property>
@@ -533,12 +568,27 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.MemberDataSourceConfiguration.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.S3LogsConfigurationResult.Status</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.Service.DetectorId</property>
     <min>1</min>
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.UnprocessedAccount.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.UsageAccountResult.AccountId</property>
     <min>12</min>
     <max>12</max>
   </property-value-rule>

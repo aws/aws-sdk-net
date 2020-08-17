@@ -31,8 +31,8 @@ namespace Amazon.FraudDetector.Model
     /// <summary>
     /// Container for the parameters to the UpdateDetectorVersion operation.
     /// Updates a detector version. The detector version attributes that you can update include
-    /// models, external model endpoints, rules, and description. You can only update a <code>DRAFT</code>
-    /// detector version.
+    /// models, external model endpoints, rules, rule execution mode, and description. You
+    /// can only update a <code>DRAFT</code> detector version.
     /// </summary>
     public partial class UpdateDetectorVersionRequest : AmazonFraudDetectorRequest
     {
@@ -88,7 +88,7 @@ namespace Amazon.FraudDetector.Model
         /// The detector version ID. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public string DetectorVersionId
         {
             get { return this._detectorVersionId; }

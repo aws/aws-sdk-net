@@ -717,6 +717,10 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly RelationshipType STRENGTH = new RelationshipType("STRENGTH");
         /// <summary>
+        /// Constant SYSTEM_ORGAN_SITE for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType SYSTEM_ORGAN_SITE = new RelationshipType("SYSTEM_ORGAN_SITE");
+        /// <summary>
         /// Constant TEST_UNITS for RelationshipType
         /// </summary>
         public static readonly RelationshipType TEST_UNITS = new RelationshipType("TEST_UNITS");

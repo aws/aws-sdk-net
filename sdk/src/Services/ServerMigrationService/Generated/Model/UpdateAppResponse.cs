@@ -40,7 +40,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property AppSummary. 
         /// <para>
-        /// Summary description of the application.
+        /// A summary description of the application.
         /// </para>
         /// </summary>
         public AppSummary AppSummary
@@ -58,7 +58,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerGroups. 
         /// <para>
-        /// List of updated server groups in the application.
+        /// The updated server groups in the application.
         /// </para>
         /// </summary>
         public List<ServerGroup> ServerGroups
@@ -76,7 +76,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// List of tags associated with the application.
+        /// The tags associated with the application.
         /// </para>
         /// </summary>
         public List<Tag> Tags

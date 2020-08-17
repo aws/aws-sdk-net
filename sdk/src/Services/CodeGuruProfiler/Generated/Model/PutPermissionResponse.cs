@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// The structure representing the putPermissionResponse.
+    /// The structure representing the <code>putPermissionResponse</code>.
     /// </summary>
     public partial class PutPermissionResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,8 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The resource-based policy.
+        ///  The JSON-formatted resource-based policy on the profiling group that includes the
+        /// added permissions. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +59,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property RevisionId. 
         /// <para>
-        /// A unique identifier for the current revision of the policy.
+        ///  A universally unique identifier (UUID) for the revision of the resource-based policy
+        /// that includes the added permissions. The JSON-formatted policy is in the <code>policy</code>
+        /// element of the response. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

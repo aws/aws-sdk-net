@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
-    /// The request does not comply with validation rules that are defined for the request
-    /// parameters.
+    /// The request includes one or more parameters that violate validation rules.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

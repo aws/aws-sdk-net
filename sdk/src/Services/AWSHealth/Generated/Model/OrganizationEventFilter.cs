@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// The values to filter results from the <a>DescribeEventsForOrganization</a> operation.
+    /// The values to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html">DescribeEventsForOrganization</a>
+    /// operation.
     /// </summary>
     public partial class OrganizationEventFilter
     {
@@ -82,7 +83,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EntityArns. 
         /// <para>
-        /// REPLACEME
+        /// A list of entity ARNs (unique identifiers).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -140,7 +141,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventTypeCategories. 
         /// <para>
-        /// REPLACEME
+        /// A list of event type category codes (issue, scheduledChange, or accountNotification).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

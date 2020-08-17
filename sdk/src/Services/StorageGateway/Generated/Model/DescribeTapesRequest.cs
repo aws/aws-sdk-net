@@ -86,7 +86,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// A marker value, obtained in a previous call to <code>DescribeTapes</code>. This marker
-        /// indicates which page of results to retrieve. 
+        /// indicates which page of results to retrieve.
         /// </para>
         ///  
         /// <para>

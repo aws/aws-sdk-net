@@ -147,7 +147,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The AWS request ID for this request.
+        /// The resource type for this request.
         /// </para>
         /// </summary>
         public ExceptionResourceType ResourceType

@@ -182,6 +182,11 @@ namespace Amazon.AWSHealth.Model
         /// <para>
         /// A map of entity tags attached to the affected entity.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, the <code>tags</code> property isn't supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=50)]
         public Dictionary<string, string> Tags

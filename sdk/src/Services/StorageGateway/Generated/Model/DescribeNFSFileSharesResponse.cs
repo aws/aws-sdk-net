@@ -38,7 +38,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property NFSFileShareInfoList. 
         /// <para>
-        /// An array containing a description for each requested file share. 
+        /// An array containing a description for each requested file share.
         /// </para>
         /// </summary>
         public List<NFSFileShareInfo> NFSFileShareInfoList

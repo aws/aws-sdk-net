@@ -70,6 +70,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.CompletedOn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ErrorMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Graph", targetDepth))
                 {
                     var unmarshaller = WorkflowGraphUnmarshaller.Instance;
@@ -80,6 +86,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PreviousRunId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreviousRunId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartedOn", targetDepth))

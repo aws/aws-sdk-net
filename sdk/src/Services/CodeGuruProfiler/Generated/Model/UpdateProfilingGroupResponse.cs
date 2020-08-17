@@ -38,7 +38,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property ProfilingGroup. 
         /// <para>
-        /// Updated information about the profiling group.
+        ///  A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <code>ProfilingGroupDescription</code> </a> that contains information about the returned
+        /// updated profiling group. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

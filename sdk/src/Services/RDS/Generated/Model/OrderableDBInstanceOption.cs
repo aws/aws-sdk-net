@@ -53,10 +53,12 @@ namespace Amazon.RDS.Model
         private double? _minIopsPerGib;
         private int? _minStorageSize;
         private bool? _multiAZCapable;
+        private bool? _outpostCapable;
         private bool? _readReplicaCapable;
         private string _storageType;
         private List<string> _supportedEngineModes = new List<string>();
         private bool? _supportsEnhancedMonitoring;
+        private bool? _supportsGlobalDatabases;
         private bool? _supportsIAMDatabaseAuthentication;
         private bool? _supportsIops;
         private bool? _supportsKerberosAuthentication;
@@ -318,6 +320,29 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutpostCapable. 
+        /// <para>
+        /// Whether a DB instance supports RDS on Outposts.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
+        /// RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public bool OutpostCapable
+        {
+            get { return this._outpostCapable.GetValueOrDefault(); }
+            set { this._outpostCapable = value; }
+        }
+
+        // Check to see if OutpostCapable property is set
+        internal bool IsSetOutpostCapable()
+        {
+            return this._outpostCapable.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ReadReplicaCapable. 
         /// <para>
         /// Indicates whether a DB instance can have a read replica.
@@ -395,6 +420,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportsEnhancedMonitoring()
         {
             return this._supportsEnhancedMonitoring.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsGlobalDatabases. 
+        /// <para>
+        /// A value that indicates whether you can use Aurora global databases with a specific
+        /// combination of other DB engine attributes.
+        /// </para>
+        /// </summary>
+        public bool SupportsGlobalDatabases
+        {
+            get { return this._supportsGlobalDatabases.GetValueOrDefault(); }
+            set { this._supportsGlobalDatabases = value; }
+        }
+
+        // Check to see if SupportsGlobalDatabases property is set
+        internal bool IsSetSupportsGlobalDatabases()
+        {
+            return this._supportsGlobalDatabases.HasValue; 
         }
 
         /// <summary>

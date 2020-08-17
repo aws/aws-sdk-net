@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// The name and type of entity who performed the action on the affected resource.
+    /// Provides information about the type and other characteristics of an entity that performed
+    /// an action on an affected resource.
     /// </summary>
     public partial class UserIdentity
     {
@@ -42,7 +43,12 @@ namespace Amazon.Macie2.Model
         private UserIdentityType _type;
 
         /// <summary>
-        /// Gets and sets the property AssumedRole.
+        /// Gets and sets the property AssumedRole. 
+        /// <para>
+        /// If the action was performed with temporary security credentials that were obtained
+        /// using the AssumeRole operation of the AWS Security Token Service (AWS STS) API, the
+        /// identifiers, session context, and other details about the identity.
+        /// </para>
         /// </summary>
         public AssumedRole AssumedRole
         {
@@ -57,7 +63,11 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AwsAccount.
+        /// Gets and sets the property AwsAccount. 
+        /// <para>
+        /// If the action was performed using the credentials for another AWS account, the details
+        /// of that account.
+        /// </para>
         /// </summary>
         public AwsAccount AwsAccount
         {
@@ -72,7 +82,11 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AwsService.
+        /// Gets and sets the property AwsService. 
+        /// <para>
+        /// If the action was performed by an AWS account that belongs to an AWS service, the
+        /// name of the service.
+        /// </para>
         /// </summary>
         public AwsService AwsService
         {
@@ -87,7 +101,12 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FederatedUser.
+        /// Gets and sets the property FederatedUser. 
+        /// <para>
+        /// If the action was performed with temporary security credentials that were obtained
+        /// using the GetFederationToken operation of the AWS Security Token Service (AWS STS)
+        /// API, the identifiers, session context, and other details about the identity.
+        /// </para>
         /// </summary>
         public FederatedUser FederatedUser
         {
@@ -102,7 +121,11 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IamUser.
+        /// Gets and sets the property IamUser. 
+        /// <para>
+        /// If the action was performed using the credentials for an AWS Identity and Access Management
+        /// (IAM) user, the name and other details about the user.
+        /// </para>
         /// </summary>
         public IamUser IamUser
         {
@@ -117,7 +140,11 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Root.
+        /// Gets and sets the property Root. 
+        /// <para>
+        /// If the action was performed using the credentials for your AWS account, the details
+        /// of your account.
+        /// </para>
         /// </summary>
         public UserIdentityRoot Root
         {
@@ -132,7 +159,10 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of entity that performed the action.
+        /// </para>
         /// </summary>
         public UserIdentityType Type
         {

@@ -147,7 +147,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp when the instance was created (e.g., <code>1479734909.17</code>).
+        /// The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in
+        /// Unix time format.
         /// </para>
         /// </summary>
         public DateTime CreatedAt

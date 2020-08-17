@@ -30,7 +30,7 @@ namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCodeReview operation.
-    /// Returns the metadaata associated with the code review along with its status.
+    /// Returns the metadata associated with the code review along with its status.
     /// </summary>
     public partial class DescribeCodeReviewRequest : AmazonCodeGuruReviewerRequest
     {
@@ -39,7 +39,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property CodeReviewArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the code review to describe. 
+        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+        /// <code>CodeReview</code> </a> object. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]

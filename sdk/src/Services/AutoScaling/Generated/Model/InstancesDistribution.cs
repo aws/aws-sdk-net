@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes an instances distribution for an Auto Scaling group with <a>MixedInstancesPolicy</a>.
+    /// Describes an instances distribution for an Auto Scaling group with a <a>MixedInstancesPolicy</a>.
     /// 
     ///  
     /// <para>

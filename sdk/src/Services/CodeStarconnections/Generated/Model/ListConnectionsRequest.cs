@@ -34,9 +34,29 @@ namespace Amazon.CodeStarconnections.Model
     /// </summary>
     public partial class ListConnectionsRequest : AmazonCodeStarconnectionsRequest
     {
+        private string _hostArnFilter;
         private int? _maxResults;
         private string _nextToken;
         private ProviderType _providerTypeFilter;
+
+        /// <summary>
+        /// Gets and sets the property HostArnFilter. 
+        /// <para>
+        /// Filters the list of connections to those associated with a specified host.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string HostArnFilter
+        {
+            get { return this._hostArnFilter; }
+            set { this._hostArnFilter = value; }
+        }
+
+        // Check to see if HostArnFilter property is set
+        internal bool IsSetHostArnFilter()
+        {
+            return this._hostArnFilter != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -45,7 +65,7 @@ namespace Amazon.CodeStarconnections.Model
         /// results, make another call with the returned <code>nextToken</code> value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5000)]
+        [AWSProperty(Min=0, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -127,6 +127,7 @@ namespace Amazon.KinesisFirehose.Model
         private DeliveryStreamType _deliveryStreamType;
         private ElasticsearchDestinationConfiguration _elasticsearchDestinationConfiguration;
         private ExtendedS3DestinationConfiguration _extendedS3DestinationConfiguration;
+        private HttpEndpointDestinationConfiguration _httpEndpointDestinationConfiguration;
         private KinesisStreamSourceConfiguration _kinesisStreamSourceConfiguration;
         private RedshiftDestinationConfiguration _redshiftDestinationConfiguration;
         private S3DestinationConfiguration _s3DestinationConfiguration;
@@ -235,6 +236,25 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetExtendedS3DestinationConfiguration()
         {
             return this._extendedS3DestinationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HttpEndpointDestinationConfiguration. 
+        /// <para>
+        /// Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination.
+        /// You can specify only one destination.
+        /// </para>
+        /// </summary>
+        public HttpEndpointDestinationConfiguration HttpEndpointDestinationConfiguration
+        {
+            get { return this._httpEndpointDestinationConfiguration; }
+            set { this._httpEndpointDestinationConfiguration = value; }
+        }
+
+        // Check to see if HttpEndpointDestinationConfiguration property is set
+        internal bool IsSetHttpEndpointDestinationConfiguration()
+        {
+            return this._httpEndpointDestinationConfiguration != null;
         }
 
         /// <summary>

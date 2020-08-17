@@ -147,6 +147,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetWorkingDirectory())
+                {
+                    context.Writer.WritePropertyName("workingDirectory");
+                    context.Writer.Write(publicRequest.WorkingDirectory);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

@@ -29,33 +29,21 @@ namespace Amazon.ServerMigrationService
     /// <summary>
     /// Interface for accessing ServerMigrationService
     ///
-    /// AAWS Sever Migration Service 
+    /// AWS Server Migration Service 
     /// <para>
-    /// This is the <i>AWS Sever Migration Service API Reference</i>. It provides descriptions,
-    /// syntax, and usage examples for each of the actions and data types for the AWS Sever
-    /// Migration Service (AWS SMS). The topic for each action shows the Query API request
-    /// parameters and the XML response. You can also view the XML request elements in the
-    /// WSDL.
-    /// </para>
-    ///  
-    /// <para>
-    /// Alternatively, you can use one of the AWS SDKs to access an API that's tailored to
-    /// the programming language or platform that you're using. For more information, see
-    /// <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// To learn more about the Server Migration Service, see the following resources:
+    /// AWS Server Migration Service (AWS SMS) makes it easier and faster for you to migrate
+    /// your on-premises workloads to AWS. To learn more about AWS SMS, see the following
+    /// resources:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://aws.amazon.com/server-migration-service/">AWS Sever Migration Service
+    ///  <a href="http://aws.amazon.com/server-migration-service/">AWS Server Migration Service
     /// product page</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/server-migration-service/latest/userguide/server-migration.html">AWS
-    /// Sever Migration Service User Guide</a> 
+    ///  <a href="https://docs.aws.amazon.com/server-migration-service/latest/userguide/">AWS
+    /// Server Migration Service User Guide</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -194,7 +182,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Deletes an existing application. Optionally deletes the launched stack associated
+        /// Deletes the specified application. Optionally deletes the launched stack associated
         /// with the application and all AWS SMS replication jobs for servers in the application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApp service method.</param>
@@ -251,7 +239,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Deletes existing launch configuration for an application.
+        /// Deletes the launch configuration for the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAppLaunchConfiguration service method.</param>
         /// 
@@ -307,7 +295,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Deletes existing replication configuration for an application.
+        /// Deletes the replication configuration for the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAppReplicationConfiguration service method.</param>
         /// 
@@ -356,6 +344,62 @@ namespace Amazon.ServerMigrationService
         /// <returns>Returns a  DeleteAppReplicationConfigurationResult from ServerMigrationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteAppReplicationConfiguration">REST API Reference for DeleteAppReplicationConfiguration Operation</seealso>
         DeleteAppReplicationConfigurationResponse EndDeleteAppReplicationConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteAppValidationConfiguration
+
+
+        /// <summary>
+        /// Deletes the validation configuration for the specified application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppValidationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAppValidationConfiguration service method, as returned by ServerMigrationService.</returns>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InternalErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InvalidParameterException">
+        /// A specified parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.MissingRequiredParameterException">
+        /// A required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.OperationNotPermittedException">
+        /// This operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
+        /// You lack permissions needed to perform this operation. Check your IAM policies, and
+        /// ensure that you are using the correct access keys.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteAppValidationConfiguration">REST API Reference for DeleteAppValidationConfiguration Operation</seealso>
+        DeleteAppValidationConfigurationResponse DeleteAppValidationConfiguration(DeleteAppValidationConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAppValidationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppValidationConfiguration operation on AmazonServerMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAppValidationConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteAppValidationConfiguration">REST API Reference for DeleteAppValidationConfiguration Operation</seealso>
+        IAsyncResult BeginDeleteAppValidationConfiguration(DeleteAppValidationConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAppValidationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAppValidationConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteAppValidationConfigurationResult from ServerMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteAppValidationConfiguration">REST API Reference for DeleteAppValidationConfiguration Operation</seealso>
+        DeleteAppValidationConfigurationResponse EndDeleteAppValidationConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -595,7 +639,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Generates an Amazon CloudFormation template based on the current launch configuration
+        /// Generates an AWS CloudFormation template based on the current launch configuration
         /// and writes it to an Amazon S3 object in the customer’s Amazon S3 bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateTemplate service method.</param>
@@ -652,7 +696,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Retrieve information about an application.
+        /// Retrieve information about the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApp service method.</param>
         /// 
@@ -708,7 +752,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Retrieves the application launch configuration associated with an application.
+        /// Retrieves the application launch configuration associated with the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAppLaunchConfiguration service method.</param>
         /// 
@@ -764,7 +808,8 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Retrieves an application replication configuration associatd with an application.
+        /// Retrieves the application replication configuration associated with the specified
+        /// application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAppReplicationConfiguration service method.</param>
         /// 
@@ -813,6 +858,118 @@ namespace Amazon.ServerMigrationService
         /// <returns>Returns a  GetAppReplicationConfigurationResult from ServerMigrationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppReplicationConfiguration">REST API Reference for GetAppReplicationConfiguration Operation</seealso>
         GetAppReplicationConfigurationResponse EndGetAppReplicationConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAppValidationConfiguration
+
+
+        /// <summary>
+        /// Retrieves information about a configuration for validating an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAppValidationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetAppValidationConfiguration service method, as returned by ServerMigrationService.</returns>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InternalErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InvalidParameterException">
+        /// A specified parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.MissingRequiredParameterException">
+        /// A required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.OperationNotPermittedException">
+        /// This operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
+        /// You lack permissions needed to perform this operation. Check your IAM policies, and
+        /// ensure that you are using the correct access keys.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppValidationConfiguration">REST API Reference for GetAppValidationConfiguration Operation</seealso>
+        GetAppValidationConfigurationResponse GetAppValidationConfiguration(GetAppValidationConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAppValidationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAppValidationConfiguration operation on AmazonServerMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAppValidationConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppValidationConfiguration">REST API Reference for GetAppValidationConfiguration Operation</seealso>
+        IAsyncResult BeginGetAppValidationConfiguration(GetAppValidationConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAppValidationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAppValidationConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetAppValidationConfigurationResult from ServerMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppValidationConfiguration">REST API Reference for GetAppValidationConfiguration Operation</seealso>
+        GetAppValidationConfigurationResponse EndGetAppValidationConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAppValidationOutput
+
+
+        /// <summary>
+        /// Retrieves output from validating an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAppValidationOutput service method.</param>
+        /// 
+        /// <returns>The response from the GetAppValidationOutput service method, as returned by ServerMigrationService.</returns>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InternalErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InvalidParameterException">
+        /// A specified parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.MissingRequiredParameterException">
+        /// A required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.OperationNotPermittedException">
+        /// This operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
+        /// You lack permissions needed to perform this operation. Check your IAM policies, and
+        /// ensure that you are using the correct access keys.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppValidationOutput">REST API Reference for GetAppValidationOutput Operation</seealso>
+        GetAppValidationOutputResponse GetAppValidationOutput(GetAppValidationOutputRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAppValidationOutput operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAppValidationOutput operation on AmazonServerMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAppValidationOutput
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppValidationOutput">REST API Reference for GetAppValidationOutput Operation</seealso>
+        IAsyncResult BeginGetAppValidationOutput(GetAppValidationOutputRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAppValidationOutput operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAppValidationOutput.</param>
+        /// 
+        /// <returns>Returns a  GetAppValidationOutputResult from ServerMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppValidationOutput">REST API Reference for GetAppValidationOutput Operation</seealso>
+        GetAppValidationOutputResponse EndGetAppValidationOutput(IAsyncResult asyncResult);
 
         #endregion
         
@@ -974,6 +1131,15 @@ namespace Amazon.ServerMigrationService
         /// <param name="request">Container for the necessary parameters to execute the GetServers service method.</param>
         /// 
         /// <returns>The response from the GetServers service method, as returned by ServerMigrationService.</returns>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InternalErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InvalidParameterException">
+        /// A specified parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.MissingRequiredParameterException">
+        /// A required parameter is missing.
+        /// </exception>
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// You lack permissions needed to perform this operation. Check your IAM policies, and
         /// ensure that you are using the correct access keys.
@@ -1009,12 +1175,68 @@ namespace Amazon.ServerMigrationService
 
         #endregion
         
+        #region  ImportAppCatalog
+
+
+        /// <summary>
+        /// Allows application import from AWS Migration Hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportAppCatalog service method.</param>
+        /// 
+        /// <returns>The response from the ImportAppCatalog service method, as returned by ServerMigrationService.</returns>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InternalErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InvalidParameterException">
+        /// A specified parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.MissingRequiredParameterException">
+        /// A required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.OperationNotPermittedException">
+        /// This operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
+        /// You lack permissions needed to perform this operation. Check your IAM policies, and
+        /// ensure that you are using the correct access keys.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportAppCatalog">REST API Reference for ImportAppCatalog Operation</seealso>
+        ImportAppCatalogResponse ImportAppCatalog(ImportAppCatalogRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportAppCatalog operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportAppCatalog operation on AmazonServerMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportAppCatalog
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportAppCatalog">REST API Reference for ImportAppCatalog Operation</seealso>
+        IAsyncResult BeginImportAppCatalog(ImportAppCatalogRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportAppCatalog operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportAppCatalog.</param>
+        /// 
+        /// <returns>Returns a  ImportAppCatalogResult from ServerMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportAppCatalog">REST API Reference for ImportAppCatalog Operation</seealso>
+        ImportAppCatalogResponse EndImportAppCatalog(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ImportServerCatalog
 
 
         /// <summary>
         /// Gathers a complete list of on-premises servers. Connectors must be installed and monitoring
-        /// all servers that you want to import.
+        /// all servers to import.
         /// 
         ///  
         /// <para>
@@ -1076,7 +1298,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Launches an application stack.
+        /// Launches the specified application as a stack in AWS CloudFormation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the LaunchApp service method.</param>
         /// 
@@ -1132,7 +1354,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Returns a list of summaries for all applications.
+        /// Retrieves summaries for all applications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApps service method.</param>
         /// 
@@ -1184,11 +1406,67 @@ namespace Amazon.ServerMigrationService
 
         #endregion
         
+        #region  NotifyAppValidationOutput
+
+
+        /// <summary>
+        /// Provides information to AWS SMS about whether application validation is successful.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NotifyAppValidationOutput service method.</param>
+        /// 
+        /// <returns>The response from the NotifyAppValidationOutput service method, as returned by ServerMigrationService.</returns>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InternalErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InvalidParameterException">
+        /// A specified parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.MissingRequiredParameterException">
+        /// A required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.OperationNotPermittedException">
+        /// This operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
+        /// You lack permissions needed to perform this operation. Check your IAM policies, and
+        /// ensure that you are using the correct access keys.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/NotifyAppValidationOutput">REST API Reference for NotifyAppValidationOutput Operation</seealso>
+        NotifyAppValidationOutputResponse NotifyAppValidationOutput(NotifyAppValidationOutputRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the NotifyAppValidationOutput operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the NotifyAppValidationOutput operation on AmazonServerMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndNotifyAppValidationOutput
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/NotifyAppValidationOutput">REST API Reference for NotifyAppValidationOutput Operation</seealso>
+        IAsyncResult BeginNotifyAppValidationOutput(NotifyAppValidationOutputRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  NotifyAppValidationOutput operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginNotifyAppValidationOutput.</param>
+        /// 
+        /// <returns>Returns a  NotifyAppValidationOutputResult from ServerMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/NotifyAppValidationOutput">REST API Reference for NotifyAppValidationOutput Operation</seealso>
+        NotifyAppValidationOutputResponse EndNotifyAppValidationOutput(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutAppLaunchConfiguration
 
 
         /// <summary>
-        /// Creates a launch configuration for an application.
+        /// Creates or updates the launch configuration for the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAppLaunchConfiguration service method.</param>
         /// 
@@ -1244,7 +1522,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Creates or updates a replication configuration for an application.
+        /// Creates or updates the replication configuration for the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAppReplicationConfiguration service method.</param>
         /// 
@@ -1296,11 +1574,68 @@ namespace Amazon.ServerMigrationService
 
         #endregion
         
+        #region  PutAppValidationConfiguration
+
+
+        /// <summary>
+        /// Creates or updates a validation configuration for the specified application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAppValidationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutAppValidationConfiguration service method, as returned by ServerMigrationService.</returns>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InternalErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InvalidParameterException">
+        /// A specified parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.MissingRequiredParameterException">
+        /// A required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.OperationNotPermittedException">
+        /// This operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
+        /// You lack permissions needed to perform this operation. Check your IAM policies, and
+        /// ensure that you are using the correct access keys.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/PutAppValidationConfiguration">REST API Reference for PutAppValidationConfiguration Operation</seealso>
+        PutAppValidationConfigurationResponse PutAppValidationConfiguration(PutAppValidationConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAppValidationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAppValidationConfiguration operation on AmazonServerMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAppValidationConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/PutAppValidationConfiguration">REST API Reference for PutAppValidationConfiguration Operation</seealso>
+        IAsyncResult BeginPutAppValidationConfiguration(PutAppValidationConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAppValidationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAppValidationConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutAppValidationConfigurationResult from ServerMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/PutAppValidationConfiguration">REST API Reference for PutAppValidationConfiguration Operation</seealso>
+        PutAppValidationConfigurationResponse EndPutAppValidationConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartAppReplication
 
 
         /// <summary>
-        /// Starts replicating an application.
+        /// Starts replicating the specified application by creating replication jobs for each
+        /// server in the application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartAppReplication service method.</param>
         /// 
@@ -1352,6 +1687,62 @@ namespace Amazon.ServerMigrationService
 
         #endregion
         
+        #region  StartOnDemandAppReplication
+
+
+        /// <summary>
+        /// Starts an on-demand replication run for the specified application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOnDemandAppReplication service method.</param>
+        /// 
+        /// <returns>The response from the StartOnDemandAppReplication service method, as returned by ServerMigrationService.</returns>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InternalErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InvalidParameterException">
+        /// A specified parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.MissingRequiredParameterException">
+        /// A required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.OperationNotPermittedException">
+        /// This operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
+        /// You lack permissions needed to perform this operation. Check your IAM policies, and
+        /// ensure that you are using the correct access keys.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandAppReplication">REST API Reference for StartOnDemandAppReplication Operation</seealso>
+        StartOnDemandAppReplicationResponse StartOnDemandAppReplication(StartOnDemandAppReplicationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartOnDemandAppReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartOnDemandAppReplication operation on AmazonServerMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartOnDemandAppReplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandAppReplication">REST API Reference for StartOnDemandAppReplication Operation</seealso>
+        IAsyncResult BeginStartOnDemandAppReplication(StartOnDemandAppReplicationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartOnDemandAppReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartOnDemandAppReplication.</param>
+        /// 
+        /// <returns>Returns a  StartOnDemandAppReplicationResult from ServerMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandAppReplication">REST API Reference for StartOnDemandAppReplication Operation</seealso>
+        StartOnDemandAppReplicationResponse EndStartOnDemandAppReplication(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartOnDemandReplicationRun
 
 
@@ -1361,13 +1752,17 @@ namespace Amazon.ServerMigrationService
         /// 
         ///  
         /// <para>
-        /// There is a limit on the number of on-demand replications runs you can request in a
-        /// 24-hour period.
+        /// There is a limit on the number of on-demand replications runs that you can request
+        /// in a 24-hour period.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartOnDemandReplicationRun service method.</param>
         /// 
         /// <returns>The response from the StartOnDemandReplicationRun service method, as returned by ServerMigrationService.</returns>
+        /// <exception cref="Amazon.ServerMigrationService.Model.DryRunOperationException">
+        /// The user has the required permissions, so the request would have succeeded, but a
+        /// dry run was performed.
+        /// </exception>
         /// <exception cref="Amazon.ServerMigrationService.Model.InvalidParameterException">
         /// A specified parameter is not valid.
         /// </exception>
@@ -1420,7 +1815,8 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Stops replicating an application.
+        /// Stops replicating the specified application by deleting the replication job for each
+        /// server in the application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopAppReplication service method.</param>
         /// 
@@ -1476,7 +1872,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Terminates the stack for an application.
+        /// Terminates the stack for the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateApp service method.</param>
         /// 
@@ -1532,7 +1928,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Updates an application.
+        /// Updates the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApp service method.</param>
         /// 

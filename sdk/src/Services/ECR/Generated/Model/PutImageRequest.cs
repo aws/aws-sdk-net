@@ -48,11 +48,30 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class PutImageRequest : AmazonECRRequest
     {
+        private string _imageDigest;
         private string _imageManifest;
         private string _imageManifestMediaType;
         private string _imageTag;
         private string _registryId;
         private string _repositoryName;
+
+        /// <summary>
+        /// Gets and sets the property ImageDigest. 
+        /// <para>
+        /// The image digest of the image manifest corresponding to the image.
+        /// </para>
+        /// </summary>
+        public string ImageDigest
+        {
+            get { return this._imageDigest; }
+            set { this._imageDigest = value; }
+        }
+
+        // Check to see if ImageDigest property is set
+        internal bool IsSetImageDigest()
+        {
+            return this._imageDigest != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ImageManifest. 
@@ -97,7 +116,7 @@ namespace Amazon.ECR.Model
         /// Gets and sets the property ImageTag. 
         /// <para>
         /// The tag to associate with the image. This parameter is required for images that use
-        /// the Docker Image Manifest V2 Schema 2 or OCI formats.
+        /// the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]

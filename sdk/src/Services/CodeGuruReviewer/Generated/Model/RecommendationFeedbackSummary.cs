@@ -79,7 +79,14 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        ///  The identifier for the user that gave the feedback. 
+        ///  The ID of the user that gave the feedback. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  The <code>UserId</code> is an IAM principal that can be specified as an AWS account
+        /// ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
+        /// Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

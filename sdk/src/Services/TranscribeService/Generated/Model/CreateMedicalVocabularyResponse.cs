@@ -61,8 +61,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code you chose to describe the entries in your custom vocabulary. US
-        /// English (en-US) is the only valid language code for Amazon Transcribe Medical.
+        /// The language code for the entries in your custom vocabulary. US English (en-US) is
+        /// the only valid language code for Amazon Transcribe Medical.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -80,7 +80,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time you created the vocabulary.
+        /// The date and time that you created the vocabulary.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -98,8 +98,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the vocabulary. The name must be unique within an AWS account. It is also
-        /// case-sensitive.
+        /// The name of the vocabulary. The name must be unique within an AWS account and is case
+        /// sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -119,7 +119,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property VocabularyState. 
         /// <para>
         /// The processing state of your custom vocabulary in Amazon Transcribe Medical. If the
-        /// state is <code>READY</code> you can use the vocabulary in a <code>StartMedicalTranscriptionJob</code>
+        /// state is <code>READY</code>, you can use the vocabulary in a <code>StartMedicalTranscriptionJob</code>
         /// request.
         /// </para>
         /// </summary>

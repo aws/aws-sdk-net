@@ -48,6 +48,7 @@ namespace Amazon.EC2.Model
         private int? _rekeyMarginTimeSeconds;
         private int? _replayWindowSize;
         private string _tunnelInsideCidr;
+        private string _tunnelInsideIpv6Cidr;
 
         /// <summary>
         /// Gets and sets the property DPDTimeoutSeconds. 
@@ -106,8 +107,8 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code>
-        /// | <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
-        /// 
+        /// | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code>
+        /// | <code>22</code> | <code>23</code> | <code>24</code> 
         /// </para>
         /// </summary>
         public List<Phase1DHGroupNumbersRequestListValue> Phase1DHGroupNumbers
@@ -130,7 +131,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>AES128</code> | <code>AES256</code> 
+        /// Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code>
+        /// | <code>AES256-GCM-16</code> 
         /// </para>
         /// </summary>
         public List<Phase1EncryptionAlgorithmsRequestListValue> Phase1EncryptionAlgorithms
@@ -153,7 +155,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>SHA1</code> | <code>SHA2-256</code> 
+        /// Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> |
+        /// <code>SHA2-512</code> 
         /// </para>
         /// </summary>
         public List<Phase1IntegrityAlgorithmsRequestListValue> Phase1IntegrityAlgorithms
@@ -203,8 +206,8 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code>
-        /// | <code>16</code> | <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code>
-        /// | <code>24</code> 
+        /// | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code>
+        /// | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> 
         /// </para>
         /// </summary>
         public List<Phase2DHGroupNumbersRequestListValue> Phase2DHGroupNumbers
@@ -227,7 +230,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>AES128</code> | <code>AES256</code> 
+        /// Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code>
+        /// | <code>AES256-GCM-16</code> 
         /// </para>
         /// </summary>
         public List<Phase2EncryptionAlgorithmsRequestListValue> Phase2EncryptionAlgorithms
@@ -250,7 +254,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>SHA1</code> | <code>SHA2-256</code> 
+        /// Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> |
+        /// <code>SHA2-512</code> 
         /// </para>
         /// </summary>
         public List<Phase2IntegrityAlgorithmsRequestListValue> Phase2IntegrityAlgorithms
@@ -400,8 +405,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TunnelInsideCidr. 
         /// <para>
-        /// The range of inside IP addresses for the tunnel. Any specified CIDR blocks must be
-        /// unique across all VPN connections that use the same virtual private gateway. 
+        /// The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must
+        /// be unique across all VPN connections that use the same virtual private gateway. 
         /// </para>
         ///  
         /// <para>
@@ -448,6 +453,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetTunnelInsideCidr()
         {
             return this._tunnelInsideCidr != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TunnelInsideIpv6Cidr. 
+        /// <para>
+        /// The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must
+        /// be unique across all VPN connections that use the same transit gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: A size /126 CIDR block from the local <code>fd00::/8</code> range.
+        /// </para>
+        /// </summary>
+        public string TunnelInsideIpv6Cidr
+        {
+            get { return this._tunnelInsideIpv6Cidr; }
+            set { this._tunnelInsideIpv6Cidr = value; }
+        }
+
+        // Check to see if TunnelInsideIpv6Cidr property is set
+        internal bool IsSetTunnelInsideIpv6Cidr()
+        {
+            return this._tunnelInsideIpv6Cidr != null;
         }
 
     }

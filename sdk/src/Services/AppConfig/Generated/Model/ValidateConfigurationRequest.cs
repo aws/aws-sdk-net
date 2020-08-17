@@ -82,7 +82,7 @@ namespace Amazon.AppConfig.Model
         /// The version of the configuration to validate.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string ConfigurationVersion
         {
             get { return this._configurationVersion; }

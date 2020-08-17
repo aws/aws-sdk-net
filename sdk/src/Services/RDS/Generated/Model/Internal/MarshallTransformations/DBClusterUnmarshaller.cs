@@ -265,6 +265,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("GlobalWriteForwardingRequested", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.GlobalWriteForwardingRequested = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("GlobalWriteForwardingStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GlobalWriteForwardingStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("HostedZoneId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

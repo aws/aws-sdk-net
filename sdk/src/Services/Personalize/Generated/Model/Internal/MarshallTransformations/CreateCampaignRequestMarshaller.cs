@@ -68,6 +68,17 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCampaignConfig())
+                {
+                    context.Writer.WritePropertyName("campaignConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CampaignConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CampaignConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMinProvisionedTPS())
                 {
                     context.Writer.WritePropertyName("minProvisionedTPS");

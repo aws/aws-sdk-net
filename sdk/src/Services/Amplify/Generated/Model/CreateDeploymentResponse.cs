@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Result structure for create a new deployment.
+    /// The result structure for the create a new deployment request.
     /// </summary>
     public partial class CreateDeploymentResponse : AmazonWebServiceResponse
     {
@@ -40,8 +40,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property FileUploadUrls. 
         /// <para>
-        ///  When the fileMap argument is provided in the request, the fileUploadUrls will contain
-        /// a map of file names to upload url. 
+        ///  When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code>
+        /// will contain a map of file names to upload URLs. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        ///  The jobId for this deployment, will supply to start deployment api. 
+        ///  The job ID for this deployment. will supply to start deployment api. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -79,7 +79,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ZipUploadUrl. 
         /// <para>
-        ///  When the fileMap argument is NOT provided. This zipUploadUrl will be returned. 
+        ///  When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code>
+        /// is returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]

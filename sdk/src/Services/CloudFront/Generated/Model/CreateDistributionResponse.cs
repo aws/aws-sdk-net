@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2020-05-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -76,8 +76,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The fully qualified URI of the new distribution resource just created. For example:
-        /// <code>https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5</code>.
+        /// The fully qualified URI of the new distribution resource just created.
         /// </para>
         /// </summary>
         public string Location

@@ -33,6 +33,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class RestoreJobsListMember
     {
+        private string _accountId;
         private long? _backupSizeInBytes;
         private DateTime? _completionDate;
         private string _createdResourceArn;
@@ -41,9 +42,28 @@ namespace Amazon.Backup.Model
         private string _iamRoleArn;
         private string _percentDone;
         private string _recoveryPointArn;
+        private string _resourceType;
         private string _restoreJobId;
         private RestoreJobStatus _status;
         private string _statusMessage;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The account ID that owns the restore job.
+        /// </para>
+        /// </summary>
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BackupSizeInBytes. 
@@ -197,6 +217,25 @@ namespace Amazon.Backup.Model
         internal bool IsSetRecoveryPointArn()
         {
             return this._recoveryPointArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// The resource type of the listed restore jobs; for example, an Amazon Elastic Block
+        /// Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
+        /// </para>
+        /// </summary>
+        public string ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
         }
 
         /// <summary>

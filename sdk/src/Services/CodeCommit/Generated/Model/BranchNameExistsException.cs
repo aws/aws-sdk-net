@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// The specified branch name already exists.
+    /// Cannot create the branch with the specified name because the commit conflicts with
+    /// an existing branch with the same name. Branch names must be unique.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

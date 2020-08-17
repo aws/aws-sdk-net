@@ -41,8 +41,7 @@ namespace Amazon.SageMaker.Model
     ///  <ul> <li> 
     /// <para>
     /// A list of <code>Filter</code> objects. Each filter defines a simple Boolean expression
-    /// comprised of a resource property name, Boolean operator, and value. A <code>SearchExpression</code>
-    /// can include only one <code>Contains</code> operator.
+    /// comprised of a resource property name, Boolean operator, and value.
     /// </para>
     ///  </li> <li> 
     /// <para>

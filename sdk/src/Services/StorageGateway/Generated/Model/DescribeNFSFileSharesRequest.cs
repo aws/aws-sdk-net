@@ -41,7 +41,6 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property FileShareARNList. 
         /// <para>
         /// An array containing the Amazon Resource Name (ARN) of each file share to be described.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

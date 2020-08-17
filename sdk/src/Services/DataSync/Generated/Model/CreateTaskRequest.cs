@@ -68,16 +68,6 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to
         /// monitor and log events in the task. 
         /// </para>
-        ///  
-        /// <para>
-        /// For more information on these groups, see Working with Log Groups and Log Streams
-        /// in the <i>Amazon CloudWatch User Guide.</i> 
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about how to use CloudWatch Logs with DataSync, see Monitoring
-        /// Your Task in the <i>AWS DataSync User Guide.</i> 
-        /// </para>
         /// </summary>
         [AWSProperty(Max=562)]
         public string CloudWatchLogGroupArn
@@ -168,7 +158,7 @@ namespace Amazon.DataSync.Model
         ///  
         /// <para>
         /// For each individual task execution, you can override these options by specifying the
-        /// <code>OverrideOptions</code> before starting a the task execution. For more information,
+        /// <code>OverrideOptions</code> before starting the task execution. For more information,
         /// see the operation. 
         /// </para>
         /// </summary>
@@ -230,7 +220,7 @@ namespace Amazon.DataSync.Model
         /// value can be an empty string. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=55)]
+        [AWSProperty(Min=0, Max=50)]
         public List<TagListEntry> Tags
         {
             get { return this._tags; }

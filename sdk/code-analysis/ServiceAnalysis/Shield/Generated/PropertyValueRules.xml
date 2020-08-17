@@ -137,10 +137,22 @@
     <pattern>^arn:aws.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Shield.Model.EmergencyContact.ContactNotes</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[\w\s\.\-,:/()+@]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Shield.Model.EmergencyContact.EmailAddress</property>
     <min>1</min>
     <max>150</max>
     <pattern>^\S+@\S+\.\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Shield.Model.EmergencyContact.PhoneNumber</property>
+    <min>1</min>
+    <max>16</max>
+    <pattern>^\+[1-9]\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.Protection.Id</property>

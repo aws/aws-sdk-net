@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Result structure for the delete job request.
+    /// The result structure for the delete job request.
     /// </summary>
     public partial class DeleteJobResponse : AmazonWebServiceResponse
     {

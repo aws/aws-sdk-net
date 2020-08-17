@@ -75,6 +75,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Direction);
             }
 
+            if(requestObject.IsSetOpenPortRange())
+            {
+                context.Writer.WritePropertyName("OpenPortRange");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PortRangeMarshaller.Instance;
+                marshaller.Marshall(requestObject.OpenPortRange, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetProtocol())
             {
                 context.Writer.WritePropertyName("Protocol");

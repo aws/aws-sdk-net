@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
-    /// The request has not been applied because it lacks valid authentication credentials
-    /// for the target resource.
+    /// The request was rejected because it doesn't have valid credentials for the target
+    /// resource.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

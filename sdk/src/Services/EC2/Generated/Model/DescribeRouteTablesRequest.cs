@@ -156,10 +156,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>transit-gateway-id</code> - The ID of a transit gateway.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>vpc-id</code> - The ID of the VPC for the route table.
         /// </para>
         ///  </li> </ul>

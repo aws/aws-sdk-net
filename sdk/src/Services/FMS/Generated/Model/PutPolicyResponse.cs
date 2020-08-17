@@ -39,7 +39,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The details of the AWS Firewall Manager policy that was created.
+        /// The details of the AWS Firewall Manager policy.
         /// </para>
         /// </summary>
         public Policy Policy
@@ -57,7 +57,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the policy that was created.
+        /// The Amazon Resource Name (ARN) of the policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

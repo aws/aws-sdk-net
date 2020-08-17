@@ -327,11 +327,102 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  CreateAccountCustomization
+
+
+        /// <summary>
+        /// Creates a customization for the Amazon QuickSight subscription associated with your
+        /// AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccountCustomization service method.</param>
+        /// 
+        /// <returns>The response from the CreateAccountCustomization service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccountCustomization">REST API Reference for CreateAccountCustomization Operation</seealso>
+        public virtual CreateAccountCustomizationResponse CreateAccountCustomization(CreateAccountCustomizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccountCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccountCustomizationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAccountCustomizationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a customization for the Amazon QuickSight subscription associated with your
+        /// AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccountCustomization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAccountCustomization service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccountCustomization">REST API Reference for CreateAccountCustomization Operation</seealso>
+        public virtual Task<CreateAccountCustomizationResponse> CreateAccountCustomizationAsync(CreateAccountCustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccountCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccountCustomizationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAccountCustomizationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDashboard
 
 
         /// <summary>
-        /// Creates a dashboard from a template. To first create a template, see the CreateTemplate
+        /// Creates a dashboard from a template. To first create a template, see the <a>CreateTemplate</a>
         /// API operation.
         /// 
         ///  
@@ -383,7 +474,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates a dashboard from a template. To first create a template, see the CreateTemplate
+        /// Creates a dashboard from a template. To first create a template, see the <a>CreateTemplate</a>
         /// API operation.
         /// 
         ///  
@@ -1052,6 +1143,135 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  CreateNamespace
+
+
+        /// <summary>
+        /// (Enterprise edition only) Creates a new namespace for you to use with Amazon QuickSight.
+        /// 
+        ///  
+        /// <para>
+        /// A namespace allows you to isolate the QuickSight users and groups that are registered
+        /// for that namespace. Users that access the namespace can share assets only with other
+        /// users or groups in the same namespace. They can't see users and groups in other namespaces.
+        /// You can create a namespace after your AWS account is subscribed to QuickSight. The
+        /// namespace must be unique within the AWS account. By default, there is a limit of 100
+        /// namespaces per AWS account. To increase your limit, create a ticket with AWS Support.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNamespace service method.</param>
+        /// 
+        /// <returns>The response from the CreateNamespace service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateNamespace">REST API Reference for CreateNamespace Operation</seealso>
+        public virtual CreateNamespaceResponse CreateNamespace(CreateNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNamespaceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// (Enterprise edition only) Creates a new namespace for you to use with Amazon QuickSight.
+        /// 
+        ///  
+        /// <para>
+        /// A namespace allows you to isolate the QuickSight users and groups that are registered
+        /// for that namespace. Users that access the namespace can share assets only with other
+        /// users or groups in the same namespace. They can't see users and groups in other namespaces.
+        /// You can create a namespace after your AWS account is subscribed to QuickSight. The
+        /// namespace must be unique within the AWS account. By default, there is a limit of 100
+        /// namespaces per AWS account. To increase your limit, create a ticket with AWS Support.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateNamespace service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateNamespace">REST API Reference for CreateNamespace Operation</seealso>
+        public virtual Task<CreateNamespaceResponse> CreateNamespaceAsync(CreateNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNamespaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateNamespaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTemplate
 
 
@@ -1077,6 +1297,9 @@ namespace Amazon.QuickSight
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
         /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -1138,6 +1361,9 @@ namespace Amazon.QuickSight
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
         /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -1260,6 +1486,299 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = CreateTemplateAliasResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateTemplateAliasResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTheme
+
+
+        /// <summary>
+        /// Creates a theme.
+        /// 
+        ///  
+        /// <para>
+        /// A <i>theme</i> is set of configuration options for color and layout. Themes apply
+        /// to analyses and dashboards. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using
+        /// Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTheme service method.</param>
+        /// 
+        /// <returns>The response from the CreateTheme service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTheme">REST API Reference for CreateTheme Operation</seealso>
+        public virtual CreateThemeResponse CreateTheme(CreateThemeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThemeResponseUnmarshaller.Instance;
+
+            return Invoke<CreateThemeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a theme.
+        /// 
+        ///  
+        /// <para>
+        /// A <i>theme</i> is set of configuration options for color and layout. Themes apply
+        /// to analyses and dashboards. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using
+        /// Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTheme service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTheme service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTheme">REST API Reference for CreateTheme Operation</seealso>
+        public virtual Task<CreateThemeResponse> CreateThemeAsync(CreateThemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThemeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateThemeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateThemeAlias
+
+
+        /// <summary>
+        /// Creates a theme alias for a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateThemeAlias service method.</param>
+        /// 
+        /// <returns>The response from the CreateThemeAlias service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateThemeAlias">REST API Reference for CreateThemeAlias Operation</seealso>
+        public virtual CreateThemeAliasResponse CreateThemeAlias(CreateThemeAliasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThemeAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThemeAliasResponseUnmarshaller.Instance;
+
+            return Invoke<CreateThemeAliasResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a theme alias for a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateThemeAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateThemeAlias service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateThemeAlias">REST API Reference for CreateThemeAlias Operation</seealso>
+        public virtual Task<CreateThemeAliasResponse> CreateThemeAliasAsync(CreateThemeAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThemeAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThemeAliasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateThemeAliasResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAccountCustomization
+
+
+        /// <summary>
+        /// Deletes customizations for the QuickSight subscription on your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountCustomization service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccountCustomization service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization">REST API Reference for DeleteAccountCustomization Operation</seealso>
+        public virtual DeleteAccountCustomizationResponse DeleteAccountCustomization(DeleteAccountCustomizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccountCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccountCustomizationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccountCustomizationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes customizations for the QuickSight subscription on your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountCustomization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAccountCustomization service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization">REST API Reference for DeleteAccountCustomization Operation</seealso>
+        public virtual Task<DeleteAccountCustomizationResponse> DeleteAccountCustomizationAsync(DeleteAccountCustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccountCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccountCustomizationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAccountCustomizationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1772,6 +2291,101 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DeleteNamespace
+
+
+        /// <summary>
+        /// Deletes a namespace and the users and groups that are associated with the namespace.
+        /// This is an asynchronous process. Assets including dashboards, analyses, datasets and
+        /// data sources are not deleted. To delete these assets, you use the APIs for the relevant
+        /// asset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNamespace service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNamespace service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteNamespace">REST API Reference for DeleteNamespace Operation</seealso>
+        public virtual DeleteNamespaceResponse DeleteNamespace(DeleteNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNamespaceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a namespace and the users and groups that are associated with the namespace.
+        /// This is an asynchronous process. Assets including dashboards, analyses, datasets and
+        /// data sources are not deleted. To delete these assets, you use the APIs for the relevant
+        /// asset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteNamespace service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteNamespace">REST API Reference for DeleteNamespace Operation</seealso>
+        public virtual Task<DeleteNamespaceResponse> DeleteNamespaceAsync(DeleteNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNamespaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteNamespaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteTemplate
 
 
@@ -1871,6 +2485,9 @@ namespace Amazon.QuickSight
         /// <param name="request">Container for the necessary parameters to execute the DeleteTemplateAlias service method.</param>
         /// 
         /// <returns>The response from the DeleteTemplateAlias service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
@@ -1907,6 +2524,9 @@ namespace Amazon.QuickSight
         /// </param>
         /// 
         /// <returns>The response from the DeleteTemplateAlias service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
@@ -1934,6 +2554,188 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DeleteTheme
+
+
+        /// <summary>
+        /// Deletes a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTheme service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTheme service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTheme">REST API Reference for DeleteTheme Operation</seealso>
+        public virtual DeleteThemeResponse DeleteTheme(DeleteThemeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThemeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteThemeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTheme service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTheme service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTheme">REST API Reference for DeleteTheme Operation</seealso>
+        public virtual Task<DeleteThemeResponse> DeleteThemeAsync(DeleteThemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThemeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteThemeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteThemeAlias
+
+
+        /// <summary>
+        /// Deletes the version of the theme that the specified theme alias points to. If you
+        /// provide a specific alias, you delete the version of the theme that the alias points
+        /// to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThemeAlias service method.</param>
+        /// 
+        /// <returns>The response from the DeleteThemeAlias service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteThemeAlias">REST API Reference for DeleteThemeAlias Operation</seealso>
+        public virtual DeleteThemeAliasResponse DeleteThemeAlias(DeleteThemeAliasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThemeAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThemeAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteThemeAliasResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the version of the theme that the specified theme alias points to. If you
+        /// provide a specific alias, you delete the version of the theme that the alias points
+        /// to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThemeAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteThemeAlias service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteThemeAlias">REST API Reference for DeleteThemeAlias Operation</seealso>
+        public virtual Task<DeleteThemeAliasResponse> DeleteThemeAliasAsync(DeleteThemeAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThemeAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThemeAliasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteThemeAliasResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteUser
 
 
@@ -1956,6 +2758,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -2000,6 +2805,9 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
         /// </exception>
@@ -2042,6 +2850,9 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
         /// </exception>
@@ -2083,6 +2894,9 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
         /// </exception>
@@ -2100,6 +2914,174 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = DeleteUserByPrincipalIdResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteUserByPrincipalIdResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAccountCustomization
+
+
+        /// <summary>
+        /// Describes the customizations associated with your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountCustomization service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountCustomization service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountCustomization">REST API Reference for DescribeAccountCustomization Operation</seealso>
+        public virtual DescribeAccountCustomizationResponse DescribeAccountCustomization(DescribeAccountCustomizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountCustomizationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAccountCustomizationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the customizations associated with your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountCustomization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAccountCustomization service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountCustomization">REST API Reference for DescribeAccountCustomization Operation</seealso>
+        public virtual Task<DescribeAccountCustomizationResponse> DescribeAccountCustomizationAsync(DescribeAccountCustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountCustomizationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAccountCustomizationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAccountSettings
+
+
+        /// <summary>
+        /// Describes the settings that were used when your QuickSight subscription was first
+        /// created in this AWS Account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountSettings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountSettings service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSettings">REST API Reference for DescribeAccountSettings Operation</seealso>
+        public virtual DescribeAccountSettingsResponse DescribeAccountSettings(DescribeAccountSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAccountSettingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the settings that were used when your QuickSight subscription was first
+        /// created in this AWS Account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAccountSettings service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSettings">REST API Reference for DescribeAccountSettings Operation</seealso>
+        public virtual Task<DescribeAccountSettingsResponse> DescribeAccountSettingsAsync(DescribeAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountSettingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAccountSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2843,6 +3825,89 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DescribeNamespace
+
+
+        /// <summary>
+        /// Describes the current namespace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNamespace service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNamespace service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeNamespace">REST API Reference for DescribeNamespace Operation</seealso>
+        public virtual DescribeNamespaceResponse DescribeNamespace(DescribeNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNamespaceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the current namespace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeNamespace service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeNamespace">REST API Reference for DescribeNamespace Operation</seealso>
+        public virtual Task<DescribeNamespaceResponse> DescribeNamespaceAsync(DescribeNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNamespaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeNamespaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTemplate
 
 
@@ -3098,6 +4163,273 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DescribeTheme
+
+
+        /// <summary>
+        /// Describes a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTheme service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTheme service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTheme">REST API Reference for DescribeTheme Operation</seealso>
+        public virtual DescribeThemeResponse DescribeTheme(DescribeThemeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThemeResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeThemeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTheme service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTheme service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTheme">REST API Reference for DescribeTheme Operation</seealso>
+        public virtual Task<DescribeThemeResponse> DescribeThemeAsync(DescribeThemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThemeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeThemeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeThemeAlias
+
+
+        /// <summary>
+        /// Describes the alias for a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThemeAlias service method.</param>
+        /// 
+        /// <returns>The response from the DescribeThemeAlias service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemeAlias">REST API Reference for DescribeThemeAlias Operation</seealso>
+        public virtual DescribeThemeAliasResponse DescribeThemeAlias(DescribeThemeAliasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThemeAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThemeAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeThemeAliasResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the alias for a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThemeAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeThemeAlias service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemeAlias">REST API Reference for DescribeThemeAlias Operation</seealso>
+        public virtual Task<DescribeThemeAliasResponse> DescribeThemeAliasAsync(DescribeThemeAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThemeAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThemeAliasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeThemeAliasResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeThemePermissions
+
+
+        /// <summary>
+        /// Describes the read and write permissions for a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThemePermissions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeThemePermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemePermissions">REST API Reference for DescribeThemePermissions Operation</seealso>
+        public virtual DescribeThemePermissionsResponse DescribeThemePermissions(DescribeThemePermissionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThemePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThemePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeThemePermissionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the read and write permissions for a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThemePermissions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeThemePermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemePermissions">REST API Reference for DescribeThemePermissions Operation</seealso>
+        public virtual Task<DescribeThemePermissionsResponse> DescribeThemePermissionsAsync(DescribeThemePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThemePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThemePermissionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeThemePermissionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeUser
 
 
@@ -3118,6 +4450,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -3160,6 +4495,9 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
         /// </exception>
@@ -3185,17 +4523,38 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Generates a server-side embeddable URL and authorization code. For this process to
-        /// work properly, first configure the dashboards and user permissions. For more information,
-        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
-        /// Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or <a
-        /// href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
-        /// Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API Reference</i>.
+        /// Generates a URL and authorization code that you can embed in your web server code.
+        /// Before you use this command, make sure that you have configured the dashboards and
+        /// permissions. 
         /// 
         ///  
         /// <para>
         /// Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not
-        /// from the user’s browser.
+        /// from the user's browser. The following rules apply to the combination of URL and authorization
+        /// code:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// They must be used together.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// They can be used one time only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// They are valid for 5 minutes after you run this command.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The resulting user session is valid for 10 hours.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
+        /// Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or <a
+        /// href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
+        /// Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API Reference</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDashboardEmbedUrl service method.</param>
@@ -3257,17 +4616,38 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Generates a server-side embeddable URL and authorization code. For this process to
-        /// work properly, first configure the dashboards and user permissions. For more information,
-        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
-        /// Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or <a
-        /// href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
-        /// Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API Reference</i>.
+        /// Generates a URL and authorization code that you can embed in your web server code.
+        /// Before you use this command, make sure that you have configured the dashboards and
+        /// permissions. 
         /// 
         ///  
         /// <para>
         /// Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not
-        /// from the user’s browser.
+        /// from the user's browser. The following rules apply to the combination of URL and authorization
+        /// code:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// They must be used together.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// They can be used one time only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// They are valid for 5 minutes after you run this command.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The resulting user session is valid for 10 hours.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
+        /// Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or <a
+        /// href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
+        /// Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API Reference</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDashboardEmbedUrl service method.</param>
@@ -3328,6 +4708,121 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = GetDashboardEmbedUrlResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetDashboardEmbedUrlResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSessionEmbedUrl
+
+
+        /// <summary>
+        /// Generates a session URL and authorization code that you can embed in your web server
+        /// code.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSessionEmbedUrl service method.</param>
+        /// 
+        /// <returns>The response from the GetSessionEmbedUrl service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.QuickSightUserNotFoundException">
+        /// The user with the provided name isn't found. This error can happen in any operation
+        /// that requires finding a user based on a provided user name, such as <code>DeleteUser</code>,
+        /// <code>DescribeUser</code>, and so on.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.SessionLifetimeInMinutesInvalidException">
+        /// The number of minutes specified for the lifetime of a session isn't valid. The session
+        /// lifetime must be 15-600 minutes.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetSessionEmbedUrl">REST API Reference for GetSessionEmbedUrl Operation</seealso>
+        public virtual GetSessionEmbedUrlResponse GetSessionEmbedUrl(GetSessionEmbedUrlRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSessionEmbedUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSessionEmbedUrlResponseUnmarshaller.Instance;
+
+            return Invoke<GetSessionEmbedUrlResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Generates a session URL and authorization code that you can embed in your web server
+        /// code.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSessionEmbedUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSessionEmbedUrl service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.QuickSightUserNotFoundException">
+        /// The user with the provided name isn't found. This error can happen in any operation
+        /// that requires finding a user based on a provided user name, such as <code>DeleteUser</code>,
+        /// <code>DescribeUser</code>, and so on.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.SessionLifetimeInMinutesInvalidException">
+        /// The number of minutes specified for the lifetime of a session isn't valid. The session
+        /// lifetime must be 15-600 minutes.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetSessionEmbedUrl">REST API Reference for GetSessionEmbedUrl Operation</seealso>
+        public virtual Task<GetSessionEmbedUrlResponse> GetSessionEmbedUrlAsync(GetSessionEmbedUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSessionEmbedUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSessionEmbedUrlResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetSessionEmbedUrlResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4107,6 +5602,101 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  ListNamespaces
+
+
+        /// <summary>
+        /// Lists the namespaces for the specified AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNamespaces service method.</param>
+        /// 
+        /// <returns>The response from the ListNamespaces service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListNamespaces">REST API Reference for ListNamespaces Operation</seealso>
+        public virtual ListNamespacesResponse ListNamespaces(ListNamespacesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNamespacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNamespacesResponseUnmarshaller.Instance;
+
+            return Invoke<ListNamespacesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the namespaces for the specified AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNamespaces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNamespaces service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListNamespaces">REST API Reference for ListNamespaces Operation</seealso>
+        public virtual Task<ListNamespacesResponse> ListNamespacesAsync(ListNamespacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNamespacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNamespacesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListNamespacesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -4196,6 +5786,9 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
         /// </exception>
@@ -4230,6 +5823,9 @@ namespace Amazon.QuickSight
         /// <returns>The response from the ListTemplateAliases service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -4421,6 +6017,285 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  ListThemeAliases
+
+
+        /// <summary>
+        /// Lists all the aliases of a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThemeAliases service method.</param>
+        /// 
+        /// <returns>The response from the ListThemeAliases service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeAliases">REST API Reference for ListThemeAliases Operation</seealso>
+        public virtual ListThemeAliasesResponse ListThemeAliases(ListThemeAliasesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThemeAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThemeAliasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListThemeAliasesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all the aliases of a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThemeAliases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListThemeAliases service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeAliases">REST API Reference for ListThemeAliases Operation</seealso>
+        public virtual Task<ListThemeAliasesResponse> ListThemeAliasesAsync(ListThemeAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThemeAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThemeAliasesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListThemeAliasesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListThemes
+
+
+        /// <summary>
+        /// Lists all the themes in the current AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThemes service method.</param>
+        /// 
+        /// <returns>The response from the ListThemes service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes">REST API Reference for ListThemes Operation</seealso>
+        public virtual ListThemesResponse ListThemes(ListThemesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThemesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThemesResponseUnmarshaller.Instance;
+
+            return Invoke<ListThemesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all the themes in the current AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThemes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListThemes service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes">REST API Reference for ListThemes Operation</seealso>
+        public virtual Task<ListThemesResponse> ListThemesAsync(ListThemesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThemesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThemesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListThemesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListThemeVersions
+
+
+        /// <summary>
+        /// Lists all the versions of the themes in the current AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThemeVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListThemeVersions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions">REST API Reference for ListThemeVersions Operation</seealso>
+        public virtual ListThemeVersionsResponse ListThemeVersions(ListThemeVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThemeVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThemeVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListThemeVersionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all the versions of the themes in the current AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThemeVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListThemeVersions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions">REST API Reference for ListThemeVersions Operation</seealso>
+        public virtual Task<ListThemeVersionsResponse> ListThemeVersionsAsync(ListThemeVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThemeVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThemeVersionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListThemeVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListUserGroups
 
 
@@ -4441,6 +6316,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -4482,6 +6360,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -4528,6 +6409,9 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
         /// </exception>
@@ -4571,6 +6455,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -4997,6 +6884,172 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAccountCustomization
+
+
+        /// <summary>
+        /// Updates customizations associated with the QuickSight subscription on your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountCustomization service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAccountCustomization service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountCustomization">REST API Reference for UpdateAccountCustomization Operation</seealso>
+        public virtual UpdateAccountCustomizationResponse UpdateAccountCustomization(UpdateAccountCustomizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountCustomizationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAccountCustomizationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates customizations associated with the QuickSight subscription on your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountCustomization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAccountCustomization service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountCustomization">REST API Reference for UpdateAccountCustomization Operation</seealso>
+        public virtual Task<UpdateAccountCustomizationResponse> UpdateAccountCustomizationAsync(UpdateAccountCustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountCustomizationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAccountCustomizationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAccountSettings
+
+
+        /// <summary>
+        /// Updates the settings for the Amazon QuickSight subscription in your AWS Account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAccountSettings service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
+        public virtual UpdateAccountSettingsResponse UpdateAccountSettings(UpdateAccountSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAccountSettingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the settings for the Amazon QuickSight subscription in your AWS Account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAccountSettings service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
+        public virtual Task<UpdateAccountSettingsResponse> UpdateAccountSettingsAsync(UpdateAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAccountSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6053,6 +8106,445 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  UpdateTheme
+
+
+        /// <summary>
+        /// Updates a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTheme service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTheme service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTheme">REST API Reference for UpdateTheme Operation</seealso>
+        public virtual UpdateThemeResponse UpdateTheme(UpdateThemeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThemeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateThemeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTheme service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTheme service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTheme">REST API Reference for UpdateTheme Operation</seealso>
+        public virtual Task<UpdateThemeResponse> UpdateThemeAsync(UpdateThemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThemeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateThemeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateThemeAlias
+
+
+        /// <summary>
+        /// Updates an alias of a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThemeAlias service method.</param>
+        /// 
+        /// <returns>The response from the UpdateThemeAlias service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemeAlias">REST API Reference for UpdateThemeAlias Operation</seealso>
+        public virtual UpdateThemeAliasResponse UpdateThemeAlias(UpdateThemeAliasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThemeAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThemeAliasResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateThemeAliasResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an alias of a theme.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThemeAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateThemeAlias service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemeAlias">REST API Reference for UpdateThemeAlias Operation</seealso>
+        public virtual Task<UpdateThemeAliasResponse> UpdateThemeAliasAsync(UpdateThemeAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThemeAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThemeAliasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateThemeAliasResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateThemePermissions
+
+
+        /// <summary>
+        /// Updates the resource permissions for a theme. Permissions apply to the action to grant
+        /// or revoke permissions on, for example <code>"quicksight:DescribeTheme"</code>.
+        /// 
+        ///  
+        /// <para>
+        /// Theme permissions apply in groupings. Valid groupings include the following for the
+        /// three levels of permissions, which are user, owner, or no permissions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// User
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>"quicksight:DescribeTheme"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:DescribeThemeAlias"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:ListThemeAliases"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:ListThemeVersions"</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Owner
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>"quicksight:DescribeTheme"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:DescribeThemeAlias"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:ListThemeAliases"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:ListThemeVersions"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:DeleteTheme"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:UpdateTheme"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:CreateThemeAlias"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:DeleteThemeAlias"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:UpdateThemeAlias"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:UpdateThemePermissions"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:DescribeThemePermissions"</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// To specify no permissions, omit the permissions list.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThemePermissions service method.</param>
+        /// 
+        /// <returns>The response from the UpdateThemePermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemePermissions">REST API Reference for UpdateThemePermissions Operation</seealso>
+        public virtual UpdateThemePermissionsResponse UpdateThemePermissions(UpdateThemePermissionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThemePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThemePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateThemePermissionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the resource permissions for a theme. Permissions apply to the action to grant
+        /// or revoke permissions on, for example <code>"quicksight:DescribeTheme"</code>.
+        /// 
+        ///  
+        /// <para>
+        /// Theme permissions apply in groupings. Valid groupings include the following for the
+        /// three levels of permissions, which are user, owner, or no permissions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// User
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>"quicksight:DescribeTheme"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:DescribeThemeAlias"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:ListThemeAliases"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:ListThemeVersions"</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Owner
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>"quicksight:DescribeTheme"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:DescribeThemeAlias"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:ListThemeAliases"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:ListThemeVersions"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:DeleteTheme"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:UpdateTheme"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:CreateThemeAlias"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:DeleteThemeAlias"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:UpdateThemeAlias"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:UpdateThemePermissions"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"quicksight:DescribeThemePermissions"</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// To specify no permissions, omit the permissions list.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThemePermissions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateThemePermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemePermissions">REST API Reference for UpdateThemePermissions Operation</seealso>
+        public virtual Task<UpdateThemePermissionsResponse> UpdateThemePermissionsAsync(UpdateThemePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThemePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThemePermissionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateThemePermissionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateUser
 
 
@@ -6073,6 +8565,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -6114,6 +8609,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.

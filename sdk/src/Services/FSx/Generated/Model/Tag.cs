@@ -43,7 +43,7 @@ namespace Amazon.FSx.Model
         /// be unique for the resource to which they are attached.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -65,7 +65,7 @@ namespace Amazon.FSx.Model
         /// of <code>payroll : April</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

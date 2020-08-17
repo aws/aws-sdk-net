@@ -30,7 +30,8 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDeployment operation.
-    /// Create a deployment for manual deploy apps. (Apps are not connected to repository)
+    /// Creates a deployment for a manually deployed Amplify app. Manually deployed apps
+    /// are not connected to a repository.
     /// </summary>
     public partial class CreateDeploymentRequest : AmazonAmplifyRequest
     {
@@ -41,7 +42,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  Unique Id for an Amplify App. 
+        ///  The unique ID for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -60,7 +61,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        ///  Name for the branch, for the Job. 
+        ///  The name for the branch, for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -79,10 +80,10 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property FileMap. 
         /// <para>
-        ///  Optional file map that contains file name as the key and file content md5 hash as
-        /// the value. If this argument is provided, the service will generate different upload
-        /// url per file. Otherwise, the service will only generate a single upload url for the
-        /// zipped files. 
+        ///  An optional file map that contains the file name as the key and the file content
+        /// md5 hash as the value. If this argument is provided, the service will generate a unique
+        /// upload URL per file. Otherwise, the service will only generate a single upload URL
+        /// for the zipped files. 
         /// </para>
         /// </summary>
         public Dictionary<string, string> FileMap

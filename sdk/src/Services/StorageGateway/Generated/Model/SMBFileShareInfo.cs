@@ -38,9 +38,12 @@ namespace Amazon.StorageGateway.Model
         private List<string> _adminUserList = new List<string>();
         private string _auditDestinationARN;
         private string _authentication;
+        private CacheAttributes _cacheAttributes;
+        private CaseSensitivity _caseSensitivity;
         private string _defaultStorageClass;
         private string _fileShareARN;
         private string _fileShareId;
+        private string _fileShareName;
         private string _fileShareStatus;
         private string _gatewayARN;
         private bool? _guessMIMETypeEnabled;
@@ -61,8 +64,9 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property AdminUserList. 
         /// <para>
         /// A list of users or groups in the Active Directory that have administrator rights to
-        /// the file share. A group must be prefixed with the @ character. For example <code>@group1</code>.
-        /// Can only be set if Authentication is set to <code>ActiveDirectory</code>.
+        /// the file share. A group must be prefixed with the @ character. Acceptable formats
+        /// include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and
+        /// <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -114,12 +118,53 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CacheAttributes. 
+        /// <para>
+        /// Refresh cache information.
+        /// </para>
+        /// </summary>
+        public CacheAttributes CacheAttributes
+        {
+            get { return this._cacheAttributes; }
+            set { this._cacheAttributes = value; }
+        }
+
+        // Check to see if CacheAttributes property is set
+        internal bool IsSetCacheAttributes()
+        {
+            return this._cacheAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CaseSensitivity. 
+        /// <para>
+        /// The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>,
+        /// the client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway
+        /// determines the case sensitivity. The default value is <code>ClientSpecified</code>.
+        /// </para>
+        /// </summary>
+        public CaseSensitivity CaseSensitivity
+        {
+            get { return this._caseSensitivity; }
+            set { this._caseSensitivity = value; }
+        }
+
+        // Check to see if CaseSensitivity property is set
+        internal bool IsSetCaseSensitivity()
+        {
+            return this._caseSensitivity != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DefaultStorageClass. 
         /// <para>
         /// The default storage class for objects put into an Amazon S3 bucket by the file gateway.
-        /// Possible values are <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>.
-        /// If this field is not populated, the default value <code>S3_STANDARD</code> is used.
-        /// Optional.
+        /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code>
+        /// | <code>S3_ONEZONE_IA</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=50)]
@@ -168,6 +213,30 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FileShareName. 
+        /// <para>
+        /// The name of the file share. Optional.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string FileShareName
+        {
+            get { return this._fileShareName; }
+            set { this._fileShareName = value; }
+        }
+
+        // Check to see if FileShareName property is set
+        internal bool IsSetFileShareName()
+        {
+            return this._fileShareName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FileShareStatus.
         /// </summary>
         [AWSProperty(Min=3, Max=50)]
@@ -203,8 +272,12 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property GuessMIMETypeEnabled. 
         /// <para>
         /// A value that enables guessing of the MIME type for uploaded objects based on file
-        /// extensions. Set this value to true to enable MIME type guessing, and otherwise to
-        /// false. The default value is true.
+        /// extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise
+        /// set to <code>false</code>. The default value is <code>true</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>true</code> | <code>false</code> 
         /// </para>
         /// </summary>
         public bool GuessMIMETypeEnabled
@@ -223,7 +296,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property InvalidUserList. 
         /// <para>
         /// A list of users or groups in the Active Directory that are not allowed to access the
-        /// file share. A group must be prefixed with the @ character. For example <code>@group1</code>.
+        /// file share. A group must be prefixed with the @ character. Acceptable formats include:
+        /// <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>.
         /// Can only be set if Authentication is set to <code>ActiveDirectory</code>.
         /// </para>
         /// </summary>
@@ -243,8 +317,12 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
-        /// True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to
-        /// use a key managed by Amazon S3. Optional. 
+        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS
+        /// KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>true</code> | <code>false</code> 
         /// </para>
         /// </summary>
         public bool KMSEncrypted
@@ -278,7 +356,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property LocationARN.
         /// </summary>
-        [AWSProperty(Min=16, Max=310)]
+        [AWSProperty(Min=16, Max=1400)]
         public string LocationARN
         {
             get { return this._locationARN; }
@@ -327,8 +405,12 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ReadOnly. 
         /// <para>
-        /// A value that sets the write status of a file share. This value is true if the write
-        /// status is read-only, and otherwise false.
+        /// A value that sets the write status of a file share. Set this value to <code>true</code>
+        /// to set the write status to read-only, otherwise set to <code>false</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>true</code> | <code>false</code> 
         /// </para>
         /// </summary>
         public bool ReadOnly
@@ -347,9 +429,9 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property RequesterPays. 
         /// <para>
         /// A value that sets who pays the cost of the request and the cost associated with data
-        /// download from the S3 bucket. If this value is set to true, the requester pays the
-        /// costs. Otherwise the S3 bucket owner pays. However, the S3 bucket owner always pays
-        /// the cost of storing data.
+        /// download from the S3 bucket. If this value is set to <code>true</code>, the requester
+        /// pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner
+        /// always pays the cost of storing data.
         /// </para>
         ///  <note> 
         /// <para>
@@ -357,7 +439,10 @@ namespace Amazon.StorageGateway.Model
         /// share, so make sure that the configuration on the file share is the same as the S3
         /// bucket configuration.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Valid Values: <code>true</code> | <code>false</code> 
+        /// </para>
         /// </summary>
         public bool RequesterPays
         {
@@ -390,14 +475,15 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property SMBACLEnabled. 
         /// <para>
-        /// If this value is set to "true", indicates that ACL (access control list) is enabled
-        /// on the SMB file share. If it is set to "false", it indicates that file and directory
-        /// permissions are mapped to the POSIX permission.
+        /// If this value is set to <code>true</code>, it indicates that access control list (ACL)
+        /// is enabled on the SMB file share. If it is set to <code>false</code>, it indicates
+        /// that file and directory permissions are mapped to the POSIX permission.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html
-        /// in the Storage Gateway User Guide.
+        /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using
+        /// Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>AWS Storage
+        /// Gateway User Guide</i>.
         /// </para>
         /// </summary>
         public bool SMBACLEnabled
@@ -436,7 +522,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property ValidUserList. 
         /// <para>
         /// A list of users or groups in the Active Directory that are allowed to access the file
-        /// share. A group must be prefixed with the @ character. For example <code>@group1</code>.
+        /// share. A group must be prefixed with the @ character. Acceptable formats include:
+        /// <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>.
         /// Can only be set if Authentication is set to <code>ActiveDirectory</code>.
         /// </para>
         /// </summary>

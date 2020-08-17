@@ -251,9 +251,9 @@ namespace Amazon.ServiceDiscovery
         /// 
         ///  
         /// <para>
-        /// For the current limit on the number of namespaces that you can create using the same
+        /// For the current quota on the number of namespaces that you can create using the same
         /// AWS account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-        /// Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
+        /// Cloud Map quotas</a> in the <i>AWS Cloud Map Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHttpNamespace service method.</param>
@@ -271,7 +271,11 @@ namespace Amazon.ServiceDiscovery
         /// The namespace that you're trying to create already exists.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceLimitExceededException">
-        /// The resource can't be created because you've reached the limit on the number of resources.
+        /// The resource can't be created because you've reached the quota on the number of resources.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.TooManyTagsException">
+        /// The list of tags on the resource is over the quota. The maximum number of tags that
+        /// can be applied to a resource is 50.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateHttpNamespace">REST API Reference for CreateHttpNamespace Operation</seealso>
         public virtual CreateHttpNamespaceResponse CreateHttpNamespace(CreateHttpNamespaceRequest request)
@@ -326,7 +330,7 @@ namespace Amazon.ServiceDiscovery
         /// Amazon VPC. The namespace defines your service naming scheme. For example, if you
         /// name your namespace <code>example.com</code> and name your service <code>backend</code>,
         /// the resulting DNS name for the service will be <code>backend.example.com</code>. For
-        /// the current limit on the number of namespaces that you can create using the same AWS
+        /// the current quota on the number of namespaces that you can create using the same AWS
         /// account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
         /// Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
         /// </summary>
@@ -345,7 +349,11 @@ namespace Amazon.ServiceDiscovery
         /// The namespace that you're trying to create already exists.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceLimitExceededException">
-        /// The resource can't be created because you've reached the limit on the number of resources.
+        /// The resource can't be created because you've reached the quota on the number of resources.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.TooManyTagsException">
+        /// The list of tags on the resource is over the quota. The maximum number of tags that
+        /// can be applied to a resource is 50.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreatePrivateDnsNamespace">REST API Reference for CreatePrivateDnsNamespace Operation</seealso>
         public virtual CreatePrivateDnsNamespaceResponse CreatePrivateDnsNamespace(CreatePrivateDnsNamespaceRequest request)
@@ -400,7 +408,7 @@ namespace Amazon.ServiceDiscovery
         /// namespace defines your service naming scheme. For example, if you name your namespace
         /// <code>example.com</code> and name your service <code>backend</code>, the resulting
         /// DNS name for the service will be <code>backend.example.com</code>. For the current
-        /// limit on the number of namespaces that you can create using the same AWS account,
+        /// quota on the number of namespaces that you can create using the same AWS account,
         /// see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
         /// Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
         /// </summary>
@@ -419,7 +427,11 @@ namespace Amazon.ServiceDiscovery
         /// The namespace that you're trying to create already exists.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceLimitExceededException">
-        /// The resource can't be created because you've reached the limit on the number of resources.
+        /// The resource can't be created because you've reached the quota on the number of resources.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.TooManyTagsException">
+        /// The list of tags on the resource is over the quota. The maximum number of tags that
+        /// can be applied to a resource is 50.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreatePublicDnsNamespace">REST API Reference for CreatePublicDnsNamespace Operation</seealso>
         public virtual CreatePublicDnsNamespaceResponse CreatePublicDnsNamespace(CreatePublicDnsNamespaceRequest request)
@@ -475,27 +487,27 @@ namespace Amazon.ServiceDiscovery
         ///  <ul> <li> 
         /// <para>
         /// For public and private DNS namespaces, one of the following combinations of DNS records
-        /// in Amazon Route 53:
+        /// in Amazon Route 53:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// A
+        ///  <code>A</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AAAA
+        ///  <code>AAAA</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A and AAAA
+        ///  <code>A</code> and <code>AAAA</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SRV
+        ///  <code>SRV</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CNAME
+        ///  <code>CNAME</code> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -509,7 +521,7 @@ namespace Amazon.ServiceDiscovery
         /// </para>
         ///  
         /// <para>
-        /// For the current limit on the number of instances that you can register using the same
+        /// For the current quota on the number of instances that you can register using the same
         /// namespace and using the same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
         /// Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
         /// </para>
@@ -526,10 +538,14 @@ namespace Amazon.ServiceDiscovery
         /// No namespace exists with the specified ID.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceLimitExceededException">
-        /// The resource can't be created because you've reached the limit on the number of resources.
+        /// The resource can't be created because you've reached the quota on the number of resources.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceAlreadyExistsException">
         /// The service can't be created because a service with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.TooManyTagsException">
+        /// The list of tags on the resource is over the quota. The maximum number of tags that
+        /// can be applied to a resource is 50.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateService">REST API Reference for CreateService Operation</seealso>
         public virtual CreateServiceResponse CreateService(CreateServiceRequest request)
@@ -717,7 +733,7 @@ namespace Amazon.ServiceDiscovery
         #region  DeregisterInstance
 
         /// <summary>
-        /// Deletes the Amazon Route 53 DNS records and health check, if any, that AWS Cloud Map
+        /// Deletes the Amazon Route 53 DNS records and health check, if any, that AWS Cloud Map
         /// created for the specified instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterInstance service method.</param>
@@ -805,6 +821,11 @@ namespace Amazon.ServiceDiscovery
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceNotFoundException">
         /// No namespace exists with the specified ID.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
+        /// The operation can't be completed because you've reached the quota for the number of
+        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">AWS
+        /// Cloud Map API request throttling quota</a> in the <i>AWS Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
         /// No service exists with the specified ID.
@@ -1430,6 +1451,68 @@ namespace Amazon.ServiceDiscovery
 
         #endregion
         
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// Lists tags for the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ServiceDiscovery.</returns>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.InvalidInputException">
+        /// One or more specified values aren't valid. For example, a required value might be
+        /// missing, a numeric value might be outside the allowed range, or a string value might
+        /// exceed length constraints.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceNotFoundException">
+        /// The operation can't be completed because the resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonServiceDiscoveryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from ServiceDiscovery.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RegisterInstance
 
         /// <summary>
@@ -1481,7 +1564,7 @@ namespace Amazon.ServiceDiscovery
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For the current limit on the number of instances that you can register using the same
+        /// For the current quota on the number of instances that you can register using the same
         /// namespace and using the same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
         /// Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
         /// </para>
@@ -1502,7 +1585,7 @@ namespace Amazon.ServiceDiscovery
         /// you can't delete a service that contains any instances.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceLimitExceededException">
-        /// The resource can't be created because you've reached the limit on the number of resources.
+        /// The resource can't be created because you've reached the quota on the number of resources.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
         /// No service exists with the specified ID.
@@ -1553,6 +1636,134 @@ namespace Amazon.ServiceDiscovery
 
         #endregion
         
+        #region  TagResource
+
+        /// <summary>
+        /// Adds one or more tags to the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by ServiceDiscovery.</returns>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.InvalidInputException">
+        /// One or more specified values aren't valid. For example, a required value might be
+        /// missing, a numeric value might be outside the allowed range, or a string value might
+        /// exceed length constraints.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceNotFoundException">
+        /// The operation can't be completed because the resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.TooManyTagsException">
+        /// The list of tags on the resource is over the quota. The maximum number of tags that
+        /// can be applied to a resource is 50.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonServiceDiscoveryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from ServiceDiscovery.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// Removes one or more tags from the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by ServiceDiscovery.</returns>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.InvalidInputException">
+        /// One or more specified values aren't valid. For example, a required value might be
+        /// missing, a numeric value might be outside the allowed range, or a string value might
+        /// exceed length constraints.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceNotFoundException">
+        /// The operation can't be completed because the resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonServiceDiscoveryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from ServiceDiscovery.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateInstanceCustomHealthStatus
 
         /// <summary>
@@ -1563,7 +1774,7 @@ namespace Amazon.ServiceDiscovery
         /// <para>
         /// You can use <code>UpdateInstanceCustomHealthStatus</code> to change the status only
         /// for custom health checks, which you define using <code>HealthCheckCustomConfig</code>
-        /// when you create a service. You can't use it to change the status for Route 53 health
+        /// when you create a service. You can't use it to change the status for Route 53 health
         /// checks, which you define using <code>HealthCheckConfig</code>.
         /// </para>
         ///  

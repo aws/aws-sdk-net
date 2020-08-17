@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Result structure for the get Domain Association request.
+    /// The result structure for the get domain association request.
     /// </summary>
     public partial class GetDomainAssociationResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property DomainAssociation. 
         /// <para>
-        ///  Domain Association structure. 
+        ///  Describes the structure of a domain association, which associates a custom domain
+        /// with an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

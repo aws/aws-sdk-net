@@ -45,6 +45,24 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateFileSystemLustreConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAutoImportPolicy())
+            {
+                context.Writer.WritePropertyName("AutoImportPolicy");
+                context.Writer.Write(requestObject.AutoImportPolicy);
+            }
+
+            if(requestObject.IsSetAutomaticBackupRetentionDays())
+            {
+                context.Writer.WritePropertyName("AutomaticBackupRetentionDays");
+                context.Writer.Write(requestObject.AutomaticBackupRetentionDays);
+            }
+
+            if(requestObject.IsSetDailyAutomaticBackupStartTime())
+            {
+                context.Writer.WritePropertyName("DailyAutomaticBackupStartTime");
+                context.Writer.Write(requestObject.DailyAutomaticBackupStartTime);
+            }
+
             if(requestObject.IsSetWeeklyMaintenanceStartTime())
             {
                 context.Writer.WritePropertyName("WeeklyMaintenanceStartTime");

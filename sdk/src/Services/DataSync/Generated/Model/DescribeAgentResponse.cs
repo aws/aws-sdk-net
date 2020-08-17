@@ -82,7 +82,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property EndpointType. 
         /// <para>
         /// The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint,
-        /// the agent is not accessible over the public Internet. 
+        /// the agent is not accessible over the public internet. 
         /// </para>
         /// </summary>
         public EndpointType EndpointType

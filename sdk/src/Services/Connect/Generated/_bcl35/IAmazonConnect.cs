@@ -1062,6 +1062,61 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ResumeContactRecording
+
+
+        /// <summary>
+        /// When a contact is being recorded, and the recording has been suspended using SuspendContactRecording,
+        /// this API resumes recording the call.
+        /// 
+        ///  
+        /// <para>
+        /// Only voice recordings are supported at this time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeContactRecording service method.</param>
+        /// 
+        /// <returns>The response from the ResumeContactRecording service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContactRecording">REST API Reference for ResumeContactRecording Operation</seealso>
+        ResumeContactRecordingResponse ResumeContactRecording(ResumeContactRecordingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResumeContactRecording operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResumeContactRecording operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResumeContactRecording
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContactRecording">REST API Reference for ResumeContactRecording Operation</seealso>
+        IAsyncResult BeginResumeContactRecording(ResumeContactRecordingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResumeContactRecording operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResumeContactRecording.</param>
+        /// 
+        /// <returns>Returns a  ResumeContactRecordingResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContactRecording">REST API Reference for ResumeContactRecording Operation</seealso>
+        ResumeContactRecordingResponse EndResumeContactRecording(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartChatContact
 
 
@@ -1127,12 +1182,86 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  StartContactRecording
+
+
+        /// <summary>
+        /// This API starts recording the contact when the agent joins the call. StartContactRecording
+        /// is a one-time action. For example, if you use StopContactRecording to stop recording
+        /// an ongoing call, you can't use StartContactRecording to restart it. For scenarios
+        /// where the recording has started and you want to suspend and resume it, such as when
+        /// collecting sensitive information (for example, a credit card number), use SuspendContactRecording
+        /// and ResumeContactRecording.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this API to override the recording behavior configured in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-recording-behavior.html">Set
+        /// recording behavior</a> block.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only voice recordings are supported at this time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartContactRecording service method.</param>
+        /// 
+        /// <returns>The response from the StartContactRecording service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactRecording">REST API Reference for StartContactRecording Operation</seealso>
+        StartContactRecordingResponse StartContactRecording(StartContactRecordingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartContactRecording operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartContactRecording operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartContactRecording
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactRecording">REST API Reference for StartContactRecording Operation</seealso>
+        IAsyncResult BeginStartContactRecording(StartContactRecordingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartContactRecording operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartContactRecording.</param>
+        /// 
+        /// <returns>Returns a  StartContactRecordingResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactRecording">REST API Reference for StartContactRecording Operation</seealso>
+        StartContactRecordingResponse EndStartContactRecording(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartOutboundVoiceContact
 
 
         /// <summary>
-        /// Initiates a contact flow to place an outbound call to a customer.
+        /// This API places an outbound call to a contact, and then initiates the contact flow.
+        /// It performs the actions in the contact flow that's specified (in <code>ContactFlowId</code>).
         /// 
+        ///  
+        /// <para>
+        /// Agents are not involved in initiating the outbound API (that is, dialing the contact).
+        /// If the contact flow places an outbound call to a contact, and then puts the contact
+        /// in queue, that's when the call is routed to the agent, like any other inbound case.
+        /// </para>
         ///  
         /// <para>
         /// There is a 60 second dialing timeout for this operation. If the call is not connected
@@ -1246,6 +1375,126 @@ namespace Amazon.Connect
         /// <returns>Returns a  StopContactResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContact">REST API Reference for StopContact Operation</seealso>
         StopContactResponse EndStopContact(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopContactRecording
+
+
+        /// <summary>
+        /// When a contact is being recorded, this API stops recording the call. StopContactRecording
+        /// is a one-time action. If you use StopContactRecording to stop recording an ongoing
+        /// call, you can't use StartContactRecording to restart it. For scenarios where the recording
+        /// has started and you want to suspend it for sensitive information (for example, to
+        /// collect a credit card number), and then restart it, use SuspendContactRecording and
+        /// ResumeContactRecording.
+        /// 
+        ///  
+        /// <para>
+        /// Only voice recordings are supported at this time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopContactRecording service method.</param>
+        /// 
+        /// <returns>The response from the StopContactRecording service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactRecording">REST API Reference for StopContactRecording Operation</seealso>
+        StopContactRecordingResponse StopContactRecording(StopContactRecordingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopContactRecording operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopContactRecording operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopContactRecording
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactRecording">REST API Reference for StopContactRecording Operation</seealso>
+        IAsyncResult BeginStopContactRecording(StopContactRecordingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopContactRecording operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopContactRecording.</param>
+        /// 
+        /// <returns>Returns a  StopContactRecordingResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactRecording">REST API Reference for StopContactRecording Operation</seealso>
+        StopContactRecordingResponse EndStopContactRecording(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SuspendContactRecording
+
+
+        /// <summary>
+        /// When a contact is being recorded, this API suspends recording the call. For example,
+        /// you might suspend the call recording while collecting sensitive information, such
+        /// as a credit card number. Then use ResumeContactRecording to restart recording. 
+        /// 
+        ///  
+        /// <para>
+        /// The period of time that the recording is suspended is filled with silence in the final
+        /// recording. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Only voice recordings are supported at this time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SuspendContactRecording service method.</param>
+        /// 
+        /// <returns>The response from the SuspendContactRecording service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SuspendContactRecording">REST API Reference for SuspendContactRecording Operation</seealso>
+        SuspendContactRecordingResponse SuspendContactRecording(SuspendContactRecordingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SuspendContactRecording operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SuspendContactRecording operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSuspendContactRecording
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SuspendContactRecording">REST API Reference for SuspendContactRecording Operation</seealso>
+        IAsyncResult BeginSuspendContactRecording(SuspendContactRecordingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SuspendContactRecording operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSuspendContactRecording.</param>
+        /// 
+        /// <returns>Returns a  SuspendContactRecordingResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SuspendContactRecording">REST API Reference for SuspendContactRecording Operation</seealso>
+        SuspendContactRecordingResponse EndSuspendContactRecording(IAsyncResult asyncResult);
 
         #endregion
         

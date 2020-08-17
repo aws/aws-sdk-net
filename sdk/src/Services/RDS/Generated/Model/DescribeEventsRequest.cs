@@ -30,9 +30,10 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEvents operation.
-    /// Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter
-    /// groups for the past 14 days. Events specific to a particular DB instance, DB security
-    /// group, database snapshot, or DB parameter group can be obtained by providing the name
+    /// Returns events related to DB instances, DB clusters, DB parameter groups, DB security
+    /// groups, DB snapshots, and DB cluster snapshots for the past 14 days. Events specific
+    /// to a particular DB instances, DB clusters, DB parameter groups, DB security groups,
+    /// DB snapshots, and DB cluster snapshots group can be obtained by providing the name
     /// as a parameter. By default, the past hour of events are returned.
     /// </summary>
     public partial class DescribeEventsRequest : AmazonRDSRequest
@@ -194,27 +195,38 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If SourceIdentifier is supplied, SourceType must also be provided.
+        /// If <code>SourceIdentifier</code> is supplied, <code>SourceType</code> must also be
+        /// provided.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code>
+        /// If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must
+        /// be supplied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must
+        /// be supplied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value
         /// must be supplied.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code>
+        /// If the source type is a DB security group, a <code>DBSecurityGroupName</code> value
         /// must be supplied.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code>
-        /// must be supplied.
+        /// If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must
+        /// be supplied.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code>
-        /// must be supplied.
+        /// If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code>
+        /// value must be supplied.
         /// </para>
         ///  </li> <li> 
         /// <para>

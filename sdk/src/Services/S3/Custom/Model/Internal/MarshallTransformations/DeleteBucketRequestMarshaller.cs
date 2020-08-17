@@ -43,7 +43,26 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(deleteBucketRequest.BucketName));
 
             if (deleteBucketRequest.BucketRegion != null)
-                request.AlternateEndpoint = RegionEndpoint.GetBySystemName(deleteBucketRequest.BucketRegion.Value);
+            {
+// Disable error preventing using explicit RegionEndpoints in the SDK since the code is mapping S3Regions to RegionEndpoints with a fallback default.
+#pragma warning disable CR1004
+                RegionEndpoint regionEndpoint;
+                if(deleteBucketRequest.BucketRegion == S3Region.US)
+                {
+                    regionEndpoint = RegionEndpoint.USEast1;
+                }
+                else if (deleteBucketRequest.BucketRegion == S3Region.EU)
+                {
+                    regionEndpoint = RegionEndpoint.EUWest1;
+                }
+                else
+                {
+                    regionEndpoint = RegionEndpoint.GetBySystemName(deleteBucketRequest.BucketRegion.Value);
+                }
+#pragma warning restore CR1004
+                request.AlternateEndpoint = regionEndpoint;
+            }
+                
             request.UseQueryString = true;
             
             return request;

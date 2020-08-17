@@ -85,7 +85,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ExclusionPatterns. 
         /// <para>
-        /// A list of regulary expression patterns. Documents that match the patterns are excluded
+        /// A list of regular expression patterns. Documents that match the patterns are excluded
         /// from the index. Documents that don't match the patterns are included in the index.
         /// If a document matches both an exclusion pattern and an inclusion pattern, the document
         /// is not included in the index.

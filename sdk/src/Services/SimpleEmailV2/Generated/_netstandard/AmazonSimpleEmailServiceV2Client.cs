@@ -389,6 +389,65 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  CreateCustomVerificationEmailTemplate
+
+        internal virtual CreateCustomVerificationEmailTemplateResponse CreateCustomVerificationEmailTemplate(CreateCustomVerificationEmailTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomVerificationEmailTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCustomVerificationEmailTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new custom verification email template.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
+        /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomVerificationEmailTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCustomVerificationEmailTemplate service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.AlreadyExistsException">
+        /// The resource specified in your request already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateCustomVerificationEmailTemplate">REST API Reference for CreateCustomVerificationEmailTemplate Operation</seealso>
+        public virtual Task<CreateCustomVerificationEmailTemplateResponse> CreateCustomVerificationEmailTemplateAsync(CreateCustomVerificationEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomVerificationEmailTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCustomVerificationEmailTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDedicatedIpPool
 
         internal virtual CreateDedicatedIpPoolResponse CreateDedicatedIpPool(CreateDedicatedIpPoolRequest request)
@@ -587,6 +646,127 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  CreateEmailIdentityPolicy
+
+        internal virtual CreateEmailIdentityPolicyResponse CreateEmailIdentityPolicy(CreateEmailIdentityPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEmailIdentityPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEmailIdentityPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEmailIdentityPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates the specified sending authorization policy for the given identity (an email
+        /// address or a domain).
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API is for the identity owner only. If you have not verified the identity, this
+        /// API will return an error.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Sending authorization is a feature that enables an identity owner to authorize other
+        /// senders to use its identities. For information about using sending authorization,
+        /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEmailIdentityPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEmailIdentityPolicy service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.AlreadyExistsException">
+        /// The resource specified in your request already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailIdentityPolicy">REST API Reference for CreateEmailIdentityPolicy Operation</seealso>
+        public virtual Task<CreateEmailIdentityPolicyResponse> CreateEmailIdentityPolicyAsync(CreateEmailIdentityPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEmailIdentityPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEmailIdentityPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateEmailIdentityPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateEmailTemplate
+
+        internal virtual CreateEmailTemplateResponse CreateEmailTemplate(CreateEmailTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEmailTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEmailTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEmailTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an email template. Email templates enable you to send personalized email to
+        /// one or more destinations in a single API operation. For more information, see the
+        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
+        /// SES Developer Guide</a>.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEmailTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEmailTemplate service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.AlreadyExistsException">
+        /// The resource specified in your request already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailTemplate">REST API Reference for CreateEmailTemplate Operation</seealso>
+        public virtual Task<CreateEmailTemplateResponse> CreateEmailTemplateAsync(CreateEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEmailTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEmailTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateEmailTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteConfigurationSet
 
         internal virtual DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request)
@@ -693,6 +873,59 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  DeleteCustomVerificationEmailTemplate
+
+        internal virtual DeleteCustomVerificationEmailTemplateResponse DeleteCustomVerificationEmailTemplate(DeleteCustomVerificationEmailTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomVerificationEmailTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCustomVerificationEmailTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an existing custom verification email template.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/es/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
+        /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomVerificationEmailTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCustomVerificationEmailTemplate service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteCustomVerificationEmailTemplate">REST API Reference for DeleteCustomVerificationEmailTemplate Operation</seealso>
+        public virtual Task<DeleteCustomVerificationEmailTemplateResponse> DeleteCustomVerificationEmailTemplateAsync(DeleteCustomVerificationEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomVerificationEmailTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCustomVerificationEmailTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDedicatedIpPool
 
         internal virtual DeleteDedicatedIpPoolResponse DeleteDedicatedIpPool(DeleteDedicatedIpPoolRequest request)
@@ -782,6 +1015,116 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = DeleteEmailIdentityResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteEmailIdentityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteEmailIdentityPolicy
+
+        internal virtual DeleteEmailIdentityPolicyResponse DeleteEmailIdentityPolicy(DeleteEmailIdentityPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEmailIdentityPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEmailIdentityPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEmailIdentityPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified sending authorization policy for the given identity (an email
+        /// address or a domain). This API returns successfully even if a policy with the specified
+        /// name does not exist.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API is for the identity owner only. If you have not verified the identity, this
+        /// API will return an error.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Sending authorization is a feature that enables an identity owner to authorize other
+        /// senders to use its identities. For information about using sending authorization,
+        /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEmailIdentityPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEmailIdentityPolicy service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteEmailIdentityPolicy">REST API Reference for DeleteEmailIdentityPolicy Operation</seealso>
+        public virtual Task<DeleteEmailIdentityPolicyResponse> DeleteEmailIdentityPolicyAsync(DeleteEmailIdentityPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEmailIdentityPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEmailIdentityPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEmailIdentityPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteEmailTemplate
+
+        internal virtual DeleteEmailTemplateResponse DeleteEmailTemplate(DeleteEmailTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEmailTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEmailTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEmailTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an email template.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEmailTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEmailTemplate service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteEmailTemplate">REST API Reference for DeleteEmailTemplate Operation</seealso>
+        public virtual Task<DeleteEmailTemplateResponse> DeleteEmailTemplateAsync(DeleteEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEmailTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEmailTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEmailTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1013,6 +1356,59 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetConfigurationSetEventDestinationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCustomVerificationEmailTemplate
+
+        internal virtual GetCustomVerificationEmailTemplateResponse GetCustomVerificationEmailTemplate(GetCustomVerificationEmailTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCustomVerificationEmailTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetCustomVerificationEmailTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the custom email verification template for the template name you specify.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
+        /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomVerificationEmailTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCustomVerificationEmailTemplate service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetCustomVerificationEmailTemplate">REST API Reference for GetCustomVerificationEmailTemplate Operation</seealso>
+        public virtual Task<GetCustomVerificationEmailTemplateResponse> GetCustomVerificationEmailTemplateAsync(GetCustomVerificationEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCustomVerificationEmailTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCustomVerificationEmailTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1306,7 +1702,8 @@ namespace Amazon.SimpleEmailV2
 
         /// <summary>
         /// Provides information about a specific identity, including the identity's verification
-        /// status, its DKIM authentication status, and its custom Mail-From settings.
+        /// status, sending authorization policies, its DKIM authentication status, and its custom
+        /// Mail-From settings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEmailIdentity service method.</param>
         /// <param name="cancellationToken">
@@ -1331,6 +1728,117 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = GetEmailIdentityResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetEmailIdentityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetEmailIdentityPolicies
+
+        internal virtual GetEmailIdentityPoliciesResponse GetEmailIdentityPolicies(GetEmailIdentityPoliciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEmailIdentityPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEmailIdentityPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<GetEmailIdentityPoliciesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the requested sending authorization policies for the given identity (an email
+        /// address or a domain). The policies are returned as a map of policy names to policy
+        /// contents. You can retrieve a maximum of 20 policies at a time.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API is for the identity owner only. If you have not verified the identity, this
+        /// API will return an error.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Sending authorization is a feature that enables an identity owner to authorize other
+        /// senders to use its identities. For information about using sending authorization,
+        /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEmailIdentityPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEmailIdentityPolicies service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetEmailIdentityPolicies">REST API Reference for GetEmailIdentityPolicies Operation</seealso>
+        public virtual Task<GetEmailIdentityPoliciesResponse> GetEmailIdentityPoliciesAsync(GetEmailIdentityPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEmailIdentityPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEmailIdentityPoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEmailIdentityPoliciesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetEmailTemplate
+
+        internal virtual GetEmailTemplateResponse GetEmailTemplate(GetEmailTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEmailTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEmailTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetEmailTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Displays the template object (which includes the subject line, HTML part and text
+        /// part) for the template you specify.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEmailTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEmailTemplate service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetEmailTemplate">REST API Reference for GetEmailTemplate Operation</seealso>
+        public virtual Task<GetEmailTemplateResponse> GetEmailTemplateAsync(GetEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEmailTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEmailTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEmailTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1423,6 +1931,57 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListConfigurationSetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCustomVerificationEmailTemplates
+
+        internal virtual ListCustomVerificationEmailTemplatesResponse ListCustomVerificationEmailTemplates(ListCustomVerificationEmailTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomVerificationEmailTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomVerificationEmailTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCustomVerificationEmailTemplatesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the existing custom verification email templates for your account in the current
+        /// AWS Region.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
+        /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomVerificationEmailTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCustomVerificationEmailTemplates service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListCustomVerificationEmailTemplates">REST API Reference for ListCustomVerificationEmailTemplates Operation</seealso>
+        public virtual Task<ListCustomVerificationEmailTemplatesResponse> ListCustomVerificationEmailTemplatesAsync(ListCustomVerificationEmailTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomVerificationEmailTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomVerificationEmailTemplatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCustomVerificationEmailTemplatesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1600,6 +2159,51 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  ListEmailTemplates
+
+        internal virtual ListEmailTemplatesResponse ListEmailTemplates(ListEmailTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEmailTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEmailTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListEmailTemplatesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the email templates present in your Amazon SES account in the current AWS Region.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEmailTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEmailTemplates service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListEmailTemplates">REST API Reference for ListEmailTemplates Operation</seealso>
+        public virtual Task<ListEmailTemplatesResponse> ListEmailTemplatesAsync(ListEmailTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEmailTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEmailTemplatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEmailTemplatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListSuppressedDestinations
 
         internal virtual ListSuppressedDestinationsResponse ListSuppressedDestinations(ListSuppressedDestinationsRequest request)
@@ -1726,6 +2330,49 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = PutAccountDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutAccountDedicatedIpWarmupAttributesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutAccountDetails
+
+        internal virtual PutAccountDetailsResponse PutAccountDetails(PutAccountDetailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<PutAccountDetailsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update your Amazon SES account details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAccountDetails service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.ConflictException">
+        /// If there is already an ongoing account details update under review.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountDetails">REST API Reference for PutAccountDetails Operation</seealso>
+        public virtual Task<PutAccountDetailsResponse> PutAccountDetailsAsync(PutAccountDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountDetailsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutAccountDetailsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2438,6 +3085,136 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  SendBulkEmail
+
+        internal virtual SendBulkEmailResponse SendBulkEmail(SendBulkEmailRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendBulkEmailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendBulkEmailResponseUnmarshaller.Instance;
+
+            return Invoke<SendBulkEmailResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Composes an email message to multiple destinations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendBulkEmail service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendBulkEmail service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.AccountSuspendedException">
+        /// The message can't be sent because the account's ability to send email has been permanently
+        /// restricted.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.MailFromDomainNotVerifiedException">
+        /// The message can't be sent because the sending domain isn't verified.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.MessageRejectedException">
+        /// The message can't be sent because it contains invalid content.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.SendingPausedException">
+        /// The message can't be sent because the account's ability to send email is currently
+        /// paused.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendBulkEmail">REST API Reference for SendBulkEmail Operation</seealso>
+        public virtual Task<SendBulkEmailResponse> SendBulkEmailAsync(SendBulkEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendBulkEmailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendBulkEmailResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendBulkEmailResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SendCustomVerificationEmail
+
+        internal virtual SendCustomVerificationEmailResponse SendCustomVerificationEmail(SendCustomVerificationEmailRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendCustomVerificationEmailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendCustomVerificationEmailResponseUnmarshaller.Instance;
+
+            return Invoke<SendCustomVerificationEmailResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds an email address to the list of identities for your Amazon SES account in the
+        /// current AWS Region and attempts to verify it. As a result of executing this operation,
+        /// a customized verification email is sent to the specified address.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must first create a custom verification email template.
+        /// For more information about creating and using custom verification email templates,
+        /// see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
+        /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendCustomVerificationEmail service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendCustomVerificationEmail service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.MailFromDomainNotVerifiedException">
+        /// The message can't be sent because the sending domain isn't verified.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.MessageRejectedException">
+        /// The message can't be sent because it contains invalid content.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.SendingPausedException">
+        /// The message can't be sent because the account's ability to send email is currently
+        /// paused.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendCustomVerificationEmail">REST API Reference for SendCustomVerificationEmail Operation</seealso>
+        public virtual Task<SendCustomVerificationEmailResponse> SendCustomVerificationEmailAsync(SendCustomVerificationEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendCustomVerificationEmailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendCustomVerificationEmailResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendCustomVerificationEmailResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SendEmail
 
         internal virtual SendEmailResponse SendEmail(SendEmailRequest request)
@@ -2466,6 +3243,12 @@ namespace Amazon.SimpleEmailV2
         /// you have to specify all of the message headers, as well as the message body. You can
         /// use this message type to send messages that contain attachments. The message that
         /// you specify has to be a valid MIME message.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Templated</b> – A message that contains personalization tags. When you send this
+        /// type of email, Amazon SES API v2 automatically replaces the tags with values that
+        /// you specify.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2569,6 +3352,55 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  TestRenderEmailTemplate
+
+        internal virtual TestRenderEmailTemplateResponse TestRenderEmailTemplate(TestRenderEmailTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestRenderEmailTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestRenderEmailTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<TestRenderEmailTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a preview of the MIME content of an email when provided with a template and
+        /// a set of replacement data.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestRenderEmailTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TestRenderEmailTemplate service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/TestRenderEmailTemplate">REST API Reference for TestRenderEmailTemplate Operation</seealso>
+        public virtual Task<TestRenderEmailTemplateResponse> TestRenderEmailTemplateAsync(TestRenderEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestRenderEmailTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestRenderEmailTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TestRenderEmailTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UntagResource
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -2663,6 +3495,172 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCustomVerificationEmailTemplate
+
+        internal virtual UpdateCustomVerificationEmailTemplateResponse UpdateCustomVerificationEmailTemplate(UpdateCustomVerificationEmailTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCustomVerificationEmailTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCustomVerificationEmailTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing custom verification email template.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
+        /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomVerificationEmailTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCustomVerificationEmailTemplate service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateCustomVerificationEmailTemplate">REST API Reference for UpdateCustomVerificationEmailTemplate Operation</seealso>
+        public virtual Task<UpdateCustomVerificationEmailTemplateResponse> UpdateCustomVerificationEmailTemplateAsync(UpdateCustomVerificationEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCustomVerificationEmailTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCustomVerificationEmailTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateEmailIdentityPolicy
+
+        internal virtual UpdateEmailIdentityPolicyResponse UpdateEmailIdentityPolicy(UpdateEmailIdentityPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEmailIdentityPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEmailIdentityPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEmailIdentityPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the specified sending authorization policy for the given identity (an email
+        /// address or a domain). This API returns successfully even if a policy with the specified
+        /// name does not exist.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API is for the identity owner only. If you have not verified the identity, this
+        /// API will return an error.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Sending authorization is a feature that enables an identity owner to authorize other
+        /// senders to use its identities. For information about using sending authorization,
+        /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEmailIdentityPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEmailIdentityPolicy service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateEmailIdentityPolicy">REST API Reference for UpdateEmailIdentityPolicy Operation</seealso>
+        public virtual Task<UpdateEmailIdentityPolicyResponse> UpdateEmailIdentityPolicyAsync(UpdateEmailIdentityPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEmailIdentityPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEmailIdentityPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateEmailIdentityPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateEmailTemplate
+
+        internal virtual UpdateEmailTemplateResponse UpdateEmailTemplate(UpdateEmailTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEmailTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEmailTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEmailTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an email template. Email templates enable you to send personalized email to
+        /// one or more destinations in a single API operation. For more information, see the
+        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
+        /// SES Developer Guide</a>.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEmailTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEmailTemplate service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateEmailTemplate">REST API Reference for UpdateEmailTemplate Operation</seealso>
+        public virtual Task<UpdateEmailTemplateResponse> UpdateEmailTemplateAsync(UpdateEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEmailTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEmailTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateEmailTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion

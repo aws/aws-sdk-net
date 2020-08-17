@@ -294,6 +294,13 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
+        /// There is already a current Amazon ECS container agent update in progress on the specified
+        /// container instance. If the container agent becomes disconnected while it is in a transitional
+        /// stage, such as <code>PENDING</code> or <code>STAGING</code>, the update process can
+        /// get stuck in that state. However, when the agent reconnects, it resumes where it stopped
+        /// previously.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider">REST API Reference for CreateCapacityProvider Operation</seealso>
         public virtual CreateCapacityProviderResponse CreateCapacityProvider(CreateCapacityProviderRequest request)
         {
@@ -337,6 +344,13 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
+        /// There is already a current Amazon ECS container agent update in progress on the specified
+        /// container instance. If the container agent becomes disconnected while it is in a transitional
+        /// stage, such as <code>PENDING</code> or <code>STAGING</code>, the update process can
+        /// get stuck in that state. However, when the agent reconnects, it resumes where it stopped
+        /// previously.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider">REST API Reference for CreateCapacityProvider Operation</seealso>
         public virtual Task<CreateCapacityProviderResponse> CreateCapacityProviderAsync(CreateCapacityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1039,6 +1053,107 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteAttributesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCapacityProvider
+
+
+        /// <summary>
+        /// Deletes the specified capacity provider.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers are reserved
+        /// and cannot be deleted. You can disassociate them from a cluster using either the <a>PutClusterCapacityProviders</a>
+        /// API or by deleting the cluster.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Prior to a capacity provider being deleted, the capacity provider must be removed
+        /// from the capacity provider strategy from all services. The <a>UpdateService</a> API
+        /// can be used to remove a capacity provider from a service's capacity provider strategy.
+        /// When updating a service, the <code>forceNewDeployment</code> option can be used to
+        /// ensure that any tasks using the Amazon EC2 instance capacity provided by the capacity
+        /// provider are transitioned to use the capacity from the remaining capacity providers.
+        /// Only capacity providers that are not associated with a cluster can be deleted. To
+        /// remove a capacity provider from a cluster, you can either use <a>PutClusterCapacityProviders</a>
+        /// or delete the cluster.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityProvider service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCapacityProvider service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider">REST API Reference for DeleteCapacityProvider Operation</seealso>
+        public virtual DeleteCapacityProviderResponse DeleteCapacityProvider(DeleteCapacityProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCapacityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCapacityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCapacityProviderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified capacity provider.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers are reserved
+        /// and cannot be deleted. You can disassociate them from a cluster using either the <a>PutClusterCapacityProviders</a>
+        /// API or by deleting the cluster.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Prior to a capacity provider being deleted, the capacity provider must be removed
+        /// from the capacity provider strategy from all services. The <a>UpdateService</a> API
+        /// can be used to remove a capacity provider from a service's capacity provider strategy.
+        /// When updating a service, the <code>forceNewDeployment</code> option can be used to
+        /// ensure that any tasks using the Amazon EC2 instance capacity provided by the capacity
+        /// provider are transitioned to use the capacity from the remaining capacity providers.
+        /// Only capacity providers that are not associated with a cluster can be deleted. To
+        /// remove a capacity provider from a cluster, you can either use <a>PutClusterCapacityProviders</a>
+        /// or delete the cluster.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCapacityProvider service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider">REST API Reference for DeleteCapacityProvider Operation</seealso>
+        public virtual Task<DeleteCapacityProviderResponse> DeleteCapacityProviderAsync(DeleteCapacityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCapacityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCapacityProviderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteCapacityProviderResponse>(request, options, cancellationToken);
         }
 
         #endregion

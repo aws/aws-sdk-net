@@ -103,9 +103,10 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is required if you are registering a scalable target. For Lambda provisioned
-        /// concurrency, the minimum value allowed is 0. For all other resources, the minimum
-        /// value allowed is 1.
+        /// This parameter is required if you are registering a scalable target. For certain resources,
+        /// the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
+        /// Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all
+        /// other resources, the minimum value allowed is 1.
         /// </para>
         /// </summary>
         public int MinCapacity

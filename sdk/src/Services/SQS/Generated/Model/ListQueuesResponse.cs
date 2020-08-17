@@ -33,12 +33,32 @@ namespace Amazon.SQS.Model
     /// </summary>
     public partial class ListQueuesResponse : AmazonWebServiceResponse
     {
+        private string _nextToken;
         private List<string> _queueUrls = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Pagination token to include in the next request.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property QueueUrls. 
         /// <para>
-        /// A list of queue URLs, up to 1,000 entries.
+        /// A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent
+        /// in the request.
         /// </para>
         /// </summary>
         public List<string> QueueUrls

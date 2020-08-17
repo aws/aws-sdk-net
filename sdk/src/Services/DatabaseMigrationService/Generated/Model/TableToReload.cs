@@ -42,6 +42,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The schema name of the table to be reloaded.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SchemaName
         {
             get { return this._schemaName; }
@@ -60,6 +61,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The table name of the table to be reloaded.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TableName
         {
             get { return this._tableName; }

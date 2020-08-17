@@ -76,6 +76,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     unmarshalledObject.PortMapping = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("timeout", targetDepth))
+                {
+                    var unmarshaller = ListenerTimeoutUnmarshaller.Instance;
+                    unmarshalledObject.Timeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tls", targetDepth))
                 {
                     var unmarshaller = ListenerTlsUnmarshaller.Instance;

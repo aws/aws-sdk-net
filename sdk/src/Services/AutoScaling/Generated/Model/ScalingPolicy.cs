@@ -52,9 +52,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AdjustmentType. 
         /// <para>
-        /// The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted.
-        /// The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-        /// <code>PercentChangeInCapacity</code>.
+        /// Specifies how the scaling adjustment is interpreted (for example, an absolute number
+        /// or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>,
+        /// and <code>PercentChangeInCapacity</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -110,8 +110,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Cooldown. 
         /// <para>
-        /// The amount of time, in seconds, after a scaling activity completes before any further
-        /// dynamic scaling activities can start.
+        /// The duration of the policy's cooldown period, in seconds.
         /// </para>
         /// </summary>
         public int Cooldown
@@ -186,10 +185,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinAdjustmentMagnitude. 
         /// <para>
-        /// The minimum number of instances to scale. If the value of <code>AdjustmentType</code>
-        /// is <code>PercentChangeInCapacity</code>, the scaling policy changes the <code>DesiredCapacity</code>
-        /// of the Auto Scaling group by at least this many instances. Otherwise, the error is
-        /// <code>ValidationError</code>.
+        /// The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>.
+        /// 
         /// </para>
         /// </summary>
         public int MinAdjustmentMagnitude
@@ -263,8 +260,25 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PolicyType. 
         /// <para>
-        /// The policy type. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>,
-        /// and <code>TargetTrackingScaling</code>.
+        /// One of the following policy types: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>TargetTrackingScaling</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>StepScaling</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SimpleScaling</code> (default)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
+        /// Tracking Scaling Policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
+        /// and Simple Scaling Policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

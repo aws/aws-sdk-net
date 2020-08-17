@@ -36,6 +36,7 @@ namespace Amazon.WorkSpaces.Model
     public partial class DescribeWorkspaceImagesRequest : AmazonWorkSpacesRequest
     {
         private List<string> _imageIds = new List<string>();
+        private ImageType _imageType;
         private int? _maxResults;
         private string _nextToken;
 
@@ -56,6 +57,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetImageIds()
         {
             return this._imageIds != null && this._imageIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageType. 
+        /// <para>
+        /// The type (owned or shared) of the image.
+        /// </para>
+        /// </summary>
+        public ImageType ImageType
+        {
+            get { return this._imageType; }
+            set { this._imageType = value; }
+        }
+
+        // Check to see if ImageType property is set
+        internal bool IsSetImageType()
+        {
+            return this._imageType != null;
         }
 
         /// <summary>

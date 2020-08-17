@@ -39,7 +39,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the resource from which tags have been removed.
+        /// The ARN of the resource group from which tags have been removed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=1600)]
@@ -58,7 +58,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Keys. 
         /// <para>
-        /// The keys of tags that have been removed.
+        /// The keys of the tags that were removed.
         /// </para>
         /// </summary>
         public List<string> Keys

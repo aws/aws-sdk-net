@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// The DNS name of the entity that performed the action on the affected resource.
+    /// Provides information about the domain name of the device that an entity used to perform
+    /// an action on an affected resource.
     /// </summary>
     public partial class DomainDetails
     {
@@ -38,7 +39,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// Reserved for future use.
+        /// The name of the domain.
         /// </para>
         /// </summary>
         public string DomainName

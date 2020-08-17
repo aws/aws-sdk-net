@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// Identifies the name and value of a source filter object used to limit the number and
-    /// type of records transferred from your source to your target.
+    /// Identifies the name and value of a filter object. This filter is used to limit the
+    /// number and type of AWS DMS objects that are returned for a particular <code>Describe*</code>
+    /// or similar operation.
     /// </summary>
     public partial class Filter
     {
@@ -40,7 +41,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the filter.
+        /// The name of the filter as specified for a <code>Describe*</code> or similar operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +60,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The filter value.
+        /// The filter value, which can specify one or more values used to narrow the returned
+        /// results.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

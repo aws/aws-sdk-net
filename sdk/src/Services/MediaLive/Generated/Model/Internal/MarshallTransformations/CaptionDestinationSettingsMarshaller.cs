@@ -78,6 +78,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEbuTtDDestinationSettings())
+            {
+                context.Writer.WritePropertyName("ebuTtDDestinationSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EbuTtDDestinationSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.EbuTtDDestinationSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEmbeddedDestinationSettings())
             {
                 context.Writer.WritePropertyName("embeddedDestinationSettings");

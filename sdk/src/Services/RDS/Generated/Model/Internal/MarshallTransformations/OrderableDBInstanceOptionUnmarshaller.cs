@@ -140,6 +140,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MultiAZCapable = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("OutpostCapable", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.OutpostCapable = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ReadReplicaCapable", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
@@ -163,6 +169,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsEnhancedMonitoring = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SupportsGlobalDatabases", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SupportsGlobalDatabases = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsIAMDatabaseAuthentication", targetDepth))

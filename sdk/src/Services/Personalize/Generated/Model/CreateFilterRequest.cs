@@ -30,8 +30,8 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFilter operation.
-    /// Creates a recommendation filter. For more information, see Using Filters with Amazon
-    /// Personalize.
+    /// Creates a recommendation filter. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
+    /// Filters with Amazon Personalize</a>.
     /// </summary>
     public partial class CreateFilterRequest : AmazonPersonalizeRequest
     {
@@ -72,7 +72,8 @@ namespace Amazon.Personalize.Model
         /// <para>
         /// Where "EVENT_TYPE" is the type of event to filter out. To filter out all items with
         /// any interactions history, set <code>"*"</code> as the EVENT_TYPE. For more information,
-        /// see Using Filters with Amazon Personalize.
+        /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
+        /// Filters with Amazon Personalize</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2500)]

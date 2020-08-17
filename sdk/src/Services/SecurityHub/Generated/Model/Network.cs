@@ -38,6 +38,7 @@ namespace Amazon.SecurityHub.Model
         private string _destinationIpV6;
         private int? _destinationPort;
         private NetworkDirection _direction;
+        private PortRange _openPortRange;
         private string _protocol;
         private string _sourceDomain;
         private string _sourceIpV4;
@@ -133,6 +134,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetDirection()
         {
             return this._direction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenPortRange. 
+        /// <para>
+        /// The range of open ports that is present on the network.
+        /// </para>
+        /// </summary>
+        public PortRange OpenPortRange
+        {
+            get { return this._openPortRange; }
+            set { this._openPortRange = value; }
+        }
+
+        // Check to see if OpenPortRange property is set
+        internal bool IsSetOpenPortRange()
+        {
+            return this._openPortRange != null;
         }
 
         /// <summary>

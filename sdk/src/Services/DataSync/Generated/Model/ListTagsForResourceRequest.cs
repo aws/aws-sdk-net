@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Returns all the tags associated with a specified resources.
+    /// Returns all the tags associated with a specified resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonDataSyncRequest
     {

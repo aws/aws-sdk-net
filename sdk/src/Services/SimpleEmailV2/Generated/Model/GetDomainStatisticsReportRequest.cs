@@ -45,7 +45,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// The domain that you want to obtain deliverability metrics for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public string Domain
         {
             get { return this._domain; }

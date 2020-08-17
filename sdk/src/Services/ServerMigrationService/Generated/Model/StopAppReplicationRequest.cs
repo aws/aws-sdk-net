@@ -30,7 +30,8 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the StopAppReplication operation.
-    /// Stops replicating an application.
+    /// Stops replicating the specified application by deleting the replication job for each
+    /// server in the application.
     /// </summary>
     public partial class StopAppReplicationRequest : AmazonServerMigrationServiceRequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// ID of the application to stop replicating.
+        /// The ID of the application.
         /// </para>
         /// </summary>
         public string AppId

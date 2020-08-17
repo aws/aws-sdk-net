@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// The data structure that containts the information for a medical transcription job.
+    /// The data structure that contains the information for a medical transcription job.
     /// </summary>
     public partial class MedicalTranscriptionJob
     {
@@ -124,7 +124,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         ///  <code>Invalid file size: file size too large</code>- The size of your audio file
         /// is larger than what Amazon Transcribe Medical can process. For more information, see
-        /// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines
+        /// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
         /// and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> 
         /// </para>
         ///  </li> <li> 

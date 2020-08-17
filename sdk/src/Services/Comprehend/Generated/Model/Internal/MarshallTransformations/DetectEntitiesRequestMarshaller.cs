@@ -68,6 +68,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEndpointArn())
+                {
+                    context.Writer.WritePropertyName("EndpointArn");
+                    context.Writer.Write(publicRequest.EndpointArn);
+                }
+
                 if(publicRequest.IsSetLanguageCode())
                 {
                     context.Writer.WritePropertyName("LanguageCode");

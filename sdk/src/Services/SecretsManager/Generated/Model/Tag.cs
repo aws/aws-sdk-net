@@ -58,7 +58,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The string value that's associated with the key of the tag.
+        /// The string value associated with the key of the tag.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]

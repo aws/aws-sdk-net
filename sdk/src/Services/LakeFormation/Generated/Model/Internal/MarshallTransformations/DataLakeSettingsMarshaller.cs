@@ -93,6 +93,17 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetTrustedResourceOwners())
+            {
+                context.Writer.WritePropertyName("TrustedResourceOwners");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTrustedResourceOwnersListValue in requestObject.TrustedResourceOwners)
+                {
+                        context.Writer.Write(requestObjectTrustedResourceOwnersListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

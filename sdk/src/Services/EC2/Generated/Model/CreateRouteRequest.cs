@@ -66,8 +66,10 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateRouteRequest : AmazonEC2Request
     {
+        private string _carrierGatewayId;
         private string _destinationCidrBlock;
         private string _destinationIpv6CidrBlock;
+        private string _destinationPrefixListId;
         private string _egressOnlyInternetGatewayId;
         private string _gatewayId;
         private string _instanceId;
@@ -79,10 +81,34 @@ namespace Amazon.EC2.Model
         private string _vpcPeeringConnectionId;
 
         /// <summary>
+        /// Gets and sets the property CarrierGatewayId. 
+        /// <para>
+        /// The ID of the carrier gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only use this option when the VPC contains a subnet which is associated with
+        /// a Wavelength Zone.
+        /// </para>
+        /// </summary>
+        public string CarrierGatewayId
+        {
+            get { return this._carrierGatewayId; }
+            set { this._carrierGatewayId = value; }
+        }
+
+        // Check to see if CarrierGatewayId property is set
+        internal bool IsSetCarrierGatewayId()
+        {
+            return this._carrierGatewayId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DestinationCidrBlock. 
         /// <para>
         /// The IPv4 CIDR address block used for the destination match. Routing decisions are
-        /// based on the most specific match.
+        /// based on the most specific match. We modify the specified CIDR block to its canonical
+        /// form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.
         /// </para>
         /// </summary>
         public string DestinationCidrBlock
@@ -114,6 +140,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDestinationIpv6CidrBlock()
         {
             return this._destinationIpv6CidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationPrefixListId. 
+        /// <para>
+        /// The ID of a prefix list used for the destination match.
+        /// </para>
+        /// </summary>
+        public string DestinationPrefixListId
+        {
+            get { return this._destinationPrefixListId; }
+            set { this._destinationPrefixListId = value; }
+        }
+
+        // Check to see if DestinationPrefixListId property is set
+        internal bool IsSetDestinationPrefixListId()
+        {
+            return this._destinationPrefixListId != null;
         }
 
         /// <summary>

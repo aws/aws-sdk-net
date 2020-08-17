@@ -70,6 +70,42 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Broker = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IncludeControlDetails", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeControlDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IncludePartitionValue", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludePartitionValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IncludeTableAlterOperations", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeTableAlterOperations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IncludeTransactionDetails", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeTransactionDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MessageFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MessageFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PartitionIncludeSchemaTable", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.PartitionIncludeSchemaTable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Topic", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

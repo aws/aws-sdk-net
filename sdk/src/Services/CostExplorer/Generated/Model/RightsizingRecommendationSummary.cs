@@ -80,7 +80,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property SavingsPercentage. 
         /// <para>
         ///  Savings percentage based on the recommended modifications, relative to the total
-        /// On Demand costs associated with these instances.
+        /// On-Demand costs associated with these instances.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

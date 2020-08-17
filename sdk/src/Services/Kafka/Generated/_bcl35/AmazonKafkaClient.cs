@@ -1348,6 +1348,81 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  RebootBroker
+
+        /// <summary>
+        /// Reboots brokers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebootBroker service method.</param>
+        /// 
+        /// <returns>The response from the RebootBroker service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/RebootBroker">REST API Reference for RebootBroker Operation</seealso>
+        public virtual RebootBrokerResponse RebootBroker(RebootBrokerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RebootBrokerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootBrokerResponseUnmarshaller.Instance;
+
+            return Invoke<RebootBrokerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RebootBroker operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RebootBroker operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebootBroker
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/RebootBroker">REST API Reference for RebootBroker Operation</seealso>
+        public virtual IAsyncResult BeginRebootBroker(RebootBrokerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RebootBrokerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootBrokerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RebootBroker operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebootBroker.</param>
+        /// 
+        /// <returns>Returns a  RebootBrokerResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/RebootBroker">REST API Reference for RebootBroker Operation</seealso>
+        public virtual RebootBrokerResponse EndRebootBroker(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RebootBrokerResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>

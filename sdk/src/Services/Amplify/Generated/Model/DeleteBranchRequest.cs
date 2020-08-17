@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteBranch operation.
-    /// Deletes a branch for an Amplify App.
+    /// Deletes a branch for an Amplify app.
     /// </summary>
     public partial class DeleteBranchRequest : AmazonAmplifyRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  Unique Id for an Amplify App. 
+        ///  The unique ID for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -59,7 +59,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        ///  Name for the branch. 
+        ///  The name for the branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

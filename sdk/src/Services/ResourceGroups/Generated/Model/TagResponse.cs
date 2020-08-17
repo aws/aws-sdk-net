@@ -58,7 +58,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags that have been added to the specified resource.
+        /// The tags that have been added to the specified resource group.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

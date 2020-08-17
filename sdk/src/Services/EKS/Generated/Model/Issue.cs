@@ -72,6 +72,15 @@ namespace Amazon.EKS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <b>Ec2SubnetInvalidConfiguration</b>: One or more Amazon EC2 subnets specified for
+        /// a node group do not automatically assign public IP addresses to instances launched
+        /// into it. If you want your instances to be assigned a public IP address, then you need
+        /// to enable the <code>auto-assign public IP address</code> setting for the subnet. See
+        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
+        /// the public IPv4 addressing attribute for your subnet</a> in the Amazon VPC User Guide.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b>IamInstanceProfileNotFound</b>: We couldn't find the IAM instance profile for
         /// your managed node group. You may be able to recreate an instance profile with the
         /// same settings to recover.

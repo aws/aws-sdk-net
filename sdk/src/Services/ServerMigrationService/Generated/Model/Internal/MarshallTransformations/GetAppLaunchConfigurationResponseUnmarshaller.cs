@@ -57,6 +57,12 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                     response.AppId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("autoLaunch", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.AutoLaunch = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

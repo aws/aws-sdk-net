@@ -59,25 +59,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ApiCallDetails. 
         /// <para>
-        /// For the affected resource:
-        /// </para>
-        ///  <ul><li>
-        /// <para>
-        /// The name of the operation that was invoked most recently and produced the finding
-        /// (api).
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// The first date and time when any operation was invoked and produced the finding (firstSeen).
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// The most recent date and time when the specified operation was invoked and produced
-        /// the finding (lastSeen).
-        /// </para>
-        /// </li></ul> 
-        /// <para>
-        /// All date and time values are in UTC and extended ISO 8601 format.
+        /// The invocation details of the API operation that an entity invoked for the affected
+        /// resource, if the value for the actionType property is AWS_API_CALL.
         /// </para>
         /// </summary>
         public ApiCallDetails ApiCallDetails

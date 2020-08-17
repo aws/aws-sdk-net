@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJobs operation.
-    /// List Jobs for a branch, part of an Amplify App.
+    /// Lists the jobs for a branch of an Amplify app.
     /// </summary>
     public partial class ListJobsRequest : AmazonAmplifyRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  Unique Id for an Amplify App. 
+        ///  The unique ID for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -61,7 +61,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        ///  Name for a branch. 
+        ///  The name for a branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -80,7 +80,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  Maximum number of records to list in a single response. 
+        ///  The maximum number of records to list in a single response. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -99,8 +99,9 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Pagination token. Set to null to start listing steps from start. If a non-null pagination
-        /// token is returned in a result, then pass its value in here to list more steps. 
+        ///  A pagination token. Set to null to start listing steps from the start. If a non-null
+        /// pagination token is returned in a result, pass its value in here to list more steps.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2000)]

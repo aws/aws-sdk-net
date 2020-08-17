@@ -118,6 +118,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.Protocols = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SecurityPolicyName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecurityPolicyName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServerId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

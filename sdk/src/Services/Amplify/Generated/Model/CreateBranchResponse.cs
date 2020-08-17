@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Result structure for create branch request.
+    /// The result structure for create branch request.
     /// </summary>
     public partial class CreateBranchResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Branch. 
         /// <para>
-        ///  Branch structure for an Amplify App. 
+        ///  Describes the branch for an Amplify app, which maps to a third-party repository branch.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLocations operation.
-    /// Returns a lists of source and destination locations.
+    /// Returns a list of source and destination locations.
     /// 
     ///  
     /// <para>

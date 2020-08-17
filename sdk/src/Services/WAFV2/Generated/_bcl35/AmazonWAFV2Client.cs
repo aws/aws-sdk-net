@@ -3535,7 +3535,17 @@ namespace Amazon.WAFV2
         /// </para>
         ///  </note> 
         /// <para>
-        /// Retrieves the <a>TagInfoForResource</a> for the specified resource. 
+        /// Retrieves the <a>TagInfoForResource</a> for the specified resource. Tags are key:value
+        /// pairs that you can use to categorize and manage your resources, for purposes like
+        /// billing. For example, you might set the tag key to "customer" and the value to the
+        /// customer name or ID. You can specify one or more tags to add to each AWS resource,
+        /// up to 50 tags for a resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups,
+        /// IP sets, and regex pattern sets. You can't manage or view tags through the AWS WAF
+        /// console. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -3755,6 +3765,11 @@ namespace Amazon.WAFV2
         /// If you are capturing logs for Amazon CloudFront, always create the firehose in US
         /// East (N. Virginia). 
         /// </para>
+        ///  
+        /// <para>
+        /// Give the data firehose a name that starts with the prefix <code>aws-waf-logs-</code>.
+        /// For example, <code>aws-waf-logs-us-east-2-analytics</code>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Do not create the data firehose using a <code>Kinesis stream</code> as your source.
@@ -3806,6 +3821,12 @@ namespace Amazon.WAFV2
         /// which a Web ACL cannot be associated.
         /// </para>
         ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
+        /// AWS WAF couldn’t perform the operation because you exceeded your resource limit. For
+        /// example, the maximum number of <code>WebACL</code> objects that you can create for
+        /// an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
         /// AWS WAF couldn’t perform the operation because your resource doesn’t exist.
@@ -4029,9 +4050,16 @@ namespace Amazon.WAFV2
         ///  </note> 
         /// <para>
         /// Associates tags with the specified AWS resource. Tags are key:value pairs that you
-        /// can associate with AWS resources. For example, the tag key might be "customer" and
-        /// the tag value might be "companyA." You can specify one or more tags to add to each
-        /// container. You can add up to 50 tags to each AWS resource.
+        /// can use to categorize and manage your resources, for purposes like billing. For example,
+        /// you might set the tag key to "customer" and the value to the customer name or ID.
+        /// You can specify one or more tags to add to each AWS resource, up to 50 tags for a
+        /// resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups,
+        /// IP sets, and regex pattern sets. You can't manage or view tags through the AWS WAF
+        /// console. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>

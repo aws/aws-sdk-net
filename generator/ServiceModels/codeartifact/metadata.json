@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Added support for AWS CodeArtifact.",
+  "generate-client-constructors": true
+}

@@ -70,6 +70,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CognitoMemberDefinition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OidcMemberDefinition", targetDepth))
+                {
+                    var unmarshaller = OidcMemberDefinitionUnmarshaller.Instance;
+                    unmarshalledObject.OidcMemberDefinition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

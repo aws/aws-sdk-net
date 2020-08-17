@@ -30,7 +30,7 @@ namespace Amazon.FraudDetector.Model
 {
     /// <summary>
     /// Container for the parameters to the GetModelVersion operation.
-    /// Gets a model version.
+    /// Gets the details of the specified model version.
     /// </summary>
     public partial class GetModelVersionRequest : AmazonFraudDetectorRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The model ID. 
+        /// The model ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -60,7 +60,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property ModelType. 
         /// <para>
-        /// The model type. 
+        /// The model type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,10 +79,10 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property ModelVersionNumber. 
         /// <para>
-        /// The model version. 
+        /// The model version number.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=3, Max=7)]
         public string ModelVersionNumber
         {
             get { return this._modelVersionNumber; }

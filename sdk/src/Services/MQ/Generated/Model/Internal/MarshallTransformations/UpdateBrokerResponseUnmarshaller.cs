@@ -51,6 +51,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("authenticationStrategy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AuthenticationStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("autoMinorVersionUpgrade", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -79,6 +85,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.HostInstanceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ldapServerMetadata", targetDepth))
+                {
+                    var unmarshaller = LdapServerMetadataOutputUnmarshaller.Instance;
+                    response.LdapServerMetadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("logs", targetDepth))

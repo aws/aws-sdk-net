@@ -129,11 +129,11 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LanguageCode. Indicates the language of the audio output
-        /// track. Only used if languageControlMode is useConfigured, or there is no ISO 639 language
-        /// code specified in the input.
+        /// Gets and sets the property LanguageCode. RFC 5646 language code representing the language
+        /// of the audio output track. Only used if languageControlMode is useConfigured, or there
+        /// is no ISO 639 language code specified in the input.
         /// </summary>
-        [AWSProperty(Min=3, Max=3)]
+        [AWSProperty(Min=1, Max=35)]
         public string LanguageCode
         {
             get { return this._languageCode; }

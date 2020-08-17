@@ -329,16 +329,33 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.ListHostedZonesByVPCRequest.VPCId</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListHostedZonesByVPCRequest.VPCRegion</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListHostedZonesByVPCRequest.NextToken</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListHostedZonesByVPCResponse.NextToken</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.ListQueryLoggingConfigsRequest.HostedZoneId</property>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListQueryLoggingConfigsRequest.NextToken</property>
-    <max>256</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListQueryLoggingConfigsResponse.NextToken</property>
-    <max>256</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListResourceRecordSetsRequest.HostedZoneId</property>
@@ -461,7 +478,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListVPCAssociationAuthorizationsRequest.NextToken</property>
-    <max>256</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListVPCAssociationAuthorizationsResponse.HostedZoneId</property>
@@ -469,7 +486,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListVPCAssociationAuthorizationsResponse.NextToken</property>
-    <max>256</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.TestDNSAnswerRequest.HostedZoneId</property>
@@ -781,6 +798,18 @@
   <property-value-rule>
     <property>Amazon.Route53.Model.HostedZoneLimit.Value</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.HostedZoneOwner.OwningService</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.HostedZoneSummary.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.HostedZoneSummary.Name</property>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.LinkedService.ServicePrincipal</property>

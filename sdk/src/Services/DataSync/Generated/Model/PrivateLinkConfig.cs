@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// The VPC endpoint, subnet and security group that an agent uses to access IP addresses
+    /// The VPC endpoint, subnet, and security group that an agent uses to access IP addresses
     /// in a VPC (Virtual Private Cloud).
     /// </summary>
     public partial class PrivateLinkConfig
@@ -45,7 +45,7 @@ namespace Amazon.DataSync.Model
         /// The private endpoint that is configured for an agent that has access to IP addresses
         /// in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>.
         /// An agent that is configured with this endpoint will not be accessible over the public
-        /// Internet.
+        /// internet.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=15)]
@@ -106,7 +106,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property VpcEndpointId. 
         /// <para>
         /// The ID of the VPC endpoint that is configured for an agent. An agent that is configured
-        /// with a VPC endpoint will not be accessible over the public Internet.
+        /// with a VPC endpoint will not be accessible over the public internet.
         /// </para>
         /// </summary>
         public string VpcEndpointId

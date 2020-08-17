@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2020-05-31.normal.json service model.
  */
 
 using System;
@@ -23,6 +23,222 @@ using Amazon.Runtime;
 
 namespace Amazon.CloudFront
 {
+
+    /// <summary>
+    /// Constants used for properties of type CachePolicyCookieBehavior.
+    /// </summary>
+    public class CachePolicyCookieBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant All for CachePolicyCookieBehavior
+        /// </summary>
+        public static readonly CachePolicyCookieBehavior All = new CachePolicyCookieBehavior("all");
+        /// <summary>
+        /// Constant AllExcept for CachePolicyCookieBehavior
+        /// </summary>
+        public static readonly CachePolicyCookieBehavior AllExcept = new CachePolicyCookieBehavior("allExcept");
+        /// <summary>
+        /// Constant None for CachePolicyCookieBehavior
+        /// </summary>
+        public static readonly CachePolicyCookieBehavior None = new CachePolicyCookieBehavior("none");
+        /// <summary>
+        /// Constant Whitelist for CachePolicyCookieBehavior
+        /// </summary>
+        public static readonly CachePolicyCookieBehavior Whitelist = new CachePolicyCookieBehavior("whitelist");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CachePolicyCookieBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CachePolicyCookieBehavior FindValue(string value)
+        {
+            return FindValue<CachePolicyCookieBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CachePolicyCookieBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CachePolicyHeaderBehavior.
+    /// </summary>
+    public class CachePolicyHeaderBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant None for CachePolicyHeaderBehavior
+        /// </summary>
+        public static readonly CachePolicyHeaderBehavior None = new CachePolicyHeaderBehavior("none");
+        /// <summary>
+        /// Constant Whitelist for CachePolicyHeaderBehavior
+        /// </summary>
+        public static readonly CachePolicyHeaderBehavior Whitelist = new CachePolicyHeaderBehavior("whitelist");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CachePolicyHeaderBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CachePolicyHeaderBehavior FindValue(string value)
+        {
+            return FindValue<CachePolicyHeaderBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CachePolicyHeaderBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CachePolicyQueryStringBehavior.
+    /// </summary>
+    public class CachePolicyQueryStringBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant All for CachePolicyQueryStringBehavior
+        /// </summary>
+        public static readonly CachePolicyQueryStringBehavior All = new CachePolicyQueryStringBehavior("all");
+        /// <summary>
+        /// Constant AllExcept for CachePolicyQueryStringBehavior
+        /// </summary>
+        public static readonly CachePolicyQueryStringBehavior AllExcept = new CachePolicyQueryStringBehavior("allExcept");
+        /// <summary>
+        /// Constant None for CachePolicyQueryStringBehavior
+        /// </summary>
+        public static readonly CachePolicyQueryStringBehavior None = new CachePolicyQueryStringBehavior("none");
+        /// <summary>
+        /// Constant Whitelist for CachePolicyQueryStringBehavior
+        /// </summary>
+        public static readonly CachePolicyQueryStringBehavior Whitelist = new CachePolicyQueryStringBehavior("whitelist");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CachePolicyQueryStringBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CachePolicyQueryStringBehavior FindValue(string value)
+        {
+            return FindValue<CachePolicyQueryStringBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CachePolicyQueryStringBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CachePolicyType.
+    /// </summary>
+    public class CachePolicyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Custom for CachePolicyType
+        /// </summary>
+        public static readonly CachePolicyType Custom = new CachePolicyType("custom");
+        /// <summary>
+        /// Constant Managed for CachePolicyType
+        /// </summary>
+        public static readonly CachePolicyType Managed = new CachePolicyType("managed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CachePolicyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CachePolicyType FindValue(string value)
+        {
+            return FindValue<CachePolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CachePolicyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 
     /// <summary>
     /// Constants used for properties of type CertificateSource.
@@ -490,6 +706,10 @@ namespace Amazon.CloudFront
         /// Constant TLSv12_2018 for MinimumProtocolVersion
         /// </summary>
         public static readonly MinimumProtocolVersion TLSv12_2018 = new MinimumProtocolVersion("TLSv1.2_2018");
+        /// <summary>
+        /// Constant TLSv12_2019 for MinimumProtocolVersion
+        /// </summary>
+        public static readonly MinimumProtocolVersion TLSv12_2019 = new MinimumProtocolVersion("TLSv1.2_2019");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -574,6 +794,222 @@ namespace Amazon.CloudFront
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OriginProtocolPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OriginRequestPolicyCookieBehavior.
+    /// </summary>
+    public class OriginRequestPolicyCookieBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant All for OriginRequestPolicyCookieBehavior
+        /// </summary>
+        public static readonly OriginRequestPolicyCookieBehavior All = new OriginRequestPolicyCookieBehavior("all");
+        /// <summary>
+        /// Constant None for OriginRequestPolicyCookieBehavior
+        /// </summary>
+        public static readonly OriginRequestPolicyCookieBehavior None = new OriginRequestPolicyCookieBehavior("none");
+        /// <summary>
+        /// Constant Whitelist for OriginRequestPolicyCookieBehavior
+        /// </summary>
+        public static readonly OriginRequestPolicyCookieBehavior Whitelist = new OriginRequestPolicyCookieBehavior("whitelist");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OriginRequestPolicyCookieBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OriginRequestPolicyCookieBehavior FindValue(string value)
+        {
+            return FindValue<OriginRequestPolicyCookieBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OriginRequestPolicyCookieBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OriginRequestPolicyHeaderBehavior.
+    /// </summary>
+    public class OriginRequestPolicyHeaderBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AllViewer for OriginRequestPolicyHeaderBehavior
+        /// </summary>
+        public static readonly OriginRequestPolicyHeaderBehavior AllViewer = new OriginRequestPolicyHeaderBehavior("allViewer");
+        /// <summary>
+        /// Constant AllViewerAndWhitelistCloudFront for OriginRequestPolicyHeaderBehavior
+        /// </summary>
+        public static readonly OriginRequestPolicyHeaderBehavior AllViewerAndWhitelistCloudFront = new OriginRequestPolicyHeaderBehavior("allViewerAndWhitelistCloudFront");
+        /// <summary>
+        /// Constant None for OriginRequestPolicyHeaderBehavior
+        /// </summary>
+        public static readonly OriginRequestPolicyHeaderBehavior None = new OriginRequestPolicyHeaderBehavior("none");
+        /// <summary>
+        /// Constant Whitelist for OriginRequestPolicyHeaderBehavior
+        /// </summary>
+        public static readonly OriginRequestPolicyHeaderBehavior Whitelist = new OriginRequestPolicyHeaderBehavior("whitelist");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OriginRequestPolicyHeaderBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OriginRequestPolicyHeaderBehavior FindValue(string value)
+        {
+            return FindValue<OriginRequestPolicyHeaderBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OriginRequestPolicyHeaderBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OriginRequestPolicyQueryStringBehavior.
+    /// </summary>
+    public class OriginRequestPolicyQueryStringBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant All for OriginRequestPolicyQueryStringBehavior
+        /// </summary>
+        public static readonly OriginRequestPolicyQueryStringBehavior All = new OriginRequestPolicyQueryStringBehavior("all");
+        /// <summary>
+        /// Constant None for OriginRequestPolicyQueryStringBehavior
+        /// </summary>
+        public static readonly OriginRequestPolicyQueryStringBehavior None = new OriginRequestPolicyQueryStringBehavior("none");
+        /// <summary>
+        /// Constant Whitelist for OriginRequestPolicyQueryStringBehavior
+        /// </summary>
+        public static readonly OriginRequestPolicyQueryStringBehavior Whitelist = new OriginRequestPolicyQueryStringBehavior("whitelist");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OriginRequestPolicyQueryStringBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OriginRequestPolicyQueryStringBehavior FindValue(string value)
+        {
+            return FindValue<OriginRequestPolicyQueryStringBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OriginRequestPolicyQueryStringBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OriginRequestPolicyType.
+    /// </summary>
+    public class OriginRequestPolicyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Custom for OriginRequestPolicyType
+        /// </summary>
+        public static readonly OriginRequestPolicyType Custom = new OriginRequestPolicyType("custom");
+        /// <summary>
+        /// Constant Managed for OriginRequestPolicyType
+        /// </summary>
+        public static readonly OriginRequestPolicyType Managed = new OriginRequestPolicyType("managed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OriginRequestPolicyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OriginRequestPolicyType FindValue(string value)
+        {
+            return FindValue<OriginRequestPolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OriginRequestPolicyType(string value)
         {
             return FindValue(value);
         }

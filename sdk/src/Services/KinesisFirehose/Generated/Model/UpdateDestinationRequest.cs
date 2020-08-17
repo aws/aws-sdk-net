@@ -78,6 +78,7 @@ namespace Amazon.KinesisFirehose.Model
         private string _destinationId;
         private ElasticsearchDestinationUpdate _elasticsearchDestinationUpdate;
         private ExtendedS3DestinationUpdate _extendedS3DestinationUpdate;
+        private HttpEndpointDestinationUpdate _httpEndpointDestinationUpdate;
         private RedshiftDestinationUpdate _redshiftDestinationUpdate;
         private S3DestinationUpdate _s3DestinationUpdate;
         private SplunkDestinationUpdate _splunkDestinationUpdate;
@@ -178,6 +179,24 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetExtendedS3DestinationUpdate()
         {
             return this._extendedS3DestinationUpdate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HttpEndpointDestinationUpdate. 
+        /// <para>
+        /// Describes an update to the specified HTTP endpoint destination.
+        /// </para>
+        /// </summary>
+        public HttpEndpointDestinationUpdate HttpEndpointDestinationUpdate
+        {
+            get { return this._httpEndpointDestinationUpdate; }
+            set { this._httpEndpointDestinationUpdate = value; }
+        }
+
+        // Check to see if HttpEndpointDestinationUpdate property is set
+        internal bool IsSetHttpEndpointDestinationUpdate()
+        {
+            return this._httpEndpointDestinationUpdate != null;
         }
 
         /// <summary>

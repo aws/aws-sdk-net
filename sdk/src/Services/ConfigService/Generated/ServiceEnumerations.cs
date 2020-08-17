@@ -1695,6 +1695,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSS3Bucket = new ResourceType("AWS::S3::Bucket");
         /// <summary>
+        /// Constant AWSSecretsManagerSecret for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSSecretsManagerSecret = new ResourceType("AWS::SecretsManager::Secret");
+        /// <summary>
         /// Constant AWSServiceCatalogCloudFormationProduct for ResourceType
         /// </summary>
         public static readonly ResourceType AWSServiceCatalogCloudFormationProduct = new ResourceType("AWS::ServiceCatalog::CloudFormationProduct");
@@ -1715,6 +1719,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSShieldRegionalProtection = new ResourceType("AWS::ShieldRegional::Protection");
         /// <summary>
+        /// Constant AWSSNSTopic for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSSNSTopic = new ResourceType("AWS::SNS::Topic");
+        /// <summary>
         /// Constant AWSSQSQueue for ResourceType
         /// </summary>
         public static readonly ResourceType AWSSQSQueue = new ResourceType("AWS::SQS::Queue");
@@ -1722,6 +1730,10 @@ namespace Amazon.ConfigService
         /// Constant AWSSSMAssociationCompliance for ResourceType
         /// </summary>
         public static readonly ResourceType AWSSSMAssociationCompliance = new ResourceType("AWS::SSM::AssociationCompliance");
+        /// <summary>
+        /// Constant AWSSSMFileData for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSSSMFileData = new ResourceType("AWS::SSM::FileData");
         /// <summary>
         /// Constant AWSSSMManagedInstanceInventory for ResourceType
         /// </summary>

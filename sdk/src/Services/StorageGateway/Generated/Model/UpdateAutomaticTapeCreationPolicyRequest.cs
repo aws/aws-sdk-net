@@ -51,8 +51,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property AutomaticTapeCreationRules. 
         /// <para>
-        ///  An automatic tape creation policy consists of a list of automatic tape creation rules.
-        /// The rules determine when and how to automatically create new tapes. 
+        /// An automatic tape creation policy consists of a list of automatic tape creation rules.
+        /// The rules determine when and how to automatically create new tapes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

@@ -33,6 +33,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class Variable
     {
+        private string _arn;
         private string _createdTime;
         private DataSource _dataSource;
         private DataType _dataType;
@@ -41,6 +42,25 @@ namespace Amazon.FraudDetector.Model
         private string _lastUpdatedTime;
         private string _name;
         private string _variableType;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The ARN of the variable.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedTime. 
@@ -81,7 +101,8 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property DataType. 
         /// <para>
-        /// The data type of the variable.
+        /// The data type of the variable. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+        /// types</a>.
         /// </para>
         /// </summary>
         public DataType DataType
@@ -172,6 +193,16 @@ namespace Amazon.FraudDetector.Model
         /// Gets and sets the property VariableType. 
         /// <para>
         /// The variable type of the variable.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY
+        /// | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN
+        /// | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT
+        /// | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY
+        /// | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME
+        /// | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT | SHIPPING_ZIP | USERAGENT</code>
+        /// 
         /// </para>
         /// </summary>
         public string VariableType

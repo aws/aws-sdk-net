@@ -40,7 +40,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property LatestLaunchTime. 
         /// <para>
-        /// Latest time this application was launched successfully.
+        /// The latest time that this application was launched successfully.
         /// </para>
         /// </summary>
         public DateTime LatestLaunchTime
@@ -58,7 +58,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property StackId. 
         /// <para>
-        /// Identifier of the latest stack launched for this application.
+        /// The ID of the latest stack launched for this application.
         /// </para>
         /// </summary>
         public string StackId
@@ -76,7 +76,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// Name of the latest stack launched for this application.
+        /// The name of the latest stack launched for this application.
         /// </para>
         /// </summary>
         public string StackName

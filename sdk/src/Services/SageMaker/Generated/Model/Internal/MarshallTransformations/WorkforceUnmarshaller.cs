@@ -64,16 +64,40 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CognitoConfig", targetDepth))
+                {
+                    var unmarshaller = CognitoConfigUnmarshaller.Instance;
+                    unmarshalledObject.CognitoConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CreateDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastUpdatedDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OidcConfig", targetDepth))
+                {
+                    var unmarshaller = OidcConfigForResponseUnmarshaller.Instance;
+                    unmarshalledObject.OidcConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceIpConfig", targetDepth))
                 {
                     var unmarshaller = SourceIpConfigUnmarshaller.Instance;
                     unmarshalledObject.SourceIpConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SubDomain", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubDomain = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WorkforceArn", targetDepth))

@@ -82,6 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.TrainingJob = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TransformJob", targetDepth))
+                {
+                    var unmarshaller = TransformJobUnmarshaller.Instance;
+                    unmarshalledObject.TransformJob = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -30,15 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBProxies operation.
-    /// <note> 
-    /// <para>
-    /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-    /// It is subject to change.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Returns information about DB proxies.
-    /// </para>
     /// </summary>
     public partial class DescribeDBProxiesRequest : AmazonRDSRequest
     {

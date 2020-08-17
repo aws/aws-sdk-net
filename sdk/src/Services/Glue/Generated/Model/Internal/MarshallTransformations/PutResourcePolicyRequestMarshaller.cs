@@ -68,6 +68,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEnableHybrid())
+                {
+                    context.Writer.WritePropertyName("EnableHybrid");
+                    context.Writer.Write(publicRequest.EnableHybrid);
+                }
+
                 if(publicRequest.IsSetPolicyExistsCondition())
                 {
                     context.Writer.WritePropertyName("PolicyExistsCondition");
@@ -84,6 +90,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("PolicyInJson");
                     context.Writer.Write(publicRequest.PolicyInJson);
+                }
+
+                if(publicRequest.IsSetResourceArn())
+                {
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
         

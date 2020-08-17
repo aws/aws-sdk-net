@@ -36,6 +36,7 @@ namespace Amazon.KinesisFirehose.Model
         private string _destinationId;
         private ElasticsearchDestinationDescription _elasticsearchDestinationDescription;
         private ExtendedS3DestinationDescription _extendedS3DestinationDescription;
+        private HttpEndpointDestinationDescription _httpEndpointDestinationDescription;
         private RedshiftDestinationDescription _redshiftDestinationDescription;
         private S3DestinationDescription _s3DestinationDescription;
         private SplunkDestinationDescription _splunkDestinationDescription;
@@ -93,6 +94,24 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetExtendedS3DestinationDescription()
         {
             return this._extendedS3DestinationDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HttpEndpointDestinationDescription. 
+        /// <para>
+        /// Describes the specified HTTP endpoint destination.
+        /// </para>
+        /// </summary>
+        public HttpEndpointDestinationDescription HttpEndpointDestinationDescription
+        {
+            get { return this._httpEndpointDestinationDescription; }
+            set { this._httpEndpointDestinationDescription = value; }
+        }
+
+        // Check to see if HttpEndpointDestinationDescription property is set
+        internal bool IsSetHttpEndpointDestinationDescription()
+        {
+            return this._httpEndpointDestinationDescription != null;
         }
 
         /// <summary>

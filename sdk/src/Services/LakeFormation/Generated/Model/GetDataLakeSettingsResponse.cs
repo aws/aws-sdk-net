@@ -38,7 +38,8 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property DataLakeSettings. 
         /// <para>
-        /// A list of AWS Lake Formation principals. 
+        /// A structure representing a list of AWS Lake Formation principals designated as data
+        /// lake administrators.
         /// </para>
         /// </summary>
         public DataLakeSettings DataLakeSettings

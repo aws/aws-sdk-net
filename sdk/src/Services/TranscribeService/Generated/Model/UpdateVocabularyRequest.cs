@@ -116,7 +116,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the vocabulary to update. The name is case-sensitive. If you try to update
+        /// The name of the vocabulary to update. The name is case sensitive. If you try to update
         /// a vocabulary with the same name as a previous vocabulary you will receive a <code>ConflictException</code>
         /// error.
         /// </para>

@@ -30,7 +30,7 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateDRTRole operation.
-    /// Removes the DDoS Response team's (DRT) access to your AWS account.
+    /// Removes the DDoS Response Team's (DRT) access to your AWS account.
     /// 
     ///  
     /// <para>

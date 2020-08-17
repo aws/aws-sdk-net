@@ -79,6 +79,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.OptInStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("parentZoneId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ParentZoneId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("parentZoneName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ParentZoneName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("regionName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -101,6 +113,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ZoneName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("zoneType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ZoneType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

@@ -29,12 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes association information for an Elastic IP address (IPv4 only).
+    /// Describes association information for an Elastic IP address (IPv4 only), or a Carrier
+    /// IP address (for a network interface which resides in a subnet in a Wavelength Zone).
     /// </summary>
     public partial class NetworkInterfaceAssociation
     {
         private string _allocationId;
         private string _associationId;
+        private string _carrierIp;
+        private string _customerOwnedIp;
         private string _ipOwnerId;
         private string _publicDnsName;
         private string _publicIp;
@@ -76,6 +79,47 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CarrierIp. 
+        /// <para>
+        /// The carrier IP address associated with the network interface.
+        /// </para>
+        ///  
+        /// <para>
+        /// This option is only available when the network interface is in a subnet which is associated
+        /// with a Wavelength Zone.
+        /// </para>
+        /// </summary>
+        public string CarrierIp
+        {
+            get { return this._carrierIp; }
+            set { this._carrierIp = value; }
+        }
+
+        // Check to see if CarrierIp property is set
+        internal bool IsSetCarrierIp()
+        {
+            return this._carrierIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerOwnedIp. 
+        /// <para>
+        /// The customer-owned IP address associated with the network interface.
+        /// </para>
+        /// </summary>
+        public string CustomerOwnedIp
+        {
+            get { return this._customerOwnedIp; }
+            set { this._customerOwnedIp = value; }
+        }
+
+        // Check to see if CustomerOwnedIp property is set
+        internal bool IsSetCustomerOwnedIp()
+        {
+            return this._customerOwnedIp != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IpOwnerId. 
         /// <para>
         /// The ID of the Elastic IP address owner.
@@ -114,7 +158,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PublicIp. 
         /// <para>
-        /// The address of the Elastic IP address bound to the network interface.
+        /// The address of the Elastic IP address or Carrier IP address bound to the network interface.
         /// </para>
         /// </summary>
         public string PublicIp

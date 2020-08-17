@@ -33,6 +33,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class UserPoolClientType
     {
+        private int? _accessTokenValidity;
         private List<string> _allowedOAuthFlows = new List<string>();
         private bool? _allowedOAuthFlowsUserPoolClient;
         private List<string> _allowedOAuthScopes = new List<string>();
@@ -44,14 +45,36 @@ namespace Amazon.CognitoIdentityProvider.Model
         private DateTime? _creationDate;
         private string _defaultRedirectURI;
         private List<string> _explicitAuthFlows = new List<string>();
+        private int? _idTokenValidity;
         private DateTime? _lastModifiedDate;
         private List<string> _logoutURLs = new List<string>();
         private PreventUserExistenceErrorTypes _preventUserExistenceErrors;
         private List<string> _readAttributes = new List<string>();
         private int? _refreshTokenValidity;
         private List<string> _supportedIdentityProviders = new List<string>();
+        private TokenValidityUnitsType _tokenValidityUnits;
         private string _userPoolId;
         private List<string> _writeAttributes = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AccessTokenValidity. 
+        /// <para>
+        /// The time limit, specified by tokenValidityUnits, defaulting to hours, after which
+        /// the access token is no longer valid and cannot be used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=86400)]
+        public int AccessTokenValidity
+        {
+            get { return this._accessTokenValidity.GetValueOrDefault(); }
+            set { this._accessTokenValidity = value; }
+        }
+
+        // Check to see if AccessTokenValidity property is set
+        internal bool IsSetAccessTokenValidity()
+        {
+            return this._accessTokenValidity.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AllowedOAuthFlows. 
@@ -380,6 +403,26 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdTokenValidity. 
+        /// <para>
+        /// The time limit, specified by tokenValidityUnits, defaulting to hours, after which
+        /// the refresh token is no longer valid and cannot be used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=86400)]
+        public int IdTokenValidity
+        {
+            get { return this._idTokenValidity.GetValueOrDefault(); }
+            set { this._idTokenValidity = value; }
+        }
+
+        // Check to see if IdTokenValidity property is set
+        internal bool IsSetIdTokenValidity()
+        {
+            return this._idTokenValidity.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
         /// The date the user pool client was last modified.
@@ -441,42 +484,6 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  <code>LEGACY</code> - This represents the old behavior of Cognito where user existence
         /// related errors are not prevented.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// This setting affects the behavior of following APIs:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a>AdminInitiateAuth</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>AdminRespondToAuthChallenge</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>InitiateAuth</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>RespondToAuthChallenge</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>ForgotPassword</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>ConfirmForgotPassword</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>ConfirmSignUp</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>ResendConfirmationCode</a> 
-        /// </para>
         ///  </li> </ul> <note> 
         /// <para>
         /// After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will
@@ -522,7 +529,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// be used.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=3650)]
+        [AWSProperty(Min=0, Max=315360000)]
         public int RefreshTokenValidity
         {
             get { return this._refreshTokenValidity.GetValueOrDefault(); }
@@ -551,6 +558,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetSupportedIdentityProviders()
         {
             return this._supportedIdentityProviders != null && this._supportedIdentityProviders.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TokenValidityUnits. 
+        /// <para>
+        /// The time units used to specify the token validity times of their respective token.
+        /// </para>
+        /// </summary>
+        public TokenValidityUnitsType TokenValidityUnits
+        {
+            get { return this._tokenValidityUnits; }
+            set { this._tokenValidityUnits = value; }
+        }
+
+        // Check to see if TokenValidityUnits property is set
+        internal bool IsSetTokenValidityUnits()
+        {
+            return this._tokenValidityUnits != null;
         }
 
         /// <summary>

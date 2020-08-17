@@ -37,15 +37,15 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// If <code>MessageAction</code> is not set, the default is to send a welcome message
     /// via email or phone (SMS).
     /// </para>
-    ///  <note> 
+    ///  
     /// <para>
-    /// This message is based on a template that you configured in your call to or . This
-    /// template includes your custom sign-up instructions and placeholders for user name
-    /// and temporary password.
+    /// This message is based on a template that you configured in your call to create or
+    /// update a user pool. This template includes your custom sign-up instructions and placeholders
+    /// for user name and temporary password.
     /// </para>
-    ///  </note> 
+    ///  
     /// <para>
-    /// Alternatively, you can call AdminCreateUser with “SUPPRESS” for the <code>MessageAction</code>
+    /// Alternatively, you can call <code>AdminCreateUser</code> with “SUPPRESS” for the <code>MessageAction</code>
     /// parameter, and Amazon Cognito will not send any email. 
     /// </para>
     ///  
@@ -55,7 +55,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </para>
     ///  
     /// <para>
-    /// AdminCreateUser requires developer credentials.
+    ///  <code>AdminCreateUser</code> requires developer credentials.
     /// </para>
     /// </summary>
     public partial class AdminCreateUserRequest : AmazonCognitoIdentityProviderRequest
@@ -242,9 +242,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// An array of name-value pairs that contain user attributes and attribute values to
         /// be set for the user to be created. You can create a user without specifying any attributes
         /// other than <code>Username</code>. However, any attributes that you specify as required
-        /// (in or in the <b>Attributes</b> tab of the console) must be supplied either by you
-        /// (in your call to <code>AdminCreateUser</code>) or by the user (when he or she signs
-        /// up in response to your welcome message).
+        /// (when creating a user pool or in the <b>Attributes</b> tab of the console) must be
+        /// supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user
+        /// (when he or she signs up in response to your welcome message).
         /// </para>
         ///  
         /// <para>
@@ -261,7 +261,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code>
         /// attribute to <code>True</code>, and you can set the <code>phone_number_verified</code>
-        /// attribute to <code>True</code>. (You can also do this by calling .)
+        /// attribute to <code>True</code>. (You can also do this by calling <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
         /// </para>
         ///  <ul> <li> 
         /// <para>

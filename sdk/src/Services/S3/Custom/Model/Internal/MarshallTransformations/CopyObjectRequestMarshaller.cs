@@ -35,6 +35,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(CopyObjectRequest copyObjectRequest)
         {
+            var sourceKey = AmazonS3Util.RemoveLeadingSlash(copyObjectRequest.SourceKey);
+            var destinationKey = AmazonS3Util.RemoveLeadingSlash(copyObjectRequest.DestinationKey);
+            
             IRequest request = new DefaultRequest(copyObjectRequest, "AmazonS3");
 
             request.HttpMethod = "PUT";
@@ -49,7 +52,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             HeaderACLRequestMarshaller.Marshall(request, copyObjectRequest);
 
             if (copyObjectRequest.IsSetSourceBucket())
-                request.Headers.Add(HeaderKeys.XAmzCopySourceHeader, ConstructCopySourceHeaderValue(copyObjectRequest.SourceBucket, copyObjectRequest.SourceKey, copyObjectRequest.SourceVersionId));
+                request.Headers.Add(HeaderKeys.XAmzCopySourceHeader, ConstructCopySourceHeaderValue(copyObjectRequest.SourceBucket, sourceKey, copyObjectRequest.SourceVersionId));
 
             if (copyObjectRequest.IsSetETagToMatch())
                 request.Headers.Add(HeaderKeys.XAmzCopySourceIfMatchHeader, S3Transforms.ToStringValue(copyObjectRequest.ETagToMatch));
@@ -123,12 +126,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (string.IsNullOrEmpty(copyObjectRequest.DestinationBucket))
                 throw new System.ArgumentException("DestinationBucket is a required property and must be set before making this call.", "CopyObjectRequest.DestinationBucket");
-            if (string.IsNullOrEmpty(copyObjectRequest.DestinationKey))
+            if (string.IsNullOrEmpty(destinationKey))
                 throw new System.ArgumentException("DestinationKey is a required property and must be set before making this call.", "CopyObjectRequest.DestinationKey");
 
-            var destinationKey = copyObjectRequest.DestinationKey.StartsWith("/", StringComparison.Ordinal) 
-                                    ? copyObjectRequest.DestinationKey.Substring(1) 
-                                    : copyObjectRequest.DestinationKey;
+            
 			request.MarshallerVersion = 2;
 			request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                  S3Transforms.ToStringValue(copyObjectRequest.DestinationBucket),
@@ -145,10 +146,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             string source;
             if (!String.IsNullOrEmpty(key))
             {
-                var sourceKey = key.StartsWith("/", StringComparison.Ordinal)
-                                        ? key.Substring(1)
-                                        : key;
-                source = AmazonS3Util.UrlEncode(String.Concat("/", bucket, "/", sourceKey), true);
+                var isAccessPoint = IsS3AccessPointsArn(bucket);
+                // 'object/' needed appended to key for copy header with access points
+                source = AmazonS3Util.UrlEncode(String.Concat(bucket, isAccessPoint ? "/object/" : "/", key), !isAccessPoint);
                 if (!String.IsNullOrEmpty(version))
                 {
                     source = string.Format(CultureInfo.InvariantCulture, "{0}?versionId={1}", source, AmazonS3Util.UrlEncode(version, true));
@@ -162,7 +162,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return source;
         }
 
-	    private static CopyObjectRequestMarshaller _instance;
+        private static bool IsS3AccessPointsArn(string bucket)
+        {
+            Arn arn;
+            if (Arn.TryParse(bucket, out arn))
+            {
+                string accessPointString;
+                return arn.TryParseAccessPoint(out accessPointString);
+            }
+            return false;
+        }
+
+        private static CopyObjectRequestMarshaller _instance;
 
 	    public static CopyObjectRequestMarshaller Instance
 	    {

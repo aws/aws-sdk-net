@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private bool? _active;
         private string _arn;
+        private string _customPermissionsName;
         private string _email;
         private IdentityType _identityType;
         private string _principalId;
@@ -78,6 +79,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomPermissionsName. 
+        /// <para>
+        /// The custom permissions profile associated with this user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string CustomPermissionsName
+        {
+            get { return this._customPermissionsName; }
+            set { this._customPermissionsName = value; }
+        }
+
+        // Check to see if CustomPermissionsName property is set
+        internal bool IsSetCustomPermissionsName()
+        {
+            return this._customPermissionsName != null;
         }
 
         /// <summary>

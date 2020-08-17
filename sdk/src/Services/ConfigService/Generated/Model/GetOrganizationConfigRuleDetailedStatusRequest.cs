@@ -33,11 +33,12 @@ namespace Amazon.ConfigService.Model
     /// Returns detailed status for each member account within an organization for a given
     /// organization config rule.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    /// Only a master account can call this API.
+    /// Only a master account and a delegated administrator account can call this API. When
+    /// calling this API with a delegated administrator, you must ensure AWS Organizations
+    /// <code>ListDelegatedAdministrator</code> permissions are added.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class GetOrganizationConfigRuleDetailedStatusRequest : AmazonConfigServiceRequest
     {

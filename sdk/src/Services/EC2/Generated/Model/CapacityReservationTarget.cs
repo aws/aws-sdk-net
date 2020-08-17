@@ -29,16 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a target Capacity Reservation.
+    /// Describes a target Capacity Reservation or Capacity Reservation group.
     /// </summary>
     public partial class CapacityReservationTarget
     {
         private string _capacityReservationId;
+        private string _capacityReservationResourceGroupArn;
 
         /// <summary>
         /// Gets and sets the property CapacityReservationId. 
         /// <para>
-        /// The ID of the Capacity Reservation.
+        /// The ID of the Capacity Reservation in which to run the instance.
         /// </para>
         /// </summary>
         public string CapacityReservationId
@@ -51,6 +52,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetCapacityReservationId()
         {
             return this._capacityReservationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservationResourceGroupArn. 
+        /// <para>
+        /// The ARN of the Capacity Reservation resource group in which to run the instance.
+        /// </para>
+        /// </summary>
+        public string CapacityReservationResourceGroupArn
+        {
+            get { return this._capacityReservationResourceGroupArn; }
+            set { this._capacityReservationResourceGroupArn = value; }
+        }
+
+        // Check to see if CapacityReservationResourceGroupArn property is set
+        internal bool IsSetCapacityReservationResourceGroupArn()
+        {
+            return this._capacityReservationResourceGroupArn != null;
         }
 
     }

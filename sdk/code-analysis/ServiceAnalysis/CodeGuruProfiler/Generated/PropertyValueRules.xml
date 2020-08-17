@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.AddNotificationChannelsRequest.ProfilingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.BatchGetFrameMetricDataRequest.Period</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.BatchGetFrameMetricDataRequest.ProfilingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.ConfigureAgentRequest.FleetInstanceId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\w-.:/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.ConfigureAgentRequest.ProfilingGroupName</property>
@@ -37,6 +53,29 @@
     <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.GetFindingsReportAccountSummaryRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.GetFindingsReportAccountSummaryRequest.NextToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.GetFindingsReportAccountSummaryResponse.NextToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.GetNotificationConfigurationRequest.ProfilingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.GetPolicyRequest.ProfilingGroupName</property>
     <min>1</min>
     <max>255</max>
@@ -60,6 +99,41 @@
     <property>Amazon.CodeGuruProfiler.Model.GetProfileRequest.ProfilingGroupName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>^[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.GetRecommendationsRequest.ProfilingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.GetRecommendationsResponse.ProfilingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.ListFindingsReportsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.ListFindingsReportsRequest.NextToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.ListFindingsReportsRequest.ProfilingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.ListFindingsReportsResponse.NextToken</property>
+    <min>1</min>
+    <max>64</max>
     <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -129,6 +203,16 @@
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.RemoveNotificationChannelRequest.ChannelId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.RemoveNotificationChannelRequest.ProfilingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.RemovePermissionRequest.ProfilingGroupName</property>
     <min>1</min>
     <max>255</max>
@@ -143,10 +227,33 @@
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.SubmitFeedbackRequest.AnomalyInstanceId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.SubmitFeedbackRequest.ProfilingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.UpdateProfilingGroupRequest.ProfilingGroupName</property>
     <min>1</min>
     <max>255</max>
     <pattern>^[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.Channel.Id</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.FindingsReportSummary.Id</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruProfiler.Model.Pattern.ThresholdPercent</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.ProfilingGroupDescription.Name</property>

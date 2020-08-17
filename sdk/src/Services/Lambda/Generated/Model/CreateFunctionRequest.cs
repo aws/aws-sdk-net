@@ -84,6 +84,7 @@ namespace Amazon.Lambda.Model
         private DeadLetterConfig _deadLetterConfig;
         private string _description;
         private Environment _environment;
+        private List<FileSystemConfig> _fileSystemConfigs = new List<FileSystemConfig>();
         private string _functionName;
         private string _handler;
         private string _kmsKeyArn;
@@ -171,6 +172,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetEnvironment()
         {
             return this._environment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileSystemConfigs. 
+        /// <para>
+        /// Connection settings for an Amazon EFS file system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<FileSystemConfig> FileSystemConfigs
+        {
+            get { return this._fileSystemConfigs; }
+            set { this._fileSystemConfigs = value; }
+        }
+
+        // Check to see if FileSystemConfigs property is set
+        internal bool IsSetFileSystemConfigs()
+        {
+            return this._fileSystemConfigs != null && this._fileSystemConfigs.Count > 0; 
         }
 
         /// <summary>

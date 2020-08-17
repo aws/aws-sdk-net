@@ -34,7 +34,14 @@ namespace Amazon.ConfigService.Model
     /// the selected target or action. The API creates the <code>RemediationConfiguration</code>
     /// object for the AWS Config rule. The AWS Config rule must already exist for you to
     /// add a remediation configuration. The target (SSM document) must exist and have permissions
-    /// to use the target.
+    /// to use the target. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If you make backward incompatible changes to the SSM document, you must call this
+    /// again to ensure the remediations can run.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class PutRemediationConfigurationsRequest : AmazonConfigServiceRequest
     {

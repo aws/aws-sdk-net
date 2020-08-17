@@ -40,7 +40,10 @@ namespace Amazon.SageMaker.Model
         private string _workteamArn;
 
         /// <summary>
-        /// Gets and sets the property ListingId.
+        /// Gets and sets the property ListingId. 
+        /// <para>
+        /// Marketplace product listing ID.
+        /// </para>
         /// </summary>
         public string ListingId
         {

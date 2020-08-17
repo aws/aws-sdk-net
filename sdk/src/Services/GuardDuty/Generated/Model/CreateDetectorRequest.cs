@@ -33,11 +33,12 @@ namespace Amazon.GuardDuty.Model
     /// Creates a single Amazon GuardDuty detector. A detector is a resource that represents
     /// the GuardDuty service. To start using GuardDuty, you must create a detector in each
     /// Region where you enable the service. You can have only one detector per account per
-    /// Region.
+    /// Region. All data sources are enabled in a new detector by default.
     /// </summary>
     public partial class CreateDetectorRequest : AmazonGuardDutyRequest
     {
         private string _clientToken;
+        private DataSourceConfigurations _dataSources;
         private bool? _enable;
         private FindingPublishingFrequency _findingPublishingFrequency;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -59,6 +60,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSources. 
+        /// <para>
+        /// An object that describes which data sources will be enabled for the detector.
+        /// </para>
+        /// </summary>
+        public DataSourceConfigurations DataSources
+        {
+            get { return this._dataSources; }
+            set { this._dataSources = value; }
+        }
+
+        // Check to see if DataSources property is set
+        internal bool IsSetDataSources()
+        {
+            return this._dataSources != null;
         }
 
         /// <summary>

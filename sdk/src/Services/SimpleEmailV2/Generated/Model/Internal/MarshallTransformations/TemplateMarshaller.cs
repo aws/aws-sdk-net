@@ -57,6 +57,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TemplateData);
             }
 
+            if(requestObject.IsSetTemplateName())
+            {
+                context.Writer.WritePropertyName("TemplateName");
+                context.Writer.Write(requestObject.TemplateName);
+            }
+
         }
 
         /// <summary>

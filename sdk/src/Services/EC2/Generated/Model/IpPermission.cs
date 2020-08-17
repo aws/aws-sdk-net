@@ -130,9 +130,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrefixListIds. 
         /// <para>
-        /// [VPC only] The prefix list IDs for an AWS service. With outbound rules, this is the
-        /// AWS service to access through a VPC endpoint from instances associated with the security
-        /// group.
+        /// [VPC only] The prefix list IDs.
         /// </para>
         /// </summary>
         public List<PrefixListId> PrefixListIds

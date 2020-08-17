@@ -34,13 +34,14 @@ namespace Amazon.ResourceGroups.Model
     public partial class CreateGroupResponse : AmazonWebServiceResponse
     {
         private Group _group;
+        private GroupConfiguration _groupConfiguration;
         private ResourceQuery _resourceQuery;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// A full description of the resource group after it is created.
+        /// The description of the resource group.
         /// </para>
         /// </summary>
         public Group Group
@@ -53,6 +54,32 @@ namespace Amazon.ResourceGroups.Model
         internal bool IsSetGroup()
         {
             return this._group != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupConfiguration. 
+        /// <para>
+        /// The service configuration associated with the resource group. AWS Resource Groups
+        /// supports adding service configurations for the following resource group types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation
+        /// pools. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">Working
+        /// with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public GroupConfiguration GroupConfiguration
+        {
+            get { return this._groupConfiguration; }
+            set { this._groupConfiguration = value; }
+        }
+
+        // Check to see if GroupConfiguration property is set
+        internal bool IsSetGroupConfiguration()
+        {
+            return this._groupConfiguration != null;
         }
 
         /// <summary>

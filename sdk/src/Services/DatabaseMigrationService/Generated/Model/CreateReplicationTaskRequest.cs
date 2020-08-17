@@ -193,7 +193,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 255 alphanumeric characters or hyphens.
+        /// Must contain 1-255 alphanumeric characters or hyphens.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -261,8 +261,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property TableMappings. 
         /// <para>
         /// The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
-        /// Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
-        /// 
+        /// Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service
+        /// User Guide.</i> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -320,8 +320,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Supplemental information that the task requires to migrate the data for certain source
         /// and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-        /// Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
-        /// 
+        /// Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service User
+        /// Guide.</i> 
         /// </para>
         /// </summary>
         public string TaskData

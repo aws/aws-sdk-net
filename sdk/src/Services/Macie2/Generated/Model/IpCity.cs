@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Reserved for future use.
+    /// Provides information about the city that an IP address originated from.
     /// </summary>
     public partial class IpCity
     {
@@ -38,7 +38,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Reserved for future use.
+        /// The name of the city.
         /// </para>
         /// </summary>
         public string Name

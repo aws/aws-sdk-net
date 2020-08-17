@@ -36,10 +36,7 @@ namespace Amazon.Snowball.Model
         private INDTaxDocuments _ind;
 
         /// <summary>
-        /// Gets and sets the property IND. 
-        /// <para>
-        /// The tax documents required in AWS Regions in India.
-        /// </para>
+        /// Gets and sets the property IND.
         /// </summary>
         public INDTaxDocuments IND
         {

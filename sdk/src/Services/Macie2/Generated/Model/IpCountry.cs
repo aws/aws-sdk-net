@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Reserved for future use.
+    /// Provides information about the country that an IP address originated from.
     /// </summary>
     public partial class IpCountry
     {
@@ -39,7 +39,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// Reserved for future use.
+        /// The two-character code, in ISO 3166-1 alpha-2 format, for the country that the IP
+        /// address originated from. For example, US for the United States.
         /// </para>
         /// </summary>
         public string Code
@@ -57,7 +58,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Reserved for future use.
+        /// The name of the country that the IP address originated from.
         /// </para>
         /// </summary>
         public string Name

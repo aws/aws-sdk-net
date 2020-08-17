@@ -54,7 +54,13 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// see <a href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html">this
     /// list</a>.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// Do not store personally identifiable information (PII) or other confidential or sensitive
+    /// information in tags. We use tags to provide you with billing and administration services.
+    /// Tags are not intended to be used for private or sensitive data.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class TagResourcesRequest : AmazonResourceGroupsTaggingAPIRequest
     {

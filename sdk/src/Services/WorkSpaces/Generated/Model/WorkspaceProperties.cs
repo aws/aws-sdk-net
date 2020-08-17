@@ -61,7 +61,9 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property RootVolumeSizeGib. 
         /// <para>
-        /// The size of the root volume.
+        /// The size of the root volume. For important information about how to modify the size
+        /// of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify
+        /// a WorkSpace</a>.
         /// </para>
         /// </summary>
         public int RootVolumeSizeGib
@@ -117,7 +119,9 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property UserVolumeSizeGib. 
         /// <para>
-        /// The size of the user storage.
+        /// The size of the user storage. For important information about how to modify the size
+        /// of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify
+        /// a WorkSpace</a>.
         /// </para>
         /// </summary>
         public int UserVolumeSizeGib

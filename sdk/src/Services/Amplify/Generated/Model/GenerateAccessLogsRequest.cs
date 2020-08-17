@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the GenerateAccessLogs operation.
-    /// Retrieve website access logs for a specific time range via a pre-signed URL.
+    /// Returns the website access logs for a specific time range using a presigned URL.
     /// </summary>
     public partial class GenerateAccessLogsRequest : AmazonAmplifyRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  Unique Id for an Amplify App. 
+        ///  The unique ID for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -61,7 +61,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        ///  Name of the domain. 
+        ///  The name of the domain. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -80,7 +80,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        ///  The time at which the logs should end, inclusive. 
+        ///  The time at which the logs should end. The time range specified is inclusive of the
+        /// end time. 
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -98,7 +99,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        ///  The time at which the logs should start, inclusive. 
+        ///  The time at which the logs should start. The time range specified is inclusive of
+        /// the start time. 
         /// </para>
         /// </summary>
         public DateTime StartTime

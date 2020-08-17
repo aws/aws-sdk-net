@@ -47,6 +47,7 @@ namespace Amazon.Lambda.Model
         private int? _parallelizationFactor;
         private string _state;
         private string _stateTransitionReason;
+        private List<string> _topics = new List<string>();
         private string _uuid;
 
         /// <summary>
@@ -202,7 +203,7 @@ namespace Amazon.Lambda.Model
         /// (Streams) The maximum age of a record that Lambda sends to a function for processing.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=60, Max=604800)]
+        [AWSProperty(Min=-1, Max=604800)]
         public int MaximumRecordAgeInSeconds
         {
             get { return this._maximumRecordAgeInSeconds.GetValueOrDefault(); }
@@ -221,7 +222,7 @@ namespace Amazon.Lambda.Model
         /// (Streams) The maximum number of times to retry when the function returns an error.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10000)]
+        [AWSProperty(Min=-1, Max=10000)]
         public int MaximumRetryAttempts
         {
             get { return this._maximumRetryAttempts.GetValueOrDefault(); }
@@ -290,6 +291,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetStateTransitionReason()
         {
             return this._stateTransitionReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Topics. 
+        /// <para>
+        ///  (MSK) The name of the Kafka topic. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> Topics
+        {
+            get { return this._topics; }
+            set { this._topics = value; }
+        }
+
+        // Check to see if Topics property is set
+        internal bool IsSetTopics()
+        {
+            return this._topics != null && this._topics.Count > 0; 
         }
 
         /// <summary>

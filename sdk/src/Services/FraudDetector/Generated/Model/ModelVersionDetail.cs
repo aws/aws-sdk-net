@@ -29,22 +29,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
-    /// Provides the model version details.
+    /// The details of the model version.
     /// </summary>
     public partial class ModelVersionDetail
     {
+        private string _arn;
         private string _createdTime;
-        private string _description;
-        private LabelSchema _labelSchema;
+        private ExternalEventsDetail _externalEventsDetail;
         private string _lastUpdatedTime;
         private string _modelId;
         private ModelTypeEnum _modelType;
-        private List<ModelVariable> _modelVariables = new List<ModelVariable>();
         private string _modelVersionNumber;
         private string _status;
-        private TrainingDataSource _trainingDataSource;
-        private Dictionary<string, string> _trainingMetrics = new Dictionary<string, string>();
-        private Dictionary<string, string> _validationMetrics = new Dictionary<string, string>();
+        private TrainingDataSchema _trainingDataSchema;
+        private TrainingDataSourceEnum _trainingDataSource;
+        private TrainingResult _trainingResult;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The model version ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedTime. 
@@ -65,40 +83,21 @@ namespace Amazon.FraudDetector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property ExternalEventsDetail. 
         /// <para>
-        /// The model description.
+        /// The event details.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string Description
+        public ExternalEventsDetail ExternalEventsDetail
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._externalEventsDetail; }
+            set { this._externalEventsDetail = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if ExternalEventsDetail property is set
+        internal bool IsSetExternalEventsDetail()
         {
-            return this._description != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property LabelSchema. 
-        /// <para>
-        /// The model label schema.
-        /// </para>
-        /// </summary>
-        public LabelSchema LabelSchema
-        {
-            get { return this._labelSchema; }
-            set { this._labelSchema = value; }
-        }
-
-        // Check to see if LabelSchema property is set
-        internal bool IsSetLabelSchema()
-        {
-            return this._labelSchema != null;
+            return this._externalEventsDetail != null;
         }
 
         /// <summary>
@@ -157,30 +156,12 @@ namespace Amazon.FraudDetector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ModelVariables. 
-        /// <para>
-        /// The model variables.
-        /// </para>
-        /// </summary>
-        public List<ModelVariable> ModelVariables
-        {
-            get { return this._modelVariables; }
-            set { this._modelVariables = value; }
-        }
-
-        // Check to see if ModelVariables property is set
-        internal bool IsSetModelVariables()
-        {
-            return this._modelVariables != null && this._modelVariables.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property ModelVersionNumber. 
         /// <para>
-        /// The model version.
+        /// The model version number.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=3, Max=7)]
         public string ModelVersionNumber
         {
             get { return this._modelVersionNumber; }
@@ -196,7 +177,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The model status.
+        /// The status of the model version.
         /// </para>
         /// </summary>
         public string Status
@@ -212,12 +193,30 @@ namespace Amazon.FraudDetector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrainingDataSource. 
+        /// Gets and sets the property TrainingDataSchema. 
         /// <para>
-        /// The model training data source.
+        /// The training data schema.
         /// </para>
         /// </summary>
-        public TrainingDataSource TrainingDataSource
+        public TrainingDataSchema TrainingDataSchema
+        {
+            get { return this._trainingDataSchema; }
+            set { this._trainingDataSchema = value; }
+        }
+
+        // Check to see if TrainingDataSchema property is set
+        internal bool IsSetTrainingDataSchema()
+        {
+            return this._trainingDataSchema != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingDataSource. 
+        /// <para>
+        /// The model version training data source.
+        /// </para>
+        /// </summary>
+        public TrainingDataSourceEnum TrainingDataSource
         {
             get { return this._trainingDataSource; }
             set { this._trainingDataSource = value; }
@@ -230,39 +229,21 @@ namespace Amazon.FraudDetector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrainingMetrics. 
+        /// Gets and sets the property TrainingResult. 
         /// <para>
-        /// The model training metrics.
+        /// The training results.
         /// </para>
         /// </summary>
-        public Dictionary<string, string> TrainingMetrics
+        public TrainingResult TrainingResult
         {
-            get { return this._trainingMetrics; }
-            set { this._trainingMetrics = value; }
+            get { return this._trainingResult; }
+            set { this._trainingResult = value; }
         }
 
-        // Check to see if TrainingMetrics property is set
-        internal bool IsSetTrainingMetrics()
+        // Check to see if TrainingResult property is set
+        internal bool IsSetTrainingResult()
         {
-            return this._trainingMetrics != null && this._trainingMetrics.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ValidationMetrics. 
-        /// <para>
-        /// The model validation metrics.
-        /// </para>
-        /// </summary>
-        public Dictionary<string, string> ValidationMetrics
-        {
-            get { return this._validationMetrics; }
-            set { this._validationMetrics = value; }
-        }
-
-        // Check to see if ValidationMetrics property is set
-        internal bool IsSetValidationMetrics()
-        {
-            return this._validationMetrics != null && this._validationMetrics.Count > 0; 
+            return this._trainingResult != null;
         }
 
     }

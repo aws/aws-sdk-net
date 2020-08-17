@@ -45,7 +45,9 @@ namespace Amazon.RDS.Model
         private List<string> _supportedEngineModes = new List<string>();
         private List<string> _supportedFeatureNames = new List<string>();
         private List<Timezone> _supportedTimezones = new List<Timezone>();
+        private bool? _supportsGlobalDatabases;
         private bool? _supportsLogExportsToCloudwatchLogs;
+        private bool? _supportsParallelQuery;
         private bool? _supportsReadReplica;
         private List<UpgradeTarget> _validUpgradeTarget = new List<UpgradeTarget>();
 
@@ -288,6 +290,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SupportsGlobalDatabases. 
+        /// <para>
+        /// A value that indicates whether you can use Aurora global databases with a specific
+        /// DB engine version.
+        /// </para>
+        /// </summary>
+        public bool SupportsGlobalDatabases
+        {
+            get { return this._supportsGlobalDatabases.GetValueOrDefault(); }
+            set { this._supportsGlobalDatabases = value; }
+        }
+
+        // Check to see if SupportsGlobalDatabases property is set
+        internal bool IsSetSupportsGlobalDatabases()
+        {
+            return this._supportsGlobalDatabases.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SupportsLogExportsToCloudwatchLogs. 
         /// <para>
         /// A value that indicates whether the engine version supports exporting the log types
@@ -304,6 +325,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportsLogExportsToCloudwatchLogs()
         {
             return this._supportsLogExportsToCloudwatchLogs.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsParallelQuery. 
+        /// <para>
+        /// A value that indicates whether you can use Aurora parallel query with a specific DB
+        /// engine version.
+        /// </para>
+        /// </summary>
+        public bool SupportsParallelQuery
+        {
+            get { return this._supportsParallelQuery.GetValueOrDefault(); }
+            set { this._supportsParallelQuery = value; }
+        }
+
+        // Check to see if SupportsParallelQuery property is set
+        internal bool IsSetSupportsParallelQuery()
+        {
+            return this._supportsParallelQuery.HasValue; 
         }
 
         /// <summary>

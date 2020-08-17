@@ -30,11 +30,11 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreDBClusterFromS3 operation.
-    /// Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon
-    /// RDS must be authorized to access the Amazon S3 bucket and the data must be created
-    /// using the Percona XtraBackup utility as described in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.html">
-    /// Migrating Data to an Amazon Aurora MySQL DB Cluster</a> in the <i>Amazon Aurora User
-    /// Guide</i>.
+    /// Creates an Amazon Aurora DB cluster from MySQL data stored in an Amazon S3 bucket.
+    /// Amazon RDS must be authorized to access the Amazon S3 bucket and the data must be
+    /// created using the Percona XtraBackup utility as described in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.ExtMySQL.html#AuroraMySQL.Migrating.ExtMySQL.S3">
+    /// Migrating Data from MySQL by Using an Amazon S3 Bucket</a> in the <i>Amazon Aurora
+    /// User Guide</i>.
     /// 
     ///  <note> 
     /// <para>
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// This action only applies to Aurora DB clusters.
+    /// This action only applies to Aurora DB clusters. The source DB engine must be MySQL.
     /// </para>
     ///  </note>
     /// </summary>
@@ -114,7 +114,11 @@ namespace Amazon.RDS.Model
         /// The target backtrack window, in seconds. To disable backtracking, set this value to
         /// 0.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Default: 0
         /// </para>
@@ -232,7 +236,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// The name of the DB cluster to create from the source data in the Amazon S3 bucket.
-        /// This parameter is isn't case-sensitive.
+        /// This parameter isn't case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -434,11 +438,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the database engine to be used for the restored DB cluster.
+        /// The name of the database engine to be used for this DB cluster.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> 
+        /// Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code>
+        /// (for MySQL 5.7-compatible Aurora), and <code>aurora-postgresql</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -834,11 +839,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// MySQL version 5.5 and 5.6 are supported. 
+        /// MySQL versions 5.5, 5.6, and 5.7 are supported. 
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>5.6.22</code> 
+        /// Example: <code>5.6.40</code>, <code>5.7.28</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

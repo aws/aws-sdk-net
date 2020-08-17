@@ -196,6 +196,10 @@ namespace Amazon.ECS
         /// Constant ACTIVE for CapacityProviderStatus
         /// </summary>
         public static readonly CapacityProviderStatus ACTIVE = new CapacityProviderStatus("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for CapacityProviderStatus
+        /// </summary>
+        public static readonly CapacityProviderStatus INACTIVE = new CapacityProviderStatus("INACTIVE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -226,6 +230,60 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CapacityProviderStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityProviderUpdateStatus.
+    /// </summary>
+    public class CapacityProviderUpdateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETE_COMPLETE for CapacityProviderUpdateStatus
+        /// </summary>
+        public static readonly CapacityProviderUpdateStatus DELETE_COMPLETE = new CapacityProviderUpdateStatus("DELETE_COMPLETE");
+        /// <summary>
+        /// Constant DELETE_FAILED for CapacityProviderUpdateStatus
+        /// </summary>
+        public static readonly CapacityProviderUpdateStatus DELETE_FAILED = new CapacityProviderUpdateStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for CapacityProviderUpdateStatus
+        /// </summary>
+        public static readonly CapacityProviderUpdateStatus DELETE_IN_PROGRESS = new CapacityProviderUpdateStatus("DELETE_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityProviderUpdateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityProviderUpdateStatus FindValue(string value)
+        {
+            return FindValue<CapacityProviderUpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityProviderUpdateStatus(string value)
         {
             return FindValue(value);
         }

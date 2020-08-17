@@ -33,6 +33,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class UserDefinedFunction
     {
+        private string _catalogId;
         private string _className;
         private DateTime? _createTime;
         private string _databaseName;
@@ -40,6 +41,25 @@ namespace Amazon.Glue.Model
         private string _ownerName;
         private PrincipalType _ownerType;
         private List<ResourceUri> _resourceUris = new List<ResourceUri>();
+
+        /// <summary>
+        /// Gets and sets the property CatalogId. 
+        /// <para>
+        /// The ID of the Data Catalog in which the function resides.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string CatalogId
+        {
+            get { return this._catalogId; }
+            set { this._catalogId = value; }
+        }
+
+        // Check to see if CatalogId property is set
+        internal bool IsSetCatalogId()
+        {
+            return this._catalogId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClassName. 
@@ -81,7 +101,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The name of the database where the function resides.
+        /// The name of the catalog database that contains the function.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

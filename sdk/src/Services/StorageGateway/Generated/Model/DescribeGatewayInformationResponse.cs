@@ -34,8 +34,10 @@ namespace Amazon.StorageGateway.Model
     public partial class DescribeGatewayInformationResponse : AmazonWebServiceResponse
     {
         private string _cloudWatchLogGroupARN;
+        private string _deprecationDate;
         private string _ec2InstanceId;
         private string _ec2InstanceRegion;
+        private string _endpointType;
         private string _gatewayARN;
         private string _gatewayId;
         private string _gatewayName;
@@ -46,6 +48,7 @@ namespace Amazon.StorageGateway.Model
         private HostEnvironment _hostEnvironment;
         private string _lastSoftwareUpdate;
         private string _nextUpdateAvailabilityDate;
+        private string _softwareUpdatesEndDate;
         private List<Tag> _tags = new List<Tag>();
         private string _vpcEndpoint;
 
@@ -67,6 +70,26 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetCloudWatchLogGroupARN()
         {
             return this._cloudWatchLogGroupARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeprecationDate. 
+        /// <para>
+        /// Date after which this gateway will not receive software updates for new features and
+        /// bug fixes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public string DeprecationDate
+        {
+            get { return this._deprecationDate; }
+            set { this._deprecationDate = value; }
+        }
+
+        // Check to see if DeprecationDate property is set
+        internal bool IsSetDeprecationDate()
+        {
+            return this._deprecationDate != null;
         }
 
         /// <summary>
@@ -103,6 +126,29 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetEc2InstanceRegion()
         {
             return this._ec2InstanceRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointType. 
+        /// <para>
+        /// The type of endpoint for your gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>STANDARD</code> | <code>FIPS</code> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4, Max=8)]
+        public string EndpointType
+        {
+            get { return this._endpointType; }
+            set { this._endpointType = value; }
+        }
+
+        // Check to see if EndpointType property is set
+        internal bool IsSetEndpointType()
+        {
+            return this._endpointType != null;
         }
 
         /// <summary>
@@ -295,6 +341,25 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SoftwareUpdatesEndDate. 
+        /// <para>
+        /// Date after which this gateway will not receive software updates for new features.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public string SoftwareUpdatesEndDate
+        {
+            get { return this._softwareUpdatesEndDate; }
+            set { this._softwareUpdatesEndDate = value; }
+        }
+
+        // Check to see if SoftwareUpdatesEndDate property is set
+        internal bool IsSetSoftwareUpdatesEndDate()
+        {
+            return this._softwareUpdatesEndDate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of up to 50 tags assigned to the gateway, sorted alphabetically by key name.
@@ -318,7 +383,6 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property VPCEndpoint. 
         /// <para>
         /// The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.
-        /// 
         /// </para>
         /// </summary>
         public string VPCEndpoint

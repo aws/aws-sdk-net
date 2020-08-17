@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         private int? _rekeyMarginTimeSeconds;
         private int? _replayWindowSize;
         private string _tunnelInsideCidr;
+        private string _tunnelInsideIpv6Cidr;
 
         /// <summary>
         /// Gets and sets the property DpdTimeoutSeconds. 
@@ -326,7 +327,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TunnelInsideCidr. 
         /// <para>
-        /// The range of inside IP addresses for the tunnel.
+        /// The range of inside IPv4 addresses for the tunnel.
         /// </para>
         /// </summary>
         public string TunnelInsideCidr
@@ -339,6 +340,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetTunnelInsideCidr()
         {
             return this._tunnelInsideCidr != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TunnelInsideIpv6Cidr. 
+        /// <para>
+        /// The range of inside IPv6 addresses for the tunnel.
+        /// </para>
+        /// </summary>
+        public string TunnelInsideIpv6Cidr
+        {
+            get { return this._tunnelInsideIpv6Cidr; }
+            set { this._tunnelInsideIpv6Cidr = value; }
+        }
+
+        // Check to see if TunnelInsideIpv6Cidr property is set
+        internal bool IsSetTunnelInsideIpv6Cidr()
+        {
+            return this._tunnelInsideIpv6Cidr != null;
         }
 
     }

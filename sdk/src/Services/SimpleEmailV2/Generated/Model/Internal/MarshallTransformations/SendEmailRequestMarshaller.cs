@@ -116,10 +116,22 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FeedbackForwardingEmailAddress);
                 }
 
+                if(publicRequest.IsSetFeedbackForwardingEmailAddressIdentityArn())
+                {
+                    context.Writer.WritePropertyName("FeedbackForwardingEmailAddressIdentityArn");
+                    context.Writer.Write(publicRequest.FeedbackForwardingEmailAddressIdentityArn);
+                }
+
                 if(publicRequest.IsSetFromEmailAddress())
                 {
                     context.Writer.WritePropertyName("FromEmailAddress");
                     context.Writer.Write(publicRequest.FromEmailAddress);
+                }
+
+                if(publicRequest.IsSetFromEmailAddressIdentityArn())
+                {
+                    context.Writer.WritePropertyName("FromEmailAddressIdentityArn");
+                    context.Writer.Write(publicRequest.FromEmailAddressIdentityArn);
                 }
 
                 if(publicRequest.IsSetReplyToAddresses())

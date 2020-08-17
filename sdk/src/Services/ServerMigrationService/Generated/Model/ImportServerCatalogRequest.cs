@@ -31,7 +31,7 @@ namespace Amazon.ServerMigrationService.Model
     /// <summary>
     /// Container for the parameters to the ImportServerCatalog operation.
     /// Gathers a complete list of on-premises servers. Connectors must be installed and monitoring
-    /// all servers that you want to import.
+    /// all servers to import.
     /// 
     ///  
     /// <para>

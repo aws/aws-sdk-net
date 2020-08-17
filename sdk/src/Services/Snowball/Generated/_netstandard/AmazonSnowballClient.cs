@@ -418,7 +418,7 @@ namespace Amazon.Snowball
         /// action.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
-        /// Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
+        /// Job or cluster creation failed. One or more inputs were invalid. Confirm that the
         /// <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>,
         /// and try again.
         /// </exception>
@@ -478,7 +478,7 @@ namespace Amazon.Snowball
         /// action.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
-        /// Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
+        /// Job or cluster creation failed. One or more inputs were invalid. Confirm that the
         /// <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>,
         /// and try again.
         /// </exception>
@@ -1079,7 +1079,7 @@ namespace Amazon.Snowball
         /// action.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
-        /// Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
+        /// Job or cluster creation failed. One or more inputs were invalid. Confirm that the
         /// <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>,
         /// and try again.
         /// </exception>
@@ -1142,7 +1142,7 @@ namespace Amazon.Snowball
         /// action.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
-        /// Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
+        /// Job or cluster creation failed. One or more inputs were invalid. Confirm that the
         /// <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>,
         /// and try again.
         /// </exception>

@@ -71,7 +71,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Specifies whether the attribute type is developer only. This attribute can only be
         /// modified by an administrator. Users will not be able to modify this attribute using
         /// their access token. For example, <code>DeveloperOnlyAttribute</code> can be modified
-        /// using the API but cannot be updated using the API.
+        /// using AdminUpdateUserAttributes but cannot be updated using UpdateUserAttributes.
         /// </para>
         /// </summary>
         public bool DeveloperOnlyAttribute

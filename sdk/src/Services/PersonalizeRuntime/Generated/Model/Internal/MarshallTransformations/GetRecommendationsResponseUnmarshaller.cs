@@ -57,6 +57,12 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
                     response.ItemList = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("recommendationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RecommendationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

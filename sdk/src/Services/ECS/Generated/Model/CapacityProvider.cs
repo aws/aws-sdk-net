@@ -38,6 +38,8 @@ namespace Amazon.ECS.Model
         private string _name;
         private CapacityProviderStatus _status;
         private List<Tag> _tags = new List<Tag>();
+        private CapacityProviderUpdateStatus _updateStatus;
+        private string _updateStatusReason;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupProvider. 
@@ -97,7 +99,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code>
-        /// state can be used in a cluster.
+        /// state can be used in a cluster. When a capacity provider is successfully deleted,
+        /// it will have an <code>INACTIVE</code> status.
         /// </para>
         /// </summary>
         public CapacityProviderStatus Status
@@ -170,6 +173,59 @@ namespace Amazon.ECS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateStatus. 
+        /// <para>
+        /// The update status of the capacity provider. The following are the possible states
+        /// that will be returned.
+        /// </para>
+        ///  <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> 
+        /// <para>
+        /// The capacity provider is in the process of being deleted.
+        /// </para>
+        ///  </dd> <dt>DELETE_COMPLETE</dt> <dd> 
+        /// <para>
+        /// The capacity provider has been successfully deleted and will have an <code>INACTIVE</code>
+        /// status.
+        /// </para>
+        ///  </dd> <dt>DELETE_FAILED</dt> <dd> 
+        /// <para>
+        /// The capacity provider was unable to be deleted. The update status reason will provide
+        /// further details about why the delete failed.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        public CapacityProviderUpdateStatus UpdateStatus
+        {
+            get { return this._updateStatus; }
+            set { this._updateStatus = value; }
+        }
+
+        // Check to see if UpdateStatus property is set
+        internal bool IsSetUpdateStatus()
+        {
+            return this._updateStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateStatusReason. 
+        /// <para>
+        /// The update status reason. This provides further details about the update status for
+        /// the capacity provider.
+        /// </para>
+        /// </summary>
+        public string UpdateStatusReason
+        {
+            get { return this._updateStatusReason; }
+            set { this._updateStatusReason = value; }
+        }
+
+        // Check to see if UpdateStatusReason property is set
+        internal bool IsSetUpdateStatusReason()
+        {
+            return this._updateStatusReason != null;
         }
 
     }

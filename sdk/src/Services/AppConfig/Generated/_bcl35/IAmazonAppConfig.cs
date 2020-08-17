@@ -72,8 +72,8 @@ namespace Amazon.AppConfig
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>User membership</b>: Use AppConfig to allow premium subscribers to access paid
-    /// content. 
+    ///  <b>Allow list</b>: Use AppConfig to allow premium subscribers to access paid content.
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -314,6 +314,66 @@ namespace Amazon.AppConfig
 
         #endregion
         
+        #region  CreateHostedConfigurationVersion
+
+
+        /// <summary>
+        /// Create a new configuration in the AppConfig configuration store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHostedConfigurationVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateHostedConfigurationVersion service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.PayloadTooLargeException">
+        /// The configuration size is too large.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
+        /// The number of hosted configuration versions exceeds the limit for the AppConfig configuration
+        /// store. Delete one or more versions and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion">REST API Reference for CreateHostedConfigurationVersion Operation</seealso>
+        CreateHostedConfigurationVersionResponse CreateHostedConfigurationVersion(CreateHostedConfigurationVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateHostedConfigurationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateHostedConfigurationVersion operation on AmazonAppConfigClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHostedConfigurationVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion">REST API Reference for CreateHostedConfigurationVersion Operation</seealso>
+        IAsyncResult BeginCreateHostedConfigurationVersion(CreateHostedConfigurationVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateHostedConfigurationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHostedConfigurationVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateHostedConfigurationVersionResult from AppConfig.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion">REST API Reference for CreateHostedConfigurationVersion Operation</seealso>
+        CreateHostedConfigurationVersionResponse EndCreateHostedConfigurationVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteApplication
 
 
@@ -519,6 +579,55 @@ namespace Amazon.AppConfig
         /// <returns>Returns a  DeleteEnvironmentResult from AppConfig.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
         DeleteEnvironmentResponse EndDeleteEnvironment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteHostedConfigurationVersion
+
+
+        /// <summary>
+        /// Delete a version of a configuration from the AppConfig configuration store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHostedConfigurationVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHostedConfigurationVersion service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteHostedConfigurationVersion">REST API Reference for DeleteHostedConfigurationVersion Operation</seealso>
+        DeleteHostedConfigurationVersionResponse DeleteHostedConfigurationVersion(DeleteHostedConfigurationVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteHostedConfigurationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHostedConfigurationVersion operation on AmazonAppConfigClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHostedConfigurationVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteHostedConfigurationVersion">REST API Reference for DeleteHostedConfigurationVersion Operation</seealso>
+        IAsyncResult BeginDeleteHostedConfigurationVersion(DeleteHostedConfigurationVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteHostedConfigurationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHostedConfigurationVersion.</param>
+        /// 
+        /// <returns>Returns a  DeleteHostedConfigurationVersionResult from AppConfig.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteHostedConfigurationVersion">REST API Reference for DeleteHostedConfigurationVersion Operation</seealso>
+        DeleteHostedConfigurationVersionResponse EndDeleteHostedConfigurationVersion(IAsyncResult asyncResult);
 
         #endregion
         
@@ -841,6 +950,55 @@ namespace Amazon.AppConfig
 
         #endregion
         
+        #region  GetHostedConfigurationVersion
+
+
+        /// <summary>
+        /// Get information about a specific configuration version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHostedConfigurationVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetHostedConfigurationVersion service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetHostedConfigurationVersion">REST API Reference for GetHostedConfigurationVersion Operation</seealso>
+        GetHostedConfigurationVersionResponse GetHostedConfigurationVersion(GetHostedConfigurationVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHostedConfigurationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHostedConfigurationVersion operation on AmazonAppConfigClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHostedConfigurationVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetHostedConfigurationVersion">REST API Reference for GetHostedConfigurationVersion Operation</seealso>
+        IAsyncResult BeginGetHostedConfigurationVersion(GetHostedConfigurationVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetHostedConfigurationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHostedConfigurationVersion.</param>
+        /// 
+        /// <returns>Returns a  GetHostedConfigurationVersionResult from AppConfig.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetHostedConfigurationVersion">REST API Reference for GetHostedConfigurationVersion Operation</seealso>
+        GetHostedConfigurationVersionResponse EndGetHostedConfigurationVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListApplications
 
 
@@ -1077,6 +1235,55 @@ namespace Amazon.AppConfig
         /// <returns>Returns a  ListEnvironmentsResult from AppConfig.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
         ListEnvironmentsResponse EndListEnvironments(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListHostedConfigurationVersions
+
+
+        /// <summary>
+        /// View a list of configurations stored in the AppConfig configuration store by version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHostedConfigurationVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListHostedConfigurationVersions service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListHostedConfigurationVersions">REST API Reference for ListHostedConfigurationVersions Operation</seealso>
+        ListHostedConfigurationVersionsResponse ListHostedConfigurationVersions(ListHostedConfigurationVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListHostedConfigurationVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListHostedConfigurationVersions operation on AmazonAppConfigClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHostedConfigurationVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListHostedConfigurationVersions">REST API Reference for ListHostedConfigurationVersions Operation</seealso>
+        IAsyncResult BeginListHostedConfigurationVersions(ListHostedConfigurationVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListHostedConfigurationVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListHostedConfigurationVersions.</param>
+        /// 
+        /// <returns>Returns a  ListHostedConfigurationVersionsResult from AppConfig.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListHostedConfigurationVersions">REST API Reference for ListHostedConfigurationVersions Operation</seealso>
+        ListHostedConfigurationVersionsResponse EndListHostedConfigurationVersions(IAsyncResult asyncResult);
 
         #endregion
         

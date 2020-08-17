@@ -30,31 +30,34 @@ namespace Amazon.FraudDetector.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateModelVersion operation.
-    /// Creates a version of the model using the specified model type.
+    /// Creates a version of the model using the specified model type and model id.
     /// </summary>
     public partial class CreateModelVersionRequest : AmazonFraudDetectorRequest
     {
-        private string _description;
+        private ExternalEventsDetail _externalEventsDetail;
         private string _modelId;
         private ModelTypeEnum _modelType;
+        private List<Tag> _tags = new List<Tag>();
+        private TrainingDataSchema _trainingDataSchema;
+        private TrainingDataSourceEnum _trainingDataSource;
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property ExternalEventsDetail. 
         /// <para>
-        /// The model version description.
+        /// Details for the external events data used for model version training. Required if
+        /// <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string Description
+        public ExternalEventsDetail ExternalEventsDetail
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._externalEventsDetail; }
+            set { this._externalEventsDetail = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if ExternalEventsDetail property is set
+        internal bool IsSetExternalEventsDetail()
         {
-            return this._description != null;
+            return this._externalEventsDetail != null;
         }
 
         /// <summary>
@@ -93,6 +96,63 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetModelType()
         {
             return this._modelType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A collection of key and value pairs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingDataSchema. 
+        /// <para>
+        /// The training data schema.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public TrainingDataSchema TrainingDataSchema
+        {
+            get { return this._trainingDataSchema; }
+            set { this._trainingDataSchema = value; }
+        }
+
+        // Check to see if TrainingDataSchema property is set
+        internal bool IsSetTrainingDataSchema()
+        {
+            return this._trainingDataSchema != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingDataSource. 
+        /// <para>
+        /// The training data source location in Amazon S3. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public TrainingDataSourceEnum TrainingDataSource
+        {
+            get { return this._trainingDataSource; }
+            set { this._trainingDataSource = value; }
+        }
+
+        // Check to see if TrainingDataSource property is set
+        internal bool IsSetTrainingDataSource()
+        {
+            return this._trainingDataSource != null;
         }
 
     }

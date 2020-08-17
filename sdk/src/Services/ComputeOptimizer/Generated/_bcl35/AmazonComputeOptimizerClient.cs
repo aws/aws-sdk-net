@@ -43,9 +43,9 @@ namespace Amazon.ComputeOptimizer
     /// for the recommendations, which you can use to evaluate which recommendation provides
     /// the best price-performance trade-off. The analysis of your usage patterns can help
     /// you decide when to move or resize your running resources, and still meet your performance
-    /// and capacity requirements. For more information about Compute Optimizer, see the <a
-    /// href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS Compute Optimizer
-    /// User Guide</a>.
+    /// and capacity requirements. For more information about Compute Optimizer, including
+    /// the required permissions to use the service, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS
+    /// Compute Optimizer User Guide</a>.
     /// </summary>
     public partial class AmazonComputeOptimizerClient : AmazonServiceClient, IAmazonComputeOptimizer
     {
@@ -246,6 +246,271 @@ namespace Amazon.ComputeOptimizer
         #endregion
 
 
+        #region  DescribeRecommendationExportJobs
+
+        /// <summary>
+        /// Describes recommendation export jobs created in the last seven days.
+        /// 
+        ///  
+        /// <para>
+        /// Use the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code>
+        /// actions to request an export of your recommendations. Then use the <code>DescribeRecommendationExportJobs</code>
+        /// action to view your export jobs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRecommendationExportJobs service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRecommendationExportJobs service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to AWS Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/DescribeRecommendationExportJobs">REST API Reference for DescribeRecommendationExportJobs Operation</seealso>
+        public virtual DescribeRecommendationExportJobsResponse DescribeRecommendationExportJobs(DescribeRecommendationExportJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRecommendationExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRecommendationExportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRecommendationExportJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRecommendationExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRecommendationExportJobs operation on AmazonComputeOptimizerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRecommendationExportJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/DescribeRecommendationExportJobs">REST API Reference for DescribeRecommendationExportJobs Operation</seealso>
+        public virtual IAsyncResult BeginDescribeRecommendationExportJobs(DescribeRecommendationExportJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRecommendationExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRecommendationExportJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRecommendationExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRecommendationExportJobs.</param>
+        /// 
+        /// <returns>Returns a  DescribeRecommendationExportJobsResult from ComputeOptimizer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/DescribeRecommendationExportJobs">REST API Reference for DescribeRecommendationExportJobs Operation</seealso>
+        public virtual DescribeRecommendationExportJobsResponse EndDescribeRecommendationExportJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeRecommendationExportJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ExportAutoScalingGroupRecommendations
+
+        /// <summary>
+        /// Exports optimization recommendations for Auto Scaling groups.
+        /// 
+        ///  
+        /// <para>
+        /// Recommendations are exported in a comma-separated values (.csv) file, and its metadata
+        /// in a JavaScript Object Notation (.json) file, to an existing Amazon Simple Storage
+        /// Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+        /// Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can have only one Auto Scaling group export job in progress per AWS Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportAutoScalingGroupRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the ExportAutoScalingGroupRecommendations service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.LimitExceededException">
+        /// The request exceeds a limit of the service.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to AWS Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportAutoScalingGroupRecommendations">REST API Reference for ExportAutoScalingGroupRecommendations Operation</seealso>
+        public virtual ExportAutoScalingGroupRecommendationsResponse ExportAutoScalingGroupRecommendations(ExportAutoScalingGroupRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportAutoScalingGroupRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportAutoScalingGroupRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<ExportAutoScalingGroupRecommendationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportAutoScalingGroupRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportAutoScalingGroupRecommendations operation on AmazonComputeOptimizerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportAutoScalingGroupRecommendations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportAutoScalingGroupRecommendations">REST API Reference for ExportAutoScalingGroupRecommendations Operation</seealso>
+        public virtual IAsyncResult BeginExportAutoScalingGroupRecommendations(ExportAutoScalingGroupRecommendationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportAutoScalingGroupRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportAutoScalingGroupRecommendationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportAutoScalingGroupRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportAutoScalingGroupRecommendations.</param>
+        /// 
+        /// <returns>Returns a  ExportAutoScalingGroupRecommendationsResult from ComputeOptimizer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportAutoScalingGroupRecommendations">REST API Reference for ExportAutoScalingGroupRecommendations Operation</seealso>
+        public virtual ExportAutoScalingGroupRecommendationsResponse EndExportAutoScalingGroupRecommendations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ExportAutoScalingGroupRecommendationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ExportEC2InstanceRecommendations
+
+        /// <summary>
+        /// Exports optimization recommendations for Amazon EC2 instances.
+        /// 
+        ///  
+        /// <para>
+        /// Recommendations are exported in a comma-separated values (.csv) file, and its metadata
+        /// in a JavaScript Object Notation (.json) file, to an existing Amazon Simple Storage
+        /// Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+        /// Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can have only one Amazon EC2 instance export job in progress per AWS Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportEC2InstanceRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the ExportEC2InstanceRecommendations service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.LimitExceededException">
+        /// The request exceeds a limit of the service.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to AWS Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEC2InstanceRecommendations">REST API Reference for ExportEC2InstanceRecommendations Operation</seealso>
+        public virtual ExportEC2InstanceRecommendationsResponse ExportEC2InstanceRecommendations(ExportEC2InstanceRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportEC2InstanceRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportEC2InstanceRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<ExportEC2InstanceRecommendationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportEC2InstanceRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportEC2InstanceRecommendations operation on AmazonComputeOptimizerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportEC2InstanceRecommendations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEC2InstanceRecommendations">REST API Reference for ExportEC2InstanceRecommendations Operation</seealso>
+        public virtual IAsyncResult BeginExportEC2InstanceRecommendations(ExportEC2InstanceRecommendationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportEC2InstanceRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportEC2InstanceRecommendationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportEC2InstanceRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportEC2InstanceRecommendations.</param>
+        /// 
+        /// <returns>Returns a  ExportEC2InstanceRecommendationsResult from ComputeOptimizer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEC2InstanceRecommendations">REST API Reference for ExportEC2InstanceRecommendations Operation</seealso>
+        public virtual ExportEC2InstanceRecommendationsResponse EndExportEC2InstanceRecommendations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ExportEC2InstanceRecommendationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetAutoScalingGroupRecommendations
 
         /// <summary>
@@ -269,7 +534,7 @@ namespace Amazon.ComputeOptimizer
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
         /// An invalid or out-of-range value was supplied for the input parameter.
@@ -278,16 +543,16 @@ namespace Amazon.ComputeOptimizer
         /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
-        /// You must opt in to the service to perform this action.
+        /// The account is not opted in to AWS Compute Optimizer.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
-        /// The specified resource was not found.
+        /// A resource that is required for the action doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the server.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetAutoScalingGroupRecommendations">REST API Reference for GetAutoScalingGroupRecommendations Operation</seealso>
         public virtual GetAutoScalingGroupRecommendationsResponse GetAutoScalingGroupRecommendations(GetAutoScalingGroupRecommendationsRequest request)
@@ -355,7 +620,7 @@ namespace Amazon.ComputeOptimizer
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
         /// An invalid or out-of-range value was supplied for the input parameter.
@@ -364,16 +629,16 @@ namespace Amazon.ComputeOptimizer
         /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
-        /// You must opt in to the service to perform this action.
+        /// The account is not opted in to AWS Compute Optimizer.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
-        /// The specified resource was not found.
+        /// A resource that is required for the action doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the server.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEC2InstanceRecommendations">REST API Reference for GetEC2InstanceRecommendations Operation</seealso>
         public virtual GetEC2InstanceRecommendationsResponse GetEC2InstanceRecommendations(GetEC2InstanceRecommendationsRequest request)
@@ -433,7 +698,7 @@ namespace Amazon.ComputeOptimizer
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
         /// An invalid or out-of-range value was supplied for the input parameter.
@@ -442,16 +707,16 @@ namespace Amazon.ComputeOptimizer
         /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
-        /// You must opt in to the service to perform this action.
+        /// The account is not opted in to AWS Compute Optimizer.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
-        /// The specified resource was not found.
+        /// A resource that is required for the action doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the server.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEC2RecommendationProjectedMetrics">REST API Reference for GetEC2RecommendationProjectedMetrics Operation</seealso>
         public virtual GetEC2RecommendationProjectedMetricsResponse GetEC2RecommendationProjectedMetrics(GetEC2RecommendationProjectedMetricsRequest request)
@@ -507,7 +772,7 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  
         /// <para>
-        /// If the account is a master account of an organization, this operation also confirms
+        /// If the account is the master account of an organization, this action also confirms
         /// the enrollment status of member accounts within the organization.
         /// </para>
         /// </summary>
@@ -518,7 +783,7 @@ namespace Amazon.ComputeOptimizer
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
         /// An invalid or out-of-range value was supplied for the input parameter.
@@ -530,7 +795,7 @@ namespace Amazon.ComputeOptimizer
         /// The request has failed due to a temporary failure of the server.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatus">REST API Reference for GetEnrollmentStatus Operation</seealso>
         public virtual GetEnrollmentStatusResponse GetEnrollmentStatus(GetEnrollmentStatusRequest request)
@@ -597,7 +862,7 @@ namespace Amazon.ComputeOptimizer
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
         /// An invalid or out-of-range value was supplied for the input parameter.
@@ -606,13 +871,13 @@ namespace Amazon.ComputeOptimizer
         /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
-        /// You must opt in to the service to perform this action.
+        /// The account is not opted in to AWS Compute Optimizer.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
         /// The request has failed due to a temporary failure of the server.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRecommendationSummaries">REST API Reference for GetRecommendationSummaries Operation</seealso>
         public virtual GetRecommendationSummariesResponse GetRecommendationSummaries(GetRecommendationSummariesRequest request)
@@ -668,8 +933,8 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  
         /// <para>
-        /// If the account is a master account of an organization, this operation can also enroll
-        /// member accounts within the organization.
+        /// If the account is a master account of an organization, this action can also be used
+        /// to enroll member accounts within the organization.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnrollmentStatus service method.</param>
@@ -679,7 +944,7 @@ namespace Amazon.ComputeOptimizer
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
-        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// An internal error has occurred. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
         /// An invalid or out-of-range value was supplied for the input parameter.
@@ -691,7 +956,7 @@ namespace Amazon.ComputeOptimizer
         /// The request has failed due to a temporary failure of the server.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/UpdateEnrollmentStatus">REST API Reference for UpdateEnrollmentStatus Operation</seealso>
         public virtual UpdateEnrollmentStatusResponse UpdateEnrollmentStatus(UpdateEnrollmentStatusRequest request)

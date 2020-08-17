@@ -1304,6 +1304,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("FSx")]
+        public void CreateFileSystemFromBackup_InvalidPerUnitStorageThroughputExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateFileSystemFromBackup");
+
+            var request = InstantiateClassGenerator.Execute<CreateFileSystemFromBackupRequest>();
+            var marshaller = new CreateFileSystemFromBackupRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateFileSystemFromBackupRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidPerUnitStorageThroughputException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidPerUnitStorageThroughputException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateFileSystemFromBackupResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("FSx")]
         public void CreateFileSystemFromBackup_MissingFileSystemConfigurationExceptionMarshallTest()
         {
             var operation =  service_model.FindOperation("CreateFileSystemFromBackup");

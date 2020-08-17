@@ -35,6 +35,7 @@ namespace Amazon.AppMesh.Model
     {
         private HealthCheckPolicy _healthCheck;
         private PortMapping _portMapping;
+        private ListenerTimeout _timeout;
         private ListenerTls _tls;
 
         /// <summary>
@@ -72,6 +73,24 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetPortMapping()
         {
             return this._portMapping != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timeout. 
+        /// <para>
+        /// An object that represents timeouts for different protocols.
+        /// </para>
+        /// </summary>
+        public ListenerTimeout Timeout
+        {
+            get { return this._timeout; }
+            set { this._timeout = value; }
+        }
+
+        // Check to see if Timeout property is set
+        internal bool IsSetTimeout()
+        {
+            return this._timeout != null;
         }
 
         /// <summary>

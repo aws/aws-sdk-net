@@ -86,8 +86,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS service
-        /// to which a security group rule allows outbound access.
+        ///  <code>egress.ip-permission.prefix-list-id</code> - The ID of a prefix list to which
+        /// a security group rule allows outbound access.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -140,8 +140,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS service from
-        /// which a security group rule allows inbound access.
+        ///  <code>ip-permission.prefix-list-id</code> - The ID of a prefix list from which a
+        /// security group rule allows inbound access.
         /// </para>
         ///  </li> <li> 
         /// <para>

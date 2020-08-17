@@ -421,9 +421,17 @@ namespace Amazon.QuickSight
     {
 
         /// <summary>
+        /// Constant ACCESS_DENIED for DataSourceErrorInfoType
+        /// </summary>
+        public static readonly DataSourceErrorInfoType ACCESS_DENIED = new DataSourceErrorInfoType("ACCESS_DENIED");
+        /// <summary>
         /// Constant CONFLICT for DataSourceErrorInfoType
         /// </summary>
         public static readonly DataSourceErrorInfoType CONFLICT = new DataSourceErrorInfoType("CONFLICT");
+        /// <summary>
+        /// Constant COPY_SOURCE_NOT_FOUND for DataSourceErrorInfoType
+        /// </summary>
+        public static readonly DataSourceErrorInfoType COPY_SOURCE_NOT_FOUND = new DataSourceErrorInfoType("COPY_SOURCE_NOT_FOUND");
         /// <summary>
         /// Constant ENGINE_VERSION_NOT_SUPPORTED for DataSourceErrorInfoType
         /// </summary>
@@ -600,6 +608,56 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Edition.
+    /// </summary>
+    public class Edition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENTERPRISE for Edition
+        /// </summary>
+        public static readonly Edition ENTERPRISE = new Edition("ENTERPRISE");
+        /// <summary>
+        /// Constant STANDARD for Edition
+        /// </summary>
+        public static readonly Edition STANDARD = new Edition("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Edition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Edition FindValue(string value)
+        {
+            return FindValue<Edition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Edition(string value)
         {
             return FindValue(value);
         }
@@ -906,6 +964,52 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GeoSpatialDataRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IdentityStore.
+    /// </summary>
+    public class IdentityStore : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant QUICKSIGHT for IdentityStore
+        /// </summary>
+        public static readonly IdentityStore QUICKSIGHT = new IdentityStore("QUICKSIGHT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IdentityStore(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdentityStore FindValue(string value)
+        {
+            return FindValue<IdentityStore>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdentityStore(string value)
         {
             return FindValue(value);
         }
@@ -1467,6 +1571,118 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type NamespaceErrorType.
+    /// </summary>
+    public class NamespaceErrorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERNAL_SERVICE_ERROR for NamespaceErrorType
+        /// </summary>
+        public static readonly NamespaceErrorType INTERNAL_SERVICE_ERROR = new NamespaceErrorType("INTERNAL_SERVICE_ERROR");
+        /// <summary>
+        /// Constant PERMISSION_DENIED for NamespaceErrorType
+        /// </summary>
+        public static readonly NamespaceErrorType PERMISSION_DENIED = new NamespaceErrorType("PERMISSION_DENIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NamespaceErrorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NamespaceErrorType FindValue(string value)
+        {
+            return FindValue<NamespaceErrorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NamespaceErrorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NamespaceStatus.
+    /// </summary>
+    public class NamespaceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for NamespaceStatus
+        /// </summary>
+        public static readonly NamespaceStatus CREATED = new NamespaceStatus("CREATED");
+        /// <summary>
+        /// Constant CREATING for NamespaceStatus
+        /// </summary>
+        public static readonly NamespaceStatus CREATING = new NamespaceStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for NamespaceStatus
+        /// </summary>
+        public static readonly NamespaceStatus DELETING = new NamespaceStatus("DELETING");
+        /// <summary>
+        /// Constant NON_RETRYABLE_FAILURE for NamespaceStatus
+        /// </summary>
+        public static readonly NamespaceStatus NON_RETRYABLE_FAILURE = new NamespaceStatus("NON_RETRYABLE_FAILURE");
+        /// <summary>
+        /// Constant RETRYABLE_FAILURE for NamespaceStatus
+        /// </summary>
+        public static readonly NamespaceStatus RETRYABLE_FAILURE = new NamespaceStatus("RETRYABLE_FAILURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NamespaceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NamespaceStatus FindValue(string value)
+        {
+            return FindValue<NamespaceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NamespaceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceStatus.
     /// </summary>
     public class ResourceStatus : ConstantClass
@@ -1680,6 +1896,106 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TextQualifier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ThemeErrorType.
+    /// </summary>
+    public class ThemeErrorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERNAL_FAILURE for ThemeErrorType
+        /// </summary>
+        public static readonly ThemeErrorType INTERNAL_FAILURE = new ThemeErrorType("INTERNAL_FAILURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThemeErrorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThemeErrorType FindValue(string value)
+        {
+            return FindValue<ThemeErrorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThemeErrorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ThemeType.
+    /// </summary>
+    public class ThemeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ThemeType
+        /// </summary>
+        public static readonly ThemeType ALL = new ThemeType("ALL");
+        /// <summary>
+        /// Constant CUSTOM for ThemeType
+        /// </summary>
+        public static readonly ThemeType CUSTOM = new ThemeType("CUSTOM");
+        /// <summary>
+        /// Constant QUICKSIGHT for ThemeType
+        /// </summary>
+        public static readonly ThemeType QUICKSIGHT = new ThemeType("QUICKSIGHT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThemeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThemeType FindValue(string value)
+        {
+            return FindValue<ThemeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThemeType(string value)
         {
             return FindValue(value);
         }

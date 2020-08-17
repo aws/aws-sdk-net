@@ -43,35 +43,35 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to
-        /// an authentication error.
+        ///  <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation
+        /// failed due to an authentication error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DETACHED: Indicates that gateway is not joined to a domain.
+        ///  <code>DETACHED</code>: Indicates that gateway is not joined to a domain.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// JOINED: Indicates that the gateway has successfully joined a domain.
+        ///  <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+        ///  <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network
-        /// or connectivity error.
+        ///  <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed
+        /// due to a network or connectivity error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation
-        /// didn't complete within the allotted time.
+        ///  <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed
+        /// because the operation didn't complete within the allotted time.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to
-        /// another type of error.
+        ///  <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation
+        /// failed due to another type of error.
         /// </para>
         ///  </li> </ul>
         /// </summary>

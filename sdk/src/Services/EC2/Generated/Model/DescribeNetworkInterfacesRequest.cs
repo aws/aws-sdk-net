@@ -120,11 +120,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network
-        /// interface is attached.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>attachment.status</code> - The status of the attachment (<code>attaching</code>
         /// | <code>attached</code> | <code>detaching</code> | <code>detached</code>).
         /// </para>

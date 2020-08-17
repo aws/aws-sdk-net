@@ -38,7 +38,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerGroupReplicationConfigurations. 
         /// <para>
-        /// Replication configurations associated with server groups in this application.
+        /// The replication configurations associated with server groups in this application.
         /// </para>
         /// </summary>
         public List<ServerGroupReplicationConfiguration> ServerGroupReplicationConfigurations

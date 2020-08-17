@@ -34,7 +34,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// Amazon VPC. The namespace defines your service naming scheme. For example, if you
     /// name your namespace <code>example.com</code> and name your service <code>backend</code>,
     /// the resulting DNS name for the service will be <code>backend.example.com</code>. For
-    /// the current limit on the number of namespaces that you can create using the same AWS
+    /// the current quota on the number of namespaces that you can create using the same AWS
     /// account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
     /// Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
     /// </summary>
@@ -43,6 +43,7 @@ namespace Amazon.ServiceDiscovery.Model
         private string _creatorRequestId;
         private string _description;
         private string _name;
+        private List<Tag> _tags = new List<Tag>();
         private string _vpc;
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name that you want to assign to this namespace. When you create a private DNS
-        /// namespace, AWS Cloud Map automatically creates an Amazon Route 53 private hosted zone
+        /// namespace, AWS Cloud Map automatically creates an Amazon Route 53 private hosted zone
         /// that has the same name as the namespace.
         /// </para>
         /// </summary>
@@ -104,6 +105,27 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to add to the namespace. Each tag consists of a key and an optional value,
+        /// both of which you define. Tag keys can have a maximum character length of 128 characters,
+        /// and tag values can have a maximum length of 256 characters.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

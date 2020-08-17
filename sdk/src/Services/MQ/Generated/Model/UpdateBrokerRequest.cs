@@ -34,13 +34,31 @@ namespace Amazon.MQ.Model
     /// </summary>
     public partial class UpdateBrokerRequest : AmazonMQRequest
     {
+        private AuthenticationStrategy _authenticationStrategy;
         private bool? _autoMinorVersionUpgrade;
         private string _brokerId;
         private ConfigurationId _configuration;
         private string _engineVersion;
         private string _hostInstanceType;
+        private LdapServerMetadataInput _ldapServerMetadata;
         private Logs _logs;
         private List<string> _securityGroups = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationStrategy. The authentication strategy used
+        /// to secure the broker.
+        /// </summary>
+        public AuthenticationStrategy AuthenticationStrategy
+        {
+            get { return this._authenticationStrategy; }
+            set { this._authenticationStrategy = value; }
+        }
+
+        // Check to see if AuthenticationStrategy property is set
+        internal bool IsSetAuthenticationStrategy()
+        {
+            return this._authenticationStrategy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. Enables automatic upgrades to
@@ -60,10 +78,8 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BrokerId. The name of the broker. This value must be unique
-        /// in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes,
-        /// and underscores, and must not contain whitespaces, brackets, wildcard characters,
-        /// or special characters.
+        /// Gets and sets the property BrokerId. The unique ID that Amazon MQ generates for the
+        /// broker.
         /// </summary>
         [AWSProperty(Required=true)]
         public string BrokerId
@@ -123,6 +139,22 @@ namespace Amazon.MQ.Model
         internal bool IsSetHostInstanceType()
         {
             return this._hostInstanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LdapServerMetadata. The metadata of the LDAP server used
+        /// to authenticate and authorize connections to the broker.
+        /// </summary>
+        public LdapServerMetadataInput LdapServerMetadata
+        {
+            get { return this._ldapServerMetadata; }
+            set { this._ldapServerMetadata = value; }
+        }
+
+        // Check to see if LdapServerMetadata property is set
+        internal bool IsSetLdapServerMetadata()
+        {
+            return this._ldapServerMetadata != null;
         }
 
         /// <summary>

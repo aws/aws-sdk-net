@@ -35,6 +35,7 @@ namespace Amazon.Personalize.Model
     public partial class Campaign
     {
         private string _campaignArn;
+        private CampaignConfig _campaignConfig;
         private DateTime? _creationDateTime;
         private string _failureReason;
         private DateTime? _lastUpdatedDateTime;
@@ -61,6 +62,24 @@ namespace Amazon.Personalize.Model
         internal bool IsSetCampaignArn()
         {
             return this._campaignArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CampaignConfig. 
+        /// <para>
+        /// The configuration details of a campaign.
+        /// </para>
+        /// </summary>
+        public CampaignConfig CampaignConfig
+        {
+            get { return this._campaignConfig; }
+            set { this._campaignConfig = value; }
+        }
+
+        // Check to see if CampaignConfig property is set
+        internal bool IsSetCampaignConfig()
+        {
+            return this._campaignConfig != null;
         }
 
         /// <summary>

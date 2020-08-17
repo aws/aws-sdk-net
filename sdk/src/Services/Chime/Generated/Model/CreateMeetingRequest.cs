@@ -31,7 +31,9 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the CreateMeeting operation.
     /// Creates a new Amazon Chime SDK meeting in the specified media Region with no initial
-    /// attendees. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
+    /// attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
+    /// Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information
+    /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
     /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
     /// </summary>
     public partial class CreateMeetingRequest : AmazonChimeRequest
@@ -85,11 +87,14 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property MediaRegion. 
         /// <para>
-        /// The Region in which to create the meeting. Available values: <code>ap-northeast-1</code>,
-        /// <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-        /// <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
-        /// <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-        /// <code>us-west-1</code>, <code>us-west-2</code>.
+        /// The Region in which to create the meeting. Default: <code>us-east-1</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Available values: <code>ap-northeast-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>,
+        /// <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-west-1</code>,
+        /// <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
+        /// <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.
         /// </para>
         /// </summary>
         public string MediaRegion

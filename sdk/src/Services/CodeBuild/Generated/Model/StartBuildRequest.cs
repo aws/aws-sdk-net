@@ -36,9 +36,11 @@ namespace Amazon.CodeBuild.Model
     {
         private ProjectArtifacts _artifactsOverride;
         private string _buildspecOverride;
+        private BuildStatusConfig _buildStatusConfigOverride;
         private ProjectCache _cacheOverride;
         private string _certificateOverride;
         private ComputeType _computeTypeOverride;
+        private bool? _debugSessionEnabled;
         private string _encryptionKeyOverride;
         private EnvironmentType _environmentTypeOverride;
         private List<EnvironmentVariable> _environmentVariablesOverride = new List<EnvironmentVariable>();
@@ -114,6 +116,26 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BuildStatusConfigOverride. 
+        /// <para>
+        /// Contains information that defines how the build project reports the build status to
+        /// the source provider. This option is only used when the source provider is <code>GITHUB</code>,
+        /// <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.
+        /// </para>
+        /// </summary>
+        public BuildStatusConfig BuildStatusConfigOverride
+        {
+            get { return this._buildStatusConfigOverride; }
+            set { this._buildStatusConfigOverride = value; }
+        }
+
+        // Check to see if BuildStatusConfigOverride property is set
+        internal bool IsSetBuildStatusConfigOverride()
+        {
+            return this._buildStatusConfigOverride != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CacheOverride. 
         /// <para>
         /// A ProjectCache object specified for this build that overrides the one defined in the
@@ -168,6 +190,26 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetComputeTypeOverride()
         {
             return this._computeTypeOverride != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DebugSessionEnabled. 
+        /// <para>
+        /// Specifies if session debugging is enabled for this build. For more information, see
+        /// <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+        /// a running build in Session Manager</a>.
+        /// </para>
+        /// </summary>
+        public bool DebugSessionEnabled
+        {
+            get { return this._debugSessionEnabled.GetValueOrDefault(); }
+            set { this._debugSessionEnabled = value; }
+        }
+
+        // Check to see if DebugSessionEnabled property is set
+        internal bool IsSetDebugSessionEnabled()
+        {
+            return this._debugSessionEnabled.HasValue; 
         }
 
         /// <summary>
@@ -280,7 +322,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
         /// A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild
-        /// request. The token is included in the StartBuild request and is valid for 12 hours.
+        /// request. The token is included in the StartBuild request and is valid for 5 minutes.
         /// If you repeat the StartBuild request with the same token, but change a parameter,
         /// AWS CodeBuild returns a parameter mismatch error. 
         /// </para>
@@ -320,24 +362,23 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ImagePullCredentialsTypeOverride. 
         /// <para>
-        ///  The type of credentials AWS CodeBuild uses to pull images in your build. There are
+        /// The type of credentials AWS CodeBuild uses to pull images in your build. There are
         /// two valid values: 
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>CODEBUILD</dt> <dd> 
         /// <para>
-        ///  <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This
-        /// requires that you modify your ECR repository policy to trust AWS CodeBuild's service
-        /// principal.
+        /// Specifies that AWS CodeBuild uses its own credentials. This requires that you modify
+        /// your ECR repository policy to trust AWS CodeBuild's service principal.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>SERVICE_ROLE</dt> <dd> 
         /// <para>
-        ///  <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's
-        /// service role. 
+        /// Specifies that AWS CodeBuild uses your build project's service role. 
         /// </para>
-        ///  </li> </ul> 
+        ///  </dd> </dl> 
         /// <para>
-        ///  When using a cross-account or private registry image, you must use SERVICE_ROLE credentials.
-        /// When using an AWS CodeBuild curated image, you must use CODEBUILD credentials. 
+        /// When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code>
+        /// credentials. When using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
+        /// credentials. 
         /// </para>
         /// </summary>
         public ImagePullCredentialsType ImagePullCredentialsTypeOverride
@@ -630,40 +671,39 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SourceVersion. 
         /// <para>
-        /// A version of the build input to be built, for this build only. If not specified, the
-        /// latest version is used. If specified, must be one of:
+        /// The version of the build input to be built, for this build only. If not specified,
+        /// the latest version is used. If specified, the contents depends on the source provider:
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>AWS CodeCommit</dt> <dd> 
         /// <para>
-        /// For AWS CodeCommit: the commit ID, branch, or Git tag to use.
+        /// The commit ID, branch, or Git tag to use.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>GitHub</dt> <dd> 
         /// <para>
-        /// For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds
-        /// to the version of the source code you want to build. If a pull request ID is specified,
-        /// it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>).
-        /// If a branch name is specified, the branch's HEAD commit ID is used. If not specified,
-        /// the default branch's HEAD commit ID is used.
+        /// The commit ID, pull request ID, branch name, or tag name that corresponds to the version
+        /// of the source code you want to build. If a pull request ID is specified, it must use
+        /// the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a
+        /// branch name is specified, the branch's HEAD commit ID is used. If not specified, the
+        /// default branch's HEAD commit ID is used.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>Bitbucket</dt> <dd> 
         /// <para>
-        /// For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version
-        /// of the source code you want to build. If a branch name is specified, the branch's
-        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+        /// The commit ID, branch name, or tag name that corresponds to the version of the source
+        /// code you want to build. If a branch name is specified, the branch's HEAD commit ID
+        /// is used. If not specified, the default branch's HEAD commit ID is used.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> 
         /// <para>
-        /// For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents
-        /// the build input ZIP file to use.
+        /// The version ID of the object that represents the build input ZIP file to use.
         /// </para>
-        ///  </li> </ul> 
+        ///  </dd> </dl> 
         /// <para>
-        ///  If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code>
+        /// If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code>
         /// (at the build level) takes precedence. 
         /// </para>
         ///  
         /// <para>
-        ///  For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+        /// For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
         /// Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. 
         /// </para>
         /// </summary>

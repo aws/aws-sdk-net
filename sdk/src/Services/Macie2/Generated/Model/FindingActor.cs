@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about an entity who performed an action that produced a policy
+    /// Provides information about an entity that performed an action that produced a policy
     /// finding for a resource.
     /// </summary>
     public partial class FindingActor
@@ -41,7 +41,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property DomainDetails. 
         /// <para>
-        /// The DNS name of the entity that performed the action on the affected resource.
+        /// The domain name of the device that the entity used to perform the action on the affected
+        /// resource.
         /// </para>
         /// </summary>
         public DomainDetails DomainDetails
@@ -60,8 +61,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property IpAddressDetails. 
         /// <para>
         /// The IP address of the device that the entity used to perform the action on the affected
-        /// resource. This object also provides information such as the owner and geographical
-        /// location for the IP address.
+        /// resource. This object also provides information such as the owner and geographic location
+        /// for the IP address.
         /// </para>
         /// </summary>
         public IpAddressDetails IpAddressDetails
@@ -79,7 +80,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property UserIdentity. 
         /// <para>
-        /// The name and type of entity who performed the action on the affected resource.
+        /// The type and other characteristics of the entity that performed the action on the
+        /// affected resource.
         /// </para>
         /// </summary>
         public UserIdentity UserIdentity

@@ -136,6 +136,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetSortingConfiguration())
+                {
+                    context.Writer.WritePropertyName("SortingConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SortingConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SortingConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

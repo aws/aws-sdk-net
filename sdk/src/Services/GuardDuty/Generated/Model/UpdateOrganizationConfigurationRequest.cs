@@ -35,6 +35,7 @@ namespace Amazon.GuardDuty.Model
     public partial class UpdateOrganizationConfigurationRequest : AmazonGuardDutyRequest
     {
         private bool? _autoEnable;
+        private OrganizationDataSourceConfigurations _dataSources;
         private string _detectorId;
 
         /// <summary>
@@ -54,6 +55,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetAutoEnable()
         {
             return this._autoEnable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSources. 
+        /// <para>
+        /// An object describes which data sources will be updated.
+        /// </para>
+        /// </summary>
+        public OrganizationDataSourceConfigurations DataSources
+        {
+            get { return this._dataSources; }
+            set { this._dataSources = value; }
+        }
+
+        // Check to see if DataSources property is set
+        internal bool IsSetDataSources()
+        {
+            return this._dataSources != null;
         }
 
         /// <summary>

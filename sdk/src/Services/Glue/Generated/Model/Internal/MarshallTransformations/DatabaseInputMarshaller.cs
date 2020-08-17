@@ -93,6 +93,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTargetDatabase())
+            {
+                context.Writer.WritePropertyName("TargetDatabase");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DatabaseIdentifierMarshaller.Instance;
+                marshaller.Marshall(requestObject.TargetDatabase, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

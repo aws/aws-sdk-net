@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DescribePlacementGroups operation.
     /// Describes the specified placement groups or all of your placement groups. For more
     /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-    /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </summary>
     public partial class DescribePlacementGroupsRequest : AmazonEC2Request
     {

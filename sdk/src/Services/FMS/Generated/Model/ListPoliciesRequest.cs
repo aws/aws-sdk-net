@@ -30,7 +30,7 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPolicies operation.
-    /// Returns an array of <code>PolicySummary</code> objects in the response.
+    /// Returns an array of <code>PolicySummary</code> objects.
     /// </summary>
     public partial class ListPoliciesRequest : AmazonFMSRequest
     {

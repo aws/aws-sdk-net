@@ -57,6 +57,11 @@ namespace Amazon.WAFV2.Model
     /// If you are capturing logs for Amazon CloudFront, always create the firehose in US
     /// East (N. Virginia). 
     /// </para>
+    ///  
+    /// <para>
+    /// Give the data firehose a name that starts with the prefix <code>aws-waf-logs-</code>.
+    /// For example, <code>aws-waf-logs-us-east-2-analytics</code>.
+    /// </para>
     ///  <note> 
     /// <para>
     /// Do not create the data firehose using a <code>Kinesis stream</code> as your source.

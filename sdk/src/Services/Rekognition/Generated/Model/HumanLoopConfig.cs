@@ -59,7 +59,9 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property FlowDefinitionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the flow definition.
+        /// The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition
+        /// by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a>
+        /// Operation. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

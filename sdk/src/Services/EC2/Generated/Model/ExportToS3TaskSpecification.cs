@@ -78,8 +78,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// The S3 bucket for the destination image. The destination bucket must exist and grant
-        /// WRITE and READ_ACP permissions to the AWS account <code>vm-import-export@amazon.com</code>.
+        /// The Amazon S3 bucket for the destination image. The destination bucket must exist
+        /// and grant WRITE and READ_ACP permissions to the AWS account <code>vm-import-export@amazon.com</code>.
         /// </para>
         /// </summary>
         public string S3Bucket
@@ -97,8 +97,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property S3Prefix. 
         /// <para>
-        /// The image is written to a single object in the S3 bucket at the S3 key s3prefix +
-        /// exportTaskId + '.' + diskImageFormat.
+        /// The image is written to a single object in the Amazon S3 bucket at the S3 key s3prefix
+        /// + exportTaskId + '.' + diskImageFormat.
         /// </para>
         /// </summary>
         public string S3Prefix

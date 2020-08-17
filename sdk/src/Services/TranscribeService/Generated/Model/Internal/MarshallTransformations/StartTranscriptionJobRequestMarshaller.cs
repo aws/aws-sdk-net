@@ -119,6 +119,17 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MediaSampleRateHertz);
                 }
 
+                if(publicRequest.IsSetModelSettings())
+                {
+                    context.Writer.WritePropertyName("ModelSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ModelSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ModelSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetOutputBucketName())
                 {
                     context.Writer.WritePropertyName("OutputBucketName");

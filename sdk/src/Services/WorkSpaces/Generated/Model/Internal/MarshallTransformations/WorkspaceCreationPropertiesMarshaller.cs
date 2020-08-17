@@ -69,6 +69,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EnableMaintenanceMode);
             }
 
+            if(requestObject.IsSetEnableWorkDocs())
+            {
+                context.Writer.WritePropertyName("EnableWorkDocs");
+                context.Writer.Write(requestObject.EnableWorkDocs);
+            }
+
             if(requestObject.IsSetUserEnabledAsLocalAdministrator())
             {
                 context.Writer.WritePropertyName("UserEnabledAsLocalAdministrator");

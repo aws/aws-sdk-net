@@ -142,7 +142,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: DISABLED or ACTIVE
+        /// Valid Values: <code>DISABLED</code> | <code>ACTIVE</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=25)]

@@ -33,8 +33,33 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class DescribeHubResponse : AmazonWebServiceResponse
     {
+        private bool? _autoEnableControls;
         private string _hubArn;
         private string _subscribedAt;
+
+        /// <summary>
+        /// Gets and sets the property AutoEnableControls. 
+        /// <para>
+        /// Whether to automatically enable new controls when they are added to standards that
+        /// are enabled.
+        /// </para>
+        ///  
+        /// <para>
+        /// If set to <code>true</code>, then new controls for enabled standards are enabled automatically.
+        /// If set to <code>false</code>, then new controls are not enabled.
+        /// </para>
+        /// </summary>
+        public bool AutoEnableControls
+        {
+            get { return this._autoEnableControls.GetValueOrDefault(); }
+            set { this._autoEnableControls = value; }
+        }
+
+        // Check to see if AutoEnableControls property is set
+        internal bool IsSetAutoEnableControls()
+        {
+            return this._autoEnableControls.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property HubArn. 

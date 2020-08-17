@@ -45,6 +45,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3Target requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetConnectionName())
+            {
+                context.Writer.WritePropertyName("ConnectionName");
+                context.Writer.Write(requestObject.ConnectionName);
+            }
+
             if(requestObject.IsSetExclusions())
             {
                 context.Writer.WritePropertyName("Exclusions");

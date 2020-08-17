@@ -253,7 +253,7 @@ namespace Amazon.DataSync
         /// 
         ///  
         /// <para>
-        /// When you cancel a task execution, the transfer of some files are abruptly interrupted.
+        /// When you cancel a task execution, the transfer of some files is abruptly interrupted.
         /// The contents of files that are transferred to the destination might be incomplete
         /// or inconsistent with the source files. However, if you start a new task execution
         /// on the same task and you allow the task execution to complete, file content on the
@@ -328,7 +328,7 @@ namespace Amazon.DataSync
         /// 
         ///  
         /// <para>
-        /// You can activate the agent in a VPC (Virtual private Cloud) or provide the agent access
+        /// You can activate the agent in a VPC (virtual private cloud) or provide the agent access
         /// to a VPC endpoint so you can run tasks without going over the public Internet.
         /// </para>
         ///  
@@ -523,7 +523,7 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Defines a file system on a Network File System (NFS) server that can be read from
-        /// or written to
+        /// or written to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationNfs service method.</param>
         /// 
@@ -576,6 +576,66 @@ namespace Amazon.DataSync
         public virtual CreateLocationNfsResponse EndCreateLocationNfs(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateLocationNfsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateLocationObjectStorage
+
+        /// <summary>
+        /// Creates an endpoint for a self-managed object storage bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationObjectStorage service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocationObjectStorage service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationObjectStorage">REST API Reference for CreateLocationObjectStorage Operation</seealso>
+        public virtual CreateLocationObjectStorageResponse CreateLocationObjectStorage(CreateLocationObjectStorageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationObjectStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationObjectStorageResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLocationObjectStorageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLocationObjectStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationObjectStorage operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLocationObjectStorage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationObjectStorage">REST API Reference for CreateLocationObjectStorage Operation</seealso>
+        public virtual IAsyncResult BeginCreateLocationObjectStorage(CreateLocationObjectStorageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationObjectStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationObjectStorageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLocationObjectStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLocationObjectStorage.</param>
+        /// 
+        /// <returns>Returns a  CreateLocationObjectStorageResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationObjectStorage">REST API Reference for CreateLocationObjectStorage Operation</seealso>
+        public virtual CreateLocationObjectStorageResponse EndCreateLocationObjectStorage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateLocationObjectStorageResponse>(asyncResult);
         }
 
         #endregion
@@ -656,7 +716,7 @@ namespace Amazon.DataSync
         #region  CreateLocationSmb
 
         /// <summary>
-        /// Defines a file system on an Server Message Block (SMB) server that can be read from
+        /// Defines a file system on a Server Message Block (SMB) server that can be read from
         /// or written to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationSmb service method.</param>
@@ -1161,7 +1221,7 @@ namespace Amazon.DataSync
         #region  DescribeLocationNfs
 
         /// <summary>
-        /// Returns metadata, such as the path information, about a NFS location.
+        /// Returns metadata, such as the path information, about an NFS location.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationNfs service method.</param>
         /// 
@@ -1214,6 +1274,66 @@ namespace Amazon.DataSync
         public virtual DescribeLocationNfsResponse EndDescribeLocationNfs(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLocationNfsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeLocationObjectStorage
+
+        /// <summary>
+        /// Returns metadata about a self-managed object storage server location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationObjectStorage service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLocationObjectStorage service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationObjectStorage">REST API Reference for DescribeLocationObjectStorage Operation</seealso>
+        public virtual DescribeLocationObjectStorageResponse DescribeLocationObjectStorage(DescribeLocationObjectStorageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationObjectStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationObjectStorageResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLocationObjectStorageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLocationObjectStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationObjectStorage operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLocationObjectStorage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationObjectStorage">REST API Reference for DescribeLocationObjectStorage Operation</seealso>
+        public virtual IAsyncResult BeginDescribeLocationObjectStorage(DescribeLocationObjectStorageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationObjectStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationObjectStorageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLocationObjectStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLocationObjectStorage.</param>
+        /// 
+        /// <returns>Returns a  DescribeLocationObjectStorageResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationObjectStorage">REST API Reference for DescribeLocationObjectStorage Operation</seealso>
+        public virtual DescribeLocationObjectStorageResponse EndDescribeLocationObjectStorage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeLocationObjectStorageResponse>(asyncResult);
         }
 
         #endregion
@@ -1281,7 +1401,7 @@ namespace Amazon.DataSync
         #region  DescribeLocationSmb
 
         /// <summary>
-        /// Returns metadata, such as the path and user information about a SMB location.
+        /// Returns metadata, such as the path and user information about an SMB location.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationSmb service method.</param>
         /// 
@@ -1535,7 +1655,7 @@ namespace Amazon.DataSync
         #region  ListLocations
 
         /// <summary>
-        /// Returns a lists of source and destination locations.
+        /// Returns a list of source and destination locations.
         /// 
         ///  
         /// <para>
@@ -1602,7 +1722,7 @@ namespace Amazon.DataSync
         #region  ListTagsForResource
 
         /// <summary>
-        /// Returns all the tags associated with a specified resources.
+        /// Returns all the tags associated with a specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 

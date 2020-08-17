@@ -51,6 +51,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MaximumCapacityUnits);
             }
 
+            if(requestObject.IsSetMaximumCoreCapacityUnits())
+            {
+                context.Writer.WritePropertyName("MaximumCoreCapacityUnits");
+                context.Writer.Write(requestObject.MaximumCoreCapacityUnits);
+            }
+
             if(requestObject.IsSetMaximumOnDemandCapacityUnits())
             {
                 context.Writer.WritePropertyName("MaximumOnDemandCapacityUnits");

@@ -54,7 +54,12 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The AWS account IDs for which to return Auto Scaling group recommendations.
+        /// The IDs of the AWS accounts for which to return Auto Scaling group recommendations.
+        /// </para>
+        ///  
+        /// <para>
+        /// If your account is the master account of an organization, use this parameter to specify
+        /// the member accounts for which you want to return Auto Scaling group recommendations.
         /// </para>
         ///  
         /// <para>
@@ -113,11 +118,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of Auto Scaling group recommendations to return with a single call.
+        /// The maximum number of Auto Scaling group recommendations to return with a single request.
         /// </para>
         ///  
         /// <para>
-        /// To retrieve the remaining results, make another call with the returned <code>NextToken</code>
+        /// To retrieve the remaining results, make another request with the returned <code>NextToken</code>
         /// value.
         /// </para>
         /// </summary>

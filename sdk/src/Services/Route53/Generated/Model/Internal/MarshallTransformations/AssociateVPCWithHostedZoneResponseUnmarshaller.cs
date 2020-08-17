@@ -120,6 +120,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     return NotAuthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("PriorRequestNotComplete"))
+                {
+                    return PriorRequestNotCompleteExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("PublicZoneVPCAssociation"))
                 {
                     return PublicZoneVPCAssociationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

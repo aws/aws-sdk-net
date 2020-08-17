@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Result structure for an Amplify App update request.
+    /// The result structure for an Amplify app update request.
     /// </summary>
     public partial class UpdateAppResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property App. 
         /// <para>
-        ///  App structure for the updated App. 
+        ///  Represents the updated Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

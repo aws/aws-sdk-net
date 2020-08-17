@@ -88,12 +88,12 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// If you are describing a long list of snapshots, you can paginate the output to make
-    /// the list more manageable. The <code>MaxResults</code> parameter sets the maximum number
-    /// of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
-    /// value, then that number of results is returned along with a <code>NextToken</code>
-    /// value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
-    /// retrieve the remaining results.
+    /// If you are describing a long list of snapshots, we recommend that you paginate the
+    /// output to make the list more manageable. The <code>MaxResults</code> parameter sets
+    /// the maximum number of results returned in a single page. If the list of results exceeds
+    /// your <code>MaxResults</code> value, then that number of results is returned along
+    /// with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code>
+    /// request to retrieve the remaining results.
     /// </para>
     ///  
     /// <para>
@@ -130,14 +130,14 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code>
-        /// | <code>self</code> | <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>)
-        /// of snapshot owners. Not to be confused with the user-configured AWS account alias,
-        /// which is set from the IAM console.
+        ///  <code>owner-alias</code> - The owner alias, from an Amazon-maintained list (<code>amazon</code>).
+        /// This is not the user-configured AWS account alias set using the IAM console. We recommend
+        /// that you use the related parameter instead of this filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-id</code> - The ID of the AWS account that owns the snapshot.
+        ///  <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use
+        /// the related parameter instead of this filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -243,7 +243,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerIds. 
         /// <para>
-        /// Describes the snapshots owned by these owners.
+        /// Scopes the results to snapshots with the specified owners. You can specify a combination
+        /// of AWS account IDs, <code>self</code>, and <code>amazon</code>.
         /// </para>
         /// </summary>
         public List<string> OwnerIds

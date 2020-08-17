@@ -29,14 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// 
+    /// Specifies whether profiling is enabled or disabled for a profiling group. It is used
+    /// by <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html">
+    /// <code>ConfigureAgent</code> </a> to enable or disable profiling for a profiling group.
     /// </summary>
     public partial class AgentOrchestrationConfig
     {
         private bool? _profilingEnabled;
 
         /// <summary>
-        /// Gets and sets the property ProfilingEnabled.
+        /// Gets and sets the property ProfilingEnabled. 
+        /// <para>
+        ///  A <code>Boolean</code> that specifies whether the profiling agent collects profiling
+        /// data or not. Set to <code>true</code> to enable profiling. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public bool ProfilingEnabled

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// The values to use to filter results from the <a>DescribeEventTypes</a> operation.
+    /// The values to use to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html">DescribeEventTypes</a>
+    /// operation.
     /// </summary>
     public partial class EventTypeFilter
     {

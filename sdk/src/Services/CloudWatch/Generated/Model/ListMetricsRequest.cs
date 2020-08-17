@@ -41,8 +41,14 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  
     /// <para>
-    /// After you create a metric, allow up to fifteen minutes before the metric appears.
-    /// Statistics about the metric, however, are available sooner using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+    /// After you create a metric, allow up to 15 minutes before the metric appears. You can
+    /// see statistics about the metric sooner by using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+    /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>ListMetrics</code> doesn't return information about metrics if those metrics
+    /// haven't reported data in the past two weeks. To retrieve those metrics, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
     /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
     /// </para>
     /// </summary>
@@ -52,6 +58,7 @@ namespace Amazon.CloudWatch.Model
         private string _metricName;
         private string _awsNamespace;
         private string _nextToken;
+        private RecentlyActive _recentlyActive;
 
         /// <summary>
         /// Gets and sets the property Dimensions. 
@@ -126,6 +133,32 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecentlyActive. 
+        /// <para>
+        /// To filter the results to show only metrics that have had data points published in
+        /// the past three hours, specify this parameter with a value of <code>PT3H</code>. This
+        /// is the only valid value for this parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// The results that are returned are an approximation of the value you specify. There
+        /// is a low probability that the returned results include metrics with last published
+        /// data as much as 40 minutes more than the specified time interval.
+        /// </para>
+        /// </summary>
+        public RecentlyActive RecentlyActive
+        {
+            get { return this._recentlyActive; }
+            set { this._recentlyActive = value; }
+        }
+
+        // Check to see if RecentlyActive property is set
+        internal bool IsSetRecentlyActive()
+        {
+            return this._recentlyActive != null;
         }
 
     }

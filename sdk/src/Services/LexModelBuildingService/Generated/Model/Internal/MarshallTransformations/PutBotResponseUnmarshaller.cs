@@ -99,6 +99,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     response.DetectSentiment = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("enableModelImprovements", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.EnableModelImprovements = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("failureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -133,6 +139,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nluIntentConfidenceThreshold", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    response.NluIntentConfidenceThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

@@ -124,6 +124,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.TaskQueueing = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TransferMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TransferMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Uid", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -36,6 +36,8 @@ namespace Amazon.FraudDetector.Model
     {
         private string _description;
         private string _detectorId;
+        private string _eventTypeName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -73,6 +75,44 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetDetectorId()
         {
             return this._detectorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventTypeName. 
+        /// <para>
+        /// The name of the event type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string EventTypeName
+        {
+            get { return this._eventTypeName; }
+            set { this._eventTypeName = value; }
+        }
+
+        // Check to see if EventTypeName property is set
+        internal bool IsSetEventTypeName()
+        {
+            return this._eventTypeName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A collection of key and value pairs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -43,6 +43,7 @@ namespace Amazon.TranscribeService.Model
         private Media _media;
         private MediaFormat _mediaFormat;
         private int? _mediaSampleRateHertz;
+        private ModelSettings _modelSettings;
         private Settings _settings;
         private DateTime? _startTime;
         private Transcript _transcript;
@@ -255,6 +256,24 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetMediaSampleRateHertz()
         {
             return this._mediaSampleRateHertz.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelSettings. 
+        /// <para>
+        /// An object containing the details of your custom language model.
+        /// </para>
+        /// </summary>
+        public ModelSettings ModelSettings
+        {
+            get { return this._modelSettings; }
+            set { this._modelSettings = value; }
+        }
+
+        // Check to see if ModelSettings property is set
+        internal bool IsSetModelSettings()
+        {
+            return this._modelSettings != null;
         }
 
         /// <summary>

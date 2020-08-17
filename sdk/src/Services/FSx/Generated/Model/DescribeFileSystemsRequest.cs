@@ -76,7 +76,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystemIds. 
         /// <para>
-        /// (Optional) IDs of the file systems whose descriptions you want to retrieve (String).
+        /// IDs of the file systems whose descriptions you want to retrieve (String).
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -95,10 +95,10 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// (Optional) Maximum number of file systems to return in the response (integer). This
-        /// parameter value must be greater than 0. The number of items that Amazon FSx returns
-        /// is the minimum of the <code>MaxResults</code> parameter specified in the request and
-        /// the service's internal maximum number of items per page.
+        /// Maximum number of file systems to return in the response (integer). This parameter
+        /// value must be greater than 0. The number of items that Amazon FSx returns is the minimum
+        /// of the <code>MaxResults</code> parameter specified in the request and the service's
+        /// internal maximum number of items per page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
@@ -117,7 +117,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// (Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code>
+        /// Opaque pagination token returned from a previous <code>DescribeFileSystems</code>
         /// operation (String). If a token present, the action continues the list from where the
         /// returning call left off.
         /// </para>

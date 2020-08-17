@@ -395,6 +395,10 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>GetCommentReactions</a>, which returns information about emoji reactions to comments.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>GetCommentsForComparedCommit</a>, which returns information about comments on
     /// the comparison between two commit specifiers in a repository.
     /// </para>
@@ -406,6 +410,10 @@ namespace Amazon.CodeCommit
     ///  </li> <li> 
     /// <para>
     ///  <a>PostCommentReply</a>, which creates a reply to a comment.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PutCommentReaction</a>, which creates or updates an emoji reaction to a comment.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -1316,7 +1324,8 @@ namespace Amazon.CodeCommit
         /// 
         /// <returns>The response from the CreateBranch service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameExistsException">
-        /// The specified branch name already exists.
+        /// Cannot create the branch with the specified name because the commit conflicts with
+        /// an existing branch with the same name. Branch names must be unique.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
         /// A branch name is required, but was not specified.
@@ -1388,7 +1397,8 @@ namespace Amazon.CodeCommit
         /// 
         /// <returns>The response from the CreateBranch service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameExistsException">
-        /// The specified branch name already exists.
+        /// Cannot create the branch with the specified name because the commit conflicts with
+        /// an existing branch with the same name. Branch names must be unique.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
         /// A branch name is required, but was not specified.
@@ -4066,6 +4076,14 @@ namespace Amazon.CodeCommit
 
         /// <summary>
         /// Returns the content of a comment made on a change, file, or commit in a repository.
+        /// 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Reaction counts might include numbers from user identities who were deleted after
+        /// the reaction was made. For a count of reactions from active identities, use GetCommentReactions.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComment service method.</param>
         /// 
@@ -4080,6 +4098,21 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.CommentIdRequiredException">
         /// The comment ID is missing or null. A comment ID is required.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidCommentIdException">
         /// The comment ID is not in a valid format. Make sure that you have provided the full
         /// comment ID.
@@ -4091,6 +4124,14 @@ namespace Amazon.CodeCommit
 
         /// <summary>
         /// Returns the content of a comment made on a change, file, or commit in a repository.
+        /// 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Reaction counts might include numbers from user identities who were deleted after
+        /// the reaction was made. For a count of reactions from active identities, use GetCommentReactions.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComment service method.</param>
         /// <param name="cancellationToken">
@@ -4108,6 +4149,21 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.CommentIdRequiredException">
         /// The comment ID is missing or null. A comment ID is required.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidCommentIdException">
         /// The comment ID is not in a valid format. Make sure that you have provided the full
         /// comment ID.
@@ -4117,11 +4173,94 @@ namespace Amazon.CodeCommit
 
         #endregion
         
+        #region  GetCommentReactions
+
+
+        /// <summary>
+        /// Returns information about reactions to a specified comment ID. Reactions from users
+        /// who have been deleted will not be included in the count.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCommentReactions service method.</param>
+        /// 
+        /// <returns>The response from the GetCommentReactions service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommentDeletedException">
+        /// This comment has already been deleted. You cannot edit or delete a deleted comment.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommentDoesNotExistException">
+        /// No comment exists with the provided ID. Verify that you have used the correct ID,
+        /// and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommentIdRequiredException">
+        /// The comment ID is missing or null. A comment ID is required.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommentIdException">
+        /// The comment ID is not in a valid format. Make sure that you have provided the full
+        /// comment ID.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidContinuationTokenException">
+        /// The specified continuation token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMaxResultsException">
+        /// The specified number of maximum results is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReactionUserArnException">
+        /// The Amazon Resource Name (ARN) of the user or identity is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentReactions">REST API Reference for GetCommentReactions Operation</seealso>
+        GetCommentReactionsResponse GetCommentReactions(GetCommentReactionsRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about reactions to a specified comment ID. Reactions from users
+        /// who have been deleted will not be included in the count.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCommentReactions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCommentReactions service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommentDeletedException">
+        /// This comment has already been deleted. You cannot edit or delete a deleted comment.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommentDoesNotExistException">
+        /// No comment exists with the provided ID. Verify that you have used the correct ID,
+        /// and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommentIdRequiredException">
+        /// The comment ID is missing or null. A comment ID is required.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommentIdException">
+        /// The comment ID is not in a valid format. Make sure that you have provided the full
+        /// comment ID.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidContinuationTokenException">
+        /// The specified continuation token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMaxResultsException">
+        /// The specified number of maximum results is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReactionUserArnException">
+        /// The Amazon Resource Name (ARN) of the user or identity is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentReactions">REST API Reference for GetCommentReactions Operation</seealso>
+        Task<GetCommentReactionsResponse> GetCommentReactionsAsync(GetCommentReactionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetCommentsForComparedCommit
 
 
         /// <summary>
         /// Returns information about comments made on the comparison between two commits.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Reaction counts might include numbers from user identities who were deleted after
+        /// the reaction was made. For a count of reactions from active identities, use GetCommentReactions.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCommentsForComparedCommit service method.</param>
         /// 
@@ -4181,6 +4320,13 @@ namespace Amazon.CodeCommit
 
         /// <summary>
         /// Returns information about comments made on the comparison between two commits.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Reaction counts might include numbers from user identities who were deleted after
+        /// the reaction was made. For a count of reactions from active identities, use GetCommentReactions.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCommentsForComparedCommit service method.</param>
         /// <param name="cancellationToken">
@@ -4246,6 +4392,13 @@ namespace Amazon.CodeCommit
 
         /// <summary>
         /// Returns comments made on a pull request.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Reaction counts might include numbers from user identities who were deleted after
+        /// the reaction was made. For a count of reactions from active identities, use GetCommentReactions.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCommentsForPullRequest service method.</param>
         /// 
@@ -4320,6 +4473,13 @@ namespace Amazon.CodeCommit
 
         /// <summary>
         /// Returns comments made on a pull request.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Reaction counts might include numbers from user identities who were deleted after
+        /// the reaction was made. For a count of reactions from active identities, use GetCommentReactions.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCommentsForPullRequest service method.</param>
         /// <param name="cancellationToken">
@@ -8730,6 +8890,88 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentReply">REST API Reference for PostCommentReply Operation</seealso>
         Task<PostCommentReplyResponse> PostCommentReplyAsync(PostCommentReplyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutCommentReaction
+
+
+        /// <summary>
+        /// Adds or updates a reaction to a specified comment for the user whose identity is used
+        /// to make the request. You can only add or update a reaction for yourself. You cannot
+        /// add, modify, or delete a reaction for another user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutCommentReaction service method.</param>
+        /// 
+        /// <returns>The response from the PutCommentReaction service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommentDeletedException">
+        /// This comment has already been deleted. You cannot edit or delete a deleted comment.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommentDoesNotExistException">
+        /// No comment exists with the provided ID. Verify that you have used the correct ID,
+        /// and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommentIdRequiredException">
+        /// The comment ID is missing or null. A comment ID is required.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommentIdException">
+        /// The comment ID is not in a valid format. Make sure that you have provided the full
+        /// comment ID.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReactionValueException">
+        /// The value of the reaction is not valid. For more information, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReactionLimitExceededException">
+        /// The number of reactions has been exceeded. Reactions are limited to one reaction per
+        /// user for each individual comment ID.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReactionValueRequiredException">
+        /// A reaction value is required.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutCommentReaction">REST API Reference for PutCommentReaction Operation</seealso>
+        PutCommentReactionResponse PutCommentReaction(PutCommentReactionRequest request);
+
+
+
+        /// <summary>
+        /// Adds or updates a reaction to a specified comment for the user whose identity is used
+        /// to make the request. You can only add or update a reaction for yourself. You cannot
+        /// add, modify, or delete a reaction for another user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutCommentReaction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutCommentReaction service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommentDeletedException">
+        /// This comment has already been deleted. You cannot edit or delete a deleted comment.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommentDoesNotExistException">
+        /// No comment exists with the provided ID. Verify that you have used the correct ID,
+        /// and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommentIdRequiredException">
+        /// The comment ID is missing or null. A comment ID is required.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommentIdException">
+        /// The comment ID is not in a valid format. Make sure that you have provided the full
+        /// comment ID.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidReactionValueException">
+        /// The value of the reaction is not valid. For more information, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReactionLimitExceededException">
+        /// The number of reactions has been exceeded. Reactions are limited to one reaction per
+        /// user for each individual comment ID.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ReactionValueRequiredException">
+        /// A reaction value is required.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutCommentReaction">REST API Reference for PutCommentReaction Operation</seealso>
+        Task<PutCommentReactionResponse> PutCommentReactionAsync(PutCommentReactionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

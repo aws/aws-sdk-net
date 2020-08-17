@@ -33,14 +33,35 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class WorkspaceImage
     {
+        private DateTime? _created;
         private string _description;
         private string _errorCode;
         private string _errorMessage;
         private string _imageId;
         private string _name;
         private OperatingSystem _operatingSystem;
+        private string _ownerAccountId;
         private WorkspaceImageRequiredTenancy _requiredTenancy;
         private WorkspaceImageState _state;
+
+        /// <summary>
+        /// Gets and sets the property Created. 
+        /// <para>
+        /// The date when the image was created. If the image has been shared, the AWS account
+        /// that the image has been shared with sees the original creation date of the image.
+        /// </para>
+        /// </summary>
+        public DateTime Created
+        {
+            get { return this._created.GetValueOrDefault(); }
+            set { this._created = value; }
+        }
+
+        // Check to see if Created property is set
+        internal bool IsSetCreated()
+        {
+            return this._created.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -150,6 +171,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetOperatingSystem()
         {
             return this._operatingSystem != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerAccountId. 
+        /// <para>
+        /// The identifier of the AWS account that owns the image.
+        /// </para>
+        /// </summary>
+        public string OwnerAccountId
+        {
+            get { return this._ownerAccountId; }
+            set { this._ownerAccountId = value; }
+        }
+
+        // Check to see if OwnerAccountId property is set
+        internal bool IsSetOwnerAccountId()
+        {
+            return this._ownerAccountId != null;
         }
 
         /// <summary>

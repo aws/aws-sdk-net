@@ -98,9 +98,28 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class CreateCampaignRequest : AmazonPersonalizeRequest
     {
+        private CampaignConfig _campaignConfig;
         private int? _minProvisionedTPS;
         private string _name;
         private string _solutionVersionArn;
+
+        /// <summary>
+        /// Gets and sets the property CampaignConfig. 
+        /// <para>
+        /// The configuration details of a campaign.
+        /// </para>
+        /// </summary>
+        public CampaignConfig CampaignConfig
+        {
+            get { return this._campaignConfig; }
+            set { this._campaignConfig = value; }
+        }
+
+        // Check to see if CampaignConfig property is set
+        internal bool IsSetCampaignConfig()
+        {
+            return this._campaignConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MinProvisionedTPS. 

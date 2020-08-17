@@ -63,6 +63,7 @@ namespace Amazon.EC2.Model
         private string _ipv6CidrBlock;
         private string _ipv6CidrBlockNetworkBorderGroup;
         private string _ipv6Pool;
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -72,7 +73,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateVpcRequest with the parameterized properties
         /// </summary>
-        /// <param name="cidrBlock">The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>.</param>
+        /// <param name="cidrBlock">The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</param>
         public CreateVpcRequest(string cidrBlock)
         {
             _cidrBlock = cidrBlock;
@@ -101,6 +102,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property CidrBlock. 
         /// <para>
         /// The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>.
+        /// We modify the specified CIDR block to its canonical form; for example, if you specify
+        /// <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -210,6 +213,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpv6Pool()
         {
             return this._ipv6Pool != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to assign to the VPC.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
     }

@@ -36,7 +36,7 @@ namespace Amazon.StorageGateway.Model
     ///  <note> 
     /// <para>
     /// Cache storage must be allocated to the gateway before you can create virtual tapes.
-    /// Use the <a>AddCache</a> operation to add cache storage to a gateway. 
+    /// Use the <a>AddCache</a> operation to add cache storage to a gateway.
     /// </para>
     ///  </note>
     /// </summary>
@@ -101,8 +101,12 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
-        /// True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to
-        /// use a key managed by Amazon S3. Optional.
+        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS
+        /// KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>true</code> | <code>false</code> 
         /// </para>
         /// </summary>
         public bool KMSEncrypted
@@ -120,8 +124,9 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSKey. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption.
-        /// This value can only be set when KMSEncrypted is true. Optional.
+        /// The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
+        /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
+        /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=2048)]
@@ -167,7 +172,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: "GLACIER", "DEEP_ARCHIVE"
+        /// Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

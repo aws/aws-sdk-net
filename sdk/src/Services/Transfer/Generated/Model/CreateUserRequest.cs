@@ -58,7 +58,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
+        /// An example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -81,8 +81,8 @@ namespace Amazon.Transfer.Model
         /// to your user and how you want to make them visible. You will need to specify the "<code>Entry</code>"
         /// and "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
         /// visible and <code>Target</code> is the actual Amazon S3 path. If you only specify
-        /// a target, it will be displayed as is. You will need to also make sure that your AWS
-        /// IAM Role provides access to paths in <code>Target</code>. The following is an example.
+        /// a target, it will be displayed as is. You will need to also make sure that your IAM
+        /// role provides access to paths in <code>Target</code>. The following is an example.
         /// </para>
         ///  
         /// <para>
@@ -98,7 +98,7 @@ namespace Amazon.Transfer.Model
         ///  <note> 
         /// <para>
         /// If the target of a logical directory entry does not exist in Amazon S3, the entry
-        /// will be ignored. As a workaround, you can use the Amazon S3 api to create 0 byte objects
+        /// will be ignored. As a workaround, you can use the Amazon S3 API to create 0 byte objects
         /// as place holders for your directory. If using the CLI, use the <code>s3api</code>
         /// call instead of <code>s3</code> so you can use the put-object operation. For example,
         /// you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>.
@@ -159,7 +159,7 @@ namespace Amazon.Transfer.Model
         ///  
         /// <para>
         /// For an example of a scope-down policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-        /// a Scope-Down Policy</a>.
+        /// a scope-down policy</a>.
         /// </para>
         ///  
         /// <para>
@@ -269,11 +269,12 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// A unique string that identifies a user and is associated with a file transfer protocol-enabled
         /// server as specified by the <code>ServerId</code>. This user name must be a minimum
-        /// of 3 and a maximum of 32 characters long. The following are valid characters: a-z,
-        /// A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.
+        /// of 3 and a maximum of 100 characters long. The following are valid characters: a-z,
+        /// A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't
+        /// start with a hyphen, period, and at sign.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=32)]
+        [AWSProperty(Required=true, Min=3, Max=100)]
         public string UserName
         {
             get { return this._userName; }

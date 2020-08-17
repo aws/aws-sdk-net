@@ -40,6 +40,7 @@ namespace Amazon.Snowball.Model
         private DateTime? _creationDate;
         private DataTransfer _dataTransferProgress;
         private string _description;
+        private DeviceConfiguration _deviceConfiguration;
         private string _forwardingAddressId;
         private string _jobId;
         private JobLogs _jobLogInfo;
@@ -147,6 +148,21 @@ namespace Amazon.Snowball.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceConfiguration.
+        /// </summary>
+        public DeviceConfiguration DeviceConfiguration
+        {
+            get { return this._deviceConfiguration; }
+            set { this._deviceConfiguration = value; }
+        }
+
+        // Check to see if DeviceConfiguration property is set
+        internal bool IsSetDeviceConfiguration()
+        {
+            return this._deviceConfiguration != null;
         }
 
         /// <summary>

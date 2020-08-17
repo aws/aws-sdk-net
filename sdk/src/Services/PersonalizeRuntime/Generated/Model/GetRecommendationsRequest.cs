@@ -101,7 +101,12 @@ namespace Amazon.PersonalizeRuntime.Model
         /// Gets and sets the property FilterArn. 
         /// <para>
         /// The ARN of the filter to apply to the returned recommendations. For more information,
-        /// see Using Filters with Amazon Personalize.
+        /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
+        /// Filters with Amazon Personalize</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this parameter, be sure the filter resource is <code>ACTIVE</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation
-    /// cannot find a specified event.
+    /// Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a>
+    /// operation cannot find a specified event.
     /// </summary>
     public partial class OrganizationEventDetailsErrorItem
     {
@@ -42,8 +42,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation
-        /// cannot find a specified event.
+        /// Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a>
+        /// operation cannot find a specified event.
         /// </para>
         /// </summary>
         [AWSProperty(Max=12)]

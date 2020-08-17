@@ -36,12 +36,15 @@ namespace Amazon.ServerMigrationService.Model
         private string _appId;
         private DateTime? _creationTime;
         private string _description;
+        private string _importedAppId;
         private DateTime? _lastModified;
         private DateTime? _latestReplicationTime;
+        private AppLaunchConfigurationStatus _launchConfigurationStatus;
         private LaunchDetails _launchDetails;
         private AppLaunchStatus _launchStatus;
         private string _launchStatusMessage;
         private string _name;
+        private AppReplicationConfigurationStatus _replicationConfigurationStatus;
         private AppReplicationStatus _replicationStatus;
         private string _replicationStatusMessage;
         private string _roleName;
@@ -53,7 +56,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// Unique ID of the application.
+        /// The unique ID of the application.
         /// </para>
         /// </summary>
         public string AppId
@@ -71,7 +74,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Time of creation of this application.
+        /// The creation time of the application.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -89,7 +92,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of the application.
+        /// The description of the application.
         /// </para>
         /// </summary>
         public string Description
@@ -105,9 +108,27 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImportedAppId. 
+        /// <para>
+        /// The ID of the application.
+        /// </para>
+        /// </summary>
+        public string ImportedAppId
+        {
+            get { return this._importedAppId; }
+            set { this._importedAppId = value; }
+        }
+
+        // Check to see if ImportedAppId property is set
+        internal bool IsSetImportedAppId()
+        {
+            return this._importedAppId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastModified. 
         /// <para>
-        /// Timestamp of the application's creation.
+        /// The last modified time of the application.
         /// </para>
         /// </summary>
         public DateTime LastModified
@@ -125,7 +146,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property LatestReplicationTime. 
         /// <para>
-        /// Timestamp of the application's most recent successful replication.
+        /// The timestamp of the application's most recent successful replication.
         /// </para>
         /// </summary>
         public DateTime LatestReplicationTime
@@ -138,6 +159,24 @@ namespace Amazon.ServerMigrationService.Model
         internal bool IsSetLatestReplicationTime()
         {
             return this._latestReplicationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchConfigurationStatus. 
+        /// <para>
+        /// Status of the launch configuration.
+        /// </para>
+        /// </summary>
+        public AppLaunchConfigurationStatus LaunchConfigurationStatus
+        {
+            get { return this._launchConfigurationStatus; }
+            set { this._launchConfigurationStatus = value; }
+        }
+
+        // Check to see if LaunchConfigurationStatus property is set
+        internal bool IsSetLaunchConfigurationStatus()
+        {
+            return this._launchConfigurationStatus != null;
         }
 
         /// <summary>
@@ -161,7 +200,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property LaunchStatus. 
         /// <para>
-        /// Launch status of the application.
+        /// The launch status of the application.
         /// </para>
         /// </summary>
         public AppLaunchStatus LaunchStatus
@@ -197,7 +236,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the application.
+        /// The name of the application.
         /// </para>
         /// </summary>
         public string Name
@@ -213,9 +252,27 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReplicationConfigurationStatus. 
+        /// <para>
+        /// Status of the replication configuration.
+        /// </para>
+        /// </summary>
+        public AppReplicationConfigurationStatus ReplicationConfigurationStatus
+        {
+            get { return this._replicationConfigurationStatus; }
+            set { this._replicationConfigurationStatus = value; }
+        }
+
+        // Check to see if ReplicationConfigurationStatus property is set
+        internal bool IsSetReplicationConfigurationStatus()
+        {
+            return this._replicationConfigurationStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ReplicationStatus. 
         /// <para>
-        /// Replication status of the application.
+        /// The replication status of the application.
         /// </para>
         /// </summary>
         public AppReplicationStatus ReplicationStatus
@@ -251,7 +308,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// Name of the service role in the customer's account used by AWS SMS.
+        /// The name of the service role in the customer's account used by AWS SMS.
         /// </para>
         /// </summary>
         public string RoleName
@@ -305,7 +362,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property TotalServerGroups. 
         /// <para>
-        /// Number of server groups present in the application.
+        /// The number of server groups present in the application.
         /// </para>
         /// </summary>
         public int TotalServerGroups
@@ -323,7 +380,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property TotalServers. 
         /// <para>
-        /// Number of servers present in the application.
+        /// The number of servers present in the application.
         /// </para>
         /// </summary>
         public int TotalServers

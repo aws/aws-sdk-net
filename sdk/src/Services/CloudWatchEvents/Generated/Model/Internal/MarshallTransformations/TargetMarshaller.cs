@@ -73,6 +73,17 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetHttpParameters())
+            {
+                context.Writer.WritePropertyName("HttpParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HttpParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.HttpParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");

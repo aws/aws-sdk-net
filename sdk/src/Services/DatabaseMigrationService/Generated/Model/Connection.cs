@@ -136,8 +136,25 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The connection status.
+        /// The connection status. This parameter can return one of the following values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>"successful"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"testing"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"failed"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"deleting"</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Status
         {

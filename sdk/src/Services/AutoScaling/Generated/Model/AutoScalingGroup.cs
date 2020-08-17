@@ -139,8 +139,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DefaultCooldown. 
         /// <para>
-        /// The amount of time, in seconds, after a scaling activity completes before another
-        /// scaling activity can start.
+        /// The duration of the default cooldown period, in seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

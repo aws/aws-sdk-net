@@ -45,6 +45,10 @@ namespace Amazon.SageMaker.Model
         /// The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide
         /// a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.
         /// </para>
+        ///  
+        /// <para>
+        /// See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
         public string HumanTaskUiArn

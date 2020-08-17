@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CloudwatchLogGroup. 
         /// <para>
-        /// The name of the CloudWatch Logs log group.
+        /// The name of the CloudWatch Logs log group. Required if connection logging is enabled.
         /// </para>
         /// </summary>
         public string CloudwatchLogGroup

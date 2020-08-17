@@ -260,7 +260,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property S3BackupMode. 
         /// <para>
-        /// The Amazon S3 backup mode.
+        /// The Amazon S3 backup mode. After you create a delivery stream, you can update it to
+        /// enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update
+        /// the delivery stream to disable it. 
         /// </para>
         /// </summary>
         public S3BackupMode S3BackupMode

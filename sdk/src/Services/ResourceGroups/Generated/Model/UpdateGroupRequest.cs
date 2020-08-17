@@ -30,19 +30,20 @@ namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGroup operation.
-    /// Updates an existing group with a new or changed description. You cannot update the
-    /// name of a resource group.
+    /// Updates the description for an existing group. You cannot update the name of a resource
+    /// group.
     /// </summary>
     public partial class UpdateGroupRequest : AmazonResourceGroupsRequest
     {
         private string _description;
+        private string _group;
         private string _groupName;
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the resource group. Descriptions can have a maximum of 511 characters,
-        /// including letters, numbers, hyphens, underscores, punctuation, and spaces.
+        /// The new description that you want to update the resource group with. Descriptions
+        /// can contain letters, numbers, hyphens, underscores, periods, and spaces.
         /// </para>
         /// </summary>
         [AWSProperty(Max=512)]
@@ -59,12 +60,32 @@ namespace Amazon.ResourceGroups.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupName. 
+        /// Gets and sets the property Group. 
         /// <para>
-        /// The name of the resource group for which you want to update its description.
+        /// The name or the ARN of the resource group to modify.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=1600)]
+        public string Group
+        {
+            get { return this._group; }
+            set { this._group = value; }
+        }
+
+        // Check to see if Group property is set
+        internal bool IsSetGroup()
+        {
+            return this._group != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupName. 
+        /// <para>
+        /// Don't use this parameter. Use <code>Group</code> instead.
+        /// </para>
+        /// </summary>
+        [Obsolete("This field is deprecated, use Group instead.")]
+        [AWSProperty(Min=1, Max=128)]
         public string GroupName
         {
             get { return this._groupName; }

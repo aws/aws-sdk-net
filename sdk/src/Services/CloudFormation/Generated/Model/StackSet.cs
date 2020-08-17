@@ -167,7 +167,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitIds. 
         /// <para>
-        /// Reserved for internal use. No data returned.
+        /// [<code>Service-managed</code> permissions] The organization root ID or organizational
+        /// unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.
         /// </para>
         /// </summary>
         public List<string> OrganizationalUnitIds

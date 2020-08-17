@@ -80,6 +80,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ServerProtocol);
                 }
 
+                if(publicRequest.IsSetSourceIp())
+                {
+                    context.Writer.WritePropertyName("SourceIp");
+                    context.Writer.Write(publicRequest.SourceIp);
+                }
+
                 if(publicRequest.IsSetUserName())
                 {
                     context.Writer.WritePropertyName("UserName");

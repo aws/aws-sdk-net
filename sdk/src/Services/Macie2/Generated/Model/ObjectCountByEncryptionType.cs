@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// The total number of objects that are in the bucket, grouped by server-side encryption
-    /// type. This includes a grouping that reports the total number of objects that aren't
-    /// encrypted.
+    /// Provides information about the number of objects that are in an S3 bucket and use
+    /// certain types of server-side encryption, use client-side encryption, or aren't encrypted.
     /// </summary>
     public partial class ObjectCountByEncryptionType
     {
@@ -43,7 +42,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property CustomerManaged. 
         /// <para>
-        /// Reserved for future use.
+        /// The total number of objects that are encrypted using a customer-managed key. The objects
+        /// use customer-provided server-side (SSE-C) encryption.
         /// </para>
         /// </summary>
         public long CustomerManaged
@@ -61,7 +61,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property KmsManaged. 
         /// <para>
-        /// Reserved for future use.
+        /// The total number of objects that are encrypted using an AWS Key Management Service
+        /// (AWS KMS) customer master key (CMK). The objects use AWS KMS AWS-managed (AWS-KMS)
+        /// encryption or AWS KMS customer-managed (SSE-KMS) encryption.
         /// </para>
         /// </summary>
         public long KmsManaged
@@ -79,7 +81,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property S3Managed. 
         /// <para>
-        /// Reserved for future use.
+        /// The total number of objects that are encrypted using an Amazon S3-managed key. The
+        /// objects use Amazon S3-managed (SSE-S3) encryption.
         /// </para>
         /// </summary>
         public long S3Managed
@@ -97,7 +100,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Unencrypted. 
         /// <para>
-        /// Reserved for future use.
+        /// The total number of objects that aren't encrypted or use client-side encryption.
         /// </para>
         /// </summary>
         public long Unencrypted

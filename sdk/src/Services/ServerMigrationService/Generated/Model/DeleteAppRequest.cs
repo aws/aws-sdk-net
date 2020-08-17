@@ -30,7 +30,7 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApp operation.
-    /// Deletes an existing application. Optionally deletes the launched stack associated
+    /// Deletes the specified application. Optionally deletes the launched stack associated
     /// with the application and all AWS SMS replication jobs for servers in the application.
     /// </summary>
     public partial class DeleteAppRequest : AmazonServerMigrationServiceRequest
@@ -42,7 +42,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// ID of the application to delete.
+        /// The ID of the application.
         /// </para>
         /// </summary>
         public string AppId
@@ -60,8 +60,8 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ForceStopAppReplication. 
         /// <para>
-        /// While deleting the application, stop all replication jobs corresponding to the servers
-        /// in the application.
+        /// Indicates whether to stop all replication jobs corresponding to the servers in the
+        /// application while deleting the application.
         /// </para>
         /// </summary>
         public bool ForceStopAppReplication
@@ -79,7 +79,8 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ForceTerminateApp. 
         /// <para>
-        /// While deleting the application, terminate the stack corresponding to the application.
+        /// Indicates whether to terminate the stack corresponding to the application while deleting
+        /// the application.
         /// </para>
         /// </summary>
         public bool ForceTerminateApp

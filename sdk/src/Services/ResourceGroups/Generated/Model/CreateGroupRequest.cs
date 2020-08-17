@@ -30,20 +30,49 @@ namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGroup operation.
-    /// Creates a group with a specified name, description, and resource query.
+    /// Creates a resource group with the specified name and description. You can optionally
+    /// include a resource query, or a service configuration.
     /// </summary>
     public partial class CreateGroupRequest : AmazonResourceGroupsRequest
     {
+        private List<GroupConfigurationItem> _configuration = new List<GroupConfigurationItem>();
         private string _description;
         private string _name;
         private ResourceQuery _resourceQuery;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// A configuration associates the resource group with an AWS service and specifies how
+        /// the service can interact with the resources in the group. A configuration is an array
+        /// of <a>GroupConfigurationItem</a> elements.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can specify either a <code>Configuration</code> or a <code>ResourceQuery</code>
+        /// in a group, but not both.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Max=2)]
+        public List<GroupConfigurationItem> Configuration
+        {
+            get { return this._configuration; }
+            set { this._configuration = value; }
+        }
+
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
+        {
+            return this._configuration != null && this._configuration.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the resource group. Descriptions can have a maximum of 511 characters,
-        /// including letters, numbers, hyphens, underscores, punctuation, and spaces.
+        /// The description of the resource group. Descriptions can consist of letters, numbers,
+        /// hyphens, underscores, periods, and spaces.
         /// </para>
         /// </summary>
         [AWSProperty(Max=512)]
@@ -62,11 +91,11 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the group, which is the identifier of the group in other operations. A
-        /// resource group name cannot be updated after it is created. A resource group name can
-        /// have a maximum of 128 characters, including letters, numbers, hyphens, dots, and underscores.
-        /// The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved.
-        /// A resource group name must be unique within your account.
+        /// The name of the group, which is the identifier of the group in other operations. You
+        /// can't change the name of a resource group after you create it. A resource group name
+        /// can consist of letters, numbers, hyphens, periods, and underscores. The name cannot
+        /// start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group
+        /// name must be unique within each AWS Region in your AWS account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -87,8 +116,13 @@ namespace Amazon.ResourceGroups.Model
         /// <para>
         /// The resource query that determines which AWS resources are members of this group.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can specify either a <code>ResourceQuery</code> or a <code>Configuration</code>,
+        /// but not both.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ResourceQuery ResourceQuery
         {
             get { return this._resourceQuery; }
@@ -104,9 +138,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to add to the group. A tag is a string-to-string map of key-value pairs.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can
-        /// have a maximum length of 256 characters.
+        /// The tags to add to the group. A tag is key-value pair string.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

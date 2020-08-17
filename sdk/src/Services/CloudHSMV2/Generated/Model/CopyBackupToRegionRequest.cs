@@ -77,7 +77,12 @@ namespace Amazon.CloudHSMV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagList.
+        /// Gets and sets the property TagList. 
+        /// <para>
+        /// Tags to apply to the destination backup during creation. If you specify tags, only
+        /// these tags will be applied to the destination backup. If you do not specify tags,
+        /// the service copies tags from the source backup to the destination backup.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<Tag> TagList

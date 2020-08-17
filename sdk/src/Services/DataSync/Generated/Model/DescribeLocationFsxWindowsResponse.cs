@@ -80,7 +80,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon resource Name (ARN) of the FSx for Windows location that was described.
+        /// The Amazon Resource Name (ARN) of the FSx for Windows location that was described.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -119,7 +119,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property SecurityGroupArns. 
         /// <para>
         /// The Amazon Resource Names (ARNs) of the security groups that are configured for the
-        /// for the FSx for Windows file system.
+        /// FSx for Windows file system.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]

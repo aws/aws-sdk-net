@@ -51,22 +51,28 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CsvInputTemplate);
             }
 
+            if(requestObject.IsSetEventTypeName())
+            {
+                context.Writer.WritePropertyName("eventTypeName");
+                context.Writer.Write(requestObject.EventTypeName);
+            }
+
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("format");
                 context.Writer.Write(requestObject.Format);
             }
 
-            if(requestObject.IsSetIsOpaque())
-            {
-                context.Writer.WritePropertyName("isOpaque");
-                context.Writer.Write(requestObject.IsOpaque);
-            }
-
             if(requestObject.IsSetJsonInputTemplate())
             {
                 context.Writer.WritePropertyName("jsonInputTemplate");
                 context.Writer.Write(requestObject.JsonInputTemplate);
+            }
+
+            if(requestObject.IsSetUseEventVariables())
+            {
+                context.Writer.WritePropertyName("useEventVariables");
+                context.Writer.Write(requestObject.UseEventVariables);
             }
 
         }

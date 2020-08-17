@@ -35,6 +35,7 @@ namespace Amazon.CodeBuild.Model
     public partial class Webhook
     {
         private string _branchFilter;
+        private WebhookBuildType _buildType;
         private List<List<WebhookFilter>> _filterGroups = new List<List<WebhookFilter>>();
         private DateTime? _lastModifiedSecret;
         private string _payloadUrl;
@@ -50,7 +51,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.
+        /// It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.
         /// 
         /// </para>
         ///  </note>
@@ -68,15 +69,33 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BuildType. 
+        /// <para>
+        /// Specifies the type of build this webhook will trigger.
+        /// </para>
+        /// </summary>
+        public WebhookBuildType BuildType
+        {
+            get { return this._buildType; }
+            set { this._buildType = value; }
+        }
+
+        // Check to see if BuildType property is set
+        internal bool IsSetBuildType()
+        {
+            return this._buildType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FilterGroups. 
         /// <para>
-        ///  An array of arrays of <code>WebhookFilter</code> objects used to determine which
-        /// webhooks are triggered. At least one <code>WebhookFilter</code> in the array must
-        /// specify <code>EVENT</code> as its <code>type</code>. 
+        /// An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks
+        /// are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code>
+        /// as its <code>type</code>. 
         /// </para>
         ///  
         /// <para>
-        ///  For a build to be triggered, at least one filter group in the <code>filterGroups</code>
+        /// For a build to be triggered, at least one filter group in the <code>filterGroups</code>
         /// array must pass. For a filter group to pass, each of its filters must pass. 
         /// </para>
         /// </summary>
@@ -95,7 +114,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property LastModifiedSecret. 
         /// <para>
-        ///  A timestamp that indicates the last time a repository's secret token was modified.
+        /// A timestamp that indicates the last time a repository's secret token was modified.
         /// 
         /// </para>
         /// </summary>
@@ -114,7 +133,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property PayloadUrl. 
         /// <para>
-        ///  The AWS CodeBuild endpoint where webhook events are sent.
+        /// The AWS CodeBuild endpoint where webhook events are sent.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -133,11 +152,11 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Secret. 
         /// <para>
-        ///  The secret token of the associated repository. 
+        /// The secret token of the associated repository. 
         /// </para>
         ///  <note> 
         /// <para>
-        ///  A Bitbucket webhook does not support <code>secret</code>. 
+        /// A Bitbucket webhook does not support <code>secret</code>. 
         /// </para>
         ///  </note>
         /// </summary>

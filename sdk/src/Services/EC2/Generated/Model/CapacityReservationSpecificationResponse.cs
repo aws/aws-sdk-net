@@ -34,7 +34,8 @@ namespace Amazon.EC2.Model
     /// configured to run in On-Demand capacity, or if it is configured in run in any <code>open</code>
     /// Capacity Reservation that has matching attributes (instance type, platform, Availability
     /// Zone). The action returns the <code>capacityReservationTarget</code> response element
-    /// if the instance explicily targets a specific Capacity Reservation.
+    /// if the instance explicily targets a specific Capacity Reservation or Capacity Reservation
+    /// group.
     /// </summary>
     public partial class CapacityReservationSpecificationResponse
     {
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CapacityReservationTarget. 
         /// <para>
-        /// Information about the targeted Capacity Reservation.
+        /// Information about the targeted Capacity Reservation or Capacity Reservation group.
         /// </para>
         /// </summary>
         public CapacityReservationTargetResponse CapacityReservationTarget

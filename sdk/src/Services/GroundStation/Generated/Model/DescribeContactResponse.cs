@@ -35,6 +35,7 @@ namespace Amazon.GroundStation.Model
     {
         private string _contactId;
         private ContactStatus _contactStatus;
+        private List<DataflowDetail> _dataflowList = new List<DataflowDetail>();
         private DateTime? _endTime;
         private string _errorMessage;
         private string _groundStation;
@@ -81,6 +82,24 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetContactStatus()
         {
             return this._contactStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataflowList. 
+        /// <para>
+        /// List describing source and destination details for each dataflow edge.
+        /// </para>
+        /// </summary>
+        public List<DataflowDetail> DataflowList
+        {
+            get { return this._dataflowList; }
+            set { this._dataflowList = value; }
+        }
+
+        // Check to see if DataflowList property is set
+        internal bool IsSetDataflowList()
+        {
+            return this._dataflowList != null && this._dataflowList.Count > 0; 
         }
 
         /// <summary>

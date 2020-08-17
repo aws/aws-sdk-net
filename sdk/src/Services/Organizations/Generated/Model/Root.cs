@@ -76,6 +76,7 @@ namespace Amazon.Organizations.Model
         /// requires "r-" followed by from 4 to 32 lower-case letters or digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=34)]
         public string Id
         {
             get { return this._id; }

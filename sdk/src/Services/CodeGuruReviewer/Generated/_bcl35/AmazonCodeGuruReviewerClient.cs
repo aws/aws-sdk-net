@@ -36,8 +36,8 @@ namespace Amazon.CodeGuruReviewer
     /// Implementation for accessing CodeGuruReviewer
     ///
     /// This section provides documentation for the Amazon CodeGuru Reviewer API operations.
-    /// Amazon CodeGuru Reviewer is a service that uses program analysis and machine learning
-    /// to detect potential defects that are difficult for developers to find and recommends
+    /// CodeGuru Reviewer is a service that uses program analysis and machine learning to
+    /// detect potential defects that are difficult for developers to find and recommends
     /// fixes in your Java code.
     /// 
     ///  
@@ -45,8 +45,8 @@ namespace Amazon.CodeGuruReviewer
     /// By proactively detecting and providing recommendations for addressing code defects
     /// and implementing best practices, CodeGuru Reviewer improves the overall quality and
     /// maintainability of your code base during the code review stage. For more information
-    /// about CodeGuru Reviewer, see the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html">Amazon
-    /// CodeGuru Reviewer User Guide</a>.
+    /// about CodeGuru Reviewer, see the <i> <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html">Amazon
+    /// CodeGuru Reviewer User Guide</a>.</i> 
     /// </para>
     /// </summary>
     public partial class AmazonCodeGuruReviewerClient : AmazonServiceClient, IAmazonCodeGuruReviewer
@@ -251,15 +251,34 @@ namespace Amazon.CodeGuruReviewer
         #region  AssociateRepository
 
         /// <summary>
-        /// Associates an AWS CodeCommit repository with Amazon CodeGuru Reviewer. When you associate
-        /// an AWS CodeCommit repository with Amazon CodeGuru Reviewer, Amazon CodeGuru Reviewer
-        /// will provide recommendations for each pull request raised within the repository. You
-        /// can view recommendations in the AWS CodeCommit repository.
+        /// Use to associate an AWS CodeCommit repository or a repostory managed by AWS CodeStar
+        /// Connections with Amazon CodeGuru Reviewer. When you associate a repository, CodeGuru
+        /// Reviewer reviews source code changes in the repository's pull requests and provides
+        /// automatic recommendations. You can view recommendations using the CodeGuru Reviewer
+        /// console. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/recommendations.html">Recommendations
+        /// in Amazon CodeGuru Reviewer</a> in the <i>Amazon CodeGuru Reviewer User Guide.</i>
+        /// 
         /// 
         ///  
         /// <para>
-        /// You can associate a GitHub repository using the Amazon CodeGuru Reviewer console.
+        /// If you associate a CodeCommit repository, it must be in the same AWS Region and AWS
+        /// account where its CodeGuru Reviewer code reviews are configured.
         /// </para>
+        ///  
+        /// <para>
+        ///  Bitbucket and GitHub Enterprise Server repositories are managed by AWS CodeStar Connections
+        /// to connect to CodeGuru Reviewer. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/reviewer-ug/step-one.html#select-repository-source-provider">Connect
+        /// to a repository source provider</a> in the <i>Amazon CodeGuru Reviewer User Guide.</i>
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  You cannot use the CodeGuru Reviewer SDK or the AWS CLI to associate a GitHub repository
+        /// with Amazon CodeGuru Reviewer. To associate a GitHub repository, use the console.
+        /// For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-with-guru.html">Getting
+        /// started with CodeGuru Reviewer</a> in the <i>CodeGuru Reviewer User Guide.</i> 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateRepository service method.</param>
         /// 
@@ -329,7 +348,7 @@ namespace Amazon.CodeGuruReviewer
         #region  DescribeCodeReview
 
         /// <summary>
-        /// Returns the metadaata associated with the code review along with its status.
+        /// Returns the metadata associated with the code review along with its status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCodeReview service method.</param>
         /// 
@@ -467,7 +486,9 @@ namespace Amazon.CodeGuruReviewer
         #region  DescribeRepositoryAssociation
 
         /// <summary>
-        /// Describes a repository association.
+        /// Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+        /// <code>RepositoryAssociation</code> </a> object that contains information about the
+        /// requested repository association.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRepositoryAssociation service method.</param>
         /// 
@@ -675,9 +696,9 @@ namespace Amazon.CodeGuruReviewer
         #region  ListRecommendationFeedback
 
         /// <summary>
-        /// Lists the customer feedback for a CodeGuru Reviewer recommendation for all users.
-        /// This API will be used from the console to extract the previously given feedback by
-        /// the user to pre-populate the feedback emojis for all recommendations.
+        /// Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedbackSummary.html">
+        /// <code>RecommendationFeedbackSummary</code> </a> objects that contain customer recommendation
+        /// feedback for all CodeGuru Reviewer users.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecommendationFeedback service method.</param>
         /// 
@@ -815,8 +836,13 @@ namespace Amazon.CodeGuruReviewer
         #region  ListRepositoryAssociations
 
         /// <summary>
-        /// Lists repository associations. You can optionally filter on one or more of the following
-        /// recommendation properties: provider types, states, names, and owners.
+        /// Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html">
+        /// <code>RepositoryAssociationSummary</code> </a> objects that contain summary information
+        /// about a repository association. You can filter the returned list by <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-ProviderType">
+        /// <code>ProviderType</code> </a>, <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Name">
+        /// <code>Name</code> </a>, <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-State">
+        /// <code>State</code> </a>, and <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Owner">
+        /// <code>Owner</code> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRepositoryAssociations service method.</param>
         /// 
@@ -879,7 +905,7 @@ namespace Amazon.CodeGuruReviewer
         #region  PutRecommendationFeedback
 
         /// <summary>
-        /// Stores customer feedback for a CodeGuru-Reviewer recommendation. When this API is
+        /// Stores customer feedback for a CodeGuru Reviewer recommendation. When this API is
         /// called again with different reactions the previous feedback is overwritten.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRecommendationFeedback service method.</param>

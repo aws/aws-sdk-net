@@ -31,7 +31,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Container for the parameters to the GetAWSOrganizationsAccessStatus operation.
     /// Get the Access Status for AWS Organization portfolio share feature. This API can only
-    /// be called by the master account in the organization.
+    /// be called by the master account in the organization or by a delegated admin.
     /// </summary>
     public partial class GetAWSOrganizationsAccessStatusRequest : AmazonServiceCatalogRequest
     {

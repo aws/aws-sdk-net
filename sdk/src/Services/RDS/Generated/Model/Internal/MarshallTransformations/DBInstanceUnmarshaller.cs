@@ -369,6 +369,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.ReadReplicaSourceDBInstanceIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ReplicaMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReplicaMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SecondaryAvailabilityZone", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

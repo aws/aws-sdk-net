@@ -36,6 +36,12 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class KafkaSettings
     {
         private string _broker;
+        private bool? _includeControlDetails;
+        private bool? _includePartitionValue;
+        private bool? _includeTableAlterOperations;
+        private bool? _includeTransactionDetails;
+        private MessageFormatValue _messageFormat;
+        private bool? _partitionIncludeSchemaTable;
         private string _topic;
 
         /// <summary>
@@ -56,6 +62,126 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetBroker()
         {
             return this._broker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeControlDetails. 
+        /// <para>
+        /// Shows detailed control information for table definition, column definition, and table
+        /// and column changes in the Kafka message output. The default is <code>False</code>.
+        /// </para>
+        /// </summary>
+        public bool IncludeControlDetails
+        {
+            get { return this._includeControlDetails.GetValueOrDefault(); }
+            set { this._includeControlDetails = value; }
+        }
+
+        // Check to see if IncludeControlDetails property is set
+        internal bool IsSetIncludeControlDetails()
+        {
+            return this._includeControlDetails.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludePartitionValue. 
+        /// <para>
+        /// Shows the partition value within the Kafka message output, unless the partition type
+        /// is <code>schema-table-type</code>. The default is <code>False</code>.
+        /// </para>
+        /// </summary>
+        public bool IncludePartitionValue
+        {
+            get { return this._includePartitionValue.GetValueOrDefault(); }
+            set { this._includePartitionValue = value; }
+        }
+
+        // Check to see if IncludePartitionValue property is set
+        internal bool IsSetIncludePartitionValue()
+        {
+            return this._includePartitionValue.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeTableAlterOperations. 
+        /// <para>
+        /// Includes any data definition language (DDL) operations that change the table in the
+        /// control data, such as <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>,
+        /// <code>drop-column</code>, and <code>rename-column</code>. The default is <code>False</code>.
+        /// </para>
+        /// </summary>
+        public bool IncludeTableAlterOperations
+        {
+            get { return this._includeTableAlterOperations.GetValueOrDefault(); }
+            set { this._includeTableAlterOperations = value; }
+        }
+
+        // Check to see if IncludeTableAlterOperations property is set
+        internal bool IsSetIncludeTableAlterOperations()
+        {
+            return this._includeTableAlterOperations.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeTransactionDetails. 
+        /// <para>
+        /// Provides detailed transaction information from the source database. This information
+        /// includes a commit timestamp, a log position, and values for <code>transaction_id</code>,
+        /// previous <code>transaction_id</code>, and <code>transaction_record_id</code> (the
+        /// record offset within a transaction). The default is <code>False</code>.
+        /// </para>
+        /// </summary>
+        public bool IncludeTransactionDetails
+        {
+            get { return this._includeTransactionDetails.GetValueOrDefault(); }
+            set { this._includeTransactionDetails = value; }
+        }
+
+        // Check to see if IncludeTransactionDetails property is set
+        internal bool IsSetIncludeTransactionDetails()
+        {
+            return this._includeTransactionDetails.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageFormat. 
+        /// <para>
+        /// The output format for the records created on the endpoint. The message format is <code>JSON</code>
+        /// (default) or <code>JSON_UNFORMATTED</code> (a single line with no tab).
+        /// </para>
+        /// </summary>
+        public MessageFormatValue MessageFormat
+        {
+            get { return this._messageFormat; }
+            set { this._messageFormat = value; }
+        }
+
+        // Check to see if MessageFormat property is set
+        internal bool IsSetMessageFormat()
+        {
+            return this._messageFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PartitionIncludeSchemaTable. 
+        /// <para>
+        /// Prefixes schema and table names to partition values, when the partition type is <code>primary-key-type</code>.
+        /// Doing this increases data distribution among Kafka partitions. For example, suppose
+        /// that a SysBench schema has thousands of tables and each table has only limited range
+        /// for a primary key. In this case, the same primary key is sent from thousands of tables
+        /// to the same partition, which causes throttling. The default is <code>False</code>.
+        /// </para>
+        /// </summary>
+        public bool PartitionIncludeSchemaTable
+        {
+            get { return this._partitionIncludeSchemaTable.GetValueOrDefault(); }
+            set { this._partitionIncludeSchemaTable = value; }
+        }
+
+        // Check to see if PartitionIncludeSchemaTable property is set
+        internal bool IsSetPartitionIncludeSchemaTable()
+        {
+            return this._partitionIncludeSchemaTable.HasValue; 
         }
 
         /// <summary>

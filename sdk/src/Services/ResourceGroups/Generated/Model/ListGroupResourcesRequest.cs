@@ -30,11 +30,12 @@ namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGroupResources operation.
-    /// Returns a list of ARNs of resources that are members of a specified resource group.
+    /// Returns a list of ARNs of the resources that are members of a specified resource group.
     /// </summary>
     public partial class ListGroupResourcesRequest : AmazonResourceGroupsRequest
     {
         private List<ResourceFilter> _filters = new List<ResourceFilter>();
+        private string _group;
         private string _groupName;
         private int? _maxResults;
         private string _nextToken;
@@ -42,16 +43,38 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters, formatted as ResourceFilter objects, that you want to apply to a ListGroupResources
-        /// operation.
+        /// Filters, formatted as <a>ResourceFilter</a> objects, that you want to apply to a <code>ListGroupResources</code>
+        /// operation. Filters the results to include only those of the specified resource types.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <code>resource-type</code> - Filter resources by their type. Specify up to five resource
-        /// types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance,
-        /// or AWS::S3::Bucket.
+        /// types in the format <code>AWS::ServiceCode::ResourceType</code>. For example, <code>AWS::EC2::Instance</code>,
+        /// or <code>AWS::S3::Bucket</code>. 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>,
+        /// AWS Resource Groups validates your filter resource types against the types that are
+        /// defined in the query associated with the group. For example, if a group contains only
+        /// S3 buckets because its query specifies only that resource type, but your <code>resource-type</code>
+        /// filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances.
+        /// In this case, a <code>ListGroupResources</code> request returns a <code>BadRequestException</code>
+        /// error with a message similar to the following:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>The resource types specified as filters in the request are not valid.</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The error includes a list of resource types that failed the validation because they
+        /// are not part of the query associated with the group. This validation doesn't occur
+        /// when the group query specifies <code>AWS::AllSupported</code>, because a group based
+        /// on such a query can contain any of the allowed resource types for the query type (tag-based
+        /// or AWS CloudFormation stack-based queries).
+        /// </para>
         /// </summary>
         public List<ResourceFilter> Filters
         {
@@ -66,12 +89,32 @@ namespace Amazon.ResourceGroups.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupName. 
+        /// Gets and sets the property Group. 
         /// <para>
-        /// The name of the resource group.
+        /// The name or the ARN of the resource group
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=1600)]
+        public string Group
+        {
+            get { return this._group; }
+            set { this._group = value; }
+        }
+
+        // Check to see if Group property is set
+        internal bool IsSetGroup()
+        {
+            return this._group != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupName. 
+        /// <para>
+        /// Don't use this parameter. Use <code>Group</code> instead.
+        /// </para>
+        /// </summary>
+        [Obsolete("This field is deprecated, use Group instead.")]
+        [AWSProperty(Min=1, Max=128)]
         public string GroupName
         {
             get { return this._groupName; }
@@ -87,8 +130,14 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of group member ARNs that are returned in a single call by ListGroupResources,
-        /// in paginated output. By default, this number is 50.
+        /// The total number of results that you want included on each page of the response. If
+        /// you do not include this parameter, it defaults to a value that is specific to the
+        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+        /// response element is present and has a value (is not null). Include that value as the
+        /// <code>NextToken</code> request parameter in the next call to the operation to get
+        /// the next part of the results. Note that the service might return fewer results than
+        /// the maximum even when there are more results available. You should check <code>NextToken</code>
+        /// after every operation to ensure that you receive all of the results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -107,9 +156,10 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The NextToken value that is returned in a paginated ListGroupResources request. To
-        /// get the next page of results, run the call again, add the NextToken parameter, and
-        /// specify the NextToken value.
+        /// The parameter for receiving additional results if you receive a <code>NextToken</code>
+        /// response in a previous request. A <code>NextToken</code> response indicates that more
+        /// output is available. Set this parameter to the value provided by a previous call's
+        /// <code>NextToken</code> response to indicate where the output should continue from.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]

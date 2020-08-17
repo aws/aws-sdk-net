@@ -64,10 +64,22 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ContactNotes", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContactNotes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EmailAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EmailAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PhoneNumber", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PhoneNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

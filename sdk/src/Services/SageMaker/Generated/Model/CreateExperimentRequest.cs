@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateExperiment operation.
-    /// Creates an Amazon SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i>
+    /// Creates an SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i>
     /// that are observed, compared and evaluated as a group. A trial is a set of steps, called
     /// <i>trial components</i>, that produce a machine learning model.
     /// 

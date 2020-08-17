@@ -37,20 +37,23 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// You can specify the type of source (SourceType) you want to be notified of, provide
-    /// a list of RDS sources (SourceIds) that triggers the events, and provide a list of
-    /// event categories (EventCategories) for events you want to be notified of. For example,
-    /// you can specify SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2
-    /// and EventCategories = Availability, Backup.
+    /// You can specify the type of source (<code>SourceType</code>) that you want to be notified
+    /// of and provide a list of RDS sources (<code>SourceIds</code>) that triggers the events.
+    /// You can also provide a list of event categories (<code>EventCategories</code>) for
+    /// events that you want to be notified of. For example, you can specify <code>SourceType</code>
+    /// = <code>db-instance</code>, <code>SourceIds</code> = <code>mydbinstance1</code>, <code>mydbinstance2</code>
+    /// and <code>EventCategories</code> = <code>Availability</code>, <code>Backup</code>.
     /// </para>
     ///  
     /// <para>
-    /// If you specify both the SourceType and SourceIds, such as SourceType = db-instance
-    /// and SourceIdentifier = myDBInstance1, you are notified of all the db-instance events
-    /// for the specified source. If you specify a SourceType but do not specify a SourceIdentifier,
-    /// you receive notice of the events for that source type for all your RDS sources. If
-    /// you don't specify either the SourceType or the SourceIdentifier, you are notified
-    /// of events generated from all RDS sources belonging to your customer account.
+    /// If you specify both the <code>SourceType</code> and <code>SourceIds</code>, such as
+    /// <code>SourceType</code> = <code>db-instance</code> and <code>SourceIdentifier</code>
+    /// = <code>myDBInstance1</code>, you are notified of all the <code>db-instance</code>
+    /// events for the specified source. If you specify a <code>SourceType</code> but do not
+    /// specify a <code>SourceIdentifier</code>, you receive notice of the events for that
+    /// source type for all your RDS sources. If you don't specify either the SourceType or
+    /// the <code>SourceIdentifier</code>, you are notified of events generated from all RDS
+    /// sources belonging to your customer account.
     /// </para>
     ///  <note> 
     /// <para>
@@ -91,10 +94,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EventCategories. 
         /// <para>
-        ///  A list of event categories for a SourceType that you want to subscribe to. You can
-        /// see a list of the categories for a given SourceType in the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
-        /// topic in the <i>Amazon RDS User Guide</i> or by using the <b>DescribeEventCategories</b>
-        /// action. 
+        ///  A list of event categories for a particular source type (<code>SourceType</code>)
+        /// that you want to subscribe to. You can see a list of the categories for a given source
+        /// type in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+        /// in the <i>Amazon RDS User Guide</i> or by using the <code>DescribeEventCategories</code>
+        /// operation. 
         /// </para>
         /// </summary>
         public List<string> EventCategories
@@ -143,26 +147,38 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If SourceIds are supplied, SourceType must also be provided.
+        /// If a <code>SourceIds</code> value is supplied, <code>SourceType</code> must also be
+        /// provided.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must
+        /// If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must
         /// be supplied.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is a DB security group, a <code>DBSecurityGroupName</code> must
+        /// If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must
         /// be supplied.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must
+        /// If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value
+        /// must be supplied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source type is a DB security group, a <code>DBSecurityGroupName</code> value
+        /// must be supplied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must
         /// be supplied.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.
+        /// If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code>
+        /// value must be supplied.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -182,8 +198,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SourceType. 
         /// <para>
         /// The type of source that is generating the events. For example, if you want to be notified
-        /// of events generated by a DB instance, you would set this parameter to db-instance.
-        /// if this value isn't specified, all events are returned.
+        /// of events generated by a DB instance, you set this parameter to <code>db-instance</code>.
+        /// If this value isn't specified, all events are returned.
         /// </para>
         ///  
         /// <para>

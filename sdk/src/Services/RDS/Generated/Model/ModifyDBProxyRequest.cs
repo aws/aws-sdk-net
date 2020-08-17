@@ -30,15 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDBProxy operation.
-    /// <note> 
-    /// <para>
-    /// This is prerelease documentation for the RDS Database Proxy feature in preview release.
-    /// It is subject to change.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Changes the settings for an existing DB proxy.
-    /// </para>
     /// </summary>
     public partial class ModifyDBProxyRequest : AmazonRDSRequest
     {

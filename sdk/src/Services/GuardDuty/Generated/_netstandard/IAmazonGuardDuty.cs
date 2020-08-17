@@ -121,7 +121,7 @@ namespace Amazon.GuardDuty
         /// Creates a single Amazon GuardDuty detector. A detector is a resource that represents
         /// the GuardDuty service. To start using GuardDuty, you must create a detector in each
         /// Region where you enable the service. You can have only one detector per account per
-        /// Region.
+        /// Region. All data sources are enabled in a new detector by default.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDetector service method.</param>
         /// <param name="cancellationToken">
@@ -197,8 +197,22 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Creates member accounts of the current AWS account by specifying a list of AWS account
-        /// IDs. The current AWS account can then invite these members to manage GuardDuty in
-        /// their accounts.
+        /// IDs. This step is a prerequisite for managing the associated member accounts either
+        /// by invitation or through an organization.
+        /// 
+        ///  
+        /// <para>
+        /// When using <code>Create Members</code> as an organizations delegated administrator
+        /// this action will enable GuardDuty in the added member accounts, with the exception
+        /// of the organization master account, which must enable GuardDuty prior to being added
+        /// as a member.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are adding accounts by invitation use this action after GuardDuty has been
+        /// enabled in potential member accounts and before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
+        /// <code>Invite Members</code> </a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembers service method.</param>
         /// <param name="cancellationToken">
@@ -806,6 +820,30 @@ namespace Amazon.GuardDuty
 
         #endregion
                 
+        #region  GetMemberDetectors
+
+
+
+        /// <summary>
+        /// Describes which data sources are enabled for the member account's detector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMemberDetectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMemberDetectors service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMemberDetectors">REST API Reference for GetMemberDetectors Operation</seealso>
+        Task<GetMemberDetectorsResponse> GetMemberDetectorsAsync(GetMemberDetectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetMembers
 
 
@@ -852,6 +890,35 @@ namespace Amazon.GuardDuty
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetThreatIntelSet">REST API Reference for GetThreatIntelSet Operation</seealso>
         Task<GetThreatIntelSetResponse> GetThreatIntelSetAsync(GetThreatIntelSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetUsageStatistics
+
+
+
+        /// <summary>
+        /// Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector
+        /// ID. For newly enabled detectors or data sources the cost returned will include only
+        /// the usage so far under 30 days, this may differ from the cost metrics in the console,
+        /// which projects usage over 30 days to provide a monthly cost estimate. For more information
+        /// see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding
+        /// How Usage Costs are Calculated</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsageStatistics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetUsageStatistics service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetUsageStatistics">REST API Reference for GetUsageStatistics Operation</seealso>
+        Task<GetUsageStatisticsResponse> GetUsageStatisticsAsync(GetUsageStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1343,6 +1410,30 @@ namespace Amazon.GuardDuty
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
         Task<UpdateIPSetResponse> UpdateIPSetAsync(UpdateIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateMemberDetectors
+
+
+
+        /// <summary>
+        /// Contains information on member accounts to be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMemberDetectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMemberDetectors service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMemberDetectors">REST API Reference for UpdateMemberDetectors Operation</seealso>
+        Task<UpdateMemberDetectorsResponse> UpdateMemberDetectorsAsync(UpdateMemberDetectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -38,8 +38,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The location that data classification results are exported to, and the encryption
-        /// settings that are used when storing results in that location.
+        /// The location where data classification results are stored, and the encryption settings
+        /// that are used when storing results in that location.
         /// </para>
         /// </summary>
         public ClassificationExportConfiguration Configuration

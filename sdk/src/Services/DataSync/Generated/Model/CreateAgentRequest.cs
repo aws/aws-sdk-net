@@ -38,7 +38,7 @@ namespace Amazon.DataSync.Model
     /// 
     ///  
     /// <para>
-    /// You can activate the agent in a VPC (Virtual private Cloud) or provide the agent access
+    /// You can activate the agent in a VPC (virtual private cloud) or provide the agent access
     /// to a VPC endpoint so you can run tasks without going over the public Internet.
     /// </para>
     ///  
@@ -175,7 +175,7 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=0, Max=55)]
+        [AWSProperty(Min=0, Max=50)]
         public List<TagListEntry> Tags
         {
             get { return this._tags; }
@@ -191,10 +191,10 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property VpcEndpointId. 
         /// <para>
-        /// The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access to. This
+        /// The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This
         /// is the client-side VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink
         /// VPC endpoint, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating
-        /// a VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.
+        /// a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.
         /// </para>
         ///  
         /// <para>

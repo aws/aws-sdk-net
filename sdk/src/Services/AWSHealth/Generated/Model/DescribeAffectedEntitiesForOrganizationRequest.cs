@@ -37,15 +37,22 @@ namespace Amazon.AWSHealth.Model
     /// 
     ///  
     /// <para>
-    /// At least one event ARN and account ID are required. Results are sorted by the <code>lastUpdatedTime</code>
-    /// of the entity, starting with the most recent.
+    /// At least one event Amazon Resource Name (ARN) and account ID are required. Results
+    /// are sorted by the <code>lastUpdatedTime</code> of the entity, starting with the most
+    /// recent.
     /// </para>
     ///  
     /// <para>
     /// Before you can call this operation, you must first enable AWS Health to work with
-    /// AWS Organizations. To do this, call the <a>EnableHealthServiceAccessForOrganization</a>
+    /// AWS Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a>
     /// operation from your organization's master account. 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
+    /// the next request to return more results.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeAffectedEntitiesForOrganizationRequest : AmazonAWSHealthRequest
     {

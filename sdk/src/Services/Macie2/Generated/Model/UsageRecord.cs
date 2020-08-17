@@ -40,7 +40,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID for the account that the data applies to.
+        /// The unique identifier for the AWS account that the data applies to.
         /// </para>
         /// </summary>
         public string AccountId
@@ -58,9 +58,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property FreeTrialStartDate. 
         /// <para>
-        /// The date and time, in UTC and extended ISO 8601 format, when the free trial period
-        /// started for the account. This value is null if the account didn't participate in the
-        /// free trial.
+        /// The date and time, in UTC and extended ISO 8601 format, when the free trial started
+        /// for the account.
         /// </para>
         /// </summary>
         public DateTime FreeTrialStartDate

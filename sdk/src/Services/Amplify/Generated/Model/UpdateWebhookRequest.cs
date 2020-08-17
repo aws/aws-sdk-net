@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateWebhook operation.
-    /// Update a webhook.
+    /// Updates a webhook.
     /// </summary>
     public partial class UpdateWebhookRequest : AmazonAmplifyRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        ///  Name for a branch, part of an Amplify App. 
+        ///  The name for a branch that is part of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -60,7 +60,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  Description for a webhook. 
+        ///  The description for a webhook. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -79,7 +79,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property WebhookId. 
         /// <para>
-        ///  Unique Id for a webhook. 
+        ///  The unique ID for a webhook. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

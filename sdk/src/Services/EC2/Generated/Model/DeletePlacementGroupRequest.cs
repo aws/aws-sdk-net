@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DeletePlacementGroup operation.
     /// Deletes the specified placement group. You must terminate all instances in the placement
     /// group before you can delete the placement group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-    /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </summary>
     public partial class DeletePlacementGroupRequest : AmazonEC2Request
     {

@@ -33,6 +33,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class DescribeRestoreJobResponse : AmazonWebServiceResponse
     {
+        private string _accountId;
         private long? _backupSizeInBytes;
         private DateTime? _completionDate;
         private string _createdResourceArn;
@@ -41,9 +42,28 @@ namespace Amazon.Backup.Model
         private string _iamRoleArn;
         private string _percentDone;
         private string _recoveryPointArn;
+        private string _resourceType;
         private string _restoreJobId;
         private RestoreJobStatus _status;
         private string _statusMessage;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// Returns the account ID that owns the restore job.
+        /// </para>
+        /// </summary>
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BackupSizeInBytes. 
@@ -201,6 +221,24 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// Returns metadata associated with a restore job listed by resource type.
+        /// </para>
+        /// </summary>
+        public string ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RestoreJobId. 
         /// <para>
         /// Uniquely identifies the job that restores a recovery point.
@@ -240,7 +278,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// A detailed message explaining the status of a job to restore a recovery point.
+        /// A message showing the status of a job to restore a recovery point.
         /// </para>
         /// </summary>
         public string StatusMessage

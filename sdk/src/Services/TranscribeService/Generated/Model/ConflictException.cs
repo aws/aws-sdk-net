@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// The resource name already exists.
+    /// There is already a resource with that name.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -197,8 +197,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Conditional: This parameter is required for new lifecycle hooks, but optional when
-        /// updating existing hooks.
+        /// Required for new lifecycle hooks, but optional when updating existing hooks.
         /// </para>
         /// </summary>
         public string LifecycleTransition
@@ -276,8 +275,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: This parameter is required for new lifecycle hooks, but optional when
-        /// updating existing hooks.
+        /// Required for new lifecycle hooks, but optional when updating existing hooks.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]

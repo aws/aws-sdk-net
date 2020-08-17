@@ -39,10 +39,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// A <code>cron</code> expression used to specify the schedule. For more information,
-        /// see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+        /// A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
         /// Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15
-        /// UTC, specify <code>cron(15 12 * * ? *)</code>.
+        /// UTC, you would specify: <code>cron(15 12 * * ? *)</code>.
         /// </para>
         /// </summary>
         public string ScheduleExpression

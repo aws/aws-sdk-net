@@ -57,12 +57,9 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ResourceGroups");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetGroupName())
-                throw new AmazonResourceGroupsException("Request object does not have required field GroupName set");
-            request.AddPathResource("{GroupName}", StringUtils.FromString(publicRequest.GroupName));
-            request.ResourcePath = "/groups/{GroupName}";
+            request.ResourcePath = "/update-group";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -73,6 +70,18 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Description");
                     context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetGroup())
+                {
+                    context.Writer.WritePropertyName("Group");
+                    context.Writer.Write(publicRequest.Group);
+                }
+
+                if(publicRequest.IsSetGroupName())
+                {
+                    context.Writer.WritePropertyName("GroupName");
+                    context.Writer.Write(publicRequest.GroupName);
                 }
 
         

@@ -258,6 +258,10 @@ namespace Amazon.Macie2
         /// Constant NONE for EncryptionType
         /// </summary>
         public static readonly EncryptionType NONE = new EncryptionType("NONE");
+        /// <summary>
+        /// Constant UNKNOWN for EncryptionType
+        /// </summary>
+        public static readonly EncryptionType UNKNOWN = new EncryptionType("UNKNOWN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1139,6 +1143,10 @@ namespace Amazon.Macie2
     {
 
         /// <summary>
+        /// Constant AccountSuspended for RelationshipStatus
+        /// </summary>
+        public static readonly RelationshipStatus AccountSuspended = new RelationshipStatus("AccountSuspended");
+        /// <summary>
         /// Constant Created for RelationshipStatus
         /// </summary>
         public static readonly RelationshipStatus Created = new RelationshipStatus("Created");
@@ -1162,6 +1170,10 @@ namespace Amazon.Macie2
         /// Constant Paused for RelationshipStatus
         /// </summary>
         public static readonly RelationshipStatus Paused = new RelationshipStatus("Paused");
+        /// <summary>
+        /// Constant RegionDisabled for RelationshipStatus
+        /// </summary>
+        public static readonly RelationshipStatus RegionDisabled = new RelationshipStatus("RegionDisabled");
         /// <summary>
         /// Constant Removed for RelationshipStatus
         /// </summary>
@@ -1597,6 +1609,76 @@ namespace Amazon.Macie2
 
 
     /// <summary>
+    /// Constants used for properties of type UsageStatisticsFilterComparator.
+    /// </summary>
+    public class UsageStatisticsFilterComparator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTAINS for UsageStatisticsFilterComparator
+        /// </summary>
+        public static readonly UsageStatisticsFilterComparator CONTAINS = new UsageStatisticsFilterComparator("CONTAINS");
+        /// <summary>
+        /// Constant EQ for UsageStatisticsFilterComparator
+        /// </summary>
+        public static readonly UsageStatisticsFilterComparator EQ = new UsageStatisticsFilterComparator("EQ");
+        /// <summary>
+        /// Constant GT for UsageStatisticsFilterComparator
+        /// </summary>
+        public static readonly UsageStatisticsFilterComparator GT = new UsageStatisticsFilterComparator("GT");
+        /// <summary>
+        /// Constant GTE for UsageStatisticsFilterComparator
+        /// </summary>
+        public static readonly UsageStatisticsFilterComparator GTE = new UsageStatisticsFilterComparator("GTE");
+        /// <summary>
+        /// Constant LT for UsageStatisticsFilterComparator
+        /// </summary>
+        public static readonly UsageStatisticsFilterComparator LT = new UsageStatisticsFilterComparator("LT");
+        /// <summary>
+        /// Constant LTE for UsageStatisticsFilterComparator
+        /// </summary>
+        public static readonly UsageStatisticsFilterComparator LTE = new UsageStatisticsFilterComparator("LTE");
+        /// <summary>
+        /// Constant NE for UsageStatisticsFilterComparator
+        /// </summary>
+        public static readonly UsageStatisticsFilterComparator NE = new UsageStatisticsFilterComparator("NE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UsageStatisticsFilterComparator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UsageStatisticsFilterComparator FindValue(string value)
+        {
+            return FindValue<UsageStatisticsFilterComparator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UsageStatisticsFilterComparator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type UsageStatisticsFilterKey.
     /// </summary>
     public class UsageStatisticsFilterKey : ConstantClass
@@ -1606,6 +1688,18 @@ namespace Amazon.Macie2
         /// Constant AccountId for UsageStatisticsFilterKey
         /// </summary>
         public static readonly UsageStatisticsFilterKey AccountId = new UsageStatisticsFilterKey("accountId");
+        /// <summary>
+        /// Constant FreeTrialStartDate for UsageStatisticsFilterKey
+        /// </summary>
+        public static readonly UsageStatisticsFilterKey FreeTrialStartDate = new UsageStatisticsFilterKey("freeTrialStartDate");
+        /// <summary>
+        /// Constant ServiceLimit for UsageStatisticsFilterKey
+        /// </summary>
+        public static readonly UsageStatisticsFilterKey ServiceLimit = new UsageStatisticsFilterKey("serviceLimit");
+        /// <summary>
+        /// Constant Total for UsageStatisticsFilterKey
+        /// </summary>
+        public static readonly UsageStatisticsFilterKey Total = new UsageStatisticsFilterKey("total");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1652,6 +1746,14 @@ namespace Amazon.Macie2
         /// Constant AccountId for UsageStatisticsSortKey
         /// </summary>
         public static readonly UsageStatisticsSortKey AccountId = new UsageStatisticsSortKey("accountId");
+        /// <summary>
+        /// Constant FreeTrialStartDate for UsageStatisticsSortKey
+        /// </summary>
+        public static readonly UsageStatisticsSortKey FreeTrialStartDate = new UsageStatisticsSortKey("freeTrialStartDate");
+        /// <summary>
+        /// Constant ServiceLimitValue for UsageStatisticsSortKey
+        /// </summary>
+        public static readonly UsageStatisticsSortKey ServiceLimitValue = new UsageStatisticsSortKey("serviceLimitValue");
         /// <summary>
         /// Constant Total for UsageStatisticsSortKey
         /// </summary>

@@ -31,6 +31,12 @@
     <pattern>[0-9a-zA-Z._:-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lex.Model.PostContentResponse.BotVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9]+|\$LATEST</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lex.Model.PostContentResponse.Message</property>
     <min>1</min>
     <max>1024</max>
@@ -45,6 +51,12 @@
     <min>2</min>
     <max>100</max>
     <pattern>[0-9a-zA-Z._:-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lex.Model.PostTextResponse.BotVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9]+|\$LATEST</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lex.Model.PostTextResponse.Message</property>

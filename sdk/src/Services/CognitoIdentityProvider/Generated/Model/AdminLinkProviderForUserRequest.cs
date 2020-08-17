@@ -43,7 +43,11 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// links that user to a federated user identity, so that when the federated user identity
     /// is used, the user signs in as the existing user account. 
     /// </para>
-    ///  <important> 
+    ///  <note> 
+    /// <para>
+    /// The maximum number of federated identities linked to a user is 5.
+    /// </para>
+    ///  </note> <important> 
     /// <para>
     /// Because this API allows a user with an external federated identity to sign in as an
     /// existing user in the user pool, it is critical that it only be used with external
@@ -51,10 +55,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// owner.
     /// </para>
     ///  </important> 
-    /// <para>
-    /// See also .
-    /// </para>
-    ///  
     /// <para>
     /// This action is enabled only for admin access and requires developer credentials.
     /// </para>

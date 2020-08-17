@@ -45,7 +45,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ConnectorId. 
         /// <para>
-        /// The identifier of the connector.
+        /// The ID of the connector.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -31,6 +31,12 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Container for the parameters to the ListPortfolioAccess operation.
     /// Lists the account IDs that have access to the specified portfolio.
+    /// 
+    ///  
+    /// <para>
+    /// A delegated admin can list the accounts that have access to the shared portfolio.
+    /// Note that if a delegated admin is de-registered, they can no longer perform this operation.
+    /// </para>
     /// </summary>
     public partial class ListPortfolioAccessRequest : AmazonServiceCatalogRequest
     {

@@ -1749,6 +1749,77 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  CreateAuditSuppression
+
+
+        /// <summary>
+        /// Creates a Device Defender audit suppression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAuditSuppression service method.</param>
+        /// 
+        /// <returns>The response from the CreateAuditSuppression service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateAuditSuppression">REST API Reference for CreateAuditSuppression Operation</seealso>
+        public virtual CreateAuditSuppressionResponse CreateAuditSuppression(CreateAuditSuppressionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAuditSuppressionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAuditSuppressionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAuditSuppressionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a Device Defender audit suppression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAuditSuppression service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAuditSuppression service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateAuditSuppression">REST API Reference for CreateAuditSuppression Operation</seealso>
+        public virtual Task<CreateAuditSuppressionResponse> CreateAuditSuppressionAsync(CreateAuditSuppressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAuditSuppressionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAuditSuppressionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAuditSuppressionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateAuthorizer
 
 
@@ -3090,7 +3161,9 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask.
-        /// Each mitigation action can apply only one type of change.
+        /// Only certain types of mitigation actions can be applied to specific check names. For
+        /// more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html">Mitigation
+        /// actions</a>. Each mitigation action can apply only one type of change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMitigationAction service method.</param>
         /// 
@@ -3123,7 +3196,9 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask.
-        /// Each mitigation action can apply only one type of change.
+        /// Only certain types of mitigation actions can be applied to specific check names. For
+        /// more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html">Mitigation
+        /// actions</a>. Each mitigation action can apply only one type of change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMitigationAction service method.</param>
         /// <param name="cancellationToken">
@@ -4787,6 +4862,65 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = DeleteAccountAuditConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteAccountAuditConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAuditSuppression
+
+
+        /// <summary>
+        /// Deletes a Device Defender audit suppression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAuditSuppression service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAuditSuppression service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAuditSuppression">REST API Reference for DeleteAuditSuppression Operation</seealso>
+        public virtual DeleteAuditSuppressionResponse DeleteAuditSuppression(DeleteAuditSuppressionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAuditSuppressionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAuditSuppressionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAuditSuppressionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a Device Defender audit suppression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAuditSuppression service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAuditSuppression service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAuditSuppression">REST API Reference for DeleteAuditSuppression Operation</seealso>
+        public virtual Task<DeleteAuditSuppressionResponse> DeleteAuditSuppressionAsync(DeleteAuditSuppressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAuditSuppressionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAuditSuppressionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAuditSuppressionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7538,6 +7672,71 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DescribeAuditSuppression
+
+
+        /// <summary>
+        /// Gets information about a Device Defender audit suppression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuditSuppression service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAuditSuppression service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditSuppression">REST API Reference for DescribeAuditSuppression Operation</seealso>
+        public virtual DescribeAuditSuppressionResponse DescribeAuditSuppression(DescribeAuditSuppressionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAuditSuppressionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAuditSuppressionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAuditSuppressionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets information about a Device Defender audit suppression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuditSuppression service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAuditSuppression service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditSuppression">REST API Reference for DescribeAuditSuppression Operation</seealso>
+        public virtual Task<DescribeAuditSuppressionResponse> DescribeAuditSuppressionAsync(DescribeAuditSuppressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAuditSuppressionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAuditSuppressionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAuditSuppressionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeAuditTask
 
 
@@ -9516,7 +9715,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="policyName">The name of the policy to detach.</param>
-        /// <param name="principal">The principal. If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</param>
+        /// <param name="principal">The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</param>
         /// 
         /// <returns>The response from the DetachPrincipalPolicy service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
@@ -9598,7 +9797,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="policyName">The name of the policy to detach.</param>
-        /// <param name="principal">The principal. If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</param>
+        /// <param name="principal">The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -11689,6 +11888,65 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListAuditSuppressions
+
+
+        /// <summary>
+        /// Lists your Device Defender audit listings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAuditSuppressions service method.</param>
+        /// 
+        /// <returns>The response from the ListAuditSuppressions service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditSuppressions">REST API Reference for ListAuditSuppressions Operation</seealso>
+        public virtual ListAuditSuppressionsResponse ListAuditSuppressions(ListAuditSuppressionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAuditSuppressionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAuditSuppressionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAuditSuppressionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists your Device Defender audit listings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAuditSuppressions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAuditSuppressions service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditSuppressions">REST API Reference for ListAuditSuppressions Operation</seealso>
+        public virtual Task<ListAuditSuppressionsResponse> ListAuditSuppressionsAsync(ListAuditSuppressionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAuditSuppressionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAuditSuppressionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAuditSuppressionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAuditTasks
 
 
@@ -13181,7 +13439,7 @@ namespace Amazon.IoT
         ///  <b>Note:</b> This API is deprecated. Please use <a>ListAttachedPolicies</a> instead.
         /// </para>
         /// </summary>
-        /// <param name="principal">The principal.</param>
+        /// <param name="principal">The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</param>
         /// 
         /// <returns>The response from the ListPrincipalPolicies service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
@@ -13265,7 +13523,7 @@ namespace Amazon.IoT
         ///  <b>Note:</b> This API is deprecated. Please use <a>ListAttachedPolicies</a> instead.
         /// </para>
         /// </summary>
-        /// <param name="principal">The principal.</param>
+        /// <param name="principal">The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -14595,7 +14853,15 @@ namespace Amazon.IoT
         /// Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters
         /// to filter your things. For example, calling <code>ListThings</code> with attributeName=Color
         /// and attributeValue=Red retrieves all things in the registry that contain an attribute
-        /// <b>Color</b> with the value <b>Red</b>.
+        /// <b>Color</b> with the value <b>Red</b>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You will not be charged for calling this API if an <code>Access denied</code> error
+        /// is returned. You will also not be charged if no attributes or pagination token was
+        /// provided in request and no pagination token and no results were returned.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the ListThings service method, as returned by IoT.</returns>
@@ -14626,7 +14892,15 @@ namespace Amazon.IoT
         /// Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters
         /// to filter your things. For example, calling <code>ListThings</code> with attributeName=Color
         /// and attributeValue=Red retrieves all things in the registry that contain an attribute
-        /// <b>Color</b> with the value <b>Red</b>.
+        /// <b>Color</b> with the value <b>Red</b>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You will not be charged for calling this API if an <code>Access denied</code> error
+        /// is returned. You will also not be charged if no attributes or pagination token was
+        /// provided in request and no pagination token and no results were returned.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThings service method.</param>
         /// 
@@ -14661,7 +14935,15 @@ namespace Amazon.IoT
         /// Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters
         /// to filter your things. For example, calling <code>ListThings</code> with attributeName=Color
         /// and attributeValue=Red retrieves all things in the registry that contain an attribute
-        /// <b>Color</b> with the value <b>Red</b>.
+        /// <b>Color</b> with the value <b>Red</b>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You will not be charged for calling this API if an <code>Access denied</code> error
+        /// is returned. You will also not be charged if no attributes or pagination token was
+        /// provided in request and no pagination token and no results were returned.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -14695,7 +14977,15 @@ namespace Amazon.IoT
         /// Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters
         /// to filter your things. For example, calling <code>ListThings</code> with attributeName=Color
         /// and attributeValue=Red retrieves all things in the registry that contain an attribute
-        /// <b>Color</b> with the value <b>Red</b>.
+        /// <b>Color</b> with the value <b>Red</b>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You will not be charged for calling this API if an <code>Access denied</code> error
+        /// is returned. You will also not be charged if no attributes or pagination token was
+        /// provided in request and no pagination token and no results were returned.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThings service method.</param>
         /// <param name="cancellationToken">
@@ -15892,6 +16182,13 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Remove the specified thing from the specified group.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify either a <code>thingGroupArn</code> or a <code>thingGroupName</code>
+        /// to identify the thing group and either a <code>thingArn</code> or a <code>thingName</code>
+        /// to identify the thing to remove from the thing group. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveThingFromThingGroup service method.</param>
         /// 
@@ -15921,6 +16218,13 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Remove the specified thing from the specified group.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify either a <code>thingGroupArn</code> or a <code>thingGroupName</code>
+        /// to identify the thing group and either a <code>thingArn</code> or a <code>thingName</code>
+        /// to identify the thing to remove from the thing group. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveThingFromThingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -17463,6 +17767,71 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  UpdateAuditSuppression
+
+
+        /// <summary>
+        /// Updates a Device Defender audit suppression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAuditSuppression service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAuditSuppression service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateAuditSuppression">REST API Reference for UpdateAuditSuppression Operation</seealso>
+        public virtual UpdateAuditSuppressionResponse UpdateAuditSuppression(UpdateAuditSuppressionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAuditSuppressionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAuditSuppressionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAuditSuppressionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a Device Defender audit suppression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAuditSuppression service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAuditSuppression service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateAuditSuppression">REST API Reference for UpdateAuditSuppression Operation</seealso>
+        public virtual Task<UpdateAuditSuppressionResponse> UpdateAuditSuppressionAsync(UpdateAuditSuppressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAuditSuppressionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAuditSuppressionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAuditSuppressionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateAuthorizer
 
 
@@ -17704,13 +18073,14 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect
-        /// currently connected devices, but these devices will be unable to reconnect.
+        /// Certificates must be in the ACTIVE state to authenticate devices that use a certificate
+        /// to connect to AWS IoT.
         /// </para>
         ///  
         /// <para>
-        /// The ACTIVE state is required to authenticate devices connecting to AWS IoT using a
-        /// certificate.
+        /// Within a few minutes of updating a certificate from the ACTIVE state to any other
+        /// state, AWS IoT disconnects all devices that used that certificate to connect. Devices
+        /// cannot use a certificate that is not in the ACTIVE state to reconnect.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
@@ -17753,13 +18123,14 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect
-        /// currently connected devices, but these devices will be unable to reconnect.
+        /// Certificates must be in the ACTIVE state to authenticate devices that use a certificate
+        /// to connect to AWS IoT.
         /// </para>
         ///  
         /// <para>
-        /// The ACTIVE state is required to authenticate devices connecting to AWS IoT using a
-        /// certificate.
+        /// Within a few minutes of updating a certificate from the ACTIVE state to any other
+        /// state, AWS IoT disconnects all devices that used that certificate to connect. Devices
+        /// cannot use a certificate that is not in the ACTIVE state to reconnect.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCertificate service method.</param>
@@ -17802,13 +18173,14 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect
-        /// currently connected devices, but these devices will be unable to reconnect.
+        /// Certificates must be in the ACTIVE state to authenticate devices that use a certificate
+        /// to connect to AWS IoT.
         /// </para>
         ///  
         /// <para>
-        /// The ACTIVE state is required to authenticate devices connecting to AWS IoT using a
-        /// certificate.
+        /// Within a few minutes of updating a certificate from the ACTIVE state to any other
+        /// state, AWS IoT disconnects all devices that used that certificate to connect. Devices
+        /// cannot use a certificate that is not in the ACTIVE state to reconnect.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
@@ -17854,13 +18226,14 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect
-        /// currently connected devices, but these devices will be unable to reconnect.
+        /// Certificates must be in the ACTIVE state to authenticate devices that use a certificate
+        /// to connect to AWS IoT.
         /// </para>
         ///  
         /// <para>
-        /// The ACTIVE state is required to authenticate devices connecting to AWS IoT using a
-        /// certificate.
+        /// Within a few minutes of updating a certificate from the ACTIVE state to any other
+        /// state, AWS IoT disconnects all devices that used that certificate to connect. Devices
+        /// cannot use a certificate that is not in the ACTIVE state to reconnect.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCertificate service method.</param>

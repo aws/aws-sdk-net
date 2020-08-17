@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _creationTime;
         private string _humanTaskUiArn;
         private string _humanTaskUiName;
+        private HumanTaskUiStatus _humanTaskUiStatus;
         private UiTemplateInfo _uiTemplate;
 
         /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HumanTaskUiArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the human task user interface.
+        /// The Amazon Resource Name (ARN) of the human task user interface (worker task template).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
@@ -79,7 +80,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HumanTaskUiName. 
         /// <para>
-        /// The name of the human task user interface.
+        /// The name of the human task user interface (worker task template).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -93,6 +94,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetHumanTaskUiName()
         {
             return this._humanTaskUiName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HumanTaskUiStatus. 
+        /// <para>
+        /// The status of the human task user interface (worker task template). Valid values are
+        /// listed below.
+        /// </para>
+        /// </summary>
+        public HumanTaskUiStatus HumanTaskUiStatus
+        {
+            get { return this._humanTaskUiStatus; }
+            set { this._humanTaskUiStatus = value; }
+        }
+
+        // Check to see if HumanTaskUiStatus property is set
+        internal bool IsSetHumanTaskUiStatus()
+        {
+            return this._humanTaskUiStatus != null;
         }
 
         /// <summary>

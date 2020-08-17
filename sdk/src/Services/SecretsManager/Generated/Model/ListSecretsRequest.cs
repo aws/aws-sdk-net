@@ -39,7 +39,7 @@ namespace Amazon.SecretsManager.Model
     /// <para>
     /// Always check the <code>NextToken</code> response parameter when calling any of the
     /// <code>List*</code> operations. These operations can occasionally return an empty or
-    /// shorter than expected list of results even when there are more results available.
+    /// shorter than expected list of results even when there more results become available.
     /// When this happens, the <code>NextToken</code> response parameter contains a value
     /// to pass to the next call to the same API to request the next part of the list.
     /// </para>
@@ -67,15 +67,36 @@ namespace Amazon.SecretsManager.Model
     /// </summary>
     public partial class ListSecretsRequest : AmazonSecretsManagerRequest
     {
+        private List<Filter> _filters = new List<Filter>();
         private int? _maxResults;
         private string _nextToken;
+        private SortOrderType _sortOrder;
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// Lists the secret request filters.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=10)]
+        public List<Filter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// (Optional) Limits the number of results that you want to include in the response.
-        /// If you don't include this parameter, it defaults to a value that's specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+        /// (Optional) Limits the number of results you want to include in the response. If you
+        /// don't include this parameter, it defaults to a value that's specific to the operation.
+        /// If additional items exist beyond the maximum you specify, the <code>NextToken</code>
         /// response element is present and has a value (isn't null). Include that value as the
         /// <code>NextToken</code> request parameter in the next call to the operation to get
         /// the next part of the results. Note that Secrets Manager might return fewer results
@@ -100,9 +121,9 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// (Optional) Use this parameter in a request if you receive a <code>NextToken</code>
-        /// response in a previous request that indicates that there's more output available.
-        /// In a subsequent call, set it to the value of the previous call's <code>NextToken</code>
-        /// response to indicate where the output should continue from.
+        /// response in a previous request indicating there's more output available. In a subsequent
+        /// call, set it to the value of the previous call <code>NextToken</code> response to
+        /// indicate where the output should continue from.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -116,6 +137,24 @@ namespace Amazon.SecretsManager.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortOrder. 
+        /// <para>
+        /// Lists secrets in the requested order. 
+        /// </para>
+        /// </summary>
+        public SortOrderType SortOrder
+        {
+            get { return this._sortOrder; }
+            set { this._sortOrder = value; }
+        }
+
+        // Check to see if SortOrder property is set
+        internal bool IsSetSortOrder()
+        {
+            return this._sortOrder != null;
         }
 
     }

@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetCarrierGatewayId())
+                {
+                    request.Parameters.Add("CarrierGatewayId", StringUtils.FromString(publicRequest.CarrierGatewayId));
+                }
                 if(publicRequest.IsSetDestinationCidrBlock())
                 {
                     request.Parameters.Add("DestinationCidrBlock", StringUtils.FromString(publicRequest.DestinationCidrBlock));
@@ -65,6 +69,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDestinationIpv6CidrBlock())
                 {
                     request.Parameters.Add("DestinationIpv6CidrBlock", StringUtils.FromString(publicRequest.DestinationIpv6CidrBlock));
+                }
+                if(publicRequest.IsSetDestinationPrefixListId())
+                {
+                    request.Parameters.Add("DestinationPrefixListId", StringUtils.FromString(publicRequest.DestinationPrefixListId));
                 }
                 if(publicRequest.IsSetEgressOnlyInternetGatewayId())
                 {

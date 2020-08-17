@@ -51,12 +51,13 @@ namespace Amazon.Lambda.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified
-    /// age.
+    /// age. Default -1 (infinite). Minimum 60. Maximum 604800.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
-    /// retries.
+    /// retries. Default -1 (infinite). Minimum 0. Maximum 10000. When infinite, failed records
+    /// will be retried until the record expires.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -93,6 +94,10 @@ namespace Amazon.Lambda.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -148,7 +153,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Disables the event source mapping to pause polling and invocation.
+        /// If true, the event source mapping is active. Set to false to pause polling and invocation.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -228,10 +233,11 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRecordAgeInSeconds. 
         /// <para>
-        /// (Streams) The maximum age of a record that Lambda sends to a function for processing.
+        /// (Streams) Discard records older than the specified age. The default value is infinite
+        /// (-1).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=60, Max=604800)]
+        [AWSProperty(Min=-1, Max=604800)]
         public int MaximumRecordAgeInSeconds
         {
             get { return this._maximumRecordAgeInSeconds.GetValueOrDefault(); }
@@ -247,10 +253,12 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRetryAttempts. 
         /// <para>
-        /// (Streams) The maximum number of times to retry when the function returns an error.
+        /// (Streams) Discard records after the specified number of retries. The default value
+        /// is infinite (-1). When set to infinite (-1), failed records will be retried until
+        /// the record expires.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10000)]
+        [AWSProperty(Min=-1, Max=10000)]
         public int MaximumRetryAttempts
         {
             get { return this._maximumRetryAttempts.GetValueOrDefault(); }

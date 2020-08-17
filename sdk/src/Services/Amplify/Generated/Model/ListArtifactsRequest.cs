@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the ListArtifacts operation.
-    /// List artifacts with an app, a branch, a job and an artifact type.
+    /// Returns a list of artifacts for a specified app, branch, and job.
     /// </summary>
     public partial class ListArtifactsRequest : AmazonAmplifyRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  Unique Id for an Amplify App. 
+        ///  The unique ID for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -62,7 +62,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        ///  Name for a branch, part of an Amplify App. 
+        ///  The name of a branch that is part of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -81,7 +81,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        ///  Unique Id for an Job. 
+        ///  The unique ID for a job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -100,7 +100,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  Maximum number of records to list in a single response. 
+        ///  The maximum number of records to list in a single response. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -119,9 +119,9 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Pagination token. Set to null to start listing artifacts from start. If non-null
-        /// pagination token is returned in a result, then pass its value in here to list more
-        /// artifacts. 
+        ///  A pagination token. Set to null to start listing artifacts from start. If a non-null
+        /// pagination token is returned in a result, pass its value in here to list more artifacts.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2000)]

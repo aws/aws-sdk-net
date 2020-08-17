@@ -31,6 +31,13 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the RemoveThingFromThingGroup operation.
     /// Remove the specified thing from the specified group.
+    /// 
+    ///  
+    /// <para>
+    /// You must specify either a <code>thingGroupArn</code> or a <code>thingGroupName</code>
+    /// to identify the thing group and either a <code>thingArn</code> or a <code>thingName</code>
+    /// to identify the thing to remove from the thing group. 
+    /// </para>
     /// </summary>
     public partial class RemoveThingFromThingGroupRequest : AmazonIoTRequest
     {

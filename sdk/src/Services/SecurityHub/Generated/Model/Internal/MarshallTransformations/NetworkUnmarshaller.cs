@@ -94,6 +94,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Direction = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OpenPortRange", targetDepth))
+                {
+                    var unmarshaller = PortRangeUnmarshaller.Instance;
+                    unmarshalledObject.OpenPortRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Protocol", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

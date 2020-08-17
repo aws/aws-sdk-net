@@ -72,6 +72,23 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAutoSubDomainCreationPatterns())
+                {
+                    context.Writer.WritePropertyName("autoSubDomainCreationPatterns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAutoSubDomainCreationPatternsListValue in publicRequest.AutoSubDomainCreationPatterns)
+                    {
+                            context.Writer.Write(publicRequestAutoSubDomainCreationPatternsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetAutoSubDomainIAMRole())
+                {
+                    context.Writer.WritePropertyName("autoSubDomainIAMRole");
+                    context.Writer.Write(publicRequest.AutoSubDomainIAMRole);
+                }
+
                 if(publicRequest.IsSetEnableAutoSubDomain())
                 {
                     context.Writer.WritePropertyName("enableAutoSubDomain");

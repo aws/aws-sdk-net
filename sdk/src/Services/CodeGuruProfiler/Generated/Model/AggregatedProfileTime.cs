@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
-    /// Information about the time range of the latest available aggregated profile.
+    /// Specifies the aggregation period and aggregation start time for an aggregated profile.
+    /// An aggregated profile is used to collect posted agent profiles during an aggregation
+    /// period. There are three possible aggregation periods (1 day, 1 hour, or 5 minutes).
     /// </summary>
     public partial class AggregatedProfileTime
     {
@@ -39,8 +41,23 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        /// The time period.
+        ///  The aggregation period. This indicates the period during which an aggregation profile
+        /// collects posted agent profiles for a profiling group. Use one of three valid durations
+        /// that are specified using the ISO 8601 format. 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>P1D</code> — 1 day 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PT1H</code> — 1 hour 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PT5M</code> — 5 minutes 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public AggregationPeriod Period
         {
@@ -57,7 +74,15 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property Start. 
         /// <para>
-        /// The start time.
+        ///  The time that aggregation of posted agent profiles for a profiling group starts.
+        /// The aggregation profile contains profiles posted by the agent starting at this time
+        /// for an aggregation period specified by the <code>period</code> property of the <code>AggregatedProfileTime</code>
+        /// object. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z
+        /// represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. 
         /// </para>
         /// </summary>
         public DateTime Start

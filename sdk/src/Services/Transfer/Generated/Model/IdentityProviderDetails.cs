@@ -60,7 +60,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// Contains the location of the service endpoint used to authenticate users.
+        /// Provides the location of the service endpoint used to authenticate users.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

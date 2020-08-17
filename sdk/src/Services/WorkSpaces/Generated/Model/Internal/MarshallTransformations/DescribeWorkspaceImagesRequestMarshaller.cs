@@ -79,6 +79,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetImageType())
+                {
+                    context.Writer.WritePropertyName("ImageType");
+                    context.Writer.Write(publicRequest.ImageType);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");

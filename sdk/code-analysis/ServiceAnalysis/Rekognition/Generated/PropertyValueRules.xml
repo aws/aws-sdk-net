@@ -297,6 +297,24 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetSegmentDetectionRequest.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetSegmentDetectionRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetSegmentDetectionRequest.NextToken</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.GetSegmentDetectionResponse.NextToken</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.GetTextDetectionRequest.JobId</property>
     <min>1</min>
     <max>64</max>
@@ -555,6 +573,24 @@
     <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.StartSegmentDetectionRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.StartSegmentDetectionRequest.JobTag</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.StartSegmentDetectionResponse.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.StartStreamProcessorRequest.Name</property>
     <min>1</min>
     <max>128</max>
@@ -596,6 +632,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.AgeRange.Low</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.AudioMetadata.DurationMillis</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.AudioMetadata.NumberOfChannels</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.AudioMetadata.SampleRate</property>
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
@@ -842,8 +890,31 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.SegmentDetection.DurationMillis</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.ShotSegment.Confidence</property>
+    <min>50</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.ShotSegment.Index</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.Smile.Confidence</property>
     <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.StartShotDetectionFilter.MinSegmentConfidence</property>
+    <min>50</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.StartTechnicalCueDetectionFilter.MinSegmentConfidence</property>
+    <min>50</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -855,6 +926,11 @@
   <property-value-rule>
     <property>Amazon.Rekognition.Model.Sunglasses.Confidence</property>
     <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.TechnicalCueSegment.Confidence</property>
+    <min>50</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>

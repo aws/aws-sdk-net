@@ -1,0 +1,68 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the lightsail-2016-11-28.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.Lightsail.Model
+{
+    /// <summary>
+    /// Container for the parameters to the GetDistributionLatestCacheReset operation.
+    /// Returns the timestamp and status of the last cache reset of a specific Amazon Lightsail
+    /// content delivery network (CDN) distribution.
+    /// </summary>
+    public partial class GetDistributionLatestCacheResetRequest : AmazonLightsailRequest
+    {
+        private string _distributionName;
+
+        /// <summary>
+        /// Gets and sets the property DistributionName. 
+        /// <para>
+        /// The name of the distribution for which to return the timestamp of the last cache reset.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <code>GetDistributions</code> action to get a list of distribution names that
+        /// you can specify.
+        /// </para>
+        ///  
+        /// <para>
+        /// When omitted, the response includes the latest cache reset timestamp of all your distributions.
+        /// </para>
+        /// </summary>
+        public string DistributionName
+        {
+            get { return this._distributionName; }
+            set { this._distributionName = value; }
+        }
+
+        // Check to see if DistributionName property is set
+        internal bool IsSetDistributionName()
+        {
+            return this._distributionName != null;
+        }
+
+    }
+}

@@ -37,10 +37,52 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class Workforce
     {
+        private CognitoConfig _cognitoConfig;
+        private DateTime? _createDate;
         private DateTime? _lastUpdatedDate;
+        private OidcConfigForResponse _oidcConfig;
         private SourceIpConfig _sourceIpConfig;
+        private string _subDomain;
         private string _workforceArn;
         private string _workforceName;
+
+        /// <summary>
+        /// Gets and sets the property CognitoConfig. 
+        /// <para>
+        /// The configuration of an Amazon Cognito workforce. A single Cognito workforce is created
+        /// using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">
+        /// Amazon Cognito user pool</a>.
+        /// </para>
+        /// </summary>
+        public CognitoConfig CognitoConfig
+        {
+            get { return this._cognitoConfig; }
+            set { this._cognitoConfig = value; }
+        }
+
+        // Check to see if CognitoConfig property is set
+        internal bool IsSetCognitoConfig()
+        {
+            return this._cognitoConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateDate. 
+        /// <para>
+        /// The date that the workforce is created.
+        /// </para>
+        /// </summary>
+        public DateTime CreateDate
+        {
+            get { return this._createDate.GetValueOrDefault(); }
+            set { this._createDate = value; }
+        }
+
+        // Check to see if CreateDate property is set
+        internal bool IsSetCreateDate()
+        {
+            return this._createDate.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property LastUpdatedDate. 
@@ -63,9 +105,27 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OidcConfig. 
+        /// <para>
+        /// The configuration of an OIDC Identity Provider (IdP) private workforce.
+        /// </para>
+        /// </summary>
+        public OidcConfigForResponse OidcConfig
+        {
+            get { return this._oidcConfig; }
+            set { this._oidcConfig = value; }
+        }
+
+        // Check to see if OidcConfig property is set
+        internal bool IsSetOidcConfig()
+        {
+            return this._oidcConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceIpConfig. 
         /// <para>
-        /// A list of one to four IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
+        /// A list of one to ten IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
         /// to be added to the workforce allow list.
         /// </para>
         /// </summary>
@@ -79,6 +139,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSourceIpConfig()
         {
             return this._sourceIpConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubDomain. 
+        /// <para>
+        /// The subdomain for your OIDC Identity Provider.
+        /// </para>
+        /// </summary>
+        public string SubDomain
+        {
+            get { return this._subDomain; }
+            set { this._subDomain = value; }
+        }
+
+        // Check to see if SubDomain property is set
+        internal bool IsSetSubDomain()
+        {
+            return this._subDomain != null;
         }
 
         /// <summary>
@@ -103,9 +181,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property WorkforceName. 
         /// <para>
-        /// The name of the private workforce whose access you want to restrict. <code>WorkforceName</code>
-        /// is automatically set to <code>default</code> when a workforce is created and cannot
-        /// be modified. 
+        /// The name of the private workforce.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

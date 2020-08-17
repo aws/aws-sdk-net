@@ -33,6 +33,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class CopyJob
     {
+        private string _accountId;
         private long? _backupSizeInBytes;
         private DateTime? _completionDate;
         private string _copyJobId;
@@ -47,6 +48,24 @@ namespace Amazon.Backup.Model
         private string _sourceRecoveryPointArn;
         private CopyJobState _state;
         private string _statusMessage;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The account ID that owns the copy job.
+        /// </para>
+        /// </summary>
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BackupSizeInBytes. 
@@ -70,8 +89,9 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CompletionDate. 
         /// <para>
         /// The date and time a copy job is completed, in Unix format and Coordinated Universal
-        /// Time (UTC). The value of CompletionDate is accurate to milliseconds. For example,
-        /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. 
+        /// Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds.
+        /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+        /// AM.
         /// </para>
         /// </summary>
         public DateTime CompletionDate
@@ -123,8 +143,9 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreationDate. 
         /// <para>
         /// The date and time a copy job is created, in Unix format and Coordinated Universal
-        /// Time (UTC). The value of CreationDate is accurate to milliseconds. For example, the
-        /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. 
+        /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
+        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+        /// AM.
         /// </para>
         /// </summary>
         public DateTime CreationDate

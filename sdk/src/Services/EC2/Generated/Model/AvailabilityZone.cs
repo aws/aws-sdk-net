@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes an Availability Zone or Local Zone.
+    /// Describes Availability Zones, Local Zones, and Wavelength Zones.
     /// </summary>
     public partial class AvailabilityZone
     {
@@ -37,10 +37,13 @@ namespace Amazon.EC2.Model
         private List<AvailabilityZoneMessage> _messages = new List<AvailabilityZoneMessage>();
         private string _networkBorderGroup;
         private AvailabilityZoneOptInStatus _optInStatus;
+        private string _parentZoneId;
+        private string _parentZoneName;
         private string _regionName;
         private AvailabilityZoneState _state;
         private string _zoneId;
         private string _zoneName;
+        private string _zoneType;
 
         /// <summary>
         /// Gets and sets the property GroupName. 
@@ -50,6 +53,10 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// For Local Zones, the name of the associated group, for example <code>us-west-2-lax-1</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Wavelength Zones, the name of the associated group, for example <code>us-east-1-wl1-bos-wlz-1</code>.
         /// </para>
         /// </summary>
         public string GroupName
@@ -67,7 +74,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Messages. 
         /// <para>
-        /// Any messages about the Availability Zone or Local Zone.
+        /// Any messages about the Availability Zone, Local Zone, or Wavelength Zone.
         /// </para>
         /// </summary>
         public List<AvailabilityZoneMessage> Messages
@@ -85,7 +92,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkBorderGroup. 
         /// <para>
-        /// The name of the location from which the address is advertised.
+        /// The name of the network border group.
         /// </para>
         /// </summary>
         public string NetworkBorderGroup
@@ -103,12 +110,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OptInStatus. 
         /// <para>
-        ///  For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.
+        /// For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.
         /// </para>
         ///  
         /// <para>
-        /// For Local Zones, this parameter is the opt in status. The possible values are <code>opted-in</code>,
-        /// and <code>not-opted-in</code>.
+        /// For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible
+        /// values are <code>opted-in</code>, and <code>not-opted-in</code>.
         /// </para>
         /// </summary>
         public AvailabilityZoneOptInStatus OptInStatus
@@ -121,6 +128,44 @@ namespace Amazon.EC2.Model
         internal bool IsSetOptInStatus()
         {
             return this._optInStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentZoneId. 
+        /// <para>
+        /// The ID of the zone that handles some of the Local Zone or Wavelength Zone control
+        /// plane operations, such as API calls.
+        /// </para>
+        /// </summary>
+        public string ParentZoneId
+        {
+            get { return this._parentZoneId; }
+            set { this._parentZoneId = value; }
+        }
+
+        // Check to see if ParentZoneId property is set
+        internal bool IsSetParentZoneId()
+        {
+            return this._parentZoneId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentZoneName. 
+        /// <para>
+        /// The name of the zone that handles some of the Local Zone or Wavelength Zone control
+        /// plane operations, such as API calls.
+        /// </para>
+        /// </summary>
+        public string ParentZoneName
+        {
+            get { return this._parentZoneName; }
+            set { this._parentZoneName = value; }
+        }
+
+        // Check to see if ParentZoneName property is set
+        internal bool IsSetParentZoneName()
+        {
+            return this._parentZoneName != null;
         }
 
         /// <summary>
@@ -144,7 +189,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the Availability Zone or Local Zone.
+        /// The state of the Availability Zone, Local Zone, or Wavelength Zone.
         /// </para>
         /// </summary>
         public AvailabilityZoneState State
@@ -162,7 +207,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ZoneId. 
         /// <para>
-        /// The ID of the Availability Zone or Local Zone.
+        /// The ID of the Availability Zone, Local Zone, or Wavelength Zone.
         /// </para>
         /// </summary>
         public string ZoneId
@@ -180,7 +225,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ZoneName. 
         /// <para>
-        /// The name of the Availability Zone or Local Zone.
+        /// The name of the Availability Zone, Local Zone, or Wavelength Zone.
         /// </para>
         /// </summary>
         public string ZoneName
@@ -193,6 +238,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetZoneName()
         {
             return this._zoneName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZoneType. 
+        /// <para>
+        /// The type of zone. The valid values are <code>availability-zone</code>, <code>local-zone</code>,
+        /// and <code>wavelength-zone</code>.
+        /// </para>
+        /// </summary>
+        public string ZoneType
+        {
+            get { return this._zoneType; }
+            set { this._zoneType = value; }
+        }
+
+        // Check to see if ZoneType property is set
+        internal bool IsSetZoneType()
+        {
+            return this._zoneType != null;
         }
 
     }

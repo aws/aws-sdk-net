@@ -148,6 +148,10 @@
       <Project>{8672DE1E-8F7B-480C-9A87-C75AA468FFEB}</Project>
       <Name>AWSSDK.Batch.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Braket/AWSSDK.Braket.CodeAnalysis.csproj">
+      <Project>{779E41EE-7E66-4A69-A705-9A583A872184}</Project>
+      <Name>AWSSDK.Braket.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Budgets/AWSSDK.Budgets.CodeAnalysis.csproj">
       <Project>{B6A09F41-9D24-45C8-9B66-B22470CD0794}</Project>
       <Name>AWSSDK.Budgets.CodeAnalysis</Name>
@@ -207,6 +211,10 @@
     <ProjectReference Include="../ServiceAnalysis/CloudWatchLogs/AWSSDK.CloudWatchLogs.CodeAnalysis.csproj">
       <Project>{169A76D6-4DBA-4B0C-BE8F-8B82BEF20297}</Project>
       <Name>AWSSDK.CloudWatchLogs.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CodeArtifact/AWSSDK.CodeArtifact.CodeAnalysis.csproj">
+      <Project>{A8A9A15A-1C05-45C4-BDA3-D8DAADFF739D}</Project>
+      <Name>AWSSDK.CodeArtifact.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CodeBuild/AWSSDK.CodeBuild.CodeAnalysis.csproj">
       <Project>{A3A9559C-7BF6-4586-B96F-951BA51C8C18}</Project>
@@ -448,6 +456,10 @@
       <Project>{9E695E0B-766A-40BB-8BBB-0376B3C88E3C}</Project>
       <Name>AWSSDK.GuardDuty.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Honeycode/AWSSDK.Honeycode.CodeAnalysis.csproj">
+      <Project>{7514CF83-2AF7-4EAC-9006-24E159F9D62A}</Project>
+      <Name>AWSSDK.Honeycode.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IdentityManagement/AWSSDK.IdentityManagement.CodeAnalysis.csproj">
       <Project>{75CCB501-0580-46F5-8CFB-705D6D6ECFDF}</Project>
       <Name>AWSSDK.IdentityManagement.CodeAnalysis</Name>
@@ -507,6 +519,10 @@
     <ProjectReference Include="../ServiceAnalysis/IoTThingsGraph/AWSSDK.IoTThingsGraph.CodeAnalysis.csproj">
       <Project>{E1340219-BBFF-4AFA-AB2E-0AEB09614F70}</Project>
       <Name>AWSSDK.IoTThingsGraph.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/IVS/AWSSDK.IVS.CodeAnalysis.csproj">
+      <Project>{F432AF25-9775-41B8-A42E-7890CD7189BB}</Project>
+      <Name>AWSSDK.IVS.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Kafka/AWSSDK.Kafka.CodeAnalysis.csproj">
       <Project>{EAAA00EB-81EC-4E9B-9246-D6801277824E}</Project>

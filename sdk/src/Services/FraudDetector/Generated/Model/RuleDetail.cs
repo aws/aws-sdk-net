@@ -33,6 +33,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class RuleDetail
     {
+        private string _arn;
         private string _createdTime;
         private string _description;
         private string _detectorId;
@@ -42,6 +43,25 @@ namespace Amazon.FraudDetector.Model
         private List<string> _outcomes = new List<string>();
         private string _ruleId;
         private string _ruleVersion;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The rule ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedTime. 
@@ -198,7 +218,7 @@ namespace Amazon.FraudDetector.Model
         /// The rule version.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=5)]
         public string RuleVersion
         {
             get { return this._ruleVersion; }

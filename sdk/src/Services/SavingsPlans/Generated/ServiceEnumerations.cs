@@ -499,6 +499,10 @@ namespace Amazon.SavingsPlans
         /// </summary>
         public static readonly SavingsPlanRateServiceCode AmazonECS = new SavingsPlanRateServiceCode("AmazonECS");
         /// <summary>
+        /// Constant AmazonEKS for SavingsPlanRateServiceCode
+        /// </summary>
+        public static readonly SavingsPlanRateServiceCode AmazonEKS = new SavingsPlanRateServiceCode("AmazonEKS");
+        /// <summary>
         /// Constant AWSLambda for SavingsPlanRateServiceCode
         /// </summary>
         public static readonly SavingsPlanRateServiceCode AWSLambda = new SavingsPlanRateServiceCode("AWSLambda");

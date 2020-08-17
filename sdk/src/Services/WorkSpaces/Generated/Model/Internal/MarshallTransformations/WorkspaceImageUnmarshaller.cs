@@ -64,6 +64,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Created", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.Created = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = OperatingSystemUnmarshaller.Instance;
                     unmarshalledObject.OperatingSystem = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OwnerAccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RequiredTenancy", targetDepth))

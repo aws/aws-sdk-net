@@ -40,6 +40,7 @@ namespace Amazon.Glue.Model
         private WorkflowGraph _graph;
         private DateTime? _lastModifiedOn;
         private WorkflowRun _lastRun;
+        private int? _maxConcurrentRuns;
         private string _name;
 
         /// <summary>
@@ -149,6 +150,27 @@ namespace Amazon.Glue.Model
         internal bool IsSetLastRun()
         {
             return this._lastRun != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxConcurrentRuns. 
+        /// <para>
+        /// You can use this parameter to prevent unwanted multiple updates to data, to control
+        /// costs, or in some cases, to prevent exceeding the maximum number of concurrent runs
+        /// of any of the component jobs. If you leave this parameter blank, there is no limit
+        /// to the number of concurrent workflow runs.
+        /// </para>
+        /// </summary>
+        public int MaxConcurrentRuns
+        {
+            get { return this._maxConcurrentRuns.GetValueOrDefault(); }
+            set { this._maxConcurrentRuns = value; }
+        }
+
+        // Check to see if MaxConcurrentRuns property is set
+        internal bool IsSetMaxConcurrentRuns()
+        {
+            return this._maxConcurrentRuns.HasValue; 
         }
 
         /// <summary>

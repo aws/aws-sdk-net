@@ -82,6 +82,12 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConnectionStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HostArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HostArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OwnerAccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

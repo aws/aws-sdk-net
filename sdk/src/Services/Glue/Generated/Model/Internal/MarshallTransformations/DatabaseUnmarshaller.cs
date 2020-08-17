@@ -64,6 +64,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CatalogId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CatalogId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreateTableDefaultPermissions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<PrincipalPermissions, PrincipalPermissionsUnmarshaller>(PrincipalPermissionsUnmarshaller.Instance);
@@ -98,6 +104,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TargetDatabase", targetDepth))
+                {
+                    var unmarshaller = DatabaseIdentifierUnmarshaller.Instance;
+                    unmarshalledObject.TargetDatabase = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

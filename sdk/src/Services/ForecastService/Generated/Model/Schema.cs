@@ -42,6 +42,7 @@ namespace Amazon.ForecastService.Model
         /// An array of attributes specifying the name and type of each field in a dataset.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<SchemaAttribute> Attributes
         {
             get { return this._attributes; }

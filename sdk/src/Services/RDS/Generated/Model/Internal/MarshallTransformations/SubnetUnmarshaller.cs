@@ -66,6 +66,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.SubnetIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SubnetOutpost", targetDepth))
+                    {
+                        var unmarshaller = OutpostUnmarshaller.Instance;
+                        unmarshalledObject.SubnetOutpost = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SubnetStatus", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

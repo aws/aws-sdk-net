@@ -495,10 +495,27 @@
     <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:user-profile/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateWorkforceRequest.WorkforceName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9\-])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateWorkforceResponse.WorkforceArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:workforce/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateWorkteamRequest.Description</property>
     <min>1</min>
     <max>200</max>
     <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateWorkteamRequest.WorkforceName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9\-])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateWorkteamRequest.WorkteamName</property>
@@ -569,6 +586,12 @@
     <pattern>^[a-z0-9](-*[a-z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeleteHumanTaskUiRequest.HumanTaskUiName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9](-*[a-z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteModelRequest.ModelName</property>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
@@ -630,6 +653,12 @@
     <property>Amazon.SageMaker.Model.DeleteUserProfileRequest.UserProfileName</property>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeleteWorkforceRequest.WorkforceName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9\-])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteWorkteamRequest.WorkteamName</property>
@@ -2053,6 +2082,27 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListWorkforcesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListWorkforcesRequest.NameContains</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9\-])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListWorkforcesRequest.NextToken</property>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListWorkforcesResponse.NextToken</property>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ListWorkteamsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -2558,10 +2608,22 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CognitoConfig.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CognitoConfig.UserPool</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>[\w-]+_[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CognitoMemberDefinition.ClientId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+]+</pattern>
+    <pattern>[\w+-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CognitoMemberDefinition.UserGroup</property>
@@ -3312,6 +3374,16 @@
     <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ModelClientConfig.InvocationsMaxRetries</property>
+    <min>0</min>
+    <max>3</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ModelClientConfig.InvocationsTimeoutInSeconds</property>
+    <min>1</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelPackageContainerDefinition.ContainerHostname</property>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
@@ -3540,6 +3612,90 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ObjectiveStatusCounters.Succeeded</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OidcConfig.AuthorizationEndpoint</property>
+    <max>500</max>
+    <pattern>https://\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OidcConfig.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OidcConfig.ClientSecret</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w+=/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OidcConfig.Issuer</property>
+    <max>500</max>
+    <pattern>https://\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OidcConfig.JwksUri</property>
+    <max>500</max>
+    <pattern>https://\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OidcConfig.LogoutEndpoint</property>
+    <max>500</max>
+    <pattern>https://\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OidcConfig.TokenEndpoint</property>
+    <max>500</max>
+    <pattern>https://\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OidcConfig.UserInfoEndpoint</property>
+    <max>500</max>
+    <pattern>https://\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OidcConfigForResponse.AuthorizationEndpoint</property>
+    <max>500</max>
+    <pattern>https://\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OidcConfigForResponse.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OidcConfigForResponse.Issuer</property>
+    <max>500</max>
+    <pattern>https://\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OidcConfigForResponse.JwksUri</property>
+    <max>500</max>
+    <pattern>https://\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OidcConfigForResponse.LogoutEndpoint</property>
+    <max>500</max>
+    <pattern>https://\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OidcConfigForResponse.TokenEndpoint</property>
+    <max>500</max>
+    <pattern>https://\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OidcConfigForResponse.UserInfoEndpoint</property>
+    <max>500</max>
+    <pattern>https://\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OutputConfig.CompilerOptions</property>
+    <min>7</min>
+    <max>1024</max>
+    <pattern>^\{.+\}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.OutputConfig.S3OutputLocation</property>
@@ -3934,6 +4090,45 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformJob.AutoMLJobArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:automl-job/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformJob.FailureReason</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformJob.LabelingJobArn</property>
+    <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:labeling-job/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformJob.MaxConcurrentTransforms</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformJob.MaxPayloadInMB</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformJob.ModelName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformJob.TransformJobArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:transform-job/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformJob.TransformJobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.TransformJobDefinition.MaxConcurrentTransforms</property>
     <min>0</min>
   </property-value-rule>
@@ -4196,6 +4391,11 @@
     <min>1</min>
     <max>200</max>
     <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.Workteam.WorkforceArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:workforce/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Workteam.WorkteamArn</property>

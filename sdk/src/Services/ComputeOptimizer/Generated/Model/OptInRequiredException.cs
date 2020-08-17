@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// You must opt in to the service to perform this action.
+    /// The account is not opted in to AWS Compute Optimizer.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

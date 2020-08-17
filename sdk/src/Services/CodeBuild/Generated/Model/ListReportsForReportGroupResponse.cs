@@ -62,7 +62,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Reports. 
         /// <para>
-        ///  The list of returned report group ARNs. 
+        ///  The list of report ARNs. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

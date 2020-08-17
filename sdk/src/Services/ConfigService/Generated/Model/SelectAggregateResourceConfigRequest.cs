@@ -106,7 +106,11 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of query results returned on each page. AWS Config also allows
+        /// the Limit request parameter.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public int MaxResults

@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// to configure the instance to run in On-Demand capacity or to run in any <code>open</code>
     /// Capacity Reservation that has matching attributes (instance type, platform, Availability
     /// Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly target
-    /// a specific Capacity Reservation.
+    /// a specific Capacity Reservation or a Capacity Reservation group.
     /// </summary>
     public partial class LaunchTemplateCapacityReservationSpecificationRequest
     {
@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CapacityReservationTarget. 
         /// <para>
-        /// Information about the target Capacity Reservation.
+        /// Information about the target Capacity Reservation or Capacity Reservation group.
         /// </para>
         /// </summary>
         public CapacityReservationTarget CapacityReservationTarget

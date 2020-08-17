@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Details of abort criteria to define rules to abort the job.
+    /// The criteria that determine when and how a job abort takes place.
     /// </summary>
     public partial class AbortCriteria
     {
@@ -41,7 +41,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The type of abort action to initiate a job abort.
+        /// The type of job action to take to initiate the job abort.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property FailureType. 
         /// <para>
-        /// The type of job execution failure to define a rule to initiate a job abort.
+        /// The type of job execution failures that can initiate a job abort.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property MinNumberOfExecutedThings. 
         /// <para>
-        /// Minimum number of executed things before evaluating an abort rule.
+        /// The minimum number of things which must receive job execution notifications before
+        /// the job can be aborted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -98,8 +99,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ThresholdPercentage. 
         /// <para>
-        /// The threshold as a percentage of the total number of executed things that will initiate
-        /// a job abort.
+        /// The minimum percentage of job execution failures that must occur to initiate the job
+        /// abort.
         /// </para>
         ///  
         /// <para>

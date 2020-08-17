@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCustomDataIdentifier operation.
-    /// Deletes a custom data identifier.
+    /// Soft deletes a custom data identifier.
     /// </summary>
     public partial class DeleteCustomDataIdentifierRequest : AmazonMacie2Request
     {

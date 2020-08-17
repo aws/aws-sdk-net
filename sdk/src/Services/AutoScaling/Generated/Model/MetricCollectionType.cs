@@ -72,6 +72,26 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         ///  <code>GroupTotalInstances</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GroupInServiceCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GroupPendingCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GroupStandbyCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GroupTerminatingCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GroupTotalCapacity</code> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

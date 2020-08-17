@@ -63,7 +63,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Gets and sets the property EndLine. 
         /// <para>
         ///  Last line where the recommendation is applicable in the source commit or source branch.
-        /// For a single line comment the start line and end line values will be the same. 
+        /// For a single line comment the start line and end line values are the same. 
         /// </para>
         /// </summary>
         public int EndLine

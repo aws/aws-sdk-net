@@ -123,6 +123,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DomainIAMRoleName", StringUtils.FromString(publicRequest.DomainIAMRoleName));
                 }
+                if(publicRequest.IsSetEnableGlobalWriteForwarding())
+                {
+                    request.Parameters.Add("EnableGlobalWriteForwarding", StringUtils.FromBool(publicRequest.EnableGlobalWriteForwarding));
+                }
                 if(publicRequest.IsSetEnableHttpEndpoint())
                 {
                     request.Parameters.Add("EnableHttpEndpoint", StringUtils.FromBool(publicRequest.EnableHttpEndpoint));

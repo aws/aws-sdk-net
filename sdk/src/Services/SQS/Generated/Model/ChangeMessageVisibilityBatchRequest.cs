@@ -49,11 +49,11 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>&amp;Attribute.1=first</code> 
+    ///  <code>&amp;AttributeName.1=first</code> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>&amp;Attribute.2=second</code> 
+    ///  <code>&amp;AttributeName.2=second</code> 
     /// </para>
     /// </summary>
     public partial class ChangeMessageVisibilityBatchRequest : AmazonSQSRequest

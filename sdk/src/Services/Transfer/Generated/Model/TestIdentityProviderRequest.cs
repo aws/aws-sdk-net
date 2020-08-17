@@ -40,6 +40,7 @@ namespace Amazon.Transfer.Model
     {
         private string _serverId;
         private Protocol _serverProtocol;
+        private string _sourceIp;
         private string _userName;
         private string _userPassword;
 
@@ -99,12 +100,31 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceIp. 
+        /// <para>
+        /// The source IP address of the user account to be tested.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=32)]
+        public string SourceIp
+        {
+            get { return this._sourceIp; }
+            set { this._sourceIp = value; }
+        }
+
+        // Check to see if SourceIp property is set
+        internal bool IsSetSourceIp()
+        {
+            return this._sourceIp != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
         /// The name of the user account to be tested.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=32)]
+        [AWSProperty(Required=true, Min=3, Max=100)]
         public string UserName
         {
             get { return this._userName; }

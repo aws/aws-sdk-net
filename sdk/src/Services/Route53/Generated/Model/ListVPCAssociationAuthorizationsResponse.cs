@@ -66,7 +66,7 @@ namespace Amazon.Route53.Model
         /// request parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

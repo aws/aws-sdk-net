@@ -30,7 +30,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the ExecutePolicy operation.
-    /// Executes the specified policy.
+    /// Executes the specified policy. This can be useful for testing the design of your scaling
+    /// policy.
     /// </summary>
     public partial class ExecutePolicyRequest : AmazonAutoScalingRequest
     {
@@ -66,8 +67,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: This parameter is required if the policy type is <code>StepScaling</code>
-        /// and not supported otherwise.
+        /// Required if the policy type is <code>StepScaling</code> and not supported otherwise.
         /// </para>
         /// </summary>
         public double BreachThreshold
@@ -90,13 +90,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is not supported if the policy type is <code>StepScaling</code> or
-        /// <code>TargetTrackingScaling</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-        /// Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// Valid only if the policy type is <code>SimpleScaling</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+        /// Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public bool HonorCooldown
@@ -126,8 +122,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: This parameter is required if the policy type is <code>StepScaling</code>
-        /// and not supported otherwise.
+        /// Required if the policy type is <code>StepScaling</code> and not supported otherwise.
         /// </para>
         /// </summary>
         public double MetricValue

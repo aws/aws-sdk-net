@@ -1784,6 +1784,38 @@
                 "Core" : "3.5.0.0"
             },
             "InPreview"               : false
+        },
+        "CodeArtifact"                    : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "Honeycode"                       : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "IVS"                             : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
+        },
+        "Braket"                          : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.0.0"
+            },
+            "InPreview"               : false
         }
     }
 }

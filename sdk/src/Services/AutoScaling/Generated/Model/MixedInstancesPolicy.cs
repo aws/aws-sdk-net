@@ -39,8 +39,8 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     /// You can create a mixed instances policy for a new Auto Scaling group, or you can create
     /// it for an existing group by updating the group to specify <code>MixedInstancesPolicy</code>
-    /// as the top-level parameter instead of a launch configuration or template. For more
-    /// information, see <a>CreateAutoScalingGroup</a> and <a>UpdateAutoScalingGroup</a>.
+    /// as the top-level parameter instead of a launch configuration or launch template. For
+    /// more information, see <a>CreateAutoScalingGroup</a> and <a>UpdateAutoScalingGroup</a>.
     /// </para>
     /// </summary>
     public partial class MixedInstancesPolicy
@@ -78,7 +78,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter must be specified when creating a mixed instances policy.
+        /// Required when creating a mixed instances policy.
         /// </para>
         /// </summary>
         public LaunchTemplate LaunchTemplate

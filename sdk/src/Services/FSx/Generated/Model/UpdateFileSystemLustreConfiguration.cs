@@ -34,7 +34,88 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class UpdateFileSystemLustreConfiguration
     {
+        private AutoImportPolicyType _autoImportPolicy;
+        private int? _automaticBackupRetentionDays;
+        private string _dailyAutomaticBackupStartTime;
         private string _weeklyMaintenanceStartTime;
+
+        /// <summary>
+        /// Gets and sets the property AutoImportPolicy. 
+        /// <para>
+        ///  (Optional) Use this property to configure the AutoImport feature on the file system's
+        /// linked Amazon S3 data repository. You use AutoImport to update the contents of your
+        /// FSx for Lustre file system automatically with changes that occur in the linked S3
+        /// data repository. <code>AutoImportPolicy</code> can have the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository
+        /// are not reflected on the FSx file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NEW</code> - AutoImport is on. New files in the linked data repository that
+        /// do not currently exist in the FSx file system are automatically imported. Updates
+        /// to existing FSx files are not imported to the FSx file system. Files deleted from
+        /// the linked data repository are not deleted from the FSx file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository
+        /// that do not currently exist in the FSx file system are automatically imported. Changes
+        /// to existing FSx files in the linked repository are also automatically imported to
+        /// the FSx file system. Files deleted from the linked data repository are not deleted
+        /// from the FSx file system. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
+        /// import updates from your S3 bucket</a>.
+        /// </para>
+        /// </summary>
+        public AutoImportPolicyType AutoImportPolicy
+        {
+            get { return this._autoImportPolicy; }
+            set { this._autoImportPolicy = value; }
+        }
+
+        // Check to see if AutoImportPolicy property is set
+        internal bool IsSetAutoImportPolicy()
+        {
+            return this._autoImportPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutomaticBackupRetentionDays.
+        /// </summary>
+        [AWSProperty(Min=0, Max=90)]
+        public int AutomaticBackupRetentionDays
+        {
+            get { return this._automaticBackupRetentionDays.GetValueOrDefault(); }
+            set { this._automaticBackupRetentionDays = value; }
+        }
+
+        // Check to see if AutomaticBackupRetentionDays property is set
+        internal bool IsSetAutomaticBackupRetentionDays()
+        {
+            return this._automaticBackupRetentionDays.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DailyAutomaticBackupStartTime.
+        /// </summary>
+        [AWSProperty(Min=5, Max=5)]
+        public string DailyAutomaticBackupStartTime
+        {
+            get { return this._dailyAutomaticBackupStartTime; }
+            set { this._dailyAutomaticBackupStartTime = value; }
+        }
+
+        // Check to see if DailyAutomaticBackupStartTime property is set
+        internal bool IsSetDailyAutomaticBackupStartTime()
+        {
+            return this._dailyAutomaticBackupStartTime != null;
+        }
 
         /// <summary>
         /// Gets and sets the property WeeklyMaintenanceStartTime. 

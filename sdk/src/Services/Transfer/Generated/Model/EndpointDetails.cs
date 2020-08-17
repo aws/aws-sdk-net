@@ -73,6 +73,11 @@ namespace Amazon.Transfer.Model
         /// A list of subnet IDs that are required to host your file transfer protocol-enabled
         /// server endpoint in your VPC.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> SubnetIds
         {
@@ -91,6 +96,11 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// The ID of the VPC endpoint.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This property can only be used when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=22, Max=22)]
         public string VpcEndpointId
@@ -111,6 +121,11 @@ namespace Amazon.Transfer.Model
         /// The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint
         /// will be hosted.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string VpcId
         {

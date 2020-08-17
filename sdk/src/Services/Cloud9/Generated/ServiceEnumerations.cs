@@ -25,6 +25,56 @@ namespace Amazon.Cloud9
 {
 
     /// <summary>
+    /// Constants used for properties of type ConnectionType.
+    /// </summary>
+    public class ConnectionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECT_SSH for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType CONNECT_SSH = new ConnectionType("CONNECT_SSH");
+        /// <summary>
+        /// Constant CONNECT_SSM for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType CONNECT_SSM = new ConnectionType("CONNECT_SSM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionType FindValue(string value)
+        {
+            return FindValue<ConnectionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EnvironmentLifecycleStatus.
     /// </summary>
     public class EnvironmentLifecycleStatus : ConstantClass

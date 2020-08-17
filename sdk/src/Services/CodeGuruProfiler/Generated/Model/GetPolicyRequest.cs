@@ -30,7 +30,7 @@ namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPolicy operation.
-    /// Gets the profiling group policy.
+    /// Returns the JSON-formatted resource-based policy on a profiling group.
     /// </summary>
     public partial class GetPolicyRequest : AmazonCodeGuruProfilerRequest
     {

@@ -30,7 +30,8 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the StartAppReplication operation.
-    /// Starts replicating an application.
+    /// Starts replicating the specified application by creating replication jobs for each
+    /// server in the application.
     /// </summary>
     public partial class StartAppReplicationRequest : AmazonServerMigrationServiceRequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// ID of the application to replicate.
+        /// The ID of the application.
         /// </para>
         /// </summary>
         public string AppId

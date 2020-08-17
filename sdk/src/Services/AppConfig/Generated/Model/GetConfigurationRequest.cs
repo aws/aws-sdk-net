@@ -101,7 +101,7 @@ namespace Amazon.AppConfig.Model
         /// the Configuration</a> in the <i>AWS AppConfig User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=1024)]
         public string ClientConfigurationVersion
         {
             get { return this._clientConfigurationVersion; }

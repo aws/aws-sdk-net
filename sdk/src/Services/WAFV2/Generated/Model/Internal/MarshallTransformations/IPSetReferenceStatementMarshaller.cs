@@ -51,6 +51,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ARN);
             }
 
+            if(requestObject.IsSetIPSetForwardedIPConfig())
+            {
+                context.Writer.WritePropertyName("IPSetForwardedIPConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IPSetForwardedIPConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.IPSetForwardedIPConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

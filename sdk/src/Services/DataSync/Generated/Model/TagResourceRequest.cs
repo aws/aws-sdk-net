@@ -62,7 +62,7 @@ namespace Amazon.DataSync.Model
         /// The tags to apply.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=55)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<TagListEntry> Tags
         {
             get { return this._tags; }

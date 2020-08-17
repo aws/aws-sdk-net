@@ -233,6 +233,56 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type BehaviorEnum.
+    /// </summary>
+    public class BehaviorEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Cache for BehaviorEnum
+        /// </summary>
+        public static readonly BehaviorEnum Cache = new BehaviorEnum("cache");
+        /// <summary>
+        /// Constant DontCache for BehaviorEnum
+        /// </summary>
+        public static readonly BehaviorEnum DontCache = new BehaviorEnum("dont-cache");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BehaviorEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BehaviorEnum FindValue(string value)
+        {
+            return FindValue<BehaviorEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BehaviorEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BlueprintType.
     /// </summary>
     public class BlueprintType : ConstantClass
@@ -276,6 +326,76 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BlueprintType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CertificateStatus.
+    /// </summary>
+    public class CertificateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXPIRED for CertificateStatus
+        /// </summary>
+        public static readonly CertificateStatus EXPIRED = new CertificateStatus("EXPIRED");
+        /// <summary>
+        /// Constant FAILED for CertificateStatus
+        /// </summary>
+        public static readonly CertificateStatus FAILED = new CertificateStatus("FAILED");
+        /// <summary>
+        /// Constant INACTIVE for CertificateStatus
+        /// </summary>
+        public static readonly CertificateStatus INACTIVE = new CertificateStatus("INACTIVE");
+        /// <summary>
+        /// Constant ISSUED for CertificateStatus
+        /// </summary>
+        public static readonly CertificateStatus ISSUED = new CertificateStatus("ISSUED");
+        /// <summary>
+        /// Constant PENDING_VALIDATION for CertificateStatus
+        /// </summary>
+        public static readonly CertificateStatus PENDING_VALIDATION = new CertificateStatus("PENDING_VALIDATION");
+        /// <summary>
+        /// Constant REVOKED for CertificateStatus
+        /// </summary>
+        public static readonly CertificateStatus REVOKED = new CertificateStatus("REVOKED");
+        /// <summary>
+        /// Constant VALIDATION_TIMED_OUT for CertificateStatus
+        /// </summary>
+        public static readonly CertificateStatus VALIDATION_TIMED_OUT = new CertificateStatus("VALIDATION_TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CertificateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateStatus FindValue(string value)
+        {
+            return FindValue<CertificateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateStatus(string value)
         {
             return FindValue(value);
         }
@@ -657,6 +777,72 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type DistributionMetricName.
+    /// </summary>
+    public class DistributionMetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BytesDownloaded for DistributionMetricName
+        /// </summary>
+        public static readonly DistributionMetricName BytesDownloaded = new DistributionMetricName("BytesDownloaded");
+        /// <summary>
+        /// Constant BytesUploaded for DistributionMetricName
+        /// </summary>
+        public static readonly DistributionMetricName BytesUploaded = new DistributionMetricName("BytesUploaded");
+        /// <summary>
+        /// Constant Http4xxErrorRate for DistributionMetricName
+        /// </summary>
+        public static readonly DistributionMetricName Http4xxErrorRate = new DistributionMetricName("Http4xxErrorRate");
+        /// <summary>
+        /// Constant Http5xxErrorRate for DistributionMetricName
+        /// </summary>
+        public static readonly DistributionMetricName Http5xxErrorRate = new DistributionMetricName("Http5xxErrorRate");
+        /// <summary>
+        /// Constant Requests for DistributionMetricName
+        /// </summary>
+        public static readonly DistributionMetricName Requests = new DistributionMetricName("Requests");
+        /// <summary>
+        /// Constant TotalErrorRate for DistributionMetricName
+        /// </summary>
+        public static readonly DistributionMetricName TotalErrorRate = new DistributionMetricName("TotalErrorRate");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DistributionMetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DistributionMetricName FindValue(string value)
+        {
+            return FindValue<DistributionMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DistributionMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExportSnapshotRecordSourceType.
     /// </summary>
     public class ExportSnapshotRecordSourceType : ConstantClass
@@ -700,6 +886,162 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExportSnapshotRecordSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ForwardValues.
+    /// </summary>
+    public class ForwardValues : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant All for ForwardValues
+        /// </summary>
+        public static readonly ForwardValues All = new ForwardValues("all");
+        /// <summary>
+        /// Constant AllowList for ForwardValues
+        /// </summary>
+        public static readonly ForwardValues AllowList = new ForwardValues("allow-list");
+        /// <summary>
+        /// Constant None for ForwardValues
+        /// </summary>
+        public static readonly ForwardValues None = new ForwardValues("none");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ForwardValues(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ForwardValues FindValue(string value)
+        {
+            return FindValue<ForwardValues>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ForwardValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HeaderEnum.
+    /// </summary>
+    public class HeaderEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Accept for HeaderEnum
+        /// </summary>
+        public static readonly HeaderEnum Accept = new HeaderEnum("Accept");
+        /// <summary>
+        /// Constant AcceptCharset for HeaderEnum
+        /// </summary>
+        public static readonly HeaderEnum AcceptCharset = new HeaderEnum("Accept-Charset");
+        /// <summary>
+        /// Constant AcceptDatetime for HeaderEnum
+        /// </summary>
+        public static readonly HeaderEnum AcceptDatetime = new HeaderEnum("Accept-Datetime");
+        /// <summary>
+        /// Constant AcceptEncoding for HeaderEnum
+        /// </summary>
+        public static readonly HeaderEnum AcceptEncoding = new HeaderEnum("Accept-Encoding");
+        /// <summary>
+        /// Constant AcceptLanguage for HeaderEnum
+        /// </summary>
+        public static readonly HeaderEnum AcceptLanguage = new HeaderEnum("Accept-Language");
+        /// <summary>
+        /// Constant Authorization for HeaderEnum
+        /// </summary>
+        public static readonly HeaderEnum Authorization = new HeaderEnum("Authorization");
+        /// <summary>
+        /// Constant CloudFrontForwardedProto for HeaderEnum
+        /// </summary>
+        public static readonly HeaderEnum CloudFrontForwardedProto = new HeaderEnum("CloudFront-Forwarded-Proto");
+        /// <summary>
+        /// Constant CloudFrontIsDesktopViewer for HeaderEnum
+        /// </summary>
+        public static readonly HeaderEnum CloudFrontIsDesktopViewer = new HeaderEnum("CloudFront-Is-Desktop-Viewer");
+        /// <summary>
+        /// Constant CloudFrontIsMobileViewer for HeaderEnum
+        /// </summary>
+        public static readonly HeaderEnum CloudFrontIsMobileViewer = new HeaderEnum("CloudFront-Is-Mobile-Viewer");
+        /// <summary>
+        /// Constant CloudFrontIsSmartTVViewer for HeaderEnum
+        /// </summary>
+        public static readonly HeaderEnum CloudFrontIsSmartTVViewer = new HeaderEnum("CloudFront-Is-SmartTV-Viewer");
+        /// <summary>
+        /// Constant CloudFrontIsTabletViewer for HeaderEnum
+        /// </summary>
+        public static readonly HeaderEnum CloudFrontIsTabletViewer = new HeaderEnum("CloudFront-Is-Tablet-Viewer");
+        /// <summary>
+        /// Constant CloudFrontViewerCountry for HeaderEnum
+        /// </summary>
+        public static readonly HeaderEnum CloudFrontViewerCountry = new HeaderEnum("CloudFront-Viewer-Country");
+        /// <summary>
+        /// Constant Host for HeaderEnum
+        /// </summary>
+        public static readonly HeaderEnum Host = new HeaderEnum("Host");
+        /// <summary>
+        /// Constant Origin for HeaderEnum
+        /// </summary>
+        public static readonly HeaderEnum Origin = new HeaderEnum("Origin");
+        /// <summary>
+        /// Constant Referer for HeaderEnum
+        /// </summary>
+        public static readonly HeaderEnum Referer = new HeaderEnum("Referer");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HeaderEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HeaderEnum FindValue(string value)
+        {
+            return FindValue<HeaderEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HeaderEnum(string value)
         {
             return FindValue(value);
         }
@@ -2157,6 +2499,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType AllocateStaticIp = new OperationType("AllocateStaticIp");
         /// <summary>
+        /// Constant AttachCertificateToDistribution for OperationType
+        /// </summary>
+        public static readonly OperationType AttachCertificateToDistribution = new OperationType("AttachCertificateToDistribution");
+        /// <summary>
         /// Constant AttachDisk for OperationType
         /// </summary>
         public static readonly OperationType AttachDisk = new OperationType("AttachDisk");
@@ -2177,6 +2523,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType CloseInstancePublicPorts = new OperationType("CloseInstancePublicPorts");
         /// <summary>
+        /// Constant CreateCertificate for OperationType
+        /// </summary>
+        public static readonly OperationType CreateCertificate = new OperationType("CreateCertificate");
+        /// <summary>
         /// Constant CreateContactMethod for OperationType
         /// </summary>
         public static readonly OperationType CreateContactMethod = new OperationType("CreateContactMethod");
@@ -2192,6 +2542,10 @@ namespace Amazon.Lightsail
         /// Constant CreateDiskSnapshot for OperationType
         /// </summary>
         public static readonly OperationType CreateDiskSnapshot = new OperationType("CreateDiskSnapshot");
+        /// <summary>
+        /// Constant CreateDistribution for OperationType
+        /// </summary>
+        public static readonly OperationType CreateDistribution = new OperationType("CreateDistribution");
         /// <summary>
         /// Constant CreateDomain for OperationType
         /// </summary>
@@ -2233,6 +2587,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType DeleteAlarm = new OperationType("DeleteAlarm");
         /// <summary>
+        /// Constant DeleteCertificate for OperationType
+        /// </summary>
+        public static readonly OperationType DeleteCertificate = new OperationType("DeleteCertificate");
+        /// <summary>
         /// Constant DeleteContactMethod for OperationType
         /// </summary>
         public static readonly OperationType DeleteContactMethod = new OperationType("DeleteContactMethod");
@@ -2244,6 +2602,10 @@ namespace Amazon.Lightsail
         /// Constant DeleteDiskSnapshot for OperationType
         /// </summary>
         public static readonly OperationType DeleteDiskSnapshot = new OperationType("DeleteDiskSnapshot");
+        /// <summary>
+        /// Constant DeleteDistribution for OperationType
+        /// </summary>
+        public static readonly OperationType DeleteDistribution = new OperationType("DeleteDistribution");
         /// <summary>
         /// Constant DeleteDomain for OperationType
         /// </summary>
@@ -2280,6 +2642,10 @@ namespace Amazon.Lightsail
         /// Constant DeleteRelationalDatabaseSnapshot for OperationType
         /// </summary>
         public static readonly OperationType DeleteRelationalDatabaseSnapshot = new OperationType("DeleteRelationalDatabaseSnapshot");
+        /// <summary>
+        /// Constant DetachCertificateFromDistribution for OperationType
+        /// </summary>
+        public static readonly OperationType DetachCertificateFromDistribution = new OperationType("DetachCertificateFromDistribution");
         /// <summary>
         /// Constant DetachDisk for OperationType
         /// </summary>
@@ -2333,6 +2699,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType ReleaseStaticIp = new OperationType("ReleaseStaticIp");
         /// <summary>
+        /// Constant ResetDistributionCache for OperationType
+        /// </summary>
+        public static readonly OperationType ResetDistributionCache = new OperationType("ResetDistributionCache");
+        /// <summary>
         /// Constant SendContactMethodVerification for OperationType
         /// </summary>
         public static readonly OperationType SendContactMethodVerification = new OperationType("SendContactMethodVerification");
@@ -2356,6 +2726,14 @@ namespace Amazon.Lightsail
         /// Constant TestAlarm for OperationType
         /// </summary>
         public static readonly OperationType TestAlarm = new OperationType("TestAlarm");
+        /// <summary>
+        /// Constant UpdateDistribution for OperationType
+        /// </summary>
+        public static readonly OperationType UpdateDistribution = new OperationType("UpdateDistribution");
+        /// <summary>
+        /// Constant UpdateDistributionBundle for OperationType
+        /// </summary>
+        public static readonly OperationType UpdateDistributionBundle = new OperationType("UpdateDistributionBundle");
         /// <summary>
         /// Constant UpdateDomainEntry for OperationType
         /// </summary>
@@ -2402,6 +2780,56 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OperationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OriginProtocolPolicyEnum.
+    /// </summary>
+    public class OriginProtocolPolicyEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HttpOnly for OriginProtocolPolicyEnum
+        /// </summary>
+        public static readonly OriginProtocolPolicyEnum HttpOnly = new OriginProtocolPolicyEnum("http-only");
+        /// <summary>
+        /// Constant HttpsOnly for OriginProtocolPolicyEnum
+        /// </summary>
+        public static readonly OriginProtocolPolicyEnum HttpsOnly = new OriginProtocolPolicyEnum("https-only");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OriginProtocolPolicyEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OriginProtocolPolicyEnum FindValue(string value)
+        {
+            return FindValue<OriginProtocolPolicyEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OriginProtocolPolicyEnum(string value)
         {
             return FindValue(value);
         }
@@ -2885,6 +3313,64 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type RenewalStatus.
+    /// </summary>
+    public class RenewalStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for RenewalStatus
+        /// </summary>
+        public static readonly RenewalStatus Failed = new RenewalStatus("Failed");
+        /// <summary>
+        /// Constant PendingAutoRenewal for RenewalStatus
+        /// </summary>
+        public static readonly RenewalStatus PendingAutoRenewal = new RenewalStatus("PendingAutoRenewal");
+        /// <summary>
+        /// Constant PendingValidation for RenewalStatus
+        /// </summary>
+        public static readonly RenewalStatus PendingValidation = new RenewalStatus("PendingValidation");
+        /// <summary>
+        /// Constant Success for RenewalStatus
+        /// </summary>
+        public static readonly RenewalStatus Success = new RenewalStatus("Success");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RenewalStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RenewalStatus FindValue(string value)
+        {
+            return FindValue<RenewalStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RenewalStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass
@@ -2894,6 +3380,10 @@ namespace Amazon.Lightsail
         /// Constant Alarm for ResourceType
         /// </summary>
         public static readonly ResourceType Alarm = new ResourceType("Alarm");
+        /// <summary>
+        /// Constant Certificate for ResourceType
+        /// </summary>
+        public static readonly ResourceType Certificate = new ResourceType("Certificate");
         /// <summary>
         /// Constant CloudFormationStackRecord for ResourceType
         /// </summary>
@@ -2910,6 +3400,10 @@ namespace Amazon.Lightsail
         /// Constant DiskSnapshot for ResourceType
         /// </summary>
         public static readonly ResourceType DiskSnapshot = new ResourceType("DiskSnapshot");
+        /// <summary>
+        /// Constant Distribution for ResourceType
+        /// </summary>
+        public static readonly ResourceType Distribution = new ResourceType("Distribution");
         /// <summary>
         /// Constant Domain for ResourceType
         /// </summary>

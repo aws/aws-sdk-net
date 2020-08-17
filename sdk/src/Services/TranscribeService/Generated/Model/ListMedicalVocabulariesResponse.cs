@@ -41,10 +41,11 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The <code>ListMedicalVocabularies</code> operation returns a page of vocabularies
-        /// at a time. The maximum size of the page is set by the <code>MaxResults</code> parameter.
-        /// If there are more jobs in the list than the page size, Amazon Transcribe Medical returns
-        /// the <code>NextPage</code> token. Include the token in the next request to the <code>ListMedicalVocabularies</code>
-        /// operation to return the next page of jobs.
+        /// at a time. You set the maximum number of vocabularies to return on a page with the
+        /// <code>MaxResults</code> parameter. If there are more jobs in the list will fit on
+        /// a page, Amazon Transcribe Medical returns the <code>NextPage</code> token. To return
+        /// the next page of vocabularies, include the token in the next request to the <code>ListMedicalVocabularies</code>
+        /// operation .
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -81,8 +82,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Vocabularies. 
         /// <para>
-        /// A list of objects that describe the vocabularies that match the search criteria in
-        /// the request.
+        /// A list of objects that describe the vocabularies that match your search criteria.
         /// </para>
         /// </summary>
         public List<VocabularyInfo> Vocabularies

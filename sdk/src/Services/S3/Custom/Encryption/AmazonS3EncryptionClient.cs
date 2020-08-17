@@ -21,6 +21,7 @@ using Amazon.Runtime.SharedInterfaces.Internal;
 using Amazon.S3.Internal;
 using Amazon.S3.Model;
 using Amazon.Util;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -29,6 +30,9 @@ namespace Amazon.S3.Encryption
     /// <summary>
     /// This class extends the AmazonS3Client and provides client side encryption when reading or writing S3 objects.
     /// </summary>
+    [Obsolete("This feature is in maintenance mode, no new updates will be released. " +
+        "Please transition to https://www.nuget.org/packages/Amazon.Extensions.S3.Encryption " +
+        "and see https://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html for more information.")]
     public partial class AmazonS3EncryptionClient : AmazonS3Client, IAmazonS3Encryption
     {
         private static readonly string S3KMSEncryptionFeature = "the KMS encryption features of " + typeof(AmazonS3EncryptionClient).Name;

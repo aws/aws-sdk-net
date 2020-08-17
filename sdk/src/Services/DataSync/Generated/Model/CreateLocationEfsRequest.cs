@@ -112,7 +112,7 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+        ///  <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -137,7 +137,7 @@ namespace Amazon.DataSync.Model
         /// your resources. We recommend that you create a name tag for your location.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=55)]
+        [AWSProperty(Min=0, Max=50)]
         public List<TagListEntry> Tags
         {
             get { return this._tags; }

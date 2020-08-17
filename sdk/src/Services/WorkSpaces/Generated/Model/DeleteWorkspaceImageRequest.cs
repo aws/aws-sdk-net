@@ -31,7 +31,7 @@ namespace Amazon.WorkSpaces.Model
     /// <summary>
     /// Container for the parameters to the DeleteWorkspaceImage operation.
     /// Deletes the specified image from your account. To delete an image, you must first
-    /// delete any bundles that are associated with the image and un-share the image if it
+    /// delete any bundles that are associated with the image and unshare the image if it
     /// is shared with other accounts.
     /// </summary>
     public partial class DeleteWorkspaceImageRequest : AmazonWorkSpacesRequest

@@ -90,6 +90,7 @@ namespace Amazon.RDS.Model
         private List<string> _readReplicaDBClusterIdentifiers = new List<string>();
         private List<string> _readReplicaDBInstanceIdentifiers = new List<string>();
         private string _readReplicaSourceDBInstanceIdentifier;
+        private ReplicaMode _replicaMode;
         private string _secondaryAvailabilityZone;
         private List<DBInstanceStatusInfo> _statusInfos = new List<DBInstanceStatusInfo>();
         private bool? _storageEncrypted;
@@ -1037,10 +1038,24 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// Specifies the accessibility options for the DB instance. A value of true specifies
-        /// an Internet-facing instance with a publicly resolvable DNS name, which resolves to
-        /// a public IP address. A value of false specifies an internal instance with a DNS name
-        /// that resolves to a private IP address.
+        /// Specifies the accessibility options for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the DB instance is publicly accessible, its DNS endpoint resolves to the private
+        /// IP address from within the DB instance's VPC, and to the public IP address from outside
+        /// of the DB instance's VPC. Access to the DB instance is ultimately controlled by the
+        /// security group it uses, and that public access is not permitted if the security group
+        /// assigned to the DB instance doesn't permit it.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the DB instance isn't publicly accessible, it is an internal DB instance with
+        /// a DNS name that resolves to a private IP address.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a>CreateDBInstance</a>.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible
@@ -1116,6 +1131,31 @@ namespace Amazon.RDS.Model
         internal bool IsSetReadReplicaSourceDBInstanceIdentifier()
         {
             return this._readReplicaSourceDBInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaMode. 
+        /// <para>
+        /// The open mode of an Oracle read replica. The default is <code>open-read-only</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+        /// with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This attribute is only supported in RDS for Oracle.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ReplicaMode ReplicaMode
+        {
+            get { return this._replicaMode; }
+            set { this._replicaMode = value; }
+        }
+
+        // Check to see if ReplicaMode property is set
+        internal bool IsSetReplicaMode()
+        {
+            return this._replicaMode != null;
         }
 
         /// <summary>

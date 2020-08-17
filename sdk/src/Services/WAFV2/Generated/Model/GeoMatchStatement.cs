@@ -44,6 +44,7 @@ namespace Amazon.WAFV2.Model
     public partial class GeoMatchStatement
     {
         private List<string> _countryCodes = new List<string>();
+        private ForwardedIPConfig _forwardedIPConfig;
 
         /// <summary>
         /// Gets and sets the property CountryCodes. 
@@ -63,6 +64,32 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetCountryCodes()
         {
             return this._countryCodes != null && this._countryCodes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForwardedIPConfig. 
+        /// <para>
+        /// The configuration for inspecting IP addresses in an HTTP header that you specify,
+        /// instead of using the IP address that's reported by the web request origin. Commonly,
+        /// this is the X-Forwarded-For (XFF) header, but you can specify any header name. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the specified header isn't present in the request, AWS WAF doesn't apply the rule
+        /// to the web request at all.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ForwardedIPConfig ForwardedIPConfig
+        {
+            get { return this._forwardedIPConfig; }
+            set { this._forwardedIPConfig = value; }
+        }
+
+        // Check to see if ForwardedIPConfig property is set
+        internal bool IsSetForwardedIPConfig()
+        {
+            return this._forwardedIPConfig != null;
         }
 
     }

@@ -57,10 +57,39 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EventType);
             }
 
+            if(requestObject.IsSetEventValue())
+            {
+                context.Writer.WritePropertyName("eventValue");
+                context.Writer.Write(requestObject.EventValue);
+            }
+
+            if(requestObject.IsSetImpression())
+            {
+                context.Writer.WritePropertyName("impression");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectImpressionListValue in requestObject.Impression)
+                {
+                        context.Writer.Write(requestObjectImpressionListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetItemId())
+            {
+                context.Writer.WritePropertyName("itemId");
+                context.Writer.Write(requestObject.ItemId);
+            }
+
             if(requestObject.IsSetProperties())
             {
                 context.Writer.WritePropertyName("properties");
                 context.Writer.Write(requestObject.Properties);
+            }
+
+            if(requestObject.IsSetRecommendationId())
+            {
+                context.Writer.WritePropertyName("recommendationId");
+                context.Writer.Write(requestObject.RecommendationId);
             }
 
             if(requestObject.IsSetSentAt())

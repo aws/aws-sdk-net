@@ -30,7 +30,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// A JSON object containing the Amazon Resource Name (ARN) of the storage volume that
-    /// was deleted
+    /// was deleted.
     /// </summary>
     public partial class DeleteVolumeResponse : AmazonWebServiceResponse
     {

@@ -149,8 +149,8 @@ namespace Amazon.ConfigService.Model
         ///  
         /// <para>
         /// For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds
-        /// as 50 seconds, AWS Config throws an exception after the 5th failed attempt within
-        /// 50 seconds.
+        /// as 50 seconds, AWS Config will put a RemediationException on your behalf for the failing
+        /// resource after the 5th failed attempt within 50 seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -213,7 +213,7 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts
         /// as 5, AWS Config will run auto-remediations 5 times within 50 seconds before throwing
-        /// an exception. 
+        /// an exception.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2678000)]
@@ -272,6 +272,12 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// Version of the target. For example, version of the SSM document.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration
+        /// API again to ensure the remediations can run.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string TargetVersion
         {

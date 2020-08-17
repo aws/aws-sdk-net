@@ -48,7 +48,12 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The AWS account IDs for which to return recommendation summaries.
+        /// The IDs of the AWS accounts for which to return recommendation summaries.
+        /// </para>
+        ///  
+        /// <para>
+        /// If your account is the master account of an organization, use this parameter to specify
+        /// the member accounts for which you want to return recommendation summaries.
         /// </para>
         ///  
         /// <para>
@@ -70,11 +75,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of recommendation summaries to return with a single call.
+        /// The maximum number of recommendation summaries to return with a single request.
         /// </para>
         ///  
         /// <para>
-        /// To retrieve the remaining results, make another call with the returned <code>NextToken</code>
+        /// To retrieve the remaining results, make another request with the returned <code>NextToken</code>
         /// value.
         /// </para>
         /// </summary>

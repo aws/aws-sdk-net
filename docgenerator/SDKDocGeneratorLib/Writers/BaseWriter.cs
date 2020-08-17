@@ -50,9 +50,7 @@ namespace SDKDocGenerator.Writers
         public static string BJSDisclaimerTemplate
                     = "AWS services or capabilities described in AWS Documentation may vary by region/location. "
                     + "Click <a href=\"https://{0}/en_us/aws/latest/userguide/services.html\">Getting Started with Amazon AWS</a> to see specific differences applicable to the China (Beijing) Region.";
-
-        public const string GdprScriptBlock = "<script src=\"/SdkStatic/sdk-priv.js\" async=\"true\"></script>";
-
+        
         public GenerationManifest Artifacts { get; private set; }
         public AbstractTypeProvider TypeProvider { get; private set; }
 
@@ -140,8 +138,8 @@ namespace SDKDocGenerator.Writers
                 // text for an element has proven unreliable as a useful source for info the search results so stay with
                 // the page title for now
                 writer.WriteLine("<meta name=\"description\" content=\"{0}\">", GetTitle());
-                writer.WriteLine("<title>{0} | AWS SDK for .NET V3</title>", GetTitle());
-                writer.WriteLine("<script src=\"https://a0.awsstatic.com/s_code/js/1.0/awshome_s_code.js\"></script>");
+                writer.WriteLine("<title>{0} | AWS SDK for .NET V3</title>", GetTitle());                
+                writer.WriteLine("<script type=\"text/javascript\" src=\"/assets/js/awsdocs-boot.js\"></script>");
                 writer.WriteLine("<link rel=\"canonical\" href=\"http://docs.aws.amazon.com/sdkfornet/v3/apidocs/index.html?page={0}&tocid={1}\"/>",
                                 FilenameGenerator.Escape(this.GenerateFilename()),
                                 FilenameGenerator.Escape(this.GetTOCID()));
@@ -164,8 +162,6 @@ namespace SDKDocGenerator.Writers
                     writer.WriteLine("</div>");
 
                     this.WriteFooter(writer);
-
-                    writer.WriteLine(GdprScriptBlock);
 
                 writer.WriteLine("</body>");
                 writer.WriteLine("</html>");
@@ -244,13 +240,13 @@ namespace SDKDocGenerator.Writers
         protected virtual void WriteFooter(TextWriter writer)
         {
             writer.WriteLine("<div id=\"pageFooter\">");
-                writer.WriteLine("<div id=\"copyright\"></div>");
                 writer.WriteLine("<span class=\"newline linkto\"><a href=\"javascript:void(0)\" onclick=\"AWSHelpObj.displayLink('{0}/{1}', '{2}')\">Link to this page</a></span>",
                                  this.GenerateFilepath(),
                                  FilenameGenerator.Escape(this.GenerateFilename()), 
                                  FilenameGenerator.Escape(this.GetTOCID()));
                 writer.WriteLine("<span class=\"divider\">&nbsp;</span>");
                 writer.WriteLine(FeedbackSection, GenerateFeedbackHTML());
+                writer.WriteLine("<div id=\"awsdocs-legal-zone-copyright\"></div>");
             writer.WriteLine("</div>");
             WriteScriptFiles(writer);
         }
@@ -320,11 +316,9 @@ namespace SDKDocGenerator.Writers
                 writer.WriteLine("AWSHelpObj.setAssemblyVersion(\"{0}\", \"{1}\");",
                                  versionInfoFile,
                                  Artifacts.ServiceName);
-            writer.WriteLine("});");
-            writer.WriteLine("AWSHelpObj.setCopyrightText();");
+            writer.WriteLine("});");            
             writer.WriteLine("</script>");
             writer.WriteLine("<!-- END-SECTION -->");
-
             writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shCore.js\"></script>", RootRelativePath);
             writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shBrushCSharp.js\"></script>", RootRelativePath);
             writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shBrushPlain.js\"></script>", RootRelativePath);

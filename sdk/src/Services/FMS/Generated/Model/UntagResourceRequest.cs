@@ -40,8 +40,9 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource. The Firewall Manager policy is the
-        /// only AWS resource that supports tagging, so this ARN is a policy ARN.
+        /// The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall
+        /// Manager resources that support tagging are policies, applications lists, and protocols
+        /// lists. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

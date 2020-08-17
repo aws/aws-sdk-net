@@ -71,7 +71,7 @@ namespace Amazon.Route53.Model
         /// the previous response and include it in <code>NextToken</code> in the next request.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

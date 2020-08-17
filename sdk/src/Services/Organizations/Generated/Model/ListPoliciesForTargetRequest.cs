@@ -58,8 +58,30 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// The type of policy that you want to include in the returned list.
+        /// The type of policy that you want to include in the returned list. You must specify
+        /// one of the following values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public PolicyType Filter
@@ -109,6 +131,7 @@ namespace Amazon.Organizations.Model
         /// response to indicate where the output should continue from.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100000)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -150,7 +173,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=100)]
         public string TargetId
         {
             get { return this._targetId; }

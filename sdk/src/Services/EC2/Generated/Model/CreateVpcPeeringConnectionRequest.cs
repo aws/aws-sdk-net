@@ -58,6 +58,7 @@ namespace Amazon.EC2.Model
         private string _peerOwnerId;
         private string _peerRegion;
         private string _peerVpcId;
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private string _vpcId;
 
         /// <summary>
@@ -122,6 +123,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPeerVpcId()
         {
             return this._peerVpcId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to assign to the peering connection.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
         /// <summary>

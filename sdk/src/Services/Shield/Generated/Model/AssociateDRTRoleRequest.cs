@@ -30,7 +30,7 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateDRTRole operation.
-    /// Authorizes the DDoS Response team (DRT), using the specified role, to access your
+    /// Authorizes the DDoS Response Team (DRT), using the specified role, to access your
     /// AWS account to assist with DDoS attack mitigation during potential attacks. This enables
     /// the DRT to inspect your AWS WAF configuration and create or update AWS WAF rules and
     /// web ACLs.

@@ -107,6 +107,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express
+        /// (NVMe) is supported or required. (<code>required</code> | <code>supported</code> |
+        /// <code>unsupported</code>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>free-tier-eligible</code> - Indicates whether the instance type is eligible
         /// to use in the free tier. (<code>true</code> | <code>false</code>)
         /// </para>

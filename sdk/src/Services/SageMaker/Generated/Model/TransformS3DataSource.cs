@@ -117,7 +117,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  The preceding JSON matches the following <code>s3Uris</code>: 
+        ///  The preceding JSON matches the following <code>S3Uris</code>: 
         /// </para>
         ///  
         /// <para>

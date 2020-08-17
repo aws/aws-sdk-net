@@ -92,7 +92,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property Precedence. 
         /// <para>
         /// The new precedence value for the group. For more information about this parameter,
-        /// see .
+        /// see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

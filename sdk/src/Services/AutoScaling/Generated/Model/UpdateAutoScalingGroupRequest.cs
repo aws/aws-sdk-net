@@ -148,14 +148,13 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property DefaultCooldown. 
         /// <para>
         /// The amount of time, in seconds, after a scaling activity completes before another
-        /// scaling activity can start. The default value is <code>300</code>. This cooldown period
-        /// is not used when a scaling-specific cooldown is specified.
+        /// scaling activity can start. The default value is <code>300</code>.
         /// </para>
         ///  
         /// <para>
-        /// Cooldown periods are not supported for target tracking scaling policies, step scaling
-        /// policies, or scheduled scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-        /// Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// This setting applies when using simple scaling policies, but not when using other
+        /// scaling policies or scheduled scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+        /// Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public int DefaultCooldown
@@ -208,8 +207,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: This parameter is required if you are adding an <code>ELB</code> health
-        /// check.
+        /// Required if you are adding an <code>ELB</code> health check.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriod
@@ -336,8 +334,8 @@ namespace Amazon.AutoScaling.Model
         /// With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling
         /// may need to go above <code>MaxSize</code> to meet your capacity requirements. In this
         /// event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more than
-        /// your maximum instance weight (weights that define how many capacity units each instance
-        /// contributes to the capacity of the group).
+        /// your largest instance weight (weights that define how many units each instance contributes
+        /// to the desired capacity of the group).
         /// </para>
         ///  </note>
         /// </summary>

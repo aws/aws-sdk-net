@@ -67,7 +67,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the file system whose tag set you want to retrieve.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=128)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
@@ -88,6 +88,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// call left off.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Marker
         {
             get { return this._marker; }

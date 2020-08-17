@@ -30,6 +30,20 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// The severity of the finding.
+    /// 
+    ///  
+    /// <para>
+    /// The finding provider can provide the initial severity, but cannot update it after
+    /// that. The severity can only be updated by a master account. It cannot be updated by
+    /// a member account.
+    /// </para>
+    ///  
+    /// <para>
+    /// The finding must have either <code>Label</code> or <code>Normalized</code> populated.
+    /// If only one of these attributes is populated, then Security Hub automatically populates
+    /// the other one. If neither attribute is populated, then the finding is invalid. <code>Label</code>
+    /// is the preferred attribute.
+    /// </para>
     /// </summary>
     public partial class Severity
     {
@@ -63,30 +77,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  <code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.
         /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        public SeverityLabel Label
-        {
-            get { return this._label; }
-            set { this._label = value; }
-        }
-
-        // Check to see if Label property is set
-        internal bool IsSetLabel()
-        {
-            return this._label != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Normalized. 
+        ///  </li> </ul> 
         /// <para>
-        /// Deprecated. This attribute is being deprecated. Instead of providing <code>Normalized</code>,
-        /// provide <code>Label</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code>
-        /// is set automatically as follows. 
+        /// If you provide <code>Normalized</code> and do not provide <code>Label</code>, then
+        /// <code>Label</code> is set automatically as follows. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -107,6 +101,51 @@ namespace Amazon.SecurityHub.Model
         ///  </li> <li> 
         /// <para>
         /// 90–100 - <code>CRITICAL</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SeverityLabel Label
+        {
+            get { return this._label; }
+            set { this._label = value; }
+        }
+
+        // Check to see if Label property is set
+        internal bool IsSetLabel()
+        {
+            return this._label != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Normalized. 
+        /// <para>
+        /// Deprecated. The normalized severity of a finding. This attribute is being deprecated.
+        /// Instead of providing <code>Normalized</code>, provide <code>Label</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide <code>Label</code> and do not provide <code>Normalized</code>, then
+        /// <code>Normalized</code> is set automatically as follows.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>INFORMATIONAL</code> - 0
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LOW</code> - 1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MEDIUM</code> - 40
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>HIGH</code> - 70
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CRITICAL</code> - 90
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -123,7 +123,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For Google, Facebook and Login with Amazon:
+        /// For Google and Login with Amazon:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -136,6 +136,26 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </li> <li> 
         /// <para>
         /// authorize_scopes
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// For Facebook:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// client_id
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// client_secret
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// authorize_scopes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// api_version
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>

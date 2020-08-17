@@ -36,6 +36,10 @@ namespace Amazon.ServiceCatalog.Model
     /// <para>
     /// You cannot delete a product if it was shared with you or is associated with a portfolio.
     /// </para>
+    ///  
+    /// <para>
+    /// A delegated admin is authorized to invoke this command.
+    /// </para>
     /// </summary>
     public partial class DeleteProductRequest : AmazonServiceCatalogRequest
     {

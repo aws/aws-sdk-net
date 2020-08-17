@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Result structure for the get artifact request.
+    /// Returns the result structure for the get artifact request.
     /// </summary>
     public partial class GetArtifactUrlResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ArtifactId. 
         /// <para>
-        ///  Unique Id for a artifact. 
+        ///  The unique ID for an artifact. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -58,7 +58,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ArtifactUrl. 
         /// <para>
-        ///  Presigned url for the artifact. 
+        ///  The presigned URL for the artifact. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]

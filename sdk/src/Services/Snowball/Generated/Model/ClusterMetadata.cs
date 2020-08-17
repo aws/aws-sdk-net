@@ -303,14 +303,14 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of AWS Snowball device to use for this cluster. Currently, the only supported
-        /// device type for cluster jobs is <code>EDGE</code>.
+        /// The type of AWS Snowball device to use for this cluster. 
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-        /// Edge Device Options</a> in the Snowball Edge Developer Guide.
+        /// For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
+        /// type.
         /// </para>
+        ///  </note>
         /// </summary>
         public SnowballType SnowballType
         {

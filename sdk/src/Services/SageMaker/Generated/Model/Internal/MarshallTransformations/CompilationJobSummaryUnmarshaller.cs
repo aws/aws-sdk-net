@@ -100,6 +100,24 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CompilationTargetDevice = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CompilationTargetPlatformAccelerator", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CompilationTargetPlatformAccelerator = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CompilationTargetPlatformArch", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CompilationTargetPlatformArch = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CompilationTargetPlatformOs", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CompilationTargetPlatformOs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

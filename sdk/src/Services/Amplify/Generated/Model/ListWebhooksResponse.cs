@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Result structure for the list webhooks request.
+    /// The result structure for the list webhooks request.
     /// </summary>
     public partial class ListWebhooksResponse : AmazonWebServiceResponse
     {
@@ -39,8 +39,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Pagination token. If non-null pagination token is returned in a result, then pass
-        /// its value in another request to fetch more entries. 
+        ///  A pagination token. If non-null, the pagination token is returned in a result. Pass
+        /// its value in another request to retrieve more entries. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2000)]
@@ -59,7 +59,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Webhooks. 
         /// <para>
-        ///  List of webhooks. 
+        ///  A list of webhooks. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

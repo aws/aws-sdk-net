@@ -33,10 +33,30 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class Outcome
     {
+        private string _arn;
         private string _createdTime;
         private string _description;
         private string _lastUpdatedTime;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The outcome ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedTime. 

@@ -74,6 +74,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// for that file system; mutually exclusive with <code>AccessPointId</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }

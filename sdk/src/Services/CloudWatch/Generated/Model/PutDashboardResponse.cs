@@ -44,8 +44,8 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// If this result includes only warning messages, then the input was valid enough for
-        /// the dashboard to be created or modified, but some elements of the dashboard may not
-        /// render.
+        /// the dashboard to be created or modified, but some elements of the dashboard might
+        /// not render.
         /// </para>
         ///  
         /// <para>

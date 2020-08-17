@@ -140,7 +140,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property ShowSpeakerLabels. 
         /// <para>
         /// Determines whether the transcription job uses speaker recognition to identify different
-        /// speakers in the input audio. Speaker recongition labels individual speakers in the
+        /// speakers in the input audio. Speaker recognition labels individual speakers in the
         /// audio file. If you set the <code>ShowSpeakerLabels</code> field to true, you must
         /// also set the maximum number of speaker labels in the <code>MaxSpeakerLabels</code>
         /// field.

@@ -67,7 +67,7 @@ namespace Amazon.Runtime.Internal
 #endif
                     {
                         thread.Start();
-                        await semaphore.WaitAsync();
+                        await semaphore.WaitAsync().ConfigureAwait(false);
                         thread.Join();
 
                         if (exception != null)

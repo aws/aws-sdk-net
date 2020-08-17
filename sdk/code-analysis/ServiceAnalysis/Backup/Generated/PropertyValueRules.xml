@@ -16,6 +16,10 @@
     <property>Amazon.Backup.Model.DeleteRecoveryPointRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.DescribeBackupJobResponse.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.DescribeBackupJobResponse.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
@@ -34,6 +38,13 @@
     <property>Amazon.Backup.Model.DescribeRecoveryPointResponse.ResourceType</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.DescribeRestoreJobResponse.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.DescribeRestoreJobResponse.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.GetBackupVaultAccessPolicyRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
@@ -47,6 +58,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.GetRecoveryPointRestoreMetadataRequest.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListBackupJobsRequest.ByAccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListBackupJobsRequest.ByBackupVaultName</property>
@@ -85,6 +100,10 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.ListCopyJobsRequest.ByAccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.ListCopyJobsRequest.ByResourceType</property>
   </property-value-rule>
   <property-value-rule>
@@ -112,6 +131,10 @@
     <property>Amazon.Backup.Model.ListRecoveryPointsByResourceRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListRestoreJobsRequest.ByAccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListRestoreJobsRequest.MaxResults</property>
@@ -142,6 +165,10 @@
     <property>Amazon.Backup.Model.UpdateRecoveryPointLifecycleRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.BackupJob.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.BackupJob.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
@@ -169,6 +196,10 @@
     <property>Amazon.Backup.Model.BackupVaultListMember.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.CopyJob.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.CopyJob.ResourceType</property>
   </property-value-rule>
   <property-value-rule>
@@ -182,5 +213,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.RecoveryPointByResource.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.RestoreJobsListMember.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.RestoreJobsListMember.ResourceType</property>
   </property-value-rule>
 </property-value-rules>

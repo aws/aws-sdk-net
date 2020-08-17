@@ -29,9 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Your request didn't pass one or more validation tests. For example, if the transcription
-    /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
-    /// it's "in progress"). See the exception <code>Message</code> field for more information.
+    /// Your request didn't pass one or more validation tests. For example, if the entity
+    /// that you're trying to delete doesn't exist or if it is in a non-terminal state (for
+    /// example, it's "in progress"). See the exception <code>Message</code> field for more
+    /// information.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

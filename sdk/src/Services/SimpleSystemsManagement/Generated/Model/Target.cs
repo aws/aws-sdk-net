@@ -52,12 +52,17 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// (Maintenance window targets only) <code>Key=resource-groups:Name,Values=<i>resource-group-name</i>
+    ///  <b>Run Command and Maintenance window targets only</b>: <code>Key=resource-groups:Name,Values=<i>resource-group-name</i>
     /// </code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// (Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
+    ///  <b>Maintenance window targets only</b>: <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
+    /// </code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Automation targets only</b>: <code>Key=ResourceGroup;Values=<i>resource-group-name</i>
     /// </code> 
     /// </para>
     ///  </li> </ul> 
@@ -79,7 +84,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// (Maintenance window targets only) <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code>
+    ///  <b>Run Command and Maintenance window targets only</b>: <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code>
     /// 
     /// </para>
     ///  
@@ -89,7 +94,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// (Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
+    ///  <b>Maintenance window targets only</b>: <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
     /// </code> 
     /// </para>
     ///  
@@ -99,8 +104,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// (State Manager association targets only) <code>Key=InstanceIds,Values=<i>*</i> </code>
+    ///  <b>Automation targets only</b>: <code>Key=ResourceGroup,Values=MyResourceGroup</code>
     /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>State Manager association targets only</b>: <code>Key=InstanceIds,Values=<i>*</i>
+    /// </code> 
     /// </para>
     ///  
     /// <para>
@@ -109,7 +119,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For information about how to send commands that target instances using <code>Key,Value</code>
+    /// For more information about how to send commands that target instances using <code>Key,Value</code>
     /// parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
     /// multiple instances</a> in the <i>AWS Systems Manager User Guide</i>.
     /// </para>

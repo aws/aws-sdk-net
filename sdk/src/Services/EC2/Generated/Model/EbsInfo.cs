@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private EbsOptimizedInfo _ebsOptimizedInfo;
         private EbsOptimizedSupport _ebsOptimizedSupport;
         private EbsEncryptionSupport _encryptionSupport;
+        private EbsNvmeSupport _nvmeSupport;
 
         /// <summary>
         /// Gets and sets the property EbsOptimizedInfo. 
@@ -91,6 +92,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetEncryptionSupport()
         {
             return this._encryptionSupport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NvmeSupport. 
+        /// <para>
+        /// Indicates whether non-volatile memory express (NVMe) is supported.
+        /// </para>
+        /// </summary>
+        public EbsNvmeSupport NvmeSupport
+        {
+            get { return this._nvmeSupport; }
+            set { this._nvmeSupport = value; }
+        }
+
+        // Check to see if NvmeSupport property is set
+        internal bool IsSetNvmeSupport()
+        {
+            return this._nvmeSupport != null;
         }
 
     }

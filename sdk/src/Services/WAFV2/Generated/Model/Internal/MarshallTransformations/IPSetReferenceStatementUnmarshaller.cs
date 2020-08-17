@@ -70,6 +70,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IPSetForwardedIPConfig", targetDepth))
+                {
+                    var unmarshaller = IPSetForwardedIPConfigUnmarshaller.Instance;
+                    unmarshalledObject.IPSetForwardedIPConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

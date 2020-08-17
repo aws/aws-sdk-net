@@ -82,6 +82,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     unmarshalledObject.RetryPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("timeout", targetDepth))
+                {
+                    var unmarshaller = HttpTimeoutUnmarshaller.Instance;
+                    unmarshalledObject.Timeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -262,7 +262,7 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Authorizes the DDoS Response team (DRT) to access the specified Amazon S3 bucket containing
+        /// Authorizes the DDoS Response Team (DRT) to access the specified Amazon S3 bucket containing
         /// your AWS WAF logs. You can associate up to 10 Amazon S3 buckets with your subscription.
         /// 
         ///  
@@ -280,7 +280,7 @@ namespace Amazon.Shield
         /// 
         /// <returns>The response from the AssociateDRTLogBucket service method, as returned by Shield.</returns>
         /// <exception cref="Amazon.Shield.Model.AccessDeniedForDependencyException">
-        /// In order to grant the necessary access to the DDoS Response Team, the user submitting
+        /// In order to grant the necessary access to the DDoS Response Team (DRT), the user submitting
         /// the request must have the <code>iam:PassRole</code> permission. This error indicates
         /// the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
         /// a User Permissions to Pass a Role to an AWS Service</a>.
@@ -311,8 +311,8 @@ namespace Amazon.Shield
         /// The ARN of the role that you specifed does not exist.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
-        /// Exception that indicates that the protection state has been modified by another client.
-        /// You can retry the request.
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
@@ -343,7 +343,7 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Authorizes the DDoS Response team (DRT), using the specified role, to access your
+        /// Authorizes the DDoS Response Team (DRT), using the specified role, to access your
         /// AWS account to assist with DDoS attack mitigation during potential attacks. This enables
         /// the DRT to inspect your AWS WAF configuration and create or update AWS WAF rules and
         /// web ACLs.
@@ -393,7 +393,7 @@ namespace Amazon.Shield
         /// 
         /// <returns>The response from the AssociateDRTRole service method, as returned by Shield.</returns>
         /// <exception cref="Amazon.Shield.Model.AccessDeniedForDependencyException">
-        /// In order to grant the necessary access to the DDoS Response Team, the user submitting
+        /// In order to grant the necessary access to the DDoS Response Team (DRT), the user submitting
         /// the request must have the <code>iam:PassRole</code> permission. This error indicates
         /// the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
         /// a User Permissions to Pass a Role to an AWS Service</a>.
@@ -409,8 +409,8 @@ namespace Amazon.Shield
         /// Exception that indicates that the parameters passed to the API are invalid.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
-        /// Exception that indicates that the protection state has been modified by another client.
-        /// You can retry the request.
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
@@ -479,8 +479,8 @@ namespace Amazon.Shield
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
-        /// Exception that indicates that the protection state has been modified by another client.
-        /// You can retry the request.
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
@@ -493,6 +493,80 @@ namespace Amazon.Shield
             options.ResponseUnmarshaller = AssociateHealthCheckResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateHealthCheckResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateProactiveEngagementDetails
+
+        internal virtual AssociateProactiveEngagementDetailsResponse AssociateProactiveEngagementDetails(AssociateProactiveEngagementDetailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateProactiveEngagementDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateProactiveEngagementDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateProactiveEngagementDetailsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Initializes proactive engagement and sets the list of contacts for the DDoS Response
+        /// Team (DRT) to use. You must provide at least one phone number in the emergency contact
+        /// list. 
+        /// 
+        ///  
+        /// <para>
+        /// After you have initialized proactive engagement using this call, to disable or enable
+        /// proactive engagement, use the calls <code>DisableProactiveEngagement</code> and <code>EnableProactiveEngagement</code>.
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This call defines the list of email addresses and phone numbers that the DDoS Response
+        /// Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive
+        /// customer support.
+        /// </para>
+        ///  
+        /// <para>
+        /// The contacts that you provide in the request replace any contacts that were already
+        /// defined. If you already have contacts defined and want to use them, retrieve the list
+        /// using <code>DescribeEmergencyContactSettings</code> and then provide it to this call.
+        /// 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateProactiveEngagementDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateProactiveEngagementDetails service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidOperationException">
+        /// Exception that indicates that the operation would not cause any change to occur.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
+        /// Exception that indicates that the parameters passed to the API are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
+        /// Exception indicating the specified resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateProactiveEngagementDetails">REST API Reference for AssociateProactiveEngagementDetails Operation</seealso>
+        public virtual Task<AssociateProactiveEngagementDetailsResponse> AssociateProactiveEngagementDetailsAsync(AssociateProactiveEngagementDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateProactiveEngagementDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateProactiveEngagementDetailsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateProactiveEngagementDetailsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -554,8 +628,8 @@ namespace Amazon.Shield
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
-        /// Exception that indicates that the protection state has been modified by another client.
-        /// You can retry the request.
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceAlreadyExistsException">
         /// Exception indicating the specified resource already exists.
@@ -591,19 +665,6 @@ namespace Amazon.Shield
         /// <summary>
         /// Activates AWS Shield Advanced for an account.
         /// 
-        ///  
-        /// <para>
-        /// As part of this request you can specify <code>EmergencySettings</code> that automaticaly
-        /// grant the DDoS response team (DRT) needed permissions to assist you during a suspected
-        /// DDoS attack. For more information see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/authorize-DRT.html">Authorize
-        /// the DDoS Response Team to Create Rules and Web ACLs on Your Behalf</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To use the services of the DRT, you must be subscribed to the <a href="https://aws.amazon.com/premiumsupport/business-support/">Business
-        /// Support plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
-        /// Support plan</a>.
-        /// </para>
         ///  
         /// <para>
         /// When you initally create a subscription, your subscription is set to be automatically
@@ -663,8 +724,8 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
-        /// Exception that indicates that the protection state has been modified by another client.
-        /// You can retry the request.
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
@@ -789,7 +850,7 @@ namespace Amazon.Shield
 
         /// <summary>
         /// Returns the current role and list of Amazon S3 log buckets used by the DDoS Response
-        /// team (DRT) to access your AWS account while assisting with attack mitigation.
+        /// Team (DRT) to access your AWS account while assisting with attack mitigation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDRTAccess service method.</param>
         /// <param name="cancellationToken">
@@ -830,7 +891,9 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Lists the email addresses that the DRT can use to contact you during a suspected attack.
+        /// A list of email addresses and phone numbers that the DDoS Response Team (DRT) can
+        /// use to contact you if you have proactive engagement enabled, for escalations to the
+        /// DRT and to initiate proactive customer support.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEmergencyContactSettings service method.</param>
         /// <param name="cancellationToken">
@@ -942,6 +1005,58 @@ namespace Amazon.Shield
 
         #endregion
         
+        #region  DisableProactiveEngagement
+
+        internal virtual DisableProactiveEngagementResponse DisableProactiveEngagement(DisableProactiveEngagementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableProactiveEngagementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableProactiveEngagementResponseUnmarshaller.Instance;
+
+            return Invoke<DisableProactiveEngagementResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes authorization from the DDoS Response Team (DRT) to notify contacts about escalations
+        /// to the DRT and to initiate proactive customer support.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableProactiveEngagement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableProactiveEngagement service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidOperationException">
+        /// Exception that indicates that the operation would not cause any change to occur.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
+        /// Exception that indicates that the parameters passed to the API are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
+        /// Exception indicating the specified resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableProactiveEngagement">REST API Reference for DisableProactiveEngagement Operation</seealso>
+        public virtual Task<DisableProactiveEngagementResponse> DisableProactiveEngagementAsync(DisableProactiveEngagementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableProactiveEngagementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableProactiveEngagementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableProactiveEngagementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateDRTLogBucket
 
         internal virtual DisassociateDRTLogBucketResponse DisassociateDRTLogBucket(DisassociateDRTLogBucketRequest request)
@@ -956,7 +1071,7 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Removes the DDoS Response team's (DRT) access to the specified Amazon S3 bucket containing
+        /// Removes the DDoS Response Team's (DRT) access to the specified Amazon S3 bucket containing
         /// your AWS WAF logs.
         /// 
         ///  
@@ -976,7 +1091,7 @@ namespace Amazon.Shield
         /// 
         /// <returns>The response from the DisassociateDRTLogBucket service method, as returned by Shield.</returns>
         /// <exception cref="Amazon.Shield.Model.AccessDeniedForDependencyException">
-        /// In order to grant the necessary access to the DDoS Response Team, the user submitting
+        /// In order to grant the necessary access to the DDoS Response Team (DRT), the user submitting
         /// the request must have the <code>iam:PassRole</code> permission. This error indicates
         /// the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
         /// a User Permissions to Pass a Role to an AWS Service</a>.
@@ -992,8 +1107,8 @@ namespace Amazon.Shield
         /// The ARN of the role that you specifed does not exist.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
-        /// Exception that indicates that the protection state has been modified by another client.
-        /// You can retry the request.
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
@@ -1024,7 +1139,7 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Removes the DDoS Response team's (DRT) access to your AWS account.
+        /// Removes the DDoS Response Team's (DRT) access to your AWS account.
         /// 
         ///  
         /// <para>
@@ -1050,8 +1165,8 @@ namespace Amazon.Shield
         /// Exception that indicates that the operation would not cause any change to occur.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
-        /// Exception that indicates that the protection state has been modified by another client.
-        /// You can retry the request.
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
@@ -1108,8 +1223,8 @@ namespace Amazon.Shield
         /// Exception that indicates that the parameters passed to the API are invalid.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
-        /// Exception that indicates that the protection state has been modified by another client.
-        /// You can retry the request.
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
@@ -1122,6 +1237,58 @@ namespace Amazon.Shield
             options.ResponseUnmarshaller = DisassociateHealthCheckResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateHealthCheckResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableProactiveEngagement
+
+        internal virtual EnableProactiveEngagementResponse EnableProactiveEngagement(EnableProactiveEngagementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableProactiveEngagementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableProactiveEngagementResponseUnmarshaller.Instance;
+
+            return Invoke<EnableProactiveEngagementResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Authorizes the DDoS Response Team (DRT) to use email and phone to notify contacts
+        /// about escalations to the DRT and to initiate proactive customer support.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableProactiveEngagement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableProactiveEngagement service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidOperationException">
+        /// Exception that indicates that the operation would not cause any change to occur.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
+        /// Exception that indicates that the parameters passed to the API are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
+        /// Exception indicating the specified resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableProactiveEngagement">REST API Reference for EnableProactiveEngagement Operation</seealso>
+        public virtual Task<EnableProactiveEngagementResponse> EnableProactiveEngagementAsync(EnableProactiveEngagementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableProactiveEngagementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableProactiveEngagementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableProactiveEngagementResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1267,8 +1434,9 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Updates the details of the list of email addresses that the DRT can use to contact
-        /// you during a suspected attack.
+        /// Updates the details of the list of email addresses and phone numbers that the DDoS
+        /// Response Team (DRT) can use to contact you if you have proactive engagement enabled,
+        /// for escalations to the DRT and to initiate proactive customer support.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEmergencyContactSettings service method.</param>
         /// <param name="cancellationToken">
@@ -1284,8 +1452,8 @@ namespace Amazon.Shield
         /// Exception that indicates that the parameters passed to the API are invalid.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
-        /// Exception that indicates that the protection state has been modified by another client.
-        /// You can retry the request.
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
@@ -1339,8 +1507,8 @@ namespace Amazon.Shield
         /// prior to that period.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
-        /// Exception that indicates that the protection state has been modified by another client.
-        /// You can retry the request.
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.

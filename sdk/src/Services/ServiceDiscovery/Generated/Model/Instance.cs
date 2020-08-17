@@ -66,7 +66,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  
         /// <para>
-        /// If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to
+        /// If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to
         /// an Elastic Load Balancing load balancer, specify the DNS name that is associated with
         /// the load balancer. For information about how to get the DNS name, see "DNSName" in
         /// the topic <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
@@ -78,7 +78,7 @@ namespace Amazon.ServiceDiscovery.Model
         ///  <ul> <li> 
         /// <para>
         /// The configuration for the service that is specified by <code>ServiceId</code> must
-        /// include settings for an A record, an AAAA record, or both.
+        /// include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -103,17 +103,26 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>AWS_EC2_INSTANCE_ID</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The <code>AWS_INSTANCE_IPV4</code>
+        /// attribute contains the primary private IPv4 address.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>AWS_INSTANCE_CNAME</b> 
         /// </para>
         ///  
         /// <para>
-        /// If the service configuration includes a CNAME record, the domain name that you want
-        /// Route 53 to return in response to DNS queries, for example, <code>example.com</code>.
+        /// If the service configuration includes a <code>CNAME</code> record, the domain name
+        /// that you want Route 53 to return in response to DNS queries, for example, <code>example.com</code>.
         /// </para>
         ///  
         /// <para>
         /// This value is required if the service specified by <code>ServiceId</code> includes
-        /// settings for an CNAME record.
+        /// settings for an <code>CNAME</code> record.
         /// </para>
         ///  
         /// <para>
@@ -121,14 +130,14 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  
         /// <para>
-        /// If the service configuration includes an A record, the IPv4 address that you want
-        /// Route 53 to return in response to DNS queries, for example, <code>192.0.2.44</code>.
+        /// If the service configuration includes an <code>A</code> record, the IPv4 address that
+        /// you want Route 53 to return in response to DNS queries, for example, <code>192.0.2.44</code>.
         /// </para>
         ///  
         /// <para>
         /// This value is required if the service specified by <code>ServiceId</code> includes
-        /// settings for an A record. If the service includes settings for an SRV record, you
-        /// must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>,
+        /// settings for an <code>A</code> record. If the service includes settings for an <code>SRV</code>
+        /// record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>,
         /// or both.
         /// </para>
         ///  
@@ -137,15 +146,15 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  
         /// <para>
-        /// If the service configuration includes an AAAA record, the IPv6 address that you want
-        /// Route 53 to return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+        /// If the service configuration includes an <code>AAAA</code> record, the IPv6 address
+        /// that you want Route 53 to return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
         /// </para>
         ///  
         /// <para>
         /// This value is required if the service specified by <code>ServiceId</code> includes
-        /// settings for an AAAA record. If the service includes settings for an SRV record, you
-        /// must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>,
-        /// or both.
+        /// settings for an <code>AAAA</code> record. If the service includes settings for an
+        /// <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
+        /// <code>AWS_INSTANCE_IPV6</code>, or both.
         /// </para>
         ///  
         /// <para>
@@ -153,18 +162,18 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  
         /// <para>
-        /// If the service includes an SRV record, the value that you want Route 53 to return
-        /// for the port.
+        /// If the service includes an <code>SRV</code> record, the value that you want Route 53
+        /// to return for the port.
         /// </para>
         ///  
         /// <para>
         /// If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that
-        /// you want Route 53 to send requests to. 
+        /// you want Route 53 to send requests to. 
         /// </para>
         ///  
         /// <para>
-        /// This value is required if you specified settings for an SRV record or a Route 53 health
-        /// check when you created the service.
+        /// This value is required if you specified settings for an <code>SRV</code> record or
+        /// a Route 53 health check when you created the service.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -210,8 +219,9 @@ namespace Amazon.ServiceDiscovery.Model
         ///  <ul> <li> 
         /// <para>
         /// If the service that is specified by <code>ServiceId</code> includes settings for an
-        /// SRV record, the value of <code>InstanceId</code> is automatically included as part
-        /// of the value for the SRV record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
+        /// <code>SRV</code> record, the value of <code>InstanceId</code> is automatically included
+        /// as part of the value for the <code>SRV</code> record. For more information, see <a
+        /// href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
         /// &gt; Type</a>.
         /// </para>
         ///  </li> <li> 

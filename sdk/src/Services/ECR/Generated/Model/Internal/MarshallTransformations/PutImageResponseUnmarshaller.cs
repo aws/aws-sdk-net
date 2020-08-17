@@ -84,6 +84,10 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 {
                     return ImageAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ImageDigestDoesNotMatchException"))
+                {
+                    return ImageDigestDoesNotMatchExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ImageTagAlreadyExistsException"))
                 {
                     return ImageTagAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -91,6 +95,10 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("KmsException"))
+                {
+                    return KmsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("LayersNotFoundException"))
                 {

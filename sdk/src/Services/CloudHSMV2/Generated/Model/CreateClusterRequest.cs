@@ -109,7 +109,10 @@ namespace Amazon.CloudHSMV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagList.
+        /// Gets and sets the property TagList. 
+        /// <para>
+        /// Tags to apply to the CloudHSM cluster during creation.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<Tag> TagList

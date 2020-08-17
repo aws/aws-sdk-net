@@ -34,8 +34,22 @@ namespace Amazon.IotData
     /// AWS IoT-Data enables secure, bi-directional communication between Internet-connected
     /// things (such as sensors, actuators, embedded devices, or smart appliances) and the
     /// AWS cloud. It implements a broker for applications and things to publish messages
-    /// over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow
-    /// is a persistent representation of your things and their state in the AWS cloud.
+    /// over HTTP (Publish) and retrieve, update, and delete shadows. A shadow is a persistent
+    /// representation of your things and their state in the AWS cloud.
+    /// </para>
+    ///  
+    /// <para>
+    /// Find the endpoint address for actions in the AWS IoT data plane by running this CLI
+    /// command:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>aws iot describe-endpoint --endpoint-type iot:Data-ATS</code> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The service name used by <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">AWS
+    /// Signature Version 4</a> to sign requests is: <i>iotdevicegateway</i>.
     /// </para>
     /// </summary>
     public partial interface IAmazonIotData : IAmazonService, IDisposable
@@ -46,12 +60,12 @@ namespace Amazon.IotData
 
 
         /// <summary>
-        /// Deletes the thing shadow for the specified thing.
+        /// Deletes the shadow for the specified thing.
         /// 
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html">DeleteThingShadow</a>
-        /// in the <i>AWS IoT Developer Guide</i>.
+        /// in the AWS IoT Developer Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteThingShadow service method.</param>
@@ -116,12 +130,12 @@ namespace Amazon.IotData
 
 
         /// <summary>
-        /// Gets the thing shadow for the specified thing.
+        /// Gets the shadow for the specified thing.
         /// 
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html">GetThingShadow</a>
-        /// in the <i>AWS IoT Developer Guide</i>.
+        /// in the AWS IoT Developer Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetThingShadow service method.</param>
@@ -182,6 +196,67 @@ namespace Amazon.IotData
 
         #endregion
         
+        #region  ListNamedShadowsForThing
+
+
+        /// <summary>
+        /// Lists the shadows for the specified thing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNamedShadowsForThing service method.</param>
+        /// 
+        /// <returns>The response from the ListNamedShadowsForThing service method, as returned by IotData.</returns>
+        /// <exception cref="Amazon.IotData.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.MethodNotAllowedException">
+        /// The specified combination of HTTP verb and URI is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/ListNamedShadowsForThing">REST API Reference for ListNamedShadowsForThing Operation</seealso>
+        ListNamedShadowsForThingResponse ListNamedShadowsForThing(ListNamedShadowsForThingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNamedShadowsForThing operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNamedShadowsForThing operation on AmazonIotDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNamedShadowsForThing
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/ListNamedShadowsForThing">REST API Reference for ListNamedShadowsForThing Operation</seealso>
+        IAsyncResult BeginListNamedShadowsForThing(ListNamedShadowsForThingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNamedShadowsForThing operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNamedShadowsForThing.</param>
+        /// 
+        /// <returns>Returns a  ListNamedShadowsForThingResult from IotData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/ListNamedShadowsForThing">REST API Reference for ListNamedShadowsForThing Operation</seealso>
+        ListNamedShadowsForThingResponse EndListNamedShadowsForThing(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  Publish
 
 
@@ -191,7 +266,7 @@ namespace Amazon.IotData
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http">HTTP
-        /// Protocol</a> in the <i>AWS IoT Developer Guide</i>.
+        /// Protocol</a> in the AWS IoT Developer Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Publish service method.</param>
@@ -244,12 +319,12 @@ namespace Amazon.IotData
 
 
         /// <summary>
-        /// Updates the thing shadow for the specified thing.
+        /// Updates the shadow for the specified thing.
         /// 
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html">UpdateThingShadow</a>
-        /// in the <i>AWS IoT Developer Guide</i>.
+        /// in the AWS IoT Developer Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateThingShadow service method.</param>

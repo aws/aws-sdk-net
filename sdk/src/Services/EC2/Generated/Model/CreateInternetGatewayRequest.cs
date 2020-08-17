@@ -41,6 +41,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateInternetGatewayRequest : AmazonEC2Request
     {
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to assign to the internet gateway.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+        }
 
     }
 }

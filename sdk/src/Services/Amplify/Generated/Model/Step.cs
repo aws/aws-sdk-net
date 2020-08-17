@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Structure for an execution step for an execution job, for an Amplify App.
+    /// Describes an execution step, for an execution job, for an Amplify app.
     /// </summary>
     public partial class Step
     {
@@ -48,7 +48,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ArtifactsUrl. 
         /// <para>
-        ///  URL to the artifact for the execution step. 
+        ///  The URL to the artifact for the execution step. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -67,7 +67,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Context. 
         /// <para>
-        ///  The context for current step, will include build image if step is build. 
+        ///  The context for the current step. Includes a build image if the step is build. 
         /// </para>
         /// </summary>
         public string Context
@@ -85,7 +85,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        ///  End date/ time of the execution step. 
+        ///  The end date and time of the execution step. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,7 +104,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property LogUrl. 
         /// <para>
-        ///  URL to the logs for the execution step. 
+        ///  The URL to the logs for the execution step. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -123,7 +123,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Screenshots. 
         /// <para>
-        ///  List of screenshot URLs for the execution step, if relevant. 
+        ///  The list of screenshot URLs for the execution step, if relevant. 
         /// </para>
         /// </summary>
         public Dictionary<string, string> Screenshots
@@ -141,7 +141,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        ///  Start date/ time of the execution step. 
+        ///  The start date and time of the execution step. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -160,7 +160,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  Status of the execution step. 
+        ///  The status of the execution step. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -179,7 +179,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        ///  The reason for current step status. 
+        ///  The reason for the current step status. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -198,7 +198,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property StepName. 
         /// <para>
-        ///  Name of the execution step. 
+        ///  The name of the execution step. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -217,7 +217,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property TestArtifactsUrl. 
         /// <para>
-        ///  URL to the test artifact for the execution step. 
+        ///  The URL to the test artifact for the execution step. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -236,7 +236,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property TestConfigUrl. 
         /// <para>
-        ///  URL to the test config for the execution step. 
+        ///  The URL to the test configuration for the execution step. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]

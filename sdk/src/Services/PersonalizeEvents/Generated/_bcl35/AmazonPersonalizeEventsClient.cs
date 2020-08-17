@@ -35,7 +35,9 @@ namespace Amazon.PersonalizeEvents
     /// <summary>
     /// Implementation for accessing PersonalizeEvents
     ///
-    /// 
+    /// Amazon Personalize can consume real-time user event data, such as <i>stream</i> or
+    /// <i>click</i> data, and use it for model training either alone or combined with historical
+    /// data. For more information see <a>recording-events</a>.
     /// </summary>
     public partial class AmazonPersonalizeEventsClient : AmazonServiceClient, IAmazonPersonalizeEvents
     {
@@ -239,7 +241,7 @@ namespace Amazon.PersonalizeEvents
         #region  PutEvents
 
         /// <summary>
-        /// Records user interaction event data.
+        /// Records user interaction event data. For more information see <a>event-record-api</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEvents service method.</param>
         /// 

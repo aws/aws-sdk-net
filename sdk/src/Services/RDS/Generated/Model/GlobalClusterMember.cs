@@ -35,6 +35,7 @@ namespace Amazon.RDS.Model
     public partial class GlobalClusterMember
     {
         private string _dbClusterArn;
+        private WriteForwardingStatus _globalWriteForwardingStatus;
         private bool? _isWriter;
         private List<string> _readers = new List<string>();
 
@@ -54,6 +55,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBClusterArn()
         {
             return this._dbClusterArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalWriteForwardingStatus. 
+        /// <para>
+        /// Specifies whether a secondary cluster in an Aurora global database has write forwarding
+        /// enabled, not enabled, or is in the process of enabling it.
+        /// </para>
+        /// </summary>
+        public WriteForwardingStatus GlobalWriteForwardingStatus
+        {
+            get { return this._globalWriteForwardingStatus; }
+            set { this._globalWriteForwardingStatus = value; }
+        }
+
+        // Check to see if GlobalWriteForwardingStatus property is set
+        internal bool IsSetGlobalWriteForwardingStatus()
+        {
+            return this._globalWriteForwardingStatus != null;
         }
 
         /// <summary>

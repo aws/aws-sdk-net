@@ -40,7 +40,7 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property AggregationEnabled. 
         /// <para>
-        /// Enables QLDB to publish multiple stream records in a single Kinesis Data Streams record.
+        /// Enables QLDB to publish multiple data records in a single Kinesis Data Streams record.
         /// To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL
         /// Key Concepts</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
         /// </para>

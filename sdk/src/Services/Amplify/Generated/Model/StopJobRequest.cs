@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the StopJob operation.
-    /// Stop a job that is in progress, for an Amplify branch, part of Amplify App.
+    /// Stops a job that is in progress for a branch of an Amplify app.
     /// </summary>
     public partial class StopJobRequest : AmazonAmplifyRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  Unique Id for an Amplify App. 
+        ///  The unique ID for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -60,7 +60,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        ///  Name for the branch, for the Job. 
+        ///  The name for the branch, for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -79,7 +79,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        ///  Unique Id for the Job. 
+        ///  The unique id for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

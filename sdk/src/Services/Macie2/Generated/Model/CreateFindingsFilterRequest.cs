@@ -46,8 +46,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Action. 
         /// <para>
         /// The action to perform on findings that meet the filter criteria (findingCriteria).
-        /// Valid values are: ARCHIVE, automatically archive the findings; and, NOOP, don't perform
-        /// any action on the findings.
+        /// Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP,
+        /// don't perform any action on the findings.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -177,9 +177,9 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  
         /// <para>
-        /// A findings filter can have a maximum of 50 tags. Each tag consists of a required tag
-        /// key and an associated tag value. The maximum length of a tag key is 128 characters.
-        /// The maximum length of a tag value is 256 characters.
+        /// A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and
+        /// an associated tag value. The maximum length of a tag key is 128 characters. The maximum
+        /// length of a tag value is 256 characters.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

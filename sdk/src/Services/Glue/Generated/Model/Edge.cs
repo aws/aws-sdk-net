@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// An edge represents a directed connection between two AWS Glue components which are
+    /// An edge represents a directed connection between two AWS Glue components that are
     /// part of the workflow the edge belongs to.
     /// </summary>
     public partial class Edge

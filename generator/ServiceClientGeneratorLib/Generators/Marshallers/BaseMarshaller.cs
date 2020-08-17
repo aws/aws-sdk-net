@@ -272,7 +272,7 @@ this.Write("));\r\n");
 					throw new NotImplementedException("Marshalling lists and maps as header value is not implemented");
 				}
 
-				if(member.IsDateTime)
+				if(member.Shape.IsString)
 				{
 
         
@@ -301,20 +301,6 @@ this.Write("\"] = ");
         #line hidden
         
         #line 70 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
-
-        
-        #line default
-        #line hidden
-        
-        #line 70 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("(");
-
-        
-        #line default
-        #line hidden
-        
-        #line 70 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
@@ -336,7 +322,7 @@ this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
         #line hidden
         
         #line 70 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(");\r\n");
+this.Write(";\r\n");
 
         
         #line default
@@ -345,8 +331,8 @@ this.Write(");\r\n");
         #line 71 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 					
 				}
-				else
-				{
+                else
+                {
 
         
         #line default
@@ -374,6 +360,20 @@ this.Write("\"] = ");
         #line hidden
         
         #line 76 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
+
+        
+        #line default
+        #line hidden
+        
+        #line 76 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 76 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
@@ -395,16 +395,16 @@ this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
         #line hidden
         
         #line 76 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(";\r\n");
+this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
         #line 77 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-			
-				}
-		    }
+
+                }
+            }
         }
 	}
 

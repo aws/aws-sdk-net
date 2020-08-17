@@ -50,11 +50,14 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class ResourceDetails
     {
+        private AwsAutoScalingAutoScalingGroupDetails _awsAutoScalingAutoScalingGroup;
         private AwsCloudFrontDistributionDetails _awsCloudFrontDistribution;
         private AwsCodeBuildProjectDetails _awsCodeBuildProject;
         private AwsEc2InstanceDetails _awsEc2Instance;
         private AwsEc2NetworkInterfaceDetails _awsEc2NetworkInterface;
         private AwsEc2SecurityGroupDetails _awsEc2SecurityGroup;
+        private AwsEc2VolumeDetails _awsEc2Volume;
+        private AwsEc2VpcDetails _awsEc2Vpc;
         private AwsElasticsearchDomainDetails _awsElasticsearchDomain;
         private AwsElbv2LoadBalancerDetails _awsElbv2LoadBalancer;
         private AwsIamAccessKeyDetails _awsIamAccessKey;
@@ -70,6 +73,24 @@ namespace Amazon.SecurityHub.Model
         private AwsWafWebAclDetails _awsWafWebAcl;
         private ContainerDetails _container;
         private Dictionary<string, string> _other = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AwsAutoScalingAutoScalingGroup. 
+        /// <para>
+        /// Details for an autoscaling group.
+        /// </para>
+        /// </summary>
+        public AwsAutoScalingAutoScalingGroupDetails AwsAutoScalingAutoScalingGroup
+        {
+            get { return this._awsAutoScalingAutoScalingGroup; }
+            set { this._awsAutoScalingAutoScalingGroup = value; }
+        }
+
+        // Check to see if AwsAutoScalingAutoScalingGroup property is set
+        internal bool IsSetAwsAutoScalingAutoScalingGroup()
+        {
+            return this._awsAutoScalingAutoScalingGroup != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AwsCloudFrontDistribution. 
@@ -159,6 +180,42 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsEc2SecurityGroup()
         {
             return this._awsEc2SecurityGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsEc2Volume. 
+        /// <para>
+        /// Details for an EC2 volume.
+        /// </para>
+        /// </summary>
+        public AwsEc2VolumeDetails AwsEc2Volume
+        {
+            get { return this._awsEc2Volume; }
+            set { this._awsEc2Volume = value; }
+        }
+
+        // Check to see if AwsEc2Volume property is set
+        internal bool IsSetAwsEc2Volume()
+        {
+            return this._awsEc2Volume != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsEc2Vpc. 
+        /// <para>
+        /// Details for an EC2 VPC.
+        /// </para>
+        /// </summary>
+        public AwsEc2VpcDetails AwsEc2Vpc
+        {
+            get { return this._awsEc2Vpc; }
+            set { this._awsEc2Vpc = value; }
+        }
+
+        // Check to see if AwsEc2Vpc property is set
+        internal bool IsSetAwsEc2Vpc()
+        {
+            return this._awsEc2Vpc != null;
         }
 
         /// <summary>

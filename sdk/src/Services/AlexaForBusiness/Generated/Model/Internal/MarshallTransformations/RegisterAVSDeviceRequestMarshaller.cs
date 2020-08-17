@@ -92,6 +92,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ProductId);
                 }
 
+                if(publicRequest.IsSetRoomArn())
+                {
+                    context.Writer.WritePropertyName("RoomArn");
+                    context.Writer.Write(publicRequest.RoomArn);
+                }
+
                 if(publicRequest.IsSetUserCode())
                 {
                     context.Writer.WritePropertyName("UserCode");

@@ -29,16 +29,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Data source credentials.
+    /// Data source credentials. This is a variant type structure. For this structure to be
+    /// valid, only one of the attributes can be non-null.
     /// </summary>
     public partial class DataSourceCredentials
     {
+        private string _copySourceArn;
         private CredentialPair _credentialPair;
+
+        /// <summary>
+        /// Gets and sets the property CopySourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a data source that has the credential pair that
+        /// you want to use. When <code>CopySourceArn</code> is not null, the credential pair
+        /// from the data source in the ARN is used as the credentials for the <code>DataSourceCredentials</code>
+        /// structure.
+        /// </para>
+        /// </summary>
+        public string CopySourceArn
+        {
+            get { return this._copySourceArn; }
+            set { this._copySourceArn = value; }
+        }
+
+        // Check to see if CopySourceArn property is set
+        internal bool IsSetCopySourceArn()
+        {
+            return this._copySourceArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CredentialPair. 
         /// <para>
-        /// Credential pair.
+        /// Credential pair. For more information, see <a>CredentialPair</a>.
         /// </para>
         /// </summary>
         public CredentialPair CredentialPair

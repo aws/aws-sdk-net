@@ -58,7 +58,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Value of an EIRP.
+        /// Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

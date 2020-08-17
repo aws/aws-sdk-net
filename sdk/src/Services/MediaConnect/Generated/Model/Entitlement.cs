@@ -37,6 +37,7 @@ namespace Amazon.MediaConnect.Model
         private string _description;
         private Encryption _encryption;
         private string _entitlementArn;
+        private EntitlementStatus _entitlementStatus;
         private string _name;
         private List<string> _subscribers = new List<string>();
 
@@ -101,6 +102,22 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetEntitlementArn()
         {
             return this._entitlementArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EntitlementStatus. An indication of whether the entitlement
+        /// is enabled.
+        /// </summary>
+        public EntitlementStatus EntitlementStatus
+        {
+            get { return this._entitlementStatus; }
+            set { this._entitlementStatus = value; }
+        }
+
+        // Check to see if EntitlementStatus property is set
+        internal bool IsSetEntitlementStatus()
+        {
+            return this._entitlementStatus != null;
         }
 
         /// <summary>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2020-05-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "POST";
-            request.ResourcePath = "/2019-03-26/origin-access-identity/cloudfront";
+            request.ResourcePath = "/2020-05-31/origin-access-identity/cloudfront";
             request.MarshallerVersion = 2;
 
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
@@ -64,12 +64,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {   
                 if (publicRequest.IsSetCloudFrontOriginAccessIdentityConfig())
                 {
-                    xmlWriter.WriteStartElement("CloudFrontOriginAccessIdentityConfig", "http://cloudfront.amazonaws.com/doc/2019-03-26/");
+                    xmlWriter.WriteStartElement("CloudFrontOriginAccessIdentityConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.CloudFrontOriginAccessIdentityConfig.IsSetCallerReference())
-                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2019-03-26/", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.CallerReference));                    
+                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.CallerReference));                    
     
                     if(publicRequest.CloudFrontOriginAccessIdentityConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2019-03-26/", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.Comment));                    
+                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.Comment));                    
     
     
                     xmlWriter.WriteEndElement();
@@ -80,7 +80,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
-                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-03-26";            
+                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-05-31";            
             } 
             catch (EncoderFallbackException e) 
             {

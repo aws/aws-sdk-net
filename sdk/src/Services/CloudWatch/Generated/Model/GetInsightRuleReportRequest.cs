@@ -46,7 +46,7 @@ namespace Amazon.CloudWatch.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>MaxContributorValue</code> -- the value of the top contributor for each data
-    /// point. The identity of the contributor may change for each data point in the graph.
+    /// point. The identity of the contributor might change for each data point in the graph.
     /// </para>
     ///  
     /// <para>
@@ -144,7 +144,7 @@ namespace Amazon.CloudWatch.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>MaxContributorValue</code> -- the value of the top contributor for each data
-        /// point. The identity of the contributor may change for each data point in the graph.
+        /// point. The identity of the contributor might change for each data point in the graph.
         /// </para>
         ///  
         /// <para>

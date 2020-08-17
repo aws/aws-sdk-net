@@ -108,7 +108,11 @@ namespace Amazon.RDS.Model
         /// The target backtrack window, in seconds. To disable backtracking, set this value to
         /// 0.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Default: 0
         /// </para>
@@ -302,7 +306,13 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Domain. 
         /// <para>
         /// Specify the Active Directory directory ID to restore the DB cluster in. The domain
-        /// must be created prior to this operation. 
+        /// must be created prior to this operation. Currently, only MySQL, Microsoft SQL Server,
+        /// Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+        /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>. 
         /// </para>
         /// </summary>
         public string Domain

@@ -74,10 +74,11 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The name of the schema attribute that specifies the data field to be featurized. Only
-        /// the <code>target</code> field of the <code>TARGET_TIME_SERIES</code> dataset type
-        /// is supported. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>,
-        /// and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>.
+        /// The name of the schema attribute that specifies the data field to be featurized. Amazon
+        /// Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the
+        /// <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code>
+        /// domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain,
+        /// the target is <code>target_value</code>. For more information, see <a>howitworks-missing-values</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

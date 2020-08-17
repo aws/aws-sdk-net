@@ -35,7 +35,13 @@ namespace Amazon.Macie2
     /// <summary>
     /// Implementation for accessing Macie2
     ///
-    /// Amazon Macie
+    /// Amazon Macie is a fully managed data security and data privacy service that uses machine
+    /// learning and pattern matching to discover and protect your sensitive data in AWS.
+    /// Macie automates the discovery of sensitive data, such as PII and intellectual property,
+    /// to provide you with insight into the data that your organization stores in AWS. Macie
+    /// also provides an inventory of your Amazon S3 buckets, which it continually monitors
+    /// for you. If Macie detects sensitive data or potential data access issues, it generates
+    /// detailed findings for you to review and act upon as necessary.
     /// </summary>
     public partial class AmazonMacie2Client : AmazonServiceClient, IAmazonMacie2
     {
@@ -313,87 +319,6 @@ namespace Amazon.Macie2
         public virtual AcceptInvitationResponse EndAcceptInvitation(IAsyncResult asyncResult)
         {
             return EndInvoke<AcceptInvitationResponse>(asyncResult);
-        }
-
-        #endregion
-        
-        #region  ArchiveFindings
-
-        /// <summary>
-        /// Archives one or more findings.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ArchiveFindings service method.</param>
-        /// 
-        /// <returns>The response from the ArchiveFindings service method, as returned by Macie2.</returns>
-        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
-        /// Provides information about an error that occurred due to insufficient access to a
-        /// specified resource.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ConflictException">
-        /// Provides information about an error that occurred due to a versioning conflict for
-        /// a specified resource.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
-        /// Provides information about an error that occurred due to an unknown internal server
-        /// error, exception, or failure.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
-        /// Provides information about an error that occurred because a specified resource wasn't
-        /// found.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
-        /// Provides information about an error that occurred due to one or more service quotas
-        /// for an account.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
-        /// Provides information about an error that occurred because too many requests were sent
-        /// during a certain amount of time.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ValidationException">
-        /// Provides information about an error that occurred due to a syntax error in a request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
-        public virtual ArchiveFindingsResponse ArchiveFindings(ArchiveFindingsRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ArchiveFindingsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ArchiveFindingsResponseUnmarshaller.Instance;
-
-            return Invoke<ArchiveFindingsResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the ArchiveFindings operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ArchiveFindings operation on AmazonMacie2Client.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndArchiveFindings
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
-        public virtual IAsyncResult BeginArchiveFindings(ArchiveFindingsRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ArchiveFindingsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ArchiveFindingsResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  ArchiveFindings operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginArchiveFindings.</param>
-        /// 
-        /// <returns>Returns a  ArchiveFindingsResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
-        public virtual ArchiveFindingsResponse EndArchiveFindings(IAsyncResult asyncResult)
-        {
-            return EndInvoke<ArchiveFindingsResponse>(asyncResult);
         }
 
         #endregion
@@ -1049,7 +974,7 @@ namespace Amazon.Macie2
         #region  DeleteCustomDataIdentifier
 
         /// <summary>
-        /// Deletes a custom data identifier.
+        /// Soft deletes a custom data identifier.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomDataIdentifier service method.</param>
         /// 
@@ -2185,7 +2110,7 @@ namespace Amazon.Macie2
         #region  GetClassificationExportConfiguration
 
         /// <summary>
-        /// Retrieves the configuration settings for exporting data classification results.
+        /// Retrieves the configuration settings for storing data classification results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetClassificationExportConfiguration service method.</param>
         /// 
@@ -3079,8 +3004,7 @@ namespace Amazon.Macie2
         #region  ListClassificationJobs
 
         /// <summary>
-        /// Retrieves information about the status and settings for one or more classification
-        /// jobs.
+        /// Retrieves a subset of information about one or more classification jobs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListClassificationJobs service method.</param>
         /// 
@@ -3705,7 +3629,7 @@ namespace Amazon.Macie2
         #region  PutClassificationExportConfiguration
 
         /// <summary>
-        /// Creates or updates the configuration settings for exporting data classification results.
+        /// Creates or updates the configuration settings for storing data classification results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutClassificationExportConfiguration service method.</param>
         /// 
@@ -3915,87 +3839,6 @@ namespace Amazon.Macie2
         public virtual TestCustomDataIdentifierResponse EndTestCustomDataIdentifier(IAsyncResult asyncResult)
         {
             return EndInvoke<TestCustomDataIdentifierResponse>(asyncResult);
-        }
-
-        #endregion
-        
-        #region  UnarchiveFindings
-
-        /// <summary>
-        /// Reactivates (unarchives) one or more findings.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UnarchiveFindings service method.</param>
-        /// 
-        /// <returns>The response from the UnarchiveFindings service method, as returned by Macie2.</returns>
-        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
-        /// Provides information about an error that occurred due to insufficient access to a
-        /// specified resource.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ConflictException">
-        /// Provides information about an error that occurred due to a versioning conflict for
-        /// a specified resource.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
-        /// Provides information about an error that occurred due to an unknown internal server
-        /// error, exception, or failure.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
-        /// Provides information about an error that occurred because a specified resource wasn't
-        /// found.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
-        /// Provides information about an error that occurred due to one or more service quotas
-        /// for an account.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
-        /// Provides information about an error that occurred because too many requests were sent
-        /// during a certain amount of time.
-        /// </exception>
-        /// <exception cref="Amazon.Macie2.Model.ValidationException">
-        /// Provides information about an error that occurred due to a syntax error in a request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
-        public virtual UnarchiveFindingsResponse UnarchiveFindings(UnarchiveFindingsRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = UnarchiveFindingsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UnarchiveFindingsResponseUnmarshaller.Instance;
-
-            return Invoke<UnarchiveFindingsResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UnarchiveFindings operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UnarchiveFindings operation on AmazonMacie2Client.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnarchiveFindings
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
-        public virtual IAsyncResult BeginUnarchiveFindings(UnarchiveFindingsRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = UnarchiveFindingsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UnarchiveFindingsResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  UnarchiveFindings operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnarchiveFindings.</param>
-        /// 
-        /// <returns>Returns a  UnarchiveFindingsResult from Macie2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
-        public virtual UnarchiveFindingsResponse EndUnarchiveFindings(IAsyncResult asyncResult)
-        {
-            return EndInvoke<UnarchiveFindingsResponse>(asyncResult);
         }
 
         #endregion

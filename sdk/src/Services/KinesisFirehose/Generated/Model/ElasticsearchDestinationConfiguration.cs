@@ -241,6 +241,10 @@ namespace Amazon.KinesisFirehose.Model
         /// appended to the prefix. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
         /// S3 Backup for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// You can't change this backup mode after you create the delivery stream. 
+        /// </para>
         /// </summary>
         public ElasticsearchS3BackupMode S3BackupMode
         {

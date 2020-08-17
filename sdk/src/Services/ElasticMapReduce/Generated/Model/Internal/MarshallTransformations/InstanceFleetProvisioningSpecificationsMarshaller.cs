@@ -45,6 +45,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InstanceFleetProvisioningSpecifications requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetOnDemandSpecification())
+            {
+                context.Writer.WritePropertyName("OnDemandSpecification");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OnDemandProvisioningSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.OnDemandSpecification, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSpotSpecification())
             {
                 context.Writer.WritePropertyName("SpotSpecification");

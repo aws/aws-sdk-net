@@ -50,7 +50,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property CodeReviewArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the code review to describe. 
+        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+        /// <code>CodeReview</code> </a> object. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -143,7 +144,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        ///  The owner of the repository. 
+        /// The owner of the repository. For an AWS CodeCommit repository, this is the AWS account
+        /// ID of the account that owns the repository. For a GitHub or Bitbucket repository,
+        /// this is the username for the account that owns the repository.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -162,7 +165,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property ProviderType. 
         /// <para>
-        ///  The provider type of the repository association. 
+        ///  The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).
+        /// 
         /// </para>
         /// </summary>
         public ProviderType ProviderType
@@ -236,8 +240,25 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        ///  The state of the code review. 
+        /// The valid code review states are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Completed</code>: The code review is complete. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Pending</code>: The code review started and has not completed or failed. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Failed</code>: The code review failed. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Deleting</code>: The code review is being deleted. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public JobState State
         {

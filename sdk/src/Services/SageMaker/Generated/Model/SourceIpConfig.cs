@@ -40,12 +40,12 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Cidrs. 
         /// <para>
-        /// A list of one to four <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless
+        /// A list of one to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless
         /// Inter-Domain Routing</a> (CIDR) values.
         /// </para>
         ///  
         /// <para>
-        /// Maximum: Four CIDR values
+        /// Maximum: Ten CIDR values
         /// </para>
         ///  <note> 
         /// <para>

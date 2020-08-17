@@ -70,6 +70,12 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                     unmarshalledObject.AuthorArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("callerReactions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CallerReactions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("clientRequestToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("reactionCounts", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
+                    unmarshalledObject.ReactionCounts = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

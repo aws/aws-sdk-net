@@ -83,8 +83,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DhcpOptionsId. 
         /// <para>
-        /// The ID of the set of DHCP options you've associated with the VPC (or <code>default</code>
-        /// if the default options are associated with the VPC).
+        /// The ID of the set of DHCP options you've associated with the VPC.
         /// </para>
         /// </summary>
         public string DhcpOptionsId

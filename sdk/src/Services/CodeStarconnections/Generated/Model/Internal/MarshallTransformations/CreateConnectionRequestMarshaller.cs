@@ -74,6 +74,12 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ConnectionName);
                 }
 
+                if(publicRequest.IsSetHostArn())
+                {
+                    context.Writer.WritePropertyName("HostArn");
+                    context.Writer.Write(publicRequest.HostArn);
+                }
+
                 if(publicRequest.IsSetProviderType())
                 {
                     context.Writer.WritePropertyName("ProviderType");

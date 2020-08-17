@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         private string _imageId;
         private string _roleName;
         private ExportTaskS3LocationRequest _s3ExportLocation;
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -64,7 +65,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the image being exported. The maximum length is 255 bytes.
+        /// A description of the image being exported. The maximum length is 255 characters.
         /// </para>
         /// </summary>
         public string Description
@@ -121,7 +122,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property RoleName. 
         /// <para>
         /// The name of the role that grants VM Import/Export permission to export images to your
-        /// S3 bucket. If this parameter is not specified, the default role is named 'vmimport'.
+        /// Amazon S3 bucket. If this parameter is not specified, the default role is named 'vmimport'.
         /// </para>
         /// </summary>
         public string RoleName
@@ -139,8 +140,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property S3ExportLocation. 
         /// <para>
-        /// Information about the destination S3 bucket. The bucket must exist and grant WRITE
-        /// and READ_ACP permissions to the AWS account vm-import-export@amazon.com.
+        /// Information about the destination Amazon S3 bucket. The bucket must exist and grant
+        /// WRITE and READ_ACP permissions to the AWS account vm-import-export@amazon.com.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -154,6 +155,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetS3ExportLocation()
         {
             return this._s3ExportLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to apply to the image being exported.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
     }

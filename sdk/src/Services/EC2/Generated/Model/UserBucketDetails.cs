@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the S3 bucket for the disk image.
+    /// Describes the Amazon S3 bucket for the disk image.
     /// </summary>
     public partial class UserBucketDetails
     {
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// The S3 bucket from which the disk image was created.
+        /// The Amazon S3 bucket from which the disk image was created.
         /// </para>
         /// </summary>
         public string S3Bucket

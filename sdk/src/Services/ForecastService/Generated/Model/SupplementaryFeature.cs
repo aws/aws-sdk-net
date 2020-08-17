@@ -39,6 +39,64 @@ namespace Amazon.ForecastService.Model
     /// calendar data, see the <a href="http://jollyday.sourceforge.net/data.html">Jollyday</a>
     /// web site.
     /// </para>
+    ///  
+    /// <para>
+    /// India and Korea's holidays are not included in the Jollyday library, but both are
+    /// supported by Amazon Forecast. Their holidays are:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>"IN" - INDIA</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>JANUARY 26 - REPUBLIC DAY</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>AUGUST 15 - INDEPENDENCE DAY</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>OCTOBER 2 GANDHI'S BIRTHDAY</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>"KR" - KOREA</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>JANUARY 1 - NEW YEAR</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>MARCH 1 - INDEPENDENCE MOVEMENT DAY</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>MAY 5 - CHILDREN'S DAY</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>JUNE 6 - MEMORIAL DAY</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>AUGUST 15 - LIBERATION DAY</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>OCTOBER 3 - NATIONAL FOUNDATION DAY</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>OCTOBER 9 - HANGEUL DAY</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DECEMBER 25 - CHRISTMAS DAY</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class SupplementaryFeature
     {
@@ -71,7 +129,51 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// "AR" - ARGENTINA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "AT" - AUSTRIA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// "AU" - AUSTRALIA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "BE" - BELGIUM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "BR" - BRAZIL
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "CA" - CANADA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "CN" - CHINA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "CZ" - CZECH REPUBLIC
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "DK" - DENMARK
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "EC" - ECUADOR
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "FI" - FINLAND
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "FR" - FRANCE
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -79,15 +181,79 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// "HU" - HUNGARY
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "IE" - IRELAND
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "IN" - INDIA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "IT" - ITALY
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// "JP" - JAPAN
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// "US" - UNITED_STATES
+        /// "KR" - KOREA
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// "UK" - UNITED_KINGDOM
+        /// "LU" - LUXEMBOURG
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "MX" - MEXICO
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "NL" - NETHERLANDS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "NO" - NORWAY
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "PL" - POLAND
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "PT" - PORTUGAL
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "RU" - RUSSIA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "ZA" - SOUTH AFRICA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "ES" - SPAIN
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "SE" - SWEDEN
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "CH" - SWITZERLAND
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "US" - UNITED STATES
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "UK" - UNITED KINGDOM
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -30,7 +30,7 @@ namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
     /// Container for the parameters to the Untag operation.
-    /// Deletes specified tags from a specified resource.
+    /// Deletes tags from a specified resource group.
     /// </summary>
     public partial class UntagRequest : AmazonResourceGroupsRequest
     {
@@ -40,7 +40,8 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the resource from which to remove tags.
+        /// The ARN of the resource group from which to remove tags. The command removed both
+        /// the specified keys and any values associated with those keys.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=1600)]

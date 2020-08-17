@@ -50,7 +50,7 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  
     /// <para>
-    /// Secrets Manager schedules the next rotation when the previous one is complete. Secrets
+    /// Secrets Manager schedules the next rotation when the previous one completes. Secrets
     /// Manager schedules the date by adding the rotation interval (number of days) to the
     /// actual date of the last rotation. The service chooses the hour within that 24-hour
     /// date window randomly. The minute is also chosen somewhat randomly, but weighted towards
@@ -71,8 +71,8 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// If instead the <code>AWSPENDING</code> staging label is present but is not attached
-    /// to the same version as <code>AWSCURRENT</code> then any later invocation of <code>RotateSecret</code>
+    /// If the <code>AWSPENDING</code> staging label is present but not attached to the same
+    /// version as <code>AWSCURRENT</code> then any later invocation of <code>RotateSecret</code>
     /// assumes that a previous rotation request is still in progress and returns an error.
     /// </para>
     ///  
@@ -138,9 +138,9 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  
         /// <para>
-        /// You only need to specify your own value if you are implementing your own retry logic
-        /// and want to ensure that a given secret is not created twice. We recommend that you
-        /// generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
+        /// You only need to specify your own value if you implement your own retry logic and
+        /// want to ensure that a given secret is not created twice. We recommend that you generate
+        /// a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
         /// value to ensure uniqueness within the specified secret. 
         /// </para>
         ///  
@@ -216,8 +216,15 @@ namespace Amazon.SecretsManager.Model
         /// (before Secrets Manager adds the hyphen and six characters to the ARN) and you try
         /// to use that as a partial ARN, then those characters cause Secrets Manager to assume
         /// that you’re specifying a complete ARN. This confusion can cause unexpected results.
-        /// To avoid this situation, we recommend that you don’t create secret names that end
-        /// with a hyphen followed by six characters.
+        /// To avoid this situation, we recommend that you don’t create secret names ending with
+        /// a hyphen followed by six characters.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an incomplete ARN without the random suffix, and instead provide the
+        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include
+        /// the random suffix added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+        /// or an <i>AccessDeniedException</i> error, depending on your permissions.
         /// </para>
         ///  </note>
         /// </summary>

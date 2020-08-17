@@ -133,6 +133,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateMaintenanceWindowRequest.ScheduleOffset</property>
+    <min>1</min>
+    <max>6</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateMaintenanceWindowResponse.WindowId</property>
     <min>20</min>
     <max>20</max>
@@ -797,6 +802,11 @@
     <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowResponse.Schedule</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowResponse.ScheduleOffset</property>
+    <min>1</min>
+    <max>6</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowResponse.WindowId</property>
@@ -1611,6 +1621,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateMaintenanceWindowRequest.ScheduleOffset</property>
+    <min>1</min>
+    <max>6</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateMaintenanceWindowRequest.WindowId</property>
     <min>20</min>
     <max>20</max>
@@ -1641,6 +1656,11 @@
     <property>Amazon.SimpleSystemsManagement.Model.UpdateMaintenanceWindowResponse.Schedule</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateMaintenanceWindowResponse.ScheduleOffset</property>
+    <min>1</min>
+    <max>6</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateMaintenanceWindowResponse.WindowId</property>
@@ -2799,6 +2819,11 @@
     <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowIdentity.Schedule</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowIdentity.ScheduleOffset</property>
+    <min>1</min>
+    <max>6</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowIdentity.WindowId</property>

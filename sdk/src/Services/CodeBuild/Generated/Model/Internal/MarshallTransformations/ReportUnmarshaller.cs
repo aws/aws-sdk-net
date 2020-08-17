@@ -70,6 +70,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("codeCoverageSummary", targetDepth))
+                {
+                    var unmarshaller = CodeCoverageReportSummaryUnmarshaller.Instance;
+                    unmarshalledObject.CodeCoverageSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("created", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

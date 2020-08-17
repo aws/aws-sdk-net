@@ -240,6 +240,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(publicRequest.PubliclyAccessible));
                 }
+                if(publicRequest.IsSetReplicaMode())
+                {
+                    request.Parameters.Add("ReplicaMode", StringUtils.FromString(publicRequest.ReplicaMode));
+                }
                 if(publicRequest.IsSetStorageType())
                 {
                     request.Parameters.Add("StorageType", StringUtils.FromString(publicRequest.StorageType));

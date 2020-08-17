@@ -30,7 +30,8 @@ namespace Amazon.FraudDetector.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRuleVersion operation.
-    /// Updates a rule version resulting in a new rule version.
+    /// Updates a rule version resulting in a new rule version. Updates a rule version resulting
+    /// in a new rule version (version 1, 2, 3 ...).
     /// </summary>
     public partial class UpdateRuleVersionRequest : AmazonFraudDetectorRequest
     {
@@ -39,6 +40,7 @@ namespace Amazon.FraudDetector.Model
         private Language _language;
         private List<string> _outcomes = new List<string>();
         private Rule _rule;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -133,6 +135,25 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetRule()
         {
             return this._rule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to assign to the rule version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

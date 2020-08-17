@@ -60,6 +60,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LocalGatewayRouteTableId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("poolArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PoolArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("poolCidrSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

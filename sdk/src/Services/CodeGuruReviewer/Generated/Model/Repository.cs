@@ -29,17 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// Information about a repository.
+    /// Information about an associated AWS CodeCommit repository or an associated repository
+    /// that is managed by AWS CodeStar Connections (for example, Bitbucket). This <code>Repository</code>
+    /// object is not used if your source code is in an associated GitHub repository.
     /// </summary>
     public partial class Repository
     {
         private ThirdPartySourceRepository _bitbucket;
         private CodeCommitRepository _codeCommit;
+        private ThirdPartySourceRepository _gitHubEnterpriseServer;
 
         /// <summary>
         /// Gets and sets the property Bitbucket. 
         /// <para>
-        ///  Information about a Bitbucket Cloud repository. 
+        ///  Information about a Bitbucket repository. 
         /// </para>
         /// </summary>
         public ThirdPartySourceRepository Bitbucket
@@ -70,6 +73,24 @@ namespace Amazon.CodeGuruReviewer.Model
         internal bool IsSetCodeCommit()
         {
             return this._codeCommit != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GitHubEnterpriseServer. 
+        /// <para>
+        ///  Information about a GitHub Enterprise Server repository. 
+        /// </para>
+        /// </summary>
+        public ThirdPartySourceRepository GitHubEnterpriseServer
+        {
+            get { return this._gitHubEnterpriseServer; }
+            set { this._gitHubEnterpriseServer = value; }
+        }
+
+        // Check to see if GitHubEnterpriseServer property is set
+        internal bool IsSetGitHubEnterpriseServer()
+        {
+            return this._gitHubEnterpriseServer != null;
         }
 
     }

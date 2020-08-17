@@ -31,8 +31,7 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Provides information about the method that featurizes (transforms) a dataset field.
     /// The method is part of the <code>FeaturizationPipeline</code> of the <a>Featurization</a>
-    /// object. If you don't specify <code>FeaturizationMethodParameters</code>, Amazon Forecast
-    /// uses default parameters.
+    /// object. 
     /// 
     ///  
     /// <para>
@@ -49,8 +48,8 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code>
-    /// 
+    ///  <code>"FeaturizationMethodParameters": {"aggregation": "sum", "middlefill": "zero",
+    /// "backfill": "zero"}</code> 
     /// </para>
     ///  
     /// <para>
@@ -84,9 +83,14 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property FeaturizationMethodParameters. 
         /// <para>
-        /// The method parameters (key-value pairs). Specify these parameters to override the
-        /// default values. The following list shows the parameters and their valid values. Bold
-        /// signifies the default value.
+        /// The method parameters (key-value pairs), which are a map of override parameters. Specify
+        /// these parameters to override the default values. Related Time Series attributes do
+        /// not accept aggregation parameters.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following list shows the parameters and their valid values for the "filling" featurization
+        /// method for a <b>Target Time Series</b> dataset. Bold signifies the default value.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -99,11 +103,33 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number)
+        ///  <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>,
+        /// <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>backfill</code>: <b>zero</b>, <code>nan</code> 
+        ///  <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>,
+        /// <code>mean</code>, <code>min</code>, <code>max</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following list shows the parameters and their valid values for a <b>Related Time
+        /// Series</b> featurization method (there are no defaults):
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>,
+        /// <code>mean</code>, <code>min</code>, <code>max</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>,
+        /// <code>mean</code>, <code>min</code>, <code>max</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>,
+        /// <code>mean</code>, <code>min</code>, <code>max</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

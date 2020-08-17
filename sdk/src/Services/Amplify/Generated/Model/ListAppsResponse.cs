@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Result structure for an Amplify App list request.
+    /// The result structure for an Amplify app list request.
     /// </summary>
     public partial class ListAppsResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Apps. 
         /// <para>
-        ///  List of Amplify Apps. 
+        ///  A list of Amplify apps. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,8 +58,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Pagination token. Set to null to start listing Apps from start. If non-null pagination
-        /// token is returned in a result, then pass its value in here to list more projects.
+        ///  A pagination token. Set to null to start listing apps from start. If non-null, the
+        /// pagination token is returned in a result. Pass its value in here to list more projects.
         /// 
         /// </para>
         /// </summary>

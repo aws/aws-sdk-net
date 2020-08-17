@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// 
+    /// Contains information on the S3 bucket.
     /// </summary>
     public partial class S3BucketDetail
     {

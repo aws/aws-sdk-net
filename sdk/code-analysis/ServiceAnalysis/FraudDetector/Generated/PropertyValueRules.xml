@@ -22,21 +22,27 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FraudDetector.Model.CreateModelVersionRequest.Description</property>
+    <property>Amazon.FraudDetector.Model.CreateModelRequest.Description</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.CreateModelRequest.ModelId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.CreateModelVersionRequest.ModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[0-9a-z_-]+$</pattern>
+    <pattern>^[0-9a-z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.CreateModelVersionResponse.ModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[0-9a-z_-]+$</pattern>
+    <pattern>^[0-9a-z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.CreateModelVersionResponse.ModelVersionNumber</property>
@@ -79,22 +85,8 @@
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.DeleteDetectorVersionRequest.DetectorVersionId</property>
     <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FraudDetector.Model.DeleteRuleVersionRequest.DetectorId</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>^[0-9a-z_-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FraudDetector.Model.DeleteRuleVersionRequest.RuleId</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>^[0-9a-z_-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FraudDetector.Model.DeleteRuleVersionRequest.RuleVersion</property>
-    <min>1</min>
+    <max>5</max>
+    <pattern>^([1-9][0-9]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.DescribeDetectorRequest.DetectorId</property>
@@ -106,6 +98,12 @@
     <property>Amazon.FraudDetector.Model.DescribeDetectorRequest.MaxResults</property>
     <min>1000</min>
     <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.DescribeDetectorResponse.Arn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn\:aws[a-z-]{0,15}\:frauddetector\:[a-z0-9-]{3,20}\:[0-9]{12}\:[^\s]{2,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.DescribeDetectorResponse.DetectorId</property>
@@ -122,11 +120,13 @@
     <property>Amazon.FraudDetector.Model.DescribeModelVersionsRequest.ModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[0-9a-z_-]+$</pattern>
+    <pattern>^[0-9a-z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.DescribeModelVersionsRequest.ModelVersionNumber</property>
-    <min>1</min>
+    <min>3</min>
+    <max>7</max>
+    <pattern>^[1-9][0-9]{0,3}\.[0-9]{1,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.GetDetectorsRequest.DetectorId</property>
@@ -148,6 +148,14 @@
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.GetDetectorVersionRequest.DetectorVersionId</property>
     <min>1</min>
+    <max>5</max>
+    <pattern>^([1-9][0-9]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetDetectorVersionResponse.Arn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn\:aws[a-z-]{0,15}\:frauddetector\:[a-z0-9-]{3,20}\:[0-9]{12}\:[^\s]{2,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.GetDetectorVersionResponse.Description</property>
@@ -163,11 +171,52 @@
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.GetDetectorVersionResponse.DetectorVersionId</property>
     <min>1</min>
+    <max>5</max>
+    <pattern>^([1-9][0-9]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetEntityTypesRequest.MaxResults</property>
+    <min>5</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetEntityTypesRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetEventPredictionRequest.DetectorVersionId</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^([1-9][0-9]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetEventTypesRequest.MaxResults</property>
+    <min>5</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetEventTypesRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.GetExternalModelsRequest.MaxResults</property>
     <min>5</min>
     <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetLabelsRequest.MaxResults</property>
+    <min>10</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetLabelsRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.GetModelsRequest.MaxResults</property>
@@ -178,32 +227,37 @@
     <property>Amazon.FraudDetector.Model.GetModelsRequest.ModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[0-9a-z_-]+$</pattern>
+    <pattern>^[0-9a-z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.GetModelVersionRequest.ModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[0-9a-z_-]+$</pattern>
+    <pattern>^[0-9a-z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.GetModelVersionRequest.ModelVersionNumber</property>
-    <min>1</min>
+    <min>3</min>
+    <max>7</max>
+    <pattern>^[1-9][0-9]{0,3}\.[0-9]{1,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FraudDetector.Model.GetModelVersionResponse.Description</property>
+    <property>Amazon.FraudDetector.Model.GetModelVersionResponse.Arn</property>
     <min>1</min>
-    <max>128</max>
+    <max>256</max>
+    <pattern>^arn\:aws[a-z-]{0,15}\:frauddetector\:[a-z0-9-]{3,20}\:[0-9]{12}\:[^\s]{2,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.GetModelVersionResponse.ModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[0-9a-z_-]+$</pattern>
+    <pattern>^[0-9a-z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.GetModelVersionResponse.ModelVersionNumber</property>
-    <min>1</min>
+    <min>3</min>
+    <max>7</max>
+    <pattern>^[1-9][0-9]{0,3}\.[0-9]{1,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.GetOutcomesRequest.MaxResults</property>
@@ -236,11 +290,24 @@
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.GetRulesRequest.RuleVersion</property>
     <min>1</min>
+    <max>5</max>
+    <pattern>^([1-9][0-9]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.GetVariablesRequest.MaxResults</property>
     <min>50</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.ListTagsForResourceRequest.MaxResults</property>
+    <min>50</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn\:aws[a-z-]{0,15}\:frauddetector\:[a-z0-9-]{3,20}\:[0-9]{12}\:[^\s]{2,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.PutDetectorRequest.Description</property>
@@ -254,12 +321,52 @@
     <pattern>^[0-9a-z_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FraudDetector.Model.PutModelRequest.Description</property>
+    <property>Amazon.FraudDetector.Model.PutDetectorRequest.EventTypeName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.PutEntityTypeRequest.Description</property>
     <min>1</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FraudDetector.Model.PutModelRequest.ModelId</property>
+    <property>Amazon.FraudDetector.Model.PutEntityTypeRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.PutEventTypeRequest.Description</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.PutEventTypeRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.PutExternalModelRequest.ModelEndpoint</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[0-9A-Za-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.PutKMSEncryptionKeyRequest.KmsEncryptionKeyArn</property>
+    <min>7</min>
+    <max>80</max>
+    <pattern>^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$|DEFAULT|arn:[a-zA-Z0-9-]+:kms:[a-zA-Z0-9-]+:\d{12}:key:[a-zA-Z0-9-_]+|[a-zA-Z0-9-_]\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.PutLabelRequest.Description</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.PutLabelRequest.Name</property>
     <min>1</min>
     <max>64</max>
     <pattern>^[0-9a-z_-]+$</pattern>
@@ -276,6 +383,18 @@
     <pattern>^[0-9a-z_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FraudDetector.Model.TagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn\:aws[a-z-]{0,15}\:frauddetector\:[a-z0-9-]{3,20}\:[0-9]{12}\:[^\s]{2,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.UntagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn\:aws[a-z-]{0,15}\:frauddetector\:[a-z0-9-]{3,20}\:[0-9]{12}\:[^\s]{2,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FraudDetector.Model.UpdateDetectorVersionRequest.Description</property>
     <min>1</min>
     <max>128</max>
@@ -289,6 +408,8 @@
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.UpdateDetectorVersionRequest.DetectorVersionId</property>
     <min>1</min>
+    <max>5</max>
+    <pattern>^([1-9][0-9]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.UpdateDetectorVersionMetadataRequest.Description</property>
@@ -304,6 +425,8 @@
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.UpdateDetectorVersionMetadataRequest.DetectorVersionId</property>
     <min>1</min>
+    <max>5</max>
+    <pattern>^([1-9][0-9]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.UpdateDetectorVersionStatusRequest.DetectorId</property>
@@ -314,21 +437,55 @@
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.UpdateDetectorVersionStatusRequest.DetectorVersionId</property>
     <min>1</min>
+    <max>5</max>
+    <pattern>^([1-9][0-9]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FraudDetector.Model.UpdateModelVersionRequest.Description</property>
+    <property>Amazon.FraudDetector.Model.UpdateModelRequest.Description</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.UpdateModelRequest.ModelId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.UpdateModelVersionRequest.MajorVersionNumber</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^([1-9][0-9]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.UpdateModelVersionRequest.ModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[0-9a-z_-]+$</pattern>
+    <pattern>^[0-9a-z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FraudDetector.Model.UpdateModelVersionRequest.ModelVersionNumber</property>
+    <property>Amazon.FraudDetector.Model.UpdateModelVersionResponse.ModelId</property>
     <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.UpdateModelVersionResponse.ModelVersionNumber</property>
+    <min>3</min>
+    <max>7</max>
+    <pattern>^[1-9][0-9]{0,3}\.[0-9]{1,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.UpdateModelVersionStatusRequest.ModelId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.UpdateModelVersionStatusRequest.ModelVersionNumber</property>
+    <min>3</min>
+    <max>7</max>
+    <pattern>^[1-9][0-9]{0,3}\.[0-9]{1,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.UpdateRuleMetadataRequest.Description</property>
@@ -346,12 +503,24 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FraudDetector.Model.Detector.Arn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn\:aws[a-z-]{0,15}\:frauddetector\:[a-z0-9-]{3,20}\:[0-9]{12}\:[^\s]{2,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FraudDetector.Model.Detector.Description</property>
     <min>1</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.Detector.DetectorId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.Detector.EventTypeName</property>
     <min>1</min>
     <max>64</max>
     <pattern>^[0-9a-z_-]+$</pattern>
@@ -366,6 +535,75 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FraudDetector.Model.Entity.EntityId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.EntityType.Arn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn\:aws[a-z-]{0,15}\:frauddetector\:[a-z0-9-]{3,20}\:[0-9]{12}\:[^\s]{2,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.EntityType.Description</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.EventType.Arn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn\:aws[a-z-]{0,15}\:frauddetector\:[a-z0-9-]{3,20}\:[0-9]{12}\:[^\s]{2,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.EventType.Description</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.ExternalEventsDetail.DataAccessRoleArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn\:aws[a-z-]{0,15}\:iam\:\:[0-9]{12}\:role\/[^\s]{2,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.ExternalEventsDetail.DataLocation</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^s3:\/\/(.+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.ExternalModel.Arn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn\:aws[a-z-]{0,15}\:frauddetector\:[a-z0-9-]{3,20}\:[0-9]{12}\:[^\s]{2,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.KMSKey.KmsEncryptionKeyArn</property>
+    <min>7</min>
+    <max>80</max>
+    <pattern>^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$|DEFAULT|arn:[a-zA-Z0-9-]+:kms:[a-zA-Z0-9-]+:\d{12}:key:[a-zA-Z0-9-_]+|[a-zA-Z0-9-_]\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.Label.Arn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn\:aws[a-z-]{0,15}\:frauddetector\:[a-z0-9-]{3,20}\:[0-9]{12}\:[^\s]{2,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.Label.Description</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.Model.Arn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn\:aws[a-z-]{0,15}\:frauddetector\:[a-z0-9-]{3,20}\:[0-9]{12}\:[^\s]{2,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FraudDetector.Model.Model.Description</property>
     <min>1</min>
     <max>128</max>
@@ -374,7 +612,7 @@
     <property>Amazon.FraudDetector.Model.Model.ModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[0-9a-z_-]+$</pattern>
+    <pattern>^[0-9a-z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.ModelEndpointDataBlob.ContentType</property>
@@ -382,29 +620,50 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FraudDetector.Model.ModelVersion.ModelId</property>
+    <property>Amazon.FraudDetector.Model.ModelInputConfiguration.EventTypeName</property>
     <min>1</min>
     <max>64</max>
     <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.ModelVersion.Arn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn\:aws[a-z-]{0,15}\:frauddetector\:[a-z0-9-]{3,20}\:[0-9]{12}\:[^\s]{2,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.ModelVersion.ModelId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.ModelVersion.ModelVersionNumber</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FraudDetector.Model.ModelVersionDetail.Description</property>
+    <property>Amazon.FraudDetector.Model.ModelVersionDetail.Arn</property>
     <min>1</min>
-    <max>128</max>
+    <max>256</max>
+    <pattern>^arn\:aws[a-z-]{0,15}\:frauddetector\:[a-z0-9-]{3,20}\:[0-9]{12}\:[^\s]{2,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.ModelVersionDetail.ModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[0-9a-z_-]+$</pattern>
+    <pattern>^[0-9a-z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.ModelVersionDetail.ModelVersionNumber</property>
+    <min>3</min>
+    <max>7</max>
+    <pattern>^[1-9][0-9]{0,3}\.[0-9]{1,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.Outcome.Arn</property>
     <min>1</min>
+    <max>256</max>
+    <pattern>^arn\:aws[a-z-]{0,15}\:frauddetector\:[a-z0-9-]{3,20}\:[0-9]{12}\:[^\s]{2,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.Outcome.Description</property>
@@ -432,6 +691,14 @@
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.Rule.RuleVersion</property>
     <min>1</min>
+    <max>5</max>
+    <pattern>^([1-9][0-9]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.RuleDetail.Arn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn\:aws[a-z-]{0,15}\:frauddetector\:[a-z0-9-]{3,20}\:[0-9]{12}\:[^\s]{2,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.RuleDetail.Description</property>
@@ -458,17 +725,24 @@
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.RuleDetail.RuleVersion</property>
     <min>1</min>
+    <max>5</max>
+    <pattern>^([1-9][0-9]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FraudDetector.Model.TrainingDataSource.DataAccessRoleArn</property>
+    <property>Amazon.FraudDetector.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.Variable.Arn</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^arn\:aws\:iam\:\:[0-9]{12}\:role\/[^\s]{2,64}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FraudDetector.Model.TrainingDataSource.DataLocation</property>
-    <min>1</min>
-    <max>512</max>
-    <pattern>^s3:\/\/(.+)$</pattern>
+    <pattern>^arn\:aws[a-z-]{0,15}\:frauddetector\:[a-z0-9-]{3,20}\:[0-9]{12}\:[^\s]{2,128}$</pattern>
   </property-value-rule>
 </property-value-rules>

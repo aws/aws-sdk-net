@@ -49,13 +49,14 @@ namespace Amazon.Glue.Model
         private List<PropertyPredicate> _filters = new List<PropertyPredicate>();
         private int? _maxResults;
         private string _nextToken;
+        private ResourceShareType _resourceShareType;
         private string _searchText;
         private List<SortCriterion> _sortCriteria = new List<SortCriterion>();
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
         /// <para>
-        /// A unique identifier, consisting of <code> <i>account_id</i>/datalake</code>.
+        /// A unique identifier, consisting of <code> <i>account_id</i> </code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -76,6 +77,17 @@ namespace Amazon.Glue.Model
         /// <para>
         /// A list of key-value pairs, and a comparator used to filter the search results. Returns
         /// all entities matching the predicate.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is
+        /// used only for time fields, and can be omitted for other field types. Also, when comparing
+        /// string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used.
+        /// The <code>Key</code> field (for example, the value of the <code>Name</code> field)
+        /// is split on certain punctuation characters, for example, -, :, #, etc. into tokens.
+        /// Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>.
+        /// For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code>
+        /// and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.
         /// </para>
         /// </summary>
         public List<PropertyPredicate> Filters
@@ -125,6 +137,35 @@ namespace Amazon.Glue.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceShareType. 
+        /// <para>
+        /// Allows you to specify that you want to search the tables shared with your account.
+        /// The allowable values are <code>FOREIGN</code> or <code>ALL</code>. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If set to <code>FOREIGN</code>, will search the tables shared with your account. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If set to <code>ALL</code>, will search the tables shared with your account, as well
+        /// as the tables in yor local account. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ResourceShareType ResourceShareType
+        {
+            get { return this._resourceShareType; }
+            set { this._resourceShareType = value; }
+        }
+
+        // Check to see if ResourceShareType property is set
+        internal bool IsSetResourceShareType()
+        {
+            return this._resourceShareType != null;
         }
 
         /// <summary>

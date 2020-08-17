@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// To modify some attributes, the instance must be stopped. For more information, see
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
-    /// Attributes of a Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// attributes of a stopped instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ModifyInstanceAttributeRequest : AmazonEC2Request
@@ -111,7 +111,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// To add instance store volumes to an Amazon EBS-backed instance, you must add them
         /// when you launch the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
-        /// the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute
+        /// the block device mapping when launching an instance</a> in the <i>Amazon Elastic Compute
         /// Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -253,7 +253,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// Changes the instance type to the specified value. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Types</a>. If the instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
+        /// types</a>. If the instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
         /// </para>
         /// </summary>
         public string InstanceType

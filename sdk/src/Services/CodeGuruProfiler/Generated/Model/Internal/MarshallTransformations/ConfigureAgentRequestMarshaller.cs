@@ -75,6 +75,20 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FleetInstanceId);
                 }
 
+                if(publicRequest.IsSetMetadata())
+                {
+                    context.Writer.WritePropertyName("metadata");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestMetadataKvp in publicRequest.Metadata)
+                    {
+                        context.Writer.WritePropertyName(publicRequestMetadataKvp.Key);
+                        var publicRequestMetadataValue = publicRequestMetadataKvp.Value;
+
+                            context.Writer.Write(publicRequestMetadataValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

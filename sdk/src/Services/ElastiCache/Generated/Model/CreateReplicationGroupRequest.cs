@@ -55,12 +55,11 @@ namespace Amazon.ElastiCache.Model
     ///  
     /// <para>
     /// When a Redis (cluster mode disabled) replication group has been successfully created,
-    /// you can add one or more read replicas to it, up to a total of 5 read replicas. You
-    /// cannot alter a Redis (cluster mode enabled) replication group after it has been created.
-    /// However, if you need to increase or decrease the number of node groups (console: shards),
-    /// you can avail yourself of ElastiCache for Redis' enhanced backup and restore. For
-    /// more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-restoring.html">Restoring
-    /// From a Backup with Cluster Resizing</a> in the <i>ElastiCache User Guide</i>.
+    /// you can add one or more read replicas to it, up to a total of 5 read replicas. If
+    /// you need to increase or decrease the number of node groups (console: shards), you
+    /// can avail yourself of ElastiCache for Redis' scaling. For more information, see <a
+    /// href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Scaling.html">Scaling
+    /// ElastiCache for Redis Clusters</a> in the <i>ElastiCache User Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -194,11 +193,6 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>,
-        /// Multi-AZ is disabled for this replication group.
-        /// </para>
-        ///  
-        /// <para>
         ///  <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled)
         /// replication groups.
         /// </para>
@@ -206,23 +200,6 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Default: false
         /// </para>
-        ///  
-        /// <para>
-        /// Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Redis versions earlier than 2.8.6.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Redis (cluster mode disabled): T1 node types.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Redis (cluster mode enabled): T1 node types.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public bool AutomaticFailoverEnabled
         {
@@ -561,7 +538,12 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MultiAZEnabled.
+        /// Gets and sets the property MultiAZEnabled. 
+        /// <para>
+        /// A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+        /// Downtime: Multi-AZ</a>.
+        /// </para>
         /// </summary>
         public bool MultiAZEnabled
         {
@@ -631,7 +613,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NumCacheClusters. 
         /// <para>
-        /// The number of nodes in the cluster.
+        /// The number of clusters this replication group initially has.
         /// </para>
         ///  
         /// <para>

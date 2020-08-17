@@ -196,7 +196,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         ///  </important>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }

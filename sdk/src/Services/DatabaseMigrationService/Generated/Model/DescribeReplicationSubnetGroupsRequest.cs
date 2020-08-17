@@ -41,7 +41,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters applied to the describe action.
+        /// Filters applied to replication subnet groups.
         /// </para>
         ///  
         /// <para>

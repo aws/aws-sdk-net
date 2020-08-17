@@ -37,9 +37,9 @@ namespace Amazon.MQ.Model
         private bool? _useAwsOwnedKey;
 
         /// <summary>
-        /// Gets and sets the property KmsKeyId. The customer master key (CMK) to use for the
-        /// AWS Key Management Service (KMS). This key is used to encrypt your data at rest. If
-        /// not provided, Amazon MQ will use a default CMK to encrypt your data.
+        /// Gets and sets the property KmsKeyId. The symmetric customer master key (CMK) to use
+        /// for the AWS Key Management Service (KMS). This key is used to encrypt your data at
+        /// rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
         /// </summary>
         public string KmsKeyId
         {

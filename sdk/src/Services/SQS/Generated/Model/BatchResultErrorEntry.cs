@@ -97,7 +97,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property SenderFault. 
         /// <para>
-        /// Specifies whether the error happened due to the producer.
+        /// Specifies whether the error happened due to the caller of the batch API action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

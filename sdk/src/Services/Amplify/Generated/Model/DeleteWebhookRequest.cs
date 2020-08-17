@@ -39,7 +39,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property WebhookId. 
         /// <para>
-        ///  Unique Id for a webhook. 
+        ///  The unique ID for a webhook. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

@@ -103,7 +103,7 @@ namespace Amazon.ElastiCache.Model
     ///  </li> </ul> </li> </ul> 
     /// <para>
     /// Also see, <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html#auto-failover-test">Testing
-    /// Multi-AZ with Automatic Failover</a> in the <i>ElastiCache User Guide</i>.
+    /// Multi-AZ </a> in the <i>ElastiCache User Guide</i>.
     /// </para>
     /// </summary>
     public partial class TestFailoverRequest : AmazonElastiCacheRequest

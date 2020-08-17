@@ -50,7 +50,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters applied to the describe table statistics action.
+        /// Filters applied to table statistics.
         /// </para>
         ///  
         /// <para>

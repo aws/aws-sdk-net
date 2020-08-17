@@ -66,6 +66,22 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetConfiguration())
+                {
+                    context.Writer.WritePropertyName("Configuration");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestConfigurationListValue in publicRequest.Configuration)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GroupConfigurationItemMarshaller.Instance;
+                        marshaller.Marshall(publicRequestConfigurationListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");

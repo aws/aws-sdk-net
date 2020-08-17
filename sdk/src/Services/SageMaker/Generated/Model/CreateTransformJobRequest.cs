@@ -82,6 +82,7 @@ namespace Amazon.SageMaker.Model
         private ExperimentConfig _experimentConfig;
         private int? _maxConcurrentTransforms;
         private int? _maxPayloadInMB;
+        private ModelClientConfig _modelClientConfig;
         private string _modelName;
         private List<Tag> _tags = new List<Tag>();
         private TransformInput _transformInput;
@@ -240,6 +241,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMaxPayloadInMB()
         {
             return this._maxPayloadInMB.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelClientConfig. 
+        /// <para>
+        /// Configures the timeout and maximum number of retries for processing a transform job
+        /// invocation.
+        /// </para>
+        /// </summary>
+        public ModelClientConfig ModelClientConfig
+        {
+            get { return this._modelClientConfig; }
+            set { this._modelClientConfig = value; }
+        }
+
+        // Check to see if ModelClientConfig property is set
+        internal bool IsSetModelClientConfig()
+        {
+            return this._modelClientConfig != null;
         }
 
         /// <summary>

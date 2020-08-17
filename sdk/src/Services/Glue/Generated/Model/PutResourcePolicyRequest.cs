@@ -34,9 +34,37 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class PutResourcePolicyRequest : AmazonGlueRequest
     {
+        private EnableHybridValues _enableHybrid;
         private ExistCondition _policyExistsCondition;
         private string _policyHashCondition;
         private string _policyInJson;
+        private string _resourceArn;
+
+        /// <summary>
+        /// Gets and sets the property EnableHybrid. 
+        /// <para>
+        /// Allows you to specify if you want to use both resource-level and account/catalog-level
+        /// resource policies. A resource-level policy is a policy attached to an individual resource
+        /// such as a database or a table.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value of <code>NO</code> indicates that resource-level policies cannot
+        /// co-exist with an account-level policy. A value of <code>YES</code> means the use of
+        /// both resource-level and account/catalog-level resource policies is allowed.
+        /// </para>
+        /// </summary>
+        public EnableHybridValues EnableHybrid
+        {
+            get { return this._enableHybrid; }
+            set { this._enableHybrid = value; }
+        }
+
+        // Check to see if EnableHybrid property is set
+        internal bool IsSetEnableHybrid()
+        {
+            return this._enableHybrid != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PolicyExistsCondition. 
@@ -96,6 +124,27 @@ namespace Amazon.Glue.Model
         internal bool IsSetPolicyInJson()
         {
             return this._policyInJson != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The ARN of the AWS Glue resource for the resource policy to be set. For more information
+        /// about AWS Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
+        /// Glue ARN string pattern</a> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10240)]
+        public string ResourceArn
+        {
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
+        }
+
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
+        {
+            return this._resourceArn != null;
         }
 
     }

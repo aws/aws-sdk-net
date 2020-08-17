@@ -53,6 +53,7 @@ namespace Amazon.WAFV2.Model
     public partial class IPSetReferenceStatement
     {
         private string _arn;
+        private IPSetForwardedIPConfig _ipSetForwardedIPConfig;
 
         /// <summary>
         /// Gets and sets the property ARN. 
@@ -71,6 +72,32 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetARN()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IPSetForwardedIPConfig. 
+        /// <para>
+        /// The configuration for inspecting IP addresses in an HTTP header that you specify,
+        /// instead of using the IP address that's reported by the web request origin. Commonly,
+        /// this is the X-Forwarded-For (XFF) header, but you can specify any header name. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the specified header isn't present in the request, AWS WAF doesn't apply the rule
+        /// to the web request at all.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public IPSetForwardedIPConfig IPSetForwardedIPConfig
+        {
+            get { return this._ipSetForwardedIPConfig; }
+            set { this._ipSetForwardedIPConfig = value; }
+        }
+
+        // Check to see if IPSetForwardedIPConfig property is set
+        internal bool IsSetIPSetForwardedIPConfig()
+        {
+            return this._ipSetForwardedIPConfig != null;
         }
 
     }

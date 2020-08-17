@@ -39,7 +39,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property Models. 
         /// <para>
-        /// The returned models. 
+        /// The array of models.
         /// </para>
         /// </summary>
         public List<Model> Models
@@ -57,7 +57,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The next token for subsequent requests. 
+        /// The next page token to be used in subsequent requests.
         /// </para>
         /// </summary>
         public string NextToken

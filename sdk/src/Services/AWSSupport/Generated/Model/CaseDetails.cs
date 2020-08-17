@@ -30,7 +30,7 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// A JSON-formatted object that contains the metadata for a support case. It is contained
-    /// the response from a <a>DescribeCases</a> request. <b>CaseDetails</b> contains the
+    /// in the response from a <a>DescribeCases</a> request. <b>CaseDetails</b> contains the
     /// following fields:
     /// 
     ///  <ul> <li> 
@@ -55,13 +55,13 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>recentCommunications.</b> One or more <a>Communication</a> objects. Fields of
-    /// these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>,
-    /// <code>submittedBy</code>, and <code>timeCreated</code>.
+    ///  <b>nextToken.</b> A resumption point for pagination.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>nextToken.</b> A resumption point for pagination.
+    ///  <b>recentCommunications.</b> One or more <a>Communication</a> objects. Fields of
+    /// these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>,
+    /// <code>submittedBy</code>, and <code>timeCreated</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -370,7 +370,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property TimeCreated. 
         /// <para>
-        /// The time that the case was case created in the AWS Support Center.
+        /// The time that the case was created in the AWS Support Center.
         /// </para>
         /// </summary>
         public string TimeCreated

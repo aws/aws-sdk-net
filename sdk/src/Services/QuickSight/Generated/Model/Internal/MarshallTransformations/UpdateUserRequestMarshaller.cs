@@ -75,6 +75,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCustomPermissionsName())
+                {
+                    context.Writer.WritePropertyName("CustomPermissionsName");
+                    context.Writer.Write(publicRequest.CustomPermissionsName);
+                }
+
                 if(publicRequest.IsSetEmail())
                 {
                     context.Writer.WritePropertyName("Email");
@@ -85,6 +91,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Role");
                     context.Writer.Write(publicRequest.Role);
+                }
+
+                if(publicRequest.IsSetUnapplyCustomPermissions())
+                {
+                    context.Writer.WritePropertyName("UnapplyCustomPermissions");
+                    context.Writer.Write(publicRequest.UnapplyCustomPermissions);
                 }
 
         

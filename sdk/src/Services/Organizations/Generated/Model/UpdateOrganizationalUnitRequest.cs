@@ -82,7 +82,7 @@ namespace Amazon.Organizations.Model
         /// dash and from 8 to 32 additional lowercase letters or digits.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=68)]
         public string OrganizationalUnitId
         {
             get { return this._organizationalUnitId; }

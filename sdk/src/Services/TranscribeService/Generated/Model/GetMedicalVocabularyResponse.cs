@@ -43,8 +43,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property DownloadUri. 
         /// <para>
-        /// The Amazon S3 location where the vocabulary is stored. Use this URI to get the contents
-        /// of the vocabulary. You can download your vocabulary from the URI for a limited time.
+        /// The location in Amazon S3 where the vocabulary is stored. Use this URI to get the
+        /// contents of the vocabulary. You can download your vocabulary from the URI for a limited
+        /// time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
@@ -82,7 +83,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The valid language code returned for your vocabulary entries.
+        /// The valid language code for your vocabulary entries.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -100,8 +101,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time the vocabulary was last modified with a text file different from
-        /// what was previously used.
+        /// The date and time that the vocabulary was last modified with a text file different
+        /// from the one that was previously used.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -119,7 +120,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The valid name that Amazon Transcribe Medical returns.
+        /// The name of the vocabulary returned by Amazon Transcribe Medical.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -138,7 +139,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyState. 
         /// <para>
-        /// The processing state of the vocabulary.
+        /// The processing state of the vocabulary. If the <code>VocabularyState</code> is <code>READY</code>
+        /// then you can use it in the <code>StartMedicalTranscriptionJob</code> operation. 
         /// </para>
         /// </summary>
         public VocabularyState VocabularyState

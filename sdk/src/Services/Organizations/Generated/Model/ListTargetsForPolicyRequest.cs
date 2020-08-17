@@ -88,6 +88,7 @@ namespace Amazon.Organizations.Model
         /// response to indicate where the output should continue from.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100000)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -112,7 +113,7 @@ namespace Amazon.Organizations.Model
         /// the underscore character (_).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=130)]
         public string PolicyId
         {
             get { return this._policyId; }

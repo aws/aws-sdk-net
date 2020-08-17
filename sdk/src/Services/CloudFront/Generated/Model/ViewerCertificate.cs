@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2019-03-26.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2020-05-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -53,8 +53,8 @@ namespace Amazon.CloudFront.Model
     ///  <ul> <li> 
     /// <para>
     /// To accept HTTPS connections from only viewers that support SNI, set <code>SSLSupportMethod</code>
-    /// to <code>sni-only</code>. This is recommended. Most browsers and clients released
-    /// after 2010 support SNI. 
+    /// to <code>sni-only</code>. This is recommended. Most browsers and clients support SNI.
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -289,11 +289,6 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using
-        /// browsers or devices that don’t support TLSv1.2.
-        /// </para>
-        ///  
-        /// <para>
         /// When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>),
         /// you must specify <code>TLSv1</code> or higher. 
         /// </para>
@@ -327,8 +322,8 @@ namespace Amazon.CloudFront.Model
         /// <para>
         ///  <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers
         /// that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server
-        /// name indication (SNI)</a>. This is recommended. Most browsers and clients released
-        /// after 2010 support SNI.
+        /// name indication (SNI)</a>. This is recommended. Most browsers and clients support
+        /// SNI.
         /// </para>
         ///  </li> <li> 
         /// <para>

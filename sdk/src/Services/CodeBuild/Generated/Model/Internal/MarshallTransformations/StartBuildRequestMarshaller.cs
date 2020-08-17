@@ -85,6 +85,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BuildspecOverride);
                 }
 
+                if(publicRequest.IsSetBuildStatusConfigOverride())
+                {
+                    context.Writer.WritePropertyName("buildStatusConfigOverride");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BuildStatusConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.BuildStatusConfigOverride, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCacheOverride())
                 {
                     context.Writer.WritePropertyName("cacheOverride");
@@ -106,6 +117,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("computeTypeOverride");
                     context.Writer.Write(publicRequest.ComputeTypeOverride);
+                }
+
+                if(publicRequest.IsSetDebugSessionEnabled())
+                {
+                    context.Writer.WritePropertyName("debugSessionEnabled");
+                    context.Writer.Write(publicRequest.DebugSessionEnabled);
                 }
 
                 if(publicRequest.IsSetEncryptionKeyOverride())

@@ -37,6 +37,7 @@ namespace Amazon.Kendra.Model
         private ColumnConfiguration _columnConfiguration;
         private ConnectionConfiguration _connectionConfiguration;
         private DatabaseEngineType _databaseEngineType;
+        private SqlConfiguration _sqlConfiguration;
         private DataSourceVpcConfiguration _vpcConfiguration;
 
         /// <summary>
@@ -112,6 +113,25 @@ namespace Amazon.Kendra.Model
         internal bool IsSetDatabaseEngineType()
         {
             return this._databaseEngineType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SqlConfiguration. 
+        /// <para>
+        /// Provides information about how Amazon Kendra uses quote marks around SQL identifiers
+        /// when querying a database data source.
+        /// </para>
+        /// </summary>
+        public SqlConfiguration SqlConfiguration
+        {
+            get { return this._sqlConfiguration; }
+            set { this._sqlConfiguration = value; }
+        }
+
+        // Check to see if SqlConfiguration property is set
+        internal bool IsSetSqlConfiguration()
+        {
+            return this._sqlConfiguration != null;
         }
 
         /// <summary>

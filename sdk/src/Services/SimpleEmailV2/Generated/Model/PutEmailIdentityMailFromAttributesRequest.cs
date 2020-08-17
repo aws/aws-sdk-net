@@ -71,7 +71,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// The verified email identity that you want to set up the custom MAIL FROM domain for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public string EmailIdentity
         {
             get { return this._emailIdentity; }

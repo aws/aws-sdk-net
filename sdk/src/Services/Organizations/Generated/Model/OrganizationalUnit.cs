@@ -75,6 +75,7 @@ namespace Amazon.Organizations.Model
         /// dash and from 8 to 32 additional lower-case letters or digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=68)]
         public string Id
         {
             get { return this._id; }

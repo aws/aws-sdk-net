@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the value that you want to use as a filter. For example, <code>"Name":
+        /// The name of the value that you want to use as a filter, for example, <code>"Name":
         /// "QUICKSIGHT_USER"</code>. 
         /// </para>
         /// </summary>
@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The comparison operator that you want to use as a filter. For example, <code>"Operator":
+        /// The comparison operator that you want to use as a filter, for example, <code>"Operator":
         /// "StringEquals"</code>.
         /// </para>
         /// </summary>
@@ -80,7 +80,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want
-        /// to use as a filter. For example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.
+        /// to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.
         /// 
         /// </para>
         /// </summary>

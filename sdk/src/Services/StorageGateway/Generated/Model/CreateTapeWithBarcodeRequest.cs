@@ -31,7 +31,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the CreateTapeWithBarcode operation.
     /// Creates a virtual tape by using your own barcode. You write data to the virtual tape
-    /// and then archive the tape. A barcode is unique and cannot be reused if it has already
+    /// and then archive the tape. A barcode is unique and can not be reused if it has already
     /// been used on a tape. This applies to barcodes used on deleted tapes. This operation
     /// is only supported in the tape gateway type.
     /// 
@@ -76,8 +76,12 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
-        /// True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to
-        /// use a key managed by Amazon S3. Optional.
+        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS
+        /// KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>true</code> | <code>false</code> 
         /// </para>
         /// </summary>
         public bool KMSEncrypted
@@ -95,8 +99,9 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSKey. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption.
-        /// This value can only be set when KMSEncrypted is true. Optional.
+        /// The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
+        /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
+        /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=2048)]
@@ -118,12 +123,11 @@ namespace Amazon.StorageGateway.Model
         /// The ID of the pool that you want to add your tape to for archiving. The tape in this
         /// pool is archived in the S3 storage class that is associated with the pool. When you
         /// use your backup application to eject the tape, the tape is archived directly into
-        /// the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the
-        /// pool.
+        /// the storage class (S3 Glacier or S3 Deep Archive) that corresponds to the pool.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: "GLACIER", "DEEP_ARCHIVE"
+        /// Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

@@ -66,6 +66,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAuthenticationStrategy())
+                {
+                    context.Writer.WritePropertyName("authenticationStrategy");
+                    context.Writer.Write(publicRequest.AuthenticationStrategy);
+                }
+
                 if(publicRequest.IsSetEngineType())
                 {
                     context.Writer.WritePropertyName("engineType");

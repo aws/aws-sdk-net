@@ -84,6 +84,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DatabaseEngineType);
             }
 
+            if(requestObject.IsSetSqlConfiguration())
+            {
+                context.Writer.WritePropertyName("SqlConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SqlConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SqlConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetVpcConfiguration())
             {
                 context.Writer.WritePropertyName("VpcConfiguration");

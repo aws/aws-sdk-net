@@ -2415,6 +2415,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type HumanTaskUiStatus.
+    /// </summary>
+    public class HumanTaskUiStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for HumanTaskUiStatus
+        /// </summary>
+        public static readonly HumanTaskUiStatus Active = new HumanTaskUiStatus("Active");
+        /// <summary>
+        /// Constant Deleting for HumanTaskUiStatus
+        /// </summary>
+        public static readonly HumanTaskUiStatus Deleting = new HumanTaskUiStatus("Deleting");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HumanTaskUiStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HumanTaskUiStatus FindValue(string value)
+        {
+            return FindValue<HumanTaskUiStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HumanTaskUiStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HyperParameterScalingType.
     /// </summary>
     public class HyperParameterScalingType : ConstantClass
@@ -2997,6 +3047,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly LabelingJobStatus Failed = new LabelingJobStatus("Failed");
         /// <summary>
+        /// Constant Initializing for LabelingJobStatus
+        /// </summary>
+        public static readonly LabelingJobStatus Initializing = new LabelingJobStatus("Initializing");
+        /// <summary>
         /// Constant InProgress for LabelingJobStatus
         /// </summary>
         public static readonly LabelingJobStatus InProgress = new LabelingJobStatus("InProgress");
@@ -3138,6 +3192,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ListLabelingJobsForWorkteamSortByOptions(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ListWorkforcesSortByOptions.
+    /// </summary>
+    public class ListWorkforcesSortByOptions : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreateDate for ListWorkforcesSortByOptions
+        /// </summary>
+        public static readonly ListWorkforcesSortByOptions CreateDate = new ListWorkforcesSortByOptions("CreateDate");
+        /// <summary>
+        /// Constant Name for ListWorkforcesSortByOptions
+        /// </summary>
+        public static readonly ListWorkforcesSortByOptions Name = new ListWorkforcesSortByOptions("Name");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListWorkforcesSortByOptions(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListWorkforcesSortByOptions FindValue(string value)
+        {
+            return FindValue<ListWorkforcesSortByOptions>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListWorkforcesSortByOptions(string value)
         {
             return FindValue(value);
         }
@@ -5981,6 +6085,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TargetDevice Ml_c5 = new TargetDevice("ml_c5");
         /// <summary>
+        /// Constant Ml_g4dn for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Ml_g4dn = new TargetDevice("ml_g4dn");
+        /// <summary>
         /// Constant Ml_inf1 for TargetDevice
         /// </summary>
         public static readonly TargetDevice Ml_inf1 = new TargetDevice("ml_inf1");
@@ -6028,6 +6136,14 @@ namespace Amazon.SageMaker
         /// Constant Sitara_am57x for TargetDevice
         /// </summary>
         public static readonly TargetDevice Sitara_am57x = new TargetDevice("sitara_am57x");
+        /// <summary>
+        /// Constant X86_win32 for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice X86_win32 = new TargetDevice("x86_win32");
+        /// <summary>
+        /// Constant X86_win64 for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice X86_win64 = new TargetDevice("x86_win64");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -6058,6 +6174,172 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TargetDevice(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetPlatformAccelerator.
+    /// </summary>
+    public class TargetPlatformAccelerator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTEL_GRAPHICS for TargetPlatformAccelerator
+        /// </summary>
+        public static readonly TargetPlatformAccelerator INTEL_GRAPHICS = new TargetPlatformAccelerator("INTEL_GRAPHICS");
+        /// <summary>
+        /// Constant MALI for TargetPlatformAccelerator
+        /// </summary>
+        public static readonly TargetPlatformAccelerator MALI = new TargetPlatformAccelerator("MALI");
+        /// <summary>
+        /// Constant NVIDIA for TargetPlatformAccelerator
+        /// </summary>
+        public static readonly TargetPlatformAccelerator NVIDIA = new TargetPlatformAccelerator("NVIDIA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetPlatformAccelerator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetPlatformAccelerator FindValue(string value)
+        {
+            return FindValue<TargetPlatformAccelerator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetPlatformAccelerator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetPlatformArch.
+    /// </summary>
+    public class TargetPlatformArch : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARM_EABI for TargetPlatformArch
+        /// </summary>
+        public static readonly TargetPlatformArch ARM_EABI = new TargetPlatformArch("ARM_EABI");
+        /// <summary>
+        /// Constant ARM_EABIHF for TargetPlatformArch
+        /// </summary>
+        public static readonly TargetPlatformArch ARM_EABIHF = new TargetPlatformArch("ARM_EABIHF");
+        /// <summary>
+        /// Constant ARM64 for TargetPlatformArch
+        /// </summary>
+        public static readonly TargetPlatformArch ARM64 = new TargetPlatformArch("ARM64");
+        /// <summary>
+        /// Constant X86 for TargetPlatformArch
+        /// </summary>
+        public static readonly TargetPlatformArch X86 = new TargetPlatformArch("X86");
+        /// <summary>
+        /// Constant X86_64 for TargetPlatformArch
+        /// </summary>
+        public static readonly TargetPlatformArch X86_64 = new TargetPlatformArch("X86_64");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetPlatformArch(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetPlatformArch FindValue(string value)
+        {
+            return FindValue<TargetPlatformArch>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetPlatformArch(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetPlatformOs.
+    /// </summary>
+    public class TargetPlatformOs : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANDROID for TargetPlatformOs
+        /// </summary>
+        public static readonly TargetPlatformOs ANDROID = new TargetPlatformOs("ANDROID");
+        /// <summary>
+        /// Constant LINUX for TargetPlatformOs
+        /// </summary>
+        public static readonly TargetPlatformOs LINUX = new TargetPlatformOs("LINUX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetPlatformOs(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetPlatformOs FindValue(string value)
+        {
+            return FindValue<TargetPlatformOs>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetPlatformOs(string value)
         {
             return FindValue(value);
         }

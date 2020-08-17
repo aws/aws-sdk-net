@@ -123,6 +123,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Backup is a fully managed backup service that makes it easy to centralize and automate the back up of data across AWS services in the cloud as well as on-premises.
 * [AWSSDK.Batch](https://www.nuget.org/packages/AWSSDK.Batch/)
 	* AWS Batch enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS. 
+* [AWSSDK.Braket](https://www.nuget.org/packages/AWSSDK.Braket/)
+	* Amazon Braket general availability with Device and Quantum Task operations.
 * [AWSSDK.Budgets](https://www.nuget.org/packages/AWSSDK.Budgets/)
 	* AWS Budget service will provide create/get/list/update/delete budgets for cost management. 
 * [AWSSDK.CertificateManager](https://www.nuget.org/packages/AWSSDK.CertificateManager/)
@@ -153,6 +155,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change state they automatically send events into an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule.
 * [AWSSDK.CloudWatchLogs](https://www.nuget.org/packages/AWSSDK.CloudWatchLogs/)
 	* Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms.
+* [AWSSDK.CodeArtifact](https://www.nuget.org/packages/AWSSDK.CodeArtifact/)
+	* Added support for AWS CodeArtifact.
 * [AWSSDK.CodeBuild](https://www.nuget.org/packages/AWSSDK.CodeBuild/)
 	* AWS CodeBuild is a fully-managed build service in the cloud. AWS CodeBuild compiles your source code, runs unit tests, and produces artifacts that are ready to deploy.
 * [AWSSDK.CodeCommit](https://www.nuget.org/packages/AWSSDK.CodeCommit/)
@@ -273,6 +277,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* New Service temporary synopsis, please replace it.
 * [AWSSDK.GuardDuty](https://www.nuget.org/packages/AWSSDK.GuardDuty/)
 	* Enable Amazon GuardDuty to continuously monitor and process AWS data sources to identify threats to your AWS accounts and workloads. You can add customization by uploading additional threat intelligence lists and IP safe lists. You can list security findings, suspend, and disable the service.
+* [AWSSDK.Honeycode](https://www.nuget.org/packages/AWSSDK.Honeycode/)
+	* Introducing Amazon Honeycode - a fully managed service that allows you to quickly build mobile and web apps for teams without programming.
 * [AWSSDK.IdentityManagement](https://www.nuget.org/packages/AWSSDK.IdentityManagement/)
 	* AWS Identity and Access Management (IAM) enables you to securely control access to AWS services and resources for your users. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.
 * [AWSSDK.Imagebuilder](https://www.nuget.org/packages/AWSSDK.Imagebuilder/)
@@ -303,6 +309,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS IoT SiteWise is a managed service that makes it easy to collect, store, organize and monitor data from industrial equipment at scale. You can use AWS IoT SiteWise to model your physical assets, processes and facilities, quickly compute common industrial performance metrics, and create fully managed web applications to help analyze industrial equipment data, prevent costly equipment issues, and reduce production inefficiencies.
 * [AWSSDK.IoTThingsGraph](https://www.nuget.org/packages/AWSSDK.IoTThingsGraph/)
 	* Initial Release.
+* [AWSSDK.IVS](https://www.nuget.org/packages/AWSSDK.IVS/)
+	* Introducing Amazon Interactive Video Service - a managed live streaming solution that is quick and easy to set up, and ideal for creating interactive video experiences.
 * [AWSSDK.Kafka](https://www.nuget.org/packages/AWSSDK.Kafka/)
 	* Amazon Managed Streaming for Kafka (Amazon MSK). Amazon MSK is a service that you can use to easily build, monitor, and manage Apache Kafka clusters in the cloud.
 * [AWSSDK.Kendra](https://www.nuget.org/packages/AWSSDK.Kendra/)

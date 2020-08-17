@@ -75,6 +75,154 @@ namespace Amazon.SimpleEmailV2
 
 
     /// <summary>
+    /// Constants used for properties of type BulkEmailStatus.
+    /// </summary>
+    public class BulkEmailStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_DAILY_QUOTA_EXCEEDED for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus ACCOUNT_DAILY_QUOTA_EXCEEDED = new BulkEmailStatus("ACCOUNT_DAILY_QUOTA_EXCEEDED");
+        /// <summary>
+        /// Constant ACCOUNT_SENDING_PAUSED for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus ACCOUNT_SENDING_PAUSED = new BulkEmailStatus("ACCOUNT_SENDING_PAUSED");
+        /// <summary>
+        /// Constant ACCOUNT_SUSPENDED for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus ACCOUNT_SUSPENDED = new BulkEmailStatus("ACCOUNT_SUSPENDED");
+        /// <summary>
+        /// Constant ACCOUNT_THROTTLED for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus ACCOUNT_THROTTLED = new BulkEmailStatus("ACCOUNT_THROTTLED");
+        /// <summary>
+        /// Constant CONFIGURATION_SET_NOT_FOUND for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus CONFIGURATION_SET_NOT_FOUND = new BulkEmailStatus("CONFIGURATION_SET_NOT_FOUND");
+        /// <summary>
+        /// Constant CONFIGURATION_SET_SENDING_PAUSED for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus CONFIGURATION_SET_SENDING_PAUSED = new BulkEmailStatus("CONFIGURATION_SET_SENDING_PAUSED");
+        /// <summary>
+        /// Constant FAILED for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus FAILED = new BulkEmailStatus("FAILED");
+        /// <summary>
+        /// Constant INVALID_PARAMETER for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus INVALID_PARAMETER = new BulkEmailStatus("INVALID_PARAMETER");
+        /// <summary>
+        /// Constant INVALID_SENDING_POOL_NAME for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus INVALID_SENDING_POOL_NAME = new BulkEmailStatus("INVALID_SENDING_POOL_NAME");
+        /// <summary>
+        /// Constant MAIL_FROM_DOMAIN_NOT_VERIFIED for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus MAIL_FROM_DOMAIN_NOT_VERIFIED = new BulkEmailStatus("MAIL_FROM_DOMAIN_NOT_VERIFIED");
+        /// <summary>
+        /// Constant MESSAGE_REJECTED for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus MESSAGE_REJECTED = new BulkEmailStatus("MESSAGE_REJECTED");
+        /// <summary>
+        /// Constant SUCCESS for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus SUCCESS = new BulkEmailStatus("SUCCESS");
+        /// <summary>
+        /// Constant TEMPLATE_NOT_FOUND for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus TEMPLATE_NOT_FOUND = new BulkEmailStatus("TEMPLATE_NOT_FOUND");
+        /// <summary>
+        /// Constant TRANSIENT_FAILURE for BulkEmailStatus
+        /// </summary>
+        public static readonly BulkEmailStatus TRANSIENT_FAILURE = new BulkEmailStatus("TRANSIENT_FAILURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BulkEmailStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BulkEmailStatus FindValue(string value)
+        {
+            return FindValue<BulkEmailStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BulkEmailStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContactLanguage.
+    /// </summary>
+    public class ContactLanguage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EN for ContactLanguage
+        /// </summary>
+        public static readonly ContactLanguage EN = new ContactLanguage("EN");
+        /// <summary>
+        /// Constant JA for ContactLanguage
+        /// </summary>
+        public static readonly ContactLanguage JA = new ContactLanguage("JA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContactLanguage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactLanguage FindValue(string value)
+        {
+            return FindValue<ContactLanguage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactLanguage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeliverabilityDashboardAccountStatus.
     /// </summary>
     public class DeliverabilityDashboardAccountStatus : ConstantClass
@@ -367,6 +515,10 @@ namespace Amazon.SimpleEmailV2
         /// </summary>
         public static readonly EventType DELIVERY = new EventType("DELIVERY");
         /// <summary>
+        /// Constant DELIVERY_DELAY for EventType
+        /// </summary>
+        public static readonly EventType DELIVERY_DELAY = new EventType("DELIVERY_DELAY");
+        /// <summary>
         /// Constant OPEN for EventType
         /// </summary>
         public static readonly EventType OPEN = new EventType("OPEN");
@@ -524,6 +676,114 @@ namespace Amazon.SimpleEmailV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MailFromDomainStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MailType.
+    /// </summary>
+    public class MailType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MARKETING for MailType
+        /// </summary>
+        public static readonly MailType MARKETING = new MailType("MARKETING");
+        /// <summary>
+        /// Constant TRANSACTIONAL for MailType
+        /// </summary>
+        public static readonly MailType TRANSACTIONAL = new MailType("TRANSACTIONAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MailType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MailType FindValue(string value)
+        {
+            return FindValue<MailType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MailType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReviewStatus.
+    /// </summary>
+    public class ReviewStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DENIED for ReviewStatus
+        /// </summary>
+        public static readonly ReviewStatus DENIED = new ReviewStatus("DENIED");
+        /// <summary>
+        /// Constant FAILED for ReviewStatus
+        /// </summary>
+        public static readonly ReviewStatus FAILED = new ReviewStatus("FAILED");
+        /// <summary>
+        /// Constant GRANTED for ReviewStatus
+        /// </summary>
+        public static readonly ReviewStatus GRANTED = new ReviewStatus("GRANTED");
+        /// <summary>
+        /// Constant PENDING for ReviewStatus
+        /// </summary>
+        public static readonly ReviewStatus PENDING = new ReviewStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReviewStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReviewStatus FindValue(string value)
+        {
+            return FindValue<ReviewStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReviewStatus(string value)
         {
             return FindValue(value);
         }

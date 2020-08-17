@@ -59,6 +59,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.CancelInstanceRefresh(Amazon.AutoScaling.Model.CancelInstanceRefreshRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.CancelInstanceRefresh(Amazon.AutoScaling.Model.CancelInstanceRefreshRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.CancelInstanceRefreshRequest" />
+            <member name="T:Amazon.AutoScaling.Model.CancelInstanceRefreshResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example cancels an instance refresh operation in progress.
+                </para>
+                <code
+                    title="To cancel an instance refresh"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="to-cancel-an-instance-refresh-1592960979817" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.CompleteLifecycleAction(Amazon.AutoScaling.Model.CompleteLifecycleActionRequest)" />
             <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.CompleteLifecycleAction(Amazon.AutoScaling.Model.CompleteLifecycleActionRequest)" />
             <member name="T:Amazon.AutoScaling.Model.CompleteLifecycleActionRequest" />
@@ -105,10 +124,10 @@
         <value>
             <example>
                 <para>
-                    This example creates an Auto Scaling group and attaches the specified Classic Load Balancer.
+                    This example creates an Auto Scaling group and attaches the specified target group.
                 </para>
                 <code
-                    title="To create an Auto Scaling group with an attached load balancer"
+                    title="To create an Auto Scaling group with an attached target group"
                     source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
                     region="autoscaling-create-auto-scaling-group-2" />
             </example>
@@ -124,10 +143,10 @@
         <value>
             <example>
                 <para>
-                    This example creates an Auto Scaling group and attaches the specified target group.
+                    This example creates an Auto Scaling group and attaches the specified Classic Load Balancer.
                 </para>
                 <code
-                    title="To create an Auto Scaling group with an attached target group"
+                    title="To create an Auto Scaling group with an attached load balancer"
                     source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
                     region="autoscaling-create-auto-scaling-group-3" />
             </example>
@@ -355,7 +374,7 @@
                     This example describes the available adjustment types.
                 </para>
                 <code
-                    title="To describe the Auto Scaling adjustment types"
+                    title="To describe the Amazon EC2 Auto Scaling adjustment types"
                     source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
                     region="autoscaling-describe-adjustment-types-1" />
             </example>
@@ -415,6 +434,25 @@
                     title="To describe the Auto Scaling notification types"
                     source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
                     region="autoscaling-describe-auto-scaling-notification-types-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeInstanceRefreshes(Amazon.AutoScaling.Model.DescribeInstanceRefreshesRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeInstanceRefreshes(Amazon.AutoScaling.Model.DescribeInstanceRefreshesRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeInstanceRefreshesRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeInstanceRefreshesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the instance refreshes for the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To list instance refreshes"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="to-list-instance-refreshes-1592959593746" />
             </example>
         </value>
     </doc>
@@ -564,7 +602,7 @@
                     This example describes the policies for the specified Auto Scaling group.
                 </para>
                 <code
-                    title="To describe Auto Scaling policies"
+                    title="To describe scaling policies"
                     source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
                     region="autoscaling-describe-policies-1" />
             </example>
@@ -789,10 +827,10 @@
         <value>
             <example>
                 <para>
-                    This example executes the specified Auto Scaling policy for the specified Auto Scaling group.
+                    This example executes the specified policy.
                 </para>
                 <code
-                    title="To execute an Auto Scaling policy"
+                    title="To execute a scaling policy"
                     source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
                     region="autoscaling-execute-policy-1" />
             </example>
@@ -1004,6 +1042,25 @@
                     title="To disable instance protection for an instance"
                     source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
                     region="autoscaling-set-instance-protection-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.StartInstanceRefresh(Amazon.AutoScaling.Model.StartInstanceRefreshRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.StartInstanceRefresh(Amazon.AutoScaling.Model.StartInstanceRefreshRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.StartInstanceRefreshRequest" />
+            <member name="T:Amazon.AutoScaling.Model.StartInstanceRefreshResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example starts an instance refresh for the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To start an instance refresh"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="to-start-an-instance-refresh-1592957271522" />
             </example>
         </value>
     </doc>

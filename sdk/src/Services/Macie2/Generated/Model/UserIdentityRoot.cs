@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Reserved for future use.
+    /// Provides information about an AWS account and entity that performed an action on an
+    /// affected resource. The action was performed using the credentials for your AWS account.
     /// </summary>
     public partial class UserIdentityRoot
     {
@@ -40,7 +41,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// Reserved for future use.
+        /// The unique identifier for the AWS account.
         /// </para>
         /// </summary>
         public string AccountId
@@ -58,7 +59,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Reserved for future use.
+        /// The Amazon Resource Name (ARN) of the principal that performed the action. The last
+        /// section of the ARN contains the name of the user or role that performed the action.
         /// </para>
         /// </summary>
         public string Arn
@@ -76,7 +78,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property PrincipalId. 
         /// <para>
-        /// Reserved for future use.
+        /// The unique identifier for the entity that performed the action.
         /// </para>
         /// </summary>
         public string PrincipalId

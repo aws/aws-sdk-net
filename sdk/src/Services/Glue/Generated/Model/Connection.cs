@@ -142,6 +142,22 @@ namespace Amazon.Glue.Model
         /// that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka
         /// client will connect to and bootstrap itself.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka
+        /// connection. Default value is "true".
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem
+        /// format). The default is an empty string.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of
+        /// the CA cert file or not. AWS Glue validates for three algorithms: SHA256withRSA, SHA384withRSA
+        /// and SHA512withRSA. Default value is "false".
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -160,7 +176,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ConnectionType. 
         /// <para>
-        /// The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+        /// The type of the connection. Currently, SFTP is not supported.
         /// </para>
         /// </summary>
         public ConnectionType ConnectionType

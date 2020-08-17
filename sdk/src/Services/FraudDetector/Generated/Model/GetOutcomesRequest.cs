@@ -30,8 +30,8 @@ namespace Amazon.FraudDetector.Model
 {
     /// <summary>
     /// Container for the parameters to the GetOutcomes operation.
-    /// Gets one or more outcomes. This is a paginated API. If you provide a null <code>maxSizePerPage</code>,
-    /// this actions retrieves a maximum of 10 records per page. If you provide a <code>maxSizePerPage</code>,
+    /// Gets one or more outcomes. This is a paginated API. If you provide a null <code>maxResults</code>,
+    /// this actions retrieves a maximum of 100 records per page. If you provide a <code>maxResults</code>,
     /// the value must be between 50 and 100. To get the next page results, provide the pagination
     /// token from the <code>GetOutcomesResult</code> as part of your request. A null pagination
     /// token fetches the records from the beginning.

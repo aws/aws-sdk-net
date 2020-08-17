@@ -681,6 +681,52 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type AcceptHeader.
+    /// </summary>
+    public class AcceptHeader : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ImageJpeg for AcceptHeader
+        /// </summary>
+        public static readonly AcceptHeader ImageJpeg = new AcceptHeader("image/jpeg");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AcceptHeader(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AcceptHeader FindValue(string value)
+        {
+            return FindValue<AcceptHeader>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AcceptHeader(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AfdSignaling.
     /// </summary>
     public class AfdSignaling : ConstantClass
@@ -1820,6 +1866,52 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ChannelState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContentType.
+    /// </summary>
+    public class ContentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ImageJpeg for ContentType
+        /// </summary>
+        public static readonly ContentType ImageJpeg = new ContentType("image/jpeg");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentType FindValue(string value)
+        {
+            return FindValue<ContentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentType(string value)
         {
             return FindValue(value);
         }
@@ -3043,6 +3135,106 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type EbuTtDDestinationStyleControl.
+    /// </summary>
+    public class EbuTtDDestinationStyleControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXCLUDE for EbuTtDDestinationStyleControl
+        /// </summary>
+        public static readonly EbuTtDDestinationStyleControl EXCLUDE = new EbuTtDDestinationStyleControl("EXCLUDE");
+        /// <summary>
+        /// Constant INCLUDE for EbuTtDDestinationStyleControl
+        /// </summary>
+        public static readonly EbuTtDDestinationStyleControl INCLUDE = new EbuTtDDestinationStyleControl("INCLUDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EbuTtDDestinationStyleControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EbuTtDDestinationStyleControl FindValue(string value)
+        {
+            return FindValue<EbuTtDDestinationStyleControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EbuTtDDestinationStyleControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EbuTtDFillLineGapControl.
+    /// </summary>
+    public class EbuTtDFillLineGapControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for EbuTtDFillLineGapControl
+        /// </summary>
+        public static readonly EbuTtDFillLineGapControl DISABLED = new EbuTtDFillLineGapControl("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for EbuTtDFillLineGapControl
+        /// </summary>
+        public static readonly EbuTtDFillLineGapControl ENABLED = new EbuTtDFillLineGapControl("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EbuTtDFillLineGapControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EbuTtDFillLineGapControl FindValue(string value)
+        {
+            return FindValue<EbuTtDFillLineGapControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EbuTtDFillLineGapControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EmbeddedConvert608To708.
     /// </summary>
     public class EmbeddedConvert608To708 : ConstantClass
@@ -3136,6 +3328,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EmbeddedScte20Detection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FeatureActivationsInputPrepareScheduleActions.
+    /// </summary>
+    public class FeatureActivationsInputPrepareScheduleActions : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for FeatureActivationsInputPrepareScheduleActions
+        /// </summary>
+        public static readonly FeatureActivationsInputPrepareScheduleActions DISABLED = new FeatureActivationsInputPrepareScheduleActions("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for FeatureActivationsInputPrepareScheduleActions
+        /// </summary>
+        public static readonly FeatureActivationsInputPrepareScheduleActions ENABLED = new FeatureActivationsInputPrepareScheduleActions("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FeatureActivationsInputPrepareScheduleActions(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeatureActivationsInputPrepareScheduleActions FindValue(string value)
+        {
+            return FindValue<FeatureActivationsInputPrepareScheduleActions>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeatureActivationsInputPrepareScheduleActions(string value)
         {
             return FindValue(value);
         }
@@ -5361,6 +5603,10 @@ namespace Amazon.MediaLive
     {
 
         /// <summary>
+        /// Constant INTERLACED for H265ScanType
+        /// </summary>
+        public static readonly H265ScanType INTERLACED = new H265ScanType("INTERLACED");
+        /// <summary>
         /// Constant PROGRESSIVE for H265ScanType
         /// </summary>
         public static readonly H265ScanType PROGRESSIVE = new H265ScanType("PROGRESSIVE");
@@ -6318,6 +6564,10 @@ namespace Amazon.MediaLive
         /// Constant SEGMENTS_ONLY for HlsOutputSelection
         /// </summary>
         public static readonly HlsOutputSelection SEGMENTS_ONLY = new HlsOutputSelection("SEGMENTS_ONLY");
+        /// <summary>
+        /// Constant VARIANT_MANIFESTS_AND_SEGMENTS for HlsOutputSelection
+        /// </summary>
+        public static readonly HlsOutputSelection VARIANT_MANIFESTS_AND_SEGMENTS = new HlsOutputSelection("VARIANT_MANIFESTS_AND_SEGMENTS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

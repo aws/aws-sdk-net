@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// The values to use to filter results from the <a>DescribeEvents</a> and <a>DescribeEventAggregates</a>
+    /// The values to use to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>
+    /// and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html">DescribeEventAggregates</a>
     /// operations.
     /// </summary>
     public partial class EventFilter
@@ -285,6 +286,11 @@ namespace Amazon.AWSHealth.Model
         /// <para>
         /// A map of entity tags attached to the affected entity.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, the <code>tags</code> property isn't supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=50)]
         public List<Dictionary<string, string>> Tags

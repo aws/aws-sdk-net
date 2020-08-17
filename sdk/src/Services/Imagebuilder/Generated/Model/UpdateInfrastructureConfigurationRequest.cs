@@ -42,6 +42,7 @@ namespace Amazon.Imagebuilder.Model
         private List<string> _instanceTypes = new List<string>();
         private string _keyPair;
         private Logging _logging;
+        private Dictionary<string, string> _resourceTags = new Dictionary<string, string>();
         private List<string> _securityGroupIds = new List<string>();
         private string _snsTopicArn;
         private string _subnetId;
@@ -181,6 +182,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetLogging()
         {
             return this._logging != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceTags. 
+        /// <para>
+        /// The tags attached to the resource created by Image Builder.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=30)]
+        public Dictionary<string, string> ResourceTags
+        {
+            get { return this._resourceTags; }
+            set { this._resourceTags = value; }
+        }
+
+        // Check to see if ResourceTags property is set
+        internal bool IsSetResourceTags()
+        {
+            return this._resourceTags != null && this._resourceTags.Count > 0; 
         }
 
         /// <summary>

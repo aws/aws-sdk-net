@@ -47,7 +47,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of the source SMB file system location that is created.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=4)]
         public List<string> AgentArns
         {
             get { return this._agentArns; }
@@ -100,7 +100,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon resource Name (ARN) of the SMB location that was described.
+        /// The Amazon Resource Name (ARN) of the SMB location that was described.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

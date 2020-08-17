@@ -45,6 +45,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TableResource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCatalogId())
+            {
+                context.Writer.WritePropertyName("CatalogId");
+                context.Writer.Write(requestObject.CatalogId);
+            }
+
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
@@ -55,6 +61,17 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Name");
                 context.Writer.Write(requestObject.Name);
+            }
+
+            if(requestObject.IsSetTableWildcard())
+            {
+                context.Writer.WritePropertyName("TableWildcard");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TableWildcardMarshaller.Instance;
+                marshaller.Marshall(requestObject.TableWildcard, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

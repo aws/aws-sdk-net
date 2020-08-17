@@ -148,8 +148,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property IamRole. 
         /// <para>
         /// The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems
-        /// Manager managed instances. This call does not return the IAM role for EC2 instances.
-        /// 
+        /// Manager managed instance. This call does not return the IAM role for EC2 instances.
+        /// To retrieve the IAM role for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code>
+        /// action. For information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
+        /// in the <i>Amazon EC2 API Reference</i> or <a href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
+        /// in the <i>AWS CLI Command Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -280,7 +283,17 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the managed instance.
+        /// The name assigned to an on-premises server or virtual machine (VM) when it is activated
+        /// as a Systems Manager managed instance. The name is specified as the <code>DefaultInstanceName</code>
+        /// property using the <a>CreateActivation</a> command. It is applied to the managed instance
+        /// by specifying the Activation Code and Activation ID when you install SSM Agent on
+        /// the instance, as explained in <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install
+        /// SSM Agent for a hybrid environment (Linux)</a> and <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install
+        /// SSM Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an EC2
+        /// instance, use the Amazon EC2 <code>DescribeInstances</code> action. For information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
+        /// in the <i>Amazon EC2 API Reference</i> or <a href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
+        /// in the <i>AWS CLI Command Reference</i>.
         /// </para>
         /// </summary>
         public string Name

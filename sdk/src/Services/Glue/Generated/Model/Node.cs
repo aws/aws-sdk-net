@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// A node represents an AWS Glue component like Trigger, Job etc. which is part of a
-    /// workflow.
+    /// A node represents an AWS Glue component such as a trigger, or job, etc., that is part
+    /// of a workflow.
     /// </summary>
     public partial class Node
     {

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// The upload could not be found, or the specified upload id is not valid for this repository.
+    /// The upload could not be found, or the specified upload ID is not valid for this repository.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

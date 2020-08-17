@@ -50,7 +50,7 @@ namespace Amazon.OpsWorksCM.Model
     /// </para>
     ///  
     /// <para>
-    ///  Example (Chef): <code>aws opsworks-cm associate-node --server-name <i>MyServer</i>
+    ///  Example (Puppet): <code>aws opsworks-cm associate-node --server-name <i>MyServer</i>
     /// --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>PUPPET_NODE_CSR</i>,Value=<i>csr-pem</i>"</code>
     /// 
     /// </para>

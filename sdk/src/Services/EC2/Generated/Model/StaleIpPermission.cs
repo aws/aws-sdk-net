@@ -100,7 +100,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrefixListIds. 
         /// <para>
-        /// The prefix list IDs for an AWS service. Not applicable for stale security group rules.
+        /// The prefix list IDs. Not applicable for stale security group rules.
         /// </para>
         /// </summary>
         public List<string> PrefixListIds

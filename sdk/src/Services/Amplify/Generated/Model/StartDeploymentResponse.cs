@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Result structure for start a deployment.
+    /// The result structure for the start a deployment request.
     /// </summary>
     public partial class StartDeploymentResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobSummary. 
         /// <para>
-        ///  Summary for the Job. 
+        ///  The summary for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

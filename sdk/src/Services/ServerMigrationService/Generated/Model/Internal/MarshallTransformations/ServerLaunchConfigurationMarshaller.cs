@@ -51,10 +51,33 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AssociatePublicIpAddress);
             }
 
+            if(requestObject.IsSetConfigureScript())
+            {
+                context.Writer.WritePropertyName("configureScript");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3LocationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConfigureScript, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetConfigureScriptType())
+            {
+                context.Writer.WritePropertyName("configureScriptType");
+                context.Writer.Write(requestObject.ConfigureScriptType);
+            }
+
             if(requestObject.IsSetEc2KeyName())
             {
                 context.Writer.WritePropertyName("ec2KeyName");
                 context.Writer.Write(requestObject.Ec2KeyName);
+            }
+
+            if(requestObject.IsSetIamInstanceProfileName())
+            {
+                context.Writer.WritePropertyName("iamInstanceProfileName");
+                context.Writer.Write(requestObject.IamInstanceProfileName);
             }
 
             if(requestObject.IsSetInstanceType())

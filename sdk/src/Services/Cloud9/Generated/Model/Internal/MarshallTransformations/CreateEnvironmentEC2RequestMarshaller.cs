@@ -80,6 +80,12 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClientRequestToken);
                 }
 
+                if(publicRequest.IsSetConnectionType())
+                {
+                    context.Writer.WritePropertyName("connectionType");
+                    context.Writer.Write(publicRequest.ConnectionType);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// The total number of buckets, grouped by server-side encryption type. This object also
-    /// reports the total number of buckets that aren't encrypted.
+    /// Provides information about the number of S3 buckets that use certain types of server-side
+    /// encryption or don't encrypt objects by default.
     /// </summary>
     public partial class BucketCountByEncryptionType
     {
@@ -39,9 +39,11 @@ namespace Amazon.Macie2.Model
         private long? _unencrypted;
 
         /// <summary>
-        /// Gets and sets the property KmsManaged. 
+        /// Gets and sets the property KmsManaged.  
         /// <para>
-        /// Reserved for future use.
+        /// The total number of buckets that use an AWS Key Management Service (AWS KMS) customer
+        /// master key (CMK) to encrypt objects. These buckets use AWS KMS AWS-managed (AWS-KMS)
+        /// encryption or AWS KMS customer-managed (SSE-KMS) encryption.
         /// </para>
         /// </summary>
         public long KmsManaged
@@ -59,7 +61,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property S3Managed. 
         /// <para>
-        /// Reserved for future use.
+        /// The total number of buckets that use an Amazon S3-managed key to encrypt objects.
+        /// These buckets use Amazon S3-managed (SSE-S3) encryption.
         /// </para>
         /// </summary>
         public long S3Managed
@@ -77,7 +80,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Unencrypted. 
         /// <para>
-        /// Reserved for future use.
+        /// The total number of buckets that don't encrypt objects by default. Default encryption
+        /// is disabled for these buckets.
         /// </para>
         /// </summary>
         public long Unencrypted

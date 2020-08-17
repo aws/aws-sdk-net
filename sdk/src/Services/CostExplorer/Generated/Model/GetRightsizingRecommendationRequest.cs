@@ -30,15 +30,16 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRightsizingRecommendation operation.
-    /// Creates recommendations that helps you save cost by identifying idle and underutilized
+    /// Creates recommendations that help you save cost by identifying idle and underutilized
     /// Amazon EC2 instances.
     /// 
     ///  
     /// <para>
     /// Recommendations are generated to either downsize or terminate instances, along with
     /// providing savings detail and metrics. For details on calculation and function, see
-    /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-what-is.html">Optimizing
-    /// Your Cost with Rightsizing Recommendations</a>.
+    /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing
+    /// Your Cost with Rightsizing Recommendations</a> in the <i>AWS Billing and Cost Management
+    /// User Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetRightsizingRecommendationRequest : AmazonCostExplorerRequest
@@ -55,7 +56,7 @@ namespace Amazon.CostExplorer.Model
         ///  Enables you to customize recommendations across two attributes. You can choose to
         /// view recommendations for instances within the same instance families or across different
         /// instance families. You can also choose to view your estimated savings associated with
-        /// recommendations with consideration of existing Savings Plans or RI benefits, or niether.
+        /// recommendations with consideration of existing Savings Plans or RI benefits, or neither.
         /// 
         /// </para>
         /// </summary>

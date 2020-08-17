@@ -39,7 +39,7 @@ namespace Amazon.ForecastService.Model
     /// an array of transformations, one for each field that you want to featurize. You then
     /// include the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code>
     /// request. Amazon Forecast applies the featurization to the <code>TARGET_TIME_SERIES</code>
-    /// dataset before model training.
+    /// and <code>RELATED_TIME_SERIES</code> datasets before model training.
     /// </para>
     ///  
     /// <para>
@@ -58,10 +58,9 @@ namespace Amazon.ForecastService.Model
         /// Gets and sets the property Featurizations. 
         /// <para>
         /// An array of featurization (transformation) information for the fields of a dataset.
-        /// Only a single featurization is supported.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=50)]
         public List<Featurization> Featurizations
         {
             get { return this._featurizations; }

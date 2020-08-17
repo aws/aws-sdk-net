@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// Error information returned when a <a>DescribeEventDetails</a> operation cannot find
-    /// a specified event.
+    /// Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a>
+    /// operation cannot find a specified event.
     /// </summary>
     public partial class EventDetailsErrorItem
     {

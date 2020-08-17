@@ -48,7 +48,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property AmiId. 
         /// <para>
-        /// The identifier of the Amazon Machine Image (AMI) from the replication run.
+        /// The ID of the Amazon Machine Image (AMI) from the replication run.
         /// </para>
         /// </summary>
         public string AmiId
@@ -102,8 +102,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code>
-        /// below.
+        /// Indicates whether the replication run should produce an encrypted AMI.
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -121,8 +120,8 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
-        /// 
+        /// The ID of the KMS key for replication jobs that produce encrypted AMIs. This value
+        /// can be any of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -134,16 +133,16 @@ namespace Amazon.ServerMigrationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ARN referring to KMS key ID
+        /// ARN referring to the KMS key ID
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ARN referring to KMS key alias
+        /// ARN referring to the KMS key alias
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default
-        /// KMS key for EBS is used. 
+        ///  If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default
+        /// KMS key for Amazon EBS is used. 
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -161,7 +160,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationRunId. 
         /// <para>
-        /// The identifier of the replication run.
+        /// The ID of the replication run.
         /// </para>
         /// </summary>
         public string ReplicationRunId
@@ -197,7 +196,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property StageDetails. 
         /// <para>
-        /// Details of the current stage of the replication run.
+        /// Details about the current stage of the replication run.
         /// </para>
         /// </summary>
         public ReplicationRunStageDetails StageDetails

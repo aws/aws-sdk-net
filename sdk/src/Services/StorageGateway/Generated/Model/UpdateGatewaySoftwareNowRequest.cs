@@ -45,8 +45,8 @@ namespace Amazon.StorageGateway.Model
     /// of any disruption to your applications by increasing your iSCSI Initiators' timeouts.
     /// For more information about increasing iSCSI Initiator timeouts for Windows and Linux,
     /// see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing
-    /// Your Windows iSCSI Settings</a> and <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings">Customizing
-    /// Your Linux iSCSI Settings</a>, respectively.
+    /// your Windows iSCSI settings</a> and <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings">Customizing
+    /// your Linux iSCSI settings</a>, respectively.
     /// </para>
     ///  </important>
     /// </summary>

@@ -70,7 +70,9 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ComputerName. 
         /// <para>
-        /// The name of the WorkSpace, as seen by the operating system.
+        /// The name of the WorkSpace, as seen by the operating system. The format of this name
+        /// varies. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+        /// Launch a WorkSpace</a>. 
         /// </para>
         /// </summary>
         public string ComputerName

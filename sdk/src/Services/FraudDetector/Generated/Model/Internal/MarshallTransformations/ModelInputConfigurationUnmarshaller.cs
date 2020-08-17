@@ -70,22 +70,28 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     unmarshalledObject.CsvInputTemplate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eventTypeName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EventTypeName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("format", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Format = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("isOpaque", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IsOpaque = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("jsonInputTemplate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JsonInputTemplate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("useEventVariables", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UseEventVariables = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

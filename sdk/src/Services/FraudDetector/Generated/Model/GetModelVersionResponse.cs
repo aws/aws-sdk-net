@@ -33,35 +33,56 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class GetModelVersionResponse : AmazonWebServiceResponse
     {
-        private string _description;
+        private string _arn;
+        private ExternalEventsDetail _externalEventsDetail;
         private string _modelId;
         private ModelTypeEnum _modelType;
         private string _modelVersionNumber;
         private string _status;
+        private TrainingDataSchema _trainingDataSchema;
+        private TrainingDataSourceEnum _trainingDataSource;
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// The model version description.
+        /// The model version ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string Description
+        [AWSProperty(Min=1, Max=256)]
+        public string Arn
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._description != null;
+            return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalEventsDetail. 
+        /// <para>
+        /// The event details.
+        /// </para>
+        /// </summary>
+        public ExternalEventsDetail ExternalEventsDetail
+        {
+            get { return this._externalEventsDetail; }
+            set { this._externalEventsDetail = value; }
+        }
+
+        // Check to see if ExternalEventsDetail property is set
+        internal bool IsSetExternalEventsDetail()
+        {
+            return this._externalEventsDetail != null;
         }
 
         /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The model ID. 
+        /// The model ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -80,7 +101,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property ModelType. 
         /// <para>
-        /// The model type. 
+        /// The model type.
         /// </para>
         /// </summary>
         public ModelTypeEnum ModelType
@@ -98,10 +119,10 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property ModelVersionNumber. 
         /// <para>
-        /// The model version. 
+        /// The model version number.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=3, Max=7)]
         public string ModelVersionNumber
         {
             get { return this._modelVersionNumber; }
@@ -117,7 +138,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The model version status. 
+        /// The model version status.
         /// </para>
         /// </summary>
         public string Status
@@ -130,6 +151,42 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingDataSchema. 
+        /// <para>
+        /// The training data schema.
+        /// </para>
+        /// </summary>
+        public TrainingDataSchema TrainingDataSchema
+        {
+            get { return this._trainingDataSchema; }
+            set { this._trainingDataSchema = value; }
+        }
+
+        // Check to see if TrainingDataSchema property is set
+        internal bool IsSetTrainingDataSchema()
+        {
+            return this._trainingDataSchema != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingDataSource. 
+        /// <para>
+        /// The training data source.
+        /// </para>
+        /// </summary>
+        public TrainingDataSourceEnum TrainingDataSource
+        {
+            get { return this._trainingDataSource; }
+            set { this._trainingDataSource = value; }
+        }
+
+        // Check to see if TrainingDataSource property is set
+        internal bool IsSetTrainingDataSource()
+        {
+            return this._trainingDataSource != null;
         }
 
     }

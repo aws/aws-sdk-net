@@ -235,6 +235,7 @@ namespace Amazon.Organizations.Model
         /// with no spaces, and any of the following characters: =,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string RoleName
         {
             get { return this._roleName; }

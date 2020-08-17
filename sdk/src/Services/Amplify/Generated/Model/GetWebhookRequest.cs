@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the GetWebhook operation.
-    /// Retrieves webhook info that corresponds to a webhookId.
+    /// Returns the webhook information that corresponds to a specified webhook ID.
     /// </summary>
     public partial class GetWebhookRequest : AmazonAmplifyRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property WebhookId. 
         /// <para>
-        ///  Unique Id for a webhook. 
+        ///  The unique ID for a webhook. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

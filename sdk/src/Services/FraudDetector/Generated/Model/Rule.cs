@@ -81,7 +81,7 @@ namespace Amazon.FraudDetector.Model
         /// The rule version.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public string RuleVersion
         {
             get { return this._ruleVersion; }

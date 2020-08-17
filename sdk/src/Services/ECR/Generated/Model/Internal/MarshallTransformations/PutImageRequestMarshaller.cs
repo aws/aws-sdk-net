@@ -68,6 +68,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetImageDigest())
+                {
+                    context.Writer.WritePropertyName("imageDigest");
+                    context.Writer.Write(publicRequest.ImageDigest);
+                }
+
                 if(publicRequest.IsSetImageManifest())
                 {
                     context.Writer.WritePropertyName("imageManifest");

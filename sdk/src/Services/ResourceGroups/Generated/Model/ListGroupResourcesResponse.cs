@@ -40,8 +40,10 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The NextToken value to include in a subsequent <code>ListGroupResources</code> request,
-        /// to get more results.
+        /// If present, indicates that more output is available than is included in the current
+        /// response. Use this value in the <code>NextToken</code> request parameter in a subsequent
+        /// call to the operation to get the next part of the output. You should repeat this until
+        /// the <code>NextToken</code> response element comes back as <code>null</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]

@@ -348,11 +348,33 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Creates a backup of an existing Amazon FSx for Windows File Server file system. Creating
-        /// regular backups for your file system is a best practice that complements the replication
-        /// that Amazon FSx for Windows File Server performs for your file system. It also enables
-        /// you to restore from user modification of data.
+        /// Creates a backup of an existing Amazon FSx file system. Creating regular backups for
+        /// your file system is a best practice, enabling you to restore a file system from a
+        /// backup if an issue arises with the original file system.
         /// 
+        ///  
+        /// <para>
+        /// For Amazon FSx for Lustre file systems, you can create a backup only for file systems
+        /// with the following configuration:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// a Persistent deployment type
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// is <i>not</i> linked to an Amazon S3 data respository.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about backing up Amazon FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
+        /// with FSx for Lustre backups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about backing up Amazon FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
+        /// with FSx for Windows backups</a>.
+        /// </para>
         ///  
         /// <para>
         /// If a backup with the specified client request token exists, and the parameters match,
@@ -380,12 +402,11 @@ namespace Amazon.FSx
         /// </para>
         ///  
         /// <para>
-        /// The <code>CreateFileSystem</code> operation returns while the backup's lifecycle state
-        /// is still <code>CREATING</code>. You can check the file system creation status by calling
+        /// The <code>CreateBackup</code> operation returns while the backup's lifecycle state
+        /// is still <code>CREATING</code>. You can check the backup creation status by calling
         /// the <a>DescribeBackups</a> operation, which returns the backup state along with other
         /// information.
         /// </para>
-        ///  <note>  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBackup service method.</param>
         /// 
@@ -427,11 +448,33 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Creates a backup of an existing Amazon FSx for Windows File Server file system. Creating
-        /// regular backups for your file system is a best practice that complements the replication
-        /// that Amazon FSx for Windows File Server performs for your file system. It also enables
-        /// you to restore from user modification of data.
+        /// Creates a backup of an existing Amazon FSx file system. Creating regular backups for
+        /// your file system is a best practice, enabling you to restore a file system from a
+        /// backup if an issue arises with the original file system.
         /// 
+        ///  
+        /// <para>
+        /// For Amazon FSx for Lustre file systems, you can create a backup only for file systems
+        /// with the following configuration:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// a Persistent deployment type
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// is <i>not</i> linked to an Amazon S3 data respository.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about backing up Amazon FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
+        /// with FSx for Lustre backups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about backing up Amazon FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
+        /// with FSx for Windows backups</a>.
+        /// </para>
         ///  
         /// <para>
         /// If a backup with the specified client request token exists, and the parameters match,
@@ -459,12 +502,11 @@ namespace Amazon.FSx
         /// </para>
         ///  
         /// <para>
-        /// The <code>CreateFileSystem</code> operation returns while the backup's lifecycle state
-        /// is still <code>CREATING</code>. You can check the file system creation status by calling
+        /// The <code>CreateBackup</code> operation returns while the backup's lifecycle state
+        /// is still <code>CREATING</code>. You can check the backup creation status by calling
         /// the <a>DescribeBackups</a> operation, which returns the backup state along with other
         /// information.
         /// </para>
-        ///  <note>  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBackup service method.</param>
         /// <param name="cancellationToken">
@@ -817,8 +859,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Creates a new Amazon FSx file system from an existing Amazon FSx for Windows File
-        /// Server backup.
+        /// Creates a new Amazon FSx file system from an existing Amazon FSx backup.
         /// 
         ///  
         /// <para>
@@ -888,6 +929,10 @@ namespace Amazon.FSx
         /// specified. <code>InvalidSecurityGroupIds</code> returns the list of IDs for security
         /// groups that are either invalid or not part of the VPC specified.
         /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InvalidPerUnitStorageThroughputException">
+        /// An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create
+        /// your file system again, using a valid value.
+        /// </exception>
         /// <exception cref="Amazon.FSx.Model.MissingFileSystemConfigurationException">
         /// A file system configuration is required for this operation.
         /// </exception>
@@ -907,8 +952,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Creates a new Amazon FSx file system from an existing Amazon FSx for Windows File
-        /// Server backup.
+        /// Creates a new Amazon FSx file system from an existing Amazon FSx backup.
         /// 
         ///  
         /// <para>
@@ -981,6 +1025,10 @@ namespace Amazon.FSx
         /// specified. <code>InvalidSecurityGroupIds</code> returns the list of IDs for security
         /// groups that are either invalid or not part of the VPC specified.
         /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InvalidPerUnitStorageThroughputException">
+        /// An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create
+        /// your file system again, using a valid value.
+        /// </exception>
         /// <exception cref="Amazon.FSx.Model.MissingFileSystemConfigurationException">
         /// A file system configuration is required for this operation.
         /// </exception>
@@ -1004,8 +1052,8 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Deletes an Amazon FSx for Windows File Server backup, deleting its contents. After
-        /// deletion, the backup no longer exists, and its data is gone.
+        /// Deletes an Amazon FSx backup, deleting its contents. After deletion, the backup no
+        /// longer exists, and its data is gone.
         /// 
         ///  
         /// <para>
@@ -1054,8 +1102,8 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Deletes an Amazon FSx for Windows File Server backup, deleting its contents. After
-        /// deletion, the backup no longer exists, and its data is gone.
+        /// Deletes an Amazon FSx backup, deleting its contents. After deletion, the backup no
+        /// longer exists, and its data is gone.
         /// 
         ///  
         /// <para>
@@ -1240,10 +1288,9 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Returns the description of specific Amazon FSx for Windows File Server backups, if
-        /// a <code>BackupIds</code> value is provided for that backup. Otherwise, it returns
-        /// all backups owned by your AWS account in the AWS Region of the endpoint that you're
-        /// calling.
+        /// Returns the description of specific Amazon FSx backups, if a <code>BackupIds</code>
+        /// value is provided for that backup. Otherwise, it returns all backups owned by your
+        /// AWS account in the AWS Region of the endpoint that you're calling.
         /// 
         ///  
         /// <para>
@@ -1304,10 +1351,9 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Returns the description of specific Amazon FSx for Windows File Server backups, if
-        /// a <code>BackupIds</code> value is provided for that backup. Otherwise, it returns
-        /// all backups owned by your AWS account in the AWS Region of the endpoint that you're
-        /// calling.
+        /// Returns the description of specific Amazon FSx backups, if a <code>BackupIds</code>
+        /// value is provided for that backup. Otherwise, it returns all backups owned by your
+        /// AWS account in the AWS Region of the endpoint that you're calling.
         /// 
         ///  
         /// <para>
@@ -1883,9 +1929,13 @@ namespace Amazon.FSx
 
         /// <summary>
         /// Use this operation to update the configuration of an existing Amazon FSx file system.
-        /// For an Amazon FSx for Lustre file system, you can update only the WeeklyMaintenanceStartTime.
-        /// For an Amazon for Windows File Server file system, you can update the following properties:
+        /// You can update multiple properties in a single request.
         /// 
+        ///  
+        /// <para>
+        /// For Amazon FSx for Windows File Server file systems, you can update the following
+        /// properties:
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         /// AutomaticBackupRetentionDays
@@ -1912,8 +1962,25 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You can update multiple properties in a single request.
+        /// For Amazon FSx for Lustre file systems, you can update the following properties:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// AutoImportPolicy
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AutomaticBackupRetentionDays
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DailyAutomaticBackupStartTime
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// WeeklyMaintenanceStartTime
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFileSystem service method.</param>
         /// 
@@ -1955,9 +2022,13 @@ namespace Amazon.FSx
 
         /// <summary>
         /// Use this operation to update the configuration of an existing Amazon FSx file system.
-        /// For an Amazon FSx for Lustre file system, you can update only the WeeklyMaintenanceStartTime.
-        /// For an Amazon for Windows File Server file system, you can update the following properties:
+        /// You can update multiple properties in a single request.
         /// 
+        ///  
+        /// <para>
+        /// For Amazon FSx for Windows File Server file systems, you can update the following
+        /// properties:
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         /// AutomaticBackupRetentionDays
@@ -1984,8 +2055,25 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You can update multiple properties in a single request.
+        /// For Amazon FSx for Lustre file systems, you can update the following properties:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// AutoImportPolicy
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AutomaticBackupRetentionDays
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DailyAutomaticBackupStartTime
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// WeeklyMaintenanceStartTime
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFileSystem service method.</param>
         /// <param name="cancellationToken">

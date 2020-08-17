@@ -81,6 +81,12 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("NextToken", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.NextToken = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("QueueUrl", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

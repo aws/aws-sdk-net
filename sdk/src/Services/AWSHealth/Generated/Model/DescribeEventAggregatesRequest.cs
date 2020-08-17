@@ -33,6 +33,13 @@ namespace Amazon.AWSHealth.Model
     /// Returns the number of events of each event type (issue, scheduled change, and account
     /// notification). If no filter is specified, the counts of all events in each category
     /// are returned.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
+    /// the next request to return more results.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeEventAggregatesRequest : AmazonAWSHealthRequest
     {

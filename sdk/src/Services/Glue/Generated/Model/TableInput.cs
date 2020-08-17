@@ -43,6 +43,7 @@ namespace Amazon.Glue.Model
         private int? _retention;
         private StorageDescriptor _storageDescriptor;
         private string _tableType;
+        private TableIdentifier _targetTable;
         private string _viewExpandedText;
         private string _viewOriginalText;
 
@@ -240,6 +241,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetTableType()
         {
             return this._tableType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetTable. 
+        /// <para>
+        /// A <code>TableIdentifier</code> structure that describes a target table for resource
+        /// linking.
+        /// </para>
+        /// </summary>
+        public TableIdentifier TargetTable
+        {
+            get { return this._targetTable; }
+            set { this._targetTable = value; }
+        }
+
+        // Check to see if TargetTable property is set
+        internal bool IsSetTargetTable()
+        {
+            return this._targetTable != null;
         }
 
         /// <summary>

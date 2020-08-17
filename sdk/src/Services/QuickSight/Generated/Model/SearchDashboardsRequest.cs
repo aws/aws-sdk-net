@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filters to apply to the search. Currently, you can search only by user name. For
+        /// The filters to apply to the search. Currently, you can search only by user name, for
         /// example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals",
         /// "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code> 
         /// </para>

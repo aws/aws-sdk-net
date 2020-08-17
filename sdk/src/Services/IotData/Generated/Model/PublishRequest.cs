@@ -35,7 +35,7 @@ namespace Amazon.IotData.Model
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http">HTTP
-    /// Protocol</a> in the <i>AWS IoT Developer Guide</i>.
+    /// Protocol</a> in the AWS IoT Developer Guide.
     /// </para>
     /// </summary>
     public partial class PublishRequest : AmazonIotDataRequest

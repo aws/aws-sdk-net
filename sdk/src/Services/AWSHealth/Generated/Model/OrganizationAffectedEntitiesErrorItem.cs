@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// Error information returned when a <a>DescribeAffectedEntitiesForOrganization</a> operation
-    /// cannot find or process a specific entity.
+    /// Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a>
+    /// operation cannot find or process a specific entity.
     /// </summary>
     public partial class OrganizationAffectedEntitiesErrorItem
     {

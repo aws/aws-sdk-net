@@ -63,6 +63,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     response.ContactStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dataflowList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DataflowDetail, DataflowDetailUnmarshaller>(DataflowDetailUnmarshaller.Instance);
+                    response.DataflowList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("endTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

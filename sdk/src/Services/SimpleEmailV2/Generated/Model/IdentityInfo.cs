@@ -43,6 +43,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// The address or domain of the identity.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string IdentityName
         {
             get { return this._identityName; }

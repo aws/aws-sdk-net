@@ -1573,7 +1573,9 @@
         {"shape":"AuthorizationNotFoundFault"},
         {"shape":"CertificateNotFoundFault"},
         {"shape":"DomainNotFoundFault"},
-        {"shape":"BackupPolicyNotFoundFault"}
+        {"shape":"BackupPolicyNotFoundFault"},
+        {"shape":"KMSKeyNotAccessibleFault"},
+        {"shape":"InvalidDBClusterStateFault"}
       ]
     },
     "ModifyDBParameterGroup":{
@@ -2770,7 +2772,8 @@
         "EnableHttpEndpoint":{"shape":"BooleanOptional"},
         "CopyTagsToSnapshot":{"shape":"BooleanOptional"},
         "Domain":{"shape":"String"},
-        "DomainIAMRoleName":{"shape":"String"}
+        "DomainIAMRoleName":{"shape":"String"},
+        "EnableGlobalWriteForwarding":{"shape":"BooleanOptional"}
       }
     },
     "CreateDBClusterParameterGroupMessage":{
@@ -2909,7 +2912,8 @@
         "UseDefaultProcessorFeatures":{"shape":"BooleanOptional"},
         "DeletionProtection":{"shape":"BooleanOptional"},
         "Domain":{"shape":"String"},
-        "DomainIAMRoleName":{"shape":"String"}
+        "DomainIAMRoleName":{"shape":"String"},
+        "ReplicaMode":{"shape":"ReplicaMode"}
       }
     },
     "CreateDBInstanceReadReplicaResult":{
@@ -3201,7 +3205,9 @@
         "ActivityStreamKinesisStreamName":{"shape":"String"},
         "CopyTagsToSnapshot":{"shape":"BooleanOptional"},
         "CrossAccountClone":{"shape":"BooleanOptional"},
-        "DomainMemberships":{"shape":"DomainMembershipList"}
+        "DomainMemberships":{"shape":"DomainMembershipList"},
+        "GlobalWriteForwardingStatus":{"shape":"WriteForwardingStatus"},
+        "GlobalWriteForwardingRequested":{"shape":"BooleanOptional"}
       },
       "wrapper":true
     },
@@ -3588,7 +3594,9 @@
         "SupportsReadReplica":{"shape":"Boolean"},
         "SupportedEngineModes":{"shape":"EngineModeList"},
         "SupportedFeatureNames":{"shape":"FeatureNameList"},
-        "Status":{"shape":"String"}
+        "Status":{"shape":"String"},
+        "SupportsParallelQuery":{"shape":"Boolean"},
+        "SupportsGlobalDatabases":{"shape":"Boolean"}
       }
     },
     "DBEngineVersionList":{
@@ -3633,6 +3641,7 @@
         "ReadReplicaSourceDBInstanceIdentifier":{"shape":"String"},
         "ReadReplicaDBInstanceIdentifiers":{"shape":"ReadReplicaDBInstanceIdentifierList"},
         "ReadReplicaDBClusterIdentifiers":{"shape":"ReadReplicaDBClusterIdentifierList"},
+        "ReplicaMode":{"shape":"ReplicaMode"},
         "LicenseModel":{"shape":"String"},
         "Iops":{"shape":"IntegerOptional"},
         "OptionGroupMemberships":{"shape":"OptionGroupMembershipList"},
@@ -5345,7 +5354,8 @@
       "members":{
         "DBClusterArn":{"shape":"String"},
         "Readers":{"shape":"ReadersArnList"},
-        "IsWriter":{"shape":"Boolean"}
+        "IsWriter":{"shape":"Boolean"},
+        "GlobalWriteForwardingStatus":{"shape":"WriteForwardingStatus"}
       },
       "wrapper":true
     },
@@ -5906,7 +5916,8 @@
         "ScalingConfiguration":{"shape":"ScalingConfiguration"},
         "DeletionProtection":{"shape":"BooleanOptional"},
         "EnableHttpEndpoint":{"shape":"BooleanOptional"},
-        "CopyTagsToSnapshot":{"shape":"BooleanOptional"}
+        "CopyTagsToSnapshot":{"shape":"BooleanOptional"},
+        "EnableGlobalWriteForwarding":{"shape":"BooleanOptional"}
       }
     },
     "ModifyDBClusterParameterGroupMessage":{
@@ -5990,7 +6001,8 @@
         "UseDefaultProcessorFeatures":{"shape":"BooleanOptional"},
         "DeletionProtection":{"shape":"BooleanOptional"},
         "MaxAllocatedStorage":{"shape":"IntegerOptional"},
-        "CertificateRotationRestart":{"shape":"BooleanOptional"}
+        "CertificateRotationRestart":{"shape":"BooleanOptional"},
+        "ReplicaMode":{"shape":"ReplicaMode"}
       }
     },
     "ModifyDBInstanceResult":{
@@ -6405,7 +6417,9 @@
         "AvailableProcessorFeatures":{"shape":"AvailableProcessorFeatureList"},
         "SupportedEngineModes":{"shape":"EngineModeList"},
         "SupportsStorageAutoscaling":{"shape":"BooleanOptional"},
-        "SupportsKerberosAuthentication":{"shape":"BooleanOptional"}
+        "SupportsKerberosAuthentication":{"shape":"BooleanOptional"},
+        "OutpostCapable":{"shape":"Boolean"},
+        "SupportsGlobalDatabases":{"shape":"Boolean"}
       },
       "wrapper":true
     },
@@ -6421,6 +6435,12 @@
       "members":{
         "OrderableDBInstanceOptions":{"shape":"OrderableDBInstanceOptionsList"},
         "Marker":{"shape":"String"}
+      }
+    },
+    "Outpost":{
+      "type":"structure",
+      "members":{
+        "Arn":{"shape":"String"}
       }
     },
     "Parameter":{
@@ -6735,6 +6755,13 @@
         "ResourceName":{"shape":"String"},
         "TagKeys":{"shape":"KeyList"}
       }
+    },
+    "ReplicaMode":{
+      "type":"string",
+      "enum":[
+        "open-read-only",
+        "mounted"
+      ]
     },
     "ReservedDBInstance":{
       "type":"structure",
@@ -7454,6 +7481,7 @@
       "members":{
         "SubnetIdentifier":{"shape":"String"},
         "SubnetAvailabilityZone":{"shape":"AvailabilityZone"},
+        "SubnetOutpost":{"shape":"Outpost"},
         "SubnetStatus":{"shape":"String"}
       }
     },
@@ -7698,6 +7726,16 @@
         "VpnName":{"shape":"String"},
         "VpnState":{"shape":"String"}
       }
+    },
+    "WriteForwardingStatus":{
+      "type":"string",
+      "enum":[
+        "enabled",
+        "disabled",
+        "enabling",
+        "disabling",
+        "unknown"
+      ]
     }
   }
 }

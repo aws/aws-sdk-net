@@ -125,6 +125,60 @@ namespace Amazon.AppMesh
 
 
     /// <summary>
+    /// Constants used for properties of type GatewayRouteStatusCode.
+    /// </summary>
+    public class GatewayRouteStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for GatewayRouteStatusCode
+        /// </summary>
+        public static readonly GatewayRouteStatusCode ACTIVE = new GatewayRouteStatusCode("ACTIVE");
+        /// <summary>
+        /// Constant DELETED for GatewayRouteStatusCode
+        /// </summary>
+        public static readonly GatewayRouteStatusCode DELETED = new GatewayRouteStatusCode("DELETED");
+        /// <summary>
+        /// Constant INACTIVE for GatewayRouteStatusCode
+        /// </summary>
+        public static readonly GatewayRouteStatusCode INACTIVE = new GatewayRouteStatusCode("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GatewayRouteStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GatewayRouteStatusCode FindValue(string value)
+        {
+            return FindValue<GatewayRouteStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GatewayRouteStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GrpcRetryPolicyEvent.
     /// </summary>
     public class GrpcRetryPolicyEvent : ConstantClass
@@ -574,6 +628,168 @@ namespace Amazon.AppMesh
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TcpRetryPolicyEvent(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VirtualGatewayListenerTlsMode.
+    /// </summary>
+    public class VirtualGatewayListenerTlsMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for VirtualGatewayListenerTlsMode
+        /// </summary>
+        public static readonly VirtualGatewayListenerTlsMode DISABLED = new VirtualGatewayListenerTlsMode("DISABLED");
+        /// <summary>
+        /// Constant PERMISSIVE for VirtualGatewayListenerTlsMode
+        /// </summary>
+        public static readonly VirtualGatewayListenerTlsMode PERMISSIVE = new VirtualGatewayListenerTlsMode("PERMISSIVE");
+        /// <summary>
+        /// Constant STRICT for VirtualGatewayListenerTlsMode
+        /// </summary>
+        public static readonly VirtualGatewayListenerTlsMode STRICT = new VirtualGatewayListenerTlsMode("STRICT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VirtualGatewayListenerTlsMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VirtualGatewayListenerTlsMode FindValue(string value)
+        {
+            return FindValue<VirtualGatewayListenerTlsMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VirtualGatewayListenerTlsMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VirtualGatewayPortProtocol.
+    /// </summary>
+    public class VirtualGatewayPortProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Grpc for VirtualGatewayPortProtocol
+        /// </summary>
+        public static readonly VirtualGatewayPortProtocol Grpc = new VirtualGatewayPortProtocol("grpc");
+        /// <summary>
+        /// Constant Http for VirtualGatewayPortProtocol
+        /// </summary>
+        public static readonly VirtualGatewayPortProtocol Http = new VirtualGatewayPortProtocol("http");
+        /// <summary>
+        /// Constant Http2 for VirtualGatewayPortProtocol
+        /// </summary>
+        public static readonly VirtualGatewayPortProtocol Http2 = new VirtualGatewayPortProtocol("http2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VirtualGatewayPortProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VirtualGatewayPortProtocol FindValue(string value)
+        {
+            return FindValue<VirtualGatewayPortProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VirtualGatewayPortProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VirtualGatewayStatusCode.
+    /// </summary>
+    public class VirtualGatewayStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for VirtualGatewayStatusCode
+        /// </summary>
+        public static readonly VirtualGatewayStatusCode ACTIVE = new VirtualGatewayStatusCode("ACTIVE");
+        /// <summary>
+        /// Constant DELETED for VirtualGatewayStatusCode
+        /// </summary>
+        public static readonly VirtualGatewayStatusCode DELETED = new VirtualGatewayStatusCode("DELETED");
+        /// <summary>
+        /// Constant INACTIVE for VirtualGatewayStatusCode
+        /// </summary>
+        public static readonly VirtualGatewayStatusCode INACTIVE = new VirtualGatewayStatusCode("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VirtualGatewayStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VirtualGatewayStatusCode FindValue(string value)
+        {
+            return FindValue<VirtualGatewayStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VirtualGatewayStatusCode(string value)
         {
             return FindValue(value);
         }

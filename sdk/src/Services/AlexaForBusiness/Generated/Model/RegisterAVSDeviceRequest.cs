@@ -39,6 +39,7 @@ namespace Amazon.AlexaForBusiness.Model
         private string _clientId;
         private string _deviceSerialNumber;
         private string _productId;
+        private string _roomArn;
         private string _userCode;
 
         /// <summary>
@@ -87,7 +88,6 @@ namespace Amazon.AlexaForBusiness.Model
         /// AVS device.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string DeviceSerialNumber
         {
             get { return this._deviceSerialNumber; }
@@ -117,6 +117,24 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetProductId()
         {
             return this._productId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoomArn. 
+        /// <para>
+        /// The ARN of the room with which to associate your AVS device.
+        /// </para>
+        /// </summary>
+        public string RoomArn
+        {
+            get { return this._roomArn; }
+            set { this._roomArn = value; }
+        }
+
+        // Check to see if RoomArn property is set
+        internal bool IsSetRoomArn()
+        {
+            return this._roomArn != null;
         }
 
         /// <summary>

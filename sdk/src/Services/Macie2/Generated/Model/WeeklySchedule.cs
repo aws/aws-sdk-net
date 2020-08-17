@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Reserved for future use.
+    /// Specifies a weekly recurrence pattern for running a classification job.
     /// </summary>
     public partial class WeeklySchedule
     {
@@ -38,8 +38,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property DayOfWeek. 
         /// <para>
-        /// Run the job once a week, on a specific day of the week. Valid values are: MONDAY,
-        /// TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, and SUNDAY.
+        /// The day of the week when Amazon Macie runs the job.
         /// </para>
         /// </summary>
         public DayOfWeek DayOfWeek

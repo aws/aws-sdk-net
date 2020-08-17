@@ -81,7 +81,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property SubmitTimeAfter. 
         /// <para>
         /// Filters the list of jobs based on the time that the job was submitted for processing.
-        /// Returns only jobs submitted before the specified time. Jobs are returned in descending
+        /// Returns only jobs submitted after the specified time. Jobs are returned in descending
         /// order, newest to oldest.
         /// </para>
         /// </summary>
@@ -101,7 +101,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property SubmitTimeBefore. 
         /// <para>
         /// Filters the list of jobs based on the time that the job was submitted for processing.
-        /// Returns only jobs submitted after the specified time. Jobs are returned in ascending
+        /// Returns only jobs submitted before the specified time. Jobs are returned in ascending
         /// order, oldest to newest.
         /// </para>
         /// </summary>

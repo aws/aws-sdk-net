@@ -30,7 +30,7 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApp operation.
-    /// Delete an existing Amplify App by appId.
+    /// Deletes an existing Amplify app specified by an app ID.
     /// </summary>
     public partial class DeleteAppRequest : AmazonAmplifyRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  Unique Id for an Amplify App. 
+        ///  The unique ID for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

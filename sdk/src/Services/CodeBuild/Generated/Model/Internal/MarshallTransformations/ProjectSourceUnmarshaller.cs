@@ -76,6 +76,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.Buildspec = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("buildStatusConfig", targetDepth))
+                {
+                    var unmarshaller = BuildStatusConfigUnmarshaller.Instance;
+                    unmarshalledObject.BuildStatusConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("gitCloneDepth", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

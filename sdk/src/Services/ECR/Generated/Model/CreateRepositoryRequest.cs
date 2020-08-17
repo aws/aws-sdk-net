@@ -35,16 +35,36 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class CreateRepositoryRequest : AmazonECRRequest
     {
+        private EncryptionConfiguration _encryptionConfiguration;
         private ImageScanningConfiguration _imageScanningConfiguration;
         private ImageTagMutability _imageTagMutability;
         private string _repositoryName;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// The encryption configuration for the repository. This determines how the contents
+        /// of your repository are encrypted at rest.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ImageScanningConfiguration. 
         /// <para>
-        /// The image scanning configuration for the repository. This setting determines whether
-        /// images are scanned for known vulnerabilities after being pushed to the repository.
+        /// The image scanning configuration for the repository. This determines whether images
+        /// are scanned for known vulnerabilities after being pushed to the repository.
         /// </para>
         /// </summary>
         public ImageScanningConfiguration ImageScanningConfiguration

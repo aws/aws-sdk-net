@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// Information about a repository association.
+    /// Summary information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+    /// <code>ListRepositoryAssociations</code> </a> operation returns a list of <code>RepositoryAssociationSummary</code>
+    /// objects.
     /// </summary>
     public partial class RepositoryAssociationSummary
     {
@@ -45,7 +47,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property AssociationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) identifying the repository association.
+        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+        /// <code>RepositoryAssociation</code> </a> object. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -64,7 +67,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property AssociationId. 
         /// <para>
-        /// The repository association ID.
+        ///  The repository association ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -83,7 +86,10 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property ConnectionArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) identifying the repository connection. 
+        ///  The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format
+        /// is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a>
+        /// in the <i>AWS CodeStar Connections API Reference</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -140,7 +146,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The owner of the repository association.
+        /// The owner of the repository. For an AWS CodeCommit repository, this is the AWS account
+        /// ID of the account that owns the repository. For a GitHub or Bitbucket repository,
+        /// this is the username for the account that owns the repository.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -179,24 +187,45 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <para>
         /// The state of the repository association.
         /// </para>
-        ///  <dl> <dt>Associated</dt> <dd> 
+        ///  
         /// <para>
-        /// Amazon CodeGuru Reviewer is associated with the repository. 
+        /// The valid repository association states are:
         /// </para>
-        ///  </dd> <dt>Associating</dt> <dd> 
+        ///  <ul> <li> 
         /// <para>
-        /// The association is in progress. 
+        ///  <b>Associated</b>: The repository association is complete. 
         /// </para>
-        ///  </dd> <dt>Failed</dt> <dd> 
+        ///  </li> <li> 
         /// <para>
-        /// The association failed. 
+        ///  <b>Associating</b>: CodeGuru Reviewer is: 
         /// </para>
-        ///  </dd> <dt>Disassociating</dt> <dd> 
+        ///  <ul> <li> 
         /// <para>
-        /// Amazon CodeGuru Reviewer is in the process of disassociating with the repository.
-        /// 
+        ///  Setting up pull request notifications. This is required for pull requests to trigger
+        /// a CodeGuru Reviewer review. 
         /// </para>
-        ///  </dd> </dl>
+        ///  <note> 
+        /// <para>
+        ///  If your repository <code>ProviderType</code> is <code>GitHub</code> or <code>Bitbucket</code>,
+        /// CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+        /// reviews. If you delete these webhooks, reviews of code in your repository cannot be
+        /// triggered. 
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        ///  Setting up source code access. This is required for CodeGuru Reviewer to securely
+        /// clone code in your repository. 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <b>Failed</b>: The repository failed to associate or disassociate. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request
+        /// notifications and source code access. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public RepositoryAssociationState State
         {

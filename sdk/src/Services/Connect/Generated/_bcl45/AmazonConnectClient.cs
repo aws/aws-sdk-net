@@ -1574,6 +1574,77 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ResumeContactRecording
+
+
+        /// <summary>
+        /// When a contact is being recorded, and the recording has been suspended using SuspendContactRecording,
+        /// this API resumes recording the call.
+        /// 
+        ///  
+        /// <para>
+        /// Only voice recordings are supported at this time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeContactRecording service method.</param>
+        /// 
+        /// <returns>The response from the ResumeContactRecording service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContactRecording">REST API Reference for ResumeContactRecording Operation</seealso>
+        public virtual ResumeContactRecordingResponse ResumeContactRecording(ResumeContactRecordingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeContactRecordingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeContactRecordingResponseUnmarshaller.Instance;
+
+            return Invoke<ResumeContactRecordingResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// When a contact is being recorded, and the recording has been suspended using SuspendContactRecording,
+        /// this API resumes recording the call.
+        /// 
+        ///  
+        /// <para>
+        /// Only voice recordings are supported at this time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeContactRecording service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResumeContactRecording service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContactRecording">REST API Reference for ResumeContactRecording Operation</seealso>
+        public virtual Task<ResumeContactRecordingResponse> ResumeContactRecordingAsync(ResumeContactRecordingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeContactRecordingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeContactRecordingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ResumeContactRecordingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartChatContact
 
 
@@ -1665,12 +1736,114 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  StartContactRecording
+
+
+        /// <summary>
+        /// This API starts recording the contact when the agent joins the call. StartContactRecording
+        /// is a one-time action. For example, if you use StopContactRecording to stop recording
+        /// an ongoing call, you can't use StartContactRecording to restart it. For scenarios
+        /// where the recording has started and you want to suspend and resume it, such as when
+        /// collecting sensitive information (for example, a credit card number), use SuspendContactRecording
+        /// and ResumeContactRecording.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this API to override the recording behavior configured in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-recording-behavior.html">Set
+        /// recording behavior</a> block.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only voice recordings are supported at this time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartContactRecording service method.</param>
+        /// 
+        /// <returns>The response from the StartContactRecording service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactRecording">REST API Reference for StartContactRecording Operation</seealso>
+        public virtual StartContactRecordingResponse StartContactRecording(StartContactRecordingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartContactRecordingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartContactRecordingResponseUnmarshaller.Instance;
+
+            return Invoke<StartContactRecordingResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API starts recording the contact when the agent joins the call. StartContactRecording
+        /// is a one-time action. For example, if you use StopContactRecording to stop recording
+        /// an ongoing call, you can't use StartContactRecording to restart it. For scenarios
+        /// where the recording has started and you want to suspend and resume it, such as when
+        /// collecting sensitive information (for example, a credit card number), use SuspendContactRecording
+        /// and ResumeContactRecording.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this API to override the recording behavior configured in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-recording-behavior.html">Set
+        /// recording behavior</a> block.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only voice recordings are supported at this time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartContactRecording service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartContactRecording service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactRecording">REST API Reference for StartContactRecording Operation</seealso>
+        public virtual Task<StartContactRecordingResponse> StartContactRecordingAsync(StartContactRecordingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartContactRecordingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartContactRecordingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartContactRecordingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartOutboundVoiceContact
 
 
         /// <summary>
-        /// Initiates a contact flow to place an outbound call to a customer.
+        /// This API places an outbound call to a contact, and then initiates the contact flow.
+        /// It performs the actions in the contact flow that's specified (in <code>ContactFlowId</code>).
         /// 
+        ///  
+        /// <para>
+        /// Agents are not involved in initiating the outbound API (that is, dialing the contact).
+        /// If the contact flow places an outbound call to a contact, and then puts the contact
+        /// in queue, that's when the call is routed to the agent, like any other inbound case.
+        /// </para>
         ///  
         /// <para>
         /// There is a 60 second dialing timeout for this operation. If the call is not connected
@@ -1713,8 +1886,15 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Initiates a contact flow to place an outbound call to a customer.
+        /// This API places an outbound call to a contact, and then initiates the contact flow.
+        /// It performs the actions in the contact flow that's specified (in <code>ContactFlowId</code>).
         /// 
+        ///  
+        /// <para>
+        /// Agents are not involved in initiating the outbound API (that is, dialing the contact).
+        /// If the contact flow places an outbound call to a contact, and then puts the contact
+        /// in queue, that's when the call is routed to the agent, like any other inbound case.
+        /// </para>
         ///  
         /// <para>
         /// There is a 60 second dialing timeout for this operation. If the call is not connected
@@ -1827,6 +2007,168 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = StopContactResponseUnmarshaller.Instance;
             
             return InvokeAsync<StopContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopContactRecording
+
+
+        /// <summary>
+        /// When a contact is being recorded, this API stops recording the call. StopContactRecording
+        /// is a one-time action. If you use StopContactRecording to stop recording an ongoing
+        /// call, you can't use StartContactRecording to restart it. For scenarios where the recording
+        /// has started and you want to suspend it for sensitive information (for example, to
+        /// collect a credit card number), and then restart it, use SuspendContactRecording and
+        /// ResumeContactRecording.
+        /// 
+        ///  
+        /// <para>
+        /// Only voice recordings are supported at this time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopContactRecording service method.</param>
+        /// 
+        /// <returns>The response from the StopContactRecording service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactRecording">REST API Reference for StopContactRecording Operation</seealso>
+        public virtual StopContactRecordingResponse StopContactRecording(StopContactRecordingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopContactRecordingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopContactRecordingResponseUnmarshaller.Instance;
+
+            return Invoke<StopContactRecordingResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// When a contact is being recorded, this API stops recording the call. StopContactRecording
+        /// is a one-time action. If you use StopContactRecording to stop recording an ongoing
+        /// call, you can't use StartContactRecording to restart it. For scenarios where the recording
+        /// has started and you want to suspend it for sensitive information (for example, to
+        /// collect a credit card number), and then restart it, use SuspendContactRecording and
+        /// ResumeContactRecording.
+        /// 
+        ///  
+        /// <para>
+        /// Only voice recordings are supported at this time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopContactRecording service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopContactRecording service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactRecording">REST API Reference for StopContactRecording Operation</seealso>
+        public virtual Task<StopContactRecordingResponse> StopContactRecordingAsync(StopContactRecordingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopContactRecordingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopContactRecordingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopContactRecordingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SuspendContactRecording
+
+
+        /// <summary>
+        /// When a contact is being recorded, this API suspends recording the call. For example,
+        /// you might suspend the call recording while collecting sensitive information, such
+        /// as a credit card number. Then use ResumeContactRecording to restart recording. 
+        /// 
+        ///  
+        /// <para>
+        /// The period of time that the recording is suspended is filled with silence in the final
+        /// recording. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Only voice recordings are supported at this time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SuspendContactRecording service method.</param>
+        /// 
+        /// <returns>The response from the SuspendContactRecording service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SuspendContactRecording">REST API Reference for SuspendContactRecording Operation</seealso>
+        public virtual SuspendContactRecordingResponse SuspendContactRecording(SuspendContactRecordingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SuspendContactRecordingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SuspendContactRecordingResponseUnmarshaller.Instance;
+
+            return Invoke<SuspendContactRecordingResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// When a contact is being recorded, this API suspends recording the call. For example,
+        /// you might suspend the call recording while collecting sensitive information, such
+        /// as a credit card number. Then use ResumeContactRecording to restart recording. 
+        /// 
+        ///  
+        /// <para>
+        /// The period of time that the recording is suspended is filled with silence in the final
+        /// recording. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Only voice recordings are supported at this time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SuspendContactRecording service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SuspendContactRecording service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SuspendContactRecording">REST API Reference for SuspendContactRecording Operation</seealso>
+        public virtual Task<SuspendContactRecordingResponse> SuspendContactRecordingAsync(SuspendContactRecordingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SuspendContactRecordingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SuspendContactRecordingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SuspendContactRecordingResponse>(request, options, cancellationToken);
         }
 
         #endregion

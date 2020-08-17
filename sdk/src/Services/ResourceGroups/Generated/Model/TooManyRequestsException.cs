@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
-    /// The caller has exceeded throttling limits.
+    /// You've exceeded throttling limits by making too many requests in a period of time.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

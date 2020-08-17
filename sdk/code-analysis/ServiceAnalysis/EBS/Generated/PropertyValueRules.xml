@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.EBS.Model.CompleteSnapshotRequest.ChangedBlocksCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.CompleteSnapshotRequest.Checksum</property>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9+/=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.CompleteSnapshotRequest.ChecksumAggregationMethod</property>
+    <max>32</max>
+    <pattern>^[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.CompleteSnapshotRequest.ChecksumAlgorithm</property>
+    <max>32</max>
+    <pattern>^[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.CompleteSnapshotRequest.SnapshotId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^snap-[0-9a-f]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.CompleteSnapshotResponse.Status</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.GetSnapshotBlockRequest.BlockIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EBS.Model.GetSnapshotBlockRequest.BlockToken</property>
     <max>256</max>
     <pattern>^[A-Za-z0-9+/=]+$</pattern>
@@ -14,10 +47,12 @@
   <property-value-rule>
     <property>Amazon.EBS.Model.GetSnapshotBlockResponse.Checksum</property>
     <max>64</max>
+    <pattern>^[A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.GetSnapshotBlockResponse.ChecksumAlgorithm</property>
     <max>32</max>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.ListChangedBlocksRequest.FirstSnapshotId</property>
@@ -42,9 +77,17 @@
     <pattern>^snap-[0-9a-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EBS.Model.ListChangedBlocksRequest.StartingBlockIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EBS.Model.ListChangedBlocksResponse.NextToken</property>
     <max>256</max>
     <pattern>^[A-Za-z0-9+/=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.ListChangedBlocksResponse.VolumeSize</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.ListSnapshotBlocksRequest.MaxResults</property>
@@ -63,14 +106,133 @@
     <pattern>^snap-[0-9a-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EBS.Model.ListSnapshotBlocksRequest.StartingBlockIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EBS.Model.ListSnapshotBlocksResponse.NextToken</property>
     <max>256</max>
     <pattern>^[A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EBS.Model.ListSnapshotBlocksResponse.VolumeSize</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.PutSnapshotBlockRequest.BlockIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.PutSnapshotBlockRequest.Checksum</property>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9+/=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.PutSnapshotBlockRequest.ChecksumAlgorithm</property>
+    <max>32</max>
+    <pattern>^[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.PutSnapshotBlockRequest.Progress</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.PutSnapshotBlockRequest.SnapshotId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^snap-[0-9a-f]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.PutSnapshotBlockResponse.Checksum</property>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9+/=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.PutSnapshotBlockResponse.ChecksumAlgorithm</property>
+    <max>32</max>
+    <pattern>^[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.StartSnapshotRequest.ClientToken</property>
+    <max>255</max>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.StartSnapshotRequest.Description</property>
+    <max>255</max>
+    <pattern>^[\S\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.StartSnapshotRequest.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:kms:.*:[0-9]{12}:key/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.StartSnapshotRequest.ParentSnapshotId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^snap-[0-9a-f]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.StartSnapshotRequest.Timeout</property>
+    <min>10</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.StartSnapshotRequest.VolumeSize</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.StartSnapshotResponse.Description</property>
+    <max>255</max>
+    <pattern>^[\S\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.StartSnapshotResponse.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:kms:.*:[0-9]{12}:key/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.StartSnapshotResponse.OwnerId</property>
+    <min>1</min>
+    <max>24</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.StartSnapshotResponse.ParentSnapshotId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^snap-[0-9a-f]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.StartSnapshotResponse.SnapshotId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^snap-[0-9a-f]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.StartSnapshotResponse.Status</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.StartSnapshotResponse.VolumeSize</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.Block.BlockIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EBS.Model.Block.BlockToken</property>
     <max>256</max>
     <pattern>^[A-Za-z0-9+/=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.ChangedBlock.BlockIndex</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.ChangedBlock.FirstBlockToken</property>
@@ -81,5 +243,15 @@
     <property>Amazon.EBS.Model.ChangedBlock.SecondBlockToken</property>
     <max>256</max>
     <pattern>^[A-Za-z0-9+/=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.Tag.Key</property>
+    <max>127</max>
+    <pattern>^[\S\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EBS.Model.Tag.Value</property>
+    <max>255</max>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
 </property-value-rules>

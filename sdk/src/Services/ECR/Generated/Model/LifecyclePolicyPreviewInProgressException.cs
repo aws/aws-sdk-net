@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// The previous lifecycle policy preview request has not completed. Please try again
-    /// later.
+    /// The previous lifecycle policy preview request has not completed. Wait and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

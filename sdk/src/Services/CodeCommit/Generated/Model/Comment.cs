@@ -34,6 +34,7 @@ namespace Amazon.CodeCommit.Model
     public partial class Comment
     {
         private string _authorArn;
+        private List<string> _callerReactions = new List<string>();
         private string _clientRequestToken;
         private string _commentId;
         private string _content;
@@ -41,6 +42,7 @@ namespace Amazon.CodeCommit.Model
         private bool? _deleted;
         private string _inReplyTo;
         private DateTime? _lastModifiedDate;
+        private Dictionary<string, int> _reactionCounts = new Dictionary<string, int>();
 
         /// <summary>
         /// Gets and sets the property AuthorArn. 
@@ -58,6 +60,25 @@ namespace Amazon.CodeCommit.Model
         internal bool IsSetAuthorArn()
         {
             return this._authorArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CallerReactions. 
+        /// <para>
+        /// The emoji reactions to a comment, if any, submitted by the user whose credentials
+        /// are associated with the call to the API.
+        /// </para>
+        /// </summary>
+        public List<string> CallerReactions
+        {
+            get { return this._callerReactions; }
+            set { this._callerReactions = value; }
+        }
+
+        // Check to see if CallerReactions property is set
+        internal bool IsSetCallerReactions()
+        {
+            return this._callerReactions != null && this._callerReactions.Count > 0; 
         }
 
         /// <summary>
@@ -187,6 +208,25 @@ namespace Amazon.CodeCommit.Model
         internal bool IsSetLastModifiedDate()
         {
             return this._lastModifiedDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReactionCounts. 
+        /// <para>
+        /// A string to integer map that represents the number of individual users who have responded
+        /// to a comment with the specified reactions.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, int> ReactionCounts
+        {
+            get { return this._reactionCounts; }
+            set { this._reactionCounts = value; }
+        }
+
+        // Check to see if ReactionCounts property is set
+        internal bool IsSetReactionCounts()
+        {
+            return this._reactionCounts != null && this._reactionCounts.Count > 0; 
         }
 
     }

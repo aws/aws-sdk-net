@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
     {
         private string _destinationCidrBlock;
         private string _destinationIpv6CidrBlock;
+        private string _destinationPrefixListId;
         private string _routeTableId;
 
         /// <summary>
@@ -74,6 +75,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDestinationIpv6CidrBlock()
         {
             return this._destinationIpv6CidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationPrefixListId. 
+        /// <para>
+        /// The ID of the prefix list for the route.
+        /// </para>
+        /// </summary>
+        public string DestinationPrefixListId
+        {
+            get { return this._destinationPrefixListId; }
+            set { this._destinationPrefixListId = value; }
+        }
+
+        // Check to see if DestinationPrefixListId property is set
+        internal bool IsSetDestinationPrefixListId()
+        {
+            return this._destinationPrefixListId != null;
         }
 
         /// <summary>

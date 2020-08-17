@@ -35,8 +35,85 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class ListRestoreJobsRequest : AmazonBackupRequest
     {
+        private string _byAccountId;
+        private DateTime? _byCreatedAfter;
+        private DateTime? _byCreatedBefore;
+        private RestoreJobStatus _byStatus;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property ByAccountId. 
+        /// <para>
+        /// The account ID to list the jobs from. Returns only restore jobs associated with the
+        /// specified account ID.
+        /// </para>
+        /// </summary>
+        public string ByAccountId
+        {
+            get { return this._byAccountId; }
+            set { this._byAccountId = value; }
+        }
+
+        // Check to see if ByAccountId property is set
+        internal bool IsSetByAccountId()
+        {
+            return this._byAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ByCreatedAfter. 
+        /// <para>
+        /// Returns only restore jobs that were created after the specified date.
+        /// </para>
+        /// </summary>
+        public DateTime ByCreatedAfter
+        {
+            get { return this._byCreatedAfter.GetValueOrDefault(); }
+            set { this._byCreatedAfter = value; }
+        }
+
+        // Check to see if ByCreatedAfter property is set
+        internal bool IsSetByCreatedAfter()
+        {
+            return this._byCreatedAfter.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ByCreatedBefore. 
+        /// <para>
+        /// Returns only restore jobs that were created before the specified date.
+        /// </para>
+        /// </summary>
+        public DateTime ByCreatedBefore
+        {
+            get { return this._byCreatedBefore.GetValueOrDefault(); }
+            set { this._byCreatedBefore = value; }
+        }
+
+        // Check to see if ByCreatedBefore property is set
+        internal bool IsSetByCreatedBefore()
+        {
+            return this._byCreatedBefore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ByStatus. 
+        /// <para>
+        /// Returns only restore jobs associated with the specified job status.
+        /// </para>
+        /// </summary>
+        public RestoreJobStatus ByStatus
+        {
+            get { return this._byStatus; }
+            set { this._byStatus = value; }
+        }
+
+        // Check to see if ByStatus property is set
+        internal bool IsSetByStatus()
+        {
+            return this._byStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

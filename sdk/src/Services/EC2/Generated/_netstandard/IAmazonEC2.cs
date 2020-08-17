@@ -251,6 +251,12 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// You can allocate a carrier IP address which is a public IP address from a telecommunication
+        /// carrier, to a network interface which resides in a subnet in a Wavelength Zone (for
+        /// example an EC2 instance). 
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -293,6 +299,12 @@ namespace Amazon.EC2
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can allocate a carrier IP address which is a public IP address from a telecommunication
+        /// carrier, to a network interface which resides in a subnet in a Wavelength Zone (for
+        /// example an EC2 instance). 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateAddress service method.</param>
@@ -424,8 +436,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Associates an Elastic IP address with an instance or a network interface. Before you
-        /// can use an Elastic IP address, you must allocate it to your account.
+        /// Associates an Elastic IP address, or carrier IP address (for instances that are in
+        /// subnets in Wavelength Zones) with an instance or a network interface. Before you can
+        /// use an Elastic IP address, you must allocate it to your account.
         /// 
         ///  
         /// <para>
@@ -448,6 +461,11 @@ namespace Amazon.EC2
         /// already associated with a different instance or a network interface, you get an error
         /// unless you allow reassociation. You cannot associate an Elastic IP address with an
         /// instance or network interface that has an existing Elastic IP address.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Subnets in Wavelength Zones] You can associate an IP address from the telecommunication
+        /// carrier to the instance or network interface. 
         /// </para>
         ///  
         /// <para>
@@ -1317,6 +1335,25 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CreateCarrierGateway
+
+
+
+        /// <summary>
+        /// Creates a carrier gateway. For more information about carrier gateways, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier
+        /// gateways</a> in the <i>AWS Wavelength Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCarrierGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCarrierGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway">REST API Reference for CreateCarrierGateway Operation</seealso>
+        Task<CreateCarrierGatewayResponse> CreateCarrierGatewayAsync(CreateCarrierGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateClientVpnEndpoint
 
 
@@ -1487,12 +1524,12 @@ namespace Amazon.EC2
         ///  <code>domain-name</code> - If you're using AmazonProvidedDNS in <code>us-east-1</code>,
         /// specify <code>ec2.internal</code>. If you're using AmazonProvidedDNS in another Region,
         /// specify <code>region.compute.internal</code> (for example, <code>ap-northeast-1.compute.internal</code>).
-        /// Otherwise, specify a domain name (for example, <code>MyCompany.com</code>). This value
-        /// is used to complete unqualified DNS hostnames. <b>Important</b>: Some Linux operating
-        /// systems accept multiple domain names separated by spaces. However, Windows and other
-        /// Linux operating systems treat the value as a single domain, which results in unexpected
-        /// behavior. If your DHCP options set is associated with a VPC that has instances with
-        /// multiple operating systems, specify only one domain name.
+        /// Otherwise, specify a domain name (for example, <code>ExampleCompany.com</code>). This
+        /// value is used to complete unqualified DNS hostnames. <b>Important</b>: Some Linux
+        /// operating systems accept multiple domain names separated by spaces. However, Windows
+        /// and other Linux operating systems treat the value as a single domain, which results
+        /// in unexpected behavior. If your DHCP options set is associated with a VPC that has
+        /// instances with multiple operating systems, specify only one domain name.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1687,7 +1724,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Exports a running or stopped instance to an S3 bucket.
+        /// Exports a running or stopped instance to an Amazon S3 bucket.
         /// 
         ///  
         /// <para>
@@ -1877,6 +1914,31 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CreateManagedPrefixList
+
+
+
+        /// <summary>
+        /// Creates a managed prefix list. You can specify one or more entries for the prefix
+        /// list. Each entry consists of a CIDR block and an optional description.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify the maximum number of entries for the prefix list. The maximum number
+        /// of entries cannot be changed later.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateManagedPrefixList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateManagedPrefixList service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateManagedPrefixList">REST API Reference for CreateManagedPrefixList Operation</seealso>
+        Task<CreateManagedPrefixListResponse> CreateManagedPrefixListAsync(CreateManagedPrefixListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateNatGateway
 
 
@@ -2033,7 +2095,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePlacementGroup service method.</param>
@@ -2310,7 +2372,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs.
         /// You can create one data feed per AWS account. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSpotDatafeedSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -2328,16 +2390,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a subnet in an existing VPC.
+        /// Creates a subnet in a specified VPC.
         /// 
         ///  
         /// <para>
-        /// When you create each subnet, you provide the VPC ID and IPv4 CIDR block for the subnet.
-        /// After you create a subnet, you can't change its CIDR block. The size of the subnet's
-        /// IPv4 CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset of a VPC's
-        /// IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR blocks
-        /// must not overlap. The smallest IPv4 subnet (and VPC) you can create uses a /28 netmask
-        /// (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses).
+        /// You must specify an IPv4 CIDR block for the subnet. After you create a subnet, you
+        /// can't change its CIDR block. The allowed block size is between a /16 netmask (65,536
+        /// IP addresses) and /28 netmask (16 IP addresses). The CIDR block must not overlap with
+        /// the CIDR block of an existing subnet in the VPC.
         /// </para>
         ///  
         /// <para>
@@ -2356,11 +2416,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
-        /// doesn't change if you stop and restart the instance (unlike a similar instance launched
-        /// outside a VPC, which gets a new IP address when restarted). It's therefore possible
-        /// to have a subnet with no running instances (they're all stopped), but no remaining
-        /// IP addresses available.
+        /// When you stop an instance in a subnet, it retains its private IPv4 address. It's therefore
+        /// possible to have a subnet with no running instances (they're all stopped), but no
+        /// remaining IP addresses available.
         /// </para>
         ///  
         /// <para>
@@ -2930,8 +2988,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a VPN connection between an existing virtual private gateway and a VPN customer
-        /// gateway. The supported connection type is <code>ipsec.1</code>.
+        /// Creates a VPN connection between an existing virtual private gateway or transit gateway
+        /// and a customer gateway. The supported connection type is <code>ipsec.1</code>.
         /// 
         ///  
         /// <para>
@@ -2941,7 +2999,8 @@ namespace Amazon.EC2
         ///  <important> 
         /// <para>
         /// We strongly recommend that you use HTTPS when calling this operation because the response
-        /// contains sensitive cryptographic information for configuring your customer gateway.
+        /// contains sensitive cryptographic information for configuring your customer gateway
+        /// device.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3020,6 +3079,31 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateVpnGateway service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">REST API Reference for CreateVpnGateway Operation</seealso>
         Task<CreateVpnGatewayResponse> CreateVpnGatewayAsync(CreateVpnGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteCarrierGateway
+
+
+
+        /// <summary>
+        /// Deletes a carrier gateway.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If you do not delete the route that contains the carrier gateway as the Target, the
+        /// route is a blackhole route. For information about how to delete a route, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRoute.html">DeleteRoute</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCarrierGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCarrierGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCarrierGateway">REST API Reference for DeleteCarrierGateway Operation</seealso>
+        Task<DeleteCarrierGatewayResponse> DeleteCarrierGatewayAsync(DeleteCarrierGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3295,6 +3379,25 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DeleteManagedPrefixList
+
+
+
+        /// <summary>
+        /// Deletes the specified managed prefix list. You must first remove all references to
+        /// the prefix list in your resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteManagedPrefixList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteManagedPrefixList service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteManagedPrefixList">REST API Reference for DeleteManagedPrefixList Operation</seealso>
+        Task<DeleteManagedPrefixListResponse> DeleteManagedPrefixListAsync(DeleteManagedPrefixListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteNatGateway
 
 
@@ -3398,7 +3501,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Deletes the specified placement group. You must terminate all instances in the placement
         /// group before you can delete the placement group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePlacementGroup service method.</param>
         /// <param name="cancellationToken">
@@ -4297,14 +4400,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Availability Zones and Local Zones that are available to you. If there
-        /// is an event impacting an Availability Zone or Local Zone, you can use this request
-        /// to view the state and any provided messages for that Availability Zone or Local Zone.
+        /// Describes the Availability Zones, Local Zones, and Wavelength Zones that are available
+        /// to you. If there is an event impacting a zone, you can use this request to view the
+        /// state and any provided messages for that zone.
         /// 
         ///  
         /// <para>
-        /// For more information about Availability Zones and Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
-        /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about Availability Zones, Local Zones, and Wavelength Zones,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions,
+        /// Zones and Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -4318,14 +4422,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Availability Zones and Local Zones that are available to you. If there
-        /// is an event impacting an Availability Zone or Local Zone, you can use this request
-        /// to view the state and any provided messages for that Availability Zone or Local Zone.
+        /// Describes the Availability Zones, Local Zones, and Wavelength Zones that are available
+        /// to you. If there is an event impacting a zone, you can use this request to view the
+        /// state and any provided messages for that zone.
         /// 
         ///  
         /// <para>
-        /// For more information about Availability Zones and Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
-        /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about Availability Zones, Local Zones, and Wavelength Zones,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions,
+        /// Zones and Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAvailabilityZones service method.</param>
@@ -4427,6 +4532,24 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeCapacityReservations service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservations">REST API Reference for DescribeCapacityReservations Operation</seealso>
         Task<DescribeCapacityReservationsResponse> DescribeCapacityReservationsAsync(DescribeCapacityReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeCarrierGateways
+
+
+
+        /// <summary>
+        /// Describes one or more of your carrier gateways.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCarrierGateways service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCarrierGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCarrierGateways">REST API Reference for DescribeCarrierGateways Operation</seealso>
+        Task<DescribeCarrierGatewaysResponse> DescribeCarrierGatewaysAsync(DescribeCarrierGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -4733,7 +4856,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified export image tasks or all your export image tasks.
+        /// Describes the specified export image tasks or all of your export image tasks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportImageTasks service method.</param>
         /// <param name="cancellationToken">
@@ -4750,7 +4873,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified export instance tasks or all your export instance tasks.
+        /// Describes the specified export instance tasks or all of your export instance tasks.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4763,7 +4886,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified export instance tasks or all your export instance tasks.
+        /// Describes the specified export instance tasks or all of your export instance tasks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks service method.</param>
         /// <param name="cancellationToken">
@@ -5264,7 +5387,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-        /// Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceCreditSpecifications service method.</param>
@@ -5397,8 +5520,8 @@ namespace Amazon.EC2
         /// <para>
         ///  <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
         /// to identify hardware and software issues. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
-        /// Checks for Your Instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
-        /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
+        /// checks for your instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
+        /// instances with failed status checks</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -5406,13 +5529,13 @@ namespace Amazon.EC2
         ///  <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
         /// maintenance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
-        /// Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// events for your instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Instance state</b> - You can manage your instances from the moment you launch
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-        /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5439,8 +5562,8 @@ namespace Amazon.EC2
         /// <para>
         ///  <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
         /// to identify hardware and software issues. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
-        /// Checks for Your Instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
-        /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
+        /// checks for your instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
+        /// instances with failed status checks</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -5448,13 +5571,13 @@ namespace Amazon.EC2
         ///  <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
         /// maintenance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
-        /// Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// events for your instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Instance state</b> - You can manage your instances from the moment you launch
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-        /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5622,7 +5745,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes one or more versions of a specified launch template. You can describe all
-        /// versions, individual versions, or a range of versions.
+        /// versions, individual versions, or a range of versions. You can also describe all the
+        /// latest versions or all the default versions of all the launch templates in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLaunchTemplateVersions service method.</param>
         /// <param name="cancellationToken">
@@ -5743,6 +5867,29 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeLocalGatewayVirtualInterfaces service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaces">REST API Reference for DescribeLocalGatewayVirtualInterfaces Operation</seealso>
         Task<DescribeLocalGatewayVirtualInterfacesResponse> DescribeLocalGatewayVirtualInterfacesAsync(DescribeLocalGatewayVirtualInterfacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeManagedPrefixLists
+
+
+
+        /// <summary>
+        /// Describes your managed prefix lists and any AWS-managed prefix lists.
+        /// 
+        ///  
+        /// <para>
+        /// To view the entries for your prefix list, use <a>GetManagedPrefixListEntries</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeManagedPrefixLists service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeManagedPrefixLists service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeManagedPrefixLists">REST API Reference for DescribeManagedPrefixLists Operation</seealso>
+        Task<DescribeManagedPrefixListsResponse> DescribeManagedPrefixListsAsync(DescribeManagedPrefixListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -5898,7 +6045,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes the specified placement groups or all of your placement groups. For more
         /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5913,7 +6060,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes the specified placement groups or all of your placement groups. For more
         /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePlacementGroups service method.</param>
         /// <param name="cancellationToken">
@@ -5933,9 +6080,11 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes available AWS services in a prefix list format, which includes the prefix
         /// list name and prefix list ID of the service and the IP address range for the service.
-        /// A prefix list ID is required for creating an outbound security group rule that allows
-        /// traffic from a VPC to access an AWS service through a gateway VPC endpoint. Currently,
-        /// the services that support this action are Amazon S3 and Amazon DynamoDB.
+        /// 
+        ///  
+        /// <para>
+        /// We recommend that you use <a>DescribeManagedPrefixLists</a> instead.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePrefixLists service method.</param>
         /// <param name="cancellationToken">
@@ -6549,12 +6698,12 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If you are describing a long list of snapshots, you can paginate the output to make
-        /// the list more manageable. The <code>MaxResults</code> parameter sets the maximum number
-        /// of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
-        /// value, then that number of results is returned along with a <code>NextToken</code>
-        /// value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
-        /// retrieve the remaining results.
+        /// If you are describing a long list of snapshots, we recommend that you paginate the
+        /// output to make the list more manageable. The <code>MaxResults</code> parameter sets
+        /// the maximum number of results returned in a single page. If the list of results exceeds
+        /// your <code>MaxResults</code> value, then that number of results is returned along
+        /// with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code>
+        /// request to retrieve the remaining results.
         /// </para>
         ///  
         /// <para>
@@ -6635,12 +6784,12 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If you are describing a long list of snapshots, you can paginate the output to make
-        /// the list more manageable. The <code>MaxResults</code> parameter sets the maximum number
-        /// of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
-        /// value, then that number of results is returned along with a <code>NextToken</code>
-        /// value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
-        /// retrieve the remaining results.
+        /// If you are describing a long list of snapshots, we recommend that you paginate the
+        /// output to make the list more manageable. The <code>MaxResults</code> parameter sets
+        /// the maximum number of results returned in a single page. If the list of results exceeds
+        /// your <code>MaxResults</code> value, then that number of results is returned along
+        /// with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code>
+        /// request to retrieve the remaining results.
         /// </para>
         ///  
         /// <para>
@@ -6668,7 +6817,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the data feed for Spot Instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -6682,7 +6831,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the data feed for Spot Instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotDatafeedSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -6843,7 +6992,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the Spot price history. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-        /// Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Instance pricing history</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// 
         ///  
         /// <para>
@@ -6865,7 +7014,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the Spot price history. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-        /// Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Instance pricing history</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// 
         ///  
         /// <para>
@@ -7191,9 +7340,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// If you are describing a long list of volumes, you can paginate the output to make
-        /// the list more manageable. The <code>MaxResults</code> parameter sets the maximum number
-        /// of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
+        /// If you are describing a long list of volumes, we recommend that you paginate the output
+        /// to make the list more manageable. The <code>MaxResults</code> parameter sets the maximum
+        /// number of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
         /// value, then that number of results is returned along with a <code>NextToken</code>
         /// value that can be passed to a subsequent <code>DescribeVolumes</code> request to retrieve
         /// the remaining results.
@@ -7219,9 +7368,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// If you are describing a long list of volumes, you can paginate the output to make
-        /// the list more manageable. The <code>MaxResults</code> parameter sets the maximum number
-        /// of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
+        /// If you are describing a long list of volumes, we recommend that you paginate the output
+        /// to make the list more manageable. The <code>MaxResults</code> parameter sets the maximum
+        /// number of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
         /// value, then that number of results is returned along with a <code>NextToken</code>
         /// value that can be passed to a subsequent <code>DescribeVolumes</code> request to retrieve
         /// the remaining results.
@@ -7248,24 +7397,20 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Reports the current modification status of EBS volumes.
+        /// Describes the most recent volume modification request for the specified EBS volumes.
         /// 
         ///  
         /// <para>
-        /// Current-generation EBS volumes support modification of attributes including type,
-        /// size, and (for <code>io1</code> volumes) IOPS provisioning while either attached to
-        /// or detached from an instance. Following an action from the API or the console to modify
-        /// a volume, the status of the modification may be <code>modifying</code>, <code>optimizing</code>,
-        /// <code>completed</code>, or <code>failed</code>. If a volume has never been modified,
-        /// then certain elements of the returned <code>VolumeModification</code> objects are
-        /// null. 
+        /// If a volume has never been modified, some information in the output will be null.
+        /// If a volume has been modified more than once, the output includes only the most recent
+        /// modification request.
         /// </para>
         ///  
         /// <para>
-        ///  You can also use CloudWatch Events to check the status of a modification to an EBS
+        /// You can also use CloudWatch Events to check the status of a modification to an EBS
         /// volume. For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
         /// CloudWatch Events User Guide</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-        /// Volume Modifications"</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Volume Modifications</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumesModifications service method.</param>
@@ -8567,7 +8712,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-        /// Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDefaultCreditSpecification service method.</param>
@@ -8632,6 +8777,24 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  GetGroupsForCapacityReservation
+
+
+
+        /// <summary>
+        /// Lists the resource groups to which a Capacity Reservation has been added.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroupsForCapacityReservation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGroupsForCapacityReservation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetGroupsForCapacityReservation">REST API Reference for GetGroupsForCapacityReservation Operation</seealso>
+        Task<GetGroupsForCapacityReservationResponse> GetGroupsForCapacityReservationAsync(GetGroupsForCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetHostReservationPurchasePreview
 
 
@@ -8663,7 +8826,16 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Retrieves the configuration data of the specified instance. You can use this data
-        /// to create a launch template.
+        /// to create a launch template. 
+        /// 
+        ///  
+        /// <para>
+        /// This action calls on other describe actions to get instance information. Depending
+        /// on your instance configuration, you may need to allow the following actions in your
+        /// IAM policy: DescribeSpotInstanceRequests, DescribeInstanceCreditSpecifications, DescribeVolumes,
+        /// DescribeInstanceAttribute, and DescribeElasticGpus. Or, you can allow <code>describe*</code>
+        /// depending on your instance requirements.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLaunchTemplateData service method.</param>
         /// <param name="cancellationToken">
@@ -8673,6 +8845,43 @@ namespace Amazon.EC2
         /// <returns>The response from the GetLaunchTemplateData service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetLaunchTemplateData">REST API Reference for GetLaunchTemplateData Operation</seealso>
         Task<GetLaunchTemplateDataResponse> GetLaunchTemplateDataAsync(GetLaunchTemplateDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetManagedPrefixListAssociations
+
+
+
+        /// <summary>
+        /// Gets information about the resources that are associated with the specified managed
+        /// prefix list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedPrefixListAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetManagedPrefixListAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListAssociations">REST API Reference for GetManagedPrefixListAssociations Operation</seealso>
+        Task<GetManagedPrefixListAssociationsResponse> GetManagedPrefixListAssociationsAsync(GetManagedPrefixListAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetManagedPrefixListEntries
+
+
+
+        /// <summary>
+        /// Gets information about the entries for a specified managed prefix list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedPrefixListEntries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetManagedPrefixListEntries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListEntries">REST API Reference for GetManagedPrefixListEntries Operation</seealso>
+        Task<GetManagedPrefixListEntriesResponse> GetManagedPrefixListEntriesAsync(GetManagedPrefixListEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -8963,12 +9172,12 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Enables or disables an Availability Zone group for your account.
+        /// Changes the opt-in status of the Local Zone and Wavelength Zone group for your account.
         /// 
         ///  
         /// <para>
-        /// Use <a href="https://docs.aws.amazon.com/AWSEC2ApiDocReef/build/server-root/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">describe-availability-zones</a>
-        /// to view the value for <code>GroupName</code>.
+        /// Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
+        /// DescribeAvailabilityZones</a> to view the value for <code>GroupName</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyAvailabilityZoneGroup service method.</param>
@@ -9045,7 +9254,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-        /// Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDefaultCreditSpecification service method.</param>
@@ -9353,7 +9562,7 @@ namespace Amazon.EC2
         /// <para>
         /// To modify some attributes, the instance must be stopped. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
-        /// Attributes of a Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// attributes of a stopped instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceAttribute service method.</param>
@@ -9398,7 +9607,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-        /// Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceCreditSpecification service method.</param>
@@ -9441,7 +9650,7 @@ namespace Amazon.EC2
         /// a state of “pending”. After the parameter modifications are successfully applied to
         /// the instance, the state of the modifications changes from “pending” to “applied” in
         /// subsequent describe-instances API calls. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-        /// Metadata and User Data</a>.
+        /// metadata and user data</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceMetadataOptions service method.</param>
         /// <param name="cancellationToken">
@@ -9522,6 +9731,35 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyLaunchTemplate service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLaunchTemplate">REST API Reference for ModifyLaunchTemplate Operation</seealso>
         Task<ModifyLaunchTemplateResponse> ModifyLaunchTemplateAsync(ModifyLaunchTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyManagedPrefixList
+
+
+
+        /// <summary>
+        /// Modifies the specified managed prefix list.
+        /// 
+        ///  
+        /// <para>
+        /// Adding or removing entries in a prefix list creates a new version of the prefix list.
+        /// Changing the name of the prefix list does not affect the version.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a current version number that does not match the true current version
+        /// number, the request fails.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyManagedPrefixList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyManagedPrefixList service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyManagedPrefixList">REST API Reference for ModifyManagedPrefixList Operation</seealso>
+        Task<ModifyManagedPrefixListResponse> ModifyManagedPrefixListAsync(ModifyManagedPrefixListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -10185,7 +10423,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Enables detailed monitoring for a running instance. Otherwise, basic monitoring is
         /// enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-        /// Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your instances and volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -10372,7 +10610,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
-        /// Console Output and Rebooting Instances</a> in the <i>Amazon Elastic Compute Cloud
+        /// console output and rebooting instances</a> in the <i>Amazon Elastic Compute Cloud
         /// User Guide</i>.
         /// </para>
         /// </summary>
@@ -10395,7 +10633,7 @@ namespace Amazon.EC2
         /// Registers an AMI. When you're creating an AMI, this is the final step you must complete
         /// before you can launch an instance from the AMI. For more information about creating
         /// AMIs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
-        /// Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -10407,12 +10645,11 @@ namespace Amazon.EC2
         /// You can also use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI
         /// from a snapshot of a root device volume. You specify the snapshot using the block
         /// device mapping. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html">Launching
-        /// a Linux Instance from a Backup</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// a Linux instance from a backup</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// You can't register an image where a secondary (non-root) snapshot has AWS Marketplace
-        /// product codes.
+        /// If any snapshots have AWS Marketplace product codes, they are copied to the new AMI.
         /// </para>
         ///  
         /// <para>
@@ -10442,7 +10679,7 @@ namespace Amazon.EC2
         /// matching billing product code, the Reserved Instance will not be applied to the On-Demand
         /// Instance. For information about how to obtain the platform details and billing information
         /// of an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
-        /// Billing Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// billing information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -10914,7 +11151,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
-        /// Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Fleet requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotFleet service method.</param>
@@ -10938,7 +11175,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Instance requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances service method.</param>
@@ -11114,6 +11351,25 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  RestoreManagedPrefixListVersion
+
+
+
+        /// <summary>
+        /// Restores the entries from a previous version of a managed prefix list to a new version
+        /// of the prefix list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreManagedPrefixListVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreManagedPrefixListVersion service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreManagedPrefixListVersion">REST API Reference for RestoreManagedPrefixListVersion Operation</seealso>
+        Task<RestoreManagedPrefixListVersionResponse> RestoreManagedPrefixListVersionAsync(RestoreManagedPrefixListVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RevokeClientVpnIngress
 
 
@@ -11233,7 +11489,7 @@ namespace Amazon.EC2
         /// Some instance types must be launched into a VPC. If you do not have a default VPC,
         /// or if you do not specify a subnet ID, the request fails. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
-        /// Types Available Only in a VPC</a>.
+        /// types available only in a VPC</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11243,13 +11499,13 @@ namespace Amazon.EC2
         ///  </li> <li> 
         /// <para>
         /// Not all instance types support IPv6 addresses. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Types</a>.
+        /// types</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you don't specify a security group ID, we use the default security group. For more
         /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
-        /// Groups</a>.
+        /// groups</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11275,20 +11531,20 @@ namespace Amazon.EC2
         /// can check the state of your instance using <a>DescribeInstances</a>. You can tag instances
         /// and EBS volumes during launch, after launch, or both. For more information, see <a>CreateTags</a>
         /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-        /// Your Amazon EC2 Resources</a>.
+        /// your Amazon EC2 resources</a>.
         /// </para>
         ///  
         /// <para>
         /// Linux instances have access to the public key of the key pair at boot. You can use
         /// this key to provide secure access to the instance. Amazon EC2 public images use this
         /// feature to provide secure access without passwords. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
-        /// To Do If An Instance Immediately Terminates</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
-        /// Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// to do if an instance immediately terminates</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
+        /// connecting to your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunInstances service method.</param>
@@ -11415,7 +11671,7 @@ namespace Amazon.EC2
         /// <para>
         /// For more information about configuring your operating system to generate a crash dump
         /// when a kernel panic or stop error occurs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send
-        /// a Diagnostic Interrupt</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send
+        /// a diagnostic interrupt</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send
         /// a Diagnostic Interrupt</a> (Windows instances).
         /// </para>
         /// </summary>
@@ -11463,7 +11719,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
-        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartInstances service method.</param>
@@ -11520,7 +11776,7 @@ namespace Amazon.EC2
         /// You can use the Stop action to hibernate an instance if the instance is <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled
         /// for hibernation</a> and it meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
         /// prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-        /// Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -11538,7 +11794,7 @@ namespace Amazon.EC2
         /// You can't stop or hibernate instance store-backed instances. You can't use the Stop
         /// action to hibernate Spot Instances, but you can specify that Amazon EC2 should hibernate
         /// Spot Instances when they are interrupted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
-        /// Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -11556,14 +11812,14 @@ namespace Amazon.EC2
         /// device and any other devices attached during the instance launch are automatically
         /// deleted. For more information about the differences between rebooting, stopping, hibernating,
         /// and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-        /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// When you stop an instance, we attempt to shut it down forcibly after a short while.
         /// If your instance appears stuck in the stopping state after a period of time, there
         /// may be an issue with the underlying host computer. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
-        /// Stopping Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// stopping your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopInstances service method.</param>
@@ -11628,12 +11884,12 @@ namespace Amazon.EC2
         /// volumes with the <code>DeleteOnTermination</code> block device mapping parameter set
         /// to <code>true</code> are automatically deleted. For more information about the differences
         /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-        /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
-        /// Terminating Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// terminating your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateInstances service method.</param>
@@ -11690,7 +11946,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Disables detailed monitoring for a running instance. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-        /// Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your instances and volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnmonitorInstances service method.</param>
         /// <param name="cancellationToken">

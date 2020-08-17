@@ -31,12 +31,12 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DescribeEventSubscriptions operation.
     /// Lists all the subscription descriptions for a customer account. The description for
-    /// a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID,
-    /// CreationTime, and Status.
+    /// a subscription includes <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>,
+    /// <code>SourceType</code>, <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
     /// 
     ///  
     /// <para>
-    /// If you specify a SubscriptionName, lists the description for that subscription.
+    /// If you specify a <code>SubscriptionName</code>, lists the description for that subscription.
     /// </para>
     /// </summary>
     public partial class DescribeEventSubscriptionsRequest : AmazonRDSRequest

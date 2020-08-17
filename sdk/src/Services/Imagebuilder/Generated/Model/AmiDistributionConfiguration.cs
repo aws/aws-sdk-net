@@ -35,6 +35,7 @@ namespace Amazon.Imagebuilder.Model
     {
         private Dictionary<string, string> _amiTags = new Dictionary<string, string>();
         private string _description;
+        private string _kmsKeyId;
         private LaunchPermissionConfiguration _launchPermission;
         private string _name;
 
@@ -74,6 +75,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        ///  The KMS key identifier used to encrypt the distributed image. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

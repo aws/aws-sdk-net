@@ -38,7 +38,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property S3Location. 
         /// <para>
-        /// Location of the Amazon S3 object.
+        /// The location of the Amazon S3 object.
         /// </para>
         /// </summary>
         public S3Location S3Location

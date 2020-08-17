@@ -45,6 +45,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CredentialPair requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAlternateDataSourceParameters())
+            {
+                context.Writer.WritePropertyName("AlternateDataSourceParameters");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAlternateDataSourceParametersListValue in requestObject.AlternateDataSourceParameters)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataSourceParametersMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAlternateDataSourceParametersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetPassword())
             {
                 context.Writer.WritePropertyName("Password");

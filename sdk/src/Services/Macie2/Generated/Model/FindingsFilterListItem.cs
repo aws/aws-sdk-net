@@ -33,10 +33,31 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class FindingsFilterListItem
     {
+        private FindingsFilterAction _action;
         private string _arn;
         private string _id;
         private string _name;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property Action. 
+        /// <para>
+        /// The action that's performed on findings that meet the filter criteria. Possible values
+        /// are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform
+        /// any action on the findings.
+        /// </para>
+        /// </summary>
+        public FindingsFilterAction Action
+        {
+            get { return this._action; }
+            set { this._action = value; }
+        }
+
+        // Check to see if Action property is set
+        internal bool IsSetAction()
+        {
+            return this._action != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 

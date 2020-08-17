@@ -41,8 +41,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code for the text file used to update the custom vocabulary. US English
-        /// (en-US) is the only language supported in Amazon Transcribe Medical.
+        /// The language code for the language of the text file used to update the custom vocabulary.
+        /// US English (en-US) is the only language supported in Amazon Transcribe Medical.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -60,7 +60,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time the vocabulary was updated.
+        /// The date and time that the vocabulary was updated.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -98,7 +98,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property VocabularyState. 
         /// <para>
         /// The processing state of the update to the vocabulary. When the <code>VocabularyState</code>
-        /// field is <code>READY</code> the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code>
+        /// field is <code>READY</code>, the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code>
         /// request.
         /// </para>
         /// </summary>

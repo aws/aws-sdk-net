@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// The name of the Availability Zone for use during database migration.
+    /// The name of an Availability Zone for use during database migration.
     /// </summary>
     public partial class AvailabilityZone
     {

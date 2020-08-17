@@ -75,6 +75,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     response.MailFromAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Policies", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Policies = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Tags", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);

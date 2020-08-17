@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         private AvailConfiguration _availConfiguration;
         private BlackoutSlate _blackoutSlate;
         private List<CaptionDescription> _captionDescriptions = new List<CaptionDescription>();
+        private FeatureActivations _featureActivations;
         private GlobalConfiguration _globalConfiguration;
         private NielsenConfiguration _nielsenConfiguration;
         private List<OutputGroup> _outputGroups = new List<OutputGroup>();
@@ -119,6 +120,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetCaptionDescriptions()
         {
             return this._captionDescriptions != null && this._captionDescriptions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FeatureActivations. Feature Activations
+        /// </summary>
+        public FeatureActivations FeatureActivations
+        {
+            get { return this._featureActivations; }
+            set { this._featureActivations = value; }
+        }
+
+        // Check to see if FeatureActivations property is set
+        internal bool IsSetFeatureActivations()
+        {
+            return this._featureActivations != null;
         }
 
         /// <summary>

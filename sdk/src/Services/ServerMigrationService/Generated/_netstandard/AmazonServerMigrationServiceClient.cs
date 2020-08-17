@@ -38,33 +38,21 @@ namespace Amazon.ServerMigrationService
     /// <summary>
     /// Implementation for accessing ServerMigrationService
     ///
-    /// AAWS Sever Migration Service 
+    /// AWS Server Migration Service 
     /// <para>
-    /// This is the <i>AWS Sever Migration Service API Reference</i>. It provides descriptions,
-    /// syntax, and usage examples for each of the actions and data types for the AWS Sever
-    /// Migration Service (AWS SMS). The topic for each action shows the Query API request
-    /// parameters and the XML response. You can also view the XML request elements in the
-    /// WSDL.
-    /// </para>
-    ///  
-    /// <para>
-    /// Alternatively, you can use one of the AWS SDKs to access an API that's tailored to
-    /// the programming language or platform that you're using. For more information, see
-    /// <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// To learn more about the Server Migration Service, see the following resources:
+    /// AWS Server Migration Service (AWS SMS) makes it easier and faster for you to migrate
+    /// your on-premises workloads to AWS. To learn more about AWS SMS, see the following
+    /// resources:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://aws.amazon.com/server-migration-service/">AWS Sever Migration Service
+    ///  <a href="http://aws.amazon.com/server-migration-service/">AWS Server Migration Service
     /// product page</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/server-migration-service/latest/userguide/server-migration.html">AWS
-    /// Sever Migration Service User Guide</a> 
+    ///  <a href="https://docs.aws.amazon.com/server-migration-service/latest/userguide/">AWS
+    /// Server Migration Service User Guide</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -397,7 +385,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Deletes an existing application. Optionally deletes the launched stack associated
+        /// Deletes the specified application. Optionally deletes the launched stack associated
         /// with the application and all AWS SMS replication jobs for servers in the application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApp service method.</param>
@@ -448,7 +436,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Deletes existing launch configuration for an application.
+        /// Deletes the launch configuration for the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAppLaunchConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -498,7 +486,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Deletes existing replication configuration for an application.
+        /// Deletes the replication configuration for the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAppReplicationConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -530,6 +518,56 @@ namespace Amazon.ServerMigrationService
             options.ResponseUnmarshaller = DeleteAppReplicationConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteAppReplicationConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAppValidationConfiguration
+
+        internal virtual DeleteAppValidationConfigurationResponse DeleteAppValidationConfiguration(DeleteAppValidationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppValidationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppValidationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAppValidationConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the validation configuration for the specified application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppValidationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAppValidationConfiguration service method, as returned by ServerMigrationService.</returns>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InternalErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InvalidParameterException">
+        /// A specified parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.MissingRequiredParameterException">
+        /// A required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.OperationNotPermittedException">
+        /// This operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
+        /// You lack permissions needed to perform this operation. Check your IAM policies, and
+        /// ensure that you are using the correct access keys.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteAppValidationConfiguration">REST API Reference for DeleteAppValidationConfiguration Operation</seealso>
+        public virtual Task<DeleteAppValidationConfigurationResponse> DeleteAppValidationConfigurationAsync(DeleteAppValidationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppValidationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppValidationConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAppValidationConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -756,7 +794,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Generates an Amazon CloudFormation template based on the current launch configuration
+        /// Generates an AWS CloudFormation template based on the current launch configuration
         /// and writes it to an Amazon S3 object in the customer’s Amazon S3 bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateTemplate service method.</param>
@@ -807,7 +845,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Retrieve information about an application.
+        /// Retrieve information about the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApp service method.</param>
         /// <param name="cancellationToken">
@@ -857,7 +895,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Retrieves the application launch configuration associated with an application.
+        /// Retrieves the application launch configuration associated with the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAppLaunchConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -907,7 +945,8 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Retrieves an application replication configuration associatd with an application.
+        /// Retrieves the application replication configuration associated with the specified
+        /// application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAppReplicationConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -939,6 +978,106 @@ namespace Amazon.ServerMigrationService
             options.ResponseUnmarshaller = GetAppReplicationConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAppReplicationConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAppValidationConfiguration
+
+        internal virtual GetAppValidationConfigurationResponse GetAppValidationConfiguration(GetAppValidationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppValidationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppValidationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetAppValidationConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a configuration for validating an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAppValidationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAppValidationConfiguration service method, as returned by ServerMigrationService.</returns>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InternalErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InvalidParameterException">
+        /// A specified parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.MissingRequiredParameterException">
+        /// A required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.OperationNotPermittedException">
+        /// This operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
+        /// You lack permissions needed to perform this operation. Check your IAM policies, and
+        /// ensure that you are using the correct access keys.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppValidationConfiguration">REST API Reference for GetAppValidationConfiguration Operation</seealso>
+        public virtual Task<GetAppValidationConfigurationResponse> GetAppValidationConfigurationAsync(GetAppValidationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppValidationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppValidationConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAppValidationConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAppValidationOutput
+
+        internal virtual GetAppValidationOutputResponse GetAppValidationOutput(GetAppValidationOutputRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppValidationOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppValidationOutputResponseUnmarshaller.Instance;
+
+            return Invoke<GetAppValidationOutputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves output from validating an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAppValidationOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAppValidationOutput service method, as returned by ServerMigrationService.</returns>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InternalErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InvalidParameterException">
+        /// A specified parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.MissingRequiredParameterException">
+        /// A required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.OperationNotPermittedException">
+        /// This operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
+        /// You lack permissions needed to perform this operation. Check your IAM policies, and
+        /// ensure that you are using the correct access keys.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppValidationOutput">REST API Reference for GetAppValidationOutput Operation</seealso>
+        public virtual Task<GetAppValidationOutputResponse> GetAppValidationOutputAsync(GetAppValidationOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppValidationOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppValidationOutputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAppValidationOutputResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1096,6 +1235,15 @@ namespace Amazon.ServerMigrationService
         /// </param>
         /// 
         /// <returns>The response from the GetServers service method, as returned by ServerMigrationService.</returns>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InternalErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InvalidParameterException">
+        /// A specified parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.MissingRequiredParameterException">
+        /// A required parameter is missing.
+        /// </exception>
         /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
         /// You lack permissions needed to perform this operation. Check your IAM policies, and
         /// ensure that you are using the correct access keys.
@@ -1108,6 +1256,56 @@ namespace Amazon.ServerMigrationService
             options.ResponseUnmarshaller = GetServersResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetServersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ImportAppCatalog
+
+        internal virtual ImportAppCatalogResponse ImportAppCatalog(ImportAppCatalogRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportAppCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportAppCatalogResponseUnmarshaller.Instance;
+
+            return Invoke<ImportAppCatalogResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Allows application import from AWS Migration Hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportAppCatalog service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportAppCatalog service method, as returned by ServerMigrationService.</returns>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InternalErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InvalidParameterException">
+        /// A specified parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.MissingRequiredParameterException">
+        /// A required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.OperationNotPermittedException">
+        /// This operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
+        /// You lack permissions needed to perform this operation. Check your IAM policies, and
+        /// ensure that you are using the correct access keys.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportAppCatalog">REST API Reference for ImportAppCatalog Operation</seealso>
+        public virtual Task<ImportAppCatalogResponse> ImportAppCatalogAsync(ImportAppCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportAppCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportAppCatalogResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportAppCatalogResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1127,7 +1325,7 @@ namespace Amazon.ServerMigrationService
 
         /// <summary>
         /// Gathers a complete list of on-premises servers. Connectors must be installed and monitoring
-        /// all servers that you want to import.
+        /// all servers to import.
         /// 
         ///  
         /// <para>
@@ -1183,7 +1381,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Launches an application stack.
+        /// Launches the specified application as a stack in AWS CloudFormation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the LaunchApp service method.</param>
         /// <param name="cancellationToken">
@@ -1233,7 +1431,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Returns a list of summaries for all applications.
+        /// Retrieves summaries for all applications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApps service method.</param>
         /// <param name="cancellationToken">
@@ -1269,6 +1467,56 @@ namespace Amazon.ServerMigrationService
 
         #endregion
         
+        #region  NotifyAppValidationOutput
+
+        internal virtual NotifyAppValidationOutputResponse NotifyAppValidationOutput(NotifyAppValidationOutputRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyAppValidationOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyAppValidationOutputResponseUnmarshaller.Instance;
+
+            return Invoke<NotifyAppValidationOutputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides information to AWS SMS about whether application validation is successful.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NotifyAppValidationOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the NotifyAppValidationOutput service method, as returned by ServerMigrationService.</returns>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InternalErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InvalidParameterException">
+        /// A specified parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.MissingRequiredParameterException">
+        /// A required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.OperationNotPermittedException">
+        /// This operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
+        /// You lack permissions needed to perform this operation. Check your IAM policies, and
+        /// ensure that you are using the correct access keys.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/NotifyAppValidationOutput">REST API Reference for NotifyAppValidationOutput Operation</seealso>
+        public virtual Task<NotifyAppValidationOutputResponse> NotifyAppValidationOutputAsync(NotifyAppValidationOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyAppValidationOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyAppValidationOutputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<NotifyAppValidationOutputResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutAppLaunchConfiguration
 
         internal virtual PutAppLaunchConfigurationResponse PutAppLaunchConfiguration(PutAppLaunchConfigurationRequest request)
@@ -1283,7 +1531,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Creates a launch configuration for an application.
+        /// Creates or updates the launch configuration for the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAppLaunchConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1333,7 +1581,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Creates or updates a replication configuration for an application.
+        /// Creates or updates the replication configuration for the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAppReplicationConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1369,6 +1617,56 @@ namespace Amazon.ServerMigrationService
 
         #endregion
         
+        #region  PutAppValidationConfiguration
+
+        internal virtual PutAppValidationConfigurationResponse PutAppValidationConfiguration(PutAppValidationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAppValidationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAppValidationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutAppValidationConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates or updates a validation configuration for the specified application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAppValidationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAppValidationConfiguration service method, as returned by ServerMigrationService.</returns>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InternalErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InvalidParameterException">
+        /// A specified parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.MissingRequiredParameterException">
+        /// A required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.OperationNotPermittedException">
+        /// This operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
+        /// You lack permissions needed to perform this operation. Check your IAM policies, and
+        /// ensure that you are using the correct access keys.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/PutAppValidationConfiguration">REST API Reference for PutAppValidationConfiguration Operation</seealso>
+        public virtual Task<PutAppValidationConfigurationResponse> PutAppValidationConfigurationAsync(PutAppValidationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAppValidationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAppValidationConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutAppValidationConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartAppReplication
 
         internal virtual StartAppReplicationResponse StartAppReplication(StartAppReplicationRequest request)
@@ -1383,7 +1681,8 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Starts replicating an application.
+        /// Starts replicating the specified application by creating replication jobs for each
+        /// server in the application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartAppReplication service method.</param>
         /// <param name="cancellationToken">
@@ -1419,6 +1718,56 @@ namespace Amazon.ServerMigrationService
 
         #endregion
         
+        #region  StartOnDemandAppReplication
+
+        internal virtual StartOnDemandAppReplicationResponse StartOnDemandAppReplication(StartOnDemandAppReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartOnDemandAppReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOnDemandAppReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StartOnDemandAppReplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts an on-demand replication run for the specified application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOnDemandAppReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartOnDemandAppReplication service method, as returned by ServerMigrationService.</returns>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InternalErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.InvalidParameterException">
+        /// A specified parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.MissingRequiredParameterException">
+        /// A required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.OperationNotPermittedException">
+        /// This operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.ServerMigrationService.Model.UnauthorizedOperationException">
+        /// You lack permissions needed to perform this operation. Check your IAM policies, and
+        /// ensure that you are using the correct access keys.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandAppReplication">REST API Reference for StartOnDemandAppReplication Operation</seealso>
+        public virtual Task<StartOnDemandAppReplicationResponse> StartOnDemandAppReplicationAsync(StartOnDemandAppReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartOnDemandAppReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOnDemandAppReplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartOnDemandAppReplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartOnDemandReplicationRun
 
         internal virtual StartOnDemandReplicationRunResponse StartOnDemandReplicationRun(StartOnDemandReplicationRunRequest request)
@@ -1438,8 +1787,8 @@ namespace Amazon.ServerMigrationService
         /// 
         ///  
         /// <para>
-        /// There is a limit on the number of on-demand replications runs you can request in a
-        /// 24-hour period.
+        /// There is a limit on the number of on-demand replications runs that you can request
+        /// in a 24-hour period.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartOnDemandReplicationRun service method.</param>
@@ -1448,6 +1797,10 @@ namespace Amazon.ServerMigrationService
         /// </param>
         /// 
         /// <returns>The response from the StartOnDemandReplicationRun service method, as returned by ServerMigrationService.</returns>
+        /// <exception cref="Amazon.ServerMigrationService.Model.DryRunOperationException">
+        /// The user has the required permissions, so the request would have succeeded, but a
+        /// dry run was performed.
+        /// </exception>
         /// <exception cref="Amazon.ServerMigrationService.Model.InvalidParameterException">
         /// A specified parameter is not valid.
         /// </exception>
@@ -1491,7 +1844,8 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Stops replicating an application.
+        /// Stops replicating the specified application by deleting the replication job for each
+        /// server in the application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopAppReplication service method.</param>
         /// <param name="cancellationToken">
@@ -1541,7 +1895,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Terminates the stack for an application.
+        /// Terminates the stack for the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateApp service method.</param>
         /// <param name="cancellationToken">
@@ -1591,7 +1945,7 @@ namespace Amazon.ServerMigrationService
 
 
         /// <summary>
-        /// Updates an application.
+        /// Updates the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApp service method.</param>
         /// <param name="cancellationToken">

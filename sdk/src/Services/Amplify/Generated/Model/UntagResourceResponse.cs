@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Response for untag resource.
+    /// The response for the untag resource request.
     /// </summary>
     public partial class UntagResourceResponse : AmazonWebServiceResponse
     {

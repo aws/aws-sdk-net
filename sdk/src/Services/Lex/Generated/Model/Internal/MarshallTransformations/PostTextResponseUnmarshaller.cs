@@ -51,6 +51,18 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("alternativeIntents", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PredictedIntent, PredictedIntentUnmarshaller>(PredictedIntentUnmarshaller.Instance);
+                    response.AlternativeIntents = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("botVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.BotVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dialogState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -73,6 +85,12 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MessageFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nluIntentConfidence", targetDepth))
+                {
+                    var unmarshaller = IntentConfidenceUnmarshaller.Instance;
+                    response.NluIntentConfidence = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("responseCard", targetDepth))

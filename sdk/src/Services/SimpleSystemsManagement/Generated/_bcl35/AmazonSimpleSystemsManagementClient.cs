@@ -681,16 +681,16 @@ namespace Amazon.SimpleSystemsManagement
         #region  CreateAssociation
 
         /// <summary>
-        /// Associates the specified Systems Manager document with the specified instances or
-        /// targets.
-        /// 
-        ///  
-        /// <para>
-        /// When you associate a document with one or more instances, SSM Agent running on the
-        /// instance processes the document and configures the instance as specified. If you associate
-        /// a document with an instance that already has an associated document, the system returns
-        /// the <code>AssociationAlreadyExists</code> exception.
-        /// </para>
+        /// A State Manager association defines the state that you want to maintain on your instances.
+        /// For example, an association can specify that anti-virus software must be installed
+        /// and running on your instances, or that certain ports must be closed. For static targets,
+        /// the association specifies a schedule for when the configuration is reapplied. For
+        /// dynamic targets, such as an AWS Resource Group or an AWS Autoscaling Group, State
+        /// Manager applies the configuration when new instances are added to the group. The association
+        /// also specifies actions to take when applying the configuration. For example, an association
+        /// for anti-virus software might run once a day. If the software is not installed, then
+        /// State Manager installs it. If the software is installed, but the service is not running,
+        /// then the association might instruct State Manager to start the service.
         /// </summary>
         /// <param name="instanceId">The instance ID. <note>  <code>InstanceId</code> has been deprecated. To specify an instance ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with SSM documents that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you cannot use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter. </note></param>
         /// <param name="name">The name of the SSM document that contains the configuration information for the instance. You can specify Command or Automation documents. You can specify AWS-predefined documents, documents you created, or a document that is shared with you from another account. For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
@@ -761,16 +761,16 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Associates the specified Systems Manager document with the specified instances or
-        /// targets.
-        /// 
-        ///  
-        /// <para>
-        /// When you associate a document with one or more instances, SSM Agent running on the
-        /// instance processes the document and configures the instance as specified. If you associate
-        /// a document with an instance that already has an associated document, the system returns
-        /// the <code>AssociationAlreadyExists</code> exception.
-        /// </para>
+        /// A State Manager association defines the state that you want to maintain on your instances.
+        /// For example, an association can specify that anti-virus software must be installed
+        /// and running on your instances, or that certain ports must be closed. For static targets,
+        /// the association specifies a schedule for when the configuration is reapplied. For
+        /// dynamic targets, such as an AWS Resource Group or an AWS Autoscaling Group, State
+        /// Manager applies the configuration when new instances are added to the group. The association
+        /// also specifies actions to take when applying the configuration. For example, an association
+        /// for anti-virus software might run once a day. If the software is not installed, then
+        /// State Manager installs it. If the software is installed, but the service is not running,
+        /// then the association might instruct State Manager to start the service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssociation service method.</param>
         /// 
@@ -8656,7 +8656,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Runs commands on one or more managed instances.
         /// </summary>
         /// <param name="documentName">Required. The name of the Systems Manager document to run. This can be a public document or a custom document.</param>
-        /// <param name="instanceIds">The instance IDs where the command should run. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags. For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</param>
+        /// <param name="instanceIds">The IDs of the instances where the command should run. Specifying instance IDs is most useful when you are targeting a limited number of instances, though you can specify up to 50 IDs. To target a larger number of instances, or if you prefer not to list individual instance IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the instances to send commands to, you can a send command to tens, hundreds, or thousands of instances at once. For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</param>
         /// 
         /// <returns>The response from the SendCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">

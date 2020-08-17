@@ -30,11 +30,33 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateBackup operation.
-    /// Creates a backup of an existing Amazon FSx for Windows File Server file system. Creating
-    /// regular backups for your file system is a best practice that complements the replication
-    /// that Amazon FSx for Windows File Server performs for your file system. It also enables
-    /// you to restore from user modification of data.
+    /// Creates a backup of an existing Amazon FSx file system. Creating regular backups for
+    /// your file system is a best practice, enabling you to restore a file system from a
+    /// backup if an issue arises with the original file system.
     /// 
+    ///  
+    /// <para>
+    /// For Amazon FSx for Lustre file systems, you can create a backup only for file systems
+    /// with the following configuration:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// a Persistent deployment type
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// is <i>not</i> linked to an Amazon S3 data respository.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information about backing up Amazon FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
+    /// with FSx for Lustre backups</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about backing up Amazon FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
+    /// with FSx for Windows backups</a>.
+    /// </para>
     ///  
     /// <para>
     /// If a backup with the specified client request token exists, and the parameters match,
@@ -62,12 +84,11 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  
     /// <para>
-    /// The <code>CreateFileSystem</code> operation returns while the backup's lifecycle state
-    /// is still <code>CREATING</code>. You can check the file system creation status by calling
+    /// The <code>CreateBackup</code> operation returns while the backup's lifecycle state
+    /// is still <code>CREATING</code>. You can check the backup creation status by calling
     /// the <a>DescribeBackups</a> operation, which returns the backup state along with other
     /// information.
     /// </para>
-    ///  <note>  </note>
     /// </summary>
     public partial class CreateBackupRequest : AmazonFSxRequest
     {
@@ -78,9 +99,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent
-        /// creation. This string is automatically filled on your behalf when you use the AWS
-        /// Command Line Interface (AWS CLI) or an AWS SDK.
+        /// A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation.
+        /// This string is automatically filled on your behalf when you use the AWS Command Line
+        /// Interface (AWS CLI) or an AWS SDK.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -119,7 +140,9 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tags to apply to the backup at backup creation. The key value of the <code>Name</code>
-        /// tag appears in the console as the backup name.
+        /// tag appears in the console as the backup name. If you have set <code>CopyTagsToBackups</code>
+        /// to true, and you specify one or more tags using the <code>CreateBackup</code> action,
+        /// no existing tags on the file system are copied from the file system to the backup.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

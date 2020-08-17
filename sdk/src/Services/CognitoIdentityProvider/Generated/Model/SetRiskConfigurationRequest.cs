@@ -38,10 +38,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// To enable Amazon Cognito advanced security features, update the user pool to include
     /// the <code>UserPoolAddOns</code> key<code>AdvancedSecurityMode</code>.
     /// </para>
-    ///  
-    /// <para>
-    /// See .
-    /// </para>
     /// </summary>
     public partial class SetRiskConfigurationRequest : AmazonCognitoIdentityProviderRequest
     {

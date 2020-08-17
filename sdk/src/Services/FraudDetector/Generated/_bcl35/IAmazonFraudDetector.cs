@@ -47,6 +47,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateVariable service method.</param>
         /// 
         /// <returns>The response from the BatchCreateVariable service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -96,6 +101,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the BatchGetVariable service method.</param>
         /// 
         /// <returns>The response from the BatchGetVariable service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -145,6 +155,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the CreateDetectorVersion service method.</param>
         /// 
         /// <returns>The response from the CreateDetectorVersion service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -188,23 +203,76 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  CreateModel
+
+
+        /// <summary>
+        /// Creates a model using the specified model type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateModel service method.</param>
+        /// 
+        /// <returns>The response from the CreateModel service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateModel">REST API Reference for CreateModel Operation</seealso>
+        CreateModelResponse CreateModel(CreateModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateModel operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateModel">REST API Reference for CreateModel Operation</seealso>
+        IAsyncResult BeginCreateModel(CreateModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateModel.</param>
+        /// 
+        /// <returns>Returns a  CreateModelResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateModel">REST API Reference for CreateModel Operation</seealso>
+        CreateModelResponse EndCreateModel(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateModelVersion
 
 
         /// <summary>
-        /// Creates a version of the model using the specified model type.
+        /// Creates a version of the model using the specified model type and model id.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateModelVersion service method.</param>
         /// 
         /// <returns>The response from the CreateModelVersion service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
         /// An exception indicating the specified resource was not found.
-        /// </exception>
-        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
-        /// An exception indicating a throttling error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
         /// An exception indicating a specified value is not allowed.
@@ -249,6 +317,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the CreateRule service method.</param>
         /// 
         /// <returns>The response from the CreateRule service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -298,6 +371,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the CreateVariable service method.</param>
         /// 
         /// <returns>The response from the CreateVariable service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -348,6 +426,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the DeleteDetector service method.</param>
         /// 
         /// <returns>The response from the DeleteDetector service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
         /// An exception indicating there was a conflict during a delete operation. The following
         /// delete operations can cause a conflict exception:
@@ -365,8 +448,8 @@ namespace Amazon.FraudDetector
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DeleteRuleVersion: A conflict exception will occur if the <code>RuleVersion</code>
-        /// is in use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -420,6 +503,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the DeleteDetectorVersion service method.</param>
         /// 
         /// <returns>The response from the DeleteDetectorVersion service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
         /// An exception indicating there was a conflict during a delete operation. The following
         /// delete operations can cause a conflict exception:
@@ -437,8 +525,8 @@ namespace Amazon.FraudDetector
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DeleteRuleVersion: A conflict exception will occur if the <code>RuleVersion</code>
-        /// is in use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -494,6 +582,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the DeleteEvent service method.</param>
         /// 
         /// <returns>The response from the DeleteEvent service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -531,16 +624,21 @@ namespace Amazon.FraudDetector
 
         #endregion
         
-        #region  DeleteRuleVersion
+        #region  DeleteRule
 
 
         /// <summary>
-        /// Deletes the rule version. You cannot delete a rule version if it is used by an <code>ACTIVE</code>
+        /// Deletes the rule. You cannot delete a rule if it is used by an <code>ACTIVE</code>
         /// or <code>INACTIVE</code> detector version.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteRuleVersion service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRule service method.</param>
         /// 
-        /// <returns>The response from the DeleteRuleVersion service method, as returned by FraudDetector.</returns>
+        /// <returns>The response from the DeleteRule service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
         /// An exception indicating there was a conflict during a delete operation. The following
         /// delete operations can cause a conflict exception:
@@ -558,8 +656,8 @@ namespace Amazon.FraudDetector
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DeleteRuleVersion: A conflict exception will occur if the <code>RuleVersion</code>
-        /// is in use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -572,34 +670,34 @@ namespace Amazon.FraudDetector
         /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
         /// An exception indicating a specified value is not allowed.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRuleVersion">REST API Reference for DeleteRuleVersion Operation</seealso>
-        DeleteRuleVersionResponse DeleteRuleVersion(DeleteRuleVersionRequest request);
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
+        DeleteRuleResponse DeleteRule(DeleteRuleRequest request);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteRuleVersion operation.
+        /// Initiates the asynchronous execution of the DeleteRule operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteRuleVersion operation on AmazonFraudDetectorClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRule operation on AmazonFraudDetectorClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRuleVersion
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRule
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRuleVersion">REST API Reference for DeleteRuleVersion Operation</seealso>
-        IAsyncResult BeginDeleteRuleVersion(DeleteRuleVersionRequest request, AsyncCallback callback, object state);
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
+        IAsyncResult BeginDeleteRule(DeleteRuleRequest request, AsyncCallback callback, object state);
 
 
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  DeleteRuleVersion operation.
+        /// Finishes the asynchronous execution of the  DeleteRule operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRuleVersion.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRule.</param>
         /// 
-        /// <returns>Returns a  DeleteRuleVersionResult from FraudDetector.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRuleVersion">REST API Reference for DeleteRuleVersion Operation</seealso>
-        DeleteRuleVersionResponse EndDeleteRuleVersion(IAsyncResult asyncResult);
+        /// <returns>Returns a  DeleteRuleResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
+        DeleteRuleResponse EndDeleteRule(IAsyncResult asyncResult);
 
         #endregion
         
@@ -612,6 +710,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the DescribeDetector service method.</param>
         /// 
         /// <returns>The response from the DescribeDetector service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -665,14 +768,16 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the DescribeModelVersions service method.</param>
         /// 
         /// <returns>The response from the DescribeModelVersions service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
         /// An exception indicating the specified resource was not found.
-        /// </exception>
-        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
-        /// An exception indicating a throttling error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
         /// An exception indicating a specified value is not allowed.
@@ -712,15 +817,21 @@ namespace Amazon.FraudDetector
 
 
         /// <summary>
-        /// Gets all of detectors. This is a paginated API. If you provide a null <code>maxSizePerPage</code>,
-        /// this actions retrieves a maximum of 10 records per page. If you provide a <code>maxSizePerPage</code>,
+        /// Gets all detectors or a single detector if a <code>detectorId</code> is specified.
+        /// This is a paginated API. If you provide a null <code>maxResults</code>, this action
+        /// retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>,
         /// the value must be between 5 and 10. To get the next page results, provide the pagination
-        /// token from the <code>GetEventTypesResponse</code> as part of your request. A null
-        /// pagination token fetches the records from the beginning.
+        /// token from the <code>GetDetectorsResponse</code> as part of your request. A null pagination
+        /// token fetches the records from the beginning.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDetectors service method.</param>
         /// 
         /// <returns>The response from the GetDetectors service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -773,6 +884,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the GetDetectorVersion service method.</param>
         /// 
         /// <returns>The response from the GetDetectorVersion service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -816,13 +932,189 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  GetEntityTypes
+
+
+        /// <summary>
+        /// Gets all entity types or a specific entity type if a name is specified. This is a
+        /// paginated API. If you provide a null <code>maxResults</code>, this action retrieves
+        /// a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value
+        /// must be between 5 and 10. To get the next page results, provide the pagination token
+        /// from the <code>GetEntityTypesResponse</code> as part of your request. A null pagination
+        /// token fetches the records from the beginning.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEntityTypes service method.</param>
+        /// 
+        /// <returns>The response from the GetEntityTypes service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEntityTypes">REST API Reference for GetEntityTypes Operation</seealso>
+        GetEntityTypesResponse GetEntityTypes(GetEntityTypesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEntityTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEntityTypes operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEntityTypes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEntityTypes">REST API Reference for GetEntityTypes Operation</seealso>
+        IAsyncResult BeginGetEntityTypes(GetEntityTypesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEntityTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEntityTypes.</param>
+        /// 
+        /// <returns>Returns a  GetEntityTypesResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEntityTypes">REST API Reference for GetEntityTypes Operation</seealso>
+        GetEntityTypesResponse EndGetEntityTypes(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetEventPrediction
+
+
+        /// <summary>
+        /// Evaluates an event against a detector version. If a version ID is not provided, the
+        /// detector’s (<code>ACTIVE</code>) version is used.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventPrediction service method.</param>
+        /// 
+        /// <returns>The response from the GetEventPrediction service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPrediction">REST API Reference for GetEventPrediction Operation</seealso>
+        GetEventPredictionResponse GetEventPrediction(GetEventPredictionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEventPrediction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEventPrediction operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEventPrediction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPrediction">REST API Reference for GetEventPrediction Operation</seealso>
+        IAsyncResult BeginGetEventPrediction(GetEventPredictionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEventPrediction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEventPrediction.</param>
+        /// 
+        /// <returns>Returns a  GetEventPredictionResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPrediction">REST API Reference for GetEventPrediction Operation</seealso>
+        GetEventPredictionResponse EndGetEventPrediction(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetEventTypes
+
+
+        /// <summary>
+        /// Gets all event types or a specific event type if name is provided. This is a paginated
+        /// API. If you provide a null <code>maxResults</code>, this action retrieves a maximum
+        /// of 10 records per page. If you provide a <code>maxResults</code>, the value must be
+        /// between 5 and 10. To get the next page results, provide the pagination token from
+        /// the <code>GetEventTypesResponse</code> as part of your request. A null pagination
+        /// token fetches the records from the beginning.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventTypes service method.</param>
+        /// 
+        /// <returns>The response from the GetEventTypes service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventTypes">REST API Reference for GetEventTypes Operation</seealso>
+        GetEventTypesResponse GetEventTypes(GetEventTypesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEventTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEventTypes operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEventTypes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventTypes">REST API Reference for GetEventTypes Operation</seealso>
+        IAsyncResult BeginGetEventTypes(GetEventTypesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEventTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEventTypes.</param>
+        /// 
+        /// <returns>Returns a  GetEventTypesResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventTypes">REST API Reference for GetEventTypes Operation</seealso>
+        GetEventTypesResponse EndGetEventTypes(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetExternalModels
 
 
         /// <summary>
         /// Gets the details for one or more Amazon SageMaker models that have been imported into
-        /// the service. This is a paginated API. If you provide a null <code>maxSizePerPage</code>,
-        /// this actions retrieves a maximum of 10 records per page. If you provide a <code>maxSizePerPage</code>,
+        /// the service. This is a paginated API. If you provide a null <code>maxResults</code>,
+        /// this actions retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>,
         /// the value must be between 5 and 10. To get the next page results, provide the pagination
         /// token from the <code>GetExternalModelsResult</code> as part of your request. A null
         /// pagination token fetches the records from the beginning.
@@ -830,6 +1122,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the GetExternalModels service method.</param>
         /// 
         /// <returns>The response from the GetExternalModels service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -873,24 +1170,147 @@ namespace Amazon.FraudDetector
 
         #endregion
         
-        #region  GetModels
+        #region  GetKMSEncryptionKey
 
 
         /// <summary>
-        /// Gets all of the models for the AWS account, or the specified model type, or gets a
-        /// single model for the specified model type, model ID combination.
+        /// Gets the encryption key if a Key Management Service (KMS) customer master key (CMK)
+        /// has been specified to be used to encrypt content in Amazon Fraud Detector.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetModels service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetKMSEncryptionKey service method.</param>
         /// 
-        /// <returns>The response from the GetModels service method, as returned by FraudDetector.</returns>
+        /// <returns>The response from the GetKMSEncryptionKey service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
         /// An exception indicating the specified resource was not found.
         /// </exception>
-        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
-        /// An exception indicating a throttling error.
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetKMSEncryptionKey">REST API Reference for GetKMSEncryptionKey Operation</seealso>
+        GetKMSEncryptionKeyResponse GetKMSEncryptionKey(GetKMSEncryptionKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetKMSEncryptionKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetKMSEncryptionKey operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetKMSEncryptionKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetKMSEncryptionKey">REST API Reference for GetKMSEncryptionKey Operation</seealso>
+        IAsyncResult BeginGetKMSEncryptionKey(GetKMSEncryptionKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetKMSEncryptionKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetKMSEncryptionKey.</param>
+        /// 
+        /// <returns>Returns a  GetKMSEncryptionKeyResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetKMSEncryptionKey">REST API Reference for GetKMSEncryptionKey Operation</seealso>
+        GetKMSEncryptionKeyResponse EndGetKMSEncryptionKey(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetLabels
+
+
+        /// <summary>
+        /// Gets all labels or a specific label if name is provided. This is a paginated API.
+        /// If you provide a null <code>maxResults</code>, this action retrieves a maximum of
+        /// 50 records per page. If you provide a <code>maxResults</code>, the value must be between
+        /// 10 and 50. To get the next page results, provide the pagination token from the <code>GetGetLabelsResponse</code>
+        /// as part of your request. A null pagination token fetches the records from the beginning.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLabels service method.</param>
+        /// 
+        /// <returns>The response from the GetLabels service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetLabels">REST API Reference for GetLabels Operation</seealso>
+        GetLabelsResponse GetLabels(GetLabelsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLabels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLabels operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLabels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetLabels">REST API Reference for GetLabels Operation</seealso>
+        IAsyncResult BeginGetLabels(GetLabelsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLabels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLabels.</param>
+        /// 
+        /// <returns>Returns a  GetLabelsResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetLabels">REST API Reference for GetLabels Operation</seealso>
+        GetLabelsResponse EndGetLabels(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetModels
+
+
+        /// <summary>
+        /// Gets one or more models. Gets all models for the AWS account if no model type and
+        /// no model id provided. Gets all models for the AWS account and model type, if the model
+        /// type is specified but model id is not provided. Gets a specific model if (model type,
+        /// model id) tuple is specified. 
+        /// 
+        ///  
+        /// <para>
+        /// This is a paginated API. If you provide a null <code>maxResults</code>, this action
+        /// retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>,
+        /// the value must be between 1 and 10. To get the next page results, provide the pagination
+        /// token from the response as part of your request. A null pagination token fetches the
+        /// records from the beginning.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetModels service method.</param>
+        /// 
+        /// <returns>The response from the GetModels service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
         /// An exception indicating a specified value is not allowed.
@@ -930,19 +1350,21 @@ namespace Amazon.FraudDetector
 
 
         /// <summary>
-        /// Gets a model version.
+        /// Gets the details of the specified model version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetModelVersion service method.</param>
         /// 
         /// <returns>The response from the GetModelVersion service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
         /// An exception indicating the specified resource was not found.
-        /// </exception>
-        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
-        /// An exception indicating a throttling error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
         /// An exception indicating a specified value is not allowed.
@@ -982,8 +1404,8 @@ namespace Amazon.FraudDetector
 
 
         /// <summary>
-        /// Gets one or more outcomes. This is a paginated API. If you provide a null <code>maxSizePerPage</code>,
-        /// this actions retrieves a maximum of 10 records per page. If you provide a <code>maxSizePerPage</code>,
+        /// Gets one or more outcomes. This is a paginated API. If you provide a null <code>maxResults</code>,
+        /// this actions retrieves a maximum of 100 records per page. If you provide a <code>maxResults</code>,
         /// the value must be between 50 and 100. To get the next page results, provide the pagination
         /// token from the <code>GetOutcomesResult</code> as part of your request. A null pagination
         /// token fetches the records from the beginning.
@@ -991,6 +1413,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the GetOutcomes service method.</param>
         /// 
         /// <returns>The response from the GetOutcomes service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -1034,68 +1461,31 @@ namespace Amazon.FraudDetector
 
         #endregion
         
-        #region  GetPrediction
-
-
-        /// <summary>
-        /// Evaluates an event against a detector version. If a version ID is not provided, the
-        /// detector’s (<code>ACTIVE</code>) version is used.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetPrediction service method.</param>
-        /// 
-        /// <returns>The response from the GetPrediction service method, as returned by FraudDetector.</returns>
-        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
-        /// An exception indicating an internal server error.
-        /// </exception>
-        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found.
-        /// </exception>
-        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
-        /// An exception indicating a throttling error.
-        /// </exception>
-        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
-        /// An exception indicating a specified value is not allowed.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetPrediction">REST API Reference for GetPrediction Operation</seealso>
-        GetPredictionResponse GetPrediction(GetPredictionRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetPrediction operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetPrediction operation on AmazonFraudDetectorClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPrediction
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetPrediction">REST API Reference for GetPrediction Operation</seealso>
-        IAsyncResult BeginGetPrediction(GetPredictionRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  GetPrediction operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPrediction.</param>
-        /// 
-        /// <returns>Returns a  GetPredictionResult from FraudDetector.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetPrediction">REST API Reference for GetPrediction Operation</seealso>
-        GetPredictionResponse EndGetPrediction(IAsyncResult asyncResult);
-
-        #endregion
-        
         #region  GetRules
 
 
         /// <summary>
-        /// Gets all rules available for the specified detector.
+        /// Get all rules for a detector (paginated) if <code>ruleId</code> and <code>ruleVersion</code>
+        /// are not specified. Gets all rules for the detector and the <code>ruleId</code> if
+        /// present (paginated). Gets a specific rule if both the <code>ruleId</code> and the
+        /// <code>ruleVersion</code> are specified.
+        /// 
+        ///  
+        /// <para>
+        /// This is a paginated API. Providing null maxResults results in retrieving maximum of
+        /// 100 records per page. If you provide maxResults the value must be between 50 and 100.
+        /// To get the next page result, a provide a pagination token from GetRulesResult as part
+        /// of your request. Null pagination token fetches the records from the beginning.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRules service method.</param>
         /// 
         /// <returns>The response from the GetRules service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -1152,6 +1542,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the GetVariables service method.</param>
         /// 
         /// <returns>The response from the GetVariables service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -1195,6 +1590,59 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Lists all tags associated with the resource. This is a paginated API. To get the next
+        /// page results, provide the pagination token from the response as part of your request.
+        /// A null pagination token fetches the records from the beginning.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutDetector
 
 
@@ -1204,6 +1652,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the PutDetector service method.</param>
         /// 
         /// <returns>The response from the PutDetector service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -1244,6 +1697,116 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  PutEntityType
+
+
+        /// <summary>
+        /// Creates or updates an entity type. An entity represents who is performing the event.
+        /// As part of a fraud prediction, you pass the entity ID to indicate the specific entity
+        /// who performed the event. An entity type classifies the entity. Example classifications
+        /// include customer, merchant, or account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEntityType service method.</param>
+        /// 
+        /// <returns>The response from the PutEntityType service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutEntityType">REST API Reference for PutEntityType Operation</seealso>
+        PutEntityTypeResponse PutEntityType(PutEntityTypeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEntityType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEntityType operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEntityType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutEntityType">REST API Reference for PutEntityType Operation</seealso>
+        IAsyncResult BeginPutEntityType(PutEntityTypeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutEntityType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEntityType.</param>
+        /// 
+        /// <returns>Returns a  PutEntityTypeResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutEntityType">REST API Reference for PutEntityType Operation</seealso>
+        PutEntityTypeResponse EndPutEntityType(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutEventType
+
+
+        /// <summary>
+        /// Creates or updates an event type. An event is a business activity that is evaluated
+        /// for fraud risk. With Amazon Fraud Detector, you generate fraud predictions for events.
+        /// An event type defines the structure for an event sent to Amazon Fraud Detector. This
+        /// includes the variables sent as part of the event, the entity performing the event
+        /// (such as a customer), and the labels that classify the event. Example event types
+        /// include online payment transactions, account registrations, and authentications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEventType service method.</param>
+        /// 
+        /// <returns>The response from the PutEventType service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutEventType">REST API Reference for PutEventType Operation</seealso>
+        PutEventTypeResponse PutEventType(PutEventTypeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEventType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEventType operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEventType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutEventType">REST API Reference for PutEventType Operation</seealso>
+        IAsyncResult BeginPutEventType(PutEventTypeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutEventType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEventType.</param>
+        /// 
+        /// <returns>Returns a  PutEventTypeResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutEventType">REST API Reference for PutEventType Operation</seealso>
+        PutEventTypeResponse EndPutEventType(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutExternalModel
 
 
@@ -1255,6 +1818,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the PutExternalModel service method.</param>
         /// 
         /// <returns>The response from the PutExternalModel service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -1295,52 +1863,111 @@ namespace Amazon.FraudDetector
 
         #endregion
         
-        #region  PutModel
+        #region  PutKMSEncryptionKey
 
 
         /// <summary>
-        /// Creates or updates a model.
+        /// Specifies the Key Management Service (KMS) customer master key (CMK) to be used to
+        /// encrypt content in Amazon Fraud Detector.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the PutModel service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutKMSEncryptionKey service method.</param>
         /// 
-        /// <returns>The response from the PutModel service method, as returned by FraudDetector.</returns>
+        /// <returns>The response from the PutKMSEncryptionKey service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
-        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
-        /// An exception indicating a throttling error.
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
         /// An exception indicating a specified value is not allowed.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutModel">REST API Reference for PutModel Operation</seealso>
-        PutModelResponse PutModel(PutModelRequest request);
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutKMSEncryptionKey">REST API Reference for PutKMSEncryptionKey Operation</seealso>
+        PutKMSEncryptionKeyResponse PutKMSEncryptionKey(PutKMSEncryptionKeyRequest request);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the PutModel operation.
+        /// Initiates the asynchronous execution of the PutKMSEncryptionKey operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutModel operation on AmazonFraudDetectorClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutKMSEncryptionKey operation on AmazonFraudDetectorClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutModel
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutKMSEncryptionKey
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutModel">REST API Reference for PutModel Operation</seealso>
-        IAsyncResult BeginPutModel(PutModelRequest request, AsyncCallback callback, object state);
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutKMSEncryptionKey">REST API Reference for PutKMSEncryptionKey Operation</seealso>
+        IAsyncResult BeginPutKMSEncryptionKey(PutKMSEncryptionKeyRequest request, AsyncCallback callback, object state);
 
 
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  PutModel operation.
+        /// Finishes the asynchronous execution of the  PutKMSEncryptionKey operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutModel.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutKMSEncryptionKey.</param>
         /// 
-        /// <returns>Returns a  PutModelResult from FraudDetector.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutModel">REST API Reference for PutModel Operation</seealso>
-        PutModelResponse EndPutModel(IAsyncResult asyncResult);
+        /// <returns>Returns a  PutKMSEncryptionKeyResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutKMSEncryptionKey">REST API Reference for PutKMSEncryptionKey Operation</seealso>
+        PutKMSEncryptionKeyResponse EndPutKMSEncryptionKey(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutLabel
+
+
+        /// <summary>
+        /// Creates or updates label. A label classifies an event as fraudulent or legitimate.
+        /// Labels are associated with event types and used to train supervised machine learning
+        /// models in Amazon Fraud Detector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutLabel service method.</param>
+        /// 
+        /// <returns>The response from the PutLabel service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutLabel">REST API Reference for PutLabel Operation</seealso>
+        PutLabelResponse PutLabel(PutLabelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutLabel operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutLabel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutLabel">REST API Reference for PutLabel Operation</seealso>
+        IAsyncResult BeginPutLabel(PutLabelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutLabel.</param>
+        /// 
+        /// <returns>Returns a  PutLabelResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutLabel">REST API Reference for PutLabel Operation</seealso>
+        PutLabelResponse EndPutLabel(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1353,6 +1980,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the PutOutcome service method.</param>
         /// 
         /// <returns>The response from the PutOutcome service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -1393,17 +2025,124 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  TagResource
+
+
+        /// <summary>
+        /// Assigns tags to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/TagResource">REST API Reference for TagResource Operation</seealso>
+        IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateDetectorVersion
 
 
         /// <summary>
         /// Updates a detector version. The detector version attributes that you can update include
-        /// models, external model endpoints, rules, and description. You can only update a <code>DRAFT</code>
-        /// detector version.
+        /// models, external model endpoints, rules, rule execution mode, and description. You
+        /// can only update a <code>DRAFT</code> detector version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDetectorVersion service method.</param>
         /// 
         /// <returns>The response from the UpdateDetectorVersion service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -1457,6 +2196,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the UpdateDetectorVersionMetadata service method.</param>
         /// 
         /// <returns>The response from the UpdateDetectorVersionMetadata service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -1508,6 +2252,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the UpdateDetectorVersionStatus service method.</param>
         /// 
         /// <returns>The response from the UpdateDetectorVersionStatus service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -1551,34 +2300,83 @@ namespace Amazon.FraudDetector
 
         #endregion
         
-        #region  UpdateModelVersion
+        #region  UpdateModel
 
 
         /// <summary>
-        /// Updates a model version. You can update the description and status attributes using
-        /// this action. You can perform the following status updates: 
-        /// 
-        ///  <ol> <li> 
-        /// <para>
-        /// Change the <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Change <code>ACTIVE</code> back to <code>TRAINING_COMPLETE</code> 
-        /// </para>
-        ///  </li> </ol>
+        /// Updates a model. You can update the description attribute using this action.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateModelVersion service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateModel service method.</param>
         /// 
-        /// <returns>The response from the UpdateModelVersion service method, as returned by FraudDetector.</returns>
+        /// <returns>The response from the UpdateModel service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
         /// An exception indicating the specified resource was not found.
         /// </exception>
-        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
-        /// An exception indicating a throttling error.
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
+        UpdateModelResponse UpdateModel(UpdateModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateModel operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
+        IAsyncResult BeginUpdateModel(UpdateModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateModel.</param>
+        /// 
+        /// <returns>Returns a  UpdateModelResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
+        UpdateModelResponse EndUpdateModel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateModelVersion
+
+
+        /// <summary>
+        /// Updates a model version. Updating a model version retrains an existing model version
+        /// using updated training data and produces a new minor version of the model. You can
+        /// update the training data set location and data access role attributes using this action.
+        /// This action creates and trains a new minor version of the model, for example version
+        /// 1.01, 1.02, 1.03.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateModelVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdateModelVersion service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
         /// An exception indicating a specified value is not allowed.
@@ -1614,15 +2412,88 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  UpdateModelVersionStatus
+
+
+        /// <summary>
+        /// Updates the status of a model version.
+        /// 
+        ///  
+        /// <para>
+        /// You can perform the following status updates:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Change the <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Change <code>ACTIVE</code>to <code>INACTIVE</code>.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateModelVersionStatus service method.</param>
+        /// 
+        /// <returns>The response from the UpdateModelVersionStatus service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModelVersionStatus">REST API Reference for UpdateModelVersionStatus Operation</seealso>
+        UpdateModelVersionStatusResponse UpdateModelVersionStatus(UpdateModelVersionStatusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateModelVersionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateModelVersionStatus operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateModelVersionStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModelVersionStatus">REST API Reference for UpdateModelVersionStatus Operation</seealso>
+        IAsyncResult BeginUpdateModelVersionStatus(UpdateModelVersionStatusRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateModelVersionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateModelVersionStatus.</param>
+        /// 
+        /// <returns>Returns a  UpdateModelVersionStatusResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModelVersionStatus">REST API Reference for UpdateModelVersionStatus Operation</seealso>
+        UpdateModelVersionStatusResponse EndUpdateModelVersionStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateRuleMetadata
 
 
         /// <summary>
-        /// Updates a rule's metadata.
+        /// Updates a rule's metadata. The description attribute can be updated.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRuleMetadata service method.</param>
         /// 
         /// <returns>The response from the UpdateRuleMetadata service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -1670,11 +2541,17 @@ namespace Amazon.FraudDetector
 
 
         /// <summary>
-        /// Updates a rule version resulting in a new rule version.
+        /// Updates a rule version resulting in a new rule version. Updates a rule version resulting
+        /// in a new rule version (version 1, 2, 3 ...).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRuleVersion service method.</param>
         /// 
         /// <returns>The response from the UpdateRuleVersion service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
@@ -1727,6 +2604,11 @@ namespace Amazon.FraudDetector
         /// <param name="request">Container for the necessary parameters to execute the UpdateVariable service method.</param>
         /// 
         /// <returns>The response from the UpdateVariable service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>

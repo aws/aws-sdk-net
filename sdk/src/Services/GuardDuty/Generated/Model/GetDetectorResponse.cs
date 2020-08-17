@@ -34,6 +34,7 @@ namespace Amazon.GuardDuty.Model
     public partial class GetDetectorResponse : AmazonWebServiceResponse
     {
         private string _createdAt;
+        private DataSourceConfigurationsResult _dataSources;
         private FindingPublishingFrequency _findingPublishingFrequency;
         private string _serviceRole;
         private DetectorStatus _status;
@@ -56,6 +57,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSources. 
+        /// <para>
+        /// An object that describes which data sources are enabled for the detector.
+        /// </para>
+        /// </summary>
+        public DataSourceConfigurationsResult DataSources
+        {
+            get { return this._dataSources; }
+            set { this._dataSources = value; }
+        }
+
+        // Check to see if DataSources property is set
+        internal bool IsSetDataSources()
+        {
+            return this._dataSources != null;
         }
 
         /// <summary>

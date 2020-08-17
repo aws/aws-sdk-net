@@ -111,6 +111,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetThemeArn())
+                {
+                    context.Writer.WritePropertyName("ThemeArn");
+                    context.Writer.Write(publicRequest.ThemeArn);
+                }
+
                 if(publicRequest.IsSetVersionDescription())
                 {
                     context.Writer.WritePropertyName("VersionDescription");

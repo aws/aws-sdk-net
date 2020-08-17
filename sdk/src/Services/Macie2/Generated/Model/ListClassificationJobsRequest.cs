@@ -30,8 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListClassificationJobs operation.
-    /// Retrieves information about the status and settings for one or more classification
-    /// jobs.
+    /// Retrieves a subset of information about one or more classification jobs.
     /// </summary>
     public partial class ListClassificationJobsRequest : AmazonMacie2Request
     {

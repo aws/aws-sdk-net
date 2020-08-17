@@ -30,7 +30,7 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the PutAppReplicationConfiguration operation.
-    /// Creates or updates a replication configuration for an application.
+    /// Creates or updates the replication configuration for the specified application.
     /// </summary>
     public partial class PutAppReplicationConfigurationRequest : AmazonServerMigrationServiceRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// ID of the application tassociated with the replication configuration.
+        /// The ID of the application.
         /// </para>
         /// </summary>
         public string AppId
@@ -58,7 +58,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerGroupReplicationConfigurations. 
         /// <para>
-        /// Replication configurations for server groups in the application.
+        /// Information about the replication configurations for server groups in the application.
         /// </para>
         /// </summary>
         public List<ServerGroupReplicationConfiguration> ServerGroupReplicationConfigurations

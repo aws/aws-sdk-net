@@ -40,6 +40,10 @@ namespace Amazon.ServiceCatalog.Model
     /// on your behalf so that your shares can be in sync with any changes in your AWS Organizations
     /// structure.
     /// </para>
+    ///  
+    /// <para>
+    /// Note that a delegated administrator is not authorized to invoke <code>EnableAWSOrganizationsAccess</code>.
+    /// </para>
     /// </summary>
     public partial class EnableAWSOrganizationsAccessRequest : AmazonServiceCatalogRequest
     {

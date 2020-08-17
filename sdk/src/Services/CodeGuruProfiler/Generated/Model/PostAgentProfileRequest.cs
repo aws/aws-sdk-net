@@ -30,7 +30,9 @@ namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
     /// Container for the parameters to the PostAgentProfile operation.
-    /// 
+    /// Submits profiling data to an aggregated profile of a profiling group. To get an aggregated
+    /// profile that is created with this profiling data, use <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetProfile.html">
+    /// <code>GetProfile</code> </a>.
     /// </summary>
     public partial class PostAgentProfileRequest : AmazonCodeGuruProfilerRequest
     {
@@ -40,7 +42,10 @@ namespace Amazon.CodeGuruProfiler.Model
         private string _profilingGroupName;
 
         /// <summary>
-        /// Gets and sets the property AgentProfile.
+        /// Gets and sets the property AgentProfile. 
+        /// <para>
+        ///  The submitted profiling data. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public MemoryStream AgentProfile
@@ -56,7 +61,16 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContentType.
+        /// Gets and sets the property ContentType. 
+        /// <para>
+        ///  The format of the submitted profiling data. The format maps to the <code>Accept</code>
+        /// and <code>Content-Type</code> headers of the HTTP request. You can specify one of
+        /// the following: or the default . 
+        /// </para>
+        ///  <pre><code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt;
+        /// — standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/x-amzn-ion&lt;/code&gt;
+        /// — the Amazon Ion data format. For more information, see &lt;a href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon
+        /// Ion&lt;/a&gt;. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code></pre>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ContentType
@@ -72,7 +86,12 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProfileToken.
+        /// Gets and sets the property ProfileToken. 
+        /// <para>
+        ///  Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent
+        /// the accidental submission of duplicate profiling data if there are failures and retries.
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string ProfileToken
@@ -88,7 +107,11 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProfilingGroupName.
+        /// Gets and sets the property ProfilingGroupName. 
+        /// <para>
+        ///  The name of the profiling group with the aggregated profile that receives the submitted
+        /// profiling data. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string ProfilingGroupName

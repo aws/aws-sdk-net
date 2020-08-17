@@ -64,19 +64,19 @@ using Amazon.Runtime.Internal.Util;
 					throw new NotImplementedException("Marshalling lists and maps as header value is not implemented");
 				}
 
-				if(member.IsDateTime)
-				{
-#>
-				request.Headers["<#=member.MarshallLocationName#>"] = <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>);
-<#+					
-				}
-				else
+				if(member.Shape.IsString)
 				{
 #>
 				request.Headers["<#=member.MarshallLocationName#>"] = <#=variableName#>.<#=member.PropertyName#>;
-<#+			
+<#+					
 				}
-		    }
+                else
+                {
+#>
+				request.Headers["<#=member.MarshallLocationName#>"] = <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>);
+<#+
+                }
+            }
         }
 	}
 

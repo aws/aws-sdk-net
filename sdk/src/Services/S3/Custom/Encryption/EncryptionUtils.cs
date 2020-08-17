@@ -508,21 +508,6 @@ namespace Amazon.S3.Encryption
             return ((metadata[XAmzKey] != null || metadata[XAmzKeyV2] != null) && metadata[XAmzIV] != null);
         }
 
-        /// <summary>
-        /// checks if encryption credentials are in the instructionfile
-        /// </summary>
-        /// <param name="response">Instruction file response that contains encryption information</param>
-        /// <returns></returns>
-        internal static bool IsEncryptionInfoInInstructionFile(GetObjectResponse response)
-        {
-            MetadataCollection metadata = response.Metadata;
-
-            if (metadata[XAmzCryptoInstrFile] != null)
-                return true;
-            else
-                return false;
-        }
-
 #endregion
     }
 }

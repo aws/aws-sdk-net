@@ -150,7 +150,7 @@ namespace Amazon.Util
             HttpMethod httpMethod = new HttpMethod(httpMethodValue);
             var headers = new List<Tuple<string, IEnumerable<string>, HttpStatusCode>>();
             var request = new HttpRequestMessage(httpMethod, url);
-            var response = await _httpClient.SendAsync(request);
+            var response = await _httpClient.SendAsync(request).ConfigureAwait(false);
             foreach (var header in response.Headers)
             {
                 headers.Add(new Tuple<string, IEnumerable<string>, HttpStatusCode>(header.Key, header.Value, response.StatusCode));

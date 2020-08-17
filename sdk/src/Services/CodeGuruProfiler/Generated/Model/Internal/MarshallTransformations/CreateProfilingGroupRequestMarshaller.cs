@@ -80,10 +80,30 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetComputePlatform())
+                {
+                    context.Writer.WritePropertyName("computePlatform");
+                    context.Writer.Write(publicRequest.ComputePlatform);
+                }
+
                 if(publicRequest.IsSetProfilingGroupName())
                 {
                     context.Writer.WritePropertyName("profilingGroupName");
                     context.Writer.Write(publicRequest.ProfilingGroupName);
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
         

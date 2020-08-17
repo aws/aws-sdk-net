@@ -42,6 +42,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }

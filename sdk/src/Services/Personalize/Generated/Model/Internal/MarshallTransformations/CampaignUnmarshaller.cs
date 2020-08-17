@@ -70,6 +70,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.CampaignArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("campaignConfig", targetDepth))
+                {
+                    var unmarshaller = CampaignConfigUnmarshaller.Instance;
+                    unmarshalledObject.CampaignConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("creationDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

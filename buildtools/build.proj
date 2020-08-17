@@ -159,7 +159,7 @@
             DestinationFolder="$(Deployment)" />
     </Target>
 
-    <Target Name="build-sdk-service" DependsOnTargets="populate-deployment;build-sdk-desktop-service;build-code-analysis;build-sdk-netstandard;copy-assemblies">
+    <Target Name="build-sdk-service" DependsOnTargets="populate-deployment;build-sdk-desktop-service;build-code-analysis;copy-assemblies">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
@@ -277,12 +277,14 @@
             Condition="Exists('..\sdk\test\Services\%(ServiceName.FileName)\UnitTests\Generated') Or Exists('..\sdk\test\Services\%(ServiceName.FileName)\UnitTests\Custom')"
             TestExecutionProfile="test-runner"/>
 
+        <!--
         <XUnitWrapperTask
             TestSuiteRunner="dotnet"
             TestContainer="..\sdk\test\NetStandard\UnitTests\UnitTests.NetStandard.csproj"
             Configuration="$(Configuration)"
             Categories="$(NetStandardTestCategories)"
             TestExecutionProfile="test-runner"/>
+        -->
     </Target>
 
     <Target Name="build-integ-tests-service">

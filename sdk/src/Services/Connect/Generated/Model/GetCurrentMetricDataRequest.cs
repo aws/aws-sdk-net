@@ -51,7 +51,8 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property CurrentMetrics. 
         /// <para>
         /// The metrics to retrieve. Specify the name and unit for each metric. The following
-        /// metrics are available:
+        /// metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
+        /// Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         ///  <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> 
         /// <para>

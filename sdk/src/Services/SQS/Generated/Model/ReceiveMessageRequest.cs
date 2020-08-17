@@ -131,22 +131,22 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>All</code> - Returns all values.
+        ///  <code>All</code> – Returns all values.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ApproximateFirstReceiveTimestamp</code> - Returns the time the message was
+        ///  <code>ApproximateFirstReceiveTimestamp</code> – Returns the time the message was
         /// first received from the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch
         /// time</a> in milliseconds).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ApproximateReceiveCount</code> - Returns the number of times a message has
-        /// been received from the queue but not deleted.
+        ///  <code>ApproximateReceiveCount</code> – Returns the number of times a message has
+        /// been received across all queues but not deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWSTraceHeader</code> - Returns the AWS X-Ray trace header string. 
+        ///  <code>AWSTraceHeader</code> – Returns the AWS X-Ray trace header string. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -162,23 +162,23 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>SentTimestamp</code> - Returns the time the message was sent to the queue (<a
+        ///  <code>SentTimestamp</code> – Returns the time the message was sent to the queue (<a
         /// href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MessageDeduplicationId</code> - Returns the value provided by the producer
+        ///  <code>MessageDeduplicationId</code> – Returns the value provided by the producer
         /// that calls the <code> <a>SendMessage</a> </code> action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MessageGroupId</code> - Returns the value provided by the producer that calls
+        ///  <code>MessageGroupId</code> – Returns the value provided by the producer that calls
         /// the <code> <a>SendMessage</a> </code> action. Messages with the same <code>MessageGroupId</code>
         /// are returned in sequence.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SequenceNumber</code> - Returns the value provided by Amazon SQS.
+        ///  <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -294,9 +294,9 @@ namespace Amazon.SQS.Model
         /// <para>
         /// The token used for deduplication of <code>ReceiveMessage</code> calls. If a networking
         /// issue occurs after a <code>ReceiveMessage</code> action, and instead of a response
-        /// you receive a generic error, you can retry the same action with an identical <code>ReceiveRequestAttemptId</code>
-        /// to retrieve the same set of messages, even if their visibility timeout has not yet
-        /// expired.
+        /// you receive a generic error, it is possible to retry the same action with an identical
+        /// <code>ReceiveRequestAttemptId</code> to retrieve the same set of messages, even if
+        /// their visibility timeout has not yet expired.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -315,7 +315,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can retry the <code>ReceiveMessage</code> action with the same <code>ReceiveRequestAttemptId</code>
+        /// It is possible to retry the <code>ReceiveMessage</code> action with the same <code>ReceiveRequestAttemptId</code>
         /// if none of the messages have been modified (deleted or had their visibility changes).
         /// </para>
         ///  </li> <li> 
@@ -353,7 +353,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The length of <code>ReceiveRequestAttemptId</code> is 128 characters. <code>ReceiveRequestAttemptId</code>
+        /// The maximum length of <code>ReceiveRequestAttemptId</code> is 128 characters. <code>ReceiveRequestAttemptId</code>
         /// can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>)
         /// and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
         /// </para>
@@ -403,6 +403,15 @@ namespace Amazon.SQS.Model
         /// If no messages are available and the wait time expires, the call returns successfully
         /// with an empty list of messages.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code>
+        /// requests is longer than the <code>WaitTimeSeconds</code> parameter. For example, with
+        /// the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html">
+        /// NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html">
+        /// ApacheHttpClient</a> for synchronous clients. 
+        /// </para>
+        ///  </important>
         /// </summary>
         public int WaitTimeSeconds
         {

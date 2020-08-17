@@ -53,11 +53,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The policy content to add to the new policy. For example, if you create a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
-        /// control policy</a> (SCP), this string must be JSON text that specifies the permissions
-        /// that admins in attached accounts can delegate to their users, groups, and roles. For
-        /// more information about the SCP syntax, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-        /// Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> 
+        /// The policy text content to add to the new policy. The text that you supply must adhere
+        /// to the rules of the policy type you specify in the <code>Type</code> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000000)]
@@ -119,14 +116,29 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of policy to create.
+        /// The type of policy to create. You can specify one of the following values:
         /// </para>
-        ///  <note> 
+        ///  <ul> <li> 
         /// <para>
-        /// In the current release, the only type of policy that you can create is a service control
-        /// policy (SCP).
+        ///  <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+        /// 
         /// </para>
-        ///  </note>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public PolicyType Type

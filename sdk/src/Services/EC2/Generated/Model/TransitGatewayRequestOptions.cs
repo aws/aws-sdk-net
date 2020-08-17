@@ -46,6 +46,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The
         /// range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.
+        /// The default is <code>64512</code>.
         /// </para>
         /// </summary>
         public long AmazonSideAsn
@@ -63,7 +64,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AutoAcceptSharedAttachments. 
         /// <para>
-        /// Enable or disable automatic acceptance of attachment requests. The default is <code>disable</code>.
+        /// Enable or disable automatic acceptance of attachment requests. Disabled by default.
         /// </para>
         /// </summary>
         public AutoAcceptSharedAttachmentsValue AutoAcceptSharedAttachments
@@ -82,7 +83,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property DefaultRouteTableAssociation. 
         /// <para>
         /// Enable or disable automatic association with the default association route table.
-        /// The default is <code>enable</code>.
+        /// Enabled by default.
         /// </para>
         /// </summary>
         public DefaultRouteTableAssociationValue DefaultRouteTableAssociation
@@ -101,7 +102,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property DefaultRouteTablePropagation. 
         /// <para>
         /// Enable or disable automatic propagation of routes to the default propagation route
-        /// table. The default is <code>enable</code>.
+        /// table. Enabled by default.
         /// </para>
         /// </summary>
         public DefaultRouteTablePropagationValue DefaultRouteTablePropagation
@@ -119,7 +120,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DnsSupport. 
         /// <para>
-        /// Enable or disable DNS support.
+        /// Enable or disable DNS support. Enabled by default.
         /// </para>
         /// </summary>
         public DnsSupportValue DnsSupport
@@ -155,7 +156,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpnEcmpSupport. 
         /// <para>
-        /// Enable or disable Equal Cost Multipath Protocol support.
+        /// Enable or disable Equal Cost Multipath Protocol support. Enabled by default.
         /// </para>
         /// </summary>
         public VpnEcmpSupportValue VpnEcmpSupport

@@ -32,16 +32,104 @@ namespace Amazon.CodeGuruProfiler
     /// Interface for accessing CodeGuruProfiler
     ///
     /// This section provides documentation for the Amazon CodeGuru Profiler API operations.
+    /// 
+    ///  <pre><code> &lt;p&gt;Amazon CodeGuru Profiler collects runtime performance data from
+    /// your live applications, and provides recommendations that can help you fine-tune your
+    /// application performance. Using machine learning algorithms, CodeGuru Profiler can
+    /// help you find your most expensive lines of code and suggest ways you can improve efficiency
+    /// and remove CPU bottlenecks. &lt;/p&gt; &lt;p&gt;Amazon CodeGuru Profiler provides
+    /// different visualizations of profiling data to help you identify what code is running
+    /// on the CPU, see how much time is consumed, and suggest ways to reduce CPU utilization.
+    /// &lt;/p&gt; &lt;note&gt; &lt;p&gt;Amazon CodeGuru Profiler currently supports applications
+    /// written in all Java virtual machine (JVM) languages. While CodeGuru Profiler supports
+    /// both visualizations and recommendations for applications written in Java, it can also
+    /// generate visualizations and a subset of recommendations for applications written in
+    /// other JVM languages.&lt;/p&gt; &lt;/note&gt; &lt;p&gt; For more information, see &lt;a
+    /// href=&quot;https://docs.aws.amazon.com/codeguru/latest/profiler-ug/what-is-codeguru-profiler.html&quot;&gt;What
+    /// is Amazon CodeGuru Profiler&lt;/a&gt; in the &lt;i&gt;Amazon CodeGuru Profiler User
+    /// Guide&lt;/i&gt;. &lt;/p&gt; </code></pre>
     /// </summary>
     public partial interface IAmazonCodeGuruProfiler : IAmazonService, IDisposable
     {
+                
+        #region  AddNotificationChannels
+
+
+
+        /// <summary>
+        /// Add up to 2 anomaly notifications channels for a profiling group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddNotificationChannels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddNotificationChannels service method, as returned by CodeGuruProfiler.</returns>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ServiceQuotaExceededException">
+        /// You have exceeded your service quota. To perform the requested action, remove some
+        /// of the relevant resources, or use <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service
+        /// Quotas</a> to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/AddNotificationChannels">REST API Reference for AddNotificationChannels Operation</seealso>
+        Task<AddNotificationChannelsResponse> AddNotificationChannelsAsync(AddNotificationChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  BatchGetFrameMetricData
+
+
+
+        /// <summary>
+        /// Returns the time series of values for a requested list of frame metrics from a time
+        /// period.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetFrameMetricData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetFrameMetricData service method, as returned by CodeGuruProfiler.</returns>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/BatchGetFrameMetricData">REST API Reference for BatchGetFrameMetricData Operation</seealso>
+        Task<BatchGetFrameMetricDataResponse> BatchGetFrameMetricDataAsync(BatchGetFrameMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
                 
         #region  ConfigureAgent
 
 
 
         /// <summary>
-        /// 
+        /// Used by profiler agents to report their current state and to receive remote configuration
+        /// updates. For example, <code>ConfigureAgent</code> can be used to tell and agent whether
+        /// to profile or not and for how long to return profiling data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfigureAgent service method.</param>
         /// <param name="cancellationToken">
@@ -137,7 +225,9 @@ namespace Amazon.CodeGuruProfiler
 
 
         /// <summary>
-        /// Describes a profiling group.
+        /// Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <code>ProfilingGroupDescription</code> </a> object that contains information about
+        /// the requested profiling group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProfilingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -162,12 +252,71 @@ namespace Amazon.CodeGuruProfiler
 
         #endregion
                 
+        #region  GetFindingsReportAccountSummary
+
+
+
+        /// <summary>
+        /// Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html">
+        /// <code>FindingsReportSummary</code> </a> objects that contain analysis results for
+        /// all profiling groups in your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingsReportAccountSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFindingsReportAccountSummary service method, as returned by CodeGuruProfiler.</returns>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetFindingsReportAccountSummary">REST API Reference for GetFindingsReportAccountSummary Operation</seealso>
+        Task<GetFindingsReportAccountSummaryResponse> GetFindingsReportAccountSummaryAsync(GetFindingsReportAccountSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetNotificationConfiguration
+
+
+
+        /// <summary>
+        /// Get the current configuration for anomaly notifications for a profiling group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNotificationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetNotificationConfiguration service method, as returned by CodeGuruProfiler.</returns>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetNotificationConfiguration">REST API Reference for GetNotificationConfiguration Operation</seealso>
+        Task<GetNotificationConfigurationResponse> GetNotificationConfigurationAsync(GetNotificationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetPolicy
 
 
 
         /// <summary>
-        /// Gets the profiling group policy.
+        /// Returns the JSON-formatted resource-based policy on a profiling group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -194,23 +343,41 @@ namespace Amazon.CodeGuruProfiler
 
 
         /// <summary>
-        /// Gets the aggregated profile of a profiling group for the specified time range. If
-        /// the requested time range does not align with the available aggregated profiles, it
-        /// is expanded to attain alignment. If aggregated profiles are available only for part
-        /// of the period requested, the profile is returned from the earliest available to the
-        /// latest within the requested time range. 
+        /// Gets the aggregated profile of a profiling group for a specified time range. Amazon
+        /// CodeGuru Profiler collects posted agent profiles for a profiling group into aggregated
+        /// profiles. 
         /// 
-        ///  
-        /// <para>
-        /// For example, if the requested time range is from 00:00 to 00:20 and the available
-        /// profiles are from 00:15 to 00:25, the returned profile will be from 00:15 to 00:20.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// You must specify exactly two of the following parameters: <code>startTime</code>,
-        /// <code>period</code>, and <code>endTime</code>. 
-        /// </para>
+        ///  <pre><code> &lt;note&gt; &lt;p&gt; Because aggregated profiles expire over time &lt;code&gt;GetProfile&lt;/code&gt;
+        /// is not idempotent. &lt;/p&gt; &lt;/note&gt; &lt;p&gt; Specify the time range for the
+        /// requested aggregated profile using 1 or 2 of the following parameters: &lt;code&gt;startTime&lt;/code&gt;,
+        /// &lt;code&gt;endTime&lt;/code&gt;, &lt;code&gt;period&lt;/code&gt;. The maximum time
+        /// range allowed is 7 days. If you specify all 3 parameters, an exception is thrown.
+        /// If you specify only &lt;code&gt;period&lt;/code&gt;, the latest aggregated profile
+        /// is returned. &lt;/p&gt; &lt;p&gt; Aggregated profiles are available with aggregation
+        /// periods of 5 minutes, 1 hour, and 1 day, aligned to UTC. The aggregation period of
+        /// an aggregated profile determines how long it is retained. For more information, see
+        /// &lt;a href=&quot;https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html&quot;&gt;
+        /// &lt;code&gt;AggregatedProfileTime&lt;/code&gt; &lt;/a&gt;. The aggregated profile's
+        /// aggregation period determines how long it is retained by CodeGuru Profiler. &lt;/p&gt;
+        /// &lt;ul&gt; &lt;li&gt; &lt;p&gt; If the aggregation period is 5 minutes, the aggregated
+        /// profile is retained for 15 days. &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; If the
+        /// aggregation period is 1 hour, the aggregated profile is retained for 60 days. &lt;/p&gt;
+        /// &lt;/li&gt; &lt;li&gt; &lt;p&gt; If the aggregation period is 1 day, the aggregated
+        /// profile is retained for 3 years. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;There
+        /// are two use cases for calling &lt;code&gt;GetProfile&lt;/code&gt;.&lt;/p&gt; &lt;ol&gt;
+        /// &lt;li&gt; &lt;p&gt; If you want to return an aggregated profile that already exists,
+        /// use &lt;a href=&quot;https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListProfileTimes.html&quot;&gt;
+        /// &lt;code&gt;ListProfileTimes&lt;/code&gt; &lt;/a&gt; to view the time ranges of existing
+        /// aggregated profiles. Use them in a &lt;code&gt;GetProfile&lt;/code&gt; request to
+        /// return a specific, existing aggregated profile. &lt;/p&gt; &lt;/li&gt; &lt;li&gt;
+        /// &lt;p&gt; If you want to return an aggregated profile for a time range that doesn't
+        /// align with an existing aggregated profile, then CodeGuru Profiler makes a best effort
+        /// to combine existing aggregated profiles from the requested time range and return them
+        /// as one aggregated profile. &lt;/p&gt; &lt;p&gt; If aggregated profiles do not exist
+        /// for the full time range requested, then aggregated profiles for a smaller time range
+        /// are returned. For example, if the requested time range is from 00:00 to 00:20, and
+        /// the existing aggregated profiles are from 00:15 and 00:25, then the aggregated profiles
+        /// from 00:15 to 00:20 are returned. &lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; </code></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProfile service method.</param>
         /// <param name="cancellationToken">
@@ -235,12 +402,76 @@ namespace Amazon.CodeGuruProfiler
 
         #endregion
                 
+        #region  GetRecommendations
+
+
+
+        /// <summary>
+        /// Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Recommendation.html">
+        /// <code>Recommendation</code> </a> objects that contain recommendations for a profiling
+        /// group for a given time period. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Anomaly.html">
+        /// <code>Anomaly</code> </a> objects that contains details about anomalies detected in
+        /// the profiling group for the same time period is also returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRecommendations service method, as returned by CodeGuruProfiler.</returns>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetRecommendations">REST API Reference for GetRecommendations Operation</seealso>
+        Task<GetRecommendationsResponse> GetRecommendationsAsync(GetRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListFindingsReports
+
+
+
+        /// <summary>
+        /// List the available reports for a given profiling group and time range.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFindingsReports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFindingsReports service method, as returned by CodeGuruProfiler.</returns>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListFindingsReports">REST API Reference for ListFindingsReports Operation</seealso>
+        Task<ListFindingsReportsResponse> ListFindingsReportsAsync(ListFindingsReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListProfileTimes
 
 
 
         /// <summary>
-        /// List the start times of the available aggregated profiles of a profiling group for
+        /// Lists the start times of the available aggregated profiles of a profiling group for
         /// an aggregation period within the specified time range.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProfileTimes service method.</param>
@@ -271,7 +502,8 @@ namespace Amazon.CodeGuruProfiler
 
 
         /// <summary>
-        /// Lists profiling groups.
+        /// Returns a list of profiling groups. The profiling groups are returned as <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <code>ProfilingGroupDescription</code> </a> objects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProfilingGroups service method.</param>
         /// <param name="cancellationToken">
@@ -290,12 +522,41 @@ namespace Amazon.CodeGuruProfiler
 
         #endregion
                 
+        #region  ListTagsForResource
+
+
+
+        /// <summary>
+        /// Returns a list of the tags that are assigned to a specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CodeGuruProfiler.</returns>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  PostAgentProfile
 
 
 
         /// <summary>
-        /// 
+        /// Submits profiling data to an aggregated profile of a profiling group. To get an aggregated
+        /// profile that is created with this profiling data, use <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetProfile.html">
+        /// <code>GetProfile</code> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PostAgentProfile service method.</param>
         /// <param name="cancellationToken">
@@ -325,8 +586,24 @@ namespace Amazon.CodeGuruProfiler
 
 
         /// <summary>
-        /// Provides permission to the principals. This overwrites the existing permissions, and
-        /// is not additive.
+        /// Adds permissions to a profiling group's resource-based policy that are provided using
+        /// an action group. If a profiling group doesn't have a resource-based policy, one is
+        /// created for it using the permissions in the action group and the roles and users in
+        /// the <code>principals</code> parameter. 
+        /// 
+        ///  <pre><code> &lt;p&gt; The one supported action group that can be added is &lt;code&gt;agentPermission&lt;/code&gt;
+        /// which grants &lt;code&gt;ConfigureAgent&lt;/code&gt; and &lt;code&gt;PostAgent&lt;/code&gt;
+        /// permissions. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/codeguru/latest/profiler-ug/resource-based-policies.html&quot;&gt;Resource-based
+        /// policies in CodeGuru Profiler&lt;/a&gt; in the &lt;i&gt;Amazon CodeGuru Profiler User
+        /// Guide&lt;/i&gt;, &lt;a href=&quot;https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html&quot;&gt;
+        /// &lt;code&gt;ConfigureAgent&lt;/code&gt; &lt;/a&gt;, and &lt;a href=&quot;https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PostAgentProfile.html&quot;&gt;
+        /// &lt;code&gt;PostAgentProfile&lt;/code&gt; &lt;/a&gt;. &lt;/p&gt; &lt;p&gt; The first
+        /// time you call &lt;code&gt;PutPermission&lt;/code&gt; on a profiling group, do not
+        /// specify a &lt;code&gt;revisionId&lt;/code&gt; because it doesn't have a resource-based
+        /// policy. Subsequent calls must provide a &lt;code&gt;revisionId&lt;/code&gt; to specify
+        /// which revision of the resource-based policy to add the permissions to. &lt;/p&gt;
+        /// &lt;p&gt; The response contains the profiling group's JSON-formatted resource policy.
+        /// &lt;/p&gt; </code></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPermission service method.</param>
         /// <param name="cancellationToken">
@@ -355,12 +632,49 @@ namespace Amazon.CodeGuruProfiler
 
         #endregion
                 
+        #region  RemoveNotificationChannel
+
+
+
+        /// <summary>
+        /// Remove one anomaly notifications channel for a profiling group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveNotificationChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveNotificationChannel service method, as returned by CodeGuruProfiler.</returns>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/RemoveNotificationChannel">REST API Reference for RemoveNotificationChannel Operation</seealso>
+        Task<RemoveNotificationChannelResponse> RemoveNotificationChannelAsync(RemoveNotificationChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RemovePermission
 
 
 
         /// <summary>
-        /// Removes statement for the provided action group from the policy.
+        /// Removes permissions from a profiling group's resource-based policy that are provided
+        /// using an action group. The one supported action group that can be removed is <code>agentPermission</code>
+        /// which grants <code>ConfigureAgent</code> and <code>PostAgent</code> permissions. For
+        /// more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-ug/resource-based-policies.html">Resource-based
+        /// policies in CodeGuru Profiler</a> in the <i>Amazon CodeGuru Profiler User Guide</i>,
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html">
+        /// <code>ConfigureAgent</code> </a>, and <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PostAgentProfile.html">
+        /// <code>PostAgentProfile</code> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission service method.</param>
         /// <param name="cancellationToken">
@@ -386,6 +700,91 @@ namespace Amazon.CodeGuruProfiler
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SubmitFeedback
+
+
+
+        /// <summary>
+        /// Sends feedback to CodeGuru Profiler about whether the anomaly detected by the analysis
+        /// is useful or not.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubmitFeedback service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SubmitFeedback service method, as returned by CodeGuruProfiler.</returns>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/SubmitFeedback">REST API Reference for SubmitFeedback Operation</seealso>
+        Task<SubmitFeedbackResponse> SubmitFeedbackAsync(SubmitFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+
+        /// <summary>
+        /// Use to assign one or more tags to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CodeGuruProfiler.</returns>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+
+        /// <summary>
+        /// Use to remove one or more tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CodeGuruProfiler.</returns>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruProfiler.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

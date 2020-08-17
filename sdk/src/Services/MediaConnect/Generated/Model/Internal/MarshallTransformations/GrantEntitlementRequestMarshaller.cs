@@ -68,6 +68,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEntitlementStatus())
+            {
+                context.Writer.WritePropertyName("entitlementStatus");
+                context.Writer.Write(requestObject.EntitlementStatus);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

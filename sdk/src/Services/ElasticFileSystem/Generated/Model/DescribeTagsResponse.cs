@@ -44,6 +44,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// this field.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Marker
         {
             get { return this._marker; }
@@ -64,6 +65,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// parameter in your next request to retrieve the next set of tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string NextMarker
         {
             get { return this._nextMarker; }

@@ -60,6 +60,20 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             #endregion
         }
 
+        public void AutoScalingCancelInstanceRefresh()
+        {
+            #region to-cancel-an-instance-refresh-1592960979817
+
+            var response = client.CancelInstanceRefresh(new CancelInstanceRefreshRequest 
+            {
+                AutoScalingGroupName = "my-auto-scaling-group"
+            });
+
+            string instanceRefreshId = response.InstanceRefreshId;
+
+            #endregion
+        }
+
         public void AutoScalingCompleteLifecycleAction()
         {
             #region autoscaling-complete-lifecycle-action-1
@@ -83,10 +97,14 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest 
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
-                LaunchConfigurationName = "my-launch-config",
+                LaunchTemplate = new LaunchTemplateSpecification {
+                    LaunchTemplateId = "lt-0a20c965061f64abc",
+                    Version = "$Latest"
+                },
+                MaxInstanceLifetime = 2592000,
                 MaxSize = 3,
                 MinSize = 1,
-                VPCZoneIdentifier = "subnet-4176792c"
+                VPCZoneIdentifier = "subnet-057fa0918fEXAMPLE"
             });
 
 
@@ -96,6 +114,28 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
         public void AutoScalingCreateAutoScalingGroup()
         {
             #region autoscaling-create-auto-scaling-group-2
+
+            var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest 
+            {
+                AutoScalingGroupName = "my-auto-scaling-group",
+                HealthCheckGracePeriod = 120,
+                HealthCheckType = "ELB",
+                LaunchConfigurationName = "my-launch-config",
+                MaxSize = 3,
+                MinSize = 1,
+                TargetGroupARNs = new List<string> {
+                    "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067"
+                },
+                VPCZoneIdentifier = "subnet-057fa0918fEXAMPLE, subnet-610acd08EXAMPLE"
+            });
+
+
+            #endregion
+        }
+
+        public void AutoScalingCreateAutoScalingGroup()
+        {
+            #region autoscaling-create-auto-scaling-group-3
 
             var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest 
             {
@@ -111,28 +151,6 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
                 },
                 MaxSize = 3,
                 MinSize = 1
-            });
-
-
-            #endregion
-        }
-
-        public void AutoScalingCreateAutoScalingGroup()
-        {
-            #region autoscaling-create-auto-scaling-group-3
-
-            var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest 
-            {
-                AutoScalingGroupName = "my-auto-scaling-group",
-                HealthCheckGracePeriod = 120,
-                HealthCheckType = "ELB",
-                LaunchConfigurationName = "my-launch-config",
-                MaxSize = 3,
-                MinSize = 1,
-                TargetGroupARNs = new List<string> {
-                    "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067"
-                },
-                VPCZoneIdentifier = "subnet-4176792c, subnet-65ea5f08"
             });
 
 
@@ -261,7 +279,7 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             var response = client.DeletePolicy(new DeletePolicyRequest 
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
-                PolicyName = "ScaleIn"
+                PolicyName = "my-step-scale-out-policy"
             });
 
 
@@ -372,6 +390,20 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             });
 
             List<string> autoScalingNotificationTypes = response.AutoScalingNotificationTypes;
+
+            #endregion
+        }
+
+        public void AutoScalingDescribeInstanceRefreshes()
+        {
+            #region to-list-instance-refreshes-1592959593746
+
+            var response = client.DescribeInstanceRefreshes(new DescribeInstanceRefreshesRequest 
+            {
+                AutoScalingGroupName = "my-auto-scaling-group"
+            });
+
+            List<InstanceRefresh> instanceRefreshes = response.InstanceRefreshes;
 
             #endregion
         }
@@ -671,8 +703,9 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             var response = client.ExecutePolicy(new ExecutePolicyRequest 
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
-                HonorCooldown = true,
-                PolicyName = "ScaleIn"
+                BreachThreshold = 50,
+                MetricValue = 59,
+                PolicyName = "my-step-scale-out-policy"
             });
 
 
@@ -736,12 +769,19 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
             var response = client.PutScalingPolicy(new PutScalingPolicyRequest 
             {
-                AdjustmentType = "ChangeInCapacity",
                 AutoScalingGroupName = "my-auto-scaling-group",
-                PolicyName = "ScaleIn",
-                ScalingAdjustment = -1
+                PolicyName = "alb1000-target-tracking-scaling-policy",
+                PolicyType = "TargetTrackingScaling",
+                TargetTrackingConfiguration = new TargetTrackingConfiguration {
+                    PredefinedMetricSpecification = new PredefinedMetricSpecification {
+                        PredefinedMetricType = "ALBRequestCountPerTarget",
+                        ResourceLabel = "app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d"
+                    },
+                    TargetValue = 1000
+                }
             });
 
+            List<Alarm> alarms = response.Alarms;
             string policyARN = response.PolicyARN;
 
             #endregion
@@ -856,6 +896,24 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
                 ProtectedFromScaleIn = false
             });
 
+
+            #endregion
+        }
+
+        public void AutoScalingStartInstanceRefresh()
+        {
+            #region to-start-an-instance-refresh-1592957271522
+
+            var response = client.StartInstanceRefresh(new StartInstanceRefreshRequest 
+            {
+                AutoScalingGroupName = "my-auto-scaling-group",
+                Preferences = new RefreshPreferences {
+                    InstanceWarmup = 400,
+                    MinHealthyPercentage = 50
+                }
+            });
+
+            string instanceRefreshId = response.InstanceRefreshId;
 
             #endregion
         }

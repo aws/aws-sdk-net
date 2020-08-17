@@ -34,7 +34,10 @@ namespace Amazon.ServerMigrationService.Model
     public partial class ServerLaunchConfiguration
     {
         private bool? _associatePublicIpAddress;
+        private S3Location _configureScript;
+        private ScriptType _configureScriptType;
         private string _ec2KeyName;
+        private string _iamInstanceProfileName;
         private string _instanceType;
         private string _logicalId;
         private string _securityGroup;
@@ -46,7 +49,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property AssociatePublicIpAddress. 
         /// <para>
-        /// If true, a publicly accessible IP address is created when launching the server.
+        /// Indicates whether a publicly accessible IP address is created when launching the server.
         /// </para>
         /// </summary>
         public bool AssociatePublicIpAddress
@@ -62,9 +65,42 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConfigureScript.
+        /// </summary>
+        public S3Location ConfigureScript
+        {
+            get { return this._configureScript; }
+            set { this._configureScript = value; }
+        }
+
+        // Check to see if ConfigureScript property is set
+        internal bool IsSetConfigureScript()
+        {
+            return this._configureScript != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfigureScriptType. 
+        /// <para>
+        /// The type of configuration script.
+        /// </para>
+        /// </summary>
+        public ScriptType ConfigureScriptType
+        {
+            get { return this._configureScriptType; }
+            set { this._configureScriptType = value; }
+        }
+
+        // Check to see if ConfigureScriptType property is set
+        internal bool IsSetConfigureScriptType()
+        {
+            return this._configureScriptType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Ec2KeyName. 
         /// <para>
-        /// Name of the EC2 SSH Key to be used for connecting to the launched server.
+        /// The name of the Amazon EC2 SSH key to be used for connecting to the launched server.
         /// </para>
         /// </summary>
         public string Ec2KeyName
@@ -80,9 +116,27 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IamInstanceProfileName. 
+        /// <para>
+        /// The name of the IAM instance profile.
+        /// </para>
+        /// </summary>
+        public string IamInstanceProfileName
+        {
+            get { return this._iamInstanceProfileName; }
+            set { this._iamInstanceProfileName = value; }
+        }
+
+        // Check to see if IamInstanceProfileName property is set
+        internal bool IsSetIamInstanceProfileName()
+        {
+            return this._iamInstanceProfileName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// Instance type to be used for launching the server.
+        /// The instance type to use when launching the server.
         /// </para>
         /// </summary>
         public string InstanceType
@@ -100,7 +154,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property LogicalId. 
         /// <para>
-        /// Logical ID of the server in the Amazon CloudFormation template.
+        /// The logical ID of the server in the AWS CloudFormation template.
         /// </para>
         /// </summary>
         public string LogicalId
@@ -118,7 +172,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property SecurityGroup. 
         /// <para>
-        /// Identifier of the security group that applies to the launched server.
+        /// The ID of the security group that applies to the launched server.
         /// </para>
         /// </summary>
         public string SecurityGroup
@@ -136,7 +190,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Server. 
         /// <para>
-        /// Identifier of the server the launch configuration is associated with.
+        /// The ID of the server with which the launch configuration is associated.
         /// </para>
         /// </summary>
         public Server Server
@@ -154,7 +208,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Subnet. 
         /// <para>
-        /// Identifier of the subnet the server should be launched into.
+        /// The ID of the subnet the server should be launched into.
         /// </para>
         /// </summary>
         public string Subnet
@@ -190,7 +244,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Vpc. 
         /// <para>
-        /// Identifier of the VPC the server should be launched into.
+        /// The ID of the VPC into which the server should be launched.
         /// </para>
         /// </summary>
         public string Vpc

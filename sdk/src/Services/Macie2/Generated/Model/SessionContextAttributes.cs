@@ -40,7 +40,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date and time, in ISO 8601 format, when the credentials were issued.
+        /// The date and time, in UTC and ISO 8601 format, when the credentials were issued.
         /// </para>
         /// </summary>
         public DateTime CreationDate
