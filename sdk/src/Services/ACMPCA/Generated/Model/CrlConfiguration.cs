@@ -40,6 +40,12 @@ namespace Amazon.ACMPCA.Model
     /// 
     ///  
     /// <para>
+    /// ACM Private CAA assets that are stored in Amazon S3 can be protected with encryption.
+    /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
+    /// Your CRLs</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// Your private CA uses the value in the <b>ExpirationInDays</b> parameter to calculate
     /// the <b>nextUpdate</b> field in the CRL. The CRL is refreshed at 1/2 the age of next
     /// update or when a certificate is revoked. When a certificate is revoked, it is recorded
@@ -156,8 +162,9 @@ namespace Amazon.ACMPCA.Model
         /// <para>
         /// Boolean value that specifies whether certificate revocation lists (CRLs) are enabled.
         /// You can use this value to enable certificate revocation for a new CA when you call
-        /// the <a>CreateCertificateAuthority</a> action or for an existing CA when you call the
-        /// <a>UpdateCertificateAuthority</a> action. 
+        /// the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
+        /// action or for an existing CA when you call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+        /// action. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -198,8 +205,9 @@ namespace Amazon.ACMPCA.Model
         /// Name of the S3 bucket that contains the CRL. If you do not provide a value for the
         /// <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL
         /// Distribution Points</b> extension of the issued certificate. You can change the name
-        /// of your bucket by calling the <a>UpdateCertificateAuthority</a> action. You must specify
-        /// a bucket policy that allows ACM Private CA to write the CRL to your bucket.
+        /// of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+        /// action. You must specify a bucket policy that allows ACM Private CA to write the CRL
+        /// to your bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=255)]

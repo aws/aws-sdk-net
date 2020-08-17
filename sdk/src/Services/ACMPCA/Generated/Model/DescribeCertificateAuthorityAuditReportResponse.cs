@@ -80,6 +80,7 @@ namespace Amazon.ACMPCA.Model
         /// Name of the S3 bucket that contains the report.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=63)]
         public string S3BucketName
         {
             get { return this._s3BucketName; }
@@ -98,6 +99,7 @@ namespace Amazon.ACMPCA.Model
         /// S3 <b>key</b> that uniquely identifies the report file in your S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string S3Key
         {
             get { return this._s3Key; }

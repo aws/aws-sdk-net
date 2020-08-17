@@ -29,10 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// Certificate revocation information used by the <a>CreateCertificateAuthority</a> and
-    /// <a>UpdateCertificateAuthority</a> actions. Your private certificate authority (CA)
-    /// can create and maintain a certificate revocation list (CRL). A CRL contains information
-    /// about certificates revoked by your CA. For more information, see <a>RevokeCertificate</a>.
+    /// Certificate revocation information used by the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
+    /// and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+    /// actions. Your private certificate authority (CA) can create and maintain a certificate
+    /// revocation list (CRL). A CRL contains information about certificates revoked by your
+    /// CA. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a>.
     /// </summary>
     public partial class RevocationConfiguration
     {

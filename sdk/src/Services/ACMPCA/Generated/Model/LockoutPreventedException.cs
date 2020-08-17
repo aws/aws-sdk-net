@@ -29,43 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// The resource policy is invalid or is missing a required statement. For general information
-    /// about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview
-    /// of JSON Policies</a>.
+    /// The current action was prevented because it would lock the caller out from performing
+    /// subsequent actions. Verify that the specified parameters would not result in the caller
+    /// being denied access to the resource.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]
     #endif
-    public partial class InvalidPolicyException : AmazonACMPCAException
+    public partial class LockoutPreventedException : AmazonACMPCAException
     {
 
         /// <summary>
-        /// Constructs a new InvalidPolicyException with the specified error
+        /// Constructs a new LockoutPreventedException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public InvalidPolicyException(string message) 
+        public LockoutPreventedException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of InvalidPolicyException
+        /// Construct instance of LockoutPreventedException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public InvalidPolicyException(string message, Exception innerException) 
+        public LockoutPreventedException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of InvalidPolicyException
+        /// Construct instance of LockoutPreventedException
         /// </summary>
         /// <param name="innerException"></param>
-        public InvalidPolicyException(Exception innerException) 
+        public LockoutPreventedException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of InvalidPolicyException
+        /// Construct instance of LockoutPreventedException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -73,30 +73,30 @@ namespace Amazon.ACMPCA.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public InvalidPolicyException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public LockoutPreventedException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of InvalidPolicyException
+        /// Construct instance of LockoutPreventedException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public InvalidPolicyException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public LockoutPreventedException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !PCL && !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the InvalidPolicyException class with serialized data.
+        /// Constructs a new instance of the LockoutPreventedException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected InvalidPolicyException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected LockoutPreventedException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }

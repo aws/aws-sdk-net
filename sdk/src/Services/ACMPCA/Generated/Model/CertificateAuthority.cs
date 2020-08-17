@@ -32,12 +32,12 @@ namespace Amazon.ACMPCA.Model
     /// Contains information about your private certificate authority (CA). Your private CA
     /// can issue and revoke X.509 digital certificates. Digital certificates verify that
     /// the entity named in the certificate <b>Subject</b> field owns or controls the public
-    /// key contained in the <b>Subject Public Key Info</b> field. Call the <a>CreateCertificateAuthority</a>
-    /// action to create your private CA. You must then call the <a>GetCertificateAuthorityCertificate</a>
+    /// key contained in the <b>Subject Public Key Info</b> field. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
+    /// action to create your private CA. You must then call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html">GetCertificateAuthorityCertificate</a>
     /// action to retrieve a private CA certificate signing request (CSR). Sign the CSR with
     /// your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call
-    /// the <a>ImportCertificateAuthorityCertificate</a> action to import the signed certificate
-    /// into AWS Certificate Manager (ACM).
+    /// the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a>
+    /// action to import the signed certificate into AWS Certificate Manager (ACM).
     /// </summary>
     public partial class CertificateAuthority
     {
@@ -48,6 +48,7 @@ namespace Amazon.ACMPCA.Model
         private DateTime? _lastStateChangeAt;
         private DateTime? _notAfter;
         private DateTime? _notBefore;
+        private string _ownerAccount;
         private DateTime? _restorableUntil;
         private RevocationConfiguration _revocationConfiguration;
         private string _serial;
@@ -183,10 +184,29 @@ namespace Amazon.ACMPCA.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OwnerAccount. 
+        /// <para>
+        /// The AWS account ID that owns the certificate authority.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string OwnerAccount
+        {
+            get { return this._ownerAccount; }
+            set { this._ownerAccount = value; }
+        }
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this._ownerAccount != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RestorableUntil. 
         /// <para>
         /// The period during which a deleted CA can be restored. For more information, see the
-        /// <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a>
+        /// <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
         /// action. 
         /// </para>
         /// </summary>

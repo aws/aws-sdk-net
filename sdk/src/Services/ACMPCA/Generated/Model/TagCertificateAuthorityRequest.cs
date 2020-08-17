@@ -36,8 +36,9 @@ namespace Amazon.ACMPCA.Model
     /// the tag by using a key-value pair. You can apply a tag to just one private CA if you
     /// want to identify a specific characteristic of that CA, or you can apply the same tag
     /// to multiple private CAs if you want to filter for a common relationship among those
-    /// CAs. To remove one or more tags, use the <a>UntagCertificateAuthority</a> action.
-    /// Call the <a>ListTags</a> action to see what tags are associated with your CA.
+    /// CAs. To remove one or more tags, use the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html">UntagCertificateAuthority</a>
+    /// action. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListTags.html">ListTags</a>
+    /// action to see what tags are associated with your CA.
     /// </summary>
     public partial class TagCertificateAuthorityRequest : AmazonACMPCARequest
     {
@@ -47,7 +48,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>.
+        /// The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>.
         /// This must be of the form: 
         /// </para>
         ///  

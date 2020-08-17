@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListCertificateAuthorities Request Marshaller
+    /// PutPolicy Request Marshaller
     /// </summary>       
-    public class ListCertificateAuthoritiesRequestMarshaller : IMarshaller<IRequest, ListCertificateAuthoritiesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutPolicyRequestMarshaller : IMarshaller<IRequest, PutPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListCertificateAuthoritiesRequest)input);
+            return this.Marshall((PutPolicyRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListCertificateAuthoritiesRequest publicRequest)
+        public IRequest Marshall(PutPolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ACMPCA");
-            string target = "ACMPrivateCA.ListCertificateAuthorities";
+            string target = "ACMPrivateCA.PutPolicy";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-22";            
@@ -68,22 +68,16 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxResults())
+                if(publicRequest.IsSetPolicy())
                 {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.WritePropertyName("Policy");
+                    context.Writer.Write(publicRequest.Policy);
                 }
 
-                if(publicRequest.IsSetNextToken())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetResourceOwner())
-                {
-                    context.Writer.WritePropertyName("ResourceOwner");
-                    context.Writer.Write(publicRequest.ResourceOwner);
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
         
@@ -95,9 +89,9 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListCertificateAuthoritiesRequestMarshaller _instance = new ListCertificateAuthoritiesRequestMarshaller();        
+        private static PutPolicyRequestMarshaller _instance = new PutPolicyRequestMarshaller();        
 
-        internal static ListCertificateAuthoritiesRequestMarshaller GetInstance()
+        internal static PutPolicyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -105,7 +99,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListCertificateAuthoritiesRequestMarshaller Instance
+        public static PutPolicyRequestMarshaller Instance
         {
             get
             {

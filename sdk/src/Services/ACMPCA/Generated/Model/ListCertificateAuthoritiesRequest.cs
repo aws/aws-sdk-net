@@ -30,13 +30,14 @@ namespace Amazon.ACMPCA.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCertificateAuthorities operation.
-    /// Lists the private certificate authorities that you created by using the <a>CreateCertificateAuthority</a>
+    /// Lists the private certificate authorities that you created by using the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
     /// action.
     /// </summary>
     public partial class ListCertificateAuthoritiesRequest : AmazonACMPCARequest
     {
         private int? _maxResults;
         private string _nextToken;
+        private ResourceOwner _resourceOwner;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -79,6 +80,25 @@ namespace Amazon.ACMPCA.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceOwner. 
+        /// <para>
+        /// Use this parameter to filter the returned set of certificate authorities based on
+        /// their owner. The default is SELF.
+        /// </para>
+        /// </summary>
+        public ResourceOwner ResourceOwner
+        {
+            get { return this._resourceOwner; }
+            set { this._resourceOwner = value; }
+        }
+
+        // Check to see if ResourceOwner property is set
+        internal bool IsSetResourceOwner()
+        {
+            return this._resourceOwner != null;
         }
 
     }

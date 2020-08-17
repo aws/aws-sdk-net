@@ -30,9 +30,10 @@ namespace Amazon.ACMPCA.Model
 {
     /// <summary>
     /// Container for the parameters to the IssueCertificate operation.
-    /// Uses your private certificate authority (CA) to issue a client certificate. This action
-    /// returns the Amazon Resource Name (ARN) of the certificate. You can retrieve the certificate
-    /// by calling the <a>GetCertificate</a> action and specifying the ARN. 
+    /// Uses your private certificate authority (CA), or one that has been shared with you,
+    /// to issue a client certificate. This action returns the Amazon Resource Name (ARN)
+    /// of the certificate. You can retrieve the certificate by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
+    /// action and specifying the ARN. 
     /// 
     ///  <note> 
     /// <para>
@@ -53,7 +54,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>.
+        /// The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>.
         /// This must be of the form:
         /// </para>
         ///  
@@ -97,6 +98,11 @@ namespace Amazon.ACMPCA.Model
         ///  <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048
         /// -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> 
         /// </para>
+        ///  
+        /// <para>
+        /// Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative
+        /// name</i> or the request will be rejected. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32768)]
         public MemoryStream Csr
@@ -139,6 +145,12 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property SigningAlgorithm. 
         /// <para>
         /// The name of the algorithm that will be used to sign the certificate to be issued.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter should not be confused with the <code>SigningAlgorithm</code> parameter
+        /// used to sign a CSR.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -159,7 +171,15 @@ namespace Amazon.ACMPCA.Model
         /// <para>
         /// Specifies a custom configuration template to use when issuing a certificate. If this
         /// parameter is not provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code>
-        /// template.
+        /// template. For CA certificates, you should choose the shortest path length that meets
+        /// your needs. The path length is indicated by the PathLen<i>N</i> portion of the ARN,
+        /// where <i>N</i> is the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA
+        /// depth</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: The CA depth configured on a subordinate CA certificate must not exceed the
+        /// limit set by its parents in the CA hierarchy.
         /// </para>
         ///  
         /// <para>
@@ -168,7 +188,47 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// arn:aws:acm-pca:::template/CodeSigningCertificate/V1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// arn:aws:acm-pca:::template/CodeSigningCertificate_CSRPassthrough/V1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// arn:aws:acm-pca:::template/EndEntityCertificate/V1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// arn:aws:acm-pca:::template/EndEntityCertificate_CSRPassthrough/V1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// arn:aws:acm-pca:::template/EndEntityClientAuthCertificate/V1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// arn:aws:acm-pca:::template/EndEntityClientAuthCertificate_CSRPassthrough/V1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// arn:aws:acm-pca:::template/EndEntityServerAuthCertificate/V1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// arn:aws:acm-pca:::template/EndEntityServerAuthCertificate_CSRPassthrough/V1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// arn:aws:acm-pca:::template/OCSPSigningCertificate/V1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// arn:aws:acm-pca:::template/OCSPSigningCertificate_CSRPassthrough/V1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// arn:aws:acm-pca:::template/RootCACertificate/V1
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -185,10 +245,6 @@ namespace Amazon.ACMPCA.Model
         ///  </li> <li> 
         /// <para>
         /// arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// arn:aws:acm-pca:::template/RootCACertificate/V1
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -212,7 +268,18 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property Validity. 
         /// <para>
-        /// The type of the validity period.
+        /// Information describing the validity period of the certificate.
+        /// </para>
+        ///  
+        /// <para>
+        /// When issuing a certificate, ACM Private CA sets the "Not Before" date in the validity
+        /// field to date and time minus 60 minutes. This is intended to compensate for time inconsistencies
+        /// across systems of 60 minutes or less. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The validity period configured on a certificate must not exceed the limit set by its
+        /// parents in the CA hierarchy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,30 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeCertificateAuthority operation.
+    /// This is the response object from the PutPolicy operation.
     /// </summary>
-    public partial class DescribeCertificateAuthorityResponse : AmazonWebServiceResponse
+    public partial class PutPolicyResponse : AmazonWebServiceResponse
     {
-        private CertificateAuthority _certificateAuthority;
-
-        /// <summary>
-        /// Gets and sets the property CertificateAuthority. 
-        /// <para>
-        /// A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a>
-        /// structure that contains information about your private CA.
-        /// </para>
-        /// </summary>
-        public CertificateAuthority CertificateAuthority
-        {
-            get { return this._certificateAuthority; }
-            set { this._certificateAuthority = value; }
-        }
-
-        // Check to see if CertificateAuthority property is set
-        internal bool IsSetCertificateAuthority()
-        {
-            return this._certificateAuthority != null;
-        }
 
     }
 }

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// An ACM Private CA limit has been exceeded. See the exception message returned to determine
-    /// the limit that was exceeded.
+    /// An ACM Private CA quota has been exceeded. See the exception message returned to determine
+    /// the quota that was exceeded.
     /// </summary>
     #if !PCL && !NETSTANDARD
     [Serializable]

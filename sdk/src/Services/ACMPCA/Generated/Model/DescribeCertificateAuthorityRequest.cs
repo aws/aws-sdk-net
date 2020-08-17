@@ -30,9 +30,9 @@ namespace Amazon.ACMPCA.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCertificateAuthority operation.
-    /// Lists information about your private certificate authority (CA). You specify the private
-    /// CA on input by its ARN (Amazon Resource Name). The output contains the status of your
-    /// CA. This can be any of the following: 
+    /// Lists information about your private certificate authority (CA) or one that has been
+    /// shared with you. You specify the private CA on input by its ARN (Amazon Resource Name).
+    /// The output contains the status of your CA. This can be any of the following: 
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -77,7 +77,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>.
+        /// The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>.
         /// This must be of the form: 
         /// </para>
         ///  

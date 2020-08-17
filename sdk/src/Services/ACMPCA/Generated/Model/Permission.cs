@@ -33,8 +33,10 @@ namespace Amazon.ACMPCA.Model
     /// or entity. In order for ACM to automatically renew private certificates, you must
     /// give the ACM service principal all available permissions (<code>IssueCertificate</code>,
     /// <code>GetCertificate</code>, and <code>ListPermissions</code>). Permissions can be
-    /// assigned with the <a>CreatePermission</a> action, removed with the <a>DeletePermission</a>
-    /// action, and listed with the <a>ListPermissions</a> action.
+    /// assigned with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html">CreatePermission</a>
+    /// action, removed with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html">DeletePermission</a>
+    /// action, and listed with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html">ListPermissions</a>
+    /// action.
     /// </summary>
     public partial class Permission
     {
@@ -107,6 +109,7 @@ namespace Amazon.ACMPCA.Model
         /// The name of the policy that is associated with the permission.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20480)]
         public string Policy
         {
             get { return this._policy; }
@@ -126,6 +129,7 @@ namespace Amazon.ACMPCA.Model
         /// principal is <code>acm.amazonaws.com</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string Principal
         {
             get { return this._principal; }
@@ -144,6 +148,7 @@ namespace Amazon.ACMPCA.Model
         /// The ID of the account that assigned the permission.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string SourceAccount
         {
             get { return this._sourceAccount; }
