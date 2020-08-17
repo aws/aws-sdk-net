@@ -39,6 +39,7 @@ namespace Amazon.QuickSight.Model
         private List<TemplateError> _errors = new List<TemplateError>();
         private string _sourceEntityArn;
         private ResourceStatus _status;
+        private string _themeArn;
         private long? _versionNumber;
 
         /// <summary>
@@ -62,9 +63,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSetConfigurations. 
         /// <para>
-        /// Schema of the dataset identified by the placeholder. The idea is that any dashboard
-        /// created from the template should be bound to new datasets matching the same schema
-        /// described through this API. .
+        /// Schema of the dataset identified by the placeholder. Any dashboard created from this
+        /// template should be bound to new datasets matching the same schema described through
+        /// this API operation.
         /// </para>
         /// </summary>
         [AWSProperty(Max=30)]
@@ -102,7 +103,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// Errors associated with the template.
+        /// Errors associated with this template version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -121,7 +122,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SourceEntityArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the analysis or template which was used to create
+        /// The Amazon Resource Name (ARN) of an analysis or template that was used to create
         /// this template.
         /// </para>
         /// </summary>
@@ -156,9 +157,27 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ThemeArn. 
+        /// <para>
+        /// The ARN of the theme associated with this version of the template.
+        /// </para>
+        /// </summary>
+        public string ThemeArn
+        {
+            get { return this._themeArn; }
+            set { this._themeArn = value; }
+        }
+
+        // Check to see if ThemeArn property is set
+        internal bool IsSetThemeArn()
+        {
+            return this._themeArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VersionNumber. 
         /// <para>
-        /// The version number of the template.
+        /// The version number of the template version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

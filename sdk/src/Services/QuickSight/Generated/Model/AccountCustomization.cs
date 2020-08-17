@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The customizations associated with your AWS account for QuickSight.
+    /// The Amazon QuickSight customizations associated with your AWS account or a QuickSight
+    /// namespace in a specific AWS Region.
     /// </summary>
     public partial class AccountCustomization
     {

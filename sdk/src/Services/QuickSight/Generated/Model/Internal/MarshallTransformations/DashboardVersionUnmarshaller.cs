@@ -106,6 +106,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ThemeArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ThemeArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VersionNumber", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

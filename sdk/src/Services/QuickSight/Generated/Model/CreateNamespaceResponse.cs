@@ -84,7 +84,7 @@ namespace Amazon.QuickSight.Model
         /// The status of the creation of the namespace. This is an asynchronous process. A status
         /// of <code>CREATED</code> means that your namespace is ready to use. If an error occurs,
         /// it indicates if the process is <code>retryable</code> or <code>non-retryable</code>.
-        /// In the case of a non-retryable error, refer to the error message for follow-up actions.
+        /// In the case of a non-retryable error, refer to the error message for follow-up tasks.
         /// </para>
         /// </summary>
         public NamespaceStatus CreationStatus

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// String parameter.
+    /// A string parameter.
     /// </summary>
     public partial class StringParameter
     {
@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A display name for the dataset.
+        /// A display name for a string parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// Values.
+        /// The values of a string parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -32,8 +32,8 @@ namespace Amazon.QuickSight.Model
     /// Container for the parameters to the DeleteNamespace operation.
     /// Deletes a namespace and the users and groups that are associated with the namespace.
     /// This is an asynchronous process. Assets including dashboards, analyses, datasets and
-    /// data sources are not deleted. To delete these assets, you use the APIs for the relevant
-    /// asset.
+    /// data sources are not deleted. To delete these assets, you use the API operations for
+    /// the relevant asset.
     /// </summary>
     public partial class DeleteNamespaceRequest : AmazonQuickSightRequest
     {

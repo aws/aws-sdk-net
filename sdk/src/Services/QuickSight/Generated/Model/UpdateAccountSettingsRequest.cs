@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAccountSettings operation.
-    /// Updates the settings for the Amazon QuickSight subscription in your AWS Account.
+    /// Updates the Amazon QuickSight settings in your AWS Account.
     /// </summary>
     public partial class UpdateAccountSettingsRequest : AmazonQuickSightRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the AWS account that contains the QuickSight namespaces that you want to
+        /// The ID for the AWS account that contains the QuickSight settings that you want to
         /// list.
         /// </para>
         /// </summary>
@@ -82,7 +82,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property NotificationEmail. 
         /// <para>
-        /// Email address used to send notifications regarding administration of QuickSight.
+        /// The email address that you want QuickSight to send notifications to regarding your
+        /// AWS account or QuickSight subscription.
         /// </para>
         /// </summary>
         public string NotificationEmail

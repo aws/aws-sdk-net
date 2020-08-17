@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDataSource operation.
-    /// Deletes the data source permanently. This action breaks all the datasets that reference
+    /// Deletes the data source permanently. This operation breaks all the datasets that reference
     /// the deleted data source.
     /// </summary>
     public partial class DeleteDataSourceRequest : AmazonQuickSightRequest

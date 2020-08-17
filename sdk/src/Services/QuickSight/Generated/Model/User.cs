@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A registered user of Amazon QuickSight. Currently, an Amazon QuickSight subscription
-    /// can't contain more than 20 million users.
+    /// A registered user of Amazon QuickSight.
     /// </summary>
     public partial class User
     {

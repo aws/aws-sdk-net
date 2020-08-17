@@ -40,6 +40,7 @@ namespace Amazon.QuickSight.Model
         private List<DashboardError> _errors = new List<DashboardError>();
         private string _sourceEntityArn;
         private ResourceStatus _status;
+        private string _themeArn;
         private long? _versionNumber;
 
         /// <summary>
@@ -81,8 +82,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSetArns. 
         /// <para>
-        /// The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version
-        /// of the dashboard.
+        /// The Amazon Resource Numbers (ARNs) for the datasets that are associated with this
+        /// version of the dashboard.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -120,7 +121,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// Errors.
+        /// Errors associated with this dashboard version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -173,9 +174,27 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ThemeArn. 
+        /// <para>
+        /// The ARN of the theme associated with a version of the dashboard.
+        /// </para>
+        /// </summary>
+        public string ThemeArn
+        {
+            get { return this._themeArn; }
+            set { this._themeArn = value; }
+        }
+
+        // Check to see if ThemeArn property is set
+        internal bool IsSetThemeArn()
+        {
+            return this._themeArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VersionNumber. 
         /// <para>
-        /// Version number.
+        /// Version number for this version of the dashboard.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

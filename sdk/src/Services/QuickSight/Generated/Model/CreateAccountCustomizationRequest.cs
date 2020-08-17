@@ -30,8 +30,26 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAccountCustomization operation.
-    /// Creates a customization for the Amazon QuickSight subscription associated with your
-    /// AWS account.
+    /// Creates Amazon QuickSight customizations the current AWS Region. Currently, you can
+    /// add a custom default theme by using the <code>CreateAccountCustomization</code> or
+    /// <code>UpdateAccountCustomization</code> API operation. To further customize QuickSight
+    /// by removing QuickSight sample assets and videos for all new users, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
+    /// QuickSight</a> in the Amazon QuickSight User Guide.
+    /// 
+    ///  
+    /// <para>
+    /// You can create customizations for your AWS account or, if you specify a namespace,
+    /// for a QuickSight namespace instead. Customizations that apply to a namespace always
+    /// override customizations that apply to an AWS account. To find out which customizations
+    /// apply, use the <code>DescribeAccountCustomization</code> API operation.
+    /// </para>
+    ///  
+    /// <para>
+    /// Before you add a theme as the namespace default, make sure that you first share the
+    /// theme with the namespace. If you don't share it with the namespace, the theme won't
+    /// be visible to your users even if you use this API operation to make it the default
+    /// theme. 
+    /// </para>
     /// </summary>
     public partial class CreateAccountCustomizationRequest : AmazonQuickSightRequest
     {
@@ -42,10 +60,16 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AccountCustomization. 
         /// <para>
-        /// The customizations you're adding to the QuickSight subscription for the AWS account.
+        /// The QuickSight customizations you're adding in the current AWS Region. You can add
+        /// these to an AWS account and a QuickSight namespace. 
+        /// </para>
+        ///  
+        /// <para>
         /// For example, you could add a default theme by setting <code>AccountCustomization</code>
-        /// to the midnight theme (<code>DefaultTheme="arn:aws:quicksight::aws:theme/MIDNIGHT"</code>)
-        /// or to a custom theme (<code>DefaultTheme="arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"</code>).
+        /// to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT"
+        /// }. </code>. Or, you could add a custom theme by specifying <code>"AccountCustomization":
+        /// { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"
+        /// }</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,7 +107,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace associated with the customization that you're creating.
+        /// The QuickSight namespace that you want to add customizations to.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

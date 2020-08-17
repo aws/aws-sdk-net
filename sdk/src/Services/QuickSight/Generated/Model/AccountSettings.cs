@@ -41,7 +41,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AccountName. 
         /// <para>
-        /// The name associated with the QuickSight subscription in your AWS account.
+        /// The "account name" you provided for the QuickSight subscription in your AWS account.
+        /// You create this name when you sign up for QuickSight. It is unique in all of AWS and
+        /// it appears only in the console when users sign in.
         /// </para>
         /// </summary>
         public string AccountName
@@ -59,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DefaultNamespace. 
         /// <para>
-        /// The default QuickSight namespace for your AWS account.
+        /// The default QuickSight namespace for your AWS account. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -78,7 +80,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Edition. 
         /// <para>
-        /// The edition of QuickSight that you're currently subscribed to.
+        /// The edition of QuickSight that you're currently subscribed to: Enterprise edition
+        /// or Standard edition.
         /// </para>
         /// </summary>
         public Edition Edition
