@@ -79,7 +79,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property ImageManifestMediaType. 
         /// <para>
-        /// The media type associated with the image manifest.
+        /// The manifest media type of the image.
         /// </para>
         /// </summary>
         public string ImageManifestMediaType
