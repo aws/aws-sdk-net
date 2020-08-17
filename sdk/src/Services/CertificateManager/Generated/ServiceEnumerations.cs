@@ -412,6 +412,10 @@ namespace Amazon.CertificateManager
         /// Constant PCA_RESOURCE_NOT_FOUND for FailureReason
         /// </summary>
         public static readonly FailureReason PCA_RESOURCE_NOT_FOUND = new FailureReason("PCA_RESOURCE_NOT_FOUND");
+        /// <summary>
+        /// Constant SLR_NOT_FOUND for FailureReason
+        /// </summary>
+        public static readonly FailureReason SLR_NOT_FOUND = new FailureReason("SLR_NOT_FOUND");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
