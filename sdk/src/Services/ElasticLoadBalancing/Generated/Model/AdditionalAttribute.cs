@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// This data type is reserved.
+    /// Information about additional load balancer attributes.
     /// </summary>
     public partial class AdditionalAttribute
     {
@@ -39,8 +39,20 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// This parameter is reserved.
+        /// The name of the attribute.
         /// </para>
+        ///  
+        /// <para>
+        /// The following attribute is supported.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles
+        /// requests that might pose a security risk to your application. The possible values
+        /// are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The
+        /// default is <code>defensive</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=256)]
         public string Key
@@ -58,7 +70,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// This parameter is reserved.
+        /// This value of the attribute.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

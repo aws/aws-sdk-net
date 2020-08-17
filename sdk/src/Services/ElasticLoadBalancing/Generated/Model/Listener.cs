@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     ///  
     /// <para>
     /// For information about the protocols and the ports supported by Elastic Load Balancing,
-    /// see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+    /// see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
     /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
     /// </para>
     /// </summary>
@@ -90,8 +90,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         ///  
         /// <para>
-        /// If the front-end protocol is HTTP, HTTPS, TCP, or SSL, <code>InstanceProtocol</code>
-        /// must be at the same protocol.
+        /// If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL.
+        /// If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or
+        /// HTTPS.
         /// </para>
         ///  
         /// <para>

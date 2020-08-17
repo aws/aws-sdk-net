@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits
+    /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits
     /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
     /// </para>
     /// </summary>

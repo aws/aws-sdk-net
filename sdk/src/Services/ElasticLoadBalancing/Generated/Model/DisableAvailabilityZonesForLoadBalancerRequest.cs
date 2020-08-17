@@ -47,7 +47,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add
+    /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add
     /// or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.
     /// </para>
     /// </summary>

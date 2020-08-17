@@ -47,7 +47,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <para>
     /// You can create up to 20 load balancers per region per account. You can request an
     /// increase for the number of load balancers for your account. For more information,
-    /// see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits
+    /// see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits
     /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
     /// </para>
     /// </summary>
@@ -79,7 +79,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Instantiates CreateLoadBalancerRequest with the parameterized properties
         /// </summary>
         /// <param name="loadBalancerName">The name of the load balancer. This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</param>
-        /// <param name="listeners">The listeners. For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</param>
+        /// <param name="listeners">The listeners. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</param>
         /// <param name="availabilityZones">One or more Availability Zones from the same region as the load balancer. You must specify at least one Availability Zone. You can add more Availability Zones after you create the load balancer using <a>EnableAvailabilityZonesForLoadBalancer</a>.</param>
         public CreateLoadBalancerRequest(string loadBalancerName, List<Listener> listeners, List<string> availabilityZones)
         {
@@ -121,7 +121,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
         /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
@@ -172,7 +172,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <para>
         /// By default, Elastic Load Balancing creates an Internet-facing load balancer with a
         /// DNS name that resolves to public IP addresses. For more information about Internet-facing
-        /// and Internal load balancers, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
+        /// and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
         /// Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.
         /// </para>
         ///  
@@ -237,7 +237,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about tagging your load balancer, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
+        /// For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
         /// Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
