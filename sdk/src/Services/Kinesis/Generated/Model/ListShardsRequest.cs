@@ -47,6 +47,7 @@ namespace Amazon.Kinesis.Model
         private string _exclusiveStartShardId;
         private int? _maxResults;
         private string _nextToken;
+        private ShardFilter _shardFilter;
         private DateTime? _streamCreationTimestamp;
         private string _streamName;
 
@@ -83,7 +84,7 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of shards to return in a single call to <code>ListShards</code>.
-        /// The minimum value you can specify for this parameter is 1, and the maximum is 1,000,
+        /// The minimum value you can specify for this parameter is 1, and the maximum is 10,000,
         /// which is also the default.
         /// </para>
         ///  
@@ -149,6 +150,21 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShardFilter.
+        /// </summary>
+        public ShardFilter ShardFilter
+        {
+            get { return this._shardFilter; }
+            set { this._shardFilter = value; }
+        }
+
+        // Check to see if ShardFilter property is set
+        internal bool IsSetShardFilter()
+        {
+            return this._shardFilter != null;
         }
 
         /// <summary>

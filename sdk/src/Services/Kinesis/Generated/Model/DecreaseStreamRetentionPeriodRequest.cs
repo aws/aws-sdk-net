@@ -53,7 +53,7 @@ namespace Amazon.Kinesis.Model
         /// period.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=168)]
+        [AWSProperty(Required=true)]
         public int RetentionPeriodHours
         {
             get { return this._retentionPeriodHours.GetValueOrDefault(); }

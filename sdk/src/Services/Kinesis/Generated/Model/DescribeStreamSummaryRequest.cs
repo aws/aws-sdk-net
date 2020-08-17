@@ -39,6 +39,10 @@ namespace Amazon.Kinesis.Model
     /// record retention period, approximate creation time, monitoring, encryption details,
     /// and open shard count. 
     /// </para>
+    ///  
+    /// <para>
+    ///  <a>DescribeStreamSummary</a> has a limit of 20 transactions per second per account.
+    /// </para>
     /// </summary>
     public partial class DescribeStreamSummaryRequest : AmazonKinesisRequest
     {

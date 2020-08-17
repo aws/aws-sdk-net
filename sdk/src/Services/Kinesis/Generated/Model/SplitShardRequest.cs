@@ -48,7 +48,7 @@ namespace Amazon.Kinesis.Model
     /// You must specify the shard to be split and the new hash key, which is the position
     /// in the shard where the shard gets split in two. In many cases, the new hash key might
     /// be the average of the beginning and ending hash key, but it can be any hash key value
-    /// in the range being mapped into the shard. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-split.html">Split
+    /// in the range being mapped into the shard. For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-split.html">Split
     /// a Shard</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
     /// </para>
     ///  
@@ -81,9 +81,9 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// For the default shard limit for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Kinesis
+    /// For the default shard limit for an AWS account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Kinesis
     /// Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
-    /// To increase this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+    /// To increase this limit, <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
     /// AWS Support</a>.
     /// </para>
     ///  

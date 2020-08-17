@@ -160,10 +160,10 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriodHours. 
         /// <para>
-        /// The current retention period, in hours.
+        /// The current retention period, in hours. Minimum value of 24. Maximum value of 168.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=168)]
+        [AWSProperty(Required=true)]
         public int RetentionPeriodHours
         {
             get { return this._retentionPeriodHours.GetValueOrDefault(); }

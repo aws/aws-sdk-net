@@ -39,9 +39,9 @@ namespace Amazon.Kinesis.Model
     /// <para>
     /// You specify and control the number of shards that a stream is composed of. Each shard
     /// can support reads up to five transactions per second, up to a maximum data read total
-    /// of 2 MB per second. Each shard can support writes up to 1,000 records per second,
-    /// up to a maximum data write total of 1 MB per second. If the amount of data input increases
-    /// or decreases, you can add or remove shards.
+    /// of 2 MiB per second. Each shard can support writes up to 1,000 records per second,
+    /// up to a maximum data write total of 1 MiB per second. If the amount of data input
+    /// increases or decreases, you can add or remove shards.
     /// </para>
     ///  
     /// <para>
@@ -73,9 +73,9 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For the default shard limit for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+    /// For the default shard limit for an AWS account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
     /// Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
-    /// To increase this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+    /// To increase this limit, <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
     /// AWS Support</a>.
     /// </para>
     ///  
@@ -99,12 +99,8 @@ namespace Amazon.Kinesis.Model
         /// The number of shards that the stream will use. The throughput of the stream is a function
         /// of the number of shards; more shards are required for greater provisioned throughput.
         /// </para>
-        ///  
-        /// <para>
-        /// DefaultShardLimit;
-        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100000)]
+        [AWSProperty(Required=true, Min=1)]
         public int ShardCount
         {
             get { return this._shardCount.GetValueOrDefault(); }

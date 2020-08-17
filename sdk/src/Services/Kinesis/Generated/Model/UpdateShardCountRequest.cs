@@ -45,8 +45,15 @@ namespace Amazon.Kinesis.Model
     /// <para>
     /// To update the shard count, Kinesis Data Streams performs splits or merges on individual
     /// shards. This can cause short-lived shards to be created, in addition to the final
-    /// shards. We recommend that you double or halve the shard count, as this results in
-    /// the fewest number of splits or merges.
+    /// shards. These short-lived shards count towards your total shard limit for your account
+    /// in the Region.
+    /// </para>
+    ///  
+    /// <para>
+    /// When using this operation, we recommend that you specify a target shard count that
+    /// is a multiple of 25% (25%, 50%, 75%, 100%). You can specify any target value within
+    /// your shard limit. However, if you specify a target that isn't a multiple of 25%, the
+    /// scaling action might take longer to complete. 
     /// </para>
     ///  
     /// <para>
@@ -54,7 +61,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Scale more than twice per rolling 24-hour period per stream
+    /// Scale more than ten times per rolling 24-hour period per stream
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -78,7 +85,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For the default limits for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
+    /// For the default limits for an AWS account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
     /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To request an
     /// increase in the call rate limit, the shard limit for this API, or your overall shard
     /// limit, use the <a href="https://console.aws.amazon.com/support/v1#/case/create?issueType=service-limit-increase&amp;limitType=service-code-kinesis">limits
@@ -132,10 +139,30 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property TargetShardCount. 
         /// <para>
-        /// The new number of shards.
+        /// The new number of shards. This value has the following default limits. By default,
+        /// you cannot do the following: 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Set this value to more than double your current shard count for a stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Set this value below half your current shard count for a stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Set this value to more than 500 shards in a stream (the default limit for shard count
+        /// per stream is 500 per account per region), unless you request a limit increase.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Scale a stream with more than 500 shards down unless you set this value to less than
+        /// 500 shards.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100000)]
+        [AWSProperty(Required=true, Min=1)]
         public int TargetShardCount
         {
             get { return this._targetShardCount.GetValueOrDefault(); }

@@ -51,6 +51,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ChildShards", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ChildShard, ChildShardUnmarshaller>(ChildShardUnmarshaller.Instance);
+                    response.ChildShards = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MillisBehindLatest", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

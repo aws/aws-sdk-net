@@ -75,7 +75,7 @@ namespace Amazon.Kinesis.Model
         /// A set of up to 10 key-value pairs to use to create the tags.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }
