@@ -84,7 +84,7 @@ namespace Amazon.RoboMaker.Model
         /// A list of simulation job requests to create in the batch.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public List<SimulationJobRequest> CreateSimulationJobRequests
         {
             get { return this._createSimulationJobRequests; }

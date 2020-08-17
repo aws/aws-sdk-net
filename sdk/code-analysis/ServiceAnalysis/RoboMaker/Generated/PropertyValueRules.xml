@@ -19,6 +19,18 @@
     <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CancelWorldExportJobRequest.Job</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CancelWorldGenerationJobRequest.Job</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RoboMaker.Model.CreateDeploymentJobRequest.ClientRequestToken</property>
     <min>1</min>
     <max>64</max>
@@ -259,6 +271,102 @@
     <pattern>arn:aws:iam::\w+:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CreateWorldExportJobRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_\-=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CreateWorldExportJobRequest.IamRole</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>arn:aws:iam::\w+:role/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CreateWorldExportJobResponse.Arn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CreateWorldExportJobResponse.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_\-=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CreateWorldExportJobResponse.IamRole</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>arn:aws:iam::\w+:role/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CreateWorldGenerationJobRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_\-=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CreateWorldGenerationJobRequest.Template</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CreateWorldGenerationJobResponse.Arn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CreateWorldGenerationJobResponse.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_\-=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CreateWorldGenerationJobResponse.Template</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CreateWorldTemplateRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_\-=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CreateWorldTemplateRequest.Name</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CreateWorldTemplateRequest.TemplateBody</property>
+    <min>1</min>
+    <max>262144</max>
+    <pattern>[\S\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CreateWorldTemplateResponse.Arn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CreateWorldTemplateResponse.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_\-=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.CreateWorldTemplateResponse.Name</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RoboMaker.Model.DeleteFleetRequest.Fleet</property>
     <min>1</min>
     <max>1224</max>
@@ -293,6 +401,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>(\$LATEST)|[0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DeleteWorldTemplateRequest.Template</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.DeregisterRobotRequest.Fleet</property>
@@ -535,6 +649,132 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldRequest.World</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldResponse.Arn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldResponse.GenerationJob</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldResponse.Template</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldExportJobRequest.Job</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldExportJobResponse.Arn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldExportJobResponse.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_\-=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldExportJobResponse.FailureReason</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldExportJobResponse.IamRole</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>arn:aws:iam::\w+:role/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldGenerationJobRequest.Job</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldGenerationJobResponse.Arn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldGenerationJobResponse.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_\-=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldGenerationJobResponse.FailureReason</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldGenerationJobResponse.Template</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldTemplateRequest.Template</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldTemplateResponse.Arn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldTemplateResponse.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_\-=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DescribeWorldTemplateResponse.Name</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.GetWorldTemplateBodyRequest.GenerationJob</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.GetWorldTemplateBodyRequest.Template</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.GetWorldTemplateBodyResponse.TemplateBody</property>
+    <min>1</min>
+    <max>262144</max>
+    <pattern>[\S\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RoboMaker.Model.ListDeploymentJobsRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
@@ -635,6 +875,54 @@
     <min>1</min>
     <max>1224</max>
     <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.ListWorldExportJobsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9_.\-\/+=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.ListWorldExportJobsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9_.\-\/+=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.ListWorldGenerationJobsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9_.\-\/+=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.ListWorldGenerationJobsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9_.\-\/+=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.ListWorldsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9_.\-\/+=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.ListWorldsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9_.\-\/+=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.ListWorldTemplatesRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9_.\-\/+=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.ListWorldTemplatesResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9_.\-\/+=]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.RegisterRobotRequest.Fleet</property>
@@ -803,6 +1091,36 @@
     <min>1</min>
     <max>255</max>
     <pattern>(\$LATEST)|[0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.UpdateWorldTemplateRequest.Name</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.UpdateWorldTemplateRequest.Template</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.UpdateWorldTemplateRequest.TemplateBody</property>
+    <min>1</min>
+    <max>262144</max>
+    <pattern>[\S\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.UpdateWorldTemplateResponse.Arn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.UpdateWorldTemplateResponse.Name</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.Compute.SimulationUnitLimit</property>
@@ -1206,9 +1524,81 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RoboMaker.Model.TemplateLocation.S3Bucket</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-z0-9][a-z0-9.\-]*[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.TemplateLocation.S3Key</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.TemplateSummary.Arn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.TemplateSummary.Name</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RoboMaker.Model.VPCConfigResponse.VpcId</property>
     <min>0</min>
     <max>1024</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.WorldConfig.World</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.WorldExportJobSummary.Arn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.WorldFailure.SampleFailureReason</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.WorldGenerationJobSummary.Arn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.WorldGenerationJobSummary.Template</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.WorldSummary.Arn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.WorldSummary.GenerationJob</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.WorldSummary.Template</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
 </property-value-rules>
