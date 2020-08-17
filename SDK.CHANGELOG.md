@@ -1,3 +1,21 @@
+### 3.3.799.0 (2020-08-17 18:13 UTC)
+* ACMPCA (3.3.102.0)
+	* ACM Private CA is launching cross-account support. This allows customers to share their private CAs with other accounts, AWS Organizations, and organizational units to issue end-entity certificates.
+* CertificateManager (3.3.102.0)
+	* ACM provides support for the new Private CA feature Cross-account CA sharing. ACM users can issue certificates signed by a private CA belonging to another account where the CA was shared with them.
+* ECR (3.3.108.0)
+	* This feature adds support for pushing and pulling Open Container Initiative (OCI) artifacts.
+* ElasticLoadBalancing (3.3.100.222)
+	* Adds support for HTTP Desync Mitigation in Classic Load Balancers.
+* ElasticLoadBalancingV2 (3.3.105.36)
+	* Adds support for HTTP Desync Mitigation in Application Load Balancers.
+* Kinesis (3.3.101.0)
+	* Introducing ShardFilter for ListShards API to filter the shards using a position in the stream, and ChildShards support for GetRecords and SubscribeToShard API to discover children shards on shard end
+* QuickSight (3.3.108.0)
+	* Amazon QuickSight now supports programmatic creation and management of analyses with new APIs.
+* RoboMaker (3.3.112.0)
+	* This release introduces RoboMaker Simulation WorldForge, a capability that automatically generates one or more simulation worlds.
+
 ### 3.3.798.0 (2020-08-14 18:10 UTC)
 * AppStream (3.3.106.0)
 	* Adds support for the Desktop View feature

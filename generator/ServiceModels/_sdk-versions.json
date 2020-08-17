@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.798.0",
+    "ProductVersion" : "3.3.799.0",
     "CoreVersion"    : "3.3.107.39",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -183,7 +183,7 @@
             "InPreview"               : false
         },
         "ElasticLoadBalancing" : {
-            "Version" : "3.3.100.221",
+            "Version" : "3.3.100.222",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.39"
@@ -233,7 +233,7 @@
             "InPreview"               : false
         },
         "Kinesis"              : {
-            "Version" : "3.3.100.221",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.39"
@@ -489,7 +489,7 @@
             "InPreview"               : false
         },
         "ECR"                             : {
-            "Version" : "3.3.107.8",
+            "Version" : "3.3.108.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.39"
@@ -505,7 +505,7 @@
             "InPreview"               : false
         },
         "CertificateManager"              : {
-            "Version" : "3.3.101.119",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.39"
@@ -569,7 +569,7 @@
             "InPreview"               : false
         },
         "ElasticLoadBalancingV2"          : {
-            "Version" : "3.3.105.35",
+            "Version" : "3.3.105.36",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.39"
@@ -1081,7 +1081,7 @@
             "InPreview"               : false
         },
         "ACMPCA"                          : {
-            "Version" : "3.3.101.186",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.39"
@@ -1225,7 +1225,7 @@
             "InPreview"               : false
         },
         "QuickSight"                      : {
-            "Version" : "3.3.107.11",
+            "Version" : "3.3.108.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.39"
@@ -1241,7 +1241,7 @@
             "InPreview"               : false
         },
         "RoboMaker"                       : {
-            "Version" : "3.3.111.64",
+            "Version" : "3.3.112.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.39"
