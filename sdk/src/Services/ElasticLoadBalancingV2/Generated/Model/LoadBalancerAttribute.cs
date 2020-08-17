@@ -79,6 +79,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer
+        /// handles requests that might pose a security risk to your application. The possible
+        /// values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>.
+        /// The default is <code>defensive</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether
         /// HTTP headers with invalid header fields are removed by the load balancer (<code>true</code>)
         /// or routed to targets (<code>false</code>). The default is <code>false</code>.

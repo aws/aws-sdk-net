@@ -205,7 +205,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property Matcher. 
         /// <para>
         /// [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response
-        /// from a target.
+        /// from a target. The possible values are from 200 to 499. You can specify multiple values
+        /// (for example, "200,202") or a range of values (for example, "200-299"). The default
+        /// is 200.
         /// </para>
         ///  
         /// <para>

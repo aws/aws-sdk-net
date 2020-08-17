@@ -30,6 +30,14 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Information about a condition for a rule.
+    /// 
+    ///  
+    /// <para>
+    /// Each rule can optionally include up to one of each of the following conditions: <code>http-request-method</code>,
+    /// <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>. Each
+    /// rule can also optionally include one or more of each of the following conditions:
+    /// <code>http-header</code> and <code>query-string</code>.
+    /// </para>
     /// </summary>
     public partial class RuleCondition
     {
@@ -201,16 +209,16 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The condition value. You can use <code>Values</code> if the rule contains only <code>host-header</code>
-        /// and <code>path-pattern</code> conditions. Otherwise, you can use <code>HostHeaderConfig</code>
-        /// for <code>host-header</code> conditions and <code>PathPatternConfig</code> for <code>path-pattern</code>
-        /// conditions.
+        /// The condition value. Specify only when <code>Field</code> is <code>host-header</code>
+        /// or <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple
+        /// path patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.
         /// </para>
         ///  
         /// <para>
-        /// If <code>Field</code> is <code>host-header</code>, you can specify a single host name
-        /// (for example, my.example.com). A host name is case insensitive, can be up to 128 characters
-        /// in length, and can contain any of the following characters.
+        /// If <code>Field</code> is <code>host-header</code> and you are not using <code>HostHeaderConfig</code>,
+        /// you can specify a single host name (for example, my.example.com) in <code>Values</code>.
+        /// A host name is case insensitive, can be up to 128 characters in length, and can contain
+        /// any of the following characters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -230,9 +238,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If <code>Field</code> is <code>path-pattern</code>, you can specify a single path
-        /// pattern (for example, /img/*). A path pattern is case-sensitive, can be up to 128
-        /// characters in length, and can contain any of the following characters.
+        /// If <code>Field</code> is <code>path-pattern</code> and you are not using <code>PathPatternConfig</code>,
+        /// you can specify a single path pattern (for example, /img/*) in <code>Values</code>.
+        /// A path pattern is case-sensitive, can be up to 128 characters in length, and can contain
+        /// any of the following characters.
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -684,6 +684,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
+        /// Each rule consists of a priority, one or more actions, and one or more conditions.
         /// Rules are evaluated in priority order, from the lowest value to the highest value.
         /// When the conditions for a rule are met, its actions are performed. If the conditions
         /// for no rules are met, the actions for the default rule are performed. For more information,
@@ -1025,6 +1026,11 @@ namespace Amazon.ElasticLoadBalancingV2
 
         /// <summary>
         /// Deletes the specified rule.
+        /// 
+        ///  
+        /// <para>
+        /// You can't delete the default rule.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRule service method.</param>
         /// 

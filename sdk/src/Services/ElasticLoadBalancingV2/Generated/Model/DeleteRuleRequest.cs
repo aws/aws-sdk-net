@@ -31,6 +31,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// <summary>
     /// Container for the parameters to the DeleteRule operation.
     /// Deletes the specified rule.
+    /// 
+    ///  
+    /// <para>
+    /// You can't delete the default rule.
+    /// </para>
     /// </summary>
     public partial class DeleteRuleRequest : AmazonElasticLoadBalancingV2Request
     {

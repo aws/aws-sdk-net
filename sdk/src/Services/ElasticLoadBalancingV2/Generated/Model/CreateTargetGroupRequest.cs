@@ -323,7 +323,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>instance</code> - Targets are specified by instance ID. This is the default
-        /// value. If the target group protocol is UDP or TCP_UDP, the target type must be <code>instance</code>.
+        /// value.
         /// </para>
         ///  </li> <li> 
         /// <para>
