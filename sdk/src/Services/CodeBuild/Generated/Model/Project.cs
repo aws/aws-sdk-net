@@ -200,7 +200,7 @@ namespace Amazon.CodeBuild.Model
         ///  </note> 
         /// <para>
         /// You can specify either the Amazon Resource Name (ARN) of the CMK or, if available,
-        /// the CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).
+        /// the CMK's alias (using the format <code>alias/&lt;alias-name&gt;</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
