@@ -269,61 +269,7 @@ namespace SDKDocGenerator
                 return null;
 
             return element;
-        }
-
-        /// <summary>
-        /// For methods that DO NOT end in "Async", checks for the Async version of the method with
-        /// a similar signature, following the PCL/.Net45 Async pattern.
-        /// </summary>
-        /// <param name="ndoc"></param>
-        /// <param name="info"></param>
-        /// <returns></returns>
-        public static XElement FindDocumentationPCLAsyncAlternative(IDictionary<string, XElement> ndoc, MethodInfoWrapper info)
-        {
-            if (ndoc == null)
-                return null;
-            var type = info.DeclaringType;
-            if (type.FullName == null)
-                return null;
-            var parameters = new StringBuilder();
-
-            foreach (var param in info.GetParameters())
-            {
-                if (parameters.Length > 0)
-                    parameters.Append(",");
-
-                if (param.ParameterType.IsGenericType)
-                {
-                    parameters
-                        .Append(param.ParameterType.GenericTypeName)
-                        .Append("{")
-                        .Append(string.Join(",", param.ParameterType.GenericTypeArguments().Select(a => a.FullName)))
-                        .Append("}");
-                }
-                else
-                {
-                    parameters.Append(param.ParameterType.FullName);
-                    if (param.IsOut)
-                        parameters.Append("@");
-                }
-            }
-
-            if (parameters.Length > 0)
-                parameters.Append(",");
-
-            // PCL Async methods have this additional parameter
-            parameters.Append("System.Threading.CancellationToken");
-
-            var signature = parameters.Length > 0
-                ? string.Format("M:{0}.{1}({2})", type.FullName, info.Name + "Async", parameters)
-                : string.Format("M:{0}.{1}", type.FullName, info.Name + "Async");
-
-            XElement element;
-            if (!ndoc.TryGetValue(signature, out element))
-                return null;
-
-            return element;
-        }
+        }                
 
         public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, ConstructorInfoWrapper info)
         {
@@ -376,6 +322,59 @@ namespace SDKDocGenerator
                 return string.Empty;
 
             return node.Value;
+        }
+
+        /// <summary>
+        /// Finds the Async version of the specified non async method info.
+        /// </summary>
+        /// <param name="ndoc"></param>
+        /// <param name="info"></param>
+        /// <returns></returns>
+        public static XElement FindDocumentationAsync(IDictionary<string, XElement> ndoc, MethodInfoWrapper info)
+        {
+            if (ndoc == null)
+                return null;
+            var type = info.DeclaringType;
+            if (type.FullName == null)
+                return null;
+            var parameters = new StringBuilder();
+
+            foreach (var param in info.GetParameters())
+            {
+                if (parameters.Length > 0)
+                    parameters.Append(",");
+
+                if (param.ParameterType.IsGenericType)
+                {
+                    parameters
+                        .Append(param.ParameterType.GenericTypeName)
+                        .Append("{")
+                        .Append(string.Join(",", param.ParameterType.GenericTypeArguments().Select(a => a.FullName)))
+                        .Append("}");
+                }
+                else
+                {
+                    parameters.Append(param.ParameterType.FullName);
+                    if (param.IsOut)
+                        parameters.Append("@");
+                }
+            }
+
+            if (parameters.Length > 0)
+                parameters.Append(",");
+
+            // Async methods have this additional parameter
+            parameters.Append("System.Threading.CancellationToken");
+
+            var signature = parameters.Length > 0
+                ? string.Format("M:{0}.{1}({2})", type.FullName, info.Name + "Async", parameters)
+                : string.Format("M:{0}.{1}", type.FullName, info.Name + "Async");
+
+            XElement element;
+            if (!ndoc.TryGetValue(signature, out element))
+                return null;
+
+            return element;
         }
 
         public static string TransformDocumentationToHTML(XElement element, string rootNodeName, AbstractTypeProvider typeProvider, FrameworkVersion version)
