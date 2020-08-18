@@ -34,8 +34,24 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class ListTasksRequest : AmazonDataSyncRequest
     {
+        private List<TaskFilter> _filters = new List<TaskFilter>();
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property Filters.
+        /// </summary>
+        public List<TaskFilter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
