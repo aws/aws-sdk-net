@@ -223,6 +223,56 @@ namespace Amazon.SimpleEmailV2
 
 
     /// <summary>
+    /// Constants used for properties of type DataFormat.
+    /// </summary>
+    public class DataFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CSV for DataFormat
+        /// </summary>
+        public static readonly DataFormat CSV = new DataFormat("CSV");
+        /// <summary>
+        /// Constant JSON for DataFormat
+        /// </summary>
+        public static readonly DataFormat JSON = new DataFormat("JSON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataFormat FindValue(string value)
+        {
+            return FindValue<DataFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeliverabilityDashboardAccountStatus.
     /// </summary>
     public class DeliverabilityDashboardAccountStatus : ConstantClass
@@ -625,6 +675,110 @@ namespace Amazon.SimpleEmailV2
 
 
     /// <summary>
+    /// Constants used for properties of type ImportDestinationType.
+    /// </summary>
+    public class ImportDestinationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SUPPRESSION_LIST for ImportDestinationType
+        /// </summary>
+        public static readonly ImportDestinationType SUPPRESSION_LIST = new ImportDestinationType("SUPPRESSION_LIST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportDestinationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportDestinationType FindValue(string value)
+        {
+            return FindValue<ImportDestinationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportDestinationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JobStatus.
+    /// </summary>
+    public class JobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for JobStatus
+        /// </summary>
+        public static readonly JobStatus COMPLETED = new JobStatus("COMPLETED");
+        /// <summary>
+        /// Constant CREATED for JobStatus
+        /// </summary>
+        public static readonly JobStatus CREATED = new JobStatus("CREATED");
+        /// <summary>
+        /// Constant FAILED for JobStatus
+        /// </summary>
+        public static readonly JobStatus FAILED = new JobStatus("FAILED");
+        /// <summary>
+        /// Constant PROCESSING for JobStatus
+        /// </summary>
+        public static readonly JobStatus PROCESSING = new JobStatus("PROCESSING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobStatus FindValue(string value)
+        {
+            return FindValue<JobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MailFromDomainStatus.
     /// </summary>
     public class MailFromDomainStatus : ConstantClass
@@ -784,6 +938,56 @@ namespace Amazon.SimpleEmailV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReviewStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SuppressionListImportAction.
+    /// </summary>
+    public class SuppressionListImportAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETE for SuppressionListImportAction
+        /// </summary>
+        public static readonly SuppressionListImportAction DELETE = new SuppressionListImportAction("DELETE");
+        /// <summary>
+        /// Constant PUT for SuppressionListImportAction
+        /// </summary>
+        public static readonly SuppressionListImportAction PUT = new SuppressionListImportAction("PUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SuppressionListImportAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SuppressionListImportAction FindValue(string value)
+        {
+            return FindValue<SuppressionListImportAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SuppressionListImportAction(string value)
         {
             return FindValue(value);
         }

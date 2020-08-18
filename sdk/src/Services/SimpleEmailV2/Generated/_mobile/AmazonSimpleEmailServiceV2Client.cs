@@ -770,6 +770,49 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  CreateImportJob
+
+        internal virtual CreateImportJobResponse CreateImportJob(CreateImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateImportJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an import job for a data destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateImportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateImportJob service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateImportJob">REST API Reference for CreateImportJob Operation</seealso>
+        public virtual Task<CreateImportJobResponse> CreateImportJobAsync(CreateImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateImportJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteConfigurationSet
 
         internal virtual DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request)
@@ -1846,6 +1889,49 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  GetImportJob
+
+        internal virtual GetImportJobResponse GetImportJob(GetImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetImportJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides information about an import job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetImportJob service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetImportJob">REST API Reference for GetImportJob Operation</seealso>
+        public virtual Task<GetImportJobResponse> GetImportJobAsync(GetImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetImportJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetSuppressedDestination
 
         internal virtual GetSuppressedDestinationResponse GetSuppressedDestination(GetSuppressedDestinationRequest request)
@@ -2203,6 +2289,46 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = ListEmailTemplatesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListEmailTemplatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListImportJobs
+
+        internal virtual ListImportJobsResponse ListImportJobs(ListImportJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListImportJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all of the import jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImportJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListImportJobs service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListImportJobs">REST API Reference for ListImportJobs Operation</seealso>
+        public virtual Task<ListImportJobsResponse> ListImportJobsAsync(ListImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListImportJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
