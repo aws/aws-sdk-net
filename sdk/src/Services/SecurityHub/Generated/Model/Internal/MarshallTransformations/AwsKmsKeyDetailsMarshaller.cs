@@ -57,6 +57,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CreationDate);
             }
 
+            if(requestObject.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.Write(requestObject.Description);
+            }
+
             if(requestObject.IsSetKeyId())
             {
                 context.Writer.WritePropertyName("KeyId");

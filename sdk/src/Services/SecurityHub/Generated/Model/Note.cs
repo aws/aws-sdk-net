@@ -61,6 +61,12 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The timestamp of when the note was updated.
         /// </para>
+        ///  
+        /// <para>
+        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
+        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string UpdatedAt

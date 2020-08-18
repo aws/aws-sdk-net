@@ -444,6 +444,10 @@ namespace Amazon.SecurityHub
         /// Constant EQUALS for MapFilterComparison
         /// </summary>
         public static readonly MapFilterComparison EQUALS = new MapFilterComparison("EQUALS");
+        /// <summary>
+        /// Constant NOT_EQUALS for MapFilterComparison
+        /// </summary>
+        public static readonly MapFilterComparison NOT_EQUALS = new MapFilterComparison("NOT_EQUALS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -877,9 +881,17 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly StringFilterComparison EQUALS = new StringFilterComparison("EQUALS");
         /// <summary>
+        /// Constant NOT_EQUALS for StringFilterComparison
+        /// </summary>
+        public static readonly StringFilterComparison NOT_EQUALS = new StringFilterComparison("NOT_EQUALS");
+        /// <summary>
         /// Constant PREFIX for StringFilterComparison
         /// </summary>
         public static readonly StringFilterComparison PREFIX = new StringFilterComparison("PREFIX");
+        /// <summary>
+        /// Constant PREFIX_NOT_EQUALS for StringFilterComparison
+        /// </summary>
+        public static readonly StringFilterComparison PREFIX_NOT_EQUALS = new StringFilterComparison("PREFIX_NOT_EQUALS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

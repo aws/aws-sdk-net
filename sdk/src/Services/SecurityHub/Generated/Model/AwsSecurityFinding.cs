@@ -143,8 +143,14 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// An ISO8601-formatted timestamp that indicates when the security-findings provider
-        /// created the potential security issue that a finding captured.
+        /// Indicates when the security-findings provider created the potential security issue
+        /// that a finding captured.
+        /// </para>
+        ///  
+        /// <para>
+        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
+        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -210,8 +216,14 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FirstObservedAt. 
         /// <para>
-        /// An ISO8601-formatted timestamp that indicates when the security-findings provider
-        /// first observed the potential security issue that a finding captured.
+        /// Indicates when the security-findings provider first observed the potential security
+        /// issue that a finding captured.
+        /// </para>
+        ///  
+        /// <para>
+        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
+        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
         /// </summary>
         public string FirstObservedAt
@@ -269,8 +281,14 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property LastObservedAt. 
         /// <para>
-        /// An ISO8601-formatted timestamp that indicates when the security-findings provider
-        /// most recently observed the potential security issue that a finding captured.
+        /// Indicates when the security-findings provider most recently observed the potential
+        /// security issue that a finding captured.
+        /// </para>
+        ///  
+        /// <para>
+        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
+        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
         /// </summary>
         public string LastObservedAt
@@ -616,8 +634,13 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// An ISO8601-formatted timestamp that indicates when the security-findings provider
-        /// last updated the finding record. 
+        /// Indicates when the security-findings provider last updated the finding record.
+        /// </para>
+        ///  
+        /// <para>
+        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
+        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

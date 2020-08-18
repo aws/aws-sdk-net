@@ -64,16 +64,52 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AllocatedStorage", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.AllocatedStorage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AssociatedRoles", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<AwsRdsDbInstanceAssociatedRole, AwsRdsDbInstanceAssociatedRoleUnmarshaller>(AwsRdsDbInstanceAssociatedRoleUnmarshaller.Instance);
                     unmarshalledObject.AssociatedRoles = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AutoMinorVersionUpgrade", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AutoMinorVersionUpgrade = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AvailabilityZone", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("BackupRetentionPeriod", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.BackupRetentionPeriod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CACertificateIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CACertificateIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CharacterSetName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CharacterSetName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CopyTagsToSnapshot", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.CopyTagsToSnapshot = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DBClusterIdentifier", targetDepth))
@@ -100,6 +136,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.DbInstancePort = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DbInstanceStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DbInstanceStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DbiResourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -112,10 +154,40 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.DBName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DbParameterGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AwsRdsDbParameterGroup, AwsRdsDbParameterGroupUnmarshaller>(AwsRdsDbParameterGroupUnmarshaller.Instance);
+                    unmarshalledObject.DbParameterGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DbSecurityGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DbSecurityGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DbSubnetGroup", targetDepth))
+                {
+                    var unmarshaller = AwsRdsDbSubnetGroupUnmarshaller.Instance;
+                    unmarshalledObject.DbSubnetGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeletionProtection", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.DeletionProtection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DomainMemberships", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AwsRdsDbDomainMembership, AwsRdsDbDomainMembershipUnmarshaller>(AwsRdsDbDomainMembershipUnmarshaller.Instance);
+                    unmarshalledObject.DomainMemberships = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EnabledCloudWatchLogsExports", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.EnabledCloudWatchLogsExports = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Endpoint", targetDepth))
@@ -136,6 +208,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EnhancedMonitoringResourceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EnhancedMonitoringResourceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IAMDatabaseAuthenticationEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -148,10 +226,118 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceCreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Iops", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestRestorableTime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LatestRestorableTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LicenseModel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LicenseModel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ListenerEndpoint", targetDepth))
+                {
+                    var unmarshaller = AwsRdsDbInstanceEndpointUnmarshaller.Instance;
+                    unmarshalledObject.ListenerEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MasterUsername", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MasterUsername = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxAllocatedStorage", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxAllocatedStorage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MonitoringInterval", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MonitoringInterval = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MonitoringRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MonitoringRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MultiAz", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.MultiAz = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OptionGroupMemberships", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AwsRdsDbOptionGroupMembership, AwsRdsDbOptionGroupMembershipUnmarshaller>(AwsRdsDbOptionGroupMembershipUnmarshaller.Instance);
+                    unmarshalledObject.OptionGroupMemberships = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PendingModifiedValues", targetDepth))
+                {
+                    var unmarshaller = AwsRdsDbPendingModifiedValuesUnmarshaller.Instance;
+                    unmarshalledObject.PendingModifiedValues = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PerformanceInsightsEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.PerformanceInsightsEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PerformanceInsightsKmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PerformanceInsightsKmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PerformanceInsightsRetentionPeriod", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PerformanceInsightsRetentionPeriod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PreferredBackupWindow", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreferredBackupWindow = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PreferredMaintenanceWindow", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreferredMaintenanceWindow = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProcessorFeatures", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AwsRdsDbProcessorFeature, AwsRdsDbProcessorFeatureUnmarshaller>(AwsRdsDbProcessorFeatureUnmarshaller.Instance);
+                    unmarshalledObject.ProcessorFeatures = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PromotionTier", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PromotionTier = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PubliclyAccessible", targetDepth))
@@ -160,16 +346,58 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.PubliclyAccessible = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReadReplicaDBClusterIdentifiers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ReadReplicaDBClusterIdentifiers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReadReplicaDBInstanceIdentifiers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ReadReplicaDBInstanceIdentifiers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReadReplicaSourceDBInstanceIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReadReplicaSourceDBInstanceIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecondaryAvailabilityZone", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecondaryAvailabilityZone = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatusInfos", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AwsRdsDbStatusInfo, AwsRdsDbStatusInfoUnmarshaller>(AwsRdsDbStatusInfoUnmarshaller.Instance);
+                    unmarshalledObject.StatusInfos = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StorageEncrypted", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.StorageEncrypted = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StorageType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TdeCredentialArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TdeCredentialArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Timezone", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Timezone = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VpcSecurityGroups", targetDepth))

@@ -76,6 +76,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
