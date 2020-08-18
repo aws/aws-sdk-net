@@ -281,6 +281,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Introducing Amazon Honeycode - a fully managed service that allows you to quickly build mobile and web apps for teams without programming.
 * [AWSSDK.IdentityManagement](https://www.nuget.org/packages/AWSSDK.IdentityManagement/)
 	* AWS Identity and Access Management (IAM) enables you to securely control access to AWS services and resources for your users. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.
+* [AWSSDK.IdentityStore](https://www.nuget.org/packages/AWSSDK.IdentityStore/)
+	* AWS Single Sign-On (SSO) Identity Store service provides an interface to retrieve all of your users and groups. It enables entitlement management per user or group for AWS SSO and other IDPs.
 * [AWSSDK.Imagebuilder](https://www.nuget.org/packages/AWSSDK.Imagebuilder/)
 	* This is the first release of EC2 Image Builder, a service that provides a managed experience for automating the creation of EC2 AMIs.
 * [AWSSDK.ImportExport](https://www.nuget.org/packages/AWSSDK.ImportExport/)

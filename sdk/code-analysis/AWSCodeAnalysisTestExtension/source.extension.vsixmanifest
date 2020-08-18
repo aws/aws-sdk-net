@@ -221,6 +221,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Honeycode.CodeAnalysis" Path="|AWSSDK.Honeycode.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IdentityManagement.CodeAnalysis" Path="|AWSSDK.IdentityManagement.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IdentityManagement.CodeAnalysis" Path="|AWSSDK.IdentityManagement.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IdentityStore.CodeAnalysis" Path="|AWSSDK.IdentityStore.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IdentityStore.CodeAnalysis" Path="|AWSSDK.IdentityStore.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Imagebuilder.CodeAnalysis" Path="|AWSSDK.Imagebuilder.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Imagebuilder.CodeAnalysis" Path="|AWSSDK.Imagebuilder.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ImportExport.CodeAnalysis" Path="|AWSSDK.ImportExport.CodeAnalysis|"/>
