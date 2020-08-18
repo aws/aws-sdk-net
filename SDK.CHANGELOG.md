@@ -1,3 +1,17 @@
+### 3.3.800.0 (2020-08-18 18:14 UTC)
+* CodeBuild (3.3.114.8)
+	* Documentation updates for codebuild
+* CognitoIdentityProvider (3.3.113.0)
+	* Adding the option to use a service linked role to publish events to Pinpoint.
+* DataSync (3.3.110.0)
+	* DataSync support for filters as input arguments to the ListTasks and ListLocations API calls.
+* IdentityStore (3.3.100.0)
+	* AWS Single Sign-On (SSO) Identity Store service provides an interface to retrieve all of your users and groups. It enables entitlement management per user or group for AWS SSO and other IDPs.
+* SecurityHub (3.3.116.0)
+	* New details for DynamoDB tables, Elastic IP addresses, IAM policies and users, RDS DB clusters and snapshots, and Secrets Manager secrets. Added details for AWS KMS keys and RDS DB instances.
+* SimpleEmailV2 (3.3.105.0)
+	* This release includes new APIs to allow customers to add or remove email addresses from their account-level suppression list in bulk.
+
 ### 3.3.799.0 (2020-08-17 18:13 UTC)
 * ACMPCA (3.3.102.0)
 	* ACM Private CA is launching cross-account support. This allows customers to share their private CAs with other accounts, AWS Organizations, and organizational units to issue end-entity certificates.

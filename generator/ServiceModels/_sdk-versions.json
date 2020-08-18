@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.799.0",
+    "ProductVersion" : "3.3.800.0",
     "CoreVersion"    : "3.3.107.39",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -537,7 +537,7 @@
             "InPreview"               : false
         },
         "CognitoIdentityProvider"         : {
-            "Version" : "3.3.112.1",
+            "Version" : "3.3.113.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.39"
@@ -657,7 +657,7 @@
             "InPreview"               : false
         },
         "CodeBuild"                       : {
-            "Version" : "3.3.114.7",
+            "Version" : "3.3.114.8",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.39"
@@ -1249,7 +1249,7 @@
             "InPreview"               : false
         },
         "DataSync"                        : {
-            "Version" : "3.3.109.10",
+            "Version" : "3.3.110.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.39"
@@ -1305,7 +1305,7 @@
             "InPreview"               : false
         },
         "SecurityHub"                     : {
-            "Version" : "3.3.115.9",
+            "Version" : "3.3.116.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.39"
@@ -1577,7 +1577,7 @@
             "InPreview"               : false
         },
         "SimpleEmailV2"                   : {
-            "Version" : "3.3.104.7",
+            "Version" : "3.3.105.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.39"
@@ -1810,6 +1810,14 @@
         },
         "Braket"                          : {
             "Version" : "3.3.101.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.107.39"
+            },
+            "InPreview"               : false
+        },
+        "IdentityStore"                   : {
+            "Version" : "3.3.100.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.39"
