@@ -29,21 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVS.Model
 {
     /// <summary>
-    /// Summary information about a stream key.
+    /// Container for the parameters to the GetPlaybackKeyPair operation.
+    /// Gets a specified playback authorization key pair and returns the <code>arn</code>
+    /// and <code>fingerprint</code>. The <code>privateKey</code> held by the caller can be
+    /// used to generate viewer authorization tokens, to grant viewers access to authorized
+    /// channels.
     /// </summary>
-    public partial class StreamKeySummary
+    public partial class GetPlaybackKeyPairRequest : AmazonIVSRequest
     {
         private string _arn;
-        private string _channelArn;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Stream-key ARN.
+        /// ARN of the key pair to be returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Arn
         {
             get { return this._arn; }
@@ -54,44 +56,6 @@ namespace Amazon.IVS.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ChannelArn. 
-        /// <para>
-        /// Channel ARN for the stream.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string ChannelArn
-        {
-            get { return this._channelArn; }
-            set { this._channelArn = value; }
-        }
-
-        // Check to see if ChannelArn property is set
-        internal bool IsSetChannelArn()
-        {
-            return this._channelArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=50)]
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

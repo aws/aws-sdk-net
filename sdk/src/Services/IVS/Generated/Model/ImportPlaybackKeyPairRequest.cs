@@ -29,56 +29,60 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVS.Model
 {
     /// <summary>
-    /// Summary information about a stream key.
+    /// Container for the parameters to the ImportPlaybackKeyPair operation.
+    /// Imports the public portion of a new key pair and returns its <code>arn</code> and
+    /// <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate
+    /// viewer authorization tokens, to grant viewers access to authorized channels.
     /// </summary>
-    public partial class StreamKeySummary
+    public partial class ImportPlaybackKeyPairRequest : AmazonIVSRequest
     {
-        private string _arn;
-        private string _channelArn;
+        private string _name;
+        private string _publicKeyMaterial;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// Stream-key ARN.
+        /// An arbitrary string (a nickname) assigned to a playback key pair that helps the customer
+        /// identify that resource. The value does not need to be unique.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string Arn
+        [AWSProperty(Min=0, Max=128)]
+        public string Name
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._arn != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ChannelArn. 
+        /// Gets and sets the property PublicKeyMaterial. 
         /// <para>
-        /// Channel ARN for the stream.
+        /// The public portion of a customer-generated key pair.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string ChannelArn
+        [AWSProperty(Required=true)]
+        public string PublicKeyMaterial
         {
-            get { return this._channelArn; }
-            set { this._channelArn = value; }
+            get { return this._publicKeyMaterial; }
+            set { this._publicKeyMaterial = value; }
         }
 
-        // Check to see if ChannelArn property is set
-        internal bool IsSetChannelArn()
+        // Check to see if PublicKeyMaterial property is set
+        internal bool IsSetPublicKeyMaterial()
         {
-            return this._channelArn != null;
+            return this._publicKeyMaterial != null;
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+        /// Any tags provided with the request are added to the playback key pair tags.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

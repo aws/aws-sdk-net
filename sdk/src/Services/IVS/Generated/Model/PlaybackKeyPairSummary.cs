@@ -29,18 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVS.Model
 {
     /// <summary>
-    /// Summary information about a stream key.
+    /// Summary information about a playback key pair.
     /// </summary>
-    public partial class StreamKeySummary
+    public partial class PlaybackKeyPairSummary
     {
         private string _arn;
-        private string _channelArn;
+        private string _name;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Stream-key ARN.
+        /// Key-pair ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -57,28 +57,28 @@ namespace Amazon.IVS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ChannelArn. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// Channel ARN for the stream.
+        /// Key-pair name.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string ChannelArn
+        [AWSProperty(Min=0, Max=128)]
+        public string Name
         {
-            get { return this._channelArn; }
-            set { this._channelArn = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if ChannelArn property is set
-        internal bool IsSetChannelArn()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._channelArn != null;
+            return this._name != null;
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+        /// Array of 1-50 maps, each of the form <code>string:string (key:value)</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

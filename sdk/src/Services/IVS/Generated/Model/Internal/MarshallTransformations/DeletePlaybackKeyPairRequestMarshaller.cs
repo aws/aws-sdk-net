@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateChannel Request Marshaller
+    /// DeletePlaybackKeyPair Request Marshaller
     /// </summary>       
-    public class CreateChannelRequestMarshaller : IMarshaller<IRequest, CreateChannelRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeletePlaybackKeyPairRequestMarshaller : IMarshaller<IRequest, DeletePlaybackKeyPairRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateChannelRequest)input);
+            return this.Marshall((DeletePlaybackKeyPairRequest)input);
         }
 
         /// <summary>
@@ -52,56 +52,24 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateChannelRequest publicRequest)
+        public IRequest Marshall(DeletePlaybackKeyPairRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IVS");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-14";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/CreateChannel";
+            request.ResourcePath = "/DeletePlaybackKeyPair";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthorized())
+                if(publicRequest.IsSetArn())
                 {
-                    context.Writer.WritePropertyName("authorized");
-                    context.Writer.Write(publicRequest.Authorized);
-                }
-
-                if(publicRequest.IsSetLatencyMode())
-                {
-                    context.Writer.WritePropertyName("latencyMode");
-                    context.Writer.Write(publicRequest.LatencyMode);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
+                    context.Writer.WritePropertyName("arn");
+                    context.Writer.Write(publicRequest.Arn);
                 }
 
         
@@ -113,9 +81,9 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateChannelRequestMarshaller _instance = new CreateChannelRequestMarshaller();        
+        private static DeletePlaybackKeyPairRequestMarshaller _instance = new DeletePlaybackKeyPairRequestMarshaller();        
 
-        internal static CreateChannelRequestMarshaller GetInstance()
+        internal static DeletePlaybackKeyPairRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -123,7 +91,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateChannelRequestMarshaller Instance
+        public static DeletePlaybackKeyPairRequestMarshaller Instance
         {
             get
             {

@@ -36,6 +36,7 @@ namespace Amazon.IVS.Model
     public partial class UpdateChannelRequest : AmazonIVSRequest
     {
         private string _arn;
+        private bool? _authorized;
         private ChannelLatencyMode _latencyMode;
         private string _name;
         private ChannelType _type;
@@ -57,6 +58,24 @@ namespace Amazon.IVS.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Authorized. 
+        /// <para>
+        /// Whether the channel is authorized. Default: <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool Authorized
+        {
+            get { return this._authorized.GetValueOrDefault(); }
+            set { this._authorized = value; }
+        }
+
+        // Check to see if Authorized property is set
+        internal bool IsSetAuthorized()
+        {
+            return this._authorized.HasValue; 
         }
 
         /// <summary>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ChannelSummary Object
+    /// Response Unmarshaller for PlaybackKeyPair Object
     /// </summary>  
-    public class ChannelSummaryUnmarshaller : IUnmarshaller<ChannelSummary, XmlUnmarshallerContext>, IUnmarshaller<ChannelSummary, JsonUnmarshallerContext>
+    public class PlaybackKeyPairUnmarshaller : IUnmarshaller<PlaybackKeyPair, XmlUnmarshallerContext>, IUnmarshaller<PlaybackKeyPair, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ChannelSummary IUnmarshaller<ChannelSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PlaybackKeyPair IUnmarshaller<PlaybackKeyPair, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ChannelSummary Unmarshall(JsonUnmarshallerContext context)
+        public PlaybackKeyPair Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ChannelSummary unmarshalledObject = new ChannelSummary();
+            PlaybackKeyPair unmarshalledObject = new PlaybackKeyPair();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,16 +70,10 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("authorized", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Authorized = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("latencyMode", targetDepth))
+                if (context.TestExpression("fingerprint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LatencyMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Fingerprint = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
@@ -100,12 +94,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ChannelSummaryUnmarshaller _instance = new ChannelSummaryUnmarshaller();        
+        private static PlaybackKeyPairUnmarshaller _instance = new PlaybackKeyPairUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ChannelSummaryUnmarshaller Instance
+        public static PlaybackKeyPairUnmarshaller Instance
         {
             get
             {

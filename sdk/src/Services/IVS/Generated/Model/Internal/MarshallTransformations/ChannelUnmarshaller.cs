@@ -70,6 +70,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("authorized", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Authorized = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ingestEndpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
