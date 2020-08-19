@@ -88,10 +88,22 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     unmarshalledObject.IdempotencyToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastProvisioningRecordId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastProvisioningRecordId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastRecordId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastRecordId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastSuccessfulProvisioningRecordId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastSuccessfulProvisioningRecordId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
@@ -112,10 +124,22 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProductId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProductName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProductName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProvisioningArtifactId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProvisioningArtifactId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProvisioningArtifactName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProvisioningArtifactName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

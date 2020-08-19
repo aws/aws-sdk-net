@@ -102,8 +102,9 @@ namespace Amazon.ServiceCatalog.Model
         /// When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>,
         /// <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
         /// <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>,
-        /// <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, and
-        /// <code>userArnSession</code>.
+        /// <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
+        /// <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>,
+        /// <code>productName</code>, and <code>provisioningArtifactName</code>.
         /// </para>
         ///  
         /// <para>

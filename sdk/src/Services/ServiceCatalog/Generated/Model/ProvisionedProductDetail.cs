@@ -37,7 +37,9 @@ namespace Amazon.ServiceCatalog.Model
         private DateTime? _createdTime;
         private string _id;
         private string _idempotencyToken;
+        private string _lastProvisioningRecordId;
         private string _lastRecordId;
+        private string _lastSuccessfulProvisioningRecordId;
         private string _name;
         private string _productId;
         private string _provisioningArtifactId;
@@ -121,6 +123,43 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastProvisioningRecordId. 
+        /// <para>
+        /// The record identifier of the last request performed on this provisioned product of
+        /// the following types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  ProvisionedProduct 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  UpdateProvisionedProduct 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  ExecuteProvisionedProductPlan 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  TerminateProvisionedProduct 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string LastProvisioningRecordId
+        {
+            get { return this._lastProvisioningRecordId; }
+            set { this._lastProvisioningRecordId = value; }
+        }
+
+        // Check to see if LastProvisioningRecordId property is set
+        internal bool IsSetLastProvisioningRecordId()
+        {
+            return this._lastProvisioningRecordId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastRecordId. 
         /// <para>
         /// The record identifier of the last request performed on this provisioned product.
@@ -136,6 +175,43 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetLastRecordId()
         {
             return this._lastRecordId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastSuccessfulProvisioningRecordId. 
+        /// <para>
+        /// The record identifier of the last successful request performed on this provisioned
+        /// product of the following types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  ProvisionedProduct 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  UpdateProvisionedProduct 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  ExecuteProvisionedProductPlan 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  TerminateProvisionedProduct 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string LastSuccessfulProvisioningRecordId
+        {
+            get { return this._lastSuccessfulProvisioningRecordId; }
+            set { this._lastSuccessfulProvisioningRecordId = value; }
+        }
+
+        // Check to see if LastSuccessfulProvisioningRecordId property is set
+        internal bool IsSetLastSuccessfulProvisioningRecordId()
+        {
+            return this._lastSuccessfulProvisioningRecordId != null;
         }
 
         /// <summary>
