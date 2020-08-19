@@ -1,3 +1,20 @@
+### 3.3.801.0 (2020-08-19 18:39 UTC)
+* IVS (3.3.102.0)
+	* Amazon Interactive Video Service (IVS) now offers customers the ability to create private channels, allowing customers to restrict their streams by channel or viewer.
+* LakeFormation (3.3.102.0)
+	* Adding additional field in ListPermissions API response to return RAM resource share ARN if a resource were shared through AWS RAM service.
+* Organizations (3.3.109.4)
+	* Minor documentation updates for AWS Organizations
+* ServiceCatalog (3.3.114.0)
+	* Enhance SearchProvisionedProducts API to allow queries using productName and provisioningArtifactName. Added lastProvisioningRecordId and lastSuccessfulRecordId to Read ProvisionedProduct APIs
+* StorageGateway (3.3.118.0)
+	* Added WORM, tape retention lock, and custom pool features for virtual tapes.
+* Core 3.3.107.40
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.800.0 (2020-08-18 18:14 UTC)
 * CodeBuild (3.3.114.8)
 	* Documentation updates for codebuild
