@@ -42,8 +42,35 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class AssignTapePoolRequest : AmazonStorageGatewayRequest
     {
+        private bool? _bypassGovernanceRetention;
         private string _poolId;
         private string _tapeARN;
+
+        /// <summary>
+        /// Gets and sets the property BypassGovernanceRetention. 
+        /// <para>
+        /// Set permissions to bypass governance retention. If the lock type of the archived tape
+        /// is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>,
+        /// and the user does not already have <code>BypassGovernanceRetention</code>, setting
+        /// this to TRUE enables the user to bypass the retention lock. This parameter is set
+        /// to true by default for calls from the console.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>TRUE</code> | <code>FALSE</code> 
+        /// </para>
+        /// </summary>
+        public bool BypassGovernanceRetention
+        {
+            get { return this._bypassGovernanceRetention.GetValueOrDefault(); }
+            set { this._bypassGovernanceRetention = value; }
+        }
+
+        // Check to see if BypassGovernanceRetention property is set
+        internal bool IsSetBypassGovernanceRetention()
+        {
+            return this._bypassGovernanceRetention.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property PoolId. 

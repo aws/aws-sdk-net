@@ -68,6 +68,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBypassGovernanceRetention())
+                {
+                    context.Writer.WritePropertyName("BypassGovernanceRetention");
+                    context.Writer.Write(publicRequest.BypassGovernanceRetention);
+                }
+
                 if(publicRequest.IsSetGatewayARN())
                 {
                     context.Writer.WritePropertyName("GatewayARN");

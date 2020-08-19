@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutomaticTapeCreationRule Object
+    /// Response Unmarshaller for PoolInfo Object
     /// </summary>  
-    public class AutomaticTapeCreationRuleUnmarshaller : IUnmarshaller<AutomaticTapeCreationRule, XmlUnmarshallerContext>, IUnmarshaller<AutomaticTapeCreationRule, JsonUnmarshallerContext>
+    public class PoolInfoUnmarshaller : IUnmarshaller<PoolInfo, XmlUnmarshallerContext>, IUnmarshaller<PoolInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutomaticTapeCreationRule IUnmarshaller<AutomaticTapeCreationRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PoolInfo IUnmarshaller<PoolInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,51 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AutomaticTapeCreationRule Unmarshall(JsonUnmarshallerContext context)
+        public PoolInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AutomaticTapeCreationRule unmarshalledObject = new AutomaticTapeCreationRule();
+            PoolInfo unmarshalledObject = new PoolInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("MinimumNumTapes", targetDepth))
+                if (context.TestExpression("PoolARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PoolARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PoolName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PoolName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PoolStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PoolStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RetentionLockTimeInDays", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MinimumNumTapes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RetentionLockTimeInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PoolId", targetDepth))
+                if (context.TestExpression("RetentionLockType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PoolId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RetentionLockType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TapeBarcodePrefix", targetDepth))
+                if (context.TestExpression("StorageClass", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TapeBarcodePrefix = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TapeSizeInBytes", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.TapeSizeInBytes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Worm", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Worm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StorageClass = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +106,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutomaticTapeCreationRuleUnmarshaller _instance = new AutomaticTapeCreationRuleUnmarshaller();        
+        private static PoolInfoUnmarshaller _instance = new PoolInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutomaticTapeCreationRuleUnmarshaller Instance
+        public static PoolInfoUnmarshaller Instance
         {
             get
             {

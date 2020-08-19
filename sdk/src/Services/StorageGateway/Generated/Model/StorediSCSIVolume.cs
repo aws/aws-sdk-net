@@ -53,7 +53,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property CreatedDate. 
         /// <para>
         /// The date the volume was created. Volumes created prior to March 28, 2017 don’t have
-        /// this time stamp.
+        /// this timestamp.
         /// </para>
         /// </summary>
         public DateTime CreatedDate
@@ -216,7 +216,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property VolumeId. 
         /// <para>
-        /// The unique identifier of the volume, e.g. vol-AE4B946D.
+        /// The unique identifier of the volume, e.g., vol-AE4B946D.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=30)]

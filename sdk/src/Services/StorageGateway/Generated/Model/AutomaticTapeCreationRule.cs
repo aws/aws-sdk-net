@@ -30,7 +30,9 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// An automatic tape creation policy consists of automatic tape creation rules where
-    /// each rule defines when and how to create new tapes.
+    /// each rule defines when and how to create new tapes. For more information about automatic
+    /// tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating
+    /// Tapes Automatically</a>.
     /// </summary>
     public partial class AutomaticTapeCreationRule
     {
@@ -38,6 +40,7 @@ namespace Amazon.StorageGateway.Model
         private string _poolId;
         private string _tapeBarcodePrefix;
         private long? _tapeSizeInBytes;
+        private bool? _worm;
 
         /// <summary>
         /// Gets and sets the property MinimumNumTapes. 
@@ -45,6 +48,8 @@ namespace Amazon.StorageGateway.Model
         /// The minimum number of available virtual tapes that the gateway maintains at all times.
         /// If the number of tapes on the gateway goes below this value, the gateway creates as
         /// many new tapes as are needed to have <code>MinimumNumTapes</code> on the gateway.
+        /// For more information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating
+        /// Tapes Automatically</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
@@ -130,6 +135,25 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetTapeSizeInBytes()
         {
             return this._tapeSizeInBytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Worm. 
+        /// <para>
+        /// Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many
+        /// (WORM). Set to <code>false</code> when WORM is not enabled for tapes.
+        /// </para>
+        /// </summary>
+        public bool Worm
+        {
+            get { return this._worm.GetValueOrDefault(); }
+            set { this._worm = value; }
+        }
+
+        // Check to see if Worm property is set
+        internal bool IsSetWorm()
+        {
+            return this._worm.HasValue; 
         }
 
     }

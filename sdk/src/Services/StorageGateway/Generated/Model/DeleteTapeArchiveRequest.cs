@@ -35,7 +35,29 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class DeleteTapeArchiveRequest : AmazonStorageGatewayRequest
     {
+        private bool? _bypassGovernanceRetention;
         private string _tapeARN;
+
+        /// <summary>
+        /// Gets and sets the property BypassGovernanceRetention. 
+        /// <para>
+        /// Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool
+        /// with tape retention lock. Only archived tapes with tape retention lock set to <code>governance</code>
+        /// can be deleted. Archived tapes with tape retention lock set to <code>compliance</code>
+        /// can't be deleted.
+        /// </para>
+        /// </summary>
+        public bool BypassGovernanceRetention
+        {
+            get { return this._bypassGovernanceRetention.GetValueOrDefault(); }
+            set { this._bypassGovernanceRetention = value; }
+        }
+
+        // Check to see if BypassGovernanceRetention property is set
+        internal bool IsSetBypassGovernanceRetention()
+        {
+            return this._bypassGovernanceRetention.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property TapeARN. 

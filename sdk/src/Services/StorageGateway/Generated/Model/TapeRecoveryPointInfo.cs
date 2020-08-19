@@ -65,7 +65,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// The default time stamp format of the tape recovery point time is in the ISO8601 extended
+        /// The default timestamp format of the tape recovery point time is in the ISO8601 extended
         /// YYYY-MM-DD'T'HH:MM:SS'Z' format.
         /// </para>
         /// </summary>

@@ -82,7 +82,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property SecretToAuthenticateTarget. 
         /// <para>
         /// The secret key that the target must provide to participate in mutual CHAP with the
-        /// initiator (e.g. Windows client).
+        /// initiator (e.g., Windows client).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

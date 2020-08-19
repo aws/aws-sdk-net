@@ -36,7 +36,7 @@ namespace Amazon.StorageGateway.Model
     /// 
     ///  <note> 
     /// <para>
-    /// For Gateways activated after September 2, 2015, the gateway's ARN contains the gateway
+    /// For gateways activated after September 2, 2015, the gateway's ARN contains the gateway
     /// ID rather than the gateway name. However, changing the name of the gateway has no
     /// effect on the gateway's ARN.
     /// </para>
@@ -58,7 +58,7 @@ namespace Amazon.StorageGateway.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What
-        /// is Amazon CloudWatch logs?</a>.
+        /// is Amazon CloudWatch Logs?</a> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=562)]

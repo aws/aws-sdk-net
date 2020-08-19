@@ -34,8 +34,10 @@ namespace Amazon.StorageGateway.Model
     public partial class Tape
     {
         private string _kmsKey;
+        private DateTime? _poolEntryDate;
         private string _poolId;
         private double? _progress;
+        private DateTime? _retentionStartDate;
         private string _tapeARN;
         private string _tapeBarcode;
         private DateTime? _tapeCreatedDate;
@@ -43,6 +45,7 @@ namespace Amazon.StorageGateway.Model
         private string _tapeStatus;
         private long? _tapeUsedInBytes;
         private string _vtlDevice;
+        private bool? _worm;
 
         /// <summary>
         /// Gets and sets the property KMSKey.
@@ -58,6 +61,24 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetKMSKey()
         {
             return this._kmsKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PoolEntryDate. 
+        /// <para>
+        /// The date that the tape enters a custom tape pool.
+        /// </para>
+        /// </summary>
+        public DateTime PoolEntryDate
+        {
+            get { return this._poolEntryDate.GetValueOrDefault(); }
+            set { this._poolEntryDate = value; }
+        }
+
+        // Check to see if PoolEntryDate property is set
+        internal bool IsSetPoolEntryDate()
+        {
+            return this._poolEntryDate.HasValue; 
         }
 
         /// <summary>
@@ -107,6 +128,24 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetProgress()
         {
             return this._progress.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetentionStartDate. 
+        /// <para>
+        /// The date that the tape is first archived with tape retention lock enabled.
+        /// </para>
+        /// </summary>
+        public DateTime RetentionStartDate
+        {
+            get { return this._retentionStartDate.GetValueOrDefault(); }
+            set { this._retentionStartDate = value; }
+        }
+
+        // Check to see if RetentionStartDate property is set
+        internal bool IsSetRetentionStartDate()
+        {
+            return this._retentionStartDate.HasValue; 
         }
 
         /// <summary>
@@ -241,6 +280,24 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetVTLDevice()
         {
             return this._vtlDevice != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Worm. 
+        /// <para>
+        /// If the tape is archived as write-once-read-many (WORM), this value is <code>true</code>.
+        /// </para>
+        /// </summary>
+        public bool Worm
+        {
+            get { return this._worm.GetValueOrDefault(); }
+            set { this._worm = value; }
+        }
+
+        // Check to see if Worm property is set
+        internal bool IsSetWorm()
+        {
+            return this._worm.HasValue; 
         }
 
     }

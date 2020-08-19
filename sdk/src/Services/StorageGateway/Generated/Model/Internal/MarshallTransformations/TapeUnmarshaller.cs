@@ -70,6 +70,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.KMSKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PoolEntryDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.PoolEntryDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PoolId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -80,6 +86,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
                     unmarshalledObject.Progress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RetentionStartDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.RetentionStartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TapeARN", targetDepth))
@@ -122,6 +134,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VTLDevice = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Worm", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Worm = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

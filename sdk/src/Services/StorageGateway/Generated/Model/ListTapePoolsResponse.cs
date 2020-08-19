@@ -29,19 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// ListTagsForResourceOutput
+    /// This is the response object from the ListTapePools operation.
     /// </summary>
-    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
+    public partial class ListTapePoolsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private string _resourceARN;
-        private List<Tag> _tags = new List<Tag>();
+        private List<PoolInfo> _poolInfos = new List<PoolInfo>();
 
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// An opaque string that indicates the position at which to stop returning the list of
-        /// tags.
+        /// A string that indicates the position at which to begin the returned list of tape pools.
+        /// Use the marker in your next request to continue pagination of tape pools. If there
+        /// are no more tape pools to list, this element does not appear in the response body.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -58,40 +59,23 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceARN. 
+        /// Gets and sets the property PoolInfos. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource for which you want to list tags.
+        /// An array of <code>PoolInfo</code> objects, where each object describes a single custom
+        /// tape pool. If there are no custom tape pools, the <code>PoolInfos</code> is an empty
+        /// array. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=50, Max=500)]
-        public string ResourceARN
+        public List<PoolInfo> PoolInfos
         {
-            get { return this._resourceARN; }
-            set { this._resourceARN = value; }
+            get { return this._poolInfos; }
+            set { this._poolInfos = value; }
         }
 
-        // Check to see if ResourceARN property is set
-        internal bool IsSetResourceARN()
+        // Check to see if PoolInfos property is set
+        internal bool IsSetPoolInfos()
         {
-            return this._resourceARN != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// An array that contains the tags for the specified resource.
-        /// </para>
-        /// </summary>
-        public List<Tag> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._poolInfos != null && this._poolInfos.Count > 0; 
         }
 
     }

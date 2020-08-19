@@ -51,7 +51,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property CreatedDate. 
         /// <para>
         /// The date the volume was created. Volumes created prior to March 28, 2017 don’t have
-        /// this time stamp.
+        /// this timestamp.
         /// </para>
         /// </summary>
         public DateTime CreatedDate
@@ -86,7 +86,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property SourceSnapshotId. 
         /// <para>
         /// If the cached volume was created from a snapshot, this field contains the snapshot
-        /// ID used, e.g. snap-78e22663. Otherwise, this field is not included.
+        /// ID used, e.g., snap-78e22663. Otherwise, this field is not included.
         /// </para>
         /// </summary>
         public string SourceSnapshotId
@@ -171,7 +171,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property VolumeId. 
         /// <para>
-        /// The unique identifier of the volume, e.g. vol-AE4B946D.
+        /// The unique identifier of the volume, e.g., vol-AE4B946D.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=30)]

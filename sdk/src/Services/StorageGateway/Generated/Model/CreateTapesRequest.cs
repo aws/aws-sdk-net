@@ -51,6 +51,7 @@ namespace Amazon.StorageGateway.Model
         private List<Tag> _tags = new List<Tag>();
         private string _tapeBarcodePrefix;
         private long? _tapeSizeInBytes;
+        private bool? _worm;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -263,6 +264,25 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetTapeSizeInBytes()
         {
             return this._tapeSizeInBytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Worm. 
+        /// <para>
+        /// Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many
+        /// (WORM) tape.
+        /// </para>
+        /// </summary>
+        public bool Worm
+        {
+            get { return this._worm.GetValueOrDefault(); }
+            set { this._worm = value; }
+        }
+
+        // Check to see if Worm property is set
+        internal bool IsSetWorm()
+        {
+            return this._worm.HasValue; 
         }
 
     }

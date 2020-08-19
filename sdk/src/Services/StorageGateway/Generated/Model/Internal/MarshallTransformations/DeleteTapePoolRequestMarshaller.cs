@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateTapeWithBarcode Request Marshaller
+    /// DeleteTapePool Request Marshaller
     /// </summary>       
-    public class CreateTapeWithBarcodeRequestMarshaller : IMarshaller<IRequest, CreateTapeWithBarcodeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteTapePoolRequestMarshaller : IMarshaller<IRequest, DeleteTapePoolRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateTapeWithBarcodeRequest)input);
+            return this.Marshall((DeleteTapePoolRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateTapeWithBarcodeRequest publicRequest)
+        public IRequest Marshall(DeleteTapePoolRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
-            string target = "StorageGateway_20130630.CreateTapeWithBarcode";
+            string target = "StorageGateway_20130630.DeleteTapePool";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-06-30";            
@@ -68,62 +68,10 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGatewayARN())
+                if(publicRequest.IsSetPoolARN())
                 {
-                    context.Writer.WritePropertyName("GatewayARN");
-                    context.Writer.Write(publicRequest.GatewayARN);
-                }
-
-                if(publicRequest.IsSetKMSEncrypted())
-                {
-                    context.Writer.WritePropertyName("KMSEncrypted");
-                    context.Writer.Write(publicRequest.KMSEncrypted);
-                }
-
-                if(publicRequest.IsSetKMSKey())
-                {
-                    context.Writer.WritePropertyName("KMSKey");
-                    context.Writer.Write(publicRequest.KMSKey);
-                }
-
-                if(publicRequest.IsSetPoolId())
-                {
-                    context.Writer.WritePropertyName("PoolId");
-                    context.Writer.Write(publicRequest.PoolId);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTapeBarcode())
-                {
-                    context.Writer.WritePropertyName("TapeBarcode");
-                    context.Writer.Write(publicRequest.TapeBarcode);
-                }
-
-                if(publicRequest.IsSetTapeSizeInBytes())
-                {
-                    context.Writer.WritePropertyName("TapeSizeInBytes");
-                    context.Writer.Write(publicRequest.TapeSizeInBytes);
-                }
-
-                if(publicRequest.IsSetWorm())
-                {
-                    context.Writer.WritePropertyName("Worm");
-                    context.Writer.Write(publicRequest.Worm);
+                    context.Writer.WritePropertyName("PoolARN");
+                    context.Writer.Write(publicRequest.PoolARN);
                 }
 
         
@@ -135,9 +83,9 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateTapeWithBarcodeRequestMarshaller _instance = new CreateTapeWithBarcodeRequestMarshaller();        
+        private static DeleteTapePoolRequestMarshaller _instance = new DeleteTapePoolRequestMarshaller();        
 
-        internal static CreateTapeWithBarcodeRequestMarshaller GetInstance()
+        internal static DeleteTapePoolRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -145,7 +93,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateTapeWithBarcodeRequestMarshaller Instance
+        public static DeleteTapePoolRequestMarshaller Instance
         {
             get
             {
