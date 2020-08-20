@@ -22,7 +22,10 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-
+using System.Threading;
+#if AWS_ASYNC_API
+using System.Threading.Tasks;
+#endif
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
@@ -571,7 +574,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// Cache of ItemStorageConfig objects
     /// </summary>
-    internal class ItemStorageConfigCache
+    internal class ItemStorageConfigCache : IDisposable
     {
         // Cache of ItemStorageConfig objects per table and the
         // base, table-less ItemStorageConfig
@@ -589,6 +592,10 @@ namespace Amazon.DynamoDBv2.DataModel
             public string BaseTableName { get; private set; }
         }
 
+#if AWS_ASYNC_API
+        private SemaphoreSlim CacheSemaphore= new SemaphoreSlim(1, 1);
+#endif
+        
         private Dictionary<Type, ConfigTableCache> Cache;
         private DynamoDBContext Context;
 
@@ -603,32 +610,108 @@ namespace Amazon.DynamoDBv2.DataModel
             Type type = typeof(T);
             return GetConfig(type, flatConfig, conversionOnly);
         }
+
+
+#if AWS_ASYNC_API
+        public async Task<ItemStorageConfig> GetConfigAsync<T>(DynamoDBFlatConfig flatConfig, bool conversionOnly = false)
+        {
+            Type type = typeof(T);
+            return await GetConfigAsync(type, flatConfig, conversionOnly);
+        }
+
+        public async Task<ItemStorageConfig> GetConfigAsync(Type type, DynamoDBFlatConfig flatConfig, bool conversionOnly = false)
+        {
+            ConfigTableCache tableCache;
+
+            await CacheSemaphore.WaitAsync();
+            var tableExists = Cache.TryGetValue(type, out tableCache);
+            CacheSemaphore.Release();
+
+            if (!tableExists)
+            {
+                var baseStorageConfig = await CreateStorageConfigAsync(type, actualTableName: null);
+                tableCache = new ConfigTableCache(baseStorageConfig);
+                
+                await CacheSemaphore.WaitAsync();
+                Cache[type] = tableCache;
+                CacheSemaphore.Release();
+            }
+
+            // If this type is only used for conversion, do not attempt to populate the config from the table
+            if (conversionOnly)
+                return tableCache.BaseTypeConfig;
+
+            string actualTableName = DynamoDBContext.GetTableName(tableCache.BaseTableName, flatConfig);
+
+            ItemStorageConfig config;
+            if (!tableCache.Cache.TryGetValue(actualTableName, out config))
+            {
+                config = await CreateStorageConfigAsync(type, actualTableName);
+                
+                tableCache.Cache[actualTableName] = config;
+            }
+            return config;
+        }
+
+        private async Task<ItemStorageConfig> CreateStorageConfigAsync(Type baseType, string actualTableName)
+        {
+            if (baseType == null) throw new ArgumentNullException("baseType");
+            ITypeInfo typeInfo = TypeFactory.GetTypeInfo(baseType);
+            ItemStorageConfig config = new ItemStorageConfig(typeInfo);
+
+            PopulateConfigFromType(config, typeInfo);
+            PopulateConfigFromMappings(config, AWSConfigsDynamoDB.Context.TypeMappings);
+
+            // try to populate config from table definition only if actual table name is known
+            if (!string.IsNullOrEmpty(actualTableName))
+            {
+                Table table = null;
+                try
+                {
+                    table = await Context.GetUnconfiguredTableAsync(actualTableName);
+                }
+#pragma warning disable CA1031 // Do not catch general exception types
+                catch (Exception e)
+#pragma warning restore CA1031 // Do not catch general exception types
+                {
+                    // ignored
+                }
+
+                if (table != null)
+                {
+                    PopulateConfigFromTable(config, table);
+                }
+            }
+
+            config.Denormalize(Context);
+            return config;
+        }
+#endif
+
         public ItemStorageConfig GetConfig(Type type, DynamoDBFlatConfig flatConfig, bool conversionOnly = false)
         {
-            lock (Cache)
-            {                
-                ConfigTableCache tableCache;
-                if (!Cache.TryGetValue(type, out tableCache))
-                {
-                    var baseStorageConfig = CreateStorageConfig(type, actualTableName: null);
-                    tableCache = new ConfigTableCache(baseStorageConfig);
-                    Cache[type] = tableCache;
-                }
-
-                // If this type is only used for conversion, do not attempt to populate the config from the table
-                if (conversionOnly)
-                    return tableCache.BaseTypeConfig;
-
-                string actualTableName = DynamoDBContext.GetTableName(tableCache.BaseTableName, flatConfig);
-
-                ItemStorageConfig config;
-                if (!tableCache.Cache.TryGetValue(actualTableName, out config))
-                {
-                    config = CreateStorageConfig(type, actualTableName);
-                    tableCache.Cache[actualTableName] = config;
-                }
-                return config;
+            ConfigTableCache tableCache;
+            if (!Cache.TryGetValue(type, out tableCache))
+            {
+                var baseStorageConfig = CreateStorageConfig(type, actualTableName: null);
+                tableCache = new ConfigTableCache(baseStorageConfig);
+                Cache[type] = tableCache;
             }
+
+            // If this type is only used for conversion, do not attempt to populate the config from the table
+            if (conversionOnly)
+                return tableCache.BaseTypeConfig;
+
+            string actualTableName = DynamoDBContext.GetTableName(tableCache.BaseTableName, flatConfig);
+
+            ItemStorageConfig config;
+            if (!tableCache.Cache.TryGetValue(actualTableName, out config))
+            {
+                config = CreateStorageConfig(type, actualTableName);
+                tableCache.Cache[actualTableName] = config;
+            }
+
+            return config;
         }
 
         private static string GetAccurateCase(ItemStorageConfig config, string value)
@@ -893,6 +976,15 @@ namespace Amazon.DynamoDBv2.DataModel
                 sb.AppendFormat(CultureInfo.InvariantCulture, messageFormat, args);
                 throw new InvalidOperationException(sb.ToString());
             }
+        }
+
+        public void Dispose()
+        {
+#if AWS_ASYNC_API
+            CacheSemaphore.Dispose();
+
+#endif
+            Context.Dispose();
         }
     }
 }
