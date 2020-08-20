@@ -105,6 +105,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     response.IntegrationResponseSelectionExpression = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("integrationSubtype", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.IntegrationSubtype = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("integrationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

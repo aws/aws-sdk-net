@@ -108,6 +108,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IntegrationMethod);
                 }
 
+                if(publicRequest.IsSetIntegrationSubtype())
+                {
+                    context.Writer.WritePropertyName("integrationSubtype");
+                    context.Writer.Write(publicRequest.IntegrationSubtype);
+                }
+
                 if(publicRequest.IsSetIntegrationType())
                 {
                     context.Writer.WritePropertyName("integrationType");
