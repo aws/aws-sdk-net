@@ -42,12 +42,12 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// A set of alternate data source parameters that you want to share for these credentials.
         /// The credentials are applied in tandem with the data source parameters when you copy
-        /// a data source by using a create or update request. The API compares the <code>DataSourceParameters</code>
-        /// structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code>
-        /// allowlist. If the structures are an exact match, the request is allowed to use the
-        /// new data source with the existing credentials. If the <code>AlternateDataSourceParameters</code>
-        /// list is null, the <code>DataSourceParameters</code> originally used with these <code>Credentials</code>
-        /// is automatically allowed.
+        /// a data source by using a create or update request. The API operation compares the
+        /// <code>DataSourceParameters</code> structure that's in the request with the structures
+        /// in the <code>AlternateDataSourceParameters</code> allowlist. If the structures are
+        /// an exact match, the request is allowed to use the new data source with the existing
+        /// credentials. If the <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code>
+        /// originally used with these <code>Credentials</code> is automatically allowed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

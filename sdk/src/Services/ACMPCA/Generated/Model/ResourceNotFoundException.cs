@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// A resource such as a private CA, S3 bucket, certificate, or audit report cannot be
-    /// found.
+    /// A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot
+    /// be found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

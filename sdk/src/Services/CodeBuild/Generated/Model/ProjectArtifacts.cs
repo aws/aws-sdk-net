@@ -146,7 +146,7 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
         /// is set to <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>,
-        /// then the output artifact is stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+        /// then the output artifact is stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
         /// 
         /// </para>
         ///  </li> <li> 
@@ -159,7 +159,7 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
         /// is set to <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>",
-        /// the output artifact is stored in <code>MyArtifacts/<i>build-ID</i> </code>. 
+        /// the output artifact is stored in <code>MyArtifacts/&lt;build-ID&gt;</code>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -209,7 +209,7 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
         /// is set to <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>,
-        /// the output artifact is stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+        /// the output artifact is stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
         /// </para>
         /// </summary>
         public ArtifactNamespace NamespaceType

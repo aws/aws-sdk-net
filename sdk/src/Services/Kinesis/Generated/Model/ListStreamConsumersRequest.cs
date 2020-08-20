@@ -35,7 +35,7 @@ namespace Amazon.Kinesis.Model
     /// 
     ///  
     /// <para>
-    /// This operation has a limit of 10 transactions per second per account.
+    /// This operation has a limit of 5 transactions per second per stream.
     /// </para>
     /// </summary>
     public partial class ListStreamConsumersRequest : AmazonKinesisRequest

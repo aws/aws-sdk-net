@@ -134,7 +134,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property NamespaceError. 
         /// <para>
-        /// An error that occured when the namespace was created.
+        /// An error that occurred when the namespace was created.
         /// </para>
         /// </summary>
         public NamespaceError NamespaceError

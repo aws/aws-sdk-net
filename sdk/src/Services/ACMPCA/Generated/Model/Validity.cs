@@ -29,9 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// Length of time for which the certificate issued by your private certificate authority
-    /// (CA), or by the private CA itself, is valid in days, months, or years. You can issue
-    /// a certificate by calling the <a>IssueCertificate</a> action.
+    /// Validity specifies the period of time during which a certificate is valid. Validity
+    /// can be expressed as an explicit date and time when the certificate expires, or as
+    /// a span of time after issuance, stated in days, months, or years. For more information,
+    /// see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in
+    /// RFC 5280.
+    /// 
+    ///  
+    /// <para>
+    /// You can issue a certificate by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_IssueCertificate.html">IssueCertificate</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class Validity
     {
@@ -41,8 +49,58 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specifies whether the <code>Value</code> parameter represents days, months, or years.
+        /// Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter,
+        /// an integer. Supported validity types include those listed below. Type definitions
+        /// with values include a sample input value and the resulting output. 
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>END_DATE</code>: The specific date and time when the certificate will expire,
+        /// expressed using UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format.
+        /// When UTCTime is used, if the year field (YY) is greater than or equal to 50, the year
+        /// is interpreted as 19YY. If the year field is less than 50, the year is interpreted
+        /// as 20YY.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Sample input value: 491231235959 (UTCTime format)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Output expiration date/time: 12/31/2049 23:59:59
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <code>ABSOLUTE</code>: The specific date and time when the certificate will expire,
+        /// expressed in seconds since the Unix Epoch. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Sample input value: 2524608000
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Output expiration date/time: 01/01/2050 00:00:00
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <code>DAYS</code>, <code>MONTHS</code>, <code>YEARS</code>: The relative time from
+        /// the moment of issuance until the certificate will expire, expressed in days, months,
+        /// or years. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Sample input value: 90
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Output expiration date: 01/10/2020 12:34:54 UTC
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ValidityPeriodType Type
@@ -60,7 +118,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Time period.
+        /// A long integer interpreted according to the value of <code>Type</code>, below.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

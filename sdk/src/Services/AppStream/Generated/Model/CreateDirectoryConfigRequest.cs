@@ -85,7 +85,6 @@ namespace Amazon.AppStream.Model
         /// to the directory.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ServiceAccountCredentials ServiceAccountCredentials
         {
             get { return this._serviceAccountCredentials; }

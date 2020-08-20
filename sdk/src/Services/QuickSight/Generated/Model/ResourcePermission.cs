@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+        /// The IAM action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=16)]

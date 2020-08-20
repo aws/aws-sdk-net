@@ -47,7 +47,8 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> 
+        /// Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=50)]

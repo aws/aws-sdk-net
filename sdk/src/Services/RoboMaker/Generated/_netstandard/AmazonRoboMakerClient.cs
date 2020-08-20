@@ -240,6 +240,50 @@ namespace Amazon.RoboMaker
         #endregion
 
 
+        #region  BatchDeleteWorlds
+
+        internal virtual BatchDeleteWorldsResponse BatchDeleteWorlds(BatchDeleteWorldsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteWorldsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteWorldsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteWorldsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes one or more worlds in a batch operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteWorlds service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteWorlds service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/BatchDeleteWorlds">REST API Reference for BatchDeleteWorlds Operation</seealso>
+        public virtual Task<BatchDeleteWorldsResponse> BatchDeleteWorldsAsync(BatchDeleteWorldsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteWorldsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteWorldsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDeleteWorldsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchDescribeSimulationJob
 
         internal virtual BatchDescribeSimulationJobResponse BatchDescribeSimulationJob(BatchDescribeSimulationJobRequest request)
@@ -425,6 +469,100 @@ namespace Amazon.RoboMaker
             options.ResponseUnmarshaller = CancelSimulationJobBatchResponseUnmarshaller.Instance;
 
             return InvokeAsync<CancelSimulationJobBatchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CancelWorldExportJob
+
+        internal virtual CancelWorldExportJobResponse CancelWorldExportJob(CancelWorldExportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelWorldExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelWorldExportJobResponseUnmarshaller.Instance;
+
+            return Invoke<CancelWorldExportJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Cancels the specified export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelWorldExportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelWorldExportJob service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelWorldExportJob">REST API Reference for CancelWorldExportJob Operation</seealso>
+        public virtual Task<CancelWorldExportJobResponse> CancelWorldExportJobAsync(CancelWorldExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelWorldExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelWorldExportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelWorldExportJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CancelWorldGenerationJob
+
+        internal virtual CancelWorldGenerationJobResponse CancelWorldGenerationJob(CancelWorldGenerationJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelWorldGenerationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelWorldGenerationJobResponseUnmarshaller.Instance;
+
+            return Invoke<CancelWorldGenerationJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Cancels the specified world generator job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelWorldGenerationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelWorldGenerationJob service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelWorldGenerationJob">REST API Reference for CancelWorldGenerationJob Operation</seealso>
+        public virtual Task<CancelWorldGenerationJobResponse> CancelWorldGenerationJobAsync(CancelWorldGenerationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelWorldGenerationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelWorldGenerationJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelWorldGenerationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -879,6 +1017,172 @@ namespace Amazon.RoboMaker
 
         #endregion
         
+        #region  CreateWorldExportJob
+
+        internal virtual CreateWorldExportJobResponse CreateWorldExportJob(CreateWorldExportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorldExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorldExportJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorldExportJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a world export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorldExportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWorldExportJob service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.IdempotentParameterMismatchException">
+        /// The request uses the same client token as a previous, but non-identical request. Do
+        /// not reuse a client token with different requests, unless the requests are identical.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateWorldExportJob">REST API Reference for CreateWorldExportJob Operation</seealso>
+        public virtual Task<CreateWorldExportJobResponse> CreateWorldExportJobAsync(CreateWorldExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorldExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorldExportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateWorldExportJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateWorldGenerationJob
+
+        internal virtual CreateWorldGenerationJobResponse CreateWorldGenerationJob(CreateWorldGenerationJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorldGenerationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorldGenerationJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorldGenerationJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates worlds using the specified template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorldGenerationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWorldGenerationJob service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.IdempotentParameterMismatchException">
+        /// The request uses the same client token as a previous, but non-identical request. Do
+        /// not reuse a client token with different requests, unless the requests are identical.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateWorldGenerationJob">REST API Reference for CreateWorldGenerationJob Operation</seealso>
+        public virtual Task<CreateWorldGenerationJobResponse> CreateWorldGenerationJobAsync(CreateWorldGenerationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorldGenerationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorldGenerationJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateWorldGenerationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateWorldTemplate
+
+        internal virtual CreateWorldTemplateResponse CreateWorldTemplate(CreateWorldTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorldTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorldTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorldTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a world template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorldTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWorldTemplate service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateWorldTemplate">REST API Reference for CreateWorldTemplate Operation</seealso>
+        public virtual Task<CreateWorldTemplateResponse> CreateWorldTemplateAsync(CreateWorldTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorldTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorldTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateWorldTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteFleet
 
         internal virtual DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
@@ -1051,6 +1355,53 @@ namespace Amazon.RoboMaker
             options.ResponseUnmarshaller = DeleteSimulationApplicationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteSimulationApplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteWorldTemplate
+
+        internal virtual DeleteWorldTemplateResponse DeleteWorldTemplate(DeleteWorldTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorldTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorldTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorldTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a world template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorldTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWorldTemplate service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteWorldTemplate">REST API Reference for DeleteWorldTemplate Operation</seealso>
+        public virtual Task<DeleteWorldTemplateResponse> DeleteWorldTemplateAsync(DeleteWorldTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorldTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorldTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteWorldTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1428,6 +1779,241 @@ namespace Amazon.RoboMaker
 
         #endregion
         
+        #region  DescribeWorld
+
+        internal virtual DescribeWorldResponse DescribeWorld(DescribeWorldRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorldRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorldResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWorldResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes a world.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorld service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorld service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeWorld">REST API Reference for DescribeWorld Operation</seealso>
+        public virtual Task<DescribeWorldResponse> DescribeWorldAsync(DescribeWorldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorldRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorldResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeWorldResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeWorldExportJob
+
+        internal virtual DescribeWorldExportJobResponse DescribeWorldExportJob(DescribeWorldExportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorldExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorldExportJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWorldExportJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes a world export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorldExportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorldExportJob service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeWorldExportJob">REST API Reference for DescribeWorldExportJob Operation</seealso>
+        public virtual Task<DescribeWorldExportJobResponse> DescribeWorldExportJobAsync(DescribeWorldExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorldExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorldExportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeWorldExportJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeWorldGenerationJob
+
+        internal virtual DescribeWorldGenerationJobResponse DescribeWorldGenerationJob(DescribeWorldGenerationJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorldGenerationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorldGenerationJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWorldGenerationJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes a world generation job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorldGenerationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorldGenerationJob service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeWorldGenerationJob">REST API Reference for DescribeWorldGenerationJob Operation</seealso>
+        public virtual Task<DescribeWorldGenerationJobResponse> DescribeWorldGenerationJobAsync(DescribeWorldGenerationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorldGenerationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorldGenerationJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeWorldGenerationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeWorldTemplate
+
+        internal virtual DescribeWorldTemplateResponse DescribeWorldTemplate(DescribeWorldTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorldTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorldTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWorldTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes a world template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorldTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorldTemplate service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeWorldTemplate">REST API Reference for DescribeWorldTemplate Operation</seealso>
+        public virtual Task<DescribeWorldTemplateResponse> DescribeWorldTemplateAsync(DescribeWorldTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorldTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorldTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeWorldTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetWorldTemplateBody
+
+        internal virtual GetWorldTemplateBodyResponse GetWorldTemplateBody(GetWorldTemplateBodyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorldTemplateBodyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorldTemplateBodyResponseUnmarshaller.Instance;
+
+            return Invoke<GetWorldTemplateBodyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the world template body.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorldTemplateBody service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWorldTemplateBody service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/GetWorldTemplateBody">REST API Reference for GetWorldTemplateBody Operation</seealso>
+        public virtual Task<GetWorldTemplateBodyResponse> GetWorldTemplateBodyAsync(GetWorldTemplateBodyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorldTemplateBodyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorldTemplateBodyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetWorldTemplateBodyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDeploymentJobs
 
         internal virtual ListDeploymentJobsResponse ListDeploymentJobs(ListDeploymentJobsRequest request)
@@ -1792,6 +2378,182 @@ namespace Amazon.RoboMaker
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListWorldExportJobs
+
+        internal virtual ListWorldExportJobsResponse ListWorldExportJobs(ListWorldExportJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorldExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorldExportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorldExportJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists world export jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorldExportJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorldExportJobs service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorldExportJobs">REST API Reference for ListWorldExportJobs Operation</seealso>
+        public virtual Task<ListWorldExportJobsResponse> ListWorldExportJobsAsync(ListWorldExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorldExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorldExportJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWorldExportJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListWorldGenerationJobs
+
+        internal virtual ListWorldGenerationJobsResponse ListWorldGenerationJobs(ListWorldGenerationJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorldGenerationJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorldGenerationJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorldGenerationJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists world generator jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorldGenerationJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorldGenerationJobs service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorldGenerationJobs">REST API Reference for ListWorldGenerationJobs Operation</seealso>
+        public virtual Task<ListWorldGenerationJobsResponse> ListWorldGenerationJobsAsync(ListWorldGenerationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorldGenerationJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorldGenerationJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWorldGenerationJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListWorlds
+
+        internal virtual ListWorldsResponse ListWorlds(ListWorldsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorldsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorldsResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorldsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists worlds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorlds service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorlds service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorlds">REST API Reference for ListWorlds Operation</seealso>
+        public virtual Task<ListWorldsResponse> ListWorldsAsync(ListWorldsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorldsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorldsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWorldsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListWorldTemplates
+
+        internal virtual ListWorldTemplatesResponse ListWorldTemplates(ListWorldTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorldTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorldTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorldTemplatesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists world templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorldTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorldTemplates service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorldTemplates">REST API Reference for ListWorldTemplates Operation</seealso>
+        public virtual Task<ListWorldTemplatesResponse> ListWorldTemplatesAsync(ListWorldTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorldTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorldTemplatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWorldTemplatesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2220,6 +2982,53 @@ namespace Amazon.RoboMaker
             options.ResponseUnmarshaller = UpdateSimulationApplicationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSimulationApplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateWorldTemplate
+
+        internal virtual UpdateWorldTemplateResponse UpdateWorldTemplate(UpdateWorldTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorldTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorldTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorldTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a world template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorldTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWorldTemplate service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UpdateWorldTemplate">REST API Reference for UpdateWorldTemplate Operation</seealso>
+        public virtual Task<UpdateWorldTemplateResponse> UpdateWorldTemplateAsync(UpdateWorldTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorldTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorldTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateWorldTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion

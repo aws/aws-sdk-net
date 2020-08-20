@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Your Amazon Cognito workforce configuration.
+    /// Your OIDC IdP workforce configuration.
     /// </summary>
     public partial class OidcConfigForResponse
     {

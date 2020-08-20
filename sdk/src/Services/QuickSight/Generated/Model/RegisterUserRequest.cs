@@ -69,20 +69,42 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property CustomPermissionsName. 
         /// <para>
         /// (Enterprise edition only) The name of the custom permissions profile that you want
-        /// to assign to this user. Currently, custom permissions profile names are assigned to
-        /// permissions profiles in the QuickSight console. You use this API to assign the named
+        /// to assign to this user. Customized permissions allows you to control a user's access
+        /// by restricting access the following operations:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Create and update data sources
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create and update datasets
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create and update email reports
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subscribe to email reports
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To add custom permissions to an existing user, use <code> <a>UpdateUser</a> </code>
+        /// instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// A set of custom permissions includes any combination of these restrictions. Currently,
+        /// you need to create the profile names for custom permission sets by using the QuickSight
+        /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named
         /// set of permissions to a QuickSight user. 
         /// </para>
         ///  
         /// <para>
-        /// Customizing permissions in the QuickSight UI allows you to control a user's access
-        /// to the following operations:
-        /// </para>
-        ///  <ul> <li>  </li> <li>  </li> <li>  </li> <li>  </li> </ul> 
-        /// <para>
         /// QuickSight custom permissions are applied through IAM policies. Therefore, they override
         /// the permissions typically granted by assigning QuickSight users to one of the default
-        /// security cohorts (admin, author, reader) in QuickSight.
+        /// security cohorts in QuickSight (admin, author, reader).
         /// </para>
         ///  
         /// <para>

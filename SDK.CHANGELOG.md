@@ -1,3 +1,85 @@
+### 3.5.0.0 (2020-08-20 21:00 UTC)
+* All (Core and Services) updated to version 3.5.0.0
+   * Additional target for .NET Core 3.1
+   * Support for Unity, Xamarin, UWP, and PCL transitioned to .NET Standard 2.0
+   * EOL platforms removed (Windows Phone, Silverlight)
+   * Paginator support added
+   * Cognito Sync Manager, Mobile Analytics Manager extracted from SDK
+
+### 3.3.802.0 (2020-08-20 18:12 UTC)
+* ApiGatewayV2 (3.3.108.0)
+	* Customers can now create Amazon API Gateway HTTP APIs that route requests to AWS AppConfig, Amazon EventBridge, Amazon Kinesis Data Streams, Amazon SQS, and AWS Step Functions.
+* Chime (3.3.115.8)
+	* Documentation updates for chime
+* FSx (3.3.109.3)
+	* Documentation updates for Amazon FSx
+
+### 3.3.801.0 (2020-08-19 18:39 UTC)
+* IVS (3.3.102.0)
+	* Amazon Interactive Video Service (IVS) now offers customers the ability to create private channels, allowing customers to restrict their streams by channel or viewer.
+* LakeFormation (3.3.102.0)
+	* Adding additional field in ListPermissions API response to return RAM resource share ARN if a resource were shared through AWS RAM service.
+* Organizations (3.3.109.4)
+	* Minor documentation updates for AWS Organizations
+* ServiceCatalog (3.3.114.0)
+	* Enhance SearchProvisionedProducts API to allow queries using productName and provisioningArtifactName. Added lastProvisioningRecordId and lastSuccessfulRecordId to Read ProvisionedProduct APIs
+* StorageGateway (3.3.118.0)
+	* Added WORM, tape retention lock, and custom pool features for virtual tapes.
+* Core 3.3.107.40
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
+### 3.3.800.0 (2020-08-18 18:14 UTC)
+* CodeBuild (3.3.114.8)
+	* Documentation updates for codebuild
+* CognitoIdentityProvider (3.3.113.0)
+	* Adding the option to use a service linked role to publish events to Pinpoint.
+* DataSync (3.3.110.0)
+	* DataSync support for filters as input arguments to the ListTasks and ListLocations API calls.
+* IdentityStore (3.3.100.0)
+	* AWS Single Sign-On (SSO) Identity Store service provides an interface to retrieve all of your users and groups. It enables entitlement management per user or group for AWS SSO and other IDPs.
+* SecurityHub (3.3.116.0)
+	* New details for DynamoDB tables, Elastic IP addresses, IAM policies and users, RDS DB clusters and snapshots, and Secrets Manager secrets. Added details for AWS KMS keys and RDS DB instances.
+* SimpleEmailV2 (3.3.105.0)
+	* This release includes new APIs to allow customers to add or remove email addresses from their account-level suppression list in bulk.
+
+### 3.3.799.0 (2020-08-17 18:13 UTC)
+* ACMPCA (3.3.102.0)
+	* ACM Private CA is launching cross-account support. This allows customers to share their private CAs with other accounts, AWS Organizations, and organizational units to issue end-entity certificates.
+* CertificateManager (3.3.102.0)
+	* ACM provides support for the new Private CA feature Cross-account CA sharing. ACM users can issue certificates signed by a private CA belonging to another account where the CA was shared with them.
+* ECR (3.3.108.0)
+	* This feature adds support for pushing and pulling Open Container Initiative (OCI) artifacts.
+* ElasticLoadBalancing (3.3.100.222)
+	* Adds support for HTTP Desync Mitigation in Classic Load Balancers.
+* ElasticLoadBalancingV2 (3.3.105.36)
+	* Adds support for HTTP Desync Mitigation in Application Load Balancers.
+* Kinesis (3.3.101.0)
+	* Introducing ShardFilter for ListShards API to filter the shards using a position in the stream, and ChildShards support for GetRecords and SubscribeToShard API to discover children shards on shard end
+* QuickSight (3.3.108.0)
+	* Amazon QuickSight now supports programmatic creation and management of analyses with new APIs.
+* RoboMaker (3.3.112.0)
+	* This release introduces RoboMaker Simulation WorldForge, a capability that automatically generates one or more simulation worlds.
+
+### 3.3.798.0 (2020-08-14 18:10 UTC)
+* AppStream (3.3.106.0)
+	* Adds support for the Desktop View feature
+* Braket (3.3.101.0)
+	* Fixing bug in our SDK model where device status and device type had been flipped.
+* EC2 (3.3.201.0)
+	* New C5ad instances featuring AMD's 2nd Generation EPYC processors, offering up to 96 vCPUs, 192 GiB of instance memory, 3.8 TB of NVMe based SSD instance storage, and 20 Gbps in Network bandwidth
+* LicenseManager (3.3.101.115)
+	* This release includes ability to enforce license assignment rules with EC2 Dedicated Hosts.
+* SageMaker (3.3.120.0)
+	* Amazon SageMaker now supports 1) creating real-time inference endpoints using model container images from Docker registries in customers' VPC 2) AUC(Area under the curve) as AutoPilot objective metric
+* Core 3.3.107.39
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.797.0 (2020-08-13 18:12 UTC)
 * AppSync (3.3.106.4)
 	* Documentation update for AWS AppSync support for Direct Lambda Resolvers.

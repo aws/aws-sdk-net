@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The data source for the AutoPilot job.
+    /// The data source for the Autopilot job.
     /// </summary>
     public partial class AutoMLDataSource
     {

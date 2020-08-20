@@ -78,6 +78,28 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsDynamoDbTable())
+            {
+                context.Writer.WritePropertyName("AwsDynamoDbTable");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsDynamoDbTableDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsDynamoDbTable, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsEc2Eip())
+            {
+                context.Writer.WritePropertyName("AwsEc2Eip");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEc2EipDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEc2Eip, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsEc2Instance())
             {
                 context.Writer.WritePropertyName("AwsEc2Instance");
@@ -166,6 +188,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsIamPolicy())
+            {
+                context.Writer.WritePropertyName("AwsIamPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsIamPolicyDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsIamPolicy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsIamRole())
             {
                 context.Writer.WritePropertyName("AwsIamRole");
@@ -173,6 +206,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsIamRoleDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsIamRole, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsIamUser())
+            {
+                context.Writer.WritePropertyName("AwsIamUser");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsIamUserDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsIamUser, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -210,6 +254,28 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsRdsDbCluster())
+            {
+                context.Writer.WritePropertyName("AwsRdsDbCluster");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsRdsDbClusterDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsRdsDbCluster, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsRdsDbClusterSnapshot())
+            {
+                context.Writer.WritePropertyName("AwsRdsDbClusterSnapshot");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsRdsDbClusterSnapshotDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsRdsDbClusterSnapshot, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsRdsDbInstance())
             {
                 context.Writer.WritePropertyName("AwsRdsDbInstance");
@@ -217,6 +283,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsRdsDbInstanceDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsRdsDbInstance, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsRdsDbSnapshot())
+            {
+                context.Writer.WritePropertyName("AwsRdsDbSnapshot");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsRdsDbSnapshotDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsRdsDbSnapshot, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -239,6 +316,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsS3ObjectDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsS3Object, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsSecretsManagerSecret())
+            {
+                context.Writer.WritePropertyName("AwsSecretsManagerSecret");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsSecretsManagerSecretDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsSecretsManagerSecret, context);
 
                 context.Writer.WriteObjectEnd();
             }

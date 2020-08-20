@@ -120,6 +120,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TapeSizeInBytes);
                 }
 
+                if(publicRequest.IsSetWorm())
+                {
+                    context.Writer.WritePropertyName("Worm");
+                    context.Writer.Write(publicRequest.Worm);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

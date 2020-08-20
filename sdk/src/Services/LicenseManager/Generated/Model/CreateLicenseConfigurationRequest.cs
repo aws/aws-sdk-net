@@ -37,9 +37,9 @@ namespace Amazon.LicenseManager.Model
     /// A license configuration is an abstraction of a customer license agreement that can
     /// be consumed and enforced by License Manager. Components include specifications for
     /// the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared
-    /// tenancy, Dedicated Instance, Dedicated Host, or all of these), host affinity (how
-    /// long a VM must be associated with a host), and the number of licenses purchased and
-    /// used.
+    /// tenancy, Dedicated Instance, Dedicated Host, or all of these), license affinity to
+    /// host (how long a license must be associated with a host), and the number of licenses
+    /// purchased and used.
     /// </para>
     /// </summary>
     public partial class CreateLicenseConfigurationRequest : AmazonLicenseManagerRequest
@@ -131,12 +131,12 @@ namespace Amazon.LicenseManager.Model
         /// Gets and sets the property LicenseRules. 
         /// <para>
         /// License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost).
-        /// Available rules vary by dimension.
+        /// The available rules vary by dimension, as follows.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code>
-        /// | <code>minimumCores</code> 
+        ///  <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code>
+        /// | <code>maximumCores</code> | <code>minimumCores</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -146,15 +146,21 @@ namespace Amazon.LicenseManager.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>maximumSockets</code>
-        /// | <code>minimumSockets</code> 
+        ///  <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code>
+        /// | <code>maximumSockets</code> | <code>minimumSockets</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code>
         /// | <code>maximumVcpus</code> | <code>minimumVcpus</code> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180.
+        /// The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>,
+        /// <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible
+        /// values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.
+        /// </para>
         /// </summary>
         public List<string> LicenseRules
         {

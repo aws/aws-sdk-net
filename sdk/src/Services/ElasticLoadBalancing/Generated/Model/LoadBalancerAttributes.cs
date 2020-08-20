@@ -47,7 +47,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable
+        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable
         /// Access Logs</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
@@ -66,7 +66,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property AdditionalAttributes. 
         /// <para>
-        /// This parameter is reserved.
+        /// Any additional attributes.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]
@@ -90,7 +90,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
+        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
         /// Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
@@ -116,7 +116,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <para>
         /// By default, Elastic Load Balancing maintains a 60-second idle connection timeout for
         /// both front-end and back-end connections of your load balancer. For more information,
-        /// see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure
+        /// see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure
         /// Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
@@ -140,7 +140,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure
+        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure
         /// Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>

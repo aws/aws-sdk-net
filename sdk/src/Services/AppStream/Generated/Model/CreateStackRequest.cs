@@ -130,6 +130,7 @@ namespace Amazon.AppStream.Model
         /// <para>
         /// The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You
         /// must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

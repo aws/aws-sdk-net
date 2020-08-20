@@ -64,6 +64,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AdditionalDetails", targetDepth))
+                {
+                    var unmarshaller = DetailsMapUnmarshaller.Instance;
+                    unmarshalledObject.AdditionalDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Permissions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

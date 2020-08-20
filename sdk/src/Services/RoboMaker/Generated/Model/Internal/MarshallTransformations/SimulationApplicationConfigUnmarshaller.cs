@@ -82,6 +82,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.LaunchConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("worldConfigs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<WorldConfig, WorldConfigUnmarshaller>(WorldConfigUnmarshaller.Instance);
+                    unmarshalledObject.WorldConfigs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

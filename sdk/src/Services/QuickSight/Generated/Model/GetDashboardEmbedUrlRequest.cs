@@ -30,9 +30,9 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDashboardEmbedUrl operation.
-    /// Generates a URL and authorization code that you can embed in your web server code.
-    /// Before you use this command, make sure that you have configured the dashboards and
-    /// permissions. 
+    /// Generates a session URL and authorization code that you can use to embed an Amazon
+    /// QuickSight read-only dashboard in your web server code. Before you use this command,
+    /// make sure that you have configured the dashboards and permissions. 
     /// 
     ///  
     /// <para>
@@ -58,10 +58,8 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
-    /// Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or <a
-    /// href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
-    /// Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API Reference</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
+    /// Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i> .
     /// </para>
     /// </summary>
     public partial class GetDashboardEmbedUrlRequest : AmazonQuickSightRequest
@@ -208,7 +206,10 @@ namespace Amazon.QuickSight.Model
         /// IAM users and IAM role-based sessions authenticated through Federated Single Sign-On
         /// using SAML, OpenID Connect, or IAM federation.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+        /// </para>
         /// </summary>
         public string UserArn
         {

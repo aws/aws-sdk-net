@@ -34,10 +34,29 @@ namespace Amazon.IVS.Model
     /// </summary>
     public partial class CreateChannelRequest : AmazonIVSRequest
     {
+        private bool? _authorized;
         private ChannelLatencyMode _latencyMode;
         private string _name;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private ChannelType _type;
+
+        /// <summary>
+        /// Gets and sets the property Authorized. 
+        /// <para>
+        /// Whether the channel is authorized. Default: <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool Authorized
+        {
+            get { return this._authorized.GetValueOrDefault(); }
+            set { this._authorized = value; }
+        }
+
+        // Check to see if Authorized property is set
+        internal bool IsSetAuthorized()
+        {
+            return this._authorized.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property LatencyMode. 

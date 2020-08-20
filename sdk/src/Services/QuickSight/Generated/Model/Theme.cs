@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// 
+    /// Summary information about a theme.
     /// </summary>
     public partial class Theme
     {

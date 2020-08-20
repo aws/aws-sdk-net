@@ -30,8 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// A <i>group</i> in Amazon QuickSight consists of a set of users. You can use groups
-    /// to make it easier to manage access and security. Currently, an Amazon QuickSight subscription
-    /// can't contain more than 500 Amazon QuickSight groups.
+    /// to make it easier to manage access and security.
     /// </summary>
     public partial class Group
     {

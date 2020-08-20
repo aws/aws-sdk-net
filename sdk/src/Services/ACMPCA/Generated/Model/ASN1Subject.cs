@@ -80,6 +80,7 @@ namespace Amazon.ACMPCA.Model
         /// Two-digit code that specifies the country in which the certificate subject located.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=2)]
         public string Country
         {
             get { return this._country; }

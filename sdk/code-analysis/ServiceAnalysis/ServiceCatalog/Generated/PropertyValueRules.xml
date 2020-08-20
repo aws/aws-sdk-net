@@ -1784,7 +1784,19 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisionedProductAttribute.LastProvisioningRecordId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ProvisionedProductAttribute.LastRecordId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisionedProductAttribute.LastSuccessfulProvisioningRecordId</property>
     <min>1</min>
     <max>100</max>
     <pattern>^[a-zA-Z0-9_\-]*</pattern>
@@ -1802,10 +1814,18 @@
     <pattern>^[a-zA-Z0-9_\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisionedProductAttribute.ProductName</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ProvisionedProductAttribute.ProvisioningArtifactId</property>
     <min>1</min>
     <max>100</max>
     <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisionedProductAttribute.ProvisioningArtifactName</property>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ProvisionedProductDetail.Arn</property>
@@ -1818,6 +1838,18 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisionedProductDetail.LastProvisioningRecordId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisionedProductDetail.LastSuccessfulProvisioningRecordId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ProvisionedProductDetail.Name</property>

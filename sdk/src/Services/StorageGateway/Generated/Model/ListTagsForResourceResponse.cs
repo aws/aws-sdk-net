@@ -60,7 +60,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// he Amazon Resource Name (ARN) of the resource for which you want to list tags.
+        /// The Amazon Resource Name (ARN) of the resource for which you want to list tags.
         /// </para>
         /// </summary>
         [AWSProperty(Min=50, Max=500)]

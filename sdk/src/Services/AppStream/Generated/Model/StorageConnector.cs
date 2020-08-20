@@ -62,7 +62,7 @@ namespace Amazon.AppStream.Model
         /// The names of the domains for the account.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Max=50)]
         public List<string> Domains
         {
             get { return this._domains; }
@@ -81,7 +81,7 @@ namespace Amazon.AppStream.Model
         /// The ARN of the storage connector.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=2048)]
         public string ResourceIdentifier
         {
             get { return this._resourceIdentifier; }

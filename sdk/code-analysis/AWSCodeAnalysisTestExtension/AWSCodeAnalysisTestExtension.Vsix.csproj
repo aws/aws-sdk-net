@@ -464,6 +464,10 @@
       <Project>{75CCB501-0580-46F5-8CFB-705D6D6ECFDF}</Project>
       <Name>AWSSDK.IdentityManagement.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/IdentityStore/AWSSDK.IdentityStore.CodeAnalysis.csproj">
+      <Project>{0063AC5D-9334-405B-B80A-55AA1F10FA65}</Project>
+      <Name>AWSSDK.IdentityStore.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Imagebuilder/AWSSDK.Imagebuilder.CodeAnalysis.csproj">
       <Project>{AB8BE066-398E-4860-9800-540AD8D5FBF9}</Project>
       <Name>AWSSDK.Imagebuilder.CodeAnalysis</Name>

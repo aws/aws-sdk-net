@@ -33,9 +33,25 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class GetRecordsResponse : AmazonWebServiceResponse
     {
+        private List<ChildShard> _childShards = new List<ChildShard>();
         private long? _millisBehindLatest;
         private string _nextShardIterator;
         private List<Record> _records = new List<Record>();
+
+        /// <summary>
+        /// Gets and sets the property ChildShards.
+        /// </summary>
+        public List<ChildShard> ChildShards
+        {
+            get { return this._childShards; }
+            set { this._childShards = value; }
+        }
+
+        // Check to see if ChildShards property is set
+        internal bool IsSetChildShards()
+        {
+            return this._childShards != null && this._childShards.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property MillisBehindLatest. 

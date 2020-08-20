@@ -38,8 +38,8 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthority. 
         /// <para>
-        /// A <a>CertificateAuthority</a> structure that contains information about your private
-        /// CA.
+        /// A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a>
+        /// structure that contains information about your private CA.
         /// </para>
         /// </summary>
         public CertificateAuthority CertificateAuthority

@@ -30,7 +30,16 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAccountCustomization operation.
-    /// Updates customizations associated with the QuickSight subscription on your AWS account.
+    /// Updates Amazon QuickSight customizations the current AWS Region. Currently, the only
+    /// customization you can use is a theme.
+    /// 
+    ///  
+    /// <para>
+    /// You can use customizations for your AWS account or, if you specify a namespace, for
+    /// a QuickSight namespace instead. Customizations that apply to a namespace override
+    /// customizations that apply to an AWS account. To find out which customizations apply,
+    /// use the <code>DescribeAccountCustomization</code> API operation. 
+    /// </para>
     /// </summary>
     public partial class UpdateAccountCustomizationRequest : AmazonQuickSightRequest
     {
@@ -41,7 +50,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AccountCustomization. 
         /// <para>
-        /// The customizations you want to update in QuickSight.
+        /// The QuickSight customizations you're updating in the current AWS Region. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +88,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace associated with the customization that you're updating.
+        /// The namespace that you want to update QuickSight customizations for.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

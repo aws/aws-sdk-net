@@ -33,7 +33,9 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class ImageDetail
     {
+        private string _artifactMediaType;
         private string _imageDigest;
+        private string _imageManifestMediaType;
         private DateTime? _imagePushedAt;
         private ImageScanFindingsSummary _imageScanFindingsSummary;
         private ImageScanStatus _imageScanStatus;
@@ -41,6 +43,24 @@ namespace Amazon.ECR.Model
         private List<string> _imageTags = new List<string>();
         private string _registryId;
         private string _repositoryName;
+
+        /// <summary>
+        /// Gets and sets the property ArtifactMediaType. 
+        /// <para>
+        /// The artifact media type of the image.
+        /// </para>
+        /// </summary>
+        public string ArtifactMediaType
+        {
+            get { return this._artifactMediaType; }
+            set { this._artifactMediaType = value; }
+        }
+
+        // Check to see if ArtifactMediaType property is set
+        internal bool IsSetArtifactMediaType()
+        {
+            return this._artifactMediaType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ImageDigest. 
@@ -58,6 +78,24 @@ namespace Amazon.ECR.Model
         internal bool IsSetImageDigest()
         {
             return this._imageDigest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageManifestMediaType. 
+        /// <para>
+        /// The media type of the image manifest.
+        /// </para>
+        /// </summary>
+        public string ImageManifestMediaType
+        {
+            get { return this._imageManifestMediaType; }
+            set { this._imageManifestMediaType = value; }
+        }
+
+        // Check to see if ImageManifestMediaType property is set
+        internal bool IsSetImageManifestMediaType()
+        {
+            return this._imageManifestMediaType != null;
         }
 
         /// <summary>

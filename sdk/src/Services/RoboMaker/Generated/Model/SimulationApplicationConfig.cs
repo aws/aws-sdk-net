@@ -36,6 +36,7 @@ namespace Amazon.RoboMaker.Model
         private string _application;
         private string _applicationVersion;
         private LaunchConfig _launchConfig;
+        private List<WorldConfig> _worldConfigs = new List<WorldConfig>();
 
         /// <summary>
         /// Gets and sets the property Application. 
@@ -92,6 +93,25 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetLaunchConfig()
         {
             return this._launchConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorldConfigs. 
+        /// <para>
+        /// A list of world configurations.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<WorldConfig> WorldConfigs
+        {
+            get { return this._worldConfigs; }
+            set { this._worldConfigs = value; }
+        }
+
+        // Check to see if WorldConfigs property is set
+        internal bool IsSetWorldConfigs()
+        {
+            return this._worldConfigs != null && this._worldConfigs.Count > 0; 
         }
 
     }

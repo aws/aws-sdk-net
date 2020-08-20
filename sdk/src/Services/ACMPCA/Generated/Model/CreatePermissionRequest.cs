@@ -30,19 +30,38 @@ namespace Amazon.ACMPCA.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePermission operation.
-    /// Assigns permissions from a private CA to a designated AWS service. Services are specified
-    /// by their service principals and can be given permission to create and retrieve certificates
-    /// on a private CA. Services can also be given permission to list the active permissions
-    /// that the private CA has granted. For ACM to automatically renew your private CA's
-    /// certificates, you must assign all possible permissions from the CA to the ACM service
-    /// principal.
+    /// Grants one or more permissions on a private CA to the AWS Certificate Manager (ACM)
+    /// service principal (<code>acm.amazonaws.com</code>). These permissions allow ACM to
+    /// issue and renew ACM certificates that reside in the same AWS account as the CA.
     /// 
     ///  
     /// <para>
-    /// At this time, you can only assign permissions to ACM (<code>acm.amazonaws.com</code>).
-    /// Permissions can be revoked with the <a>DeletePermission</a> action and listed with
-    /// the <a>ListPermissions</a> action.
+    /// You can list current permissions with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html">ListPermissions</a>
+    /// action and revoke them with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html">DeletePermission</a>
+    /// action.
     /// </para>
+    ///  <p class="title"> <b>About Permissions</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If the private CA and the certificates it issues reside in the same account, you can
+    /// use <code>CreatePermission</code> to grant permissions for ACM to carry out automatic
+    /// certificate renewals.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For automatic certificate renewal to succeed, the ACM service principal needs permissions
+    /// to create, retrieve, and list certificates.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If the private CA and the ACM certificates reside in different accounts, then permissions
+    /// cannot be used to enable automatic renewals. Instead, the ACM certificate owner must
+    /// set up a resource-based policy to enable cross-account issuance and renewals. For
+    /// more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource
+    /// Based Policy with ACM Private CA</a>.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreatePermissionRequest : AmazonACMPCARequest
     {
@@ -75,8 +94,8 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find
-        /// the ARN by calling the <a>ListCertificateAuthorities</a> action. This must have the
-        /// following form: 
+        /// the ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
+        /// action. This must have the following form: 
         /// </para>
         ///  
         /// <para>

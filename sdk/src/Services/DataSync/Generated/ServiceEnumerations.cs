@@ -283,6 +283,60 @@ namespace Amazon.DataSync
 
 
     /// <summary>
+    /// Constants used for properties of type LocationFilterName.
+    /// </summary>
+    public class LocationFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreationTime for LocationFilterName
+        /// </summary>
+        public static readonly LocationFilterName CreationTime = new LocationFilterName("CreationTime");
+        /// <summary>
+        /// Constant LocationType for LocationFilterName
+        /// </summary>
+        public static readonly LocationFilterName LocationType = new LocationFilterName("LocationType");
+        /// <summary>
+        /// Constant LocationUri for LocationFilterName
+        /// </summary>
+        public static readonly LocationFilterName LocationUri = new LocationFilterName("LocationUri");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LocationFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LocationFilterName FindValue(string value)
+        {
+            return FindValue<LocationFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LocationFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogLevel.
     /// </summary>
     public class LogLevel : ConstantClass
@@ -488,6 +542,88 @@ namespace Amazon.DataSync
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ObjectStorageServerProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Operator.
+    /// </summary>
+    public class Operator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BeginsWith for Operator
+        /// </summary>
+        public static readonly Operator BeginsWith = new Operator("BeginsWith");
+        /// <summary>
+        /// Constant Contains for Operator
+        /// </summary>
+        public static readonly Operator Contains = new Operator("Contains");
+        /// <summary>
+        /// Constant Equals for Operator
+        /// </summary>
+        public static readonly Operator Equals = new Operator("Equals");
+        /// <summary>
+        /// Constant GreaterThan for Operator
+        /// </summary>
+        public static readonly Operator GreaterThan = new Operator("GreaterThan");
+        /// <summary>
+        /// Constant GreaterThanOrEqual for Operator
+        /// </summary>
+        public static readonly Operator GreaterThanOrEqual = new Operator("GreaterThanOrEqual");
+        /// <summary>
+        /// Constant In for Operator
+        /// </summary>
+        public static readonly Operator In = new Operator("In");
+        /// <summary>
+        /// Constant LessThan for Operator
+        /// </summary>
+        public static readonly Operator LessThan = new Operator("LessThan");
+        /// <summary>
+        /// Constant LessThanOrEqual for Operator
+        /// </summary>
+        public static readonly Operator LessThanOrEqual = new Operator("LessThanOrEqual");
+        /// <summary>
+        /// Constant NotContains for Operator
+        /// </summary>
+        public static readonly Operator NotContains = new Operator("NotContains");
+        /// <summary>
+        /// Constant NotEquals for Operator
+        /// </summary>
+        public static readonly Operator NotEquals = new Operator("NotEquals");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Operator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Operator FindValue(string value)
+        {
+            return FindValue<Operator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Operator(string value)
         {
             return FindValue(value);
         }
@@ -932,6 +1068,56 @@ namespace Amazon.DataSync
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TaskExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TaskFilterName.
+    /// </summary>
+    public class TaskFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreationTime for TaskFilterName
+        /// </summary>
+        public static readonly TaskFilterName CreationTime = new TaskFilterName("CreationTime");
+        /// <summary>
+        /// Constant LocationId for TaskFilterName
+        /// </summary>
+        public static readonly TaskFilterName LocationId = new TaskFilterName("LocationId");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TaskFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TaskFilterName FindValue(string value)
+        {
+            return FindValue<TaskFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TaskFilterName(string value)
         {
             return FindValue(value);
         }

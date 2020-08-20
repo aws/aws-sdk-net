@@ -133,14 +133,21 @@ namespace Amazon.IVS
     /// <para>
     /// Channel — Stores configuration data related to your live stream. You first create
     /// a channel and then use the channel’s stream key to start your live stream. See the
-    /// <a>Channel</a> endpoints for more information. 
+    /// Channel endpoints for more information. 
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// Stream key — An identifier assigned by Amazon IVS when you create a channel, which
-    /// is then used to authorize streaming. See the <a>StreamKey</a> endpoints for more information.
+    /// is then used to authorize streaming. See the StreamKey endpoints for more information.
     /// <i> <b>Treat the stream key like a secret, since it allows anyone to stream to the
     /// channel.</b> </i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Playback key pair — Video playback may be restricted using playback-authorization
+    /// tokens, which use public-key encryption. A playback key pair is the public-private
+    /// pair of keys used to sign and validate the playback-authorization token. See the PlaybackKeyPair
+    /// endpoints for more information.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -163,16 +170,12 @@ namespace Amazon.IVS
     ///  
     /// <para>
     /// The Amazon IVS API has these tag-related endpoints: <a>TagResource</a>, <a>UntagResource</a>,
-    /// and <a>ListTagsForResource</a>. The following resources support tagging: Channels
-    /// and Stream Keys.
+    /// and <a>ListTagsForResource</a>. The following resources support tagging: Channels,
+    /// Stream Keys, and Playback Key Pairs.
     /// </para>
     ///  
     /// <para>
-    ///  <b>API Endpoints</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>Channel</a>:
+    ///  <b>Channel Endpoints</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -206,7 +209,7 @@ namespace Amazon.IVS
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <a>StreamKey</a>:
+    ///  <b>StreamKey Endpoints</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -233,7 +236,7 @@ namespace Amazon.IVS
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <a>Stream</a>:
+    ///  <b>Stream Endpoints</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -259,7 +262,34 @@ namespace Amazon.IVS
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> AWS Tags</a>:
+    ///  <b>PlaybackKeyPair Endpoints</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>ImportPlaybackKeyPair</a> — Imports the public portion of a new key pair and returns
+    /// its <code>arn</code> and <code>fingerprint</code>. The <code>privateKey</code> can
+    /// then be used to generate viewer authorization tokens, to grant viewers access to authorized
+    /// channels.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetPlaybackKeyPair</a> — Gets a specified playback authorization key pair and
+    /// returns the <code>arn</code> and <code>fingerprint</code>. The <code>privateKey</code>
+    /// held by the caller can be used to generate viewer authorization tokens, to grant viewers
+    /// access to authorized channels.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListPlaybackKeyPairs</a> — Gets summary information about playback key pairs.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeletePlaybackKeyPair</a> — Deletes a specified authorization key pair. This invalidates
+    /// future viewer tokens generated using the key pair’s <code>privateKey</code>.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>AWS Tags Endpoints</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -696,6 +726,53 @@ namespace Amazon.IVS
 
         #endregion
         
+        #region  DeletePlaybackKeyPair
+
+        internal virtual DeletePlaybackKeyPairResponse DeletePlaybackKeyPair(DeletePlaybackKeyPairRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePlaybackKeyPairRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePlaybackKeyPairResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePlaybackKeyPairResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a specified authorization key pair. This invalidates future viewer tokens
+        /// generated using the key pair’s <code>privateKey</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePlaybackKeyPair service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePlaybackKeyPair service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackKeyPair">REST API Reference for DeletePlaybackKeyPair Operation</seealso>
+        public virtual Task<DeletePlaybackKeyPairResponse> DeletePlaybackKeyPairAsync(DeletePlaybackKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePlaybackKeyPairRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePlaybackKeyPairResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePlaybackKeyPairResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteStreamKey
 
         internal virtual DeleteStreamKeyResponse DeleteStreamKey(DeleteStreamKeyRequest request)
@@ -781,6 +858,52 @@ namespace Amazon.IVS
             options.ResponseUnmarshaller = GetChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetChannelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPlaybackKeyPair
+
+        internal virtual GetPlaybackKeyPairResponse GetPlaybackKeyPair(GetPlaybackKeyPairRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPlaybackKeyPairRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPlaybackKeyPairResponseUnmarshaller.Instance;
+
+            return Invoke<GetPlaybackKeyPairResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a specified playback authorization key pair and returns the <code>arn</code>
+        /// and <code>fingerprint</code>. The <code>privateKey</code> held by the caller can be
+        /// used to generate viewer authorization tokens, to grant viewers access to authorized
+        /// channels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPlaybackKeyPair service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPlaybackKeyPair service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackKeyPair">REST API Reference for GetPlaybackKeyPair Operation</seealso>
+        public virtual Task<GetPlaybackKeyPairResponse> GetPlaybackKeyPairAsync(GetPlaybackKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPlaybackKeyPairRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPlaybackKeyPairResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPlaybackKeyPairResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -874,6 +997,57 @@ namespace Amazon.IVS
 
         #endregion
         
+        #region  ImportPlaybackKeyPair
+
+        internal virtual ImportPlaybackKeyPairResponse ImportPlaybackKeyPair(ImportPlaybackKeyPairRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportPlaybackKeyPairRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportPlaybackKeyPairResponseUnmarshaller.Instance;
+
+            return Invoke<ImportPlaybackKeyPairResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Imports the public portion of a new key pair and returns its <code>arn</code> and
+        /// <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate
+        /// viewer authorization tokens, to grant viewers access to authorized channels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportPlaybackKeyPair service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportPlaybackKeyPair service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ImportPlaybackKeyPair">REST API Reference for ImportPlaybackKeyPair Operation</seealso>
+        public virtual Task<ImportPlaybackKeyPairResponse> ImportPlaybackKeyPairAsync(ImportPlaybackKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportPlaybackKeyPairRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportPlaybackKeyPairResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportPlaybackKeyPairResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListChannels
 
         internal virtual ListChannelsResponse ListChannels(ListChannelsRequest request)
@@ -911,6 +1085,46 @@ namespace Amazon.IVS
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListChannelsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPlaybackKeyPairs
+
+        internal virtual ListPlaybackKeyPairsResponse ListPlaybackKeyPairs(ListPlaybackKeyPairsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPlaybackKeyPairsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPlaybackKeyPairsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPlaybackKeyPairsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets summary information about playback key pairs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlaybackKeyPairs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPlaybackKeyPairs service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackKeyPairs">REST API Reference for ListPlaybackKeyPairs Operation</seealso>
+        public virtual Task<ListPlaybackKeyPairsResponse> ListPlaybackKeyPairsAsync(ListPlaybackKeyPairsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPlaybackKeyPairsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPlaybackKeyPairsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPlaybackKeyPairsResponse>(request, options, cancellationToken);
         }
 
         #endregion

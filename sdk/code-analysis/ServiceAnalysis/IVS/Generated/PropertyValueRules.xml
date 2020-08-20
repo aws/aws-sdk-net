@@ -19,6 +19,12 @@
     <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVS.Model.DeletePlaybackKeyPairRequest.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:playback-key/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVS.Model.DeleteStreamKeyRequest.Arn</property>
     <min>1</min>
     <max>128</max>
@@ -31,6 +37,12 @@
     <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVS.Model.GetPlaybackKeyPairRequest.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:playback-key/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVS.Model.GetStreamRequest.ChannelArn</property>
     <min>1</min>
     <max>128</max>
@@ -41,6 +53,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:stream-key/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.ImportPlaybackKeyPairRequest.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ListChannelsRequest.FilterByName</property>
@@ -60,6 +78,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ListChannelsResponse.NextToken</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.ListPlaybackKeyPairsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.ListPlaybackKeyPairsRequest.NextToken</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.ListPlaybackKeyPairsResponse.NextToken</property>
     <min>0</min>
     <max>500</max>
   </property-value-rule>
@@ -172,6 +205,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ChannelSummary.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.PlaybackKeyPair.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:playback-key/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.PlaybackKeyPair.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.PlaybackKeyPairSummary.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:playback-key/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.PlaybackKeyPairSummary.Name</property>
     <min>0</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>

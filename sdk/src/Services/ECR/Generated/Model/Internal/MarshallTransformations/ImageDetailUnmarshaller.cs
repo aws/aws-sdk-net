@@ -64,10 +64,22 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("artifactMediaType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ArtifactMediaType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("imageDigest", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageDigest = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("imageManifestMediaType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImageManifestMediaType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("imagePushedAt", targetDepth))

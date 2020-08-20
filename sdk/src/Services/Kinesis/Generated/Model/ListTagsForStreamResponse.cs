@@ -64,7 +64,7 @@ namespace Amazon.Kinesis.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Min=0, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

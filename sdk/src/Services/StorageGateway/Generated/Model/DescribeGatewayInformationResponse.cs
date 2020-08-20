@@ -55,7 +55,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogGroupARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to
+        /// The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to
         /// monitor events in the gateway.
         /// </para>
         /// </summary>

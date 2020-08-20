@@ -45,6 +45,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AnalyticsConfigurationType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetApplicationArn())
+            {
+                context.Writer.WritePropertyName("ApplicationArn");
+                context.Writer.Write(requestObject.ApplicationArn);
+            }
+
             if(requestObject.IsSetApplicationId())
             {
                 context.Writer.WritePropertyName("ApplicationId");

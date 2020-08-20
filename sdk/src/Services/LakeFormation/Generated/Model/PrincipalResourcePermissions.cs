@@ -33,10 +33,30 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class PrincipalResourcePermissions
     {
+        private DetailsMap _additionalDetails;
         private List<string> _permissions = new List<string>();
         private List<string> _permissionsWithGrantOption = new List<string>();
         private DataLakePrincipal _principal;
         private Resource _resource;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalDetails. 
+        /// <para>
+        /// This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>.
+        /// Currently returns only as a RAM share resource ARN.
+        /// </para>
+        /// </summary>
+        public DetailsMap AdditionalDetails
+        {
+            get { return this._additionalDetails; }
+            set { this._additionalDetails = value; }
+        }
+
+        // Check to see if AdditionalDetails property is set
+        internal bool IsSetAdditionalDetails()
+        {
+            return this._additionalDetails != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Permissions. 

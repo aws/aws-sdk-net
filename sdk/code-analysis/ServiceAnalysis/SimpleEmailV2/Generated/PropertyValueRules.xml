@@ -26,6 +26,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.CreateImportJobResponse.JobId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.DeleteCustomVerificationEmailTemplateRequest.TemplateName</property>
     <min>1</min>
   </property-value-rule>
@@ -72,6 +76,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.GetEmailTemplateResponse.TemplateName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.GetImportJobRequest.JobId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.GetImportJobResponse.JobId</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -171,6 +183,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.IdentityInfo.IdentityName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.ImportDataSource.S3Url</property>
+    <pattern>^s3:\/\/([^\/]+)\/(.*?([^\/]+)\/?)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.ImportJobSummary.JobId</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>

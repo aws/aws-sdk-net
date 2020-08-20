@@ -30,18 +30,18 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAutoMLJob operation.
-    /// Creates an AutoPilot job.
+    /// Creates an Autopilot job.
     /// 
     ///  
     /// <para>
-    /// After you run an AutoPilot job, you can find the best performing model by calling
-    /// , and then deploy that model by following the steps described in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html">Step
+    /// Find the best performing model after you run an Autopilot job by calling . Deploy
+    /// that model by following the steps described in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html">Step
     /// 6.1: Deploy the Model to Amazon SageMaker Hosting Services</a>.
     /// </para>
     ///  
     /// <para>
-    /// For information about how to use AutoPilot, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Use
-    /// AutoPilot to Automate Model Development</a>.
+    /// For information about how to use Autopilot, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">
+    /// Automate Model Development with Amazon SageMaker Autopilot</a>.
     /// </para>
     /// </summary>
     public partial class CreateAutoMLJobRequest : AmazonSageMakerRequest
@@ -77,7 +77,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobName. 
         /// <para>
-        /// Identifies an AutoPilot job. Must be unique to your account and is case-insensitive.
+        /// Identifies an Autopilot job. Must be unique to your account and is case-insensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -96,9 +96,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobObjective. 
         /// <para>
-        /// Defines the job's objective. You provide a MetricName and AutoML will infer minimize
-        /// or maximize. If this is not provided, the most commonly used ObjectiveMetric for problem
-        /// type will be selected.
+        /// Defines the objective of a an AutoML job. You provide a <a>AutoMLJobObjective$MetricName</a>
+        /// and Autopilot infers whether to minimize or maximize it. If a metric is not specified,
+        /// the most commonly used ObjectiveMetric for problem type is automaically selected.
         /// </para>
         /// </summary>
         public AutoMLJobObjective AutoMLJobObjective
@@ -116,8 +116,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property GenerateCandidateDefinitionsOnly. 
         /// <para>
-        /// This will generate possible candidates without training a model. A candidate is a
-        /// combination of data preprocessors, algorithms, and algorithm parameter settings.
+        /// Generates possible candidates without training a model. A candidate is a combination
+        /// of data preprocessors, algorithms, and algorithm parameter settings.
         /// </para>
         /// </summary>
         public bool GenerateCandidateDefinitionsOnly
@@ -193,7 +193,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the role that will be used to access the data.
+        /// The ARN of the role that is used to access the data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

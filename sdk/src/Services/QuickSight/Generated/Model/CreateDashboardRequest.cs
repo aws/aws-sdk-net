@@ -30,17 +30,15 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDashboard operation.
-    /// Creates a dashboard from a template. To first create a template, see the <a>CreateTemplate</a>
-    /// API operation.
+    /// Creates a dashboard from a template. To first create a template, see the <code> <a>CreateTemplate</a>
+    /// </code> API operation.
     /// 
     ///  
     /// <para>
     /// A dashboard is an entity in QuickSight that identifies QuickSight reports, created
     /// from analyses. You can share QuickSight dashboards. With the right permissions, you
-    /// can create scheduled email reports from them. The <code>CreateDashboard</code>, <code>DescribeDashboard</code>,
-    /// and <code>ListDashboardsByUser</code> API operations act on the dashboard entity.
-    /// If you have the correct permissions, you can create a dashboard from a template that
-    /// exists in a different AWS account.
+    /// can create scheduled email reports from them. If you have the correct permissions,
+    /// you can create a dashboard from a template that exists in a different AWS account.
     /// </para>
     /// </summary>
     public partial class CreateDashboardRequest : AmazonQuickSightRequest
@@ -111,7 +109,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         ///  <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
         /// can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to
-        /// export data to .csv format isn't enabled when this is set to <code>DISABLED</code>.
+        /// export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>.
         /// This option is <code>ENABLED</code> by default. 
         /// </para>
         ///  </li> <li> 
@@ -177,7 +175,12 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Permissions. 
         /// <para>
         /// A structure that contains the permissions of the dashboard. You can use this structure
-        /// for granting permissions with principal and action information.
+        /// for granting permissions by providing a list of IAM action information for each principal
+        /// ARN. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify no permissions, omit the permissions list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

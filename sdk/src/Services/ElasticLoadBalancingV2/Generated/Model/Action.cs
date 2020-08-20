@@ -30,6 +30,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Information about an action.
+    /// 
+    ///  
+    /// <para>
+    /// Each rule must include exactly one of the following types of actions: <code>forward</code>,
+    /// <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action
+    /// to be performed.
+    /// </para>
     /// </summary>
     public partial class Action
     {
@@ -125,9 +132,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property Order. 
         /// <para>
         /// The order for the action. This value is required for rules with multiple actions.
-        /// The action with the lowest value for order is performed first. The last action to
-        /// be performed must be one of the following types of actions: a <code>forward</code>,
-        /// <code>fixed-response</code>, or <code>redirect</code>.
+        /// The action with the lowest value for order is performed first.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50000)]

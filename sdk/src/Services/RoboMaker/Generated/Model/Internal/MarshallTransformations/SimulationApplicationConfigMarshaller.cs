@@ -68,6 +68,22 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetWorldConfigs())
+            {
+                context.Writer.WritePropertyName("worldConfigs");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectWorldConfigsListValue in requestObject.WorldConfigs)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WorldConfigMarshaller.Instance;
+                    marshaller.Marshall(requestObjectWorldConfigsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

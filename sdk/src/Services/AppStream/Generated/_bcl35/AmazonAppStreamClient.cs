@@ -348,6 +348,9 @@ namespace Amazon.AppStream
         /// <param name="request">Container for the necessary parameters to execute the BatchAssociateUserStack service method.</param>
         /// 
         /// <returns>The response from the BatchAssociateUserStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
         /// The attempted operation is not permitted.
         /// </exception>
@@ -405,6 +408,12 @@ namespace Amazon.AppStream
         /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateUserStack service method.</param>
         /// 
         /// <returns>The response from the BatchDisassociateUserStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchDisassociateUserStack">REST API Reference for BatchDisassociateUserStack Operation</seealso>
         public virtual BatchDisassociateUserStackResponse BatchDisassociateUserStack(BatchDisassociateUserStackRequest request)
         {
@@ -539,11 +548,20 @@ namespace Amazon.AppStream
         /// The resource cannot be created because your AWS account is suspended. For assistance,
         /// contact AWS Support.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
+        /// The specified role is invalid.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
         /// The requested limit exceeds the permitted limit for an account.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">REST API Reference for CreateDirectoryConfig Operation</seealso>
         public virtual CreateDirectoryConfigResponse CreateDirectoryConfig(CreateDirectoryConfigRequest request)
@@ -620,6 +638,10 @@ namespace Amazon.AppStream
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
         /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
+        /// AppStream 2.0 can’t process the request right now because the Describe calls from
+        /// your AWS account are being throttled by Amazon EC2. Try again later.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
@@ -712,6 +734,10 @@ namespace Amazon.AppStream
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
         /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
+        /// AppStream 2.0 can’t process the request right now because the Describe calls from
+        /// your AWS account are being throttled by Amazon EC2. Try again later.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
@@ -2169,6 +2195,9 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
         /// Indicates an incorrect combination of parameters, or a missing parameter.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUserStackAssociations">REST API Reference for DescribeUserStackAssociations Operation</seealso>
         public virtual DescribeUserStackAssociationsResponse DescribeUserStackAssociations(DescribeUserStackAssociationsRequest request)
         {
@@ -2283,6 +2312,9 @@ namespace Amazon.AppStream
         /// <returns>The response from the DisassociateFleet service method, as returned by AppStream.</returns>
         /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
         /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
         /// The specified resource is in use.
@@ -2647,6 +2679,10 @@ namespace Amazon.AppStream
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
         /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
+        /// AppStream 2.0 can’t process the request right now because the Describe calls from
+        /// your AWS account are being throttled by Amazon EC2. Try again later.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
         /// The specified resource exists and is not in use, but isn't available.
@@ -3054,6 +3090,12 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
         /// An API error occurred. Wait a few minutes and try again.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
+        /// The specified role is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
         /// The specified resource is in use.
         /// </exception>
@@ -3145,6 +3187,10 @@ namespace Amazon.AppStream
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
         /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
+        /// AppStream 2.0 can’t process the request right now because the Describe calls from
+        /// your AWS account are being throttled by Amazon EC2. Try again later.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
         /// The specified resource is in use.

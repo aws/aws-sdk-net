@@ -66,6 +66,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAuthorized())
+                {
+                    context.Writer.WritePropertyName("authorized");
+                    context.Writer.Write(publicRequest.Authorized);
+                }
+
                 if(publicRequest.IsSetLatencyMode())
                 {
                     context.Writer.WritePropertyName("latencyMode");

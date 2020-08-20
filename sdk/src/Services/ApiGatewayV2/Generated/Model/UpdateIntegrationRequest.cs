@@ -42,6 +42,7 @@ namespace Amazon.ApiGatewayV2.Model
         private string _description;
         private string _integrationId;
         private string _integrationMethod;
+        private string _integrationSubtype;
         private IntegrationType _integrationType;
         private string _integrationUri;
         private PassthroughBehavior _passthroughBehavior;
@@ -222,6 +223,26 @@ namespace Amazon.ApiGatewayV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IntegrationSubtype. 
+        /// <para>
+        /// Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action
+        /// to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration
+        /// subtype reference</a>.
+        /// </para>
+        /// </summary>
+        public string IntegrationSubtype
+        {
+            get { return this._integrationSubtype; }
+            set { this._integrationSubtype = value; }
+        }
+
+        // Check to see if IntegrationSubtype property is set
+        internal bool IsSetIntegrationSubtype()
+        {
+            return this._integrationSubtype != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IntegrationType. 
         /// <para>
         /// The integration type of an integration. One of the following:
@@ -235,9 +256,8 @@ namespace Amazon.ApiGatewayV2.Model
         /// </para>
         ///  
         /// <para>
-        /// AWS_PROXY: for integrating the route or method request with the Lambda function-invoking
-        /// action with the client request passed through as-is. This integration is also referred
-        /// to as Lambda proxy integration.
+        /// AWS_PROXY: for integrating the route or method request with a Lambda function or other
+        /// AWS service action. This integration is also referred to as a Lambda proxy integration.
         /// </para>
         ///  
         /// <para>
@@ -356,15 +376,22 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property RequestParameters. 
         /// <para>
-        /// A key-value map specifying request parameters that are passed from the method request
-        /// to the backend. The key is an integration request parameter name and the associated
-        /// value is a method request parameter value or static value that must be enclosed within
-        /// single quotes and pre-encoded as required by the backend. The method request parameter
-        /// value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
-        ///               , where                   <replaceable>{location}</replaceable>    
-        ///            is querystring, path, or header; and                   <replaceable>{name}</replaceable>
-        ///                must be a valid and unique method request parameter name. Supported
-        /// only for WebSocket APIs.
+        /// For WebSocket APIs, a key-value map specifying request parameters that are passed
+        /// from the method request to the backend. The key is an integration request parameter
+        /// name and the associated value is a method request parameter value or static value
+        /// that must be enclosed within single quotes and pre-encoded as required by the backend.
+        /// The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
+        ///              , where  <replaceable>{location}</replaceable>  is querystring, path,
+        /// or header; and <replaceable>{name}</replaceable> must be a valid and unique method
+        /// request parameter name.
+        /// </para>
+        ///  
+        /// <para>
+        /// For HTTP APIs, request parameters are a key-value map specifying parameters that are
+        /// passed to AWS_PROXY integrations with a specified integrationSubtype. You can provide
+        /// static values, or map request data, stage variables, or context variables that are
+        /// evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working
+        /// with AWS service integrations for HTTP APIs</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> RequestParameters

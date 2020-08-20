@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The map filter for querying findings.
+    /// A map filter for querying findings. Each map filter provides the field to check, the
+    /// value to look for, and the comparison operator.
     /// </summary>
     public partial class MapFilter
     {
@@ -40,7 +41,36 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Comparison. 
         /// <para>
-        /// The condition to apply to a key value when querying for findings with a map filter.
+        /// The condition to apply to the key value when querying for findings with a map filter.
+        /// </para>
+        ///  
+        /// <para>
+        /// To search for values that exactly match the filter value, use <code>EQUALS</code>.
+        /// For example, for the <code>ResourceTags</code> field, the filter <code>Department
+        /// EQUALS Security</code> matches findings that have the value <code>Security</code>
+        /// for the tag <code>Department</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To search for values other than the filter value, use <code>NOT_EQUALS</code>. For
+        /// example, for the <code>ResourceTags</code> field, the filter <code>Department NOT_EQUALS
+        /// Finance</code> matches findings that do not have the value <code>Finance</code> for
+        /// the tag <code>Department</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>EQUALS</code> filters on the same field are joined by <code>OR</code>. A finding
+        /// matches if it matches any one of those filters.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>NOT_EQUALS</code> filters on the same field are joined by <code>AND</code>.
+        /// A finding matches only if it matches all of those filters.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot have both an <code>EQUALS</code> filter and a <code>NOT_EQUALS</code> filter
+        /// on the same field.
         /// </para>
         /// </summary>
         public MapFilterComparison Comparison
@@ -58,7 +88,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key of the map filter.
+        /// The key of the map filter. For example, for <code>ResourceTags</code>, <code>Key</code>
+        /// identifies the name of the tag. For <code>UserDefinedFields</code>, <code>Key</code>
+        /// is the name of the field.
         /// </para>
         /// </summary>
         public string Key
@@ -76,7 +108,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value for the key in the map filter.
+        /// The value for the key in the map filter. Filter values are case sensitive. For example,
+        /// one of the values for a tag called <code>Department</code> might be <code>Security</code>.
+        /// If you provide <code>security</code> as the filter value, then there is no match.
         /// </para>
         /// </summary>
         public string Value

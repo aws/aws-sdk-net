@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchDashboards operation.
-    /// Searchs for dashboards that belong to a user.
+    /// Searches for dashboards that belong to a user.
     /// </summary>
     public partial class SearchDashboardsRequest : AmazonQuickSightRequest
     {

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// The private CA is in a state during which a report or certificate cannot be generated.
+    /// The state of the private CA does not allow this action to occur.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

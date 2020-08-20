@@ -53,6 +53,8 @@ namespace Amazon.SecurityHub.Model
         private AwsAutoScalingAutoScalingGroupDetails _awsAutoScalingAutoScalingGroup;
         private AwsCloudFrontDistributionDetails _awsCloudFrontDistribution;
         private AwsCodeBuildProjectDetails _awsCodeBuildProject;
+        private AwsDynamoDbTableDetails _awsDynamoDbTable;
+        private AwsEc2EipDetails _awsEc2Eip;
         private AwsEc2InstanceDetails _awsEc2Instance;
         private AwsEc2NetworkInterfaceDetails _awsEc2NetworkInterface;
         private AwsEc2SecurityGroupDetails _awsEc2SecurityGroup;
@@ -61,13 +63,19 @@ namespace Amazon.SecurityHub.Model
         private AwsElasticsearchDomainDetails _awsElasticsearchDomain;
         private AwsElbv2LoadBalancerDetails _awsElbv2LoadBalancer;
         private AwsIamAccessKeyDetails _awsIamAccessKey;
+        private AwsIamPolicyDetails _awsIamPolicy;
         private AwsIamRoleDetails _awsIamRole;
+        private AwsIamUserDetails _awsIamUser;
         private AwsKmsKeyDetails _awsKmsKey;
         private AwsLambdaFunctionDetails _awsLambdaFunction;
         private AwsLambdaLayerVersionDetails _awsLambdaLayerVersion;
+        private AwsRdsDbClusterDetails _awsRdsDbCluster;
+        private AwsRdsDbClusterSnapshotDetails _awsRdsDbClusterSnapshot;
         private AwsRdsDbInstanceDetails _awsRdsDbInstance;
+        private AwsRdsDbSnapshotDetails _awsRdsDbSnapshot;
         private AwsS3BucketDetails _awsS3Bucket;
         private AwsS3ObjectDetails _awsS3Object;
+        private AwsSecretsManagerSecretDetails _awsSecretsManagerSecret;
         private AwsSnsTopicDetails _awsSnsTopic;
         private AwsSqsQueueDetails _awsSqsQueue;
         private AwsWafWebAclDetails _awsWafWebAcl;
@@ -126,6 +134,42 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsCodeBuildProject()
         {
             return this._awsCodeBuildProject != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsDynamoDbTable. 
+        /// <para>
+        /// Details about a DynamoDB table.
+        /// </para>
+        /// </summary>
+        public AwsDynamoDbTableDetails AwsDynamoDbTable
+        {
+            get { return this._awsDynamoDbTable; }
+            set { this._awsDynamoDbTable = value; }
+        }
+
+        // Check to see if AwsDynamoDbTable property is set
+        internal bool IsSetAwsDynamoDbTable()
+        {
+            return this._awsDynamoDbTable != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsEc2Eip. 
+        /// <para>
+        /// Details about an Elastic IP address.
+        /// </para>
+        /// </summary>
+        public AwsEc2EipDetails AwsEc2Eip
+        {
+            get { return this._awsEc2Eip; }
+            set { this._awsEc2Eip = value; }
+        }
+
+        // Check to see if AwsEc2Eip property is set
+        internal bool IsSetAwsEc2Eip()
+        {
+            return this._awsEc2Eip != null;
         }
 
         /// <summary>
@@ -273,6 +317,24 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsIamPolicy. 
+        /// <para>
+        /// Details about an IAM permissions policy.
+        /// </para>
+        /// </summary>
+        public AwsIamPolicyDetails AwsIamPolicy
+        {
+            get { return this._awsIamPolicy; }
+            set { this._awsIamPolicy = value; }
+        }
+
+        // Check to see if AwsIamPolicy property is set
+        internal bool IsSetAwsIamPolicy()
+        {
+            return this._awsIamPolicy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsIamRole. 
         /// <para>
         /// Details about an IAM role.
@@ -288,6 +350,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsIamRole()
         {
             return this._awsIamRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsIamUser. 
+        /// <para>
+        /// Details about an IAM user.
+        /// </para>
+        /// </summary>
+        public AwsIamUserDetails AwsIamUser
+        {
+            get { return this._awsIamUser; }
+            set { this._awsIamUser = value; }
+        }
+
+        // Check to see if AwsIamUser property is set
+        internal bool IsSetAwsIamUser()
+        {
+            return this._awsIamUser != null;
         }
 
         /// <summary>
@@ -345,9 +425,45 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsRdsDbCluster. 
+        /// <para>
+        /// Details about an Amazon RDS database cluster.
+        /// </para>
+        /// </summary>
+        public AwsRdsDbClusterDetails AwsRdsDbCluster
+        {
+            get { return this._awsRdsDbCluster; }
+            set { this._awsRdsDbCluster = value; }
+        }
+
+        // Check to see if AwsRdsDbCluster property is set
+        internal bool IsSetAwsRdsDbCluster()
+        {
+            return this._awsRdsDbCluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsRdsDbClusterSnapshot. 
+        /// <para>
+        /// Details about an Amazon RDS database cluster snapshot.
+        /// </para>
+        /// </summary>
+        public AwsRdsDbClusterSnapshotDetails AwsRdsDbClusterSnapshot
+        {
+            get { return this._awsRdsDbClusterSnapshot; }
+            set { this._awsRdsDbClusterSnapshot = value; }
+        }
+
+        // Check to see if AwsRdsDbClusterSnapshot property is set
+        internal bool IsSetAwsRdsDbClusterSnapshot()
+        {
+            return this._awsRdsDbClusterSnapshot != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsRdsDbInstance. 
         /// <para>
-        /// Details for an Amazon RDS database instance.
+        /// Details about an Amazon RDS database instance.
         /// </para>
         /// </summary>
         public AwsRdsDbInstanceDetails AwsRdsDbInstance
@@ -360,6 +476,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsRdsDbInstance()
         {
             return this._awsRdsDbInstance != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsRdsDbSnapshot. 
+        /// <para>
+        /// Details about an Amazon RDS database snapshot.
+        /// </para>
+        /// </summary>
+        public AwsRdsDbSnapshotDetails AwsRdsDbSnapshot
+        {
+            get { return this._awsRdsDbSnapshot; }
+            set { this._awsRdsDbSnapshot = value; }
+        }
+
+        // Check to see if AwsRdsDbSnapshot property is set
+        internal bool IsSetAwsRdsDbSnapshot()
+        {
+            return this._awsRdsDbSnapshot != null;
         }
 
         /// <summary>
@@ -396,6 +530,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsS3Object()
         {
             return this._awsS3Object != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsSecretsManagerSecret. 
+        /// <para>
+        /// Details about a Secrets Manager secret.
+        /// </para>
+        /// </summary>
+        public AwsSecretsManagerSecretDetails AwsSecretsManagerSecret
+        {
+            get { return this._awsSecretsManagerSecret; }
+            set { this._awsSecretsManagerSecret = value; }
+        }
+
+        // Check to see if AwsSecretsManagerSecret property is set
+        internal bool IsSetAwsSecretsManagerSecret()
+        {
+            return this._awsSecretsManagerSecret != null;
         }
 
         /// <summary>

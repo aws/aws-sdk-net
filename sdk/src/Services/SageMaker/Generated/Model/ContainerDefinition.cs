@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
         private string _containerHostname;
         private Dictionary<string, string> _environment = new Dictionary<string, string>();
         private string _image;
+        private ImageConfig _imageConfig;
         private ContainerMode _mode;
         private string _modelDataUrl;
         private string _modelPackageName;
@@ -115,6 +116,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetImage()
         {
             return this._image != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageConfig. 
+        /// <para>
+        /// Specifies whether the model container is in Amazon ECR or a private Docker registry
+        /// in your Amazon Virtual Private Cloud (VPC). For information about storing containers
+        /// in a private Docker registry, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
+        /// a Private Docker Registry for Real-Time Inference Containers</a> 
+        /// </para>
+        /// </summary>
+        public ImageConfig ImageConfig
+        {
+            get { return this._imageConfig; }
+            set { this._imageConfig = value; }
+        }
+
+        // Check to see if ImageConfig property is set
+        internal bool IsSetImageConfig()
+        {
+            return this._imageConfig != null;
         }
 
         /// <summary>

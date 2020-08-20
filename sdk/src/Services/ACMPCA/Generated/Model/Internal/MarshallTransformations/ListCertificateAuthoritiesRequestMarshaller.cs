@@ -80,6 +80,12 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetResourceOwner())
+                {
+                    context.Writer.WritePropertyName("ResourceOwner");
+                    context.Writer.Write(publicRequest.ResourceOwner);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

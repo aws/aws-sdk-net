@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Parameters.
+    /// A list of QuickSight parameters and the list's override values.
     /// </summary>
     public partial class Parameters
     {
@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DateTimeParameters. 
         /// <para>
-        /// DateTime parameters.
+        /// Date-time parameters.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

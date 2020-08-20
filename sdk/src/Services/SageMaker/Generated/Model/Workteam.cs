@@ -102,7 +102,14 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MemberDefinitions. 
         /// <para>
-        /// The Amazon Cognito user groups that make up the work team.
+        /// A list of <code>MemberDefinition</code> objects that contains objects that identify
+        /// the workers that make up the work team. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Workforces can be created using Amazon Cognito or your own OIDC Identity Provider
+        /// (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>.
+        /// For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

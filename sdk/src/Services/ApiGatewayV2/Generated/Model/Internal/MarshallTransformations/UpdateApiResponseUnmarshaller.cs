@@ -57,6 +57,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     response.ApiEndpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("apiGatewayManaged", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.ApiGatewayManaged = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("apiId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -43,8 +43,8 @@ namespace Amazon.QuickSight.Model
         /// The information about the namespace that you're describing. The response includes
         /// the namespace ARN, name, AWS Region, creation status, and identity store. <code>DescribeNamespace</code>
         /// also works for namespaces that are in the process of being created. For incomplete
-        /// namespaces, this API lists the namespace error types and messages associated with
-        /// the creation process.
+        /// namespaces, this API operation lists the namespace error types and messages associated
+        /// with the creation process.
         /// </para>
         /// </summary>
         public NamespaceInfoV2 Namespace

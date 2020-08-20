@@ -36,18 +36,18 @@ namespace Amazon.ACMPCA.Model
     /// 
     ///  <ol> <li> 
     /// <para>
-    /// In ACM Private CA, call the <a>CreateCertificateAuthority</a> action to create the
-    /// private CA that that you plan to back with the imported certificate.
+    /// In ACM Private CA, call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
+    /// action to create the private CA that that you plan to back with the imported certificate.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Call the <a>GetCertificateAuthorityCsr</a> action to generate a certificate signing
-    /// request (CSR).
+    /// Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCsr.html">GetCertificateAuthorityCsr</a>
+    /// action to generate a certificate signing request (CSR).
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Sign the CSR using a root or intermediate CA hosted either by an on-premises PKI hierarchy
-    /// or a commercial CA..
+    /// Sign the CSR using a root or intermediate CA hosted by either an on-premises PKI hierarchy
+    /// or by a commercial CA.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -81,6 +81,100 @@ namespace Amazon.ACMPCA.Model
     /// <para>
     /// The chain must be PEM-encoded.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The maximum allowed size of a certificate is 32 KB.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The maximum allowed size of a certificate chain is 2 MB.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <i>Enforcement of Critical Constraints</i> 
+    /// </para>
+    ///  
+    /// <para>
+    /// ACM Private CA allows the following extensions to be marked critical in the imported
+    /// CA certificate or chain.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Basic constraints (<i>must</i> be marked critical)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Subject alternative names
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Key usage
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Extended key usage
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Authority key identifier
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Subject key identifier
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Issuer alternative name
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Subject directory attributes
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Subject information access
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Certificate policies
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Policy mappings
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Inhibit anyPolicy
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// ACM Private CA rejects the following extensions when they are marked critical in an
+    /// imported CA certificate or chain.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Name constraints
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Policy constraints
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// CRL distribution points
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Authority information access
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Freshest CRL
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Any other extension
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class ImportCertificateAuthorityCertificateRequest : AmazonACMPCARequest
@@ -112,7 +206,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>.
+        /// The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>.
         /// This must be of the form: 
         /// </para>
         ///  

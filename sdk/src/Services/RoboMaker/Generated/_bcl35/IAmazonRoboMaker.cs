@@ -35,6 +35,56 @@ namespace Amazon.RoboMaker
     {
 
         
+        #region  BatchDeleteWorlds
+
+
+        /// <summary>
+        /// Deletes one or more worlds in a batch operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteWorlds service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteWorlds service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/BatchDeleteWorlds">REST API Reference for BatchDeleteWorlds Operation</seealso>
+        BatchDeleteWorldsResponse BatchDeleteWorlds(BatchDeleteWorldsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteWorlds operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteWorlds operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteWorlds
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/BatchDeleteWorlds">REST API Reference for BatchDeleteWorlds Operation</seealso>
+        IAsyncResult BeginBatchDeleteWorlds(BatchDeleteWorldsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDeleteWorlds operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteWorlds.</param>
+        /// 
+        /// <returns>Returns a  BatchDeleteWorldsResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/BatchDeleteWorlds">REST API Reference for BatchDeleteWorlds Operation</seealso>
+        BatchDeleteWorldsResponse EndBatchDeleteWorlds(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  BatchDescribeSimulationJob
 
 
@@ -245,6 +295,112 @@ namespace Amazon.RoboMaker
         /// <returns>Returns a  CancelSimulationJobBatchResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelSimulationJobBatch">REST API Reference for CancelSimulationJobBatch Operation</seealso>
         CancelSimulationJobBatchResponse EndCancelSimulationJobBatch(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CancelWorldExportJob
+
+
+        /// <summary>
+        /// Cancels the specified export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelWorldExportJob service method.</param>
+        /// 
+        /// <returns>The response from the CancelWorldExportJob service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelWorldExportJob">REST API Reference for CancelWorldExportJob Operation</seealso>
+        CancelWorldExportJobResponse CancelWorldExportJob(CancelWorldExportJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelWorldExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelWorldExportJob operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelWorldExportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelWorldExportJob">REST API Reference for CancelWorldExportJob Operation</seealso>
+        IAsyncResult BeginCancelWorldExportJob(CancelWorldExportJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelWorldExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelWorldExportJob.</param>
+        /// 
+        /// <returns>Returns a  CancelWorldExportJobResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelWorldExportJob">REST API Reference for CancelWorldExportJob Operation</seealso>
+        CancelWorldExportJobResponse EndCancelWorldExportJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CancelWorldGenerationJob
+
+
+        /// <summary>
+        /// Cancels the specified world generator job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelWorldGenerationJob service method.</param>
+        /// 
+        /// <returns>The response from the CancelWorldGenerationJob service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelWorldGenerationJob">REST API Reference for CancelWorldGenerationJob Operation</seealso>
+        CancelWorldGenerationJobResponse CancelWorldGenerationJob(CancelWorldGenerationJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelWorldGenerationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelWorldGenerationJob operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelWorldGenerationJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelWorldGenerationJob">REST API Reference for CancelWorldGenerationJob Operation</seealso>
+        IAsyncResult BeginCancelWorldGenerationJob(CancelWorldGenerationJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelWorldGenerationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelWorldGenerationJob.</param>
+        /// 
+        /// <returns>Returns a  CancelWorldGenerationJobResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelWorldGenerationJob">REST API Reference for CancelWorldGenerationJob Operation</seealso>
+        CancelWorldGenerationJobResponse EndCancelWorldGenerationJob(IAsyncResult asyncResult);
 
         #endregion
         
@@ -746,6 +902,190 @@ namespace Amazon.RoboMaker
 
         #endregion
         
+        #region  CreateWorldExportJob
+
+
+        /// <summary>
+        /// Creates a world export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorldExportJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateWorldExportJob service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.IdempotentParameterMismatchException">
+        /// The request uses the same client token as a previous, but non-identical request. Do
+        /// not reuse a client token with different requests, unless the requests are identical.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateWorldExportJob">REST API Reference for CreateWorldExportJob Operation</seealso>
+        CreateWorldExportJobResponse CreateWorldExportJob(CreateWorldExportJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWorldExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorldExportJob operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWorldExportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateWorldExportJob">REST API Reference for CreateWorldExportJob Operation</seealso>
+        IAsyncResult BeginCreateWorldExportJob(CreateWorldExportJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateWorldExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateWorldExportJob.</param>
+        /// 
+        /// <returns>Returns a  CreateWorldExportJobResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateWorldExportJob">REST API Reference for CreateWorldExportJob Operation</seealso>
+        CreateWorldExportJobResponse EndCreateWorldExportJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateWorldGenerationJob
+
+
+        /// <summary>
+        /// Creates worlds using the specified template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorldGenerationJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateWorldGenerationJob service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.IdempotentParameterMismatchException">
+        /// The request uses the same client token as a previous, but non-identical request. Do
+        /// not reuse a client token with different requests, unless the requests are identical.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateWorldGenerationJob">REST API Reference for CreateWorldGenerationJob Operation</seealso>
+        CreateWorldGenerationJobResponse CreateWorldGenerationJob(CreateWorldGenerationJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWorldGenerationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorldGenerationJob operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWorldGenerationJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateWorldGenerationJob">REST API Reference for CreateWorldGenerationJob Operation</seealso>
+        IAsyncResult BeginCreateWorldGenerationJob(CreateWorldGenerationJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateWorldGenerationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateWorldGenerationJob.</param>
+        /// 
+        /// <returns>Returns a  CreateWorldGenerationJobResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateWorldGenerationJob">REST API Reference for CreateWorldGenerationJob Operation</seealso>
+        CreateWorldGenerationJobResponse EndCreateWorldGenerationJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateWorldTemplate
+
+
+        /// <summary>
+        /// Creates a world template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorldTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateWorldTemplate service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateWorldTemplate">REST API Reference for CreateWorldTemplate Operation</seealso>
+        CreateWorldTemplateResponse CreateWorldTemplate(CreateWorldTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWorldTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorldTemplate operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWorldTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateWorldTemplate">REST API Reference for CreateWorldTemplate Operation</seealso>
+        IAsyncResult BeginCreateWorldTemplate(CreateWorldTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateWorldTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateWorldTemplate.</param>
+        /// 
+        /// <returns>Returns a  CreateWorldTemplateResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateWorldTemplate">REST API Reference for CreateWorldTemplate Operation</seealso>
+        CreateWorldTemplateResponse EndCreateWorldTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteFleet
 
 
@@ -943,6 +1283,59 @@ namespace Amazon.RoboMaker
         /// <returns>Returns a  DeleteSimulationApplicationResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteSimulationApplication">REST API Reference for DeleteSimulationApplication Operation</seealso>
         DeleteSimulationApplicationResponse EndDeleteSimulationApplication(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteWorldTemplate
+
+
+        /// <summary>
+        /// Deletes a world template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorldTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWorldTemplate service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteWorldTemplate">REST API Reference for DeleteWorldTemplate Operation</seealso>
+        DeleteWorldTemplateResponse DeleteWorldTemplate(DeleteWorldTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWorldTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorldTemplate operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWorldTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteWorldTemplate">REST API Reference for DeleteWorldTemplate Operation</seealso>
+        IAsyncResult BeginDeleteWorldTemplate(DeleteWorldTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWorldTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWorldTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeleteWorldTemplateResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteWorldTemplate">REST API Reference for DeleteWorldTemplate Operation</seealso>
+        DeleteWorldTemplateResponse EndDeleteWorldTemplate(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1367,6 +1760,271 @@ namespace Amazon.RoboMaker
 
         #endregion
         
+        #region  DescribeWorld
+
+
+        /// <summary>
+        /// Describes a world.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorld service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWorld service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeWorld">REST API Reference for DescribeWorld Operation</seealso>
+        DescribeWorldResponse DescribeWorld(DescribeWorldRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWorld operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorld operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorld
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeWorld">REST API Reference for DescribeWorld Operation</seealso>
+        IAsyncResult BeginDescribeWorld(DescribeWorldRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeWorld operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorld.</param>
+        /// 
+        /// <returns>Returns a  DescribeWorldResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeWorld">REST API Reference for DescribeWorld Operation</seealso>
+        DescribeWorldResponse EndDescribeWorld(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeWorldExportJob
+
+
+        /// <summary>
+        /// Describes a world export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorldExportJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWorldExportJob service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeWorldExportJob">REST API Reference for DescribeWorldExportJob Operation</seealso>
+        DescribeWorldExportJobResponse DescribeWorldExportJob(DescribeWorldExportJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWorldExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorldExportJob operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorldExportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeWorldExportJob">REST API Reference for DescribeWorldExportJob Operation</seealso>
+        IAsyncResult BeginDescribeWorldExportJob(DescribeWorldExportJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeWorldExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorldExportJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeWorldExportJobResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeWorldExportJob">REST API Reference for DescribeWorldExportJob Operation</seealso>
+        DescribeWorldExportJobResponse EndDescribeWorldExportJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeWorldGenerationJob
+
+
+        /// <summary>
+        /// Describes a world generation job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorldGenerationJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWorldGenerationJob service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeWorldGenerationJob">REST API Reference for DescribeWorldGenerationJob Operation</seealso>
+        DescribeWorldGenerationJobResponse DescribeWorldGenerationJob(DescribeWorldGenerationJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWorldGenerationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorldGenerationJob operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorldGenerationJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeWorldGenerationJob">REST API Reference for DescribeWorldGenerationJob Operation</seealso>
+        IAsyncResult BeginDescribeWorldGenerationJob(DescribeWorldGenerationJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeWorldGenerationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorldGenerationJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeWorldGenerationJobResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeWorldGenerationJob">REST API Reference for DescribeWorldGenerationJob Operation</seealso>
+        DescribeWorldGenerationJobResponse EndDescribeWorldGenerationJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeWorldTemplate
+
+
+        /// <summary>
+        /// Describes a world template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorldTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWorldTemplate service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeWorldTemplate">REST API Reference for DescribeWorldTemplate Operation</seealso>
+        DescribeWorldTemplateResponse DescribeWorldTemplate(DescribeWorldTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWorldTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorldTemplate operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorldTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeWorldTemplate">REST API Reference for DescribeWorldTemplate Operation</seealso>
+        IAsyncResult BeginDescribeWorldTemplate(DescribeWorldTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeWorldTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorldTemplate.</param>
+        /// 
+        /// <returns>Returns a  DescribeWorldTemplateResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeWorldTemplate">REST API Reference for DescribeWorldTemplate Operation</seealso>
+        DescribeWorldTemplateResponse EndDescribeWorldTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetWorldTemplateBody
+
+
+        /// <summary>
+        /// Gets the world template body.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorldTemplateBody service method.</param>
+        /// 
+        /// <returns>The response from the GetWorldTemplateBody service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/GetWorldTemplateBody">REST API Reference for GetWorldTemplateBody Operation</seealso>
+        GetWorldTemplateBodyResponse GetWorldTemplateBody(GetWorldTemplateBodyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetWorldTemplateBody operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetWorldTemplateBody operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetWorldTemplateBody
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/GetWorldTemplateBody">REST API Reference for GetWorldTemplateBody Operation</seealso>
+        IAsyncResult BeginGetWorldTemplateBody(GetWorldTemplateBodyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetWorldTemplateBody operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetWorldTemplateBody.</param>
+        /// 
+        /// <returns>Returns a  GetWorldTemplateBodyResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/GetWorldTemplateBody">REST API Reference for GetWorldTemplateBody Operation</seealso>
+        GetWorldTemplateBodyResponse EndGetWorldTemplateBody(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListDeploymentJobs
 
 
@@ -1780,6 +2438,206 @@ namespace Amazon.RoboMaker
         /// <returns>Returns a  ListTagsForResourceResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListWorldExportJobs
+
+
+        /// <summary>
+        /// Lists world export jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorldExportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListWorldExportJobs service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorldExportJobs">REST API Reference for ListWorldExportJobs Operation</seealso>
+        ListWorldExportJobsResponse ListWorldExportJobs(ListWorldExportJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWorldExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWorldExportJobs operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWorldExportJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorldExportJobs">REST API Reference for ListWorldExportJobs Operation</seealso>
+        IAsyncResult BeginListWorldExportJobs(ListWorldExportJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWorldExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWorldExportJobs.</param>
+        /// 
+        /// <returns>Returns a  ListWorldExportJobsResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorldExportJobs">REST API Reference for ListWorldExportJobs Operation</seealso>
+        ListWorldExportJobsResponse EndListWorldExportJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListWorldGenerationJobs
+
+
+        /// <summary>
+        /// Lists world generator jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorldGenerationJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListWorldGenerationJobs service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorldGenerationJobs">REST API Reference for ListWorldGenerationJobs Operation</seealso>
+        ListWorldGenerationJobsResponse ListWorldGenerationJobs(ListWorldGenerationJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWorldGenerationJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWorldGenerationJobs operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWorldGenerationJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorldGenerationJobs">REST API Reference for ListWorldGenerationJobs Operation</seealso>
+        IAsyncResult BeginListWorldGenerationJobs(ListWorldGenerationJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWorldGenerationJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWorldGenerationJobs.</param>
+        /// 
+        /// <returns>Returns a  ListWorldGenerationJobsResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorldGenerationJobs">REST API Reference for ListWorldGenerationJobs Operation</seealso>
+        ListWorldGenerationJobsResponse EndListWorldGenerationJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListWorlds
+
+
+        /// <summary>
+        /// Lists worlds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorlds service method.</param>
+        /// 
+        /// <returns>The response from the ListWorlds service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorlds">REST API Reference for ListWorlds Operation</seealso>
+        ListWorldsResponse ListWorlds(ListWorldsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWorlds operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWorlds operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWorlds
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorlds">REST API Reference for ListWorlds Operation</seealso>
+        IAsyncResult BeginListWorlds(ListWorldsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWorlds operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWorlds.</param>
+        /// 
+        /// <returns>Returns a  ListWorldsResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorlds">REST API Reference for ListWorlds Operation</seealso>
+        ListWorldsResponse EndListWorlds(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListWorldTemplates
+
+
+        /// <summary>
+        /// Lists world templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorldTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListWorldTemplates service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorldTemplates">REST API Reference for ListWorldTemplates Operation</seealso>
+        ListWorldTemplatesResponse ListWorldTemplates(ListWorldTemplatesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWorldTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWorldTemplates operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWorldTemplates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorldTemplates">REST API Reference for ListWorldTemplates Operation</seealso>
+        IAsyncResult BeginListWorldTemplates(ListWorldTemplatesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWorldTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWorldTemplates.</param>
+        /// 
+        /// <returns>Returns a  ListWorldTemplatesResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorldTemplates">REST API Reference for ListWorldTemplates Operation</seealso>
+        ListWorldTemplatesResponse EndListWorldTemplates(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2256,6 +3114,59 @@ namespace Amazon.RoboMaker
         /// <returns>Returns a  UpdateSimulationApplicationResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UpdateSimulationApplication">REST API Reference for UpdateSimulationApplication Operation</seealso>
         UpdateSimulationApplicationResponse EndUpdateSimulationApplication(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateWorldTemplate
+
+
+        /// <summary>
+        /// Updates a world template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorldTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWorldTemplate service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UpdateWorldTemplate">REST API Reference for UpdateWorldTemplate Operation</seealso>
+        UpdateWorldTemplateResponse UpdateWorldTemplate(UpdateWorldTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWorldTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorldTemplate operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateWorldTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UpdateWorldTemplate">REST API Reference for UpdateWorldTemplate Operation</seealso>
+        IAsyncResult BeginUpdateWorldTemplate(UpdateWorldTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateWorldTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateWorldTemplate.</param>
+        /// 
+        /// <returns>Returns a  UpdateWorldTemplateResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UpdateWorldTemplate">REST API Reference for UpdateWorldTemplate Operation</seealso>
+        UpdateWorldTemplateResponse EndUpdateWorldTemplate(IAsyncResult asyncResult);
 
         #endregion
         

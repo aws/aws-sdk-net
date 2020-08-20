@@ -187,8 +187,7 @@ namespace Amazon.CodeBuild.Model
         ///  </li> <li> 
         /// <para>
         /// For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository
-        /// that contains the source code and the buildspec file (for example, <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
-        /// </code>).
+        /// that contains the source code and the buildspec file (for example, <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -197,12 +196,12 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The path to the ZIP file that contains the source code (for example, <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+        /// The path to the ZIP file that contains the source code (for example, <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>).
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The path to the folder that contains the source code (for example, <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+        /// The path to the folder that contains the source code (for example, <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
         /// 
         /// </para>
         ///  </li> </ul> </li> <li> 

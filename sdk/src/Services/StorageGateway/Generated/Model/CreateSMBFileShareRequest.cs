@@ -32,7 +32,7 @@ namespace Amazon.StorageGateway.Model
     /// Container for the parameters to the CreateSMBFileShare operation.
     /// Creates a Server Message Block (SMB) file share on an existing file gateway. In Storage
     /// Gateway, a file share is a file system mount point backed by Amazon S3 cloud storage.
-    /// Storage Gateway expose file shares using an SMB interface. This operation is only
+    /// Storage Gateway exposes file shares using an SMB interface. This operation is only
     /// supported for file gateways.
     /// 
     ///  <important> 

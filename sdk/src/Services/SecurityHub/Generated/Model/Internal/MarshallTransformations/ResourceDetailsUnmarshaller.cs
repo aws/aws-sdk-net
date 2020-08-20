@@ -82,6 +82,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsCodeBuildProject = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsDynamoDbTable", targetDepth))
+                {
+                    var unmarshaller = AwsDynamoDbTableDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsDynamoDbTable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsEc2Eip", targetDepth))
+                {
+                    var unmarshaller = AwsEc2EipDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsEc2Eip = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsEc2Instance", targetDepth))
                 {
                     var unmarshaller = AwsEc2InstanceDetailsUnmarshaller.Instance;
@@ -130,10 +142,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsIamAccessKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsIamPolicy", targetDepth))
+                {
+                    var unmarshaller = AwsIamPolicyDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsIamPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsIamRole", targetDepth))
                 {
                     var unmarshaller = AwsIamRoleDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsIamRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsIamUser", targetDepth))
+                {
+                    var unmarshaller = AwsIamUserDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsIamUser = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AwsKmsKey", targetDepth))
@@ -154,10 +178,28 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsLambdaLayerVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsRdsDbCluster", targetDepth))
+                {
+                    var unmarshaller = AwsRdsDbClusterDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsRdsDbCluster = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsRdsDbClusterSnapshot", targetDepth))
+                {
+                    var unmarshaller = AwsRdsDbClusterSnapshotDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsRdsDbClusterSnapshot = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsRdsDbInstance", targetDepth))
                 {
                     var unmarshaller = AwsRdsDbInstanceDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsRdsDbInstance = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsRdsDbSnapshot", targetDepth))
+                {
+                    var unmarshaller = AwsRdsDbSnapshotDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsRdsDbSnapshot = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AwsS3Bucket", targetDepth))
@@ -170,6 +212,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AwsS3ObjectDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsS3Object = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsSecretsManagerSecret", targetDepth))
+                {
+                    var unmarshaller = AwsSecretsManagerSecretDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsSecretsManagerSecret = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AwsSnsTopic", targetDepth))

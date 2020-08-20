@@ -81,13 +81,13 @@ namespace Amazon.Braket
     {
 
         /// <summary>
-        /// Constant QPU for DeviceStatus
+        /// Constant OFFLINE for DeviceStatus
         /// </summary>
-        public static readonly DeviceStatus QPU = new DeviceStatus("QPU");
+        public static readonly DeviceStatus OFFLINE = new DeviceStatus("OFFLINE");
         /// <summary>
-        /// Constant SIMULATOR for DeviceStatus
+        /// Constant ONLINE for DeviceStatus
         /// </summary>
-        public static readonly DeviceStatus SIMULATOR = new DeviceStatus("SIMULATOR");
+        public static readonly DeviceStatus ONLINE = new DeviceStatus("ONLINE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -131,13 +131,13 @@ namespace Amazon.Braket
     {
 
         /// <summary>
-        /// Constant OFFLINE for DeviceType
+        /// Constant QPU for DeviceType
         /// </summary>
-        public static readonly DeviceType OFFLINE = new DeviceType("OFFLINE");
+        public static readonly DeviceType QPU = new DeviceType("QPU");
         /// <summary>
-        /// Constant ONLINE for DeviceType
+        /// Constant SIMULATOR for DeviceType
         /// </summary>
-        public static readonly DeviceType ONLINE = new DeviceType("ONLINE");
+        public static readonly DeviceType SIMULATOR = new DeviceType("SIMULATOR");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

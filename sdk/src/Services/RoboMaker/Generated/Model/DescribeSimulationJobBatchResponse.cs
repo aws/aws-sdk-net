@@ -222,7 +222,7 @@ namespace Amazon.RoboMaker.Model
         /// into simulation jobs.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1000)]
         public List<SimulationJobRequest> PendingRequests
         {
             get { return this._pendingRequests; }

@@ -35,6 +35,7 @@ namespace Amazon.SecurityHub.Model
     {
         private string _awsAccountId;
         private double? _creationDate;
+        private string _description;
         private string _keyId;
         private string _keyManager;
         private string _keyState;
@@ -61,7 +62,13 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date and time when the CMK was created.
+        /// Indicates when the CMK was created.
+        /// </para>
+        ///  
+        /// <para>
+        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
+        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
         /// </summary>
         public double CreationDate
@@ -74,6 +81,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetCreationDate()
         {
             return this._creationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the key.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>

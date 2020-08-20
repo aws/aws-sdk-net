@@ -34,6 +34,7 @@ namespace Amazon.ApiGatewayV2.Model
     public partial class GetApiResponse : AmazonWebServiceResponse
     {
         private string _apiEndpoint;
+        private bool? _apiGatewayManaged;
         private string _apiId;
         private string _apiKeySelectionExpression;
         private Cors _corsConfiguration;
@@ -65,6 +66,26 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetApiEndpoint()
         {
             return this._apiEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApiGatewayManaged. 
+        /// <para>
+        /// Specifies whether an API is managed by API Gateway. You can't update or delete a managed
+        /// API by using API Gateway. A managed API can be deleted only through the tooling or
+        /// service that created it.
+        /// </para>
+        /// </summary>
+        public bool ApiGatewayManaged
+        {
+            get { return this._apiGatewayManaged.GetValueOrDefault(); }
+            set { this._apiGatewayManaged = value; }
+        }
+
+        // Check to see if ApiGatewayManaged property is set
+        internal bool IsSetApiGatewayManaged()
+        {
+            return this._apiGatewayManaged.HasValue; 
         }
 
         /// <summary>

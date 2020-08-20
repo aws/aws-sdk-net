@@ -108,6 +108,10 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 {
                     return OperationNotPermittedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("RequestLimitExceededException"))
+                {
+                    return RequestLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
                 {
                     return ResourceInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

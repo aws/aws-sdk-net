@@ -30,10 +30,11 @@ namespace Amazon.ACMPCA.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTags operation.
-    /// Lists the tags, if any, that are associated with your private CA. Tags are labels
-    /// that you can use to identify and organize your CAs. Each tag consists of a key and
-    /// an optional value. Call the <a>TagCertificateAuthority</a> action to add one or more
-    /// tags to your CA. Call the <a>UntagCertificateAuthority</a> action to remove tags.
+    /// Lists the tags, if any, that are associated with your private CA or one that has been
+    /// shared with you. Tags are labels that you can use to identify and organize your CAs.
+    /// Each tag consists of a key and an optional value. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_TagCertificateAuthority.html">TagCertificateAuthority</a>
+    /// action to add one or more tags to your CA. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html">UntagCertificateAuthority</a>
+    /// action to remove tags.
     /// </summary>
     public partial class ListTagsRequest : AmazonACMPCARequest
     {
@@ -44,7 +45,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a>
+        /// The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
         /// action. This must be of the form: 
         /// </para>
         ///  

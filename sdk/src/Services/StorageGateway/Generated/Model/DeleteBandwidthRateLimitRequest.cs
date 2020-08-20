@@ -49,7 +49,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>Upload</code> | <code>Download</code> | <code>All</code> 
+        /// Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=25)]

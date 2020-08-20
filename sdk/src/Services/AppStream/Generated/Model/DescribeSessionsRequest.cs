@@ -144,10 +144,11 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The user identifier.
+        /// The user identifier (ID). If you specify a user ID, you must also specify the authentication
+        /// type.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=32)]
+        [AWSProperty(Min=2, Max=128)]
         public string UserId
         {
             get { return this._userId; }

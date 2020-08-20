@@ -88,6 +88,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.TapeSizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Worm", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Worm = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

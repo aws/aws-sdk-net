@@ -671,6 +671,110 @@ namespace Amazon.StorageGateway
 
 
     /// <summary>
+    /// Constants used for properties of type PoolStatus.
+    /// </summary>
+    public class PoolStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for PoolStatus
+        /// </summary>
+        public static readonly PoolStatus ACTIVE = new PoolStatus("ACTIVE");
+        /// <summary>
+        /// Constant DELETED for PoolStatus
+        /// </summary>
+        public static readonly PoolStatus DELETED = new PoolStatus("DELETED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PoolStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PoolStatus FindValue(string value)
+        {
+            return FindValue<PoolStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PoolStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RetentionLockType.
+    /// </summary>
+    public class RetentionLockType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLIANCE for RetentionLockType
+        /// </summary>
+        public static readonly RetentionLockType COMPLIANCE = new RetentionLockType("COMPLIANCE");
+        /// <summary>
+        /// Constant GOVERNANCE for RetentionLockType
+        /// </summary>
+        public static readonly RetentionLockType GOVERNANCE = new RetentionLockType("GOVERNANCE");
+        /// <summary>
+        /// Constant NONE for RetentionLockType
+        /// </summary>
+        public static readonly RetentionLockType NONE = new RetentionLockType("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RetentionLockType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RetentionLockType FindValue(string value)
+        {
+            return FindValue<RetentionLockType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RetentionLockType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SMBSecurityStrategy.
     /// </summary>
     public class SMBSecurityStrategy : ConstantClass
@@ -718,6 +822,56 @@ namespace Amazon.StorageGateway
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SMBSecurityStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TapeStorageClass.
+    /// </summary>
+    public class TapeStorageClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEEP_ARCHIVE for TapeStorageClass
+        /// </summary>
+        public static readonly TapeStorageClass DEEP_ARCHIVE = new TapeStorageClass("DEEP_ARCHIVE");
+        /// <summary>
+        /// Constant GLACIER for TapeStorageClass
+        /// </summary>
+        public static readonly TapeStorageClass GLACIER = new TapeStorageClass("GLACIER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TapeStorageClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TapeStorageClass FindValue(string value)
+        {
+            return FindValue<TapeStorageClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TapeStorageClass(string value)
         {
             return FindValue(value);
         }

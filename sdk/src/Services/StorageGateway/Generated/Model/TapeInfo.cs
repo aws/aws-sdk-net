@@ -34,7 +34,9 @@ namespace Amazon.StorageGateway.Model
     public partial class TapeInfo
     {
         private string _gatewayARN;
+        private DateTime? _poolEntryDate;
         private string _poolId;
+        private DateTime? _retentionStartDate;
         private string _tapeARN;
         private string _tapeBarcode;
         private long? _tapeSizeInBytes;
@@ -58,6 +60,24 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetGatewayARN()
         {
             return this._gatewayARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PoolEntryDate. 
+        /// <para>
+        /// The date that the tape entered the custom tape pool with tape retention lock enabled.
+        /// </para>
+        /// </summary>
+        public DateTime PoolEntryDate
+        {
+            get { return this._poolEntryDate.GetValueOrDefault(); }
+            set { this._poolEntryDate = value; }
+        }
+
+        // Check to see if PoolEntryDate property is set
+        internal bool IsSetPoolEntryDate()
+        {
+            return this._poolEntryDate.HasValue; 
         }
 
         /// <summary>
@@ -85,6 +105,24 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetPoolId()
         {
             return this._poolId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetentionStartDate. 
+        /// <para>
+        /// The date that the tape became subject to tape retention lock.
+        /// </para>
+        /// </summary>
+        public DateTime RetentionStartDate
+        {
+            get { return this._retentionStartDate.GetValueOrDefault(); }
+            set { this._retentionStartDate = value; }
+        }
+
+        // Check to see if RetentionStartDate property is set
+        internal bool IsSetRetentionStartDate()
+        {
+            return this._retentionStartDate.HasValue; 
         }
 
         /// <summary>

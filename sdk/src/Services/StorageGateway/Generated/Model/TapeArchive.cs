@@ -35,7 +35,9 @@ namespace Amazon.StorageGateway.Model
     {
         private DateTime? _completionTime;
         private string _kmsKey;
+        private DateTime? _poolEntryDate;
         private string _poolId;
+        private DateTime? _retentionStartDate;
         private string _retrievedTo;
         private string _tapeARN;
         private string _tapeBarcode;
@@ -43,6 +45,7 @@ namespace Amazon.StorageGateway.Model
         private long? _tapeSizeInBytes;
         private string _tapeStatus;
         private long? _tapeUsedInBytes;
+        private bool? _worm;
 
         /// <summary>
         /// Gets and sets the property CompletionTime. 
@@ -51,8 +54,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// The default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
-        /// format.
+        /// The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
         /// </para>
         /// </summary>
         public DateTime CompletionTime
@@ -84,6 +86,28 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PoolEntryDate. 
+        /// <para>
+        /// The time that the tape entered the custom tape pool.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+        /// </para>
+        /// </summary>
+        public DateTime PoolEntryDate
+        {
+            get { return this._poolEntryDate.GetValueOrDefault(); }
+            set { this._poolEntryDate = value; }
+        }
+
+        // Check to see if PoolEntryDate property is set
+        internal bool IsSetPoolEntryDate()
+        {
+            return this._poolEntryDate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PoolId. 
         /// <para>
         /// The ID of the pool that was used to archive the tape. The tapes in this pool are archived
@@ -105,6 +129,25 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetPoolId()
         {
             return this._poolId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetentionStartDate. 
+        /// <para>
+        /// If the archived tape is subject to tape retention lock, the date that the archived
+        /// tape started being retained.
+        /// </para>
+        /// </summary>
+        public DateTime RetentionStartDate
+        {
+            get { return this._retentionStartDate.GetValueOrDefault(); }
+            set { this._retentionStartDate = value; }
+        }
+
+        // Check to see if RetentionStartDate property is set
+        internal bool IsSetRetentionStartDate()
+        {
+            return this._retentionStartDate.HasValue; 
         }
 
         /// <summary>
@@ -244,6 +287,24 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetTapeUsedInBytes()
         {
             return this._tapeUsedInBytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Worm. 
+        /// <para>
+        /// Set to <code>true</code> if the archived tape is stored as write-once-read-many (WORM).
+        /// </para>
+        /// </summary>
+        public bool Worm
+        {
+            get { return this._worm.GetValueOrDefault(); }
+            set { this._worm = value; }
+        }
+
+        // Check to see if Worm property is set
+        internal bool IsSetWorm()
+        {
+            return this._worm.HasValue; 
         }
 
     }

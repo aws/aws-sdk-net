@@ -72,6 +72,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Arn);
                 }
 
+                if(publicRequest.IsSetAuthorized())
+                {
+                    context.Writer.WritePropertyName("authorized");
+                    context.Writer.Write(publicRequest.Authorized);
+                }
+
                 if(publicRequest.IsSetLatencyMode())
                 {
                     context.Writer.WritePropertyName("latencyMode");

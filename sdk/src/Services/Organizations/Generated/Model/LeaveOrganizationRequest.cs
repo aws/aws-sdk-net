@@ -51,13 +51,11 @@ namespace Amazon.Organizations.Model
     /// with the information required to operate as a standalone account. When you create
     /// an account in an organization using the AWS Organizations console, API, or CLI commands,
     /// the information required of standalone accounts is <i>not</i> automatically collected.
-    /// For each account that you want to make standalone, you must do the following steps:
+    /// For each account that you want to make standalone, you must perform the following
+    /// steps. If any of the steps are already completed for this account, that step doesn't
+    /// appear.
     /// </para>
     ///  <ul> <li> 
-    /// <para>
-    /// Accept the end user license agreement (EULA)
-    /// </para>
-    ///  </li> <li> 
     /// <para>
     /// Choose a support plan
     /// </para>

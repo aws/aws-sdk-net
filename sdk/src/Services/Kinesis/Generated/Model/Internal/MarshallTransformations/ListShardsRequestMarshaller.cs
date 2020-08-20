@@ -86,6 +86,17 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetShardFilter())
+                {
+                    context.Writer.WritePropertyName("ShardFilter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ShardFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ShardFilter, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetStreamCreationTimestamp())
                 {
                     context.Writer.WritePropertyName("StreamCreationTimestamp");

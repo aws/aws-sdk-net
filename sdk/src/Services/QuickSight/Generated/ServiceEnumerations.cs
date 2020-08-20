@@ -25,6 +25,134 @@ namespace Amazon.QuickSight
 {
 
     /// <summary>
+    /// Constants used for properties of type AnalysisErrorType.
+    /// </summary>
+    public class AnalysisErrorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_DENIED for AnalysisErrorType
+        /// </summary>
+        public static readonly AnalysisErrorType ACCESS_DENIED = new AnalysisErrorType("ACCESS_DENIED");
+        /// <summary>
+        /// Constant COLUMN_GEOGRAPHIC_ROLE_MISMATCH for AnalysisErrorType
+        /// </summary>
+        public static readonly AnalysisErrorType COLUMN_GEOGRAPHIC_ROLE_MISMATCH = new AnalysisErrorType("COLUMN_GEOGRAPHIC_ROLE_MISMATCH");
+        /// <summary>
+        /// Constant COLUMN_REPLACEMENT_MISSING for AnalysisErrorType
+        /// </summary>
+        public static readonly AnalysisErrorType COLUMN_REPLACEMENT_MISSING = new AnalysisErrorType("COLUMN_REPLACEMENT_MISSING");
+        /// <summary>
+        /// Constant COLUMN_TYPE_MISMATCH for AnalysisErrorType
+        /// </summary>
+        public static readonly AnalysisErrorType COLUMN_TYPE_MISMATCH = new AnalysisErrorType("COLUMN_TYPE_MISMATCH");
+        /// <summary>
+        /// Constant DATA_SET_NOT_FOUND for AnalysisErrorType
+        /// </summary>
+        public static readonly AnalysisErrorType DATA_SET_NOT_FOUND = new AnalysisErrorType("DATA_SET_NOT_FOUND");
+        /// <summary>
+        /// Constant INTERNAL_FAILURE for AnalysisErrorType
+        /// </summary>
+        public static readonly AnalysisErrorType INTERNAL_FAILURE = new AnalysisErrorType("INTERNAL_FAILURE");
+        /// <summary>
+        /// Constant PARAMETER_NOT_FOUND for AnalysisErrorType
+        /// </summary>
+        public static readonly AnalysisErrorType PARAMETER_NOT_FOUND = new AnalysisErrorType("PARAMETER_NOT_FOUND");
+        /// <summary>
+        /// Constant PARAMETER_TYPE_INVALID for AnalysisErrorType
+        /// </summary>
+        public static readonly AnalysisErrorType PARAMETER_TYPE_INVALID = new AnalysisErrorType("PARAMETER_TYPE_INVALID");
+        /// <summary>
+        /// Constant PARAMETER_VALUE_INCOMPATIBLE for AnalysisErrorType
+        /// </summary>
+        public static readonly AnalysisErrorType PARAMETER_VALUE_INCOMPATIBLE = new AnalysisErrorType("PARAMETER_VALUE_INCOMPATIBLE");
+        /// <summary>
+        /// Constant SOURCE_NOT_FOUND for AnalysisErrorType
+        /// </summary>
+        public static readonly AnalysisErrorType SOURCE_NOT_FOUND = new AnalysisErrorType("SOURCE_NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalysisErrorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisErrorType FindValue(string value)
+        {
+            return FindValue<AnalysisErrorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisErrorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalysisFilterAttribute.
+    /// </summary>
+    public class AnalysisFilterAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant QUICKSIGHT_USER for AnalysisFilterAttribute
+        /// </summary>
+        public static readonly AnalysisFilterAttribute QUICKSIGHT_USER = new AnalysisFilterAttribute("QUICKSIGHT_USER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalysisFilterAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisFilterAttribute FindValue(string value)
+        {
+            return FindValue<AnalysisFilterAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisFilterAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssignmentStatus.
     /// </summary>
     public class AssignmentStatus : ConstantClass
@@ -1701,6 +1829,10 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly ResourceStatus CREATION_SUCCESSFUL = new ResourceStatus("CREATION_SUCCESSFUL");
         /// <summary>
+        /// Constant DELETED for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus DELETED = new ResourceStatus("DELETED");
+        /// <summary>
         /// Constant UPDATE_FAILED for ResourceStatus
         /// </summary>
         public static readonly ResourceStatus UPDATE_FAILED = new ResourceStatus("UPDATE_FAILED");
@@ -1804,6 +1936,10 @@ namespace Amazon.QuickSight
     public class TemplateErrorType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ACCESS_DENIED for TemplateErrorType
+        /// </summary>
+        public static readonly TemplateErrorType ACCESS_DENIED = new TemplateErrorType("ACCESS_DENIED");
         /// <summary>
         /// Constant DATA_SET_NOT_FOUND for TemplateErrorType
         /// </summary>

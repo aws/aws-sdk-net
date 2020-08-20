@@ -30,10 +30,11 @@ namespace Amazon.ACMPCA.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCertificateAuthorityAuditReport operation.
-    /// Lists information about a specific audit report created by calling the <a>CreateCertificateAuthorityAuditReport</a>
+    /// Lists information about a specific audit report created by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>
     /// action. Audit information is created every time the certificate authority (CA) private
-    /// key is used. The private key is used when you call the <a>IssueCertificate</a> action
-    /// or the <a>RevokeCertificate</a> action.
+    /// key is used. The private key is used when you call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_IssueCertificate.html">IssueCertificate</a>
+    /// action or the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a>
+    /// action.
     /// </summary>
     public partial class DescribeCertificateAuthorityAuditReportRequest : AmazonACMPCARequest
     {
@@ -43,7 +44,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property AuditReportId. 
         /// <para>
-        /// The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a>
+        /// The report ID returned by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>
         /// action.
         /// </para>
         /// </summary>

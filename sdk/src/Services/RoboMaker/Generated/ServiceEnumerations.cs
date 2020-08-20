@@ -1011,4 +1011,272 @@ namespace Amazon.RoboMaker
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type WorldExportJobErrorCode.
+    /// </summary>
+    public class WorldExportJobErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessDenied for WorldExportJobErrorCode
+        /// </summary>
+        public static readonly WorldExportJobErrorCode AccessDenied = new WorldExportJobErrorCode("AccessDenied");
+        /// <summary>
+        /// Constant InternalServiceError for WorldExportJobErrorCode
+        /// </summary>
+        public static readonly WorldExportJobErrorCode InternalServiceError = new WorldExportJobErrorCode("InternalServiceError");
+        /// <summary>
+        /// Constant InvalidInput for WorldExportJobErrorCode
+        /// </summary>
+        public static readonly WorldExportJobErrorCode InvalidInput = new WorldExportJobErrorCode("InvalidInput");
+        /// <summary>
+        /// Constant LimitExceeded for WorldExportJobErrorCode
+        /// </summary>
+        public static readonly WorldExportJobErrorCode LimitExceeded = new WorldExportJobErrorCode("LimitExceeded");
+        /// <summary>
+        /// Constant RequestThrottled for WorldExportJobErrorCode
+        /// </summary>
+        public static readonly WorldExportJobErrorCode RequestThrottled = new WorldExportJobErrorCode("RequestThrottled");
+        /// <summary>
+        /// Constant ResourceNotFound for WorldExportJobErrorCode
+        /// </summary>
+        public static readonly WorldExportJobErrorCode ResourceNotFound = new WorldExportJobErrorCode("ResourceNotFound");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorldExportJobErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorldExportJobErrorCode FindValue(string value)
+        {
+            return FindValue<WorldExportJobErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorldExportJobErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorldExportJobStatus.
+    /// </summary>
+    public class WorldExportJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Canceled for WorldExportJobStatus
+        /// </summary>
+        public static readonly WorldExportJobStatus Canceled = new WorldExportJobStatus("Canceled");
+        /// <summary>
+        /// Constant Canceling for WorldExportJobStatus
+        /// </summary>
+        public static readonly WorldExportJobStatus Canceling = new WorldExportJobStatus("Canceling");
+        /// <summary>
+        /// Constant Completed for WorldExportJobStatus
+        /// </summary>
+        public static readonly WorldExportJobStatus Completed = new WorldExportJobStatus("Completed");
+        /// <summary>
+        /// Constant Failed for WorldExportJobStatus
+        /// </summary>
+        public static readonly WorldExportJobStatus Failed = new WorldExportJobStatus("Failed");
+        /// <summary>
+        /// Constant Pending for WorldExportJobStatus
+        /// </summary>
+        public static readonly WorldExportJobStatus Pending = new WorldExportJobStatus("Pending");
+        /// <summary>
+        /// Constant Running for WorldExportJobStatus
+        /// </summary>
+        public static readonly WorldExportJobStatus Running = new WorldExportJobStatus("Running");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorldExportJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorldExportJobStatus FindValue(string value)
+        {
+            return FindValue<WorldExportJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorldExportJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorldGenerationJobErrorCode.
+    /// </summary>
+    public class WorldGenerationJobErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AllWorldGenerationFailed for WorldGenerationJobErrorCode
+        /// </summary>
+        public static readonly WorldGenerationJobErrorCode AllWorldGenerationFailed = new WorldGenerationJobErrorCode("AllWorldGenerationFailed");
+        /// <summary>
+        /// Constant InternalServiceError for WorldGenerationJobErrorCode
+        /// </summary>
+        public static readonly WorldGenerationJobErrorCode InternalServiceError = new WorldGenerationJobErrorCode("InternalServiceError");
+        /// <summary>
+        /// Constant InvalidInput for WorldGenerationJobErrorCode
+        /// </summary>
+        public static readonly WorldGenerationJobErrorCode InvalidInput = new WorldGenerationJobErrorCode("InvalidInput");
+        /// <summary>
+        /// Constant LimitExceeded for WorldGenerationJobErrorCode
+        /// </summary>
+        public static readonly WorldGenerationJobErrorCode LimitExceeded = new WorldGenerationJobErrorCode("LimitExceeded");
+        /// <summary>
+        /// Constant RequestThrottled for WorldGenerationJobErrorCode
+        /// </summary>
+        public static readonly WorldGenerationJobErrorCode RequestThrottled = new WorldGenerationJobErrorCode("RequestThrottled");
+        /// <summary>
+        /// Constant ResourceNotFound for WorldGenerationJobErrorCode
+        /// </summary>
+        public static readonly WorldGenerationJobErrorCode ResourceNotFound = new WorldGenerationJobErrorCode("ResourceNotFound");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorldGenerationJobErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorldGenerationJobErrorCode FindValue(string value)
+        {
+            return FindValue<WorldGenerationJobErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorldGenerationJobErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorldGenerationJobStatus.
+    /// </summary>
+    public class WorldGenerationJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Canceled for WorldGenerationJobStatus
+        /// </summary>
+        public static readonly WorldGenerationJobStatus Canceled = new WorldGenerationJobStatus("Canceled");
+        /// <summary>
+        /// Constant Canceling for WorldGenerationJobStatus
+        /// </summary>
+        public static readonly WorldGenerationJobStatus Canceling = new WorldGenerationJobStatus("Canceling");
+        /// <summary>
+        /// Constant Completed for WorldGenerationJobStatus
+        /// </summary>
+        public static readonly WorldGenerationJobStatus Completed = new WorldGenerationJobStatus("Completed");
+        /// <summary>
+        /// Constant Failed for WorldGenerationJobStatus
+        /// </summary>
+        public static readonly WorldGenerationJobStatus Failed = new WorldGenerationJobStatus("Failed");
+        /// <summary>
+        /// Constant PartialFailed for WorldGenerationJobStatus
+        /// </summary>
+        public static readonly WorldGenerationJobStatus PartialFailed = new WorldGenerationJobStatus("PartialFailed");
+        /// <summary>
+        /// Constant Pending for WorldGenerationJobStatus
+        /// </summary>
+        public static readonly WorldGenerationJobStatus Pending = new WorldGenerationJobStatus("Pending");
+        /// <summary>
+        /// Constant Running for WorldGenerationJobStatus
+        /// </summary>
+        public static readonly WorldGenerationJobStatus Running = new WorldGenerationJobStatus("Running");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorldGenerationJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorldGenerationJobStatus FindValue(string value)
+        {
+            return FindValue<WorldGenerationJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorldGenerationJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

@@ -88,10 +88,22 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     unmarshalledObject.IdempotencyToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastProvisioningRecordId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastProvisioningRecordId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastRecordId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastRecordId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastSuccessfulProvisioningRecordId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastSuccessfulProvisioningRecordId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// An object that represents the details of a registered consumer.
+    /// An object that represents the details of a registered consumer. This type of object
+    /// is returned by <a>DescribeStreamConsumer</a>.
     /// </summary>
     public partial class ConsumerDescription
     {
