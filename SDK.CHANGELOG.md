@@ -1,3 +1,11 @@
+### 3.3.802.0 (2020-08-20 18:12 UTC)
+* ApiGatewayV2 (3.3.108.0)
+	* Customers can now create Amazon API Gateway HTTP APIs that route requests to AWS AppConfig, Amazon EventBridge, Amazon Kinesis Data Streams, Amazon SQS, and AWS Step Functions.
+* Chime (3.3.115.8)
+	* Documentation updates for chime
+* FSx (3.3.109.3)
+	* Documentation updates for Amazon FSx
+
 ### 3.3.801.0 (2020-08-19 18:39 UTC)
 * IVS (3.3.102.0)
 	* Amazon Interactive Video Service (IVS) now offers customers the ability to create private channels, allowing customers to restrict their streams by channel or viewer.

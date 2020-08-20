@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.801.0",
+    "ProductVersion" : "3.3.802.0",
     "CoreVersion"    : "3.3.107.40",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -1169,7 +1169,7 @@
             "InPreview"               : false
         },
         "Chime"                           : {
-            "Version" : "3.3.115.7",
+            "Version" : "3.3.115.8",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.40"
@@ -1297,7 +1297,7 @@
             "InPreview"               : false
         },
         "FSx"                             : {
-            "Version" : "3.3.109.2",
+            "Version" : "3.3.109.3",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.40"
@@ -1345,7 +1345,7 @@
             "InPreview"               : false
         },
         "ApiGatewayV2"                    : {
-            "Version" : "3.3.107.60",
+            "Version" : "3.3.108.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.107.40"
