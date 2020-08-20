@@ -149,7 +149,7 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// is <i>not</i> linked to an Amazon S3 data respository.
+        /// is <i>not</i> linked to a data respository.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -243,7 +243,7 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// is <i>not</i> linked to an Amazon S3 data respository.
+        /// is <i>not</i> linked to a data respository.
         /// </para>
         ///  </li> </ul> 
         /// <para>

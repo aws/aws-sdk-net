@@ -143,9 +143,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this backup
-        /// of the Amazon FSx for Windows file system's data at rest. Amazon FSx for Lustre does
-        /// not support KMS encryption.
+        /// The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the backup
+        /// of the Amazon FSx file system's data at rest. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -166,6 +165,28 @@ namespace Amazon.FSx.Model
         /// <para>
         /// The lifecycle status of the backup.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AVAILABLE</code> - The backup is fully available.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATING</code> - FSx is creating the backup.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the
+        /// backup to S3.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETED</code> - The backup was deleted is no longer available.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED</code> - Amazon FSx could not complete the backup.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public BackupLifecycle Lifecycle
