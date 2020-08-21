@@ -202,7 +202,7 @@ namespace <#=this.Config.Namespace#>
     if (this.Config.ServiceModel.HasPaginators)
     {
 #>
-#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+#if AWS_ASYNC_ENUMERABLES_API
         private I<#=this.Config.ServiceNameRoot#>PaginatorFactory _paginators;
 
         /// <summary>
