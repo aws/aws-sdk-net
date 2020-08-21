@@ -91,6 +91,38 @@ namespace Amazon.RoboMaker.Model
         {
             return new ListSimulationJobsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListWorldExportJobs operation
+        ///</summary>
+        public IListWorldExportJobsPaginator ListWorldExportJobs(ListWorldExportJobsRequest request) 
+        {
+            return new ListWorldExportJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWorldGenerationJobs operation
+        ///</summary>
+        public IListWorldGenerationJobsPaginator ListWorldGenerationJobs(ListWorldGenerationJobsRequest request) 
+        {
+            return new ListWorldGenerationJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWorlds operation
+        ///</summary>
+        public IListWorldsPaginator ListWorlds(ListWorldsRequest request) 
+        {
+            return new ListWorldsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWorldTemplates operation
+        ///</summary>
+        public IListWorldTemplatesPaginator ListWorldTemplates(ListWorldTemplatesRequest request) 
+        {
+            return new ListWorldTemplatesPaginator(this.client, request);
+        }
     }
 }
 #endif

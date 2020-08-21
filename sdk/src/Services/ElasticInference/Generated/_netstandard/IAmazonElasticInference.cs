@@ -35,12 +35,6 @@ namespace Amazon.ElasticInference
     /// </summary>
     public partial interface IAmazonElasticInference : IAmazonService, IDisposable
     {
-#if BCL45 || AWS_ASYNC_ENUMERABLES_API
-        /// <summary>
-        /// Paginators for the service
-        /// </summary>
-        IElasticInferencePaginatorFactory Paginators { get; }
-#endif
                 
         #region  DescribeAcceleratorOfferings
 

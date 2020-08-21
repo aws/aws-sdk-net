@@ -35,12 +35,6 @@ namespace Amazon.DocDB
     /// </summary>
     public partial interface IAmazonDocDB : IAmazonService, IDisposable
     {
-#if BCL45 || AWS_ASYNC_ENUMERABLES_API
-        /// <summary>
-        /// Paginators for the service
-        /// </summary>
-        IDocDBPaginatorFactory Paginators { get; }
-#endif
                 
         #region  AddTagsToResource
 

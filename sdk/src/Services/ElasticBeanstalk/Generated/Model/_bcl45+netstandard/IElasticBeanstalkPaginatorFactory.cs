@@ -27,6 +27,11 @@ namespace Amazon.ElasticBeanstalk.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeEnvironmentManagedActionHistory operation
+        ///</summary>
+        IDescribeEnvironmentManagedActionHistoryPaginator DescribeEnvironmentManagedActionHistory(DescribeEnvironmentManagedActionHistoryRequest request);
+
+        /// <summary>
         /// Paginator for DescribeEvents operation
         ///</summary>
         IDescribeEventsPaginator DescribeEvents(DescribeEventsRequest request);
@@ -35,6 +40,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Paginator for ListPlatformBranches operation
         ///</summary>
         IListPlatformBranchesPaginator ListPlatformBranches(ListPlatformBranchesRequest request);
+
+        /// <summary>
+        /// Paginator for ListPlatformVersions operation
+        ///</summary>
+        IListPlatformVersionsPaginator ListPlatformVersions(ListPlatformVersionsRequest request);
     }
 }
 #endif

@@ -37,6 +37,11 @@ namespace Amazon.Braket
     public partial interface IAmazonBraket : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IBraketPaginatorFactory Paginators { get; }
+
         
         #region  CancelQuantumTask
 

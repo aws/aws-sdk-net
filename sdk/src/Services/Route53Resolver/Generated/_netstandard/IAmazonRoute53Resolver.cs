@@ -97,12 +97,6 @@ namespace Amazon.Route53Resolver
     /// </summary>
     public partial interface IAmazonRoute53Resolver : IAmazonService, IDisposable
     {
-#if BCL45 || AWS_ASYNC_ENUMERABLES_API
-        /// <summary>
-        /// Paginators for the service
-        /// </summary>
-        IRoute53ResolverPaginatorFactory Paginators { get; }
-#endif
                 
         #region  AssociateResolverEndpointIpAddress
 

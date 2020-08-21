@@ -43,6 +43,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("AppMesh")]
+        public void ListGatewayRoutesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListGatewayRoutesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListGatewayRoutesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListGatewayRoutesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListGatewayRoutes(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListGatewayRoutes(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("AppMesh")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListGatewayRoutesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListGatewayRoutesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListGatewayRoutesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListGatewayRoutes(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListGatewayRoutes(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("AppMesh")]
         public void ListMeshesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListMeshesRequest>();
@@ -148,6 +187,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListTagsForResource(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListTagsForResource(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("AppMesh")]
+        public void ListVirtualGatewaysTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListVirtualGatewaysRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListVirtualGatewaysResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListVirtualGatewaysResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListVirtualGateways(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListVirtualGateways(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("AppMesh")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListVirtualGatewaysTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListVirtualGatewaysRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListVirtualGatewaysResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListVirtualGateways(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListVirtualGateways(request);
 
             // Should work the first time
             paginator.Responses.ToList();

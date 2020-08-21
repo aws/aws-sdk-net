@@ -43,6 +43,14 @@ namespace Amazon.CodeStarconnections.Model
         {
             return new ListConnectionsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListHosts operation
+        ///</summary>
+        public IListHostsPaginator ListHosts(ListHostsRequest request) 
+        {
+            return new ListHostsPaginator(this.client, request);
+        }
     }
 }
 #endif

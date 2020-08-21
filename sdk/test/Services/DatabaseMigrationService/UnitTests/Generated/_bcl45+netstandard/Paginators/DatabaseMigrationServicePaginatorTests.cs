@@ -43,6 +43,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("DatabaseMigrationService")]
+        public void DescribeApplicableIndividualAssessmentsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeApplicableIndividualAssessmentsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeApplicableIndividualAssessmentsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeApplicableIndividualAssessmentsResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.DescribeApplicableIndividualAssessments(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeApplicableIndividualAssessments(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("DatabaseMigrationService")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeApplicableIndividualAssessmentsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeApplicableIndividualAssessmentsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeApplicableIndividualAssessmentsResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.DescribeApplicableIndividualAssessments(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeApplicableIndividualAssessments(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("DatabaseMigrationService")]
         public void DescribeCertificatesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<DescribeCertificatesRequest>();
@@ -499,6 +538,84 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.DescribeReplicationTaskAssessmentResults(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.DescribeReplicationTaskAssessmentResults(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("DatabaseMigrationService")]
+        public void DescribeReplicationTaskAssessmentRunsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeReplicationTaskAssessmentRunsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeReplicationTaskAssessmentRunsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeReplicationTaskAssessmentRunsResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.DescribeReplicationTaskAssessmentRuns(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeReplicationTaskAssessmentRuns(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("DatabaseMigrationService")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeReplicationTaskAssessmentRunsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeReplicationTaskAssessmentRunsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeReplicationTaskAssessmentRunsResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.DescribeReplicationTaskAssessmentRuns(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeReplicationTaskAssessmentRuns(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("DatabaseMigrationService")]
+        public void DescribeReplicationTaskIndividualAssessmentsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeReplicationTaskIndividualAssessmentsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeReplicationTaskIndividualAssessmentsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeReplicationTaskIndividualAssessmentsResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.DescribeReplicationTaskIndividualAssessments(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeReplicationTaskIndividualAssessments(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("DatabaseMigrationService")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeReplicationTaskIndividualAssessmentsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeReplicationTaskIndividualAssessmentsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeReplicationTaskIndividualAssessmentsResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.DescribeReplicationTaskIndividualAssessments(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeReplicationTaskIndividualAssessments(request);
 
             // Should work the first time
             paginator.Responses.ToList();

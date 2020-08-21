@@ -53,6 +53,14 @@ namespace Amazon.SimpleEmailV2.Model
         }
 
         /// <summary>
+        /// Paginator for ListCustomVerificationEmailTemplates operation
+        ///</summary>
+        public IListCustomVerificationEmailTemplatesPaginator ListCustomVerificationEmailTemplates(ListCustomVerificationEmailTemplatesRequest request) 
+        {
+            return new ListCustomVerificationEmailTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDedicatedIpPools operation
         ///</summary>
         public IListDedicatedIpPoolsPaginator ListDedicatedIpPools(ListDedicatedIpPoolsRequest request) 
@@ -82,6 +90,22 @@ namespace Amazon.SimpleEmailV2.Model
         public IListEmailIdentitiesPaginator ListEmailIdentities(ListEmailIdentitiesRequest request) 
         {
             return new ListEmailIdentitiesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEmailTemplates operation
+        ///</summary>
+        public IListEmailTemplatesPaginator ListEmailTemplates(ListEmailTemplatesRequest request) 
+        {
+            return new ListEmailTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListImportJobs operation
+        ///</summary>
+        public IListImportJobsPaginator ListImportJobs(ListImportJobsRequest request) 
+        {
+            return new ListImportJobsPaginator(this.client, request);
         }
 
         /// <summary>

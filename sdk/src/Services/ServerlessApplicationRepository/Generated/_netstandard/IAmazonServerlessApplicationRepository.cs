@@ -76,12 +76,6 @@ namespace Amazon.ServerlessApplicationRepository
     /// </summary>
     public partial interface IAmazonServerlessApplicationRepository : IAmazonService, IDisposable
     {
-#if BCL45 || AWS_ASYNC_ENUMERABLES_API
-        /// <summary>
-        /// Paginators for the service
-        /// </summary>
-        IServerlessApplicationRepositoryPaginatorFactory Paginators { get; }
-#endif
                 
         #region  CreateApplication
 

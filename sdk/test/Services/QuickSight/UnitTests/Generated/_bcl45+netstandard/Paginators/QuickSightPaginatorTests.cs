@@ -43,6 +43,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("QuickSight")]
+        public void ListAnalysesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAnalysesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListAnalysesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListAnalysesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListAnalyses(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListAnalyses(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("QuickSight")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListAnalysesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAnalysesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListAnalysesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListAnalyses(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListAnalyses(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("QuickSight")]
         public void ListDashboardsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListDashboardsRequest>();
@@ -238,6 +277,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("QuickSight")]
+        public void ListNamespacesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListNamespacesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListNamespacesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListNamespacesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListNamespaces(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListNamespaces(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("QuickSight")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListNamespacesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListNamespacesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListNamespacesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListNamespaces(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListNamespaces(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("QuickSight")]
         public void ListTemplateAliasesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListTemplateAliasesRequest>();
@@ -343,6 +421,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListTemplateVersions(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListTemplateVersions(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("QuickSight")]
+        public void SearchAnalysesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<SearchAnalysesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<SearchAnalysesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<SearchAnalysesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.SearchAnalyses(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.SearchAnalyses(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("QuickSight")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void SearchAnalysesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<SearchAnalysesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<SearchAnalysesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.SearchAnalyses(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.SearchAnalyses(request);
 
             // Should work the first time
             paginator.Responses.ToList();

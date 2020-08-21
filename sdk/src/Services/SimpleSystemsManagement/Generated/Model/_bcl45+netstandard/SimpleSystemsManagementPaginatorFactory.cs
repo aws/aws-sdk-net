@@ -45,6 +45,70 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeAssociationExecutions operation
+        ///</summary>
+        public IDescribeAssociationExecutionsPaginator DescribeAssociationExecutions(DescribeAssociationExecutionsRequest request) 
+        {
+            return new DescribeAssociationExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeAssociationExecutionTargets operation
+        ///</summary>
+        public IDescribeAssociationExecutionTargetsPaginator DescribeAssociationExecutionTargets(DescribeAssociationExecutionTargetsRequest request) 
+        {
+            return new DescribeAssociationExecutionTargetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeAutomationExecutions operation
+        ///</summary>
+        public IDescribeAutomationExecutionsPaginator DescribeAutomationExecutions(DescribeAutomationExecutionsRequest request) 
+        {
+            return new DescribeAutomationExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeAutomationStepExecutions operation
+        ///</summary>
+        public IDescribeAutomationStepExecutionsPaginator DescribeAutomationStepExecutions(DescribeAutomationStepExecutionsRequest request) 
+        {
+            return new DescribeAutomationStepExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeAvailablePatches operation
+        ///</summary>
+        public IDescribeAvailablePatchesPaginator DescribeAvailablePatches(DescribeAvailablePatchesRequest request) 
+        {
+            return new DescribeAvailablePatchesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeEffectiveInstanceAssociations operation
+        ///</summary>
+        public IDescribeEffectiveInstanceAssociationsPaginator DescribeEffectiveInstanceAssociations(DescribeEffectiveInstanceAssociationsRequest request) 
+        {
+            return new DescribeEffectiveInstanceAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeEffectivePatchesForPatchBaseline operation
+        ///</summary>
+        public IDescribeEffectivePatchesForPatchBaselinePaginator DescribeEffectivePatchesForPatchBaseline(DescribeEffectivePatchesForPatchBaselineRequest request) 
+        {
+            return new DescribeEffectivePatchesForPatchBaselinePaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeInstanceAssociationsStatus operation
+        ///</summary>
+        public IDescribeInstanceAssociationsStatusPaginator DescribeInstanceAssociationsStatus(DescribeInstanceAssociationsStatusRequest request) 
+        {
+            return new DescribeInstanceAssociationsStatusPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeInstanceInformation operation
         ///</summary>
         public IDescribeInstanceInformationPaginator DescribeInstanceInformation(DescribeInstanceInformationRequest request) 
@@ -53,11 +117,171 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeInstancePatches operation
+        ///</summary>
+        public IDescribeInstancePatchesPaginator DescribeInstancePatches(DescribeInstancePatchesRequest request) 
+        {
+            return new DescribeInstancePatchesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeInstancePatchStates operation
+        ///</summary>
+        public IDescribeInstancePatchStatesPaginator DescribeInstancePatchStates(DescribeInstancePatchStatesRequest request) 
+        {
+            return new DescribeInstancePatchStatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeInstancePatchStatesForPatchGroup operation
+        ///</summary>
+        public IDescribeInstancePatchStatesForPatchGroupPaginator DescribeInstancePatchStatesForPatchGroup(DescribeInstancePatchStatesForPatchGroupRequest request) 
+        {
+            return new DescribeInstancePatchStatesForPatchGroupPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeInventoryDeletions operation
+        ///</summary>
+        public IDescribeInventoryDeletionsPaginator DescribeInventoryDeletions(DescribeInventoryDeletionsRequest request) 
+        {
+            return new DescribeInventoryDeletionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeMaintenanceWindowExecutions operation
+        ///</summary>
+        public IDescribeMaintenanceWindowExecutionsPaginator DescribeMaintenanceWindowExecutions(DescribeMaintenanceWindowExecutionsRequest request) 
+        {
+            return new DescribeMaintenanceWindowExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeMaintenanceWindowExecutionTaskInvocations operation
+        ///</summary>
+        public IDescribeMaintenanceWindowExecutionTaskInvocationsPaginator DescribeMaintenanceWindowExecutionTaskInvocations(DescribeMaintenanceWindowExecutionTaskInvocationsRequest request) 
+        {
+            return new DescribeMaintenanceWindowExecutionTaskInvocationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeMaintenanceWindowExecutionTasks operation
+        ///</summary>
+        public IDescribeMaintenanceWindowExecutionTasksPaginator DescribeMaintenanceWindowExecutionTasks(DescribeMaintenanceWindowExecutionTasksRequest request) 
+        {
+            return new DescribeMaintenanceWindowExecutionTasksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeMaintenanceWindows operation
+        ///</summary>
+        public IDescribeMaintenanceWindowsPaginator DescribeMaintenanceWindows(DescribeMaintenanceWindowsRequest request) 
+        {
+            return new DescribeMaintenanceWindowsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeMaintenanceWindowSchedule operation
+        ///</summary>
+        public IDescribeMaintenanceWindowSchedulePaginator DescribeMaintenanceWindowSchedule(DescribeMaintenanceWindowScheduleRequest request) 
+        {
+            return new DescribeMaintenanceWindowSchedulePaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeMaintenanceWindowsForTarget operation
+        ///</summary>
+        public IDescribeMaintenanceWindowsForTargetPaginator DescribeMaintenanceWindowsForTarget(DescribeMaintenanceWindowsForTargetRequest request) 
+        {
+            return new DescribeMaintenanceWindowsForTargetPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeMaintenanceWindowTargets operation
+        ///</summary>
+        public IDescribeMaintenanceWindowTargetsPaginator DescribeMaintenanceWindowTargets(DescribeMaintenanceWindowTargetsRequest request) 
+        {
+            return new DescribeMaintenanceWindowTargetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeMaintenanceWindowTasks operation
+        ///</summary>
+        public IDescribeMaintenanceWindowTasksPaginator DescribeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest request) 
+        {
+            return new DescribeMaintenanceWindowTasksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeOpsItems operation
+        ///</summary>
+        public IDescribeOpsItemsPaginator DescribeOpsItems(DescribeOpsItemsRequest request) 
+        {
+            return new DescribeOpsItemsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeParameters operation
         ///</summary>
         public IDescribeParametersPaginator DescribeParameters(DescribeParametersRequest request) 
         {
             return new DescribeParametersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribePatchBaselines operation
+        ///</summary>
+        public IDescribePatchBaselinesPaginator DescribePatchBaselines(DescribePatchBaselinesRequest request) 
+        {
+            return new DescribePatchBaselinesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribePatchGroups operation
+        ///</summary>
+        public IDescribePatchGroupsPaginator DescribePatchGroups(DescribePatchGroupsRequest request) 
+        {
+            return new DescribePatchGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribePatchProperties operation
+        ///</summary>
+        public IDescribePatchPropertiesPaginator DescribePatchProperties(DescribePatchPropertiesRequest request) 
+        {
+            return new DescribePatchPropertiesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeSessions operation
+        ///</summary>
+        public IDescribeSessionsPaginator DescribeSessions(DescribeSessionsRequest request) 
+        {
+            return new DescribeSessionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetInventory operation
+        ///</summary>
+        public IGetInventoryPaginator GetInventory(GetInventoryRequest request) 
+        {
+            return new GetInventoryPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetInventorySchema operation
+        ///</summary>
+        public IGetInventorySchemaPaginator GetInventorySchema(GetInventorySchemaRequest request) 
+        {
+            return new GetInventorySchemaPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetOpsSummary operation
+        ///</summary>
+        public IGetOpsSummaryPaginator GetOpsSummary(GetOpsSummaryRequest request) 
+        {
+            return new GetOpsSummaryPaginator(this.client, request);
         }
 
         /// <summary>
@@ -85,6 +309,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Paginator for ListAssociationVersions operation
+        ///</summary>
+        public IListAssociationVersionsPaginator ListAssociationVersions(ListAssociationVersionsRequest request) 
+        {
+            return new ListAssociationVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCommandInvocations operation
         ///</summary>
         public IListCommandInvocationsPaginator ListCommandInvocations(ListCommandInvocationsRequest request) 
@@ -101,11 +333,51 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Paginator for ListComplianceItems operation
+        ///</summary>
+        public IListComplianceItemsPaginator ListComplianceItems(ListComplianceItemsRequest request) 
+        {
+            return new ListComplianceItemsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListComplianceSummaries operation
+        ///</summary>
+        public IListComplianceSummariesPaginator ListComplianceSummaries(ListComplianceSummariesRequest request) 
+        {
+            return new ListComplianceSummariesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDocuments operation
         ///</summary>
         public IListDocumentsPaginator ListDocuments(ListDocumentsRequest request) 
         {
             return new ListDocumentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDocumentVersions operation
+        ///</summary>
+        public IListDocumentVersionsPaginator ListDocumentVersions(ListDocumentVersionsRequest request) 
+        {
+            return new ListDocumentVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListResourceComplianceSummaries operation
+        ///</summary>
+        public IListResourceComplianceSummariesPaginator ListResourceComplianceSummaries(ListResourceComplianceSummariesRequest request) 
+        {
+            return new ListResourceComplianceSummariesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListResourceDataSync operation
+        ///</summary>
+        public IListResourceDataSyncPaginator ListResourceDataSync(ListResourceDataSyncRequest request) 
+        {
+            return new ListResourceDataSyncPaginator(this.client, request);
         }
     }
 }

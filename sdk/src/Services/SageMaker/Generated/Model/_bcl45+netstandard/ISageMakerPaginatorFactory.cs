@@ -177,6 +177,11 @@ namespace Amazon.SageMaker.Model
         IListUserProfilesPaginator ListUserProfiles(ListUserProfilesRequest request);
 
         /// <summary>
+        /// Paginator for ListWorkforces operation
+        ///</summary>
+        IListWorkforcesPaginator ListWorkforces(ListWorkforcesRequest request);
+
+        /// <summary>
         /// Paginator for ListWorkteams operation
         ///</summary>
         IListWorkteamsPaginator ListWorkteams(ListWorkteamsRequest request);

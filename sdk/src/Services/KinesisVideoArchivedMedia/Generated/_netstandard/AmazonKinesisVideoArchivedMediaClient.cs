@@ -44,24 +44,6 @@ namespace Amazon.KinesisVideoArchivedMedia
     {
         private static IServiceMetadata serviceMetadata = new AmazonKinesisVideoArchivedMediaMetadata();
         
-#if AWS_ASYNC_ENUMERABLES_API
-        private IKinesisVideoArchivedMediaPaginatorFactory _paginators;
-
-        /// <summary>
-        /// Paginators for the service
-        /// </summary>
-        public IKinesisVideoArchivedMediaPaginatorFactory Paginators 
-        {
-            get 
-            {
-                if (this._paginators == null) 
-                {
-                    this._paginators = new KinesisVideoArchivedMediaPaginatorFactory(this);
-                }
-                return this._paginators;
-            }
-        }
-#endif
 
         #region Overrides
 

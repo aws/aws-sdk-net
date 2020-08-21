@@ -116,12 +116,6 @@ namespace Amazon.ApplicationAutoScaling
     /// </summary>
     public partial interface IAmazonApplicationAutoScaling : IAmazonService, IDisposable
     {
-#if BCL45 || AWS_ASYNC_ENUMERABLES_API
-        /// <summary>
-        /// Paginators for the service
-        /// </summary>
-        IApplicationAutoScalingPaginatorFactory Paginators { get; }
-#endif
                 
         #region  DeleteScalingPolicy
 

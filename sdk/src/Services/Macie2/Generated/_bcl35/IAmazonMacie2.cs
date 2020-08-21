@@ -41,6 +41,12 @@ namespace Amazon.Macie2
     {
 
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMacie2PaginatorFactory Paginators { get; }
+#endif
 
 
         

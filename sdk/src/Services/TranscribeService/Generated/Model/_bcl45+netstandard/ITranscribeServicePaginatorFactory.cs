@@ -27,6 +27,11 @@ namespace Amazon.TranscribeService.Model
     {
 
         /// <summary>
+        /// Paginator for ListLanguageModels operation
+        ///</summary>
+        IListLanguageModelsPaginator ListLanguageModels(ListLanguageModelsRequest request);
+
+        /// <summary>
         /// Paginator for ListMedicalTranscriptionJobs operation
         ///</summary>
         IListMedicalTranscriptionJobsPaginator ListMedicalTranscriptionJobs(ListMedicalTranscriptionJobsRequest request);

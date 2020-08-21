@@ -39,12 +39,6 @@ namespace Amazon.ManagedBlockchain
     /// </summary>
     public partial interface IAmazonManagedBlockchain : IAmazonService, IDisposable
     {
-#if BCL45 || AWS_ASYNC_ENUMERABLES_API
-        /// <summary>
-        /// Paginators for the service
-        /// </summary>
-        IManagedBlockchainPaginatorFactory Paginators { get; }
-#endif
                 
         #region  CreateMember
 

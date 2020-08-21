@@ -38,6 +38,12 @@ namespace Amazon.MQ
     {
 
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMQPaginatorFactory Paginators { get; }
+#endif
 
 
         

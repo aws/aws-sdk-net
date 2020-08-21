@@ -37,6 +37,14 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeEnvironmentManagedActionHistory operation
+        ///</summary>
+        public IDescribeEnvironmentManagedActionHistoryPaginator DescribeEnvironmentManagedActionHistory(DescribeEnvironmentManagedActionHistoryRequest request) 
+        {
+            return new DescribeEnvironmentManagedActionHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeEvents operation
         ///</summary>
         public IDescribeEventsPaginator DescribeEvents(DescribeEventsRequest request) 
@@ -50,6 +58,14 @@ namespace Amazon.ElasticBeanstalk.Model
         public IListPlatformBranchesPaginator ListPlatformBranches(ListPlatformBranchesRequest request) 
         {
             return new ListPlatformBranchesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPlatformVersions operation
+        ///</summary>
+        public IListPlatformVersionsPaginator ListPlatformVersions(ListPlatformVersionsRequest request) 
+        {
+            return new ListPlatformVersionsPaginator(this.client, request);
         }
     }
 }

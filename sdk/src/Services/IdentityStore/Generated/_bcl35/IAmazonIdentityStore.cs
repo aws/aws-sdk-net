@@ -34,6 +34,15 @@ namespace Amazon.IdentityStore
     public partial interface IAmazonIdentityStore : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IIdentityStorePaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  DescribeGroup
 

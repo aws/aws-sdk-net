@@ -61,12 +61,6 @@ namespace Amazon.DataExchange
     /// </summary>
     public partial interface IAmazonDataExchange : IAmazonService, IDisposable
     {
-#if BCL45 || AWS_ASYNC_ENUMERABLES_API
-        /// <summary>
-        /// Paginators for the service
-        /// </summary>
-        IDataExchangePaginatorFactory Paginators { get; }
-#endif
                 
         #region  CancelJob
 

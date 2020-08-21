@@ -65,6 +65,10 @@ namespace Amazon.IoT
     public partial interface IAmazonIoT : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IIoTPaginatorFactory Paginators { get; }
 
         
         #region  AcceptCertificateTransfer

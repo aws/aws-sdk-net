@@ -37,6 +37,11 @@ namespace Amazon.SimpleEmailV2.Model
         IListConfigurationSetsPaginator ListConfigurationSets(ListConfigurationSetsRequest request);
 
         /// <summary>
+        /// Paginator for ListCustomVerificationEmailTemplates operation
+        ///</summary>
+        IListCustomVerificationEmailTemplatesPaginator ListCustomVerificationEmailTemplates(ListCustomVerificationEmailTemplatesRequest request);
+
+        /// <summary>
         /// Paginator for ListDedicatedIpPools operation
         ///</summary>
         IListDedicatedIpPoolsPaginator ListDedicatedIpPools(ListDedicatedIpPoolsRequest request);
@@ -55,6 +60,16 @@ namespace Amazon.SimpleEmailV2.Model
         /// Paginator for ListEmailIdentities operation
         ///</summary>
         IListEmailIdentitiesPaginator ListEmailIdentities(ListEmailIdentitiesRequest request);
+
+        /// <summary>
+        /// Paginator for ListEmailTemplates operation
+        ///</summary>
+        IListEmailTemplatesPaginator ListEmailTemplates(ListEmailTemplatesRequest request);
+
+        /// <summary>
+        /// Paginator for ListImportJobs operation
+        ///</summary>
+        IListImportJobsPaginator ListImportJobs(ListImportJobsRequest request);
 
         /// <summary>
         /// Paginator for ListSuppressedDestinations operation

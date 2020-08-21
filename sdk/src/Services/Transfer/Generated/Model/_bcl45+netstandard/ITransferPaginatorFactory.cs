@@ -27,6 +27,11 @@ namespace Amazon.Transfer.Model
     {
 
         /// <summary>
+        /// Paginator for ListSecurityPolicies operation
+        ///</summary>
+        IListSecurityPoliciesPaginator ListSecurityPolicies(ListSecurityPoliciesRequest request);
+
+        /// <summary>
         /// Paginator for ListServers operation
         ///</summary>
         IListServersPaginator ListServers(ListServersRequest request);

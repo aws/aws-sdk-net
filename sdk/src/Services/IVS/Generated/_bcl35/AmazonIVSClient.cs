@@ -306,6 +306,7 @@ namespace Amazon.IVS
     public partial class AmazonIVSClient : AmazonServiceClient, IAmazonIVS
     {
         private static IServiceMetadata serviceMetadata = new AmazonIVSMetadata();
+
         #region Constructors
 
         /// <summary>

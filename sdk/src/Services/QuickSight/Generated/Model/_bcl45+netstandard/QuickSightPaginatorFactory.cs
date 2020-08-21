@@ -37,6 +37,14 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListAnalyses operation
+        ///</summary>
+        public IListAnalysesPaginator ListAnalyses(ListAnalysesRequest request) 
+        {
+            return new ListAnalysesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDashboards operation
         ///</summary>
         public IListDashboardsPaginator ListDashboards(ListDashboardsRequest request) 
@@ -77,6 +85,14 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListNamespaces operation
+        ///</summary>
+        public IListNamespacesPaginator ListNamespaces(ListNamespacesRequest request) 
+        {
+            return new ListNamespacesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTemplateAliases operation
         ///</summary>
         public IListTemplateAliasesPaginator ListTemplateAliases(ListTemplateAliasesRequest request) 
@@ -98,6 +114,14 @@ namespace Amazon.QuickSight.Model
         public IListTemplateVersionsPaginator ListTemplateVersions(ListTemplateVersionsRequest request) 
         {
             return new ListTemplateVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchAnalyses operation
+        ///</summary>
+        public ISearchAnalysesPaginator SearchAnalyses(SearchAnalysesRequest request) 
+        {
+            return new SearchAnalysesPaginator(this.client, request);
         }
 
         /// <summary>

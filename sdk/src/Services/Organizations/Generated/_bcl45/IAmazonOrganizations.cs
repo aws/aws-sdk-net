@@ -18165,18 +18165,6 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you get this exception when running a command immediately after creating the organization,
-        /// wait one hour and try again. After an hour, if the command continues to fail with
-        /// this error, contact <a href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
-        /// account of the organization as a delegated administrator for an AWS service integrated
-        /// with Organizations. You can designate only a member account as a delegated administrator.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as

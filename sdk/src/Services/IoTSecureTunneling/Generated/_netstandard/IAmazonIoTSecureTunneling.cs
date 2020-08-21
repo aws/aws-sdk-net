@@ -44,12 +44,6 @@ namespace Amazon.IoTSecureTunneling
     /// </summary>
     public partial interface IAmazonIoTSecureTunneling : IAmazonService, IDisposable
     {
-#if BCL45 || AWS_ASYNC_ENUMERABLES_API
-        /// <summary>
-        /// Paginators for the service
-        /// </summary>
-        IIoTSecureTunnelingPaginatorFactory Paginators { get; }
-#endif
                 
         #region  CloseTunnel
 

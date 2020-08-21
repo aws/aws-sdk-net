@@ -121,6 +121,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("EC2")]
+        public void DescribeCarrierGatewaysTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeCarrierGatewaysRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeCarrierGatewaysResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeCarrierGatewaysResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeCarrierGateways(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeCarrierGateways(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeCarrierGatewaysTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeCarrierGatewaysRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeCarrierGatewaysResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeCarrierGateways(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeCarrierGateways(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void DescribeClassicLinkInstancesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<DescribeClassicLinkInstancesRequest>();
@@ -1474,6 +1513,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.DescribeLocalGatewayVirtualInterfaces(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.DescribeLocalGatewayVirtualInterfaces(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        public void DescribeManagedPrefixListsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeManagedPrefixListsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeManagedPrefixListsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeManagedPrefixListsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeManagedPrefixLists(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeManagedPrefixLists(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeManagedPrefixListsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeManagedPrefixListsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeManagedPrefixListsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeManagedPrefixLists(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeManagedPrefixLists(request);
 
             // Should work the first time
             paginator.Responses.ToList();
@@ -3112,6 +3190,123 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.GetAssociatedIpv6PoolCidrs(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.GetAssociatedIpv6PoolCidrs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        public void GetGroupsForCapacityReservationTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetGroupsForCapacityReservationRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetGroupsForCapacityReservationResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetGroupsForCapacityReservationResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetGroupsForCapacityReservation(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetGroupsForCapacityReservation(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetGroupsForCapacityReservationTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetGroupsForCapacityReservationRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetGroupsForCapacityReservationResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetGroupsForCapacityReservation(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetGroupsForCapacityReservation(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        public void GetManagedPrefixListAssociationsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetManagedPrefixListAssociationsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetManagedPrefixListAssociationsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetManagedPrefixListAssociationsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetManagedPrefixListAssociations(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetManagedPrefixListAssociations(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetManagedPrefixListAssociationsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetManagedPrefixListAssociationsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetManagedPrefixListAssociationsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetManagedPrefixListAssociations(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetManagedPrefixListAssociations(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        public void GetManagedPrefixListEntriesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetManagedPrefixListEntriesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetManagedPrefixListEntriesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetManagedPrefixListEntriesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetManagedPrefixListEntries(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetManagedPrefixListEntries(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetManagedPrefixListEntriesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetManagedPrefixListEntriesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetManagedPrefixListEntriesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetManagedPrefixListEntries(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetManagedPrefixListEntries(request);
 
             // Should work the first time
             paginator.Responses.ToList();

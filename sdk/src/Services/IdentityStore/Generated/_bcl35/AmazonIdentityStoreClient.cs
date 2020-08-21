@@ -40,6 +40,7 @@ namespace Amazon.IdentityStore
     public partial class AmazonIdentityStoreClient : AmazonServiceClient, IAmazonIdentityStore
     {
         private static IServiceMetadata serviceMetadata = new AmazonIdentityStoreMetadata();
+
         #region Constructors
 
         /// <summary>

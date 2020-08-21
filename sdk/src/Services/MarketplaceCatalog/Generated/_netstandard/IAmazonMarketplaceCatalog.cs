@@ -44,12 +44,6 @@ namespace Amazon.MarketplaceCatalog
     /// </summary>
     public partial interface IAmazonMarketplaceCatalog : IAmazonService, IDisposable
     {
-#if BCL45 || AWS_ASYNC_ENUMERABLES_API
-        /// <summary>
-        /// Paginators for the service
-        /// </summary>
-        IMarketplaceCatalogPaginatorFactory Paginators { get; }
-#endif
                 
         #region  CancelChangeSet
 

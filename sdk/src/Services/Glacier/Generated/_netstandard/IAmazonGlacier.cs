@@ -77,12 +77,6 @@ namespace Amazon.Glacier
     /// </summary>
     public partial interface IAmazonGlacier : IAmazonService, IDisposable
     {
-#if BCL45 || AWS_ASYNC_ENUMERABLES_API
-        /// <summary>
-        /// Paginators for the service
-        /// </summary>
-        IGlacierPaginatorFactory Paginators { get; }
-#endif
                 
         #region  AbortMultipartUpload
 

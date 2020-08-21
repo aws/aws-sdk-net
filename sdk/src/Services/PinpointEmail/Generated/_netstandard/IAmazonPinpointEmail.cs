@@ -78,12 +78,6 @@ namespace Amazon.PinpointEmail
     /// </summary>
     public partial interface IAmazonPinpointEmail : IAmazonService, IDisposable
     {
-#if BCL45 || AWS_ASYNC_ENUMERABLES_API
-        /// <summary>
-        /// Paginators for the service
-        /// </summary>
-        IPinpointEmailPaginatorFactory Paginators { get; }
-#endif
                 
         #region  CreateConfigurationSet
 

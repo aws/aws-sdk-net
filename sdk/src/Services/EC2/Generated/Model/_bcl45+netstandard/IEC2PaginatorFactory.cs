@@ -37,6 +37,11 @@ namespace Amazon.EC2.Model
         IDescribeCapacityReservationsPaginator DescribeCapacityReservations(DescribeCapacityReservationsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeCarrierGateways operation
+        ///</summary>
+        IDescribeCarrierGatewaysPaginator DescribeCarrierGateways(DescribeCarrierGatewaysRequest request);
+
+        /// <summary>
         /// Paginator for DescribeClassicLinkInstances operation
         ///</summary>
         IDescribeClassicLinkInstancesPaginator DescribeClassicLinkInstances(DescribeClassicLinkInstancesRequest request);
@@ -210,6 +215,11 @@ namespace Amazon.EC2.Model
         /// Paginator for DescribeLocalGatewayVirtualInterfaces operation
         ///</summary>
         IDescribeLocalGatewayVirtualInterfacesPaginator DescribeLocalGatewayVirtualInterfaces(DescribeLocalGatewayVirtualInterfacesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeManagedPrefixLists operation
+        ///</summary>
+        IDescribeManagedPrefixListsPaginator DescribeManagedPrefixLists(DescribeManagedPrefixListsRequest request);
 
         /// <summary>
         /// Paginator for DescribeMovingAddresses operation
@@ -420,6 +430,21 @@ namespace Amazon.EC2.Model
         /// Paginator for GetAssociatedIpv6PoolCidrs operation
         ///</summary>
         IGetAssociatedIpv6PoolCidrsPaginator GetAssociatedIpv6PoolCidrs(GetAssociatedIpv6PoolCidrsRequest request);
+
+        /// <summary>
+        /// Paginator for GetGroupsForCapacityReservation operation
+        ///</summary>
+        IGetGroupsForCapacityReservationPaginator GetGroupsForCapacityReservation(GetGroupsForCapacityReservationRequest request);
+
+        /// <summary>
+        /// Paginator for GetManagedPrefixListAssociations operation
+        ///</summary>
+        IGetManagedPrefixListAssociationsPaginator GetManagedPrefixListAssociations(GetManagedPrefixListAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for GetManagedPrefixListEntries operation
+        ///</summary>
+        IGetManagedPrefixListEntriesPaginator GetManagedPrefixListEntries(GetManagedPrefixListEntriesRequest request);
 
         /// <summary>
         /// Paginator for GetTransitGatewayAttachmentPropagations operation

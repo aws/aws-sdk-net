@@ -43,6 +43,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Transfer")]
+        public void ListSecurityPoliciesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListSecurityPoliciesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListSecurityPoliciesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListSecurityPoliciesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListSecurityPolicies(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListSecurityPolicies(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Transfer")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListSecurityPoliciesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListSecurityPoliciesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListSecurityPoliciesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListSecurityPolicies(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListSecurityPolicies(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Transfer")]
         public void ListServersTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListServersRequest>();

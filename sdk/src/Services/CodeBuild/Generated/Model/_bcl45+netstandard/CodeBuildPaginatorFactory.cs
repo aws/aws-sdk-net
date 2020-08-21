@@ -37,11 +37,35 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeCodeCoverages operation
+        ///</summary>
+        public IDescribeCodeCoveragesPaginator DescribeCodeCoverages(DescribeCodeCoveragesRequest request) 
+        {
+            return new DescribeCodeCoveragesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeTestCases operation
         ///</summary>
         public IDescribeTestCasesPaginator DescribeTestCases(DescribeTestCasesRequest request) 
         {
             return new DescribeTestCasesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListBuildBatches operation
+        ///</summary>
+        public IListBuildBatchesPaginator ListBuildBatches(ListBuildBatchesRequest request) 
+        {
+            return new ListBuildBatchesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListBuildBatchesForProject operation
+        ///</summary>
+        public IListBuildBatchesForProjectPaginator ListBuildBatchesForProject(ListBuildBatchesForProjectRequest request) 
+        {
+            return new ListBuildBatchesForProjectPaginator(this.client, request);
         }
 
         /// <summary>

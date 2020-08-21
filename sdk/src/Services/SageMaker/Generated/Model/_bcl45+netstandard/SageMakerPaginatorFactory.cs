@@ -277,6 +277,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListWorkforces operation
+        ///</summary>
+        public IListWorkforcesPaginator ListWorkforces(ListWorkforcesRequest request) 
+        {
+            return new ListWorkforcesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListWorkteams operation
         ///</summary>
         public IListWorkteamsPaginator ListWorkteams(ListWorkteamsRequest request) 

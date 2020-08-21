@@ -27,6 +27,16 @@ namespace Amazon.CodeGuruProfiler.Model
     {
 
         /// <summary>
+        /// Paginator for GetFindingsReportAccountSummary operation
+        ///</summary>
+        IGetFindingsReportAccountSummaryPaginator GetFindingsReportAccountSummary(GetFindingsReportAccountSummaryRequest request);
+
+        /// <summary>
+        /// Paginator for ListFindingsReports operation
+        ///</summary>
+        IListFindingsReportsPaginator ListFindingsReports(ListFindingsReportsRequest request);
+
+        /// <summary>
         /// Paginator for ListProfileTimes operation
         ///</summary>
         IListProfileTimesPaginator ListProfileTimes(ListProfileTimesRequest request);

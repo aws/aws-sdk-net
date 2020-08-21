@@ -53,11 +53,35 @@ namespace Amazon.FraudDetector.Model
         }
 
         /// <summary>
+        /// Paginator for GetEntityTypes operation
+        ///</summary>
+        public IGetEntityTypesPaginator GetEntityTypes(GetEntityTypesRequest request) 
+        {
+            return new GetEntityTypesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetEventTypes operation
+        ///</summary>
+        public IGetEventTypesPaginator GetEventTypes(GetEventTypesRequest request) 
+        {
+            return new GetEventTypesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetExternalModels operation
         ///</summary>
         public IGetExternalModelsPaginator GetExternalModels(GetExternalModelsRequest request) 
         {
             return new GetExternalModelsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetLabels operation
+        ///</summary>
+        public IGetLabelsPaginator GetLabels(GetLabelsRequest request) 
+        {
+            return new GetLabelsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -90,6 +114,14 @@ namespace Amazon.FraudDetector.Model
         public IGetVariablesPaginator GetVariables(GetVariablesRequest request) 
         {
             return new GetVariablesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTagsForResource operation
+        ///</summary>
+        public IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request) 
+        {
+            return new ListTagsForResourcePaginator(this.client, request);
         }
     }
 }

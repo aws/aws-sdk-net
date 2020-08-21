@@ -41,12 +41,6 @@ namespace Amazon.WorkLink
     /// </summary>
     public partial interface IAmazonWorkLink : IAmazonService, IDisposable
     {
-#if BCL45 || AWS_ASYNC_ENUMERABLES_API
-        /// <summary>
-        /// Paginators for the service
-        /// </summary>
-        IWorkLinkPaginatorFactory Paginators { get; }
-#endif
                 
         #region  AssociateDomain
 

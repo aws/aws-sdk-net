@@ -56,12 +56,6 @@ namespace Amazon.Neptune
     /// </summary>
     public partial interface IAmazonNeptune : IAmazonService, IDisposable
     {
-#if BCL45 || AWS_ASYNC_ENUMERABLES_API
-        /// <summary>
-        /// Paginators for the service
-        /// </summary>
-        INeptunePaginatorFactory Paginators { get; }
-#endif
                 
         #region  AddRoleToDBCluster
 

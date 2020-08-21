@@ -312,6 +312,162 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
             paginator.Responses.ToList();
         }
 
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("RoboMaker")]
+        public void ListWorldExportJobsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListWorldExportJobsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListWorldExportJobsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListWorldExportJobsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListWorldExportJobs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListWorldExportJobs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("RoboMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListWorldExportJobsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListWorldExportJobsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListWorldExportJobsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListWorldExportJobs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListWorldExportJobs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("RoboMaker")]
+        public void ListWorldGenerationJobsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListWorldGenerationJobsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListWorldGenerationJobsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListWorldGenerationJobsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListWorldGenerationJobs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListWorldGenerationJobs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("RoboMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListWorldGenerationJobsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListWorldGenerationJobsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListWorldGenerationJobsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListWorldGenerationJobs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListWorldGenerationJobs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("RoboMaker")]
+        public void ListWorldsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListWorldsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListWorldsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListWorldsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListWorlds(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListWorlds(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("RoboMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListWorldsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListWorldsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListWorldsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListWorlds(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListWorlds(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("RoboMaker")]
+        public void ListWorldTemplatesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListWorldTemplatesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListWorldTemplatesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListWorldTemplatesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListWorldTemplates(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListWorldTemplates(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("RoboMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListWorldTemplatesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListWorldTemplatesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListWorldTemplatesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListWorldTemplates(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListWorldTemplates(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
     }
 }
 #endif

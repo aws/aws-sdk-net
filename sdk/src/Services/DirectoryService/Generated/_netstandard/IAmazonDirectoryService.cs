@@ -53,12 +53,6 @@ namespace Amazon.DirectoryService
     /// </summary>
     public partial interface IAmazonDirectoryService : IAmazonService, IDisposable
     {
-#if BCL45 || AWS_ASYNC_ENUMERABLES_API
-        /// <summary>
-        /// Paginators for the service
-        /// </summary>
-        IDirectoryServicePaginatorFactory Paginators { get; }
-#endif
                 
         #region  AcceptSharedDirectory
 

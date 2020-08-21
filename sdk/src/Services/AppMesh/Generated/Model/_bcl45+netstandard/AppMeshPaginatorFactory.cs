@@ -37,6 +37,14 @@ namespace Amazon.AppMesh.Model
         }
 
         /// <summary>
+        /// Paginator for ListGatewayRoutes operation
+        ///</summary>
+        public IListGatewayRoutesPaginator ListGatewayRoutes(ListGatewayRoutesRequest request) 
+        {
+            return new ListGatewayRoutesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMeshes operation
         ///</summary>
         public IListMeshesPaginator ListMeshes(ListMeshesRequest request) 
@@ -58,6 +66,14 @@ namespace Amazon.AppMesh.Model
         public IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request) 
         {
             return new ListTagsForResourcePaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListVirtualGateways operation
+        ///</summary>
+        public IListVirtualGatewaysPaginator ListVirtualGateways(ListVirtualGatewaysRequest request) 
+        {
+            return new ListVirtualGatewaysPaginator(this.client, request);
         }
 
         /// <summary>

@@ -40,12 +40,6 @@ namespace Amazon.LexModelBuildingService
     /// </summary>
     public partial interface IAmazonLexModelBuildingService : IAmazonService, IDisposable
     {
-#if BCL45 || AWS_ASYNC_ENUMERABLES_API
-        /// <summary>
-        /// Paginators for the service
-        /// </summary>
-        ILexModelBuildingServicePaginatorFactory Paginators { get; }
-#endif
                 
         #region  CreateBotVersion
 

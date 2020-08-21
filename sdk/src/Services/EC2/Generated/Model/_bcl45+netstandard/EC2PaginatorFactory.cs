@@ -53,6 +53,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeCarrierGateways operation
+        ///</summary>
+        public IDescribeCarrierGatewaysPaginator DescribeCarrierGateways(DescribeCarrierGatewaysRequest request) 
+        {
+            return new DescribeCarrierGatewaysPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeClassicLinkInstances operation
         ///</summary>
         public IDescribeClassicLinkInstancesPaginator DescribeClassicLinkInstances(DescribeClassicLinkInstancesRequest request) 
@@ -330,6 +338,14 @@ namespace Amazon.EC2.Model
         public IDescribeLocalGatewayVirtualInterfacesPaginator DescribeLocalGatewayVirtualInterfaces(DescribeLocalGatewayVirtualInterfacesRequest request) 
         {
             return new DescribeLocalGatewayVirtualInterfacesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeManagedPrefixLists operation
+        ///</summary>
+        public IDescribeManagedPrefixListsPaginator DescribeManagedPrefixLists(DescribeManagedPrefixListsRequest request) 
+        {
+            return new DescribeManagedPrefixListsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -666,6 +682,30 @@ namespace Amazon.EC2.Model
         public IGetAssociatedIpv6PoolCidrsPaginator GetAssociatedIpv6PoolCidrs(GetAssociatedIpv6PoolCidrsRequest request) 
         {
             return new GetAssociatedIpv6PoolCidrsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetGroupsForCapacityReservation operation
+        ///</summary>
+        public IGetGroupsForCapacityReservationPaginator GetGroupsForCapacityReservation(GetGroupsForCapacityReservationRequest request) 
+        {
+            return new GetGroupsForCapacityReservationPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetManagedPrefixListAssociations operation
+        ///</summary>
+        public IGetManagedPrefixListAssociationsPaginator GetManagedPrefixListAssociations(GetManagedPrefixListAssociationsRequest request) 
+        {
+            return new GetManagedPrefixListAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetManagedPrefixListEntries operation
+        ///</summary>
+        public IGetManagedPrefixListEntriesPaginator GetManagedPrefixListEntries(GetManagedPrefixListEntriesRequest request) 
+        {
+            return new GetManagedPrefixListEntriesPaginator(this.client, request);
         }
 
         /// <summary>

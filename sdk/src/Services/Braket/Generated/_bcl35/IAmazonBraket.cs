@@ -35,6 +35,15 @@ namespace Amazon.Braket
     public partial interface IAmazonBraket : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IBraketPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CancelQuantumTask
 

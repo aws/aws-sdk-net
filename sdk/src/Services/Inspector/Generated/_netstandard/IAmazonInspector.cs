@@ -40,12 +40,6 @@ namespace Amazon.Inspector
     /// </summary>
     public partial interface IAmazonInspector : IAmazonService, IDisposable
     {
-#if BCL45 || AWS_ASYNC_ENUMERABLES_API
-        /// <summary>
-        /// Paginators for the service
-        /// </summary>
-        IInspectorPaginatorFactory Paginators { get; }
-#endif
                 
         #region  AddAttributesToFindings
 

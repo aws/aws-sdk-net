@@ -27,6 +27,11 @@ namespace Amazon.AppMesh.Model
     {
 
         /// <summary>
+        /// Paginator for ListGatewayRoutes operation
+        ///</summary>
+        IListGatewayRoutesPaginator ListGatewayRoutes(ListGatewayRoutesRequest request);
+
+        /// <summary>
         /// Paginator for ListMeshes operation
         ///</summary>
         IListMeshesPaginator ListMeshes(ListMeshesRequest request);
@@ -40,6 +45,11 @@ namespace Amazon.AppMesh.Model
         /// Paginator for ListTagsForResource operation
         ///</summary>
         IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Paginator for ListVirtualGateways operation
+        ///</summary>
+        IListVirtualGatewaysPaginator ListVirtualGateways(ListVirtualGatewaysRequest request);
 
         /// <summary>
         /// Paginator for ListVirtualNodes operation

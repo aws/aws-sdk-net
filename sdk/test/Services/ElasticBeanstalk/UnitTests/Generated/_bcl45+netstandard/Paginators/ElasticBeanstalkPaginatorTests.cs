@@ -43,6 +43,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("ElasticBeanstalk")]
+        public void DescribeEnvironmentManagedActionHistoryTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentManagedActionHistoryRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeEnvironmentManagedActionHistoryResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeEnvironmentManagedActionHistoryResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeEnvironmentManagedActionHistory(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeEnvironmentManagedActionHistory(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ElasticBeanstalk")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeEnvironmentManagedActionHistoryTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentManagedActionHistoryRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeEnvironmentManagedActionHistoryResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeEnvironmentManagedActionHistory(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeEnvironmentManagedActionHistory(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ElasticBeanstalk")]
         public void DescribeEventsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<DescribeEventsRequest>();
@@ -109,6 +148,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListPlatformBranches(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListPlatformBranches(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ElasticBeanstalk")]
+        public void ListPlatformVersionsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListPlatformVersionsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListPlatformVersionsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListPlatformVersionsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListPlatformVersions(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListPlatformVersions(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ElasticBeanstalk")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListPlatformVersionsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListPlatformVersionsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListPlatformVersionsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListPlatformVersions(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListPlatformVersions(request);
 
             // Should work the first time
             paginator.Responses.ToList();

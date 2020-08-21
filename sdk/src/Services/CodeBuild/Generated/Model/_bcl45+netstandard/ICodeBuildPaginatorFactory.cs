@@ -27,9 +27,24 @@ namespace Amazon.CodeBuild.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeCodeCoverages operation
+        ///</summary>
+        IDescribeCodeCoveragesPaginator DescribeCodeCoverages(DescribeCodeCoveragesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeTestCases operation
         ///</summary>
         IDescribeTestCasesPaginator DescribeTestCases(DescribeTestCasesRequest request);
+
+        /// <summary>
+        /// Paginator for ListBuildBatches operation
+        ///</summary>
+        IListBuildBatchesPaginator ListBuildBatches(ListBuildBatchesRequest request);
+
+        /// <summary>
+        /// Paginator for ListBuildBatchesForProject operation
+        ///</summary>
+        IListBuildBatchesForProjectPaginator ListBuildBatchesForProject(ListBuildBatchesForProjectRequest request);
 
         /// <summary>
         /// Paginator for ListBuilds operation

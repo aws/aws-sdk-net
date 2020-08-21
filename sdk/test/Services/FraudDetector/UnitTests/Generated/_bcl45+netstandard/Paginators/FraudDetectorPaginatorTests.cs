@@ -121,6 +121,84 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("FraudDetector")]
+        public void GetEntityTypesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetEntityTypesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetEntityTypesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetEntityTypesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetEntityTypes(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetEntityTypes(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FraudDetector")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetEntityTypesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetEntityTypesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetEntityTypesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetEntityTypes(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetEntityTypes(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FraudDetector")]
+        public void GetEventTypesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetEventTypesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetEventTypesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetEventTypesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetEventTypes(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetEventTypes(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FraudDetector")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetEventTypesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetEventTypesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetEventTypesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetEventTypes(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetEventTypes(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FraudDetector")]
         public void GetExternalModelsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<GetExternalModelsRequest>();
@@ -148,6 +226,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.GetExternalModels(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.GetExternalModels(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FraudDetector")]
+        public void GetLabelsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetLabelsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetLabelsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetLabelsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetLabels(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetLabels(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FraudDetector")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetLabelsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetLabelsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetLabelsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetLabels(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetLabels(request);
 
             // Should work the first time
             paginator.Responses.ToList();
@@ -304,6 +421,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.GetVariables(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.GetVariables(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FraudDetector")]
+        public void ListTagsForResourceTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListTagsForResourceResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListTagsForResourceResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListTagsForResource(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListTagsForResource(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FraudDetector")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListTagsForResourceTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListTagsForResourceResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListTagsForResource(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListTagsForResource(request);
 
             // Should work the first time
             paginator.Responses.ToList();

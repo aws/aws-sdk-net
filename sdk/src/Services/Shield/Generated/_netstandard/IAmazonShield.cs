@@ -43,12 +43,6 @@ namespace Amazon.Shield
     /// </summary>
     public partial interface IAmazonShield : IAmazonService, IDisposable
     {
-#if BCL45 || AWS_ASYNC_ENUMERABLES_API
-        /// <summary>
-        /// Paginators for the service
-        /// </summary>
-        IShieldPaginatorFactory Paginators { get; }
-#endif
                 
         #region  AssociateDRTLogBucket
 

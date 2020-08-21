@@ -37,6 +37,14 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeApplicableIndividualAssessments operation
+        ///</summary>
+        public IDescribeApplicableIndividualAssessmentsPaginator DescribeApplicableIndividualAssessments(DescribeApplicableIndividualAssessmentsRequest request) 
+        {
+            return new DescribeApplicableIndividualAssessmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeCertificates operation
         ///</summary>
         public IDescribeCertificatesPaginator DescribeCertificates(DescribeCertificatesRequest request) 
@@ -130,6 +138,22 @@ namespace Amazon.DatabaseMigrationService.Model
         public IDescribeReplicationTaskAssessmentResultsPaginator DescribeReplicationTaskAssessmentResults(DescribeReplicationTaskAssessmentResultsRequest request) 
         {
             return new DescribeReplicationTaskAssessmentResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeReplicationTaskAssessmentRuns operation
+        ///</summary>
+        public IDescribeReplicationTaskAssessmentRunsPaginator DescribeReplicationTaskAssessmentRuns(DescribeReplicationTaskAssessmentRunsRequest request) 
+        {
+            return new DescribeReplicationTaskAssessmentRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeReplicationTaskIndividualAssessments operation
+        ///</summary>
+        public IDescribeReplicationTaskIndividualAssessmentsPaginator DescribeReplicationTaskIndividualAssessments(DescribeReplicationTaskIndividualAssessmentsRequest request) 
+        {
+            return new DescribeReplicationTaskIndividualAssessmentsPaginator(this.client, request);
         }
 
         /// <summary>

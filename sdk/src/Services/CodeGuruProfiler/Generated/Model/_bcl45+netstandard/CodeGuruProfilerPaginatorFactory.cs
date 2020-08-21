@@ -37,6 +37,22 @@ namespace Amazon.CodeGuruProfiler.Model
         }
 
         /// <summary>
+        /// Paginator for GetFindingsReportAccountSummary operation
+        ///</summary>
+        public IGetFindingsReportAccountSummaryPaginator GetFindingsReportAccountSummary(GetFindingsReportAccountSummaryRequest request) 
+        {
+            return new GetFindingsReportAccountSummaryPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFindingsReports operation
+        ///</summary>
+        public IListFindingsReportsPaginator ListFindingsReports(ListFindingsReportsRequest request) 
+        {
+            return new ListFindingsReportsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListProfileTimes operation
         ///</summary>
         public IListProfileTimesPaginator ListProfileTimes(ListProfileTimesRequest request) 

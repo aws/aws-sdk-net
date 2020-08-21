@@ -43,6 +43,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("TranscribeService")]
+        public void ListLanguageModelsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListLanguageModelsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListLanguageModelsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListLanguageModelsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListLanguageModels(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListLanguageModels(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("TranscribeService")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListLanguageModelsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListLanguageModelsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListLanguageModelsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListLanguageModels(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListLanguageModels(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("TranscribeService")]
         public void ListMedicalTranscriptionJobsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListMedicalTranscriptionJobsRequest>();

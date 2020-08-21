@@ -30,6 +30,11 @@ namespace Amazon.CodeStarconnections.Model
         /// Paginator for ListConnections operation
         ///</summary>
         IListConnectionsPaginator ListConnections(ListConnectionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListHosts operation
+        ///</summary>
+        IListHostsPaginator ListHosts(ListHostsRequest request);
     }
 }
 #endif
