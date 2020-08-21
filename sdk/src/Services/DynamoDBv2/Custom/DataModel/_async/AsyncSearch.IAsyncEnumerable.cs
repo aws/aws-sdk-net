@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-#if NETCOREAPP3_1
+#if NETCOREAPP3_1 || NETSTANDARD20
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
