@@ -361,7 +361,7 @@ namespace ServiceClientGenerator
 
                 config.ServiceFileVersion = DefaultAssemblyVersion;
                 var versionTokens = CoreVersion.Split('.');
-                if (!DefaultAssemblyVersion.StartsWith($"{versionTokens[0]}.{versionTokens[1]}."))
+                if (!DefaultAssemblyVersion.StartsWith($"{versionTokens[0]}.{versionTokens[1]}"))
                 {
                     throw new NotImplementedException($"{nameof(DefaultAssemblyVersion)} should be updated to match the AWSSDK.Core minor version number.");
                 }
