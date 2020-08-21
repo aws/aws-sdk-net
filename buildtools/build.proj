@@ -142,6 +142,16 @@
         <Exec Command="ServiceClientGenerator.exe $(GeneratorPartialBuildArgument)"
             WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
     </Target>
+    <Target Name="run-generator-service">
+        <CallTarget Targets="clean-old-models" Condition="Exists('$(InternalBuildTools)\references.targets')" />
+    
+        <Message Text="Build and run code generator"/>
+        <Exec Command="dotnet restore -f  AWSSDKGenerator.sln" WorkingDirectory="..\generator" />
+        <Exec Command="dotnet clean -c $(Configuration) AWSSDKGenerator.sln" WorkingDirectory="..\generator"/>
+        <Exec Command="dotnet build -c $(Configuration) --no-incremental /p:RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild) AWSSDKGenerator.sln" WorkingDirectory="..\generator"/>
+        <Exec Command="ServiceClientGenerator.exe --servicemodels &quot;$(ServiceList)&quot; $(GeneratorDisablePCLSupport) $(GeneratorUnityPath) $(GeneratorPartialBuildArgument)"
+            WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
+    </Target>
     <Target Name="build-custom-roslyn-analyzer" Condition="$(RunAnalyzersDuringBuild)">
         <Message Text="Build Custom Roslyn Analyzer"/>
         <Exec Command="dotnet build -c $(Configuration) --no-incremental CustomRoslynAnalyzers.csproj"
@@ -159,7 +169,7 @@
             DestinationFolder="$(Deployment)" />
     </Target>
 
-    <Target Name="build-sdk-service" DependsOnTargets="populate-deployment;build-sdk-desktop-service;build-code-analysis;copy-assemblies">
+    <Target Name="build-sdk-service" DependsOnTargets="populate-deployment;build-sdk-desktop-service;build-code-analysis-service;copy-assemblies">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
@@ -177,15 +187,20 @@
         <Exec Command="dotnet build -c $(Configuration) --no-incremental $(Net45SolutionsFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk"/>
     </Target>
 
-    <Target Name="build-sdk-desktop-service" DependsOnTargets="run-generator;build-custom-roslyn-analyzer;restore-nuget-service;override-endpoints-file">
+    <Target Name="build-sdk-desktop-service" DependsOnTargets="run-generator-service;build-custom-roslyn-analyzer;restore-nuget-service;override-endpoints-file">
         <Message Text="Restore and compile service solution "/>
         <Exec Command="dotnet restore -f  %(ServiceName.Filename).sln" WorkingDirectory="..\sdk\src\Services\%(ServiceName.Filename)"/>
         <Exec Command="dotnet clean -c $(Configuration) %(ServiceName.FileName).sln" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)"/>
         <Exec Command="dotnet build -c $(Configuration) --no-incremental %(ServiceName.FileName).sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)"/>
     </Target>
 
-
     <Target Name="build-code-analysis" DependsOnTargets="restore-nuget;run-generator;build-custom-roslyn-analyzer;override-endpoints-file">
+        <MSBuild Projects="..\sdk\AWSSDK.CodeAnalysis.sln"
+            Targets="Clean;Build"
+            Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation)" />
+    </Target>
+
+    <Target Name="build-code-analysis-service" DependsOnTargets="restore-nuget-service;run-generator-service;build-custom-roslyn-analyzer;override-endpoints-file">
         <MSBuild Projects="..\sdk\AWSSDK.CodeAnalysis.sln"
             Targets="Clean;Build"
             Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation)" />
