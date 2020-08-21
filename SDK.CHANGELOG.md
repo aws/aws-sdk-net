@@ -3,7 +3,6 @@
    * Additional target for .NET Core 3.1
    * Support for Unity, Xamarin, UWP, and PCL transitioned to .NET Standard 2.0
    * EOL platforms removed (Windows Phone, Silverlight)
-   * Paginator support added
    * Cognito Sync Manager, Mobile Analytics Manager extracted from SDK
 
 ### 3.3.802.0 (2020-08-20 18:12 UTC)
