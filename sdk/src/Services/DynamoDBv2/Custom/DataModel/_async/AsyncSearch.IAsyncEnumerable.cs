@@ -42,7 +42,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #endregion
     }
 
-    internal struct AsyncSearchEnumerator<T> : IAsyncEnumerator<IList<T>>
+    internal sealed class AsyncSearchEnumerator<T> : IAsyncEnumerator<IList<T>>
     {
  
         #region Private members
