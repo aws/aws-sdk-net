@@ -233,6 +233,24 @@ namespace Amazon.ElasticLoadBalancingV2
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IElasticLoadBalancingV2PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IElasticLoadBalancingV2PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ElasticLoadBalancingV2PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

@@ -226,6 +226,24 @@ namespace Amazon.StepFunctions
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IStepFunctionsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IStepFunctionsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new StepFunctionsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

@@ -42,6 +42,12 @@ namespace Amazon.Snowball
     /// </summary>
     public partial interface IAmazonSnowball : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISnowballPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CancelCluster
 

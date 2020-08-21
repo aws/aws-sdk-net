@@ -211,6 +211,24 @@ namespace Amazon.AlexaForBusiness
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IAlexaForBusinessPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAlexaForBusinessPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AlexaForBusinessPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

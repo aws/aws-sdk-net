@@ -229,6 +229,24 @@ namespace Amazon.CloudFormation
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ICloudFormationPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICloudFormationPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CloudFormationPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

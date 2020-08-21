@@ -36,6 +36,12 @@ namespace Amazon.XRay
     /// </summary>
     public partial interface IAmazonXRay : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IXRayPaginatorFactory Paginators { get; }
+#endif
                 
         #region  BatchGetTraces
 

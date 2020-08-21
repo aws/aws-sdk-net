@@ -84,6 +84,12 @@ namespace Amazon.ResourceGroups
     /// </summary>
     public partial interface IAmazonResourceGroups : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IResourceGroupsPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateGroup
 

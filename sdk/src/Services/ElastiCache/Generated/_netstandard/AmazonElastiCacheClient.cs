@@ -220,6 +220,24 @@ namespace Amazon.ElastiCache
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IElastiCachePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IElastiCachePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ElastiCachePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

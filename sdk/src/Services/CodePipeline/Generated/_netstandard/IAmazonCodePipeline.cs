@@ -253,6 +253,12 @@ namespace Amazon.CodePipeline
     /// </summary>
     public partial interface IAmazonCodePipeline : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICodePipelinePaginatorFactory Paginators { get; }
+#endif
                 
         #region  AcknowledgeJob
 

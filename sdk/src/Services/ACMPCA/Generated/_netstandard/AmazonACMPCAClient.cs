@@ -222,6 +222,24 @@ namespace Amazon.ACMPCA
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IACMPCAPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IACMPCAPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ACMPCAPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

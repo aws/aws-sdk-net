@@ -139,6 +139,12 @@ namespace Amazon.OpsWorksCM
     /// </summary>
     public partial interface IAmazonOpsWorksCM : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IOpsWorksCMPaginatorFactory Paginators { get; }
+#endif
                 
         #region  AssociateNode
 

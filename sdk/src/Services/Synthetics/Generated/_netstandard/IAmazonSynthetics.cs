@@ -53,6 +53,12 @@ namespace Amazon.Synthetics
     /// </summary>
     public partial interface IAmazonSynthetics : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISyntheticsPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateCanary
 

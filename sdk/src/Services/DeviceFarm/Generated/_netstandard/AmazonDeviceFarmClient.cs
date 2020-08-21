@@ -226,6 +226,24 @@ namespace Amazon.DeviceFarm
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IDeviceFarmPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IDeviceFarmPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new DeviceFarmPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

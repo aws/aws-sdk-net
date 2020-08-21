@@ -232,6 +232,24 @@ namespace Amazon.IoT
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IIoTPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IIoTPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new IoTPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

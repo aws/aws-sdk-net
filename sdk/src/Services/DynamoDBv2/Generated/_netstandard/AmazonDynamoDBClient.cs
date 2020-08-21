@@ -225,6 +225,24 @@ namespace Amazon.DynamoDBv2
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IDynamoDBv2PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IDynamoDBv2PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new DynamoDBv2PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

@@ -58,6 +58,12 @@ namespace Amazon.DeviceFarm
     /// </summary>
     public partial interface IAmazonDeviceFarm : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IDeviceFarmPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateDevicePool
 

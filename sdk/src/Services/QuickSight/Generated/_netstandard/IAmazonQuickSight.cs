@@ -41,6 +41,12 @@ namespace Amazon.QuickSight
     /// </summary>
     public partial interface IAmazonQuickSight : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IQuickSightPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CancelIngestion
 

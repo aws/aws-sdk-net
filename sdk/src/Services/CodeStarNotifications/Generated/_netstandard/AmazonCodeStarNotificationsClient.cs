@@ -289,6 +289,24 @@ namespace Amazon.CodeStarNotifications
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ICodeStarNotificationsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICodeStarNotificationsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CodeStarNotificationsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

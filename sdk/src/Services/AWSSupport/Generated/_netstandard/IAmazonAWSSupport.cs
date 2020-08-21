@@ -124,6 +124,12 @@ namespace Amazon.AWSSupport
     /// </summary>
     public partial interface IAmazonAWSSupport : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAWSSupportPaginatorFactory Paginators { get; }
+#endif
                 
         #region  AddAttachmentsToSet
 

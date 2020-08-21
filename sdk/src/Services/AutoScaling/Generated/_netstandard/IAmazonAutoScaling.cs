@@ -46,6 +46,12 @@ namespace Amazon.AutoScaling
     /// </summary>
     public partial interface IAmazonAutoScaling : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAutoScalingPaginatorFactory Paginators { get; }
+#endif
                 
         #region  AttachInstances
 

@@ -212,6 +212,24 @@ namespace Amazon.IoTSecureTunneling
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IIoTSecureTunnelingPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IIoTSecureTunnelingPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new IoTSecureTunnelingPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

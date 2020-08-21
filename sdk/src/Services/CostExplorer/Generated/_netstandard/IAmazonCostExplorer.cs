@@ -56,6 +56,12 @@ namespace Amazon.CostExplorer
     /// </summary>
     public partial interface IAmazonCostExplorer : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICostExplorerPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateCostCategoryDefinition
 

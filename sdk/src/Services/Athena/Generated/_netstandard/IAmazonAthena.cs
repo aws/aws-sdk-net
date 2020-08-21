@@ -54,6 +54,12 @@ namespace Amazon.Athena
     /// </summary>
     public partial interface IAmazonAthena : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAthenaPaginatorFactory Paginators { get; }
+#endif
                 
         #region  BatchGetNamedQuery
 

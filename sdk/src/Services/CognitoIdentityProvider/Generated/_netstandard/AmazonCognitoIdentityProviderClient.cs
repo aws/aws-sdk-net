@@ -214,6 +214,24 @@ namespace Amazon.CognitoIdentityProvider
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ICognitoIdentityProviderPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICognitoIdentityProviderPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CognitoIdentityProviderPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

@@ -51,6 +51,12 @@ namespace Amazon.Macie
     /// </summary>
     public partial interface IAmazonMacie : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMaciePaginatorFactory Paginators { get; }
+#endif
                 
         #region  AssociateMemberAccount
 

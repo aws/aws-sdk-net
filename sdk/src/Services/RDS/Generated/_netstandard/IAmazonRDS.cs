@@ -106,6 +106,12 @@ namespace Amazon.RDS
     /// </summary>
     public partial interface IAmazonRDS : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IRDSPaginatorFactory Paginators { get; }
+#endif
                 
         #region  AddRoleToDBCluster
 

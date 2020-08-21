@@ -212,6 +212,24 @@ namespace Amazon.CloudDirectory
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ICloudDirectoryPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICloudDirectoryPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CloudDirectoryPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

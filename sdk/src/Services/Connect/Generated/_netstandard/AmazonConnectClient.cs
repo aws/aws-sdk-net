@@ -219,6 +219,24 @@ namespace Amazon.Connect
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IConnectPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IConnectPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ConnectPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

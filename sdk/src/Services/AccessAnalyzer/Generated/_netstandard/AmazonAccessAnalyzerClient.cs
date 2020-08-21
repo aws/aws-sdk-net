@@ -215,6 +215,24 @@ namespace Amazon.AccessAnalyzer
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IAccessAnalyzerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAccessAnalyzerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AccessAnalyzerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

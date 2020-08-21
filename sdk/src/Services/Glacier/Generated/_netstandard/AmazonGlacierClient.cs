@@ -245,6 +245,24 @@ namespace Amazon.Glacier
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IGlacierPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IGlacierPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new GlacierPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

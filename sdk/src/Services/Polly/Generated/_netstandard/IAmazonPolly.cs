@@ -42,6 +42,12 @@ namespace Amazon.Polly
     /// </summary>
     public partial interface IAmazonPolly : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IPollyPaginatorFactory Paginators { get; }
+#endif
                 
         #region  DeleteLexicon
 

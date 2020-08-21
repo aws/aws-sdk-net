@@ -52,6 +52,12 @@ namespace Amazon.CloudWatch
     /// </summary>
     public partial interface IAmazonCloudWatch : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICloudWatchPaginatorFactory Paginators { get; }
+#endif
                 
         #region  DeleteAlarms
 

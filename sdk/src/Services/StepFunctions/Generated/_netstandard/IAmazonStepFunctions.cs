@@ -58,6 +58,12 @@ namespace Amazon.StepFunctions
     /// </summary>
     public partial interface IAmazonStepFunctions : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IStepFunctionsPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateActivity
 

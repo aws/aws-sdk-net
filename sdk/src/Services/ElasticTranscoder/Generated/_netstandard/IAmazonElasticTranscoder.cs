@@ -38,6 +38,12 @@ namespace Amazon.ElasticTranscoder
     /// </summary>
     public partial interface IAmazonElasticTranscoder : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IElasticTranscoderPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CancelJob
 

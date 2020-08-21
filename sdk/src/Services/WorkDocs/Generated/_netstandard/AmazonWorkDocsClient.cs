@@ -239,6 +239,24 @@ namespace Amazon.WorkDocs
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IWorkDocsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IWorkDocsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new WorkDocsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

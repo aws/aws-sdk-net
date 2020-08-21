@@ -203,6 +203,24 @@ namespace Amazon.KinesisVideo
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IKinesisVideoPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IKinesisVideoPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new KinesisVideoPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

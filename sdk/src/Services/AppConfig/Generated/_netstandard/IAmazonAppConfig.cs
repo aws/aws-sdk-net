@@ -90,6 +90,12 @@ namespace Amazon.AppConfig
     /// </summary>
     public partial interface IAmazonAppConfig : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAppConfigPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateApplication
 

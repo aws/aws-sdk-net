@@ -238,6 +238,24 @@ namespace Amazon.SimpleEmailV2
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ISimpleEmailV2PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISimpleEmailV2PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SimpleEmailV2PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

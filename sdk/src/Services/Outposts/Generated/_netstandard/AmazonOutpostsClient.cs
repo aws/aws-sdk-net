@@ -207,6 +207,24 @@ namespace Amazon.Outposts
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IOutpostsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IOutpostsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new OutpostsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

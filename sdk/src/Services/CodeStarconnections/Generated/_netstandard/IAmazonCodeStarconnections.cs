@@ -130,6 +130,12 @@ namespace Amazon.CodeStarconnections
     /// </summary>
     public partial interface IAmazonCodeStarconnections : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICodeStarconnectionsPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateConnection
 

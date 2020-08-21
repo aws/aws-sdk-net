@@ -209,6 +209,24 @@ namespace Amazon.CloudFront
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ICloudFrontPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICloudFrontPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CloudFrontPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

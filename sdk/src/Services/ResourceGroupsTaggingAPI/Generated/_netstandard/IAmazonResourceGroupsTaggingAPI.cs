@@ -610,6 +610,12 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </summary>
     public partial interface IAmazonResourceGroupsTaggingAPI : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IResourceGroupsTaggingAPIPaginatorFactory Paginators { get; }
+#endif
                 
         #region  DescribeReportCreation
 

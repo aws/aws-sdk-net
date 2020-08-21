@@ -273,6 +273,24 @@ namespace Amazon.Cloud9
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ICloud9PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICloud9PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new Cloud9PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

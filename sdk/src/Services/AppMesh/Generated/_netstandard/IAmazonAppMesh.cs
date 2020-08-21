@@ -56,6 +56,12 @@ namespace Amazon.AppMesh
     /// </summary>
     public partial interface IAmazonAppMesh : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAppMeshPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateGatewayRoute
 

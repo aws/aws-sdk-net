@@ -204,6 +204,24 @@ namespace Amazon.Personalize
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IPersonalizePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IPersonalizePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new PersonalizePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

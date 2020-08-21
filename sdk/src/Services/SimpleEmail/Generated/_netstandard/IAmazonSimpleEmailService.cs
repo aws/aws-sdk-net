@@ -48,6 +48,12 @@ namespace Amazon.SimpleEmail
     /// </summary>
     public partial interface IAmazonSimpleEmailService : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISimpleEmailPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CloneReceiptRuleSet
 

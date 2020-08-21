@@ -70,6 +70,12 @@ namespace Amazon.SimpleEmailV2
     /// </summary>
     public partial interface IAmazonSimpleEmailServiceV2 : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISimpleEmailV2PaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateConfigurationSet
 

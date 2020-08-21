@@ -233,6 +233,24 @@ namespace Amazon.EC2
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IEC2PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IEC2PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new EC2PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

@@ -138,6 +138,12 @@ namespace Amazon.CodeDeploy
     /// </summary>
     public partial interface IAmazonCodeDeploy : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICodeDeployPaginatorFactory Paginators { get; }
+#endif
                 
         #region  AddTagsToOnPremisesInstances
 

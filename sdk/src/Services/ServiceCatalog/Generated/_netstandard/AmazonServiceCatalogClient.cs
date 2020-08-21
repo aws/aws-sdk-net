@@ -210,6 +210,24 @@ namespace Amazon.ServiceCatalog
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IServiceCatalogPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IServiceCatalogPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ServiceCatalogPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

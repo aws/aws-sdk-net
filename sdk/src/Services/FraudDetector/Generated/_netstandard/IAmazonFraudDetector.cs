@@ -38,6 +38,12 @@ namespace Amazon.FraudDetector
     /// </summary>
     public partial interface IAmazonFraudDetector : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IFraudDetectorPaginatorFactory Paginators { get; }
+#endif
                 
         #region  BatchCreateVariable
 

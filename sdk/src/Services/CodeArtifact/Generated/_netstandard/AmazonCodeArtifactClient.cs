@@ -470,6 +470,24 @@ namespace Amazon.CodeArtifact
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ICodeArtifactPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICodeArtifactPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CodeArtifactPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

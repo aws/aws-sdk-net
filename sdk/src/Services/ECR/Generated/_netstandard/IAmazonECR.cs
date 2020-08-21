@@ -43,6 +43,12 @@ namespace Amazon.ECR
     /// </summary>
     public partial interface IAmazonECR : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IECRPaginatorFactory Paginators { get; }
+#endif
                 
         #region  BatchCheckLayerAvailability
 
