@@ -45,6 +45,7 @@ namespace Amazon.Inspector
     public partial class AmazonInspectorClient : AmazonServiceClient, IAmazonInspector
     {
         private static IServiceMetadata serviceMetadata = new AmazonInspectorMetadata();
+
         #region Constructors
 
         /// <summary>

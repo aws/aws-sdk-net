@@ -203,6 +203,24 @@ namespace Amazon.MediaPackage
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IMediaPackagePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMediaPackagePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MediaPackagePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

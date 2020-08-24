@@ -42,6 +42,12 @@ namespace Amazon.ServiceCatalog
     /// </summary>
     public partial interface IAmazonServiceCatalog : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IServiceCatalogPaginatorFactory Paginators { get; }
+#endif
                 
         #region  AcceptPortfolioShare
 

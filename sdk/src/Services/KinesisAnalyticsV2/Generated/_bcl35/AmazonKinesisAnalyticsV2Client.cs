@@ -43,6 +43,7 @@ namespace Amazon.KinesisAnalyticsV2
     public partial class AmazonKinesisAnalyticsV2Client : AmazonServiceClient, IAmazonKinesisAnalyticsV2
     {
         private static IServiceMetadata serviceMetadata = new AmazonKinesisAnalyticsV2Metadata();
+
         #region Constructors
 
         /// <summary>

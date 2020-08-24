@@ -60,6 +60,7 @@ namespace Amazon.IoTJobsDataPlane
     {
         private static IServiceMetadata serviceMetadata = new AmazonIoTJobsDataPlaneMetadata();
 
+
         #region Overrides
 
         

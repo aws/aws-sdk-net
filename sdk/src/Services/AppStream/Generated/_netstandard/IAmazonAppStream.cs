@@ -65,6 +65,12 @@ namespace Amazon.AppStream
     /// </summary>
     public partial interface IAmazonAppStream : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAppStreamPaginatorFactory Paginators { get; }
+#endif
                 
         #region  AssociateFleet
 

@@ -44,6 +44,7 @@ namespace Amazon.Kinesis
     public partial class AmazonKinesisClient : AmazonServiceClient, IAmazonKinesis
     {
         private static IServiceMetadata serviceMetadata = new AmazonKinesisMetadata();
+
         #region Constructors
 
         /// <summary>

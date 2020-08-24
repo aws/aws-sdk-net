@@ -207,6 +207,24 @@ namespace Amazon.Kinesis
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IKinesisPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IKinesisPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new KinesisPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

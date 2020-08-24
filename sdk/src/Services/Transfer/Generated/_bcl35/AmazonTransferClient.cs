@@ -48,6 +48,7 @@ namespace Amazon.Transfer
     public partial class AmazonTransferClient : AmazonServiceClient, IAmazonTransfer
     {
         private static IServiceMetadata serviceMetadata = new AmazonTransferMetadata();
+
         #region Constructors
 
         /// <summary>

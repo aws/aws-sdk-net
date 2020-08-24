@@ -50,6 +50,15 @@ namespace Amazon.CodeGuruProfiler
     public partial interface IAmazonCodeGuruProfiler : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICodeGuruProfilerPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AddNotificationChannels
 

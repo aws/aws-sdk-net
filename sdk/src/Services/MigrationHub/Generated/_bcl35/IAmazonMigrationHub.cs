@@ -43,6 +43,15 @@ namespace Amazon.MigrationHub
     public partial interface IAmazonMigrationHub : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMigrationHubPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AssociateCreatedArtifact
 

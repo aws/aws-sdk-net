@@ -49,6 +49,7 @@ namespace Amazon.IoTSecureTunneling
     public partial class AmazonIoTSecureTunnelingClient : AmazonServiceClient, IAmazonIoTSecureTunneling
     {
         private static IServiceMetadata serviceMetadata = new AmazonIoTSecureTunnelingMetadata();
+
         #region Constructors
 
         /// <summary>

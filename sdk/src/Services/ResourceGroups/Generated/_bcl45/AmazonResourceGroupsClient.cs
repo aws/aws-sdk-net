@@ -92,6 +92,22 @@ namespace Amazon.ResourceGroups
     public partial class AmazonResourceGroupsClient : AmazonServiceClient, IAmazonResourceGroups
     {
         private static IServiceMetadata serviceMetadata = new AmazonResourceGroupsMetadata();
+        private IResourceGroupsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IResourceGroupsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ResourceGroupsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

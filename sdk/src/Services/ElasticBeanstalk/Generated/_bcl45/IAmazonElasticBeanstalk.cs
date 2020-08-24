@@ -59,6 +59,11 @@ namespace Amazon.ElasticBeanstalk
     public partial interface IAmazonElasticBeanstalk : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IElasticBeanstalkPaginatorFactory Paginators { get; }
+
         
         #region  AbortEnvironmentUpdate
 

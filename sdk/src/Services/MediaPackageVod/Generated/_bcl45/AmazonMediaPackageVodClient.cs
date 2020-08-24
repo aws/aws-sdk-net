@@ -43,6 +43,22 @@ namespace Amazon.MediaPackageVod
     public partial class AmazonMediaPackageVodClient : AmazonServiceClient, IAmazonMediaPackageVod
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaPackageVodMetadata();
+        private IMediaPackageVodPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMediaPackageVodPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MediaPackageVodPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

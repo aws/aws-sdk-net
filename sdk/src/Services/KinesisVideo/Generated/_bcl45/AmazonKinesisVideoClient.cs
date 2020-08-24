@@ -43,6 +43,22 @@ namespace Amazon.KinesisVideo
     public partial class AmazonKinesisVideoClient : AmazonServiceClient, IAmazonKinesisVideo
     {
         private static IServiceMetadata serviceMetadata = new AmazonKinesisVideoMetadata();
+        private IKinesisVideoPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IKinesisVideoPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new KinesisVideoPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

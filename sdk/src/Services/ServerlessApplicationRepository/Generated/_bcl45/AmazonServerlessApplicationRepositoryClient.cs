@@ -84,6 +84,22 @@ namespace Amazon.ServerlessApplicationRepository
     public partial class AmazonServerlessApplicationRepositoryClient : AmazonServiceClient, IAmazonServerlessApplicationRepository
     {
         private static IServiceMetadata serviceMetadata = new AmazonServerlessApplicationRepositoryMetadata();
+        private IServerlessApplicationRepositoryPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IServerlessApplicationRepositoryPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ServerlessApplicationRepositoryPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

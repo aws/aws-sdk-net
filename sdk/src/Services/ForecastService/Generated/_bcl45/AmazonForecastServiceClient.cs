@@ -43,6 +43,22 @@ namespace Amazon.ForecastService
     public partial class AmazonForecastServiceClient : AmazonServiceClient, IAmazonForecastService
     {
         private static IServiceMetadata serviceMetadata = new AmazonForecastServiceMetadata();
+        private IForecastServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IForecastServicePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ForecastServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

@@ -254,6 +254,11 @@ namespace Amazon.CodePipeline
     public partial interface IAmazonCodePipeline : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICodePipelinePaginatorFactory Paginators { get; }
+
         
         #region  AcknowledgeJob
 

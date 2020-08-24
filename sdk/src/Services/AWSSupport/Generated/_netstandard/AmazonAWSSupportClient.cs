@@ -292,6 +292,24 @@ namespace Amazon.AWSSupport
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IAWSSupportPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAWSSupportPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AWSSupportPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

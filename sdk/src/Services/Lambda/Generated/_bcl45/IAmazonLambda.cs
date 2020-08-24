@@ -46,6 +46,11 @@ namespace Amazon.Lambda
     public partial interface IAmazonLambda : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ILambdaPaginatorFactory Paginators { get; }
+
         
         #region  AddLayerVersionPermission
 

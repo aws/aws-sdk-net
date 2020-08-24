@@ -69,6 +69,22 @@ namespace Amazon.IoTAnalytics
     public partial class AmazonIoTAnalyticsClient : AmazonServiceClient, IAmazonIoTAnalytics
     {
         private static IServiceMetadata serviceMetadata = new AmazonIoTAnalyticsMetadata();
+        private IIoTAnalyticsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IIoTAnalyticsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new IoTAnalyticsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

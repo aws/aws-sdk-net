@@ -43,6 +43,22 @@ namespace Amazon.Rekognition
     public partial class AmazonRekognitionClient : AmazonServiceClient, IAmazonRekognition
     {
         private static IServiceMetadata serviceMetadata = new AmazonRekognitionMetadata();
+        private IRekognitionPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IRekognitionPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new RekognitionPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

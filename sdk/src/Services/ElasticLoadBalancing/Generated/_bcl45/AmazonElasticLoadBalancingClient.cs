@@ -75,6 +75,22 @@ namespace Amazon.ElasticLoadBalancing
     public partial class AmazonElasticLoadBalancingClient : AmazonServiceClient, IAmazonElasticLoadBalancing
     {
         private static IServiceMetadata serviceMetadata = new AmazonElasticLoadBalancingMetadata();
+        private IElasticLoadBalancingPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IElasticLoadBalancingPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ElasticLoadBalancingPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

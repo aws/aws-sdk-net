@@ -42,6 +42,7 @@ namespace Amazon.CloudHSMV2
     public partial class AmazonCloudHSMV2Client : AmazonServiceClient, IAmazonCloudHSMV2
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudHSMV2Metadata();
+
         #region Constructors
 
         /// <summary>

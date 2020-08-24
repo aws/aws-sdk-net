@@ -48,6 +48,7 @@ namespace Amazon.Signer
     public partial class AmazonSignerClient : AmazonServiceClient, IAmazonSigner
     {
         private static IServiceMetadata serviceMetadata = new AmazonSignerMetadata();
+
         #region Constructors
 
         /// <summary>

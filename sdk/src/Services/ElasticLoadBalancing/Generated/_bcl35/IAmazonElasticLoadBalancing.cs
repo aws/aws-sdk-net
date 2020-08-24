@@ -66,6 +66,15 @@ namespace Amazon.ElasticLoadBalancing
     public partial interface IAmazonElasticLoadBalancing : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IElasticLoadBalancingPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AddTags
 

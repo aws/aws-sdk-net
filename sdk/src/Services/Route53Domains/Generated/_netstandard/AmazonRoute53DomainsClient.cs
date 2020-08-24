@@ -203,6 +203,24 @@ namespace Amazon.Route53Domains
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IRoute53DomainsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IRoute53DomainsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new Route53DomainsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

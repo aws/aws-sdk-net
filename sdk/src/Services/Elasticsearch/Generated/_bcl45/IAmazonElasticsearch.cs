@@ -53,6 +53,11 @@ namespace Amazon.Elasticsearch
     public partial interface IAmazonElasticsearch : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IElasticsearchPaginatorFactory Paginators { get; }
+
         
         #region  AcceptInboundCrossClusterSearchConnection
 

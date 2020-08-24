@@ -133,6 +133,7 @@ namespace Amazon.CodeStar
     public partial class AmazonCodeStarClient : AmazonServiceClient, IAmazonCodeStar
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeStarMetadata();
+
         #region Constructors
 
         /// <summary>

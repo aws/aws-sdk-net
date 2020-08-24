@@ -57,6 +57,7 @@ namespace Amazon.CloudWatch
     public partial class AmazonCloudWatchClient : AmazonServiceClient, IAmazonCloudWatch
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudWatchMetadata();
+
         #region Constructors
 
         /// <summary>

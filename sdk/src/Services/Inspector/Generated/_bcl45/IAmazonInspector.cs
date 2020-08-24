@@ -41,6 +41,11 @@ namespace Amazon.Inspector
     public partial interface IAmazonInspector : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IInspectorPaginatorFactory Paginators { get; }
+
         
         #region  AddAttributesToFindings
 

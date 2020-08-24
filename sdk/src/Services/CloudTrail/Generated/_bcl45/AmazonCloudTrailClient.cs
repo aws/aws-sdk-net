@@ -70,6 +70,22 @@ namespace Amazon.CloudTrail
     public partial class AmazonCloudTrailClient : AmazonServiceClient, IAmazonCloudTrail
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudTrailMetadata();
+        private ICloudTrailPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICloudTrailPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CloudTrailPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

@@ -36,6 +36,7 @@ namespace Amazon.MTurk
     public partial interface IAmazonMTurk : IAmazonService, IDisposable
     {
 
+
         
         #region  AcceptQualificationRequest
 

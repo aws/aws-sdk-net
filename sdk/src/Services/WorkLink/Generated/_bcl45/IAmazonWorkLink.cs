@@ -42,6 +42,11 @@ namespace Amazon.WorkLink
     public partial interface IAmazonWorkLink : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IWorkLinkPaginatorFactory Paginators { get; }
+
         
         #region  AssociateDomain
 

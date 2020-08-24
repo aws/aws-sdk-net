@@ -50,6 +50,7 @@ namespace Amazon.RAM
     public partial class AmazonRAMClient : AmazonServiceClient, IAmazonRAM
     {
         private static IServiceMetadata serviceMetadata = new AmazonRAMMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -85,6 +85,22 @@ namespace Amazon.Glacier
     public partial class AmazonGlacierClient : AmazonServiceClient, IAmazonGlacier
     {
         private static IServiceMetadata serviceMetadata = new AmazonGlacierMetadata();
+        private IGlacierPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IGlacierPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new GlacierPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

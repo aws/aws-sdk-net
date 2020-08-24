@@ -90,6 +90,22 @@ namespace Amazon.Chime
     public partial class AmazonChimeClient : AmazonServiceClient, IAmazonChime
     {
         private static IServiceMetadata serviceMetadata = new AmazonChimeMetadata();
+        private IChimePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IChimePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ChimePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

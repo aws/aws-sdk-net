@@ -59,6 +59,9 @@ namespace Amazon.WAFRegional
     public partial interface IAmazonWAFRegional : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  AssociateWebACL
 

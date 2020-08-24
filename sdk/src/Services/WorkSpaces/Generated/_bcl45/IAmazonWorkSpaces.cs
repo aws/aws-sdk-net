@@ -40,6 +40,11 @@ namespace Amazon.WorkSpaces
     public partial interface IAmazonWorkSpaces : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IWorkSpacesPaginatorFactory Paginators { get; }
+
         
         #region  AssociateIpGroups
 

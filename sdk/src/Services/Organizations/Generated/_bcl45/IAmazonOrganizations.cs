@@ -36,6 +36,11 @@ namespace Amazon.Organizations
     public partial interface IAmazonOrganizations : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IOrganizationsPaginatorFactory Paginators { get; }
+
         
         #region  AcceptHandshake
 

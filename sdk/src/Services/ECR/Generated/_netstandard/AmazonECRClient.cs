@@ -211,6 +211,24 @@ namespace Amazon.ECR
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IECRPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IECRPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ECRPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

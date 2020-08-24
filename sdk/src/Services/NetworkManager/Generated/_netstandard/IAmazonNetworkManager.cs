@@ -37,6 +37,12 @@ namespace Amazon.NetworkManager
     /// </summary>
     public partial interface IAmazonNetworkManager : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        INetworkManagerPaginatorFactory Paginators { get; }
+#endif
                 
         #region  AssociateCustomerGateway
 

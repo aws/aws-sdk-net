@@ -91,6 +91,11 @@ namespace Amazon.AppConfig
     public partial interface IAmazonAppConfig : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAppConfigPaginatorFactory Paginators { get; }
+
         
         #region  CreateApplication
 

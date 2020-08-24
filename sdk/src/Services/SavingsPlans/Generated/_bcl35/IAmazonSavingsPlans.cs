@@ -38,6 +38,9 @@ namespace Amazon.SavingsPlans
     public partial interface IAmazonSavingsPlans : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  CreateSavingsPlan
 

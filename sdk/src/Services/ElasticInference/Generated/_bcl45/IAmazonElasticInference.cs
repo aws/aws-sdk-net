@@ -36,6 +36,11 @@ namespace Amazon.ElasticInference
     public partial interface IAmazonElasticInference : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IElasticInferencePaginatorFactory Paginators { get; }
+
         
         #region  DescribeAcceleratorOfferings
 

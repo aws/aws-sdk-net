@@ -47,6 +47,9 @@ namespace Amazon.CloudSearch
     public partial interface IAmazonCloudSearch : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  BuildSuggesters
 

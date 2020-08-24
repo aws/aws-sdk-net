@@ -212,6 +212,24 @@ namespace Amazon.MigrationHub
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IMigrationHubPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMigrationHubPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MigrationHubPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

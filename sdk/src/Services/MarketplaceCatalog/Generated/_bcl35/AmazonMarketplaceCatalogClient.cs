@@ -49,6 +49,7 @@ namespace Amazon.MarketplaceCatalog
     public partial class AmazonMarketplaceCatalogClient : AmazonServiceClient, IAmazonMarketplaceCatalog
     {
         private static IServiceMetadata serviceMetadata = new AmazonMarketplaceCatalogMetadata();
+
         #region Constructors
 
         /// <summary>

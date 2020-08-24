@@ -38,6 +38,12 @@ namespace Amazon.Comprehend
     /// </summary>
     public partial interface IAmazonComprehend : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IComprehendPaginatorFactory Paginators { get; }
+#endif
                 
         #region  BatchDetectDominantLanguage
 

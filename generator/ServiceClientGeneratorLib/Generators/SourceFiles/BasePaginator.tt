@@ -1,0 +1,179 @@
+﻿<#@ template language="C#" inherits="BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+#if !NETSTANDARD13
+<#
+	AddLicenseHeader();
+#>
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Collections;
+using System.Threading;
+using System.Threading.Tasks;
+using Amazon.Runtime;
+ 
+namespace <#=this.Config.Namespace#>.Model
+{
+    /// <summary>
+    /// Base class for <#=this.Operation.Name#> paginators.
+    /// </summary>
+    internal sealed partial class <#=this.Operation.Name#>Paginator : IPaginator<<#=this.Operation.Name#>Response>, I<#=this.Operation.Name#>Paginator
+    {
+        private readonly IAmazon<#=this.Config.ClassName#> _client;
+        private readonly <#=this.Operation.Name#>Request _request;
+        private int _isPaginatorInUse = 0;
+        
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        public IPaginatedEnumerable<<#=this.Operation.Name#>Response> Responses => new PaginatedResponse<<#=this.Operation.Name#>Response>(this);
+<#
+foreach(var resultKey in this.Operation.Paginators.ResultKeys.Where(r => r.ListItemType != null))
+{
+#>
+
+        /// <summary>
+        /// Enumerable containing all of the <#=resultKey.Member.PropertyName#>
+        /// </summary>
+        public IPaginatedEnumerable<<#=resultKey.ListItemType#>> <#=resultKey.Member.PropertyName#> => 
+            new PaginatedResultKeyResponse<<#=this.Operation.Name#>Response, <#=resultKey.ListItemType#>>(this, (i) => i.<#=resultKey.PropertyName#>);
+<#
+}
+#>
+
+        internal <#=this.Operation.Name#>Paginator(IAmazon<#=this.Config.ClassName#> client, <#=this.Operation.Name#>Request request)
+        {
+            this._client = client;
+            this._request = request;
+        }
+#if BCL
+        IEnumerable<<#=this.Operation.Name#>Response> IPaginator<<#=this.Operation.Name#>Response>.Paginate()
+        {
+            if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
+            {
+                throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
+            }
+<#
+foreach(var inputToken in this.Operation.Paginators.InputTokens)
+{
+#>
+            var <#=inputToken.Member.ArgumentName#> = _request.<#=inputToken.PropertyName#>;
+<#
+}
+#>
+            <#=this.Operation.Name#>Response response;
+            do
+            {
+<#
+foreach(var inputToken in this.Operation.Paginators.InputTokens)
+{
+#>
+                _request.<#=inputToken.PropertyName#> = <#=inputToken.Member.ArgumentName#>;
+<#
+}
+#>
+                response = _client.<#=this.Operation.Name#>(_request);
+<#
+for(var i = 0; i < this.Operation.Paginators.InputTokens.Count; i++)
+{
+#>
+                <#=this.Operation.Paginators.InputTokens[i].Member.ArgumentName#> = response.<#=this.Operation.Paginators.OutputTokens[i].PropertyName#>;
+<#
+}
+#>
+                yield return response;
+            }
+<#
+if (this.Operation.Paginators.MoreResults != null)
+{
+#>
+            while (response.<#=this.Operation.Paginators.MoreResults.PropertyName#>);
+<#
+} 
+else if (this.Operation.Paginators.InputTokens[0].IsListOrDict)
+{
+#>
+            while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#>.Count > 0);
+<#
+}
+else
+{
+#>
+            while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#> != null);
+<#
+}
+#>
+        }
+#endif
+#if AWS_ASYNC_ENUMERABLES_API
+        async IAsyncEnumerable<<#=this.Operation.Name#>Response> IPaginator<<#=this.Operation.Name#>Response>.PaginateAsync(CancellationToken cancellationToken = default)
+        {
+            if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
+            {
+                throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
+            }
+<#
+foreach(var inputToken in this.Operation.Paginators.InputTokens)
+{
+#>
+            var <#=inputToken.Member.ArgumentName#> = _request.<#=inputToken.PropertyName#>;
+<#
+}
+#>
+            <#=this.Operation.Name#>Response response;
+            do
+            {
+<#
+foreach(var inputToken in this.Operation.Paginators.InputTokens)
+{
+#>
+                _request.<#=inputToken.PropertyName#> = <#=inputToken.Member.ArgumentName#>;
+<#
+}
+#>
+                response = await _client.<#=this.Operation.Name#>Async(_request, cancellationToken).ConfigureAwait(false);
+<#
+for(var i = 0; i < this.Operation.Paginators.InputTokens.Count; i++)
+{
+#>
+                <#=this.Operation.Paginators.InputTokens[i].Member.ArgumentName#> = response.<#=this.Operation.Paginators.OutputTokens[i].PropertyName#>;
+<#
+}
+#>
+                cancellationToken.ThrowIfCancellationRequested();
+                yield return response;
+            }
+<#
+if (this.Operation.Paginators.MoreResults != null)
+{
+#>
+            while (response.<#=this.Operation.Paginators.MoreResults.PropertyName#>);
+<#
+} 
+else if (this.Operation.Paginators.InputTokens[0].IsListOrDict)
+{
+#>
+            while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#>.Count > 0);
+<#
+}
+else
+{
+#>
+            while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#> != null);
+<#
+}
+#>
+        }
+#endif
+    }
+}
+#endif
+ 
+<#+
+    // The operation the marshaller will be used on
+	public Operation Operation { get; set; }	
+#>

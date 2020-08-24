@@ -142,6 +142,7 @@ namespace Amazon.SecurityToken
     public partial class AmazonSecurityTokenServiceClient : AmazonServiceClient, IAmazonSecurityTokenService
     {
         private static IServiceMetadata serviceMetadata = new AmazonSecurityTokenServiceMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -76,6 +76,7 @@ namespace Amazon.WorkDocs
     public partial class AmazonWorkDocsClient : AmazonServiceClient, IAmazonWorkDocs
     {
         private static IServiceMetadata serviceMetadata = new AmazonWorkDocsMetadata();
+
         #region Constructors
 
         /// <summary>

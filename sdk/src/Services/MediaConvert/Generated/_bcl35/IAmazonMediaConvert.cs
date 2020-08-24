@@ -34,6 +34,15 @@ namespace Amazon.MediaConvert
     public partial interface IAmazonMediaConvert : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMediaConvertPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AssociateCertificate
 

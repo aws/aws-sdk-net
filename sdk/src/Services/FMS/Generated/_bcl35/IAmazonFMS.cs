@@ -41,6 +41,15 @@ namespace Amazon.FMS
     public partial interface IAmazonFMS : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IFMSPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AssociateAdminAccount
 

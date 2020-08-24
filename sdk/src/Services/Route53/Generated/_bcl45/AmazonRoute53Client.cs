@@ -43,6 +43,22 @@ namespace Amazon.Route53
     public partial class AmazonRoute53Client : AmazonServiceClient, IAmazonRoute53
     {
         private static IServiceMetadata serviceMetadata = new AmazonRoute53Metadata();
+        private IRoute53PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IRoute53PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new Route53PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

@@ -221,6 +221,24 @@ namespace Amazon.DirectoryService
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IDirectoryServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IDirectoryServicePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new DirectoryServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

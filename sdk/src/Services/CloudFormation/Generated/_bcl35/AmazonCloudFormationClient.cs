@@ -66,6 +66,7 @@ namespace Amazon.CloudFormation
     public partial class AmazonCloudFormationClient : AmazonServiceClient, IAmazonCloudFormation
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudFormationMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -52,6 +52,15 @@ namespace Amazon.Batch
     public partial interface IAmazonBatch : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IBatchPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CancelJob
 

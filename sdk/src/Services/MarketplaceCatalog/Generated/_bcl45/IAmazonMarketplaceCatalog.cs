@@ -45,6 +45,11 @@ namespace Amazon.MarketplaceCatalog
     public partial interface IAmazonMarketplaceCatalog : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMarketplaceCatalogPaginatorFactory Paginators { get; }
+
         
         #region  CancelChangeSet
 

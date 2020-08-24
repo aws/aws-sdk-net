@@ -44,6 +44,15 @@ namespace Amazon.DataSync
     public partial interface IAmazonDataSync : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IDataSyncPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CancelTaskExecution
 

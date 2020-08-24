@@ -209,6 +209,24 @@ namespace Amazon.QuickSight
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IQuickSightPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IQuickSightPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new QuickSightPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

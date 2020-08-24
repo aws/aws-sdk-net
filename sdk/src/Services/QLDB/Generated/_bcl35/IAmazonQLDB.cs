@@ -34,6 +34,15 @@ namespace Amazon.QLDB
     public partial interface IAmazonQLDB : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IQLDBPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CancelJournalKinesisStream
 

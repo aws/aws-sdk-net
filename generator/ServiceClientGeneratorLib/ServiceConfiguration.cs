@@ -13,7 +13,8 @@ namespace ServiceClientGenerator
     {
         private const string amazonDotPrefix = "Amazon.";
 
-        string _modelPath;
+        private string _modelPath;
+        private string _paginatorsPath;
 
         /// <summary>
         /// The name of the model, taken from the "model" entry in the service models 
@@ -34,6 +35,18 @@ namespace ServiceClientGenerator
             }
         }
 
+        /// <summary>
+        /// Path to the paginators for a service
+        /// </summary>
+        public string PaginatorsPath
+        {
+            get { return this._paginatorsPath; }
+            set
+            {
+                this._paginatorsPath = value;
+            }
+        }
+
         ServiceModel _serviceModel;
 
         /// <summary>
@@ -45,7 +58,8 @@ namespace ServiceClientGenerator
             {
                 if (this._serviceModel == null)
                 {
-                    this._serviceModel = new ServiceModel(this.ModelPath, this.CustomizationsPath);
+                    this._serviceModel = this._paginatorsPath != null ? new ServiceModel(this.ModelPath, this.CustomizationsPath, this._paginatorsPath) : 
+                        new ServiceModel(this.ModelPath, this.CustomizationsPath);
                 }
 
                 return this._serviceModel;

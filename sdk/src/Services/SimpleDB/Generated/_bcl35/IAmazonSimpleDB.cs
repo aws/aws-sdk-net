@@ -51,6 +51,9 @@ namespace Amazon.SimpleDB
     public partial interface IAmazonSimpleDB : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  BatchDeleteAttributes
 

@@ -52,6 +52,22 @@ namespace Amazon.CloudDirectory
     public partial class AmazonCloudDirectoryClient : AmazonServiceClient, IAmazonCloudDirectory
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudDirectoryMetadata();
+        private ICloudDirectoryPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICloudDirectoryPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CloudDirectoryPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

@@ -40,6 +40,15 @@ namespace Amazon.APIGateway
     public partial interface IAmazonAPIGateway : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAPIGatewayPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CreateApiKey
 

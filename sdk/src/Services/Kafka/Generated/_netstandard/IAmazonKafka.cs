@@ -35,6 +35,12 @@ namespace Amazon.Kafka
     /// </summary>
     public partial interface IAmazonKafka : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IKafkaPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateCluster
 

@@ -225,6 +225,24 @@ namespace Amazon.GuardDuty
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IGuardDutyPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IGuardDutyPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new GuardDutyPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

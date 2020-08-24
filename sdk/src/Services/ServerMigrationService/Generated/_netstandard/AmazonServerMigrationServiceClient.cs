@@ -219,6 +219,24 @@ namespace Amazon.ServerMigrationService
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IServerMigrationServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IServerMigrationServicePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ServerMigrationServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

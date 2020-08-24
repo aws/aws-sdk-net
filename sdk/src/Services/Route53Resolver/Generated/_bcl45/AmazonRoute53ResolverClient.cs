@@ -105,6 +105,22 @@ namespace Amazon.Route53Resolver
     public partial class AmazonRoute53ResolverClient : AmazonServiceClient, IAmazonRoute53Resolver
     {
         private static IServiceMetadata serviceMetadata = new AmazonRoute53ResolverMetadata();
+        private IRoute53ResolverPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IRoute53ResolverPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new Route53ResolverPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

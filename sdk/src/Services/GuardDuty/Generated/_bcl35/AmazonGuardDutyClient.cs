@@ -62,6 +62,7 @@ namespace Amazon.GuardDuty
     public partial class AmazonGuardDutyClient : AmazonServiceClient, IAmazonGuardDuty
     {
         private static IServiceMetadata serviceMetadata = new AmazonGuardDutyMetadata();
+
         #region Constructors
 
         /// <summary>

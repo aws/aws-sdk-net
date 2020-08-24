@@ -42,6 +42,7 @@ namespace Amazon.KinesisVideoSignalingChannels
     public partial class AmazonKinesisVideoSignalingChannelsClient : AmazonServiceClient, IAmazonKinesisVideoSignalingChannels
     {
         private static IServiceMetadata serviceMetadata = new AmazonKinesisVideoSignalingChannelsMetadata();
+
         #region Constructors
 
         /// <summary>

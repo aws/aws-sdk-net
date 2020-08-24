@@ -469,6 +469,24 @@ namespace Amazon.IVS
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IIVSPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IIVSPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new IVSPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

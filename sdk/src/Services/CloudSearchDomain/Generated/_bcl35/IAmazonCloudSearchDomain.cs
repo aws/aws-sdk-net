@@ -49,6 +49,9 @@ namespace Amazon.CloudSearchDomain
     public partial interface IAmazonCloudSearchDomain : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  Search
 

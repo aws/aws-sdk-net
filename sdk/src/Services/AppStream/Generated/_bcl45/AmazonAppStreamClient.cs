@@ -73,6 +73,22 @@ namespace Amazon.AppStream
     public partial class AmazonAppStreamClient : AmazonServiceClient, IAmazonAppStream
     {
         private static IServiceMetadata serviceMetadata = new AmazonAppStreamMetadata();
+        private IAppStreamPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAppStreamPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AppStreamPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

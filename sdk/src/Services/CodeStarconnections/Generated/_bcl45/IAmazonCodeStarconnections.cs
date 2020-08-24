@@ -131,6 +131,11 @@ namespace Amazon.CodeStarconnections
     public partial interface IAmazonCodeStarconnections : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICodeStarconnectionsPaginatorFactory Paginators { get; }
+
         
         #region  CreateConnection
 

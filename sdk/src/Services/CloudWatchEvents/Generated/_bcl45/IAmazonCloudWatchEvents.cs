@@ -60,6 +60,7 @@ namespace Amazon.CloudWatchEvents
     public partial interface IAmazonCloudWatchEvents : IAmazonService, IDisposable
     {
 
+
         
         #region  ActivateEventSource
 

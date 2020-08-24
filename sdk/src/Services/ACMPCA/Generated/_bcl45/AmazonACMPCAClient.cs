@@ -62,6 +62,22 @@ namespace Amazon.ACMPCA
     public partial class AmazonACMPCAClient : AmazonServiceClient, IAmazonACMPCA
     {
         private static IServiceMetadata serviceMetadata = new AmazonACMPCAMetadata();
+        private IACMPCAPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IACMPCAPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ACMPCAPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

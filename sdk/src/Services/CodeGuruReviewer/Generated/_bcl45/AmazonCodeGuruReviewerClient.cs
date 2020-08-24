@@ -55,6 +55,22 @@ namespace Amazon.CodeGuruReviewer
     public partial class AmazonCodeGuruReviewerClient : AmazonServiceClient, IAmazonCodeGuruReviewer
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeGuruReviewerMetadata();
+        private ICodeGuruReviewerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICodeGuruReviewerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CodeGuruReviewerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

@@ -105,6 +105,12 @@ namespace Amazon.Cloud9
     /// </summary>
     public partial interface IAmazonCloud9 : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICloud9PaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateEnvironmentEC2
 

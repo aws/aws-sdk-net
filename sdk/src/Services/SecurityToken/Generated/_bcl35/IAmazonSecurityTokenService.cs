@@ -136,6 +136,9 @@ namespace Amazon.SecurityToken
     public partial interface IAmazonSecurityTokenService : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  AssumeRole
 

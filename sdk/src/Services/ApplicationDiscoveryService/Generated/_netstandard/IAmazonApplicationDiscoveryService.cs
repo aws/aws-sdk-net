@@ -154,6 +154,12 @@ namespace Amazon.ApplicationDiscoveryService
     /// </summary>
     public partial interface IAmazonApplicationDiscoveryService : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IApplicationDiscoveryServicePaginatorFactory Paginators { get; }
+#endif
                 
         #region  AssociateConfigurationItemsToApplication
 

@@ -67,6 +67,7 @@ namespace Amazon.CloudTrail
     public partial class AmazonCloudTrailClient : AmazonServiceClient, IAmazonCloudTrail
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudTrailMetadata();
+
         #region Constructors
 
         /// <summary>

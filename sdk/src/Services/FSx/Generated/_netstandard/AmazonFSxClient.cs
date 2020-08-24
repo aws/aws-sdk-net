@@ -204,6 +204,24 @@ namespace Amazon.FSx
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IFSxPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IFSxPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new FSxPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

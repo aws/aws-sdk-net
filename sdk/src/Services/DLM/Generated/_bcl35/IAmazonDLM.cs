@@ -45,6 +45,9 @@ namespace Amazon.DLM
     public partial interface IAmazonDLM : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  CreateLifecyclePolicy
 

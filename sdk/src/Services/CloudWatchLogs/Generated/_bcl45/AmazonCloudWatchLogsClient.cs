@@ -78,6 +78,22 @@ namespace Amazon.CloudWatchLogs
     public partial class AmazonCloudWatchLogsClient : AmazonServiceClient, IAmazonCloudWatchLogs
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudWatchLogsMetadata();
+        private ICloudWatchLogsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICloudWatchLogsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CloudWatchLogsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

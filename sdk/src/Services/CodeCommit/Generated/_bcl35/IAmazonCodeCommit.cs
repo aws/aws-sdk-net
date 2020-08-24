@@ -462,6 +462,15 @@ namespace Amazon.CodeCommit
     public partial interface IAmazonCodeCommit : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICodeCommitPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AssociateApprovalRuleTemplateWithRepository
 

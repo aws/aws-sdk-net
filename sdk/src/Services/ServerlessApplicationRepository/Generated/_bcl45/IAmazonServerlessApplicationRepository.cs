@@ -77,6 +77,11 @@ namespace Amazon.ServerlessApplicationRepository
     public partial interface IAmazonServerlessApplicationRepository : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IServerlessApplicationRepositoryPaginatorFactory Paginators { get; }
+
         
         #region  CreateApplication
 

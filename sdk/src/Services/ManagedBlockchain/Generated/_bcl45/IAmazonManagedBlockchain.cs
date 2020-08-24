@@ -40,6 +40,11 @@ namespace Amazon.ManagedBlockchain
     public partial interface IAmazonManagedBlockchain : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IManagedBlockchainPaginatorFactory Paginators { get; }
+
         
         #region  CreateMember
 

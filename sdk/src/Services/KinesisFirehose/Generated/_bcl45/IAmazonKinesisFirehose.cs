@@ -41,6 +41,7 @@ namespace Amazon.KinesisFirehose
     public partial interface IAmazonKinesisFirehose : IAmazonService, IDisposable
     {
 
+
         
         #region  CreateDeliveryStream
 

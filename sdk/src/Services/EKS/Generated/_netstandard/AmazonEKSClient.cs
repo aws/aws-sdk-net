@@ -216,6 +216,24 @@ namespace Amazon.EKS
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IEKSPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IEKSPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new EKSPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

@@ -49,6 +49,12 @@ namespace Amazon.DatabaseMigrationService
     /// </summary>
     public partial interface IAmazonDatabaseMigrationService : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IDatabaseMigrationServicePaginatorFactory Paginators { get; }
+#endif
                 
         #region  AddTagsToResource
 

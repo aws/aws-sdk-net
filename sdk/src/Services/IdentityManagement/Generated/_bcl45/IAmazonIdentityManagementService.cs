@@ -44,6 +44,11 @@ namespace Amazon.IdentityManagement
     public partial interface IAmazonIdentityManagementService : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IIdentityManagementPaginatorFactory Paginators { get; }
+
         
         #region  AddClientIDToOpenIDConnectProvider
 

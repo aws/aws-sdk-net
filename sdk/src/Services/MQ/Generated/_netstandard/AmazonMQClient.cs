@@ -206,6 +206,24 @@ namespace Amazon.MQ
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IMQPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMQPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MQPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

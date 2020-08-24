@@ -203,6 +203,24 @@ namespace Amazon.ElasticInference
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IElasticInferencePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IElasticInferencePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ElasticInferencePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

@@ -41,6 +41,7 @@ namespace Amazon.KinesisVideoArchivedMedia
     {
         private static IServiceMetadata serviceMetadata = new AmazonKinesisVideoArchivedMediaMetadata();
 
+
         #region Overrides
 
         

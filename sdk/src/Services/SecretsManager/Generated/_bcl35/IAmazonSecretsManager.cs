@@ -119,6 +119,15 @@ namespace Amazon.SecretsManager
     public partial interface IAmazonSecretsManager : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISecretsManagerPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CancelRotateSecret
 

@@ -50,6 +50,22 @@ namespace Amazon.FMS
     public partial class AmazonFMSClient : AmazonServiceClient, IAmazonFMS
     {
         private static IServiceMetadata serviceMetadata = new AmazonFMSMetadata();
+        private IFMSPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IFMSPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new FMSPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

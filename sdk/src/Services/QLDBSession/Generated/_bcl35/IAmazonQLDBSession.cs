@@ -56,6 +56,9 @@ namespace Amazon.QLDBSession
     public partial interface IAmazonQLDBSession : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  SendCommand
 

@@ -57,6 +57,11 @@ namespace Amazon.Neptune
     public partial interface IAmazonNeptune : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        INeptunePaginatorFactory Paginators { get; }
+
         
         #region  AddRoleToDBCluster
 

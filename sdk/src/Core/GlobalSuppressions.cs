@@ -109,6 +109,10 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix", Scope = "type", Target = "Amazon.Runtime.Internal.AutoConstructedList`1")]
 [module: SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix", Scope = "type", Target = "Amazon.Runtime.Internal.ParametersDictionaryFacade")]
 [module: SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix", Scope = "type", Target = "Amazon.Runtime.Internal.ParameterCollection")]
+[assembly: SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "Not a collection", Scope = "type", Target = "~T:Amazon.Runtime.PaginatedResultKeyResponse`2")]
+[assembly: SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "Not a collection", Scope = "type", Target = "~T:Amazon.Runtime.IPaginatedEnumerable`1")]
+[assembly: SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "Not a collection", Scope = "type", Target = "~T:Amazon.Runtime.PaginatedResponse`1")]
+
 
 // Interface methods not callable by child types
 [module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.Runtime.AmazonWebServiceRequest.#Amazon.Runtime.Internal.IRequestEvents.FireBeforeRequestEvent(System.Object,Amazon.Runtime.RequestEventArgs)")]
@@ -512,6 +516,12 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1055:Uri return values should not be strings", Scope = "member", Target = "~M:Amazon.Util.AWSSDKUtils.UrlEncode(System.Int32,System.String,System.Boolean)~System.String")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1060:Move pinvokes to native methods class", Scope = "type", Target = "~T:Amazon.Runtime.Internal.Settings.UserCrypto")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1065:Do not raise exceptions in unexpected locations", Scope = "member", Target = "~P:ThirdParty.Ionic.Zlib.CrcCalculatorStream.Length")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1065:Do not raise exceptions in unexpected locations", Justification = "<Pending>", Scope = "member", Target = "~P:Amazon.Runtime.AssumeRoleAWSCredentialsOptions.MfaTokenCode")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1065:Do not raise exceptions in unexpected locations", Justification = "<Pending>", Scope = "member", Target = "~P:Amazon.Runtime.Internal.Util.DecryptStream.Position")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1065:Do not raise exceptions in unexpected locations", Justification = "<Pending>", Scope = "member", Target = "~P:Amazon.Runtime.Internal.Util.ReadOnlyWrapperStream.Length")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1065:Do not raise exceptions in unexpected locations", Justification = "<Pending>", Scope = "member", Target = "~P:Amazon.Runtime.Internal.Util.ReadOnlyWrapperStream.Position")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1065:Do not raise exceptions in unexpected locations", Justification = "<Pending>", Scope = "member", Target = "~P:Amazon.Runtime.Internal.Util.HashStream.Position")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1065:Do not raise exceptions in unexpected locations", Justification = "<Pending>", Scope = "member", Target = "~P:Amazon.Runtime.Internal.Util.CachingWrapperStream.Position")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1715:Identifiers should have correct prefix", Scope = "type", Target = "~T:ThirdParty.BouncyCastle.Utilities.IO.Pem.PemObjectGenerator")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1715:Identifiers should have correct prefix", Scope = "type", Target = "~T:ThirdParty.BouncyCastle.Utilities.IO.Pem.PemObjectParser")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1720:Identifier contains type name", Scope = "member", Target = "~F:ThirdParty.BouncyCastle.Asn1.Asn1InputStream.Integer")]

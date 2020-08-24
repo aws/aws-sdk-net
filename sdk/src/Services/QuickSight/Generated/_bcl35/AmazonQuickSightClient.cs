@@ -46,6 +46,7 @@ namespace Amazon.QuickSight
     public partial class AmazonQuickSightClient : AmazonServiceClient, IAmazonQuickSight
     {
         private static IServiceMetadata serviceMetadata = new AmazonQuickSightMetadata();
+
         #region Constructors
 
         /// <summary>

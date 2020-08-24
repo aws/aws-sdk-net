@@ -104,6 +104,22 @@ namespace Amazon.Detective
     public partial class AmazonDetectiveClient : AmazonServiceClient, IAmazonDetective
     {
         private static IServiceMetadata serviceMetadata = new AmazonDetectiveMetadata();
+        private IDetectivePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IDetectivePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new DetectivePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

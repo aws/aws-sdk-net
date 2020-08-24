@@ -122,6 +122,22 @@ namespace Amazon.StorageGateway
     public partial class AmazonStorageGatewayClient : AmazonServiceClient, IAmazonStorageGateway
     {
         private static IServiceMetadata serviceMetadata = new AmazonStorageGatewayMetadata();
+        private IStorageGatewayPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IStorageGatewayPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new StorageGatewayPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

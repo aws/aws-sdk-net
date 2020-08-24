@@ -35,6 +35,12 @@ namespace Amazon.TranscribeService
     /// </summary>
     public partial interface IAmazonTranscribeService : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ITranscribeServicePaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateLanguageModel
 

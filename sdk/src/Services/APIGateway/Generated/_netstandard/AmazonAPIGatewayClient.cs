@@ -209,6 +209,24 @@ namespace Amazon.APIGateway
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IAPIGatewayPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAPIGatewayPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new APIGatewayPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

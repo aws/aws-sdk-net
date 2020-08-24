@@ -271,6 +271,24 @@ namespace Amazon.SQS
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ISQSPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISQSPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SQSPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

@@ -47,6 +47,7 @@ namespace Amazon.ServiceCatalog
     public partial class AmazonServiceCatalogClient : AmazonServiceClient, IAmazonServiceCatalog
     {
         private static IServiceMetadata serviceMetadata = new AmazonServiceCatalogMetadata();
+
         #region Constructors
 
         /// <summary>

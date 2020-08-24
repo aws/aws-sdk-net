@@ -49,6 +49,7 @@ namespace Amazon.CertificateManager
     public partial class AmazonCertificateManagerClient : AmazonServiceClient, IAmazonCertificateManager
     {
         private static IServiceMetadata serviceMetadata = new AmazonCertificateManagerMetadata();
+
         #region Constructors
 
         /// <summary>

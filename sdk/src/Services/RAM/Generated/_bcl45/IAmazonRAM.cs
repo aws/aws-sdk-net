@@ -46,6 +46,11 @@ namespace Amazon.RAM
     public partial interface IAmazonRAM : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IRAMPaginatorFactory Paginators { get; }
+
         
         #region  AcceptResourceShareInvitation
 

@@ -203,6 +203,24 @@ namespace Amazon.S3Control
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IS3ControlPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IS3ControlPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new S3ControlPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

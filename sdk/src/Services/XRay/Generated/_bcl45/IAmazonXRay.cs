@@ -37,6 +37,11 @@ namespace Amazon.XRay
     public partial interface IAmazonXRay : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IXRayPaginatorFactory Paginators { get; }
+
         
         #region  BatchGetTraces
 

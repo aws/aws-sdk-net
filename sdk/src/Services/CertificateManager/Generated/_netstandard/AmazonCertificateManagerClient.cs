@@ -212,6 +212,24 @@ namespace Amazon.CertificateManager
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ICertificateManagerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICertificateManagerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CertificateManagerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

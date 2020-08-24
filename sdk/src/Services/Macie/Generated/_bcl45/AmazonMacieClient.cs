@@ -59,6 +59,22 @@ namespace Amazon.Macie
     public partial class AmazonMacieClient : AmazonServiceClient, IAmazonMacie
     {
         private static IServiceMetadata serviceMetadata = new AmazonMacieMetadata();
+        private IMaciePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMaciePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MaciePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

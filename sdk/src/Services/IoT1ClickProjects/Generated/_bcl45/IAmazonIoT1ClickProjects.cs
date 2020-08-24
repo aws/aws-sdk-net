@@ -36,6 +36,7 @@ namespace Amazon.IoT1ClickProjects
     public partial interface IAmazonIoT1ClickProjects : IAmazonService, IDisposable
     {
 
+
         
         #region  AssociateDeviceWithPlacement
 

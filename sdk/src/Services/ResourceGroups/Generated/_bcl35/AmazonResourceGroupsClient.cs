@@ -89,6 +89,7 @@ namespace Amazon.ResourceGroups
     public partial class AmazonResourceGroupsClient : AmazonServiceClient, IAmazonResourceGroups
     {
         private static IServiceMetadata serviceMetadata = new AmazonResourceGroupsMetadata();
+
         #region Constructors
 
         /// <summary>

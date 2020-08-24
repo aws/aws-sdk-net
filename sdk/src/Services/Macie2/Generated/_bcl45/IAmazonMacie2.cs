@@ -42,6 +42,11 @@ namespace Amazon.Macie2
     public partial interface IAmazonMacie2 : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMacie2PaginatorFactory Paginators { get; }
+
         
         #region  AcceptInvitation
 

@@ -70,6 +70,7 @@ namespace Amazon.EC2
     public partial class AmazonEC2Client : AmazonServiceClient, IAmazonEC2
     {
         private static IServiceMetadata serviceMetadata = new AmazonEC2Metadata();
+
         #region Constructors
 
         /// <summary>

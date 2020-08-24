@@ -35,6 +35,9 @@ namespace Amazon.WorkMailMessageFlow
     public partial interface IAmazonWorkMailMessageFlow : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  GetRawMessageContent
 

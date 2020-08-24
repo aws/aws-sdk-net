@@ -154,6 +154,22 @@ namespace Amazon.KeyManagementService
     public partial class AmazonKeyManagementServiceClient : AmazonServiceClient, IAmazonKeyManagementService
     {
         private static IServiceMetadata serviceMetadata = new AmazonKeyManagementServiceMetadata();
+        private IKeyManagementServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IKeyManagementServicePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new KeyManagementServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

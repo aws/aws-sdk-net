@@ -107,6 +107,11 @@ namespace Amazon.RDS
     public partial interface IAmazonRDS : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IRDSPaginatorFactory Paginators { get; }
+
         
         #region  AddRoleToDBCluster
 

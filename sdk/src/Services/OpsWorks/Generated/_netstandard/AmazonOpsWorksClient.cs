@@ -347,6 +347,24 @@ namespace Amazon.OpsWorks
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IOpsWorksPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IOpsWorksPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new OpsWorksPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

@@ -36,6 +36,11 @@ namespace Amazon.DocDB
     public partial interface IAmazonDocDB : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IDocDBPaginatorFactory Paginators { get; }
+
         
         #region  AddTagsToResource
 

@@ -84,6 +84,7 @@ namespace Amazon.AugmentedAIRuntime
     public partial class AmazonAugmentedAIRuntimeClient : AmazonServiceClient, IAmazonAugmentedAIRuntime
     {
         private static IServiceMetadata serviceMetadata = new AmazonAugmentedAIRuntimeMetadata();
+
         #region Constructors
 
         /// <summary>

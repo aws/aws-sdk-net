@@ -180,6 +180,11 @@ namespace Amazon.OpsWorks
     public partial interface IAmazonOpsWorks : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IOpsWorksPaginatorFactory Paginators { get; }
+
         
         #region  AssignInstance
 

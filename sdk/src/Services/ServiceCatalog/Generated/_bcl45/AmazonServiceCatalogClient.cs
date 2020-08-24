@@ -50,6 +50,22 @@ namespace Amazon.ServiceCatalog
     public partial class AmazonServiceCatalogClient : AmazonServiceClient, IAmazonServiceCatalog
     {
         private static IServiceMetadata serviceMetadata = new AmazonServiceCatalogMetadata();
+        private IServiceCatalogPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IServiceCatalogPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ServiceCatalogPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

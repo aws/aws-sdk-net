@@ -56,6 +56,7 @@ namespace Amazon.CloudSearchDomain
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudSearchDomainMetadata();
 
+
         #region Overrides
 
         

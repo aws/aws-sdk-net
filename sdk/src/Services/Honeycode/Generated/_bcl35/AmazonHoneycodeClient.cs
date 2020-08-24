@@ -43,6 +43,7 @@ namespace Amazon.Honeycode
     public partial class AmazonHoneycodeClient : AmazonServiceClient, IAmazonHoneycode
     {
         private static IServiceMetadata serviceMetadata = new AmazonHoneycodeMetadata();
+
         #region Constructors
 
         /// <summary>

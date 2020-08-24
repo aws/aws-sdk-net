@@ -203,6 +203,24 @@ namespace Amazon.ForecastService
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IForecastServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IForecastServicePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ForecastServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

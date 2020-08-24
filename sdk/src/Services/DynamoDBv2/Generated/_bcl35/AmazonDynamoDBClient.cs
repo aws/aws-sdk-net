@@ -62,6 +62,7 @@ namespace Amazon.DynamoDBv2
     public partial class AmazonDynamoDBClient : AmazonServiceClient, IAmazonDynamoDB
     {
         private static IServiceMetadata serviceMetadata = new AmazonDynamoDBMetadata();
+
         #region Constructors
 
         /// <summary>

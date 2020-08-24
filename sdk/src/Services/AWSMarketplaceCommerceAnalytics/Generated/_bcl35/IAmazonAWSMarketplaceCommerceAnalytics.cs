@@ -34,6 +34,9 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
     public partial interface IAmazonAWSMarketplaceCommerceAnalytics : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  GenerateDataSet
 

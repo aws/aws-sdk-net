@@ -78,6 +78,11 @@ namespace Amazon.Glacier
     public partial interface IAmazonGlacier : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IGlacierPaginatorFactory Paginators { get; }
+
         
         #region  AbortMultipartUpload
 

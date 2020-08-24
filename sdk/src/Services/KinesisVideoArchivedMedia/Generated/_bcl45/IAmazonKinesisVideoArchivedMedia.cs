@@ -36,6 +36,11 @@ namespace Amazon.KinesisVideoArchivedMedia
     public partial interface IAmazonKinesisVideoArchivedMedia : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IKinesisVideoArchivedMediaPaginatorFactory Paginators { get; }
+
         
         #region  GetClip
 

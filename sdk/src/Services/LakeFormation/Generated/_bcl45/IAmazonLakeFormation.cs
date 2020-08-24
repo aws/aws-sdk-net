@@ -39,6 +39,11 @@ namespace Amazon.LakeFormation
     public partial interface IAmazonLakeFormation : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ILakeFormationPaginatorFactory Paginators { get; }
+
         
         #region  BatchGrantPermissions
 

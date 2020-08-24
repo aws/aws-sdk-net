@@ -77,6 +77,15 @@ namespace Amazon.SecurityHub
     public partial interface IAmazonSecurityHub : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISecurityHubPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AcceptInvitation
 

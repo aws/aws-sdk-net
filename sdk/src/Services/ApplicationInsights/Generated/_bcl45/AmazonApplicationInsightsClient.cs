@@ -60,6 +60,22 @@ namespace Amazon.ApplicationInsights
     public partial class AmazonApplicationInsightsClient : AmazonServiceClient, IAmazonApplicationInsights
     {
         private static IServiceMetadata serviceMetadata = new AmazonApplicationInsightsMetadata();
+        private IApplicationInsightsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IApplicationInsightsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ApplicationInsightsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

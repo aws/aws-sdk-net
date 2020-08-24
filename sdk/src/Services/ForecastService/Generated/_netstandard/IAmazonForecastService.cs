@@ -35,6 +35,12 @@ namespace Amazon.ForecastService
     /// </summary>
     public partial interface IAmazonForecastService : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IForecastServicePaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateDataset
 

@@ -36,6 +36,7 @@ namespace Amazon.ForecastQueryService
     public partial interface IAmazonForecastQueryService : IAmazonService, IDisposable
     {
 
+
         
         #region  QueryForecast
 

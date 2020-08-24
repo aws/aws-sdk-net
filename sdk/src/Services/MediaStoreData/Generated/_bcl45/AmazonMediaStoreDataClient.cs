@@ -45,6 +45,22 @@ namespace Amazon.MediaStoreData
     public partial class AmazonMediaStoreDataClient : AmazonServiceClient, IAmazonMediaStoreData
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaStoreDataMetadata();
+        private IMediaStoreDataPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMediaStoreDataPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MediaStoreDataPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
 
         #region Overrides
 

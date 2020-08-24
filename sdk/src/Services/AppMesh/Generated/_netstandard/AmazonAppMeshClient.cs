@@ -224,6 +224,24 @@ namespace Amazon.AppMesh
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IAppMeshPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAppMeshPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AppMeshPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

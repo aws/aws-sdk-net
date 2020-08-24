@@ -42,6 +42,7 @@ namespace Amazon.IoT1ClickDevicesService
     public partial class AmazonIoT1ClickDevicesServiceClient : AmazonServiceClient, IAmazonIoT1ClickDevicesService
     {
         private static IServiceMetadata serviceMetadata = new AmazonIoT1ClickDevicesServiceMetadata();
+
         #region Constructors
 
         /// <summary>

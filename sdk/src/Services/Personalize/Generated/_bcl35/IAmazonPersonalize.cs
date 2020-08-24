@@ -35,6 +35,15 @@ namespace Amazon.Personalize
     public partial interface IAmazonPersonalize : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IPersonalizePaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CreateBatchInferenceJob
 

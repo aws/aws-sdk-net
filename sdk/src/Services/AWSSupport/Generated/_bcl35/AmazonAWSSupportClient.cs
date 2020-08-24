@@ -129,6 +129,7 @@ namespace Amazon.AWSSupport
     public partial class AmazonAWSSupportClient : AmazonServiceClient, IAmazonAWSSupport
     {
         private static IServiceMetadata serviceMetadata = new AmazonAWSSupportMetadata();
+
         #region Constructors
 
         /// <summary>

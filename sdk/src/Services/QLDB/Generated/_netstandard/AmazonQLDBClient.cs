@@ -203,6 +203,24 @@ namespace Amazon.QLDB
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IQLDBPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IQLDBPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new QLDBPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

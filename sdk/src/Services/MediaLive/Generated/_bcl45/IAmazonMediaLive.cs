@@ -36,6 +36,11 @@ namespace Amazon.MediaLive
     public partial interface IAmazonMediaLive : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMediaLivePaginatorFactory Paginators { get; }
+
         
         #region  BatchUpdateSchedule
 

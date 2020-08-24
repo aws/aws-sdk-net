@@ -40,6 +40,15 @@ namespace Amazon.QuickSight
     public partial interface IAmazonQuickSight : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IQuickSightPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CancelIngestion
 

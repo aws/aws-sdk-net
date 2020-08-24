@@ -114,6 +114,12 @@ namespace Amazon.StorageGateway
     /// </summary>
     public partial interface IAmazonStorageGateway : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IStorageGatewayPaginatorFactory Paginators { get; }
+#endif
                 
         #region  ActivateGateway
 

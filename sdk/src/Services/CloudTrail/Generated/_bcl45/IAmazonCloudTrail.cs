@@ -63,6 +63,11 @@ namespace Amazon.CloudTrail
     public partial interface IAmazonCloudTrail : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICloudTrailPaginatorFactory Paginators { get; }
+
         
         #region  AddTags
 

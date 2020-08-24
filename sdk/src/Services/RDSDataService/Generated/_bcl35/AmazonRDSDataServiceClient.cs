@@ -55,6 +55,7 @@ namespace Amazon.RDSDataService
     public partial class AmazonRDSDataServiceClient : AmazonServiceClient, IAmazonRDSDataService
     {
         private static IServiceMetadata serviceMetadata = new AmazonRDSDataServiceMetadata();
+
         #region Constructors
 
         /// <summary>

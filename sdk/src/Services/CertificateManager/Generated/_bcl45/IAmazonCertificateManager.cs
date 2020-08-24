@@ -45,6 +45,11 @@ namespace Amazon.CertificateManager
     public partial interface IAmazonCertificateManager : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICertificateManagerPaginatorFactory Paginators { get; }
+
         
         #region  AddTagsToCertificate
 

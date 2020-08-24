@@ -57,6 +57,7 @@ namespace Amazon.Elasticsearch
     public partial class AmazonElasticsearchClient : AmazonServiceClient, IAmazonElasticsearch
     {
         private static IServiceMetadata serviceMetadata = new AmazonElasticsearchMetadata();
+
         #region Constructors
 
         /// <summary>

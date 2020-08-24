@@ -146,6 +146,22 @@ namespace Amazon.CodeDeploy
     public partial class AmazonCodeDeployClient : AmazonServiceClient, IAmazonCodeDeploy
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeDeployMetadata();
+        private ICodeDeployPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICodeDeployPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CodeDeployPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

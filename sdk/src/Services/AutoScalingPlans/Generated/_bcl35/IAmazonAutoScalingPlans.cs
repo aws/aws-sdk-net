@@ -50,6 +50,9 @@ namespace Amazon.AutoScalingPlans
     public partial interface IAmazonAutoScalingPlans : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  CreateScalingPlan
 

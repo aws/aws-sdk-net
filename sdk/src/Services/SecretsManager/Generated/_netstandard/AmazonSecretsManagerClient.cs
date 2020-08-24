@@ -288,6 +288,24 @@ namespace Amazon.SecretsManager
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ISecretsManagerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISecretsManagerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SecretsManagerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

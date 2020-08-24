@@ -40,6 +40,15 @@ namespace Amazon.CloudFront
     public partial interface IAmazonCloudFront : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICloudFrontPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CreateCachePolicy
 

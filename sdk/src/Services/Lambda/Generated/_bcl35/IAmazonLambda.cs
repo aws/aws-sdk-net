@@ -44,6 +44,15 @@ namespace Amazon.Lambda
     public partial interface IAmazonLambda : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ILambdaPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AddLayerVersionPermission
 

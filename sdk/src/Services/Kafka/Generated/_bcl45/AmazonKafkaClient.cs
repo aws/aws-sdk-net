@@ -43,6 +43,22 @@ namespace Amazon.Kafka
     public partial class AmazonKafkaClient : AmazonServiceClient, IAmazonKafka
     {
         private static IServiceMetadata serviceMetadata = new AmazonKafkaMetadata();
+        private IKafkaPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IKafkaPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new KafkaPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

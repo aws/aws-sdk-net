@@ -22,6 +22,19 @@ namespace <#=this.Config.Namespace#>
 	public partial interface IAmazon<#=this.Config.ClassName#> : IAmazonService, IDisposable
 	{
 
+<#
+// Creates paginators for service if available
+if (this.Config.ServiceModel.HasPaginators)
+{
+#>
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        I<#=this.Config.ServiceNameRoot#>PaginatorFactory Paginators { get; }
+<#
+    }
+#>
+
 		<#
     // Generates definitions for each operation in the service model
 		foreach(var operation in this.Config.ServiceModel.Operations)

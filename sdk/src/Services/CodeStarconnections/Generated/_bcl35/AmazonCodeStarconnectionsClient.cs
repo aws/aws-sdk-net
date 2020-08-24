@@ -135,6 +135,7 @@ namespace Amazon.CodeStarconnections
     public partial class AmazonCodeStarconnectionsClient : AmazonServiceClient, IAmazonCodeStarconnections
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeStarconnectionsMetadata();
+
         #region Constructors
 
         /// <summary>

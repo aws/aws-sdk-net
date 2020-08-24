@@ -40,6 +40,7 @@ namespace Amazon.ElasticInference
     public partial class AmazonElasticInferenceClient : AmazonServiceClient, IAmazonElasticInference
     {
         private static IServiceMetadata serviceMetadata = new AmazonElasticInferenceMetadata();
+
         #region Constructors
 
         /// <summary>

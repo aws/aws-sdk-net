@@ -54,6 +54,22 @@ namespace Amazon.CognitoIdentityProvider
     public partial class AmazonCognitoIdentityProviderClient : AmazonServiceClient, IAmazonCognitoIdentityProvider
     {
         private static IServiceMetadata serviceMetadata = new AmazonCognitoIdentityProviderMetadata();
+        private ICognitoIdentityProviderPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICognitoIdentityProviderPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CognitoIdentityProviderPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

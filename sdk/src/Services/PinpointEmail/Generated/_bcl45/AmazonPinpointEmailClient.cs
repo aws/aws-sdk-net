@@ -86,6 +86,22 @@ namespace Amazon.PinpointEmail
     public partial class AmazonPinpointEmailClient : AmazonServiceClient, IAmazonPinpointEmail
     {
         private static IServiceMetadata serviceMetadata = new AmazonPinpointEmailMetadata();
+        private IPinpointEmailPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IPinpointEmailPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new PinpointEmailPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

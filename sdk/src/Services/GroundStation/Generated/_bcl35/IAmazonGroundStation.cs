@@ -37,6 +37,15 @@ namespace Amazon.GroundStation
     public partial interface IAmazonGroundStation : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IGroundStationPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CancelContact
 

@@ -314,6 +314,24 @@ namespace Amazon.KeyManagementService
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IKeyManagementServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IKeyManagementServicePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new KeyManagementServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

@@ -61,6 +61,7 @@ namespace Amazon.AppMesh
     public partial class AmazonAppMeshClient : AmazonServiceClient, IAmazonAppMesh
     {
         private static IServiceMetadata serviceMetadata = new AmazonAppMeshMetadata();
+
         #region Constructors
 
         /// <summary>

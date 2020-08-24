@@ -41,6 +41,7 @@ namespace Amazon.Personalize
     public partial class AmazonPersonalizeClient : AmazonServiceClient, IAmazonPersonalize
     {
         private static IServiceMetadata serviceMetadata = new AmazonPersonalizeMetadata();
+
         #region Constructors
 
         /// <summary>

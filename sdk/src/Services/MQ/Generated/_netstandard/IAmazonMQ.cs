@@ -38,6 +38,12 @@ namespace Amazon.MQ
     /// </summary>
     public partial interface IAmazonMQ : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMQPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateBroker
 

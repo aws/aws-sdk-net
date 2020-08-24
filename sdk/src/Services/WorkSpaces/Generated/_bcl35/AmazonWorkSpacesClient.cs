@@ -44,6 +44,7 @@ namespace Amazon.WorkSpaces
     public partial class AmazonWorkSpacesClient : AmazonServiceClient, IAmazonWorkSpaces
     {
         private static IServiceMetadata serviceMetadata = new AmazonWorkSpacesMetadata();
+
         #region Constructors
 
         /// <summary>

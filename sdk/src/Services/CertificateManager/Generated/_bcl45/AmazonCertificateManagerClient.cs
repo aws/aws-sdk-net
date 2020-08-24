@@ -52,6 +52,22 @@ namespace Amazon.CertificateManager
     public partial class AmazonCertificateManagerClient : AmazonServiceClient, IAmazonCertificateManager
     {
         private static IServiceMetadata serviceMetadata = new AmazonCertificateManagerMetadata();
+        private ICertificateManagerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICertificateManagerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CertificateManagerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

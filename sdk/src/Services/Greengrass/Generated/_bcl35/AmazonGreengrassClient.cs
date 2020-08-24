@@ -45,6 +45,7 @@ namespace Amazon.Greengrass
     public partial class AmazonGreengrassClient : AmazonServiceClient, IAmazonGreengrass
     {
         private static IServiceMetadata serviceMetadata = new AmazonGreengrassMetadata();
+
         #region Constructors
 
         /// <summary>

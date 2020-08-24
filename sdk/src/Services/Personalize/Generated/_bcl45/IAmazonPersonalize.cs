@@ -37,6 +37,11 @@ namespace Amazon.Personalize
     public partial interface IAmazonPersonalize : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IPersonalizePaginatorFactory Paginators { get; }
+
         
         #region  CreateBatchInferenceJob
 

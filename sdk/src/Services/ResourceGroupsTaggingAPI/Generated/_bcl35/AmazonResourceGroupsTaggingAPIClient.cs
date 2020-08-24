@@ -615,6 +615,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
     public partial class AmazonResourceGroupsTaggingAPIClient : AmazonServiceClient, IAmazonResourceGroupsTaggingAPI
     {
         private static IServiceMetadata serviceMetadata = new AmazonResourceGroupsTaggingAPIMetadata();
+
         #region Constructors
 
         /// <summary>

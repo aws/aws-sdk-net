@@ -42,6 +42,11 @@ namespace Amazon.ServiceDiscovery
     public partial interface IAmazonServiceDiscovery : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IServiceDiscoveryPaginatorFactory Paginators { get; }
+
         
         #region  CreateHttpNamespace
 

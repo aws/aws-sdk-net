@@ -43,6 +43,22 @@ namespace Amazon.Schemas
     public partial class AmazonSchemasClient : AmazonServiceClient, IAmazonSchemas
     {
         private static IServiceMetadata serviceMetadata = new AmazonSchemasMetadata();
+        private ISchemasPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISchemasPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SchemasPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

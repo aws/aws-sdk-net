@@ -49,6 +49,9 @@ namespace Amazon.KinesisAnalytics
     public partial interface IAmazonKinesisAnalytics : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  AddApplicationCloudWatchLoggingOption
 

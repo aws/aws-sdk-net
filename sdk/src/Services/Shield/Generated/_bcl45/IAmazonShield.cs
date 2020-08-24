@@ -44,6 +44,11 @@ namespace Amazon.Shield
     public partial interface IAmazonShield : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IShieldPaginatorFactory Paginators { get; }
+
         
         #region  AssociateDRTLogBucket
 

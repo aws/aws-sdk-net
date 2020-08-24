@@ -52,6 +52,22 @@ namespace Amazon.MarketplaceCatalog
     public partial class AmazonMarketplaceCatalogClient : AmazonServiceClient, IAmazonMarketplaceCatalog
     {
         private static IServiceMetadata serviceMetadata = new AmazonMarketplaceCatalogMetadata();
+        private IMarketplaceCatalogPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMarketplaceCatalogPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MarketplaceCatalogPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

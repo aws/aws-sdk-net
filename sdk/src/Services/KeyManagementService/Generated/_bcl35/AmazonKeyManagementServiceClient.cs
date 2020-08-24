@@ -151,6 +151,7 @@ namespace Amazon.KeyManagementService
     public partial class AmazonKeyManagementServiceClient : AmazonServiceClient, IAmazonKeyManagementService
     {
         private static IServiceMetadata serviceMetadata = new AmazonKeyManagementServiceMetadata();
+
         #region Constructors
 
         /// <summary>

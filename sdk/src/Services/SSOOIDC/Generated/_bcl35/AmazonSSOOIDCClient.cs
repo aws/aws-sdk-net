@@ -64,6 +64,7 @@ namespace Amazon.SSOOIDC
     public partial class AmazonSSOOIDCClient : AmazonServiceClient, IAmazonSSOOIDC
     {
         private static IServiceMetadata serviceMetadata = new AmazonSSOOIDCMetadata();
+
         #region Constructors
 
         /// <summary>

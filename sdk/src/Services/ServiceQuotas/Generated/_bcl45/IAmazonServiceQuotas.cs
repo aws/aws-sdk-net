@@ -51,6 +51,11 @@ namespace Amazon.ServiceQuotas
     public partial interface IAmazonServiceQuotas : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IServiceQuotasPaginatorFactory Paginators { get; }
+
         
         #region  AssociateServiceQuotaTemplate
 

@@ -41,6 +41,11 @@ namespace Amazon.IoTSiteWise
     public partial interface IAmazonIoTSiteWise : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IIoTSiteWisePaginatorFactory Paginators { get; }
+
         
         #region  AssociateAssets
 

@@ -36,6 +36,11 @@ namespace Amazon.Kendra
     public partial interface IAmazonKendra : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IKendraPaginatorFactory Paginators { get; }
+
         
         #region  BatchDeleteDocument
 

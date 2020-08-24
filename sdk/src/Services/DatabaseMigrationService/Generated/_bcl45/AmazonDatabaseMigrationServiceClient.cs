@@ -57,6 +57,22 @@ namespace Amazon.DatabaseMigrationService
     public partial class AmazonDatabaseMigrationServiceClient : AmazonServiceClient, IAmazonDatabaseMigrationService
     {
         private static IServiceMetadata serviceMetadata = new AmazonDatabaseMigrationServiceMetadata();
+        private IDatabaseMigrationServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IDatabaseMigrationServicePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new DatabaseMigrationServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

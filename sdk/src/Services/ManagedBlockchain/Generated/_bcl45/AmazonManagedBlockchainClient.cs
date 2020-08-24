@@ -47,6 +47,22 @@ namespace Amazon.ManagedBlockchain
     public partial class AmazonManagedBlockchainClient : AmazonServiceClient, IAmazonManagedBlockchain
     {
         private static IServiceMetadata serviceMetadata = new AmazonManagedBlockchainMetadata();
+        private IManagedBlockchainPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IManagedBlockchainPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ManagedBlockchainPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

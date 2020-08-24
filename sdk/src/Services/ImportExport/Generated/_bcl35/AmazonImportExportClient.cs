@@ -45,6 +45,7 @@ namespace Amazon.ImportExport
     public partial class AmazonImportExportClient : AmazonServiceClient, IAmazonImportExport
     {
         private static IServiceMetadata serviceMetadata = new AmazonImportExportMetadata();
+
         #region Constructors
 
         /// <summary>

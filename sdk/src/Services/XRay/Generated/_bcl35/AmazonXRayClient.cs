@@ -41,6 +41,7 @@ namespace Amazon.XRay
     public partial class AmazonXRayClient : AmazonServiceClient, IAmazonXRay
     {
         private static IServiceMetadata serviceMetadata = new AmazonXRayMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -40,6 +40,7 @@ namespace Amazon.Kendra
     public partial class AmazonKendraClient : AmazonServiceClient, IAmazonKendra
     {
         private static IServiceMetadata serviceMetadata = new AmazonKendraMetadata();
+
         #region Constructors
 
         /// <summary>

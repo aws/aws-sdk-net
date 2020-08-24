@@ -34,6 +34,15 @@ namespace Amazon.TranscribeService
     public partial interface IAmazonTranscribeService : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ITranscribeServicePaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CreateLanguageModel
 

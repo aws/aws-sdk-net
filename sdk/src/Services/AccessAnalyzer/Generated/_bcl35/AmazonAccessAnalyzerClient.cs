@@ -52,6 +52,7 @@ namespace Amazon.AccessAnalyzer
     public partial class AmazonAccessAnalyzerClient : AmazonServiceClient, IAmazonAccessAnalyzer
     {
         private static IServiceMetadata serviceMetadata = new AmazonAccessAnalyzerMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -48,6 +48,7 @@ namespace Amazon.AlexaForBusiness
     public partial class AmazonAlexaForBusinessClient : AmazonServiceClient, IAmazonAlexaForBusiness
     {
         private static IServiceMetadata serviceMetadata = new AmazonAlexaForBusinessMetadata();
+
         #region Constructors
 
         /// <summary>

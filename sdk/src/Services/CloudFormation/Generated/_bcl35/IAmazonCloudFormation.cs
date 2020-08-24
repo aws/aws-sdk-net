@@ -60,6 +60,15 @@ namespace Amazon.CloudFormation
     public partial interface IAmazonCloudFormation : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICloudFormationPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CancelUpdateStack
 

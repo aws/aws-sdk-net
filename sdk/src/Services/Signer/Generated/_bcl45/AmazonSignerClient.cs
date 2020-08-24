@@ -51,6 +51,22 @@ namespace Amazon.Signer
     public partial class AmazonSignerClient : AmazonServiceClient, IAmazonSigner
     {
         private static IServiceMetadata serviceMetadata = new AmazonSignerMetadata();
+        private ISignerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISignerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SignerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

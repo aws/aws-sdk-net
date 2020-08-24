@@ -40,6 +40,7 @@ namespace Amazon.S3
     public partial class AmazonS3Client : AmazonServiceClient, IAmazonS3
     {
         private static IServiceMetadata serviceMetadata = new AmazonS3Metadata();
+
         #region Constructors
 
         /// <summary>

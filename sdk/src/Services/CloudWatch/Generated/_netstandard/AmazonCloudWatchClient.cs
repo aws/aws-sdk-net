@@ -220,6 +220,24 @@ namespace Amazon.CloudWatch
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ICloudWatchPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICloudWatchPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CloudWatchPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

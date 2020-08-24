@@ -113,6 +113,22 @@ namespace Amazon.Cloud9
     public partial class AmazonCloud9Client : AmazonServiceClient, IAmazonCloud9
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloud9Metadata();
+        private ICloud9PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICloud9PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new Cloud9PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

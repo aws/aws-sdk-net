@@ -43,6 +43,22 @@ namespace Amazon.S3
     public partial class AmazonS3Client : AmazonServiceClient, IAmazonS3
     {
         private static IServiceMetadata serviceMetadata = new AmazonS3Metadata();
+        private IS3PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IS3PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new S3PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

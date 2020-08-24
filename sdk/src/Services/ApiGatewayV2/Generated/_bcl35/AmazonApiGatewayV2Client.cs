@@ -40,6 +40,7 @@ namespace Amazon.ApiGatewayV2
     public partial class AmazonApiGatewayV2Client : AmazonServiceClient, IAmazonApiGatewayV2
     {
         private static IServiceMetadata serviceMetadata = new AmazonApiGatewayV2Metadata();
+
         #region Constructors
 
         /// <summary>

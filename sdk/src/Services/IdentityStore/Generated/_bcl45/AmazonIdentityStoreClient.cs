@@ -43,6 +43,22 @@ namespace Amazon.IdentityStore
     public partial class AmazonIdentityStoreClient : AmazonServiceClient, IAmazonIdentityStore
     {
         private static IServiceMetadata serviceMetadata = new AmazonIdentityStoreMetadata();
+        private IIdentityStorePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IIdentityStorePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new IdentityStorePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

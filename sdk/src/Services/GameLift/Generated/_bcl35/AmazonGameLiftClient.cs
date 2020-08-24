@@ -114,6 +114,7 @@ namespace Amazon.GameLift
     public partial class AmazonGameLiftClient : AmazonServiceClient, IAmazonGameLift
     {
         private static IServiceMetadata serviceMetadata = new AmazonGameLiftMetadata();
+
         #region Constructors
 
         /// <summary>

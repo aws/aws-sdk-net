@@ -57,6 +57,7 @@ namespace Amazon.ApplicationInsights
     public partial class AmazonApplicationInsightsClient : AmazonServiceClient, IAmazonApplicationInsights
     {
         private static IServiceMetadata serviceMetadata = new AmazonApplicationInsightsMetadata();
+
         #region Constructors
 
         /// <summary>

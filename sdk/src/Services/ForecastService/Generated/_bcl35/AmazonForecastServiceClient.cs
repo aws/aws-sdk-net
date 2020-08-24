@@ -40,6 +40,7 @@ namespace Amazon.ForecastService
     public partial class AmazonForecastServiceClient : AmazonServiceClient, IAmazonForecastService
     {
         private static IServiceMetadata serviceMetadata = new AmazonForecastServiceMetadata();
+
         #region Constructors
 
         /// <summary>

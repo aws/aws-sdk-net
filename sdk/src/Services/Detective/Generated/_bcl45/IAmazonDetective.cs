@@ -97,6 +97,11 @@ namespace Amazon.Detective
     public partial interface IAmazonDetective : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IDetectivePaginatorFactory Paginators { get; }
+
         
         #region  AcceptInvitation
 

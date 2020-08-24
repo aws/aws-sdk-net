@@ -88,6 +88,11 @@ namespace Amazon.AWSHealth
     public partial interface IAmazonAWSHealth : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAWSHealthPaginatorFactory Paginators { get; }
+
         
         #region  DescribeAffectedAccountsForOrganization
 

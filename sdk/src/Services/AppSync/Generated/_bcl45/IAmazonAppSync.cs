@@ -37,6 +37,7 @@ namespace Amazon.AppSync
     public partial interface IAmazonAppSync : IAmazonService, IDisposable
     {
 
+
         
         #region  CreateApiCache
 

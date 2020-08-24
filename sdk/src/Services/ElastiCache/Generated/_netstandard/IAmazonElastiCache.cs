@@ -52,6 +52,12 @@ namespace Amazon.ElastiCache
     /// </summary>
     public partial interface IAmazonElastiCache : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IElastiCachePaginatorFactory Paginators { get; }
+#endif
                 
         #region  AddTagsToResource
 

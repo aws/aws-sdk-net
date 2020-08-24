@@ -98,6 +98,11 @@ namespace Amazon.Route53Resolver
     public partial interface IAmazonRoute53Resolver : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IRoute53ResolverPaginatorFactory Paginators { get; }
+
         
         #region  AssociateResolverEndpointIpAddress
 

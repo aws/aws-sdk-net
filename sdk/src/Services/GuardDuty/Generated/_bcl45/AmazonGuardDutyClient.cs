@@ -65,6 +65,22 @@ namespace Amazon.GuardDuty
     public partial class AmazonGuardDutyClient : AmazonServiceClient, IAmazonGuardDuty
     {
         private static IServiceMetadata serviceMetadata = new AmazonGuardDutyMetadata();
+        private IGuardDutyPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IGuardDutyPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new GuardDutyPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

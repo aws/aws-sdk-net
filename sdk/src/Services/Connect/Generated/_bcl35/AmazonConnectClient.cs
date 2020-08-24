@@ -56,6 +56,7 @@ namespace Amazon.Connect
     public partial class AmazonConnectClient : AmazonServiceClient, IAmazonConnect
     {
         private static IServiceMetadata serviceMetadata = new AmazonConnectMetadata();
+
         #region Constructors
 
         /// <summary>

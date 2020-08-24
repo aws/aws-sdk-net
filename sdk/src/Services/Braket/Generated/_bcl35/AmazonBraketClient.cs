@@ -41,6 +41,7 @@ namespace Amazon.Braket
     public partial class AmazonBraketClient : AmazonServiceClient, IAmazonBraket
     {
         private static IServiceMetadata serviceMetadata = new AmazonBraketMetadata();
+
         #region Constructors
 
         /// <summary>

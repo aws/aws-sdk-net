@@ -46,6 +46,15 @@ namespace Amazon.IoTThingsGraph
     public partial interface IAmazonIoTThingsGraph : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IIoTThingsGraphPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AssociateEntityToThing
 

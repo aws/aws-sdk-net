@@ -421,6 +421,24 @@ namespace Amazon.CodePipeline
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ICodePipelinePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICodePipelinePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CodePipelinePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

@@ -46,6 +46,22 @@ namespace Amazon.MQ
     public partial class AmazonMQClient : AmazonServiceClient, IAmazonMQ
     {
         private static IServiceMetadata serviceMetadata = new AmazonMQMetadata();
+        private IMQPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMQPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MQPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

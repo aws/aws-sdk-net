@@ -58,6 +58,7 @@ namespace Amazon.DirectoryService
     public partial class AmazonDirectoryServiceClient : AmazonServiceClient, IAmazonDirectoryService
     {
         private static IServiceMetadata serviceMetadata = new AmazonDirectoryServiceMetadata();
+
         #region Constructors
 
         /// <summary>

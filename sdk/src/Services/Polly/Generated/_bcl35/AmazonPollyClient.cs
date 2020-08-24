@@ -47,6 +47,7 @@ namespace Amazon.Polly
     public partial class AmazonPollyClient : AmazonServiceClient, IAmazonPolly
     {
         private static IServiceMetadata serviceMetadata = new AmazonPollyMetadata();
+
         #region Constructors
 
         /// <summary>

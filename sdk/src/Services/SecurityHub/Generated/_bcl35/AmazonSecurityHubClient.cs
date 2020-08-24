@@ -83,6 +83,7 @@ namespace Amazon.SecurityHub
     public partial class AmazonSecurityHubClient : AmazonServiceClient, IAmazonSecurityHub
     {
         private static IServiceMetadata serviceMetadata = new AmazonSecurityHubMetadata();
+
         #region Constructors
 
         /// <summary>

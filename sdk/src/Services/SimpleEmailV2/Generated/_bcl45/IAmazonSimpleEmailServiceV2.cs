@@ -71,6 +71,11 @@ namespace Amazon.SimpleEmailV2
     public partial interface IAmazonSimpleEmailServiceV2 : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISimpleEmailV2PaginatorFactory Paginators { get; }
+
         
         #region  CreateConfigurationSet
 

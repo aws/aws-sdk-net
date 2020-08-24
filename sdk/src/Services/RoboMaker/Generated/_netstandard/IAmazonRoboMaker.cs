@@ -35,6 +35,12 @@ namespace Amazon.RoboMaker
     /// </summary>
     public partial interface IAmazonRoboMaker : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IRoboMakerPaginatorFactory Paginators { get; }
+#endif
                 
         #region  BatchDeleteWorlds
 

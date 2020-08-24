@@ -217,6 +217,24 @@ namespace Amazon.DatabaseMigrationService
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IDatabaseMigrationServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IDatabaseMigrationServicePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new DatabaseMigrationServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

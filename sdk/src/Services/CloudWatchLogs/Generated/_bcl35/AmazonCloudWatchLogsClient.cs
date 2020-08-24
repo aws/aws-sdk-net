@@ -75,6 +75,7 @@ namespace Amazon.CloudWatchLogs
     public partial class AmazonCloudWatchLogsClient : AmazonServiceClient, IAmazonCloudWatchLogs
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudWatchLogsMetadata();
+
         #region Constructors
 
         /// <summary>

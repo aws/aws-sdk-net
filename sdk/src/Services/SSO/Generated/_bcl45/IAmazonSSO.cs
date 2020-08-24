@@ -58,6 +58,11 @@ namespace Amazon.SSO
     public partial interface IAmazonSSO : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISSOPaginatorFactory Paginators { get; }
+
         
         #region  GetRoleCredentials
 

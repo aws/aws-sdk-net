@@ -53,6 +53,22 @@ namespace Amazon.RAM
     public partial class AmazonRAMClient : AmazonServiceClient, IAmazonRAM
     {
         private static IServiceMetadata serviceMetadata = new AmazonRAMMetadata();
+        private IRAMPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IRAMPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new RAMPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

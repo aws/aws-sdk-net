@@ -57,6 +57,12 @@ namespace Amazon.SSO
     /// </summary>
     public partial interface IAmazonSSO : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISSOPaginatorFactory Paginators { get; }
+#endif
                 
         #region  GetRoleCredentials
 

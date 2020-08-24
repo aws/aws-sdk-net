@@ -54,6 +54,7 @@ namespace Amazon.CloudHSM
     public partial class AmazonCloudHSMClient : AmazonServiceClient, IAmazonCloudHSM
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudHSMMetadata();
+
         #region Constructors
 
         /// <summary>

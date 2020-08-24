@@ -274,6 +274,24 @@ namespace Amazon.RDS
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IRDSPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IRDSPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new RDSPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

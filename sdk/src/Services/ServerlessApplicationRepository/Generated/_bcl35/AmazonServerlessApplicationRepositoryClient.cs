@@ -81,6 +81,7 @@ namespace Amazon.ServerlessApplicationRepository
     public partial class AmazonServerlessApplicationRepositoryClient : AmazonServiceClient, IAmazonServerlessApplicationRepository
     {
         private static IServiceMetadata serviceMetadata = new AmazonServerlessApplicationRepositoryMetadata();
+
         #region Constructors
 
         /// <summary>

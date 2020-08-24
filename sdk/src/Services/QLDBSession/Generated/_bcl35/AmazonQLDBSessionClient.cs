@@ -62,6 +62,7 @@ namespace Amazon.QLDBSession
     public partial class AmazonQLDBSessionClient : AmazonServiceClient, IAmazonQLDBSession
     {
         private static IServiceMetadata serviceMetadata = new AmazonQLDBSessionMetadata();
+
         #region Constructors
 
         /// <summary>

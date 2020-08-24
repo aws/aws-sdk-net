@@ -47,6 +47,12 @@ namespace Amazon.CodeGuruReviewer
     /// </summary>
     public partial interface IAmazonCodeGuruReviewer : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICodeGuruReviewerPaginatorFactory Paginators { get; }
+#endif
                 
         #region  AssociateRepository
 

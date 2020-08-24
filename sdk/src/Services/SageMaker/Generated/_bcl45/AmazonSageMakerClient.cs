@@ -59,6 +59,22 @@ namespace Amazon.SageMaker
     public partial class AmazonSageMakerClient : AmazonServiceClient, IAmazonSageMaker
     {
         private static IServiceMetadata serviceMetadata = new AmazonSageMakerMetadata();
+        private ISageMakerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISageMakerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SageMakerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

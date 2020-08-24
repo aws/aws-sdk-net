@@ -203,6 +203,24 @@ namespace Amazon.Kafka
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IKafkaPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IKafkaPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new KafkaPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

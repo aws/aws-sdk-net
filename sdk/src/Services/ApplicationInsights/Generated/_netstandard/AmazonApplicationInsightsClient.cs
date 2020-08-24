@@ -220,6 +220,24 @@ namespace Amazon.ApplicationInsights
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IApplicationInsightsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IApplicationInsightsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ApplicationInsightsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

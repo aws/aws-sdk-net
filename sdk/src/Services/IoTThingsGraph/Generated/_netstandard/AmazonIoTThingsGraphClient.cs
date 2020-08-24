@@ -215,6 +215,24 @@ namespace Amazon.IoTThingsGraph
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IIoTThingsGraphPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IIoTThingsGraphPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new IoTThingsGraphPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

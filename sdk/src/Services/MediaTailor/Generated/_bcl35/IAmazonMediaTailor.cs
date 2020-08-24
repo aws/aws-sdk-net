@@ -42,6 +42,9 @@ namespace Amazon.MediaTailor
     public partial interface IAmazonMediaTailor : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  DeletePlaybackConfiguration
 

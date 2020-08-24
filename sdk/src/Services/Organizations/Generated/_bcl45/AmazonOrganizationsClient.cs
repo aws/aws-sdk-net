@@ -43,6 +43,22 @@ namespace Amazon.Organizations
     public partial class AmazonOrganizationsClient : AmazonServiceClient, IAmazonOrganizations
     {
         private static IServiceMetadata serviceMetadata = new AmazonOrganizationsMetadata();
+        private IOrganizationsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IOrganizationsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new OrganizationsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

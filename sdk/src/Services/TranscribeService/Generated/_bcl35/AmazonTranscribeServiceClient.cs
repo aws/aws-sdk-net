@@ -40,6 +40,7 @@ namespace Amazon.TranscribeService
     public partial class AmazonTranscribeServiceClient : AmazonServiceClient, IAmazonTranscribeService
     {
         private static IServiceMetadata serviceMetadata = new AmazonTranscribeServiceMetadata();
+
         #region Constructors
 
         /// <summary>

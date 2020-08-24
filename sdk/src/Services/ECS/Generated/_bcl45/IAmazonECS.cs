@@ -59,6 +59,11 @@ namespace Amazon.ECS
     public partial interface IAmazonECS : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IECSPaginatorFactory Paginators { get; }
+
         
         #region  CreateCapacityProvider
 

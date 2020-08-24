@@ -51,6 +51,22 @@ namespace Amazon.ECR
     public partial class AmazonECRClient : AmazonServiceClient, IAmazonECR
     {
         private static IServiceMetadata serviceMetadata = new AmazonECRMetadata();
+        private IECRPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IECRPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ECRPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

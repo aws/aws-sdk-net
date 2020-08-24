@@ -255,6 +255,24 @@ namespace Amazon.AWSHealth
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IAWSHealthPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAWSHealthPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AWSHealthPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

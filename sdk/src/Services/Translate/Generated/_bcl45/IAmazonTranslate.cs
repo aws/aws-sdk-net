@@ -36,6 +36,11 @@ namespace Amazon.Translate
     public partial interface IAmazonTranslate : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ITranslatePaginatorFactory Paginators { get; }
+
         
         #region  DeleteTerminology
 

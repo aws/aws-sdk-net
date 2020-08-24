@@ -56,6 +56,7 @@ namespace Amazon.AutoScalingPlans
     public partial class AmazonAutoScalingPlansClient : AmazonServiceClient, IAmazonAutoScalingPlans
     {
         private static IServiceMetadata serviceMetadata = new AmazonAutoScalingPlansMetadata();
+
         #region Constructors
 
         /// <summary>

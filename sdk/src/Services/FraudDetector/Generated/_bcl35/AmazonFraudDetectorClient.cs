@@ -43,6 +43,7 @@ namespace Amazon.FraudDetector
     public partial class AmazonFraudDetectorClient : AmazonServiceClient, IAmazonFraudDetector
     {
         private static IServiceMetadata serviceMetadata = new AmazonFraudDetectorMetadata();
+
         #region Constructors
 
         /// <summary>

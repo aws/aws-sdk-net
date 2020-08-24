@@ -48,6 +48,22 @@ namespace Amazon.LexModelBuildingService
     public partial class AmazonLexModelBuildingServiceClient : AmazonServiceClient, IAmazonLexModelBuildingService
     {
         private static IServiceMetadata serviceMetadata = new AmazonLexModelBuildingServiceMetadata();
+        private ILexModelBuildingServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ILexModelBuildingServicePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new LexModelBuildingServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

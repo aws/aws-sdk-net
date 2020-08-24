@@ -44,6 +44,11 @@ namespace Amazon.Transfer
     public partial interface IAmazonTransfer : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ITransferPaginatorFactory Paginators { get; }
+
         
         #region  CreateServer
 

@@ -71,6 +71,22 @@ namespace Amazon.SimpleSystemsManagement
     public partial class AmazonSimpleSystemsManagementClient : AmazonServiceClient, IAmazonSimpleSystemsManagement
     {
         private static IServiceMetadata serviceMetadata = new AmazonSimpleSystemsManagementMetadata();
+        private ISimpleSystemsManagementPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISimpleSystemsManagementPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SimpleSystemsManagementPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

@@ -45,6 +45,7 @@ namespace Amazon.LexModelBuildingService
     public partial class AmazonLexModelBuildingServiceClient : AmazonServiceClient, IAmazonLexModelBuildingService
     {
         private static IServiceMetadata serviceMetadata = new AmazonLexModelBuildingServiceMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -126,6 +126,7 @@ namespace Amazon.CodeStarNotifications
     public partial class AmazonCodeStarNotificationsClient : AmazonServiceClient, IAmazonCodeStarNotifications
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeStarNotificationsMetadata();
+
         #region Constructors
 
         /// <summary>

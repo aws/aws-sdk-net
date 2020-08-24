@@ -36,6 +36,11 @@ namespace Amazon.Rekognition
     public partial interface IAmazonRekognition : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IRekognitionPaginatorFactory Paginators { get; }
+
         
         #region  CompareFaces
 

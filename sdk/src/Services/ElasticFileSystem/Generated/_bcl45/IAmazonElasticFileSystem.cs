@@ -44,6 +44,11 @@ namespace Amazon.ElasticFileSystem
     public partial interface IAmazonElasticFileSystem : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IElasticFileSystemPaginatorFactory Paginators { get; }
+
         
         #region  CreateAccessPoint
 

@@ -301,6 +301,12 @@ namespace Amazon.IVS
     /// </summary>
     public partial interface IAmazonIVS : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IIVSPaginatorFactory Paginators { get; }
+#endif
                 
         #region  BatchGetChannel
 

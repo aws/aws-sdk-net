@@ -56,6 +56,7 @@ namespace Amazon.Macie
     public partial class AmazonMacieClient : AmazonServiceClient, IAmazonMacie
     {
         private static IServiceMetadata serviceMetadata = new AmazonMacieMetadata();
+
         #region Constructors
 
         /// <summary>

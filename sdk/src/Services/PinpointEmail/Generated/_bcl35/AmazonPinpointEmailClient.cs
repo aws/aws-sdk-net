@@ -83,6 +83,7 @@ namespace Amazon.PinpointEmail
     public partial class AmazonPinpointEmailClient : AmazonServiceClient, IAmazonPinpointEmail
     {
         private static IServiceMetadata serviceMetadata = new AmazonPinpointEmailMetadata();
+
         #region Constructors
 
         /// <summary>

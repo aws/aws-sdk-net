@@ -80,6 +80,11 @@ namespace Amazon.AugmentedAIRuntime
     public partial interface IAmazonAugmentedAIRuntime : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAugmentedAIRuntimePaginatorFactory Paginators { get; }
+
         
         #region  DeleteHumanLoop
 

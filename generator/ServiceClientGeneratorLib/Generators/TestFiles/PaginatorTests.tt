@@ -1,0 +1,122 @@
+﻿<#@ template language="C#" inherits="Generators.BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+#if !NETSTANDARD13
+<#
+	AddLicenseHeader();
+#>
+
+using <#=this.Config.Namespace#>;
+using <#=this.Config.Namespace#>.Model;
+
+using Moq;
+using System;
+using System.Linq;
+using AWSSDK_DotNet35.UnitTests.TestTools;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
+{
+    [TestClass]
+    public class <#=this.Config.ClassName#>PaginatorTests
+    {
+        private static Mock<Amazon<#=this.Config.ClassName#>Client> _mockClient;
+
+        [ClassInitialize()]
+        public static void ClassInitialize(TestContext a)
+        {
+            _mockClient = new Mock<Amazon<#=this.Config.ClassName#>Client>("access key", "secret", Amazon.RegionEndpoint.USEast1);
+        }
+<#
+        foreach(var operation in this.Config.ServiceModel.Operations)
+        {
+            if (operation.Paginators != null && !operation.UnsupportedPaginatorConfig)
+            {
+#>
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("<#=this.Config.TestCategory#>")]
+        public void <#=operation.Name#>Test_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<<#=operation.Name#>Request>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<<#=operation.Name#>Response>();
+            var secondResponse = InstantiateClassGenerator.Execute<<#=operation.Name#>Response>();
+<#
+            if (operation.Paginators.MoreResults != null)
+            {
+#>
+            secondResponse.<#=operation.Paginators.MoreResults.PropertyName#> = false;
+<#
+            }
+            else if (operation.Paginators.InputTokens[0].IsListOrDict)
+            {
+#>
+            secondResponse.<#=operation.Paginators.OutputTokens[0].PropertyName#>.Clear();
+<#
+            } 
+            else 
+            {
+#>
+            secondResponse.<#=operation.Paginators.OutputTokens[0].PropertyName#> = null;
+<#
+            }
+#>
+
+            _mockClient.SetupSequence(x => x.<#=operation.Name#>(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.<#=operation.Name#>(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("<#=this.Config.TestCategory#>")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void <#=operation.Name#>Test__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<<#=operation.Name#>Request>();
+
+            var response = InstantiateClassGenerator.Execute<<#=operation.Name#>Response>();
+<#
+            if (operation.Paginators.MoreResults != null)
+            {
+#>
+            response.<#=operation.Paginators.MoreResults.PropertyName#> = false;
+<#
+            }
+            else if (operation.Paginators.InputTokens[0].IsListOrDict)
+            {
+#>
+            response.<#=operation.Paginators.OutputTokens[0].PropertyName#>.Clear();
+<#
+            } 
+            else 
+            {
+#>
+            response.<#=operation.Paginators.OutputTokens[0].PropertyName#> = null;
+<#
+            }
+#>
+
+            _mockClient.Setup(x => x.<#=operation.Name#>(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.<#=operation.Name#>(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+<#
+            }
+        }
+#>
+    }
+}
+#endif

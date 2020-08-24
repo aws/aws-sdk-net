@@ -69,6 +69,22 @@ namespace Amazon.CloudFormation
     public partial class AmazonCloudFormationClient : AmazonServiceClient, IAmazonCloudFormation
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudFormationMetadata();
+        private ICloudFormationPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICloudFormationPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CloudFormationPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

@@ -36,6 +36,11 @@ namespace Amazon.TranscribeService
     public partial interface IAmazonTranscribeService : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ITranscribeServicePaginatorFactory Paginators { get; }
+
         
         #region  CreateLanguageModel
 

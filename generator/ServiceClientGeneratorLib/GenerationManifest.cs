@@ -160,7 +160,9 @@ namespace ServiceClientGenerator
                     }
 
                     var serviceModelFileName = GetLatestModel(serviceDirectory);
-                    var config = CreateServiceConfiguration(metadataNode, serviceVersions, serviceDirectory, serviceModelFileName);
+                    string paginatorsFileName = GetLatestPaginators(serviceDirectory);
+                    
+                    var config = CreateServiceConfiguration(metadataNode, serviceVersions, serviceDirectory, serviceModelFileName, paginatorsFileName);
                     serviceConfigurations.Add(config);
 
                     modelConfigList.Add(new Tuple<JsonData, ServiceConfiguration>(metadataNode, config));
@@ -206,9 +208,16 @@ namespace ServiceClientGenerator
                 .ToList();
         }
 
+        /// <summary>
+        /// Use the date order of the models combined with default string sort
+        /// to find the latest models file
+        /// </summary>
+        /// <param name="serviceDirectory"></param>
+        /// <returns></returns>
         private static string GetLatestModel(string serviceDirectory)
         {
-            string latestModelName="";
+            string latestModelName = string.Empty;
+
             foreach (string modelName in Directory.GetFiles(serviceDirectory, "*.normal.json", SearchOption.TopDirectoryOnly))
             {
                 if (string.Compare(latestModelName, modelName) < 0)
@@ -225,9 +234,23 @@ namespace ServiceClientGenerator
             return Path.GetFileName(latestModelName);
         }
 
-        private ServiceConfiguration CreateServiceConfiguration(JsonData modelNode, JsonData serviceVersions, string serviceDirectoryPath, string serviceModelFileName)
+        /// <summary>
+        /// Use the date order of the paginators combined with default string sort
+        /// to find the latest paginators file
+        /// </summary>
+        /// <param name="serviceDirectory"></param>
+        /// <returns></returns>
+        private static string GetLatestPaginators(string serviceDirectory)
+        {
+            var latestPaginatorsName = Directory.GetFiles(serviceDirectory, "*.paginators.json", SearchOption.TopDirectoryOnly)
+                .OrderBy(x => x).FirstOrDefault() ?? "";
+            return Path.GetFileName(latestPaginatorsName);
+        }
+
+        private ServiceConfiguration CreateServiceConfiguration(JsonData modelNode, JsonData serviceVersions, string serviceDirectoryPath, string serviceModelFileName, string servicePaginatorsFileName)
         {
             var modelFullPath = Path.Combine(serviceDirectoryPath, serviceModelFileName);
+            var paginatorsFullPath = Path.Combine(serviceDirectoryPath, servicePaginatorsFileName);
 
             JsonData metadata = JsonMapper.ToObject(File.ReadAllText(modelFullPath))[ServiceModel.MetadataKey];
 
@@ -237,6 +260,7 @@ namespace ServiceClientGenerator
             {
                 ModelName = modelName,
                 ModelPath = modelFullPath,
+                PaginatorsPath = paginatorsFullPath,
                 Namespace = Utils.JsonDataToString(modelNode[ModelsSectionKeys.NamespaceKey]), // Namespace of the service if it's different from basename
                 ClassNameOverride = Utils.JsonDataToString(modelNode[ModelsSectionKeys.BaseNameKey]),
                 DefaultRegion = Utils.JsonDataToString(modelNode[ModelsSectionKeys.DefaultRegionKey]),

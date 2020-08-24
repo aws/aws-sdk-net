@@ -102,6 +102,7 @@ namespace Amazon.Route53Resolver
     public partial class AmazonRoute53ResolverClient : AmazonServiceClient, IAmazonRoute53Resolver
     {
         private static IServiceMetadata serviceMetadata = new AmazonRoute53ResolverMetadata();
+
         #region Constructors
 
         /// <summary>

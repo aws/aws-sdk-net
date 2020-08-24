@@ -95,6 +95,7 @@ namespace Amazon.AppConfig
     public partial class AmazonAppConfigClient : AmazonServiceClient, IAmazonAppConfig
     {
         private static IServiceMetadata serviceMetadata = new AmazonAppConfigMetadata();
+
         #region Constructors
 
         /// <summary>

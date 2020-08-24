@@ -57,6 +57,9 @@ namespace Amazon.DataPipeline
     public partial interface IAmazonDataPipeline : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  ActivatePipeline
 

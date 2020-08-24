@@ -44,6 +44,11 @@ namespace Amazon.AlexaForBusiness
     public partial interface IAmazonAlexaForBusiness : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAlexaForBusinessPaginatorFactory Paginators { get; }
+
         
         #region  ApproveSkill
 

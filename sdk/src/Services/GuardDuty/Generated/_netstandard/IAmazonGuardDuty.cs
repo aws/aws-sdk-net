@@ -57,6 +57,12 @@ namespace Amazon.GuardDuty
     /// </summary>
     public partial interface IAmazonGuardDuty : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IGuardDutyPaginatorFactory Paginators { get; }
+#endif
                 
         #region  AcceptInvitation
 

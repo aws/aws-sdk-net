@@ -55,6 +55,11 @@ namespace Amazon.SimpleWorkflow
     public partial interface IAmazonSimpleWorkflow : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISimpleWorkflowPaginatorFactory Paginators { get; }
+
         
         #region  CountClosedWorkflowExecutions
 

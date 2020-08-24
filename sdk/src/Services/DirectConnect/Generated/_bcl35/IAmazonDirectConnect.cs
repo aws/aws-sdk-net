@@ -41,6 +41,9 @@ namespace Amazon.DirectConnect
     public partial interface IAmazonDirectConnect : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  AcceptDirectConnectGatewayAssociationProposal
 

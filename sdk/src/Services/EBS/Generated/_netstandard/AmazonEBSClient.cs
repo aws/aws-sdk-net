@@ -221,6 +221,24 @@ namespace Amazon.EBS
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IEBSPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IEBSPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new EBSPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

@@ -224,6 +224,24 @@ namespace Amazon.CostExplorer
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ICostExplorerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICostExplorerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CostExplorerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

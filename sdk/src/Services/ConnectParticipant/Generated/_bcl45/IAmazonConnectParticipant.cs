@@ -47,6 +47,11 @@ namespace Amazon.ConnectParticipant
     public partial interface IAmazonConnectParticipant : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IConnectParticipantPaginatorFactory Paginators { get; }
+
         
         #region  CreateParticipantConnection
 

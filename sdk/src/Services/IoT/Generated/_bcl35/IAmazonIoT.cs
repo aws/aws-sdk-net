@@ -63,6 +63,15 @@ namespace Amazon.IoT
     public partial interface IAmazonIoT : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IIoTPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AcceptCertificateTransfer
 

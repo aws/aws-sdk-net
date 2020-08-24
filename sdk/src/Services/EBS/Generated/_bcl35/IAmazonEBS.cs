@@ -52,6 +52,15 @@ namespace Amazon.EBS
     public partial interface IAmazonEBS : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IEBSPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  CompleteSnapshot
 

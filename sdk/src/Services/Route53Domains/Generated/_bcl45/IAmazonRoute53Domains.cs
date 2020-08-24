@@ -36,6 +36,11 @@ namespace Amazon.Route53Domains
     public partial interface IAmazonRoute53Domains : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IRoute53DomainsPaginatorFactory Paginators { get; }
+
         
         #region  AcceptDomainTransferFromAnotherAwsAccount
 

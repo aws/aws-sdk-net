@@ -73,6 +73,22 @@ namespace Amazon.EC2
     public partial class AmazonEC2Client : AmazonServiceClient, IAmazonEC2
     {
         private static IServiceMetadata serviceMetadata = new AmazonEC2Metadata();
+        private IEC2PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IEC2PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new EC2PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

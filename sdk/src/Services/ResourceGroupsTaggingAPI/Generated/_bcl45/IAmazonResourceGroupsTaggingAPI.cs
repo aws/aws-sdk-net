@@ -611,6 +611,11 @@ namespace Amazon.ResourceGroupsTaggingAPI
     public partial interface IAmazonResourceGroupsTaggingAPI : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IResourceGroupsTaggingAPIPaginatorFactory Paginators { get; }
+
         
         #region  DescribeReportCreation
 

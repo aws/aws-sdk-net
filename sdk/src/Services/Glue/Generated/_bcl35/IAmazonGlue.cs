@@ -37,6 +37,15 @@ namespace Amazon.Glue
     public partial interface IAmazonGlue : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IGluePaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  BatchCreatePartition
 

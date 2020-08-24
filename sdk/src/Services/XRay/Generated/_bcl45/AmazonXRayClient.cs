@@ -44,6 +44,22 @@ namespace Amazon.XRay
     public partial class AmazonXRayClient : AmazonServiceClient, IAmazonXRay
     {
         private static IServiceMetadata serviceMetadata = new AmazonXRayMetadata();
+        private IXRayPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IXRayPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new XRayPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

@@ -44,6 +44,22 @@ namespace Amazon.FSx
     public partial class AmazonFSxClient : AmazonServiceClient, IAmazonFSx
     {
         private static IServiceMetadata serviceMetadata = new AmazonFSxMetadata();
+        private IFSxPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IFSxPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new FSxPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

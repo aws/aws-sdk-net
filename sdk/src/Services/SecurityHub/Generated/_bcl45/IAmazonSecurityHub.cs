@@ -79,6 +79,11 @@ namespace Amazon.SecurityHub
     public partial interface IAmazonSecurityHub : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISecurityHubPaginatorFactory Paginators { get; }
+
         
         #region  AcceptInvitation
 

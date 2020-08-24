@@ -35,6 +35,12 @@ namespace Amazon.MediaPackageVod
     /// </summary>
     public partial interface IAmazonMediaPackageVod : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMediaPackageVodPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateAsset
 

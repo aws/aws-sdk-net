@@ -71,6 +71,11 @@ namespace Amazon.CloudWatchLogs
     public partial interface IAmazonCloudWatchLogs : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICloudWatchLogsPaginatorFactory Paginators { get; }
+
         
         #region  AssociateKmsKey
 

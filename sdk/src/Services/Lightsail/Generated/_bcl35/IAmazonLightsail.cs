@@ -54,6 +54,9 @@ namespace Amazon.Lightsail
     public partial interface IAmazonLightsail : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  AllocateStaticIp
 

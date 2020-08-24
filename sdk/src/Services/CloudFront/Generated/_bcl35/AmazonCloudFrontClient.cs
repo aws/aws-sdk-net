@@ -46,6 +46,7 @@ namespace Amazon.CloudFront
     public partial class AmazonCloudFrontClient : AmazonServiceClient, IAmazonCloudFront
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudFrontMetadata();
+
         #region Constructors
 
         /// <summary>

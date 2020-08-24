@@ -40,6 +40,7 @@ namespace Amazon.Organizations
     public partial class AmazonOrganizationsClient : AmazonServiceClient, IAmazonOrganizations
     {
         private static IServiceMetadata serviceMetadata = new AmazonOrganizationsMetadata();
+
         #region Constructors
 
         /// <summary>

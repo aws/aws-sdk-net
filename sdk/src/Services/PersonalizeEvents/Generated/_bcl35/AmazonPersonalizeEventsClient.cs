@@ -42,6 +42,7 @@ namespace Amazon.PersonalizeEvents
     public partial class AmazonPersonalizeEventsClient : AmazonServiceClient, IAmazonPersonalizeEvents
     {
         private static IServiceMetadata serviceMetadata = new AmazonPersonalizeEventsMetadata();
+
         #region Constructors
 
         /// <summary>

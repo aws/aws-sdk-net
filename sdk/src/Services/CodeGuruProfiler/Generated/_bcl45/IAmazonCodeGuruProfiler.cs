@@ -52,6 +52,11 @@ namespace Amazon.CodeGuruProfiler
     public partial interface IAmazonCodeGuruProfiler : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICodeGuruProfilerPaginatorFactory Paginators { get; }
+
         
         #region  AddNotificationChannels
 

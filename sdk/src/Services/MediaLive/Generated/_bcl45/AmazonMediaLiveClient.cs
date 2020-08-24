@@ -43,6 +43,22 @@ namespace Amazon.MediaLive
     public partial class AmazonMediaLiveClient : AmazonServiceClient, IAmazonMediaLive
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaLiveMetadata();
+        private IMediaLivePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMediaLivePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MediaLivePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

@@ -53,6 +53,22 @@ namespace Amazon.Lambda
     public partial class AmazonLambdaClient : AmazonServiceClient, IAmazonLambda
     {
         private static IServiceMetadata serviceMetadata = new AmazonLambdaMetadata();
+        private ILambdaPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ILambdaPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new LambdaPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

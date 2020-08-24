@@ -66,6 +66,22 @@ namespace Amazon.ConfigService
     public partial class AmazonConfigServiceClient : AmazonServiceClient, IAmazonConfigService
     {
         private static IServiceMetadata serviceMetadata = new AmazonConfigServiceMetadata();
+        private IConfigServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IConfigServicePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ConfigServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

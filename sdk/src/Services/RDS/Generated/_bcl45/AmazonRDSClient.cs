@@ -114,6 +114,22 @@ namespace Amazon.RDS
     public partial class AmazonRDSClient : AmazonServiceClient, IAmazonRDS
     {
         private static IServiceMetadata serviceMetadata = new AmazonRDSMetadata();
+        private IRDSPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IRDSPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new RDSPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

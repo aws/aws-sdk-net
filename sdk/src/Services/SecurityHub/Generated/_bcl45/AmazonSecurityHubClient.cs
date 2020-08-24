@@ -86,6 +86,22 @@ namespace Amazon.SecurityHub
     public partial class AmazonSecurityHubClient : AmazonServiceClient, IAmazonSecurityHub
     {
         private static IServiceMetadata serviceMetadata = new AmazonSecurityHubMetadata();
+        private ISecurityHubPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISecurityHubPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SecurityHubPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

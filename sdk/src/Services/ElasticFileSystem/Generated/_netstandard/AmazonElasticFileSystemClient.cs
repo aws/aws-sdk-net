@@ -211,6 +211,24 @@ namespace Amazon.ElasticFileSystem
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IElasticFileSystemPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IElasticFileSystemPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ElasticFileSystemPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

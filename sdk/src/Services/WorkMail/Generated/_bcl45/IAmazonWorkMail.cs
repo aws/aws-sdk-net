@@ -74,6 +74,11 @@ namespace Amazon.WorkMail
     public partial interface IAmazonWorkMail : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IWorkMailPaginatorFactory Paginators { get; }
+
         
         #region  AssociateDelegateToResource
 

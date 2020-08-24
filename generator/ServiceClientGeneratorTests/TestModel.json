@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "apiVersion": "2020-6-25",
+    "serviceAbbreviation": "TestService",
+    "serviceFullName": "TestService",
+    "signatureVersion": "v4",
+    "serviceId": "TestService"
+  },
+  "operations": {
+    "GetItem": {
+      "name": "GetItem",
+      "input": { "shape": "GetItemInput" },
+      "output": { "shape": "GetItemOutput" },
+      "documentation": "get item"
+    },
+    "ListItems": {
+      "name": "ListItems",
+      "input": { "shape": "ListItemsInput" },
+      "output": { "shape": "ListItemsOutput" },
+      "documentation": "list items"
+    },
+    "DeleteItem": {
+      "name": "DeleteItem",
+      "input": { "shape": "DeleteItemInput" },
+      "output": { "shape": "DeleteItemOutput" },
+      "documentation": "delete item"
+    }
+  },
+  "shapes": {
+    "ChildItem": {"type": "string"},
+    "DeleteItemInput": {
+      "type": "structure",
+      "members": {
+        "ItemKey": { "shape": "ItemKey" }
+      }
+    },
+    "DeleteItemOutput": {
+      "type": "structure",
+      "members": {
+      }
+    },
+    "GetItemInput": {
+      "type": "structure",
+      "members": {
+        "ItemKey": { "shape": "ItemKey" }
+      }
+    },
+    "GetItemOutput": {
+      "type": "structure",
+      "members": {
+        "Item": { "shape": "Item" }
+      }
+    },
+    "Item": { "type": "string" },
+    "ItemKey": { "type": "string" },
+    "ListItemsInput": {
+      "type": "structure",
+      "members": {
+        "NextToken": {"shape": "NextToken"}
+      }
+    },
+    "ListItemsOutput": {
+      "type": "structure",
+      "members": {
+        "ParentItem": { "shape": "ParentItem" }
+      }
+    },
+    "NextToken": {"type": "string"},
+    "ParentItem": {
+      "type": "structure",
+      "members": {
+        "ChildItem": { "shape": "ChildItem" },
+        "NextToken": { "shape": "NextToken" }
+      }
+    }
+  }
+}

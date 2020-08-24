@@ -57,6 +57,15 @@ namespace Amazon.ElasticBeanstalk
     public partial interface IAmazonElasticBeanstalk : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IElasticBeanstalkPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  AbortEnvironmentUpdate
 

@@ -40,6 +40,7 @@ namespace Amazon.ForecastQueryService
     public partial class AmazonForecastQueryServiceClient : AmazonServiceClient, IAmazonForecastQueryService
     {
         private static IServiceMetadata serviceMetadata = new AmazonForecastQueryServiceMetadata();
+
         #region Constructors
 
         /// <summary>

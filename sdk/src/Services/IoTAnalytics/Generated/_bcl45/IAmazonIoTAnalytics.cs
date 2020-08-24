@@ -62,6 +62,11 @@ namespace Amazon.IoTAnalytics
     public partial interface IAmazonIoTAnalytics : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IIoTAnalyticsPaginatorFactory Paginators { get; }
+
         
         #region  BatchPutMessage
 

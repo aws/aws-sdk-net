@@ -55,6 +55,7 @@ namespace Amazon.IoTJobsDataPlane
     public partial interface IAmazonIoTJobsDataPlane : IAmazonService, IDisposable
     {
 
+
         
         #region  DescribeJobExecution
 

@@ -48,6 +48,7 @@ namespace Amazon.IdentityManagement
     public partial class AmazonIdentityManagementServiceClient : AmazonServiceClient, IAmazonIdentityManagementService
     {
         private static IServiceMetadata serviceMetadata = new AmazonIdentityManagementServiceMetadata();
+
         #region Constructors
 
         /// <summary>

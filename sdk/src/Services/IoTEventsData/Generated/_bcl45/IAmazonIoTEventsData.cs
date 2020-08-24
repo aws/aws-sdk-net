@@ -39,6 +39,7 @@ namespace Amazon.IoTEventsData
     public partial interface IAmazonIoTEventsData : IAmazonService, IDisposable
     {
 
+
         
         #region  BatchPutMessage
 

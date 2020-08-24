@@ -187,6 +187,22 @@ namespace Amazon.OpsWorks
     public partial class AmazonOpsWorksClient : AmazonServiceClient, IAmazonOpsWorks
     {
         private static IServiceMetadata serviceMetadata = new AmazonOpsWorksMetadata();
+        private IOpsWorksPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IOpsWorksPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new OpsWorksPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

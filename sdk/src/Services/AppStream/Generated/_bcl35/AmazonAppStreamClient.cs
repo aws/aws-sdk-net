@@ -70,6 +70,7 @@ namespace Amazon.AppStream
     public partial class AmazonAppStreamClient : AmazonServiceClient, IAmazonAppStream
     {
         private static IServiceMetadata serviceMetadata = new AmazonAppStreamMetadata();
+
         #region Constructors
 
         /// <summary>

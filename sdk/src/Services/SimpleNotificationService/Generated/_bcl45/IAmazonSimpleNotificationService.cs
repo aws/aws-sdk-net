@@ -53,6 +53,11 @@ namespace Amazon.SimpleNotificationService
     public partial interface IAmazonSimpleNotificationService : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISimpleNotificationServicePaginatorFactory Paginators { get; }
+
         
         #region  AddPermission
 

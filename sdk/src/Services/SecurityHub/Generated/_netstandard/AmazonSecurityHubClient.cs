@@ -246,6 +246,24 @@ namespace Amazon.SecurityHub
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ISecurityHubPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISecurityHubPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SecurityHubPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

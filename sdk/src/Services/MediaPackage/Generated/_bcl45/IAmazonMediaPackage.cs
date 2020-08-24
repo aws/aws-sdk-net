@@ -36,6 +36,11 @@ namespace Amazon.MediaPackage
     public partial interface IAmazonMediaPackage : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMediaPackagePaginatorFactory Paginators { get; }
+
         
         #region  CreateChannel
 

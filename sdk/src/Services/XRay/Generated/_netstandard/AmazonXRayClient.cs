@@ -204,6 +204,24 @@ namespace Amazon.XRay
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IXRayPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IXRayPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new XRayPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

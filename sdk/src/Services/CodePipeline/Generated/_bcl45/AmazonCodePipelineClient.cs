@@ -261,6 +261,22 @@ namespace Amazon.CodePipeline
     public partial class AmazonCodePipelineClient : AmazonServiceClient, IAmazonCodePipeline
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodePipelineMetadata();
+        private ICodePipelinePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICodePipelinePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CodePipelinePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

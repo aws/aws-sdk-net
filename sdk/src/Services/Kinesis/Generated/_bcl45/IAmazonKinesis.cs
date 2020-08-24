@@ -40,6 +40,11 @@ namespace Amazon.Kinesis
     public partial interface IAmazonKinesis : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IKinesisPaginatorFactory Paginators { get; }
+
         
         #region  AddTagsToStream
 

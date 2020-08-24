@@ -111,6 +111,7 @@ namespace Amazon.RDS
     public partial class AmazonRDSClient : AmazonServiceClient, IAmazonRDS
     {
         private static IServiceMetadata serviceMetadata = new AmazonRDSMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -205,6 +205,24 @@ namespace Amazon.CloudHSMV2
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ICloudHSMV2PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICloudHSMV2PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CloudHSMV2PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

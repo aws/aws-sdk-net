@@ -48,6 +48,7 @@ namespace Amazon.MediaTailor
     public partial class AmazonMediaTailorClient : AmazonServiceClient, IAmazonMediaTailor
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaTailorMetadata();
+
         #region Constructors
 
         /// <summary>

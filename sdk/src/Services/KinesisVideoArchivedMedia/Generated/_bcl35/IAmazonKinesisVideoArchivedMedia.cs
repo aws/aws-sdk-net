@@ -34,6 +34,15 @@ namespace Amazon.KinesisVideoArchivedMedia
     public partial interface IAmazonKinesisVideoArchivedMedia : IAmazonService, IDisposable
     {
 
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IKinesisVideoArchivedMediaPaginatorFactory Paginators { get; }
+#endif
+
+
         
         #region  GetClip
 

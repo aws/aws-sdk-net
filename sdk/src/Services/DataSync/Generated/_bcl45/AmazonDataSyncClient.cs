@@ -53,6 +53,22 @@ namespace Amazon.DataSync
     public partial class AmazonDataSyncClient : AmazonServiceClient, IAmazonDataSync
     {
         private static IServiceMetadata serviceMetadata = new AmazonDataSyncMetadata();
+        private IDataSyncPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IDataSyncPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new DataSyncPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

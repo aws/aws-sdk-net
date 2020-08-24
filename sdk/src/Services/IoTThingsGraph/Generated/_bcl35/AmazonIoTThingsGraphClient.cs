@@ -52,6 +52,7 @@ namespace Amazon.IoTThingsGraph
     public partial class AmazonIoTThingsGraphClient : AmazonServiceClient, IAmazonIoTThingsGraph
     {
         private static IServiceMetadata serviceMetadata = new AmazonIoTThingsGraphMetadata();
+
         #region Constructors
 
         /// <summary>

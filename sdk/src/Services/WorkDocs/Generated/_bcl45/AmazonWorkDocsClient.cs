@@ -79,6 +79,22 @@ namespace Amazon.WorkDocs
     public partial class AmazonWorkDocsClient : AmazonServiceClient, IAmazonWorkDocs
     {
         private static IServiceMetadata serviceMetadata = new AmazonWorkDocsMetadata();
+        private IWorkDocsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IWorkDocsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new WorkDocsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

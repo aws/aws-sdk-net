@@ -1,0 +1,184 @@
+#if !NETSTANDARD13
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Amazon.Redshift.Model
+{
+    /// <summary>
+    /// Paginators for the Redshift service
+    ///</summary>
+    public class RedshiftPaginatorFactory : IRedshiftPaginatorFactory
+    {
+        private readonly IAmazonRedshift client;
+
+        internal RedshiftPaginatorFactory(IAmazonRedshift client) 
+        {
+            this.client = client;
+        }
+
+        /// <summary>
+        /// Paginator for DescribeClusterParameterGroups operation
+        ///</summary>
+        public IDescribeClusterParameterGroupsPaginator DescribeClusterParameterGroups(DescribeClusterParameterGroupsRequest request) 
+        {
+            return new DescribeClusterParameterGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeClusterParameters operation
+        ///</summary>
+        public IDescribeClusterParametersPaginator DescribeClusterParameters(DescribeClusterParametersRequest request) 
+        {
+            return new DescribeClusterParametersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeClusters operation
+        ///</summary>
+        public IDescribeClustersPaginator DescribeClusters(DescribeClustersRequest request) 
+        {
+            return new DescribeClustersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeClusterSecurityGroups operation
+        ///</summary>
+        public IDescribeClusterSecurityGroupsPaginator DescribeClusterSecurityGroups(DescribeClusterSecurityGroupsRequest request) 
+        {
+            return new DescribeClusterSecurityGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeClusterSnapshots operation
+        ///</summary>
+        public IDescribeClusterSnapshotsPaginator DescribeClusterSnapshots(DescribeClusterSnapshotsRequest request) 
+        {
+            return new DescribeClusterSnapshotsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeClusterSubnetGroups operation
+        ///</summary>
+        public IDescribeClusterSubnetGroupsPaginator DescribeClusterSubnetGroups(DescribeClusterSubnetGroupsRequest request) 
+        {
+            return new DescribeClusterSubnetGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeClusterVersions operation
+        ///</summary>
+        public IDescribeClusterVersionsPaginator DescribeClusterVersions(DescribeClusterVersionsRequest request) 
+        {
+            return new DescribeClusterVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDefaultClusterParameters operation
+        ///</summary>
+        public IDescribeDefaultClusterParametersPaginator DescribeDefaultClusterParameters(DescribeDefaultClusterParametersRequest request) 
+        {
+            return new DescribeDefaultClusterParametersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeEvents operation
+        ///</summary>
+        public IDescribeEventsPaginator DescribeEvents(DescribeEventsRequest request) 
+        {
+            return new DescribeEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeEventSubscriptions operation
+        ///</summary>
+        public IDescribeEventSubscriptionsPaginator DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request) 
+        {
+            return new DescribeEventSubscriptionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeHsmClientCertificates operation
+        ///</summary>
+        public IDescribeHsmClientCertificatesPaginator DescribeHsmClientCertificates(DescribeHsmClientCertificatesRequest request) 
+        {
+            return new DescribeHsmClientCertificatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeHsmConfigurations operation
+        ///</summary>
+        public IDescribeHsmConfigurationsPaginator DescribeHsmConfigurations(DescribeHsmConfigurationsRequest request) 
+        {
+            return new DescribeHsmConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeNodeConfigurationOptions operation
+        ///</summary>
+        public IDescribeNodeConfigurationOptionsPaginator DescribeNodeConfigurationOptions(DescribeNodeConfigurationOptionsRequest request) 
+        {
+            return new DescribeNodeConfigurationOptionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeOrderableClusterOptions operation
+        ///</summary>
+        public IDescribeOrderableClusterOptionsPaginator DescribeOrderableClusterOptions(DescribeOrderableClusterOptionsRequest request) 
+        {
+            return new DescribeOrderableClusterOptionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeReservedNodeOfferings operation
+        ///</summary>
+        public IDescribeReservedNodeOfferingsPaginator DescribeReservedNodeOfferings(DescribeReservedNodeOfferingsRequest request) 
+        {
+            return new DescribeReservedNodeOfferingsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeReservedNodes operation
+        ///</summary>
+        public IDescribeReservedNodesPaginator DescribeReservedNodes(DescribeReservedNodesRequest request) 
+        {
+            return new DescribeReservedNodesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeScheduledActions operation
+        ///</summary>
+        public IDescribeScheduledActionsPaginator DescribeScheduledActions(DescribeScheduledActionsRequest request) 
+        {
+            return new DescribeScheduledActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeUsageLimits operation
+        ///</summary>
+        public IDescribeUsageLimitsPaginator DescribeUsageLimits(DescribeUsageLimitsRequest request) 
+        {
+            return new DescribeUsageLimitsPaginator(this.client, request);
+        }
+    }
+}
+#endif

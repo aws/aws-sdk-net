@@ -221,6 +221,7 @@ namespace Amazon.CodeBuild
     public partial class AmazonCodeBuildClient : AmazonServiceClient, IAmazonCodeBuild
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeBuildMetadata();
+
         #region Constructors
 
         /// <summary>

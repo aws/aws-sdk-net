@@ -44,6 +44,9 @@ namespace Amazon.ComputeOptimizer
     public partial interface IAmazonComputeOptimizer : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  DescribeRecommendationExportJobs
 

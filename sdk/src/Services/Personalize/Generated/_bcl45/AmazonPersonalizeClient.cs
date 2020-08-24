@@ -44,6 +44,22 @@ namespace Amazon.Personalize
     public partial class AmazonPersonalizeClient : AmazonServiceClient, IAmazonPersonalize
     {
         private static IServiceMetadata serviceMetadata = new AmazonPersonalizeMetadata();
+        private IPersonalizePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IPersonalizePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new PersonalizePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

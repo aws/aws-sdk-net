@@ -51,6 +51,22 @@ namespace Amazon.AlexaForBusiness
     public partial class AmazonAlexaForBusinessClient : AmazonServiceClient, IAmazonAlexaForBusiness
     {
         private static IServiceMetadata serviceMetadata = new AmazonAlexaForBusinessMetadata();
+        private IAlexaForBusinessPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAlexaForBusinessPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AlexaForBusinessPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

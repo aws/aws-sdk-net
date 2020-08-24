@@ -44,6 +44,22 @@ namespace Amazon.Braket
     public partial class AmazonBraketClient : AmazonServiceClient, IAmazonBraket
     {
         private static IServiceMetadata serviceMetadata = new AmazonBraketMetadata();
+        private IBraketPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IBraketPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new BraketPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

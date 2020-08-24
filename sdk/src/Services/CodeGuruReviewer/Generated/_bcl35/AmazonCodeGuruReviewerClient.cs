@@ -52,6 +52,7 @@ namespace Amazon.CodeGuruReviewer
     public partial class AmazonCodeGuruReviewerClient : AmazonServiceClient, IAmazonCodeGuruReviewer
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeGuruReviewerMetadata();
+
         #region Constructors
 
         /// <summary>

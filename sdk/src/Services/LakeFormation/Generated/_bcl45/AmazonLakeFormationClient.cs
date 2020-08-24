@@ -46,6 +46,22 @@ namespace Amazon.LakeFormation
     public partial class AmazonLakeFormationClient : AmazonServiceClient, IAmazonLakeFormation
     {
         private static IServiceMetadata serviceMetadata = new AmazonLakeFormationMetadata();
+        private ILakeFormationPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ILakeFormationPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new LakeFormationPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

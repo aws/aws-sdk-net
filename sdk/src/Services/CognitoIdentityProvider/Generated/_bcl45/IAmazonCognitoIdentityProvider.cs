@@ -47,6 +47,11 @@ namespace Amazon.CognitoIdentityProvider
     public partial interface IAmazonCognitoIdentityProvider : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ICognitoIdentityProviderPaginatorFactory Paginators { get; }
+
         
         #region  AddCustomAttributes
 

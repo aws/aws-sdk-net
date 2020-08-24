@@ -60,6 +60,22 @@ namespace Amazon.ElastiCache
     public partial class AmazonElastiCacheClient : AmazonServiceClient, IAmazonElastiCache
     {
         private static IServiceMetadata serviceMetadata = new AmazonElastiCacheMetadata();
+        private IElastiCachePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IElastiCachePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ElastiCachePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

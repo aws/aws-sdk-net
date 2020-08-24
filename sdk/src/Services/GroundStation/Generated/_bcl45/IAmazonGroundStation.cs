@@ -39,6 +39,11 @@ namespace Amazon.GroundStation
     public partial interface IAmazonGroundStation : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IGroundStationPaginatorFactory Paginators { get; }
+
         
         #region  CancelContact
 

@@ -66,6 +66,7 @@ namespace Amazon.CognitoIdentity
     public partial class AmazonCognitoIdentityClient : AmazonServiceClient, IAmazonCognitoIdentity
     {
         private static IServiceMetadata serviceMetadata = new AmazonCognitoIdentityMetadata();
+
         #region Constructors
 
         /// <summary>

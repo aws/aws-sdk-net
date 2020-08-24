@@ -104,6 +104,11 @@ namespace Amazon.SQS
     public partial interface IAmazonSQS : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISQSPaginatorFactory Paginators { get; }
+
         
         #region  AddPermission
 

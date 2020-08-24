@@ -39,6 +39,9 @@ namespace Amazon.DAX
     public partial interface IAmazonDAX : IAmazonService, IDisposable
     {
 
+
+
+
         
         #region  CreateCluster
 

@@ -184,6 +184,7 @@ namespace Amazon.OpsWorks
     public partial class AmazonOpsWorksClient : AmazonServiceClient, IAmazonOpsWorks
     {
         private static IServiceMetadata serviceMetadata = new AmazonOpsWorksMetadata();
+
         #region Constructors
 
         /// <summary>

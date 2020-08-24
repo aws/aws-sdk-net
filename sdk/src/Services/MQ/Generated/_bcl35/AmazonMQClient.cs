@@ -43,6 +43,7 @@ namespace Amazon.MQ
     public partial class AmazonMQClient : AmazonServiceClient, IAmazonMQ
     {
         private static IServiceMetadata serviceMetadata = new AmazonMQMetadata();
+
         #region Constructors
 
         /// <summary>

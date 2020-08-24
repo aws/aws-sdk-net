@@ -43,6 +43,7 @@ namespace Amazon.IoTEventsData
     public partial class AmazonIoTEventsDataClient : AmazonServiceClient, IAmazonIoTEventsData
     {
         private static IServiceMetadata serviceMetadata = new AmazonIoTEventsDataMetadata();
+
         #region Constructors
 
         /// <summary>

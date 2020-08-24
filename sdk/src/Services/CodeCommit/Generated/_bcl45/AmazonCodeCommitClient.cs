@@ -471,6 +471,22 @@ namespace Amazon.CodeCommit
     public partial class AmazonCodeCommitClient : AmazonServiceClient, IAmazonCodeCommit
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeCommitMetadata();
+        private ICodeCommitPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICodeCommitPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CodeCommitPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

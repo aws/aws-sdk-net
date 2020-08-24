@@ -43,6 +43,22 @@ namespace Amazon.MediaPackage
     public partial class AmazonMediaPackageClient : AmazonServiceClient, IAmazonMediaPackage
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaPackageMetadata();
+        private IMediaPackagePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMediaPackagePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MediaPackagePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

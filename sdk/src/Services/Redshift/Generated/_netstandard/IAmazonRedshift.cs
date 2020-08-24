@@ -69,6 +69,12 @@ namespace Amazon.Redshift
     /// </summary>
     public partial interface IAmazonRedshift : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IRedshiftPaginatorFactory Paginators { get; }
+#endif
                 
         #region  AcceptReservedNodeExchange
 

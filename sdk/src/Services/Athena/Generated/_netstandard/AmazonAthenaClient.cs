@@ -222,6 +222,24 @@ namespace Amazon.Athena
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IAthenaPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAthenaPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AthenaPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

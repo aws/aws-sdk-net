@@ -62,6 +62,22 @@ namespace Amazon.Athena
     public partial class AmazonAthenaClient : AmazonServiceClient, IAmazonAthena
     {
         private static IServiceMetadata serviceMetadata = new AmazonAthenaMetadata();
+        private IAthenaPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAthenaPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AthenaPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

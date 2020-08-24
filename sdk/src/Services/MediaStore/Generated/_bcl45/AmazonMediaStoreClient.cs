@@ -44,6 +44,22 @@ namespace Amazon.MediaStore
     public partial class AmazonMediaStoreClient : AmazonServiceClient, IAmazonMediaStore
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaStoreMetadata();
+        private IMediaStorePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMediaStorePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MediaStorePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

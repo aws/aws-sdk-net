@@ -36,6 +36,11 @@ namespace Amazon.Schemas
     public partial interface IAmazonSchemas : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISchemasPaginatorFactory Paginators { get; }
+
         
         #region  CreateDiscoverer
 

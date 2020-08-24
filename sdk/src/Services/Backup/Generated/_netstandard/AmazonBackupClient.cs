@@ -208,6 +208,24 @@ namespace Amazon.Backup
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IBackupPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IBackupPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new BackupPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

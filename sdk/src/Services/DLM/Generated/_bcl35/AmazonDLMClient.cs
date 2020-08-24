@@ -51,6 +51,7 @@ namespace Amazon.DLM
     public partial class AmazonDLMClient : AmazonServiceClient, IAmazonDLM
     {
         private static IServiceMetadata serviceMetadata = new AmazonDLMMetadata();
+
         #region Constructors
 
         /// <summary>

@@ -64,6 +64,22 @@ namespace Amazon.AppMesh
     public partial class AmazonAppMeshClient : AmazonServiceClient, IAmazonAppMesh
     {
         private static IServiceMetadata serviceMetadata = new AmazonAppMeshMetadata();
+        private IAppMeshPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAppMeshPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AppMeshPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

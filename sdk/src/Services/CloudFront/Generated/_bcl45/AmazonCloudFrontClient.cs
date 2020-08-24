@@ -49,6 +49,22 @@ namespace Amazon.CloudFront
     public partial class AmazonCloudFrontClient : AmazonServiceClient, IAmazonCloudFront
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudFrontMetadata();
+        private ICloudFrontPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICloudFrontPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CloudFrontPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>
