@@ -51,6 +51,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IncludeControlDetails);
             }
 
+            if(requestObject.IsSetIncludeNullAndEmpty())
+            {
+                context.Writer.WritePropertyName("IncludeNullAndEmpty");
+                context.Writer.Write(requestObject.IncludeNullAndEmpty);
+            }
+
             if(requestObject.IsSetIncludePartitionValue())
             {
                 context.Writer.WritePropertyName("IncludePartitionValue");

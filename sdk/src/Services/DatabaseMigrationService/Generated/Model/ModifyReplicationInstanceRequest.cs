@@ -157,6 +157,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// The engine version number of the replication instance.
         /// </para>
+        ///  
+        /// <para>
+        /// When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code>
+        /// to <code>true</code>.
+        /// </para>
         /// </summary>
         public string EngineVersion
         {

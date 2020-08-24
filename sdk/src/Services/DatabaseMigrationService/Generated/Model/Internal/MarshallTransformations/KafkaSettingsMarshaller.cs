@@ -57,6 +57,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IncludeControlDetails);
             }
 
+            if(requestObject.IsSetIncludeNullAndEmpty())
+            {
+                context.Writer.WritePropertyName("IncludeNullAndEmpty");
+                context.Writer.Write(requestObject.IncludeNullAndEmpty);
+            }
+
             if(requestObject.IsSetIncludePartitionValue())
             {
                 context.Writer.WritePropertyName("IncludePartitionValue");
@@ -79,6 +85,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("MessageFormat");
                 context.Writer.Write(requestObject.MessageFormat);
+            }
+
+            if(requestObject.IsSetMessageMaxBytes())
+            {
+                context.Writer.WritePropertyName("MessageMaxBytes");
+                context.Writer.Write(requestObject.MessageMaxBytes);
             }
 
             if(requestObject.IsSetPartitionIncludeSchemaTable())

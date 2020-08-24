@@ -37,10 +37,12 @@ namespace Amazon.DatabaseMigrationService.Model
     {
         private string _broker;
         private bool? _includeControlDetails;
+        private bool? _includeNullAndEmpty;
         private bool? _includePartitionValue;
         private bool? _includeTableAlterOperations;
         private bool? _includeTransactionDetails;
         private MessageFormatValue _messageFormat;
+        private int? _messageMaxBytes;
         private bool? _partitionIncludeSchemaTable;
         private string _topic;
 
@@ -68,7 +70,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property IncludeControlDetails. 
         /// <para>
         /// Shows detailed control information for table definition, column definition, and table
-        /// and column changes in the Kafka message output. The default is <code>False</code>.
+        /// and column changes in the Kafka message output. The default is <code>false</code>.
         /// </para>
         /// </summary>
         public bool IncludeControlDetails
@@ -84,10 +86,29 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IncludeNullAndEmpty. 
+        /// <para>
+        /// Include NULL and empty columns for records migrated to the endpoint. The default is
+        /// <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool IncludeNullAndEmpty
+        {
+            get { return this._includeNullAndEmpty.GetValueOrDefault(); }
+            set { this._includeNullAndEmpty = value; }
+        }
+
+        // Check to see if IncludeNullAndEmpty property is set
+        internal bool IsSetIncludeNullAndEmpty()
+        {
+            return this._includeNullAndEmpty.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property IncludePartitionValue. 
         /// <para>
         /// Shows the partition value within the Kafka message output, unless the partition type
-        /// is <code>schema-table-type</code>. The default is <code>False</code>.
+        /// is <code>schema-table-type</code>. The default is <code>false</code>.
         /// </para>
         /// </summary>
         public bool IncludePartitionValue
@@ -107,7 +128,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Includes any data definition language (DDL) operations that change the table in the
         /// control data, such as <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>,
-        /// <code>drop-column</code>, and <code>rename-column</code>. The default is <code>False</code>.
+        /// <code>drop-column</code>, and <code>rename-column</code>. The default is <code>false</code>.
         /// </para>
         /// </summary>
         public bool IncludeTableAlterOperations
@@ -128,7 +149,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Provides detailed transaction information from the source database. This information
         /// includes a commit timestamp, a log position, and values for <code>transaction_id</code>,
         /// previous <code>transaction_id</code>, and <code>transaction_record_id</code> (the
-        /// record offset within a transaction). The default is <code>False</code>.
+        /// record offset within a transaction). The default is <code>false</code>.
         /// </para>
         /// </summary>
         public bool IncludeTransactionDetails
@@ -163,13 +184,31 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MessageMaxBytes. 
+        /// <para>
+        /// The maximum size in bytes for records created on the endpoint The default is 1,000,000.
+        /// </para>
+        /// </summary>
+        public int MessageMaxBytes
+        {
+            get { return this._messageMaxBytes.GetValueOrDefault(); }
+            set { this._messageMaxBytes = value; }
+        }
+
+        // Check to see if MessageMaxBytes property is set
+        internal bool IsSetMessageMaxBytes()
+        {
+            return this._messageMaxBytes.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PartitionIncludeSchemaTable. 
         /// <para>
         /// Prefixes schema and table names to partition values, when the partition type is <code>primary-key-type</code>.
         /// Doing this increases data distribution among Kafka partitions. For example, suppose
         /// that a SysBench schema has thousands of tables and each table has only limited range
         /// for a primary key. In this case, the same primary key is sent from thousands of tables
-        /// to the same partition, which causes throttling. The default is <code>False</code>.
+        /// to the same partition, which causes throttling. The default is <code>false</code>.
         /// </para>
         /// </summary>
         public bool PartitionIncludeSchemaTable

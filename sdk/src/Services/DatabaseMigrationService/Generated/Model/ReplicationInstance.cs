@@ -136,6 +136,16 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// The engine version number of the replication instance.
         /// </para>
+        ///  
+        /// <para>
+        /// If an engine version number is not specified when a replication instance is created,
+        /// the default is the latest engine version available.
+        /// </para>
+        ///  
+        /// <para>
+        /// When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code>
+        /// to <code>true</code>.
+        /// </para>
         /// </summary>
         public string EngineVersion
         {
@@ -255,7 +265,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        /// The maintenance window times for the replication instance.
+        /// The maintenance window times for the replication instance. Any pending upgrades to
+        /// the replication instance are performed during this time.
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -312,7 +323,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ReplicationInstanceClass. 
         /// <para>
         /// The compute and memory capacity of the replication instance as defined for the specified
-        /// replication instance class.
+        /// replication instance class. It is a required parameter, although a defualt value is
+        /// pre-selected in the DMS console.
         /// </para>
         ///  
         /// <para>
@@ -336,7 +348,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationInstanceIdentifier. 
         /// <para>
-        /// The replication instance identifier. This parameter is stored as a lowercase string.
+        /// The replication instance identifier is a required parameter. This parameter is stored
+        /// as a lowercase string.
         /// </para>
         ///  
         /// <para>

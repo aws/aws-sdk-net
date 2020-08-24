@@ -97,11 +97,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+        /// Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
         /// </para>
         ///  
         /// <para>
-        /// Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+        /// Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
         /// </para>
         /// </summary>
         public string CdcStopPosition
@@ -119,7 +119,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property LastFailureMessage. 
         /// <para>
-        /// The last error (failure) message generated for the replication instance.
+        /// The last error (failure) message generated for the replication task.
         /// </para>
         /// </summary>
         public string LastFailureMessage

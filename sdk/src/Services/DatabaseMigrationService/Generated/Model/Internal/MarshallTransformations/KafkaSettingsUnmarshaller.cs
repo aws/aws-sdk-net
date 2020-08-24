@@ -76,6 +76,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.IncludeControlDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IncludeNullAndEmpty", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeNullAndEmpty = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IncludePartitionValue", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MessageFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MessageMaxBytes", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MessageMaxBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PartitionIncludeSchemaTable", targetDepth))

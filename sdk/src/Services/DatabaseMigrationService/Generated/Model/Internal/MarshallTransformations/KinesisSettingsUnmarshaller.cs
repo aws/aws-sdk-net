@@ -70,6 +70,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.IncludeControlDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IncludeNullAndEmpty", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeNullAndEmpty = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IncludePartitionValue", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

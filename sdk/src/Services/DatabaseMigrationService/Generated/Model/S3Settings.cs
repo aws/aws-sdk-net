@@ -99,8 +99,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations
         /// to .csv or .parquet (columnar storage) output files. The default setting is <code>false</code>,
-        /// but when <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>,
-        /// INSERTs and UPDATEs from the source database are migrated to the .csv or .parquet
+        /// but when <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>,
+        /// only INSERTs and UPDATEs from the source database are migrated to the .csv or .parquet
         /// file. 
         /// </para>
         ///  
@@ -213,8 +213,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CsvDelimiter. 
         /// <para>
-        ///  The delimiter used to separate columns in the source files. The default is a comma.
-        /// 
+        ///  The delimiter used to separate columns in the .csv file for both source and target.
+        /// The default is a comma. 
         /// </para>
         /// </summary>
         public string CsvDelimiter
@@ -232,8 +232,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CsvRowDelimiter. 
         /// <para>
-        ///  The delimiter used to separate rows in the source files. The default is a carriage
-        /// return (<code>\n</code>). 
+        ///  The delimiter used to separate rows in the .csv file for both source and target.
+        /// The default is a carriage return (<code>\n</code>). 
         /// </para>
         /// </summary>
         public string CsvRowDelimiter
@@ -379,6 +379,16 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The type of server-side encryption that you want to use for your data. This encryption
         /// type is part of the endpoint settings or the extra connections attributes for Amazon
         /// S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>.
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For the <code>ModifyEndpoint</code> operation, you can change the existing value of
+        /// the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>.
+        /// But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role
         /// with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
         /// </para>
@@ -443,7 +453,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ExternalTableDefinition. 
         /// <para>
-        ///  The external table definition. 
+        ///  Specifies how tables are defined in the S3 source files only. 
         /// </para>
         /// </summary>
         public string ExternalTableDefinition
@@ -622,7 +632,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServiceAccessRoleArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) used by the service access IAM role. 
+        ///  The Amazon Resource Name (ARN) used by the service access IAM role. It is a required
+        /// parameter that enables DMS to write and read objects from an 3S bucket.
         /// </para>
         /// </summary>
         public string ServiceAccessRoleArn

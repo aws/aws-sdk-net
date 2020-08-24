@@ -230,6 +230,16 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The type of server-side encryption that you want to use for your data. This encryption
         /// type is part of the endpoint settings or the extra connections attributes for Amazon
         /// S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>.
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For the <code>ModifyEndpoint</code> operation, you can change the existing value of
+        /// the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>.
+        /// But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// To use <code>SSE_S3</code>, create an AWS Identity and Access Management (IAM) role
         /// with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
         /// <code>"s3:PutObject", "s3:ListBucket"</code> 

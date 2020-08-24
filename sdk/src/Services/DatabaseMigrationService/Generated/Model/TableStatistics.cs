@@ -362,38 +362,51 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Not enabled - Validation isn't enabled for the table in the migration task.
+        /// Not enabled – Validation isn't enabled for the table in the migration task.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Pending records - Some records in the table are waiting for validation.
+        /// Pending records – Some records in the table are waiting for validation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Mismatched records - Some records in the table don't match between the source and
+        /// Mismatched records – Some records in the table don't match between the source and
         /// target.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Suspended records - Some records in the table couldn't be validated.
+        /// Suspended records – Some records in the table couldn't be validated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// No primary key - The table couldn't be validated because it has no primary key.
+        /// No primary key –The table couldn't be validated because it has no primary key.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Table error - The table wasn't validated because it's in an error state and some data
+        /// Table error – The table wasn't validated because it's in an error state and some data
         /// wasn't migrated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Validated - All rows in the table are validated. If the table is updated, the status
+        /// Validated – All rows in the table are validated. If the table is updated, the status
         /// can change from Validated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Error - The table couldn't be validated because of an unexpected error.
+        /// Error – The table couldn't be validated because of an unexpected error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Pending validation – The table is waiting validation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Preparing table – Preparing the table enabled in the migration task for validation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Pending revalidation – All rows in the table are pending validation after the table
+        /// was updated.
         /// </para>
         ///  </li> </ul>
         /// </summary>
