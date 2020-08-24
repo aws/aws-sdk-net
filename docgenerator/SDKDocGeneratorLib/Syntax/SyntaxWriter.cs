@@ -21,10 +21,21 @@ namespace SDKDocGenerator.Syntax
 
         public void WriteToken(string token)
         {
-            if(this._builder.Length > 0)
-                this._builder.Append(" ");
+            if(_builder.Length > 0 && !_builder.ToString().EndsWith("<br/>"))
+            {
+                _builder.Append(" ");
+            }
 
             WriteValue(wrapHighlight(token));
+        }
+
+        internal void WriteAttributes(TypeWrapper type)
+        {
+            foreach (var attributes in type.Attributes)
+            {
+                var line = $"[{attributes.Name}({string.Join(", ", attributes.Arguments)})]<br/>";
+                WriteValue(line);
+            }
         }
 
         public void WriteTypeName(TypeWrapper type)
