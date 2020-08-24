@@ -1288,7 +1288,7 @@ namespace Amazon.EC2
         /// <para>
         /// After you attach an EBS volume, you must make it available. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Making
-        /// an EBS Volume Available For Use</a>.
+        /// an EBS volume available for use</a>.
         /// </para>
         ///  
         /// <para>
@@ -1315,7 +1315,7 @@ namespace Amazon.EC2
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
-        /// Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Amazon EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachVolume service method.</param>
@@ -2149,7 +2149,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
-        /// an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// an Amazon EBS snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopySnapshot service method.</param>
@@ -3898,7 +3898,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You can tag your snapshots during creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-        /// Your Amazon EC2 Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4531,6 +4531,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateTransitGatewayPrefixListReference
+
+
+        /// <summary>
+        /// Creates a reference (route) to a prefix list in a specified transit gateway route
+        /// table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayPrefixListReference service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayPrefixListReference service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPrefixListReference">REST API Reference for CreateTransitGatewayPrefixListReference Operation</seealso>
+        CreateTransitGatewayPrefixListReferenceResponse CreateTransitGatewayPrefixListReference(CreateTransitGatewayPrefixListReferenceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayPrefixListReference operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayPrefixListReference operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTransitGatewayPrefixListReference
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPrefixListReference">REST API Reference for CreateTransitGatewayPrefixListReference Operation</seealso>
+        IAsyncResult BeginCreateTransitGatewayPrefixListReference(CreateTransitGatewayPrefixListReferenceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTransitGatewayPrefixListReference operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTransitGatewayPrefixListReference.</param>
+        /// 
+        /// <returns>Returns a  CreateTransitGatewayPrefixListReferenceResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPrefixListReference">REST API Reference for CreateTransitGatewayPrefixListReference Operation</seealso>
+        CreateTransitGatewayPrefixListReferenceResponse EndCreateTransitGatewayPrefixListReference(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateTransitGatewayRoute
 
 
@@ -4687,12 +4728,12 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You can tag your volumes during creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-        /// Your Amazon EC2 Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
-        /// an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVolume service method.</param>
@@ -6291,7 +6332,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Deleting
-        /// an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// an Amazon EBS snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshot service method.</param>
@@ -6754,6 +6795,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteTransitGatewayPrefixListReference
+
+
+        /// <summary>
+        /// Deletes a reference (route) to a prefix list in a specified transit gateway route
+        /// table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayPrefixListReference service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayPrefixListReference service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPrefixListReference">REST API Reference for DeleteTransitGatewayPrefixListReference Operation</seealso>
+        DeleteTransitGatewayPrefixListReferenceResponse DeleteTransitGatewayPrefixListReference(DeleteTransitGatewayPrefixListReferenceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGatewayPrefixListReference operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayPrefixListReference operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTransitGatewayPrefixListReference
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPrefixListReference">REST API Reference for DeleteTransitGatewayPrefixListReference Operation</seealso>
+        IAsyncResult BeginDeleteTransitGatewayPrefixListReference(DeleteTransitGatewayPrefixListReferenceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTransitGatewayPrefixListReference operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTransitGatewayPrefixListReference.</param>
+        /// 
+        /// <returns>Returns a  DeleteTransitGatewayPrefixListReferenceResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPrefixListReference">REST API Reference for DeleteTransitGatewayPrefixListReference Operation</seealso>
+        DeleteTransitGatewayPrefixListReferenceResponse EndDeleteTransitGatewayPrefixListReference(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteTransitGatewayRoute
 
 
@@ -6889,7 +6971,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
-        /// an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVolume service method.</param>
@@ -12776,7 +12858,7 @@ namespace Amazon.EC2
         /// You can also use CloudWatch Events to check the status of a modification to an EBS
         /// volume. For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
         /// CloudWatch Events User Guide</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-        /// Volume Modifications</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// volume modifications</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumesModifications service method.</param>
@@ -12838,7 +12920,7 @@ namespace Amazon.EC2
         /// fails, the overall status is <code>impaired</code>. If the status is <code>insufficient-data</code>,
         /// then the checks may still be taking place on your volume at the time. We recommend
         /// that you retry the request. For more information about volume status, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
-        /// the Status of Your Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// the status of your volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -12890,7 +12972,7 @@ namespace Amazon.EC2
         /// fails, the overall status is <code>impaired</code>. If the status is <code>insufficient-data</code>,
         /// then the checks may still be taking place on your volume at the time. We recommend
         /// that you retry the request. For more information about volume status, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
-        /// the Status of Your Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// the status of your volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -13677,7 +13759,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detaching
-        /// an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachVolume service method.</param>
@@ -14434,7 +14516,7 @@ namespace Amazon.EC2
         /// <para>
         /// After you enable encryption by default, you can no longer launch instances using instance
         /// types that do not support encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-        /// Instance Types</a>.
+        /// instance types</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableEbsEncryptionByDefault service method.</param>
@@ -14487,7 +14569,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon
-        /// EBS Fast Snapshot Restore</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS fast snapshot restore</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableFastSnapshotRestores service method.</param>
@@ -15694,6 +15776,47 @@ namespace Amazon.EC2
         /// <returns>Returns a  GetTransitGatewayMulticastDomainAssociationsResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMulticastDomainAssociations">REST API Reference for GetTransitGatewayMulticastDomainAssociations Operation</seealso>
         GetTransitGatewayMulticastDomainAssociationsResponse EndGetTransitGatewayMulticastDomainAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetTransitGatewayPrefixListReferences
+
+
+        /// <summary>
+        /// Gets information about the prefix list references in a specified transit gateway route
+        /// table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayPrefixListReferences service method.</param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayPrefixListReferences service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPrefixListReferences">REST API Reference for GetTransitGatewayPrefixListReferences Operation</seealso>
+        GetTransitGatewayPrefixListReferencesResponse GetTransitGatewayPrefixListReferences(GetTransitGatewayPrefixListReferencesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTransitGatewayPrefixListReferences operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayPrefixListReferences operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTransitGatewayPrefixListReferences
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPrefixListReferences">REST API Reference for GetTransitGatewayPrefixListReferences Operation</seealso>
+        IAsyncResult BeginGetTransitGatewayPrefixListReferences(GetTransitGatewayPrefixListReferencesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTransitGatewayPrefixListReferences operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTransitGatewayPrefixListReferences.</param>
+        /// 
+        /// <returns>Returns a  GetTransitGatewayPrefixListReferencesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPrefixListReferences">REST API Reference for GetTransitGatewayPrefixListReferences Operation</seealso>
+        GetTransitGatewayPrefixListReferencesResponse EndGetTransitGatewayPrefixListReferences(IAsyncResult asyncResult);
 
         #endregion
         
@@ -17177,7 +17300,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-        /// Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotAttribute service method.</param>
@@ -17475,6 +17598,89 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyTransitGateway
+
+
+        /// <summary>
+        /// Modifies the specified transit gateway. When you modify a transit gateway, the modified
+        /// options are applied to new transit gateway attachments only. Your existing transit
+        /// gateway attachments are not modified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGateway service method.</param>
+        /// 
+        /// <returns>The response from the ModifyTransitGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGateway">REST API Reference for ModifyTransitGateway Operation</seealso>
+        ModifyTransitGatewayResponse ModifyTransitGateway(ModifyTransitGatewayRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyTransitGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGateway operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyTransitGateway
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGateway">REST API Reference for ModifyTransitGateway Operation</seealso>
+        IAsyncResult BeginModifyTransitGateway(ModifyTransitGatewayRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyTransitGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyTransitGateway.</param>
+        /// 
+        /// <returns>Returns a  ModifyTransitGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGateway">REST API Reference for ModifyTransitGateway Operation</seealso>
+        ModifyTransitGatewayResponse EndModifyTransitGateway(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyTransitGatewayPrefixListReference
+
+
+        /// <summary>
+        /// Modifies a reference (route) to a prefix list in a specified transit gateway route
+        /// table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayPrefixListReference service method.</param>
+        /// 
+        /// <returns>The response from the ModifyTransitGatewayPrefixListReference service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayPrefixListReference">REST API Reference for ModifyTransitGatewayPrefixListReference Operation</seealso>
+        ModifyTransitGatewayPrefixListReferenceResponse ModifyTransitGatewayPrefixListReference(ModifyTransitGatewayPrefixListReferenceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyTransitGatewayPrefixListReference operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayPrefixListReference operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyTransitGatewayPrefixListReference
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayPrefixListReference">REST API Reference for ModifyTransitGatewayPrefixListReference Operation</seealso>
+        IAsyncResult BeginModifyTransitGatewayPrefixListReference(ModifyTransitGatewayPrefixListReferenceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyTransitGatewayPrefixListReference operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyTransitGatewayPrefixListReference.</param>
+        /// 
+        /// <returns>Returns a  ModifyTransitGatewayPrefixListReferenceResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayPrefixListReference">REST API Reference for ModifyTransitGatewayPrefixListReference Operation</seealso>
+        ModifyTransitGatewayPrefixListReferenceResponse EndModifyTransitGatewayPrefixListReference(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyTransitGatewayVpcAttachment
 
 
@@ -17524,18 +17730,18 @@ namespace Amazon.EC2
         /// EC2 instance type, you may be able to apply these changes without stopping the instance
         /// or detaching the volume from it. For more information about modifying an EBS volume
         /// running Linux, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
-        /// the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information about
+        /// the size, IOPS, or type of an EBS volume on Linux</a>. For more information about
         /// modifying an EBS volume running Windows, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
-        /// the Size, IOPS, or Type of an EBS Volume on Windows</a>. 
+        /// the size, IOPS, or type of an EBS volume on Windows</a>. 
         /// 
         ///  
         /// <para>
         ///  When you complete a resize operation on your volume, you need to extend the volume's
         /// file-system size to take advantage of the new storage capacity. For information about
         /// extending a Linux file system, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extending
-        /// a Linux File System</a>. For information about extending a Windows file system, see
+        /// a Linux file system</a>. For information about extending a Windows file system, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending
-        /// a Windows File System</a>. 
+        /// a Windows file system</a>. 
         /// </para>
         ///  
         /// <para>
@@ -17544,15 +17750,15 @@ namespace Amazon.EC2
         /// CloudWatch Events User Guide</a>. You can also track the status of a modification
         /// using <a>DescribeVolumesModifications</a>. For information about tracking status changes
         /// using either method, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-        /// Volume Modifications</a>. 
+        /// volume modifications</a>. 
         /// </para>
         ///  
         /// <para>
         /// With previous-generation instance types, resizing an EBS volume may require detaching
         /// and reattaching the volume or stopping and restarting the instance. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
-        /// the Size, IOPS, or Type of an EBS Volume on Linux</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
-        /// the Size, IOPS, or Type of an EBS Volume on Windows</a>.
+        /// the size, IOPS, or type of an EBS volume on Linux</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
+        /// the size, IOPS, or type of an EBS volume on Windows</a>.
         /// </para>
         ///  
         /// <para>
@@ -19764,7 +19970,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-        /// Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetSnapshotAttribute service method.</param>

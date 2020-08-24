@@ -379,6 +379,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.GetTransitGatewayPrefixListReferencesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.GetTransitGatewayRouteTableAssociationsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>

@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// After you enable encryption by default, you can no longer launch instances using instance
     /// types that do not support encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-    /// Instance Types</a>.
+    /// instance types</a>.
     /// </para>
     /// </summary>
     public partial class EnableEbsEncryptionByDefaultRequest : AmazonEC2Request

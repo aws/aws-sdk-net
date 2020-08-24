@@ -11145,6 +11145,64 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type TransitGatewayPrefixListReferenceState.
+    /// </summary>
+    public class TransitGatewayPrefixListReferenceState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for TransitGatewayPrefixListReferenceState
+        /// </summary>
+        public static readonly TransitGatewayPrefixListReferenceState Available = new TransitGatewayPrefixListReferenceState("available");
+        /// <summary>
+        /// Constant Deleting for TransitGatewayPrefixListReferenceState
+        /// </summary>
+        public static readonly TransitGatewayPrefixListReferenceState Deleting = new TransitGatewayPrefixListReferenceState("deleting");
+        /// <summary>
+        /// Constant Modifying for TransitGatewayPrefixListReferenceState
+        /// </summary>
+        public static readonly TransitGatewayPrefixListReferenceState Modifying = new TransitGatewayPrefixListReferenceState("modifying");
+        /// <summary>
+        /// Constant Pending for TransitGatewayPrefixListReferenceState
+        /// </summary>
+        public static readonly TransitGatewayPrefixListReferenceState Pending = new TransitGatewayPrefixListReferenceState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransitGatewayPrefixListReferenceState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitGatewayPrefixListReferenceState FindValue(string value)
+        {
+            return FindValue<TransitGatewayPrefixListReferenceState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitGatewayPrefixListReferenceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TransitGatewayPropagationState.
     /// </summary>
     public class TransitGatewayPropagationState : ConstantClass
@@ -12100,6 +12158,10 @@ namespace Amazon.EC2
         /// Constant Io1 for VolumeType
         /// </summary>
         public static readonly VolumeType Io1 = new VolumeType("io1");
+        /// <summary>
+        /// Constant Io2 for VolumeType
+        /// </summary>
+        public static readonly VolumeType Io2 = new VolumeType("io2");
         /// <summary>
         /// Constant Sc1 for VolumeType
         /// </summary>

@@ -130,7 +130,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>status</code> - The status of the volume (<code>creating</code> | <code>available</code>
+        ///  <code>status</code> - The state of the volume (<code>creating</code> | <code>available</code>
         /// | <code>in-use</code> | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
         /// </para>
         ///  </li> <li> 
@@ -153,9 +153,9 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code>
-        /// for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code>
-        /// for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code>
-        /// for Magnetic volumes.
+        /// for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS
+        /// SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD,
+        /// or <code>standard</code> for Magnetic volumes.
         /// </para>
         ///  </li> </ul>
         /// </summary>

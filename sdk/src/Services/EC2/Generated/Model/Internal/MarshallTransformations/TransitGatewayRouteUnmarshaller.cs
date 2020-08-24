@@ -60,6 +60,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DestinationCidrBlock = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("prefixListId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PrefixListId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("state", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

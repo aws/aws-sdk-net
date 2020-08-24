@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
     /// You can also use CloudWatch Events to check the status of a modification to an EBS
     /// volume. For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
     /// CloudWatch Events User Guide</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-    /// Volume Modifications</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// volume modifications</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeVolumesModificationsRequest : AmazonEC2Request
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>original-volume-type</code> - The original volume type of the volume (standard
-        /// | io1 | gp2 | sc1 | st1).
+        /// | io1 | io2 | gp2 | sc1 | st1).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>target-volume-type</code> - The target volume type of the volume (standard
-        /// | io1 | gp2 | sc1 | st1).
+        /// | io1 | io2 | gp2 | sc1 | st1).
         /// </para>
         ///  </li> <li> 
         /// <para>

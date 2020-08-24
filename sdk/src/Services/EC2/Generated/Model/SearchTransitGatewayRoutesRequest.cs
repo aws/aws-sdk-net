@@ -55,7 +55,11 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code>
-        /// | <code>vpn</code>).
+        /// | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>prefix-list-id</code> - The ID of the prefix list.
         /// </para>
         ///  </li> <li> 
         /// <para>

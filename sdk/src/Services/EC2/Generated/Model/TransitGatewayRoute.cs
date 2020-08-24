@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class TransitGatewayRoute
     {
         private string _destinationCidrBlock;
+        private string _prefixListId;
         private TransitGatewayRouteState _state;
         private List<TransitGatewayRouteAttachment> _transitGatewayAttachments = new List<TransitGatewayRouteAttachment>();
         private TransitGatewayRouteType _type;
@@ -54,6 +55,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDestinationCidrBlock()
         {
             return this._destinationCidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrefixListId. 
+        /// <para>
+        /// The ID of the prefix list used for destination matches.
+        /// </para>
+        /// </summary>
+        public string PrefixListId
+        {
+            get { return this._prefixListId; }
+            set { this._prefixListId = value; }
+        }
+
+        // Check to see if PrefixListId property is set
+        internal bool IsSetPrefixListId()
+        {
+            return this._prefixListId != null;
         }
 
         /// <summary>

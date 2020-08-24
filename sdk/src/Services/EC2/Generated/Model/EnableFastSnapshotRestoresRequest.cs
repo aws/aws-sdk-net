@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon
-    /// EBS Fast Snapshot Restore</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// EBS fast snapshot restore</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class EnableFastSnapshotRestoresRequest : AmazonEC2Request

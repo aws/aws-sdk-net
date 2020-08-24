@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// After you attach an EBS volume, you must make it available. For more information,
     /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Making
-    /// an EBS Volume Available For Use</a>.
+    /// an EBS volume available for use</a>.
     /// </para>
     ///  
     /// <para>
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
-    /// Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Amazon EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AttachVolumeRequest : AmazonEC2Request

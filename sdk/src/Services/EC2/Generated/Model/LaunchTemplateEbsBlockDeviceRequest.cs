@@ -82,17 +82,18 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The number of I/O operations per second (IOPS) that the volume supports. For io1,
-        /// this represents the number of IOPS that are provisioned for the volume. For gp2, this
-        /// represents the baseline performance of the volume and the rate at which the volume
-        /// accumulates I/O credits for bursting. For more information about General Purpose SSD
-        /// baseline performance, I/O credits, and bursting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+        /// The number of I/O operations per second (IOPS) to provision for an <code>io1</code>
+        /// or <code>io2</code> volume, with a maximum ratio of 50 IOPS/GiB for <code>io1</code>,
+        /// and 500 IOPS/GiB for <code>io2</code>. Range is 100 to 64,000 IOPS for volumes in
+        /// most Regions. Maximum IOPS of 64,000 is guaranteed only on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+        /// instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
         /// EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Condition: This parameter is required for requests to create io1 volumes; it is not
-        /// used in requests to create gp2, st1, sc1, or standard volumes.
+        /// This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>)
+        /// volumes.
         /// </para>
         /// </summary>
         public int Iops

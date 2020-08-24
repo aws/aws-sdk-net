@@ -50,7 +50,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code>).
+        ///  <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code>
+        /// | <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
