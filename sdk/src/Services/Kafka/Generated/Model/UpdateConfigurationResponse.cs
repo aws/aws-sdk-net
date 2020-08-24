@@ -29,15 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// This is the response object from the CreateConfiguration operation.
+    /// This is the response object from the UpdateConfiguration operation.
     /// </summary>
-    public partial class CreateConfigurationResponse : AmazonWebServiceResponse
+    public partial class UpdateConfigurationResponse : AmazonWebServiceResponse
     {
         private string _arn;
-        private DateTime? _creationTime;
         private ConfigurationRevision _latestRevision;
-        private string _name;
-        private ConfigurationState _state;
 
         /// <summary>
         /// Gets and sets the property Arn.             
@@ -58,24 +55,6 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationTime.             
-        /// <para>
-        /// The time when the configuration was created.
-        /// </para>
-        /// </summary>
-        public DateTime CreationTime
-        {
-            get { return this._creationTime.GetValueOrDefault(); }
-            set { this._creationTime = value; }
-        }
-
-        // Check to see if CreationTime property is set
-        internal bool IsSetCreationTime()
-        {
-            return this._creationTime.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property LatestRevision.             
         /// <para>
         /// Latest revision of the configuration.
@@ -91,43 +70,6 @@ namespace Amazon.Kafka.Model
         internal bool IsSetLatestRevision()
         {
             return this._latestRevision != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name.             
-        /// <para>
-        /// The name of the configuration.
-        /// </para>
-        /// </summary>
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property State.             
-        /// <para>
-        /// The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
-        /// 
-        /// </para>
-        /// </summary>
-        public ConfigurationState State
-        {
-            get { return this._state; }
-            set { this._state = value; }
-        }
-
-        // Check to see if State property is set
-        internal bool IsSetState()
-        {
-            return this._state != null;
         }
 
     }

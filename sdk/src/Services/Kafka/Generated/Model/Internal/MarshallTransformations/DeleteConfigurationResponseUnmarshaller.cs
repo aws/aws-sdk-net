@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateConfiguration operation
+    /// Response Unmarshaller for DeleteConfiguration operation
     /// </summary>  
-    public class CreateConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateConfigurationResponse response = new CreateConfigurationResponse();
+            DeleteConfigurationResponse response = new DeleteConfigurationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -55,24 +55,6 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("creationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("latestRevision", targetDepth))
-                {
-                    var unmarshaller = ConfigurationRevisionUnmarshaller.Instance;
-                    response.LatestRevision = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("state", targetDepth))
@@ -108,10 +90,6 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 {
                     return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
                 {
                     return ForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -120,25 +98,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 {
                     return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
                 {
-                    return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
-                {
-                    return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedException"))
-                {
-                    return UnauthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonKafkaException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateConfigurationResponseUnmarshaller _instance = new CreateConfigurationResponseUnmarshaller();        
+        private static DeleteConfigurationResponseUnmarshaller _instance = new DeleteConfigurationResponseUnmarshaller();        
 
-        internal static CreateConfigurationResponseUnmarshaller GetInstance()
+        internal static DeleteConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -146,7 +116,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateConfigurationResponseUnmarshaller Instance
+        public static DeleteConfigurationResponseUnmarshaller Instance
         {
             get
             {

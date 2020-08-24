@@ -396,6 +396,52 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  DeleteConfiguration
+
+        internal virtual DeleteConfigurationResponse DeleteConfiguration(DeleteConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an MSK Configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConfiguration service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteConfiguration">REST API Reference for DeleteConfiguration Operation</seealso>
+        public virtual Task<DeleteConfigurationResponse> DeleteConfigurationAsync(DeleteConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeCluster
 
         internal virtual DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
@@ -1374,6 +1420,58 @@ namespace Amazon.Kafka
             options.ResponseUnmarshaller = UpdateClusterKafkaVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateClusterKafkaVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateConfiguration
+
+        internal virtual UpdateConfigurationResponse UpdateConfiguration(UpdateConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an MSK configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConfiguration service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConfiguration">REST API Reference for UpdateConfiguration Operation</seealso>
+        public virtual Task<UpdateConfigurationResponse> UpdateConfigurationAsync(UpdateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
