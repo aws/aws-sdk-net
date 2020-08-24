@@ -1,3 +1,24 @@
+### 3.5.1.0 (2020-08-24 19:51 UTC)
+* CloudWatchLogs (3.5.0.1)
+	* Documentation updates for CloudWatch Logs
+* DatabaseMigrationService (3.5.1.0)
+	* Added new endpoint settings to include columns with Null and Empty value when using Kinesis and Kafka as target. Added a new endpoint setting to set maximum message size when using Kafka as target.
+* EC2 (3.5.1.0)
+	* This release enables customers to use VPC prefix lists in their transit gateway route tables, and it adds support for Provisioned IOPS SSD (io2) EBS volumes.
+* IoTSiteWise (3.5.1.0)
+	* Add traversalDirection to ListAssociatedAssetsRequest and add portal status to ListPortalsResponse
+* Kafka (3.5.1.0)
+	* Add UpdateConfiguration and DeleteConfiguration operations.
+* SimpleSystemsManagement (3.5.1.0)
+	* Add string length constraints to OpsDataAttributeName and OpsFilterValue.
+* XRay (3.5.1.0)
+	* AWS X-Ray now supports tagging on sampling rules and groups.
+* Core 3.5.0.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.0.0 (2020-08-20 21:00 UTC)
 * All (Core and Services) updated to version 3.5.0.0
    * Additional target for .NET Core 3.1
