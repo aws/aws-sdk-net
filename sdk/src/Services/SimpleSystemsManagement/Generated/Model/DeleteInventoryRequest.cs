@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteInventory operation.
-    /// Delete a custom inventory type, or the data associated with a custom Inventory type.
+    /// Delete a custom inventory type or the data associated with a custom Inventory type.
     /// Deleting a custom inventory type is also referred to as deleting a custom inventory
     /// schema.
     /// </summary>
@@ -47,7 +47,6 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// User-provided idempotency token.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -117,7 +116,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property TypeName. 
         /// <para>
         /// The name of the custom inventory type for which you want to delete either all previously
-        /// collected data, or the inventory type itself. 
+        /// collected data or the inventory type itself. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

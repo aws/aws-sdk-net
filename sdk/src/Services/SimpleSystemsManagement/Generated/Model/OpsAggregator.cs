@@ -86,6 +86,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of an OpsItem attribute on which to limit the count of OpsItems.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string AttributeName
         {
             get { return this._attributeName; }
