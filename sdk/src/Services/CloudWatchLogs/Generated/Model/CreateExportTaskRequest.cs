@@ -31,7 +31,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Container for the parameters to the CreateExportTask operation.
     /// Creates an export task, which allows you to efficiently export data from a log group
-    /// to an Amazon S3 bucket.
+    /// to an Amazon S3 bucket. When you perform a <code>CreateExportTask</code> operation,
+    /// you must use credentials that have permission to write to the S3 bucket that you specify
+    /// as the destination.
     /// 
     ///  
     /// <para>

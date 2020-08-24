@@ -38,7 +38,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// An upload in a newly created log stream does not require a sequence token. You can
     /// also get the sequence token in the <code>expectedSequenceToken</code> field from <code>InvalidSequenceTokenException</code>.
     /// If you call <code>PutLogEvents</code> twice within a narrow time period using the
-    /// same value for <code>sequenceToken</code>, both calls may be successful, or one may
+    /// same value for <code>sequenceToken</code>, both calls might be successful or one might
     /// be rejected.
     /// </para>
     ///  
@@ -47,8 +47,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The maximum batch size is 1,048,576 bytes, and this size is calculated as the sum
-    /// of all event messages in UTF-8, plus 26 bytes for each log event.
+    /// The maximum batch size is 1,048,576 bytes. This size is calculated as the sum of all
+    /// event messages in UTF-8, plus 26 bytes for each log event.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -61,7 +61,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The log events in the batch must be in chronological ordered by their timestamp. The
+    /// The log events in the batch must be in chronological order by their timestamp. The
     /// timestamp is the time the event occurred, expressed as the number of milliseconds
     /// after Jan 1, 1970 00:00:00 UTC. (In AWS Tools for PowerShell and the AWS SDK for .NET,
     /// the timestamp is specified in .NET format: yyyy-mm-ddThh:mm:ss. For example, 2017-09-15T13:45:30.)
@@ -83,8 +83,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// If a call to PutLogEvents returns "UnrecognizedClientException" the most likely cause
-    /// is an invalid AWS access key ID or secret key. 
+    /// If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most
+    /// likely cause is an invalid AWS access key ID or secret key. 
     /// </para>
     /// </summary>
     public partial class PutLogEventsRequest : AmazonCloudWatchLogsRequest
@@ -176,7 +176,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// call. An upload in a newly created log stream does not require a sequence token. You
         /// can also get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
         /// If you call <code>PutLogEvents</code> twice within a narrow time period using the
-        /// same value for <code>sequenceToken</code>, both calls may be successful, or one may
+        /// same value for <code>sequenceToken</code>, both calls might be successful or one might
         /// be rejected.
         /// </para>
         /// </summary>

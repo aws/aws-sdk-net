@@ -107,7 +107,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The time of the most recent log event in the log stream in CloudWatch Logs. This number
         /// is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code>
         /// value updates on an eventual consistency basis. It typically updates in less than
-        /// an hour from ingestion, but may take longer in some rare situations.
+        /// an hour from ingestion, but in rare situations might take longer.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -169,7 +169,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>IMPORTANT:</b>On June 17, 2019, this parameter was deprecated for log streams,
+        ///  <b>Important:</b> On June 17, 2019, this parameter was deprecated for log streams,
         /// and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code>
         /// parameter for log groups is not affected.
         /// </para>

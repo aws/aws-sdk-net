@@ -46,7 +46,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The name of Amazon S3 bucket to which the log data was exported.
+        /// The name of the S3 bucket to which the log data was exported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -83,7 +83,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ExecutionInfo. 
         /// <para>
-        /// Execution info about the export task.
+        /// Execution information about the export task.
         /// </para>
         /// </summary>
         public ExportTaskExecutionInfo ExecutionInfo

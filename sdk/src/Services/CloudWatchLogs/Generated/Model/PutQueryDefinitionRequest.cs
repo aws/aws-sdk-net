@@ -30,7 +30,25 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the PutQueryDefinition operation.
+    /// Creates or updates a query definition for CloudWatch Logs Insights. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html">Analyzing
+    /// Log Data with CloudWatch Logs Insights</a>.
     /// 
+    ///  
+    /// <para>
+    /// To update a query definition, specify its <code>queryDefinitionId</code> in your request.
+    /// The values of <code>name</code>, <code>queryString</code>, and <code>logGroupNames</code>
+    /// are changed to the values that you specify in your update operation. No current values
+    /// are retained from the current query definition. For example, if you update a current
+    /// query definition that includes log groups, and you don't specify the <code>logGroupNames</code>
+    /// parameter in your update operation, the query definition changes to contain no log
+    /// groups.
+    /// </para>
+    ///  
+    /// <para>
+    /// You must have the <code>logs:PutQueryDefinition</code> permission to be able to perform
+    /// this operation.
+    /// </para>
     /// </summary>
     public partial class PutQueryDefinitionRequest : AmazonCloudWatchLogsRequest
     {
@@ -40,7 +58,15 @@ namespace Amazon.CloudWatchLogs.Model
         private string _queryString;
 
         /// <summary>
-        /// Gets and sets the property LogGroupNames.
+        /// Gets and sets the property LogGroupNames. 
+        /// <para>
+        /// Use this parameter to include specific log groups as part of your query definition.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are updating a query definition and you omit this parameter, then the updated
+        /// definition will contain no log groups.
+        /// </para>
         /// </summary>
         public List<string> LogGroupNames
         {
@@ -55,7 +81,13 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// A name for the query definition. If you are saving a lot of query definitions, we
+        /// recommend that you name them so that you can easily find the ones you want by using
+        /// the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code>
+        /// parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
@@ -71,7 +103,18 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QueryDefinitionId.
+        /// Gets and sets the property QueryDefinitionId. 
+        /// <para>
+        /// If you are updating a query definition, use this parameter to specify the ID of the
+        /// query definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>
+        /// to retrieve the IDs of your saved query definitions.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are creating a query definition, do not specify this parameter. CloudWatch
+        /// generates a unique ID for the new query definition and include it in the response
+        /// to this operation.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
         public string QueryDefinitionId
@@ -87,7 +130,11 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QueryString.
+        /// Gets and sets the property QueryString. 
+        /// <para>
+        /// The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
+        /// Logs Insights Query Syntax</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10000)]
         public string QueryString

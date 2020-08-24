@@ -78,6 +78,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property SearchedLogStreams. 
         /// <para>
+        ///  <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be deprecated. This
+        /// parameter will be an empty list after the deprecation occurs.
+        /// </para>
+        ///  
+        /// <para>
         /// Indicates which log streams have been searched and whether each has been searched
         /// completely.
         /// </para>

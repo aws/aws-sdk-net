@@ -30,14 +30,29 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteQueryDefinition operation.
+    /// Deletes a saved CloudWatch Logs Insights query definition. A query definition contains
+    /// details about a saved CloudWatch Logs Insights query.
     /// 
+    ///  
+    /// <para>
+    /// Each <code>DeleteQueryDefinition</code> operation can delete one query definition.
+    /// </para>
+    ///  
+    /// <para>
+    /// You must have the <code>logs:DeleteQueryDefinition</code> permission to be able to
+    /// perform this operation.
+    /// </para>
     /// </summary>
     public partial class DeleteQueryDefinitionRequest : AmazonCloudWatchLogsRequest
     {
         private string _queryDefinitionId;
 
         /// <summary>
-        /// Gets and sets the property QueryDefinitionId.
+        /// Gets and sets the property QueryDefinitionId. 
+        /// <para>
+        /// The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>
+        /// to retrieve the IDs of your saved query definitions.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
         public string QueryDefinitionId

@@ -30,7 +30,14 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeQueryDefinitions operation.
+    /// This operation returns a paginated list of your saved CloudWatch Logs Insights query
+    /// definitions.
     /// 
+    ///  
+    /// <para>
+    /// You can use the <code>queryDefinitionNamePrefix</code> parameter to limit the results
+    /// to only the query definitions that have names that start with a certain string.
+    /// </para>
     /// </summary>
     public partial class DescribeQueryDefinitionsRequest : AmazonCloudWatchLogsRequest
     {
@@ -39,7 +46,10 @@ namespace Amazon.CloudWatchLogs.Model
         private string _queryDefinitionNamePrefix;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// Limits the number of returned query definitions to the specified number.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
@@ -71,7 +81,11 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QueryDefinitionNamePrefix.
+        /// Gets and sets the property QueryDefinitionNamePrefix. 
+        /// <para>
+        /// Use this parameter to filter your results to only the query definitions that have
+        /// names that start with the prefix you specify.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string QueryDefinitionNamePrefix

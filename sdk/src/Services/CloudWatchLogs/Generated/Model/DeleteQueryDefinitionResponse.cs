@@ -36,7 +36,11 @@ namespace Amazon.CloudWatchLogs.Model
         private bool? _success;
 
         /// <summary>
-        /// Gets and sets the property Success.
+        /// Gets and sets the property Success. 
+        /// <para>
+        /// A value of TRUE indicates that the operation succeeded. FALSE indicates that the operation
+        /// failed.
+        /// </para>
         /// </summary>
         public bool Success
         {

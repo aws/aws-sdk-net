@@ -36,7 +36,10 @@ namespace Amazon.CloudWatchLogs.Model
         private string _queryDefinitionId;
 
         /// <summary>
-        /// Gets and sets the property QueryDefinitionId.
+        /// Gets and sets the property QueryDefinitionId. 
+        /// <para>
+        /// The ID of the query definition.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
         public string QueryDefinitionId

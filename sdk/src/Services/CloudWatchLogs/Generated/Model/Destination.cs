@@ -139,8 +139,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property TargetArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the physical target to where the log events are
-        /// delivered (for example, a Kinesis stream).
+        /// The Amazon Resource Name (ARN) of the physical target where the log events are delivered
+        /// (for example, a Kinesis stream).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

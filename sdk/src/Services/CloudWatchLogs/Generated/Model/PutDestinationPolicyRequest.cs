@@ -44,7 +44,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property AccessPolicy. 
         /// <para>
         /// An IAM policy document that authorizes cross-account users to deliver their log events
-        /// to the associated destination.
+        /// to the associated destination. This can be up to 5120 bytes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

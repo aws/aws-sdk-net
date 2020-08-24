@@ -30,7 +30,7 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// The query string is not valid. Details about this error are displayed in a <code>QueryCompileError</code>
-    /// object. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_QueryCompileError.html">QueryCompileError</a>"/&gt;.
+    /// object. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_QueryCompileError.html">QueryCompileError</a>.
     /// 
     ///  
     /// <para>

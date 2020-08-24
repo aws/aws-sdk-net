@@ -36,9 +36,15 @@ namespace Amazon.CloudWatchLogs.Model
     ///  
     /// <para>
     /// By default, this operation returns as many log events as can fit in 1 MB (up to 10,000
-    /// log events), or all the events found within the time range that you specify. If the
+    /// log events) or all the events found within the time range that you specify. If the
     /// results include a token, then there are more log events available, and you can get
-    /// additional results by specifying the token in a subsequent call.
+    /// additional results by specifying the token in a subsequent call. This operation can
+    /// return empty results while there are more log events available through the token.
+    /// </para>
+    ///  
+    /// <para>
+    /// The returned log events are sorted by event timestamp, the timestamp when the event
+    /// was ingested by CloudWatch Logs, and the ID of the <code>PutLogEvents</code> request.
     /// </para>
     /// </summary>
     public partial class FilterLogEventsRequest : AmazonCloudWatchLogsRequest
@@ -107,9 +113,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the
-        /// value will be assumed to be true. The response from this operation will always interleave
-        /// events from multiple log streams within a log group.
+        ///  <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value
+        /// is assumed to be true. The response from this operation always interleaves events
+        /// from multiple log streams within a log group.
         /// </para>
         /// </summary>
         [Obsolete("Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group.")]
@@ -239,6 +245,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// The start of the time range, expressed as the number of milliseconds after Jan 1,
         /// 1970 00:00:00 UTC. Events with a timestamp before this time are not returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit <code>startTime</code> and <code>endTime</code> the most recent log events
+        /// are retrieved, to up 1 MB or 10,000 log events.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

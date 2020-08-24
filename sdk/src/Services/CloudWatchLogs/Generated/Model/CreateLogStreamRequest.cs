@@ -30,7 +30,9 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLogStream operation.
-    /// Creates a log stream for the specified log group.
+    /// Creates a log stream for the specified log group. A log stream is a sequence of log
+    /// events that originate from a single source, such as an application instance or a resource
+    /// that is being monitored.
     /// 
     ///  
     /// <para>

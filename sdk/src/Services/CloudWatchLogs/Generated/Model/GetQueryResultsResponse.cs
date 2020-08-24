@@ -66,7 +66,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// Includes the number of log events scanned by the query, the number of log events that
         /// matched the query criteria, and the total number of bytes in the log events that were
-        /// scanned.
+        /// scanned. These values reflect the full raw results of the query.
         /// </para>
         /// </summary>
         public QueryStatistics Statistics
@@ -91,7 +91,7 @@ namespace Amazon.CloudWatchLogs.Model
         ///  
         /// <para>
         /// Queries time out after 15 minutes of execution. To avoid having your queries time
-        /// out, reduce the time range being searched, or partition your query into a number of
+        /// out, reduce the time range being searched or partition your query into a number of
         /// queries.
         /// </para>
         /// </summary>

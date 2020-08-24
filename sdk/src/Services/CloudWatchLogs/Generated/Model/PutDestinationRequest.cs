@@ -47,6 +47,11 @@ namespace Amazon.CloudWatchLogs.Model
     /// against this destination. To enable this, the destination owner must call <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>
     /// after <code>PutDestination</code>.
     /// </para>
+    ///  
+    /// <para>
+    /// To perform a <code>PutDestination</code> operation, you must also have the <code>iam:PassRole</code>
+    /// permission.
+    /// </para>
     /// </summary>
     public partial class PutDestinationRequest : AmazonCloudWatchLogsRequest
     {
@@ -77,7 +82,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon
-        /// Kinesis PutRecord operation on the destination stream.
+        /// Kinesis <code>PutRecord</code> operation on the destination stream.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

@@ -30,13 +30,13 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLogRecord operation.
-    /// Retrieves all the fields and values of a single log event. All fields are retrieved,
+    /// Retrieves all of the fields and values of a single log event. All fields are retrieved,
     /// even if the original query that produced the <code>logRecordPointer</code> retrieved
     /// only a subset of fields. Fields are returned as field name/field value pairs.
     /// 
     ///  
     /// <para>
-    /// Additionally, the entire unparsed log event is returned within <code>@message</code>.
+    /// The full unparsed log event is returned within <code>@message</code>.
     /// </para>
     /// </summary>
     public partial class GetLogRecordRequest : AmazonCloudWatchLogsRequest

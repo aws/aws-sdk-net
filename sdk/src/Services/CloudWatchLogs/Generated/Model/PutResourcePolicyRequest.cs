@@ -32,7 +32,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// Container for the parameters to the PutResourcePolicy operation.
     /// Creates or updates a resource policy allowing other AWS services to put log events
     /// to this account, such as Amazon Route 53. An account can have up to 10 resource policies
-    /// per region.
+    /// per AWS Region.
     /// </summary>
     public partial class PutResourcePolicyRequest : AmazonCloudWatchLogsRequest
     {
@@ -49,8 +49,8 @@ namespace Amazon.CloudWatchLogs.Model
         ///  
         /// <para>
         /// The following example creates a resource policy enabling the Route 53 service to put
-        /// DNS query logs in to the specified log group. Replace "logArn" with the ARN of your
-        /// CloudWatch Logs resource, such as a log group or log stream.
+        /// DNS query logs in to the specified log group. Replace <code>"logArn"</code> with the
+        /// ARN of your CloudWatch Logs resource, such as a log group or log stream.
         /// </para>
         ///  
         /// <para>

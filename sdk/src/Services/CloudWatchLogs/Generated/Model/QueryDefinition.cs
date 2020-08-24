@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// 
+    /// This structure contains details about a saved CloudWatch Logs Insights query definition.
     /// </summary>
     public partial class QueryDefinition
     {
@@ -40,7 +40,10 @@ namespace Amazon.CloudWatchLogs.Model
         private string _queryString;
 
         /// <summary>
-        /// Gets and sets the property LastModified.
+        /// Gets and sets the property LastModified. 
+        /// <para>
+        /// The date that the query definition was most recently modified.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
         public long LastModified
@@ -56,7 +59,11 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogGroupNames.
+        /// Gets and sets the property LogGroupNames. 
+        /// <para>
+        /// If this query definition contains a list of log groups that it is limited to, that
+        /// list appears here.
+        /// </para>
         /// </summary>
         public List<string> LogGroupNames
         {
@@ -71,7 +78,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the query definition.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string Name
@@ -87,7 +97,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QueryDefinitionId.
+        /// Gets and sets the property QueryDefinitionId. 
+        /// <para>
+        /// The unique ID of the query definition.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
         public string QueryDefinitionId
@@ -103,7 +116,11 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QueryString.
+        /// Gets and sets the property QueryString. 
+        /// <para>
+        /// The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
+        /// Logs Insights Query Syntax</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
         public string QueryString

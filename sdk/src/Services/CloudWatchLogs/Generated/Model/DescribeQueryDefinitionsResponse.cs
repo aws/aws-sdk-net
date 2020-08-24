@@ -53,7 +53,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QueryDefinitions.
+        /// Gets and sets the property QueryDefinitions. 
+        /// <para>
+        /// The list of query definitions that match your request.
+        /// </para>
         /// </summary>
         public List<QueryDefinition> QueryDefinitions
         {
