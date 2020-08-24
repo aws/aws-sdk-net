@@ -29,43 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateSamplingRule operation.
-    /// Creates a rule to control sampling behavior for instrumented applications. Services
-    /// retrieve rules with <a>GetSamplingRules</a>, and evaluate each rule in ascending order
-    /// of <i>priority</i> for each request. If a rule matches, the service records a trace,
-    /// borrowing it from the reservoir size. After 10 seconds, the service reports back to
-    /// X-Ray with <a>GetSamplingTargets</a> to get updated versions of each in-use rule.
-    /// The updated rule contains a trace quota that the service can use instead of borrowing
-    /// from the reservoir.
+    /// Container for the parameters to the TagResource operation.
+    /// 
     /// </summary>
-    public partial class CreateSamplingRuleRequest : AmazonXRayRequest
+    public partial class TagResourceRequest : AmazonXRayRequest
     {
-        private SamplingRule _samplingRule;
+        private string _resourceARN;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property SamplingRule. 
-        /// <para>
-        /// The rule definition.
-        /// </para>
+        /// Gets and sets the property ResourceARN.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public SamplingRule SamplingRule
+        [AWSProperty(Required=true, Min=1, Max=1011)]
+        public string ResourceARN
         {
-            get { return this._samplingRule; }
-            set { this._samplingRule = value; }
+            get { return this._resourceARN; }
+            set { this._resourceARN = value; }
         }
 
-        // Check to see if SamplingRule property is set
-        internal bool IsSetSamplingRule()
+        // Check to see if ResourceARN property is set
+        internal bool IsSetResourceARN()
         {
-            return this._samplingRule != null;
+            return this._resourceARN != null;
         }
 
         /// <summary>
         /// Gets and sets the property Tags.
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Required=true, Min=0, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

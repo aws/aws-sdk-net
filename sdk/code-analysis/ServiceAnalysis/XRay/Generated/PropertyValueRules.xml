@@ -56,6 +56,11 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.XRay.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.XRay.Model.PutEncryptionConfigRequest.KeyId</property>
     <min>1</min>
     <max>3000</max>
@@ -73,6 +78,16 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.XRay.Model.TagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.UntagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.XRay.Model.UpdateGroupRequest.GroupARN</property>
     <min>1</min>
     <max>400</max>
@@ -81,6 +96,11 @@
     <property>Amazon.XRay.Model.UpdateGroupRequest.GroupName</property>
     <min>1</min>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.ResourceNotFoundException.ResourceName</property>
+    <min>1</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.SamplingRule.FixedRate</property>
@@ -183,6 +203,21 @@
   <property-value-rule>
     <property>Amazon.XRay.Model.Segment.Document</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.TooManyTagsException.ResourceName</property>
+    <min>1</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.Trace.Id</property>

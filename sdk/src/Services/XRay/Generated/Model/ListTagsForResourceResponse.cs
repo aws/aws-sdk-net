@@ -29,37 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateSamplingRule operation.
-    /// Creates a rule to control sampling behavior for instrumented applications. Services
-    /// retrieve rules with <a>GetSamplingRules</a>, and evaluate each rule in ascending order
-    /// of <i>priority</i> for each request. If a rule matches, the service records a trace,
-    /// borrowing it from the reservoir size. After 10 seconds, the service reports back to
-    /// X-Ray with <a>GetSamplingTargets</a> to get updated versions of each in-use rule.
-    /// The updated rule contains a trace quota that the service can use instead of borrowing
-    /// from the reservoir.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class CreateSamplingRuleRequest : AmazonXRayRequest
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private SamplingRule _samplingRule;
+        private string _nextToken;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property SamplingRule. 
-        /// <para>
-        /// The rule definition.
-        /// </para>
+        /// Gets and sets the property NextToken.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public SamplingRule SamplingRule
+        public string NextToken
         {
-            get { return this._samplingRule; }
-            set { this._samplingRule = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if SamplingRule property is set
-        internal bool IsSetSamplingRule()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._samplingRule != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
