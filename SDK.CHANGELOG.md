@@ -1,3 +1,8 @@
+### 3.5.2.0 (2020-08-24 22:27 UTC)
+* Core 3.5.1.0
+	* Add paginator support
+	* All services packages updated to require new Core
+
 ### 3.5.1.0 (2020-08-24 19:51 UTC)
 * CloudWatchLogs (3.5.0.1)
 	* Documentation updates for CloudWatch Logs
