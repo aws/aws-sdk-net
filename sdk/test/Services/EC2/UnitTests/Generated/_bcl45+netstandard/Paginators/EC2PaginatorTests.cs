@@ -3397,6 +3397,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("EC2")]
+        public void GetTransitGatewayPrefixListReferencesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetTransitGatewayPrefixListReferencesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetTransitGatewayPrefixListReferencesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetTransitGatewayPrefixListReferencesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetTransitGatewayPrefixListReferences(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetTransitGatewayPrefixListReferences(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetTransitGatewayPrefixListReferencesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetTransitGatewayPrefixListReferencesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetTransitGatewayPrefixListReferencesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetTransitGatewayPrefixListReferences(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetTransitGatewayPrefixListReferences(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void GetTransitGatewayRouteTableAssociationsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<GetTransitGatewayRouteTableAssociationsRequest>();

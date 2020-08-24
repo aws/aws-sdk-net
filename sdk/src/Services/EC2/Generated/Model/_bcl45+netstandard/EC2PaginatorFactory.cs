@@ -725,6 +725,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for GetTransitGatewayPrefixListReferences operation
+        ///</summary>
+        public IGetTransitGatewayPrefixListReferencesPaginator GetTransitGatewayPrefixListReferences(GetTransitGatewayPrefixListReferencesRequest request) 
+        {
+            return new GetTransitGatewayPrefixListReferencesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetTransitGatewayRouteTableAssociations operation
         ///</summary>
         public IGetTransitGatewayRouteTableAssociationsPaginator GetTransitGatewayRouteTableAssociations(GetTransitGatewayRouteTableAssociationsRequest request) 

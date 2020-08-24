@@ -457,6 +457,11 @@ namespace Amazon.EC2.Model
         IGetTransitGatewayMulticastDomainAssociationsPaginator GetTransitGatewayMulticastDomainAssociations(GetTransitGatewayMulticastDomainAssociationsRequest request);
 
         /// <summary>
+        /// Paginator for GetTransitGatewayPrefixListReferences operation
+        ///</summary>
+        IGetTransitGatewayPrefixListReferencesPaginator GetTransitGatewayPrefixListReferences(GetTransitGatewayPrefixListReferencesRequest request);
+
+        /// <summary>
         /// Paginator for GetTransitGatewayRouteTableAssociations operation
         ///</summary>
         IGetTransitGatewayRouteTableAssociationsPaginator GetTransitGatewayRouteTableAssociations(GetTransitGatewayRouteTableAssociationsRequest request);
