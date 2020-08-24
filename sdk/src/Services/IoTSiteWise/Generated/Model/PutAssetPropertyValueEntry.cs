@@ -86,7 +86,7 @@ namespace Amazon.IoTSiteWise.Model
         /// The property alias that identifies the property, such as an OPC-UA server data stream
         /// path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more
         /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-        /// Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

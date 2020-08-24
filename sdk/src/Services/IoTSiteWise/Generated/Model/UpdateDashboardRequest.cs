@@ -65,7 +65,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// The new dashboard definition, as specified in a JSON literal. For detailed information,
         /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-        /// Dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=204800)]

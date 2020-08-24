@@ -46,10 +46,10 @@ namespace Amazon.IoTSiteWise.Model
         /// The property alias that identifies the property, such as an OPC-UA server data stream
         /// path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more
         /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-        /// Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1)]
         public string Alias
         {
             get { return this._alias; }
@@ -122,8 +122,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Notification. 
         /// <para>
-        /// The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>
-        /// 
+        /// The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.
         /// </para>
         /// </summary>
         public PropertyNotification Notification

@@ -31,15 +31,15 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Container for the parameters to the CreatePortal operation.
     /// Creates a portal, which can contain projects and dashboards. Before you can create
-    /// a portal, you must configure AWS Single Sign-On in the current Region. AWS IoT SiteWise
-    /// Monitor uses AWS SSO to manage user permissions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
+    /// a portal, you must enable AWS Single Sign-On. AWS IoT SiteWise Monitor uses AWS SSO
+    /// to manage user permissions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
     /// AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.
     /// 
     ///  <note> 
     /// <para>
     /// Before you can sign in to a new portal, you must add at least one AWS SSO user or
     /// group to that portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
-    /// or Removing Portal Administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
+    /// or removing portal administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
     /// </para>
     ///  </note>
     /// </summary>

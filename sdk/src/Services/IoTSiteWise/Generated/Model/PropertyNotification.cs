@@ -32,7 +32,7 @@ namespace Amazon.IoTSiteWise.Model
     /// Contains asset property value notification information. When the notification state
     /// is enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic.
     /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-    /// with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.
+    /// with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.
     /// </summary>
     public partial class PropertyNotification
     {

@@ -42,7 +42,7 @@ namespace Amazon.IoTSiteWise.Model
         /// The default value of the asset model property attribute. All assets that you create
         /// from the asset model contain this attribute value. You can update an attribute's value
         /// after you create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating
-        /// Attribute Values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// attribute values</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -31,7 +31,7 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Container for the parameters to the GetAssetPropertyValueHistory operation.
     /// Gets the history of an asset property's values. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying
-    /// Historical Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+    /// historical values</a> in the <i>AWS IoT SiteWise User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -103,6 +103,10 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// The maximum number of results to be returned per paginated request.
         /// </para>
+        ///  
+        /// <para>
+        /// Default: 100
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]
         public int MaxResults
@@ -142,7 +146,7 @@ namespace Amazon.IoTSiteWise.Model
         /// The property alias that identifies the property, such as an OPC-UA server data stream
         /// path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more
         /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-        /// Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -219,6 +223,10 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property TimeOrdering. 
         /// <para>
         /// The chronological sorting order of the requested information.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>ASCENDING</code> 
         /// </para>
         /// </summary>
         public TimeOrdering TimeOrdering

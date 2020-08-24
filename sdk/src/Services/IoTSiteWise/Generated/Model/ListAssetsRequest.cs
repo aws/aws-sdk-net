@@ -82,8 +82,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// The filter for the requested list of assets. Choose one of the following options.
-        /// Defaults to <code>ALL</code>.
+        /// The filter for the requested list of assets. Choose one of the following options:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -95,7 +94,10 @@ namespace Amazon.IoTSiteWise.Model
         ///  <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy
         /// tree.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <code>ALL</code> 
+        /// </para>
         /// </summary>
         public ListAssetsFilter Filter
         {
@@ -113,6 +115,10 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to be returned per paginated request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 50
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]

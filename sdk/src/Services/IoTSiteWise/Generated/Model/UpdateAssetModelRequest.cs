@@ -33,7 +33,7 @@ namespace Amazon.IoTSiteWise.Model
     /// Updates an asset model and all of the assets that were created from the model. Each
     /// asset created from the model inherits the updated asset model's property and hierarchy
     /// definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-    /// Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+    /// assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
     /// 
     ///  <important> 
     /// <para>
@@ -84,7 +84,7 @@ namespace Amazon.IoTSiteWise.Model
         /// The updated hierarchy definitions of the asset model. Each hierarchy specifies an
         /// asset model whose assets can be children of any other assets created from this asset
         /// model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-        /// Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -148,7 +148,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// The updated property definitions of the asset model. For more information, see <a
         /// href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset
-        /// Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
         ///  
         /// <para>

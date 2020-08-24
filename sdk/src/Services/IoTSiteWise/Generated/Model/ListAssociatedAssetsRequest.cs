@@ -30,8 +30,21 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAssociatedAssets operation.
-    /// Retrieves a paginated list of the assets associated to a parent asset (<code>assetId</code>)
-    /// by a given hierarchy (<code>hierarchyId</code>).
+    /// Retrieves a paginated list of associated assets.
+    /// 
+    ///  
+    /// <para>
+    /// You can use this operation to do the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// List child assets associated to a parent asset by a hierarchy that you specify.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// List an asset's parent asset.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListAssociatedAssetsRequest : AmazonIoTSiteWiseRequest
     {
@@ -39,11 +52,12 @@ namespace Amazon.IoTSiteWise.Model
         private string _hierarchyId;
         private int? _maxResults;
         private string _nextToken;
+        private TraversalDirection _traversalDirection;
 
         /// <summary>
         /// Gets and sets the property AssetId. 
         /// <para>
-        /// The ID of the parent asset.
+        /// The ID of the asset to query.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -62,18 +76,18 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property HierarchyId. 
         /// <para>
-        /// The hierarchy ID (of the parent asset model) whose associated assets are returned.
-        /// To find a hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a>
+        /// The ID of the hierarchy by which child assets are associated to the asset. To find
+        /// a hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a>
         /// or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>
-        /// actions.
+        /// operations. This parameter is required if you choose <code>CHILD</code> for <code>traversalDirection</code>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-        /// Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
+        [AWSProperty(Min=36, Max=36)]
         public string HierarchyId
         {
             get { return this._hierarchyId; }
@@ -90,6 +104,10 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to be returned per paginated request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 50
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]
@@ -122,6 +140,37 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraversalDirection. 
+        /// <para>
+        /// The direction to list associated assets. Choose one of the following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CHILD</code> – The list includes all child assets associated to the asset.
+        /// The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PARENT</code> – The list includes the asset's parent asset.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <code>CHILD</code> 
+        /// </para>
+        /// </summary>
+        public TraversalDirection TraversalDirection
+        {
+            get { return this._traversalDirection; }
+            set { this._traversalDirection = value; }
+        }
+
+        // Check to see if TraversalDirection property is set
+        internal bool IsSetTraversalDirection()
+        {
+            return this._traversalDirection != null;
         }
 
     }

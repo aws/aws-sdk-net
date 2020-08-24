@@ -1050,7 +1050,6 @@
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.UpdateAssetPropertyRequest.PropertyAlias</property>
     <min>1</min>
-    <max>2048</max>
     <pattern>[^\u0000-\u001F\u007F]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1295,7 +1294,6 @@
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.AssetProperty.Alias</property>
     <min>1</min>
-    <max>2048</max>
     <pattern>[^\u0000-\u001F\u007F]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1522,7 +1520,6 @@
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.Property.Alias</property>
     <min>1</min>
-    <max>2048</max>
     <pattern>[^\u0000-\u001F\u007F]+</pattern>
   </property-value-rule>
   <property-value-rule>

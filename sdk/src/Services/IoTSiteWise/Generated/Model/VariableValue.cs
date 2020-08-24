@@ -48,7 +48,7 @@ namespace Amazon.IoTSiteWise.Model
         /// using the same model and therefore the same <code>propertyId</code>. For example,
         /// you might have separately grouped assets that come from the same asset model. For
         /// more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-        /// Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

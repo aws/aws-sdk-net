@@ -31,7 +31,7 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Container for the parameters to the CreateAsset operation.
     /// Creates an asset from an existing asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating
-    /// Assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
+    /// assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
     /// </summary>
     public partial class CreateAssetRequest : AmazonIoTSiteWiseRequest
     {

@@ -48,7 +48,7 @@ namespace Amazon.IoTSiteWise
         /// <summary>
         /// Associates a child asset with the given parent asset through a hierarchy defined in
         /// the parent asset's model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating
-        /// Assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAssets service method.</param>
         /// 
@@ -97,7 +97,7 @@ namespace Amazon.IoTSiteWise
         /// <summary>
         /// Associates a child asset with the given parent asset through a hierarchy defined in
         /// the parent asset's model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating
-        /// Assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAssets service method.</param>
         /// <param name="cancellationToken">
@@ -314,7 +314,7 @@ namespace Amazon.IoTSiteWise
         /// <summary>
         /// Sends a list of asset property values to AWS IoT SiteWise. Each value is a timestamp-quality-value
         /// (TQV) data point. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting
-        /// Data Using the API</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// data using the API</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -342,7 +342,12 @@ namespace Amazon.IoTSiteWise
         /// unless the newer TQV has a different quality. For example, if you store a TQV <code>{T1,
         /// GOOD, V1}</code>, then storing <code>{T1, GOOD, V2}</code> replaces the existing TQV.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// AWS IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code>
+        /// entry individually. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue
+        /// authorization</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutAssetPropertyValue service method.</param>
         /// 
@@ -394,7 +399,7 @@ namespace Amazon.IoTSiteWise
         /// <summary>
         /// Sends a list of asset property values to AWS IoT SiteWise. Each value is a timestamp-quality-value
         /// (TQV) data point. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting
-        /// Data Using the API</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// data using the API</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -422,7 +427,12 @@ namespace Amazon.IoTSiteWise
         /// unless the newer TQV has a different quality. For example, if you store a TQV <code>{T1,
         /// GOOD, V1}</code>, then storing <code>{T1, GOOD, V2}</code> replaces the existing TQV.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// AWS IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code>
+        /// entry individually. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue
+        /// authorization</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutAssetPropertyValue service method.</param>
         /// <param name="cancellationToken">
@@ -573,7 +583,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Creates an asset from an existing asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating
-        /// Assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAsset service method.</param>
         /// 
@@ -624,7 +634,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Creates an asset from an existing asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating
-        /// Assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAsset service method.</param>
         /// <param name="cancellationToken">
@@ -685,7 +695,7 @@ namespace Amazon.IoTSiteWise
         /// type that have standardized definitions. Each asset created from a model inherits
         /// the asset model's property and hierarchy definitions. For more information, see <a
         /// href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining
-        /// Asset Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// asset models</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssetModel service method.</param>
         /// 
@@ -740,7 +750,7 @@ namespace Amazon.IoTSiteWise
         /// type that have standardized definitions. Each asset created from a model inherits
         /// the asset model's property and hierarchy definitions. For more information, see <a
         /// href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining
-        /// Asset Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// asset models</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssetModel service method.</param>
         /// <param name="cancellationToken">
@@ -985,15 +995,15 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Creates a portal, which can contain projects and dashboards. Before you can create
-        /// a portal, you must configure AWS Single Sign-On in the current Region. AWS IoT SiteWise
-        /// Monitor uses AWS SSO to manage user permissions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
+        /// a portal, you must enable AWS Single Sign-On. AWS IoT SiteWise Monitor uses AWS SSO
+        /// to manage user permissions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
         /// AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
         /// Before you can sign in to a new portal, you must add at least one AWS SSO user or
         /// group to that portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
-        /// or Removing Portal Administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// or removing portal administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1039,15 +1049,15 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Creates a portal, which can contain projects and dashboards. Before you can create
-        /// a portal, you must configure AWS Single Sign-On in the current Region. AWS IoT SiteWise
-        /// Monitor uses AWS SSO to manage user permissions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
+        /// a portal, you must enable AWS Single Sign-On. AWS IoT SiteWise Monitor uses AWS SSO
+        /// to manage user permissions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
         /// AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
         /// Before you can sign in to a new portal, you must add at least one AWS SSO user or
         /// group to that portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
-        /// or Removing Portal Administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// or removing portal administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1265,7 +1275,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Deletes an asset. This action can't be undone. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-        /// Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>. 
+        /// assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>. 
         /// 
         ///  <note> 
         /// <para>
@@ -1309,7 +1319,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Deletes an asset. This action can't be undone. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-        /// Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>. 
+        /// assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>. 
         /// 
         ///  <note> 
         /// <para>
@@ -1362,7 +1372,7 @@ namespace Amazon.IoTSiteWise
         /// from an asset model before you can delete the model. Also, you can't delete an asset
         /// model if a parent asset model exists that contains a property formula expression that
         /// depends on the asset model that you want to delete. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-        /// Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAssetModel service method.</param>
         /// 
@@ -1402,7 +1412,7 @@ namespace Amazon.IoTSiteWise
         /// from an asset model before you can delete the model. Also, you can't delete an asset
         /// model if a parent asset model exists that contains a property formula expression that
         /// depends on the asset model that you want to delete. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-        /// Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAssetModel service method.</param>
         /// <param name="cancellationToken">
@@ -1948,7 +1958,19 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Retrieves information about an asset's property.
+        /// Retrieves information about an asset property.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When you call this operation for an attribute property, this response includes the
+        /// default attribute value that you define in the asset model. If you update the default
+        /// value in the model, this operation's response includes the new default value.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This operation doesn't return the value of the asset property. To get the value of
+        /// an asset property, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html">GetAssetPropertyValue</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAssetProperty service method.</param>
         /// 
@@ -1980,7 +2002,19 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Retrieves information about an asset's property.
+        /// Retrieves information about an asset property.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When you call this operation for an attribute property, this response includes the
+        /// default attribute value that you define in the asset model. If you update the default
+        /// value in the model, this operation's response includes the new default value.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This operation doesn't return the value of the asset property. To get the value of
+        /// an asset property, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html">GetAssetPropertyValue</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAssetProperty service method.</param>
         /// <param name="cancellationToken">
@@ -2527,7 +2561,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Gets aggregated values for an asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
-        /// Aggregated Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// aggregates</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -2578,7 +2612,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Gets aggregated values for an asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
-        /// Aggregated Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// aggregates</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -2635,7 +2669,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Gets an asset property's current value. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying
-        /// Current Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// current values</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -2686,7 +2720,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Gets an asset property's current value. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying
-        /// Current Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// current values</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -2743,7 +2777,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Gets the history of an asset property's values. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying
-        /// Historical Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// historical values</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -2794,7 +2828,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Gets the history of an asset property's values. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying
-        /// Historical Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// historical values</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -3090,8 +3124,21 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Retrieves a paginated list of the assets associated to a parent asset (<code>assetId</code>)
-        /// by a given hierarchy (<code>hierarchyId</code>).
+        /// Retrieves a paginated list of associated assets.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this operation to do the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// List child assets associated to a parent asset by a hierarchy that you specify.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// List an asset's parent asset.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociatedAssets service method.</param>
         /// 
@@ -3123,8 +3170,21 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Retrieves a paginated list of the assets associated to a parent asset (<code>assetId</code>)
-        /// by a given hierarchy (<code>hierarchyId</code>).
+        /// Retrieves a paginated list of associated assets.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this operation to do the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// List child assets associated to a parent asset by a hierarchy that you specify.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// List an asset's parent asset.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociatedAssets service method.</param>
         /// <param name="cancellationToken">
@@ -3855,7 +3915,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Updates an asset's name. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-        /// Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAsset service method.</param>
         /// 
@@ -3895,7 +3955,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Updates an asset's name. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-        /// Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAsset service method.</param>
         /// <param name="cancellationToken">
@@ -3943,7 +4003,7 @@ namespace Amazon.IoTSiteWise
         /// Updates an asset model and all of the assets that were created from the model. Each
         /// asset created from the model inherits the updated asset model's property and hierarchy
         /// definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-        /// Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// 
         ///  <important> 
         /// <para>
@@ -4011,7 +4071,7 @@ namespace Amazon.IoTSiteWise
         /// Updates an asset model and all of the assets that were created from the model. Each
         /// asset created from the model inherits the updated asset model's property and hierarchy
         /// definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-        /// Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// 
         ///  <important> 
         /// <para>

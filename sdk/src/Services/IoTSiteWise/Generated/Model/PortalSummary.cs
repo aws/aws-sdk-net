@@ -40,6 +40,7 @@ namespace Amazon.IoTSiteWise.Model
         private string _name;
         private string _roleArn;
         private string _startUrl;
+        private PortalStatus _status;
 
         /// <summary>
         /// Gets and sets the property CreationDate. 
@@ -173,6 +174,22 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetStartUrl()
         {
             return this._startUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public PortalStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

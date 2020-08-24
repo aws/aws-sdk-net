@@ -31,7 +31,7 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Container for the parameters to the DeleteAsset operation.
     /// Deletes an asset. This action can't be undone. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-    /// Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>. 
+    /// assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>. 
     /// 
     ///  <note> 
     /// <para>
