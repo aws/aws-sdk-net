@@ -149,7 +149,15 @@ namespace Amazon.Runtime.Internal
             var uri = new Uri(redirectedLocation);
 
             var requestContext = executionContext.RequestContext;
-            requestContext.Request.Endpoint = new UriBuilder(uri.Scheme, uri.Host).Uri;
+            
+            if (uri.IsDefaultPort)
+            {
+                requestContext.Request.Endpoint = new UriBuilder(uri.Scheme, uri.Host).Uri;
+            }
+            else
+            {
+                requestContext.Request.Endpoint = new UriBuilder(uri.Scheme, uri.Host, uri.Port).Uri;
+            }
 
             RetryHandler.PrepareForRetry(executionContext.RequestContext);
         }
