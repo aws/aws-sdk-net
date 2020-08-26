@@ -1,3 +1,14 @@
+### 3.5.3.0 (2020-08-26 21:07 UTC)
+* Appflow (3.5.0.0)
+	* Amazon AppFlow is a fully managed integration service that securely transfers data between AWS services and SaaS applications. This update releases the first version of Amazon AppFlow APIs and SDK.
+* Route53Resolver (3.5.1.0)
+	* Route 53 Resolver adds support for resolver query logs
+* Core 3.5.1.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.2.0 (2020-08-24 22:27 UTC)
 * Core 3.5.1.0
 	* Add paginator support
