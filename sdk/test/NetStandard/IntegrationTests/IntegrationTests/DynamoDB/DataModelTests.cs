@@ -11,6 +11,7 @@ using System.IO;
 using Amazon.DynamoDBv2.DataModel;
 
 using Xunit;
+using System.Threading;
 
 namespace Amazon.DNXCore.IntegrationTests.DynamoDB
 {
@@ -43,6 +44,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 await TestHashRangeObjects();
                 await TestOtherContextOperations();
                 await TestBatchOperations();
+                await TestAsyncSearchEnumerable();
             }
         }
 
@@ -760,6 +762,116 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             Assert.Equal(employee1.Data.Length, doc["Data"].AsByteArray().Length);
         }
 
+        private async Task TestAsyncSearchEnumerable()
+        {
+            using (var cancellationTokenSource = new CancellationTokenSource())
+            {
+                var cancellationToken = cancellationTokenSource.Token;
+
+                int idStart = 2000;
+                string companyName = "CompanyAsyncSearch";
+                int priceBase = 500;
+
+                var batchWrite = SharedTestFixture.Context.CreateBatchWrite<Product>();
+                for (int i = 0; i < 12; i++)
+                {
+                    var product = new Product
+                    {
+                        Id = idStart + i,
+                        Name = "CloudSpotter",
+                        CompanyName = companyName,
+                        Price = priceBase + i,
+                        TagSet = new HashSet<string> { "Prod", "1.0" },
+                        CurrentStatus = Status.Active,
+                        FormerStatus = Status.Upcoming,
+                        Supports = Support.Windows | Support.Abacus,
+                        PreviousSupport = null,
+                        InternalId = "T1000",
+                        IsPublic = true,
+                        AlwaysN = true,
+                        Rating = 4,
+                        Components = new List<string> { "Code", "Coffee" },
+                        KeySizes = new List<byte> { 16, 64, 128 },
+                        CompanyInfo = new CompanyInfo {
+                            Name = "MyCloud",
+                            Founded = new DateTime(1994, 7, 6),
+                            Revenue = 9001,
+                            AllProducts = new List<Product>
+                            {
+                                new Product { Id = 12, Name = "CloudDebugger" },
+                                new Product { Id = 13, Name = "CloudDebuggerTester" }
+                            },
+                            CompetitorProducts = new Dictionary<string, List<Product>>
+                            {
+                                {
+                                    "CloudsAreOK",
+                                    new List<Product>
+                                    {
+                                        new Product { Id = 90, Name = "CloudSpotter RipOff" },
+                                        new Product { Id = 100, Name = "CloudDebugger RipOff" },
+                                    }
+                                },
+                                {
+                                    "CloudsAreBetter",
+                                    new List<Product>
+                                    {
+                                        new Product { Id = 92, Name = "CloudSpotter RipOff 2" },
+                                        new Product { Id = 102, Name = "CloudDebugger RipOff 3" },
+                                    }
+                                },
+                            }
+                        },
+                        Map = new Dictionary<string, string>
+                        {
+                            { "a", "1" },
+                            { "b", "2" }
+                        }
+                    };
+                    batchWrite.AddPutItem(product);
+                }
+
+                // 12 items were put (putItem).
+                await batchWrite.ExecuteAsync(cancellationToken).ConfigureAwait(false);
+
+                var queryConfig = new QueryOperationConfig
+                {
+                    IndexName = "GlobalIndex",
+                    Filter = new QueryFilter("Company", QueryOperator.Equal, companyName),
+                    ConditionalOperator = ConditionalOperatorValues.And,
+                    Limit = 5, // set QueryOperationConfig.Limit to 5.
+                    Select = SelectValues.AllProjectedAttributes,
+                };
+
+                var enumerable = SharedTestFixture.Context.FromQueryAsync<Product>(queryConfig, new DynamoDBOperationConfig { Conversion = DynamoDBEntryConversion.V2 });
+                Assert.IsAssignableFrom(typeof(IAsyncEnumerable<Product>), enumerable);
+
+                var resultList = new List<IList<Product>>();
+                await foreach (var itemList in enumerable.WithCancellation(cancellationToken).ConfigureAwait(false))
+                {
+                    Assert.NotNull(itemList);
+                    Assert.NotEqual(0, itemList.Count);
+                    resultList.Add(itemList);
+                }
+
+                // 12 items were put (putItem). set QueryOperationConfig.Limit to 5.
+                // In that case, IAsyncEnumerable will return a maximum of 5 items at a time.
+                Assert.Equal(5, resultList[0].Count);
+                Assert.Equal(priceBase + 0, resultList[0][0].Price);
+                Assert.Equal(priceBase + 1, resultList[0][1].Price);
+                Assert.Equal(priceBase + 2, resultList[0][2].Price);
+                Assert.Equal(priceBase + 3, resultList[0][3].Price);
+                Assert.Equal(priceBase + 4, resultList[0][4].Price);
+                Assert.Equal(5, resultList[1].Count);
+                Assert.Equal(priceBase + 5, resultList[1][0].Price);
+                Assert.Equal(priceBase + 6, resultList[1][1].Price);
+                Assert.Equal(priceBase + 7, resultList[1][2].Price);
+                Assert.Equal(priceBase + 8, resultList[1][3].Price);
+                Assert.Equal(priceBase + 9, resultList[1][4].Price);
+                Assert.Equal(2, resultList[2].Count);
+                Assert.Equal(priceBase + 10, resultList[2][0].Price);
+                Assert.Equal(priceBase + 11, resultList[2][1].Price);
+            }
+        }
 
         #region OPM definitions
 
