@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// In an <a>UpdateResolverRule</a> request, information about the changes that you want
-    /// to make.
+    /// In an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverRule.html">UpdateResolverRule</a>
+    /// request, information about the changes that you want to make.
     /// </summary>
     public partial class ResolverRuleConfig
     {
@@ -41,7 +41,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The new name for the resolver rule. The name that you specify appears in the Resolver
+        /// The new name for the Resolver rule. The name that you specify appears in the Resolver
         /// dashboard in the Route 53 console. 
         /// </para>
         /// </summary>
@@ -61,7 +61,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverEndpointId. 
         /// <para>
-        /// The ID of the new outbound resolver endpoint that you want to use to route DNS queries
+        /// The ID of the new outbound Resolver endpoint that you want to use to route DNS queries
         /// to the IP addresses that you specify in <code>TargetIps</code>.
         /// </para>
         /// </summary>

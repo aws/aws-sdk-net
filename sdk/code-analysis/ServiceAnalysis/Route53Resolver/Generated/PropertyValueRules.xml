@@ -6,9 +6,19 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.AssociateResolverQueryLogConfigRequest.ResolverQueryLogConfigId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.AssociateResolverQueryLogConfigRequest.ResourceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Resolver.Model.AssociateResolverRuleRequest.Name</property>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9-_' ']+)</pattern>
+    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.AssociateResolverRuleRequest.ResolverRuleId</property>
@@ -28,7 +38,23 @@
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.CreateResolverEndpointRequest.Name</property>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9-_' ']+)</pattern>
+    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.CreateResolverQueryLogConfigRequest.CreatorRequestId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.CreateResolverQueryLogConfigRequest.DestinationArn</property>
+    <min>1</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.CreateResolverQueryLogConfigRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.CreateResolverRuleRequest.CreatorRequestId</property>
@@ -43,7 +69,7 @@
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.CreateResolverRuleRequest.Name</property>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9-_' ']+)</pattern>
+    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.CreateResolverRuleRequest.ResolverEndpointId</property>
@@ -56,12 +82,27 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.DeleteResolverQueryLogConfigRequest.ResolverQueryLogConfigId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Resolver.Model.DeleteResolverRuleRequest.ResolverRuleId</property>
     <min>1</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.DisassociateResolverEndpointIpAddressRequest.ResolverEndpointId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.DisassociateResolverQueryLogConfigRequest.ResolverQueryLogConfigId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.DisassociateResolverQueryLogConfigRequest.ResourceId</property>
     <min>1</min>
     <max>64</max>
   </property-value-rule>
@@ -79,6 +120,25 @@
     <property>Amazon.Route53Resolver.Model.GetResolverEndpointRequest.ResolverEndpointId</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.GetResolverQueryLogConfigRequest.ResolverQueryLogConfigId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.GetResolverQueryLogConfigAssociationRequest.ResolverQueryLogConfigAssociationId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.GetResolverQueryLogConfigPolicyRequest.Arn</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.GetResolverQueryLogConfigPolicyResponse.ResolverQueryLogConfigPolicy</property>
+    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.GetResolverRuleRequest.ResolverRuleId</property>
@@ -125,6 +185,26 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ListResolverQueryLogConfigAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ListResolverQueryLogConfigAssociationsRequest.SortBy</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ListResolverQueryLogConfigsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ListResolverQueryLogConfigsRequest.SortBy</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ListResolverRuleAssociationsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -155,6 +235,15 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.PutResolverQueryLogConfigPolicyRequest.Arn</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.PutResolverQueryLogConfigPolicyRequest.ResolverQueryLogConfigPolicy</property>
+    <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Resolver.Model.PutResolverRulePolicyRequest.Arn</property>
     <min>1</min>
     <max>255</max>
@@ -176,7 +265,7 @@
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.UpdateResolverEndpointRequest.Name</property>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9-_' ']+)</pattern>
+    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.UpdateResolverEndpointRequest.ResolverEndpointId</property>
@@ -280,16 +369,77 @@
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverEndpoint.Name</property>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9-_' ']+)</pattern>
+    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverEndpoint.StatusMessage</property>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverQueryLogConfig.Arn</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverQueryLogConfig.CreationTime</property>
+    <min>20</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverQueryLogConfig.CreatorRequestId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverQueryLogConfig.DestinationArn</property>
+    <min>1</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverQueryLogConfig.Id</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverQueryLogConfig.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverQueryLogConfig.OwnerId</property>
+    <min>12</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverQueryLogConfigAssociation.CreationTime</property>
+    <min>20</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverQueryLogConfigAssociation.Id</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverQueryLogConfigAssociation.ResolverQueryLogConfigId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverQueryLogConfigAssociation.ResourceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverRule.Arn</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverRule.CreationTime</property>
+    <min>20</min>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverRule.CreatorRequestId</property>
@@ -307,9 +457,14 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverRule.ModificationTime</property>
+    <min>20</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverRule.Name</property>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9-_' ']+)</pattern>
+    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverRule.OwnerId</property>
@@ -333,7 +488,7 @@
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverRuleAssociation.Name</property>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9-_' ']+)</pattern>
+    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverRuleAssociation.ResolverRuleId</property>
@@ -352,12 +507,22 @@
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverRuleConfig.Name</property>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9-_' ']+)</pattern>
+    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverRuleConfig.ResolverEndpointId</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.TargetAddress.Ip</property>

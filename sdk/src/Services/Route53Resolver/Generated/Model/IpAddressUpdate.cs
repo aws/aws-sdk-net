@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// In an <a>UpdateResolverEndpoint</a> request, information about an IP address to update.
+    /// In an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html">UpdateResolverEndpoint</a>
+    /// request, information about an IP address to update.
     /// </summary>
     public partial class IpAddressUpdate
     {
@@ -59,8 +60,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property IpId. 
         /// <para>
-        ///  <i>Only when removing an IP address from a resolver endpoint</i>: The ID of the IP
-        /// address that you want to remove. To get this ID, use <a>GetResolverEndpoint</a>.
+        ///  <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP
+        /// address that you want to remove. To get this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -80,7 +81,7 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property SubnetId. 
         /// <para>
         /// The ID of the subnet that includes the IP address that you want to update. To get
-        /// this ID, use <a>GetResolverEndpoint</a>.
+        /// this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]

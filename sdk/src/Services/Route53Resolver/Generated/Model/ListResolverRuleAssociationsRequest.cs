@@ -30,7 +30,7 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResolverRuleAssociations operation.
-    /// Lists the associations that were created between resolver rules and VPCs using the
+    /// Lists the associations that were created between Resolver rules and VPCs using the
     /// current AWS account.
     /// </summary>
     public partial class ListResolverRuleAssociationsRequest : AmazonRoute53ResolverRequest
@@ -42,7 +42,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// An optional specification to return a subset of resolver rules, such as resolver rules
+        /// An optional specification to return a subset of Resolver rules, such as Resolver rules
         /// that are associated with the same VPC ID.
         /// </para>
         ///  <note> 

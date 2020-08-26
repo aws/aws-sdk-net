@@ -121,6 +121,84 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Route53Resolver")]
+        public void ListResolverQueryLogConfigAssociationsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListResolverQueryLogConfigAssociationsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListResolverQueryLogConfigAssociationsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListResolverQueryLogConfigAssociationsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListResolverQueryLogConfigAssociations(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListResolverQueryLogConfigAssociations(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListResolverQueryLogConfigAssociationsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListResolverQueryLogConfigAssociationsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListResolverQueryLogConfigAssociationsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListResolverQueryLogConfigAssociations(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListResolverQueryLogConfigAssociations(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        public void ListResolverQueryLogConfigsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListResolverQueryLogConfigsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListResolverQueryLogConfigsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListResolverQueryLogConfigsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListResolverQueryLogConfigs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListResolverQueryLogConfigs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListResolverQueryLogConfigsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListResolverQueryLogConfigsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListResolverQueryLogConfigsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListResolverQueryLogConfigs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListResolverQueryLogConfigs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
         public void ListResolverRuleAssociationsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListResolverRuleAssociationsRequest>();
@@ -187,6 +265,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListResolverRules(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListResolverRules(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        public void ListTagsForResourceTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListTagsForResourceResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListTagsForResourceResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListTagsForResource(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListTagsForResource(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListTagsForResourceTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListTagsForResourceResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListTagsForResource(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListTagsForResource(request);
 
             // Should work the first time
             paginator.Responses.ToList();

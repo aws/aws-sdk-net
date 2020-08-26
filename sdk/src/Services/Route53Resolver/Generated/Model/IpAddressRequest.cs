@@ -29,8 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// In an <a>CreateResolverEndpoint</a> request, a subnet and IP address that you want
-    /// to use for DNS queries.
+    /// In a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>
+    /// request, the IP address that DNS queries originate from (for outbound endpoints) or
+    /// that you forward DNS queries to (for inbound endpoints). <code>IpAddressRequest</code>
+    /// also includes the ID of the subnet that contains the IP address.
     /// </summary>
     public partial class IpAddressRequest
     {
@@ -59,7 +61,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The subnet that contains the IP address.
+        /// The ID of the subnet that contains the IP address. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

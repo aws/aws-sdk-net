@@ -30,7 +30,7 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateResolverEndpoint operation.
-    /// Updates the name of an inbound or an outbound resolver endpoint.
+    /// Updates the name of an inbound or an outbound Resolver endpoint.
     /// </summary>
     public partial class UpdateResolverEndpointRequest : AmazonRoute53ResolverRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the resolver endpoint that you want to update.
+        /// The name of the Resolver endpoint that you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -59,7 +59,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverEndpointId. 
         /// <para>
-        /// The ID of the resolver endpoint that you want to update.
+        /// The ID of the Resolver endpoint that you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

@@ -29,10 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>,
-    /// <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a>
+    /// In the response to a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>,
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverEndpoint.html">DeleteResolverEndpoint</a>,
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>,
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>,
+    /// or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html">UpdateResolverEndpoint</a>
     /// request, a complex type that contains settings for an existing inbound or outbound
-    /// resolver endpoint.
+    /// Resolver endpoint.
     /// </summary>
     public partial class ResolverEndpoint
     {
@@ -52,7 +55,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN (Amazon Resource Name) for the resolver endpoint.
+        /// The ARN (Amazon Resource Name) for the Resolver endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -91,7 +94,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
-        /// A unique string that identifies the request that created the resolver endpoint. The
+        /// A unique string that identifies the request that created the Resolver endpoint. The
         /// <code>CreatorRequestId</code> allows failed requests to be retried without the risk
         /// of executing the operation twice.
         /// </para>
@@ -112,17 +115,15 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Direction. 
         /// <para>
-        /// Indicates whether the resolver endpoint allows inbound or outbound DNS queries:
+        /// Indicates whether the Resolver endpoint allows inbound or outbound DNS queries:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>INBOUND</code>: allows DNS queries to your VPC from your network or another
-        /// VPC
+        ///  <code>INBOUND</code>: allows DNS queries to your VPC from your network
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OUTBOUND</code>: allows DNS queries from your VPC to your network or another
-        /// VPC
+        ///  <code>OUTBOUND</code>: allows DNS queries from your VPC to your network
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -141,7 +142,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property HostVPCId. 
         /// <para>
-        /// The ID of the VPC that you want to create the resolver endpoint in.
+        /// The ID of the VPC that you want to create the Resolver endpoint in.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -160,7 +161,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the resolver endpoint.
+        /// The ID of the Resolver endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -179,7 +180,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property IpAddressCount. 
         /// <para>
-        /// The number of IP addresses that the resolver endpoint can use for DNS queries.
+        /// The number of IP addresses that the Resolver endpoint can use for DNS queries.
         /// </para>
         /// </summary>
         public int IpAddressCount
@@ -217,7 +218,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name that you assigned to the resolver endpoint when you submitted a <a>CreateResolverEndpoint</a>
+        /// The name that you assigned to the Resolver endpoint when you submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>
         /// request.
         /// </para>
         /// </summary>
@@ -238,7 +239,10 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
         /// The ID of one or more security groups that control access to this VPC. The security
-        /// group must include one or more inbound resolver rules.
+        /// group must include one or more inbound rules (for inbound endpoints) or outbound rules
+        /// (for outbound endpoints). Inbound and outbound rules must allow TCP and UDP access.
+        /// For inbound access, open port 53. For outbound access, open the port that you're using
+        /// for DNS queries on your network.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -256,8 +260,58 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// A code that specifies the current status of the resolver endpoint.
+        /// A code that specifies the current status of the Resolver endpoint. Valid values include
+        /// the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATING</code>: Resolver is creating and configuring one or more Amazon VPC
+        /// network interfaces for this endpoint.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OPERATIONAL</code>: The Amazon VPC network interfaces for this endpoint are
+        /// correctly configured and able to pass inbound or outbound DNS queries between your
+        /// network and Resolver.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATING</code>: Resolver is associating or disassociating one or more network
+        /// interfaces with this endpoint.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AUTO_RECOVERING</code>: Resolver is trying to recover one or more of the network
+        /// interfaces that are associated with this endpoint. During the recovery process, the
+        /// endpoint functions with limited capacity because of the limit on the number of DNS
+        /// queries per IP address (per network interface). For the current limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-resolver">Limits
+        /// on Route 53 Resolver</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ACTION_NEEDED</code>: This endpoint is unhealthy, and Resolver can't automatically
+        /// recover it. To resolve the problem, we recommend that you check each IP address that
+        /// you associated with the endpoint. For each IP address that isn't available, add another
+        /// IP address and then delete the IP address that isn't available. (An endpoint must
+        /// always include at least two IP addresses.) A status of <code>ACTION_NEEDED</code>
+        /// can have a variety of causes. Here are two common causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// One or more of the network interfaces that are associated with the endpoint were deleted
+        /// using Amazon VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The network interface couldn't be created for some reason that's outside the control
+        /// of Resolver.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <code>DELETING</code>: Resolver is deleting this endpoint and the associated network
+        /// interfaces.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ResolverEndpointStatus Status
         {
@@ -274,7 +328,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// A detailed description of the status of the resolver endpoint.
+        /// A detailed description of the status of the Resolver endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

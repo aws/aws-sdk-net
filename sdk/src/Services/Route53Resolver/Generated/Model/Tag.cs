@@ -45,6 +45,7 @@ namespace Amazon.Route53Resolver.Model
         /// might be <code>account-id</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -65,6 +66,7 @@ namespace Amazon.Route53Resolver.Model
         /// the resource for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

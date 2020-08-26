@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// In the response to a <a>GetResolverEndpoint</a> request, information about the IP
-    /// addresses that the resolver endpoint uses for DNS queries.
+    /// In the response to a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
+    /// request, information about the IP addresses that the Resolver endpoint uses for DNS
+    /// queries.
     /// </summary>
     public partial class IpAddressResponse
     {
@@ -65,7 +66,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Ip. 
         /// <para>
-        /// One IP address that the resolver endpoint uses for DNS queries.
+        /// One IP address that the Resolver endpoint uses for DNS queries.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=36)]

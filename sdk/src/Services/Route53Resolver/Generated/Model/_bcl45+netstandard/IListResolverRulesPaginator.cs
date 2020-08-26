@@ -30,6 +30,11 @@ namespace Amazon.Route53Resolver.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListResolverRulesResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the ResolverRules
+        /// </summary>
+        IPaginatedEnumerable<ResolverRule> ResolverRules { get; }
     }
 }
 #endif

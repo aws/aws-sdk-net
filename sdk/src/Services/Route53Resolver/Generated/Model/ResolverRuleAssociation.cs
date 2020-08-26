@@ -29,9 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// In the response to an <a>AssociateResolverRule</a>, <a>DisassociateResolverRule</a>,
-    /// or <a>ListResolverRuleAssociations</a> request, information about an association between
-    /// a resolver rule and a VPC.
+    /// In the response to an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">AssociateResolverRule</a>,
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html">DisassociateResolverRule</a>,
+    /// or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>
+    /// request, provides information about an association between a Resolver rule and a VPC.
+    /// The association determines which DNS queries that originate in the VPC are forwarded
+    /// to your network.
     /// </summary>
     public partial class ResolverRuleAssociation
     {
@@ -45,8 +48,9 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the association between a resolver rule and a VPC. Resolver assigns this
-        /// value when you submit an <a>AssociateResolverRule</a> request.
+        /// The ID of the association between a Resolver rule and a VPC. Resolver assigns this
+        /// value when you submit an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">AssociateResolverRule</a>
+        /// request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -65,7 +69,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of an association between a resolver rule and a VPC.
+        /// The name of an association between a Resolver rule and a VPC.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -84,7 +88,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverRuleId. 
         /// <para>
-        /// The ID of the resolver rule that you associated with the VPC that is specified by
+        /// The ID of the Resolver rule that you associated with the VPC that is specified by
         /// <code>VPCId</code>.
         /// </para>
         /// </summary>
@@ -104,7 +108,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// A code that specifies the current status of the association between a resolver rule
+        /// A code that specifies the current status of the association between a Resolver rule
         /// and a VPC.
         /// </para>
         /// </summary>
@@ -123,7 +127,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// A detailed description of the status of the association between a resolver rule and
+        /// A detailed description of the status of the association between a Resolver rule and
         /// a VPC.
         /// </para>
         /// </summary>
@@ -143,7 +147,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property VPCId. 
         /// <para>
-        /// The ID of the VPC that you associated the resolver rule with.
+        /// The ID of the VPC that you associated the Resolver rule with.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

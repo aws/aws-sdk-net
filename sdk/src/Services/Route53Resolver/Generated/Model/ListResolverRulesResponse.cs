@@ -59,7 +59,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If more than <code>MaxResults</code> resolver rules match the specified criteria,
+        /// If more than <code>MaxResults</code> Resolver rules match the specified criteria,
         /// you can submit another <code>ListResolverRules</code> request to get the next group
         /// of results. In the next request, specify the value of <code>NextToken</code> from
         /// the previous response. 
@@ -80,7 +80,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverRules. 
         /// <para>
-        /// The resolver rules that were created using the current AWS account and that match
+        /// The Resolver rules that were created using the current AWS account and that match
         /// the specified filters, if any.
         /// </para>
         /// </summary>

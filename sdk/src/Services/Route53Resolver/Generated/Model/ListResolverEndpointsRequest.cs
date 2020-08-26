@@ -30,7 +30,7 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResolverEndpoints operation.
-    /// Lists all the resolver endpoints that were created using the current AWS account.
+    /// Lists all the Resolver endpoints that were created using the current AWS account.
     /// </summary>
     public partial class ListResolverEndpointsRequest : AmazonRoute53ResolverRequest
     {
@@ -41,8 +41,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// An optional specification to return a subset of resolver endpoints, such as all inbound
-        /// resolver endpoints.
+        /// An optional specification to return a subset of Resolver endpoints, such as all inbound
+        /// Resolver endpoints.
         /// </para>
         ///  <note> 
         /// <para>
@@ -67,9 +67,9 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of resolver endpoints that you want to return in the response to
+        /// The maximum number of Resolver endpoints that you want to return in the response to
         /// a <code>ListResolverEndpoints</code> request. If you don't specify a value for <code>MaxResults</code>,
-        /// Resolver returns up to 100 resolver endpoints. 
+        /// Resolver returns up to 100 Resolver endpoints. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -92,8 +92,8 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  
         /// <para>
-        /// If you have more than <code>MaxResults</code> resolver endpoints, you can submit another
-        /// <code>ListResolverEndpoints</code> request to get the next group of resolver endpoints.
+        /// If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another
+        /// <code>ListResolverEndpoints</code> request to get the next group of Resolver endpoints.
         /// In the next request, specify the value of <code>NextToken</code> from the previous
         /// response. 
         /// </para>

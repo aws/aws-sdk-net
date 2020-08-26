@@ -80,7 +80,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverRuleAssociations. 
         /// <para>
-        /// The associations that were created between resolver rules and VPCs using the current
+        /// The associations that were created between Resolver rules and VPCs using the current
         /// AWS account, and that match the specified filters, if any.
         /// </para>
         /// </summary>

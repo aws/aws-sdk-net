@@ -30,8 +30,8 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResolverEndpoint operation.
-    /// Gets information about a specified resolver endpoint, such as whether it's an inbound
-    /// or an outbound resolver endpoint, and the current status of the endpoint.
+    /// Gets information about a specified Resolver endpoint, such as whether it's an inbound
+    /// or an outbound Resolver endpoint, and the current status of the endpoint.
     /// </summary>
     public partial class GetResolverEndpointRequest : AmazonRoute53ResolverRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverEndpointId. 
         /// <para>
-        /// The ID of the resolver endpoint that you want to get information about.
+        /// The ID of the Resolver endpoint that you want to get information about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

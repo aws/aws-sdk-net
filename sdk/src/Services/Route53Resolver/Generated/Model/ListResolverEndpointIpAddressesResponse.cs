@@ -40,8 +40,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property IpAddresses. 
         /// <para>
-        /// The IP addresses that DNS queries pass through on their way to your network (outbound
-        /// endpoint) or on the way to Resolver (inbound endpoint).
+        /// Information about the IP addresses in your VPC that DNS queries originate from (for
+        /// outbound endpoints) or that you forward DNS queries to (for inbound endpoints).
         /// </para>
         /// </summary>
         public List<IpAddressResponse> IpAddresses

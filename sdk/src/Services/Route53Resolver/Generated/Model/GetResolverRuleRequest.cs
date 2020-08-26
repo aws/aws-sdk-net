@@ -30,8 +30,8 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResolverRule operation.
-    /// Gets information about a specified resolver rule, such as the domain name that the
-    /// rule forwards DNS queries for and the ID of the outbound resolver endpoint that the
+    /// Gets information about a specified Resolver rule, such as the domain name that the
+    /// rule forwards DNS queries for and the ID of the outbound Resolver endpoint that the
     /// rule is associated with.
     /// </summary>
     public partial class GetResolverRuleRequest : AmazonRoute53ResolverRequest
@@ -41,7 +41,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverRuleId. 
         /// <para>
-        /// The ID of the resolver rule that you want to get information about.
+        /// The ID of the Resolver rule that you want to get information about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

@@ -30,8 +30,8 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResolverRuleAssociation operation.
-    /// Gets information about an association between a specified resolver rule and a VPC.
-    /// You associate a resolver rule and a VPC using <a>AssociateResolverRule</a>.
+    /// Gets information about an association between a specified Resolver rule and a VPC.
+    /// You associate a Resolver rule and a VPC using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">AssociateResolverRule</a>.
     /// </summary>
     public partial class GetResolverRuleAssociationRequest : AmazonRoute53ResolverRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverRuleAssociationId. 
         /// <para>
-        /// The ID of the resolver rule association that you want to get information about.
+        /// The ID of the Resolver rule association that you want to get information about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

@@ -53,6 +53,22 @@ namespace Amazon.Route53Resolver.Model
         }
 
         /// <summary>
+        /// Paginator for ListResolverQueryLogConfigAssociations operation
+        ///</summary>
+        public IListResolverQueryLogConfigAssociationsPaginator ListResolverQueryLogConfigAssociations(ListResolverQueryLogConfigAssociationsRequest request) 
+        {
+            return new ListResolverQueryLogConfigAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListResolverQueryLogConfigs operation
+        ///</summary>
+        public IListResolverQueryLogConfigsPaginator ListResolverQueryLogConfigs(ListResolverQueryLogConfigsRequest request) 
+        {
+            return new ListResolverQueryLogConfigsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListResolverRuleAssociations operation
         ///</summary>
         public IListResolverRuleAssociationsPaginator ListResolverRuleAssociations(ListResolverRuleAssociationsRequest request) 
@@ -66,6 +82,14 @@ namespace Amazon.Route53Resolver.Model
         public IListResolverRulesPaginator ListResolverRules(ListResolverRulesRequest request) 
         {
             return new ListResolverRulesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTagsForResource operation
+        ///</summary>
+        public IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request) 
+        {
+            return new ListTagsForResourcePaginator(this.client, request);
         }
     }
 }

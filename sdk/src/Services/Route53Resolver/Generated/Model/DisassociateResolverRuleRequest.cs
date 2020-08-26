@@ -30,12 +30,12 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateResolverRule operation.
-    /// Removes the association between a specified resolver rule and a specified VPC.
+    /// Removes the association between a specified Resolver rule and a specified VPC.
     /// 
     ///  <important> 
     /// <para>
-    /// If you disassociate a resolver rule from a VPC, Resolver stops forwarding DNS queries
-    /// for the domain name that you specified in the resolver rule. 
+    /// If you disassociate a Resolver rule from a VPC, Resolver stops forwarding DNS queries
+    /// for the domain name that you specified in the Resolver rule. 
     /// </para>
     ///  </important>
     /// </summary>
@@ -47,7 +47,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverRuleId. 
         /// <para>
-        /// The ID of the resolver rule that you want to disassociate from the specified VPC.
+        /// The ID of the Resolver rule that you want to disassociate from the specified VPC.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -66,7 +66,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property VPCId. 
         /// <para>
-        /// The ID of the VPC that you want to disassociate the resolver rule from.
+        /// The ID of the VPC that you want to disassociate the Resolver rule from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

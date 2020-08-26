@@ -42,6 +42,12 @@ namespace Amazon.Route53Resolver.Model
         /// </summary>
         public IPaginatedEnumerable<ListResolverEndpointIpAddressesResponse> Responses => new PaginatedResponse<ListResolverEndpointIpAddressesResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the IpAddresses
+        /// </summary>
+        public IPaginatedEnumerable<IpAddressResponse> IpAddresses => 
+            new PaginatedResultKeyResponse<ListResolverEndpointIpAddressesResponse, IpAddressResponse>(this, (i) => i.IpAddresses);
+
         internal ListResolverEndpointIpAddressesPaginator(IAmazonRoute53Resolver client, ListResolverEndpointIpAddressesRequest request)
         {
             this._client = client;

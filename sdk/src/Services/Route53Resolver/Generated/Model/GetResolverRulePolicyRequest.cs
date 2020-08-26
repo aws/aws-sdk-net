@@ -30,7 +30,7 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResolverRulePolicy operation.
-    /// Gets information about a resolver rule policy. A resolver rule policy specifies the
+    /// Gets information about a Resolver rule policy. A Resolver rule policy specifies the
     /// Resolver operations and resources that you want to allow another AWS account to be
     /// able to use.
     /// </summary>
@@ -41,7 +41,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ID of the resolver rule policy that you want to get information about.
+        /// The ID of the Resolver rule policy that you want to get information about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

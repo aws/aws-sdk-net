@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// In a <a>CreateResolverRule</a> request, an array of the IPs that you want to forward
-    /// DNS queries to.
+    /// In a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html">CreateResolverRule</a>
+    /// request, an array of the IPs that you want to forward DNS queries to.
     /// </summary>
     public partial class TargetAddress
     {

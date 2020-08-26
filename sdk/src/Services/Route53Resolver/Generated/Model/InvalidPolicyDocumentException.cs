@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// The specified resolver rule policy is invalid.
+    /// The specified Resolver rule policy is invalid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

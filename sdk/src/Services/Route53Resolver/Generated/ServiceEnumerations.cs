@@ -223,6 +223,184 @@ namespace Amazon.Route53Resolver
 
 
     /// <summary>
+    /// Constants used for properties of type ResolverQueryLogConfigAssociationError.
+    /// </summary>
+    public class ResolverQueryLogConfigAssociationError : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_DENIED for ResolverQueryLogConfigAssociationError
+        /// </summary>
+        public static readonly ResolverQueryLogConfigAssociationError ACCESS_DENIED = new ResolverQueryLogConfigAssociationError("ACCESS_DENIED");
+        /// <summary>
+        /// Constant DESTINATION_NOT_FOUND for ResolverQueryLogConfigAssociationError
+        /// </summary>
+        public static readonly ResolverQueryLogConfigAssociationError DESTINATION_NOT_FOUND = new ResolverQueryLogConfigAssociationError("DESTINATION_NOT_FOUND");
+        /// <summary>
+        /// Constant INTERNAL_SERVICE_ERROR for ResolverQueryLogConfigAssociationError
+        /// </summary>
+        public static readonly ResolverQueryLogConfigAssociationError INTERNAL_SERVICE_ERROR = new ResolverQueryLogConfigAssociationError("INTERNAL_SERVICE_ERROR");
+        /// <summary>
+        /// Constant NONE for ResolverQueryLogConfigAssociationError
+        /// </summary>
+        public static readonly ResolverQueryLogConfigAssociationError NONE = new ResolverQueryLogConfigAssociationError("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResolverQueryLogConfigAssociationError(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResolverQueryLogConfigAssociationError FindValue(string value)
+        {
+            return FindValue<ResolverQueryLogConfigAssociationError>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResolverQueryLogConfigAssociationError(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResolverQueryLogConfigAssociationStatus.
+    /// </summary>
+    public class ResolverQueryLogConfigAssociationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTION_NEEDED for ResolverQueryLogConfigAssociationStatus
+        /// </summary>
+        public static readonly ResolverQueryLogConfigAssociationStatus ACTION_NEEDED = new ResolverQueryLogConfigAssociationStatus("ACTION_NEEDED");
+        /// <summary>
+        /// Constant ACTIVE for ResolverQueryLogConfigAssociationStatus
+        /// </summary>
+        public static readonly ResolverQueryLogConfigAssociationStatus ACTIVE = new ResolverQueryLogConfigAssociationStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for ResolverQueryLogConfigAssociationStatus
+        /// </summary>
+        public static readonly ResolverQueryLogConfigAssociationStatus CREATING = new ResolverQueryLogConfigAssociationStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for ResolverQueryLogConfigAssociationStatus
+        /// </summary>
+        public static readonly ResolverQueryLogConfigAssociationStatus DELETING = new ResolverQueryLogConfigAssociationStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for ResolverQueryLogConfigAssociationStatus
+        /// </summary>
+        public static readonly ResolverQueryLogConfigAssociationStatus FAILED = new ResolverQueryLogConfigAssociationStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResolverQueryLogConfigAssociationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResolverQueryLogConfigAssociationStatus FindValue(string value)
+        {
+            return FindValue<ResolverQueryLogConfigAssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResolverQueryLogConfigAssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResolverQueryLogConfigStatus.
+    /// </summary>
+    public class ResolverQueryLogConfigStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for ResolverQueryLogConfigStatus
+        /// </summary>
+        public static readonly ResolverQueryLogConfigStatus CREATED = new ResolverQueryLogConfigStatus("CREATED");
+        /// <summary>
+        /// Constant CREATING for ResolverQueryLogConfigStatus
+        /// </summary>
+        public static readonly ResolverQueryLogConfigStatus CREATING = new ResolverQueryLogConfigStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for ResolverQueryLogConfigStatus
+        /// </summary>
+        public static readonly ResolverQueryLogConfigStatus DELETING = new ResolverQueryLogConfigStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for ResolverQueryLogConfigStatus
+        /// </summary>
+        public static readonly ResolverQueryLogConfigStatus FAILED = new ResolverQueryLogConfigStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResolverQueryLogConfigStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResolverQueryLogConfigStatus FindValue(string value)
+        {
+            return FindValue<ResolverQueryLogConfigStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResolverQueryLogConfigStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResolverRuleAssociationStatus.
     /// </summary>
     public class ResolverRuleAssociationStatus : ConstantClass
@@ -444,6 +622,56 @@ namespace Amazon.Route53Resolver
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ShareStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASCENDING = new SortOrder("ASCENDING");
+        /// <summary>
+        /// Constant DESCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESCENDING = new SortOrder("DESCENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
         {
             return FindValue(value);
         }

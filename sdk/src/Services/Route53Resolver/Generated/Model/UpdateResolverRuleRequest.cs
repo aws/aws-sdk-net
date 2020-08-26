@@ -30,7 +30,7 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateResolverRule operation.
-    /// Updates settings for a specified resolver rule. <code>ResolverRuleId</code> is required,
+    /// Updates settings for a specified Resolver rule. <code>ResolverRuleId</code> is required,
     /// and all other parameters are optional. If you don't specify a parameter, it retains
     /// its current value.
     /// </summary>
@@ -42,7 +42,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Config. 
         /// <para>
-        /// The new settings for the resolver rule.
+        /// The new settings for the Resolver rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverRuleId. 
         /// <para>
-        /// The ID of the resolver rule that you want to update.
+        /// The ID of the Resolver rule that you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

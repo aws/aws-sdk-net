@@ -30,7 +30,7 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateResolverRule operation.
-    /// For DNS queries that originate in your VPCs, specifies which resolver endpoint the
+    /// For DNS queries that originate in your VPCs, specifies which Resolver endpoint the
     /// queries pass through, one domain name that you want to forward to your network, and
     /// the IP addresses of the DNS resolvers in your network.
     /// </summary>
@@ -69,8 +69,8 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property DomainName. 
         /// <para>
         /// DNS queries for this domain name are forwarded to the IP addresses that you specify
-        /// in <code>TargetIps</code>. If a query matches multiple resolver rules (example.com
-        /// and www.example.com), outbound DNS queries are routed using the resolver rule that
+        /// in <code>TargetIps</code>. If a query matches multiple Resolver rules (example.com
+        /// and www.example.com), outbound DNS queries are routed using the Resolver rule that
         /// contains the most specific domain name (www.example.com).
         /// </para>
         /// </summary>
@@ -110,7 +110,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverEndpointId. 
         /// <para>
-        /// The ID of the outbound resolver endpoint that you want to use to route DNS queries
+        /// The ID of the outbound Resolver endpoint that you want to use to route DNS queries
         /// to the IP addresses that you specify in <code>TargetIps</code>.
         /// </para>
         /// </summary>
@@ -130,7 +130,25 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property RuleType. 
         /// <para>
-        /// Specify <code>FORWARD</code>. Other resolver rule types aren't supported.
+        /// When you want to forward DNS queries for specified domain name to resolvers on your
+        /// network, specify <code>FORWARD</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you have a forwarding rule to forward DNS queries for a domain to your network
+        /// and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, to forward DNS queries for example.com to resolvers on your network,
+        /// you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then
+        /// have Resolver process queries for apex.example.com, you create a rule and specify
+        /// <code>SYSTEM</code> for <code>RuleType</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code>
+        /// for <code>RuleType</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -152,6 +170,7 @@ namespace Amazon.Route53Resolver.Model
         /// A list of the tag keys and values that you want to associate with the endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -169,6 +188,11 @@ namespace Amazon.Route53Resolver.Model
         /// <para>
         /// The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4
         /// addresses. Separate IP addresses with a comma.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>TargetIps</code> is available only when the value of <code>Rule type</code>
+        /// is <code>FORWARD</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

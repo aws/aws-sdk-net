@@ -70,6 +70,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CreationTime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatorRequestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ModificationTime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ModificationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))

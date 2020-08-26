@@ -38,7 +38,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverEndpoint. 
         /// <para>
-        /// Information about the resolver endpoint that you specified in a <code>GetResolverEndpoint</code>
+        /// Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code>
         /// request.
         /// </para>
         /// </summary>

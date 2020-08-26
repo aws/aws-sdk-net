@@ -30,18 +30,17 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteResolverEndpoint operation.
-    /// Deletes a resolver endpoint. The effect of deleting a resolver endpoint depends on
-    /// whether it's an inbound or an outbound resolver endpoint:
+    /// Deletes a Resolver endpoint. The effect of deleting a Resolver endpoint depends on
+    /// whether it's an inbound or an outbound Resolver endpoint:
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Inbound</b>: DNS queries from your network or another VPC are no longer routed
-    /// to the DNS service for the specified VPC.
+    ///  <b>Inbound</b>: DNS queries from your network are no longer routed to the DNS service
+    /// for the specified VPC.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Outbound</b>: DNS queries from a VPC are no longer routed to your network or to
-    /// another VPC.
+    ///  <b>Outbound</b>: DNS queries from a VPC are no longer routed to your network.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -52,7 +51,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverEndpointId. 
         /// <para>
-        /// The ID of the resolver endpoint that you want to delete.
+        /// The ID of the Resolver endpoint that you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

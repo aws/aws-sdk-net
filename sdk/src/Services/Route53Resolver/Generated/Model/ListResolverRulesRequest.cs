@@ -30,7 +30,7 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResolverRules operation.
-    /// Lists the resolver rules that were created using the current AWS account.
+    /// Lists the Resolver rules that were created using the current AWS account.
     /// </summary>
     public partial class ListResolverRulesRequest : AmazonRoute53ResolverRequest
     {
@@ -41,8 +41,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// An optional specification to return a subset of resolver rules, such as all resolver
-        /// rules that are associated with the same resolver endpoint.
+        /// An optional specification to return a subset of Resolver rules, such as all Resolver
+        /// rules that are associated with the same Resolver endpoint.
         /// </para>
         ///  <note> 
         /// <para>
@@ -67,9 +67,9 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of resolver rules that you want to return in the response to a
+        /// The maximum number of Resolver rules that you want to return in the response to a
         /// <code>ListResolverRules</code> request. If you don't specify a value for <code>MaxResults</code>,
-        /// Resolver returns up to 100 resolver rules.
+        /// Resolver returns up to 100 Resolver rules.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -92,8 +92,8 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  
         /// <para>
-        /// If you have more than <code>MaxResults</code> resolver rules, you can submit another
-        /// <code>ListResolverRules</code> request to get the next group of resolver rules. In
+        /// If you have more than <code>MaxResults</code> Resolver rules, you can submit another
+        /// <code>ListResolverRules</code> request to get the next group of Resolver rules. In
         /// the next request, specify the value of <code>NextToken</code> from the previous response.
         /// 
         /// </para>

@@ -64,6 +64,7 @@ namespace Amazon.Route53Resolver.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

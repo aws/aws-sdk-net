@@ -46,27 +46,33 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetResolverEndpoint</a> 
+        ///  <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetResolverRule</a> 
+        ///  <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetResolverRuleAssociation</a> 
+        ///  <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListResolverEndpoints</a> 
+        ///  <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListResolverRuleAssociations</a> 
+        ///  <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListResolverRules</a> 
+        ///  <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -89,7 +95,7 @@ namespace Amazon.Route53Resolver.Model
         /// The tags that you want to remove to the specified resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=200)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

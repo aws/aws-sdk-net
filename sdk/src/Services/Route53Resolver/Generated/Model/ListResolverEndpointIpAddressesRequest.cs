@@ -30,7 +30,7 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResolverEndpointIpAddresses operation.
-    /// Gets the IP addresses for a specified resolver endpoint.
+    /// Gets the IP addresses for a specified Resolver endpoint.
     /// </summary>
     public partial class ListResolverEndpointIpAddressesRequest : AmazonRoute53ResolverRequest
     {
@@ -66,7 +66,7 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  
         /// <para>
-        /// If the specified resolver endpoint has more than <code>MaxResults</code> IP addresses,
+        /// If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses,
         /// you can submit another <code>ListResolverEndpointIpAddresses</code> request to get
         /// the next group of IP addresses. In the next request, specify the value of <code>NextToken</code>
         /// from the previous response. 
@@ -87,7 +87,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverEndpointId. 
         /// <para>
-        /// The ID of the resolver endpoint that you want to get IP addresses for.
+        /// The ID of the Resolver endpoint that you want to get IP addresses for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
