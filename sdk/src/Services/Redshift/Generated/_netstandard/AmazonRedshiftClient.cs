@@ -5320,6 +5320,14 @@ namespace Amazon.Redshift
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// dc1.large (if your cluster is in a VPC)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// dc1.8xlarge (if your cluster is in a VPC)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// dc2.large
         /// </para>
         ///  </li> <li> 

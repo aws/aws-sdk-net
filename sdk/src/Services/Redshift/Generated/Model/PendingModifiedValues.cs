@@ -121,8 +121,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property EncryptionType. 
         /// <para>
-        /// The encryption type for a cluster. Possible values are: KMS and None. For the China
-        /// region the possible values are None, and Legacy. 
+        /// The encryption type for a cluster. Possible values are: KMS and None. 
         /// </para>
         /// </summary>
         public string EncryptionType

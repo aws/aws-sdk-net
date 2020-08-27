@@ -45,6 +45,14 @@ namespace Amazon.Redshift.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    /// dc1.large (if your cluster is in a VPC)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// dc1.8xlarge (if your cluster is in a VPC)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// dc2.large
     /// </para>
     ///  </li> <li> 
@@ -160,7 +168,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
-        /// The new number of nodes for the cluster.
+        /// The new number of nodes for the cluster. If not specified, the cluster's current number
+        /// of nodes is used.
         /// </para>
         /// </summary>
         public int NumberOfNodes

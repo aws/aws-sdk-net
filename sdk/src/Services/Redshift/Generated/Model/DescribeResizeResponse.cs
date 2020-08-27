@@ -306,8 +306,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible values are <code>KMS</code> and <code>None</code>. In the China region possible
-        /// values are: <code>Legacy</code> and <code>None</code>.
+        /// Possible values are <code>KMS</code> and <code>None</code>. 
         /// </para>
         /// </summary>
         public string TargetEncryptionType

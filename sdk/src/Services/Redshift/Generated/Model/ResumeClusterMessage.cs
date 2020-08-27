@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// 
+    /// Describes a resume cluster operation. For example, a scheduled action to run the <code>ResumeCluster</code>
+    /// API operation.
     /// </summary>
     public partial class ResumeClusterMessage
     {

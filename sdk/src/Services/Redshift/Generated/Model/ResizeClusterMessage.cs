@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// 
+    /// Describes a resize cluster operation. For example, a scheduled action to run the <code>ResizeCluster</code>
+    /// API operation.
     /// </summary>
     public partial class ResizeClusterMessage
     {
@@ -118,7 +119,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
-        /// The new number of nodes for the cluster.
+        /// The new number of nodes for the cluster. If not specified, the cluster's current number
+        /// of nodes is used.
         /// </para>
         /// </summary>
         public int NumberOfNodes
