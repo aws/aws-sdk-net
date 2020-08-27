@@ -60,6 +60,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetTunnelOptions())
                 {
+                    if(publicRequest.TunnelOptions.IsSetDPDTimeoutAction())
+                    {
+                        request.Parameters.Add("TunnelOptions" + "." + "DPDTimeoutAction", StringUtils.FromString(publicRequest.TunnelOptions.DPDTimeoutAction));
+                    }
                     if(publicRequest.TunnelOptions.IsSetDPDTimeoutSeconds())
                     {
                         request.Parameters.Add("TunnelOptions" + "." + "DPDTimeoutSeconds", StringUtils.FromInt(publicRequest.TunnelOptions.DPDTimeoutSeconds));
@@ -171,6 +175,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.TunnelOptions.IsSetReplayWindowSize())
                     {
                         request.Parameters.Add("TunnelOptions" + "." + "ReplayWindowSize", StringUtils.FromInt(publicRequest.TunnelOptions.ReplayWindowSize));
+                    }
+                    if(publicRequest.TunnelOptions.IsSetStartupAction())
+                    {
+                        request.Parameters.Add("TunnelOptions" + "." + "StartupAction", StringUtils.FromString(publicRequest.TunnelOptions.StartupAction));
                     }
                     if(publicRequest.TunnelOptions.IsSetTunnelInsideCidr())
                     {

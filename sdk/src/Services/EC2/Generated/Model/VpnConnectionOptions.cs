@@ -34,6 +34,10 @@ namespace Amazon.EC2.Model
     public partial class VpnConnectionOptions
     {
         private bool? _enableAcceleration;
+        private string _localIpv4NetworkCidr;
+        private string _localIpv6NetworkCidr;
+        private string _remoteIpv4NetworkCidr;
+        private string _remoteIpv6NetworkCidr;
         private bool? _staticRoutesOnly;
         private TunnelInsideIpVersion _tunnelInsideIpVersion;
         private List<TunnelOption> _tunnelOptions = new List<TunnelOption>();
@@ -54,6 +58,78 @@ namespace Amazon.EC2.Model
         internal bool IsSetEnableAcceleration()
         {
             return this._enableAcceleration.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalIpv4NetworkCidr. 
+        /// <para>
+        /// The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.
+        /// </para>
+        /// </summary>
+        public string LocalIpv4NetworkCidr
+        {
+            get { return this._localIpv4NetworkCidr; }
+            set { this._localIpv4NetworkCidr = value; }
+        }
+
+        // Check to see if LocalIpv4NetworkCidr property is set
+        internal bool IsSetLocalIpv4NetworkCidr()
+        {
+            return this._localIpv4NetworkCidr != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalIpv6NetworkCidr. 
+        /// <para>
+        /// The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.
+        /// </para>
+        /// </summary>
+        public string LocalIpv6NetworkCidr
+        {
+            get { return this._localIpv6NetworkCidr; }
+            set { this._localIpv6NetworkCidr = value; }
+        }
+
+        // Check to see if LocalIpv6NetworkCidr property is set
+        internal bool IsSetLocalIpv6NetworkCidr()
+        {
+            return this._localIpv6NetworkCidr != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoteIpv4NetworkCidr. 
+        /// <para>
+        /// The IPv4 CIDR on the AWS side of the VPN connection.
+        /// </para>
+        /// </summary>
+        public string RemoteIpv4NetworkCidr
+        {
+            get { return this._remoteIpv4NetworkCidr; }
+            set { this._remoteIpv4NetworkCidr = value; }
+        }
+
+        // Check to see if RemoteIpv4NetworkCidr property is set
+        internal bool IsSetRemoteIpv4NetworkCidr()
+        {
+            return this._remoteIpv4NetworkCidr != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoteIpv6NetworkCidr. 
+        /// <para>
+        /// The IPv6 CIDR on the AWS side of the VPN connection.
+        /// </para>
+        /// </summary>
+        public string RemoteIpv6NetworkCidr
+        {
+            get { return this._remoteIpv6NetworkCidr; }
+            set { this._remoteIpv6NetworkCidr = value; }
+        }
+
+        // Check to see if RemoteIpv6NetworkCidr property is set
+        internal bool IsSetRemoteIpv6NetworkCidr()
+        {
+            return this._remoteIpv6NetworkCidr != null;
         }
 
         /// <summary>

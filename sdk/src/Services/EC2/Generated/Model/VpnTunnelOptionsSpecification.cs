@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class VpnTunnelOptionsSpecification
     {
+        private string _dpdTimeoutAction;
         private int? _dpdTimeoutSeconds;
         private List<IKEVersionsRequestListValue> _ikeVersions = new List<IKEVersionsRequestListValue>();
         private List<Phase1DHGroupNumbersRequestListValue> _phase1DHGroupNumbers = new List<Phase1DHGroupNumbersRequestListValue>();
@@ -47,8 +48,36 @@ namespace Amazon.EC2.Model
         private int? _rekeyFuzzPercentage;
         private int? _rekeyMarginTimeSeconds;
         private int? _replayWindowSize;
+        private string _startupAction;
         private string _tunnelInsideCidr;
         private string _tunnelInsideIpv6Cidr;
+
+        /// <summary>
+        /// Gets and sets the property DPDTimeoutAction. 
+        /// <para>
+        /// The action to take after DPD timeout occurs. Specify <code>restart</code> to restart
+        /// the IKE initiation. Specify <code>clear</code> to end the IKE session.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>clear</code> 
+        /// </para>
+        /// </summary>
+        public string DPDTimeoutAction
+        {
+            get { return this._dpdTimeoutAction; }
+            set { this._dpdTimeoutAction = value; }
+        }
+
+        // Check to see if DPDTimeoutAction property is set
+        internal bool IsSetDPDTimeoutAction()
+        {
+            return this._dpdTimeoutAction != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DPDTimeoutSeconds. 
@@ -400,6 +429,34 @@ namespace Amazon.EC2.Model
         internal bool IsSetReplayWindowSize()
         {
             return this._replayWindowSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartupAction. 
+        /// <para>
+        /// The action to take when the establishing the tunnel for the VPN connection. By default,
+        /// your customer gateway device must initiate the IKE negotiation and bring up the tunnel.
+        /// Specify <code>start</code> for AWS to initiate the IKE negotiation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>add</code> | <code>start</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>add</code> 
+        /// </para>
+        /// </summary>
+        public string StartupAction
+        {
+            get { return this._startupAction; }
+            set { this._startupAction = value; }
+        }
+
+        // Check to see if StartupAction property is set
+        internal bool IsSetStartupAction()
+        {
+            return this._startupAction != null;
         }
 
         /// <summary>

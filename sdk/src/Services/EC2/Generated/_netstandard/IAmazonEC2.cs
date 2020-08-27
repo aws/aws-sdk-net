@@ -1407,7 +1407,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Provides information to AWS about your VPN customer gateway device. The customer gateway
         /// is the appliance at your end of the VPN connection. (The device on the AWS side of
-        /// the VPN connection is the virtual private gateway.) You must provide the Internet-routable
+        /// the VPN connection is the virtual private gateway.) You must provide the internet-routable
         /// IP address of the customer gateway's external interface. The IP address must be static
         /// and can be behind a device performing network address translation (NAT).
         /// 
@@ -1420,11 +1420,26 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534, with the exception
-        /// of 7224, which is reserved in the <code>us-east-1</code> Region, and 9059, which is
-        /// reserved in the <code>eu-west-1</code> Region.
+        /// Amazon EC2 supports all 4-byte ASN numbers in the range of 1 - 2147483647, with the
+        /// exception of the following:
         /// </para>
-        ///  </note> 
+        ///  <ul> <li> 
+        /// <para>
+        /// 7224 - reserved in the <code>us-east-1</code> Region
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 9059 - reserved in the <code>eu-west-1</code> Region
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 17943 - reserved in the <code>ap-southeast-1</code> Region
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 10124 - reserved in the <code>ap-northeast-1</code> Region
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
         /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
@@ -10475,6 +10490,31 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyVpnConnection service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnection">REST API Reference for ModifyVpnConnection Operation</seealso>
         Task<ModifyVpnConnectionResponse> ModifyVpnConnectionAsync(ModifyVpnConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyVpnConnectionOptions
+
+
+
+        /// <summary>
+        /// Modifies the connection options for your Site-to-Site VPN VPN connection.
+        /// 
+        ///  
+        /// <para>
+        /// When you modify the VPN connection options, the VPN endpoint IP addresses on the AWS
+        /// side do not change, and the tunnel options do not change. Your VPN connection will
+        /// be temporarily unavailable for a brief period while the VPN connection is updated.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpnConnectionOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVpnConnectionOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnectionOptions">REST API Reference for ModifyVpnConnectionOptions Operation</seealso>
+        Task<ModifyVpnConnectionOptionsResponse> ModifyVpnConnectionOptionsAsync(ModifyVpnConnectionOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

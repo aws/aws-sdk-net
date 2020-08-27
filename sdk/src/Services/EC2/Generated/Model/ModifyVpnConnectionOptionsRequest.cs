@@ -29,40 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes VPN connection options.
+    /// Container for the parameters to the ModifyVpnConnectionOptions operation.
+    /// Modifies the connection options for your Site-to-Site VPN VPN connection.
+    /// 
+    ///  
+    /// <para>
+    /// When you modify the VPN connection options, the VPN endpoint IP addresses on the AWS
+    /// side do not change, and the tunnel options do not change. Your VPN connection will
+    /// be temporarily unavailable for a brief period while the VPN connection is updated.
+    /// </para>
     /// </summary>
-    public partial class VpnConnectionOptionsSpecification
+    public partial class ModifyVpnConnectionOptionsRequest : AmazonEC2Request
     {
-        private bool? _enableAcceleration;
         private string _localIpv4NetworkCidr;
         private string _localIpv6NetworkCidr;
         private string _remoteIpv4NetworkCidr;
         private string _remoteIpv6NetworkCidr;
-        private bool? _staticRoutesOnly;
-        private TunnelInsideIpVersion _tunnelInsideIpVersion;
-        private List<VpnTunnelOptionsSpecification> _tunnelOptions = new List<VpnTunnelOptionsSpecification>();
-
-        /// <summary>
-        /// Gets and sets the property EnableAcceleration. 
-        /// <para>
-        /// Indicate whether to enable acceleration for the VPN connection.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>false</code> 
-        /// </para>
-        /// </summary>
-        public bool EnableAcceleration
-        {
-            get { return this._enableAcceleration.GetValueOrDefault(); }
-            set { this._enableAcceleration = value; }
-        }
-
-        // Check to see if EnableAcceleration property is set
-        internal bool IsSetEnableAcceleration()
-        {
-            return this._enableAcceleration.HasValue; 
-        }
+        private string _vpnConnectionId;
 
         /// <summary>
         /// Gets and sets the property LocalIpv4NetworkCidr. 
@@ -153,67 +136,22 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StaticRoutesOnly. 
+        /// Gets and sets the property VpnConnectionId. 
         /// <para>
-        /// Indicate whether the VPN connection uses static routes only. If you are creating a
-        /// VPN connection for a device that does not support BGP, you must specify <code>true</code>.
-        /// Use <a>CreateVpnConnectionRoute</a> to create a static route.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>false</code> 
+        /// The ID of the Site-to-Site VPN VPN connection. 
         /// </para>
         /// </summary>
-        public bool StaticRoutesOnly
+        [AWSProperty(Required=true)]
+        public string VpnConnectionId
         {
-            get { return this._staticRoutesOnly.GetValueOrDefault(); }
-            set { this._staticRoutesOnly = value; }
+            get { return this._vpnConnectionId; }
+            set { this._vpnConnectionId = value; }
         }
 
-        // Check to see if StaticRoutesOnly property is set
-        internal bool IsSetStaticRoutesOnly()
+        // Check to see if VpnConnectionId property is set
+        internal bool IsSetVpnConnectionId()
         {
-            return this._staticRoutesOnly.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property TunnelInsideIpVersion. 
-        /// <para>
-        /// Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>ipv4</code> 
-        /// </para>
-        /// </summary>
-        public TunnelInsideIpVersion TunnelInsideIpVersion
-        {
-            get { return this._tunnelInsideIpVersion; }
-            set { this._tunnelInsideIpVersion = value; }
-        }
-
-        // Check to see if TunnelInsideIpVersion property is set
-        internal bool IsSetTunnelInsideIpVersion()
-        {
-            return this._tunnelInsideIpVersion != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TunnelOptions. 
-        /// <para>
-        /// The tunnel options for the VPN connection.
-        /// </para>
-        /// </summary>
-        public List<VpnTunnelOptionsSpecification> TunnelOptions
-        {
-            get { return this._tunnelOptions; }
-            set { this._tunnelOptions = value; }
-        }
-
-        // Check to see if TunnelOptions property is set
-        internal bool IsSetTunnelOptions()
-        {
-            return this._tunnelOptions != null && this._tunnelOptions.Count > 0; 
+            return this._vpnConnectionId != null;
         }
 
     }

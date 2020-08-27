@@ -68,6 +68,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Options" + "." + "EnableAcceleration", StringUtils.FromBool(publicRequest.Options.EnableAcceleration));
                     }
+                    if(publicRequest.Options.IsSetLocalIpv4NetworkCidr())
+                    {
+                        request.Parameters.Add("Options" + "." + "LocalIpv4NetworkCidr", StringUtils.FromString(publicRequest.Options.LocalIpv4NetworkCidr));
+                    }
+                    if(publicRequest.Options.IsSetLocalIpv6NetworkCidr())
+                    {
+                        request.Parameters.Add("Options" + "." + "LocalIpv6NetworkCidr", StringUtils.FromString(publicRequest.Options.LocalIpv6NetworkCidr));
+                    }
+                    if(publicRequest.Options.IsSetRemoteIpv4NetworkCidr())
+                    {
+                        request.Parameters.Add("Options" + "." + "RemoteIpv4NetworkCidr", StringUtils.FromString(publicRequest.Options.RemoteIpv4NetworkCidr));
+                    }
+                    if(publicRequest.Options.IsSetRemoteIpv6NetworkCidr())
+                    {
+                        request.Parameters.Add("Options" + "." + "RemoteIpv6NetworkCidr", StringUtils.FromString(publicRequest.Options.RemoteIpv6NetworkCidr));
+                    }
                     if(publicRequest.Options.IsSetStaticRoutesOnly())
                     {
                         request.Parameters.Add("Options" + "." + "StaticRoutesOnly", StringUtils.FromBool(publicRequest.Options.StaticRoutesOnly));
@@ -81,6 +97,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         int publicRequestOptionslistValueIndex = 1;
                         foreach(var publicRequestOptionslistValue in publicRequest.Options.TunnelOptions)
                         {
+                            if(publicRequestOptionslistValue.IsSetDPDTimeoutAction())
+                            {
+                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "DPDTimeoutAction", StringUtils.FromString(publicRequestOptionslistValue.DPDTimeoutAction));
+                            }
                             if(publicRequestOptionslistValue.IsSetDPDTimeoutSeconds())
                             {
                                 request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "DPDTimeoutSeconds", StringUtils.FromInt(publicRequestOptionslistValue.DPDTimeoutSeconds));
@@ -192,6 +212,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             if(publicRequestOptionslistValue.IsSetReplayWindowSize())
                             {
                                 request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "ReplayWindowSize", StringUtils.FromInt(publicRequestOptionslistValue.ReplayWindowSize));
+                            }
+                            if(publicRequestOptionslistValue.IsSetStartupAction())
+                            {
+                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "StartupAction", StringUtils.FromString(publicRequestOptionslistValue.StartupAction));
                             }
                             if(publicRequestOptionslistValue.IsSetTunnelInsideCidr())
                             {
