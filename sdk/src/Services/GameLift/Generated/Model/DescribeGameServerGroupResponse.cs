@@ -38,7 +38,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerGroup. 
         /// <para>
-        /// An object that describes the requested game server group resource. 
+        /// An object with the property settings for the requested game server group resource.
+        /// 
         /// </para>
         /// </summary>
         public GameServerGroup GameServerGroup

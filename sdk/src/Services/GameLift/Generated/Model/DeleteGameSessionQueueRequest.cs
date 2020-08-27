@@ -30,8 +30,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGameSessionQueue operation.
-    /// Deletes a game session queue. This action means that any <a>StartGameSessionPlacement</a>
-    /// requests that reference this queue will fail. To delete a queue, specify the queue
+    /// Deletes a game session queue. Once a queue is successfully deleted, unfulfilled <a>StartGameSessionPlacement</a>
+    /// requests that reference the queue will fail. To delete a queue, specify the queue
     /// name.
     /// 
     ///  

@@ -68,12 +68,6 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCustomSortKey())
-                {
-                    context.Writer.WritePropertyName("CustomSortKey");
-                    context.Writer.Write(publicRequest.CustomSortKey);
-                }
-
                 if(publicRequest.IsSetGameServerData())
                 {
                     context.Writer.WritePropertyName("GameServerData");

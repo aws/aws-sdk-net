@@ -30,13 +30,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterGameServer operation.
-    /// <b>This action is part of Amazon GameLift FleetIQ with game server groups, which
-    /// is in preview release and is subject to change.</b> 
+    /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
+    /// groups.</b> 
     /// 
     ///  
     /// <para>
     /// Creates a new game server resource and notifies GameLift FleetIQ that the game server
-    /// is ready to host gameplay and players. This action is called by a game server process
+    /// is ready to host gameplay and players. This operation is called by a game server process
     /// that is running on an instance in a game server group. Registering game servers enables
     /// GameLift FleetIQ to track available game servers and enables game clients and services
     /// to claim a game server for a new game session. 
@@ -45,14 +45,16 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// To register a game server, identify the game server group and instance where the game
     /// server is running, and provide a unique identifier for the game server. You can also
-    /// include connection and game server data; when a game client or service requests a
-    /// game server by calling <a>ClaimGameServer</a>, this information is returned in response.
+    /// include connection and game server data. When a game client or service requests a
+    /// game server by calling <a>ClaimGameServer</a>, this information is returned in the
+    /// response.
     /// </para>
     ///  
     /// <para>
-    /// Once a game server is successfully registered, it is put in status AVAILABLE. A request
-    /// to register a game server may fail if the instance it is in the process of shutting
-    /// down as part of instance rebalancing or scale-down activity. 
+    /// Once a game server is successfully registered, it is put in status <code>AVAILABLE</code>.
+    /// A request to register a game server may fail if the instance it is running on is in
+    /// the process of shutting down as part of instance balancing or scale-down activity.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -60,7 +62,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift
     /// FleetIQ Guide</a> 
     /// </para>
     ///  
@@ -96,18 +98,16 @@ namespace Amazon.GameLift.Model
     public partial class RegisterGameServerRequest : AmazonGameLiftRequest
     {
         private string _connectionInfo;
-        private string _customSortKey;
         private string _gameServerData;
         private string _gameServerGroupName;
         private string _gameServerId;
         private string _instanceId;
-        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ConnectionInfo. 
         /// <para>
-        /// Information needed to make inbound client connections to the game server. This might
-        /// include IP address and port, DNS name, etc.
+        /// Information that is needed to make inbound client connections to the game server.
+        /// This might include the IP address and port, DNS name, and other information.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -124,31 +124,10 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomSortKey. 
-        /// <para>
-        /// A game server tag that can be used to request sorted lists of game servers using <a>ListGameServers</a>.
-        /// Custom sort keys are developer-defined based on how you want to organize the retrieved
-        /// game server information.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string CustomSortKey
-        {
-            get { return this._customSortKey; }
-            set { this._customSortKey = value; }
-        }
-
-        // Check to see if CustomSortKey property is set
-        internal bool IsSetCustomSortKey()
-        {
-            return this._customSortKey != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property GameServerData. 
         /// <para>
         /// A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service when it requests information on a game servers
+        /// is passed to a game client or service when it requests information on game servers
         /// using <a>ListGameServers</a> or <a>ClaimGameServer</a>. 
         /// </para>
         /// </summary>
@@ -168,8 +147,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
-        /// An identifier for the game server group where the game server is running. You can
-        /// use either the <a>GameServerGroup</a> name or ARN value.
+        /// A unique identifier for the game server group where the game server is running. Use
+        /// either the <a>GameServerGroup</a> name or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -188,8 +167,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerId. 
         /// <para>
-        /// A custom string that uniquely identifies the new game server. Game server IDs are
-        /// developer-defined and must be unique across all game server groups in your AWS account.
+        /// A custom string that uniquely identifies the game server to register. Game server
+        /// IDs are developer-defined and must be unique across all game server groups in your
+        /// AWS account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=128)]
@@ -209,7 +189,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property InstanceId. 
         /// <para>
         /// The unique identifier for the instance where the game server is running. This ID is
-        /// available in the instance metadata.
+        /// available in the instance metadata. EC2 instance IDs use a 17-character format, for
+        /// example: <code>i-1234567890abcdef0</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]
@@ -223,31 +204,6 @@ namespace Amazon.GameLift.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// A list of labels to assign to the new game server resource. Tags are developer-defined
-        /// key-value pairs. Tagging AWS resources are useful for resource management, access
-        /// management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-        /// Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-        /// created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
-        /// to add, remove, and view tags. The maximum tag limit may be lower than stated. See
-        /// the AWS General Reference for actual tagging limits.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=200)]
-        public List<Tag> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

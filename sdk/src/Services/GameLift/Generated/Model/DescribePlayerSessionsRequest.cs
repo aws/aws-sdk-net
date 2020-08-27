@@ -30,10 +30,10 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePlayerSessions operation.
-    /// Retrieves properties for one or more player sessions. This action can be used in several
-    /// ways: (1) provide a <code>PlayerSessionId</code> to request properties for a specific
-    /// player session; (2) provide a <code>GameSessionId</code> to request properties for
-    /// all player sessions in the specified game session; (3) provide a <code>PlayerId</code>
+    /// Retrieves properties for one or more player sessions. This operation can be used in
+    /// several ways: (1) provide a <code>PlayerSessionId</code> to request properties for
+    /// a specific player session; (2) provide a <code>GameSessionId</code> to request properties
+    /// for all player sessions in the specified game session; (3) provide a <code>PlayerId</code>
     /// to request properties for all player sessions of a specified player. 
     /// 
     ///  
@@ -131,8 +131,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Token that indicates the start of the next sequential page of results. Use the token
-        /// that is returned with a previous call to this action. To start at the beginning of
-        /// the result set, do not specify a value. If a player session ID is specified, this
+        /// that is returned with a previous call to this operation. To start at the beginning
+        /// of the result set, do not specify a value. If a player session ID is specified, this
         /// parameter is ignored.
         /// </para>
         /// </summary>

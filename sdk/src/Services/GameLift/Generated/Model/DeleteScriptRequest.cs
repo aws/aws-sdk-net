@@ -30,9 +30,9 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteScript operation.
-    /// Deletes a Realtime script. This action permanently deletes the script record. If script
-    /// files were uploaded, they are also deleted (files stored in an S3 bucket are not deleted).
-    /// 
+    /// Deletes a Realtime script. This operation permanently deletes the script record. If
+    /// script files were uploaded, they are also deleted (files stored in an S3 bucket are
+    /// not deleted). 
     /// 
     ///  
     /// <para>

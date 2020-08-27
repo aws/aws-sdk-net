@@ -30,7 +30,7 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAlias operation.
-    /// Deletes an alias. This action removes all record of the alias. Game clients attempting
+    /// Deletes an alias. This operation removes all record of the alias. Game clients attempting
     /// to access a server process using the deleted alias receive an error. To delete an
     /// alias, specify the alias ID to be deleted.
     /// 

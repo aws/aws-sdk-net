@@ -29,14 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which
-    /// is in preview release and is subject to change.</b> 
+    /// <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b>
+    /// 
     /// 
     ///  
     /// <para>
-    /// An allowed instance type for your game server group. GameLift FleetIQ periodically
-    /// evaluates each defined instance type for viability. It then updates the Auto Scaling
-    /// group with the list of viable instance types.
+    /// An allowed instance type for a <a>GameServerGroup</a>. All game server groups must
+    /// have at least two instance types defined for it. GameLift FleetIQ periodically evaluates
+    /// each defined instance type for viability. It then updates the Auto Scaling group with
+    /// the list of viable instance types.
     /// </para>
     /// </summary>
     public partial class InstanceDefinition

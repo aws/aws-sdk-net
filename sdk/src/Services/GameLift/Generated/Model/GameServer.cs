@@ -29,24 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which
-    /// is in preview release and is subject to change.</b> 
+    /// <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b>
+    /// 
     /// 
     ///  
     /// <para>
-    /// Properties describing a game server resource. 
+    /// Properties describing a game server that is running on an instance in a <a>GameServerGroup</a>.
+    /// 
     /// </para>
     ///  
     /// <para>
-    /// A game server resource is created by a successful call to <a>RegisterGameServer</a>
-    /// and deleted by calling <a>DeregisterGameServer</a>. 
+    /// A game server is created by a successful call to <code>RegisterGameServer</code> and
+    /// deleted by calling <code>DeregisterGameServer</code>. A game server is claimed to
+    /// host a game session by calling <code>ClaimGameServer</code>. 
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>RegisterGameServer</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListGameServers</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ClaimGameServer</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameServer</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateGameServer</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeregisterGameServer</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GameServer
     {
         private GameServerClaimStatus _claimStatus;
         private string _connectionInfo;
-        private string _customSortKey;
         private string _gameServerData;
         private string _gameServerGroupArn;
         private string _gameServerGroupName;
@@ -60,11 +86,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ClaimStatus. 
         /// <para>
-        /// Indicates when an available game server has been reserved but has not yet started
-        /// hosting a game. Once it is claimed, game server remains in CLAIMED status for a maximum
-        /// of one minute. During this time, game clients must connect to the game server and
-        /// start the game, which triggers the game server to update its utilization status. After
-        /// one minute, the game server claim status reverts to null.
+        /// Indicates when an available game server has been reserved for gameplay but has not
+        /// yet started hosting a game. Once it is claimed, the game server remains in <code>CLAIMED</code>
+        /// status for a maximum of one minute. During this time, game clients connect to the
+        /// game server to start the game and trigger the game server to update its utilization
+        /// status. After one minute, the game server claim status reverts to null.
         /// </para>
         /// </summary>
         public GameServerClaimStatus ClaimStatus
@@ -100,32 +126,11 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomSortKey. 
-        /// <para>
-        /// A game server tag that can be used to request sorted lists of game servers when calling
-        /// <a>ListGameServers</a>. Custom sort keys are developer-defined. This property can
-        /// be updated using <a>UpdateGameServer</a>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string CustomSortKey
-        {
-            get { return this._customSortKey; }
-            set { this._customSortKey = value; }
-        }
-
-        // Check to see if CustomSortKey property is set
-        internal bool IsSetCustomSortKey()
-        {
-            return this._customSortKey != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property GameServerData. 
         /// <para>
         /// A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service in response to requests <a>ListGameServers</a>
-        /// or <a>ClaimGameServer</a>. This property can be updated using <a>UpdateGameServer</a>.
+        /// is passed to a game client or service when it requests information on game servers
+        /// using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -163,7 +168,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
-        /// The name identifier for the game server group where the game server is located.
+        /// A unique identifier for the game server group where the game server is running. Use
+        /// either the <a>GameServerGroup</a> name or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -202,7 +208,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The unique identifier for the instance where the game server is located.
+        /// The unique identifier for the instance where the game server is running. This ID is
+        /// available in the instance metadata. EC2 instance IDs use a 17-character format, for
+        /// example: <code>i-1234567890abcdef0</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=19)]
@@ -221,9 +229,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property LastClaimTime. 
         /// <para>
-        /// Time stamp indicating the last time the game server was claimed with a <a>ClaimGameServer</a>
-        /// request. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
-        /// This value is used to calculate when the game server's claim status.
+        /// Timestamp that indicates the last time the game server was claimed with a <a>ClaimGameServer</a>
+        /// request. The format is a number expressed in Unix time as milliseconds (for example
+        /// <code>"1469498468.057"</code>). This value is used to calculate when a claimed game
+        /// server's status should revert to null.
         /// </para>
         /// </summary>
         public DateTime LastClaimTime
@@ -241,10 +250,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property LastHealthCheckTime. 
         /// <para>
-        /// Time stamp indicating the last time the game server was updated with health status
-        /// using an <a>UpdateGameServer</a> request. Format is a number expressed in Unix time
-        /// as milliseconds (for example "1469498468.057"). After game server registration, this
-        /// property is only changed when a game server update specifies a health check value.
+        /// Timestamp that indicates the last time the game server was updated with health status
+        /// using an <a>UpdateGameServer</a> request. The format is a number expressed in Unix
+        /// time as milliseconds (for example <code>"1469498468.057"</code>). After game server
+        /// registration, this property is only changed when a game server update specifies a
+        /// health check value.
         /// </para>
         /// </summary>
         public DateTime LastHealthCheckTime
@@ -262,8 +272,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RegistrationTime. 
         /// <para>
-        /// Time stamp indicating when the game server resource was created with a <a>RegisterGameServer</a>
-        /// request. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
+        /// Timestamp that indicates when the game server was created with a <a>RegisterGameServer</a>
+        /// request. The format is a number expressed in Unix time as milliseconds (for example
+        /// <code>"1469498468.057"</code>).
         /// </para>
         /// </summary>
         public DateTime RegistrationTime
@@ -286,12 +297,14 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AVAILABLE - The game server is available to be claimed. A game server that has been
-        /// claimed remains in this status until it reports game hosting activity. 
+        ///  <code>AVAILABLE</code> - The game server is available to be claimed. A game server
+        /// that has been claimed remains in this status until it reports game hosting activity.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// IN_USE - The game server is currently hosting a game session with players. 
+        ///  <code>UTILIZED</code> - The game server is currently hosting a game session with
+        /// players. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

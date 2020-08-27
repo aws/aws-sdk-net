@@ -30,13 +30,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeGameServer operation.
-    /// <b>This action is part of Amazon GameLift FleetIQ with game server groups, which
-    /// is in preview release and is subject to change.</b> 
+    /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
+    /// groups.</b> 
     /// 
     ///  
     /// <para>
-    /// Retrieves information for a game server resource. Information includes the game server
-    /// statuses, health check info, and the instance the game server is running on. 
+    /// Retrieves information for a registered game server. Information includes game server
+    /// status, health check info, and the instance that the game server is running on. 
     /// </para>
     ///  
     /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift
     /// FleetIQ Guide</a> 
     /// </para>
     ///  
@@ -90,8 +90,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
-        /// An identifier for the game server group where the game server is running. Use either
-        /// the <a>GameServerGroup</a> name or ARN value.
+        /// A unique identifier for the game server group where the game server is running. Use
+        /// either the <a>GameServerGroup</a> name or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -110,7 +110,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerId. 
         /// <para>
-        /// The identifier for the game server to be retrieved.
+        /// A custom string that uniquely identifies the game server information to be retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=128)]

@@ -43,7 +43,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// If the action is successful, the service sends back an empty JSON struct with the
+    /// If the operation is successful, the service sends back an empty JSON struct with the
     /// HTTP 200 response (not an empty HTTP body).
     /// </para>
     ///  </note> 

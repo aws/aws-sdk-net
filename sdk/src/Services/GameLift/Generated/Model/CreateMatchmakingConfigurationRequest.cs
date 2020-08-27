@@ -46,13 +46,10 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// There are two ways to track the progress of matchmaking tickets: (1) polling ticket
-    /// status with <a>DescribeMatchmaking</a>; or (2) receiving notifications with Amazon
-    /// Simple Notification Service (SNS). To use notifications, you first need to set up
-    /// an SNS topic to receive the notifications, and provide the topic ARN in the matchmaking
-    /// configuration. Since notifications promise only "best effort" delivery, we recommend
-    /// calling <code>DescribeMatchmaking</code> if no notifications are received within 30
-    /// seconds.
+    /// To track the progress of matchmaking tickets, set up an Amazon Simple Notification
+    /// Service (SNS) to receive notifications, and provide the topic ARN in the matchmaking
+    /// configuration. An alternative method, continuously poling ticket status with <a>DescribeMatchmaking</a>,
+    /// should only be used for games in development with low matchmaking usage.
     /// </para>
     ///  
     /// <para>
@@ -66,7 +63,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
-    /// Setting up Notifications for Matchmaking</a> 
+    /// Set Up FlexMatch Event Notification</a> 
     /// </para>
     ///  
     /// <para>

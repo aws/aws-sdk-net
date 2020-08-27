@@ -30,29 +30,30 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the SuspendGameServerGroup operation.
-    /// <b>This action is part of Amazon GameLift FleetIQ with game server groups, which
-    /// is in preview release and is subject to change.</b> 
+    /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
+    /// groups.</b> 
     /// 
     ///  
     /// <para>
     /// Temporarily stops activity on a game server group without terminating instances or
-    /// the game server group. Activity can be restarted by calling <a>ResumeGameServerGroup</a>.
-    /// Activities that can suspended are:
+    /// the game server group. You can restart activity by calling <a>ResumeGameServerGroup</a>.
+    /// You can suspend the following activity:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Instance type replacement. This activity evaluates the current Spot viability of all
-    /// instance types that are defined for the game server group. It updates the Auto Scaling
-    /// group to remove nonviable Spot instance types (which have a higher chance of game
-    /// server interruptions) and rebalances capacity across the remaining viable Spot instance
-    /// types. When this activity is suspended, the Auto Scaling group continues with its
-    /// current balance, regardless of viability. Instance protection, utilization metrics,
-    /// and capacity autoscaling activities continue to be active. 
+    ///  <b>Instance type replacement</b> - This activity evaluates the current game hosting
+    /// viability of all Spot instance types that are defined for the game server group. It
+    /// updates the Auto Scaling group to remove nonviable Spot Instance types, which have
+    /// a higher chance of game server interruptions. It then balances capacity across the
+    /// remaining viable Spot Instance types. When this activity is suspended, the Auto Scaling
+    /// group continues with its current balance, regardless of viability. Instance protection,
+    /// utilization metrics, and capacity scaling activities continue to be active. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// To suspend activity, specify a game server group ARN and the type of activity to be
-    /// suspended.
+    /// suspended. If successful, a <a>GameServerGroup</a> object is returned showing that
+    /// the activity is listed in <code>SuspendedActions</code>.
     /// </para>
     ///  
     /// <para>
@@ -60,7 +61,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift
     /// FleetIQ Guide</a> 
     /// </para>
     ///  
@@ -95,6 +96,10 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <a>SuspendGameServerGroup</a> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameServerInstances</a> 
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class SuspendGameServerGroupRequest : AmazonGameLiftRequest
@@ -105,8 +110,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
-        /// The unique identifier of the game server group to stop activity on. Use either the
-        /// <a>GameServerGroup</a> name or ARN value.
+        /// A unique identifier for the game server group. Use either the <a>GameServerGroup</a>
+        /// name or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -125,7 +130,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property SuspendActions. 
         /// <para>
-        /// The action to suspend for this game server group.
+        /// The activity to suspend for this game server group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]

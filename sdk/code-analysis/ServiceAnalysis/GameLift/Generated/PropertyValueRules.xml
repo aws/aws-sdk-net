@@ -442,6 +442,26 @@
     <pattern>[a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeGameServerInstancesRequest.GameServerGroupName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeGameServerInstancesRequest.Limit</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeGameServerInstancesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeGameServerInstancesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeGameSessionDetailsRequest.AliasId</property>
     <pattern>^alias-\S+|^arn:.*:alias\/alias-\S+</pattern>
   </property-value-rule>
@@ -793,12 +813,6 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.GameLift.Model.RegisterGameServerRequest.CustomSortKey</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.GameLift.Model.RegisterGameServerRequest.GameServerData</property>
     <min>1</min>
     <max>1024</max>
@@ -1039,12 +1053,6 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateFleetPortSettingsResponse.FleetId</property>
     <pattern>^fleet-\S+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GameLift.Model.UpdateGameServerRequest.CustomSortKey</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateGameServerRequest.GameServerData</property>
@@ -1370,12 +1378,6 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.GameLift.Model.GameServer.CustomSortKey</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.GameLift.Model.GameServer.GameServerData</property>
     <min>1</min>
     <max>1024</max>
@@ -1436,6 +1438,24 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.GameServerGroupAutoScalingPolicy.EstimatedInstanceWarmup</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.GameServerInstance.GameServerGroupArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.GameServerInstance.GameServerGroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.GameServerInstance.InstanceId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^i-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GameSession.CreatorId</property>

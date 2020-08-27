@@ -31,7 +31,7 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the DescribeInstances operation.
     /// Retrieves information about a fleet's instances, including instance IDs. Use this
-    /// action to get details on all instances in the fleet or get details on one specific
+    /// operation to get details on all instances in the fleet or get details on one specific
     /// instance.
     /// 
     ///  
@@ -139,8 +139,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Token that indicates the start of the next sequential page of results. Use the token
-        /// that is returned with a previous call to this action. To start at the beginning of
-        /// the result set, do not specify a value.
+        /// that is returned with a previous call to this operation. To start at the beginning
+        /// of the result set, do not specify a value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

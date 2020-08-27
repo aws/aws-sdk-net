@@ -76,12 +76,6 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConnectionInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CustomSortKey", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomSortKey = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("GameServerData", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

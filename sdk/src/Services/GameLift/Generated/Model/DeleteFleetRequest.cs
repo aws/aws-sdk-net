@@ -42,7 +42,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// This action removes the fleet and its resources. Once a fleet is deleted, you can
+    /// This operation removes the fleet and its resources. Once a fleet is deleted, you can
     /// no longer use any of the resource in that fleet.
     /// </para>
     ///  

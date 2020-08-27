@@ -30,39 +30,37 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGameServer operation.
-    /// <b>This action is part of Amazon GameLift FleetIQ with game server groups, which
-    /// is in preview release and is subject to change.</b> 
+    /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
+    /// groups.</b> 
     /// 
     ///  
     /// <para>
-    /// Updates information about a registered game server. This action is called by a game
-    /// server process that is running on an instance in a game server group. There are three
-    /// reasons to update game server information: (1) to change the utilization status of
-    /// the game server, (2) to report game server health status, and (3) to change game server
-    /// metadata. A registered game server should regularly report health and should update
-    /// utilization status when it is supporting gameplay so that GameLift FleetIQ can accurately
-    /// track game server availability. You can make all three types of updates in the same
-    /// request.
+    /// Updates information about a registered game server to help GameLift FleetIQ to track
+    /// game server availability. This operation is called by a game server process that is
+    /// running on an instance in a game server group. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Use this operation to update the following types of game server information. You can
+    /// make all three types of updates in the same request:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     /// To update the game server's utilization status, identify the game server and game
     /// server group and specify the current utilization status. Use this status to identify
     /// when game servers are currently hosting games and when they are available to be claimed.
-    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// To report health status, identify the game server and game server group and set health
-    /// check to HEALTHY. If a game server does not report health status for a certain length
-    /// of time, the game server is no longer considered healthy and will be eventually de-registered
-    /// from the game server group to avoid affecting utilization metrics. The best practice
-    /// is to report health every 60 seconds.
+    /// check to <code>HEALTHY</code>. If a game server does not report health status for
+    /// a certain length of time, the game server is no longer considered healthy. As a result,
+    /// it will be eventually deregistered from the game server group to avoid affecting utilization
+    /// metrics. The best practice is to report health every 60 seconds.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To change game server metadata, provide updated game server data and custom sort key
-    /// values.
+    /// To change game server metadata, provide updated game server data.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -75,7 +73,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift
     /// FleetIQ Guide</a> 
     /// </para>
     ///  
@@ -110,7 +108,6 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class UpdateGameServerRequest : AmazonGameLiftRequest
     {
-        private string _customSortKey;
         private string _gameServerData;
         private string _gameServerGroupName;
         private string _gameServerId;
@@ -118,32 +115,11 @@ namespace Amazon.GameLift.Model
         private GameServerUtilizationStatus _utilizationStatus;
 
         /// <summary>
-        /// Gets and sets the property CustomSortKey. 
-        /// <para>
-        /// A game server tag that can be used to request sorted lists of game servers using <a>ListGameServers</a>.
-        /// Custom sort keys are developer-defined based on how you want to organize the retrieved
-        /// game server information.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string CustomSortKey
-        {
-            get { return this._customSortKey; }
-            set { this._customSortKey = value; }
-        }
-
-        // Check to see if CustomSortKey property is set
-        internal bool IsSetCustomSortKey()
-        {
-            return this._customSortKey != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property GameServerData. 
         /// <para>
         /// A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service when it requests information on a game servers
-        /// using <a>DescribeGameServer</a> or <a>ClaimGameServer</a>. 
+        /// is passed to a game client or service when it requests information on game servers
+        /// using <a>ListGameServers</a> or <a>ClaimGameServer</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -162,8 +138,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
-        /// An identifier for the game server group where the game server is running. Use either
-        /// the <a>GameServerGroup</a> name or ARN value.
+        /// A unique identifier for the game server group where the game server is running. Use
+        /// either the <a>GameServerGroup</a> name or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -182,7 +158,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerId. 
         /// <para>
-        /// The identifier for the game server to be updated.
+        /// A custom string that uniquely identifies the game server to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=128)]
@@ -201,8 +177,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property HealthCheck. 
         /// <para>
-        /// Indicates health status of the game server. An update that explicitly includes this
-        /// parameter updates the game server's <i>LastHealthCheckTime</i> time stamp. 
+        /// Indicates health status of the game server. A request that includes this parameter
+        /// updates the game server's <i>LastHealthCheckTime</i> timestamp. 
         /// </para>
         /// </summary>
         public GameServerHealthCheck HealthCheck

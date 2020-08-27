@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Represents the returned data in response to a request action.
+    /// Represents the returned data in response to a request operation.
     /// </summary>
     public partial class DescribePlayerSessionsResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token that indicates where to resume retrieving results on the next call to this action.
+        /// Token that indicates where to resume retrieving results on the next call to this operation.
         /// If no token is returned, these results represent the end of the list.
         /// </para>
         /// </summary>

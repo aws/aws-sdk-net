@@ -544,7 +544,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property StoppedActions. 
         /// <para>
-        /// List of fleet actions that have been suspended using <a>StopFleetActions</a>. This
+        /// List of fleet activity that have been suspended using <a>StopFleetActions</a>. This
         /// includes auto-scaling.
         /// </para>
         /// </summary>

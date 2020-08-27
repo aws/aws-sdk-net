@@ -30,14 +30,20 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMatchmakingConfigurations operation.
-    /// Retrieves the details of FlexMatch matchmaking configurations. With this operation,
-    /// you have the following options: (1) retrieve all existing configurations, (2) provide
-    /// the names of one or more configurations to retrieve, or (3) retrieve all configurations
-    /// that use a specified rule set name. When requesting multiple items, use the pagination
-    /// parameters to retrieve results as a set of sequential pages. If successful, a configuration
-    /// is returned for each requested name. When specifying a list of names, only configurations
-    /// that currently exist are returned. 
+    /// Retrieves the details of FlexMatch matchmaking configurations. 
     /// 
+    ///  
+    /// <para>
+    /// This operation offers the following options: (1) retrieve all matchmaking configurations,
+    /// (2) retrieve configurations for a specified list, or (3) retrieve all configurations
+    /// that use a specified rule set name. When requesting multiple items, use the pagination
+    /// parameters to retrieve results as a set of sequential pages. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If successful, a configuration is returned for each requested name. When specifying
+    /// a list of names, only configurations that currently exist are returned. 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Learn more</b> 
@@ -136,8 +142,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token that indicates the start of the next sequential page of results. Use the token
-        /// that is returned with a previous call to this action. To start at the beginning of
-        /// the result set, do not specify a value.
+        /// that is returned with a previous call to this operation. To start at the beginning
+        /// of the result set, do not specify a value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

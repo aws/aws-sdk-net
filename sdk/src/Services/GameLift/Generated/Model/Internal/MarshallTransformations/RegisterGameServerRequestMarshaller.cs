@@ -74,12 +74,6 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ConnectionInfo);
                 }
 
-                if(publicRequest.IsSetCustomSortKey())
-                {
-                    context.Writer.WritePropertyName("CustomSortKey");
-                    context.Writer.Write(publicRequest.CustomSortKey);
-                }
-
                 if(publicRequest.IsSetGameServerData())
                 {
                     context.Writer.WritePropertyName("GameServerData");
@@ -102,22 +96,6 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("InstanceId");
                     context.Writer.Write(publicRequest.InstanceId);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
                 }
 
         

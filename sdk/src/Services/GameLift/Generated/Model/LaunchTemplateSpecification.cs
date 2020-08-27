@@ -29,13 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which
-    /// is in preview release and is subject to change.</b> 
+    /// <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b>
+    /// 
     /// 
     ///  
     /// <para>
     /// An EC2 launch template that contains configuration settings and game server code to
-    /// be deployed to all instances in a game server group. 
+    /// be deployed to all instances in a game server group. The launch template is specified
+    /// when creating a new game server group with <a>CreateGameServerGroup</a>. 
     /// </para>
     /// </summary>
     public partial class LaunchTemplateSpecification
@@ -86,8 +87,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Version. 
         /// <para>
         /// The version of the EC2 launch template to use. If no version is specified, the default
-        /// version will be used. EC2 allows you to specify a default version for a launch template,
-        /// if none is set, the default is the first version created.
+        /// version will be used. With Amazon EC2, you can specify a default version for a launch
+        /// template. If none is set, the default is the first version created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

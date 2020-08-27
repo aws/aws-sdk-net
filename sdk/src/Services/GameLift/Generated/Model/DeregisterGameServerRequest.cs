@@ -30,19 +30,20 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterGameServer operation.
-    /// <b>This action is part of Amazon GameLift FleetIQ with game server groups, which
-    /// is in preview release and is subject to change.</b> 
+    /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
+    /// groups.</b> 
     /// 
     ///  
     /// <para>
-    /// Removes the game server resource from the game server group. As a result of this action,
-    /// the de-registered game server can no longer be claimed and will not returned in a
-    /// list of active game servers. 
+    /// Removes the game server from a game server group. As a result of this operation, the
+    /// deregistered game server can no longer be claimed and will not be returned in a list
+    /// of active game servers. 
     /// </para>
     ///  
     /// <para>
-    /// To de-register a game server, specify the game server group and game server ID. If
-    /// successful, this action emits a CloudWatch event with termination time stamp and reason.
+    /// To deregister a game server, specify the game server group and game server ID. If
+    /// successful, this operation emits a CloudWatch event with termination timestamp and
+    /// reason.
     /// </para>
     ///  
     /// <para>
@@ -50,7 +51,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift
     /// FleetIQ Guide</a> 
     /// </para>
     ///  
@@ -91,8 +92,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
-        /// An identifier for the game server group where the game server to be de-registered
-        /// is running. Use either the <a>GameServerGroup</a> name or ARN value.
+        /// A unique identifier for the game server group where the game server is running. Use
+        /// either the <a>GameServerGroup</a> name or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -111,7 +112,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerId. 
         /// <para>
-        /// The identifier for the game server to be de-registered.
+        /// A custom string that uniquely identifies the game server to deregister.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=128)]

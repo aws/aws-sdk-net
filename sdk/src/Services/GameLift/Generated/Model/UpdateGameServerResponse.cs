@@ -38,7 +38,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServer. 
         /// <para>
-        /// Object that describes the newly updated game server resource.
+        /// Object that describes the newly updated game server.
         /// </para>
         /// </summary>
         public GameServer GameServer

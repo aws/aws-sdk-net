@@ -43,9 +43,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Some API actions may limit the number of fleet IDs allowed in one request. If a request
-    /// exceeds this limit, the request fails and the error message includes the maximum allowed
-    /// number.
+    /// Some API operations may limit the number of fleet IDs allowed in one request. If a
+    /// request exceeds this limit, the request fails and the error message includes the maximum
+    /// allowed number.
     /// </para>
     ///  </note> 
     /// <para>
@@ -167,8 +167,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Token that indicates the start of the next sequential page of results. Use the token
-        /// that is returned with a previous call to this action. To start at the beginning of
-        /// the result set, do not specify a value. This parameter is ignored when the request
+        /// that is returned with a previous call to this operation. To start at the beginning
+        /// of the result set, do not specify a value. This parameter is ignored when the request
         /// specifies one or a list of fleet IDs.
         /// </para>
         /// </summary>

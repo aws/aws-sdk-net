@@ -30,14 +30,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGameServerGroups operation.
-    /// <b>This action is part of Amazon GameLift FleetIQ with game server groups, which
-    /// is in preview release and is subject to change.</b> 
+    /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
+    /// groups.</b> 
     /// 
     ///  
     /// <para>
     /// Retrieves information on all game servers groups that exist in the current AWS account
-    /// for the selected region. Use the pagination parameters to retrieve results in a set
-    /// of sequential pages. 
+    /// for the selected Region. Use the pagination parameters to retrieve results in a set
+    /// of sequential segments. 
     /// </para>
     ///  
     /// <para>
@@ -45,7 +45,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift
     /// FleetIQ Guide</a> 
     /// </para>
     ///  
@@ -80,6 +80,10 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <a>SuspendGameServerGroup</a> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameServerInstances</a> 
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class ListGameServerGroupsRequest : AmazonGameLiftRequest
@@ -91,7 +95,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
-        /// to get results as a set of sequential pages.
+        /// to get results as a set of sequential segments.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -110,9 +114,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token that indicates the start of the next sequential page of results. Use the token
-        /// that is returned with a previous call to this action. To start at the beginning of
-        /// the result set, do not specify a value.
+        /// A token that indicates the start of the next sequential segment of results. Use the
+        /// token returned with the previous call to this operation. To start at the beginning
+        /// of the result set, do not specify a value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

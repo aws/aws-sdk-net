@@ -38,7 +38,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerGroup. 
         /// <para>
-        /// An object that describes the game server group resource, with the <i>SuspendedActions</i>
+        /// An object that describes the game server group resource, with the <code>SuspendedActions</code>
         /// property updated to reflect the suspended activity.
         /// </para>
         /// </summary>

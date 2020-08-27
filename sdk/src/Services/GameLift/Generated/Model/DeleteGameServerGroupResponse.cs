@@ -39,7 +39,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameServerGroup. 
         /// <para>
         /// An object that describes the deleted game server group resource, with status updated
-        /// to DELETE_SCHEDULED. 
+        /// to <code>DELETE_SCHEDULED</code>. 
         /// </para>
         /// </summary>
         public GameServerGroup GameServerGroup
