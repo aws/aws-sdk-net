@@ -45,6 +45,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AudioDescription requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAudioChannelTaggingSettings())
+            {
+                context.Writer.WritePropertyName("audioChannelTaggingSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AudioChannelTaggingSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AudioChannelTaggingSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAudioNormalizationSettings())
             {
                 context.Writer.WritePropertyName("audioNormalizationSettings");

@@ -76,6 +76,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdMarkers = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("audioOnlyHeader", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioOnlyHeader = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("baseUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -35,6 +35,7 @@ namespace Amazon.MediaConvert.Model
     {
         private List<HlsAdditionalManifest> _additionalManifests = new List<HlsAdditionalManifest>();
         private List<string> _adMarkers = new List<string>();
+        private HlsAudioOnlyHeader _audioOnlyHeader;
         private string _baseUrl;
         private List<HlsCaptionLanguageMapping> _captionLanguageMappings = new List<HlsCaptionLanguageMapping>();
         private HlsCaptionLanguageSetting _captionLanguageSetting;
@@ -93,6 +94,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAdMarkers()
         {
             return this._adMarkers != null && this._adMarkers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AudioOnlyHeader. Ignore this setting unless you are using
+        /// FairPlay DRM with Verimatrix and you encounter playback issues. Keep the default value,
+        /// Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove
+        /// the audio-only headers from your audio segments.
+        /// </summary>
+        public HlsAudioOnlyHeader AudioOnlyHeader
+        {
+            get { return this._audioOnlyHeader; }
+            set { this._audioOnlyHeader = value; }
+        }
+
+        // Check to see if AudioOnlyHeader property is set
+        internal bool IsSetAudioOnlyHeader()
+        {
+            return this._audioOnlyHeader != null;
         }
 
         /// <summary>

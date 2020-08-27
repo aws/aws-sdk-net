@@ -1047,6 +1047,108 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type AudioChannelTag.
+    /// </summary>
+    public class AudioChannelTag : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant C for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag C = new AudioChannelTag("C");
+        /// <summary>
+        /// Constant CS for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag CS = new AudioChannelTag("CS");
+        /// <summary>
+        /// Constant L for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag L = new AudioChannelTag("L");
+        /// <summary>
+        /// Constant LC for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag LC = new AudioChannelTag("LC");
+        /// <summary>
+        /// Constant LFE for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag LFE = new AudioChannelTag("LFE");
+        /// <summary>
+        /// Constant LS for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag LS = new AudioChannelTag("LS");
+        /// <summary>
+        /// Constant LSD for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag LSD = new AudioChannelTag("LSD");
+        /// <summary>
+        /// Constant R for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag R = new AudioChannelTag("R");
+        /// <summary>
+        /// Constant RC for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag RC = new AudioChannelTag("RC");
+        /// <summary>
+        /// Constant RS for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag RS = new AudioChannelTag("RS");
+        /// <summary>
+        /// Constant RSD for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag RSD = new AudioChannelTag("RSD");
+        /// <summary>
+        /// Constant TCS for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag TCS = new AudioChannelTag("TCS");
+        /// <summary>
+        /// Constant VHC for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag VHC = new AudioChannelTag("VHC");
+        /// <summary>
+        /// Constant VHL for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag VHL = new AudioChannelTag("VHL");
+        /// <summary>
+        /// Constant VHR for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag VHR = new AudioChannelTag("VHR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AudioChannelTag(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AudioChannelTag FindValue(string value)
+        {
+            return FindValue<AudioChannelTag>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AudioChannelTag(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AudioCodec.
     /// </summary>
     public class AudioCodec : ConstantClass
@@ -8696,6 +8798,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HlsAudioOnlyContainer(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HlsAudioOnlyHeader.
+    /// </summary>
+    public class HlsAudioOnlyHeader : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXCLUDE for HlsAudioOnlyHeader
+        /// </summary>
+        public static readonly HlsAudioOnlyHeader EXCLUDE = new HlsAudioOnlyHeader("EXCLUDE");
+        /// <summary>
+        /// Constant INCLUDE for HlsAudioOnlyHeader
+        /// </summary>
+        public static readonly HlsAudioOnlyHeader INCLUDE = new HlsAudioOnlyHeader("INCLUDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsAudioOnlyHeader(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsAudioOnlyHeader FindValue(string value)
+        {
+            return FindValue<HlsAudioOnlyHeader>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsAudioOnlyHeader(string value)
         {
             return FindValue(value);
         }

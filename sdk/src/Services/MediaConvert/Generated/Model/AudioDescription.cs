@@ -33,6 +33,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class AudioDescription
     {
+        private AudioChannelTaggingSettings _audioChannelTaggingSettings;
         private AudioNormalizationSettings _audioNormalizationSettings;
         private string _audioSourceName;
         private int? _audioType;
@@ -43,6 +44,27 @@ namespace Amazon.MediaConvert.Model
         private AudioLanguageCodeControl _languageCodeControl;
         private RemixSettings _remixSettings;
         private string _streamName;
+
+        /// <summary>
+        /// Gets and sets the property AudioChannelTaggingSettings. When you mimic a multi-channel
+        /// audio layout with multiple mono-channel tracks, you can tag each channel layout manually.
+        /// For example, you would tag the tracks that contain your left, right, and center audio
+        /// with Left (L), Right (R), and Center (C), respectively. When you don't specify a value,
+        /// MediaConvert labels your track as Center (C) by default. To use audio layout tagging,
+        /// your output must be in a QuickTime (.mov) container; your audio codec must be AAC,
+        /// WAV, or AIFF; and you must set up your audio track to have only one channel.
+        /// </summary>
+        public AudioChannelTaggingSettings AudioChannelTaggingSettings
+        {
+            get { return this._audioChannelTaggingSettings; }
+            set { this._audioChannelTaggingSettings = value; }
+        }
+
+        // Check to see if AudioChannelTaggingSettings property is set
+        internal bool IsSetAudioChannelTaggingSettings()
+        {
+            return this._audioChannelTaggingSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AudioNormalizationSettings. Advanced audio normalization

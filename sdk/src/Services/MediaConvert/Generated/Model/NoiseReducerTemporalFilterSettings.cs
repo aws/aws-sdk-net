@@ -58,9 +58,11 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property PostTemporalSharpening. Optional. When you set Noise reducer
-        /// (noiseReducer) to Temporal (TEMPORAL), you can optionally use this setting to apply
-        /// additional sharpening. The default behavior, Auto (AUTO) allows the transcoder to
-        /// determine whether to apply filtering, depending on input type and quality.
+        /// (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply sharpening.
+        /// The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply
+        /// filtering, depending on input type and quality. When you set Noise reducer to Temporal,
+        /// your output bandwidth is reduced. When Post temporal sharpening is also enabled, that
+        /// bandwidth reduction is smaller.
         /// </summary>
         public NoiseFilterPostTemporalSharpening PostTemporalSharpening
         {

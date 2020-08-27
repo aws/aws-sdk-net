@@ -72,6 +72,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetAudioOnlyHeader())
+            {
+                context.Writer.WritePropertyName("audioOnlyHeader");
+                context.Writer.Write(requestObject.AudioOnlyHeader);
+            }
+
             if(requestObject.IsSetBaseUrl())
             {
                 context.Writer.WritePropertyName("baseUrl");
