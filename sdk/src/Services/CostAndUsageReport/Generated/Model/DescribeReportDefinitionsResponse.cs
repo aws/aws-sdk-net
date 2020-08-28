@@ -39,6 +39,7 @@ namespace Amazon.CostAndUsageReport.Model
         /// <summary>
         /// Gets and sets the property NextToken.
         /// </summary>
+        [AWSProperty(Max=256)]
         public string NextToken
         {
             get { return this._nextToken; }

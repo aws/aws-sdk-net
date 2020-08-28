@@ -37,7 +37,11 @@ namespace Amazon.CostAndUsageReport.Model
         private string _reportName;
 
         /// <summary>
-        /// Gets and sets the property ReportName.
+        /// Gets and sets the property ReportName. 
+        /// <para>
+        /// The name of the report that you want to delete. The name must be unique, is case sensitive,
+        /// and can't include spaces.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
         public string ReportName

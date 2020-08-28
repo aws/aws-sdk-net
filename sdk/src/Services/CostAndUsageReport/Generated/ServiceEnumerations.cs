@@ -85,6 +85,10 @@ namespace Amazon.CostAndUsageReport
     {
 
         /// <summary>
+        /// Constant AfSouth1 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion AfSouth1 = new AWSRegion("af-south-1");
+        /// <summary>
         /// Constant ApEast1 for AWSRegion
         /// </summary>
         public static readonly AWSRegion ApEast1 = new AWSRegion("ap-east-1");
@@ -93,9 +97,17 @@ namespace Amazon.CostAndUsageReport
         /// </summary>
         public static readonly AWSRegion ApNortheast1 = new AWSRegion("ap-northeast-1");
         /// <summary>
+        /// Constant ApNortheast2 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion ApNortheast2 = new AWSRegion("ap-northeast-2");
+        /// <summary>
         /// Constant ApNortheast3 for AWSRegion
         /// </summary>
         public static readonly AWSRegion ApNortheast3 = new AWSRegion("ap-northeast-3");
+        /// <summary>
+        /// Constant ApSouth1 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion ApSouth1 = new AWSRegion("ap-south-1");
         /// <summary>
         /// Constant ApSoutheast1 for AWSRegion
         /// </summary>
@@ -105,6 +117,18 @@ namespace Amazon.CostAndUsageReport
         /// </summary>
         public static readonly AWSRegion ApSoutheast2 = new AWSRegion("ap-southeast-2");
         /// <summary>
+        /// Constant CaCentral1 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion CaCentral1 = new AWSRegion("ca-central-1");
+        /// <summary>
+        /// Constant CnNorth1 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion CnNorth1 = new AWSRegion("cn-north-1");
+        /// <summary>
+        /// Constant CnNorthwest1 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion CnNorthwest1 = new AWSRegion("cn-northwest-1");
+        /// <summary>
         /// Constant EuCentral1 for AWSRegion
         /// </summary>
         public static readonly AWSRegion EuCentral1 = new AWSRegion("eu-central-1");
@@ -113,13 +137,37 @@ namespace Amazon.CostAndUsageReport
         /// </summary>
         public static readonly AWSRegion EuNorth1 = new AWSRegion("eu-north-1");
         /// <summary>
+        /// Constant EuSouth1 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion EuSouth1 = new AWSRegion("eu-south-1");
+        /// <summary>
         /// Constant EuWest1 for AWSRegion
         /// </summary>
         public static readonly AWSRegion EuWest1 = new AWSRegion("eu-west-1");
         /// <summary>
+        /// Constant EuWest2 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion EuWest2 = new AWSRegion("eu-west-2");
+        /// <summary>
+        /// Constant EuWest3 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion EuWest3 = new AWSRegion("eu-west-3");
+        /// <summary>
+        /// Constant MeSouth1 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion MeSouth1 = new AWSRegion("me-south-1");
+        /// <summary>
+        /// Constant SaEast1 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion SaEast1 = new AWSRegion("sa-east-1");
+        /// <summary>
         /// Constant UsEast1 for AWSRegion
         /// </summary>
         public static readonly AWSRegion UsEast1 = new AWSRegion("us-east-1");
+        /// <summary>
+        /// Constant UsEast2 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion UsEast2 = new AWSRegion("us-east-2");
         /// <summary>
         /// Constant UsWest1 for AWSRegion
         /// </summary>
@@ -378,6 +426,10 @@ namespace Amazon.CostAndUsageReport
         /// Constant HOURLY for TimeUnit
         /// </summary>
         public static readonly TimeUnit HOURLY = new TimeUnit("HOURLY");
+        /// <summary>
+        /// Constant MONTHLY for TimeUnit
+        /// </summary>
+        public static readonly TimeUnit MONTHLY = new TimeUnit("MONTHLY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
