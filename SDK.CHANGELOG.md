@@ -1,3 +1,18 @@
+### 3.5.5.0 (2020-08-28 18:11 UTC)
+* CloudFront (3.5.1.0)
+	* You can now manage CloudFront's additional, real-time metrics with the CloudFront API.
+* CostAndUsageReport (3.5.1.0)
+	* This release add MONTHLY as the new supported TimeUnit for ReportDefinition.
+* ElasticMapReduce (3.5.1.0)
+	* Amazon EMR adds support for ICMP, port -1, in Block Public Access Exceptions and API access for EMR Notebooks execution. You can now non-interactively execute EMR Notebooks and pass input parameters.
+* Route53 (3.5.0.5)
+	* Documentation updates for Route 53
+* Core 3.5.1.3
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.4.0 (2020-08-27 18:13 UTC)
 * EC2 (3.5.2.0)
 	* Introduces support to initiate Internet Key Exchange (IKE) negotiations for VPN connections from AWS. A user can now send the initial IKE message to their Customer Gateway (CGW) from VPN endpoints.
