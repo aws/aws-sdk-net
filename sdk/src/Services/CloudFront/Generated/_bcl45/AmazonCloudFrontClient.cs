@@ -1567,6 +1567,75 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  CreateMonitoringSubscription
+
+
+        /// <summary>
+        /// Enables additional CloudWatch metrics for the specified CloudFront distribution. The
+        /// additional metrics incur an additional cost.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewing-cloudfront-metrics.html#monitoring-console.distributions-additional">Viewing
+        /// additional CloudFront distribution metrics</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMonitoringSubscription service method.</param>
+        /// 
+        /// <returns>The response from the CreateMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateMonitoringSubscription">REST API Reference for CreateMonitoringSubscription Operation</seealso>
+        public virtual CreateMonitoringSubscriptionResponse CreateMonitoringSubscription(CreateMonitoringSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMonitoringSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMonitoringSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMonitoringSubscriptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Enables additional CloudWatch metrics for the specified CloudFront distribution. The
+        /// additional metrics incur an additional cost.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewing-cloudfront-metrics.html#monitoring-console.distributions-additional">Viewing
+        /// additional CloudFront distribution metrics</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMonitoringSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateMonitoringSubscription">REST API Reference for CreateMonitoringSubscription Operation</seealso>
+        public virtual Task<CreateMonitoringSubscriptionResponse> CreateMonitoringSubscriptionAsync(CreateMonitoringSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMonitoringSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMonitoringSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateMonitoringSubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateOriginRequestPolicy
 
 
@@ -2616,6 +2685,59 @@ namespace Amazon.CloudFront
             options.ResponseUnmarshaller = DeleteFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteFieldLevelEncryptionProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteMonitoringSubscription
+
+
+        /// <summary>
+        /// Disables additional CloudWatch metrics for the specified CloudFront distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMonitoringSubscription service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription">REST API Reference for DeleteMonitoringSubscription Operation</seealso>
+        public virtual DeleteMonitoringSubscriptionResponse DeleteMonitoringSubscription(DeleteMonitoringSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMonitoringSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMonitoringSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMonitoringSubscriptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disables additional CloudWatch metrics for the specified CloudFront distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMonitoringSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription">REST API Reference for DeleteMonitoringSubscription Operation</seealso>
+        public virtual Task<DeleteMonitoringSubscriptionResponse> DeleteMonitoringSubscriptionAsync(DeleteMonitoringSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMonitoringSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMonitoringSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteMonitoringSubscriptionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3944,6 +4066,61 @@ namespace Amazon.CloudFront
             options.ResponseUnmarshaller = GetInvalidationResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetInvalidationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMonitoringSubscription
+
+
+        /// <summary>
+        /// Gets information about whether additional CloudWatch metrics are enabled for the specified
+        /// CloudFront distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMonitoringSubscription service method.</param>
+        /// 
+        /// <returns>The response from the GetMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetMonitoringSubscription">REST API Reference for GetMonitoringSubscription Operation</seealso>
+        public virtual GetMonitoringSubscriptionResponse GetMonitoringSubscription(GetMonitoringSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMonitoringSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMonitoringSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<GetMonitoringSubscriptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets information about whether additional CloudWatch metrics are enabled for the specified
+        /// CloudFront distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMonitoringSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetMonitoringSubscription">REST API Reference for GetMonitoringSubscription Operation</seealso>
+        public virtual Task<GetMonitoringSubscriptionResponse> GetMonitoringSubscriptionAsync(GetMonitoringSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMonitoringSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMonitoringSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMonitoringSubscriptionResponse>(request, options, cancellationToken);
         }
 
         #endregion

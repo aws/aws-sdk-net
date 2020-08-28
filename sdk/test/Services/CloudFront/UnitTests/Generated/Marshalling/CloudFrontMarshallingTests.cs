@@ -4716,6 +4716,98 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("CloudFront")]
+        public void CreateMonitoringSubscriptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateMonitoringSubscription");
+
+            var request = InstantiateClassGenerator.Execute<CreateMonitoringSubscriptionRequest>();
+            var marshaller = new CreateMonitoringSubscriptionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateMonitoringSubscription", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateMonitoringSubscriptionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateMonitoringSubscriptionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void CreateMonitoringSubscription_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateMonitoringSubscription");
+
+            var request = InstantiateClassGenerator.Execute<CreateMonitoringSubscriptionRequest>();
+            var marshaller = new CreateMonitoringSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateMonitoringSubscription", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateMonitoringSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void CreateMonitoringSubscription_NoSuchDistributionExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateMonitoringSubscription");
+
+            var request = InstantiateClassGenerator.Execute<CreateMonitoringSubscriptionRequest>();
+            var marshaller = new CreateMonitoringSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateMonitoringSubscription", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NoSuchDistributionException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateMonitoringSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
         public void CreateOriginRequestPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("CreateOriginRequestPolicy");
@@ -6918,6 +7010,98 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("CloudFront")]
+        public void DeleteMonitoringSubscriptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteMonitoringSubscription");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMonitoringSubscriptionRequest>();
+            var marshaller = new DeleteMonitoringSubscriptionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteMonitoringSubscription", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteMonitoringSubscriptionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeleteMonitoringSubscriptionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void DeleteMonitoringSubscription_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteMonitoringSubscription");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMonitoringSubscriptionRequest>();
+            var marshaller = new DeleteMonitoringSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteMonitoringSubscription", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteMonitoringSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void DeleteMonitoringSubscription_NoSuchDistributionExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteMonitoringSubscription");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMonitoringSubscriptionRequest>();
+            var marshaller = new DeleteMonitoringSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteMonitoringSubscription", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NoSuchDistributionException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteMonitoringSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
         public void DeleteOriginRequestPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteOriginRequestPolicy");
@@ -8527,6 +8711,98 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = GetInvalidationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void GetMonitoringSubscriptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetMonitoringSubscription");
+
+            var request = InstantiateClassGenerator.Execute<GetMonitoringSubscriptionRequest>();
+            var marshaller = new GetMonitoringSubscriptionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetMonitoringSubscription", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetMonitoringSubscriptionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetMonitoringSubscriptionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void GetMonitoringSubscription_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetMonitoringSubscription");
+
+            var request = InstantiateClassGenerator.Execute<GetMonitoringSubscriptionRequest>();
+            var marshaller = new GetMonitoringSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetMonitoringSubscription", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetMonitoringSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void GetMonitoringSubscription_NoSuchDistributionExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetMonitoringSubscription");
+
+            var request = InstantiateClassGenerator.Execute<GetMonitoringSubscriptionRequest>();
+            var marshaller = new GetMonitoringSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetMonitoringSubscription", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NoSuchDistributionException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetMonitoringSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

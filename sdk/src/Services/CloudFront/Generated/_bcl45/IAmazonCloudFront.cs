@@ -1264,6 +1264,62 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  CreateMonitoringSubscription
+
+
+        /// <summary>
+        /// Enables additional CloudWatch metrics for the specified CloudFront distribution. The
+        /// additional metrics incur an additional cost.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewing-cloudfront-metrics.html#monitoring-console.distributions-additional">Viewing
+        /// additional CloudFront distribution metrics</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMonitoringSubscription service method.</param>
+        /// 
+        /// <returns>The response from the CreateMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateMonitoringSubscription">REST API Reference for CreateMonitoringSubscription Operation</seealso>
+        CreateMonitoringSubscriptionResponse CreateMonitoringSubscription(CreateMonitoringSubscriptionRequest request);
+
+
+
+        /// <summary>
+        /// Enables additional CloudWatch metrics for the specified CloudFront distribution. The
+        /// additional metrics incur an additional cost.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewing-cloudfront-metrics.html#monitoring-console.distributions-additional">Viewing
+        /// additional CloudFront distribution metrics</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMonitoringSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateMonitoringSubscription">REST API Reference for CreateMonitoringSubscription Operation</seealso>
+        Task<CreateMonitoringSubscriptionResponse> CreateMonitoringSubscriptionAsync(CreateMonitoringSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateOriginRequestPolicy
 
 
@@ -2187,6 +2243,46 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionProfile">REST API Reference for DeleteFieldLevelEncryptionProfile Operation</seealso>
         Task<DeleteFieldLevelEncryptionProfileResponse> DeleteFieldLevelEncryptionProfileAsync(DeleteFieldLevelEncryptionProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteMonitoringSubscription
+
+
+        /// <summary>
+        /// Disables additional CloudWatch metrics for the specified CloudFront distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMonitoringSubscription service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription">REST API Reference for DeleteMonitoringSubscription Operation</seealso>
+        DeleteMonitoringSubscriptionResponse DeleteMonitoringSubscription(DeleteMonitoringSubscriptionRequest request);
+
+
+
+        /// <summary>
+        /// Disables additional CloudWatch metrics for the specified CloudFront distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMonitoringSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription">REST API Reference for DeleteMonitoringSubscription Operation</seealso>
+        Task<DeleteMonitoringSubscriptionResponse> DeleteMonitoringSubscriptionAsync(DeleteMonitoringSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3308,6 +3404,48 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
         Task<GetInvalidationResponse> GetInvalidationAsync(GetInvalidationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetMonitoringSubscription
+
+
+        /// <summary>
+        /// Gets information about whether additional CloudWatch metrics are enabled for the specified
+        /// CloudFront distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMonitoringSubscription service method.</param>
+        /// 
+        /// <returns>The response from the GetMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetMonitoringSubscription">REST API Reference for GetMonitoringSubscription Operation</seealso>
+        GetMonitoringSubscriptionResponse GetMonitoringSubscription(GetMonitoringSubscriptionRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about whether additional CloudWatch metrics are enabled for the specified
+        /// CloudFront distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMonitoringSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetMonitoringSubscription">REST API Reference for GetMonitoringSubscription Operation</seealso>
+        Task<GetMonitoringSubscriptionResponse> GetMonitoringSubscriptionAsync(GetMonitoringSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

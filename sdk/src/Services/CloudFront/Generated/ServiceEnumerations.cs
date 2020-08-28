@@ -1071,6 +1071,56 @@ namespace Amazon.CloudFront
 
 
     /// <summary>
+    /// Constants used for properties of type RealtimeMetricsSubscriptionStatus.
+    /// </summary>
+    public class RealtimeMetricsSubscriptionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for RealtimeMetricsSubscriptionStatus
+        /// </summary>
+        public static readonly RealtimeMetricsSubscriptionStatus Disabled = new RealtimeMetricsSubscriptionStatus("Disabled");
+        /// <summary>
+        /// Constant Enabled for RealtimeMetricsSubscriptionStatus
+        /// </summary>
+        public static readonly RealtimeMetricsSubscriptionStatus Enabled = new RealtimeMetricsSubscriptionStatus("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RealtimeMetricsSubscriptionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RealtimeMetricsSubscriptionStatus FindValue(string value)
+        {
+            return FindValue<RealtimeMetricsSubscriptionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RealtimeMetricsSubscriptionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SslProtocol.
     /// </summary>
     public class SslProtocol : ConstantClass

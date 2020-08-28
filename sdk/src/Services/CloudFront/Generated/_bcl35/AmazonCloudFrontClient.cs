@@ -1131,6 +1131,74 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  CreateMonitoringSubscription
+
+        /// <summary>
+        /// Enables additional CloudWatch metrics for the specified CloudFront distribution. The
+        /// additional metrics incur an additional cost.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewing-cloudfront-metrics.html#monitoring-console.distributions-additional">Viewing
+        /// additional CloudFront distribution metrics</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMonitoringSubscription service method.</param>
+        /// 
+        /// <returns>The response from the CreateMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateMonitoringSubscription">REST API Reference for CreateMonitoringSubscription Operation</seealso>
+        public virtual CreateMonitoringSubscriptionResponse CreateMonitoringSubscription(CreateMonitoringSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMonitoringSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMonitoringSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMonitoringSubscriptionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMonitoringSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMonitoringSubscription operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMonitoringSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateMonitoringSubscription">REST API Reference for CreateMonitoringSubscription Operation</seealso>
+        public virtual IAsyncResult BeginCreateMonitoringSubscription(CreateMonitoringSubscriptionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMonitoringSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMonitoringSubscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMonitoringSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMonitoringSubscription.</param>
+        /// 
+        /// <returns>Returns a  CreateMonitoringSubscriptionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateMonitoringSubscription">REST API Reference for CreateMonitoringSubscription Operation</seealso>
+        public virtual CreateMonitoringSubscriptionResponse EndCreateMonitoringSubscription(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateMonitoringSubscriptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateOriginRequestPolicy
 
         /// <summary>
@@ -1951,6 +2019,66 @@ namespace Amazon.CloudFront
         public virtual DeleteFieldLevelEncryptionProfileResponse EndDeleteFieldLevelEncryptionProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFieldLevelEncryptionProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteMonitoringSubscription
+
+        /// <summary>
+        /// Disables additional CloudWatch metrics for the specified CloudFront distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMonitoringSubscription service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription">REST API Reference for DeleteMonitoringSubscription Operation</seealso>
+        public virtual DeleteMonitoringSubscriptionResponse DeleteMonitoringSubscription(DeleteMonitoringSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMonitoringSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMonitoringSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMonitoringSubscriptionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMonitoringSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMonitoringSubscription operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMonitoringSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription">REST API Reference for DeleteMonitoringSubscription Operation</seealso>
+        public virtual IAsyncResult BeginDeleteMonitoringSubscription(DeleteMonitoringSubscriptionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMonitoringSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMonitoringSubscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMonitoringSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMonitoringSubscription.</param>
+        /// 
+        /// <returns>Returns a  DeleteMonitoringSubscriptionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription">REST API Reference for DeleteMonitoringSubscription Operation</seealso>
+        public virtual DeleteMonitoringSubscriptionResponse EndDeleteMonitoringSubscription(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteMonitoringSubscriptionResponse>(asyncResult);
         }
 
         #endregion
@@ -3074,6 +3202,67 @@ namespace Amazon.CloudFront
         public virtual GetInvalidationResponse EndGetInvalidation(IAsyncResult asyncResult)
         {
             return EndInvoke<GetInvalidationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetMonitoringSubscription
+
+        /// <summary>
+        /// Gets information about whether additional CloudWatch metrics are enabled for the specified
+        /// CloudFront distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMonitoringSubscription service method.</param>
+        /// 
+        /// <returns>The response from the GetMonitoringSubscription service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetMonitoringSubscription">REST API Reference for GetMonitoringSubscription Operation</seealso>
+        public virtual GetMonitoringSubscriptionResponse GetMonitoringSubscription(GetMonitoringSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMonitoringSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMonitoringSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<GetMonitoringSubscriptionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMonitoringSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMonitoringSubscription operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMonitoringSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetMonitoringSubscription">REST API Reference for GetMonitoringSubscription Operation</seealso>
+        public virtual IAsyncResult BeginGetMonitoringSubscription(GetMonitoringSubscriptionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMonitoringSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMonitoringSubscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMonitoringSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMonitoringSubscription.</param>
+        /// 
+        /// <returns>Returns a  GetMonitoringSubscriptionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetMonitoringSubscription">REST API Reference for GetMonitoringSubscription Operation</seealso>
+        public virtual GetMonitoringSubscriptionResponse EndGetMonitoringSubscription(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMonitoringSubscriptionResponse>(asyncResult);
         }
 
         #endregion
