@@ -29,32 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Managed scaling policy for an Amazon EMR cluster. The policy specifies the limits
-    /// for resources that can be added or terminated from a cluster. The policy only applies
-    /// to the core and task nodes. The master node cannot be scaled after initial configuration.
+    /// This is the response object from the DescribeNotebookExecution operation.
     /// </summary>
-    public partial class ManagedScalingPolicy
+    public partial class DescribeNotebookExecutionResponse : AmazonWebServiceResponse
     {
-        private ComputeLimits _computeLimits;
+        private NotebookExecution _notebookExecution;
 
         /// <summary>
-        /// Gets and sets the property ComputeLimits. 
+        /// Gets and sets the property NotebookExecution. 
         /// <para>
-        /// The EC2 unit limits for a managed scaling policy. The managed scaling activity of
-        /// a cluster is not allowed to go above or below these limits. The limit only applies
-        /// to the core and task nodes. The master node cannot be scaled after initial configuration.
+        /// Properties of the notebook execution.
         /// </para>
         /// </summary>
-        public ComputeLimits ComputeLimits
+        public NotebookExecution NotebookExecution
         {
-            get { return this._computeLimits; }
-            set { this._computeLimits = value; }
+            get { return this._notebookExecution; }
+            set { this._notebookExecution = value; }
         }
 
-        // Check to see if ComputeLimits property is set
-        internal bool IsSetComputeLimits()
+        // Check to see if NotebookExecution property is set
+        internal bool IsSetNotebookExecution()
         {
-            return this._computeLimits != null;
+            return this._notebookExecution != null;
         }
 
     }

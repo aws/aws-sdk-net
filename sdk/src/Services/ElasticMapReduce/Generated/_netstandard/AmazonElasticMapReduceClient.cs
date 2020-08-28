@@ -780,6 +780,47 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  DescribeNotebookExecution
+
+        internal virtual DescribeNotebookExecutionResponse DescribeNotebookExecution(DescribeNotebookExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNotebookExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotebookExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNotebookExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides details of a notebook execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNotebookExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeNotebookExecution service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeNotebookExecution">REST API Reference for DescribeNotebookExecution Operation</seealso>
+        public virtual Task<DescribeNotebookExecutionResponse> DescribeNotebookExecutionAsync(DescribeNotebookExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNotebookExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotebookExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeNotebookExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeSecurityConfiguration
 
         internal virtual DescribeSecurityConfigurationResponse DescribeSecurityConfiguration(DescribeSecurityConfigurationRequest request)
@@ -1276,6 +1317,50 @@ namespace Amazon.ElasticMapReduce
             options.ResponseUnmarshaller = ListInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListInstancesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNotebookExecutions
+
+        internal virtual ListNotebookExecutionsResponse ListNotebookExecutions(ListNotebookExecutionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNotebookExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNotebookExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNotebookExecutionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides summaries of all notebook executions. You can filter the list based on multiple
+        /// criteria such as status, time range, and editor id. Returns a maximum of 50 notebook
+        /// executions and a marker to track the paging of a longer notebook execution list across
+        /// multiple <code>ListNotebookExecution</code> calls.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebookExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNotebookExecutions service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListNotebookExecutions">REST API Reference for ListNotebookExecutions Operation</seealso>
+        public virtual Task<ListNotebookExecutionsResponse> ListNotebookExecutionsAsync(ListNotebookExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNotebookExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNotebookExecutionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListNotebookExecutionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1932,6 +2017,87 @@ namespace Amazon.ElasticMapReduce
             options.ResponseUnmarshaller = SetVisibleToAllUsersResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetVisibleToAllUsersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartNotebookExecution
+
+        internal virtual StartNotebookExecutionResponse StartNotebookExecution(StartNotebookExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartNotebookExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNotebookExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StartNotebookExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a notebook execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNotebookExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartNotebookExecution service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StartNotebookExecution">REST API Reference for StartNotebookExecution Operation</seealso>
+        public virtual Task<StartNotebookExecutionResponse> StartNotebookExecutionAsync(StartNotebookExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartNotebookExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNotebookExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartNotebookExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopNotebookExecution
+
+        internal virtual StopNotebookExecutionResponse StopNotebookExecution(StopNotebookExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopNotebookExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopNotebookExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StopNotebookExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops a notebook execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopNotebookExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopNotebookExecution service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StopNotebookExecution">REST API Reference for StopNotebookExecution Operation</seealso>
+        public virtual Task<StopNotebookExecutionResponse> StopNotebookExecutionAsync(StopNotebookExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopNotebookExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopNotebookExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopNotebookExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion

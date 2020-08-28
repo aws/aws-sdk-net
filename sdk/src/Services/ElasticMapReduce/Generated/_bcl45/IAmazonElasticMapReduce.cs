@@ -685,6 +685,48 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  DescribeNotebookExecution
+
+
+        /// <summary>
+        /// Provides details of a notebook execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNotebookExecution service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNotebookExecution service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeNotebookExecution">REST API Reference for DescribeNotebookExecution Operation</seealso>
+        DescribeNotebookExecutionResponse DescribeNotebookExecution(DescribeNotebookExecutionRequest request);
+
+
+
+        /// <summary>
+        /// Provides details of a notebook execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNotebookExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeNotebookExecution service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeNotebookExecution">REST API Reference for DescribeNotebookExecution Operation</seealso>
+        Task<DescribeNotebookExecutionResponse> DescribeNotebookExecutionAsync(DescribeNotebookExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeSecurityConfiguration
 
 
@@ -1237,6 +1279,54 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstances">REST API Reference for ListInstances Operation</seealso>
         Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListNotebookExecutions
+
+
+        /// <summary>
+        /// Provides summaries of all notebook executions. You can filter the list based on multiple
+        /// criteria such as status, time range, and editor id. Returns a maximum of 50 notebook
+        /// executions and a marker to track the paging of a longer notebook execution list across
+        /// multiple <code>ListNotebookExecution</code> calls.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebookExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListNotebookExecutions service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListNotebookExecutions">REST API Reference for ListNotebookExecutions Operation</seealso>
+        ListNotebookExecutionsResponse ListNotebookExecutions(ListNotebookExecutionsRequest request);
+
+
+
+        /// <summary>
+        /// Provides summaries of all notebook executions. You can filter the list based on multiple
+        /// criteria such as status, time range, and editor id. Returns a maximum of 50 notebook
+        /// executions and a marker to track the paging of a longer notebook execution list across
+        /// multiple <code>ListNotebookExecution</code> calls.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebookExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNotebookExecutions service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListNotebookExecutions">REST API Reference for ListNotebookExecutions Operation</seealso>
+        Task<ListNotebookExecutionsResponse> ListNotebookExecutionsAsync(ListNotebookExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1972,6 +2062,88 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">REST API Reference for SetVisibleToAllUsers Operation</seealso>
         Task<SetVisibleToAllUsersResponse> SetVisibleToAllUsersAsync(SetVisibleToAllUsersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartNotebookExecution
+
+
+        /// <summary>
+        /// Starts a notebook execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNotebookExecution service method.</param>
+        /// 
+        /// <returns>The response from the StartNotebookExecution service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StartNotebookExecution">REST API Reference for StartNotebookExecution Operation</seealso>
+        StartNotebookExecutionResponse StartNotebookExecution(StartNotebookExecutionRequest request);
+
+
+
+        /// <summary>
+        /// Starts a notebook execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNotebookExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartNotebookExecution service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StartNotebookExecution">REST API Reference for StartNotebookExecution Operation</seealso>
+        Task<StartNotebookExecutionResponse> StartNotebookExecutionAsync(StartNotebookExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopNotebookExecution
+
+
+        /// <summary>
+        /// Stops a notebook execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopNotebookExecution service method.</param>
+        /// 
+        /// <returns>The response from the StopNotebookExecution service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StopNotebookExecution">REST API Reference for StopNotebookExecution Operation</seealso>
+        StopNotebookExecutionResponse StopNotebookExecution(StopNotebookExecutionRequest request);
+
+
+
+        /// <summary>
+        /// Stops a notebook execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopNotebookExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopNotebookExecution service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StopNotebookExecution">REST API Reference for StopNotebookExecution Operation</seealso>
+        Task<StopNotebookExecutionResponse> StopNotebookExecutionAsync(StopNotebookExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

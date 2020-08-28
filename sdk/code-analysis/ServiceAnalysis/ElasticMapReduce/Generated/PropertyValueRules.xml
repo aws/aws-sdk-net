@@ -56,6 +56,11 @@
     <max>10280</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.DescribeNotebookExecutionRequest.NotebookExecutionId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.DescribeSecurityConfigurationRequest.Name</property>
     <min>0</min>
     <max>10280</max>
@@ -64,6 +69,11 @@
     <property>Amazon.ElasticMapReduce.Model.DescribeSecurityConfigurationResponse.Name</property>
     <min>0</min>
     <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.ListNotebookExecutionsRequest.EditorId</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.PutAutoScalingPolicyResponse.ClusterArn</property>
@@ -136,6 +146,46 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.StartNotebookExecutionRequest.EditorId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.StartNotebookExecutionRequest.NotebookExecutionName</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.StartNotebookExecutionRequest.NotebookInstanceSecurityGroupId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.StartNotebookExecutionRequest.NotebookParams</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.StartNotebookExecutionRequest.RelativePath</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.StartNotebookExecutionRequest.ServiceRole</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.StartNotebookExecutionResponse.NotebookExecutionId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.StopNotebookExecutionRequest.NotebookExecutionId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.BlockPublicAccessConfigurationMetadata.CreatedByArn</property>
     <min>20</min>
     <max>2048</max>
@@ -183,6 +233,16 @@
     <property>Amazon.ElasticMapReduce.Model.ClusterSummary.OutpostArn</property>
     <min>0</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.ExecutionEngineConfig.Id</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.ExecutionEngineConfig.MasterInstanceSecurityGroupId</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.HadoopJarStepConfig.Jar</property>
@@ -488,18 +548,73 @@
     <max>10280</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.NotebookExecution.Arn</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.NotebookExecution.EditorId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.NotebookExecution.LastStateChangeReason</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.NotebookExecution.NotebookExecutionId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.NotebookExecution.NotebookExecutionName</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.NotebookExecution.NotebookInstanceSecurityGroupId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.NotebookExecution.NotebookParams</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.NotebookExecution.OutputNotebookURI</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.NotebookExecutionSummary.EditorId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.NotebookExecutionSummary.NotebookExecutionId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.NotebookExecutionSummary.NotebookExecutionName</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.PlacementType.AvailabilityZone</property>
     <min>0</min>
     <max>10280</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.PortRange.MaxRange</property>
-    <min>0</min>
+    <min>-1</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.PortRange.MinRange</property>
-    <min>0</min>
+    <min>-1</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>

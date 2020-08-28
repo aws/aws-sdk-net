@@ -238,6 +238,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("ElasticMapReduce")]
+        public void ListNotebookExecutionsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListNotebookExecutionsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListNotebookExecutionsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListNotebookExecutionsResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.ListNotebookExecutions(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListNotebookExecutions(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ElasticMapReduce")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListNotebookExecutionsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListNotebookExecutionsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListNotebookExecutionsResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.ListNotebookExecutions(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListNotebookExecutions(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ElasticMapReduce")]
         public void ListSecurityConfigurationsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListSecurityConfigurationsRequest>();

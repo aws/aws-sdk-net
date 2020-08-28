@@ -29,51 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// A list of port ranges that are permitted to allow inbound traffic from all public
-    /// IP addresses. To specify a single port, use the same value for <code>MinRange</code>
-    /// and <code>MaxRange</code>.
+    /// This is the response object from the ListNotebookExecutions operation.
     /// </summary>
-    public partial class PortRange
+    public partial class ListNotebookExecutionsResponse : AmazonWebServiceResponse
     {
-        private int? _maxRange;
-        private int? _minRange;
+        private string _marker;
+        private List<NotebookExecutionSummary> _notebookExecutions = new List<NotebookExecutionSummary>();
 
         /// <summary>
-        /// Gets and sets the property MaxRange. 
+        /// Gets and sets the property Marker. 
         /// <para>
-        /// The smallest port number in a specified range of port numbers.
+        /// A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to
+        /// determine the next set of results to retrieve.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=-1, Max=65535)]
-        public int MaxRange
+        public string Marker
         {
-            get { return this._maxRange.GetValueOrDefault(); }
-            set { this._maxRange = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
-        // Check to see if MaxRange property is set
-        internal bool IsSetMaxRange()
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
         {
-            return this._maxRange.HasValue; 
+            return this._marker != null;
         }
 
         /// <summary>
-        /// Gets and sets the property MinRange. 
+        /// Gets and sets the property NotebookExecutions. 
         /// <para>
-        /// The smallest port number in a specified range of port numbers.
+        /// A list of notebook executions.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=-1, Max=65535)]
-        public int MinRange
+        public List<NotebookExecutionSummary> NotebookExecutions
         {
-            get { return this._minRange.GetValueOrDefault(); }
-            set { this._minRange = value; }
+            get { return this._notebookExecutions; }
+            set { this._notebookExecutions = value; }
         }
 
-        // Check to see if MinRange property is set
-        internal bool IsSetMinRange()
+        // Check to see if NotebookExecutions property is set
+        internal bool IsSetNotebookExecutions()
         {
-            return this._minRange.HasValue; 
+            return this._notebookExecutions != null && this._notebookExecutions.Count > 0; 
         }
 
     }

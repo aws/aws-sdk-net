@@ -77,6 +77,14 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Paginator for ListNotebookExecutions operation
+        ///</summary>
+        public IListNotebookExecutionsPaginator ListNotebookExecutions(ListNotebookExecutionsRequest request) 
+        {
+            return new ListNotebookExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSecurityConfigurations operation
         ///</summary>
         public IListSecurityConfigurationsPaginator ListSecurityConfigurations(ListSecurityConfigurationsRequest request) 

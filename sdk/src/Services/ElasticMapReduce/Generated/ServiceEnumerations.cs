@@ -563,6 +563,52 @@ namespace Amazon.ElasticMapReduce
 
 
     /// <summary>
+    /// Constants used for properties of type ExecutionEngineType.
+    /// </summary>
+    public class ExecutionEngineType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EMR for ExecutionEngineType
+        /// </summary>
+        public static readonly ExecutionEngineType EMR = new ExecutionEngineType("EMR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionEngineType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionEngineType FindValue(string value)
+        {
+            return FindValue<ExecutionEngineType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionEngineType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceCollectionType.
     /// </summary>
     public class InstanceCollectionType : ConstantClass
@@ -1288,6 +1334,88 @@ namespace Amazon.ElasticMapReduce
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MarketType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotebookExecutionStatus.
+    /// </summary>
+    public class NotebookExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for NotebookExecutionStatus
+        /// </summary>
+        public static readonly NotebookExecutionStatus FAILED = new NotebookExecutionStatus("FAILED");
+        /// <summary>
+        /// Constant FAILING for NotebookExecutionStatus
+        /// </summary>
+        public static readonly NotebookExecutionStatus FAILING = new NotebookExecutionStatus("FAILING");
+        /// <summary>
+        /// Constant FINISHED for NotebookExecutionStatus
+        /// </summary>
+        public static readonly NotebookExecutionStatus FINISHED = new NotebookExecutionStatus("FINISHED");
+        /// <summary>
+        /// Constant FINISHING for NotebookExecutionStatus
+        /// </summary>
+        public static readonly NotebookExecutionStatus FINISHING = new NotebookExecutionStatus("FINISHING");
+        /// <summary>
+        /// Constant RUNNING for NotebookExecutionStatus
+        /// </summary>
+        public static readonly NotebookExecutionStatus RUNNING = new NotebookExecutionStatus("RUNNING");
+        /// <summary>
+        /// Constant START_PENDING for NotebookExecutionStatus
+        /// </summary>
+        public static readonly NotebookExecutionStatus START_PENDING = new NotebookExecutionStatus("START_PENDING");
+        /// <summary>
+        /// Constant STARTING for NotebookExecutionStatus
+        /// </summary>
+        public static readonly NotebookExecutionStatus STARTING = new NotebookExecutionStatus("STARTING");
+        /// <summary>
+        /// Constant STOP_PENDING for NotebookExecutionStatus
+        /// </summary>
+        public static readonly NotebookExecutionStatus STOP_PENDING = new NotebookExecutionStatus("STOP_PENDING");
+        /// <summary>
+        /// Constant STOPPED for NotebookExecutionStatus
+        /// </summary>
+        public static readonly NotebookExecutionStatus STOPPED = new NotebookExecutionStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for NotebookExecutionStatus
+        /// </summary>
+        public static readonly NotebookExecutionStatus STOPPING = new NotebookExecutionStatus("STOPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotebookExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotebookExecutionStatus FindValue(string value)
+        {
+            return FindValue<NotebookExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotebookExecutionStatus(string value)
         {
             return FindValue(value);
         }

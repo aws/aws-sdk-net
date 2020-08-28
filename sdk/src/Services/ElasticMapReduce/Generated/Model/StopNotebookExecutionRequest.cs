@@ -29,32 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Managed scaling policy for an Amazon EMR cluster. The policy specifies the limits
-    /// for resources that can be added or terminated from a cluster. The policy only applies
-    /// to the core and task nodes. The master node cannot be scaled after initial configuration.
+    /// Container for the parameters to the StopNotebookExecution operation.
+    /// Stops a notebook execution.
     /// </summary>
-    public partial class ManagedScalingPolicy
+    public partial class StopNotebookExecutionRequest : AmazonElasticMapReduceRequest
     {
-        private ComputeLimits _computeLimits;
+        private string _notebookExecutionId;
 
         /// <summary>
-        /// Gets and sets the property ComputeLimits. 
+        /// Gets and sets the property NotebookExecutionId. 
         /// <para>
-        /// The EC2 unit limits for a managed scaling policy. The managed scaling activity of
-        /// a cluster is not allowed to go above or below these limits. The limit only applies
-        /// to the core and task nodes. The master node cannot be scaled after initial configuration.
+        /// The unique identifier of the notebook execution.
         /// </para>
         /// </summary>
-        public ComputeLimits ComputeLimits
+        [AWSProperty(Required=true, Min=0, Max=256)]
+        public string NotebookExecutionId
         {
-            get { return this._computeLimits; }
-            set { this._computeLimits = value; }
+            get { return this._notebookExecutionId; }
+            set { this._notebookExecutionId = value; }
         }
 
-        // Check to see if ComputeLimits property is set
-        internal bool IsSetComputeLimits()
+        // Check to see if NotebookExecutionId property is set
+        internal bool IsSetNotebookExecutionId()
         {
-            return this._computeLimits != null;
+            return this._notebookExecutionId != null;
         }
 
     }

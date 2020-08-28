@@ -923,6 +923,67 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  DescribeNotebookExecution
+
+        /// <summary>
+        /// Provides details of a notebook execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNotebookExecution service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNotebookExecution service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeNotebookExecution">REST API Reference for DescribeNotebookExecution Operation</seealso>
+        public virtual DescribeNotebookExecutionResponse DescribeNotebookExecution(DescribeNotebookExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNotebookExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotebookExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNotebookExecutionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNotebookExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNotebookExecution operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNotebookExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeNotebookExecution">REST API Reference for DescribeNotebookExecution Operation</seealso>
+        public virtual IAsyncResult BeginDescribeNotebookExecution(DescribeNotebookExecutionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNotebookExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotebookExecutionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeNotebookExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNotebookExecution.</param>
+        /// 
+        /// <returns>Returns a  DescribeNotebookExecutionResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeNotebookExecution">REST API Reference for DescribeNotebookExecution Operation</seealso>
+        public virtual DescribeNotebookExecutionResponse EndDescribeNotebookExecution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeNotebookExecutionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeSecurityConfiguration
 
         /// <summary>
@@ -1559,6 +1620,70 @@ namespace Amazon.ElasticMapReduce
         public virtual ListInstancesResponse EndListInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<ListInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListNotebookExecutions
+
+        /// <summary>
+        /// Provides summaries of all notebook executions. You can filter the list based on multiple
+        /// criteria such as status, time range, and editor id. Returns a maximum of 50 notebook
+        /// executions and a marker to track the paging of a longer notebook execution list across
+        /// multiple <code>ListNotebookExecution</code> calls.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebookExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListNotebookExecutions service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListNotebookExecutions">REST API Reference for ListNotebookExecutions Operation</seealso>
+        public virtual ListNotebookExecutionsResponse ListNotebookExecutions(ListNotebookExecutionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNotebookExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNotebookExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNotebookExecutionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNotebookExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebookExecutions operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNotebookExecutions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListNotebookExecutions">REST API Reference for ListNotebookExecutions Operation</seealso>
+        public virtual IAsyncResult BeginListNotebookExecutions(ListNotebookExecutionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNotebookExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNotebookExecutionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNotebookExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNotebookExecutions.</param>
+        /// 
+        /// <returns>Returns a  ListNotebookExecutionsResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListNotebookExecutions">REST API Reference for ListNotebookExecutions Operation</seealso>
+        public virtual ListNotebookExecutionsResponse EndListNotebookExecutions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListNotebookExecutionsResponse>(asyncResult);
         }
 
         #endregion
@@ -2487,6 +2612,127 @@ namespace Amazon.ElasticMapReduce
         public virtual SetVisibleToAllUsersResponse EndSetVisibleToAllUsers(IAsyncResult asyncResult)
         {
             return EndInvoke<SetVisibleToAllUsersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartNotebookExecution
+
+        /// <summary>
+        /// Starts a notebook execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNotebookExecution service method.</param>
+        /// 
+        /// <returns>The response from the StartNotebookExecution service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StartNotebookExecution">REST API Reference for StartNotebookExecution Operation</seealso>
+        public virtual StartNotebookExecutionResponse StartNotebookExecution(StartNotebookExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartNotebookExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNotebookExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StartNotebookExecutionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartNotebookExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartNotebookExecution operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartNotebookExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StartNotebookExecution">REST API Reference for StartNotebookExecution Operation</seealso>
+        public virtual IAsyncResult BeginStartNotebookExecution(StartNotebookExecutionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartNotebookExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNotebookExecutionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartNotebookExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartNotebookExecution.</param>
+        /// 
+        /// <returns>Returns a  StartNotebookExecutionResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StartNotebookExecution">REST API Reference for StartNotebookExecution Operation</seealso>
+        public virtual StartNotebookExecutionResponse EndStartNotebookExecution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartNotebookExecutionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopNotebookExecution
+
+        /// <summary>
+        /// Stops a notebook execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopNotebookExecution service method.</param>
+        /// 
+        /// <returns>The response from the StopNotebookExecution service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StopNotebookExecution">REST API Reference for StopNotebookExecution Operation</seealso>
+        public virtual StopNotebookExecutionResponse StopNotebookExecution(StopNotebookExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopNotebookExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopNotebookExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StopNotebookExecutionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopNotebookExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopNotebookExecution operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopNotebookExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StopNotebookExecution">REST API Reference for StopNotebookExecution Operation</seealso>
+        public virtual IAsyncResult BeginStopNotebookExecution(StopNotebookExecutionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopNotebookExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopNotebookExecutionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopNotebookExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopNotebookExecution.</param>
+        /// 
+        /// <returns>Returns a  StopNotebookExecutionResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StopNotebookExecution">REST API Reference for StopNotebookExecution Operation</seealso>
+        public virtual StopNotebookExecutionResponse EndStopNotebookExecution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopNotebookExecutionResponse>(asyncResult);
         }
 
         #endregion
