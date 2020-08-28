@@ -50,30 +50,20 @@ namespace Amazon.Route53
         /// <summary>
         /// Associates an Amazon VPC with a private hosted zone. 
         /// 
-        ///  <note> 
+        ///  <important> 
         /// <para>
         /// To perform the association, the VPC and the private hosted zone must already exist.
-        /// Also, you can't convert a public hosted zone into a private hosted zone.
+        /// You can't convert a public hosted zone into a private hosted zone.
         /// </para>
-        ///  </note> 
+        ///  </important> <note> 
         /// <para>
-        /// If you want to associate a VPC that was created by one AWS account with a private
-        /// hosted zone that was created by a different account, do one of the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Use the AWS account that created the private hosted zone to submit a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html">CreateVPCAssociationAuthorization</a>
-        /// request. Then use the account that created the VPC to submit an <code>AssociateVPCWithHostedZone</code>
+        /// If you want to associate a VPC that was created by using one AWS account with a private
+        /// hosted zone that was created by using a different account, the AWS account that created
+        /// the private hosted zone must first submit a <code>CreateVPCAssociationAuthorization</code>
+        /// request. Then the account that created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
         /// request.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If a subnet in the VPC was shared with another account, you can use the account that
-        /// the subnet was shared with to submit an <code>AssociateVPCWithHostedZone</code> request.
-        /// For more information about sharing subnets, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">Working
-        /// with Shared VPCs</a>.
-        /// </para>
-        ///  </li> </ul>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateVPCWithHostedZone service method.</param>
         /// 
@@ -1679,6 +1669,27 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Deletes a traffic policy.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a traffic policy, Route 53 sets a flag on the policy to indicate that
+        /// it has been deleted. However, Route 53 never fully deletes the traffic policy. Note
+        /// the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Deleted traffic policies aren't listed if you run <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicies.html">ListTrafficPolicies</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  There's no way to get a list of deleted policies.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you retain the ID of the policy, you can get information about the policy, including
+        /// the traffic policy document, by running <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficPolicy service method.</param>
         /// 
@@ -2689,6 +2700,13 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Gets information about a specific traffic policy version.
+        /// 
+        ///  
+        /// <para>
+        /// For information about how of deleting a traffic policy affects the response from <code>GetTrafficPolicy</code>,
+        /// see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicy service method.</param>
         /// 
@@ -3626,7 +3644,14 @@ namespace Amazon.Route53
         /// <summary>
         /// Gets information about the latest version for every traffic policy that is associated
         /// with the current AWS account. Policies are listed in the order that they were created
-        /// in.
+        /// in. 
+        /// 
+        ///  
+        /// <para>
+        /// For information about how of deleting a traffic policy affects the response from <code>ListTrafficPolicies</code>,
+        /// see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicies service method.</param>
         /// 

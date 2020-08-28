@@ -31,6 +31,13 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the GetTrafficPolicy operation.
     /// Gets information about a specific traffic policy version.
+    /// 
+    ///  
+    /// <para>
+    /// For information about how of deleting a traffic policy affects the response from <code>GetTrafficPolicy</code>,
+    /// see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
+    /// 
+    /// </para>
     /// </summary>
     public partial class GetTrafficPolicyRequest : AmazonRoute53Request
     {

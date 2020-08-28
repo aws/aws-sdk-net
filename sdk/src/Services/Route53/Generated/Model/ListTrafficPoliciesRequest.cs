@@ -32,7 +32,14 @@ namespace Amazon.Route53.Model
     /// Container for the parameters to the ListTrafficPolicies operation.
     /// Gets information about the latest version for every traffic policy that is associated
     /// with the current AWS account. Policies are listed in the order that they were created
-    /// in.
+    /// in. 
+    /// 
+    ///  
+    /// <para>
+    /// For information about how of deleting a traffic policy affects the response from <code>ListTrafficPolicies</code>,
+    /// see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
+    /// 
+    /// </para>
     /// </summary>
     public partial class ListTrafficPoliciesRequest : AmazonRoute53Request
     {

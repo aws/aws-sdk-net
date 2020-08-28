@@ -101,8 +101,8 @@ namespace Amazon.Route53.Model
         /// (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return.
         /// If the specified VPC is associated with more than <code>MaxItems</code> hosted zones,
         /// the response includes a <code>NextToken</code> element. <code>NextToken</code> contains
-        /// the hosted zone ID of the first hosted zone that Route 53 will return if you submit
-        /// another request.
+        /// an encrypted token that identifies the first hosted zone that Route 53 will return
+        /// if you submit another request.
         /// </para>
         /// </summary>
         public string MaxItems
