@@ -75,6 +75,7 @@ namespace Amazon.EC2.Model
     {
         private FleetExcessCapacityTerminationPolicy _excessCapacityTerminationPolicy;
         private string _fleetId;
+        private List<FleetLaunchTemplateConfigRequest> _launchTemplateConfigs = new List<FleetLaunchTemplateConfigRequest>();
         private TargetCapacitySpecificationRequest _targetCapacitySpecification;
 
         /// <summary>
@@ -113,6 +114,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetFleetId()
         {
             return this._fleetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchTemplateConfigs. 
+        /// <para>
+        /// The launch template and overrides.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<FleetLaunchTemplateConfigRequest> LaunchTemplateConfigs
+        {
+            get { return this._launchTemplateConfigs; }
+            set { this._launchTemplateConfigs = value; }
+        }
+
+        // Check to see if LaunchTemplateConfigs property is set
+        internal bool IsSetLaunchTemplateConfigs()
+        {
+            return this._launchTemplateConfigs != null && this._launchTemplateConfigs.Count > 0; 
         }
 
         /// <summary>

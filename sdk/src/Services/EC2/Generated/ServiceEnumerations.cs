@@ -8895,6 +8895,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType DhcpOptions = new ResourceType("dhcp-options");
         /// <summary>
+        /// Constant EgressOnlyInternetGateway for ResourceType
+        /// </summary>
+        public static readonly ResourceType EgressOnlyInternetGateway = new ResourceType("egress-only-internet-gateway");
+        /// <summary>
         /// Constant ElasticGpu for ResourceType
         /// </summary>
         public static readonly ResourceType ElasticGpu = new ResourceType("elastic-gpu");
