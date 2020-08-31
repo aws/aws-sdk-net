@@ -17,32 +17,23 @@ using Amazon.Util;
 
 namespace Amazon.Runtime.CredentialManagement
 {
+    /// <summary>
+    /// The options that are available for creating AWSCredentials with the AWSCredentialsFactory.
+    /// The type of AWSCredentials that are created depends on which Options are set.
+    ///
+    /// Below are the different types of credentials returned, along with the options that are used to obtain them.
+    /// ([] denotes options that are not required)
+    ///
+    /// BasicAWSCredentials         AccessKey SecretKey
+    /// SessionAWSCredentials       AccessKey SecretKey Token
+    /// AssmeRoleAWSCredentials     SourceProfile RoleArn [ExternalID] [MfaSerial]
 #if !NETSTANDARD13
-    /// <summary>
-    /// The options that are available for creating AWSCredentials with the AWSCredentialsFactory.
-    /// The type of AWSCredentials that are created depends on which Options are set.
-    ///
-    /// Below are the different types of credentials returned, along with the options that are used to obtain them.
-    /// ([] denotes options that are not required)
-    ///
-    /// BasicAWSCredentials         AccessKey SecretKey
-    /// SessionAWSCredentials       AccessKey SecretKey Token
-    /// AssmeRoleAWSCredentials     SourceProfile RoleArn [ExternalID] [MfaSerial]
     /// FederatedAWSCredentials     EndpointName RoleArn [UserIdentity]
-    /// </summary>
-#else
-    /// <summary>
-    /// The options that are available for creating AWSCredentials with the AWSCredentialsFactory.
-    /// The type of AWSCredentials that are created depends on which Options are set.
-    ///
-    /// Below are the different types of credentials returned, along with the options that are used to obtain them.
-    /// ([] denotes options that are not required)
-    ///
-    /// BasicAWSCredentials         AccessKey SecretKey
-    /// SessionAWSCredentials       AccessKey SecretKey Token
-    /// AssmeRoleAWSCredentials     SourceProfile RoleArn [ExternalID] [MfaSerial]
-    /// </summary>
 #endif
+#if !BCL35 && !NETSTANDARD13
+    /// SSO                         SsoAccountId SsoRegion SsoRoleName SsoStartUrl
+#endif
+    /// </summary>
     public class CredentialProfileOptions
     {
         /// <summary>
@@ -111,6 +102,28 @@ namespace Amazon.Runtime.CredentialManagement
         /// </summary>
         public string WebIdentityTokenFile { get; set; }
 
+#if !BCL35 && !NETSTANDARD13
+        /// <summary>
+        /// The AWS account ID that temporary AWS credentials will be resolved for using AWS SSO.
+        /// </summary>
+        public string SsoAccountId { get; set; }
+
+        /// <summary>
+        /// The AWS region where the SSO directory for <see cref="SsoStartUrl"/> is hosted.
+        /// </summary>
+        public string SsoRegion { get; set; }
+
+        /// <summary>
+        /// The corresponding IAM role in the AWS account that temporary AWS credentials will be resolved for using AWS SSO.
+        /// </summary>
+        public string SsoRoleName { get; set; }
+
+        /// <summary>
+        /// The main URL for users to login to their SSO directory.
+        /// Provided by the SSO service via the web console.
+        /// </summary>
+        public string SsoStartUrl { get; set; }
+#endif
         /// <summary>
         /// Return true the properties are all null or empty, false otherwise.
         /// </summary>
@@ -132,6 +145,12 @@ namespace Amazon.Runtime.CredentialManagement
                     string.IsNullOrEmpty(SourceProfile) &&
                     string.IsNullOrEmpty(Token) &&
                     string.IsNullOrEmpty(CredentialProcess) &&
+#if !BCL35 && !NETSTANDARD13
+                    string.IsNullOrEmpty(SsoAccountId) &&
+                    string.IsNullOrEmpty(SsoRegion) &&
+                    string.IsNullOrEmpty(SsoRoleName) &&
+                    string.IsNullOrEmpty(SsoStartUrl) &&
+#endif
                     string.IsNullOrEmpty(WebIdentityTokenFile);
             }
         }
@@ -154,6 +173,12 @@ namespace Amazon.Runtime.CredentialManagement
 #endif
                 ", " + "CredentialProcess=" + CredentialProcess +
                 ", " + "WebIdentityTokenFile=" + WebIdentityTokenFile +
+#if !BCL35 && !NETSTANDARD13
+                ", " + "SsoAccountId=" + SsoAccountId +
+                ", " + "SsoRegion=" + SsoRegion +
+                ", " + "SsoRoleName=" + SsoRoleName +
+                ", " + "SsoStartUrl=" + SsoStartUrl +
+#endif
                 "]";
         }
 
@@ -166,20 +191,26 @@ namespace Amazon.Runtime.CredentialManagement
             if (po == null)
                 return false;
 
-#if !NETSTANDARD13
+#if !BCL35 && !NETSTANDARD13
+            return AWSSDKUtils.AreEqual(
+                new object[] { AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, UserIdentity, CredentialProcess, WebIdentityTokenFile, SsoAccountId, SsoRegion, SsoRoleName, SsoStartUrl },
+                new object[] { po.AccessKey, po.EndpointName, po.ExternalID, po.MfaSerial, po.RoleArn, po.RoleSessionName, po.SecretKey, po.SourceProfile, po.Token, po.UserIdentity, po.CredentialProcess, po.WebIdentityTokenFile, SsoAccountId, SsoRegion, SsoRoleName, SsoStartUrl });
+#elif BCL35
             return AWSSDKUtils.AreEqual(
                 new object[] { AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, UserIdentity, CredentialProcess, WebIdentityTokenFile },
                 new object[] { po.AccessKey, po.EndpointName, po.ExternalID, po.MfaSerial, po.RoleArn, po.RoleSessionName, po.SecretKey, po.SourceProfile, po.Token, po.UserIdentity, po.CredentialProcess, po.WebIdentityTokenFile });
 #else
             return AWSSDKUtils.AreEqual(
-                new object[] { AccessKey, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, CredentialProcess, WebIdentityTokenFile},
+                new object[] { AccessKey, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, CredentialProcess, WebIdentityTokenFile },
                 new object[] { po.AccessKey, po.ExternalID, po.MfaSerial, po.RoleArn, po.RoleSessionName, po.SecretKey, po.SourceProfile, po.Token, po.CredentialProcess, po.WebIdentityTokenFile });
 #endif
         }
 
         public override int GetHashCode()
         {
-#if !NETSTANDARD13
+#if !BCL35 && !NETSTANDARD13
+            return Hashing.Hash(AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, UserIdentity, CredentialProcess, WebIdentityTokenFile, SsoAccountId, SsoRegion, SsoRoleName, SsoStartUrl);
+#elif BCL35
             return Hashing.Hash(AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, UserIdentity, CredentialProcess, WebIdentityTokenFile);
 #else
             return Hashing.Hash(AccessKey, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, CredentialProcess, WebIdentityTokenFile);

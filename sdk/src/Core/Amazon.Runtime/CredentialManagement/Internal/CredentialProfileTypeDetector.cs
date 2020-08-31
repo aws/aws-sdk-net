@@ -12,8 +12,11 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+using System;
 using Amazon.Runtime.CredentialManagement;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 namespace Amazon.Runtime.CredentialManagement.Internal
@@ -39,6 +42,9 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         AssumeRoleExternalSessionName,
         AssumeRoleExternalMFASessionName,
         AssumeRoleMFASessionName,
+#if !BCL35 && !NETSTANDARD13
+        SSO,
+#endif
     }
 
     public enum CredentialSourceType
@@ -69,6 +75,17 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         private const string WebIdentityTokenFile = "WebIdentityTokenFile";
         private const string UserIdentity = "UserIdentity";
         private const string CredentialProcess = "CredentialProcess";
+
+#if !BCL35 && !NETSTANDARD13
+        private const string SsoAccountId = nameof(CredentialProfileOptions.SsoAccountId);
+        private const string SsoRegion = nameof(CredentialProfileOptions.SsoRegion);
+        private const string SsoRoleName = nameof(CredentialProfileOptions.SsoRoleName);
+        private const string SsoStartUrl = nameof(CredentialProfileOptions.SsoStartUrl);
+
+        private static HashSet<string> SsoProperties = new HashSet<string>(
+            new string[] {SsoAccountId, SsoRegion, SsoRoleName, SsoStartUrl},
+            StringComparer.OrdinalIgnoreCase);
+#endif
 
         private static Dictionary<CredentialProfileType, HashSet<string>> TypePropertyDictionary =
             new Dictionary<CredentialProfileType, HashSet<string>>()
@@ -208,7 +225,18 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         SourceProfile,
                         RoleSessionName
                     }
-                }
+                },
+#if !BCL35 && !NETSTANDARD13
+                {
+                    CredentialProfileType.SSO, new HashSet<string>()
+                    {
+                        SsoAccountId,
+                        SsoRegion,
+                        SsoRoleName,
+                        SsoStartUrl,
+                    }
+                },
+#endif
             };
 
         private static Dictionary<CredentialProfileType, string> CredentialTypeDictionary =
@@ -250,6 +278,14 @@ namespace Amazon.Runtime.CredentialManagement.Internal
             CredentialProfileType? profileType = null;
 
             HashSet<string> propertyNames = GetPropertyNames(profileOptions);
+
+#if !BCL35 && !NETSTANDARD13
+            // Spec: If one or more of the SSO properties is present, the profile MUST be resolved by the SSO credential provider.
+            if (propertyNames.Any(propertyName => SsoProperties.Contains(propertyName)))
+            {
+                return CredentialProfileType.SSO;
+            }
+#endif
 
             // brute force algorithm - but it's a very small set
             foreach (var pair in TypePropertyDictionary)
