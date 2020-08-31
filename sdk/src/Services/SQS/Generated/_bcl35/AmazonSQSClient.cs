@@ -46,6 +46,12 @@ namespace Amazon.SQS
     /// </para>
     ///  
     /// <para>
+    /// For information on the permissions you need to use this API, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-authentication-and-access-control.html">Identity
+    /// and access management</a> in the <i>Amazon Simple Queue Service Developer Guide.</i>
+    /// 
+    /// </para>
+    ///  
+    /// <para>
     /// You can use <a href="http://aws.amazon.com/tools/#sdk">AWS SDKs</a> to access Amazon
     /// SQS using your favorite programming language. The SDKs perform tasks such as the following
     /// automatically:
@@ -81,7 +87,7 @@ namespace Amazon.SQS
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+    ///  <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
     /// SQS Message Attributes</a> 
     /// </para>
     ///  </li> <li> 
@@ -578,7 +584,7 @@ namespace Amazon.SQS
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue whose message's visibility is changed. Queue URLs and names are case-sensitive.</param>
         /// <param name="receiptHandle">The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code> <a>ReceiveMessage</a> </code> action.</param>
-        /// <param name="visibilityTimeout">The new value for the message's visibility timeout (in seconds). Values values: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</param>
+        /// <param name="visibilityTimeout">The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</param>
         /// 
         /// <returns>The response from the ChangeMessageVisibility service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.MessageNotInflightException">
@@ -1699,6 +1705,16 @@ namespace Amazon.SQS
         /// 
         ///  
         /// <para>
+        ///  The <code>ListDeadLetterSourceQueues</code> methods supports pagination. Set parameter
+        /// <code>MaxResults</code> in the request to specify the maximum number of results to
+        /// be returned in the response. If you do not set <code>MaxResults</code>, the response
+        /// includes a maximum of 1,000 results. If you set <code>MaxResults</code> and there
+        /// are additional results to display, the response includes a value for <code>NextToken</code>.
+        /// Use <code>NextToken</code> as a parameter in your next request to <code>ListDeadLetterSourceQueues</code>
+        /// to receive the next page of results. 
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about using dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
         /// Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer
         /// Guide</i>.
@@ -1759,10 +1775,20 @@ namespace Amazon.SQS
         #region  ListQueues
 
         /// <summary>
-        /// Returns a list of your queues. The maximum number of queues that can be returned is
-        /// 1,000. If you specify a value for the optional <code>QueueNamePrefix</code> parameter,
-        /// only queues with a name that begins with the specified value are returned.
+        /// Returns a list of your queues in the current region. The response includes a maximum
+        /// of 1,000 results. If you specify a value for the optional <code>QueueNamePrefix</code>
+        /// parameter, only queues with a name that begins with the specified value are returned.
         /// 
+        ///  
+        /// <para>
+        ///  The <code>listQueues</code> methods supports pagination. Set parameter <code>MaxResults</code>
+        /// in the request to specify the maximum number of results to be returned in the response.
+        /// If you do not set <code>MaxResults</code>, the response includes a maximum of 1,000
+        /// results. If you set <code>MaxResults</code> and there are additional results to display,
+        /// the response includes a value for <code>NextToken</code>. Use <code>NextToken</code>
+        /// as a parameter in your next request to <code>listQueues</code> to receive the next
+        /// page of results. 
+        /// </para>
         ///  <note> 
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
@@ -1785,10 +1811,20 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Returns a list of your queues. The maximum number of queues that can be returned is
-        /// 1,000. If you specify a value for the optional <code>QueueNamePrefix</code> parameter,
-        /// only queues with a name that begins with the specified value are returned.
+        /// Returns a list of your queues in the current region. The response includes a maximum
+        /// of 1,000 results. If you specify a value for the optional <code>QueueNamePrefix</code>
+        /// parameter, only queues with a name that begins with the specified value are returned.
         /// 
+        ///  
+        /// <para>
+        ///  The <code>listQueues</code> methods supports pagination. Set parameter <code>MaxResults</code>
+        /// in the request to specify the maximum number of results to be returned in the response.
+        /// If you do not set <code>MaxResults</code>, the response includes a maximum of 1,000
+        /// results. If you set <code>MaxResults</code> and there are additional results to display,
+        /// the response includes a value for <code>NextToken</code>. Use <code>NextToken</code>
+        /// as a parameter in your next request to <code>listQueues</code> to receive the next
+        /// page of results. 
+        /// </para>
         ///  <note> 
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
@@ -2385,7 +2421,7 @@ namespace Amazon.SQS
         ///  </important>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to which a message is sent. Queue URLs and names are case-sensitive.</param>
-        /// <param name="messageBody">The message to send. The maximum string size is 256 KB. <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>  Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>. </important></param>
+        /// <param name="messageBody">The message to send. The minimum size is one character. The maximum size is 256 KB. <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>  Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>. </important></param>
         /// 
         /// <returns>The response from the SendMessage service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidMessageContentsException">

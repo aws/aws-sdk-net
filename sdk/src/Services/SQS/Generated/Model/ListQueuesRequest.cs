@@ -30,10 +30,20 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListQueues operation.
-    /// Returns a list of your queues. The maximum number of queues that can be returned is
-    /// 1,000. If you specify a value for the optional <code>QueueNamePrefix</code> parameter,
-    /// only queues with a name that begins with the specified value are returned.
+    /// Returns a list of your queues in the current region. The response includes a maximum
+    /// of 1,000 results. If you specify a value for the optional <code>QueueNamePrefix</code>
+    /// parameter, only queues with a name that begins with the specified value are returned.
     /// 
+    ///  
+    /// <para>
+    ///  The <code>listQueues</code> methods supports pagination. Set parameter <code>MaxResults</code>
+    /// in the request to specify the maximum number of results to be returned in the response.
+    /// If you do not set <code>MaxResults</code>, the response includes a maximum of 1,000
+    /// results. If you set <code>MaxResults</code> and there are additional results to display,
+    /// the response includes a value for <code>NextToken</code>. Use <code>NextToken</code>
+    /// as a parameter in your next request to <code>listQueues</code> to receive the next
+    /// page of results. 
+    /// </para>
     ///  <note> 
     /// <para>
     /// Cross-account permissions don't apply to this action. For more information, see <a
@@ -66,7 +76,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of results to include in the response.
+        /// Maximum number of results to include in the response. Value range is 1 to 1000. You
+        /// must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in
+        /// the response.
         /// </para>
         /// </summary>
         public int MaxResults

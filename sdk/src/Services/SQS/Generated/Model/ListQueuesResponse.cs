@@ -39,7 +39,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token to include in the next request.
+        /// Pagination token to include in the next request. Token value is <code>null</code>
+        /// if there are no additional results to request, or if you did not set <code>MaxResults</code>
+        /// in the request.
         /// </para>
         /// </summary>
         public string NextToken
