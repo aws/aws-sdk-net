@@ -1189,6 +1189,10 @@ namespace Amazon.CloudFront
         /// </summary>
         public static readonly SSLSupportMethod SniOnly = new SSLSupportMethod("sni-only");
         /// <summary>
+        /// Constant StaticIp for SSLSupportMethod
+        /// </summary>
+        public static readonly SSLSupportMethod StaticIp = new SSLSupportMethod("static-ip");
+        /// <summary>
         /// Constant Vip for SSLSupportMethod
         /// </summary>
         public static readonly SSLSupportMethod Vip = new SSLSupportMethod("vip");

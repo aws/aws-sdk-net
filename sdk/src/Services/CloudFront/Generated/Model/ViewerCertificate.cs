@@ -331,6 +331,13 @@ namespace Amazon.CloudFront.Model
         /// those that don’t support SNI. This is not recommended, and results in additional monthly
         /// charges from CloudFront.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>static-ip</code> - Do not specify this value unless your distribution has been
+        /// enabled for this feature by the CloudFront team. If you have a use case that requires
+        /// static IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
+        /// Support Center</a>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>,

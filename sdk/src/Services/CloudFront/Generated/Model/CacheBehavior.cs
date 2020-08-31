@@ -81,6 +81,7 @@ namespace Amazon.CloudFront.Model
         private long? _minTTL;
         private string _originRequestPolicyId;
         private string _pathPattern;
+        private string _realtimeLogConfigArn;
         private bool? _smoothStreaming;
         private string _targetOriginId;
         private TrustedSigners _trustedSigners;
@@ -379,6 +380,26 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetPathPattern()
         {
             return this._pathPattern != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RealtimeLogConfigArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the real-time log configuration that is attached
+        /// to this cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+        /// logs</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string RealtimeLogConfigArn
+        {
+            get { return this._realtimeLogConfigArn; }
+            set { this._realtimeLogConfigArn = value; }
+        }
+
+        // Check to see if RealtimeLogConfigArn property is set
+        internal bool IsSetRealtimeLogConfigArn()
+        {
+            return this._realtimeLogConfigArn != null;
         }
 
         /// <summary>

@@ -280,6 +280,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 if(publicRequestDistributionConfigCacheBehaviorsItemsValue.IsSetPathPattern())
                                     xmlWriter.WriteElementString("PathPattern", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigCacheBehaviorsItemsValue.PathPattern));                 
                 
+                                if(publicRequestDistributionConfigCacheBehaviorsItemsValue.IsSetRealtimeLogConfigArn())
+                                    xmlWriter.WriteElementString("RealtimeLogConfigArn", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigCacheBehaviorsItemsValue.RealtimeLogConfigArn));                 
+                
                                 if(publicRequestDistributionConfigCacheBehaviorsItemsValue.IsSetSmoothStreaming())
                                     xmlWriter.WriteElementString("SmoothStreaming", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestDistributionConfigCacheBehaviorsItemsValue.SmoothStreaming));                 
                 
@@ -545,6 +548,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         
                         if(publicRequest.DistributionConfig.DefaultCacheBehavior.IsSetOriginRequestPolicyId())
                             xmlWriter.WriteElementString("OriginRequestPolicyId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.DefaultCacheBehavior.OriginRequestPolicyId));                 
+        
+                        if(publicRequest.DistributionConfig.DefaultCacheBehavior.IsSetRealtimeLogConfigArn())
+                            xmlWriter.WriteElementString("RealtimeLogConfigArn", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.DefaultCacheBehavior.RealtimeLogConfigArn));                 
         
                         if(publicRequest.DistributionConfig.DefaultCacheBehavior.IsSetSmoothStreaming())
                             xmlWriter.WriteElementString("SmoothStreaming", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.DefaultCacheBehavior.SmoothStreaming));                 

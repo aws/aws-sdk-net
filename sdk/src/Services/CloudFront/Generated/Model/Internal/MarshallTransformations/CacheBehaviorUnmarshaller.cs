@@ -121,6 +121,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.PathPattern = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("RealtimeLogConfigArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RealtimeLogConfigArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SmoothStreaming", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

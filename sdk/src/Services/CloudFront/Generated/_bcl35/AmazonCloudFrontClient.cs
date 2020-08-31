@@ -1385,6 +1385,83 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  CreateRealtimeLogConfig
+
+        /// <summary>
+        /// Creates a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// After you create a real-time log configuration, you can attach it to one or more cache
+        /// behaviors to send real-time log data to the specified Amazon Kinesis data stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about real-time log configurations, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+        /// logs</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRealtimeLogConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigAlreadyExistsException">
+        /// A real-time log configuration with this name already exists. You must provide a unique
+        /// name. To modify an existing real-time log configuration, use <code>UpdateRealtimeLogConfig</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyRealtimeLogConfigsException">
+        /// You have reached the maximum number of real-time log configurations for this AWS account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateRealtimeLogConfig">REST API Reference for CreateRealtimeLogConfig Operation</seealso>
+        public virtual CreateRealtimeLogConfigResponse CreateRealtimeLogConfig(CreateRealtimeLogConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRealtimeLogConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRealtimeLogConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRealtimeLogConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRealtimeLogConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRealtimeLogConfig operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRealtimeLogConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateRealtimeLogConfig">REST API Reference for CreateRealtimeLogConfig Operation</seealso>
+        public virtual IAsyncResult BeginCreateRealtimeLogConfig(CreateRealtimeLogConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRealtimeLogConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRealtimeLogConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRealtimeLogConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRealtimeLogConfig.</param>
+        /// 
+        /// <returns>Returns a  CreateRealtimeLogConfigResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateRealtimeLogConfig">REST API Reference for CreateRealtimeLogConfig Operation</seealso>
+        public virtual CreateRealtimeLogConfigResponse EndCreateRealtimeLogConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateRealtimeLogConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateStreamingDistribution
 
         /// <summary>
@@ -2233,6 +2310,83 @@ namespace Amazon.CloudFront
         public virtual DeletePublicKeyResponse EndDeletePublicKey(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePublicKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteRealtimeLogConfig
+
+        /// <summary>
+        /// Deletes a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a real-time log configuration if it’s attached to a cache behavior.
+        /// First update your distributions to remove the real-time log configuration from all
+        /// cache behaviors, then delete the real-time log configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a real-time log configuration, you can provide the configuration’s name
+        /// or its Amazon Resource Name (ARN). You must provide at least one. If you provide both,
+        /// CloudFront uses the name to identify the real-time log configuration to delete.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRealtimeLogConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigInUseException">
+        /// Cannot delete the real-time log configuration because it is attached to one or more
+        /// cache behaviors.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteRealtimeLogConfig">REST API Reference for DeleteRealtimeLogConfig Operation</seealso>
+        public virtual DeleteRealtimeLogConfigResponse DeleteRealtimeLogConfig(DeleteRealtimeLogConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRealtimeLogConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRealtimeLogConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRealtimeLogConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRealtimeLogConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRealtimeLogConfig operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRealtimeLogConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteRealtimeLogConfig">REST API Reference for DeleteRealtimeLogConfig Operation</seealso>
+        public virtual IAsyncResult BeginDeleteRealtimeLogConfig(DeleteRealtimeLogConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRealtimeLogConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRealtimeLogConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRealtimeLogConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRealtimeLogConfig.</param>
+        /// 
+        /// <returns>Returns a  DeleteRealtimeLogConfigResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteRealtimeLogConfig">REST API Reference for DeleteRealtimeLogConfig Operation</seealso>
+        public virtual DeleteRealtimeLogConfigResponse EndDeleteRealtimeLogConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRealtimeLogConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -3533,6 +3687,73 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  GetRealtimeLogConfig
+
+        /// <summary>
+        /// Gets a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To get a real-time log configuration, you can provide the configuration’s name or
+        /// its Amazon Resource Name (ARN). You must provide at least one. If you provide both,
+        /// CloudFront uses the name to identify the real-time log configuration to get.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRealtimeLogConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetRealtimeLogConfig">REST API Reference for GetRealtimeLogConfig Operation</seealso>
+        public virtual GetRealtimeLogConfigResponse GetRealtimeLogConfig(GetRealtimeLogConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRealtimeLogConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRealtimeLogConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetRealtimeLogConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRealtimeLogConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRealtimeLogConfig operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRealtimeLogConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetRealtimeLogConfig">REST API Reference for GetRealtimeLogConfig Operation</seealso>
+        public virtual IAsyncResult BeginGetRealtimeLogConfig(GetRealtimeLogConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRealtimeLogConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRealtimeLogConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRealtimeLogConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRealtimeLogConfig.</param>
+        /// 
+        /// <returns>Returns a  GetRealtimeLogConfigResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetRealtimeLogConfig">REST API Reference for GetRealtimeLogConfig Operation</seealso>
+        public virtual GetRealtimeLogConfigResponse EndGetRealtimeLogConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetRealtimeLogConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetStreamingDistribution
 
         /// <summary>
@@ -4052,6 +4273,79 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListDistributionsByRealtimeLogConfig
+
+        /// <summary>
+        /// Gets a list of distribution that have a cache behavior that’s associated with the
+        /// specified real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You can specify the real-time log configuration by its name or its Amazon Resource
+        /// Name (ARN). You must provide at least one. If you provide both, CloudFront uses the
+        /// name to identify the real-time log configuration to list distributions for.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByRealtimeLogConfig service method.</param>
+        /// 
+        /// <returns>The response from the ListDistributionsByRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByRealtimeLogConfig">REST API Reference for ListDistributionsByRealtimeLogConfig Operation</seealso>
+        public virtual ListDistributionsByRealtimeLogConfigResponse ListDistributionsByRealtimeLogConfig(ListDistributionsByRealtimeLogConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionsByRealtimeLogConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsByRealtimeLogConfigResponseUnmarshaller.Instance;
+
+            return Invoke<ListDistributionsByRealtimeLogConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDistributionsByRealtimeLogConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByRealtimeLogConfig operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDistributionsByRealtimeLogConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByRealtimeLogConfig">REST API Reference for ListDistributionsByRealtimeLogConfig Operation</seealso>
+        public virtual IAsyncResult BeginListDistributionsByRealtimeLogConfig(ListDistributionsByRealtimeLogConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionsByRealtimeLogConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsByRealtimeLogConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDistributionsByRealtimeLogConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDistributionsByRealtimeLogConfig.</param>
+        /// 
+        /// <returns>Returns a  ListDistributionsByRealtimeLogConfigResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByRealtimeLogConfig">REST API Reference for ListDistributionsByRealtimeLogConfig Operation</seealso>
+        public virtual ListDistributionsByRealtimeLogConfigResponse EndListDistributionsByRealtimeLogConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDistributionsByRealtimeLogConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDistributionsByWebACLId
 
         /// <summary>
@@ -4423,6 +4717,69 @@ namespace Amazon.CloudFront
         public virtual ListPublicKeysResponse EndListPublicKeys(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPublicKeysResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListRealtimeLogConfigs
+
+        /// <summary>
+        /// Gets a list of real-time log configurations.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRealtimeLogConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListRealtimeLogConfigs service method, as returned by CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListRealtimeLogConfigs">REST API Reference for ListRealtimeLogConfigs Operation</seealso>
+        public virtual ListRealtimeLogConfigsResponse ListRealtimeLogConfigs(ListRealtimeLogConfigsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRealtimeLogConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRealtimeLogConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRealtimeLogConfigsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRealtimeLogConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRealtimeLogConfigs operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRealtimeLogConfigs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListRealtimeLogConfigs">REST API Reference for ListRealtimeLogConfigs Operation</seealso>
+        public virtual IAsyncResult BeginListRealtimeLogConfigs(ListRealtimeLogConfigsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRealtimeLogConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRealtimeLogConfigsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRealtimeLogConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRealtimeLogConfigs.</param>
+        /// 
+        /// <returns>Returns a  ListRealtimeLogConfigsResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListRealtimeLogConfigs">REST API Reference for ListRealtimeLogConfigs Operation</seealso>
+        public virtual ListRealtimeLogConfigsResponse EndListRealtimeLogConfigs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRealtimeLogConfigsResponse>(asyncResult);
         }
 
         #endregion
@@ -5568,6 +5925,91 @@ namespace Amazon.CloudFront
         public virtual UpdatePublicKeyResponse EndUpdatePublicKey(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdatePublicKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateRealtimeLogConfig
+
+        /// <summary>
+        /// Updates a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a real-time log configuration, all the parameters are updated with
+        /// the values provided in the request. You cannot update some parameters independent
+        /// of others. To update a real-time log configuration:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Call <code>GetRealtimeLogConfig</code> to get the current real-time log configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Locally modify the parameters in the real-time log configuration that you want to
+        /// update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call this API (<code>UpdateRealtimeLogConfig</code>) by providing the entire real-time
+        /// log configuration, including the parameters that you modified and those that you didn’t.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// You cannot update a real-time log configuration’s <code>Name</code> or <code>ARN</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRealtimeLogConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateRealtimeLogConfig">REST API Reference for UpdateRealtimeLogConfig Operation</seealso>
+        public virtual UpdateRealtimeLogConfigResponse UpdateRealtimeLogConfig(UpdateRealtimeLogConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRealtimeLogConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRealtimeLogConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRealtimeLogConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRealtimeLogConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRealtimeLogConfig operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRealtimeLogConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateRealtimeLogConfig">REST API Reference for UpdateRealtimeLogConfig Operation</seealso>
+        public virtual IAsyncResult BeginUpdateRealtimeLogConfig(UpdateRealtimeLogConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRealtimeLogConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRealtimeLogConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRealtimeLogConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRealtimeLogConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateRealtimeLogConfigResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateRealtimeLogConfig">REST API Reference for UpdateRealtimeLogConfig Operation</seealso>
+        public virtual UpdateRealtimeLogConfigResponse EndUpdateRealtimeLogConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateRealtimeLogConfigResponse>(asyncResult);
         }
 
         #endregion

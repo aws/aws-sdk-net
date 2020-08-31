@@ -1532,6 +1532,80 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  CreateRealtimeLogConfig
+
+
+        /// <summary>
+        /// Creates a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// After you create a real-time log configuration, you can attach it to one or more cache
+        /// behaviors to send real-time log data to the specified Amazon Kinesis data stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about real-time log configurations, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+        /// logs</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRealtimeLogConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigAlreadyExistsException">
+        /// A real-time log configuration with this name already exists. You must provide a unique
+        /// name. To modify an existing real-time log configuration, use <code>UpdateRealtimeLogConfig</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyRealtimeLogConfigsException">
+        /// You have reached the maximum number of real-time log configurations for this AWS account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateRealtimeLogConfig">REST API Reference for CreateRealtimeLogConfig Operation</seealso>
+        CreateRealtimeLogConfigResponse CreateRealtimeLogConfig(CreateRealtimeLogConfigRequest request);
+
+
+
+        /// <summary>
+        /// Creates a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// After you create a real-time log configuration, you can attach it to one or more cache
+        /// behaviors to send real-time log data to the specified Amazon Kinesis data stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about real-time log configurations, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+        /// logs</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRealtimeLogConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigAlreadyExistsException">
+        /// A real-time log configuration with this name already exists. You must provide a unique
+        /// name. To modify an existing real-time log configuration, use <code>UpdateRealtimeLogConfig</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyRealtimeLogConfigsException">
+        /// You have reached the maximum number of real-time log configurations for this AWS account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateRealtimeLogConfig">REST API Reference for CreateRealtimeLogConfig Operation</seealso>
+        Task<CreateRealtimeLogConfigResponse> CreateRealtimeLogConfigAsync(CreateRealtimeLogConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateStreamingDistribution
 
 
@@ -2431,6 +2505,80 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeletePublicKey">REST API Reference for DeletePublicKey Operation</seealso>
         Task<DeletePublicKeyResponse> DeletePublicKeyAsync(DeletePublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteRealtimeLogConfig
+
+
+        /// <summary>
+        /// Deletes a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a real-time log configuration if it’s attached to a cache behavior.
+        /// First update your distributions to remove the real-time log configuration from all
+        /// cache behaviors, then delete the real-time log configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a real-time log configuration, you can provide the configuration’s name
+        /// or its Amazon Resource Name (ARN). You must provide at least one. If you provide both,
+        /// CloudFront uses the name to identify the real-time log configuration to delete.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRealtimeLogConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigInUseException">
+        /// Cannot delete the real-time log configuration because it is attached to one or more
+        /// cache behaviors.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteRealtimeLogConfig">REST API Reference for DeleteRealtimeLogConfig Operation</seealso>
+        DeleteRealtimeLogConfigResponse DeleteRealtimeLogConfig(DeleteRealtimeLogConfigRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a real-time log configuration if it’s attached to a cache behavior.
+        /// First update your distributions to remove the real-time log configuration from all
+        /// cache behaviors, then delete the real-time log configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a real-time log configuration, you can provide the configuration’s name
+        /// or its Amazon Resource Name (ARN). You must provide at least one. If you provide both,
+        /// CloudFront uses the name to identify the real-time log configuration to delete.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRealtimeLogConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigInUseException">
+        /// Cannot delete the real-time log configuration because it is attached to one or more
+        /// cache behaviors.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteRealtimeLogConfig">REST API Reference for DeleteRealtimeLogConfig Operation</seealso>
+        Task<DeleteRealtimeLogConfigResponse> DeleteRealtimeLogConfigAsync(DeleteRealtimeLogConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3661,6 +3809,60 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  GetRealtimeLogConfig
+
+
+        /// <summary>
+        /// Gets a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To get a real-time log configuration, you can provide the configuration’s name or
+        /// its Amazon Resource Name (ARN). You must provide at least one. If you provide both,
+        /// CloudFront uses the name to identify the real-time log configuration to get.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRealtimeLogConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetRealtimeLogConfig">REST API Reference for GetRealtimeLogConfig Operation</seealso>
+        GetRealtimeLogConfigResponse GetRealtimeLogConfig(GetRealtimeLogConfigRequest request);
+
+
+
+        /// <summary>
+        /// Gets a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To get a real-time log configuration, you can provide the configuration’s name or
+        /// its Amazon Resource Name (ARN). You must provide at least one. If you provide both,
+        /// CloudFront uses the name to identify the real-time log configuration to get.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRealtimeLogConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetRealtimeLogConfig">REST API Reference for GetRealtimeLogConfig Operation</seealso>
+        Task<GetRealtimeLogConfigResponse> GetRealtimeLogConfigAsync(GetRealtimeLogConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetStreamingDistribution
 
 
@@ -4135,6 +4337,72 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListDistributionsByRealtimeLogConfig
+
+
+        /// <summary>
+        /// Gets a list of distribution that have a cache behavior that’s associated with the
+        /// specified real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You can specify the real-time log configuration by its name or its Amazon Resource
+        /// Name (ARN). You must provide at least one. If you provide both, CloudFront uses the
+        /// name to identify the real-time log configuration to list distributions for.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByRealtimeLogConfig service method.</param>
+        /// 
+        /// <returns>The response from the ListDistributionsByRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByRealtimeLogConfig">REST API Reference for ListDistributionsByRealtimeLogConfig Operation</seealso>
+        ListDistributionsByRealtimeLogConfigResponse ListDistributionsByRealtimeLogConfig(ListDistributionsByRealtimeLogConfigRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of distribution that have a cache behavior that’s associated with the
+        /// specified real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You can specify the real-time log configuration by its name or its Amazon Resource
+        /// Name (ARN). You must provide at least one. If you provide both, CloudFront uses the
+        /// name to identify the real-time log configuration to list distributions for.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByRealtimeLogConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDistributionsByRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByRealtimeLogConfig">REST API Reference for ListDistributionsByRealtimeLogConfig Operation</seealso>
+        Task<ListDistributionsByRealtimeLogConfigResponse> ListDistributionsByRealtimeLogConfigAsync(ListDistributionsByRealtimeLogConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListDistributionsByWebACLId
 
 
@@ -4402,6 +4670,52 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
         Task<ListPublicKeysResponse> ListPublicKeysAsync(ListPublicKeysRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListRealtimeLogConfigs
+
+
+        /// <summary>
+        /// Gets a list of real-time log configurations.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRealtimeLogConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListRealtimeLogConfigs service method, as returned by CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListRealtimeLogConfigs">REST API Reference for ListRealtimeLogConfigs Operation</seealso>
+        ListRealtimeLogConfigsResponse ListRealtimeLogConfigs(ListRealtimeLogConfigsRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of real-time log configurations.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRealtimeLogConfigs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRealtimeLogConfigs service method, as returned by CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListRealtimeLogConfigs">REST API Reference for ListRealtimeLogConfigs Operation</seealso>
+        Task<ListRealtimeLogConfigsResponse> ListRealtimeLogConfigsAsync(ListRealtimeLogConfigsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5811,6 +6125,96 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdatePublicKey">REST API Reference for UpdatePublicKey Operation</seealso>
         Task<UpdatePublicKeyResponse> UpdatePublicKeyAsync(UpdatePublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateRealtimeLogConfig
+
+
+        /// <summary>
+        /// Updates a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a real-time log configuration, all the parameters are updated with
+        /// the values provided in the request. You cannot update some parameters independent
+        /// of others. To update a real-time log configuration:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Call <code>GetRealtimeLogConfig</code> to get the current real-time log configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Locally modify the parameters in the real-time log configuration that you want to
+        /// update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call this API (<code>UpdateRealtimeLogConfig</code>) by providing the entire real-time
+        /// log configuration, including the parameters that you modified and those that you didn’t.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// You cannot update a real-time log configuration’s <code>Name</code> or <code>ARN</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRealtimeLogConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateRealtimeLogConfig">REST API Reference for UpdateRealtimeLogConfig Operation</seealso>
+        UpdateRealtimeLogConfigResponse UpdateRealtimeLogConfig(UpdateRealtimeLogConfigRequest request);
+
+
+
+        /// <summary>
+        /// Updates a real-time log configuration.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a real-time log configuration, all the parameters are updated with
+        /// the values provided in the request. You cannot update some parameters independent
+        /// of others. To update a real-time log configuration:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Call <code>GetRealtimeLogConfig</code> to get the current real-time log configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Locally modify the parameters in the real-time log configuration that you want to
+        /// update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call this API (<code>UpdateRealtimeLogConfig</code>) by providing the entire real-time
+        /// log configuration, including the parameters that you modified and those that you didn’t.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// You cannot update a real-time log configuration’s <code>Name</code> or <code>ARN</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRealtimeLogConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateRealtimeLogConfig">REST API Reference for UpdateRealtimeLogConfig Operation</seealso>
+        Task<UpdateRealtimeLogConfigResponse> UpdateRealtimeLogConfigAsync(UpdateRealtimeLogConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
