@@ -139,7 +139,7 @@ namespace Amazon.Backup
         /// </para>
         ///  
         /// <para>
-        ///  <code>ConditionType:"STRINGEQUALS"</code> 
+        ///  <code>ConditionType:"StringEquals"</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -151,7 +151,7 @@ namespace Amazon.Backup
         /// </para>
         ///  
         /// <para>
-        ///  <code>ConditionType:"STRINGEQUALS"</code> 
+        ///  <code>ConditionType:"StringEquals"</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
