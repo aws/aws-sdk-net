@@ -35,6 +35,14 @@ namespace AWSSDK.UnitTests
     {
         private static readonly Guid UniqueKey = Guid.NewGuid();
 
+        private static class SampleValues
+        {
+            public const string SsoAccountId = "sso_account_id";
+            public const string SsoRegion = "sso_region";
+            public const string SsoRoleName = "sso_role_name";
+            public const string SsoStartUrl = "sso_start_url";
+        }
+
         private static readonly string DefaultProfileText = new StringBuilder()
             .AppendLine("[default]")
             .AppendLine("aws_access_key_id=aws_access_key_id")
@@ -89,6 +97,24 @@ namespace AWSSDK.UnitTests
             RoleArn = "assume_role_arn",
             MfaSerial = "mfa_serial_number"
         };
+
+#if !BCL35 && !NETSTANDARD13
+        private static readonly string SsoProfileText = new StringBuilder()
+            .AppendLine("[sso]")
+            .AppendLine($"sso_account_id={SampleValues.SsoAccountId}")
+            .AppendLine($"sso_region={SampleValues.SsoRegion}")
+            .AppendLine($"sso_role_name={SampleValues.SsoRoleName}")
+            .Append($"sso_start_url={SampleValues.SsoStartUrl}")
+            .ToString();
+
+        private static readonly CredentialProfileOptions SsoProfileOptions = new CredentialProfileOptions()
+        {
+            SsoAccountId = SampleValues.SsoAccountId,
+            SsoRegion = SampleValues.SsoRegion,
+            SsoRoleName = SampleValues.SsoRoleName,
+            SsoStartUrl = SampleValues.SsoStartUrl,
+        };
+#endif
 
         private static readonly string BasicProfileConfigText = new StringBuilder()
             .AppendLine("[profile basic_profile]")
@@ -402,6 +428,26 @@ namespace AWSSDK.UnitTests
                 tester.AssertWriteProfile("assume_role_mfa_profile", AssumeRoleMfaProfileOptions, AssumeRoleMfaProfileText);
             }
         }
+
+#if !BCL35 && !NETSTANDARD13
+        [TestMethod]
+        public void ReadSsoProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(SsoProfileText))
+            {
+                tester.ReadAndAssertProfile("sso", SsoProfileOptions);
+            }
+        }
+
+        [TestMethod]
+        public void WriteSsoProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture())
+            {
+                tester.AssertWriteProfile("sso", SsoProfileOptions, SsoProfileText);
+            }
+        }
+#endif
 
         [TestMethod]
         public void ReadRegionOnlyProfile()

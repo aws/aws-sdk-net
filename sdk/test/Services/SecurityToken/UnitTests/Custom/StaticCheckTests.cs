@@ -43,9 +43,14 @@ namespace AWSSDK.UnitTests
         [TestCategory("SecurityToken")]
         public void LookForProfileTypeChanges()
         {
+#if BCL35
+            var expectedHash = "F11B812752DD3261D6D734C860ED47010CA562DF4C82901E8D79D4CC09C7FDF1";
+#else
+            var expectedHash = "1C76F6CC5D3B18FD76D4A811E5EB2FD96E97F4D4F202F38B5FBE5FAC56BE09FB";
+#endif
             AssertExtensions.AssertEnumUnchanged(
                 typeof(CredentialProfileType),
-                "F11B812752DD3261D6D734C860ED47010CA562DF4C82901E8D79D4CC09C7FDF1",
+                expectedHash,
                 "The AWSCredentialsFactory.GetAWSCredentials method implementation may need to be updated.");
         }
 

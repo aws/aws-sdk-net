@@ -57,6 +57,11 @@ namespace Amazon.Runtime.CredentialManagement
         private const string RetryModeField = "RetryMode";
         private const string MaxAttemptsField = "MaxAttempts";
 
+        private const string SsoAccountId = "sso_account_id";
+        private const string SsoRegion = "sso_region";
+        private const string SsoRoleName = "sso_role_name";
+        private const string SsoStartUrl = "sso_start_url";
+
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             SettingsConstants.DisplayNameField,
@@ -67,7 +72,11 @@ namespace Amazon.Runtime.CredentialManagement
             StsRegionalEndpointsField,
             S3RegionalEndpointField,
             RetryModeField,
-            MaxAttemptsField
+            MaxAttemptsField,
+            SsoAccountId,
+            SsoRegion,
+            SsoRoleName,
+            SsoStartUrl,
         };
 
         private static readonly CredentialProfilePropertyMapping PropertyMapping =
@@ -92,7 +101,13 @@ namespace Amazon.Runtime.CredentialManagement
                     // Not implemented for NetSDKCredentials. Applicable only
                     // for SharedCredentials
                     { "CredentialProcess" , SettingsConstants.CredentialProcess },
-                    { "WebIdentityTokenFile", SettingsConstants.WebIdentityTokenFile }
+                    { "WebIdentityTokenFile", SettingsConstants.WebIdentityTokenFile },
+#if !BCL35 && !NETSTANDARD13
+                    { nameof(CredentialProfileOptions.SsoAccountId), SsoAccountId },
+                    { nameof(CredentialProfileOptions.SsoRegion), SsoRegion },
+                    { nameof(CredentialProfileOptions.SsoRoleName), SsoRoleName },
+                    { nameof(CredentialProfileOptions.SsoStartUrl), SsoStartUrl },
+#endif
                 }
             );
 
