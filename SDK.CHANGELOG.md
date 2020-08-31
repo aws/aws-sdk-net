@@ -1,3 +1,18 @@
+### 3.5.6.0 (2020-08-31 18:22 UTC)
+* Backup (3.5.0.6)
+	* Documentation updates for Cryo
+* CloudFront (3.5.2.0)
+	* CloudFront now supports real-time logging for CloudFront distributions. CloudFront real-time logs are more detailed, configurable, and are available in real time.
+* EC2 (3.5.3.0)
+	* Amazon EC2 and Spot Fleet now support modification of launch template configs for a running fleet enabling instance type, instance weight, AZ, and AMI updates without losing the current fleet ID.
+* SQS (3.5.0.6)
+	* Documentation updates for SQS.
+* Core 3.5.1.4
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.5.0 (2020-08-28 18:11 UTC)
 * CloudFront (3.5.1.0)
 	* You can now manage CloudFront's additional, real-time metrics with the CloudFront API.
