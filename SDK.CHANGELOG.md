@@ -1,3 +1,11 @@
+### 3.5.6.1 (2020-08-31 23:52 UTC)
+* DynamoDBv2 (3.5.0.7)
+	* Fixed DynamoDB table not found error by passing config object down function call stack
+* Core 3.5.1.5
+	* -Update Copyright Statement in SDK
+-Refactor DetermineRegion by matching with regions in endpoints.json
+	* All services packages updated to require new Core
+
 ### 3.5.6.0 (2020-08-31 18:22 UTC)
 * Backup (3.5.0.6)
 	* Documentation updates for Cryo
