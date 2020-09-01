@@ -148,6 +148,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Note = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PatchSummary", targetDepth))
+                {
+                    var unmarshaller = PatchSummaryUnmarshaller.Instance;
+                    unmarshalledObject.PatchSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Process", targetDepth))
                 {
                     var unmarshaller = ProcessDetailsUnmarshaller.Instance;

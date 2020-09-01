@@ -164,6 +164,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPatchSummary())
+            {
+                context.Writer.WritePropertyName("PatchSummary");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PatchSummaryMarshaller.Instance;
+                marshaller.Marshall(requestObject.PatchSummary, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetProcess())
             {
                 context.Writer.WritePropertyName("Process");
