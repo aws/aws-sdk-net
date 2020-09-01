@@ -57,6 +57,7 @@ foreach(var resultKey in this.Operation.Paginators.ResultKeys.Where(r => r.ListI
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
 <#
 foreach(var inputToken in this.Operation.Paginators.InputTokens)
 {
@@ -116,6 +117,7 @@ else
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
 <#
 foreach(var inputToken in this.Operation.Paginators.InputTokens)
 {

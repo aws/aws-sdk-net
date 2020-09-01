@@ -24,6 +24,7 @@ namespace Amazon.Runtime
     public abstract partial class AmazonWebServiceRequest : Amazon.Runtime.Internal.IAmazonWebServiceRequest
     {
         internal RequestEventHandler mBeforeRequestEvent;
+        internal string UserAgentAddition { get; set; } = null;
 
         internal event RequestEventHandler BeforeRequestEvent
         {

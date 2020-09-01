@@ -60,6 +60,7 @@ namespace Amazon.APIGateway.Model
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var position = _request.Position;
             GetDomainNamesResponse response;
             do
@@ -79,6 +80,7 @@ namespace Amazon.APIGateway.Model
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var position = _request.Position;
             GetDomainNamesResponse response;
             do

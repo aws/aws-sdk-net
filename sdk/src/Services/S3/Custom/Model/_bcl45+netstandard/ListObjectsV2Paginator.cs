@@ -62,6 +62,7 @@ namespace Amazon.S3.Model
             {
                 throw new InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var continuationToken = _request.ContinuationToken;
             ListObjectsV2Response response;
             do
@@ -81,6 +82,7 @@ namespace Amazon.S3.Model
             {
                 throw new InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var continuationToken = _request.ContinuationToken;
             ListObjectsV2Response response;
             do

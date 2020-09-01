@@ -60,6 +60,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var paginationToken = _request.PaginationToken;
             GetResourcesResponse response;
             do
@@ -79,6 +80,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var paginationToken = _request.PaginationToken;
             GetResourcesResponse response;
             do

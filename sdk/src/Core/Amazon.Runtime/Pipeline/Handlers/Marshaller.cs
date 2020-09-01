@@ -78,8 +78,8 @@ namespace Amazon.Runtime.Internal
             var requestContext = executionContext.RequestContext;
             requestContext.Request = requestContext.Marshaller.Marshall(requestContext.OriginalRequest);
             requestContext.Request.AuthenticationRegion = requestContext.ClientConfig.AuthenticationRegion;
-            requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = requestContext.ClientConfig.UserAgent
-            + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync");
+            requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = $"{requestContext.ClientConfig.UserAgent} " +
+                $"{(executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync")}{requestContext.OriginalRequest.UserAgentAddition}";
 
 #if NETSTANDARD
             var method = requestContext.Request.HttpMethod.ToUpperInvariant();

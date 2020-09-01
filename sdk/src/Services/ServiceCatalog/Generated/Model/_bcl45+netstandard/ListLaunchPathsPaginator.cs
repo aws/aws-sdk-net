@@ -54,6 +54,7 @@ namespace Amazon.ServiceCatalog.Model
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var pageToken = _request.PageToken;
             ListLaunchPathsResponse response;
             do
@@ -73,6 +74,7 @@ namespace Amazon.ServiceCatalog.Model
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var pageToken = _request.PageToken;
             ListLaunchPathsResponse response;
             do

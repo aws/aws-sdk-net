@@ -54,6 +54,7 @@ namespace Amazon.AppConfig.Model
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
             ListConfigurationProfilesResponse response;
             do
@@ -73,6 +74,7 @@ namespace Amazon.AppConfig.Model
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
             ListConfigurationProfilesResponse response;
             do

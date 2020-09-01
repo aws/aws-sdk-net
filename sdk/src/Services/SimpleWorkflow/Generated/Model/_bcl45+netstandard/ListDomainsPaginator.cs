@@ -54,6 +54,7 @@ namespace Amazon.SimpleWorkflow.Model
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextPageToken = _request.NextPageToken;
             ListDomainsResponse response;
             do
@@ -73,6 +74,7 @@ namespace Amazon.SimpleWorkflow.Model
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextPageToken = _request.NextPageToken;
             ListDomainsResponse response;
             do

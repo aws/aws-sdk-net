@@ -54,6 +54,7 @@ namespace Amazon.DynamoDBv2.Model
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var exclusiveStartKey = _request.ExclusiveStartKey;
             QueryResponse response;
             do
@@ -73,6 +74,7 @@ namespace Amazon.DynamoDBv2.Model
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var exclusiveStartKey = _request.ExclusiveStartKey;
             QueryResponse response;
             do

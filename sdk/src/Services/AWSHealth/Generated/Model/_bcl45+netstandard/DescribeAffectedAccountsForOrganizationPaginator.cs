@@ -60,6 +60,7 @@ namespace Amazon.AWSHealth.Model
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
             DescribeAffectedAccountsForOrganizationResponse response;
             do
@@ -79,6 +80,7 @@ namespace Amazon.AWSHealth.Model
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
             DescribeAffectedAccountsForOrganizationResponse response;
             do
