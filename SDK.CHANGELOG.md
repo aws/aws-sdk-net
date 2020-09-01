@@ -1,3 +1,9 @@
+### 3.5.7.0 (2020-09-01 18:15 UTC)
+* CodeGuruReviewer (3.5.1.0)
+	* Add support for repository analysis based code reviews
+* SecurityHub (3.5.1.0)
+	* Added a PatchSummary object for security findings. The PatchSummary object provides details about the patch compliance status of an instance.
+
 ### 3.5.6.1 (2020-08-31 23:52 UTC)
 * DynamoDBv2 (3.5.0.7)
 	* Fixed DynamoDB table not found error by passing config object down function call stack

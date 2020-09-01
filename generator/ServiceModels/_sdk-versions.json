@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.5.6.1",
+    "ProductVersion" : "3.5.7.0",
     "CoreVersion"    : "3.5.1.5",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -1306,7 +1306,7 @@
             "InPreview"               : false
         },
         "SecurityHub"                     : {
-            "Version" : "3.5.0.7",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.5"
@@ -1698,7 +1698,7 @@
             "InPreview"               : false
         },
         "CodeGuruReviewer"                : {
-            "Version" : "3.5.0.7",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.5"
