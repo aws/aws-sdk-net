@@ -29,32 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisassociateRepository operation.
-    /// Removes the association between Amazon CodeGuru Reviewer and a repository.
+    /// A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+    /// <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated
+    /// repository.
     /// </summary>
-    public partial class DisassociateRepositoryRequest : AmazonCodeGuruReviewerRequest
+    public partial class RepositoryHeadSourceCodeType
     {
-        private string _associationArn;
+        private string _branchName;
 
         /// <summary>
-        /// Gets and sets the property AssociationArn. 
+        /// Gets and sets the property BranchName. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-        /// <code>ListRepositories</code>. 
+        ///  The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code>
+        /// specifies the tip of this branch. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1600)]
-        public string AssociationArn
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string BranchName
         {
-            get { return this._associationArn; }
-            set { this._associationArn = value; }
+            get { return this._branchName; }
+            set { this._branchName = value; }
         }
 
-        // Check to see if AssociationArn property is set
-        internal bool IsSetAssociationArn()
+        // Check to see if BranchName property is set
+        internal bool IsSetBranchName()
         {
-            return this._associationArn != null;
+            return this._branchName != null;
         }
 
     }

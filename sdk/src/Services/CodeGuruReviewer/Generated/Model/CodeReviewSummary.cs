@@ -143,8 +143,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Gets and sets the property Owner. 
         /// <para>
         /// The owner of the repository. For an AWS CodeCommit repository, this is the AWS account
-        /// ID of the account that owns the repository. For a GitHub or Bitbucket repository,
-        /// this is the username for the account that owns the repository.
+        /// ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server,
+        /// or Bitbucket repository, this is the username for the account that owns the repository.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

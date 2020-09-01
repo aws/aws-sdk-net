@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SourceCodeType Object
+    /// Response Unmarshaller for RepositoryHeadSourceCodeType Object
     /// </summary>  
-    public class SourceCodeTypeUnmarshaller : IUnmarshaller<SourceCodeType, XmlUnmarshallerContext>, IUnmarshaller<SourceCodeType, JsonUnmarshallerContext>
+    public class RepositoryHeadSourceCodeTypeUnmarshaller : IUnmarshaller<RepositoryHeadSourceCodeType, XmlUnmarshallerContext>, IUnmarshaller<RepositoryHeadSourceCodeType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SourceCodeType IUnmarshaller<SourceCodeType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RepositoryHeadSourceCodeType IUnmarshaller<RepositoryHeadSourceCodeType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SourceCodeType Unmarshall(JsonUnmarshallerContext context)
+        public RepositoryHeadSourceCodeType Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SourceCodeType unmarshalledObject = new SourceCodeType();
+            RepositoryHeadSourceCodeType unmarshalledObject = new RepositoryHeadSourceCodeType();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CommitDiff", targetDepth))
+                if (context.TestExpression("BranchName", targetDepth))
                 {
-                    var unmarshaller = CommitDiffSourceCodeTypeUnmarshaller.Instance;
-                    unmarshalledObject.CommitDiff = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RepositoryHead", targetDepth))
-                {
-                    var unmarshaller = RepositoryHeadSourceCodeTypeUnmarshaller.Instance;
-                    unmarshalledObject.RepositoryHead = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BranchName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         }
 
 
-        private static SourceCodeTypeUnmarshaller _instance = new SourceCodeTypeUnmarshaller();        
+        private static RepositoryHeadSourceCodeTypeUnmarshaller _instance = new RepositoryHeadSourceCodeTypeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SourceCodeTypeUnmarshaller Instance
+        public static RepositoryHeadSourceCodeTypeUnmarshaller Instance
         {
             get
             {

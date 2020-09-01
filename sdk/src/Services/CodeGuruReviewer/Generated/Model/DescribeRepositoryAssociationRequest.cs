@@ -41,9 +41,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property AssociationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+        ///  The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
         /// <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-        /// <code>ListRepositories</code>.
+        /// <code>ListRepositories</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]

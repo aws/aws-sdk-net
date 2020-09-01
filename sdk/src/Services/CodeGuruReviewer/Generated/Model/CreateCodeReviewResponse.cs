@@ -29,32 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisassociateRepository operation.
-    /// Removes the association between Amazon CodeGuru Reviewer and a repository.
+    /// This is the response object from the CreateCodeReview operation.
     /// </summary>
-    public partial class DisassociateRepositoryRequest : AmazonCodeGuruReviewerRequest
+    public partial class CreateCodeReviewResponse : AmazonWebServiceResponse
     {
-        private string _associationArn;
+        private CodeReview _codeReview;
 
         /// <summary>
-        /// Gets and sets the property AssociationArn. 
-        /// <para>
-        ///  The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-        /// <code>ListRepositories</code>. 
-        /// </para>
+        /// Gets and sets the property CodeReview.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1600)]
-        public string AssociationArn
+        public CodeReview CodeReview
         {
-            get { return this._associationArn; }
-            set { this._associationArn = value; }
+            get { return this._codeReview; }
+            set { this._codeReview = value; }
         }
 
-        // Check to see if AssociationArn property is set
-        internal bool IsSetAssociationArn()
+        // Check to see if CodeReview property is set
+        internal bool IsSetCodeReview()
         {
-            return this._associationArn != null;
+            return this._codeReview != null;
         }
 
     }

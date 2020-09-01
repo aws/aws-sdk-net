@@ -89,8 +89,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <para>
         ///  The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format
         /// is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a>
-        /// in the <i>AWS CodeStar Connections API Reference</i>. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+        /// <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -166,8 +167,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Gets and sets the property Owner. 
         /// <para>
         /// The owner of the repository. For an AWS CodeCommit repository, this is the AWS account
-        /// ID of the account that owns the repository. For a GitHub or Bitbucket repository,
-        /// this is the username for the account that owns the repository.
+        /// ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server,
+        /// or Bitbucket repository, this is the username for the account that owns the repository.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -225,10 +226,10 @@ namespace Amazon.CodeGuruReviewer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  If your repository <code>ProviderType</code> is <code>GitHub</code> or <code>Bitbucket</code>,
-        /// CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
-        /// reviews. If you delete these webhooks, reviews of code in your repository cannot be
-        /// triggered. 
+        ///  If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub
+        /// Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks
+        /// in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
+        /// reviews of code in your repository cannot be triggered. 
         /// </para>
         ///  </note> </li> <li> 
         /// <para>

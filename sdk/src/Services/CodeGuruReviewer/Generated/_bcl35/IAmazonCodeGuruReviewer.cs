@@ -75,7 +75,7 @@ namespace Amazon.CodeGuruReviewer
         /// </para>
         ///  
         /// <para>
-        ///  Bitbucket and GitHub Enterprise Server repositories are managed by AWS CodeStar Connections
+        /// Bitbucket and GitHub Enterprise Server repositories are managed by AWS CodeStar Connections
         /// to connect to CodeGuru Reviewer. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/reviewer-ug/step-one.html#select-repository-source-provider">Connect
         /// to a repository source provider</a> in the <i>Amazon CodeGuru Reviewer User Guide.</i>
         /// 
@@ -136,6 +136,65 @@ namespace Amazon.CodeGuruReviewer
         /// <returns>Returns a  AssociateRepositoryResult from CodeGuruReviewer.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/AssociateRepository">REST API Reference for AssociateRepository Operation</seealso>
         AssociateRepositoryResponse EndAssociateRepository(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateCodeReview
+
+
+        /// <summary>
+        /// Use to create a code review for a repository analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCodeReview service method.</param>
+        /// 
+        /// <returns>The response from the CreateCodeReview service method, as returned by CodeGuruReviewer.</returns>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CreateCodeReview">REST API Reference for CreateCodeReview Operation</seealso>
+        CreateCodeReviewResponse CreateCodeReview(CreateCodeReviewRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCodeReview operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCodeReview operation on AmazonCodeGuruReviewerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCodeReview
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CreateCodeReview">REST API Reference for CreateCodeReview Operation</seealso>
+        IAsyncResult BeginCreateCodeReview(CreateCodeReviewRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCodeReview operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCodeReview.</param>
+        /// 
+        /// <returns>Returns a  CreateCodeReviewResult from CodeGuruReviewer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CreateCodeReview">REST API Reference for CreateCodeReview Operation</seealso>
+        CreateCodeReviewResponse EndCreateCodeReview(IAsyncResult asyncResult);
 
         #endregion
         

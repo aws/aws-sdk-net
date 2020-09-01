@@ -7,6 +7,24 @@
     <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CreateCodeReviewRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CreateCodeReviewRequest.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CreateCodeReviewRequest.RepositoryAssociationArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.DescribeCodeReviewRequest.CodeReviewArn</property>
     <min>1</min>
     <max>1600</max>
@@ -305,6 +323,11 @@
     <min>1</min>
     <max>100</max>
     <pattern>^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.RepositoryHeadSourceCodeType.BranchName</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.ThirdPartySourceRepository.ConnectionArn</property>

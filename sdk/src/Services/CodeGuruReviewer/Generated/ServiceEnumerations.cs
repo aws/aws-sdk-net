@@ -258,6 +258,10 @@ namespace Amazon.CodeGuruReviewer
         /// Constant PullRequest for Type
         /// </summary>
         public static readonly Type PullRequest = new Type("PullRequest");
+        /// <summary>
+        /// Constant RepositoryAnalysis for Type
+        /// </summary>
+        public static readonly Type RepositoryAnalysis = new Type("RepositoryAnalysis");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
