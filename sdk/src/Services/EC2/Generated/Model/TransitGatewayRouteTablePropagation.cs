@@ -59,7 +59,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource.
+        /// The type of resource. Note that the <code>tgw-peering</code> resource type has been
+        /// deprecated.
         /// </para>
         /// </summary>
         public TransitGatewayAttachmentResourceType ResourceType

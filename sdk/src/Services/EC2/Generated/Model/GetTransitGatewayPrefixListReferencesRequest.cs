@@ -51,8 +51,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>attachment.resource-type</code> - The type of resource for the attachment (<code>vpc</code>
-        /// | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+        ///  <code>attachment.resource-type</code> - The type of resource for the attachment.
+        /// Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code>
+        /// | <code>peering</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

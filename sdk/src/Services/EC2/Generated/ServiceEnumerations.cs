@@ -10895,6 +10895,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly TransitGatewayAttachmentResourceType DirectConnectGateway = new TransitGatewayAttachmentResourceType("direct-connect-gateway");
         /// <summary>
+        /// Constant Peering for TransitGatewayAttachmentResourceType
+        /// </summary>
+        public static readonly TransitGatewayAttachmentResourceType Peering = new TransitGatewayAttachmentResourceType("peering");
+        /// <summary>
         /// Constant TgwPeering for TransitGatewayAttachmentResourceType
         /// </summary>
         public static readonly TransitGatewayAttachmentResourceType TgwPeering = new TransitGatewayAttachmentResourceType("tgw-peering");
@@ -10972,6 +10976,10 @@ namespace Amazon.EC2
         /// Constant Initiating for TransitGatewayAttachmentState
         /// </summary>
         public static readonly TransitGatewayAttachmentState Initiating = new TransitGatewayAttachmentState("initiating");
+        /// <summary>
+        /// Constant InitiatingRequest for TransitGatewayAttachmentState
+        /// </summary>
+        public static readonly TransitGatewayAttachmentState InitiatingRequest = new TransitGatewayAttachmentState("initiatingRequest");
         /// <summary>
         /// Constant Modifying for TransitGatewayAttachmentState
         /// </summary>

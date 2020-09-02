@@ -57,9 +57,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code>
-        /// | <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code>
-        /// | <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+        ///  <code>state</code> - The state of the route table (<code>available</code> | <code>deleting</code>
+        /// | <code>deleted</code> | <code>pending</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -66,14 +66,15 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code>
-        /// | <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+        ///  <code>resource-type</code> - The resource type. Valid values are <code>vpc</code>
+        /// | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code>
-        /// | <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code>
-        /// | <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+        ///  <code>state</code> - The state of the attachment. Valid values are <code>available</code>
+        /// | <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code>
+        /// | <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code>
+        /// | <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

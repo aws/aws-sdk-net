@@ -119,7 +119,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type.
+        /// The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
         /// </para>
         /// </summary>
         public TransitGatewayAttachmentResourceType ResourceType
@@ -137,7 +137,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The attachment state.
+        /// The attachment state. Note that the <code>initiating</code> state has been deprecated.
         /// </para>
         /// </summary>
         public TransitGatewayAttachmentState State
