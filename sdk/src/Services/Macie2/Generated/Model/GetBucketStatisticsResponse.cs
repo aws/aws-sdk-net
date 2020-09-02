@@ -38,10 +38,13 @@ namespace Amazon.Macie2.Model
         private BucketCountByEncryptionType _bucketCountByEncryptionType;
         private BucketCountBySharedAccessType _bucketCountBySharedAccessType;
         private long? _classifiableObjectCount;
+        private long? _classifiableSizeInBytes;
         private DateTime? _lastUpdated;
         private long? _objectCount;
         private long? _sizeInBytes;
         private long? _sizeInBytesCompressed;
+        private ObjectLevelStatistics _unclassifiableObjectCount;
+        private ObjectLevelStatistics _unclassifiableObjectSizeInBytes;
 
         /// <summary>
         /// Gets and sets the property BucketCount. 
@@ -84,7 +87,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property BucketCountByEncryptionType. 
         /// <para>
         /// The total number of buckets, grouped by server-side encryption type. This object also
-        /// reports the total number of buckets that aren't encrypted.
+        /// reports the total number of buckets that don't encrypt objects by default.
         /// </para>
         /// </summary>
         public BucketCountByEncryptionType BucketCountByEncryptionType
@@ -120,8 +123,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ClassifiableObjectCount. 
         /// <para>
-        /// The total number of objects that Amazon Macie can analyze in all the buckets. These
-        /// objects use a file format, file extension, or content type that Amazon Macie supports.
+        /// The total number of objects that Amazon Macie can analyze in the buckets. These objects
+        /// use a supported file or storage format and storage class.
         /// </para>
         /// </summary>
         public long ClassifiableObjectCount
@@ -137,10 +140,29 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClassifiableSizeInBytes. 
+        /// <para>
+        /// The total storage size, in bytes, of all the objects that Amazon Macie can analyze
+        /// in the buckets. These objects use a supported file or storage format and storage class.
+        /// </para>
+        /// </summary>
+        public long ClassifiableSizeInBytes
+        {
+            get { return this._classifiableSizeInBytes.GetValueOrDefault(); }
+            set { this._classifiableSizeInBytes = value; }
+        }
+
+        // Check to see if ClassifiableSizeInBytes property is set
+        internal bool IsSetClassifiableSizeInBytes()
+        {
+            return this._classifiableSizeInBytes.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastUpdated. 
         /// <para>
-        /// The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed
-        /// the buckets.
+        /// The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently
+        /// retrieved data about the buckets from Amazon S3.
         /// </para>
         /// </summary>
         public DateTime LastUpdated
@@ -158,7 +180,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ObjectCount. 
         /// <para>
-        /// The total number of objects in all the buckets.
+        /// The total number of objects in the buckets.
         /// </para>
         /// </summary>
         public long ObjectCount
@@ -176,7 +198,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property SizeInBytes. 
         /// <para>
-        /// The total storage size, in bytes, of all the buckets.
+        /// The total storage size, in bytes, of the buckets.
         /// </para>
         /// </summary>
         public long SizeInBytes
@@ -194,7 +216,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property SizeInBytesCompressed. 
         /// <para>
-        /// The total compressed storage size, in bytes, of all the buckets.
+        /// The total compressed storage size, in bytes, of the buckets.
         /// </para>
         /// </summary>
         public long SizeInBytesCompressed
@@ -207,6 +229,45 @@ namespace Amazon.Macie2.Model
         internal bool IsSetSizeInBytesCompressed()
         {
             return this._sizeInBytesCompressed.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnclassifiableObjectCount. 
+        /// <para>
+        /// The total number of objects that Amazon Macie can't analyze in the buckets. These
+        /// objects use an unsupported file or storage format or storage class.
+        /// </para>
+        /// </summary>
+        public ObjectLevelStatistics UnclassifiableObjectCount
+        {
+            get { return this._unclassifiableObjectCount; }
+            set { this._unclassifiableObjectCount = value; }
+        }
+
+        // Check to see if UnclassifiableObjectCount property is set
+        internal bool IsSetUnclassifiableObjectCount()
+        {
+            return this._unclassifiableObjectCount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnclassifiableObjectSizeInBytes. 
+        /// <para>
+        /// The total storage size, in bytes, of all the objects that Amazon Macie can't analyze
+        /// in the buckets. These objects use an unsupported file or storage format or storage
+        /// class.
+        /// </para>
+        /// </summary>
+        public ObjectLevelStatistics UnclassifiableObjectSizeInBytes
+        {
+            get { return this._unclassifiableObjectSizeInBytes; }
+            set { this._unclassifiableObjectSizeInBytes = value; }
+        }
+
+        // Check to see if UnclassifiableObjectSizeInBytes property is set
+        internal bool IsSetUnclassifiableObjectSizeInBytes()
+        {
+            return this._unclassifiableObjectSizeInBytes != null;
         }
 
     }

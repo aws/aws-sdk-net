@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about permissions settings that determine whether an S3 bucket
+    /// Provides information about the permissions settings that determine whether an S3 bucket
     /// is publicly accessible.
     /// </summary>
     public partial class BucketPublicAccess
@@ -38,12 +38,24 @@ namespace Amazon.Macie2.Model
         private BucketPermissionConfiguration _permissionConfiguration;
 
         /// <summary>
-        /// Gets and sets the property EffectivePermission. 
+        /// Gets and sets the property EffectivePermission.  
         /// <para>
         /// Specifies whether the bucket is publicly accessible due to the combination of permissions
-        /// settings that apply to the bucket. Possible values are: PUBLIC, the bucket is publicly
-        /// accessible; and, NOT_PUBLIC, the bucket isn't publicly accessible.
+        /// settings that apply to the bucket. Possible values are:
         /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// NOT_PUBLIC - The bucket isn't publicly accessible.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// PUBLIC - The bucket is publicly accessible.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.
+        /// </para>
+        /// </li></ul>
         /// </summary>
         public EffectivePermission EffectivePermission
         {

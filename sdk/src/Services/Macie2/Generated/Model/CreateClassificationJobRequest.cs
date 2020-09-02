@@ -102,7 +102,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property InitialRun. 
         /// <para>
-        /// Specifies whether to run the job immediately, after it's created.
+        /// Specifies whether to analyze all existing, eligible objects immediately after the
+        /// job is created.
         /// </para>
         /// </summary>
         public bool InitialRun

@@ -87,8 +87,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Extension. 
         /// <para>
-        /// The file extension of the object. If the object doesn't have a file extension, this
-        /// value is "".
+        /// The file name extension of the object. If the object doesn't have a file name extension,
+        /// this value is "".
         /// </para>
         /// </summary>
         public string Extension

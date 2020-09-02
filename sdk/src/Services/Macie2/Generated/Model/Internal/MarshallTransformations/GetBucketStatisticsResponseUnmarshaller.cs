@@ -81,6 +81,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     response.ClassifiableObjectCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("classifiableSizeInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.ClassifiableSizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdated", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -103,6 +109,18 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
                     response.SizeInBytesCompressed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("unclassifiableObjectCount", targetDepth))
+                {
+                    var unmarshaller = ObjectLevelStatisticsUnmarshaller.Instance;
+                    response.UnclassifiableObjectCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("unclassifiableObjectSizeInBytes", targetDepth))
+                {
+                    var unmarshaller = ObjectLevelStatisticsUnmarshaller.Instance;
+                    response.UnclassifiableObjectSizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

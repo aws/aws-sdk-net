@@ -61,7 +61,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property ReplicatedExternally. 
         /// <para>
         /// Specifies whether the bucket is configured to replicate one or more objects to an
-        /// AWS account that isn't part of the Amazon Macie organization.
+        /// AWS account that isn't part of the same Amazon Macie organization.
         /// </para>
         /// </summary>
         public bool ReplicatedExternally

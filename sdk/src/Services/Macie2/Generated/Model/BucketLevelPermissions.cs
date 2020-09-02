@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about bucket-level permissions settings for an S3 bucket.
+    /// Provides information about the bucket-level permissions settings for an S3 bucket.
     /// </summary>
     public partial class BucketLevelPermissions
     {

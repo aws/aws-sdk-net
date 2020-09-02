@@ -42,8 +42,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property DetailedResultsLocation. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the file that contains the detailed record, including
-        /// offsets, for the finding.
+        /// The path to the folder or file (in Amazon S3) that contains the corresponding sensitive
+        /// data discovery results for the finding. If a finding applies to a large archive or
+        /// compressed file, this is a path to a folder. Otherwise, this is a path to a file.
         /// </para>
         /// </summary>
         public string DetailedResultsLocation
@@ -97,7 +98,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Result. 
         /// <para>
-        /// The status and detailed results of the finding.
+        /// The status and other details for the finding.
         /// </para>
         /// </summary>
         public ClassificationResult Result

@@ -37,10 +37,27 @@ namespace Amazon.Macie2.Model
         private string _reason;
 
         /// <summary>
-        /// Gets and sets the property Code. 
+        /// Gets and sets the property Code.  
         /// <para>
-        /// The status of the finding, such as COMPLETE.
+        /// The status of the finding. Possible values are:
         /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// COMPLETE - Amazon Macie successfully completed its analysis of the object that the
+        /// finding applies to.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// PARTIAL - Macie was able to analyze only a subset of the data in the object that the
+        /// finding applies to. For example, the object is a compressed or archive file that contains
+        /// files in an unsupported format.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For
+        /// example, the object is a malformed file or a file that's in an unsupported format.
+        /// </para>
+        /// </li></ul>
         /// </summary>
         public string Code
         {

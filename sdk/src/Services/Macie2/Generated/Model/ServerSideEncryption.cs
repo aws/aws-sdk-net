@@ -59,9 +59,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property KmsMasterKeyId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) master
-        /// key that's used to encrypt the bucket or object. This value is null if KMS isn't used
-        /// to encrypt the bucket or object.
+        /// The unique identifier for the AWS Key Management Service (AWS KMS) master key that's
+        /// used to encrypt the bucket or object. This value is null if AWS KMS isn't used to
+        /// encrypt the bucket or object.
         /// </para>
         /// </summary>
         public string KmsMasterKeyId
