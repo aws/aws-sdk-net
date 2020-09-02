@@ -1,3 +1,14 @@
+### 3.5.8.0 (2020-09-02 18:15 UTC)
+* EC2 (3.5.4.0)
+	* This release adds a new transit gateway attachment state and resource type.
+* Macie2 (3.5.1.0)
+	* This release of the Amazon Macie API introduces additional statistics for the size and count of Amazon S3 objects that Macie can analyze as part of a classification job.
+* Core 3.5.1.6
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.7.0 (2020-09-01 18:15 UTC)
 * CodeGuruReviewer (3.5.1.0)
 	* Add support for repository analysis based code reviews
