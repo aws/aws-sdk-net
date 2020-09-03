@@ -1,3 +1,13 @@
+### 3.5.9.0 (2020-09-03 18:17 UTC)
+* GuardDuty (3.5.1.0)
+	* GuardDuty findings triggered by failed events now include the error code name within the AwsApiCallAction section.
+* Kendra (3.5.1.0)
+	* Amazon Kendra now returns confidence scores for both 'answer' and 'question and answer' query responses.
+* MediaPackage (3.5.1.0)
+	* Enables inserting a UTCTiming XML tag in the output manifest of a DASH endpoint which a media player will use to help with time synchronization.
+* StepFunctions (3.5.1.0)
+	* This release of the AWS Step Functions SDK introduces support for payloads up to 256KB for Standard and Express workflows
+
 ### 3.5.8.0 (2020-09-02 18:15 UTC)
 * EC2 (3.5.4.0)
 	* This release adds a new transit gateway attachment state and resource type.

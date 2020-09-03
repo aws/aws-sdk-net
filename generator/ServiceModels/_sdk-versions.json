@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.5.8.0",
+    "ProductVersion" : "3.5.9.0",
     "CoreVersion"    : "3.5.1.6",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -634,7 +634,7 @@
             "InPreview"               : false
         },
         "StepFunctions"                   : {
-            "Version" : "3.5.0.8",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.6"
@@ -866,7 +866,7 @@
             "InPreview"               : false
         },
         "MediaPackage"                    : {
-            "Version" : "3.5.0.8",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.6"
@@ -914,7 +914,7 @@
             "InPreview"               : false
         },
         "GuardDuty"                       : {
-            "Version" : "3.5.0.8",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.6"
@@ -1682,7 +1682,7 @@
             "InPreview"               : false
         },
         "Kendra"                          : {
-            "Version" : "3.5.0.8",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.6"
