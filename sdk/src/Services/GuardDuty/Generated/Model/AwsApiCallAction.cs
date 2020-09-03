@@ -29,13 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the API operation.
+    /// Contains information about the API action.
     /// </summary>
     public partial class AwsApiCallAction
     {
         private string _api;
         private string _callerType;
         private DomainDetails _domainDetails;
+        private string _errorCode;
         private RemoteIpDetails _remoteIpDetails;
         private string _serviceName;
 
@@ -94,9 +95,27 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ErrorCode. 
+        /// <para>
+        /// The error code of the failed AWS API action.
+        /// </para>
+        /// </summary>
+        public string ErrorCode
+        {
+            get { return this._errorCode; }
+            set { this._errorCode = value; }
+        }
+
+        // Check to see if ErrorCode property is set
+        internal bool IsSetErrorCode()
+        {
+            return this._errorCode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RemoteIpDetails. 
         /// <para>
-        /// The remote IP information of the connection.
+        /// The remote IP information of the connection that initiated the AWS API call.
         /// </para>
         /// </summary>
         public RemoteIpDetails RemoteIpDetails

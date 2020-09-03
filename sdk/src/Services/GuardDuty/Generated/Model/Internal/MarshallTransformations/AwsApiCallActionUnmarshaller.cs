@@ -82,6 +82,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.DomainDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("errorCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("remoteIpDetails", targetDepth))
                 {
                     var unmarshaller = RemoteIpDetailsUnmarshaller.Instance;

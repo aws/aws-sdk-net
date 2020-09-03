@@ -30,7 +30,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Contains information on the server side encryption method used in the S3 bucket. See
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/atest/dev/serv-side-encryption.html">S3
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">S3
     /// Server-Side Encryption</a> for more information.
     /// </summary>
     public partial class DefaultServerSideEncryption
