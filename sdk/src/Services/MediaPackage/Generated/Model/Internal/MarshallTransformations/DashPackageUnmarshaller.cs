@@ -142,6 +142,18 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     unmarshalledObject.SuggestedPresentationDelaySeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("utcTiming", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UtcTiming = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("utcTimingUri", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UtcTimingUri = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -143,6 +143,18 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SuggestedPresentationDelaySeconds);
             }
 
+            if(requestObject.IsSetUtcTiming())
+            {
+                context.Writer.WritePropertyName("utcTiming");
+                context.Writer.Write(requestObject.UtcTiming);
+            }
+
+            if(requestObject.IsSetUtcTimingUri())
+            {
+                context.Writer.WritePropertyName("utcTimingUri");
+                context.Writer.Write(requestObject.UtcTimingUri);
+            }
+
         }
 
         /// <summary>

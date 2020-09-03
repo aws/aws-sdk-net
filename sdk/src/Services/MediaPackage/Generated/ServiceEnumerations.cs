@@ -675,4 +675,58 @@ namespace Amazon.MediaPackage
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type UtcTiming.
+    /// </summary>
+    public class UtcTiming : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HTTPHEAD for UtcTiming
+        /// </summary>
+        public static readonly UtcTiming HTTPHEAD = new UtcTiming("HTTP-HEAD");
+        /// <summary>
+        /// Constant HTTPISO for UtcTiming
+        /// </summary>
+        public static readonly UtcTiming HTTPISO = new UtcTiming("HTTP-ISO");
+        /// <summary>
+        /// Constant NONE for UtcTiming
+        /// </summary>
+        public static readonly UtcTiming NONE = new UtcTiming("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UtcTiming(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UtcTiming FindValue(string value)
+        {
+            return FindValue<UtcTiming>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UtcTiming(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }
