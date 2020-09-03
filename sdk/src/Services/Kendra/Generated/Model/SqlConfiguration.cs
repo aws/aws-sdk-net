@@ -38,8 +38,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property QueryIdentifiersEnclosingOption. 
         /// <para>
-        /// Determines whether Amazon Kendra encloses SQL identifiers in double quotes (") when
-        /// making a database query.
+        /// Determines whether Amazon Kendra encloses SQL identifiers for tables and column names
+        /// in double quotes (") when making a database query.
         /// </para>
         ///  
         /// <para>
@@ -56,7 +56,7 @@ namespace Amazon.Kendra.Model
         ///  
         /// <para>
         /// For MySQL databases, you must enable the <code>ansi_quotes</code> option when you
-        /// choose this option.
+        /// set this field to <code>DOUBLE_QUOTES</code>.
         /// </para>
         /// </summary>
         public QueryIdentifiersEnclosingOption QueryIdentifiersEnclosingOption

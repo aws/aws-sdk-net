@@ -1193,6 +1193,60 @@ namespace Amazon.Kendra
 
 
     /// <summary>
+    /// Constants used for properties of type ScoreConfidence.
+    /// </summary>
+    public class ScoreConfidence : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for ScoreConfidence
+        /// </summary>
+        public static readonly ScoreConfidence HIGH = new ScoreConfidence("HIGH");
+        /// <summary>
+        /// Constant MEDIUM for ScoreConfidence
+        /// </summary>
+        public static readonly ScoreConfidence MEDIUM = new ScoreConfidence("MEDIUM");
+        /// <summary>
+        /// Constant VERY_HIGH for ScoreConfidence
+        /// </summary>
+        public static readonly ScoreConfidence VERY_HIGH = new ScoreConfidence("VERY_HIGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScoreConfidence(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScoreConfidence FindValue(string value)
+        {
+            return FindValue<ScoreConfidence>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScoreConfidence(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ServiceNowBuildVersionType.
     /// </summary>
     public class ServiceNowBuildVersionType : ConstantClass

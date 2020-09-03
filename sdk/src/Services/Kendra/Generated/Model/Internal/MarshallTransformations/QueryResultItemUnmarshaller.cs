@@ -106,6 +106,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ScoreAttributes", targetDepth))
+                {
+                    var unmarshaller = ScoreAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ScoreAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

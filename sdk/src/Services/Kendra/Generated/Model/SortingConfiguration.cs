@@ -32,6 +32,32 @@ namespace Amazon.Kendra.Model
     /// Specifies the document attribute to use to sort the response to a Amazon Kendra query.
     /// You can specify a single attribute for sorting. The attribute must have the <code>Sortable</code>
     /// flag set to <code>true</code>, otherwise Amazon Kendra returns an exception.
+    /// 
+    ///  
+    /// <para>
+    /// You can sort attributes of the following types.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Date value
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Long value
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// String value
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can't sort attributes of the following type.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// String list value
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class SortingConfiguration
     {

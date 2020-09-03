@@ -47,12 +47,13 @@ namespace Amazon.Kendra.Model
         private TextWithHighlights _documentTitle;
         private string _documentURI;
         private string _id;
+        private ScoreAttributes _scoreAttributes;
         private QueryResultType _type;
 
         /// <summary>
         /// Gets and sets the property AdditionalAttributes. 
         /// <para>
-        /// One or more additional attribues associated with the query result.
+        /// One or more additional attributes associated with the query result.
         /// </para>
         /// </summary>
         public List<AdditionalResultAttribute> AdditionalAttributes
@@ -179,6 +180,33 @@ namespace Amazon.Kendra.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScoreAttributes. 
+        /// <para>
+        /// Indicates the confidence that Amazon Kendra has that a result matches the query that
+        /// you provided. Each result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>,
+        /// <code>HIGH</code>, and <code>MEDIUM</code>. You can use the score to determine if
+        /// a response meets the confidence needed for your application.
+        /// </para>
+        ///  
+        /// <para>
+        /// Confidence scores are only returned for results with the <code>Type</code> field set
+        /// to <code>QUESTION_ANSWER</code> or <code>ANSWER</code>. This field is not returned
+        /// if the <code>Type</code> field is set to <code>DOCUMENT</code>.
+        /// </para>
+        /// </summary>
+        public ScoreAttributes ScoreAttributes
+        {
+            get { return this._scoreAttributes; }
+            set { this._scoreAttributes = value; }
+        }
+
+        // Check to see if ScoreAttributes property is set
+        internal bool IsSetScoreAttributes()
+        {
+            return this._scoreAttributes != null;
         }
 
         /// <summary>

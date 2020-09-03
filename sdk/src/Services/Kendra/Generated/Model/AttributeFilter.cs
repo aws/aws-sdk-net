@@ -89,7 +89,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ContainsAll. 
         /// <para>
         /// Returns true when a document contains all of the specified document attributes. This
-        /// filter is only appicable to <code>StringListValue</code> metadata.
+        /// filter is only applicable to <code>StringListValue</code> metadata.
         /// </para>
         /// </summary>
         public DocumentAttribute ContainsAll
@@ -107,8 +107,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ContainsAny. 
         /// <para>
-        /// Returns true when a document contains any of the specified document attributes.This
-        /// filter is only appicable to <code>StringListValue</code> metadata.
+        /// Returns true when a document contains any of the specified document attributes. This
+        /// filter is only applicable to <code>StringListValue</code> metadata.
         /// </para>
         /// </summary>
         public DocumentAttribute ContainsAny
