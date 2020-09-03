@@ -76,6 +76,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     unmarshalledObject.Output = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("outputDetails", targetDepth))
+                {
+                    var unmarshaller = HistoryEventExecutionDataDetailsUnmarshaller.Instance;
+                    unmarshalledObject.OutputDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -63,6 +63,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     response.Input = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inputDetails", targetDepth))
+                {
+                    var unmarshaller = CloudWatchEventsExecutionDataDetailsUnmarshaller.Instance;
+                    response.InputDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -73,6 +79,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Output = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("outputDetails", targetDepth))
+                {
+                    var unmarshaller = CloudWatchEventsExecutionDataDetailsUnmarshaller.Instance;
+                    response.OutputDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startDate", targetDepth))

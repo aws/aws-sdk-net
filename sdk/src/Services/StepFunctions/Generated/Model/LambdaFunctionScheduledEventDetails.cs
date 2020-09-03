@@ -34,16 +34,18 @@ namespace Amazon.StepFunctions.Model
     public partial class LambdaFunctionScheduledEventDetails
     {
         private string _input;
+        private HistoryEventExecutionDataDetails _inputDetails;
         private string _resource;
         private long? _timeoutInSeconds;
 
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// The JSON data input to the lambda function.
+        /// The JSON data input to the lambda function. Length constraints apply to the payload
+        /// size, and are expressed as bytes in UTF-8 encoding.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=32768)]
+        [AWSProperty(Max=262144)]
         public string Input
         {
             get { return this._input; }
@@ -54,6 +56,24 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetInput()
         {
             return this._input != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputDetails. 
+        /// <para>
+        /// Contains details about input for an execution history event.
+        /// </para>
+        /// </summary>
+        public HistoryEventExecutionDataDetails InputDetails
+        {
+            get { return this._inputDetails; }
+            set { this._inputDetails = value; }
+        }
+
+        // Check to see if InputDetails property is set
+        internal bool IsSetInputDetails()
+        {
+            return this._inputDetails != null;
         }
 
         /// <summary>

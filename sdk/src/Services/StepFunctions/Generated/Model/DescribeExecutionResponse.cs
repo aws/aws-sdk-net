@@ -35,8 +35,10 @@ namespace Amazon.StepFunctions.Model
     {
         private string _executionArn;
         private string _input;
+        private CloudWatchEventsExecutionDataDetails _inputDetails;
         private string _name;
         private string _output;
+        private CloudWatchEventsExecutionDataDetails _outputDetails;
         private DateTime? _startDate;
         private string _stateMachineArn;
         private ExecutionStatus _status;
@@ -64,10 +66,11 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// The string that contains the JSON input data of the execution.
+        /// The string that contains the JSON input data of the execution. Length constraints
+        /// apply to the payload size, and are expressed as bytes in UTF-8 encoding.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=32768)]
+        [AWSProperty(Max=262144)]
         public string Input
         {
             get { return this._input; }
@@ -78,6 +81,21 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetInput()
         {
             return this._input != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputDetails.
+        /// </summary>
+        public CloudWatchEventsExecutionDataDetails InputDetails
+        {
+            get { return this._inputDetails; }
+            set { this._inputDetails = value; }
+        }
+
+        // Check to see if InputDetails property is set
+        internal bool IsSetInputDetails()
+        {
+            return this._inputDetails != null;
         }
 
         /// <summary>
@@ -131,7 +149,8 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Output. 
         /// <para>
-        /// The JSON output data of the execution.
+        /// The JSON output data of the execution. Length constraints apply to the payload size,
+        /// and are expressed as bytes in UTF-8 encoding.
         /// </para>
         ///  <note> 
         /// <para>
@@ -140,7 +159,7 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Max=32768)]
+        [AWSProperty(Max=262144)]
         public string Output
         {
             get { return this._output; }
@@ -151,6 +170,21 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetOutput()
         {
             return this._output != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputDetails.
+        /// </summary>
+        public CloudWatchEventsExecutionDataDetails OutputDetails
+        {
+            get { return this._outputDetails; }
+            set { this._outputDetails = value; }
+        }
+
+        // Check to see if OutputDetails property is set
+        internal bool IsSetOutputDetails()
+        {
+            return this._outputDetails != null;
         }
 
         /// <summary>

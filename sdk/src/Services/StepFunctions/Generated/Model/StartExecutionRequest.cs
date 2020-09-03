@@ -62,9 +62,13 @@ namespace Amazon.StepFunctions.Model
         /// If you don't include any JSON input data, you still must include the two braces, for
         /// example: <code>"input": "{}"</code> 
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Length constraints apply to the payload size, and are expressed as bytes in UTF-8
+        /// encoding.
+        /// </para>
         /// </summary>
-        [AWSProperty(Max=32768)]
+        [AWSProperty(Max=262144)]
         public string Input
         {
             get { return this._input; }

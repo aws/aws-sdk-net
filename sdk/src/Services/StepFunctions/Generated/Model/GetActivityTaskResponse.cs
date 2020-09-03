@@ -39,10 +39,11 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// The string that contains the JSON input data for the task.
+        /// The string that contains the JSON input data for the task. Length constraints apply
+        /// to the payload size, and are expressed as bytes in UTF-8 encoding.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=65536)]
+        [AWSProperty(Max=262144)]
         public string Input
         {
             get { return this._input; }

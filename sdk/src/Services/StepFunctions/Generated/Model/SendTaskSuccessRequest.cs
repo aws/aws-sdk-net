@@ -42,10 +42,11 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Output. 
         /// <para>
-        /// The JSON output of the task.
+        /// The JSON output of the task. Length constraints apply to the payload size, and are
+        /// expressed as bytes in UTF-8 encoding.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=32768)]
+        [AWSProperty(Required=true, Max=262144)]
         public string Output
         {
             get { return this._output; }

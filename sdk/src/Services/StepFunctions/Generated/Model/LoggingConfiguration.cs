@@ -59,7 +59,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property IncludeExecutionData. 
         /// <para>
-        /// Determines whether execution data is included in your log. When set to <code>FALSE</code>,
+        /// Determines whether execution data is included in your log. When set to <code>false</code>,
         /// data is excluded.
         /// </para>
         /// </summary>

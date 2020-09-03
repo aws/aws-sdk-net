@@ -34,14 +34,16 @@ namespace Amazon.StepFunctions.Model
     public partial class ExecutionSucceededEventDetails
     {
         private string _output;
+        private HistoryEventExecutionDataDetails _outputDetails;
 
         /// <summary>
         /// Gets and sets the property Output. 
         /// <para>
-        /// The JSON data output by the execution.
+        /// The JSON data output by the execution. Length constraints apply to the payload size,
+        /// and are expressed as bytes in UTF-8 encoding.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=32768)]
+        [AWSProperty(Max=262144)]
         public string Output
         {
             get { return this._output; }
@@ -52,6 +54,24 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetOutput()
         {
             return this._output != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputDetails. 
+        /// <para>
+        /// Contains details about the output of an execution history event.
+        /// </para>
+        /// </summary>
+        public HistoryEventExecutionDataDetails OutputDetails
+        {
+            get { return this._outputDetails; }
+            set { this._outputDetails = value; }
+        }
+
+        // Check to see if OutputDetails property is set
+        internal bool IsSetOutputDetails()
+        {
+            return this._outputDetails != null;
         }
 
     }

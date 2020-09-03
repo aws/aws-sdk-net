@@ -74,6 +74,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ExecutionArn);
                 }
 
+                if(publicRequest.IsSetIncludeExecutionData())
+                {
+                    context.Writer.WritePropertyName("includeExecutionData");
+                    context.Writer.Write(publicRequest.IncludeExecutionData);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");

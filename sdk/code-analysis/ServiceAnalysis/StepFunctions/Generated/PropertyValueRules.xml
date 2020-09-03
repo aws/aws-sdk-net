@@ -67,7 +67,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeExecutionResponse.Input</property>
-    <max>32768</max>
+    <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeExecutionResponse.Name</property>
@@ -76,7 +76,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeExecutionResponse.Output</property>
-    <max>32768</max>
+    <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeExecutionResponse.StateMachineArn</property>
@@ -145,7 +145,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.GetActivityTaskResponse.Input</property>
-    <max>65536</max>
+    <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.GetActivityTaskResponse.TaskToken</property>
@@ -249,7 +249,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.SendTaskSuccessRequest.Output</property>
-    <max>32768</max>
+    <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.SendTaskSuccessRequest.TaskToken</property>
@@ -258,7 +258,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.StartExecutionRequest.Input</property>
-    <max>32768</max>
+    <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.StartExecutionRequest.Name</property>
@@ -337,7 +337,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ActivityScheduledEventDetails.Input</property>
-    <max>32768</max>
+    <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ActivityScheduledEventDetails.Resource</property>
@@ -360,7 +360,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ActivitySucceededEventDetails.Output</property>
-    <max>32768</max>
+    <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ActivityTimedOutEventDetails.Cause</property>
@@ -414,7 +414,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ExecutionStartedEventDetails.Input</property>
-    <max>32768</max>
+    <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ExecutionStartedEventDetails.RoleArn</property>
@@ -423,7 +423,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ExecutionSucceededEventDetails.Output</property>
-    <max>32768</max>
+    <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ExecutionTimedOutEventDetails.Cause</property>
@@ -447,7 +447,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.LambdaFunctionScheduledEventDetails.Input</property>
-    <max>32768</max>
+    <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.LambdaFunctionScheduledEventDetails.Resource</property>
@@ -476,7 +476,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.LambdaFunctionSucceededEventDetails.Output</property>
-    <max>32768</max>
+    <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.LambdaFunctionTimedOutEventDetails.Cause</property>
@@ -508,7 +508,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.StateEnteredEventDetails.Input</property>
-    <max>32768</max>
+    <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.StateEnteredEventDetails.Name</property>
@@ -522,7 +522,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.StateExitedEventDetails.Output</property>
-    <max>32768</max>
+    <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.StateMachineListItem.Name</property>
@@ -567,7 +567,7 @@
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.TaskScheduledEventDetails.Parameters</property>
     <min>0</min>
-    <max>32768</max>
+    <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.TaskScheduledEventDetails.Region</property>
@@ -636,7 +636,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.TaskSubmittedEventDetails.Output</property>
-    <max>32768</max>
+    <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.TaskSubmittedEventDetails.Resource</property>
@@ -650,7 +650,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.TaskSucceededEventDetails.Output</property>
-    <max>32768</max>
+    <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.TaskSucceededEventDetails.Resource</property>

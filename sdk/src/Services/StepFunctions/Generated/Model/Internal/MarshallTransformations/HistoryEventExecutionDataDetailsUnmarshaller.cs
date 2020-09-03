@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StateEnteredEventDetails Object
+    /// Response Unmarshaller for HistoryEventExecutionDataDetails Object
     /// </summary>  
-    public class StateEnteredEventDetailsUnmarshaller : IUnmarshaller<StateEnteredEventDetails, XmlUnmarshallerContext>, IUnmarshaller<StateEnteredEventDetails, JsonUnmarshallerContext>
+    public class HistoryEventExecutionDataDetailsUnmarshaller : IUnmarshaller<HistoryEventExecutionDataDetails, XmlUnmarshallerContext>, IUnmarshaller<HistoryEventExecutionDataDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StateEnteredEventDetails IUnmarshaller<StateEnteredEventDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        HistoryEventExecutionDataDetails IUnmarshaller<HistoryEventExecutionDataDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StateEnteredEventDetails Unmarshall(JsonUnmarshallerContext context)
+        public HistoryEventExecutionDataDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StateEnteredEventDetails unmarshalledObject = new StateEnteredEventDetails();
+            HistoryEventExecutionDataDetails unmarshalledObject = new HistoryEventExecutionDataDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("input", targetDepth))
+                if (context.TestExpression("truncated", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Input = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inputDetails", targetDepth))
-                {
-                    var unmarshaller = HistoryEventExecutionDataDetailsUnmarshaller.Instance;
-                    unmarshalledObject.InputDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Truncated = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         }
 
 
-        private static StateEnteredEventDetailsUnmarshaller _instance = new StateEnteredEventDetailsUnmarshaller();        
+        private static HistoryEventExecutionDataDetailsUnmarshaller _instance = new HistoryEventExecutionDataDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StateEnteredEventDetailsUnmarshaller Instance
+        public static HistoryEventExecutionDataDetailsUnmarshaller Instance
         {
             get
             {
