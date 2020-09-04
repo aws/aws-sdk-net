@@ -1,3 +1,16 @@
+### 3.5.10.0 (2020-09-04 18:16 UTC)
+* SimpleSystemsManagement (3.5.1.8)
+	* Documentation-only updates for AWS Systems Manager
+* WorkSpaces (3.5.1.0)
+	* Adding support for Microsoft Office 2016 and Microsoft Office 2019 in BYOL Images
+* XRay (3.5.2.0)
+	* Enhancing CreateGroup, UpdateGroup, GetGroup and GetGroups APIs to support configuring X-Ray Insights
+* Core 3.5.1.7
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.9.0 (2020-09-03 18:17 UTC)
 * GuardDuty (3.5.1.0)
 	* GuardDuty findings triggered by failed events now include the error code name within the AwsApiCallAction section.
