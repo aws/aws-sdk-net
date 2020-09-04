@@ -30,8 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// The operating systems you specified is not supported, or the operation is not supported
-    /// for the operating system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux,
-    /// and Ubuntu.
+    /// for the operating system.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

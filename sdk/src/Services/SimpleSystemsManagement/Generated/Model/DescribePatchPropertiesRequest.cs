@@ -40,11 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// The following section lists the properties that can be used in filters for each major
     /// operating system type:
     /// </para>
-    ///  <dl> <dt>WINDOWS</dt> <dd> 
-    /// <para>
-    /// Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
-    /// </para>
-    ///  </dd> <dt>AMAZON_LINUX</dt> <dd> 
+    ///  <dl> <dt>AMAZON_LINUX</dt> <dd> 
     /// <para>
     /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
     /// </para>
@@ -52,9 +48,17 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
     /// </para>
-    ///  </dd> <dt>UBUNTU </dt> <dd> 
+    ///  </dd> <dt>CENTOS</dt> <dd> 
+    /// <para>
+    /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+    /// </para>
+    ///  </dd> <dt>DEBIAN</dt> <dd> 
     /// <para>
     /// Valid properties: PRODUCT, PRIORITY
+    /// </para>
+    ///  </dd> <dt>ORACLE_LINUX</dt> <dd> 
+    /// <para>
+    /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
     /// </para>
     ///  </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> 
     /// <para>
@@ -64,9 +68,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
     /// </para>
-    ///  </dd> <dt>CENTOS</dt> <dd> 
+    ///  </dd> <dt>UBUNTU</dt> <dd> 
     /// <para>
-    /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+    /// Valid properties: PRODUCT, PRIORITY
+    /// </para>
+    ///  </dd> <dt>WINDOWS</dt> <dd> 
+    /// <para>
+    /// Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
     /// </para>
     ///  </dd> </dl>
     /// </summary>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Defines a filter used in DescribeInstancePatchStatesForPatchGroup used to scope down
-    /// the information returned by the API.
+    /// Defines a filter used in <a>DescribeInstancePatchStatesForPatchGroup</a> used to scope
+    /// down the information returned by the API.
     /// </summary>
     public partial class InstancePatchStateFilter
     {

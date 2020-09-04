@@ -2507,8 +2507,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedOperatingSystemException">
         /// The operating systems you specified is not supported, or the operation is not supported
-        /// for the operating system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux,
-        /// and Ubuntu.
+        /// for the operating system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">REST API Reference for DescribeEffectivePatchesForPatchBaseline Operation</seealso>
         DescribeEffectivePatchesForPatchBaselineResponse DescribeEffectivePatchesForPatchBaseline(DescribeEffectivePatchesForPatchBaselineRequest request);
@@ -3637,11 +3636,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The following section lists the properties that can be used in filters for each major
         /// operating system type:
         /// </para>
-        ///  <dl> <dt>WINDOWS</dt> <dd> 
-        /// <para>
-        /// Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
-        /// </para>
-        ///  </dd> <dt>AMAZON_LINUX</dt> <dd> 
+        ///  <dl> <dt>AMAZON_LINUX</dt> <dd> 
         /// <para>
         /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
         /// </para>
@@ -3649,9 +3644,17 @@ namespace Amazon.SimpleSystemsManagement
         /// <para>
         /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
         /// </para>
-        ///  </dd> <dt>UBUNTU </dt> <dd> 
+        ///  </dd> <dt>CENTOS</dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// </para>
+        ///  </dd> <dt>DEBIAN</dt> <dd> 
         /// <para>
         /// Valid properties: PRODUCT, PRIORITY
+        /// </para>
+        ///  </dd> <dt>ORACLE_LINUX</dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
         /// </para>
         ///  </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> 
         /// <para>
@@ -3661,9 +3664,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <para>
         /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
         /// </para>
-        ///  </dd> <dt>CENTOS</dt> <dd> 
+        ///  </dd> <dt>UBUNTU</dt> <dd> 
         /// <para>
-        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// Valid properties: PRODUCT, PRIORITY
+        /// </para>
+        ///  </dd> <dt>WINDOWS</dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -4061,8 +4068,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedOperatingSystemException">
         /// The operating systems you specified is not supported, or the operation is not supported
-        /// for the operating system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux,
-        /// and Ubuntu.
+        /// for the operating system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">REST API Reference for GetDeployablePatchSnapshotForInstance Operation</seealso>
         GetDeployablePatchSnapshotForInstanceResponse GetDeployablePatchSnapshotForInstance(GetDeployablePatchSnapshotForInstanceRequest request);
@@ -7859,11 +7865,23 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If a parameter is null, then the corresponding field is not modified. Also, if you
-        /// set Replace to true, then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a>
-        /// action are required for this request. Optional fields that aren't specified are set
-        /// to null.
+        /// If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null,
+        /// then the corresponding field is not modified. If you set <code>Replace</code> to true,
+        /// then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action are
+        /// required for this request. Optional fields that aren't specified are set to null.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
+        /// you must provide again all the <code>TaskInvocationParameters</code> values that you
+        /// want to retain. The values you do not specify again are removed. For example, suppose
+        /// that when you registered a Run Command task, you specified <code>TaskInvocationParameters</code>
+        /// values for <code>Comment</code>, <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>.
+        /// If you update the maintenance window task and specify only a different <code>OutputS3BucketName</code>
+        /// value, the values for <code>Comment</code> and <code>NotificationConfig</code> are
+        /// removed.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMaintenanceWindowTask service method.</param>
         /// 
