@@ -30,17 +30,46 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportWorkspaceImage operation.
-    /// Imports the specified Windows 7 or Windows 10 Bring Your Own License (BYOL) image
-    /// into Amazon WorkSpaces. The image must be an already licensed EC2 image that is in
-    /// your AWS account, and you must own the image.
+    /// Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces.
+    /// The image must be an already licensed EC2 image that is in your AWS account, and you
+    /// must own the image. For more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+    /// Bring Your Own Windows Desktop Licenses</a>.
     /// </summary>
     public partial class ImportWorkspaceImageRequest : AmazonWorkSpacesRequest
     {
+        private List<string> _applications = new List<string>();
         private string _ec2ImageId;
         private string _imageDescription;
         private string _imageName;
         private WorkspaceImageIngestionProcess _ingestionProcess;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property Applications. 
+        /// <para>
+        /// If specified, the version of Microsoft Office to subscribe to. Valid only for Windows
+        /// 10 BYOL images. For more information about subscribing to Office for BYOL images,
+        /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+        /// Bring Your Own Windows Desktop Licenses</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Although this parameter is an array, only one item is allowed at this time.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> Applications
+        {
+            get { return this._applications; }
+            set { this._applications = value; }
+        }
+
+        // Check to see if Applications property is set
+        internal bool IsSetApplications()
+        {
+            return this._applications != null && this._applications.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Ec2ImageId. 
@@ -102,7 +131,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property IngestionProcess. 
         /// <para>
-        /// The ingestion process to be used when importing the image.
+        /// The ingestion process to be used when importing the image. For non-GPU-enabled bundles
+        /// (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
