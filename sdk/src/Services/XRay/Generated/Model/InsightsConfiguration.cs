@@ -29,30 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// This is the response object from the CreateGroup operation.
+    /// The structure containing configurations related to insights.
     /// </summary>
-    public partial class CreateGroupResponse : AmazonWebServiceResponse
+    public partial class InsightsConfiguration
     {
-        private Group _group;
+        private bool? _insightsEnabled;
 
         /// <summary>
-        /// Gets and sets the property Group. 
+        /// Gets and sets the property InsightsEnabled. 
         /// <para>
-        /// The group that was created. Contains the name of the group that was created, the ARN
-        /// of the group that was generated based on the group name, the filter expression, and
-        /// the insight configuration that was assigned to the group.
+        /// Set the InsightsEnabled value to true to enable insights or false to disable insights.
         /// </para>
         /// </summary>
-        public Group Group
+        public bool InsightsEnabled
         {
-            get { return this._group; }
-            set { this._group = value; }
+            get { return this._insightsEnabled.GetValueOrDefault(); }
+            set { this._insightsEnabled = value; }
         }
 
-        // Check to see if Group property is set
-        internal bool IsSetGroup()
+        // Check to see if InsightsEnabled property is set
+        internal bool IsSetInsightsEnabled()
         {
-            return this._group != null;
+            return this._insightsEnabled.HasValue; 
         }
 
     }

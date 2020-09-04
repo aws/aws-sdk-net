@@ -82,6 +82,12 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InsightsConfiguration", targetDepth))
+                {
+                    var unmarshaller = InsightsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.InsightsConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

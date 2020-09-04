@@ -36,6 +36,7 @@ namespace Amazon.XRay.Model
         private string _filterExpression;
         private string _groupARN;
         private string _groupName;
+        private InsightsConfiguration _insightsConfiguration;
 
         /// <summary>
         /// Gets and sets the property FilterExpression. 
@@ -89,6 +90,26 @@ namespace Amazon.XRay.Model
         internal bool IsSetGroupName()
         {
             return this._groupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InsightsConfiguration. 
+        /// <para>
+        /// The structure containing configurations related to insights. The InsightsEnabled boolean
+        /// can be set to true to enable insights for the groups or false to disable insights
+        /// for the groups.
+        /// </para>
+        /// </summary>
+        public InsightsConfiguration InsightsConfiguration
+        {
+            get { return this._insightsConfiguration; }
+            set { this._insightsConfiguration = value; }
+        }
+
+        // Check to see if InsightsConfiguration property is set
+        internal bool IsSetInsightsConfiguration()
+        {
+            return this._insightsConfiguration != null;
         }
 
     }

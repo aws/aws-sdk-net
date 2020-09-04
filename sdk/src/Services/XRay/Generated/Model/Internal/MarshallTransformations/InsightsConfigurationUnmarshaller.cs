@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GroupSummary Object
+    /// Response Unmarshaller for InsightsConfiguration Object
     /// </summary>  
-    public class GroupSummaryUnmarshaller : IUnmarshaller<GroupSummary, XmlUnmarshallerContext>, IUnmarshaller<GroupSummary, JsonUnmarshallerContext>
+    public class InsightsConfigurationUnmarshaller : IUnmarshaller<InsightsConfiguration, XmlUnmarshallerContext>, IUnmarshaller<InsightsConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GroupSummary IUnmarshaller<GroupSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InsightsConfiguration IUnmarshaller<InsightsConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public GroupSummary Unmarshall(JsonUnmarshallerContext context)
+        public InsightsConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GroupSummary unmarshalledObject = new GroupSummary();
+            InsightsConfiguration unmarshalledObject = new InsightsConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FilterExpression", targetDepth))
+                if (context.TestExpression("InsightsEnabled", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilterExpression = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("GroupARN", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GroupARN = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("GroupName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InsightsConfiguration", targetDepth))
-                {
-                    var unmarshaller = InsightsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.InsightsConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.InsightsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         }
 
 
-        private static GroupSummaryUnmarshaller _instance = new GroupSummaryUnmarshaller();        
+        private static InsightsConfigurationUnmarshaller _instance = new InsightsConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GroupSummaryUnmarshaller Instance
+        public static InsightsConfigurationUnmarshaller Instance
         {
             get
             {

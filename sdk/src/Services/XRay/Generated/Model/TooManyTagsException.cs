@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// 
+    /// You have exceeded the maximum number of tags you can apply to this resource.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

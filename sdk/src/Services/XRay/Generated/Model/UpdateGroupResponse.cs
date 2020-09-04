@@ -39,7 +39,8 @@ namespace Amazon.XRay.Model
         /// Gets and sets the property Group. 
         /// <para>
         /// The group that was updated. Contains the name of the group that was updated, the ARN
-        /// of the group that was updated, and the updated filter expression assigned to the group.
+        /// of the group that was updated, the updated filter expression, and the updated insight
+        /// configuration assigned to the group.
         /// </para>
         /// </summary>
         public Group Group

@@ -84,6 +84,17 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GroupName);
                 }
 
+                if(publicRequest.IsSetInsightsConfiguration())
+                {
+                    context.Writer.WritePropertyName("InsightsConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InsightsConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InsightsConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

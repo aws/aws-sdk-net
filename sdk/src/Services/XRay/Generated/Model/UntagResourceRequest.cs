@@ -30,7 +30,8 @@ namespace Amazon.XRay.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// 
+    /// Removes tags from an AWS X-Ray group or sampling rule. You cannot edit or delete system
+    /// tags (those with an <code>aws:</code> prefix).
     /// </summary>
     public partial class UntagResourceRequest : AmazonXRayRequest
     {
@@ -38,7 +39,10 @@ namespace Amazon.XRay.Model
         private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ResourceARN.
+        /// Gets and sets the property ResourceARN. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
         public string ResourceARN
@@ -54,7 +58,11 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys.
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// Keys for one or more tags that you want to remove from an X-Ray group or sampling
+        /// rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]
         public List<string> TagKeys
