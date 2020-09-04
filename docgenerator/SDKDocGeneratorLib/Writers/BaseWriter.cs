@@ -53,17 +53,6 @@ namespace SDKDocGenerator.Writers
         public GenerationManifest Artifacts { get; private set; }
         public AbstractTypeProvider TypeProvider { get; private set; }
 
-        public static string SiteCatalystSnippet { get; private set; }
-
-        static BaseWriter()
-        {
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("SDKDocGenerator.Templates.SiteCatalyst.snippet"))
-            using (var reader = new StreamReader(stream))
-            {
-                SiteCatalystSnippet = reader.ReadToEnd();
-            }
-        }
-
         protected BaseWriter(GenerationManifest artifacts, AbstractTypeProvider typeProvider, FrameworkVersion version)
         {
             Artifacts = artifacts;
@@ -126,7 +115,11 @@ namespace SDKDocGenerator.Writers
             {
                 writer.WriteLine("<html>");
                 writer.WriteLine("<head>");
+               
                 writer.WriteLine("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/>");
+
+                writer.WriteLine("<meta name=\"guide-name\" content=\"API Reference\"/>");
+                writer.WriteLine("<meta name=\"service-name\" content=\"AWS SDK for .NET Version 3\"/>");
 
                 writer.WriteLine("<link rel=\"stylesheet\" type=\"text/css\" href=\"{0}/resources/style.css\"/>", RootRelativePath);
                 writer.WriteLine("<link rel=\"stylesheet\" type=\"text/css\" href=\"{0}/resources/syntaxhighlighter/shCore.css\">", RootRelativePath);
@@ -322,9 +315,6 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shBrushCSharp.js\"></script>", RootRelativePath);
             writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shBrushPlain.js\"></script>", RootRelativePath);
             writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shBrushXml.js\"></script>", RootRelativePath);
-
-            writer.WriteLine(SiteCatalystSnippet);
-
             writer.WriteLine("<script type=\"text/javascript\">SyntaxHighlighter.all()</script>");
         }
 
