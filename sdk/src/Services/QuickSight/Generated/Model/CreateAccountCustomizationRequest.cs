@@ -56,6 +56,7 @@ namespace Amazon.QuickSight.Model
         private AccountCustomization _accountCustomization;
         private string _awsAccountId;
         private string _awsNamespace;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AccountCustomization. 
@@ -121,6 +122,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetNamespace()
         {
             return this._awsNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of the tags that you want to attach to this resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
