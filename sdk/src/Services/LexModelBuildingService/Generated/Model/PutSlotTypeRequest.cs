@@ -142,6 +142,11 @@ namespace Amazon.LexModelBuildingService.Model
         /// </para>
         ///  
         /// <para>
+        /// A regular expression slot type doesn't require enumeration values. All other slot
+        /// types require a list of enumeration values.
+        /// </para>
+        ///  
+        /// <para>
         /// When Amazon Lex resolves a slot value, it generates a resolution list that contains
         /// up to five possible values for the slot. If you are using a Lambda function, this
         /// resolution list is passed to the function. If you are not using a Lambda function

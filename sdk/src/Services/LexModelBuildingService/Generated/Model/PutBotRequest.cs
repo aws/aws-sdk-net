@@ -76,8 +76,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <para>
         /// When Amazon Lex can't understand the user's input in context, it tries to elicit the
         /// information a few times. After that, Amazon Lex sends the message defined in <code>abortStatement</code>
-        /// to the user, and then aborts the conversation. To set the number of retries, use the
-        /// <code>valueElicitationPrompt</code> field for the slot type. 
+        /// to the user, and then cancels the conversation. To set the number of retries, use
+        /// the <code>valueElicitationPrompt</code> field for the slot type. 
         /// </para>
         ///  
         /// <para>
@@ -95,7 +95,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you have defined a fallback intent the abort statement will not be sent to the
+        /// If you have defined a fallback intent the cancel statement will not be sent to the
         /// user, the fallback intent is used instead. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html">
         /// AMAZON.FallbackIntent</a>.
         /// </para>
@@ -306,8 +306,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property EnableModelImprovements. 
         /// <para>
-        /// Set to <code>true</code> to enable the use of a new natural language understanding
-        /// (NLU) model. Using the new NLU may improve the performance of your bot. 
+        /// Set to <code>true</code> to enable access to natural language understanding improvements.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -319,10 +319,7 @@ namespace Amazon.LexModelBuildingService.Model
         ///  
         /// <para>
         /// You can only set the <code>enableModelImprovements</code> parameter in certain Regions.
-        /// If you set the parameter to <code>true</code>, your bot will use the new NLU. If you
-        /// set the parameter to <code>false</code>, your bot will continue to use the original
-        /// NLU. If you set the parameter to <code>false</code> after setting it to <code>true</code>,
-        /// your bot will return to the original NLU.
+        /// If you set the parameter to <code>true</code>, your bot has access to accuracy improvements.
         /// </para>
         ///  
         /// <para>
@@ -500,6 +497,27 @@ namespace Amazon.LexModelBuildingService.Model
         /// <para>
         /// You must set the <code>enableModelImprovements</code> parameter to <code>true</code>
         /// to use confidence scores.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// US East (N. Virginia) (us-east-1)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// US West (Oregon) (us-west-2)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Sydney) (ap-southeast-2)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EU (Ireland) (eu-west-1)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code>
+        /// by default.
         /// </para>
         ///  
         /// <para>

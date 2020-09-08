@@ -54,7 +54,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property AbortStatement. 
         /// <para>
-        /// The message that Amazon Lex uses to abort a conversation. For more information, see
+        /// The message that Amazon Lex uses to cancel a conversation. For more information, see
         /// <a>PutBot</a>.
         /// </para>
         /// </summary>
@@ -207,9 +207,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property EnableModelImprovements. 
         /// <para>
-        /// Indicates whether the bot uses the new natural language understanding (NLU) model
-        /// or the original NLU. True indicates that the bot is using the new model, otherwise,
-        /// false.
+        /// Indicates whether the bot uses accuracy improvements. <code>true</code> indicates
+        /// that the bot is using the imoprovements, otherwise, <code>false</code>.
         /// </para>
         /// </summary>
         public bool EnableModelImprovements
