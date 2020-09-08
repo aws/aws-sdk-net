@@ -1,3 +1,15 @@
+### 3.5.11.0 (2020-09-08 18:13 UTC)
+* ApiGatewayV2 (3.5.1.0)
+	* You can now secure HTTP APIs using Lambda authorizers and IAM authorizers. These options enable you to make flexible auth decisions using a Lambda function, or using IAM policies, respectively.
+* CodeBuild (3.5.1.0)
+	* AWS CodeBuild - Support keyword search for test cases in DecribeTestCases API . Allow deletion of reports in the report group, before deletion of report group using the deleteReports flag.
+* ElasticLoadBalancingV2 (3.5.1.0)
+	* Adds support for Application Load Balancers on Outposts.
+* LexModelBuildingService (3.5.1.0)
+	* Amazon Lex supports en-AU locale
+* QuickSight (3.5.1.0)
+	* Adds tagging support for QuickSight customization resources.  A user can now specify a list of tags when creating a customization resource and use a customization ARN in QuickSight's tagging APIs.
+
 ### 3.5.10.0 (2020-09-04 18:16 UTC)
 * SimpleSystemsManagement (3.5.1.8)
 	* Documentation-only updates for AWS Systems Manager
