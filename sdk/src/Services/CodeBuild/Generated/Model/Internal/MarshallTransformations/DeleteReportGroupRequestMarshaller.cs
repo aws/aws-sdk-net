@@ -74,6 +74,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Arn);
                 }
 
+                if(publicRequest.IsSetDeleteReports())
+                {
+                    context.Writer.WritePropertyName("deleteReports");
+                    context.Writer.Write(publicRequest.DeleteReports);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

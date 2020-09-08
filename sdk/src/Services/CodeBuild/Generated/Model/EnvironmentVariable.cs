@@ -65,8 +65,8 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems
         /// Manager Parameter Store. To learn how to specify a parameter store environment variable,
-        /// see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#parameter-store-build-spec">
-        /// parameter store reference-key in the buildspec file</a>.
+        /// see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a>
+        /// in the <i>AWS CodeBuild User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -76,8 +76,8 @@ namespace Amazon.CodeBuild.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager.
-        /// To learn how to specify a secrets manager environment variable, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#secrets-manager-build-spec">
-        /// secrets manager reference-key in the buildspec file</a>.
+        /// To learn how to specify a secrets manager environment variable, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a>
+        /// in the <i>AWS CodeBuild User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
