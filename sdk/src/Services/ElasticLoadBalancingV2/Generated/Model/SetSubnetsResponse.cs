@@ -38,7 +38,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// Information about the subnet and Availability Zone.
+        /// Information about the subnets.
         /// </para>
         /// </summary>
         public List<AvailabilityZone> AvailabilityZones

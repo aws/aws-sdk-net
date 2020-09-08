@@ -6,6 +6,11 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticLoadBalancingV2.Model.CreateLoadBalancerRequest.CustomerOwnedIpv4Pool</property>
+    <max>256</max>
+    <pattern>^(ipv4pool-coip-)[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticLoadBalancingV2.Model.CreateRuleRequest.Priority</property>
     <min>1</min>
     <max>50000</max>
@@ -128,6 +133,11 @@
     <property>Amazon.ElasticLoadBalancingV2.Model.Listener.Port</property>
     <min>1</min>
     <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticLoadBalancingV2.Model.LoadBalancer.CustomerOwnedIpv4Pool</property>
+    <max>256</max>
+    <pattern>^(ipv4pool-coip-)[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticLoadBalancingV2.Model.LoadBalancerAttribute.Key</property>

@@ -73,6 +73,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CustomerOwnedIpv4Pool", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CustomerOwnedIpv4Pool = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DNSName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -61,6 +61,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LoadBalancerAddresses.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("OutpostId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OutpostId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SubnetId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
