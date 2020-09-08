@@ -78,6 +78,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AuthorizerCredentialsArn);
                 }
 
+                if(publicRequest.IsSetAuthorizerPayloadFormatVersion())
+                {
+                    context.Writer.WritePropertyName("authorizerPayloadFormatVersion");
+                    context.Writer.Write(publicRequest.AuthorizerPayloadFormatVersion);
+                }
+
                 if(publicRequest.IsSetAuthorizerResultTtlInSeconds())
                 {
                     context.Writer.WritePropertyName("authorizerResultTtlInSeconds");
@@ -94,6 +100,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("authorizerUri");
                     context.Writer.Write(publicRequest.AuthorizerUri);
+                }
+
+                if(publicRequest.IsSetEnableSimpleResponses())
+                {
+                    context.Writer.WritePropertyName("enableSimpleResponses");
+                    context.Writer.Write(publicRequest.EnableSimpleResponses);
                 }
 
                 if(publicRequest.IsSetIdentitySource())

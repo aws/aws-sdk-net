@@ -115,8 +115,8 @@ namespace Amazon.ApiGatewayV2.Model
         /// <para>
         /// The authorization type for the route. For WebSocket APIs, valid values are NONE for
         /// open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda
-        /// authorizer For HTTP APIs, valid values are NONE for open access, or JWT for using
-        /// JSON Web Tokens.
+        /// authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON
+        /// Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.
         /// </para>
         /// </summary>
         public AuthorizationType AuthorizationType

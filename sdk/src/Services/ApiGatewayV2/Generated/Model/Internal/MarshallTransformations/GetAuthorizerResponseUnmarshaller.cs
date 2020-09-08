@@ -63,6 +63,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     response.AuthorizerId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("authorizerPayloadFormatVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AuthorizerPayloadFormatVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("authorizerResultTtlInSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -79,6 +85,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AuthorizerUri = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("enableSimpleResponses", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.EnableSimpleResponses = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("identitySource", targetDepth))
