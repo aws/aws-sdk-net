@@ -85,6 +85,10 @@ namespace Amazon.KinesisAnalyticsV2
     {
 
         /// <summary>
+        /// Constant AUTOSCALING for ApplicationStatus
+        /// </summary>
+        public static readonly ApplicationStatus AUTOSCALING = new ApplicationStatus("AUTOSCALING");
+        /// <summary>
         /// Constant DELETING for ApplicationStatus
         /// </summary>
         public static readonly ApplicationStatus DELETING = new ApplicationStatus("DELETING");

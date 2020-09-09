@@ -55,7 +55,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// delimiter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string RecordColumnDelimiter
         {
             get { return this._recordColumnDelimiter; }
@@ -74,7 +74,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row delimiter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string RecordRowDelimiter
         {
             get { return this._recordRowDelimiter; }

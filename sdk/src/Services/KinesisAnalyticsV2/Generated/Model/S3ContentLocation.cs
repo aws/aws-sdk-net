@@ -84,6 +84,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The version of the object containing the application code.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string ObjectVersion
         {
             get { return this._objectVersion; }

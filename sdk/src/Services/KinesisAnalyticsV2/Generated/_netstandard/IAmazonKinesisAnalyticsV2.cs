@@ -304,6 +304,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// can be the result of attempting to modify an application without using the current
         /// application ID.
         /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
+        /// The user-provided application configuration is not valid.
+        /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
         /// </exception>
@@ -377,6 +380,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// 
         /// <returns>The response from the CreateApplicationSnapshot service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
+        /// The user-provided application configuration is not valid.
+        /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
         /// </exception>
@@ -644,6 +650,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// Exception thrown as a result of concurrent modifications to an application. This error
         /// can be the result of attempting to modify an application without using the current
         /// application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
+        /// The user-provided application configuration is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.

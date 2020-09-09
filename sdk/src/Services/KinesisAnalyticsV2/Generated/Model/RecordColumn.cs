@@ -50,6 +50,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// A reference to the data element in the streaming input or the reference data source.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=65535)]
         public string Mapping
         {
             get { return this._mapping; }
@@ -69,7 +70,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -88,7 +89,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The type of column created in the in-application input stream or reference table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string SqlType
         {
             get { return this._sqlType; }

@@ -64,6 +64,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Specifies the encoding of the records in the streaming source; for example, UTF-8.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=5)]
         public string RecordEncodingUpdate
         {
             get { return this._recordEncodingUpdate; }

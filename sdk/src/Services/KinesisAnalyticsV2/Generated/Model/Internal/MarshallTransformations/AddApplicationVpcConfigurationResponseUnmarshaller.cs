@@ -96,6 +96,10 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 {
                     return ConcurrentModificationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidApplicationConfigurationException"))
+                {
+                    return InvalidApplicationConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgumentException"))
                 {
                     return InvalidArgumentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

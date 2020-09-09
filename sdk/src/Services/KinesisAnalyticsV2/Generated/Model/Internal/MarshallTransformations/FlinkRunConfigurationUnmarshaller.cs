@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RunConfigurationDescription Object
+    /// Response Unmarshaller for FlinkRunConfiguration Object
     /// </summary>  
-    public class RunConfigurationDescriptionUnmarshaller : IUnmarshaller<RunConfigurationDescription, XmlUnmarshallerContext>, IUnmarshaller<RunConfigurationDescription, JsonUnmarshallerContext>
+    public class FlinkRunConfigurationUnmarshaller : IUnmarshaller<FlinkRunConfiguration, XmlUnmarshallerContext>, IUnmarshaller<FlinkRunConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RunConfigurationDescription IUnmarshaller<RunConfigurationDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FlinkRunConfiguration IUnmarshaller<FlinkRunConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RunConfigurationDescription Unmarshall(JsonUnmarshallerContext context)
+        public FlinkRunConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RunConfigurationDescription unmarshalledObject = new RunConfigurationDescription();
+            FlinkRunConfiguration unmarshalledObject = new FlinkRunConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ApplicationRestoreConfigurationDescription", targetDepth))
+                if (context.TestExpression("AllowNonRestoredState", targetDepth))
                 {
-                    var unmarshaller = ApplicationRestoreConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationRestoreConfigurationDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FlinkRunConfigurationDescription", targetDepth))
-                {
-                    var unmarshaller = FlinkRunConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.FlinkRunConfigurationDescription = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AllowNonRestoredState = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static RunConfigurationDescriptionUnmarshaller _instance = new RunConfigurationDescriptionUnmarshaller();        
+        private static FlinkRunConfigurationUnmarshaller _instance = new FlinkRunConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RunConfigurationDescriptionUnmarshaller Instance
+        public static FlinkRunConfigurationUnmarshaller Instance
         {
             get
             {
