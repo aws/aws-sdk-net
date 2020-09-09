@@ -1,3 +1,16 @@
+### 3.5.12.0 (2020-09-09 18:11 UTC)
+* Glue (3.5.1.0)
+	* Adding support for partitionIndexes to improve GetPartitions performance.
+* KinesisAnalyticsV2 (3.5.1.0)
+	* Kinesis Data Analytics is adding new AUTOSCALING application status for applications during auto scaling and also adding FlinkRunConfigurationDescription in the ApplicationDetails.
+* RedshiftDataAPIService (3.5.0.0)
+	* The Amazon Redshift Data API is generally available. This release enables querying Amazon Redshift data and listing various database objects.
+* Core 3.5.1.8
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.11.0 (2020-09-08 18:13 UTC)
 * ApiGatewayV2 (3.5.1.0)
 	* You can now secure HTTP APIs using Lambda authorizers and IAM authorizers. These options enable you to make flexible auth decisions using a Lambda function, or using IAM policies, respectively.
