@@ -77,6 +77,11 @@ namespace Amazon.Glue.Model
         IGetMLTransformsPaginator GetMLTransforms(GetMLTransformsRequest request);
 
         /// <summary>
+        /// Paginator for GetPartitionIndexes operation
+        ///</summary>
+        IGetPartitionIndexesPaginator GetPartitionIndexes(GetPartitionIndexesRequest request);
+
+        /// <summary>
         /// Paginator for GetPartitions operation
         ///</summary>
         IGetPartitionsPaginator GetPartitions(GetPartitionsRequest request);

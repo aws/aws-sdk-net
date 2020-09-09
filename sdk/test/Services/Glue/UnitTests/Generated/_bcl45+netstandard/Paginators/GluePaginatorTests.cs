@@ -433,6 +433,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Glue")]
+        public void GetPartitionIndexesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetPartitionIndexesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetPartitionIndexesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetPartitionIndexesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetPartitionIndexes(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetPartitionIndexes(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Glue")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetPartitionIndexesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetPartitionIndexesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetPartitionIndexesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetPartitionIndexes(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetPartitionIndexes(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Glue")]
         public void GetPartitionsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<GetPartitionsRequest>();

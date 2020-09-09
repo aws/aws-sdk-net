@@ -29,21 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateTable operation.
-    /// Creates a new table definition in the Data Catalog.
+    /// Container for the parameters to the GetPartitionIndexes operation.
+    /// Retrieves the partition indexes associated with a table.
     /// </summary>
-    public partial class CreateTableRequest : AmazonGlueRequest
+    public partial class GetPartitionIndexesRequest : AmazonGlueRequest
     {
         private string _catalogId;
         private string _databaseName;
-        private List<PartitionIndex> _partitionIndexes = new List<PartitionIndex>();
-        private TableInput _tableInput;
+        private string _nextToken;
+        private string _tableName;
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
         /// <para>
-        /// The ID of the Data Catalog in which to create the <code>Table</code>. If none is supplied,
-        /// the AWS account ID is used by default.
+        /// The catalog ID where the table resides.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -62,8 +61,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The catalog database in which to create the new table. For Hive compatibility, this
-        /// name is entirely lowercase.
+        /// Specifies the name of a database from which you want to retrieve partition indexes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -80,43 +78,40 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PartitionIndexes. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// A list of partition indexes, <code>PartitionIndex</code> structures, to create in
-        /// the table.
+        /// A continuation token, included if this is a continuation call.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=3)]
-        public List<PartitionIndex> PartitionIndexes
+        public string NextToken
         {
-            get { return this._partitionIndexes; }
-            set { this._partitionIndexes = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if PartitionIndexes property is set
-        internal bool IsSetPartitionIndexes()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._partitionIndexes != null && this._partitionIndexes.Count > 0; 
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TableInput. 
+        /// Gets and sets the property TableName. 
         /// <para>
-        /// The <code>TableInput</code> object that defines the metadata table to create in the
-        /// catalog.
+        /// Specifies the name of a table for which you want to retrieve the partition indexes.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public TableInput TableInput
+        [AWSProperty(Required=true, Min=1, Max=255)]
+        public string TableName
         {
-            get { return this._tableInput; }
-            set { this._tableInput = value; }
+            get { return this._tableName; }
+            set { this._tableName = value; }
         }
 
-        // Check to see if TableInput property is set
-        internal bool IsSetTableInput()
+        // Check to see if TableName property is set
+        internal bool IsSetTableName()
         {
-            return this._tableInput != null;
+            return this._tableName != null;
         }
 
     }

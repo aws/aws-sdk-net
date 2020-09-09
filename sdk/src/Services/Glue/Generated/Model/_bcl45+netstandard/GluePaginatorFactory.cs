@@ -117,6 +117,14 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Paginator for GetPartitionIndexes operation
+        ///</summary>
+        public IGetPartitionIndexesPaginator GetPartitionIndexes(GetPartitionIndexesRequest request) 
+        {
+            return new GetPartitionIndexesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetPartitions operation
         ///</summary>
         public IGetPartitionsPaginator GetPartitions(GetPartitionsRequest request) 

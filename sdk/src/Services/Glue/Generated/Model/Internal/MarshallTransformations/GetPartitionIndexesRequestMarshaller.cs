@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateTable Request Marshaller
+    /// GetPartitionIndexes Request Marshaller
     /// </summary>       
-    public class CreateTableRequestMarshaller : IMarshaller<IRequest, CreateTableRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetPartitionIndexesRequestMarshaller : IMarshaller<IRequest, GetPartitionIndexesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateTableRequest)input);
+            return this.Marshall((GetPartitionIndexesRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateTableRequest publicRequest)
+        public IRequest Marshall(GetPartitionIndexesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glue");
-            string target = "AWSGlue.CreateTable";
+            string target = "AWSGlue.GetPartitionIndexes";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";            
@@ -80,31 +80,16 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DatabaseName);
                 }
 
-                if(publicRequest.IsSetPartitionIndexes())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("PartitionIndexes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPartitionIndexesListValue in publicRequest.PartitionIndexes)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PartitionIndexMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPartitionIndexesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetTableInput())
+                if(publicRequest.IsSetTableName())
                 {
-                    context.Writer.WritePropertyName("TableInput");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TableInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TableInput, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("TableName");
+                    context.Writer.Write(publicRequest.TableName);
                 }
 
         
@@ -116,9 +101,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateTableRequestMarshaller _instance = new CreateTableRequestMarshaller();        
+        private static GetPartitionIndexesRequestMarshaller _instance = new GetPartitionIndexesRequestMarshaller();        
 
-        internal static CreateTableRequestMarshaller GetInstance()
+        internal static GetPartitionIndexesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -126,7 +111,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateTableRequestMarshaller Instance
+        public static GetPartitionIndexesRequestMarshaller Instance
         {
             get
             {
