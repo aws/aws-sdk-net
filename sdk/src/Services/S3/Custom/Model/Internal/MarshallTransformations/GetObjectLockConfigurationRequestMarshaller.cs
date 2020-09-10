@@ -29,6 +29,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
+using Amazon.S3.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -56,6 +57,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "AmazonS3");
             request.HttpMethod = "GET";
+
+            if (publicRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(publicRequest.ExpectedBucketOwner));
+
             string uriResourcePath = "/{Bucket}";
             request.AddSubResource("object-lock");
             if (!publicRequest.IsSetBucketName())

@@ -122,6 +122,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (copyObjectRequest.IsSetRequestPayer())
                 request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(copyObjectRequest.RequestPayer.ToString()));
 
+            if (copyObjectRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(copyObjectRequest.ExpectedBucketOwner));
+
+            if (copyObjectRequest.IsSetExpectedSourceBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedSourceBucketOwner, S3Transforms.ToStringValue(copyObjectRequest.ExpectedSourceBucketOwner));
+
             AmazonS3Util.SetMetadataHeaders(request, copyObjectRequest.Metadata);
 
             if (string.IsNullOrEmpty(copyObjectRequest.DestinationBucket))

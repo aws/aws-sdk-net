@@ -46,6 +46,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (putObjectAclRequest.IsSetCannedACL())
                 request.Headers.Add(HeaderKeys.XAmzAclHeader, S3Transforms.ToStringValue(putObjectAclRequest.CannedACL));
 
+            if (putObjectAclRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putObjectAclRequest.ExpectedBucketOwner));
+
             if (string.IsNullOrEmpty(putObjectAclRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutACLRequest.BucketName");
             //Not checking if Key is null or empty because PutAcl allows to put an ACL for both a Bucket or an Object. TODO: deprecate PutAcl and create two separate operations

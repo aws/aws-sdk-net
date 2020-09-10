@@ -50,6 +50,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add(HeaderKeys.XAmzMfaHeader, deleteObjectsRequest.MfaCodes.FormattedMfaCodes);
             if (deleteObjectsRequest.IsSetRequestPayer())
                 request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(deleteObjectsRequest.RequestPayer.ToString()));
+            if (deleteObjectsRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(deleteObjectsRequest.ExpectedBucketOwner));
 
             if (string.IsNullOrEmpty(deleteObjectsRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteObjectsRequest.BucketName");

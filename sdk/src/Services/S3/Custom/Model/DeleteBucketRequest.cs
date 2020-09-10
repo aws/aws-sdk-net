@@ -33,6 +33,7 @@ namespace Amazon.S3.Model
         private string bucketName;
         private S3Region bucketRegion;
         private bool useClientRegion = true;
+        private string expectedBucketOwner;
 
         /// <summary>
         /// The name of the bucket to be created.
@@ -81,6 +82,25 @@ namespace Amazon.S3.Model
             {
                 this.useClientRegion = value;
             }
+        }
+
+        /// <summary>
+        /// The account id of the expected bucket owner. 
+        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
     }
 }

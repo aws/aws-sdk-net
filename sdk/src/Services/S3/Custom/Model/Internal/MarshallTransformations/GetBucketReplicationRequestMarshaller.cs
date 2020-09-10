@@ -15,6 +15,7 @@
 
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.S3.Util;
 
 #pragma warning disable 1591
 
@@ -33,6 +34,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.Suppress404Exceptions = true;
             request.HttpMethod = "GET";
+
+            if (getBucketReplicationConfigurationRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(getBucketReplicationConfigurationRequest.ExpectedBucketOwner));
 
             if (string.IsNullOrEmpty(getBucketReplicationConfigurationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetBucketReplicationRequest.BucketName");

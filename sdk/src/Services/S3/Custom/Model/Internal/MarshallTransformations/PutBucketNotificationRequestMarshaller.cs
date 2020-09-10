@@ -42,6 +42,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
+            if (putBucketNotificationRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putBucketNotificationRequest.ExpectedBucketOwner));
+
             if (string.IsNullOrEmpty(putBucketNotificationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketNotificationRequest.BucketName");
 

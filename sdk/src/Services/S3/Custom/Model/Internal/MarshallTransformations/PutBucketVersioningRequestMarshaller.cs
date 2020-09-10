@@ -45,6 +45,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (putBucketVersioningRequest.IsSetMfaCodes())
                 request.Headers.Add(HeaderKeys.XAmzMfaHeader, putBucketVersioningRequest.MfaCodes.FormattedMfaCodes);
 
+            if (putBucketVersioningRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putBucketVersioningRequest.ExpectedBucketOwner));
+
             if (string.IsNullOrEmpty(putBucketVersioningRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketVersioningRequest.BucketName");
 

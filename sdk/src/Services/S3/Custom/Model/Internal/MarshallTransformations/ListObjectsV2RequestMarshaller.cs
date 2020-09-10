@@ -38,6 +38,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (listObjectsRequest.IsSetRequestPayer())
                 request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(listObjectsRequest.RequestPayer.ToString()));
 
+            if (listObjectsRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(listObjectsRequest.ExpectedBucketOwner));
+
             request.HttpMethod = "GET";
 
             if (string.IsNullOrEmpty(listObjectsRequest.BucketName))

@@ -15,6 +15,7 @@
 
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.S3.Util;
 using System.Globalization;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
@@ -40,6 +41,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(getObjectTaggingRequest, "AmazonS3");
 
             request.HttpMethod = "GET";
+
+            if (getObjectTaggingRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(getObjectTaggingRequest.ExpectedBucketOwner));
 
             request.UseQueryString = true;
 

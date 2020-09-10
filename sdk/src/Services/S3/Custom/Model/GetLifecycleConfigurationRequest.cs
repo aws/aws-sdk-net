@@ -30,6 +30,7 @@ namespace Amazon.S3.Model
     public partial class GetLifecycleConfigurationRequest : AmazonWebServiceRequest
     {
         private string bucketName;
+        private string expectedBucketOwner;
 
 
         /// <summary>
@@ -45,6 +46,25 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
+        }
+
+        /// <summary>
+        /// The account id of the expected bucket owner. 
+        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
     }
 }

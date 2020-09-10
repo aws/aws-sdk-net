@@ -74,6 +74,8 @@ namespace Amazon.S3.Util
             PostFormDataSecurityToken = "x-amz-security-token";
 
         internal static string
+            AmzHeaderExpectedBucketOwner = "x-amz-expected-bucket-owner",
+            AmzHeaderExpectedSourceBucketOwner = "x-amz-source-expected-bucket-owner",
             AmzHeaderMultipartPartsCount    = "x-amz-mp-parts-count",
             AmzHeaderRequestPayer           = "x-amz-request-payer",
             AmzHeaderRequestCharged         = "x-amz-request-charged",

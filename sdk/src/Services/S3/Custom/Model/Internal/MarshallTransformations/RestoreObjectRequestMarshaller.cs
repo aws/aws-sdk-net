@@ -46,6 +46,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (restoreObjectRequest.IsSetRequestPayer())
                 request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(restoreObjectRequest.RequestPayer.ToString()));
 
+            if (restoreObjectRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(restoreObjectRequest.ExpectedBucketOwner));
+
             if (string.IsNullOrEmpty(restoreObjectRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "RestoreObjectRequest.BucketName");
             if (string.IsNullOrEmpty(restoreObjectRequest.Key))

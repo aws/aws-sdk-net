@@ -40,6 +40,7 @@ namespace Amazon.S3.Model
         private RequestPayer _requestPayer;
         private ObjectLockRetention _retention;
         private string _versionId;
+        private string expectedBucketOwner;
 
         /// <summary>
         /// <para>The bucket name that contains the object you want to apply this Object Retention configuration to.</para>
@@ -170,6 +171,25 @@ namespace Amazon.S3.Model
         internal bool IsSetVersionId()
         {
             return !string.IsNullOrEmpty(this._versionId);
+        }
+
+        /// <summary>
+        /// The account id of the expected bucket owner. 
+        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
 
     }

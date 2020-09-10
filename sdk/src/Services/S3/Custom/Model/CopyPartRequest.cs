@@ -42,6 +42,8 @@ namespace Amazon.S3.Model
         private int? partNumber;
         private long? firstByte;
         private long? lastByte;
+        private string expectedBucketOwner;
+        private string expectedSourceBucketOwner;
 
         [Obsolete("Use ServerSideEncryptionMethod in InitiateMultipartUploadRequest instead.")]
         private ServerSideEncryptionMethod serverSideEncryption;
@@ -529,6 +531,44 @@ namespace Amazon.S3.Model
         internal bool IsSetCopySourceServerSideEncryptionCustomerProvidedKeyMD5()
         {
             return !System.String.IsNullOrEmpty(this.copySourceServerSideEncryptionCustomerProvidedKeyMD5);
+        }
+
+        /// <summary>
+        /// The account id of the expected destination bucket owner. 
+        /// If the destination bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+        }
+
+        /// <summary>
+        /// The account id of the expected source bucket owner. 
+        /// If the source bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// </summary>
+        public string ExpectedSourceBucketOwner
+        {
+            get { return this.expectedSourceBucketOwner; }
+            set { this.expectedSourceBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedSourceBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedSourceBucketOwner property is set.</returns>
+        internal bool IsSetExpectedSourceBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedSourceBucketOwner);
         }
     }
 }

@@ -44,7 +44,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add("x-amz-bypass-governance-retention", S3Transforms.ToStringValue(deleteObjectRequest.BypassGovernanceRetention));
             if (deleteObjectRequest.IsSetMfaCodes())
                 request.Headers.Add(HeaderKeys.XAmzMfaHeader, deleteObjectRequest.MfaCodes.FormattedMfaCodes);
-							
+
+            if (deleteObjectRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(deleteObjectRequest.ExpectedBucketOwner));
+
             if (string.IsNullOrEmpty(deleteObjectRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteObjectRequest.BucketName");
             if (string.IsNullOrEmpty(deleteObjectRequest.Key))

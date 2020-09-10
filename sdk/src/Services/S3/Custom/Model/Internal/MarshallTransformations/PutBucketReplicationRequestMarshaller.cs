@@ -53,6 +53,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (putBucketreplicationRequest.IsSetToken())
                 request.Headers.Add("x-amz-bucket-object-lock-token", putBucketreplicationRequest.Token);
 
+            if (putBucketreplicationRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putBucketreplicationRequest.ExpectedBucketOwner));
+
             var stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true }))
             {

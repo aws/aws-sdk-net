@@ -41,6 +41,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (abortMultipartUploadRequest.IsSetRequestPayer())
                 request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(abortMultipartUploadRequest.RequestPayer.ToString()));
 
+            if (abortMultipartUploadRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(abortMultipartUploadRequest.ExpectedBucketOwner));
+
             if (string.IsNullOrEmpty(abortMultipartUploadRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "AbortMultipartUploadRequest.BucketName");
             if (string.IsNullOrEmpty(abortMultipartUploadRequest.Key))

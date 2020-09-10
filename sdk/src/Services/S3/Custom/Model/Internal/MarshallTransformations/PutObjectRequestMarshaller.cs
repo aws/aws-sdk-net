@@ -96,6 +96,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (putObjectRequest.IsSetTagSet())
                 request.Headers.Add(S3Constants.AmzHeaderTagging, AmazonS3Util.TagSetToQueryString(putObjectRequest.TagSet));
 
+            if (putObjectRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putObjectRequest.ExpectedBucketOwner));
+
             AmazonS3Util.SetMetadataHeaders(request, putObjectRequest.Metadata);
 
             if (string.IsNullOrEmpty(putObjectRequest.BucketName))

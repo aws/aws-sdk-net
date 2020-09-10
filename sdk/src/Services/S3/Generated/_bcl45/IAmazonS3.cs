@@ -56,8 +56,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// To verify that all parts have been removed, so you don't get charged for the part
-        /// storage, you should call the <a>ListParts</a> operation and ensure that the parts
-        /// list is empty.
+        /// storage, you should call the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// operation and ensure that the parts list is empty.
         /// </para>
         ///  
         /// <para>
@@ -71,23 +71,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -110,8 +115,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// To verify that all parts have been removed, so you don't get charged for the part
-        /// storage, you should call the <a>ListParts</a> operation and ensure that the parts
-        /// list is empty.
+        /// storage, you should call the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// operation and ensure that the parts list is empty.
         /// </para>
         ///  
         /// <para>
@@ -125,23 +130,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -163,8 +173,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// To verify that all parts have been removed, so you don't get charged for the part
-        /// storage, you should call the <a>ListParts</a> operation and ensure that the parts
-        /// list is empty.
+        /// storage, you should call the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// operation and ensure that the parts list is empty.
         /// </para>
         ///  
         /// <para>
@@ -178,23 +188,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -221,8 +236,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// To verify that all parts have been removed, so you don't get charged for the part
-        /// storage, you should call the <a>ListParts</a> operation and ensure that the parts
-        /// list is empty.
+        /// storage, you should call the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// operation and ensure that the parts list is empty.
         /// </para>
         ///  
         /// <para>
@@ -236,23 +251,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -275,7 +295,7 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// You first initiate the multipart upload and then upload all parts using the <a>UploadPart</a>
+        /// You first initiate the multipart upload and then upload all parts using the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
         /// operation. After successfully uploading all relevant parts of an upload, you call
         /// this operation to complete the upload. Upon receiving this request, Amazon S3 concatenates
         /// all the parts in ascending order by part number to create a new object. In the Complete
@@ -373,23 +393,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -406,7 +431,7 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// You first initiate the multipart upload and then upload all parts using the <a>UploadPart</a>
+        /// You first initiate the multipart upload and then upload all parts using the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
         /// operation. After successfully uploading all relevant parts of an upload, you call
         /// this operation to complete the upload. Upon receiving this request, Amazon S3 concatenates
         /// all the parts in ascending order by part number to create a new object. In the Complete
@@ -504,23 +529,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -744,7 +774,7 @@ namespace Amazon.S3
         /// <para>
         /// If the source object's storage class is GLACIER, you must restore a copy of this object
         /// before you can use it as a source object for the copy operation. For more information,
-        /// see .
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// </para>
         ///  
         /// <para>
@@ -752,11 +782,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -979,7 +1011,7 @@ namespace Amazon.S3
         /// <para>
         /// If the source object's storage class is GLACIER, you must restore a copy of this object
         /// before you can use it as a source object for the copy operation. For more information,
-        /// see .
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// </para>
         ///  
         /// <para>
@@ -987,11 +1019,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1215,7 +1249,7 @@ namespace Amazon.S3
         /// <para>
         /// If the source object's storage class is GLACIER, you must restore a copy of this object
         /// before you can use it as a source object for the copy operation. For more information,
-        /// see .
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// </para>
         ///  
         /// <para>
@@ -1223,11 +1257,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1448,7 +1484,7 @@ namespace Amazon.S3
         /// <para>
         /// If the source object's storage class is GLACIER, you must restore a copy of this object
         /// before you can use it as a source object for the copy operation. For more information,
-        /// see .
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// </para>
         ///  
         /// <para>
@@ -1456,11 +1492,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1686,7 +1724,7 @@ namespace Amazon.S3
         /// <para>
         /// If the source object's storage class is GLACIER, you must restore a copy of this object
         /// before you can use it as a source object for the copy operation. For more information,
-        /// see .
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// </para>
         ///  
         /// <para>
@@ -1694,11 +1732,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1926,7 +1966,7 @@ namespace Amazon.S3
         /// <para>
         /// If the source object's storage class is GLACIER, you must restore a copy of this object
         /// before you can use it as a source object for the copy operation. For more information,
-        /// see .
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// </para>
         ///  
         /// <para>
@@ -1934,11 +1974,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1974,7 +2016,7 @@ namespace Amazon.S3
         /// </para>
         ///  <note> 
         /// <para>
-        /// Instead of using an existing object as part data, you might use the <a>UploadPart</a>
+        /// Instead of using an existing object as part data, you might use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
         /// operation and provide data in your request.
         /// </para>
         ///  </note> 
@@ -2009,7 +2051,8 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         /// For information about using server-side encryption with customer-provided encryption
-        /// keys with the UploadPartCopy operation, see <a>CopyObject</a> and <a>UploadPart</a>.
+        /// keys with the UploadPartCopy operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2119,27 +2162,33 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2167,7 +2216,7 @@ namespace Amazon.S3
         /// </para>
         ///  <note> 
         /// <para>
-        /// Instead of using an existing object as part data, you might use the <a>UploadPart</a>
+        /// Instead of using an existing object as part data, you might use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
         /// operation and provide data in your request.
         /// </para>
         ///  </note> 
@@ -2202,7 +2251,8 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         /// For information about using server-side encryption with customer-provided encryption
-        /// keys with the UploadPartCopy operation, see <a>CopyObject</a> and <a>UploadPart</a>.
+        /// keys with the UploadPartCopy operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2312,27 +2362,33 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2361,7 +2417,7 @@ namespace Amazon.S3
         /// </para>
         ///  <note> 
         /// <para>
-        /// Instead of using an existing object as part data, you might use the <a>UploadPart</a>
+        /// Instead of using an existing object as part data, you might use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
         /// operation and provide data in your request.
         /// </para>
         ///  </note> 
@@ -2396,7 +2452,8 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         /// For information about using server-side encryption with customer-provided encryption
-        /// keys with the UploadPartCopy operation, see <a>CopyObject</a> and <a>UploadPart</a>.
+        /// keys with the UploadPartCopy operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2506,27 +2563,33 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2551,7 +2614,7 @@ namespace Amazon.S3
         /// </para>
         ///  <note> 
         /// <para>
-        /// Instead of using an existing object as part data, you might use the <a>UploadPart</a>
+        /// Instead of using an existing object as part data, you might use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
         /// operation and provide data in your request.
         /// </para>
         ///  </note> 
@@ -2586,7 +2649,8 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         /// For information about using server-side encryption with customer-provided encryption
-        /// keys with the UploadPartCopy operation, see <a>CopyObject</a> and <a>UploadPart</a>.
+        /// keys with the UploadPartCopy operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2696,27 +2760,33 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2747,7 +2817,7 @@ namespace Amazon.S3
         /// </para>
         ///  <note> 
         /// <para>
-        /// Instead of using an existing object as part data, you might use the <a>UploadPart</a>
+        /// Instead of using an existing object as part data, you might use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
         /// operation and provide data in your request.
         /// </para>
         ///  </note> 
@@ -2782,7 +2852,8 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         /// For information about using server-side encryption with customer-provided encryption
-        /// keys with the UploadPartCopy operation, see <a>CopyObject</a> and <a>UploadPart</a>.
+        /// keys with the UploadPartCopy operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2892,27 +2963,33 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2945,7 +3022,7 @@ namespace Amazon.S3
         /// </para>
         ///  <note> 
         /// <para>
-        /// Instead of using an existing object as part data, you might use the <a>UploadPart</a>
+        /// Instead of using an existing object as part data, you might use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
         /// operation and provide data in your request.
         /// </para>
         ///  </note> 
@@ -2980,7 +3057,8 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         /// For information about using server-side encryption with customer-provided encryption
-        /// keys with the UploadPartCopy operation, see <a>CopyObject</a> and <a>UploadPart</a>.
+        /// keys with the UploadPartCopy operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -3090,27 +3168,33 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3136,11 +3220,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3158,11 +3244,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3181,11 +3269,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3207,11 +3297,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3252,15 +3344,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAnalyticsConfiguration.html">GetBucketAnalyticsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketAnalyticsConfigurations.html">ListBucketAnalyticsConfigurations</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html">PutBucketAnalyticsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3295,15 +3390,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAnalyticsConfiguration.html">GetBucketAnalyticsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketAnalyticsConfigurations.html">ListBucketAnalyticsConfigurations</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html">PutBucketAnalyticsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3340,11 +3438,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketEncryption</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html">PutBucketEncryption</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketEncryption</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html">GetBucketEncryption</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3375,11 +3475,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketEncryption</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html">PutBucketEncryption</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketEncryption</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html">GetBucketEncryption</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3419,15 +3521,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketInventoryConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketInventoryConfiguration.html">GetBucketInventoryConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketInventoryConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html">PutBucketInventoryConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListBucketInventoryConfigurations</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketInventoryConfigurations.html">ListBucketInventoryConfigurations</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3461,15 +3566,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketInventoryConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketInventoryConfiguration.html">GetBucketInventoryConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketInventoryConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html">PutBucketInventoryConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListBucketInventoryConfigurations</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketInventoryConfigurations.html">ListBucketInventoryConfigurations</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3511,15 +3619,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketMetricsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetricsConfiguration.html">GetBucketMetricsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketMetricsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html">PutBucketMetricsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListBucketMetricsConfigurations</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketMetricsConfigurations.html">ListBucketMetricsConfigurations</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3560,15 +3671,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketMetricsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetricsConfiguration.html">GetBucketMetricsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketMetricsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html">PutBucketMetricsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListBucketMetricsConfigurations</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketMetricsConfigurations.html">ListBucketMetricsConfigurations</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3622,11 +3736,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3667,11 +3783,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3713,11 +3831,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3762,11 +3882,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3810,11 +3932,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketReplication</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html">PutBucketReplication</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketReplication</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html">GetBucketReplication</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3852,11 +3976,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketReplication</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html">PutBucketReplication</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketReplication</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html">GetBucketReplication</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3889,11 +4015,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3918,11 +4046,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3948,11 +4078,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3981,11 +4113,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4029,11 +4163,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketWebsite</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketWebsite.html">GetBucketWebsite</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketWebsite</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4069,11 +4205,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketWebsite</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketWebsite.html">GetBucketWebsite</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketWebsite</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4110,11 +4248,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketWebsite</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketWebsite.html">GetBucketWebsite</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketWebsite</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4154,11 +4294,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketWebsite</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketWebsite.html">GetBucketWebsite</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketWebsite</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4195,11 +4337,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html">PutBucketCors</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>RESTOPTIONSobject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4228,11 +4372,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html">PutBucketCors</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>RESTOPTIONSobject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4262,11 +4408,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html">PutBucketCors</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>RESTOPTIONSobject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4299,11 +4447,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html">PutBucketCors</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>RESTOPTIONSobject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4349,11 +4499,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4391,11 +4543,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4434,11 +4588,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4480,11 +4636,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4530,10 +4688,11 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// You can delete objects by explicitly calling the DELETE Object API or configure its
-        /// lifecycle (<a>PutBucketLifecycle</a>) to enable Amazon S3 to remove them for you.
-        /// If you want to block users or accounts from removing or deleting objects from your
-        /// bucket, you must deny them the <code>s3:DeleteObject</code>, <code>s3:DeleteObjectVersion</code>,
-        /// and <code>s3:PutLifeCycleConfiguration</code> actions. 
+        /// lifecycle (<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>)
+        /// to enable Amazon S3 to remove them for you. If you want to block users or accounts
+        /// from removing or deleting objects from your bucket, you must deny them the <code>s3:DeleteObject</code>,
+        /// <code>s3:DeleteObjectVersion</code>, and <code>s3:PutLifeCycleConfiguration</code>
+        /// actions. 
         /// </para>
         ///  
         /// <para>
@@ -4541,7 +4700,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4580,10 +4740,11 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// You can delete objects by explicitly calling the DELETE Object API or configure its
-        /// lifecycle (<a>PutBucketLifecycle</a>) to enable Amazon S3 to remove them for you.
-        /// If you want to block users or accounts from removing or deleting objects from your
-        /// bucket, you must deny them the <code>s3:DeleteObject</code>, <code>s3:DeleteObjectVersion</code>,
-        /// and <code>s3:PutLifeCycleConfiguration</code> actions. 
+        /// lifecycle (<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>)
+        /// to enable Amazon S3 to remove them for you. If you want to block users or accounts
+        /// from removing or deleting objects from your bucket, you must deny them the <code>s3:DeleteObject</code>,
+        /// <code>s3:DeleteObjectVersion</code>, and <code>s3:PutLifeCycleConfiguration</code>
+        /// actions. 
         /// </para>
         ///  
         /// <para>
@@ -4591,7 +4752,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4631,10 +4793,11 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// You can delete objects by explicitly calling the DELETE Object API or configure its
-        /// lifecycle (<a>PutBucketLifecycle</a>) to enable Amazon S3 to remove them for you.
-        /// If you want to block users or accounts from removing or deleting objects from your
-        /// bucket, you must deny them the <code>s3:DeleteObject</code>, <code>s3:DeleteObjectVersion</code>,
-        /// and <code>s3:PutLifeCycleConfiguration</code> actions. 
+        /// lifecycle (<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>)
+        /// to enable Amazon S3 to remove them for you. If you want to block users or accounts
+        /// from removing or deleting objects from your bucket, you must deny them the <code>s3:DeleteObject</code>,
+        /// <code>s3:DeleteObjectVersion</code>, and <code>s3:PutLifeCycleConfiguration</code>
+        /// actions. 
         /// </para>
         ///  
         /// <para>
@@ -4642,7 +4805,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4681,10 +4845,11 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// You can delete objects by explicitly calling the DELETE Object API or configure its
-        /// lifecycle (<a>PutBucketLifecycle</a>) to enable Amazon S3 to remove them for you.
-        /// If you want to block users or accounts from removing or deleting objects from your
-        /// bucket, you must deny them the <code>s3:DeleteObject</code>, <code>s3:DeleteObjectVersion</code>,
-        /// and <code>s3:PutLifeCycleConfiguration</code> actions. 
+        /// lifecycle (<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>)
+        /// to enable Amazon S3 to remove them for you. If you want to block users or accounts
+        /// from removing or deleting objects from your bucket, you must deny them the <code>s3:DeleteObject</code>,
+        /// <code>s3:DeleteObjectVersion</code>, and <code>s3:PutLifeCycleConfiguration</code>
+        /// actions. 
         /// </para>
         ///  
         /// <para>
@@ -4692,7 +4857,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4734,10 +4900,11 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// You can delete objects by explicitly calling the DELETE Object API or configure its
-        /// lifecycle (<a>PutBucketLifecycle</a>) to enable Amazon S3 to remove them for you.
-        /// If you want to block users or accounts from removing or deleting objects from your
-        /// bucket, you must deny them the <code>s3:DeleteObject</code>, <code>s3:DeleteObjectVersion</code>,
-        /// and <code>s3:PutLifeCycleConfiguration</code> actions. 
+        /// lifecycle (<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>)
+        /// to enable Amazon S3 to remove them for you. If you want to block users or accounts
+        /// from removing or deleting objects from your bucket, you must deny them the <code>s3:DeleteObject</code>,
+        /// <code>s3:DeleteObjectVersion</code>, and <code>s3:PutLifeCycleConfiguration</code>
+        /// actions. 
         /// </para>
         ///  
         /// <para>
@@ -4745,7 +4912,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4789,10 +4957,11 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// You can delete objects by explicitly calling the DELETE Object API or configure its
-        /// lifecycle (<a>PutBucketLifecycle</a>) to enable Amazon S3 to remove them for you.
-        /// If you want to block users or accounts from removing or deleting objects from your
-        /// bucket, you must deny them the <code>s3:DeleteObject</code>, <code>s3:DeleteObjectVersion</code>,
-        /// and <code>s3:PutLifeCycleConfiguration</code> actions. 
+        /// lifecycle (<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>)
+        /// to enable Amazon S3 to remove them for you. If you want to block users or accounts
+        /// from removing or deleting objects from your bucket, you must deny them the <code>s3:DeleteObject</code>,
+        /// <code>s3:DeleteObjectVersion</code>, and <code>s3:PutLifeCycleConfiguration</code>
+        /// actions. 
         /// </para>
         ///  
         /// <para>
@@ -4800,7 +4969,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4863,23 +5033,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4936,23 +5111,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4992,11 +5172,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObjectTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html">PutObjectTagging</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObjectTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5030,11 +5212,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObjectTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html">PutObjectTagging</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObjectTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5070,15 +5254,18 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetPublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetPublicAccessBlock.html">GetPublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutPublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutPublicAccessBlock.html">PutPublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketPolicyStatus</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicyStatus.html">GetBucketPolicyStatus</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5108,15 +5295,18 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetPublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetPublicAccessBlock.html">GetPublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutPublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutPublicAccessBlock.html">PutPublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketPolicyStatus</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicyStatus.html">GetBucketPolicyStatus</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5145,7 +5335,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5166,7 +5357,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5188,7 +5380,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5213,7 +5406,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5249,8 +5443,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// You set the Transfer Acceleration state of an existing bucket to <code>Enabled</code>
-        /// or <code>Suspended</code> by using the <a>PutBucketAccelerateConfiguration</a> operation.
-        /// 
+        /// or <code>Suspended</code> by using the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html">PutBucketAccelerateConfiguration</a>
+        /// operation. 
         /// </para>
         ///  
         /// <para>
@@ -5267,7 +5461,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketAccelerateConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html">PutBucketAccelerateConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5295,8 +5490,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// You set the Transfer Acceleration state of an existing bucket to <code>Enabled</code>
-        /// or <code>Suspended</code> by using the <a>PutBucketAccelerateConfiguration</a> operation.
-        /// 
+        /// or <code>Suspended</code> by using the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html">PutBucketAccelerateConfiguration</a>
+        /// operation. 
         /// </para>
         ///  
         /// <para>
@@ -5313,7 +5508,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketAccelerateConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html">PutBucketAccelerateConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5342,8 +5538,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// You set the Transfer Acceleration state of an existing bucket to <code>Enabled</code>
-        /// or <code>Suspended</code> by using the <a>PutBucketAccelerateConfiguration</a> operation.
-        /// 
+        /// or <code>Suspended</code> by using the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html">PutBucketAccelerateConfiguration</a>
+        /// operation. 
         /// </para>
         ///  
         /// <para>
@@ -5360,7 +5556,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketAccelerateConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html">PutBucketAccelerateConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5392,8 +5589,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// You set the Transfer Acceleration state of an existing bucket to <code>Enabled</code>
-        /// or <code>Suspended</code> by using the <a>PutBucketAccelerateConfiguration</a> operation.
-        /// 
+        /// or <code>Suspended</code> by using the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html">PutBucketAccelerateConfiguration</a>
+        /// operation. 
         /// </para>
         ///  
         /// <para>
@@ -5410,7 +5607,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketAccelerateConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html">PutBucketAccelerateConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5451,15 +5649,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketAnalyticsConfiguration.html">DeleteBucketAnalyticsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketAnalyticsConfigurations.html">ListBucketAnalyticsConfigurations</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html">PutBucketAnalyticsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5494,15 +5695,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketAnalyticsConfiguration.html">DeleteBucketAnalyticsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketAnalyticsConfigurations.html">ListBucketAnalyticsConfigurations</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html">PutBucketAnalyticsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5539,11 +5743,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketEncryption</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html">PutBucketEncryption</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketEncryption</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html">DeleteBucketEncryption</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5574,11 +5780,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketEncryption</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html">PutBucketEncryption</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketEncryption</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html">DeleteBucketEncryption</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5619,15 +5827,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DeleteBucketInventoryConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketInventoryConfiguration.html">DeleteBucketInventoryConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListBucketInventoryConfigurations</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketInventoryConfigurations.html">ListBucketInventoryConfigurations</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketInventoryConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html">PutBucketInventoryConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5662,15 +5873,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DeleteBucketInventoryConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketInventoryConfiguration.html">DeleteBucketInventoryConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListBucketInventoryConfigurations</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketInventoryConfigurations.html">ListBucketInventoryConfigurations</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketInventoryConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html">PutBucketInventoryConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5691,7 +5905,7 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the Region the bucket resides in. You set the bucket's Region using the <code>LocationConstraint</code>
         /// request parameter in a <code>CreateBucket</code> request. For more information, see
-        /// <a>CreateBucket</a>.
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.
         /// 
         ///  
         /// <para>
@@ -5703,11 +5917,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5720,7 +5936,7 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the Region the bucket resides in. You set the bucket's Region using the <code>LocationConstraint</code>
         /// request parameter in a <code>CreateBucket</code> request. For more information, see
-        /// <a>CreateBucket</a>.
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.
         /// 
         ///  
         /// <para>
@@ -5732,11 +5948,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5750,7 +5968,7 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the Region the bucket resides in. You set the bucket's Region using the <code>LocationConstraint</code>
         /// request parameter in a <code>CreateBucket</code> request. For more information, see
-        /// <a>CreateBucket</a>.
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.
         /// 
         ///  
         /// <para>
@@ -5762,11 +5980,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5783,7 +6003,7 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the Region the bucket resides in. You set the bucket's Region using the <code>LocationConstraint</code>
         /// request parameter in a <code>CreateBucket</code> request. For more information, see
-        /// <a>CreateBucket</a>.
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.
         /// 
         ///  
         /// <para>
@@ -5795,11 +6015,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5827,11 +6049,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketLogging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLogging.html">PutBucketLogging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5851,11 +6075,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketLogging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLogging.html">PutBucketLogging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5876,11 +6102,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketLogging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLogging.html">PutBucketLogging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5904,11 +6132,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketLogging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLogging.html">PutBucketLogging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5949,15 +6179,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketMetricsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html">PutBucketMetricsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketMetricsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetricsConfiguration.html">DeleteBucketMetricsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListBucketMetricsConfigurations</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketMetricsConfigurations.html">ListBucketMetricsConfigurations</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5997,15 +6230,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketMetricsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html">PutBucketMetricsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketMetricsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetricsConfiguration.html">DeleteBucketMetricsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListBucketMetricsConfigurations</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketMetricsConfigurations.html">ListBucketMetricsConfigurations</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6057,7 +6293,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketNotification</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotification.html">PutBucketNotification</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6096,7 +6333,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketNotification</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotification.html">PutBucketNotification</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6136,7 +6374,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketNotification</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotification.html">PutBucketNotification</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6179,7 +6418,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketNotification</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotification.html">PutBucketNotification</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6227,7 +6467,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6267,7 +6508,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6308,7 +6550,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6352,7 +6595,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6392,15 +6636,18 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetPublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetPublicAccessBlock.html">GetPublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutPublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutPublicAccessBlock.html">PutPublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeletePublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeletePublicAccessBlock.html">DeletePublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6434,15 +6681,18 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetPublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetPublicAccessBlock.html">GetPublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutPublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutPublicAccessBlock.html">PutPublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeletePublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeletePublicAccessBlock.html">DeletePublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6499,7 +6749,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListObjects</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6520,7 +6771,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListObjects</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6542,7 +6794,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListObjects</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6567,7 +6820,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListObjects</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6612,11 +6866,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6655,11 +6911,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6696,15 +6954,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6733,15 +6994,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6771,15 +7035,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6812,15 +7079,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6857,11 +7127,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DeleteBucketWebsite</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketWebsite.html">DeleteBucketWebsite</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketWebsite</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6890,11 +7162,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DeleteBucketWebsite</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketWebsite.html">DeleteBucketWebsite</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketWebsite</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6924,11 +7198,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DeleteBucketWebsite</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketWebsite.html">DeleteBucketWebsite</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketWebsite</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6961,11 +7237,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DeleteBucketWebsite</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketWebsite.html">DeleteBucketWebsite</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketWebsite</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -7002,11 +7280,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketCors</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html">PutBucketCors</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketCors</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html">DeleteBucketCors</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -7035,11 +7315,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketCors</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html">PutBucketCors</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketCors</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html">DeleteBucketCors</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -7069,11 +7351,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketCors</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html">PutBucketCors</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketCors</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html">DeleteBucketCors</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -7106,11 +7390,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketCors</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html">PutBucketCors</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketCors</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html">DeleteBucketCors</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -7136,7 +7422,7 @@ namespace Amazon.S3
         /// section describes the latest API. The response describes the new filter element that
         /// you can use to specify a filter to select a subset of objects to which the rule applies.
         /// If you are still using previous version of the lifecycle configuration, it works.
-        /// For the earlier API description, see <a>GetBucketLifecycle</a>.
+        /// For the earlier API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7178,15 +7464,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketLifecycle</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycle</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketLifecycle</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -7204,7 +7493,7 @@ namespace Amazon.S3
         /// section describes the latest API. The response describes the new filter element that
         /// you can use to specify a filter to select a subset of objects to which the rule applies.
         /// If you are still using previous version of the lifecycle configuration, it works.
-        /// For the earlier API description, see <a>GetBucketLifecycle</a>.
+        /// For the earlier API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7246,15 +7535,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketLifecycle</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycle</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketLifecycle</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -7273,7 +7565,7 @@ namespace Amazon.S3
         /// section describes the latest API. The response describes the new filter element that
         /// you can use to specify a filter to select a subset of objects to which the rule applies.
         /// If you are still using previous version of the lifecycle configuration, it works.
-        /// For the earlier API description, see <a>GetBucketLifecycle</a>.
+        /// For the earlier API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7315,15 +7607,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketLifecycle</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycle</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketLifecycle</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -7345,7 +7640,7 @@ namespace Amazon.S3
         /// section describes the latest API. The response describes the new filter element that
         /// you can use to specify a filter to select a subset of objects to which the rule applies.
         /// If you are still using previous version of the lifecycle configuration, it works.
-        /// For the earlier API description, see <a>GetBucketLifecycle</a>.
+        /// For the earlier API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7387,15 +7682,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketLifecycle</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycle</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketLifecycle</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -7440,12 +7738,14 @@ namespace Amazon.S3
         /// <para>
         /// To distribute large files to many people, you can save bandwidth costs by using BitTorrent.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Amazon
-        /// S3 Torrent</a>. For more information about returning the ACL of an object, see <a>GetObjectAcl</a>.
+        /// S3 Torrent</a>. For more information about returning the ACL of an object, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>.
         /// </para>
         ///  
         /// <para>
         /// If the object you are retrieving is stored in the GLACIER or DEEP_ARCHIVE storage
-        /// classes, before you can retrieve the object you must first restore a copy using .
+        /// classes, before you can retrieve the object you must first restore a copy using <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// Otherwise, this operation returns an <code>InvalidObjectStateError</code> error. For
         /// information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
         /// Archived Objects</a>.
@@ -7466,15 +7766,15 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
+        /// x-amz-server-side-encryption-customer-algorithm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
+        /// x-amz-server-side-encryption-customer-key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
+        /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -7485,7 +7785,7 @@ namespace Amazon.S3
         /// <para>
         /// Assuming you have permission to read object tags (permission for the <code>s3:GetObjectVersionTagging</code>
         /// action), the response also returns the <code>x-amz-tagging-count</code> header that
-        /// provides the count of number of tags associated with the object. You can use <a>GetObjectTagging</a>
+        /// provides the count of number of tags associated with the object. You can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
         /// to retrieve the tag set associated with an object.
         /// </para>
         ///  
@@ -7525,7 +7825,8 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about versioning, see <a>PutBucketVersioning</a>. 
+        /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -7606,11 +7907,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListBuckets</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObjectAcl</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -7648,12 +7951,14 @@ namespace Amazon.S3
         /// <para>
         /// To distribute large files to many people, you can save bandwidth costs by using BitTorrent.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Amazon
-        /// S3 Torrent</a>. For more information about returning the ACL of an object, see <a>GetObjectAcl</a>.
+        /// S3 Torrent</a>. For more information about returning the ACL of an object, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>.
         /// </para>
         ///  
         /// <para>
         /// If the object you are retrieving is stored in the GLACIER or DEEP_ARCHIVE storage
-        /// classes, before you can retrieve the object you must first restore a copy using .
+        /// classes, before you can retrieve the object you must first restore a copy using <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// Otherwise, this operation returns an <code>InvalidObjectStateError</code> error. For
         /// information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
         /// Archived Objects</a>.
@@ -7674,15 +7979,15 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
+        /// x-amz-server-side-encryption-customer-algorithm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
+        /// x-amz-server-side-encryption-customer-key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
+        /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -7693,7 +7998,7 @@ namespace Amazon.S3
         /// <para>
         /// Assuming you have permission to read object tags (permission for the <code>s3:GetObjectVersionTagging</code>
         /// action), the response also returns the <code>x-amz-tagging-count</code> header that
-        /// provides the count of number of tags associated with the object. You can use <a>GetObjectTagging</a>
+        /// provides the count of number of tags associated with the object. You can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
         /// to retrieve the tag set associated with an object.
         /// </para>
         ///  
@@ -7733,7 +8038,8 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about versioning, see <a>PutBucketVersioning</a>. 
+        /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -7814,11 +8120,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListBuckets</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObjectAcl</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -7857,12 +8165,14 @@ namespace Amazon.S3
         /// <para>
         /// To distribute large files to many people, you can save bandwidth costs by using BitTorrent.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Amazon
-        /// S3 Torrent</a>. For more information about returning the ACL of an object, see <a>GetObjectAcl</a>.
+        /// S3 Torrent</a>. For more information about returning the ACL of an object, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>.
         /// </para>
         ///  
         /// <para>
         /// If the object you are retrieving is stored in the GLACIER or DEEP_ARCHIVE storage
-        /// classes, before you can retrieve the object you must first restore a copy using .
+        /// classes, before you can retrieve the object you must first restore a copy using <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// Otherwise, this operation returns an <code>InvalidObjectStateError</code> error. For
         /// information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
         /// Archived Objects</a>.
@@ -7883,15 +8193,15 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
+        /// x-amz-server-side-encryption-customer-algorithm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
+        /// x-amz-server-side-encryption-customer-key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
+        /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -7902,7 +8212,7 @@ namespace Amazon.S3
         /// <para>
         /// Assuming you have permission to read object tags (permission for the <code>s3:GetObjectVersionTagging</code>
         /// action), the response also returns the <code>x-amz-tagging-count</code> header that
-        /// provides the count of number of tags associated with the object. You can use <a>GetObjectTagging</a>
+        /// provides the count of number of tags associated with the object. You can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
         /// to retrieve the tag set associated with an object.
         /// </para>
         ///  
@@ -7942,7 +8252,8 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about versioning, see <a>PutBucketVersioning</a>. 
+        /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -8023,11 +8334,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListBuckets</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObjectAcl</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -8065,12 +8378,14 @@ namespace Amazon.S3
         /// <para>
         /// To distribute large files to many people, you can save bandwidth costs by using BitTorrent.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Amazon
-        /// S3 Torrent</a>. For more information about returning the ACL of an object, see <a>GetObjectAcl</a>.
+        /// S3 Torrent</a>. For more information about returning the ACL of an object, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>.
         /// </para>
         ///  
         /// <para>
         /// If the object you are retrieving is stored in the GLACIER or DEEP_ARCHIVE storage
-        /// classes, before you can retrieve the object you must first restore a copy using .
+        /// classes, before you can retrieve the object you must first restore a copy using <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// Otherwise, this operation returns an <code>InvalidObjectStateError</code> error. For
         /// information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
         /// Archived Objects</a>.
@@ -8091,15 +8406,15 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
+        /// x-amz-server-side-encryption-customer-algorithm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
+        /// x-amz-server-side-encryption-customer-key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
+        /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -8110,7 +8425,7 @@ namespace Amazon.S3
         /// <para>
         /// Assuming you have permission to read object tags (permission for the <code>s3:GetObjectVersionTagging</code>
         /// action), the response also returns the <code>x-amz-tagging-count</code> header that
-        /// provides the count of number of tags associated with the object. You can use <a>GetObjectTagging</a>
+        /// provides the count of number of tags associated with the object. You can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
         /// to retrieve the tag set associated with an object.
         /// </para>
         ///  
@@ -8150,7 +8465,8 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about versioning, see <a>PutBucketVersioning</a>. 
+        /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -8231,11 +8547,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListBuckets</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObjectAcl</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -8276,12 +8594,14 @@ namespace Amazon.S3
         /// <para>
         /// To distribute large files to many people, you can save bandwidth costs by using BitTorrent.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Amazon
-        /// S3 Torrent</a>. For more information about returning the ACL of an object, see <a>GetObjectAcl</a>.
+        /// S3 Torrent</a>. For more information about returning the ACL of an object, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>.
         /// </para>
         ///  
         /// <para>
         /// If the object you are retrieving is stored in the GLACIER or DEEP_ARCHIVE storage
-        /// classes, before you can retrieve the object you must first restore a copy using .
+        /// classes, before you can retrieve the object you must first restore a copy using <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// Otherwise, this operation returns an <code>InvalidObjectStateError</code> error. For
         /// information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
         /// Archived Objects</a>.
@@ -8302,15 +8622,15 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
+        /// x-amz-server-side-encryption-customer-algorithm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
+        /// x-amz-server-side-encryption-customer-key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
+        /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -8321,7 +8641,7 @@ namespace Amazon.S3
         /// <para>
         /// Assuming you have permission to read object tags (permission for the <code>s3:GetObjectVersionTagging</code>
         /// action), the response also returns the <code>x-amz-tagging-count</code> header that
-        /// provides the count of number of tags associated with the object. You can use <a>GetObjectTagging</a>
+        /// provides the count of number of tags associated with the object. You can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
         /// to retrieve the tag set associated with an object.
         /// </para>
         ///  
@@ -8361,7 +8681,8 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about versioning, see <a>PutBucketVersioning</a>. 
+        /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -8442,11 +8763,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListBuckets</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObjectAcl</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -8489,12 +8812,14 @@ namespace Amazon.S3
         /// <para>
         /// To distribute large files to many people, you can save bandwidth costs by using BitTorrent.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Amazon
-        /// S3 Torrent</a>. For more information about returning the ACL of an object, see <a>GetObjectAcl</a>.
+        /// S3 Torrent</a>. For more information about returning the ACL of an object, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>.
         /// </para>
         ///  
         /// <para>
         /// If the object you are retrieving is stored in the GLACIER or DEEP_ARCHIVE storage
-        /// classes, before you can retrieve the object you must first restore a copy using .
+        /// classes, before you can retrieve the object you must first restore a copy using <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// Otherwise, this operation returns an <code>InvalidObjectStateError</code> error. For
         /// information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
         /// Archived Objects</a>.
@@ -8515,15 +8840,15 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
+        /// x-amz-server-side-encryption-customer-algorithm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
+        /// x-amz-server-side-encryption-customer-key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
+        /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -8534,7 +8859,7 @@ namespace Amazon.S3
         /// <para>
         /// Assuming you have permission to read object tags (permission for the <code>s3:GetObjectVersionTagging</code>
         /// action), the response also returns the <code>x-amz-tagging-count</code> header that
-        /// provides the count of number of tags associated with the object. You can use <a>GetObjectTagging</a>
+        /// provides the count of number of tags associated with the object. You can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
         /// to retrieve the tag set associated with an object.
         /// </para>
         ///  
@@ -8574,7 +8899,8 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about versioning, see <a>PutBucketVersioning</a>. 
+        /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -8655,11 +8981,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListBuckets</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObjectAcl</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -8760,15 +9088,15 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
+        /// x-amz-server-side-encryption-customer-algorithm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
+        /// x-amz-server-side-encryption-customer-key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
+        /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -8858,7 +9186,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -8888,15 +9217,15 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
+        /// x-amz-server-side-encryption-customer-algorithm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
+        /// x-amz-server-side-encryption-customer-key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
+        /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -8986,7 +9315,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -9017,15 +9347,15 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
+        /// x-amz-server-side-encryption-customer-algorithm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
+        /// x-amz-server-side-encryption-customer-key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
+        /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -9115,7 +9445,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -9145,15 +9476,15 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
+        /// x-amz-server-side-encryption-customer-algorithm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
+        /// x-amz-server-side-encryption-customer-key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
+        /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -9243,7 +9574,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -9276,15 +9608,15 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
+        /// x-amz-server-side-encryption-customer-algorithm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
+        /// x-amz-server-side-encryption-customer-key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
+        /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -9374,7 +9706,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -9409,15 +9742,15 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
+        /// x-amz-server-side-encryption-customer-algorithm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
+        /// x-amz-server-side-encryption-customer-key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
+        /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -9507,7 +9840,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -9583,7 +9917,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObjectTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html">PutObjectTagging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -9623,7 +9958,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObjectTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html">PutObjectTagging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -9661,7 +9997,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -9692,7 +10029,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -9723,7 +10061,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -9758,7 +10097,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -9808,15 +10148,18 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutPublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutPublicAccessBlock.html">PutPublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetPublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetPublicAccessBlock.html">GetPublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeletePublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeletePublicAccessBlock.html">DeletePublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -9860,15 +10203,18 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutPublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutPublicAccessBlock.html">PutPublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetPublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetPublicAccessBlock.html">GetPublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeletePublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeletePublicAccessBlock.html">DeletePublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -9889,7 +10235,7 @@ namespace Amazon.S3
         /// <summary>
         /// This operation initiates a multipart upload and returns an upload ID. This upload
         /// ID is used to associate all of the parts in the specific multipart upload. You specify
-        /// this upload ID in each of your subsequent upload part requests (see <a>UploadPart</a>).
+        /// this upload ID in each of your subsequent upload part requests (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>).
         /// You also include this upload ID in the final request to either complete or abort the
         /// multipart upload request.
         /// 
@@ -9935,9 +10281,9 @@ namespace Amazon.S3
         /// when you access it. You can provide your own encryption key, or use AWS Key Management
         /// Service (AWS KMS) customer master keys (CMKs) or Amazon S3-managed encryption keys.
         /// If you choose to provide your own encryption key, the request headers you provide
-        /// in <a>UploadPart</a>) and <a>UploadPartCopy</a>) requests must match the headers you
-        /// used in the request to initiate the upload by using <code>CreateMultipartUpload</code>.
-        /// 
+        /// in <a href="AmazonS3/latest/API/API_UploadPart.html">UploadPart</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>
+        /// requests must match the headers you used in the request to initiate the upload by
+        /// using <code>CreateMultipartUpload</code>. 
         /// </para>
         ///  
         /// <para>
@@ -10000,7 +10346,7 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption
+        /// x-amz-server-side-encryption
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10034,15 +10380,15 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
+        /// x-amz-server-side-encryption-customer-algorithm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
+        /// x-amz-server-side-encryption-customer-key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
+        /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -10170,23 +10516,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -10200,7 +10551,7 @@ namespace Amazon.S3
         /// <summary>
         /// This operation initiates a multipart upload and returns an upload ID. This upload
         /// ID is used to associate all of the parts in the specific multipart upload. You specify
-        /// this upload ID in each of your subsequent upload part requests (see <a>UploadPart</a>).
+        /// this upload ID in each of your subsequent upload part requests (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>).
         /// You also include this upload ID in the final request to either complete or abort the
         /// multipart upload request.
         /// 
@@ -10246,9 +10597,9 @@ namespace Amazon.S3
         /// when you access it. You can provide your own encryption key, or use AWS Key Management
         /// Service (AWS KMS) customer master keys (CMKs) or Amazon S3-managed encryption keys.
         /// If you choose to provide your own encryption key, the request headers you provide
-        /// in <a>UploadPart</a>) and <a>UploadPartCopy</a>) requests must match the headers you
-        /// used in the request to initiate the upload by using <code>CreateMultipartUpload</code>.
-        /// 
+        /// in <a href="AmazonS3/latest/API/API_UploadPart.html">UploadPart</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>
+        /// requests must match the headers you used in the request to initiate the upload by
+        /// using <code>CreateMultipartUpload</code>. 
         /// </para>
         ///  
         /// <para>
@@ -10311,7 +10662,7 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption
+        /// x-amz-server-side-encryption
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10345,15 +10696,15 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
+        /// x-amz-server-side-encryption-customer-algorithm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
+        /// x-amz-server-side-encryption-customer-key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
+        /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -10481,23 +10832,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -10511,7 +10867,7 @@ namespace Amazon.S3
         /// <summary>
         /// This operation initiates a multipart upload and returns an upload ID. This upload
         /// ID is used to associate all of the parts in the specific multipart upload. You specify
-        /// this upload ID in each of your subsequent upload part requests (see <a>UploadPart</a>).
+        /// this upload ID in each of your subsequent upload part requests (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>).
         /// You also include this upload ID in the final request to either complete or abort the
         /// multipart upload request.
         /// 
@@ -10557,9 +10913,9 @@ namespace Amazon.S3
         /// when you access it. You can provide your own encryption key, or use AWS Key Management
         /// Service (AWS KMS) customer master keys (CMKs) or Amazon S3-managed encryption keys.
         /// If you choose to provide your own encryption key, the request headers you provide
-        /// in <a>UploadPart</a>) and <a>UploadPartCopy</a>) requests must match the headers you
-        /// used in the request to initiate the upload by using <code>CreateMultipartUpload</code>.
-        /// 
+        /// in <a href="AmazonS3/latest/API/API_UploadPart.html">UploadPart</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>
+        /// requests must match the headers you used in the request to initiate the upload by
+        /// using <code>CreateMultipartUpload</code>. 
         /// </para>
         ///  
         /// <para>
@@ -10622,7 +10978,7 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption
+        /// x-amz-server-side-encryption
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10656,15 +11012,15 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
+        /// x-amz-server-side-encryption-customer-algorithm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
+        /// x-amz-server-side-encryption-customer-key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
+        /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -10792,23 +11148,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -10826,7 +11187,7 @@ namespace Amazon.S3
         /// <summary>
         /// This operation initiates a multipart upload and returns an upload ID. This upload
         /// ID is used to associate all of the parts in the specific multipart upload. You specify
-        /// this upload ID in each of your subsequent upload part requests (see <a>UploadPart</a>).
+        /// this upload ID in each of your subsequent upload part requests (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>).
         /// You also include this upload ID in the final request to either complete or abort the
         /// multipart upload request.
         /// 
@@ -10872,9 +11233,9 @@ namespace Amazon.S3
         /// when you access it. You can provide your own encryption key, or use AWS Key Management
         /// Service (AWS KMS) customer master keys (CMKs) or Amazon S3-managed encryption keys.
         /// If you choose to provide your own encryption key, the request headers you provide
-        /// in <a>UploadPart</a>) and <a>UploadPartCopy</a>) requests must match the headers you
-        /// used in the request to initiate the upload by using <code>CreateMultipartUpload</code>.
-        /// 
+        /// in <a href="AmazonS3/latest/API/API_UploadPart.html">UploadPart</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>
+        /// requests must match the headers you used in the request to initiate the upload by
+        /// using <code>CreateMultipartUpload</code>. 
         /// </para>
         ///  
         /// <para>
@@ -10937,7 +11298,7 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption
+        /// x-amz-server-side-encryption
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10971,15 +11332,15 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
+        /// x-amz-server-side-encryption-customer-algorithm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
+        /// x-amz-server-side-encryption-customer-key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
+        /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -11107,23 +11468,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -11174,15 +11540,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketAnalyticsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAnalyticsConfiguration.html">GetBucketAnalyticsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketAnalyticsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketAnalyticsConfiguration.html">DeleteBucketAnalyticsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketAnalyticsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html">PutBucketAnalyticsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -11227,15 +11596,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketAnalyticsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAnalyticsConfiguration.html">GetBucketAnalyticsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketAnalyticsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketAnalyticsConfiguration.html">DeleteBucketAnalyticsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketAnalyticsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html">PutBucketAnalyticsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -11286,15 +11658,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketInventoryConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketInventoryConfiguration.html">GetBucketInventoryConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketInventoryConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketInventoryConfiguration.html">DeleteBucketInventoryConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketInventoryConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html">PutBucketInventoryConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -11339,15 +11714,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketInventoryConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketInventoryConfiguration.html">GetBucketInventoryConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketInventoryConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketInventoryConfiguration.html">DeleteBucketInventoryConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketInventoryConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html">PutBucketInventoryConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -11400,15 +11778,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketMetricsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html">PutBucketMetricsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketMetricsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetricsConfiguration.html">GetBucketMetricsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketMetricsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetricsConfiguration.html">DeleteBucketMetricsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -11455,15 +11836,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketMetricsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html">PutBucketMetricsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketMetricsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetricsConfiguration.html">GetBucketMetricsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketMetricsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetricsConfiguration.html">DeleteBucketMetricsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -11568,23 +11952,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -11632,23 +12021,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -11697,23 +12091,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -11762,23 +12161,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -11829,23 +12233,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -11898,23 +12307,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -11940,7 +12354,7 @@ namespace Amazon.S3
         /// 
         ///  <important> 
         /// <para>
-        /// This API has been revised. We recommend that you use the newer version, <a>ListObjectsV2</a>,
+        /// This API has been revised. We recommend that you use the newer version, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>,
         /// when developing applications. For backward compatibility, Amazon S3 continues to support
         /// <code>ListObjects</code>.
         /// </para>
@@ -11950,23 +12364,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListObjectsV2</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListBuckets</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -11984,7 +12403,7 @@ namespace Amazon.S3
         /// 
         ///  <important> 
         /// <para>
-        /// This API has been revised. We recommend that you use the newer version, <a>ListObjectsV2</a>,
+        /// This API has been revised. We recommend that you use the newer version, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>,
         /// when developing applications. For backward compatibility, Amazon S3 continues to support
         /// <code>ListObjects</code>.
         /// </para>
@@ -11994,23 +12413,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListObjectsV2</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListBuckets</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12029,7 +12453,7 @@ namespace Amazon.S3
         /// 
         ///  <important> 
         /// <para>
-        /// This API has been revised. We recommend that you use the newer version, <a>ListObjectsV2</a>,
+        /// This API has been revised. We recommend that you use the newer version, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>,
         /// when developing applications. For backward compatibility, Amazon S3 continues to support
         /// <code>ListObjects</code>.
         /// </para>
@@ -12039,23 +12463,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListObjectsV2</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListBuckets</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12074,7 +12503,7 @@ namespace Amazon.S3
         /// 
         ///  <important> 
         /// <para>
-        /// This API has been revised. We recommend that you use the newer version, <a>ListObjectsV2</a>,
+        /// This API has been revised. We recommend that you use the newer version, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>,
         /// when developing applications. For backward compatibility, Amazon S3 continues to support
         /// <code>ListObjects</code>.
         /// </para>
@@ -12084,23 +12513,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListObjectsV2</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListBuckets</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12121,7 +12555,7 @@ namespace Amazon.S3
         /// 
         ///  <important> 
         /// <para>
-        /// This API has been revised. We recommend that you use the newer version, <a>ListObjectsV2</a>,
+        /// This API has been revised. We recommend that you use the newer version, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>,
         /// when developing applications. For backward compatibility, Amazon S3 continues to support
         /// <code>ListObjects</code>.
         /// </para>
@@ -12131,23 +12565,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListObjectsV2</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListBuckets</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12170,7 +12609,7 @@ namespace Amazon.S3
         /// 
         ///  <important> 
         /// <para>
-        /// This API has been revised. We recommend that you use the newer version, <a>ListObjectsV2</a>,
+        /// This API has been revised. We recommend that you use the newer version, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>,
         /// when developing applications. For backward compatibility, Amazon S3 continues to support
         /// <code>ListObjects</code>.
         /// </para>
@@ -12180,23 +12619,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListObjectsV2</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListBuckets</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12237,11 +12681,11 @@ namespace Amazon.S3
         /// <para>
         /// This section describes the latest revision of the API. We recommend that you use this
         /// revised API for application development. For backward compatibility, Amazon S3 continues
-        /// to support the prior version of this API, <a>ListObjects</a>.
+        /// to support the prior version of this API, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>.
         /// </para>
         ///  </important> 
         /// <para>
-        /// To get a list of your buckets, see <a>ListBuckets</a>.
+        /// To get a list of your buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>.
         /// </para>
         ///  
         /// <para>
@@ -12249,15 +12693,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12292,11 +12739,11 @@ namespace Amazon.S3
         /// <para>
         /// This section describes the latest revision of the API. We recommend that you use this
         /// revised API for application development. For backward compatibility, Amazon S3 continues
-        /// to support the prior version of this API, <a>ListObjects</a>.
+        /// to support the prior version of this API, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>.
         /// </para>
         ///  </important> 
         /// <para>
-        /// To get a list of your buckets, see <a>ListBuckets</a>.
+        /// To get a list of your buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>.
         /// </para>
         ///  
         /// <para>
@@ -12304,15 +12751,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12333,14 +12783,15 @@ namespace Amazon.S3
         /// <summary>
         /// Lists the parts that have been uploaded for a specific multipart upload. This operation
         /// must include the upload ID, which you obtain by sending the initiate multipart upload
-        /// request (see <a>CreateMultipartUpload</a>). This request returns a maximum of 1,000
-        /// uploaded parts. The default number of parts returned is 1,000 parts. You can restrict
-        /// the number of parts returned by specifying the <code>max-parts</code> request parameter.
-        /// If your multipart upload consists of more than 1,000 parts, the response returns an
-        /// <code>IsTruncated</code> field with the value of true, and a <code>NextPartNumberMarker</code>
-        /// element. In subsequent <code>ListParts</code> requests you can include the part-number-marker
-        /// query string parameter and set its value to the <code>NextPartNumberMarker</code>
-        /// field value from the previous response.
+        /// request (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>).
+        /// This request returns a maximum of 1,000 uploaded parts. The default number of parts
+        /// returned is 1,000 parts. You can restrict the number of parts returned by specifying
+        /// the <code>max-parts</code> request parameter. If your multipart upload consists of
+        /// more than 1,000 parts, the response returns an <code>IsTruncated</code> field with
+        /// the value of true, and a <code>NextPartNumberMarker</code> element. In subsequent
+        /// <code>ListParts</code> requests you can include the part-number-marker query string
+        /// parameter and set its value to the <code>NextPartNumberMarker</code> field value from
+        /// the previous response.
         /// 
         ///  
         /// <para>
@@ -12358,23 +12809,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12389,14 +12845,15 @@ namespace Amazon.S3
         /// <summary>
         /// Lists the parts that have been uploaded for a specific multipart upload. This operation
         /// must include the upload ID, which you obtain by sending the initiate multipart upload
-        /// request (see <a>CreateMultipartUpload</a>). This request returns a maximum of 1,000
-        /// uploaded parts. The default number of parts returned is 1,000 parts. You can restrict
-        /// the number of parts returned by specifying the <code>max-parts</code> request parameter.
-        /// If your multipart upload consists of more than 1,000 parts, the response returns an
-        /// <code>IsTruncated</code> field with the value of true, and a <code>NextPartNumberMarker</code>
-        /// element. In subsequent <code>ListParts</code> requests you can include the part-number-marker
-        /// query string parameter and set its value to the <code>NextPartNumberMarker</code>
-        /// field value from the previous response.
+        /// request (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>).
+        /// This request returns a maximum of 1,000 uploaded parts. The default number of parts
+        /// returned is 1,000 parts. You can restrict the number of parts returned by specifying
+        /// the <code>max-parts</code> request parameter. If your multipart upload consists of
+        /// more than 1,000 parts, the response returns an <code>IsTruncated</code> field with
+        /// the value of true, and a <code>NextPartNumberMarker</code> element. In subsequent
+        /// <code>ListParts</code> requests you can include the part-number-marker query string
+        /// parameter and set its value to the <code>NextPartNumberMarker</code> field value from
+        /// the previous response.
         /// 
         ///  
         /// <para>
@@ -12414,23 +12871,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12444,14 +12906,15 @@ namespace Amazon.S3
         /// <summary>
         /// Lists the parts that have been uploaded for a specific multipart upload. This operation
         /// must include the upload ID, which you obtain by sending the initiate multipart upload
-        /// request (see <a>CreateMultipartUpload</a>). This request returns a maximum of 1,000
-        /// uploaded parts. The default number of parts returned is 1,000 parts. You can restrict
-        /// the number of parts returned by specifying the <code>max-parts</code> request parameter.
-        /// If your multipart upload consists of more than 1,000 parts, the response returns an
-        /// <code>IsTruncated</code> field with the value of true, and a <code>NextPartNumberMarker</code>
-        /// element. In subsequent <code>ListParts</code> requests you can include the part-number-marker
-        /// query string parameter and set its value to the <code>NextPartNumberMarker</code>
-        /// field value from the previous response.
+        /// request (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>).
+        /// This request returns a maximum of 1,000 uploaded parts. The default number of parts
+        /// returned is 1,000 parts. You can restrict the number of parts returned by specifying
+        /// the <code>max-parts</code> request parameter. If your multipart upload consists of
+        /// more than 1,000 parts, the response returns an <code>IsTruncated</code> field with
+        /// the value of true, and a <code>NextPartNumberMarker</code> element. In subsequent
+        /// <code>ListParts</code> requests you can include the part-number-marker query string
+        /// parameter and set its value to the <code>NextPartNumberMarker</code> field value from
+        /// the previous response.
         /// 
         ///  
         /// <para>
@@ -12469,23 +12932,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12504,14 +12972,15 @@ namespace Amazon.S3
         /// <summary>
         /// Lists the parts that have been uploaded for a specific multipart upload. This operation
         /// must include the upload ID, which you obtain by sending the initiate multipart upload
-        /// request (see <a>CreateMultipartUpload</a>). This request returns a maximum of 1,000
-        /// uploaded parts. The default number of parts returned is 1,000 parts. You can restrict
-        /// the number of parts returned by specifying the <code>max-parts</code> request parameter.
-        /// If your multipart upload consists of more than 1,000 parts, the response returns an
-        /// <code>IsTruncated</code> field with the value of true, and a <code>NextPartNumberMarker</code>
-        /// element. In subsequent <code>ListParts</code> requests you can include the part-number-marker
-        /// query string parameter and set its value to the <code>NextPartNumberMarker</code>
-        /// field value from the previous response.
+        /// request (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>).
+        /// This request returns a maximum of 1,000 uploaded parts. The default number of parts
+        /// returned is 1,000 parts. You can restrict the number of parts returned by specifying
+        /// the <code>max-parts</code> request parameter. If your multipart upload consists of
+        /// more than 1,000 parts, the response returns an <code>IsTruncated</code> field with
+        /// the value of true, and a <code>NextPartNumberMarker</code> element. In subsequent
+        /// <code>ListParts</code> requests you can include the part-number-marker query string
+        /// parameter and set its value to the <code>NextPartNumberMarker</code> field value from
+        /// the previous response.
         /// 
         ///  
         /// <para>
@@ -12529,23 +12998,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UploadPart</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12583,19 +13057,23 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListObjectsV2</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12625,19 +13103,23 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListObjectsV2</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12668,19 +13150,23 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListObjectsV2</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12711,19 +13197,23 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListObjectsV2</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12756,19 +13246,23 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListObjectsV2</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12803,19 +13297,23 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListObjectsV2</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -13055,15 +13553,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObjectAcl</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -13297,15 +13798,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetObjectAcl</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -13453,11 +13957,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -13597,11 +14103,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -13742,11 +14250,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -13890,11 +14400,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -13940,8 +14452,8 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The <a>GetBucketAccelerateConfiguration</a> operation returns the transfer acceleration
-        /// state of a bucket.
+        /// The <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAccelerateConfiguration.html">GetBucketAccelerateConfiguration</a>
+        /// operation returns the transfer acceleration state of a bucket.
         /// </para>
         ///  
         /// <para>
@@ -13964,11 +14476,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketAccelerateConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAccelerateConfiguration.html">GetBucketAccelerateConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -14008,8 +14522,8 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The <a>GetBucketAccelerateConfiguration</a> operation returns the transfer acceleration
-        /// state of a bucket.
+        /// The <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAccelerateConfiguration.html">GetBucketAccelerateConfiguration</a>
+        /// operation returns the transfer acceleration state of a bucket.
         /// </para>
         ///  
         /// <para>
@@ -14032,11 +14546,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketAccelerateConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAccelerateConfiguration.html">GetBucketAccelerateConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -14129,15 +14645,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAnalyticsConfiguration.html">GetBucketAnalyticsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketAnalyticsConfiguration.html">DeleteBucketAnalyticsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketAnalyticsConfigurations.html">ListBucketAnalyticsConfigurations</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -14224,15 +14743,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAnalyticsConfiguration.html">GetBucketAnalyticsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketAnalyticsConfiguration.html">DeleteBucketAnalyticsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketAnalyticsConfigurations.html">ListBucketAnalyticsConfigurations</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -14280,11 +14802,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketEncryption</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html">GetBucketEncryption</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketEncryption</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html">DeleteBucketEncryption</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -14326,11 +14850,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketEncryption</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html">GetBucketEncryption</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketEncryption</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html">DeleteBucketEncryption</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -14425,15 +14951,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketInventoryConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketInventoryConfiguration.html">GetBucketInventoryConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketInventoryConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketInventoryConfiguration.html">DeleteBucketInventoryConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListBucketInventoryConfigurations</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketInventoryConfigurations.html">ListBucketInventoryConfigurations</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -14522,15 +15051,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketInventoryConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketInventoryConfiguration.html">GetBucketInventoryConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketInventoryConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketInventoryConfiguration.html">DeleteBucketInventoryConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListBucketInventoryConfigurations</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketInventoryConfigurations.html">ListBucketInventoryConfigurations</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -14622,8 +15154,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// For more information about creating a bucket, see <a>CreateBucket</a>. For more information
-        /// about returning the logging status of a bucket, see <a>GetBucketLogging</a>.
+        /// For more information about creating a bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.
+        /// For more information about returning the logging status of a bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLogging.html">GetBucketLogging</a>.
         /// </para>
         ///  
         /// <para>
@@ -14631,19 +15163,23 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketLogging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLogging.html">GetBucketLogging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -14729,8 +15265,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// For more information about creating a bucket, see <a>CreateBucket</a>. For more information
-        /// about returning the logging status of a bucket, see <a>GetBucketLogging</a>.
+        /// For more information about creating a bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.
+        /// For more information about returning the logging status of a bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLogging.html">GetBucketLogging</a>.
         /// </para>
         ///  
         /// <para>
@@ -14738,19 +15274,23 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketLogging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLogging.html">GetBucketLogging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -14794,15 +15334,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DeleteBucketMetricsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetricsConfiguration.html">DeleteBucketMetricsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketMetricsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html">PutBucketMetricsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListBucketMetricsConfigurations</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketMetricsConfigurations.html">ListBucketMetricsConfigurations</a>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -14857,15 +15400,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DeleteBucketMetricsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetricsConfiguration.html">DeleteBucketMetricsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketMetricsConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html">PutBucketMetricsConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListBucketMetricsConfigurations</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketMetricsConfigurations.html">ListBucketMetricsConfigurations</a>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -14975,7 +15521,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketNotificationConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -15062,7 +15609,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketNotificationConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -15110,11 +15658,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -15155,11 +15705,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -15201,11 +15753,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -15246,11 +15800,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -15294,11 +15850,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -15344,11 +15902,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -15436,8 +15996,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// For information on <code>PutBucketReplication</code> errors, see <a>ReplicationErrorCodeList</a>
-        /// 
+        /// For information on <code>PutBucketReplication</code> errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ReplicationErrorCodeList">List
+        /// of replication-related error codes</a> 
         /// </para>
         ///  
         /// <para>
@@ -15445,11 +16005,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketReplication</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html">GetBucketReplication</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketReplication</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketReplication.html">DeleteBucketReplication</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -15531,8 +16093,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// For information on <code>PutBucketReplication</code> errors, see <a>ReplicationErrorCodeList</a>
-        /// 
+        /// For information on <code>PutBucketReplication</code> errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ReplicationErrorCodeList">List
+        /// of replication-related error codes</a> 
         /// </para>
         ///  
         /// <para>
@@ -15540,11 +16102,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketReplication</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html">GetBucketReplication</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketReplication</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketReplication.html">DeleteBucketReplication</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -15575,11 +16139,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketRequestPayment</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketRequestPayment.html">GetBucketRequestPayment</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -15603,11 +16169,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketRequestPayment</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketRequestPayment.html">GetBucketRequestPayment</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -15631,11 +16199,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketRequestPayment</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketRequestPayment.html">GetBucketRequestPayment</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -15663,11 +16233,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketRequestPayment</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketRequestPayment.html">GetBucketRequestPayment</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -15758,11 +16330,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -15846,11 +16420,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -15934,11 +16510,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -16026,11 +16604,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -16069,7 +16649,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// If the versioning state has never been set on a bucket, it has no versioning state;
-        /// a <a>GetBucketVersioning</a> request does not return a versioning state value.
+        /// a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a>
+        /// request does not return a versioning state value.
         /// </para>
         ///  
         /// <para>
@@ -16092,15 +16673,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketVersioning</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -16133,7 +16717,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// If the versioning state has never been set on a bucket, it has no versioning state;
-        /// a <a>GetBucketVersioning</a> request does not return a versioning state value.
+        /// a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a>
+        /// request does not return a versioning state value.
         /// </para>
         ///  
         /// <para>
@@ -16156,15 +16741,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucket</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketVersioning</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -16737,15 +17325,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketCors</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketCors.html">GetBucketCors</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketCors</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html">DeleteBucketCors</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>RESTOPTIONSobject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -16812,15 +17403,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketCors</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketCors.html">GetBucketCors</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketCors</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html">DeleteBucketCors</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>RESTOPTIONSobject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -16887,15 +17481,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketCors</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketCors.html">GetBucketCors</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketCors</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html">DeleteBucketCors</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>RESTOPTIONSobject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -16966,15 +17563,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetBucketCors</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketCors.html">GetBucketCors</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketCors</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html">DeleteBucketCors</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>RESTOPTIONSobject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -17003,7 +17603,7 @@ namespace Amazon.S3
         /// key name prefix, one or more object tags, or a combination of both. Accordingly, this
         /// section describes the latest API. The previous version of the API supported filtering
         /// based only on an object key name prefix, which is supported for backward compatibility.
-        /// For the related API description, see <a>PutBucketLifecycle</a>.
+        /// For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -17084,11 +17684,13 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketLifecycle</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -17110,7 +17712,7 @@ namespace Amazon.S3
         /// key name prefix, one or more object tags, or a combination of both. Accordingly, this
         /// section describes the latest API. The previous version of the API supported filtering
         /// based only on an object key name prefix, which is supported for backward compatibility.
-        /// For the related API description, see <a>PutBucketLifecycle</a>.
+        /// For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -17191,11 +17793,13 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketLifecycle</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -17217,7 +17821,7 @@ namespace Amazon.S3
         /// key name prefix, one or more object tags, or a combination of both. Accordingly, this
         /// section describes the latest API. The previous version of the API supported filtering
         /// based only on an object key name prefix, which is supported for backward compatibility.
-        /// For the related API description, see <a>PutBucketLifecycle</a>.
+        /// For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -17298,11 +17902,13 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketLifecycle</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -17328,7 +17934,7 @@ namespace Amazon.S3
         /// key name prefix, one or more object tags, or a combination of both. Accordingly, this
         /// section describes the latest API. The previous version of the API supported filtering
         /// based only on an object key name prefix, which is supported for backward compatibility.
-        /// For the related API description, see <a>PutBucketLifecycle</a>.
+        /// For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -17409,11 +18015,13 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteBucketLifecycle</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -17515,17 +18123,20 @@ namespace Amazon.S3
         /// <para>
         /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/AddingObjectstoVersioningEnabledBuckets.html">Adding
         /// Objects to Versioning Enabled Buckets</a>. For information about returning the versioning
-        /// state of a bucket, see <a>GetBucketVersioning</a>. 
+        /// state of a bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a>.
+        /// 
         /// </para>
         ///  <p class="title"> <b>Related Resources</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CopyObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -17621,17 +18232,20 @@ namespace Amazon.S3
         /// <para>
         /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/AddingObjectstoVersioningEnabledBuckets.html">Adding
         /// Objects to Versioning Enabled Buckets</a>. For information about returning the versioning
-        /// state of a bucket, see <a>GetBucketVersioning</a>. 
+        /// state of a bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a>.
+        /// 
         /// </para>
         ///  <p class="title"> <b>Related Resources</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CopyObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -17808,7 +18422,7 @@ namespace Amazon.S3
         /// <para>
         /// A tag is a key-value pair. You can associate tags with an object by sending a PUT
         /// request against the tagging subresource that is associated with the object. You can
-        /// retrieve tags by sending a GET request. For more information, see <a>GetObjectTagging</a>.
+        /// retrieve tags by sending a GET request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>.
         /// </para>
         ///  
         /// <para>
@@ -17877,7 +18491,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObjectTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -17896,7 +18511,7 @@ namespace Amazon.S3
         /// <para>
         /// A tag is a key-value pair. You can associate tags with an object by sending a PUT
         /// request against the tagging subresource that is associated with the object. You can
-        /// retrieve tags by sending a GET request. For more information, see <a>GetObjectTagging</a>.
+        /// retrieve tags by sending a GET request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>.
         /// </para>
         ///  
         /// <para>
@@ -17965,7 +18580,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObjectTagging</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -18008,15 +18624,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetPublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetPublicAccessBlock.html">GetPublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeletePublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeletePublicAccessBlock.html">DeletePublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketPolicyStatus</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicyStatus.html">GetBucketPolicyStatus</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18058,15 +18677,18 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetPublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetPublicAccessBlock.html">GetPublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeletePublicAccessBlock</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeletePublicAccessBlock.html">DeletePublicAccessBlock</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketPolicyStatus</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicyStatus.html">GetBucketPolicyStatus</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18146,7 +18768,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18331,7 +18954,8 @@ namespace Amazon.S3
         /// action, the object expiration overrides the life span that you specify in a restore
         /// request. For example, if you restore an object copy for 10 days, but the object is
         /// scheduled to expire in 3 days, Amazon S3 deletes the object in 3 days. For more information
-        /// about lifecycle configuration, see <a>PutBucketLifecycleConfiguration</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
+        /// about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
         /// Lifecycle Management</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  
@@ -18399,11 +19023,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketNotificationConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18477,7 +19103,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18662,7 +19289,8 @@ namespace Amazon.S3
         /// action, the object expiration overrides the life span that you specify in a restore
         /// request. For example, if you restore an object copy for 10 days, but the object is
         /// scheduled to expire in 3 days, Amazon S3 deletes the object in 3 days. For more information
-        /// about lifecycle configuration, see <a>PutBucketLifecycleConfiguration</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
+        /// about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
         /// Lifecycle Management</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  
@@ -18730,11 +19358,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketNotificationConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18809,7 +19439,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18994,7 +19625,8 @@ namespace Amazon.S3
         /// action, the object expiration overrides the life span that you specify in a restore
         /// request. For example, if you restore an object copy for 10 days, but the object is
         /// scheduled to expire in 3 days, Amazon S3 deletes the object in 3 days. For more information
-        /// about lifecycle configuration, see <a>PutBucketLifecycleConfiguration</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
+        /// about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
         /// Lifecycle Management</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  
@@ -19062,11 +19694,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketNotificationConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19141,7 +19775,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19326,7 +19961,8 @@ namespace Amazon.S3
         /// action, the object expiration overrides the life span that you specify in a restore
         /// request. For example, if you restore an object copy for 10 days, but the object is
         /// scheduled to expire in 3 days, Amazon S3 deletes the object in 3 days. For more information
-        /// about lifecycle configuration, see <a>PutBucketLifecycleConfiguration</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
+        /// about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
         /// Lifecycle Management</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  
@@ -19394,11 +20030,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketNotificationConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19474,7 +20112,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19659,7 +20298,8 @@ namespace Amazon.S3
         /// action, the object expiration overrides the life span that you specify in a restore
         /// request. For example, if you restore an object copy for 10 days, but the object is
         /// scheduled to expire in 3 days, Amazon S3 deletes the object in 3 days. For more information
-        /// about lifecycle configuration, see <a>PutBucketLifecycleConfiguration</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
+        /// about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
         /// Lifecycle Management</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  
@@ -19727,11 +20367,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketNotificationConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19805,7 +20447,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19990,7 +20633,8 @@ namespace Amazon.S3
         /// action, the object expiration overrides the life span that you specify in a restore
         /// request. For example, if you restore an object copy for 10 days, but the object is
         /// scheduled to expire in 3 days, Amazon S3 deletes the object in 3 days. For more information
-        /// about lifecycle configuration, see <a>PutBucketLifecycleConfiguration</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
+        /// about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
         /// Lifecycle Management</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  
@@ -20058,11 +20702,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketNotificationConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20139,7 +20785,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20324,7 +20971,8 @@ namespace Amazon.S3
         /// action, the object expiration overrides the life span that you specify in a restore
         /// request. For example, if you restore an object copy for 10 days, but the object is
         /// scheduled to expire in 3 days, Amazon S3 deletes the object in 3 days. For more information
-        /// about lifecycle configuration, see <a>PutBucketLifecycleConfiguration</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
+        /// about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
         /// Lifecycle Management</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  
@@ -20392,11 +21040,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketNotificationConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20474,7 +21124,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20659,7 +21310,8 @@ namespace Amazon.S3
         /// action, the object expiration overrides the life span that you specify in a restore
         /// request. For example, if you restore an object copy for 10 days, but the object is
         /// scheduled to expire in 3 days, Amazon S3 deletes the object in 3 days. For more information
-        /// about lifecycle configuration, see <a>PutBucketLifecycleConfiguration</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
+        /// about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
         /// Lifecycle Management</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  
@@ -20727,11 +21379,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketNotificationConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20809,7 +21463,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20994,7 +21649,8 @@ namespace Amazon.S3
         /// action, the object expiration overrides the life span that you specify in a restore
         /// request. For example, if you restore an object copy for 10 days, but the object is
         /// scheduled to expire in 3 days, Amazon S3 deletes the object in 3 days. For more information
-        /// about lifecycle configuration, see <a>PutBucketLifecycleConfiguration</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
+        /// about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
         /// Lifecycle Management</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  
@@ -21062,11 +21718,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketNotificationConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21146,7 +21804,8 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21331,7 +21990,8 @@ namespace Amazon.S3
         /// action, the object expiration overrides the life span that you specify in a restore
         /// request. For example, if you restore an object copy for 10 days, but the object is
         /// scheduled to expire in 3 days, Amazon S3 deletes the object in 3 days. For more information
-        /// about lifecycle configuration, see <a>PutBucketLifecycleConfiguration</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
+        /// about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
         /// Lifecycle Management</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  
@@ -21399,11 +22059,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketNotificationConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21489,7 +22151,7 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// For objects that are encrypted with customer-provided encryption keys (SSE-C), you
-        /// must use HTTPS, and you must use the headers that are documented in the <a>GetObject</a>.
+        /// must use HTTPS, and you must use the headers that are documented in the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>.
         /// For more information about SSE-C, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
         /// Encryption (Using Customer-Provided Encryption Keys)</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>.
@@ -21511,8 +22173,8 @@ namespace Amazon.S3
         /// <para>
         /// Given the response size is unknown, Amazon S3 Select streams the response as a series
         /// of messages and includes a <code>Transfer-Encoding</code> header with <code>chunked</code>
-        /// as its value in the response. For more information, see <a>RESTSelectObjectAppendix</a>
-        /// .
+        /// as its value in the response. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTSelectObjectAppendix.html">Appendix:
+        /// SelectObjectContent Response</a> .
         /// </para>
         ///   
         /// <para>
@@ -21521,13 +22183,14 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// The <code>SelectObjectContent</code> operation does not support the following <code>GetObject</code>
-        /// functionality. For more information, see <a>GetObject</a>.
+        /// functionality. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <code>Range</code>: Although you can specify a scan range for an Amazon S3 Select
-        /// request (see <a>SelectObjectContentRequest$ScanRange</a> in the request parameters),
-        /// you cannot specify the range of bytes of an object to return. 
+        /// request (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html#AmazonS3-SelectObjectContent-request-ScanRange">SelectObjectContentRequest
+        /// - ScanRange</a> in the request parameters), you cannot specify the range of bytes
+        /// of an object to return. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21542,22 +22205,25 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// For a list of special errors for this operation, see <a>SelectObjectContentErrorCodeList</a>
-        /// 
+        /// For a list of special errors for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#SelectObjectContentErrorCodeList">List
+        /// of SELECT Object Content Error Codes</a> 
         /// </para>
         ///  <p class="title"> <b>Related Resources</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -21631,7 +22297,7 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// For objects that are encrypted with customer-provided encryption keys (SSE-C), you
-        /// must use HTTPS, and you must use the headers that are documented in the <a>GetObject</a>.
+        /// must use HTTPS, and you must use the headers that are documented in the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>.
         /// For more information about SSE-C, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
         /// Encryption (Using Customer-Provided Encryption Keys)</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>.
@@ -21653,8 +22319,8 @@ namespace Amazon.S3
         /// <para>
         /// Given the response size is unknown, Amazon S3 Select streams the response as a series
         /// of messages and includes a <code>Transfer-Encoding</code> header with <code>chunked</code>
-        /// as its value in the response. For more information, see <a>RESTSelectObjectAppendix</a>
-        /// .
+        /// as its value in the response. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTSelectObjectAppendix.html">Appendix:
+        /// SelectObjectContent Response</a> .
         /// </para>
         ///   
         /// <para>
@@ -21663,13 +22329,14 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// The <code>SelectObjectContent</code> operation does not support the following <code>GetObject</code>
-        /// functionality. For more information, see <a>GetObject</a>.
+        /// functionality. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <code>Range</code>: Although you can specify a scan range for an Amazon S3 Select
-        /// request (see <a>SelectObjectContentRequest$ScanRange</a> in the request parameters),
-        /// you cannot specify the range of bytes of an object to return. 
+        /// request (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html#AmazonS3-SelectObjectContent-request-ScanRange">SelectObjectContentRequest
+        /// - ScanRange</a> in the request parameters), you cannot specify the range of bytes
+        /// of an object to return. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21684,22 +22351,25 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// For a list of special errors for this operation, see <a>SelectObjectContentErrorCodeList</a>
-        /// 
+        /// For a list of special errors for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#SelectObjectContentErrorCodeList">List
+        /// of SELECT Object Content Error Codes</a> 
         /// </para>
         ///  <p class="title"> <b>Related Resources</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetObject</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutBucketLifecycleConfiguration</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -21724,14 +22394,14 @@ namespace Amazon.S3
         /// <para>
         /// In this operation, you provide part data in your request. However, you have an option
         /// to specify your existing Amazon S3 object as a data source for the part you are uploading.
-        /// To upload a part from an existing object, you use the <a>UploadPartCopy</a> operation.
-        /// 
+        /// To upload a part from an existing object, you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>
+        /// operation. 
         /// </para>
         ///  </note> 
         /// <para>
-        /// You must initiate a multipart upload (see <a>CreateMultipartUpload</a>) before you
-        /// can upload any part. In response to your initiate request, Amazon S3 returns an upload
-        /// ID, a unique identifier, that you must include in your upload part request.
+        /// You must initiate a multipart upload (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>)
+        /// before you can upload any part. In response to your initiate request, Amazon S3 returns
+        /// an upload ID, a unique identifier, that you must include in your upload part request.
         /// </para>
         ///  
         /// <para>
@@ -21772,8 +22442,8 @@ namespace Amazon.S3
         /// it. You have the option of providing your own encryption key, or you can use the AWS
         /// managed encryption keys. If you choose to provide your own encryption key, the request
         /// headers you provide in the request must match the headers you used in the request
-        /// to initiate the upload by using <a>CreateMultipartUpload</a>. For more information,
-        /// go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
+        /// to initiate the upload by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.
+        /// For more information, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
         /// Server-Side Encryption</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  
@@ -21782,7 +22452,7 @@ namespace Amazon.S3
         /// are using a customer-provided encryption key, you don't need to specify the encryption
         /// parameters in each UploadPart request. Instead, you only need to specify the server-side
         /// encryption parameters in the initial Initiate Multipart request. For more information,
-        /// see <a>CreateMultipartUpload</a>.
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.
         /// </para>
         ///  
         /// <para>
@@ -21792,15 +22462,15 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
+        /// x-amz-server-side-encryption-customer-algorithm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
+        /// x-amz-server-side-encryption-customer-key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
+        /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
@@ -21827,23 +22497,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -21862,14 +22537,14 @@ namespace Amazon.S3
         /// <para>
         /// In this operation, you provide part data in your request. However, you have an option
         /// to specify your existing Amazon S3 object as a data source for the part you are uploading.
-        /// To upload a part from an existing object, you use the <a>UploadPartCopy</a> operation.
-        /// 
+        /// To upload a part from an existing object, you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>
+        /// operation. 
         /// </para>
         ///  </note> 
         /// <para>
-        /// You must initiate a multipart upload (see <a>CreateMultipartUpload</a>) before you
-        /// can upload any part. In response to your initiate request, Amazon S3 returns an upload
-        /// ID, a unique identifier, that you must include in your upload part request.
+        /// You must initiate a multipart upload (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>)
+        /// before you can upload any part. In response to your initiate request, Amazon S3 returns
+        /// an upload ID, a unique identifier, that you must include in your upload part request.
         /// </para>
         ///  
         /// <para>
@@ -21910,8 +22585,8 @@ namespace Amazon.S3
         /// it. You have the option of providing your own encryption key, or you can use the AWS
         /// managed encryption keys. If you choose to provide your own encryption key, the request
         /// headers you provide in the request must match the headers you used in the request
-        /// to initiate the upload by using <a>CreateMultipartUpload</a>. For more information,
-        /// go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
+        /// to initiate the upload by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.
+        /// For more information, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
         /// Server-Side Encryption</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         ///  
@@ -21920,7 +22595,7 @@ namespace Amazon.S3
         /// are using a customer-provided encryption key, you don't need to specify the encryption
         /// parameters in each UploadPart request. Instead, you only need to specify the server-side
         /// encryption parameters in the initial Initiate Multipart request. For more information,
-        /// see <a>CreateMultipartUpload</a>.
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.
         /// </para>
         ///  
         /// <para>
@@ -21930,15 +22605,15 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-algorithm
+        /// x-amz-server-side-encryption-customer-algorithm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key
+        /// x-amz-server-side-encryption-customer-key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// x-amz-server-side​-encryption​-customer-key-MD5
+        /// x-amz-server-side-encryption-customer-key-MD5
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
@@ -21965,23 +22640,28 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CompleteMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>AbortMultipartUpload</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListParts</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListMultipartUploads</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>

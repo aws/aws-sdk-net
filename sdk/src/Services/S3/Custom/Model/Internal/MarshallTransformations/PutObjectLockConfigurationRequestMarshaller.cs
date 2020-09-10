@@ -67,6 +67,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(publicRequest.RequestPayer.ToString()));
             if (publicRequest.IsSetToken())
                 request.Headers.Add("x-amz-bucket-object-lock-token", publicRequest.Token);
+            if (publicRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(publicRequest.ExpectedBucketOwner));
             if (!publicRequest.IsSetBucketName())
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "publicRequest.BucketName");
             uriResourcePath = uriResourcePath.Replace("{Bucket}", StringUtils.FromString(publicRequest.BucketName));

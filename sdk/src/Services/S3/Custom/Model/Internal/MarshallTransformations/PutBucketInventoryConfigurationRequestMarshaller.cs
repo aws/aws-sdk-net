@@ -43,6 +43,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
+            if (putBucketInventoryConfigurationRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putBucketInventoryConfigurationRequest.ExpectedBucketOwner));
+
             if (string.IsNullOrEmpty(putBucketInventoryConfigurationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketInventoryConfigurationRequest.BucketName");
 

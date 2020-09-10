@@ -82,6 +82,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if(copyPartRequest.IsSetFirstByte() && copyPartRequest.IsSetLastByte())
             	request.Headers.Add(HeaderKeys.XAmzCopySourceRangeHeader, ConstructCopySourceRangeHeader(copyPartRequest.FirstByte, copyPartRequest.LastByte));
 
+            if (copyPartRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(copyPartRequest.ExpectedBucketOwner));
+
+            if (copyPartRequest.IsSetExpectedSourceBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedSourceBucketOwner, S3Transforms.ToStringValue(copyPartRequest.ExpectedSourceBucketOwner));
+
             if (string.IsNullOrEmpty(copyPartRequest.DestinationBucket))
                 throw new System.ArgumentException("DestinationBucket is a required property and must be set before making this call.", "CopyPartRequest.DestinationBucket");
 

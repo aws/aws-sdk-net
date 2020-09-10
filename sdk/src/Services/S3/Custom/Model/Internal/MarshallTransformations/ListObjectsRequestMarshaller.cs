@@ -40,6 +40,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (listObjectsRequest.IsSetRequestPayer())
                 request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(listObjectsRequest.RequestPayer.ToString()));
 
+            if (listObjectsRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(listObjectsRequest.ExpectedBucketOwner));
+
             if (string.IsNullOrEmpty(listObjectsRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "ListObjectsRequest.BucketName");
 

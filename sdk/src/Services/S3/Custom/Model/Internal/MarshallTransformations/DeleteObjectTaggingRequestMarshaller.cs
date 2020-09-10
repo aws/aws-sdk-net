@@ -44,6 +44,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "DELETE";
 
+            if (deleteObjectTaggingRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(deleteObjectTaggingRequest.ExpectedBucketOwner));
+
             if (string.IsNullOrEmpty(deleteObjectTaggingRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteObjectTaggingRequest.BucketName");
             if (string.IsNullOrEmpty(deleteObjectTaggingRequest.Key))

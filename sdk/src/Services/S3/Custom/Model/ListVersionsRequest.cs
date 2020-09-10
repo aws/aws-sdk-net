@@ -36,6 +36,7 @@ namespace Amazon.S3.Model
         private string prefix;
         private string versionIdMarker;
         private EncodingType encoding;
+        private string expectedBucketOwner;
 
         /// <summary>
         /// <para>The bucket name that contains the objects.</para>
@@ -151,6 +152,25 @@ namespace Amazon.S3.Model
         internal bool IsSetEncoding()
         {
             return this.encoding != null;
+        }
+
+        /// <summary>
+        /// The account id of the expected bucket owner. 
+        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
     }
 }

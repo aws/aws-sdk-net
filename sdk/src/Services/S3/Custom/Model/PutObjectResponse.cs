@@ -41,6 +41,11 @@ namespace Amazon.S3.Model
         /// Specifies the expiration date for the object and the
         /// rule governing the expiration.
         /// Is null if expiration is not applicable.
+        /// If the expiration is configured for the object (see https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html\), 
+        /// the response includes this header. 
+        /// It includes the expiry-date and rule-id key-value pairs that provide information about object expiration. 
+        /// The value of the rule-id is URL encoded."
+
         /// </summary>
         public Expiration Expiration
         {

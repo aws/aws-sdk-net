@@ -99,6 +99,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 }
             }
 
+            if (selectObjectContentRequest.IsSetExpectedBucketOwner())
+            {
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, 
+                    S3Transforms.ToStringValue(selectObjectContentRequest.ExpectedBucketOwner));
+            }
+
             // Subresources
             request.AddSubResource("select");
             request.AddSubResource("select-type", "2");

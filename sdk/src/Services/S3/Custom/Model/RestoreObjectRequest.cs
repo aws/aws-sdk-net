@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Xml;
 
 using Amazon.Runtime;
@@ -38,6 +39,7 @@ namespace Amazon.S3.Model
         private string description;
         private SelectParameters selectParameters;
         private OutputLocation outputLocation;
+        private string expectedBucketOwner;
 
         /// <summary>
         /// <para>The bucket name or containing the object to restore.</para>
@@ -249,6 +251,25 @@ namespace Amazon.S3.Model
                     OutputLocation.Marshall("OutputLocation", xmlWriter);
             }
             xmlWriter.WriteEndElement();
+        }
+
+        /// <summary>
+        /// The account id of the expected bucket owner. 
+        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
     }
 }

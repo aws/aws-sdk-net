@@ -27,7 +27,7 @@ namespace Amazon.S3.Model
         private string value;
 
         /// <summary>
-        /// Name of the tag.
+        /// Name of the object key.
         /// </summary>
         public string Key
         {

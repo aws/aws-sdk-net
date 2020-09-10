@@ -34,6 +34,7 @@ namespace Amazon.S3.Model
         private List<PartETag> partETags = new List<PartETag>();
         private string uploadId;
         private RequestPayer requestPayer;
+        private string expectedBucketOwner;
 
         /// <summary>
         /// The name of the bucketName containing the S3 object that was being uploaded in parts.
@@ -192,6 +193,25 @@ namespace Amazon.S3.Model
         internal bool IsSetRequestPayer()
         {
             return requestPayer != null;
+        }
+
+        /// <summary>
+        /// The account id of the expected bucket owner. 
+        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
     }
 }
