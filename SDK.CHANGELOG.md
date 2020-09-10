@@ -1,3 +1,15 @@
+### 3.5.13.0 (2020-09-10 18:10 UTC)
+* CloudFront (3.5.3.0)
+	* Cloudfront adds support for Brotli. You can enable brotli caching and compression support by enabling it in your Cache Policy.
+* EBS (3.5.0.12)
+	* Documentation updates for Amazon EBS direct APIs.
+* Pinpoint (3.5.0.12)
+	* Update SMS message model description to clearly indicate that the MediaUrl field is reserved for future use and is not supported by Pinpoint as of today.
+* S3 (3.5.1.0)
+	* Bucket owner verification feature added. This feature introduces the x-amz-expected-bucket-owner and x-amz-source-expected-bucket-owner headers.
+* SSOAdmin (3.5.0.0)
+	* This is an initial release of AWS Single Sign-On (SSO) Access Management APIs. This release adds support for SSO operations which could be used for managing access to AWS accounts.
+
 ### 3.5.12.1 (2020-09-10 00:18 UTC)
 * Core 3.5.1.9
 	* Add UserAgent string addition when using paginators
