@@ -54,7 +54,7 @@ namespace Amazon.CloudFront.Model
     /// included in requests that CloudFront sends to the origin. CloudFront sends a request
     /// when it can’t find an object in its cache that matches the request’s cache key. If
     /// you want to send values to the origin but <i>not</i> include them in the cache key,
-    /// use <code>CreateOriginRequestPolicy</code>.
+    /// use <code>OriginRequestPolicy</code>.
     /// </para>
     ///  
     /// <para>

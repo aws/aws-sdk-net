@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDistributionsByRealtimeLogConfig operation.
-    /// Gets a list of distribution that have a cache behavior that’s associated with the
+    /// Gets a list of distributions that have a cache behavior that’s associated with the
     /// specified real-time log configuration.
     /// 
     ///  

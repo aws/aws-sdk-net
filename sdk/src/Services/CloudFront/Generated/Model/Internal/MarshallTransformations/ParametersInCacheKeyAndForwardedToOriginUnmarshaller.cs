@@ -61,6 +61,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.CookiesConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("EnableAcceptEncodingBrotli", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.EnableAcceptEncodingBrotli = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EnableAcceptEncodingGzip", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

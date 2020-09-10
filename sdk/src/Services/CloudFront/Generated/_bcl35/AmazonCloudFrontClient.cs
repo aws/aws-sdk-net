@@ -270,7 +270,7 @@ namespace Amazon.CloudFront
         /// included in requests that CloudFront sends to the origin. CloudFront sends a request
         /// when it can’t find an object in its cache that matches the request’s cache key. If
         /// you want to send values to the origin but <i>not</i> include them in the cache key,
-        /// use <code>CreateOriginRequestPolicy</code>.
+        /// use <code>OriginRequestPolicy</code>.
         /// </para>
         ///  
         /// <para>
@@ -1230,7 +1230,7 @@ namespace Amazon.CloudFront
         /// <para>
         /// CloudFront sends a request when it can’t find a valid object in its cache that matches
         /// the request. If you want to send values to the origin and also include them in the
-        /// cache key, use <code>CreateCachePolicy</code>.
+        /// cache key, use <code>CachePolicy</code>.
         /// </para>
         ///  
         /// <para>
@@ -4276,7 +4276,7 @@ namespace Amazon.CloudFront
         #region  ListDistributionsByRealtimeLogConfig
 
         /// <summary>
-        /// Gets a list of distribution that have a cache behavior that’s associated with the
+        /// Gets a list of distributions that have a cache behavior that’s associated with the
         /// specified real-time log configuration.
         /// 
         ///  

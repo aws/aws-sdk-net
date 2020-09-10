@@ -114,6 +114,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             }
                             xmlWriter.WriteEndElement();
                         }
+                        if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.IsSetEnableAcceptEncodingBrotli())
+                            xmlWriter.WriteElementString("EnableAcceptEncodingBrotli", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingBrotli));                 
+        
                         if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.IsSetEnableAcceptEncodingGzip())
                             xmlWriter.WriteElementString("EnableAcceptEncodingGzip", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingGzip));                 
         
