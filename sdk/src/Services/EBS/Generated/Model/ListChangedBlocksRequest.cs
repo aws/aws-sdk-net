@@ -30,8 +30,8 @@ namespace Amazon.EBS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListChangedBlocks operation.
-    /// Returns the block indexes and block tokens for blocks that are different between two
-    /// Amazon Elastic Block Store snapshots of the same volume/snapshot lineage.
+    /// Returns information about the blocks that are different between two Amazon Elastic
+    /// Block Store snapshots of the same volume/snapshot lineage.
     /// </summary>
     public partial class ListChangedBlocksRequest : AmazonEBSRequest
     {

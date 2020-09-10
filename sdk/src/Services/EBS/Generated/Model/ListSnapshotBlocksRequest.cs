@@ -30,8 +30,7 @@ namespace Amazon.EBS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSnapshotBlocks operation.
-    /// Returns the block indexes and block tokens for blocks in an Amazon Elastic Block Store
-    /// snapshot.
+    /// Returns information about the blocks in an Amazon Elastic Block Store snapshot.
     /// </summary>
     public partial class ListSnapshotBlocksRequest : AmazonEBSRequest
     {
