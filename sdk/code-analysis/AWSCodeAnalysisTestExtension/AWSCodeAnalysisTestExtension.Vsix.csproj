@@ -900,6 +900,10 @@
       <Project>{1D5634B9-7F53-48CC-BC00-4CE57AE8457E}</Project>
       <Name>AWSSDK.SSO.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SSOAdmin/AWSSDK.SSOAdmin.CodeAnalysis.csproj">
+      <Project>{941EB53D-999B-4EF3-AFAC-09AF610CB312}</Project>
+      <Name>AWSSDK.SSOAdmin.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SSOOIDC/AWSSDK.SSOOIDC.CodeAnalysis.csproj">
       <Project>{45750F34-213E-4AFD-B98C-20069902DBA3}</Project>
       <Name>AWSSDK.SSOOIDC.CodeAnalysis</Name>
