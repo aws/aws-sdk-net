@@ -3979,40 +3979,6 @@
         }
       ]
     },
-    "UpdateTemplateActiveVersion": {
-      "name": "UpdateTemplateActiveVersion",
-      "http": {
-        "method": "PUT",
-        "requestUri": "/v1/templates/{template-name}/{template-type}/active-version",
-        "responseCode": 200
-      },
-      "input": {
-        "shape": "UpdateTemplateActiveVersionRequest"
-      },
-      "output": {
-        "shape": "UpdateTemplateActiveVersionResponse"
-      },
-      "errors": [
-        {
-          "shape": "BadRequestException"
-        },
-        {
-          "shape": "InternalServerErrorException"
-        },
-        {
-          "shape": "ForbiddenException"
-        },
-        {
-          "shape": "NotFoundException"
-        },
-        {
-          "shape": "MethodNotAllowedException"
-        },
-        {
-          "shape": "TooManyRequestsException"
-        }
-      ]
-    },
     "UpdateVoiceChannel": {
       "name": "UpdateVoiceChannel",
       "http": {
@@ -9294,47 +9260,6 @@
         "TagsModel"
       ],
       "payload": "TagsModel"
-    },
-    "ListTemplateVersionsRequest": {
-      "type": "structure",
-      "members": {
-        "NextToken": {
-          "shape": "__string",
-          "location": "querystring",
-          "locationName": "next-token"
-        },
-        "PageSize": {
-          "shape": "__string",
-          "location": "querystring",
-          "locationName": "page-size"
-        },
-        "TemplateName": {
-          "shape": "__string",
-          "location": "uri",
-          "locationName": "template-name"
-        },
-        "TemplateType": {
-          "shape": "__string",
-          "location": "uri",
-          "locationName": "template-type"
-        }
-      },
-      "required": [
-        "TemplateName",
-        "TemplateType"
-      ]
-    },
-    "ListTemplateVersionsResponse": {
-      "type": "structure",
-      "members": {
-        "TemplateVersionsResponse": {
-          "shape": "TemplateVersionsResponse"
-        }
-      },
-      "required": [
-        "TemplateVersionsResponse"
-      ],
-      "payload": "TemplateVersionsResponse"
     },
     "ListTemplateVersionsRequest": {
       "type": "structure",
