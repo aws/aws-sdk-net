@@ -1,3 +1,8 @@
+### 3.5.12.1 (2020-09-10 00:18 UTC)
+* Core 3.5.1.9
+	* Add UserAgent string addition when using paginators
+	* All services packages updated to require new Core
+
 ### 3.5.12.0 (2020-09-09 18:11 UTC)
 * Glue (3.5.1.0)
 	* Adding support for partitionIndexes to improve GetPartitions performance.
