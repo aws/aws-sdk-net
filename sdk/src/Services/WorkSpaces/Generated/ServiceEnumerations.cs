@@ -125,6 +125,68 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type AssociationStatus.
+    /// </summary>
+    public class AssociationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSOCIATED_WITH_OWNER_ACCOUNT for AssociationStatus
+        /// </summary>
+        public static readonly AssociationStatus ASSOCIATED_WITH_OWNER_ACCOUNT = new AssociationStatus("ASSOCIATED_WITH_OWNER_ACCOUNT");
+        /// <summary>
+        /// Constant ASSOCIATED_WITH_SHARED_ACCOUNT for AssociationStatus
+        /// </summary>
+        public static readonly AssociationStatus ASSOCIATED_WITH_SHARED_ACCOUNT = new AssociationStatus("ASSOCIATED_WITH_SHARED_ACCOUNT");
+        /// <summary>
+        /// Constant NOT_ASSOCIATED for AssociationStatus
+        /// </summary>
+        public static readonly AssociationStatus NOT_ASSOCIATED = new AssociationStatus("NOT_ASSOCIATED");
+        /// <summary>
+        /// Constant PENDING_ASSOCIATION for AssociationStatus
+        /// </summary>
+        public static readonly AssociationStatus PENDING_ASSOCIATION = new AssociationStatus("PENDING_ASSOCIATION");
+        /// <summary>
+        /// Constant PENDING_DISASSOCIATION for AssociationStatus
+        /// </summary>
+        public static readonly AssociationStatus PENDING_DISASSOCIATION = new AssociationStatus("PENDING_DISASSOCIATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssociationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationStatus FindValue(string value)
+        {
+            return FindValue<AssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Compute.
     /// </summary>
     public class Compute : ConstantClass
@@ -188,6 +250,60 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Compute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectionAliasState.
+    /// </summary>
+    public class ConnectionAliasState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for ConnectionAliasState
+        /// </summary>
+        public static readonly ConnectionAliasState CREATED = new ConnectionAliasState("CREATED");
+        /// <summary>
+        /// Constant CREATING for ConnectionAliasState
+        /// </summary>
+        public static readonly ConnectionAliasState CREATING = new ConnectionAliasState("CREATING");
+        /// <summary>
+        /// Constant DELETING for ConnectionAliasState
+        /// </summary>
+        public static readonly ConnectionAliasState DELETING = new ConnectionAliasState("DELETING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionAliasState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionAliasState FindValue(string value)
+        {
+            return FindValue<ConnectionAliasState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionAliasState(string value)
         {
             return FindValue(value);
         }

@@ -40,7 +40,8 @@ namespace Amazon.WorkSpaces.Model
         /// Gets and sets the property ResourceId. 
         /// <para>
         /// The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, and IP access control groups.
+        /// registered directories, images, custom bundles, IP access control groups, and connection
+        /// aliases.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

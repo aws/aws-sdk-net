@@ -46,6 +46,90 @@ namespace Amazon.WorkSpaces
         IWorkSpacesPaginatorFactory Paginators { get; }
 
         
+        #region  AssociateConnectionAlias
+
+
+        /// <summary>
+        /// Associates the specified connection alias with the specified directory to enable cross-Region
+        /// redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
+        /// DescribeConnectionAliases</a> to make sure that the current state of the connection
+        /// alias is <code>CREATED</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateConnectionAlias service method.</param>
+        /// 
+        /// <returns>The response from the AssociateConnectionAlias service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAssociatedException">
+        /// The resource is associated with a directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateConnectionAlias">REST API Reference for AssociateConnectionAlias Operation</seealso>
+        AssociateConnectionAliasResponse AssociateConnectionAlias(AssociateConnectionAliasRequest request);
+
+
+
+        /// <summary>
+        /// Associates the specified connection alias with the specified directory to enable cross-Region
+        /// redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
+        /// DescribeConnectionAliases</a> to make sure that the current state of the connection
+        /// alias is <code>CREATED</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateConnectionAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateConnectionAlias service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAssociatedException">
+        /// The resource is associated with a directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateConnectionAlias">REST API Reference for AssociateConnectionAlias Operation</seealso>
+        Task<AssociateConnectionAliasResponse> AssociateConnectionAliasAsync(AssociateConnectionAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AssociateIpGroups
 
 
@@ -250,6 +334,74 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  CreateConnectionAlias
+
+
+        /// <summary>
+        /// Creates the specified connection alias for use with cross-Region redirection. For
+        /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectionAlias service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnectionAlias service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateConnectionAlias">REST API Reference for CreateConnectionAlias Operation</seealso>
+        CreateConnectionAliasResponse CreateConnectionAlias(CreateConnectionAliasRequest request);
+
+
+
+        /// <summary>
+        /// Creates the specified connection alias for use with cross-Region redirection. For
+        /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectionAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConnectionAlias service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateConnectionAlias">REST API Reference for CreateConnectionAlias Operation</seealso>
+        Task<CreateConnectionAliasResponse> CreateConnectionAliasAsync(CreateConnectionAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateIpGroup
 
 
@@ -433,6 +585,106 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">REST API Reference for CreateWorkspaces Operation</seealso>
         Task<CreateWorkspacesResponse> CreateWorkspacesAsync(CreateWorkspacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteConnectionAlias
+
+
+        /// <summary>
+        /// Deletes the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// 
+        ///  <important> 
+        /// <para>
+        ///  <b>If you will no longer be using a fully qualified domain name (FQDN) as the registration
+        /// code for your WorkSpaces users, you must take certain precautions to prevent potential
+        /// security issues.</b> For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html#cross-region-redirection-security-considerations">
+        /// Security Considerations if You Stop Using Cross-Region Redirection</a>.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// To delete a connection alias that has been shared, the shared account must first disassociate
+        /// the connection alias from any directories it has been associated with. Then you must
+        /// unshare the connection alias from the account it has been shared with. You can delete
+        /// a connection alias only after it is no longer shared with any accounts or associated
+        /// with any directories.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectionAlias service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnectionAlias service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAssociatedException">
+        /// The resource is associated with a directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteConnectionAlias">REST API Reference for DeleteConnectionAlias Operation</seealso>
+        DeleteConnectionAliasResponse DeleteConnectionAlias(DeleteConnectionAliasRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// 
+        ///  <important> 
+        /// <para>
+        ///  <b>If you will no longer be using a fully qualified domain name (FQDN) as the registration
+        /// code for your WorkSpaces users, you must take certain precautions to prevent potential
+        /// security issues.</b> For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html#cross-region-redirection-security-considerations">
+        /// Security Considerations if You Stop Using Cross-Region Redirection</a>.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// To delete a connection alias that has been shared, the shared account must first disassociate
+        /// the connection alias from any directories it has been associated with. Then you must
+        /// unshare the connection alias from the account it has been shared with. You can delete
+        /// a connection alias only after it is no longer shared with any accounts or associated
+        /// with any directories.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectionAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnectionAlias service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAssociatedException">
+        /// The resource is associated with a directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteConnectionAlias">REST API Reference for DeleteConnectionAlias Operation</seealso>
+        Task<DeleteConnectionAliasResponse> DeleteConnectionAliasAsync(DeleteConnectionAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -765,6 +1017,112 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientProperties">REST API Reference for DescribeClientProperties Operation</seealso>
         Task<DescribeClientPropertiesResponse> DescribeClientPropertiesAsync(DescribeClientPropertiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeConnectionAliases
+
+
+        /// <summary>
+        /// Retrieves a list that describes the connection aliases used for cross-Region redirection.
+        /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionAliases service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConnectionAliases service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectionAliases">REST API Reference for DescribeConnectionAliases Operation</seealso>
+        DescribeConnectionAliasesResponse DescribeConnectionAliases(DescribeConnectionAliasesRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list that describes the connection aliases used for cross-Region redirection.
+        /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionAliases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConnectionAliases service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectionAliases">REST API Reference for DescribeConnectionAliases Operation</seealso>
+        Task<DescribeConnectionAliasesResponse> DescribeConnectionAliasesAsync(DescribeConnectionAliasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeConnectionAliasPermissions
+
+
+        /// <summary>
+        /// Describes the permissions that the owner of a connection alias has granted to another
+        /// AWS account for the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionAliasPermissions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConnectionAliasPermissions service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectionAliasPermissions">REST API Reference for DescribeConnectionAliasPermissions Operation</seealso>
+        DescribeConnectionAliasPermissionsResponse DescribeConnectionAliasPermissions(DescribeConnectionAliasPermissionsRequest request);
+
+
+
+        /// <summary>
+        /// Describes the permissions that the owner of a connection alias has granted to another
+        /// AWS account for the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionAliasPermissions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConnectionAliasPermissions service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectionAliasPermissions">REST API Reference for DescribeConnectionAliasPermissions Operation</seealso>
+        Task<DescribeConnectionAliasPermissionsResponse> DescribeConnectionAliasPermissionsAsync(DescribeConnectionAliasPermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1239,6 +1597,86 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DisassociateConnectionAlias
+
+
+        /// <summary>
+        /// Disassociates a connection alias from a directory. Disassociating a connection alias
+        /// disables cross-Region redirection between two directories in different AWS Regions.
+        /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
+        /// DescribeConnectionAliases</a> to make sure that the current state of the connection
+        /// alias is <code>CREATED</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateConnectionAlias service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateConnectionAlias service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateConnectionAlias">REST API Reference for DisassociateConnectionAlias Operation</seealso>
+        DisassociateConnectionAliasResponse DisassociateConnectionAlias(DisassociateConnectionAliasRequest request);
+
+
+
+        /// <summary>
+        /// Disassociates a connection alias from a directory. Disassociating a connection alias
+        /// disables cross-Region redirection between two directories in different AWS Regions.
+        /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
+        /// DescribeConnectionAliases</a> to make sure that the current state of the connection
+        /// alias is <code>CREATED</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateConnectionAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateConnectionAlias service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateConnectionAlias">REST API Reference for DisassociateConnectionAlias Operation</seealso>
+        Task<DisassociateConnectionAliasResponse> DisassociateConnectionAliasAsync(DisassociateConnectionAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisassociateIpGroups
 
 
@@ -1296,8 +1734,9 @@ namespace Amazon.WorkSpaces
 
         /// <summary>
         /// Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces.
-        /// The image must be an already licensed EC2 image that is in your AWS account, and you
-        /// must own the image. For more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+        /// The image must be an already licensed Amazon EC2 image that is in your AWS account,
+        /// and you must own the image. For more information about creating BYOL images, see <a
+        /// href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
         /// Bring Your Own Windows Desktop Licenses</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceImage service method.</param>
@@ -1328,8 +1767,9 @@ namespace Amazon.WorkSpaces
 
         /// <summary>
         /// Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces.
-        /// The image must be an already licensed EC2 image that is in your AWS account, and you
-        /// must own the image. For more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+        /// The image must be an already licensed Amazon EC2 image that is in your AWS account,
+        /// and you must own the image. For more information about creating BYOL images, see <a
+        /// href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
         /// Bring Your Own Windows Desktop Licenses</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceImage service method.</param>
@@ -2380,6 +2820,118 @@ namespace Amazon.WorkSpaces
         /// <returns>The response from the TerminateWorkspaces service method, as returned by WorkSpaces.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">REST API Reference for TerminateWorkspaces Operation</seealso>
         Task<TerminateWorkspacesResponse> TerminateWorkspacesAsync(TerminateWorkspacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateConnectionAliasPermission
+
+
+        /// <summary>
+        /// Shares or unshares a connection alias with one account by specifying whether that
+        /// account has permission to associate the connection alias with a directory. If the
+        /// association permission is granted, the connection alias is shared with that account.
+        /// If the association permission is revoked, the connection alias is unshared with the
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
+        /// DescribeConnectionAliases</a> to make sure that the current state of the connection
+        /// alias is <code>CREATED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To delete a connection alias that has been shared, the shared account must first disassociate
+        /// the connection alias from any directories it has been associated with. Then you must
+        /// unshare the connection alias from the account it has been shared with. You can delete
+        /// a connection alias only after it is no longer shared with any accounts or associated
+        /// with any directories.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectionAliasPermission service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnectionAliasPermission service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAssociatedException">
+        /// The resource is associated with a directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateConnectionAliasPermission">REST API Reference for UpdateConnectionAliasPermission Operation</seealso>
+        UpdateConnectionAliasPermissionResponse UpdateConnectionAliasPermission(UpdateConnectionAliasPermissionRequest request);
+
+
+
+        /// <summary>
+        /// Shares or unshares a connection alias with one account by specifying whether that
+        /// account has permission to associate the connection alias with a directory. If the
+        /// association permission is granted, the connection alias is shared with that account.
+        /// If the association permission is revoked, the connection alias is unshared with the
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
+        /// DescribeConnectionAliases</a> to make sure that the current state of the connection
+        /// alias is <code>CREATED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To delete a connection alias that has been shared, the shared account must first disassociate
+        /// the connection alias from any directories it has been associated with. Then you must
+        /// unshare the connection alias from the account it has been shared with. You can delete
+        /// a connection alias only after it is no longer shared with any accounts or associated
+        /// with any directories.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectionAliasPermission service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConnectionAliasPermission service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAssociatedException">
+        /// The resource is associated with a directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateConnectionAliasPermission">REST API Reference for UpdateConnectionAliasPermission Operation</seealso>
+        Task<UpdateConnectionAliasPermissionResponse> UpdateConnectionAliasPermissionAsync(UpdateConnectionAliasPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

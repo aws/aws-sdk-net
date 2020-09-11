@@ -44,7 +44,7 @@ namespace Amazon.WorkSpaces.Model
         /// provide this token to receive the next set of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=63)]
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }
