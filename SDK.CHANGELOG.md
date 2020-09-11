@@ -1,3 +1,12 @@
+### 3.5.14.0 (2020-09-11 18:28 UTC)
+* WorkSpaces (3.5.2.0)
+	* Adds API support for WorkSpaces Cross-Region Redirection feature.
+* Core 3.5.1.10
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.13.0 (2020-09-10 18:10 UTC)
 * CloudFront (3.5.3.0)
 	* Cloudfront adds support for Brotli. You can enable brotli caching and compression support by enabling it in your Cache Policy.
