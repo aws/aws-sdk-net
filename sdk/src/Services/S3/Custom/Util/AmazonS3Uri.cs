@@ -32,11 +32,9 @@ namespace Amazon.S3.Util
     /// </summary>
     public class AmazonS3Uri
     {
-        private const string EndpointPattern = @"^(.+\.)?s3[.-]([a-z0-9-]+)\.";
-
         private static Regex endpointRegexMatch;
 
-        private static Regex EndpointRegexMatch => endpointRegexMatch ?? (endpointRegexMatch = new Regex(EndpointPattern, RegexOptions.Compiled));
+        private static Regex EndpointRegexMatch => endpointRegexMatch ?? (endpointRegexMatch = new Regex(@"^(.+\.)?s3[.-]([a-z0-9-]+)\.", RegexOptions.Compiled));
 
         /// <summary>
         /// True if the URI contains the bucket in the path, false if it contains the bucket in the authority.
@@ -81,7 +79,7 @@ namespace Amazon.S3.Util
             if (string.IsNullOrEmpty(uri.Host))
                 throw new ArgumentException("Invalid URI - no hostname present");
 
-            var match = new Regex(EndpointPattern).Match(uri.Host);
+            var match = EndpointRegexMatch.Match(uri.Host);
             if (!match.Success)
                 throw new ArgumentException("Invalid S3 URI - hostname does not appear to be a valid S3 endpoint");
 
