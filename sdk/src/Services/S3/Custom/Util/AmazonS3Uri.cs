@@ -34,6 +34,10 @@ namespace Amazon.S3.Util
     {
         private const string EndpointPattern = @"^(.+\.)?s3[.-]([a-z0-9-]+)\.";
 
+        private static Regex endpointRegexMatch;
+
+        private static Regex EndpointRegexMatch => endpointRegexMatch ?? (endpointRegexMatch = new Regex(EndpointPattern, RegexOptions.Compiled));
+
         /// <summary>
         /// True if the URI contains the bucket in the path, false if it contains the bucket in the authority.
         /// </summary>
@@ -221,16 +225,14 @@ namespace Amazon.S3.Util
             if (uri == null)
                 throw new ArgumentNullException("uri");
 
-            var match = new Regex(EndpointPattern).Match(uri.Host);
             if (uri.Host.EndsWith("amazonaws.com", StringComparison.OrdinalIgnoreCase) || uri.Host.EndsWith("amazonaws.com.cn", StringComparison.OrdinalIgnoreCase))
             {
-                return match.Success;
+                return EndpointRegexMatch.Match(uri.Host).Success;
             }
             else
             {
                 return false;
             }
-
         }
 
         /// <summary>
