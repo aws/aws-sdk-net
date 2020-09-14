@@ -27,9 +27,29 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeCertificates operation
+        ///</summary>
+        IDescribeCertificatesPaginator DescribeCertificates(DescribeCertificatesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeDBClusterParameterGroups operation
+        ///</summary>
+        IDescribeDBClusterParameterGroupsPaginator DescribeDBClusterParameterGroups(DescribeDBClusterParameterGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeDBClusterParameters operation
+        ///</summary>
+        IDescribeDBClusterParametersPaginator DescribeDBClusterParameters(DescribeDBClusterParametersRequest request);
+
+        /// <summary>
         /// Paginator for DescribeDBClusters operation
         ///</summary>
         IDescribeDBClustersPaginator DescribeDBClusters(DescribeDBClustersRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeDBClusterSnapshots operation
+        ///</summary>
+        IDescribeDBClusterSnapshotsPaginator DescribeDBClusterSnapshots(DescribeDBClusterSnapshotsRequest request);
 
         /// <summary>
         /// Paginator for DescribeDBEngineVersions operation
@@ -55,6 +75,11 @@ namespace Amazon.DocDB.Model
         /// Paginator for DescribeOrderableDBInstanceOptions operation
         ///</summary>
         IDescribeOrderableDBInstanceOptionsPaginator DescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribePendingMaintenanceActions operation
+        ///</summary>
+        IDescribePendingMaintenanceActionsPaginator DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request);
     }
 }
 #endif

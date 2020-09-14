@@ -115,7 +115,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>5.1.49</code> 
+        /// Example: <code>3.6.0</code> 
         /// </para>
         /// </summary>
         public string EngineVersion

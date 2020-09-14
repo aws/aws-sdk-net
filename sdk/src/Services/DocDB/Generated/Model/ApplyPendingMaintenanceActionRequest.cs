@@ -30,7 +30,8 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the ApplyPendingMaintenanceAction operation.
-    /// Applies a pending maintenance action to a resource (for example, to a DB instance).
+    /// Applies a pending maintenance action to a resource (for example, to an Amazon DocumentDB
+    /// instance).
     /// </summary>
     public partial class ApplyPendingMaintenanceActionRequest : AmazonDocDBRequest
     {
@@ -78,7 +79,7 @@ namespace Amazon.DocDB.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>next-maintenance</code> - Apply the maintenance action during the next maintenance
-        /// window for the resource.
+        /// window for the resource. 
         /// </para>
         ///  </li> <li> 
         /// <para>

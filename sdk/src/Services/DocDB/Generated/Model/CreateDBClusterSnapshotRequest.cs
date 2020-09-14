@@ -89,7 +89,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// Cannot end with a hyphen or contain two consecutive hyphens. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
