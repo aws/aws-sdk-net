@@ -11622,6 +11622,10 @@ namespace Amazon.EC2
         /// Constant T3a for UnlimitedSupportedInstanceFamily
         /// </summary>
         public static readonly UnlimitedSupportedInstanceFamily T3a = new UnlimitedSupportedInstanceFamily("t3a");
+        /// <summary>
+        /// Constant T4g for UnlimitedSupportedInstanceFamily
+        /// </summary>
+        public static readonly UnlimitedSupportedInstanceFamily T4g = new UnlimitedSupportedInstanceFamily("t4g");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
