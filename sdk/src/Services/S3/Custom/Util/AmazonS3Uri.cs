@@ -195,7 +195,9 @@ namespace Amazon.S3.Util
                 }
             }
             // intentionally suppress all exceptions, because this is a try method
+#pragma warning disable CA1031 // Do not catch general exception types
             catch { }
+#pragma warning restore CA1031 // Do not catch general exception types
 
             amazonS3Uri = null;
             return false;
