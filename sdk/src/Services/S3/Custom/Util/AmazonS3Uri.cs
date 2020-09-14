@@ -32,9 +32,7 @@ namespace Amazon.S3.Util
     /// </summary>
     public class AmazonS3Uri
     {
-        private static Regex endpointRegexMatch;
-
-        private static Regex EndpointRegexMatch => endpointRegexMatch ?? (endpointRegexMatch = new Regex(@"^(.+\.)?s3[.-]([a-z0-9-]+)\.", RegexOptions.Compiled));
+        private static Regex EndpointRegexMatch = new Regex(@"^(.+\.)?s3[.-]([a-z0-9-]+)\.", RegexOptions.Compiled);
 
         /// <summary>
         /// True if the URI contains the bucket in the path, false if it contains the bucket in the authority.
