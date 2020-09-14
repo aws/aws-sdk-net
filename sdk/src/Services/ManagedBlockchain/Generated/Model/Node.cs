@@ -41,6 +41,7 @@ namespace Amazon.ManagedBlockchain.Model
         private NodeLogPublishingConfiguration _logPublishingConfiguration;
         private string _memberId;
         private string _networkId;
+        private StateDBType _stateDB;
         private NodeStatus _status;
 
         /// <summary>
@@ -135,7 +136,11 @@ namespace Amazon.ManagedBlockchain.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogPublishingConfiguration.
+        /// Gets and sets the property LogPublishingConfiguration. 
+        /// <para>
+        /// Configuration properties for logging events associated with a peer node owned by a
+        /// member in a Managed Blockchain network.
+        /// </para>
         /// </summary>
         public NodeLogPublishingConfiguration LogPublishingConfiguration
         {
@@ -185,6 +190,24 @@ namespace Amazon.ManagedBlockchain.Model
         internal bool IsSetNetworkId()
         {
             return this._networkId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateDB. 
+        /// <para>
+        /// The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+        /// </para>
+        /// </summary>
+        public StateDBType StateDB
+        {
+            get { return this._stateDB; }
+            set { this._stateDB = value; }
+        }
+
+        // Check to see if StateDB property is set
+        internal bool IsSetStateDB()
+        {
+            return this._stateDB != null;
         }
 
         /// <summary>

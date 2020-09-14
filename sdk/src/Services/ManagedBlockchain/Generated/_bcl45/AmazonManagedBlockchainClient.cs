@@ -1134,7 +1134,7 @@ namespace Amazon.ManagedBlockchain
 
 
         /// <summary>
-        /// Returns a listing of all invitations made on the specified network.
+        /// Returns a listing of all invitations for the current AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInvitations service method.</param>
         /// 
@@ -1174,7 +1174,7 @@ namespace Amazon.ManagedBlockchain
 
 
         /// <summary>
-        /// Returns a listing of all invitations made on the specified network.
+        /// Returns a listing of all invitations for the current AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInvitations service method.</param>
         /// <param name="cancellationToken">

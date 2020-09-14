@@ -68,6 +68,12 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetStateDB())
+            {
+                context.Writer.WritePropertyName("StateDB");
+                context.Writer.Write(requestObject.StateDB);
+            }
+
         }
 
         /// <summary>

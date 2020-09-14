@@ -36,6 +36,7 @@ namespace Amazon.ManagedBlockchain.Model
         private string _availabilityZone;
         private string _instanceType;
         private NodeLogPublishingConfiguration _logPublishingConfiguration;
+        private StateDBType _stateDB;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -76,7 +77,11 @@ namespace Amazon.ManagedBlockchain.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogPublishingConfiguration.
+        /// Gets and sets the property LogPublishingConfiguration. 
+        /// <para>
+        /// Configuration properties for logging events associated with a peer node owned by a
+        /// member in a Managed Blockchain network. 
+        /// </para>
         /// </summary>
         public NodeLogPublishingConfiguration LogPublishingConfiguration
         {
@@ -88,6 +93,26 @@ namespace Amazon.ManagedBlockchain.Model
         internal bool IsSetLogPublishingConfiguration()
         {
             return this._logPublishingConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateDB. 
+        /// <para>
+        /// The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+        /// When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4
+        /// or later, the default is <code>CouchDB</code>.
+        /// </para>
+        /// </summary>
+        public StateDBType StateDB
+        {
+            get { return this._stateDB; }
+            set { this._stateDB = value; }
+        }
+
+        // Check to see if StateDB property is set
+        internal bool IsSetStateDB()
+        {
+            return this._stateDB != null;
         }
 
     }
