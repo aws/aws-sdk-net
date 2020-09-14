@@ -29,29 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Provides details about execution input or output.
+    /// Selects whether or not the state machine's AWS X-Ray tracing is enabled. Default is
+    /// <code>false</code>
     /// </summary>
-    public partial class CloudWatchEventsExecutionDataDetails
+    public partial class TracingConfiguration
     {
-        private bool? _included;
+        private bool? _enabled;
 
         /// <summary>
-        /// Gets and sets the property Included. 
+        /// Gets and sets the property Enabled. 
         /// <para>
-        /// Indicates whether input or output was included in the response. Always <code>true</code>
-        /// for API calls. 
+        /// When set to <code>true</code>, AWS X-Ray tracing is enabled.
         /// </para>
         /// </summary>
-        public bool Included
+        public bool Enabled
         {
-            get { return this._included.GetValueOrDefault(); }
-            set { this._included = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
 
-        // Check to see if Included property is set
-        internal bool IsSetIncluded()
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
         {
-            return this._included.HasValue; 
+            return this._enabled.HasValue; 
         }
 
     }

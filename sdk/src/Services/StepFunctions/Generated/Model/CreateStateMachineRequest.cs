@@ -47,10 +47,11 @@ namespace Amazon.StepFunctions.Model
     ///  <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create
     /// a duplicate resource if it was already created. <code>CreateStateMachine</code>'s
     /// idempotency check is based on the state machine <code>name</code>, <code>definition</code>,
-    /// <code>type</code>, and <code>LoggingConfiguration</code>. If a following request has
-    /// a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore
-    /// these differences and treat it as an idempotent request of the previous. In this case,
-    /// <code>roleArn</code> and <code>tags</code> will not be updated, even if they are different.
+    /// <code>type</code>, <code>LoggingConfiguration</code> and <code>TracingConfiguration</code>.
+    /// If a following request has a different <code>roleArn</code> or <code>tags</code>,
+    /// Step Functions will ignore these differences and treat it as an idempotent request
+    /// of the previous. In this case, <code>roleArn</code> and <code>tags</code> will not
+    /// be updated, even if they are different.
     /// </para>
     ///  </note>
     /// </summary>
@@ -61,6 +62,7 @@ namespace Amazon.StepFunctions.Model
         private string _name;
         private string _roleArn;
         private List<Tag> _tags = new List<Tag>();
+        private TracingConfiguration _tracingConfiguration;
         private StateMachineType _type;
 
         /// <summary>
@@ -203,6 +205,24 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TracingConfiguration. 
+        /// <para>
+        /// Selects whether AWS X-Ray tracing is enabled.
+        /// </para>
+        /// </summary>
+        public TracingConfiguration TracingConfiguration
+        {
+            get { return this._tracingConfiguration; }
+            set { this._tracingConfiguration = value; }
+        }
+
+        // Check to see if TracingConfiguration property is set
+        internal bool IsSetTracingConfiguration()
+        {
+            return this._tracingConfiguration != null;
         }
 
         /// <summary>

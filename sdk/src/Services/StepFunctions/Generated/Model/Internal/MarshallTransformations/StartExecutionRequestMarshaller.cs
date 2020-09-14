@@ -86,6 +86,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StateMachineArn);
                 }
 
+                if(publicRequest.IsSetTraceHeader())
+                {
+                    context.Writer.WritePropertyName("traceHeader");
+                    context.Writer.Write(publicRequest.TraceHeader);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

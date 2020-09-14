@@ -178,10 +178,11 @@ namespace Amazon.StepFunctions
         ///  <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create
         /// a duplicate resource if it was already created. <code>CreateStateMachine</code>'s
         /// idempotency check is based on the state machine <code>name</code>, <code>definition</code>,
-        /// <code>type</code>, and <code>LoggingConfiguration</code>. If a following request has
-        /// a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore
-        /// these differences and treat it as an idempotent request of the previous. In this case,
-        /// <code>roleArn</code> and <code>tags</code> will not be updated, even if they are different.
+        /// <code>type</code>, <code>LoggingConfiguration</code> and <code>TracingConfiguration</code>.
+        /// If a following request has a different <code>roleArn</code> or <code>tags</code>,
+        /// Step Functions will ignore these differences and treat it as an idempotent request
+        /// of the previous. In this case, <code>roleArn</code> and <code>tags</code> will not
+        /// be updated, even if they are different.
         /// </para>
         ///  </note>
         /// </summary>
@@ -199,6 +200,10 @@ namespace Amazon.StepFunctions
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
         /// The provided name is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidTracingConfigurationException">
+        /// Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code>
+        /// has not been set to <code>true</code> or <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineAlreadyExistsException">
         /// A state machine with the same name but a different definition or role ARN already
@@ -241,10 +246,11 @@ namespace Amazon.StepFunctions
         ///  <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create
         /// a duplicate resource if it was already created. <code>CreateStateMachine</code>'s
         /// idempotency check is based on the state machine <code>name</code>, <code>definition</code>,
-        /// <code>type</code>, and <code>LoggingConfiguration</code>. If a following request has
-        /// a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore
-        /// these differences and treat it as an idempotent request of the previous. In this case,
-        /// <code>roleArn</code> and <code>tags</code> will not be updated, even if they are different.
+        /// <code>type</code>, <code>LoggingConfiguration</code> and <code>TracingConfiguration</code>.
+        /// If a following request has a different <code>roleArn</code> or <code>tags</code>,
+        /// Step Functions will ignore these differences and treat it as an idempotent request
+        /// of the previous. In this case, <code>roleArn</code> and <code>tags</code> will not
+        /// be updated, even if they are different.
         /// </para>
         ///  </note>
         /// </summary>
@@ -265,6 +271,10 @@ namespace Amazon.StepFunctions
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
         /// The provided name is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidTracingConfigurationException">
+        /// Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code>
+        /// has not been set to <code>true</code> or <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineAlreadyExistsException">
         /// A state machine with the same name but a different definition or role ARN already
@@ -1518,6 +1528,10 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidLoggingConfigurationException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidTracingConfigurationException">
+        /// Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code>
+        /// has not been set to <code>true</code> or <code>false</code>.
+        /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.MissingRequiredParameterException">
         /// Request is missing a required parameter. This error occurs if both <code>definition</code>
         /// and <code>roleArn</code> are not specified.
@@ -1563,6 +1577,10 @@ namespace Amazon.StepFunctions
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidLoggingConfigurationException">
         /// 
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidTracingConfigurationException">
+        /// Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code>
+        /// has not been set to <code>true</code> or <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.MissingRequiredParameterException">
         /// Request is missing a required parameter. This error occurs if both <code>definition</code>

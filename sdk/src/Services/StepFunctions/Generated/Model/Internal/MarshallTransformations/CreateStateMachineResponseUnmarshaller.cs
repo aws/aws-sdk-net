@@ -102,6 +102,10 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 {
                     return InvalidNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTracingConfiguration"))
+                {
+                    return InvalidTracingConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("StateMachineAlreadyExists"))
                 {
                     return StateMachineAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

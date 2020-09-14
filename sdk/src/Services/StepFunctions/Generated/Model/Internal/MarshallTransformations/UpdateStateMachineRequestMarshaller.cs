@@ -97,6 +97,17 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StateMachineArn);
                 }
 
+                if(publicRequest.IsSetTracingConfiguration())
+                {
+                    context.Writer.WritePropertyName("tracingConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TracingConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TracingConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

@@ -43,6 +43,7 @@ namespace Amazon.StepFunctions.Model
         private string _stateMachineArn;
         private ExecutionStatus _status;
         private DateTime? _stopDate;
+        private string _traceHeader;
 
         /// <summary>
         /// Gets and sets the property ExecutionArn. 
@@ -260,6 +261,25 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetStopDate()
         {
             return this._stopDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraceHeader. 
+        /// <para>
+        /// The AWS X-Ray trace header which was passed to the execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string TraceHeader
+        {
+            get { return this._traceHeader; }
+            set { this._traceHeader = value; }
+        }
+
+        // Check to see if TraceHeader property is set
+        internal bool IsSetTraceHeader()
+        {
+            return this._traceHeader != null;
         }
 
     }

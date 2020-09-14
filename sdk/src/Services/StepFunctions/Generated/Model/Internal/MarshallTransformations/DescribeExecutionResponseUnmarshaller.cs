@@ -111,6 +111,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     response.StopDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("traceHeader", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TraceHeader = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

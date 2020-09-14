@@ -81,6 +81,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     response.StateMachineArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("tracingConfiguration", targetDepth))
+                {
+                    var unmarshaller = TracingConfigurationUnmarshaller.Instance;
+                    response.TracingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("updateDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

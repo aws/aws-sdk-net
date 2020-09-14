@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Contains details about the data from an execution's events. Always <code>true</code>
-    /// for API calls, but may be <code>false</code> for CloudWatch Logs.
+    /// Provides details about input or output in an execution history event.
     /// </summary>
     public partial class HistoryEventExecutionDataDetails
     {
@@ -39,7 +38,8 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Truncated. 
         /// <para>
-        /// Indicates whether input or output was truncated in the response. Always <code>false</code>.
+        /// Indicates whether input or output was truncated in the response. Always <code>false</code>
+        /// for API calls.
         /// </para>
         /// </summary>
         public bool Truncated

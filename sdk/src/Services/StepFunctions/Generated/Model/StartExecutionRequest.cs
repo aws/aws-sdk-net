@@ -47,6 +47,7 @@ namespace Amazon.StepFunctions.Model
         private string _input;
         private string _name;
         private string _stateMachineArn;
+        private string _traceHeader;
 
         /// <summary>
         /// Gets and sets the property Input. 
@@ -149,6 +150,26 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetStateMachineArn()
         {
             return this._stateMachineArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraceHeader. 
+        /// <para>
+        /// Passes the AWS X-Ray trace header. The trace header can also be passed in the request
+        /// payload.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string TraceHeader
+        {
+            get { return this._traceHeader; }
+            set { this._traceHeader = value; }
+        }
+
+        // Check to see if TraceHeader property is set
+        internal bool IsSetTraceHeader()
+        {
+            return this._traceHeader != null;
         }
 
     }

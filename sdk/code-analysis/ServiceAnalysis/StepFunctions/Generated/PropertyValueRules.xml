@@ -84,6 +84,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeExecutionResponse.TraceHeader</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeStateMachineRequest.StateMachineArn</property>
     <min>1</min>
     <max>256</max>
@@ -268,6 +273,11 @@
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.StartExecutionRequest.StateMachineArn</property>
     <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.StartExecutionRequest.TraceHeader</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>

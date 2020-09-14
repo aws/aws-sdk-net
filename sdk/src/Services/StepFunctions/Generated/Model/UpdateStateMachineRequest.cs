@@ -51,6 +51,7 @@ namespace Amazon.StepFunctions.Model
         private LoggingConfiguration _loggingConfiguration;
         private string _roleArn;
         private string _stateMachineArn;
+        private TracingConfiguration _tracingConfiguration;
 
         /// <summary>
         /// Gets and sets the property Definition. 
@@ -126,6 +127,24 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetStateMachineArn()
         {
             return this._stateMachineArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TracingConfiguration. 
+        /// <para>
+        /// Selects whether AWS X-Ray tracing is enabled.
+        /// </para>
+        /// </summary>
+        public TracingConfiguration TracingConfiguration
+        {
+            get { return this._tracingConfiguration; }
+            set { this._tracingConfiguration = value; }
+        }
+
+        // Check to see if TracingConfiguration property is set
+        internal bool IsSetTracingConfiguration()
+        {
+            return this._tracingConfiguration != null;
         }
 
     }

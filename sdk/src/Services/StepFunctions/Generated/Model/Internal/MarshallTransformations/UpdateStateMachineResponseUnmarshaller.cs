@@ -92,6 +92,10 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 {
                     return InvalidLoggingConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTracingConfiguration"))
+                {
+                    return InvalidTracingConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("MissingRequiredParameter"))
                 {
                     return MissingRequiredParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

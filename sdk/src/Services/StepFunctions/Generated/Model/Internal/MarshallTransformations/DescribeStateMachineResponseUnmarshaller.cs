@@ -93,6 +93,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("tracingConfiguration", targetDepth))
+                {
+                    var unmarshaller = TracingConfigurationUnmarshaller.Instance;
+                    response.TracingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
