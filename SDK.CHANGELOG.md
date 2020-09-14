@@ -1,3 +1,18 @@
+### 3.5.15.0 (2020-09-14 20:53 UTC)
+* DocDB (3.5.1.0)
+	* Updated API documentation and added paginators for DescribeCertificates, DescribeDBClusterParameterGroups, DescribeDBClusterParameters, DescribeDBClusterSnapshots and DescribePendingMaintenanceActions
+* EC2 (3.5.5.0)
+	* This release adds support for the T4G instance family to the EC2 ModifyDefaultCreditSpecification and GetDefaultCreditSpecification APIs.
+* ManagedBlockchain (3.5.1.0)
+	* Introducing support for Hyperledger Fabric 1.4. When using framework version 1.4, the state database may optionally be specified when creating peer nodes (defaults to CouchDB).
+* StepFunctions (3.5.2.0)
+	* This release of the AWS Step Functions SDK introduces support for AWS X-Ray.
+* Core 3.5.1.11
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.14.0 (2020-09-11 18:28 UTC)
 * WorkSpaces (3.5.2.0)
 	* Adds API support for WorkSpaces Cross-Region Redirection feature.
