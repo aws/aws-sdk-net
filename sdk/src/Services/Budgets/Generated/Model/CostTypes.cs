@@ -34,8 +34,8 @@ namespace Amazon.Budgets.Model
     /// 
     ///  
     /// <para>
-    ///  <code>USAGE</code>, <code>RI_UTILIZATION</code>, and <code>RI_COVERAGE</code> budgets
-    /// do not have <code>CostTypes</code>.
+    ///  <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>,
+    /// and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.
     /// </para>
     /// </summary>
     public partial class CostTypes

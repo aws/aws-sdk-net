@@ -39,7 +39,7 @@ namespace Amazon.Budgets.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>arn:aws:budgetservice::AccountId:budget/budgetName</code> 
+    ///  <code>arn:aws:budgets::AccountId:budget/budgetName</code> 
     /// </para>
     /// </summary>
     public partial class Budget
@@ -191,8 +191,8 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>,
-        /// and <code>Savings_Plans_Coverage</code> budgets do not have <code>CostTypes</code>.
+        ///  <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>,
+        /// and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.
         /// </para>
         /// </summary>
         public CostTypes CostTypes
@@ -329,9 +329,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property TimeUnit. 
         /// <para>
-        /// The length of time until a budget resets the actual and forecasted spend. <code>DAILY</code>
-        /// is available only for <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>,
-        /// and <code>Savings_Plans_Coverage</code> budgets.
+        /// The length of time until a budget resets the actual and forecasted spend.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

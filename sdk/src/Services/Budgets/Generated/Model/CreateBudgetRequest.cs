@@ -95,7 +95,7 @@ namespace Amazon.Budgets.Model
         /// call, AWS creates the notifications and subscribers for you.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Max=10)]
         public List<NotificationWithSubscribers> NotificationsWithSubscribers
         {
             get { return this._notificationsWithSubscribers; }

@@ -109,6 +109,22 @@ namespace Amazon.Budgets
     public partial class AmazonBudgetsClient : AmazonServiceClient, IAmazonBudgets
     {
         private static IServiceMetadata serviceMetadata = new AmazonBudgetsMetadata();
+        private IBudgetsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IBudgetsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new BudgetsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

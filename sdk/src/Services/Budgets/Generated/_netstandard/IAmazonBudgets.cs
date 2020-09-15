@@ -101,6 +101,12 @@ namespace Amazon.Budgets
     /// </summary>
     public partial interface IAmazonBudgets : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IBudgetsPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateBudget
 

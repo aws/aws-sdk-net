@@ -269,6 +269,24 @@ namespace Amazon.Budgets
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IBudgetsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IBudgetsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new BudgetsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

@@ -102,6 +102,10 @@ namespace Amazon.Budgets
     public partial interface IAmazonBudgets : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IBudgetsPaginatorFactory Paginators { get; }
 
         
         #region  CreateBudget

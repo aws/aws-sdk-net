@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// A notification that is associated with a budget. A budget can have up to five notifications.
+    /// A notification that is associated with a budget. A budget can have up to ten notifications.
     /// 
     /// 
     ///  
@@ -129,10 +129,12 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property Threshold. 
         /// <para>
-        /// The threshold that is associated with a notification. Thresholds are always a percentage.
+        /// The threshold that is associated with a notification. Thresholds are always a percentage,
+        /// and many customers find value being alerted between 50% - 200% of the budgeted amount.
+        /// The maximum limit for your threshold is 1,000,000% above the budgeted amount.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1000000000)]
+        [AWSProperty(Required=true, Min=0, Max=40000000000)]
         public double Threshold
         {
             get { return this._threshold.GetValueOrDefault(); }
