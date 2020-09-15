@@ -1,3 +1,26 @@
+### 3.5.16.0 (2020-09-15 18:17 UTC)
+* Budgets (3.5.0.14)
+	* Documentation updates for Daily Cost and Usage budgets
+* EC2 (3.5.6.0)
+	* T4g instances are powered by AWS Graviton2 processors
+* Kafka (3.5.2.0)
+	* Added new API's to support SASL SCRAM Authentication with MSK Clusters.
+* Kendra (3.5.2.0)
+	* Amazon Kendra now returns confidence scores for 'document' query responses.
+* MediaLive (3.5.1.0)
+	* AWS Elemental MediaLive now supports CDI (Cloud Digital Interface) inputs which enable uncompressed video from applications on Elastic Cloud Compute (EC2), AWS Media Services, and from AWS partners
+* Organizations (3.5.1.0)
+	* AWS Organizations now enables you to add tags to the AWS accounts, organizational units, organization root, and policies in your organization.
+* SageMaker (3.5.1.0)
+	* Sagemaker Ground Truth: Added support for a new Streaming feature which helps to continuously feed data and receive labels in real time. This release adds a new input and output SNS data channel.
+* TranscribeService (3.5.1.0)
+	* Amazon Transcribe now supports automatic language identification, which enables you to transcribe audio files without needing to know the language in advance.
+* Core 3.5.1.12
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.15.0 (2020-09-14 20:53 UTC)
 * DocDB (3.5.1.0)
 	* Updated API documentation and added paginators for DescribeCertificates, DescribeDBClusterParameterGroups, DescribeDBClusterParameters, DescribeDBClusterSnapshots and DescribePendingMaintenanceActions
