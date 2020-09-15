@@ -88,6 +88,18 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IdentifiedLanguageScore", targetDepth))
+                {
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.IdentifiedLanguageScore = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IdentifyLanguage", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IdentifyLanguage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LanguageCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -35,8 +35,10 @@ namespace Amazon.TranscribeService.Model
     public partial class StartTranscriptionJobRequest : AmazonTranscribeServiceRequest
     {
         private ContentRedaction _contentRedaction;
+        private bool? _identifyLanguage;
         private JobExecutionSettings _jobExecutionSettings;
         private LanguageCode _languageCode;
+        private List<string> _languageOptions = new List<string>();
         private Media _media;
         private MediaFormat _mediaFormat;
         private int? _mediaSampleRateHertz;
@@ -65,6 +67,26 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdentifyLanguage. 
+        /// <para>
+        /// Set this field to <code>true</code> to enable automatic language identification. Automatic
+        /// language identification is disabled by default. You receive a <code>BadRequestException</code>
+        /// error if you enter a value for a <code>LanguageCode</code>.
+        /// </para>
+        /// </summary>
+        public bool IdentifyLanguage
+        {
+            get { return this._identifyLanguage.GetValueOrDefault(); }
+            set { this._identifyLanguage = value; }
+        }
+
+        // Check to see if IdentifyLanguage property is set
+        internal bool IsSetIdentifyLanguage()
+        {
+            return this._identifyLanguage.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property JobExecutionSettings. 
         /// <para>
         /// Provides information about how a transcription job is executed. Use this field to
@@ -90,7 +112,6 @@ namespace Amazon.TranscribeService.Model
         /// The language code for the language used in the input media file.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public LanguageCode LanguageCode
         {
             get { return this._languageCode; }
@@ -101,6 +122,27 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetLanguageCode()
         {
             return this._languageCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LanguageOptions. 
+        /// <para>
+        /// An object containing a list of languages that might be present in your collection
+        /// of audio files. Automatic language identification chooses a language that best matches
+        /// the source audio from that list.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2)]
+        public List<string> LanguageOptions
+        {
+            get { return this._languageOptions; }
+            set { this._languageOptions = value; }
+        }
+
+        // Check to see if LanguageOptions property is set
+        internal bool IsSetLanguageOptions()
+        {
+            return this._languageOptions != null && this._languageOptions.Count > 0; 
         }
 
         /// <summary>

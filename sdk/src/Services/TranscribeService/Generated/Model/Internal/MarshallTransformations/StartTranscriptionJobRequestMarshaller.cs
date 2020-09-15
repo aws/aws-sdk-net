@@ -79,6 +79,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetIdentifyLanguage())
+                {
+                    context.Writer.WritePropertyName("IdentifyLanguage");
+                    context.Writer.Write(publicRequest.IdentifyLanguage);
+                }
+
                 if(publicRequest.IsSetJobExecutionSettings())
                 {
                     context.Writer.WritePropertyName("JobExecutionSettings");
@@ -94,6 +100,17 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("LanguageCode");
                     context.Writer.Write(publicRequest.LanguageCode);
+                }
+
+                if(publicRequest.IsSetLanguageOptions())
+                {
+                    context.Writer.WritePropertyName("LanguageOptions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestLanguageOptionsListValue in publicRequest.LanguageOptions)
+                    {
+                            context.Writer.Write(publicRequestLanguageOptionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetMedia())

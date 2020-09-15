@@ -88,6 +88,18 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IdentifiedLanguageScore", targetDepth))
+                {
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.IdentifiedLanguageScore = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IdentifyLanguage", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IdentifyLanguage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JobExecutionSettings", targetDepth))
                 {
                     var unmarshaller = JobExecutionSettingsUnmarshaller.Instance;
@@ -98,6 +110,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LanguageOptions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.LanguageOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Media", targetDepth))

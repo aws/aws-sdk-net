@@ -38,8 +38,11 @@ namespace Amazon.TranscribeService.Model
         private ContentRedaction _contentRedaction;
         private DateTime? _creationTime;
         private string _failureReason;
+        private float? _identifiedLanguageScore;
+        private bool? _identifyLanguage;
         private JobExecutionSettings _jobExecutionSettings;
         private LanguageCode _languageCode;
+        private List<string> _languageOptions = new List<string>();
         private Media _media;
         private MediaFormat _mediaFormat;
         private int? _mediaSampleRateHertz;
@@ -168,6 +171,45 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdentifiedLanguageScore. 
+        /// <para>
+        /// The score that Amazon Transcribe gives for the predominant language that it identified
+        /// in your collection of source audio files. This score reflects the confidence that
+        /// the language that Amazon Transcribe identified is the correct language.
+        /// </para>
+        /// </summary>
+        public float IdentifiedLanguageScore
+        {
+            get { return this._identifiedLanguageScore.GetValueOrDefault(); }
+            set { this._identifiedLanguageScore = value; }
+        }
+
+        // Check to see if IdentifiedLanguageScore property is set
+        internal bool IsSetIdentifiedLanguageScore()
+        {
+            return this._identifiedLanguageScore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentifyLanguage. 
+        /// <para>
+        /// A value that shows if automatic language identification was enabled for a transcription
+        /// job.
+        /// </para>
+        /// </summary>
+        public bool IdentifyLanguage
+        {
+            get { return this._identifyLanguage.GetValueOrDefault(); }
+            set { this._identifyLanguage = value; }
+        }
+
+        // Check to see if IdentifyLanguage property is set
+        internal bool IsSetIdentifyLanguage()
+        {
+            return this._identifyLanguage.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property JobExecutionSettings. 
         /// <para>
         /// Provides information about how a transcription job is executed.
@@ -201,6 +243,26 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetLanguageCode()
         {
             return this._languageCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LanguageOptions. 
+        /// <para>
+        /// An object that shows the optional array of languages inputted for transcription jobs
+        /// with automatic language identification enabled.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2)]
+        public List<string> LanguageOptions
+        {
+            get { return this._languageOptions; }
+            set { this._languageOptions = value; }
+        }
+
+        // Check to see if LanguageOptions property is set
+        internal bool IsSetLanguageOptions()
+        {
+            return this._languageOptions != null && this._languageOptions.Count > 0; 
         }
 
         /// <summary>

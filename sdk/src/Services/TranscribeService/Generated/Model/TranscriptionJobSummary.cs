@@ -37,6 +37,8 @@ namespace Amazon.TranscribeService.Model
         private ContentRedaction _contentRedaction;
         private DateTime? _creationTime;
         private string _failureReason;
+        private float? _identifiedLanguageScore;
+        private bool? _identifyLanguage;
         private LanguageCode _languageCode;
         private ModelSettings _modelSettings;
         private OutputLocationType _outputLocationType;
@@ -115,6 +117,44 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentifiedLanguageScore. 
+        /// <para>
+        /// A value between zero and one that Amazon Transcribe assigned to the language it identified
+        /// in the source audio. A higher score indicates that Amazon Transcribe is more confident
+        /// in the language it identified.
+        /// </para>
+        /// </summary>
+        public float IdentifiedLanguageScore
+        {
+            get { return this._identifiedLanguageScore.GetValueOrDefault(); }
+            set { this._identifiedLanguageScore = value; }
+        }
+
+        // Check to see if IdentifiedLanguageScore property is set
+        internal bool IsSetIdentifiedLanguageScore()
+        {
+            return this._identifiedLanguageScore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentifyLanguage. 
+        /// <para>
+        /// Whether automatic language identification was enabled for a transcription job.
+        /// </para>
+        /// </summary>
+        public bool IdentifyLanguage
+        {
+            get { return this._identifyLanguage.GetValueOrDefault(); }
+            set { this._identifyLanguage = value; }
+        }
+
+        // Check to see if IdentifyLanguage property is set
+        internal bool IsSetIdentifyLanguage()
+        {
+            return this._identifyLanguage.HasValue; 
         }
 
         /// <summary>
