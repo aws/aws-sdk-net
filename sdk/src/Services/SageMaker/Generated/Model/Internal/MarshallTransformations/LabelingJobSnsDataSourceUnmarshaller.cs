@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LabelingJobDataSource Object
+    /// Response Unmarshaller for LabelingJobSnsDataSource Object
     /// </summary>  
-    public class LabelingJobDataSourceUnmarshaller : IUnmarshaller<LabelingJobDataSource, XmlUnmarshallerContext>, IUnmarshaller<LabelingJobDataSource, JsonUnmarshallerContext>
+    public class LabelingJobSnsDataSourceUnmarshaller : IUnmarshaller<LabelingJobSnsDataSource, XmlUnmarshallerContext>, IUnmarshaller<LabelingJobSnsDataSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LabelingJobDataSource IUnmarshaller<LabelingJobDataSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LabelingJobSnsDataSource IUnmarshaller<LabelingJobSnsDataSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LabelingJobDataSource Unmarshall(JsonUnmarshallerContext context)
+        public LabelingJobSnsDataSource Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LabelingJobDataSource unmarshalledObject = new LabelingJobDataSource();
+            LabelingJobSnsDataSource unmarshalledObject = new LabelingJobSnsDataSource();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("S3DataSource", targetDepth))
+                if (context.TestExpression("SnsTopicArn", targetDepth))
                 {
-                    var unmarshaller = LabelingJobS3DataSourceUnmarshaller.Instance;
-                    unmarshalledObject.S3DataSource = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SnsDataSource", targetDepth))
-                {
-                    var unmarshaller = LabelingJobSnsDataSourceUnmarshaller.Instance;
-                    unmarshalledObject.SnsDataSource = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SnsTopicArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static LabelingJobDataSourceUnmarshaller _instance = new LabelingJobDataSourceUnmarshaller();        
+        private static LabelingJobSnsDataSourceUnmarshaller _instance = new LabelingJobSnsDataSourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LabelingJobDataSourceUnmarshaller Instance
+        public static LabelingJobSnsDataSourceUnmarshaller Instance
         {
             get
             {

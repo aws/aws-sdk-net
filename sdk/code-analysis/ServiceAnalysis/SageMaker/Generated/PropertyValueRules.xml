@@ -3302,6 +3302,11 @@
     <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.LabelingJobOutputConfig.SnsTopicArn</property>
+    <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sns:[a-z0-9\-]*:[0-9]{12}:[a-zA-Z0-9_.-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobResourceConfig.VolumeKmsKeyId</property>
     <max>2048</max>
     <pattern>.*</pattern>
@@ -3310,6 +3315,11 @@
     <property>Amazon.SageMaker.Model.LabelingJobS3DataSource.ManifestS3Uri</property>
     <max>1024</max>
     <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.LabelingJobSnsDataSource.SnsTopicArn</property>
+    <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sns:[a-z0-9\-]*:[0-9]{12}:[a-zA-Z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobStoppingConditions.MaxHumanLabeledObjectCount</property>

@@ -57,6 +57,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.S3OutputPath);
             }
 
+            if(requestObject.IsSetSnsTopicArn())
+            {
+                context.Writer.WritePropertyName("SnsTopicArn");
+                context.Writer.Write(requestObject.SnsTopicArn);
+            }
+
         }
 
         /// <summary>

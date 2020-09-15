@@ -30,10 +30,28 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Provides information about the location of input data.
+    /// 
+    ///  
+    /// <para>
+    /// You must specify at least one of the following: <code>S3DataSource</code> or <code>SnsDataSource</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Use <code>SnsDataSource</code> to specify an SNS input topic for a streaming labeling
+    /// job. If you do not specify and SNS input topic ARN, Ground Truth will create a one-time
+    /// labeling job.
+    /// </para>
+    ///  
+    /// <para>
+    /// Use <code>S3DataSource</code> to specify an input manifest file for both streaming
+    /// and one-time labeling jobs. Adding an <code>S3DataSource</code> is optional if you
+    /// use <code>SnsDataSource</code> to create a streaming labeling job.
+    /// </para>
     /// </summary>
     public partial class LabelingJobDataSource
     {
         private LabelingJobS3DataSource _s3DataSource;
+        private LabelingJobSnsDataSource _snsDataSource;
 
         /// <summary>
         /// Gets and sets the property S3DataSource. 
@@ -51,6 +69,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetS3DataSource()
         {
             return this._s3DataSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnsDataSource. 
+        /// <para>
+        /// An Amazon SNS data source used for streaming labeling jobs.
+        /// </para>
+        /// </summary>
+        public LabelingJobSnsDataSource SnsDataSource
+        {
+            get { return this._snsDataSource; }
+            set { this._snsDataSource = value; }
+        }
+
+        // Check to see if SnsDataSource property is set
+        internal bool IsSetSnsDataSource()
+        {
+            return this._snsDataSource != null;
         }
 
     }

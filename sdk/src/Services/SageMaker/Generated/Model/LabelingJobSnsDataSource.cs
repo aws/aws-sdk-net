@@ -29,40 +29,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies whether the model container is in Amazon ECR or a private Docker registry
-    /// accessible from your Amazon Virtual Private Cloud (VPC).
+    /// An Amazon SNS data source used for streaming labeling jobs.
     /// </summary>
-    public partial class ImageConfig
+    public partial class LabelingJobSnsDataSource
     {
-        private RepositoryAccessMode _repositoryAccessMode;
+        private string _snsTopicArn;
 
         /// <summary>
-        /// Gets and sets the property RepositoryAccessMode. 
+        /// Gets and sets the property SnsTopicArn. 
         /// <para>
-        /// Set this to one of the following values:
+        /// The Amazon SNS input topic Amazon Resource Name (ARN). Specify the ARN of the input
+        /// topic you will use to send new data objects to a streaming labeling job.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <code>Platform</code> - The model image is hosted in Amazon ECR.
+        /// If you specify an input topic for <code>SnsTopicArn</code> in <code>InputConfig</code>,
+        /// you must specify a value for <code>SnsTopicArn</code> in <code>OutputConfig</code>.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Vpc</code> - The model image is hosted in a private Docker registry in your
-        /// VPC.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public RepositoryAccessMode RepositoryAccessMode
+        [AWSProperty(Required=true, Max=2048)]
+        public string SnsTopicArn
         {
-            get { return this._repositoryAccessMode; }
-            set { this._repositoryAccessMode = value; }
+            get { return this._snsTopicArn; }
+            set { this._snsTopicArn = value; }
         }
 
-        // Check to see if RepositoryAccessMode property is set
-        internal bool IsSetRepositoryAccessMode()
+        // Check to see if SnsTopicArn property is set
+        internal bool IsSetSnsTopicArn()
         {
-            return this._repositoryAccessMode != null;
+            return this._snsTopicArn != null;
         }
 
     }

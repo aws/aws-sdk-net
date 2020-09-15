@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _kmsKeyId;
         private string _s3OutputPath;
+        private string _snsTopicArn;
 
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
@@ -89,6 +90,35 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetS3OutputPath()
         {
             return this._s3OutputPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnsTopicArn. 
+        /// <para>
+        /// An Amazon Simple Notification Service (Amazon SNS) output topic ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// When workers complete labeling tasks, Ground Truth will send labeling task output
+        /// data to the SNS output topic you specify here.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must provide a value for this parameter if you provide an Amazon SNS input topic
+        /// in <code>SnsDataSource</code> in <code>InputConfig</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string SnsTopicArn
+        {
+            get { return this._snsTopicArn; }
+            set { this._snsTopicArn = value; }
+        }
+
+        // Check to see if SnsTopicArn property is set
+        internal bool IsSetSnsTopicArn()
+        {
+            return this._snsTopicArn != null;
         }
 
     }

@@ -41,10 +41,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InitialActiveLearningModelArn. 
         /// <para>
-        /// At the end of an auto-label job Amazon SageMaker Ground Truth sends the Amazon Resource
-        /// Nam (ARN) of the final model used for auto-labeling. You can use this model as the
-        /// starting point for subsequent similar jobs by providing the ARN of the model here.
-        /// 
+        /// At the end of an auto-label job Ground Truth sends the Amazon Resource Name (ARN)
+        /// of the final model used for auto-labeling. You can use this model as the starting
+        /// point for subsequent similar jobs by providing the ARN of the model here. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

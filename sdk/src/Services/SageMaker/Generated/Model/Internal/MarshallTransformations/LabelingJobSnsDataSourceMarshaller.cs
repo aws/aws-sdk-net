@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LabelingJobDataSource Marshaller
+    /// LabelingJobSnsDataSource Marshaller
     /// </summary>       
-    public class LabelingJobDataSourceMarshaller : IRequestMarshaller<LabelingJobDataSource, JsonMarshallerContext> 
+    public class LabelingJobSnsDataSourceMarshaller : IRequestMarshaller<LabelingJobSnsDataSource, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LabelingJobDataSource requestObject, JsonMarshallerContext context)
+        public void Marshall(LabelingJobSnsDataSource requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetS3DataSource())
+            if(requestObject.IsSetSnsTopicArn())
             {
-                context.Writer.WritePropertyName("S3DataSource");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = LabelingJobS3DataSourceMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3DataSource, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSnsDataSource())
-            {
-                context.Writer.WritePropertyName("SnsDataSource");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = LabelingJobSnsDataSourceMarshaller.Instance;
-                marshaller.Marshall(requestObject.SnsDataSource, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("SnsTopicArn");
+                context.Writer.Write(requestObject.SnsTopicArn);
             }
 
         }
@@ -72,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static LabelingJobDataSourceMarshaller Instance = new LabelingJobDataSourceMarshaller();
+        public readonly static LabelingJobSnsDataSourceMarshaller Instance = new LabelingJobSnsDataSourceMarshaller();
 
     }
 }

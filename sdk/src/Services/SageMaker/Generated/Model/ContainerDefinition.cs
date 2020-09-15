@@ -97,10 +97,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Image. 
         /// <para>
-        /// The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.
-        /// If you are using your own custom algorithm instead of an algorithm provided by Amazon
-        /// SageMaker, the inference code must meet Amazon SageMaker requirements. Amazon SageMaker
-        /// supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code>
+        /// The path where inference code is stored. This can be either in Amazon EC2 Container
+        /// Registry or in a Docker registry that is accessible from the same VPC that you configure
+        /// for your endpoint. If you are using your own custom algorithm instead of an algorithm
+        /// provided by Amazon SageMaker, the inference code must meet Amazon SageMaker requirements.
+        /// Amazon SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code>
         /// image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
         /// Your Own Algorithms with Amazon SageMaker</a> 
         /// </para>
@@ -122,8 +123,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ImageConfig. 
         /// <para>
         /// Specifies whether the model container is in Amazon ECR or a private Docker registry
-        /// in your Amazon Virtual Private Cloud (VPC). For information about storing containers
-        /// in a private Docker registry, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
+        /// accessible from your Amazon Virtual Private Cloud (VPC). For information about storing
+        /// containers in a private Docker registry, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
         /// a Private Docker Registry for Real-Time Inference Containers</a> 
         /// </para>
         /// </summary>
