@@ -55,6 +55,11 @@ namespace Amazon.Kafka.Model
         /// Paginator for ListNodes operation
         ///</summary>
         IListNodesPaginator ListNodes(ListNodesRequest request);
+
+        /// <summary>
+        /// Paginator for ListScramSecrets operation
+        ///</summary>
+        IListScramSecretsPaginator ListScramSecrets(ListScramSecretsRequest request);
     }
 }
 #endif

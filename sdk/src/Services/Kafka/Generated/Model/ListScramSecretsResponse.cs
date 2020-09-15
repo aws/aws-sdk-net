@@ -29,47 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Includes all client authentication information.
+    /// This is the response object from the ListScramSecrets operation.
     /// </summary>
-    public partial class ClientAuthentication
+    public partial class ListScramSecretsResponse : AmazonWebServiceResponse
     {
-        private Sasl _sasl;
-        private Tls _tls;
+        private string _nextToken;
+        private List<string> _secretArnList = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Sasl.             
+        /// Gets and sets the property NextToken.             
         /// <para>
-        /// Details for ClientAuthentication using SASL.
+        /// Paginated results marker.
         /// </para>
         /// </summary>
-        public Sasl Sasl
+        public string NextToken
         {
-            get { return this._sasl; }
-            set { this._sasl = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Sasl property is set
-        internal bool IsSetSasl()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._sasl != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Tls.             
+        /// Gets and sets the property SecretArnList.             
         /// <para>
-        /// Details for ClientAuthentication using TLS.
+        /// The list of scram secrets associated with the cluster.
         /// </para>
         /// </summary>
-        public Tls Tls
+        public List<string> SecretArnList
         {
-            get { return this._tls; }
-            set { this._tls = value; }
+            get { return this._secretArnList; }
+            set { this._secretArnList = value; }
         }
 
-        // Check to see if Tls property is set
-        internal bool IsSetTls()
+        // Check to see if SecretArnList property is set
+        internal bool IsSetSecretArnList()
         {
-            return this._tls != null;
+            return this._secretArnList != null && this._secretArnList.Count > 0; 
         }
 
     }

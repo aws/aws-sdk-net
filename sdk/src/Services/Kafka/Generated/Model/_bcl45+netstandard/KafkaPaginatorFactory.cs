@@ -83,6 +83,14 @@ namespace Amazon.Kafka.Model
         {
             return new ListNodesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListScramSecrets operation
+        ///</summary>
+        public IListScramSecretsPaginator ListScramSecrets(ListScramSecretsRequest request) 
+        {
+            return new ListScramSecretsPaginator(this.client, request);
+        }
     }
 }
 #endif

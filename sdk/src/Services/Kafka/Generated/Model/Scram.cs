@@ -29,47 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Includes all client authentication information.
+    /// Details for SASL/SCRAM client authentication.
     /// </summary>
-    public partial class ClientAuthentication
+    public partial class Scram
     {
-        private Sasl _sasl;
-        private Tls _tls;
+        private bool? _enabled;
 
         /// <summary>
-        /// Gets and sets the property Sasl.             
+        /// Gets and sets the property Enabled.             
         /// <para>
-        /// Details for ClientAuthentication using SASL.
+        /// SASL/SCRAM authentication is enabled or not.
         /// </para>
         /// </summary>
-        public Sasl Sasl
+        public bool Enabled
         {
-            get { return this._sasl; }
-            set { this._sasl = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
 
-        // Check to see if Sasl property is set
-        internal bool IsSetSasl()
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
         {
-            return this._sasl != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tls.             
-        /// <para>
-        /// Details for ClientAuthentication using TLS.
-        /// </para>
-        /// </summary>
-        public Tls Tls
-        {
-            get { return this._tls; }
-            set { this._tls = value; }
-        }
-
-        // Check to see if Tls property is set
-        internal bool IsSetTls()
-        {
-            return this._tls != null;
+            return this._enabled.HasValue; 
         }
 
     }

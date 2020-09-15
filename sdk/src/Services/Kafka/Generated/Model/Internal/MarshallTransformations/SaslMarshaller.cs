@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ClientAuthentication Marshaller
+    /// Sasl Marshaller
     /// </summary>       
-    public class ClientAuthenticationMarshaller : IRequestMarshaller<ClientAuthentication, JsonMarshallerContext> 
+    public class SaslMarshaller : IRequestMarshaller<Sasl, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,26 +43,15 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ClientAuthentication requestObject, JsonMarshallerContext context)
+        public void Marshall(Sasl requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetSasl())
+            if(requestObject.IsSetScram())
             {
-                context.Writer.WritePropertyName("sasl");
+                context.Writer.WritePropertyName("scram");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = SaslMarshaller.Instance;
-                marshaller.Marshall(requestObject.Sasl, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetTls())
-            {
-                context.Writer.WritePropertyName("tls");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = TlsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Tls, context);
+                var marshaller = ScramMarshaller.Instance;
+                marshaller.Marshall(requestObject.Scram, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -72,7 +61,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ClientAuthenticationMarshaller Instance = new ClientAuthenticationMarshaller();
+        public readonly static SaslMarshaller Instance = new SaslMarshaller();
 
     }
 }

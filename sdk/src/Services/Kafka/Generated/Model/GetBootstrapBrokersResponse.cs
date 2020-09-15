@@ -34,6 +34,7 @@ namespace Amazon.Kafka.Model
     public partial class GetBootstrapBrokersResponse : AmazonWebServiceResponse
     {
         private string _bootstrapBrokerString;
+        private string _bootstrapBrokerStringSaslScram;
         private string _bootstrapBrokerStringTls;
 
         /// <summary>
@@ -52,6 +53,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetBootstrapBrokerString()
         {
             return this._bootstrapBrokerString != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BootstrapBrokerStringSaslScram.             
+        /// <para>
+        /// A string containing one or more DNS names (or IP) and Sasl Scram port pairs.
+        /// </para>
+        /// </summary>
+        public string BootstrapBrokerStringSaslScram
+        {
+            get { return this._bootstrapBrokerStringSaslScram; }
+            set { this._bootstrapBrokerStringSaslScram = value; }
+        }
+
+        // Check to see if BootstrapBrokerStringSaslScram property is set
+        internal bool IsSetBootstrapBrokerStringSaslScram()
+        {
+            return this._bootstrapBrokerStringSaslScram != null;
         }
 
         /// <summary>

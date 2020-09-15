@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClientAuthentication Object
+    /// Response Unmarshaller for UnprocessedScramSecret Object
     /// </summary>  
-    public class ClientAuthenticationUnmarshaller : IUnmarshaller<ClientAuthentication, XmlUnmarshallerContext>, IUnmarshaller<ClientAuthentication, JsonUnmarshallerContext>
+    public class UnprocessedScramSecretUnmarshaller : IUnmarshaller<UnprocessedScramSecret, XmlUnmarshallerContext>, IUnmarshaller<UnprocessedScramSecret, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ClientAuthentication IUnmarshaller<ClientAuthentication, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        UnprocessedScramSecret IUnmarshaller<UnprocessedScramSecret, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ClientAuthentication Unmarshall(JsonUnmarshallerContext context)
+        public UnprocessedScramSecret Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ClientAuthentication unmarshalledObject = new ClientAuthentication();
+            UnprocessedScramSecret unmarshalledObject = new UnprocessedScramSecret();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("sasl", targetDepth))
+                if (context.TestExpression("errorCode", targetDepth))
                 {
-                    var unmarshaller = SaslUnmarshaller.Instance;
-                    unmarshalledObject.Sasl = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("tls", targetDepth))
+                if (context.TestExpression("errorMessage", targetDepth))
                 {
-                    var unmarshaller = TlsUnmarshaller.Instance;
-                    unmarshalledObject.Tls = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("secretArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClientAuthenticationUnmarshaller _instance = new ClientAuthenticationUnmarshaller();        
+        private static UnprocessedScramSecretUnmarshaller _instance = new UnprocessedScramSecretUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClientAuthenticationUnmarshaller Instance
+        public static UnprocessedScramSecretUnmarshaller Instance
         {
             get
             {

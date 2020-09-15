@@ -273,6 +273,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
             paginator.Responses.ToList();
         }
 
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Kafka")]
+        public void ListScramSecretsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListScramSecretsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListScramSecretsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListScramSecretsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListScramSecrets(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListScramSecrets(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Kafka")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListScramSecretsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListScramSecretsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListScramSecretsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListScramSecrets(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListScramSecrets(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
     }
 }
 #endif

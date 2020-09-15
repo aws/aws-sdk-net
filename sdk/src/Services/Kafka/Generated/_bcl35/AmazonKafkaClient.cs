@@ -237,6 +237,156 @@ namespace Amazon.Kafka
         #endregion
 
 
+        #region  BatchAssociateScramSecret
+
+        /// <summary>
+        /// Associates one or more Scram Secrets with an Amazon MSK cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateScramSecret service method.</param>
+        /// 
+        /// <returns>The response from the BatchAssociateScramSecret service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchAssociateScramSecret">REST API Reference for BatchAssociateScramSecret Operation</seealso>
+        public virtual BatchAssociateScramSecretResponse BatchAssociateScramSecret(BatchAssociateScramSecretRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAssociateScramSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAssociateScramSecretResponseUnmarshaller.Instance;
+
+            return Invoke<BatchAssociateScramSecretResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchAssociateScramSecret operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateScramSecret operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchAssociateScramSecret
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchAssociateScramSecret">REST API Reference for BatchAssociateScramSecret Operation</seealso>
+        public virtual IAsyncResult BeginBatchAssociateScramSecret(BatchAssociateScramSecretRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAssociateScramSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAssociateScramSecretResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchAssociateScramSecret operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchAssociateScramSecret.</param>
+        /// 
+        /// <returns>Returns a  BatchAssociateScramSecretResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchAssociateScramSecret">REST API Reference for BatchAssociateScramSecret Operation</seealso>
+        public virtual BatchAssociateScramSecretResponse EndBatchAssociateScramSecret(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchAssociateScramSecretResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchDisassociateScramSecret
+
+        /// <summary>
+        /// Disassociates one or more Scram Secrets from an Amazon MSK cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateScramSecret service method.</param>
+        /// 
+        /// <returns>The response from the BatchDisassociateScramSecret service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchDisassociateScramSecret">REST API Reference for BatchDisassociateScramSecret Operation</seealso>
+        public virtual BatchDisassociateScramSecretResponse BatchDisassociateScramSecret(BatchDisassociateScramSecretRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDisassociateScramSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDisassociateScramSecretResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDisassociateScramSecretResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDisassociateScramSecret operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateScramSecret operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDisassociateScramSecret
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchDisassociateScramSecret">REST API Reference for BatchDisassociateScramSecret Operation</seealso>
+        public virtual IAsyncResult BeginBatchDisassociateScramSecret(BatchDisassociateScramSecretRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDisassociateScramSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDisassociateScramSecretResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDisassociateScramSecret operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDisassociateScramSecret.</param>
+        /// 
+        /// <returns>Returns a  BatchDisassociateScramSecretResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchDisassociateScramSecret">REST API Reference for BatchDisassociateScramSecret Operation</seealso>
+        public virtual BatchDisassociateScramSecretResponse EndBatchDisassociateScramSecret(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDisassociateScramSecretResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateCluster
 
         /// <summary>
@@ -1348,6 +1498,81 @@ namespace Amazon.Kafka
         public virtual ListNodesResponse EndListNodes(IAsyncResult asyncResult)
         {
             return EndInvoke<ListNodesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListScramSecrets
+
+        /// <summary>
+        /// Returns a list of the Scram Secrets associated with an Amazon MSK cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScramSecrets service method.</param>
+        /// 
+        /// <returns>The response from the ListScramSecrets service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListScramSecrets">REST API Reference for ListScramSecrets Operation</seealso>
+        public virtual ListScramSecretsResponse ListScramSecrets(ListScramSecretsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListScramSecretsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScramSecretsResponseUnmarshaller.Instance;
+
+            return Invoke<ListScramSecretsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListScramSecrets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListScramSecrets operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListScramSecrets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListScramSecrets">REST API Reference for ListScramSecrets Operation</seealso>
+        public virtual IAsyncResult BeginListScramSecrets(ListScramSecretsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListScramSecretsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScramSecretsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListScramSecrets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListScramSecrets.</param>
+        /// 
+        /// <returns>Returns a  ListScramSecretsResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListScramSecrets">REST API Reference for ListScramSecrets Operation</seealso>
+        public virtual ListScramSecretsResponse EndListScramSecrets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListScramSecretsResponse>(asyncResult);
         }
 
         #endregion

@@ -29,33 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Container for the parameters to the RebootBroker operation.
-    /// Reboots brokers.
+    /// Container for the parameters to the BatchAssociateScramSecret operation.
+    /// Associates one or more Scram Secrets with an Amazon MSK cluster.
     /// </summary>
-    public partial class RebootBrokerRequest : AmazonKafkaRequest
+    public partial class BatchAssociateScramSecretRequest : AmazonKafkaRequest
     {
-        private List<string> _brokerIds = new List<string>();
         private string _clusterArn;
-
-        /// <summary>
-        /// Gets and sets the property BrokerIds.             
-        /// <para>
-        /// The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting
-        /// one broker at a time.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> BrokerIds
-        {
-            get { return this._brokerIds; }
-            set { this._brokerIds = value; }
-        }
-
-        // Check to see if BrokerIds property is set
-        internal bool IsSetBrokerIds()
-        {
-            return this._brokerIds != null && this._brokerIds.Count > 0; 
-        }
+        private List<string> _secretArnList = new List<string>();
 
         /// <summary>
         /// Gets and sets the property ClusterArn.             
@@ -74,6 +54,25 @@ namespace Amazon.Kafka.Model
         internal bool IsSetClusterArn()
         {
             return this._clusterArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretArnList.             
+        /// <para>
+        /// List of AWS Secrets Manager secret ARNs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public List<string> SecretArnList
+        {
+            get { return this._secretArnList; }
+            set { this._secretArnList = value; }
+        }
+
+        // Check to see if SecretArnList property is set
+        internal bool IsSetSecretArnList()
+        {
+            return this._secretArnList != null && this._secretArnList.Count > 0; 
         }
 
     }

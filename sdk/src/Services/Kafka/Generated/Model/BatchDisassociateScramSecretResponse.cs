@@ -29,41 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Container for the parameters to the RebootBroker operation.
-    /// Reboots brokers.
+    /// This is the response object from the BatchDisassociateScramSecret operation.
     /// </summary>
-    public partial class RebootBrokerRequest : AmazonKafkaRequest
+    public partial class BatchDisassociateScramSecretResponse : AmazonWebServiceResponse
     {
-        private List<string> _brokerIds = new List<string>();
         private string _clusterArn;
-
-        /// <summary>
-        /// Gets and sets the property BrokerIds.             
-        /// <para>
-        /// The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting
-        /// one broker at a time.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> BrokerIds
-        {
-            get { return this._brokerIds; }
-            set { this._brokerIds = value; }
-        }
-
-        // Check to see if BrokerIds property is set
-        internal bool IsSetBrokerIds()
-        {
-            return this._brokerIds != null && this._brokerIds.Count > 0; 
-        }
+        private List<UnprocessedScramSecret> _unprocessedScramSecrets = new List<UnprocessedScramSecret>();
 
         /// <summary>
         /// Gets and sets the property ClusterArn.             
         /// <para>
-        /// The Amazon Resource Name (ARN) of the cluster to be updated.
+        /// The Amazon Resource Name (ARN) of the cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ClusterArn
         {
             get { return this._clusterArn; }
@@ -74,6 +52,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetClusterArn()
         {
             return this._clusterArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnprocessedScramSecrets.             
+        /// <para>
+        /// List of errors when disassociating secrets to cluster.
+        /// </para>
+        /// </summary>
+        public List<UnprocessedScramSecret> UnprocessedScramSecrets
+        {
+            get { return this._unprocessedScramSecrets; }
+            set { this._unprocessedScramSecrets = value; }
+        }
+
+        // Check to see if UnprocessedScramSecrets property is set
+        internal bool IsSetUnprocessedScramSecrets()
+        {
+            return this._unprocessedScramSecrets != null && this._unprocessedScramSecrets.Count > 0; 
         }
 
     }
