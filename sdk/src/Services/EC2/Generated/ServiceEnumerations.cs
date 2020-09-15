@@ -6291,6 +6291,34 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType T3Xlarge = new InstanceType("t3.xlarge");
         /// <summary>
+        /// Constant T4gNano for InstanceType
+        /// </summary>
+        public static readonly InstanceType T4gNano = new InstanceType("t4g.nano");
+        /// <summary>
+        /// Constant T4gMicro for InstanceType
+        /// </summary>
+        public static readonly InstanceType T4gMicro = new InstanceType("t4g.micro");
+        /// <summary>
+        /// Constant T4gSmall for InstanceType
+        /// </summary>
+        public static readonly InstanceType T4gSmall = new InstanceType("t4g.small");
+        /// <summary>
+        /// Constant T4gMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType T4gMedium = new InstanceType("t4g.medium");
+        /// <summary>
+        /// Constant T4gLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType T4gLarge = new InstanceType("t4g.large");
+        /// <summary>
+        /// Constant T4gXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType T4gXlarge = new InstanceType("t4g.xlarge");
+        /// <summary>
+        /// Constant T4g2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType T4g2xlarge = new InstanceType("t4g.2xlarge");
+        /// <summary>
         /// Constant U12tb1Metal for InstanceType
         /// </summary>
         public static readonly InstanceType U12tb1Metal = new InstanceType("u-12tb1.metal");
