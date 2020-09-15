@@ -68,7 +68,7 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation can be called only from the organization's master account. 
+    /// This operation can be called only from the organization's master account.
     /// </para>
     /// </summary>
     public partial class EnableAllFeaturesRequest : AmazonOrganizationsRequest

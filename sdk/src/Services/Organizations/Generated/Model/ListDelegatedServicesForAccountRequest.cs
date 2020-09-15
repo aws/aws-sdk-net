@@ -32,7 +32,6 @@ namespace Amazon.Organizations.Model
     /// Container for the parameters to the ListDelegatedServicesForAccount operation.
     /// List the AWS services for which the specified account is a delegated administrator.
     /// 
-    /// 
     ///  
     /// <para>
     /// This operation can be called only from the organization's master account or by a member

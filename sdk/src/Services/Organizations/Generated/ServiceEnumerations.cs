@@ -943,6 +943,10 @@ namespace Amazon.Organizations
     {
 
         /// <summary>
+        /// Constant DUPLICATE_TAG_KEY for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason DUPLICATE_TAG_KEY = new InvalidInputExceptionReason("DUPLICATE_TAG_KEY");
+        /// <summary>
         /// Constant IMMUTABLE_POLICY for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason IMMUTABLE_POLICY = new InvalidInputExceptionReason("IMMUTABLE_POLICY");

@@ -428,8 +428,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListTagsForResourceRequest.ResourceId</property>
-    <max>12</max>
-    <pattern>^\d{12}$</pattern>
+    <max>130</max>
+    <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})|(^p-[0-9a-zA-Z_]{8,128})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListTagsForResourceResponse.NextToken</property>
@@ -489,13 +489,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.TagResourceRequest.ResourceId</property>
-    <max>12</max>
-    <pattern>^\d{12}$</pattern>
+    <max>130</max>
+    <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})|(^p-[0-9a-zA-Z_]{8,128})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.UntagResourceRequest.ResourceId</property>
-    <max>12</max>
-    <pattern>^\d{12}$</pattern>
+    <max>130</max>
+    <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})|(^p-[0-9a-zA-Z_]{8,128})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.UpdateOrganizationalUnitRequest.Name</property>

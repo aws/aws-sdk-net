@@ -30,7 +30,7 @@ namespace Amazon.Organizations.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachPolicy operation.
-    /// Detaches a policy from a target root, organizational unit (OU), or account. 
+    /// Detaches a policy from a target root, organizational unit (OU), or account.
     /// 
     ///  <important> 
     /// <para>

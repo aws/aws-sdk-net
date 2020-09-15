@@ -34,12 +34,17 @@ namespace Amazon.Organizations.Model
     /// for accounts that enables you to organize your accounts to apply policies according
     /// to your business requirements. The number of levels deep that you can nest OUs is
     /// dependent upon the policy types enabled for that root. For service control policies,
-    /// the limit is five. 
+    /// the limit is five.
     /// 
     ///  
     /// <para>
     /// For more information about OUs, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing
     /// Organizational Units</a> in the <i>AWS Organizations User Guide.</i> 
+    /// </para>
+    ///  
+    /// <para>
+    /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+    /// permission.
     /// </para>
     ///  
     /// <para>
@@ -50,6 +55,7 @@ namespace Amazon.Organizations.Model
     {
         private string _name;
         private string _parentId;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -106,6 +112,34 @@ namespace Amazon.Organizations.Model
         internal bool IsSetParentId()
         {
             return this._parentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags that you want to attach to the newly created OU. For each tag in the
+        /// list, you must specify both a tag key and a value. You can set the value to an empty
+        /// string, but you can't set it to <code>null</code>. For more information about tagging,
+        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
+        /// AWS Organizations resources</a> in the AWS Organizations User Guide.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If any one of the tags is invalid or if you exceed the allowed number of tags for
+        /// an OU, then the entire request fails and the OU is not created.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

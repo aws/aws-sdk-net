@@ -31,7 +31,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Container for the parameters to the AcceptHandshake operation.
     /// Sends a response to the originator of a handshake agreeing to the action proposed
-    /// by the handshake request. 
+    /// by the handshake request.
     /// 
     ///  
     /// <para>
@@ -41,7 +41,7 @@ namespace Amazon.Organizations.Model
     ///  <ul> <li> 
     /// <para>
     ///  <b>Invitation to join</b> or <b>Approve all features request</b> handshakes: only
-    /// a principal from the member account. 
+    /// a principal from the member account.
     /// </para>
     ///  
     /// <para>

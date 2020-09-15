@@ -49,7 +49,7 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// In the current release, a child can have only a single parent. 
+    /// In the current release, a child can have only a single parent.
     /// </para>
     ///  </note>
     /// </summary>

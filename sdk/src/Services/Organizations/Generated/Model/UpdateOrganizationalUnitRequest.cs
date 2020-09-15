@@ -33,7 +33,6 @@ namespace Amazon.Organizations.Model
     /// Renames the specified organizational unit (OU). The ID and ARN don't change. The child
     /// OUs and accounts remain in place, and any attached policies of the OU remain attached.
     /// 
-    /// 
     ///  
     /// <para>
     /// This operation can be called only from the organization's master account.

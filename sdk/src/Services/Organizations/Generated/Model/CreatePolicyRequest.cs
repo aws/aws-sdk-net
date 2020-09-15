@@ -40,6 +40,11 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
+    /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+    /// permission.
+    /// </para>
+    ///  
+    /// <para>
     /// This operation can be called only from the organization's master account.
     /// </para>
     /// </summary>
@@ -48,6 +53,7 @@ namespace Amazon.Organizations.Model
         private string _content;
         private string _description;
         private string _name;
+        private List<Tag> _tags = new List<Tag>();
         private PolicyType _type;
 
         /// <summary>
@@ -111,6 +117,34 @@ namespace Amazon.Organizations.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags that you want to attach to the newly created policy. For each tag in
+        /// the list, you must specify both a tag key and a value. You can set the value to an
+        /// empty string, but you can't set it to <code>null</code>. For more information about
+        /// tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
+        /// AWS Organizations resources</a> in the AWS Organizations User Guide.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If any one of the tags is invalid or if you exceed the allowed number of tags for
+        /// a policy, then the entire request fails and the policy is not created.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

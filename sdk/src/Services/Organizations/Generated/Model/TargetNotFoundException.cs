@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+    /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
+    /// specified.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -49,13 +49,18 @@ namespace Amazon.Organizations.Model
     /// the Activity in Your Organization</a> in the <i>AWS Organizations User Guide.</i>
     /// 
     /// </para>
-    ///  </li> </ul>  
+    ///  </li> </ul> 
     /// <para>
     /// The user who calls the API to create an account must have the <code>organizations:CreateAccount</code>
     /// permission. If you enabled all features in the organization, AWS Organizations creates
     /// the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
     /// For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">AWS
     /// Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+    /// permission.
     /// </para>
     ///  
     /// <para>
@@ -124,6 +129,7 @@ namespace Amazon.Organizations.Model
         private string _email;
         private IAMUserAccessToBilling _iamUserAccessToBilling;
         private string _roleName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AccountName. 
@@ -246,6 +252,34 @@ namespace Amazon.Organizations.Model
         internal bool IsSetRoleName()
         {
             return this._roleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags that you want to attach to the newly created account. For each tag
+        /// in the list, you must specify both a tag key and a value. You can set the value to
+        /// an empty string, but you can't set it to <code>null</code>. For more information about
+        /// tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
+        /// AWS Organizations resources</a> in the AWS Organizations User Guide.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If any one of the tags is invalid or if you exceed the allowed number of tags for
+        /// an account, then the entire request fails and the account is not created.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

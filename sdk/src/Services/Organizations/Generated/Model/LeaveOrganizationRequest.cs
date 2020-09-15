@@ -43,7 +43,7 @@ namespace Amazon.Organizations.Model
     /// The master account in an organization with all features enabled can set service control
     /// policies (SCPs) that can restrict what administrators of member accounts can do. This
     /// includes preventing them from successfully calling <code>LeaveOrganization</code>
-    /// and leaving the organization. 
+    /// and leaving the organization.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -81,6 +81,12 @@ namespace Amazon.Organizations.Model
     /// your account. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
     /// Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
     /// Management User Guide.</i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// After the account leaves the organization, all tags that were attached to the account
+    /// object in the organization are deleted. AWS accounts outside of an organization do
+    /// not support tags.
     /// </para>
     ///  </li> </ul> </important>
     /// </summary>

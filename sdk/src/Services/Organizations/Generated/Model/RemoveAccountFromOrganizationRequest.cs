@@ -44,7 +44,7 @@ namespace Amazon.Organizations.Model
     /// This operation can be called only from the organization's master account. Member accounts
     /// can remove themselves with <a>LeaveOrganization</a> instead.
     /// </para>
-    ///  <important> 
+    ///  <important> <ul> <li> 
     /// <para>
     /// You can remove an account from your organization only if the account is configured
     /// with the information required to operate as a standalone account. When you create
@@ -59,7 +59,13 @@ namespace Amazon.Organizations.Model
     /// To leave an organization when all required account information has not yet been provided</a>
     /// in the <i>AWS Organizations User Guide.</i> 
     /// </para>
-    ///  </important>
+    ///  </li> <li> 
+    /// <para>
+    /// After the account leaves the organization, all tags that were attached to the account
+    /// object in the organization are deleted. AWS accounts outside of an organization do
+    /// not support tags.
+    /// </para>
+    ///  </li> </ul> </important>
     /// </summary>
     public partial class RemoveAccountFromOrganizationRequest : AmazonOrganizationsRequest
     {

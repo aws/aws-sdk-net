@@ -41,7 +41,7 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     /// You already have an account in the AWS GovCloud (US) Region that is associated with
-    /// your master account in the commercial Region. 
+    /// your master account in the commercial Region.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -50,13 +50,16 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You have the <code>organizations:CreateGovCloudAccount</code> permission. AWS Organizations
-    /// creates the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
+    /// You have the <code>organizations:CreateGovCloudAccount</code> permission. 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// AWS Organizations automatically creates the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
     /// For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">AWS
     /// Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide.</i>
     /// 
     /// </para>
-    ///  </li> </ul> 
+    ///  
     /// <para>
     /// AWS automatically enables AWS CloudTrail for AWS GovCloud (US) accounts, but you should
     /// also do the following:
@@ -75,6 +78,14 @@ namespace Amazon.Organizations.Model
     /// AWS CloudTrail Is Enabled</a> in the <i>AWS GovCloud User Guide</i>. 
     /// </para>
     ///  </li> </ul> 
+    /// <para>
+    /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+    /// permission. The tags are attached to the commercial account associated with the GovCloud
+    /// account, rather than the GovCloud account itself. To add tags to the GovCloud account,
+    /// call the <a>TagResource</a> operation in the GovCloud Region after the new GovCloud
+    /// account exists.
+    /// </para>
+    ///  
     /// <para>
     /// You call this action from the master account of your organization in the commercial
     /// Region to create a standalone AWS account in the AWS GovCloud (US) Region. After the
@@ -116,7 +127,7 @@ namespace Amazon.Organizations.Model
     /// A role is created in the new account in the commercial Region that allows the master
     /// account in the organization in the commercial Region to assume it. An AWS GovCloud
     /// (US) account is then created and associated with the commercial account that you just
-    /// created. A role is created in the new AWS GovCloud (US) account that can be assumed
+    /// created. A role is also created in the new AWS GovCloud (US) account that can be assumed
     /// by the AWS GovCloud (US) account that is associated with the master account of the
     /// commercial organization. For more information and to view a diagram that explains
     /// how account access works, see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
@@ -177,6 +188,7 @@ namespace Amazon.Organizations.Model
         private string _email;
         private IAMUserAccessToBilling _iamUserAccessToBilling;
         private string _roleName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AccountName. 
@@ -295,6 +307,41 @@ namespace Amazon.Organizations.Model
         internal bool IsSetRoleName()
         {
             return this._roleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags that you want to attach to the newly created account. These tags are
+        /// attached to the commercial account associated with the GovCloud account, and not to
+        /// the GovCloud account itself. To add tags to the actual GovCloud account, call the
+        /// <a>TagResource</a> operation in the GovCloud region after the new GovCloud account
+        /// exists.
+        /// </para>
+        ///  
+        /// <para>
+        /// For each tag in the list, you must specify both a tag key and a value. You can set
+        /// the value to an empty string, but you can't set it to <code>null</code>. For more
+        /// information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
+        /// AWS Organizations resources</a> in the AWS Organizations User Guide.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If any one of the tags is invalid or if you exceed the allowed number of tags for
+        /// an account, then the entire request fails and the account is not created.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
