@@ -1051,6 +1051,10 @@ namespace Amazon.Kendra
         /// You can specify that the query return only one type of result using the <code>QueryResultTypeConfig</code>
         /// parameter.
         /// </para>
+        ///  
+        /// <para>
+        /// Each query returns the 100 most relevant results. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Query service method.</param>
         /// 

@@ -187,14 +187,14 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// Indicates the confidence that Amazon Kendra has that a result matches the query that
         /// you provided. Each result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>,
-        /// <code>HIGH</code>, and <code>MEDIUM</code>. You can use the score to determine if
-        /// a response meets the confidence needed for your application.
+        /// <code>HIGH</code>, <code>MEDIUM</code> and <code>LOW</code>. You can use the score
+        /// to determine if a response meets the confidence needed for your application.
         /// </para>
         ///  
         /// <para>
-        /// Confidence scores are only returned for results with the <code>Type</code> field set
-        /// to <code>QUESTION_ANSWER</code> or <code>ANSWER</code>. This field is not returned
-        /// if the <code>Type</code> field is set to <code>DOCUMENT</code>.
+        /// The field is only set to <code>LOW</code> when the <code>Type</code> field is set
+        /// to <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches
+        /// the query.
         /// </para>
         /// </summary>
         public ScoreAttributes ScoreAttributes

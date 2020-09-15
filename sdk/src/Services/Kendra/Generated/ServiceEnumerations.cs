@@ -1203,6 +1203,10 @@ namespace Amazon.Kendra
         /// </summary>
         public static readonly ScoreConfidence HIGH = new ScoreConfidence("HIGH");
         /// <summary>
+        /// Constant LOW for ScoreConfidence
+        /// </summary>
+        public static readonly ScoreConfidence LOW = new ScoreConfidence("LOW");
+        /// <summary>
         /// Constant MEDIUM for ScoreConfidence
         /// </summary>
         public static readonly ScoreConfidence MEDIUM = new ScoreConfidence("MEDIUM");

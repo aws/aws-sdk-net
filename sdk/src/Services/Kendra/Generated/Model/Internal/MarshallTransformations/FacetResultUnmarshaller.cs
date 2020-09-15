@@ -76,6 +76,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.DocumentAttributeValueCountPairs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DocumentAttributeValueType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DocumentAttributeValueType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

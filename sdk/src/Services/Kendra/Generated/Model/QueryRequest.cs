@@ -60,6 +60,10 @@ namespace Amazon.Kendra.Model
     /// You can specify that the query return only one type of result using the <code>QueryResultTypeConfig</code>
     /// parameter.
     /// </para>
+    ///  
+    /// <para>
+    /// Each query returns the 100 most relevant results. 
+    /// </para>
     /// </summary>
     public partial class QueryRequest : AmazonKendraRequest
     {

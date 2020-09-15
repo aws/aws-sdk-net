@@ -35,6 +35,7 @@ namespace Amazon.Kendra.Model
     {
         private string _documentAttributeKey;
         private List<DocumentAttributeValueCountPair> _documentAttributeValueCountPairs = new List<DocumentAttributeValueCountPair>();
+        private DocumentAttributeValueType _documentAttributeValueType;
 
         /// <summary>
         /// Gets and sets the property DocumentAttributeKey. 
@@ -73,6 +74,25 @@ namespace Amazon.Kendra.Model
         internal bool IsSetDocumentAttributeValueCountPairs()
         {
             return this._documentAttributeValueCountPairs != null && this._documentAttributeValueCountPairs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentAttributeValueType. 
+        /// <para>
+        /// The data type of the facet value. This is the same as the type defined for the index
+        /// field when it was created.
+        /// </para>
+        /// </summary>
+        public DocumentAttributeValueType DocumentAttributeValueType
+        {
+            get { return this._documentAttributeValueType; }
+            set { this._documentAttributeValueType = value; }
+        }
+
+        // Check to see if DocumentAttributeValueType property is set
+        internal bool IsSetDocumentAttributeValueType()
+        {
+            return this._documentAttributeValueType != null;
         }
 
     }
