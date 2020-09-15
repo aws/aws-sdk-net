@@ -349,10 +349,10 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IndexNSegments. Applies only if Mode field is LIVE. Specifies
+        /// Gets and sets the property IndexNSegments. Applies only if Mode field is LIVE.Specifies
         /// the maximum number of segments in the media manifest file. After this maximum, older
-        /// segments are removed from the media manifest. This number must be less than or equal
-        /// to the Keep Segments field.
+        /// segments are removed from the media manifest. This number must be smaller than the
+        /// number in the Keep Segments field.
         /// </summary>
         [AWSProperty(Min=3)]
         public int IndexNSegments
@@ -421,8 +421,13 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KeepSegments. Applies only if Mode field is LIVE. Specifies
-        /// the number of media segments (.ts files) to retain in the destination directory.
+        /// Gets and sets the property KeepSegments. Applies only if Mode field is LIVE.Specifies
+        /// the number of media segments to retain in the destination directory. This number should
+        /// be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments)
+        /// + 1).If this "keep segments" number is too low, the following might happen: the player
+        /// is still reading a media manifest file that lists this segment, but that segment has
+        /// been removed from the destination directory (as directed by indexNSegments). This
+        /// situation would result in a 404 HTTP error on the player.
         /// </summary>
         [AWSProperty(Min=1)]
         public int KeepSegments

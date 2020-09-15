@@ -37,7 +37,7 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property Tracks. Selects one or more unique audio tracks from within
-        /// an mp4 source.
+        /// a source.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<AudioTrack> Tracks

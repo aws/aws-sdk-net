@@ -8305,6 +8305,10 @@ namespace Amazon.MediaLive
     {
 
         /// <summary>
+        /// Constant AWS_CDI for InputType
+        /// </summary>
+        public static readonly InputType AWS_CDI = new InputType("AWS_CDI");
+        /// <summary>
         /// Constant INPUT_DEVICE for InputType
         /// </summary>
         public static readonly InputType INPUT_DEVICE = new InputType("INPUT_DEVICE");
@@ -10142,6 +10146,10 @@ namespace Amazon.MediaLive
         /// Constant HEVC for ReservationCodec
         /// </summary>
         public static readonly ReservationCodec HEVC = new ReservationCodec("HEVC");
+        /// <summary>
+        /// Constant LINK for ReservationCodec
+        /// </summary>
+        public static readonly ReservationCodec LINK = new ReservationCodec("LINK");
         /// <summary>
         /// Constant MPEG2 for ReservationCodec
         /// </summary>

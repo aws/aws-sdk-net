@@ -61,7 +61,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Codec. Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'
+        /// Gets and sets the property Codec. Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO',
+        /// or 'LINK'
         /// </summary>
         public string Codec
         {
