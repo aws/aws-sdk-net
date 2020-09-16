@@ -79,7 +79,7 @@ namespace Amazon.Connect.Model
         /// The name of the routing profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=127)]
         public string Name
         {
             get { return this._name; }

@@ -62,7 +62,7 @@ namespace Amazon.Connect.Model
         /// The tag keys.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

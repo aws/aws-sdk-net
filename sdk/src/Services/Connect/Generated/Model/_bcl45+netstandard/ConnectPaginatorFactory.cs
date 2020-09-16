@@ -77,11 +77,27 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListPrompts operation
+        ///</summary>
+        public IListPromptsPaginator ListPrompts(ListPromptsRequest request) 
+        {
+            return new ListPromptsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListQueues operation
         ///</summary>
         public IListQueuesPaginator ListQueues(ListQueuesRequest request) 
         {
             return new ListQueuesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRoutingProfileQueues operation
+        ///</summary>
+        public IListRoutingProfileQueuesPaginator ListRoutingProfileQueues(ListRoutingProfileQueuesRequest request) 
+        {
+            return new ListRoutingProfileQueuesPaginator(this.client, request);
         }
 
         /// <summary>

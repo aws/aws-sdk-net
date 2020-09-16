@@ -34,8 +34,8 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics.html">Historical
-    /// Metrics Reports</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+    /// Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetMetricDataRequest : AmazonConnectRequest
@@ -80,7 +80,7 @@ namespace Amazon.Connect.Model
         /// The queues, up to 100, or channels, to use to filter the metrics returned. Metric
         /// data is retrieved only for the resources associated with the queues or channels included
         /// in the filter. You can include both queue IDs and queue ARNs in the same request.
-        /// The only supported channel is <code>VOICE</code>.
+        /// Both <code>VOICE</code> and <code>CHAT</code> channels are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

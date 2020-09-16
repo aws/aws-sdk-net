@@ -99,6 +99,7 @@ namespace Amazon.Connect.Model
         /// The name of the contact flow.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Name
         {
             get { return this._name; }

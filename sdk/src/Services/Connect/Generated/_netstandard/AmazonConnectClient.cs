@@ -53,7 +53,13 @@ namespace Amazon.Connect
     /// There are limits to the number of Amazon Connect resources that you can create and
     /// limits to the number of requests that you can make per second. For more information,
     /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-    /// Connect Service Limits</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// To connect programmatically to an AWS service, you use an endpoint. For a list of
+    /// Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+    /// Connect Endpoints</a>.
     /// </para>
     /// </summary>
     public partial class AmazonConnectClient : AmazonServiceClient, IAmazonConnect
@@ -274,6 +280,168 @@ namespace Amazon.Connect
         #endregion
 
 
+        #region  AssociateRoutingProfileQueues
+
+        internal virtual AssociateRoutingProfileQueuesResponse AssociateRoutingProfileQueues(AssociateRoutingProfileQueuesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateRoutingProfileQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateRoutingProfileQueuesResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateRoutingProfileQueuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a set of queues with a routing profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateRoutingProfileQueues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateRoutingProfileQueues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateRoutingProfileQueues">REST API Reference for AssociateRoutingProfileQueues Operation</seealso>
+        public virtual Task<AssociateRoutingProfileQueuesResponse> AssociateRoutingProfileQueuesAsync(AssociateRoutingProfileQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateRoutingProfileQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateRoutingProfileQueuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateRoutingProfileQueuesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateContactFlow
+
+        internal virtual CreateContactFlowResponse CreateContactFlow(CreateContactFlowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContactFlowResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a contact flow for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateContactFlow service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidContactFlowException">
+        /// The contact flow is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlow">REST API Reference for CreateContactFlow Operation</seealso>
+        public virtual Task<CreateContactFlowResponse> CreateContactFlowAsync(CreateContactFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateContactFlowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateRoutingProfile
+
+        internal virtual CreateRoutingProfileResponse CreateRoutingProfile(CreateRoutingProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRoutingProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRoutingProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRoutingProfileResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new routing profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRoutingProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRoutingProfile service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateRoutingProfile">REST API Reference for CreateRoutingProfile Operation</seealso>
+        public virtual Task<CreateRoutingProfileResponse> CreateRoutingProfileAsync(CreateRoutingProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRoutingProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRoutingProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRoutingProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateUser
 
         internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
@@ -289,6 +457,13 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Creates a user account for the specified Amazon Connect instance.
+        /// 
+        ///  
+        /// <para>
+        /// For information about how to create user accounts using the Amazon Connect console,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
+        /// Users</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
         /// <param name="cancellationToken">
@@ -344,6 +519,14 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Deletes a user account from the specified Amazon Connect instance.
+        /// 
+        ///  
+        /// <para>
+        /// For information about what happens to a user's data when their account is deleted,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete
+        /// Users from Your Amazon Connect Instance</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// <param name="cancellationToken">
@@ -374,6 +557,107 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeContactFlow
+
+        internal virtual DescribeContactFlowResponse DescribeContactFlow(DescribeContactFlowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeContactFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContactFlowResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeContactFlowResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the specified contact flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeContactFlow service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ContactFlowNotPublishedException">
+        /// The contact flow has not been published.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlow">REST API Reference for DescribeContactFlow Operation</seealso>
+        public virtual Task<DescribeContactFlowResponse> DescribeContactFlowAsync(DescribeContactFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeContactFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContactFlowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeContactFlowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeRoutingProfile
+
+        internal virtual DescribeRoutingProfileResponse DescribeRoutingProfile(DescribeRoutingProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRoutingProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRoutingProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRoutingProfileResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the specified routing profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRoutingProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRoutingProfile service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeRoutingProfile">REST API Reference for DescribeRoutingProfile Operation</seealso>
+        public virtual Task<DescribeRoutingProfileResponse> DescribeRoutingProfileAsync(DescribeRoutingProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRoutingProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRoutingProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeRoutingProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -527,6 +811,55 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateRoutingProfileQueues
+
+        internal virtual DisassociateRoutingProfileQueuesResponse DisassociateRoutingProfileQueues(DisassociateRoutingProfileQueuesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateRoutingProfileQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateRoutingProfileQueuesResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateRoutingProfileQueuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates a set of queues from a routing profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateRoutingProfileQueues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateRoutingProfileQueues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateRoutingProfileQueues">REST API Reference for DisassociateRoutingProfileQueues Operation</seealso>
+        public virtual Task<DisassociateRoutingProfileQueuesResponse> DisassociateRoutingProfileQueuesAsync(DisassociateRoutingProfileQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateRoutingProfileQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateRoutingProfileQueuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateRoutingProfileQueuesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetContactAttributes
 
         internal virtual GetContactAttributesResponse GetContactAttributes(GetContactAttributesRequest request)
@@ -588,8 +921,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-reports.html">Real-time
-        /// Metrics Reports</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
+        /// Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCurrentMetricData service method.</param>
@@ -695,8 +1028,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics.html">Historical
-        /// Metrics Reports</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+        /// Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricData service method.</param>
@@ -747,6 +1080,12 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Provides information about the contact flows for the specified Amazon Connect instance.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about contact flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact
+        /// Flows</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContactFlows service method.</param>
         /// <param name="cancellationToken">
@@ -797,6 +1136,12 @@ namespace Amazon.Connect
         /// <summary>
         /// Provides information about the hours of operation for the specified Amazon Connect
         /// instance.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about hours of operation, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html">Set
+        /// the Hours of Operation for a Queue</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHoursOfOperations service method.</param>
         /// <param name="cancellationToken">
@@ -846,6 +1191,14 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Provides information about the phone numbers for the specified Amazon Connect instance.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
+        /// Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPhoneNumbers service method.</param>
         /// <param name="cancellationToken">
@@ -880,6 +1233,55 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListPrompts
+
+        internal virtual ListPromptsResponse ListPrompts(ListPromptsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPromptsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPromptsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPromptsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides information about the prompts for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPrompts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPrompts service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPrompts">REST API Reference for ListPrompts Operation</seealso>
+        public virtual Task<ListPromptsResponse> ListPromptsAsync(ListPromptsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPromptsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPromptsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPromptsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListQueues
 
         internal virtual ListQueuesResponse ListQueues(ListQueuesRequest request)
@@ -895,6 +1297,12 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Provides information about the queues for the specified Amazon Connect instance.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about queues, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues:
+        /// Standard and Agent</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQueues service method.</param>
         /// <param name="cancellationToken">
@@ -929,6 +1337,55 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListRoutingProfileQueues
+
+        internal virtual ListRoutingProfileQueuesResponse ListRoutingProfileQueues(ListRoutingProfileQueuesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRoutingProfileQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoutingProfileQueuesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRoutingProfileQueuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List the queues associated with a routing profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRoutingProfileQueues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRoutingProfileQueues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfileQueues">REST API Reference for ListRoutingProfileQueues Operation</seealso>
+        public virtual Task<ListRoutingProfileQueuesResponse> ListRoutingProfileQueuesAsync(ListRoutingProfileQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRoutingProfileQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoutingProfileQueuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRoutingProfileQueuesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListRoutingProfiles
 
         internal virtual ListRoutingProfilesResponse ListRoutingProfiles(ListRoutingProfilesRequest request)
@@ -945,6 +1402,13 @@ namespace Amazon.Connect
         /// <summary>
         /// Provides summary information about the routing profiles for the specified Amazon Connect
         /// instance.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about routing profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing.html">Routing
+        /// Profiles</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html">Create
+        /// a Routing Profile</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRoutingProfiles service method.</param>
         /// <param name="cancellationToken">
@@ -995,6 +1459,12 @@ namespace Amazon.Connect
         /// <summary>
         /// Provides summary information about the security profiles for the specified Amazon
         /// Connect instance.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
+        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfiles service method.</param>
         /// <param name="cancellationToken">
@@ -1044,6 +1514,13 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Lists the tags for the specified resource.
+        /// 
+        ///  
+        /// <para>
+        /// For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
+        /// Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1094,6 +1571,12 @@ namespace Amazon.Connect
         /// <summary>
         /// Provides summary information about the hierarchy groups for the specified Amazon Connect
         /// instance.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about agent hierarchies, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set
+        /// Up Agent Hierarchies</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUserHierarchyGroups service method.</param>
         /// <param name="cancellationToken">
@@ -1251,6 +1734,25 @@ namespace Amazon.Connect
         /// invoking <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
         /// with WEBSOCKET and CONNECTION_CREDENTIALS. 
         /// </para>
+        ///  
+        /// <para>
+        /// A 429 error occurs in two situations:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// API rate limit is exceeded. API TPS throttling returns a <code>TooManyRequests</code>
+        /// exception from the API Gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota
+        /// for concurrent active chats</a> is exceeded. Active chat throttling returns a <code>LimitExceededException</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about how chat works, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
+        /// in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartChatContact service method.</param>
         /// <param name="cancellationToken">
@@ -1374,6 +1876,14 @@ namespace Amazon.Connect
         /// There is a 60 second dialing timeout for this operation. If the call is not connected
         /// after 60 seconds, it fails.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// UK numbers with a 447 prefix are not allowed by default. Before you can dial these
+        /// UK mobile numbers, you must submit a service quota increase request. For more information,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartOutboundVoiceContact service method.</param>
         /// <param name="cancellationToken">
@@ -1591,6 +2101,12 @@ namespace Amazon.Connect
         /// <para>
         /// The supported resource type is users.
         /// </para>
+        ///  
+        /// <para>
+        /// For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
+        /// Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1744,6 +2260,312 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateContactFlowContent
+
+        internal virtual UpdateContactFlowContentResponse UpdateContactFlowContent(UpdateContactFlowContentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactFlowContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactFlowContentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContactFlowContentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the specified contact flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowContent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateContactFlowContent service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidContactFlowException">
+        /// The contact flow is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowContent">REST API Reference for UpdateContactFlowContent Operation</seealso>
+        public virtual Task<UpdateContactFlowContentResponse> UpdateContactFlowContentAsync(UpdateContactFlowContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactFlowContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactFlowContentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateContactFlowContentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateContactFlowName
+
+        internal virtual UpdateContactFlowNameResponse UpdateContactFlowName(UpdateContactFlowNameRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactFlowNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactFlowNameResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContactFlowNameResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The name of the contact flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowName service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateContactFlowName service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowName">REST API Reference for UpdateContactFlowName Operation</seealso>
+        public virtual Task<UpdateContactFlowNameResponse> UpdateContactFlowNameAsync(UpdateContactFlowNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactFlowNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactFlowNameResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateContactFlowNameResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRoutingProfileConcurrency
+
+        internal virtual UpdateRoutingProfileConcurrencyResponse UpdateRoutingProfileConcurrency(UpdateRoutingProfileConcurrencyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRoutingProfileConcurrencyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRoutingProfileConcurrencyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRoutingProfileConcurrencyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the channels that agents can handle in the Contact Control Panel (CCP) for
+        /// a routing profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoutingProfileConcurrency service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRoutingProfileConcurrency service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRoutingProfileConcurrency">REST API Reference for UpdateRoutingProfileConcurrency Operation</seealso>
+        public virtual Task<UpdateRoutingProfileConcurrencyResponse> UpdateRoutingProfileConcurrencyAsync(UpdateRoutingProfileConcurrencyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRoutingProfileConcurrencyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRoutingProfileConcurrencyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRoutingProfileConcurrencyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRoutingProfileDefaultOutboundQueue
+
+        internal virtual UpdateRoutingProfileDefaultOutboundQueueResponse UpdateRoutingProfileDefaultOutboundQueue(UpdateRoutingProfileDefaultOutboundQueueRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRoutingProfileDefaultOutboundQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRoutingProfileDefaultOutboundQueueResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRoutingProfileDefaultOutboundQueueResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the default outbound queue of a routing profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoutingProfileDefaultOutboundQueue service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRoutingProfileDefaultOutboundQueue service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRoutingProfileDefaultOutboundQueue">REST API Reference for UpdateRoutingProfileDefaultOutboundQueue Operation</seealso>
+        public virtual Task<UpdateRoutingProfileDefaultOutboundQueueResponse> UpdateRoutingProfileDefaultOutboundQueueAsync(UpdateRoutingProfileDefaultOutboundQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRoutingProfileDefaultOutboundQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRoutingProfileDefaultOutboundQueueResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRoutingProfileDefaultOutboundQueueResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRoutingProfileName
+
+        internal virtual UpdateRoutingProfileNameResponse UpdateRoutingProfileName(UpdateRoutingProfileNameRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRoutingProfileNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRoutingProfileNameResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRoutingProfileNameResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the name and description of a routing profile. The request accepts the following
+        /// data in JSON format. At least <code>Name</code> or <code>Description</code> must be
+        /// provided.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoutingProfileName service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRoutingProfileName service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRoutingProfileName">REST API Reference for UpdateRoutingProfileName Operation</seealso>
+        public virtual Task<UpdateRoutingProfileNameResponse> UpdateRoutingProfileNameAsync(UpdateRoutingProfileNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRoutingProfileNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRoutingProfileNameResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRoutingProfileNameResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRoutingProfileQueues
+
+        internal virtual UpdateRoutingProfileQueuesResponse UpdateRoutingProfileQueues(UpdateRoutingProfileQueuesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRoutingProfileQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRoutingProfileQueuesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRoutingProfileQueuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the properties associated with a set of queues for a routing profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoutingProfileQueues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRoutingProfileQueues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRoutingProfileQueues">REST API Reference for UpdateRoutingProfileQueues Operation</seealso>
+        public virtual Task<UpdateRoutingProfileQueuesResponse> UpdateRoutingProfileQueuesAsync(UpdateRoutingProfileQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRoutingProfileQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRoutingProfileQueuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRoutingProfileQueuesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateUserHierarchy
 
         internal virtual UpdateUserHierarchyResponse UpdateUserHierarchy(UpdateUserHierarchyRequest request)
@@ -1808,6 +2630,18 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Updates the identity information for the specified user.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Someone with the ability to invoke <code>UpdateUserIndentityInfo</code> can change
+        /// the login credentials of other users by changing their email address. This poses a
+        /// security risk to your organization. They can change the email address of a user to
+        /// the attacker's email address, and then reset the password through email. We strongly
+        /// recommend limiting who has the ability to invoke <code>UpdateUserIndentityInfo</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
+        /// Practices for Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserIdentityInfo service method.</param>
         /// <param name="cancellationToken">

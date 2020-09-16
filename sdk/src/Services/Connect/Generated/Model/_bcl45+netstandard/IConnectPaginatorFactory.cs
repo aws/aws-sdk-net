@@ -52,9 +52,19 @@ namespace Amazon.Connect.Model
         IListPhoneNumbersPaginator ListPhoneNumbers(ListPhoneNumbersRequest request);
 
         /// <summary>
+        /// Paginator for ListPrompts operation
+        ///</summary>
+        IListPromptsPaginator ListPrompts(ListPromptsRequest request);
+
+        /// <summary>
         /// Paginator for ListQueues operation
         ///</summary>
         IListQueuesPaginator ListQueues(ListQueuesRequest request);
+
+        /// <summary>
+        /// Paginator for ListRoutingProfileQueues operation
+        ///</summary>
+        IListRoutingProfileQueuesPaginator ListRoutingProfileQueues(ListRoutingProfileQueuesRequest request);
 
         /// <summary>
         /// Paginator for ListRoutingProfiles operation

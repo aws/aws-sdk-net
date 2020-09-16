@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateRoutingProfileQueuesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateContactFlowRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateContactFlowRequest.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateContactFlowResponse.ContactFlowId</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateRoutingProfileRequest.Description</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateRoutingProfileRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateRoutingProfileRequest.Name</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.CreateUserRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -20,6 +53,20 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeContactFlowRequest.ContactFlowId</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeContactFlowRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeRoutingProfileRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DescribeUserRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -31,6 +78,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeUserHierarchyStructureRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateRoutingProfileQueuesRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -100,6 +152,16 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ListPromptsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListPromptsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ListQueuesRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -108,6 +170,16 @@
     <property>Amazon.Connect.Model.ListQueuesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListRoutingProfileQueuesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListRoutingProfileQueuesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListRoutingProfilesRequest.InstanceId</property>
@@ -276,6 +348,58 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactFlowContentRequest.ContactFlowId</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactFlowContentRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactFlowNameRequest.ContactFlowId</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactFlowNameRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactFlowNameRequest.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateRoutingProfileConcurrencyRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateRoutingProfileDefaultOutboundQueueRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateRoutingProfileNameRequest.Description</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateRoutingProfileNameRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateRoutingProfileNameRequest.Name</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateRoutingProfileQueuesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UpdateUserHierarchyRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -311,11 +435,43 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ContactFlow.Id</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ContactFlow.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlowSummary.Id</property>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ContactFlowSummary.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.MediaConcurrency.Concurrency</property>
+    <min>1</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ParticipantDetails.DisplayName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ProblemDetail.Message</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.PromptSummary.Id</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.PromptSummary.Name</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
@@ -325,9 +481,49 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Connect.Model.RoutingProfileSummary.Name</property>
+    <property>Amazon.Connect.Model.RoutingProfile.Description</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RoutingProfile.InstanceId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RoutingProfile.Name</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RoutingProfileQueueConfig.Delay</property>
+    <min>0</min>
+    <max>9999</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RoutingProfileQueueConfig.Priority</property>
+    <min>1</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RoutingProfileQueueConfigSummary.Delay</property>
+    <min>0</min>
+    <max>9999</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RoutingProfileQueueConfigSummary.Priority</property>
+    <min>1</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RoutingProfileQueueConfigSummary.QueueName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RoutingProfileSummary.Name</property>
+    <min>1</min>
+    <max>127</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.User.Username</property>
