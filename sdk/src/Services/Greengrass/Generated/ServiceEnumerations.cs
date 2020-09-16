@@ -91,6 +91,56 @@ namespace Amazon.Greengrass
 
 
     /// <summary>
+    /// Constants used for properties of type ConfigurationSyncStatus.
+    /// </summary>
+    public class ConfigurationSyncStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InSync for ConfigurationSyncStatus
+        /// </summary>
+        public static readonly ConfigurationSyncStatus InSync = new ConfigurationSyncStatus("InSync");
+        /// <summary>
+        /// Constant OutOfSync for ConfigurationSyncStatus
+        /// </summary>
+        public static readonly ConfigurationSyncStatus OutOfSync = new ConfigurationSyncStatus("OutOfSync");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigurationSyncStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationSyncStatus FindValue(string value)
+        {
+            return FindValue<ConfigurationSyncStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationSyncStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeploymentType.
     /// </summary>
     public class DeploymentType : ConstantClass
@@ -504,6 +554,56 @@ namespace Amazon.Greengrass
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SoftwareToUpdate(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Telemetry.
+    /// </summary>
+    public class Telemetry : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Off for Telemetry
+        /// </summary>
+        public static readonly Telemetry Off = new Telemetry("Off");
+        /// <summary>
+        /// Constant On for Telemetry
+        /// </summary>
+        public static readonly Telemetry On = new Telemetry("On");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Telemetry(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Telemetry FindValue(string value)
+        {
+            return FindValue<Telemetry>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Telemetry(string value)
         {
             return FindValue(value);
         }
