@@ -94,12 +94,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
+        /// doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
         /// 
         /// </para>
         ///  
         /// <para>
-        /// test_folder is the name of the S3 bucket;
+        /// doc-example-bucket is the name of the S3 bucket;
         /// </para>
         ///  
         /// <para>
@@ -107,7 +107,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// i-1234567876543 is the instance ID;
+        /// i-02573cafcfEXAMPLE is the instance ID;
         /// </para>
         ///  
         /// <para>
@@ -136,12 +136,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
+        /// doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
         /// 
         /// </para>
         ///  
         /// <para>
-        /// test_folder is the name of the S3 bucket;
+        /// doc-example-bucket is the name of the S3 bucket;
         /// </para>
         ///  
         /// <para>
@@ -149,7 +149,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// i-1234567876543 is the instance ID;
+        /// i-02573cafcfEXAMPLE is the instance ID;
         /// </para>
         ///  
         /// <para>
