@@ -1794,6 +1794,9 @@ namespace Amazon.ServiceCatalog
         /// <param name="request">Container for the necessary parameters to execute the DescribeProvisionedProduct service method.</param>
         /// 
         /// <returns>The response from the DescribeProvisionedProduct service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
@@ -1811,6 +1814,9 @@ namespace Amazon.ServiceCatalog
         /// </param>
         /// 
         /// <returns>The response from the DescribeProvisionedProduct service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>

@@ -36,6 +36,7 @@ namespace Amazon.ServiceCatalog.Model
     {
         private string _acceptLanguage;
         private string _id;
+        private string _name;
 
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
@@ -72,10 +73,15 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The provisioned product identifier.
+        /// The provisioned product identifier. You must provide the name or ID, but not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code>
+        /// will occur.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }
@@ -86,6 +92,30 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the provisioned product. You must provide the name or ID, but not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code>
+        /// will occur.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
     }
