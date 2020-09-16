@@ -98,10 +98,11 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property Schedules. 
         /// <para>
-        /// The schedule of policy-defined actions.
+        /// The schedules of policy-defined actions. A policy can have up to four schedules -
+        /// one mandatory schedule and up to three optional schedules.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=4)]
         public List<Schedule> Schedules
         {
             get { return this._schedules; }
