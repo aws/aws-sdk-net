@@ -1,3 +1,20 @@
+### 3.5.17.0 (2020-09-16 18:14 UTC)
+* Connect (3.5.1.0)
+	* This release adds support for contact flows and routing profiles. For details, see the Release Notes in the Amazon Connect Administrator Guide.
+* DLM (3.5.1.0)
+	* Customers can now provide multiple schedules within a single Data Lifecycle Manager (DLM) policy. Each schedule supports tagging, Fast Snapshot Restore (FSR) and cross region copy individually.
+* Greengrass (3.5.1.0)
+	* This release includes the ability to set run-time configuration for a Greengrass core. The Telemetry feature, also included in this release, can be configured via run-time configuration per core.
+* ServiceCatalog (3.5.1.0)
+	* Enhance DescribeProvisionedProduct API to allow useProvisionedProduct Name as Input, so customer can provide ProvisionedProduct Name instead of ProvisionedProduct Id to describe a ProvisionedProduct.
+* SimpleSystemsManagement (3.5.1.14)
+	* The ComplianceItemEntry Status description was updated to address Windows patches that aren't applicable.
+* Core 3.5.1.13
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.16.0 (2020-09-15 18:17 UTC)
 * Budgets (3.5.0.14)
 	* Documentation updates for Daily Cost and Usage budgets
