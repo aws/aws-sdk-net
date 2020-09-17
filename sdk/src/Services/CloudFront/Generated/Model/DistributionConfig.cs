@@ -456,8 +456,7 @@ namespace Amazon.CloudFront.Model
         /// the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer
         /// Guide</i>. For information about CloudFront pricing, including how price classes (such
         /// as Price Class 100) map to CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon
-        /// CloudFront Pricing</a>. For price class information, scroll down to see the table
-        /// at the bottom of the page.
+        /// CloudFront Pricing</a>.
         /// </para>
         /// </summary>
         public PriceClass PriceClass
