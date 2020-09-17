@@ -85,6 +85,17 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetMutualTlsAuthentication())
+                {
+                    context.Writer.WritePropertyName("mutualTlsAuthentication");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MutualTlsAuthenticationInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MutualTlsAuthentication, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

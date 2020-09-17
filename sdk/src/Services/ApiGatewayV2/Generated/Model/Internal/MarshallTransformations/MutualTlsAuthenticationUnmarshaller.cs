@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DomainName Object
+    /// Response Unmarshaller for MutualTlsAuthentication Object
     /// </summary>  
-    public class DomainNameUnmarshaller : IUnmarshaller<DomainName, XmlUnmarshallerContext>, IUnmarshaller<DomainName, JsonUnmarshallerContext>
+    public class MutualTlsAuthenticationUnmarshaller : IUnmarshaller<MutualTlsAuthentication, XmlUnmarshallerContext>, IUnmarshaller<MutualTlsAuthentication, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DomainName IUnmarshaller<DomainName, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MutualTlsAuthentication IUnmarshaller<MutualTlsAuthentication, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DomainName Unmarshall(JsonUnmarshallerContext context)
+        public MutualTlsAuthentication Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DomainName unmarshalledObject = new DomainName();
+            MutualTlsAuthentication unmarshalledObject = new MutualTlsAuthentication();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("apiMappingSelectionExpression", targetDepth))
+                if (context.TestExpression("truststoreUri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApiMappingSelectionExpression = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TruststoreUri = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("domainNameConfigurations", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<DomainNameConfiguration, DomainNameConfigurationUnmarshaller>(DomainNameConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.DomainNameConfigurations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("mutualTlsAuthentication", targetDepth))
-                {
-                    var unmarshaller = MutualTlsAuthenticationUnmarshaller.Instance;
-                    unmarshalledObject.MutualTlsAuthentication = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("domainName", targetDepth))
+                if (context.TestExpression("truststoreVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TruststoreVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("truststoreWarnings", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TruststoreWarnings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static DomainNameUnmarshaller _instance = new DomainNameUnmarshaller();        
+        private static MutualTlsAuthenticationUnmarshaller _instance = new MutualTlsAuthenticationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DomainNameUnmarshaller Instance
+        public static MutualTlsAuthenticationUnmarshaller Instance
         {
             get
             {

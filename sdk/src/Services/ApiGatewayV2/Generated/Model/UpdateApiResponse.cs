@@ -40,6 +40,7 @@ namespace Amazon.ApiGatewayV2.Model
         private Cors _corsConfiguration;
         private DateTime? _createdDate;
         private string _description;
+        private bool? _disableExecuteApiEndpoint;
         private bool? _disableSchemaValidation;
         private List<string> _importInfo = new List<string>();
         private string _name;
@@ -177,6 +178,27 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableExecuteApiEndpoint. 
+        /// <para>
+        /// Specifies whether clients can invoke your API by using the default execute-api endpoint.
+        /// By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com
+        /// endpoint. To require that clients use a custom domain name to invoke your API, disable
+        /// the default endpoint.
+        /// </para>
+        /// </summary>
+        public bool DisableExecuteApiEndpoint
+        {
+            get { return this._disableExecuteApiEndpoint.GetValueOrDefault(); }
+            set { this._disableExecuteApiEndpoint = value; }
+        }
+
+        // Check to see if DisableExecuteApiEndpoint property is set
+        internal bool IsSetDisableExecuteApiEndpoint()
+        {
+            return this._disableExecuteApiEndpoint.HasValue; 
         }
 
         /// <summary>

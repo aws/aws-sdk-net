@@ -69,6 +69,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     response.DomainNameConfigurations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mutualTlsAuthentication", targetDepth))
+                {
+                    var unmarshaller = MutualTlsAuthenticationUnmarshaller.Instance;
+                    response.MutualTlsAuthentication = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

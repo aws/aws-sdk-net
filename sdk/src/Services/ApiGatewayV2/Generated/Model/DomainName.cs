@@ -35,6 +35,7 @@ namespace Amazon.ApiGatewayV2.Model
     {
         private string _apiMappingSelectionExpression;
         private List<DomainNameConfiguration> _domainNameConfigurations = new List<DomainNameConfiguration>();
+        private MutualTlsAuthentication _mutualTlsAuthentication;
         private string _name;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
@@ -72,6 +73,24 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetDomainNameConfigurations()
         {
             return this._domainNameConfigurations != null && this._domainNameConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MutualTlsAuthentication. 
+        /// <para>
+        /// The mutual TLS authentication configuration for a custom domain name.
+        /// </para>
+        /// </summary>
+        public MutualTlsAuthentication MutualTlsAuthentication
+        {
+            get { return this._mutualTlsAuthentication; }
+            set { this._mutualTlsAuthentication = value; }
+        }
+
+        // Check to see if MutualTlsAuthentication property is set
+        internal bool IsSetMutualTlsAuthentication()
+        {
+            return this._mutualTlsAuthentication != null;
         }
 
         /// <summary>

@@ -95,6 +95,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetDisableExecuteApiEndpoint())
+                {
+                    context.Writer.WritePropertyName("disableExecuteApiEndpoint");
+                    context.Writer.Write(publicRequest.DisableExecuteApiEndpoint);
+                }
+
                 if(publicRequest.IsSetDisableSchemaValidation())
                 {
                     context.Writer.WritePropertyName("disableSchemaValidation");
