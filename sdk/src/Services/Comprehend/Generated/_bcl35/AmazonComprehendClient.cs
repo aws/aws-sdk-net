@@ -1649,6 +1649,73 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  DescribePiiEntitiesDetectionJob
+
+        /// <summary>
+        /// Gets the properties associated with a PII entities detection job. For example, you
+        /// can use this operation to get the job status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePiiEntitiesDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribePiiEntitiesDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribePiiEntitiesDetectionJob">REST API Reference for DescribePiiEntitiesDetectionJob Operation</seealso>
+        public virtual DescribePiiEntitiesDetectionJobResponse DescribePiiEntitiesDetectionJob(DescribePiiEntitiesDetectionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePiiEntitiesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePiiEntitiesDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePiiEntitiesDetectionJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePiiEntitiesDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePiiEntitiesDetectionJob operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePiiEntitiesDetectionJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribePiiEntitiesDetectionJob">REST API Reference for DescribePiiEntitiesDetectionJob Operation</seealso>
+        public virtual IAsyncResult BeginDescribePiiEntitiesDetectionJob(DescribePiiEntitiesDetectionJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePiiEntitiesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePiiEntitiesDetectionJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePiiEntitiesDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePiiEntitiesDetectionJob.</param>
+        /// 
+        /// <returns>Returns a  DescribePiiEntitiesDetectionJobResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribePiiEntitiesDetectionJob">REST API Reference for DescribePiiEntitiesDetectionJob Operation</seealso>
+        public virtual DescribePiiEntitiesDetectionJobResponse EndDescribePiiEntitiesDetectionJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribePiiEntitiesDetectionJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeSentimentDetectionJob
 
         /// <summary>
@@ -1988,6 +2055,77 @@ namespace Amazon.Comprehend
         public virtual DetectKeyPhrasesResponse EndDetectKeyPhrases(IAsyncResult asyncResult)
         {
             return EndInvoke<DetectKeyPhrasesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DetectPiiEntities
+
+        /// <summary>
+        /// Inspects the input text for entities that contain personally identifiable information
+        /// (PII) and returns information about them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetectPiiEntities service method.</param>
+        /// 
+        /// <returns>The response from the DetectPiiEntities service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
+        /// The size of the input text exceeds the limit. Use a smaller document.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
+        /// Amazon Comprehend can't process the language of the input text. For all custom entity
+        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
+        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
+        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
+        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectPiiEntities">REST API Reference for DetectPiiEntities Operation</seealso>
+        public virtual DetectPiiEntitiesResponse DetectPiiEntities(DetectPiiEntitiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectPiiEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectPiiEntitiesResponseUnmarshaller.Instance;
+
+            return Invoke<DetectPiiEntitiesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetectPiiEntities operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetectPiiEntities operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetectPiiEntities
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectPiiEntities">REST API Reference for DetectPiiEntities Operation</seealso>
+        public virtual IAsyncResult BeginDetectPiiEntities(DetectPiiEntitiesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectPiiEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectPiiEntitiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetectPiiEntities operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetectPiiEntities.</param>
+        /// 
+        /// <returns>Returns a  DetectPiiEntitiesResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectPiiEntities">REST API Reference for DetectPiiEntities Operation</seealso>
+        public virtual DetectPiiEntitiesResponse EndDetectPiiEntities(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DetectPiiEntitiesResponse>(asyncResult);
         }
 
         #endregion
@@ -2602,6 +2740,72 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  ListPiiEntitiesDetectionJobs
+
+        /// <summary>
+        /// Gets a list of the PII entity detection jobs that you have submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPiiEntitiesDetectionJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListPiiEntitiesDetectionJobs service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the operation is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListPiiEntitiesDetectionJobs">REST API Reference for ListPiiEntitiesDetectionJobs Operation</seealso>
+        public virtual ListPiiEntitiesDetectionJobsResponse ListPiiEntitiesDetectionJobs(ListPiiEntitiesDetectionJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPiiEntitiesDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPiiEntitiesDetectionJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPiiEntitiesDetectionJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPiiEntitiesDetectionJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPiiEntitiesDetectionJobs operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPiiEntitiesDetectionJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListPiiEntitiesDetectionJobs">REST API Reference for ListPiiEntitiesDetectionJobs Operation</seealso>
+        public virtual IAsyncResult BeginListPiiEntitiesDetectionJobs(ListPiiEntitiesDetectionJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPiiEntitiesDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPiiEntitiesDetectionJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPiiEntitiesDetectionJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPiiEntitiesDetectionJobs.</param>
+        /// 
+        /// <returns>Returns a  ListPiiEntitiesDetectionJobsResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListPiiEntitiesDetectionJobs">REST API Reference for ListPiiEntitiesDetectionJobs Operation</seealso>
+        public virtual ListPiiEntitiesDetectionJobsResponse EndListPiiEntitiesDetectionJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPiiEntitiesDetectionJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListSentimentDetectionJobs
 
         /// <summary>
@@ -3089,6 +3293,73 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  StartPiiEntitiesDetectionJob
+
+        /// <summary>
+        /// Starts an asynchronous PII entity detection job for a collection of documents.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartPiiEntitiesDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the StartPiiEntitiesDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartPiiEntitiesDetectionJob">REST API Reference for StartPiiEntitiesDetectionJob Operation</seealso>
+        public virtual StartPiiEntitiesDetectionJobResponse StartPiiEntitiesDetectionJob(StartPiiEntitiesDetectionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartPiiEntitiesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartPiiEntitiesDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartPiiEntitiesDetectionJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartPiiEntitiesDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartPiiEntitiesDetectionJob operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartPiiEntitiesDetectionJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartPiiEntitiesDetectionJob">REST API Reference for StartPiiEntitiesDetectionJob Operation</seealso>
+        public virtual IAsyncResult BeginStartPiiEntitiesDetectionJob(StartPiiEntitiesDetectionJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartPiiEntitiesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartPiiEntitiesDetectionJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartPiiEntitiesDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartPiiEntitiesDetectionJob.</param>
+        /// 
+        /// <returns>Returns a  StartPiiEntitiesDetectionJobResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartPiiEntitiesDetectionJob">REST API Reference for StartPiiEntitiesDetectionJob Operation</seealso>
+        public virtual StartPiiEntitiesDetectionJobResponse EndStartPiiEntitiesDetectionJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartPiiEntitiesDetectionJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartSentimentDetectionJob
 
         /// <summary>
@@ -3464,6 +3735,69 @@ namespace Amazon.Comprehend
         public virtual StopKeyPhrasesDetectionJobResponse EndStopKeyPhrasesDetectionJob(IAsyncResult asyncResult)
         {
             return EndInvoke<StopKeyPhrasesDetectionJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopPiiEntitiesDetectionJob
+
+        /// <summary>
+        /// Stops a PII entities detection job in progress.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopPiiEntitiesDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the StopPiiEntitiesDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopPiiEntitiesDetectionJob">REST API Reference for StopPiiEntitiesDetectionJob Operation</seealso>
+        public virtual StopPiiEntitiesDetectionJobResponse StopPiiEntitiesDetectionJob(StopPiiEntitiesDetectionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopPiiEntitiesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopPiiEntitiesDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopPiiEntitiesDetectionJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopPiiEntitiesDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopPiiEntitiesDetectionJob operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopPiiEntitiesDetectionJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopPiiEntitiesDetectionJob">REST API Reference for StopPiiEntitiesDetectionJob Operation</seealso>
+        public virtual IAsyncResult BeginStopPiiEntitiesDetectionJob(StopPiiEntitiesDetectionJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopPiiEntitiesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopPiiEntitiesDetectionJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopPiiEntitiesDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopPiiEntitiesDetectionJob.</param>
+        /// 
+        /// <returns>Returns a  StopPiiEntitiesDetectionJobResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopPiiEntitiesDetectionJob">REST API Reference for StopPiiEntitiesDetectionJob Operation</seealso>
+        public virtual StopPiiEntitiesDetectionJobResponse EndStopPiiEntitiesDetectionJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopPiiEntitiesDetectionJobResponse>(asyncResult);
         }
 
         #endregion

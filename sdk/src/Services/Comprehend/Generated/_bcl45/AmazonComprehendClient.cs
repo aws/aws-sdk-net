@@ -1802,6 +1802,73 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  DescribePiiEntitiesDetectionJob
+
+
+        /// <summary>
+        /// Gets the properties associated with a PII entities detection job. For example, you
+        /// can use this operation to get the job status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePiiEntitiesDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribePiiEntitiesDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribePiiEntitiesDetectionJob">REST API Reference for DescribePiiEntitiesDetectionJob Operation</seealso>
+        public virtual DescribePiiEntitiesDetectionJobResponse DescribePiiEntitiesDetectionJob(DescribePiiEntitiesDetectionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePiiEntitiesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePiiEntitiesDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePiiEntitiesDetectionJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the properties associated with a PII entities detection job. For example, you
+        /// can use this operation to get the job status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePiiEntitiesDetectionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePiiEntitiesDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribePiiEntitiesDetectionJob">REST API Reference for DescribePiiEntitiesDetectionJob Operation</seealso>
+        public virtual Task<DescribePiiEntitiesDetectionJobResponse> DescribePiiEntitiesDetectionJobAsync(DescribePiiEntitiesDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePiiEntitiesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePiiEntitiesDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribePiiEntitiesDetectionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeSentimentDetectionJob
 
 
@@ -2149,6 +2216,81 @@ namespace Amazon.Comprehend
             options.ResponseUnmarshaller = DetectKeyPhrasesResponseUnmarshaller.Instance;
             
             return InvokeAsync<DetectKeyPhrasesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetectPiiEntities
+
+
+        /// <summary>
+        /// Inspects the input text for entities that contain personally identifiable information
+        /// (PII) and returns information about them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetectPiiEntities service method.</param>
+        /// 
+        /// <returns>The response from the DetectPiiEntities service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
+        /// The size of the input text exceeds the limit. Use a smaller document.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
+        /// Amazon Comprehend can't process the language of the input text. For all custom entity
+        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
+        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
+        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
+        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectPiiEntities">REST API Reference for DetectPiiEntities Operation</seealso>
+        public virtual DetectPiiEntitiesResponse DetectPiiEntities(DetectPiiEntitiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectPiiEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectPiiEntitiesResponseUnmarshaller.Instance;
+
+            return Invoke<DetectPiiEntitiesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Inspects the input text for entities that contain personally identifiable information
+        /// (PII) and returns information about them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetectPiiEntities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DetectPiiEntities service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
+        /// The size of the input text exceeds the limit. Use a smaller document.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
+        /// Amazon Comprehend can't process the language of the input text. For all custom entity
+        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish,
+        /// French, Italian, German, or Portuguese are accepted. For most other APIs, such as
+        /// those for Custom Classification, Amazon Comprehend accepts text in all supported languages.
+        /// For a list of supported languages, see <a>supported-languages</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectPiiEntities">REST API Reference for DetectPiiEntities Operation</seealso>
+        public virtual Task<DetectPiiEntitiesResponse> DetectPiiEntitiesAsync(DetectPiiEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectPiiEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectPiiEntitiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DetectPiiEntitiesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2770,6 +2912,71 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  ListPiiEntitiesDetectionJobs
+
+
+        /// <summary>
+        /// Gets a list of the PII entity detection jobs that you have submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPiiEntitiesDetectionJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListPiiEntitiesDetectionJobs service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the operation is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListPiiEntitiesDetectionJobs">REST API Reference for ListPiiEntitiesDetectionJobs Operation</seealso>
+        public virtual ListPiiEntitiesDetectionJobsResponse ListPiiEntitiesDetectionJobs(ListPiiEntitiesDetectionJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPiiEntitiesDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPiiEntitiesDetectionJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPiiEntitiesDetectionJobsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a list of the PII entity detection jobs that you have submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPiiEntitiesDetectionJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPiiEntitiesDetectionJobs service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the operation is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListPiiEntitiesDetectionJobs">REST API Reference for ListPiiEntitiesDetectionJobs Operation</seealso>
+        public virtual Task<ListPiiEntitiesDetectionJobsResponse> ListPiiEntitiesDetectionJobsAsync(ListPiiEntitiesDetectionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPiiEntitiesDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPiiEntitiesDetectionJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPiiEntitiesDetectionJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListSentimentDetectionJobs
 
 
@@ -3275,6 +3482,73 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  StartPiiEntitiesDetectionJob
+
+
+        /// <summary>
+        /// Starts an asynchronous PII entity detection job for a collection of documents.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartPiiEntitiesDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the StartPiiEntitiesDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartPiiEntitiesDetectionJob">REST API Reference for StartPiiEntitiesDetectionJob Operation</seealso>
+        public virtual StartPiiEntitiesDetectionJobResponse StartPiiEntitiesDetectionJob(StartPiiEntitiesDetectionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartPiiEntitiesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartPiiEntitiesDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartPiiEntitiesDetectionJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts an asynchronous PII entity detection job for a collection of documents.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartPiiEntitiesDetectionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartPiiEntitiesDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartPiiEntitiesDetectionJob">REST API Reference for StartPiiEntitiesDetectionJob Operation</seealso>
+        public virtual Task<StartPiiEntitiesDetectionJobResponse> StartPiiEntitiesDetectionJobAsync(StartPiiEntitiesDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartPiiEntitiesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartPiiEntitiesDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartPiiEntitiesDetectionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartSentimentDetectionJob
 
 
@@ -3694,6 +3968,65 @@ namespace Amazon.Comprehend
             options.ResponseUnmarshaller = StopKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<StopKeyPhrasesDetectionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopPiiEntitiesDetectionJob
+
+
+        /// <summary>
+        /// Stops a PII entities detection job in progress.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopPiiEntitiesDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the StopPiiEntitiesDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopPiiEntitiesDetectionJob">REST API Reference for StopPiiEntitiesDetectionJob Operation</seealso>
+        public virtual StopPiiEntitiesDetectionJobResponse StopPiiEntitiesDetectionJob(StopPiiEntitiesDetectionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopPiiEntitiesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopPiiEntitiesDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopPiiEntitiesDetectionJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops a PII entities detection job in progress.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopPiiEntitiesDetectionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopPiiEntitiesDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopPiiEntitiesDetectionJob">REST API Reference for StopPiiEntitiesDetectionJob Operation</seealso>
+        public virtual Task<StopPiiEntitiesDetectionJobResponse> StopPiiEntitiesDetectionJobAsync(StopPiiEntitiesDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopPiiEntitiesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopPiiEntitiesDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopPiiEntitiesDetectionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion

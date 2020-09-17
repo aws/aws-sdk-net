@@ -605,6 +605,240 @@ namespace Amazon.Comprehend
 
 
     /// <summary>
+    /// Constants used for properties of type PiiEntitiesDetectionMaskMode.
+    /// </summary>
+    public class PiiEntitiesDetectionMaskMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MASK for PiiEntitiesDetectionMaskMode
+        /// </summary>
+        public static readonly PiiEntitiesDetectionMaskMode MASK = new PiiEntitiesDetectionMaskMode("MASK");
+        /// <summary>
+        /// Constant REPLACE_WITH_PII_ENTITY_TYPE for PiiEntitiesDetectionMaskMode
+        /// </summary>
+        public static readonly PiiEntitiesDetectionMaskMode REPLACE_WITH_PII_ENTITY_TYPE = new PiiEntitiesDetectionMaskMode("REPLACE_WITH_PII_ENTITY_TYPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PiiEntitiesDetectionMaskMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PiiEntitiesDetectionMaskMode FindValue(string value)
+        {
+            return FindValue<PiiEntitiesDetectionMaskMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PiiEntitiesDetectionMaskMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PiiEntitiesDetectionMode.
+    /// </summary>
+    public class PiiEntitiesDetectionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ONLY_OFFSETS for PiiEntitiesDetectionMode
+        /// </summary>
+        public static readonly PiiEntitiesDetectionMode ONLY_OFFSETS = new PiiEntitiesDetectionMode("ONLY_OFFSETS");
+        /// <summary>
+        /// Constant ONLY_REDACTION for PiiEntitiesDetectionMode
+        /// </summary>
+        public static readonly PiiEntitiesDetectionMode ONLY_REDACTION = new PiiEntitiesDetectionMode("ONLY_REDACTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PiiEntitiesDetectionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PiiEntitiesDetectionMode FindValue(string value)
+        {
+            return FindValue<PiiEntitiesDetectionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PiiEntitiesDetectionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PiiEntityType.
+    /// </summary>
+    public class PiiEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDRESS for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType ADDRESS = new PiiEntityType("ADDRESS");
+        /// <summary>
+        /// Constant AGE for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType AGE = new PiiEntityType("AGE");
+        /// <summary>
+        /// Constant ALL for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType ALL = new PiiEntityType("ALL");
+        /// <summary>
+        /// Constant AWS_ACCESS_KEY for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType AWS_ACCESS_KEY = new PiiEntityType("AWS_ACCESS_KEY");
+        /// <summary>
+        /// Constant AWS_SECRET_KEY for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType AWS_SECRET_KEY = new PiiEntityType("AWS_SECRET_KEY");
+        /// <summary>
+        /// Constant BANK_ACCOUNT_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType BANK_ACCOUNT_NUMBER = new PiiEntityType("BANK_ACCOUNT_NUMBER");
+        /// <summary>
+        /// Constant BANK_ROUTING for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType BANK_ROUTING = new PiiEntityType("BANK_ROUTING");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_CVV for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType CREDIT_DEBIT_CVV = new PiiEntityType("CREDIT_DEBIT_CVV");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_EXPIRY for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType CREDIT_DEBIT_EXPIRY = new PiiEntityType("CREDIT_DEBIT_EXPIRY");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType CREDIT_DEBIT_NUMBER = new PiiEntityType("CREDIT_DEBIT_NUMBER");
+        /// <summary>
+        /// Constant DATE_TIME for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType DATE_TIME = new PiiEntityType("DATE_TIME");
+        /// <summary>
+        /// Constant DRIVER_ID for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType DRIVER_ID = new PiiEntityType("DRIVER_ID");
+        /// <summary>
+        /// Constant EMAIL for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType EMAIL = new PiiEntityType("EMAIL");
+        /// <summary>
+        /// Constant IP_ADDRESS for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType IP_ADDRESS = new PiiEntityType("IP_ADDRESS");
+        /// <summary>
+        /// Constant MAC_ADDRESS for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType MAC_ADDRESS = new PiiEntityType("MAC_ADDRESS");
+        /// <summary>
+        /// Constant NAME for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType NAME = new PiiEntityType("NAME");
+        /// <summary>
+        /// Constant PASSPORT_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType PASSPORT_NUMBER = new PiiEntityType("PASSPORT_NUMBER");
+        /// <summary>
+        /// Constant PASSWORD for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType PASSWORD = new PiiEntityType("PASSWORD");
+        /// <summary>
+        /// Constant PHONE for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType PHONE = new PiiEntityType("PHONE");
+        /// <summary>
+        /// Constant PIN for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType PIN = new PiiEntityType("PIN");
+        /// <summary>
+        /// Constant SSN for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType SSN = new PiiEntityType("SSN");
+        /// <summary>
+        /// Constant URL for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType URL = new PiiEntityType("URL");
+        /// <summary>
+        /// Constant USERNAME for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType USERNAME = new PiiEntityType("USERNAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PiiEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PiiEntityType FindValue(string value)
+        {
+            return FindValue<PiiEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PiiEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SentimentType.
     /// </summary>
     public class SentimentType : ConstantClass
