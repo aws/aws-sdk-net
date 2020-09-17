@@ -1,3 +1,22 @@
+### 3.5.18.0 (2020-09-17 18:33 UTC)
+* APIGateway (3.5.1.0)
+	* Adds support for mutual TLS authentication for public regional REST Apis
+* ApiGatewayV2 (3.5.2.0)
+	* Adds support for mutual TLS authentication and disableAPIExecuteEndpoint for public regional HTTP Apis
+* CloudFront (3.5.3.5)
+	* Documentation updates for CloudFront
+* Comprehend (3.5.1.0)
+	* Amazon Comprehend now supports detecting Personally Identifiable Information (PII) entities in a document.
+* Elasticsearch (3.5.1.0)
+	* Adds support for data plane audit logging in Amazon Elasticsearch Service.
+* Kendra (3.5.3.0)
+	* Amazon Kendra now supports additional file formats and metadata for FAQs.
+* Core 3.5.1.14
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.17.0 (2020-09-16 18:14 UTC)
 * Connect (3.5.1.0)
 	* This release adds support for contact flows and routing profiles. For details, see the Release Notes in the Amazon Connect Administrator Guide.
