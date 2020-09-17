@@ -113,6 +113,17 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetMutualTlsAuthentication())
+                {
+                    context.Writer.WritePropertyName("mutualTlsAuthentication");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MutualTlsAuthenticationInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MutualTlsAuthentication, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRegionalCertificateArn())
                 {
                     context.Writer.WritePropertyName("regionalCertificateArn");

@@ -112,6 +112,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndpointConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mutualTlsAuthentication", targetDepth))
+                {
+                    var unmarshaller = MutualTlsAuthenticationUnmarshaller.Instance;
+                    unmarshalledObject.MutualTlsAuthentication = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("domainName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

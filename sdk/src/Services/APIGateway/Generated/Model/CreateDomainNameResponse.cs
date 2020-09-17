@@ -55,6 +55,7 @@ namespace Amazon.APIGateway.Model
         private DomainNameStatus _domainNameStatus;
         private string _domainNameStatusMessage;
         private EndpointConfiguration _endpointConfiguration;
+        private MutualTlsAuthentication _mutualTlsAuthentication;
         private string _name;
         private string _regionalCertificateArn;
         private string _regionalCertificateName;
@@ -221,6 +222,26 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetEndpointConfiguration()
         {
             return this._endpointConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MutualTlsAuthentication. 
+        /// <para>
+        /// The mutual TLS authentication configuration for a custom domain name. If specified,
+        /// API Gateway performs two-way authentication between the client and the server. Clients
+        /// must present a trusted certificate to access your API.
+        /// </para>
+        /// </summary>
+        public MutualTlsAuthentication MutualTlsAuthentication
+        {
+            get { return this._mutualTlsAuthentication; }
+            set { this._mutualTlsAuthentication = value; }
+        }
+
+        // Check to see if MutualTlsAuthentication property is set
+        internal bool IsSetMutualTlsAuthentication()
+        {
+            return this._mutualTlsAuthentication != null;
         }
 
         /// <summary>

@@ -41,6 +41,7 @@ namespace Amazon.APIGateway.Model
         private string _certificatePrivateKey;
         private string _domainName;
         private EndpointConfiguration _endpointConfiguration;
+        private MutualTlsAuthenticationInput _mutualTlsAuthentication;
         private string _regionalCertificateArn;
         private string _regionalCertificateName;
         private SecurityPolicy _securityPolicy;
@@ -180,6 +181,21 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetEndpointConfiguration()
         {
             return this._endpointConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MutualTlsAuthentication.
+        /// </summary>
+        public MutualTlsAuthenticationInput MutualTlsAuthentication
+        {
+            get { return this._mutualTlsAuthentication; }
+            set { this._mutualTlsAuthentication = value; }
+        }
+
+        // Check to see if MutualTlsAuthentication property is set
+        internal bool IsSetMutualTlsAuthentication()
+        {
+            return this._mutualTlsAuthentication != null;
         }
 
         /// <summary>
