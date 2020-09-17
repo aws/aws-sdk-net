@@ -466,11 +466,7 @@ namespace Amazon.Kendra
         /// 
         ///  
         /// <para>
-        /// You specify a name, connector type and description for your data source. You can choose
-        /// between an S3 connector, a SharePoint Online connector, and a database connector.
-        /// </para>
-        ///  
-        /// <para>
+        /// You specify a name, data source connector type and description for your data source.
         /// You also specify configuration information such as document metadata (author, source
         /// URI, and so on) and user context information.
         /// </para>
@@ -523,11 +519,7 @@ namespace Amazon.Kendra
         /// 
         ///  
         /// <para>
-        /// You specify a name, connector type and description for your data source. You can choose
-        /// between an S3 connector, a SharePoint Online connector, and a database connector.
-        /// </para>
-        ///  
-        /// <para>
+        /// You specify a name, data source connector type and description for your data source.
         /// You also specify configuration information such as document metadata (author, source
         /// URI, and so on) and user context information.
         /// </para>

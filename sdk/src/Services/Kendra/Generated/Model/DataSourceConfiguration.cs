@@ -43,7 +43,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DatabaseConfiguration. 
         /// <para>
-        /// Provides information necessary to create a connector for a database.
+        /// Provides information necessary to create a data source connector for a database.
         /// </para>
         /// </summary>
         public DatabaseConfiguration DatabaseConfiguration
@@ -79,8 +79,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property S3Configuration. 
         /// <para>
-        /// Provides information to create a connector for a document repository in an Amazon
-        /// S3 bucket.
+        /// Provides information to create a data source connector for a document repository in
+        /// an Amazon S3 bucket.
         /// </para>
         /// </summary>
         public S3DataSourceConfiguration S3Configuration
@@ -134,7 +134,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SharePointConfiguration. 
         /// <para>
-        /// Provides information necessary to create a connector for a Microsoft SharePoint site.
+        /// Provides information necessary to create a data source connector for a Microsoft SharePoint
+        /// site.
         /// </para>
         /// </summary>
         public SharePointConfiguration SharePointConfiguration

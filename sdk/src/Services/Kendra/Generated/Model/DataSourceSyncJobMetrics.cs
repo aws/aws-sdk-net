@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Maps a batch delete document request to a specific data source sync job. This is optional
-    /// and should only be supplied when documents are deleted by a connector.
+    /// and should only be supplied when documents are deleted by a data source connector.
     /// </summary>
     public partial class DataSourceSyncJobMetrics
     {

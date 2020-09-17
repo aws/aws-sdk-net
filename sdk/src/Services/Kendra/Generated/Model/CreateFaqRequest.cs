@@ -35,6 +35,7 @@ namespace Amazon.Kendra.Model
     public partial class CreateFaqRequest : AmazonKendraRequest
     {
         private string _description;
+        private FaqFileFormat _fileFormat;
         private string _indexId;
         private string _name;
         private string _roleArn;
@@ -58,6 +59,36 @@ namespace Amazon.Kendra.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileFormat. 
+        /// <para>
+        /// The format of the input file. You can choose between a basic CSV format, a CSV format
+        /// that includes customs attributes in a header, and a JSON format that includes custom
+        /// attributes.
+        /// </para>
+        ///  
+        /// <para>
+        /// The format must match the format of the file stored in the S3 bucket identified in
+        /// the <code>S3Path</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+        /// questions and answers</a>.
+        /// </para>
+        /// </summary>
+        public FaqFileFormat FileFormat
+        {
+            get { return this._fileFormat; }
+            set { this._fileFormat = value; }
+        }
+
+        // Check to see if FileFormat property is set
+        internal bool IsSetFileFormat()
+        {
+            return this._fileFormat != null;
         }
 
         /// <summary>

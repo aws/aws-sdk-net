@@ -497,6 +497,60 @@ namespace Amazon.Kendra
 
 
     /// <summary>
+    /// Constants used for properties of type FaqFileFormat.
+    /// </summary>
+    public class FaqFileFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CSV for FaqFileFormat
+        /// </summary>
+        public static readonly FaqFileFormat CSV = new FaqFileFormat("CSV");
+        /// <summary>
+        /// Constant CSV_WITH_HEADER for FaqFileFormat
+        /// </summary>
+        public static readonly FaqFileFormat CSV_WITH_HEADER = new FaqFileFormat("CSV_WITH_HEADER");
+        /// <summary>
+        /// Constant JSON for FaqFileFormat
+        /// </summary>
+        public static readonly FaqFileFormat JSON = new FaqFileFormat("JSON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FaqFileFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FaqFileFormat FindValue(string value)
+        {
+            return FindValue<FaqFileFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FaqFileFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FaqStatus.
     /// </summary>
     public class FaqStatus : ConstantClass

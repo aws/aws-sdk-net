@@ -36,6 +36,7 @@ namespace Amazon.Kendra.Model
         private DateTime? _createdAt;
         private string _description;
         private string _errorMessage;
+        private FaqFileFormat _fileFormat;
         private string _id;
         private string _indexId;
         private string _name;
@@ -99,6 +100,24 @@ namespace Amazon.Kendra.Model
         internal bool IsSetErrorMessage()
         {
             return this._errorMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileFormat. 
+        /// <para>
+        /// The file format used by the input files for the FAQ.
+        /// </para>
+        /// </summary>
+        public FaqFileFormat FileFormat
+        {
+            get { return this._fileFormat; }
+            set { this._fileFormat = value; }
+        }
+
+        // Check to see if FileFormat property is set
+        internal bool IsSetFileFormat()
+        {
+            return this._fileFormat != null;
         }
 
         /// <summary>

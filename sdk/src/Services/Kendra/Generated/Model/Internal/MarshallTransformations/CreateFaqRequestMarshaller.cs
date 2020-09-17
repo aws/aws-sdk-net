@@ -74,6 +74,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetFileFormat())
+                {
+                    context.Writer.WritePropertyName("FileFormat");
+                    context.Writer.Write(publicRequest.FileFormat);
+                }
+
                 if(publicRequest.IsSetIndexId())
                 {
                     context.Writer.WritePropertyName("IndexId");
