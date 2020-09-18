@@ -258,6 +258,180 @@ namespace Amazon.MediaLive
         #endregion
 
 
+        #region  BatchDelete
+
+        internal virtual BatchDeleteResponse BatchDelete(BatchDeleteRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts delete of resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDelete service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDelete service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchDelete">REST API Reference for BatchDelete Operation</seealso>
+        public virtual Task<BatchDeleteResponse> BatchDeleteAsync(BatchDeleteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDeleteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchStart
+
+        internal virtual BatchStartResponse BatchStart(BatchStartRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchStartRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchStartResponseUnmarshaller.Instance;
+
+            return Invoke<BatchStartResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts existing resources
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchStart service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchStart service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStart">REST API Reference for BatchStart Operation</seealso>
+        public virtual Task<BatchStartResponse> BatchStartAsync(BatchStartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchStartRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchStartResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchStartResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchStop
+
+        internal virtual BatchStopResponse BatchStop(BatchStopRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchStopRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchStopResponseUnmarshaller.Instance;
+
+            return Invoke<BatchStopResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops running resources
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchStop service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchStop service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStop">REST API Reference for BatchStop Operation</seealso>
+        public virtual Task<BatchStopResponse> BatchStopAsync(BatchStopRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchStopRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchStopResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchStopResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchUpdateSchedule
 
         internal virtual BatchUpdateScheduleResponse BatchUpdateSchedule(BatchUpdateScheduleRequest request)
