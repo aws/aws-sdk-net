@@ -89,6 +89,10 @@ namespace Amazon.CodeStarconnections
         /// </summary>
         public static readonly ProviderType Bitbucket = new ProviderType("Bitbucket");
         /// <summary>
+        /// Constant GitHub for ProviderType
+        /// </summary>
+        public static readonly ProviderType GitHub = new ProviderType("GitHub");
+        /// <summary>
         /// Constant GitHubEnterpriseServer for ProviderType
         /// </summary>
         public static readonly ProviderType GitHubEnterpriseServer = new ProviderType("GitHubEnterpriseServer");
