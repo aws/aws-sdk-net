@@ -82,7 +82,8 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// The identifier for the chosen target.
+        /// TargetID is an AWS account identifier, typically a 10-12 digit string (For example,
+        /// 123456789012).
         /// </para>
         /// </summary>
         public string TargetId

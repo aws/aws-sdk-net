@@ -103,7 +103,10 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property PrincipalId. 
         /// <para>
-        /// The identifier of the principal.
+        /// An identifier for an object in AWS SSO, such as a user or group. PrincipalIds are
+        /// GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about
+        /// PrincipalIds in AWS SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS
+        /// SSO Identity Store API Reference</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=47)]
@@ -177,7 +180,8 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// The identifier for the chosen target.
+        /// TargetID is an AWS account identifier, typically a 10-12 digit string (For example,
+        /// 123456789012).
         /// </para>
         /// </summary>
         public string TargetId

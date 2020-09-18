@@ -31,6 +31,14 @@ namespace Amazon.SSOAdmin.Model
     /// <summary>
     /// Container for the parameters to the AttachManagedPolicyToPermissionSet operation.
     /// Attaches an IAM managed policy ARN to a permission set.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If the permission set is already referenced by one or more account assignments, you
+    /// will need to call <code> <a>ProvisionPermissionSet</a> </code> after this action to
+    /// apply the corresponding IAM policy updates to all assigned accounts.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AttachManagedPolicyToPermissionSetRequest : AmazonSSOAdminRequest
     {

@@ -31,6 +31,13 @@ namespace Amazon.SSOAdmin.Model
     /// <summary>
     /// Container for the parameters to the CreatePermissionSet operation.
     /// Creates a permission set within a specified SSO instance.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// To grant users and groups access to AWS account resources, use <code> <a>CreateAccountAssignment</a>
+    /// </code>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreatePermissionSetRequest : AmazonSSOAdminRequest
     {

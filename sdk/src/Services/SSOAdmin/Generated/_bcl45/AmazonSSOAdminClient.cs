@@ -259,6 +259,14 @@ namespace Amazon.SSOAdmin
 
         /// <summary>
         /// Attaches an IAM managed policy ARN to a permission set.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the permission set is already referenced by one or more account assignments, you
+        /// will need to call <code> <a>ProvisionPermissionSet</a> </code> after this action to
+        /// apply the corresponding IAM policy updates to all assigned accounts.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachManagedPolicyToPermissionSet service method.</param>
         /// 
@@ -302,6 +310,14 @@ namespace Amazon.SSOAdmin
 
         /// <summary>
         /// Attaches an IAM managed policy ARN to a permission set.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the permission set is already referenced by one or more account assignments, you
+        /// will need to call <code> <a>ProvisionPermissionSet</a> </code> after this action to
+        /// apply the corresponding IAM policy updates to all assigned accounts.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachManagedPolicyToPermissionSet service method.</param>
         /// <param name="cancellationToken">
@@ -358,6 +374,15 @@ namespace Amazon.SSOAdmin
         /// <para>
         /// The term <i>principal</i> here refers to a user or group that is defined in AWS SSO.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// As part of a successful <code>CreateAccountAssignment</code> call, the specified permission
+        /// set will automatically be provisioned to the account in the form of an IAM policy
+        /// attached to the SSO-created IAM role. If the permission set is subsequently updated,
+        /// the corresponding IAM policies attached to roles in your accounts will not be updated
+        /// automatically. In this case, you will need to call <code> <a>ProvisionPermissionSet</a>
+        /// </code> to make these updates.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccountAssignment service method.</param>
@@ -407,6 +432,15 @@ namespace Amazon.SSOAdmin
         ///  <note> 
         /// <para>
         /// The term <i>principal</i> here refers to a user or group that is defined in AWS SSO.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// As part of a successful <code>CreateAccountAssignment</code> call, the specified permission
+        /// set will automatically be provisioned to the account in the form of an IAM policy
+        /// attached to the SSO-created IAM role. If the permission set is subsequently updated,
+        /// the corresponding IAM policies attached to roles in your accounts will not be updated
+        /// automatically. In this case, you will need to call <code> <a>ProvisionPermissionSet</a>
+        /// </code> to make these updates.
         /// </para>
         ///  </note>
         /// </summary>
@@ -459,6 +493,13 @@ namespace Amazon.SSOAdmin
 
         /// <summary>
         /// Creates a permission set within a specified SSO instance.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To grant users and groups access to AWS account resources, use <code> <a>CreateAccountAssignment</a>
+        /// </code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePermissionSet service method.</param>
         /// 
@@ -502,6 +543,13 @@ namespace Amazon.SSOAdmin
 
         /// <summary>
         /// Creates a permission set within a specified SSO instance.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To grant users and groups access to AWS account resources, use <code> <a>CreateAccountAssignment</a>
+        /// </code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePermissionSet service method.</param>
         /// <param name="cancellationToken">
@@ -2072,6 +2120,14 @@ namespace Amazon.SSOAdmin
 
         /// <summary>
         /// Attaches an IAM inline policy to a permission set.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the permission set is already referenced by one or more account assignments, you
+        /// will need to call <code> <a>ProvisionPermissionSet</a> </code> after this action to
+        /// apply the corresponding IAM policy updates to all assigned accounts.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutInlinePolicyToPermissionSet service method.</param>
         /// 
@@ -2115,6 +2171,14 @@ namespace Amazon.SSOAdmin
 
         /// <summary>
         /// Attaches an IAM inline policy to a permission set.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the permission set is already referenced by one or more account assignments, you
+        /// will need to call <code> <a>ProvisionPermissionSet</a> </code> after this action to
+        /// apply the corresponding IAM policy updates to all assigned accounts.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutInlinePolicyToPermissionSet service method.</param>
         /// <param name="cancellationToken">
