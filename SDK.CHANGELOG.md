@@ -1,3 +1,16 @@
+### 3.5.19.0 (2020-09-18 18:16 UTC)
+* CodeStarconnections (3.5.1.0)
+	* New integration with the GitHub provider type.
+* MediaLive (3.5.2.0)
+	* AWS Elemental MediaLive now supports batch operations, which allow users to start, stop, and delete multiple MediaLive resources with a single request.
+* SSOAdmin (3.5.0.6)
+	* Documentation updates for AWS SSO APIs.
+* Core 3.5.1.15
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.18.0 (2020-09-17 18:33 UTC)
 * APIGateway (3.5.1.0)
 	* Adds support for mutual TLS authentication for public regional REST Apis
