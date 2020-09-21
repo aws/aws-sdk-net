@@ -467,6 +467,34 @@
     <pattern>[\.\-_A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchEvents.Model.RedshiftDataParameters.Database</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>([a-zA-Z0-9]+)|(\$(\.[\w_-]+(\[(\d+|\*)\])*)*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchEvents.Model.RedshiftDataParameters.DbUser</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>([a-zA-Z0-9]+)|(\$(\.[\w_-]+(\[(\d+|\*)\])*)*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchEvents.Model.RedshiftDataParameters.SecretManagerArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:[a-z0-9-.]+:.*)|(\$(\.[\w_-]+(\[(\d+|\*)\])*)*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchEvents.Model.RedshiftDataParameters.Sql</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchEvents.Model.RedshiftDataParameters.StatementName</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.RemoveTargetsResultEntry.TargetId</property>
     <min>1</min>
     <max>64</max>
