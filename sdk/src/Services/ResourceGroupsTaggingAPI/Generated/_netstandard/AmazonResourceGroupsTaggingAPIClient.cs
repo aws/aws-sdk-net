@@ -222,6 +222,11 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-ug/">AWS CodeGuru Profiler</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a href="https://docs.aws.amazon.com/codepipeline">AWS CodePipeline</a> 
     /// </para>
     ///  </li> <li> 
@@ -327,6 +332,11 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a href="https://docs.aws.amazon.com/elastic-inference">Amazon Elastic Inference</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a href="https://docs.aws.amazon.com/elasticache">Amazon ElastiCache</a> 
     /// </para>
     ///  </li> <li> 
@@ -366,6 +376,14 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a href="https://docs.aws.amazon.com/forecast">Amazon Forecast</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/frauddetector">Amazon Fraud Detector</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a href="https://docs.aws.amazon.com/fsx">Amazon FSx</a> 
     /// </para>
     ///  </li> <li> 
@@ -393,6 +411,10 @@ namespace Amazon.ResourceGroupsTaggingAPI
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/inspector">Amazon Inspector</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/ivs">Amazon Interactive Video Service</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -468,6 +490,10 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a href="https://docs.aws.amazon.com/lightsail">Amazon Lightsail</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a href="https://docs.aws.amazon.com/macie">Amazon Macie</a> 
     /// </para>
     ///  </li> <li> 
@@ -485,7 +511,16 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a href="https://docs.aws.amazon.com/msk">Amazon MSK</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a href="https://docs.aws.amazon.com/neptune">Amazon Neptune</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html">AWS
+    /// Network Manager</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -599,7 +634,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/waf">AWS WAFv2</a> 
+    ///  <a href="https://docs.aws.amazon.com/waf">AWS WAF</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
