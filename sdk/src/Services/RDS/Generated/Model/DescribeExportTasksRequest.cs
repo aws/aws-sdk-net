@@ -63,7 +63,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// Filters specify one or more snapshot exports to describe. The filters are specified
-        /// as name-value pairs that define what to include in the output.
+        /// as name-value pairs that define what to include in the output. Filter names and values
+        /// are case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -84,7 +85,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>status</code> - The status of the export task.
+        ///  <code>status</code> - The status of the export task. Must be lowercase, for example,
+        /// <code>complete</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -821,6 +821,49 @@ namespace Amazon.RDS.Model
         /// Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database
         /// Service User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>MariaDB</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>audit</code>, <code>error</code>, <code>general</code>,
+        /// and <code>slowquery</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Microsoft SQL Server</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>agent</code> and <code>error</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>audit</code>, <code>error</code>, <code>general</code>,
+        /// and <code>slowquery</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Oracle</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>,
+        /// and <code>trace</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>postgresql</code> and <code>upgrade</code>. 
+        /// </para>
         /// </summary>
         public List<string> EnableCloudwatchLogsExports
         {

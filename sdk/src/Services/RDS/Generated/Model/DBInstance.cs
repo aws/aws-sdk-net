@@ -571,7 +571,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Provides the name of the database engine to be used for this DB instance.
+        /// The name of the database engine to be used for this DB instance.
         /// </para>
         /// </summary>
         public string Engine

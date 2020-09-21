@@ -86,6 +86,24 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// If you call <code>DescribeDBInstances</code>, <code>ProcessorFeature</code> returns
+    /// non-null values only if the following conditions are met:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// You are accessing an Oracle DB instance.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Your Oracle DB instance class supports configuring the number of CPU cores and threads
+    /// per core.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The current number CPU cores and threads is set to a non-default value.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring
     /// the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i> 
     /// </para>

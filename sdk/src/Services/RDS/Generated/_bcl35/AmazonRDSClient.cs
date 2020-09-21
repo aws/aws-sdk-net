@@ -1195,8 +1195,8 @@ namespace Amazon.RDS
         #region  CopyDBSnapshot
 
         /// <summary>
-        /// Copies the specified DB snapshot. The source DB snapshot must be in the "available"
-        /// state.
+        /// Copies the specified DB snapshot. The source DB snapshot must be in the <code>available</code>
+        /// or <code>storage-optimization</code> state.
         /// 
         ///  
         /// <para>
@@ -2528,9 +2528,9 @@ namespace Amazon.RDS
         #region  CreateGlobalCluster
 
         /// <summary>
-        /// Creates an Aurora global database spread across multiple regions. The global database
-        /// contains a single primary cluster with read-write capability, and a read-only secondary
-        /// cluster that receives data from the primary cluster through high-speed replication
+        /// Creates an Aurora global database spread across multiple AWS Regions. The global
+        /// database contains a single primary cluster with read-write capability, and a read-only
+        /// secondary cluster that receives data from the primary cluster through high-speed replication
         /// performed by the Aurora storage subsystem. 
         /// 
         ///  
@@ -5645,7 +5645,13 @@ namespace Amazon.RDS
         /// groups, DB snapshots, and DB cluster snapshots for the past 14 days. Events specific
         /// to a particular DB instances, DB clusters, DB parameter groups, DB security groups,
         /// DB snapshots, and DB cluster snapshots group can be obtained by providing the name
-        /// as a parameter. By default, the past hour of events are returned.
+        /// as a parameter.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// By default, the past hour of events are returned.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by RDS.</returns>
@@ -5660,7 +5666,13 @@ namespace Amazon.RDS
         /// groups, DB snapshots, and DB cluster snapshots for the past 14 days. Events specific
         /// to a particular DB instances, DB clusters, DB parameter groups, DB security groups,
         /// DB snapshots, and DB cluster snapshots group can be obtained by providing the name
-        /// as a parameter. By default, the past hour of events are returned.
+        /// as a parameter.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// By default, the past hour of events are returned.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
         /// 
