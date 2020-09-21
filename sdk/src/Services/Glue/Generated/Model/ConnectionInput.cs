@@ -77,6 +77,11 @@ namespace Amazon.Glue.Model
         /// <para>
         ///  <code>MONGODB</code> - Designates a connection to a MongoDB document database.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NETWORK</code> - Designates a network connection to a data source within an
+        /// Amazon Virtual Private Cloud environment (Amazon VPC).
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// SFTP is not supported.
