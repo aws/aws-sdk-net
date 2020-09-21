@@ -43,10 +43,10 @@ namespace Amazon.IoTSiteWise.Model
     /// </para>
     ///  
     /// <para>
-    /// If you remove a property from an asset model or update a property's formula expression,
-    /// AWS IoT SiteWise deletes all previous data for that property. If you remove a hierarchy
-    /// definition from an asset model, AWS IoT SiteWise disassociates every asset associated
-    /// with that hierarchy. You can't change the type or data type of an existing property.
+    /// If you remove a property from an asset model, AWS IoT SiteWise deletes all previous
+    /// data for that property. If you remove a hierarchy definition from an asset model,
+    /// AWS IoT SiteWise disassociates every asset associated with that hierarchy. You can't
+    /// change the type or data type of an existing property.
     /// </para>
     ///  </important>
     /// </summary>

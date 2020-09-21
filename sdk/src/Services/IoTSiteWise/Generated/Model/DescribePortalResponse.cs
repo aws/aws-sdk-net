@@ -34,6 +34,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class DescribePortalResponse : AmazonWebServiceResponse
     {
         private string _portalArn;
+        private AuthMode _portalAuthMode;
         private string _portalClientId;
         private string _portalContactEmail;
         private DateTime? _portalCreationDate;
@@ -72,9 +73,29 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PortalAuthMode. 
+        /// <para>
+        /// The service to use to authenticate users to the portal.
+        /// </para>
+        /// </summary>
+        public AuthMode PortalAuthMode
+        {
+            get { return this._portalAuthMode; }
+            set { this._portalAuthMode = value; }
+        }
+
+        // Check to see if PortalAuthMode property is set
+        internal bool IsSetPortalAuthMode()
+        {
+            return this._portalAuthMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PortalClientId. 
         /// <para>
-        /// The AWS SSO application generated client ID (used with AWS SSO APIs).
+        /// The AWS SSO application generated client ID (used with AWS SSO APIs). AWS IoT SiteWise
+        /// includes <code>portalClientId</code> for only portals that use AWS SSO to authenticate
+        /// users.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -225,7 +246,10 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property PortalStartUrl. 
         /// <para>
-        /// The public root URL for the AWS IoT AWS IoT SiteWise Monitor application portal.
+        /// The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals
+        /// that use AWS SSO for authentication. For portals that use IAM for authentication,
+        /// you must use the <a href="https://docs.aws.amazon.com/AWS IoT SiteWise API ReferenceAPI_CreatePresignedPortalUrl.html">CreatePresignedPortalUrl</a>
+        /// operation to create a URL that you can use to access the portal.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

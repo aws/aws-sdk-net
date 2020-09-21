@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListAccessPolicies Request Marshaller
+    /// CreatePresignedPortalUrl Request Marshaller
     /// </summary>       
-    public class ListAccessPoliciesRequestMarshaller : IMarshaller<IRequest, ListAccessPoliciesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreatePresignedPortalUrlRequestMarshaller : IMarshaller<IRequest, CreatePresignedPortalUrlRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListAccessPoliciesRequest)input);
+            return this.Marshall((CreatePresignedPortalUrlRequest)input);
         }
 
         /// <summary>
@@ -52,34 +52,19 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListAccessPoliciesRequest publicRequest)
+        public IRequest Marshall(CreatePresignedPortalUrlRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTSiteWise");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";            
             request.HttpMethod = "GET";
 
+            if (!publicRequest.IsSetPortalId())
+                throw new AmazonIoTSiteWiseException("Request object does not have required field PortalId set");
+            request.AddPathResource("{portalId}", StringUtils.FromString(publicRequest.PortalId));
             
-            if (publicRequest.IsSetIamArn())
-                request.Parameters.Add("iamArn", StringUtils.FromString(publicRequest.IamArn));
-            
-            if (publicRequest.IsSetIdentityId())
-                request.Parameters.Add("identityId", StringUtils.FromString(publicRequest.IdentityId));
-            
-            if (publicRequest.IsSetIdentityType())
-                request.Parameters.Add("identityType", StringUtils.FromString(publicRequest.IdentityType));
-            
-            if (publicRequest.IsSetMaxResults())
-                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            
-            if (publicRequest.IsSetResourceId())
-                request.Parameters.Add("resourceId", StringUtils.FromString(publicRequest.ResourceId));
-            
-            if (publicRequest.IsSetResourceType())
-                request.Parameters.Add("resourceType", StringUtils.FromString(publicRequest.ResourceType));
-            request.ResourcePath = "/access-policies";
+            if (publicRequest.IsSetSessionDurationSeconds())
+                request.Parameters.Add("sessionDurationSeconds", StringUtils.FromInt(publicRequest.SessionDurationSeconds));
+            request.ResourcePath = "/portals/{portalId}/presigned-url";
             request.MarshallerVersion = 2;
             request.UseQueryString = true;
             
@@ -87,9 +72,9 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListAccessPoliciesRequestMarshaller _instance = new ListAccessPoliciesRequestMarshaller();        
+        private static CreatePresignedPortalUrlRequestMarshaller _instance = new CreatePresignedPortalUrlRequestMarshaller();        
 
-        internal static ListAccessPoliciesRequestMarshaller GetInstance()
+        internal static CreatePresignedPortalUrlRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -97,7 +82,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListAccessPoliciesRequestMarshaller Instance
+        public static CreatePresignedPortalUrlRequestMarshaller Instance
         {
             get
             {

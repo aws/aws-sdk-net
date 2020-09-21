@@ -107,7 +107,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AccessPolicyIdentity. 
         /// <para>
-        /// The AWS SSO identity (user or group) to which this access policy applies.
+        /// The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access policy
+        /// applies.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

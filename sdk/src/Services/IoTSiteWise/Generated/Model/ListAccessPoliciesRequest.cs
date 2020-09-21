@@ -30,11 +30,13 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccessPolicies operation.
-    /// Retrieves a paginated list of access policies for an AWS SSO identity (a user or group)
-    /// or an AWS IoT SiteWise Monitor resource (a portal or project).
+    /// Retrieves a paginated list of access policies for an identity (an AWS SSO user, an
+    /// AWS SSO group, or an IAM user) or an AWS IoT SiteWise Monitor resource (a portal or
+    /// project).
     /// </summary>
     public partial class ListAccessPoliciesRequest : AmazonIoTSiteWiseRequest
     {
+        private string _iamArn;
         private string _identityId;
         private IdentityType _identityType;
         private int? _maxResults;
@@ -43,9 +45,31 @@ namespace Amazon.IoTSiteWise.Model
         private ResourceType _resourceType;
 
         /// <summary>
+        /// Gets and sets the property IamArn. 
+        /// <para>
+        /// The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+        /// ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code>
+        /// for <code>identityType</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
+        public string IamArn
+        {
+            get { return this._iamArn; }
+            set { this._iamArn = value; }
+        }
+
+        // Check to see if IamArn property is set
+        internal bool IsSetIamArn()
+        {
+            return this._iamArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IdentityId. 
         /// <para>
-        /// The ID of the identity. This parameter is required if you specify <code>identityType</code>.
+        /// The ID of the identity. This parameter is required if you specify <code>USER</code>
+        /// or <code>GROUP</code> for <code>identityType</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -64,7 +88,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property IdentityType. 
         /// <para>
-        /// The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
+        /// The type of identity (AWS SSO user, AWS SSO group, or IAM user). This parameter is
+        /// required if you specify <code>identityId</code>.
         /// </para>
         /// </summary>
         public IdentityType IdentityType

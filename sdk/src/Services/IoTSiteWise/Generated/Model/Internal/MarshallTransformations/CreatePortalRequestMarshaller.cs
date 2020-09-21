@@ -77,6 +77,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetPortalAuthMode())
+                {
+                    context.Writer.WritePropertyName("portalAuthMode");
+                    context.Writer.Write(publicRequest.PortalAuthMode);
+                }
+
                 if(publicRequest.IsSetPortalContactEmail())
                 {
                     context.Writer.WritePropertyName("portalContactEmail");

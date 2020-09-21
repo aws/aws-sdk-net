@@ -29,31 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteGateway operation.
-    /// Deletes a gateway from AWS IoT SiteWise. When you delete a gateway, some of the gateway's
-    /// files remain in your gateway's file system.
+    /// Contains information about an AWS Identity and Access Management (IAM) user.
     /// </summary>
-    public partial class DeleteGatewayRequest : AmazonIoTSiteWiseRequest
+    public partial class IAMUserIdentity
     {
-        private string _gatewayId;
+        private string _arn;
 
         /// <summary>
-        /// Gets and sets the property GatewayId. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// The ID of the gateway to delete.
+        /// The ARN of the IAM user. IAM users must have the <code>iotsitewise:CreatePresignedPortalUrl</code>
+        /// permission to sign in to the portal. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+        /// ARNs</a> in the <i>IAM User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you delete the IAM user, access policies that contain this identity include an
+        /// empty <code>arn</code>. You can delete the access policy for the IAM user that no
+        /// longer exists.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
-        public string GatewayId
+        [AWSProperty(Required=true, Min=1, Max=1600)]
+        public string Arn
         {
-            get { return this._gatewayId; }
-            set { this._gatewayId = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if GatewayId property is set
-        internal bool IsSetGatewayId()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._gatewayId != null;
+            return this._arn != null;
         }
 
     }

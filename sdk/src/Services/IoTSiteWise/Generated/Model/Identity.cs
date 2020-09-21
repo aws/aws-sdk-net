@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains an AWS SSO identity ID for a user or group.
+    /// Contains an identity that can access an AWS IoT SiteWise Monitor resource.
     /// 
     ///  <note> 
     /// <para>
@@ -42,12 +42,13 @@ namespace Amazon.IoTSiteWise.Model
     public partial class Identity
     {
         private GroupIdentity _group;
+        private IAMUserIdentity _iamUser;
         private UserIdentity _user;
 
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// A group identity.
+        /// An AWS SSO group identity.
         /// </para>
         /// </summary>
         public GroupIdentity Group
@@ -63,9 +64,27 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IamUser. 
+        /// <para>
+        /// An IAM user identity.
+        /// </para>
+        /// </summary>
+        public IAMUserIdentity IamUser
+        {
+            get { return this._iamUser; }
+            set { this._iamUser = value; }
+        }
+
+        // Check to see if IamUser property is set
+        internal bool IsSetIamUser()
+        {
+            return this._iamUser != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// A user identity.
+        /// An AWS SSO user identity.
         /// </para>
         /// </summary>
         public UserIdentity User

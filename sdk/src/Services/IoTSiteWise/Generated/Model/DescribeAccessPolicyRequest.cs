@@ -30,8 +30,8 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccessPolicy operation.
-    /// Describes an access policy, which specifies an AWS SSO user or group's access to an
-    /// AWS IoT SiteWise Monitor portal or project.
+    /// Describes an access policy, which specifies an identity's access to an AWS IoT SiteWise
+    /// Monitor portal or project.
     /// </summary>
     public partial class DescribeAccessPolicyRequest : AmazonIoTSiteWiseRequest
     {

@@ -30,8 +30,9 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAccessPolicy operation.
-    /// Creates an access policy that grants the specified AWS Single Sign-On user or group
-    /// access to the specified AWS IoT SiteWise Monitor portal or project resource.
+    /// Creates an access policy that grants the specified identity (AWS SSO user, AWS SSO
+    /// group, or IAM user) access to the specified AWS IoT SiteWise Monitor portal or project
+    /// resource.
     /// </summary>
     public partial class CreateAccessPolicyRequest : AmazonIoTSiteWiseRequest
     {
@@ -44,8 +45,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AccessPolicyIdentity. 
         /// <para>
-        /// The identity for this access policy. Choose either a <code>user</code> or a <code>group</code>
-        /// but not both.
+        /// The identity for this access policy. Choose an AWS SSO user, an AWS SSO group, or
+        /// an IAM user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,8 +85,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AccessPolicyResource. 
         /// <para>
-        /// The AWS IoT SiteWise Monitor resource for this access policy. Choose either <code>portal</code>
-        /// or <code>project</code> but not both.
+        /// The AWS IoT SiteWise Monitor resource for this access policy. Choose either a portal
+        /// or a project.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

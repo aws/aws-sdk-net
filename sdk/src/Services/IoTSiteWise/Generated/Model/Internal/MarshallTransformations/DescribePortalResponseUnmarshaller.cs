@@ -57,6 +57,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.PortalArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("portalAuthMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PortalAuthMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("portalClientId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

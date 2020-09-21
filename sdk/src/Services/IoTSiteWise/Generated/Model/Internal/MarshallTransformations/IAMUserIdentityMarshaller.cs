@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Identity Marshaller
+    /// IAMUserIdentity Marshaller
     /// </summary>       
-    public class IdentityMarshaller : IRequestMarshaller<Identity, JsonMarshallerContext> 
+    public class IAMUserIdentityMarshaller : IRequestMarshaller<IAMUserIdentity, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Identity requestObject, JsonMarshallerContext context)
+        public void Marshall(IAMUserIdentity requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetGroup())
+            if(requestObject.IsSetArn())
             {
-                context.Writer.WritePropertyName("group");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = GroupIdentityMarshaller.Instance;
-                marshaller.Marshall(requestObject.Group, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetIamUser())
-            {
-                context.Writer.WritePropertyName("iamUser");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = IAMUserIdentityMarshaller.Instance;
-                marshaller.Marshall(requestObject.IamUser, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetUser())
-            {
-                context.Writer.WritePropertyName("user");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = UserIdentityMarshaller.Instance;
-                marshaller.Marshall(requestObject.User, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("arn");
+                context.Writer.Write(requestObject.Arn);
             }
 
         }
@@ -83,7 +56,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static IdentityMarshaller Instance = new IdentityMarshaller();
+        public readonly static IAMUserIdentityMarshaller Instance = new IAMUserIdentityMarshaller();
 
     }
 }

@@ -82,7 +82,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
         /// or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
-        /// API.
+        /// API operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

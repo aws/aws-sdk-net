@@ -86,7 +86,10 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property PortalStartUrl. 
         /// <para>
-        /// The public URL for the AWS IoT SiteWise Monitor portal.
+        /// The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals
+        /// that use AWS SSO for authentication. For portals that use IAM for authentication,
+        /// you must use the <a href="https://docs.aws.amazon.com/AWS IoT SiteWise API ReferenceAPI_CreatePresignedPortalUrl.html">CreatePresignedPortalUrl</a>
+        /// operation to create a URL that you can use to access the portal.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -125,7 +128,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property SsoApplicationId. 
         /// <para>
-        /// The associated AWS SSO application Id.
+        /// The associated AWS SSO application ID, if the portal uses AWS SSO.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

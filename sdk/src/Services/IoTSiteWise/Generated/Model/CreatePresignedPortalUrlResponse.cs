@@ -29,31 +29,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteGateway operation.
-    /// Deletes a gateway from AWS IoT SiteWise. When you delete a gateway, some of the gateway's
-    /// files remain in your gateway's file system.
+    /// This is the response object from the CreatePresignedPortalUrl operation.
     /// </summary>
-    public partial class DeleteGatewayRequest : AmazonIoTSiteWiseRequest
+    public partial class CreatePresignedPortalUrlResponse : AmazonWebServiceResponse
     {
-        private string _gatewayId;
+        private string _presignedPortalUrl;
 
         /// <summary>
-        /// Gets and sets the property GatewayId. 
+        /// Gets and sets the property PresignedPortalUrl. 
         /// <para>
-        /// The ID of the gateway to delete.
+        /// The pre-signed URL to the portal. The URL contains the portal ID and a session token
+        /// that lets you access the portal. The URL has the following format.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>https://&lt;portal-id&gt;.app.iotsitewise.aws/auth?token=&lt;encrypted-token&gt;</code>
+        /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
-        public string GatewayId
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string PresignedPortalUrl
         {
-            get { return this._gatewayId; }
-            set { this._gatewayId = value; }
+            get { return this._presignedPortalUrl; }
+            set { this._presignedPortalUrl = value; }
         }
 
-        // Check to see if GatewayId property is set
-        internal bool IsSetGatewayId()
+        // Check to see if PresignedPortalUrl property is set
+        internal bool IsSetPresignedPortalUrl()
         {
-            return this._gatewayId != null;
+            return this._presignedPortalUrl != null;
         }
 
     }
