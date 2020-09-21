@@ -42,6 +42,12 @@ namespace Amazon.ResourceGroups.Model
         /// </summary>
         public IPaginatedEnumerable<SearchResourcesResponse> Responses => new PaginatedResponse<SearchResourcesResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the ResourceIdentifiers
+        /// </summary>
+        public IPaginatedEnumerable<ResourceIdentifier> ResourceIdentifiers => 
+            new PaginatedResultKeyResponse<SearchResourcesResponse, ResourceIdentifier>(this, (i) => i.ResourceIdentifiers);
+
         internal SearchResourcesPaginator(IAmazonResourceGroups client, SearchResourcesRequest request)
         {
             this._client = client;
