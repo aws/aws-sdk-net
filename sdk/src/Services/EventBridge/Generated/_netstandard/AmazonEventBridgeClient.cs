@@ -1683,6 +1683,10 @@ namespace Amazon.EventBridge
         /// <para>
         /// Amazon API Gateway REST APIs
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Redshift Clusters to invoke Data API ExecuteStatement on
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Creating rules with built-in targets is supported only in the AWS Management Console.

@@ -52,6 +52,7 @@ namespace Amazon.EventBridge.Model
         private string _inputPath;
         private InputTransformer _inputTransformer;
         private KinesisParameters _kinesisParameters;
+        private RedshiftDataParameters _redshiftDataParameters;
         private string _roleArn;
         private RunCommandParameters _runCommandParameters;
         private SqsParameters _sqsParameters;
@@ -238,6 +239,29 @@ namespace Amazon.EventBridge.Model
         internal bool IsSetKinesisParameters()
         {
             return this._kinesisParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedshiftDataParameters. 
+        /// <para>
+        /// Contains the Redshift Data API parameters to use when the target is a Redshift cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a Redshift Cluster as a Target, you can use this to specify parameters
+        /// to invoke the Redshift Data API ExecuteStatement based on EventBridge events.
+        /// </para>
+        /// </summary>
+        public RedshiftDataParameters RedshiftDataParameters
+        {
+            get { return this._redshiftDataParameters; }
+            set { this._redshiftDataParameters = value; }
+        }
+
+        // Check to see if RedshiftDataParameters property is set
+        internal bool IsSetRedshiftDataParameters()
+        {
+            return this._redshiftDataParameters != null;
         }
 
         /// <summary>

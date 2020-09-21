@@ -118,6 +118,12 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                     unmarshalledObject.KinesisParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RedshiftDataParameters", targetDepth))
+                {
+                    var unmarshaller = RedshiftDataParametersUnmarshaller.Instance;
+                    unmarshalledObject.RedshiftDataParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

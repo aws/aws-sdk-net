@@ -124,6 +124,17 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRedshiftDataParameters())
+            {
+                context.Writer.WritePropertyName("RedshiftDataParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RedshiftDataParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.RedshiftDataParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
