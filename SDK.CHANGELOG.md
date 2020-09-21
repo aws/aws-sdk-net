@@ -1,3 +1,24 @@
+### 3.5.20.0 (2020-09-21 18:14 UTC)
+* CloudWatchEvents (3.5.1.0)
+	* Add support for Redshift Data API Targets
+* EventBridge (3.5.1.0)
+	* Add support for Redshift Data API Targets
+* Glue (3.5.2.0)
+	* Adding support to update multiple partitions of a table in a single request
+* IoTSiteWise (3.5.2.0)
+	* This release supports IAM mode for SiteWise Monitor portals
+* RDS (3.5.0.18)
+	* Documentation updates for the RDS DescribeExportTasks API
+* ResourceGroups (3.5.0.18)
+	* Documentation updates and corrections for Resource Groups API Reference and SDKs.
+* ResourceGroupsTaggingAPI (3.5.0.18)
+	* Documentation updates for the Resource Groups Tagging API.
+* Core 3.5.1.16
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.19.0 (2020-09-18 18:16 UTC)
 * CodeStarconnections (3.5.1.0)
 	* New integration with the GitHub provider type.
