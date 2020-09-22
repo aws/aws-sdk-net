@@ -160,6 +160,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("WorkMail")]
+        public void ListMailboxExportJobsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListMailboxExportJobsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListMailboxExportJobsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListMailboxExportJobsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListMailboxExportJobs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListMailboxExportJobs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("WorkMail")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListMailboxExportJobsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListMailboxExportJobsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListMailboxExportJobsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListMailboxExportJobs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListMailboxExportJobs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("WorkMail")]
         public void ListMailboxPermissionsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListMailboxPermissionsRequest>();

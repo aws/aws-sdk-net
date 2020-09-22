@@ -28,6 +28,22 @@
     <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.CancelMailboxExportJobRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x21-\x7e]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.CancelMailboxExportJobRequest.JobId</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[A-Za-z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.CancelMailboxExportJobRequest.OrganizationId</property>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateAliasRequest.Alias</property>
     <min>1</min>
     <max>254</max>
@@ -204,6 +220,67 @@
     <min>1</min>
     <max>256</max>
     <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeMailboxExportJobRequest.JobId</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[A-Za-z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeMailboxExportJobRequest.OrganizationId</property>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeMailboxExportJobResponse.Description</property>
+    <min>0</min>
+    <max>1023</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeMailboxExportJobResponse.EntityId</property>
+    <min>12</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeMailboxExportJobResponse.ErrorInfo</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeMailboxExportJobResponse.EstimatedProgress</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeMailboxExportJobResponse.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws:kms:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeMailboxExportJobResponse.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeMailboxExportJobResponse.S3BucketName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[A-Za-z0-9.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeMailboxExportJobResponse.S3Path</property>
+    <min>1</min>
+    <max>1023</max>
+    <pattern>[A-Za-z0-9!_.*'()/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeMailboxExportJobResponse.S3Prefix</property>
+    <min>1</min>
+    <max>1023</max>
+    <pattern>[A-Za-z0-9!_.*'()/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeOrganizationRequest.OrganizationId</property>
@@ -455,6 +532,25 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMailboxExportJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMailboxExportJobsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMailboxExportJobsRequest.OrganizationId</property>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMailboxExportJobsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.ListMailboxPermissionsRequest.EntityId</property>
     <min>12</min>
     <max>256</max>
@@ -641,6 +737,56 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.StartMailboxExportJobRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x21-\x7e]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.StartMailboxExportJobRequest.Description</property>
+    <min>0</min>
+    <max>1023</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.StartMailboxExportJobRequest.EntityId</property>
+    <min>12</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.StartMailboxExportJobRequest.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws:kms:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.StartMailboxExportJobRequest.OrganizationId</property>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.StartMailboxExportJobRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.StartMailboxExportJobRequest.S3BucketName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[A-Za-z0-9.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.StartMailboxExportJobRequest.S3Prefix</property>
+    <min>1</min>
+    <max>1023</max>
+    <pattern>[A-Za-z0-9!_.*'()/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.StartMailboxExportJobResponse.JobId</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[A-Za-z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.TagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
@@ -729,6 +875,40 @@
     <min>1</min>
     <max>256</max>
     <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.MailboxExportJob.Description</property>
+    <min>0</min>
+    <max>1023</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.MailboxExportJob.EntityId</property>
+    <min>12</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.MailboxExportJob.EstimatedProgress</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.MailboxExportJob.JobId</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[A-Za-z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.MailboxExportJob.S3BucketName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[A-Za-z0-9.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.MailboxExportJob.S3Path</property>
+    <min>1</min>
+    <max>1023</max>
+    <pattern>[A-Za-z0-9!_.*'()/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.Member.Id</property>
