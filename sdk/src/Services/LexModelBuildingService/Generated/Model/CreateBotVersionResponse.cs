@@ -208,7 +208,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Gets and sets the property EnableModelImprovements. 
         /// <para>
         /// Indicates whether the bot uses accuracy improvements. <code>true</code> indicates
-        /// that the bot is using the imoprovements, otherwise, <code>false</code>.
+        /// that the bot is using the improvements, otherwise, <code>false</code>.
         /// </para>
         /// </summary>
         public bool EnableModelImprovements

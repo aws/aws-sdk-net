@@ -470,6 +470,10 @@ namespace Amazon.LexModelBuildingService
         /// Constant EnUS for Locale
         /// </summary>
         public static readonly Locale EnUS = new Locale("en-US");
+        /// <summary>
+        /// Constant EsUS for Locale
+        /// </summary>
+        public static readonly Locale EsUS = new Locale("es-US");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -201,8 +201,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property KendraConfiguration. 
         /// <para>
-        /// Configuration information, if any, for connectin an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code>
-        /// intent.
+        /// Configuration information, if any, for connecting an Amazon Kendra index with the
+        /// <code>AMAZON.KendraSearchIntent</code> intent.
         /// </para>
         /// </summary>
         public KendraConfiguration KendraConfiguration
