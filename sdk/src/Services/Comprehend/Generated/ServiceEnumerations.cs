@@ -25,6 +25,56 @@ namespace Amazon.Comprehend
 {
 
     /// <summary>
+    /// Constants used for properties of type DocumentClassifierDataFormat.
+    /// </summary>
+    public class DocumentClassifierDataFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUGMENTED_MANIFEST for DocumentClassifierDataFormat
+        /// </summary>
+        public static readonly DocumentClassifierDataFormat AUGMENTED_MANIFEST = new DocumentClassifierDataFormat("AUGMENTED_MANIFEST");
+        /// <summary>
+        /// Constant COMPREHEND_CSV for DocumentClassifierDataFormat
+        /// </summary>
+        public static readonly DocumentClassifierDataFormat COMPREHEND_CSV = new DocumentClassifierDataFormat("COMPREHEND_CSV");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentClassifierDataFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentClassifierDataFormat FindValue(string value)
+        {
+            return FindValue<DocumentClassifierDataFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentClassifierDataFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DocumentClassifierMode.
     /// </summary>
     public class DocumentClassifierMode : ConstantClass
@@ -130,6 +180,56 @@ namespace Amazon.Comprehend
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EndpointStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EntityRecognizerDataFormat.
+    /// </summary>
+    public class EntityRecognizerDataFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUGMENTED_MANIFEST for EntityRecognizerDataFormat
+        /// </summary>
+        public static readonly EntityRecognizerDataFormat AUGMENTED_MANIFEST = new EntityRecognizerDataFormat("AUGMENTED_MANIFEST");
+        /// <summary>
+        /// Constant COMPREHEND_CSV for EntityRecognizerDataFormat
+        /// </summary>
+        public static readonly EntityRecognizerDataFormat COMPREHEND_CSV = new EntityRecognizerDataFormat("COMPREHEND_CSV");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EntityRecognizerDataFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EntityRecognizerDataFormat FindValue(string value)
+        {
+            return FindValue<EntityRecognizerDataFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EntityRecognizerDataFormat(string value)
         {
             return FindValue(value);
         }

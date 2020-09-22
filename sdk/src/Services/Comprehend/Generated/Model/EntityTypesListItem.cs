@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Information about an individual item on a list of entity types.
+    /// An entity type within a labeled training dataset that Amazon Comprehend uses to train
+    /// a custom entity recognizer.
     /// </summary>
     public partial class EntityTypesListItem
     {
@@ -38,7 +39,14 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Entity type of an item on an entity type list.
+        /// An entity type within a labeled training dataset that Amazon Comprehend uses to train
+        /// a custom entity recognizer.
+        /// </para>
+        ///  
+        /// <para>
+        /// Entity types must not contain the following invalid characters: \n (line break), \\n
+        /// (escaped line break, \r (carriage return), \\r (escaped carriage return), \t (tab),
+        /// \\t (escaped tab), space, and , (comma).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

@@ -56,6 +56,28 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAugmentedManifests())
+            {
+                context.Writer.WritePropertyName("AugmentedManifests");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAugmentedManifestsListValue in requestObject.AugmentedManifests)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AugmentedManifestsListItemMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAugmentedManifestsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetDataFormat())
+            {
+                context.Writer.WritePropertyName("DataFormat");
+                context.Writer.Write(requestObject.DataFormat);
+            }
+
             if(requestObject.IsSetDocuments())
             {
                 context.Writer.WritePropertyName("Documents");

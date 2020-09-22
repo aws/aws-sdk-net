@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DocumentClassifierInputDataConfig Marshaller
+    /// AugmentedManifestsListItem Marshaller
     /// </summary>       
-    public class DocumentClassifierInputDataConfigMarshaller : IRequestMarshaller<DocumentClassifierInputDataConfig, JsonMarshallerContext> 
+    public class AugmentedManifestsListItemMarshaller : IRequestMarshaller<AugmentedManifestsListItem, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,17 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DocumentClassifierInputDataConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(AugmentedManifestsListItem requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAugmentedManifests())
+            if(requestObject.IsSetAttributeNames())
             {
-                context.Writer.WritePropertyName("AugmentedManifests");
+                context.Writer.WritePropertyName("AttributeNames");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectAugmentedManifestsListValue in requestObject.AugmentedManifests)
+                foreach(var requestObjectAttributeNamesListValue in requestObject.AttributeNames)
                 {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AugmentedManifestsListItemMarshaller.Instance;
-                    marshaller.Marshall(requestObjectAugmentedManifestsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.Write(requestObjectAttributeNamesListValue);
                 }
                 context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetDataFormat())
-            {
-                context.Writer.WritePropertyName("DataFormat");
-                context.Writer.Write(requestObject.DataFormat);
-            }
-
-            if(requestObject.IsSetLabelDelimiter())
-            {
-                context.Writer.WritePropertyName("LabelDelimiter");
-                context.Writer.Write(requestObject.LabelDelimiter);
             }
 
             if(requestObject.IsSetS3Uri())
@@ -84,7 +67,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static DocumentClassifierInputDataConfigMarshaller Instance = new DocumentClassifierInputDataConfigMarshaller();
+        public readonly static AugmentedManifestsListItemMarshaller Instance = new AugmentedManifestsListItemMarshaller();
 
     }
 }

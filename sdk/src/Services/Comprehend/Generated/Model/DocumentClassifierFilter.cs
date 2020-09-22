@@ -41,7 +41,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Filters the list of classifiers based on status. 
+        /// Filters the list of classifiers based on status.
         /// </para>
         /// </summary>
         public ModelStatus Status

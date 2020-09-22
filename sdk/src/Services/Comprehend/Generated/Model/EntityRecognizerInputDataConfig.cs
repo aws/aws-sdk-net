@@ -34,6 +34,8 @@ namespace Amazon.Comprehend.Model
     public partial class EntityRecognizerInputDataConfig
     {
         private EntityRecognizerAnnotations _annotations;
+        private List<AugmentedManifestsListItem> _augmentedManifests = new List<AugmentedManifestsListItem>();
+        private EntityRecognizerDataFormat _dataFormat;
         private EntityRecognizerDocuments _documents;
         private EntityRecognizerEntityList _entityList;
         private List<EntityTypesListItem> _entityTypes = new List<EntityTypesListItem>();
@@ -41,7 +43,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Annotations. 
         /// <para>
-        /// S3 location of the annotations file for an entity recognizer.
+        /// The S3 location of the CSV file that annotates your training documents.
         /// </para>
         /// </summary>
         public EntityRecognizerAnnotations Annotations
@@ -57,12 +59,88 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Documents. 
+        /// Gets and sets the property AugmentedManifests. 
         /// <para>
-        /// S3 location of the documents folder for an entity recognizer
+        /// A list of augmented manifest files that provide training data for your custom model.
+        /// An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker
+        /// Ground Truth.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is required if you set <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        public List<AugmentedManifestsListItem> AugmentedManifests
+        {
+            get { return this._augmentedManifests; }
+            set { this._augmentedManifests = value; }
+        }
+
+        // Check to see if AugmentedManifests property is set
+        internal bool IsSetAugmentedManifests()
+        {
+            return this._augmentedManifests != null && this._augmentedManifests.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataFormat. 
+        /// <para>
+        /// The format of your training data:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>COMPREHEND_CSV</code>: A CSV file that supplements your training documents.
+        /// The CSV file contains information about the custom entities that your trained model
+        /// will detect. The required format of the file depends on whether you are providing
+        /// annotations or an entity list.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use this value, you must provide your CSV file by using either the <code>Annotations</code>
+        /// or <code>EntityList</code> parameters. You must provide your training documents by
+        /// using the <code>Documents</code> parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker
+        /// Ground Truth. This file is in JSON lines format. Each line is a complete JSON object
+        /// that contains a training document and its labels. Each label annotates a named entity
+        /// in the training document. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use this value, you must provide the <code>AugmentedManifests</code> parameter
+        /// in your request.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as
+        /// the default.
+        /// </para>
+        /// </summary>
+        public EntityRecognizerDataFormat DataFormat
+        {
+            get { return this._dataFormat; }
+            set { this._dataFormat = value; }
+        }
+
+        // Check to see if DataFormat property is set
+        internal bool IsSetDataFormat()
+        {
+            return this._dataFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Documents. 
+        /// <para>
+        /// The S3 location of the folder that contains the training documents for your custom
+        /// entity recognizer.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.
+        /// </para>
+        /// </summary>
         public EntityRecognizerDocuments Documents
         {
             get { return this._documents; }
@@ -78,7 +156,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property EntityList. 
         /// <para>
-        /// S3 location of the entity list for an entity recognizer.
+        /// The S3 location of the CSV file that has the entity list for your custom entity recognizer.
         /// </para>
         /// </summary>
         public EntityRecognizerEntityList EntityList
@@ -96,8 +174,15 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property EntityTypes. 
         /// <para>
-        /// The entity types in the input data for an entity recognizer. A maximum of 25 entity
-        /// types can be used at one time to train an entity recognizer.
+        /// The entity types in the labeled training data that Amazon Comprehend uses to train
+        /// the custom entity recognizer. Any entity types that you don't specify are ignored.
+        /// </para>
+        ///  
+        /// <para>
+        /// A maximum of 25 entity types can be used at one time to train an entity recognizer.
+        /// Entity types must not contain the following invalid characters: \n (line break), \\n
+        /// (escaped line break), \r (carriage return), \\r (escaped carriage return), \t (tab),
+        /// \\t (escaped tab), space, and , (comma). 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

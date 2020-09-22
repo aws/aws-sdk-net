@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DocumentClassifierInputDataConfig Object
+    /// Response Unmarshaller for AugmentedManifestsListItem Object
     /// </summary>  
-    public class DocumentClassifierInputDataConfigUnmarshaller : IUnmarshaller<DocumentClassifierInputDataConfig, XmlUnmarshallerContext>, IUnmarshaller<DocumentClassifierInputDataConfig, JsonUnmarshallerContext>
+    public class AugmentedManifestsListItemUnmarshaller : IUnmarshaller<AugmentedManifestsListItem, XmlUnmarshallerContext>, IUnmarshaller<AugmentedManifestsListItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DocumentClassifierInputDataConfig IUnmarshaller<DocumentClassifierInputDataConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AugmentedManifestsListItem IUnmarshaller<AugmentedManifestsListItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DocumentClassifierInputDataConfig Unmarshall(JsonUnmarshallerContext context)
+        public AugmentedManifestsListItem Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DocumentClassifierInputDataConfig unmarshalledObject = new DocumentClassifierInputDataConfig();
+            AugmentedManifestsListItem unmarshalledObject = new AugmentedManifestsListItem();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AugmentedManifests", targetDepth))
+                if (context.TestExpression("AttributeNames", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AugmentedManifestsListItem, AugmentedManifestsListItemUnmarshaller>(AugmentedManifestsListItemUnmarshaller.Instance);
-                    unmarshalledObject.AugmentedManifests = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DataFormat", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataFormat = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LabelDelimiter", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LabelDelimiter = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AttributeNames = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("S3Uri", targetDepth))
@@ -94,12 +82,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         }
 
 
-        private static DocumentClassifierInputDataConfigUnmarshaller _instance = new DocumentClassifierInputDataConfigUnmarshaller();        
+        private static AugmentedManifestsListItemUnmarshaller _instance = new AugmentedManifestsListItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DocumentClassifierInputDataConfigUnmarshaller Instance
+        public static AugmentedManifestsListItemUnmarshaller Instance
         {
             get
             {

@@ -70,6 +70,18 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     unmarshalledObject.Annotations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AugmentedManifests", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AugmentedManifestsListItem, AugmentedManifestsListItemUnmarshaller>(AugmentedManifestsListItemUnmarshaller.Instance);
+                    unmarshalledObject.AugmentedManifests = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DataFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Documents", targetDepth))
                 {
                     var unmarshaller = EntityRecognizerDocumentsUnmarshaller.Instance;
