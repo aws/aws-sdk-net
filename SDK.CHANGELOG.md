@@ -1,3 +1,11 @@
+### 3.5.21.0 (2020-09-22 18:50 UTC)
+* Comprehend (3.5.2.0)
+	* Amazon Comprehend integrates with Amazon SageMaker GroundTruth to allow its customers to annotate their datasets using GroundTruth and train their models using Comprehend Custom APIs.
+* LexModelBuildingService (3.5.2.0)
+	* Lex now supports es-US locales
+* WorkMail (3.5.1.0)
+	* Adding support for Mailbox Export APIs
+
 ### 3.5.20.0 (2020-09-21 18:14 UTC)
 * CloudWatchEvents (3.5.1.0)
 	* Add support for Redshift Data API Targets
