@@ -40,6 +40,7 @@ namespace Amazon.QuickSight.Model
         private List<AnalysisError> _errors = new List<AnalysisError>();
         private DateTime? _lastUpdatedTime;
         private string _name;
+        private List<Sheet> _sheets = new List<Sheet>();
         private ResourceStatus _status;
         private string _themeArn;
 
@@ -171,6 +172,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sheets. 
+        /// <para>
+        /// A list of the associated sheets with the unique identifier and name of each sheet.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=20)]
+        public List<Sheet> Sheets
+        {
+            get { return this._sheets; }
+            set { this._sheets = value; }
+        }
+
+        // Check to see if Sheets property is set
+        internal bool IsSetSheets()
+        {
+            return this._sheets != null && this._sheets.Count > 0; 
         }
 
         /// <summary>

@@ -106,6 +106,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Sheets", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Sheet, SheetUnmarshaller>(SheetUnmarshaller.Instance);
+                    unmarshalledObject.Sheets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

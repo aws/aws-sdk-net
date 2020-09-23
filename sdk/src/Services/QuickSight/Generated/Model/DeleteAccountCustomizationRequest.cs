@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the DeleteAccountCustomization operation.
     /// Deletes all Amazon QuickSight customizations in this AWS Region for the specified
-    /// AWS Account and QuickSight namespace.
+    /// AWS account and QuickSight namespace.
     /// </summary>
     public partial class DeleteAccountCustomizationRequest : AmazonQuickSightRequest
     {
