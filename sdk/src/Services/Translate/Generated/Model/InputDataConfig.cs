@@ -39,10 +39,43 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The multipurpose internet mail extension (MIME) type of the input files. Valid values
-        /// are <code>text/plain</code> for plaintext files and <code>text/html</code> for HTML
-        /// files.
+        /// Describes the format of the data that you submit to Amazon Translate as input. You
+        /// can specify one of the following multipurpose internet mail extension (MIME) types:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>text/html</code>: The input data consists of one or more HTML files. Amazon
+        /// Translate translates only the text that resides in the <code>html</code> element in
+        /// each file.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>text/plain</code>: The input data consists of one or more unformatted text
+        /// files. Amazon Translate translates every character in this type of input.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>:
+        /// The input data consists of one or more Word documents (.docx).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>:
+        /// The input data consists of one or more PowerPoint Presentation files (.pptx).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The
+        /// input data consists of one or more Excel Workbook files (.xlsx).
+        /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// If you structure your input data as HTML, ensure that you set this parameter to <code>text/html</code>.
+        /// By doing so, you cut costs by limiting the translation to the contents of the <code>html</code>
+        /// element in each file. Otherwise, if you set this parameter to <code>text/plain</code>,
+        /// your costs will cover the translation of every character.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
         public string ContentType
