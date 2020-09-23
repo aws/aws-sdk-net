@@ -245,8 +245,9 @@ namespace Amazon.Backup
         #region  CreateBackupPlan
 
         /// <summary>
-        /// Backup plans are documents that contain information that AWS Backup uses to schedule
-        /// tasks that create recovery points of resources.
+        /// Creates a backup plan using a backup plan name and backup rules. A backup plan is
+        /// a document that contains information that AWS Backup uses to schedule tasks that create
+        /// recovery points for resources.
         /// 
         ///  
         /// <para>
@@ -363,13 +364,13 @@ namespace Amazon.Backup
         /// <para>
         /// Using these patterns would back up all Amazon Elastic Block Store (Amazon EBS) volumes
         /// that are tagged as <code>"department=finance"</code>, <code>"importance=critical"</code>,
-        /// in addition to an EBS volume with the specified volume Id.
+        /// in addition to an EBS volume with the specified volume ID.
         /// </para>
         ///  
         /// <para>
         /// Resources and conditions are additive in that all resources that match the pattern
         /// are selected. This shouldn't be confused with a logical AND, where all conditions
-        /// must match. The matching patterns are logically 'put together using the OR operator.
+        /// must match. The matching patterns are logically put together using the OR operator.
         /// In other words, all patterns that match are selected for backup.
         /// </para>
         /// </summary>
@@ -940,7 +941,7 @@ namespace Amazon.Backup
         #region  DescribeBackupJob
 
         /// <summary>
-        /// Returns metadata associated with creating a backup of a resource.
+        /// Returns backup job details for the specified <code>BackupJobId</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBackupJob service method.</param>
         /// 
@@ -1282,10 +1283,10 @@ namespace Amazon.Backup
 
         /// <summary>
         /// Returns the current service opt-in settings for the Region. If the service has a value
-        /// set to <code>true</code>, AWS Backup attempts to protect that service's resources
-        /// in this Region, when included in an on-demand backup or scheduled backup plan. If
-        /// the value is set to <code>false</code> for a service, AWS Backup does not attempt
-        /// to protect that service's resources in this Region.
+        /// set to <code>true</code>, AWS Backup tries to protect that service's resources in
+        /// this Region, when included in an on-demand backup or scheduled backup plan. If the
+        /// value is set to <code>false</code> for a service, AWS Backup does not try to protect
+        /// that service's resources in this Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRegionSettings service method.</param>
         /// 
@@ -1480,6 +1481,7 @@ namespace Amazon.Backup
         #region  GetBackupPlan
 
         /// <summary>
+        /// Returns <code>BackupPlan</code> details for the specified <code>BackupPlanId</code>.
         /// Returns the body of a backup plan in JSON format, in addition to plan metadata.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBackupPlan service method.</param>
@@ -2012,7 +2014,7 @@ namespace Amazon.Backup
         #region  ListBackupJobs
 
         /// <summary>
-        /// Returns metadata about your backup jobs.
+        /// Returns a list of existing backup jobs for an authenticated account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBackupJobs service method.</param>
         /// 
@@ -2073,9 +2075,10 @@ namespace Amazon.Backup
         #region  ListBackupPlans
 
         /// <summary>
-        /// Returns metadata of your saved backup plans, including Amazon Resource Names (ARNs),
-        /// plan IDs, creation and deletion dates, version IDs, plan names, and creator request
-        /// IDs.
+        /// Returns a list of existing backup plans for an authenticated account. The list is
+        /// populated only if the advanced option is set for the backup plan. The list contains
+        /// information such as Amazon Resource Names (ARNs), plan IDs, creation and deletion
+        /// dates, version IDs, plan names, and creator request IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBackupPlans service method.</param>
         /// 
@@ -2949,7 +2952,7 @@ namespace Amazon.Backup
         #region  StartBackupJob
 
         /// <summary>
-        /// Starts a job to create a one-time backup of the specified resource.
+        /// Starts an on-demand backup job for the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartBackupJob service method.</param>
         /// 
@@ -3376,9 +3379,8 @@ namespace Amazon.Backup
         #region  UpdateBackupPlan
 
         /// <summary>
-        /// Replaces the body of a saved backup plan identified by its <code>backupPlanId</code>
-        /// with the input document in JSON format. The new version is uniquely identified by
-        /// a <code>VersionId</code>.
+        /// Updates an existing backup plan identified by its <code>backupPlanId</code> with the
+        /// input document in JSON format. The new version is uniquely identified by a <code>VersionId</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBackupPlan service method.</param>
         /// 
@@ -3527,10 +3529,10 @@ namespace Amazon.Backup
 
         /// <summary>
         /// Updates the current service opt-in settings for the Region. If the service has a value
-        /// set to <code>true</code>, AWS Backup attempts to protect that service's resources
-        /// in this Region, when included in an on-demand backup or scheduled backup plan. If
-        /// the value is set to <code>false</code> for a service, AWS Backup does not attempt
-        /// to protect that service's resources in this Region.
+        /// set to <code>true</code>, AWS Backup tries to protect that service's resources in
+        /// this Region, when included in an on-demand backup or scheduled backup plan. If the
+        /// value is set to <code>false</code> for a service, AWS Backup does not try to protect
+        /// that service's resources in this Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRegionSettings service method.</param>
         /// 

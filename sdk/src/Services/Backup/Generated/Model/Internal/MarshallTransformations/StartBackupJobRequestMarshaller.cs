@@ -66,6 +66,20 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBackupOptions())
+                {
+                    context.Writer.WritePropertyName("BackupOptions");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestBackupOptionsKvp in publicRequest.BackupOptions)
+                    {
+                        context.Writer.WritePropertyName(publicRequestBackupOptionsKvp.Key);
+                        var publicRequestBackupOptionsValue = publicRequestBackupOptionsKvp.Value;
+
+                            context.Writer.Write(publicRequestBackupOptionsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetBackupVaultName())
                 {
                     context.Writer.WritePropertyName("BackupVaultName");

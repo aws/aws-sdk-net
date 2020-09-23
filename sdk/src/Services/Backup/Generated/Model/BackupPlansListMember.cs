@@ -33,6 +33,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class BackupPlansListMember
     {
+        private List<AdvancedBackupSetting> _advancedBackupSettings = new List<AdvancedBackupSetting>();
         private string _backupPlanArn;
         private string _backupPlanId;
         private string _backupPlanName;
@@ -41,6 +42,24 @@ namespace Amazon.Backup.Model
         private DateTime? _deletionDate;
         private DateTime? _lastExecutionDate;
         private string _versionId;
+
+        /// <summary>
+        /// Gets and sets the property AdvancedBackupSettings. 
+        /// <para>
+        /// Contains a list of <code>BackupOptions</code> for a resource type.
+        /// </para>
+        /// </summary>
+        public List<AdvancedBackupSetting> AdvancedBackupSettings
+        {
+            get { return this._advancedBackupSettings; }
+            set { this._advancedBackupSettings = value; }
+        }
+
+        // Check to see if AdvancedBackupSettings property is set
+        internal bool IsSetAdvancedBackupSettings()
+        {
+            return this._advancedBackupSettings != null && this._advancedBackupSettings.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property BackupPlanArn. 
@@ -122,7 +141,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
         /// A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of executing the operation twice.
+        /// without the risk of running the operation twice.
         /// </para>
         /// </summary>
         public string CreatorRequestId
@@ -161,7 +180,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property LastExecutionDate. 
         /// <para>
-        /// The last time a job to back up resources was executed with this rule. A date and time,
+        /// The last time a job to back up resources was run with this rule. A date and time,
         /// in Unix format and Coordinated Universal Time (UTC). The value of <code>LastExecutionDate</code>
         /// is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
         /// January 26, 2018 12:11:30.087 AM.

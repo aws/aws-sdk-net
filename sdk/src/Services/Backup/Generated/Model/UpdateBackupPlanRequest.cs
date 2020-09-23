@@ -30,9 +30,8 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateBackupPlan operation.
-    /// Replaces the body of a saved backup plan identified by its <code>backupPlanId</code>
-    /// with the input document in JSON format. The new version is uniquely identified by
-    /// a <code>VersionId</code>.
+    /// Updates an existing backup plan identified by its <code>backupPlanId</code> with the
+    /// input document in JSON format. The new version is uniquely identified by a <code>VersionId</code>.
     /// </summary>
     public partial class UpdateBackupPlanRequest : AmazonBackupRequest
     {

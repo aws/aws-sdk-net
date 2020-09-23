@@ -100,7 +100,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property VersionId. 
         /// <para>
         /// Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024
-        /// bytes long. Version Ids cannot be edited.
+        /// bytes long. Version IDs cannot be edited.
         /// </para>
         /// </summary>
         public string VersionId

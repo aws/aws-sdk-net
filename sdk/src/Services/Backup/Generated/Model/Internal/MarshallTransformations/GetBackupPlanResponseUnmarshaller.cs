@@ -51,6 +51,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AdvancedBackupSettings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AdvancedBackupSetting, AdvancedBackupSettingUnmarshaller>(AdvancedBackupSettingUnmarshaller.Instance);
+                    response.AdvancedBackupSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BackupPlan", targetDepth))
                 {
                     var unmarshaller = BackupPlanUnmarshaller.Instance;

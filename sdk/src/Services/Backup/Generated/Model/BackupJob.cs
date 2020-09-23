@@ -35,7 +35,9 @@ namespace Amazon.Backup.Model
     {
         private string _accountId;
         private string _backupJobId;
+        private Dictionary<string, string> _backupOptions = new Dictionary<string, string>();
         private long? _backupSizeInBytes;
+        private string _backupType;
         private string _backupVaultArn;
         private string _backupVaultName;
         private long? _bytesTransferred;
@@ -89,6 +91,31 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BackupOptions. 
+        /// <para>
+        /// Specifies the backup option for a selected resource. This option is only available
+        /// for Windows VSS backup jobs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows
+        /// backup; otherwise, creates a regular backup. If you specify an invalid option, you
+        /// get an <code>InvalidParameterValueException</code> exception.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> BackupOptions
+        {
+            get { return this._backupOptions; }
+            set { this._backupOptions = value; }
+        }
+
+        // Check to see if BackupOptions property is set
+        internal bool IsSetBackupOptions()
+        {
+            return this._backupOptions != null && this._backupOptions.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property BackupSizeInBytes. 
         /// <para>
         /// The size, in bytes, of a backup.
@@ -104,6 +131,24 @@ namespace Amazon.Backup.Model
         internal bool IsSetBackupSizeInBytes()
         {
             return this._backupSizeInBytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupType. 
+        /// <para>
+        /// Represents the type of backup for a backup job.
+        /// </para>
+        /// </summary>
+        public string BackupType
+        {
+            get { return this._backupType; }
+            set { this._backupType = value; }
+        }
+
+        // Check to see if BackupType property is set
+        internal bool IsSetBackupType()
+        {
+            return this._backupType != null;
         }
 
         /// <summary>
@@ -327,6 +372,7 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The type of AWS resource to be backed up; for example, an Amazon Elastic Block Store
         /// (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
+        /// For VSS Windows backups, the only supported resource type is Amazon EC2.
         /// </para>
         /// </summary>
         public string ResourceType

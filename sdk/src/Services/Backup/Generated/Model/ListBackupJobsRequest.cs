@@ -30,7 +30,7 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the ListBackupJobs operation.
-    /// Returns metadata about your backup jobs.
+    /// Returns a list of existing backup jobs for an authenticated account.
     /// </summary>
     public partial class ListBackupJobsRequest : AmazonBackupRequest
     {

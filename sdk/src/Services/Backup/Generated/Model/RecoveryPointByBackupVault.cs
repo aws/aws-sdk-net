@@ -335,7 +335,7 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The type of AWS resource saved as a recovery point; for example, an Amazon Elastic
         /// Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-        /// database.
+        /// database. For VSS Windows backups, the only supported resource type is Amazon EC2.
         /// </para>
         /// </summary>
         public string ResourceType

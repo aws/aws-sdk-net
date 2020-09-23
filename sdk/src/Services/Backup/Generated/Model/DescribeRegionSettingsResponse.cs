@@ -38,7 +38,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceTypeOptInPreference. 
         /// <para>
-        /// Returns a list of all services along with the opt-in preferences in the region.
+        /// Returns a list of all services along with the opt-in preferences in the Region.
         /// </para>
         /// </summary>
         public Dictionary<string, bool> ResourceTypeOptInPreference

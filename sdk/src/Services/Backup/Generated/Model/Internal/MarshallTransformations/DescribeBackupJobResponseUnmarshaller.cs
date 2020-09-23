@@ -63,10 +63,22 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.BackupJobId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BackupOptions", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.BackupOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BackupSizeInBytes", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
                     response.BackupSizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("BackupType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.BackupType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("BackupVaultArn", targetDepth))

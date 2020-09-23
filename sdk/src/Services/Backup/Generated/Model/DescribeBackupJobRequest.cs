@@ -30,7 +30,7 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeBackupJob operation.
-    /// Returns metadata associated with creating a backup of a resource.
+    /// Returns backup job details for the specified <code>BackupJobId</code>.
     /// </summary>
     public partial class DescribeBackupJobRequest : AmazonBackupRequest
     {

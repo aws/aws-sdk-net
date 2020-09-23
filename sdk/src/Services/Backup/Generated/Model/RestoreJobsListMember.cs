@@ -224,6 +224,7 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The resource type of the listed restore jobs; for example, an Amazon Elastic Block
         /// Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
+        /// For VSS Windows backups, the only supported resource type is Amazon EC2.
         /// </para>
         /// </summary>
         public string ResourceType

@@ -35,8 +35,27 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class BackupPlan
     {
+        private List<AdvancedBackupSetting> _advancedBackupSettings = new List<AdvancedBackupSetting>();
         private string _backupPlanName;
         private List<BackupRule> _rules = new List<BackupRule>();
+
+        /// <summary>
+        /// Gets and sets the property AdvancedBackupSettings. 
+        /// <para>
+        /// Contains a list of <code>BackupOptions</code> for each resource type.
+        /// </para>
+        /// </summary>
+        public List<AdvancedBackupSetting> AdvancedBackupSettings
+        {
+            get { return this._advancedBackupSettings; }
+            set { this._advancedBackupSettings = value; }
+        }
+
+        // Check to see if AdvancedBackupSettings property is set
+        internal bool IsSetAdvancedBackupSettings()
+        {
+            return this._advancedBackupSettings != null && this._advancedBackupSettings.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property BackupPlanName. 

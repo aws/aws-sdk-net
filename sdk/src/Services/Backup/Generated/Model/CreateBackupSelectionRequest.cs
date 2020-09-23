@@ -70,13 +70,13 @@ namespace Amazon.Backup.Model
     /// <para>
     /// Using these patterns would back up all Amazon Elastic Block Store (Amazon EBS) volumes
     /// that are tagged as <code>"department=finance"</code>, <code>"importance=critical"</code>,
-    /// in addition to an EBS volume with the specified volume Id.
+    /// in addition to an EBS volume with the specified volume ID.
     /// </para>
     ///  
     /// <para>
     /// Resources and conditions are additive in that all resources that match the pattern
     /// are selected. This shouldn't be confused with a logical AND, where all conditions
-    /// must match. The matching patterns are logically 'put together using the OR operator.
+    /// must match. The matching patterns are logically put together using the OR operator.
     /// In other words, all patterns that match are selected for backup.
     /// </para>
     /// </summary>
@@ -128,7 +128,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
         /// A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of executing the operation twice.
+        /// without the risk of running the operation twice.
         /// </para>
         /// </summary>
         public string CreatorRequestId

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BackupPlan Object
+    /// Response Unmarshaller for AdvancedBackupSetting Object
     /// </summary>  
-    public class BackupPlanUnmarshaller : IUnmarshaller<BackupPlan, XmlUnmarshallerContext>, IUnmarshaller<BackupPlan, JsonUnmarshallerContext>
+    public class AdvancedBackupSettingUnmarshaller : IUnmarshaller<AdvancedBackupSetting, XmlUnmarshallerContext>, IUnmarshaller<AdvancedBackupSetting, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BackupPlan IUnmarshaller<BackupPlan, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AdvancedBackupSetting IUnmarshaller<AdvancedBackupSetting, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public BackupPlan Unmarshall(JsonUnmarshallerContext context)
+        public AdvancedBackupSetting Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BackupPlan unmarshalledObject = new BackupPlan();
+            AdvancedBackupSetting unmarshalledObject = new AdvancedBackupSetting();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AdvancedBackupSettings", targetDepth))
+                if (context.TestExpression("BackupOptions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AdvancedBackupSetting, AdvancedBackupSettingUnmarshaller>(AdvancedBackupSettingUnmarshaller.Instance);
-                    unmarshalledObject.AdvancedBackupSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.BackupOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("BackupPlanName", targetDepth))
+                if (context.TestExpression("ResourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BackupPlanName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Rules", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<BackupRule, BackupRuleUnmarshaller>(BackupRuleUnmarshaller.Instance);
-                    unmarshalledObject.Rules = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         }
 
 
-        private static BackupPlanUnmarshaller _instance = new BackupPlanUnmarshaller();        
+        private static AdvancedBackupSettingUnmarshaller _instance = new AdvancedBackupSettingUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BackupPlanUnmarshaller Instance
+        public static AdvancedBackupSettingUnmarshaller Instance
         {
             get
             {

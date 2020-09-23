@@ -104,7 +104,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
         /// A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of executing the operation twice.
+        /// without the risk of running the operation twice.
         /// </para>
         /// </summary>
         public string CreatorRequestId

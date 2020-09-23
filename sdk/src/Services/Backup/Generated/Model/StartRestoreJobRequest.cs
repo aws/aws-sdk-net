@@ -106,8 +106,8 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by
-        /// AWS Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.
+        ///  <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed
+        /// up by AWS Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
