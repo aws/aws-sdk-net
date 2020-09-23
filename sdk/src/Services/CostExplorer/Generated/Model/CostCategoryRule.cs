@@ -41,7 +41,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Rule. 
         /// <para>
         /// An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-        /// object used to categorize costs. This supports dimensions, Tags, and nested expressions.
+        /// object used to categorize costs. This supports dimensions, tags, and nested expressions.
         /// Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>,
         /// <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.
         /// </para>

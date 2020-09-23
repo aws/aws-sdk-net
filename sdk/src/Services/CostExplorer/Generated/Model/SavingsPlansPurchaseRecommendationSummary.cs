@@ -48,8 +48,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The currency code Amazon Web Services used to generate the recommendations and present
-        /// potential savings.
+        /// The currency code AWS used to generate the recommendations and present potential savings.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

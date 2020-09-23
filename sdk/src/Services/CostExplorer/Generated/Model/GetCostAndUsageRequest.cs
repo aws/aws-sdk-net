@@ -93,7 +93,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property GroupBy. 
         /// <para>
         /// You can group AWS costs using up to two different groups, either dimensions, tag keys,
-        /// or both.
+        /// cost categories, or any two group by types.
         /// </para>
         ///  
         /// <para>
@@ -146,6 +146,7 @@ namespace Amazon.CostExplorer.Model
         ///  <code>Metrics</code> is required for <code>GetCostAndUsage</code> requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Metrics
         {
             get { return this._metrics; }

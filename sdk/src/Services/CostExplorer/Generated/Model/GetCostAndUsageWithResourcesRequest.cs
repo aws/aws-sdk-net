@@ -68,9 +68,11 @@ namespace Amazon.CostExplorer.Model
         ///  
         /// <para>
         /// The <code>GetCostAndUsageWithResources</code> operation requires that you either group
-        /// by or filter by a <code>ResourceId</code>.
+        /// by or filter by a <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+        /// <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Expression Filter
         {
             get { return this._filter; }

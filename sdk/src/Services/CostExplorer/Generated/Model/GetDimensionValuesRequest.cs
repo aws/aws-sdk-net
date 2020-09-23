@@ -113,6 +113,10 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// REGION - The AWS Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds,
         /// and credits.
         /// </para>

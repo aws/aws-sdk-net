@@ -62,7 +62,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property OnDemandCost. 
         /// <para>
-        /// The cost of your Amazon Web Services usage at the public On-Demand rate.
+        /// The cost of your AWS usage at the public On-Demand rate.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -81,7 +81,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SpendCoveredBySavingsPlans. 
         /// <para>
-        /// The amount of your Amazon Web Services usage that is covered by a Savings Plans.
+        /// The amount of your AWS usage that is covered by a Savings Plans.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -100,7 +100,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TotalCost. 
         /// <para>
-        /// The total cost of your Amazon Web Services usage, regardless of your purchase option.
+        /// The total cost of your AWS usage, regardless of your purchase option.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

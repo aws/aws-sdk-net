@@ -46,7 +46,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property HourlyOnDemandRate. 
         /// <para>
-        ///  Hourly public On Demand rate for the instance type.
+        ///  Hourly public On-Demand rate for the instance type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -65,7 +65,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        ///  The type of Amazon Web Services instance.
+        ///  The type of AWS instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -84,7 +84,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        ///  Memory capacity of Amazon Web Services instance.
+        ///  Memory capacity of the AWS instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -103,7 +103,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NetworkPerformance. 
         /// <para>
-        ///  Network performance capacity of the Amazon Web Services instance.
+        ///  Network performance capacity of the AWS instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -122,8 +122,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        ///  The platform of the Amazon Web Services instance. The platform is the specific combination
-        /// of operating system, license model, and software on an instance.
+        ///  The platform of the AWS instance. The platform is the specific combination of operating
+        /// system, license model, and software on an instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -142,7 +142,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        ///  The Amazon Web Services Region of the instance.
+        ///  The AWS Region of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -180,7 +180,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Storage. 
         /// <para>
-        ///  The disk storage of the Amazon Web Services instance (Not EBS storage).
+        ///  The disk storage of the AWS instance (not EBS storage).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -199,7 +199,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Vcpu. 
         /// <para>
-        ///  Number of VCPU cores in the Amazon Web Services instance type.
+        ///  Number of VCPU cores in the AWS instance type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

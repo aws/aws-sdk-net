@@ -38,7 +38,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EC2ResourceUtilization. 
         /// <para>
-        /// Utilization of current Amazon EC2 Instance 
+        /// Utilization of current Amazon EC2 instance. 
         /// </para>
         /// </summary>
         public EC2ResourceUtilization EC2ResourceUtilization

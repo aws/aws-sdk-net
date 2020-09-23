@@ -30,7 +30,7 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// You've reached the limit on the number of resources you can create, or exceeded the
-    /// size of an individual resources.
+    /// size of an individual resource.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

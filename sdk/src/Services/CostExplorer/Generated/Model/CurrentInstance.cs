@@ -48,7 +48,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        ///  The currency code that Amazon Web Services used to calculate the costs for this instance.
+        ///  The currency code that AWS used to calculate the costs for this instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -87,7 +87,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MonthlyCost. 
         /// <para>
-        ///  Current On Demand cost of operating this instance on a monthly basis.
+        ///  Current On-Demand cost of operating this instance on a monthly basis.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -106,7 +106,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property OnDemandHoursInLookbackPeriod. 
         /// <para>
-        ///  Number of hours during the lookback period billed at On Demand rates.
+        ///  Number of hours during the lookback period billed at On-Demand rates.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

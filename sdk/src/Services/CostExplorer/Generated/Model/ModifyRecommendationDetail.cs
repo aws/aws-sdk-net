@@ -38,7 +38,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TargetInstances. 
         /// <para>
-        /// Identifies whether this instance type is the Amazon Web Services default recommendation.
+        /// Identifies whether this instance type is the AWS default recommendation.
         /// </para>
         /// </summary>
         public List<TargetInstance> TargetInstances

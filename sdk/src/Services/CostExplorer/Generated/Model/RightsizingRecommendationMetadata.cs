@@ -40,7 +40,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property GenerationTimestamp. 
         /// <para>
-        ///  The timestamp for when Amazon Web Services made this recommendation.
+        ///  The timestamp for when AWS made this recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -59,8 +59,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property LookbackPeriodInDays. 
         /// <para>
-        ///  How many days of previous usage that Amazon Web Services considers when making this
-        /// recommendation.
+        ///  How many days of previous usage that AWS considers when making this recommendation.
         /// </para>
         /// </summary>
         public LookbackPeriodInDays LookbackPeriodInDays

@@ -60,7 +60,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SavingsCurrencyCode. 
         /// <para>
-        ///  The currency code that Amazon Web Services used to calculate the savings.
+        ///  The currency code that AWS used to calculate the savings.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

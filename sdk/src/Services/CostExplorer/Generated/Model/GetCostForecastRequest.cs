@@ -156,7 +156,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// The period of time that you want the forecast to cover.
+        /// The period of time that you want the forecast to cover. The start date must be equal
+        /// to or no later than the current date to avoid a validation error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
