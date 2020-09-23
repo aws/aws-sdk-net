@@ -1,3 +1,13 @@
+### 3.5.22.0 (2020-09-23 18:11 UTC)
+* Backup (3.5.1.0)
+	* This release allows customers to enable or disable advanced backup settings in backup plan. As part of this feature AWS Backup added support for  Windows VSS backup option for EC2 resources.
+* CostExplorer (3.5.1.0)
+	* This release provides access to Cost Anomaly Detection Public Preview APIs. Cost Anomaly Detection finds cost anomalies based on your historical cost and usage using Machine Learning models.
+* QuickSight (3.5.2.0)
+	* Added Sheet information to DescribeDashboard, DescribeTemplate and DescribeAnalysis API response.
+* Translate (3.5.1.0)
+	* Improvements to DeleteTerminology API.
+
 ### 3.5.21.0 (2020-09-22 18:50 UTC)
 * Comprehend (3.5.2.0)
 	* Amazon Comprehend integrates with Amazon SageMaker GroundTruth to allow its customers to annotate their datasets using GroundTruth and train their models using Comprehend Custom APIs.
