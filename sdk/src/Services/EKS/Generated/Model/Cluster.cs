@@ -40,6 +40,7 @@ namespace Amazon.EKS.Model
         private List<EncryptionConfig> _encryptionConfig = new List<EncryptionConfig>();
         private string _endpoint;
         private Identity _identity;
+        private KubernetesNetworkConfigResponse _kubernetesNetworkConfig;
         private Logging _logging;
         private string _name;
         private string _platformVersion;
@@ -175,6 +176,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetIdentity()
         {
             return this._identity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KubernetesNetworkConfig. 
+        /// <para>
+        /// Network configuration settings for your cluster.
+        /// </para>
+        /// </summary>
+        public KubernetesNetworkConfigResponse KubernetesNetworkConfig
+        {
+            get { return this._kubernetesNetworkConfig; }
+            set { this._kubernetesNetworkConfig = value; }
+        }
+
+        // Check to see if KubernetesNetworkConfig property is set
+        internal bool IsSetKubernetesNetworkConfig()
+        {
+            return this._kubernetesNetworkConfig != null;
         }
 
         /// <summary>

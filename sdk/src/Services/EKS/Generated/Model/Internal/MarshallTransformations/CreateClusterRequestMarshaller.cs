@@ -93,6 +93,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetKubernetesNetworkConfig())
+                {
+                    context.Writer.WritePropertyName("kubernetesNetworkConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KubernetesNetworkConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.KubernetesNetworkConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLogging())
                 {
                     context.Writer.WritePropertyName("logging");

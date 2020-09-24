@@ -106,6 +106,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Identity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("kubernetesNetworkConfig", targetDepth))
+                {
+                    var unmarshaller = KubernetesNetworkConfigResponseUnmarshaller.Instance;
+                    unmarshalledObject.KubernetesNetworkConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("logging", targetDepth))
                 {
                     var unmarshaller = LoggingUnmarshaller.Instance;

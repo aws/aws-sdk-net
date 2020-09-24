@@ -115,7 +115,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// If the node group wasn't deployed with a launch template, then this is the disk size
         /// in the node group configuration. If the node group was deployed with a launch template,
-        /// then <code>diskSize</code> is <code>null</code>.
+        /// then this is <code>null</code>.
         /// </para>
         /// </summary>
         public int DiskSize
@@ -154,7 +154,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// If the node group wasn't deployed with a launch template, then this is the instance
         /// type that is associated with the node group. If the node group was deployed with a
-        /// launch template, then <code>instanceTypes</code> is <code>null</code>.
+        /// launch template, then this is <code>null</code>.
         /// </para>
         /// </summary>
         public List<string> InstanceTypes
@@ -312,7 +312,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// If the node group wasn't deployed with a launch template, then this is the remote
         /// access configuration that is associated with the node group. If the node group was
-        /// deployed with a launch template, then <code>remoteAccess</code> is <code>null</code>.
+        /// deployed with a launch template, then this is <code>null</code>.
         /// </para>
         /// </summary>
         public RemoteAccessConfig RemoteAccess
