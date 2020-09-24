@@ -48,7 +48,7 @@ namespace Amazon.Synthetics.Model
         /// </code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

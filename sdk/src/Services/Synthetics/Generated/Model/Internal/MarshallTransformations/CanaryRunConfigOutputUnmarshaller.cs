@@ -64,6 +64,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ActiveTracing", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ActiveTracing = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MemoryInMB", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -29,18 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Synthetics.Model
 {
     /// <summary>
-    /// A structure that contains information for a canary run.
+    /// A structure that contains information about a canary run.
     /// </summary>
     public partial class CanaryRunConfigOutput
     {
+        private bool? _activeTracing;
         private int? _memoryInMB;
         private int? _timeoutInSeconds;
 
         /// <summary>
+        /// Gets and sets the property ActiveTracing. 
+        /// <para>
+        /// Displays whether this canary run used active AWS X-Ray tracing. 
+        /// </para>
+        /// </summary>
+        public bool ActiveTracing
+        {
+            get { return this._activeTracing.GetValueOrDefault(); }
+            set { this._activeTracing = value; }
+        }
+
+        // Check to see if ActiveTracing property is set
+        internal bool IsSetActiveTracing()
+        {
+            return this._activeTracing.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MemoryInMB. 
         /// <para>
-        /// The maximum amount of memory available to the canary while it is running, in MB. The
-        /// value you must be a multiple of 64.
+        /// The maximum amount of memory available to the canary while it is running, in MB. This
+        /// value must be a multiple of 64.
         /// </para>
         /// </summary>
         [AWSProperty(Min=960, Max=3008)]
@@ -62,7 +81,7 @@ namespace Amazon.Synthetics.Model
         /// How long the canary is allowed to run before it must stop.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=60, Max=900)]
+        [AWSProperty(Min=3, Max=840)]
         public int TimeoutInSeconds
         {
             get { return this._timeoutInSeconds.GetValueOrDefault(); }

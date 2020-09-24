@@ -33,14 +33,42 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class CanaryRunConfigInput
     {
+        private bool? _activeTracing;
         private int? _memoryInMB;
         private int? _timeoutInSeconds;
 
         /// <summary>
+        /// Gets and sets the property ActiveTracing. 
+        /// <para>
+        /// Specifies whether this canary is to use active AWS X-Ray tracing when it runs. Active
+        /// tracing enables this canary run to be displayed in the ServiceLens and X-Ray service
+        /// maps even if the canary does not hit an endpoint that has X-ray tracing enabled. Using
+        /// X-Ray tracing incurs charges. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html">
+        /// Canaries and X-Ray tracing</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can enable active tracing only for canaries that use version <code>syn-nodejs-2.0</code>
+        /// or later for their canary runtime.
+        /// </para>
+        /// </summary>
+        public bool ActiveTracing
+        {
+            get { return this._activeTracing.GetValueOrDefault(); }
+            set { this._activeTracing = value; }
+        }
+
+        // Check to see if ActiveTracing property is set
+        internal bool IsSetActiveTracing()
+        {
+            return this._activeTracing.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MemoryInMB. 
         /// <para>
-        /// The maximum amount of memory available to the canary while it is running, in MB. The
-        /// value you specify must be a multiple of 64.
+        /// The maximum amount of memory available to the canary while it is running, in MB. This
+        /// value must be a multiple of 64.
         /// </para>
         /// </summary>
         [AWSProperty(Min=960, Max=3008)]
@@ -59,11 +87,16 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property TimeoutInSeconds. 
         /// <para>
-        /// How long the canary is allowed to run before it must stop. If you omit this field,
-        /// the frequency of the canary is used as this value, up to a maximum of 14 minutes.
+        /// How long the canary is allowed to run before it must stop. You can't set this time
+        /// to be longer than the frequency of the runs of this canary.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this field, the frequency of the canary is used as this value, up to a
+        /// maximum of 14 minutes.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=60, Max=900)]
+        [AWSProperty(Min=3, Max=840)]
         public int TimeoutInSeconds
         {
             get { return this._timeoutInSeconds.GetValueOrDefault(); }

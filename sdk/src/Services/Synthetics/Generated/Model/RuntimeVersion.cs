@@ -98,13 +98,8 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property VersionName. 
         /// <para>
-        /// The name of the runtime version. Currently, the only valid value is <code>syn-1.0</code>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// Specifies the runtime version to use for the canary. Currently, the only valid value
-        /// is <code>syn-1.0</code>.
+        /// The name of the runtime version. Currently, the only valid values are <code>syn-nodejs-2.0</code>,
+        /// <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

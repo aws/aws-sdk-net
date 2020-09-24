@@ -144,11 +144,11 @@ namespace Amazon.Synthetics.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>logs:CreateLogStream</code> 
+        ///  <code>logs:PutLogEvents</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ExecutionRoleArn
         {
             get { return this._executionRoleArn; }
@@ -230,8 +230,9 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property RuntimeVersion. 
         /// <para>
-        /// Specifies the runtime version to use for the canary. Currently, the only valid value
-        /// is <code>syn-1.0</code>. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+        /// Specifies the runtime version to use for the canary. Currently, the only valid values
+        /// are <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>.
+        /// For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
         /// Canary Runtime Versions</a>.
         /// </para>
         /// </summary>

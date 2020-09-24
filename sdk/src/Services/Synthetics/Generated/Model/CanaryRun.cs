@@ -34,6 +34,7 @@ namespace Amazon.Synthetics.Model
     public partial class CanaryRun
     {
         private string _artifactS3Location;
+        private string _id;
         private string _name;
         private CanaryRunStatus _status;
         private CanaryRunTimeline _timeline;
@@ -56,6 +57,24 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetArtifactS3Location()
         {
             return this._artifactS3Location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// A unique ID that identifies this canary run.
+        /// </para>
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
         }
 
         /// <summary>

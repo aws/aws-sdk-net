@@ -45,6 +45,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CanaryRunConfigInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetActiveTracing())
+            {
+                context.Writer.WritePropertyName("ActiveTracing");
+                context.Writer.Write(requestObject.ActiveTracing);
+            }
+
             if(requestObject.IsSetMemoryInMB())
             {
                 context.Writer.WritePropertyName("MemoryInMB");

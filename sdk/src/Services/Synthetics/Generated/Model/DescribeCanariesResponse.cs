@@ -61,6 +61,7 @@ namespace Amazon.Synthetics.Model
         /// a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=252)]
         public string NextToken
         {
             get { return this._nextToken; }
