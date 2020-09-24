@@ -1,3 +1,7 @@
+### 3.5.23.1 (2020-09-24 22:07 UTC)
+* S3 (3.5.1.9)
+	* Improved Performance in S3 Client: https://github.com/aws/aws-sdk-net/issues/1700
+
 ### 3.5.23.0 (2020-09-24 18:12 UTC)
 * Amplify (3.5.1.0)
 	* Allow Oauth Token in CreateApp call to be a maximum of 1000 characters instead of 100
