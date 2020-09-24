@@ -307,6 +307,72 @@ namespace Amazon.SavingsPlans
 
         #endregion
         
+        #region  DeleteQueuedSavingsPlan
+
+        /// <summary>
+        /// Deletes the queued purchase for the specified Savings Plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueuedSavingsPlan service method.</param>
+        /// 
+        /// <returns>The response from the DeleteQueuedSavingsPlan service method, as returned by SavingsPlans.</returns>
+        /// <exception cref="Amazon.SavingsPlans.Model.InternalServerException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SavingsPlans.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SavingsPlans.Model.ServiceQuotaExceededException">
+        /// A service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SavingsPlans.Model.ValidationException">
+        /// One of the input parameters is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DeleteQueuedSavingsPlan">REST API Reference for DeleteQueuedSavingsPlan Operation</seealso>
+        public virtual DeleteQueuedSavingsPlanResponse DeleteQueuedSavingsPlan(DeleteQueuedSavingsPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQueuedSavingsPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQueuedSavingsPlanResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteQueuedSavingsPlanResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteQueuedSavingsPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueuedSavingsPlan operation on AmazonSavingsPlansClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteQueuedSavingsPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DeleteQueuedSavingsPlan">REST API Reference for DeleteQueuedSavingsPlan Operation</seealso>
+        public virtual IAsyncResult BeginDeleteQueuedSavingsPlan(DeleteQueuedSavingsPlanRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQueuedSavingsPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQueuedSavingsPlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteQueuedSavingsPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteQueuedSavingsPlan.</param>
+        /// 
+        /// <returns>Returns a  DeleteQueuedSavingsPlanResult from SavingsPlans.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DeleteQueuedSavingsPlan">REST API Reference for DeleteQueuedSavingsPlan Operation</seealso>
+        public virtual DeleteQueuedSavingsPlanResponse EndDeleteQueuedSavingsPlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteQueuedSavingsPlanResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeSavingsPlanRates
 
         /// <summary>

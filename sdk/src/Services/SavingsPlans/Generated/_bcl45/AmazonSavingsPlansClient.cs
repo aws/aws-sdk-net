@@ -307,6 +307,71 @@ namespace Amazon.SavingsPlans
 
         #endregion
         
+        #region  DeleteQueuedSavingsPlan
+
+
+        /// <summary>
+        /// Deletes the queued purchase for the specified Savings Plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueuedSavingsPlan service method.</param>
+        /// 
+        /// <returns>The response from the DeleteQueuedSavingsPlan service method, as returned by SavingsPlans.</returns>
+        /// <exception cref="Amazon.SavingsPlans.Model.InternalServerException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SavingsPlans.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SavingsPlans.Model.ServiceQuotaExceededException">
+        /// A service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SavingsPlans.Model.ValidationException">
+        /// One of the input parameters is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DeleteQueuedSavingsPlan">REST API Reference for DeleteQueuedSavingsPlan Operation</seealso>
+        public virtual DeleteQueuedSavingsPlanResponse DeleteQueuedSavingsPlan(DeleteQueuedSavingsPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQueuedSavingsPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQueuedSavingsPlanResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteQueuedSavingsPlanResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the queued purchase for the specified Savings Plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueuedSavingsPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteQueuedSavingsPlan service method, as returned by SavingsPlans.</returns>
+        /// <exception cref="Amazon.SavingsPlans.Model.InternalServerException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SavingsPlans.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SavingsPlans.Model.ServiceQuotaExceededException">
+        /// A service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SavingsPlans.Model.ValidationException">
+        /// One of the input parameters is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DeleteQueuedSavingsPlan">REST API Reference for DeleteQueuedSavingsPlan Operation</seealso>
+        public virtual Task<DeleteQueuedSavingsPlanResponse> DeleteQueuedSavingsPlanAsync(DeleteQueuedSavingsPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQueuedSavingsPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQueuedSavingsPlanResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteQueuedSavingsPlanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeSavingsPlanRates
 
 

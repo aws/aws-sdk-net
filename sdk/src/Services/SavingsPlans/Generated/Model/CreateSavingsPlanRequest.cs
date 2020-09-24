@@ -36,6 +36,7 @@ namespace Amazon.SavingsPlans.Model
     {
         private string _clientToken;
         private string _commitment;
+        private DateTime? _purchaseTime;
         private string _savingsPlanOfferingId;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _upfrontPaymentAmount;
@@ -77,6 +78,24 @@ namespace Amazon.SavingsPlans.Model
         internal bool IsSetCommitment()
         {
             return this._commitment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PurchaseTime. 
+        /// <para>
+        /// The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).
+        /// </para>
+        /// </summary>
+        public DateTime PurchaseTime
+        {
+            get { return this._purchaseTime.GetValueOrDefault(); }
+            set { this._purchaseTime = value; }
+        }
+
+        // Check to see if PurchaseTime property is set
+        internal bool IsSetPurchaseTime()
+        {
+            return this._purchaseTime.HasValue; 
         }
 
         /// <summary>

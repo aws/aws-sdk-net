@@ -499,10 +499,6 @@ namespace Amazon.SavingsPlans
         /// </summary>
         public static readonly SavingsPlanRateServiceCode AmazonECS = new SavingsPlanRateServiceCode("AmazonECS");
         /// <summary>
-        /// Constant AmazonEKS for SavingsPlanRateServiceCode
-        /// </summary>
-        public static readonly SavingsPlanRateServiceCode AmazonEKS = new SavingsPlanRateServiceCode("AmazonEKS");
-        /// <summary>
         /// Constant AWSLambda for SavingsPlanRateServiceCode
         /// </summary>
         public static readonly SavingsPlanRateServiceCode AWSLambda = new SavingsPlanRateServiceCode("AWSLambda");
@@ -692,6 +688,14 @@ namespace Amazon.SavingsPlans
         /// Constant PaymentPending for SavingsPlanState
         /// </summary>
         public static readonly SavingsPlanState PaymentPending = new SavingsPlanState("payment-pending");
+        /// <summary>
+        /// Constant Queued for SavingsPlanState
+        /// </summary>
+        public static readonly SavingsPlanState Queued = new SavingsPlanState("queued");
+        /// <summary>
+        /// Constant QueuedDeleted for SavingsPlanState
+        /// </summary>
+        public static readonly SavingsPlanState QueuedDeleted = new SavingsPlanState("queued-deleted");
         /// <summary>
         /// Constant Retired for SavingsPlanState
         /// </summary>

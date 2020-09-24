@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateSavingsPlan Request Marshaller
+    /// DeleteQueuedSavingsPlan Request Marshaller
     /// </summary>       
-    public class CreateSavingsPlanRequestMarshaller : IMarshaller<IRequest, CreateSavingsPlanRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteQueuedSavingsPlanRequestMarshaller : IMarshaller<IRequest, DeleteQueuedSavingsPlanRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateSavingsPlanRequest)input);
+            return this.Marshall((DeleteQueuedSavingsPlanRequest)input);
         }
 
         /// <summary>
@@ -52,67 +52,24 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateSavingsPlanRequest publicRequest)
+        public IRequest Marshall(DeleteQueuedSavingsPlanRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SavingsPlans");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-06-28";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/CreateSavingsPlan";
+            request.ResourcePath = "/DeleteQueuedSavingsPlan";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                if(publicRequest.IsSetSavingsPlanId())
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
-                }
-                if(publicRequest.IsSetCommitment())
-                {
-                    context.Writer.WritePropertyName("commitment");
-                    context.Writer.Write(publicRequest.Commitment);
-                }
-
-                if(publicRequest.IsSetPurchaseTime())
-                {
-                    context.Writer.WritePropertyName("purchaseTime");
-                    context.Writer.Write(publicRequest.PurchaseTime);
-                }
-
-                if(publicRequest.IsSetSavingsPlanOfferingId())
-                {
-                    context.Writer.WritePropertyName("savingsPlanOfferingId");
-                    context.Writer.Write(publicRequest.SavingsPlanOfferingId);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUpfrontPaymentAmount())
-                {
-                    context.Writer.WritePropertyName("upfrontPaymentAmount");
-                    context.Writer.Write(publicRequest.UpfrontPaymentAmount);
+                    context.Writer.WritePropertyName("savingsPlanId");
+                    context.Writer.Write(publicRequest.SavingsPlanId);
                 }
 
         
@@ -124,9 +81,9 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateSavingsPlanRequestMarshaller _instance = new CreateSavingsPlanRequestMarshaller();        
+        private static DeleteQueuedSavingsPlanRequestMarshaller _instance = new DeleteQueuedSavingsPlanRequestMarshaller();        
 
-        internal static CreateSavingsPlanRequestMarshaller GetInstance()
+        internal static DeleteQueuedSavingsPlanRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -134,7 +91,7 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateSavingsPlanRequestMarshaller Instance
+        public static DeleteQueuedSavingsPlanRequestMarshaller Instance
         {
             get
             {
