@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Textract.Model
 {
     /// <summary>
-    /// You aren't authorized to perform the action.
+    /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+    /// an authorized user or IAM role to perform the operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

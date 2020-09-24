@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Textract.Model
 {
     /// <summary>
-    /// Amazon Textract isn't able to read the document.
+    /// Amazon Textract isn't able to read the document. For more information on the document
+    /// limits in Amazon Textract, see <a>limits</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

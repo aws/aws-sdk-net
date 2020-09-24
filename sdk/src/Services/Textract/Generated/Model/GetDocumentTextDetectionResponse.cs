@@ -134,7 +134,8 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// The current status of an asynchronous text-detection operation for the document. 
+        /// Returns if the detection job could not be completed. Contains explanation for what
+        /// error occured. 
         /// </para>
         /// </summary>
         public string StatusMessage

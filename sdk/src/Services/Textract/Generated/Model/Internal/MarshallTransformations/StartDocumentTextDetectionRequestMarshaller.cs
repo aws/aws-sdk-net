@@ -102,6 +102,17 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOutputConfig())
+                {
+                    context.Writer.WritePropertyName("OutputConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OutputConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OutputConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

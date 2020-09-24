@@ -313,6 +313,10 @@ namespace Amazon.Textract
         /// </summary>
         public static readonly RelationshipType CHILD = new RelationshipType("CHILD");
         /// <summary>
+        /// Constant COMPLEX_FEATURES for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType COMPLEX_FEATURES = new RelationshipType("COMPLEX_FEATURES");
+        /// <summary>
         /// Constant VALUE for RelationshipType
         /// </summary>
         public static readonly RelationshipType VALUE = new RelationshipType("VALUE");

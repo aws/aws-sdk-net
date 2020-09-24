@@ -102,10 +102,12 @@ namespace Amazon.Textract
         /// 
         /// <returns>The response from the AnalyzeDocument service method, as returned by Textract.</returns>
         /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
-        /// You aren't authorized to perform the action.
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
-        /// Amazon Textract isn't able to read the document.
+        /// Amazon Textract isn't able to read the document. For more information on the document
+        /// limits in Amazon Textract, see <a>limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -127,6 +129,9 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InvalidS3ObjectException">
         /// Amazon Textract is unable to access the S3 object that's specified in the request.
+        /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure
+        /// Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting
+        /// Amazon S3</a>
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -181,10 +186,12 @@ namespace Amazon.Textract
         /// 
         /// <returns>The response from the DetectDocumentText service method, as returned by Textract.</returns>
         /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
-        /// You aren't authorized to perform the action.
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
-        /// Amazon Textract isn't able to read the document.
+        /// Amazon Textract isn't able to read the document. For more information on the document
+        /// limits in Amazon Textract, see <a>limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -202,6 +209,9 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InvalidS3ObjectException">
         /// Amazon Textract is unable to access the S3 object that's specified in the request.
+        /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure
+        /// Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting
+        /// Amazon S3</a>
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -292,7 +302,8 @@ namespace Amazon.Textract
         /// 
         /// <returns>The response from the GetDocumentAnalysis service method, as returned by Textract.</returns>
         /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
-        /// You aren't authorized to perform the action.
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
         /// Amazon Textract experienced a service issue. Try your call again.
@@ -305,6 +316,12 @@ namespace Amazon.Textract
         /// an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
         /// or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
         /// Validate your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidS3ObjectException">
+        /// Amazon Textract is unable to access the S3 object that's specified in the request.
+        /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure
+        /// Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting
+        /// Amazon S3</a>
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -371,7 +388,8 @@ namespace Amazon.Textract
         /// 
         /// <returns>The response from the GetDocumentTextDetection service method, as returned by Textract.</returns>
         /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
-        /// You aren't authorized to perform the action.
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
         /// Amazon Textract experienced a service issue. Try your call again.
@@ -384,6 +402,12 @@ namespace Amazon.Textract
         /// an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
         /// or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
         /// Validate your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidS3ObjectException">
+        /// Amazon Textract is unable to access the S3 object that's specified in the request.
+        /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure
+        /// Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting
+        /// Amazon S3</a>
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -434,10 +458,12 @@ namespace Amazon.Textract
         /// 
         /// <returns>The response from the StartDocumentAnalysis service method, as returned by Textract.</returns>
         /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
-        /// You aren't authorized to perform the action.
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
-        /// Amazon Textract isn't able to read the document.
+        /// Amazon Textract isn't able to read the document. For more information on the document
+        /// limits in Amazon Textract, see <a>limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -460,6 +486,9 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InvalidS3ObjectException">
         /// Amazon Textract is unable to access the S3 object that's specified in the request.
+        /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure
+        /// Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting
+        /// Amazon S3</a>
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.LimitExceededException">
         /// An Amazon Textract service limit was exceeded. For example, if you start too many
@@ -521,10 +550,12 @@ namespace Amazon.Textract
         /// 
         /// <returns>The response from the StartDocumentTextDetection service method, as returned by Textract.</returns>
         /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
-        /// You aren't authorized to perform the action.
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
-        /// Amazon Textract isn't able to read the document.
+        /// Amazon Textract isn't able to read the document. For more information on the document
+        /// limits in Amazon Textract, see <a>limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -547,6 +578,9 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InvalidS3ObjectException">
         /// Amazon Textract is unable to access the S3 object that's specified in the request.
+        /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure
+        /// Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting
+        /// Amazon S3</a>
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.LimitExceededException">
         /// An Amazon Textract service limit was exceeded. For example, if you start too many

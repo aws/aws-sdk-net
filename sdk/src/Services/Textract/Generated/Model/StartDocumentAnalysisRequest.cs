@@ -62,6 +62,7 @@ namespace Amazon.Textract.Model
         private List<string> _featureTypes = new List<string>();
         private string _jobTag;
         private NotificationChannel _notificationChannel;
+        private OutputConfig _outputConfig;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -167,6 +168,25 @@ namespace Amazon.Textract.Model
         internal bool IsSetNotificationChannel()
         {
             return this._notificationChannel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputConfig. 
+        /// <para>
+        /// Sets if the output will go to a customer defined bucket. By default, Amazon Textract
+        /// will save the results internally to be accessed by the GetDocumentAnalysis operation.
+        /// </para>
+        /// </summary>
+        public OutputConfig OutputConfig
+        {
+            get { return this._outputConfig; }
+            set { this._outputConfig = value; }
+        }
+
+        // Check to see if OutputConfig property is set
+        internal bool IsSetOutputConfig()
+        {
+            return this._outputConfig != null;
         }
 
     }
