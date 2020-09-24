@@ -323,7 +323,7 @@ namespace Amazon.Amplify.Model
         /// stored. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Max=1000)]
         public string OauthToken
         {
             get { return this._oauthToken; }

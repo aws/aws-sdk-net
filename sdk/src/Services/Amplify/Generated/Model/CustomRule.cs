@@ -81,6 +81,28 @@ namespace Amazon.Amplify.Model
         /// <para>
         ///  The status code for a URL rewrite or redirect rule. 
         /// </para>
+        ///  <dl> <dt>200</dt> <dd> 
+        /// <para>
+        /// Represents a 200 rewrite rule.
+        /// </para>
+        ///  </dd> <dt>301</dt> <dd> 
+        /// <para>
+        /// Represents a 301 (moved pemanently) redirect rule. This and all future requests should
+        /// be directed to the target URL. 
+        /// </para>
+        ///  </dd> <dt>302</dt> <dd> 
+        /// <para>
+        /// Represents a 302 temporary redirect rule.
+        /// </para>
+        ///  </dd> <dt>404</dt> <dd> 
+        /// <para>
+        /// Represents a 404 redirect rule.
+        /// </para>
+        ///  </dd> <dt>404-200</dt> <dd> 
+        /// <para>
+        /// Represents a 404 rewrite rule.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Min=3, Max=7)]
         public string Status
