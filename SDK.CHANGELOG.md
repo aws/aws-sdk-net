@@ -1,3 +1,22 @@
+### 3.5.23.0 (2020-09-24 18:12 UTC)
+* Amplify (3.5.1.0)
+	* Allow Oauth Token in CreateApp call to be a maximum of 1000 characters instead of 100
+* EKS (3.5.1.0)
+	* Amazon EKS now supports configuring your cluster's service CIDR during cluster creation.
+* SavingsPlans (3.5.1.0)
+	* Introducing Queued SavingsPlans that will enable customers to queue their purchase request of Savings Plans for future dates.
+* Synthetics (3.5.1.0)
+	* AWS Synthetics now supports AWS X-Ray Active Tracing feature. RunConfig is now an optional parameter with timeout updated from (60 - 900 seconds) to (3 - 840 seconds).
+* Textract (3.5.1.0)
+	* AWS Textract now supports output results for asynchronous jobs to customer specified s3 bucket.
+* TranscribeService (3.5.2.0)
+	* Amazon Transcribe now supports WebM, OGG, AMR and AMR-WB as input formats. You can also specify an output key as a location within your S3 buckets to store the output of your transcription jobs.
+* Core 3.5.1.17
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.22.0 (2020-09-23 18:11 UTC)
 * Backup (3.5.1.0)
 	* This release allows customers to enable or disable advanced backup settings in backup plan. As part of this feature AWS Backup added support for  Windows VSS backup option for EC2 resources.
