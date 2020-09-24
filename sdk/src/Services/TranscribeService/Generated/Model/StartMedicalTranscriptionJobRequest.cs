@@ -41,6 +41,7 @@ namespace Amazon.TranscribeService.Model
         private string _medicalTranscriptionJobName;
         private string _outputBucketName;
         private string _outputEncryptionKMSKeyId;
+        private string _outputKey;
         private MedicalTranscriptionSetting _settings;
         private Specialty _specialty;
         private Type _type;
@@ -240,6 +241,46 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetOutputEncryptionKMSKeyId()
         {
             return this._outputEncryptionKMSKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputKey. 
+        /// <para>
+        /// You can specify a location in an Amazon S3 bucket to store the output of your medical
+        /// transcription job.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify an output key, Amazon Transcribe Medical stores the output of
+        /// your transcription job in the Amazon S3 bucket you specified. By default, the object
+        /// key is "your-transcription-job-name.json".
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use output keys to specify the Amazon S3 prefix and file name of the transcription
+        /// output. For example, specifying the Amazon S3 prefix, "folder1/folder2/", as an output
+        /// key would lead to the output being stored as "folder1/folder2/your-transcription-job-name.json".
+        /// If you specify "my-other-job-name.json" as the output key, the object key is changed
+        /// to "my-other-job-name.json". You can use an output key to change both the prefix and
+        /// the file name, for example "folder/my-other-job-name.json".
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
+        /// parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string OutputKey
+        {
+            get { return this._outputKey; }
+            set { this._outputKey = value; }
+        }
+
+        // Check to see if OutputKey property is set
+        internal bool IsSetOutputKey()
+        {
+            return this._outputKey != null;
         }
 
         /// <summary>
