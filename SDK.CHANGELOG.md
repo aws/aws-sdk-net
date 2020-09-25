@@ -1,3 +1,22 @@
+### 3.5.24.0 (2020-09-25 18:13 UTC)
+* Batch (3.5.1.0)
+	* Support custom logging, executionRole, secrets, and linuxParameters (initProcessEnabled, maxSwap, swappiness, sharedMemorySize, and tmpfs). Also, add new context keys for awslogs.
+* ConfigService (3.5.1.0)
+	* Make the delivery-s3-bucket as an optional parameter for conformance packs and organizational conformance packs
+* DocDB (3.5.1.7)
+	* Documentation updates for docdb
+* EC2 (3.5.7.0)
+	* This release supports returning additional information about local gateway resources, such as the local gateway route table.
+* FraudDetector (3.5.1.0)
+	* Increased maximum length of eventVariables values for GetEventPrediction from 256 to 1024.
+* SecurityToken (3.5.1.0)
+	* Documentation update for AssumeRole error
+* Core 3.5.1.18
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.23.1 (2020-09-24 22:07 UTC)
 * S3 (3.5.1.9)
 	* Improved Performance in S3 Client: https://github.com/aws/aws-sdk-net/issues/1700
