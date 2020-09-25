@@ -68,7 +68,7 @@ namespace Amazon.ConfigService.Model
         /// conformance pack template that is used to create a pack. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=63)]
+        [AWSProperty(Min=0, Max=63)]
         public string DeliveryS3Bucket
         {
             get { return this._deliveryS3Bucket; }
@@ -87,7 +87,7 @@ namespace Amazon.ConfigService.Model
         /// Any folder structure you want to add to an Amazon S3 bucket.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string DeliveryS3KeyPrefix
         {
             get { return this._deliveryS3KeyPrefix; }

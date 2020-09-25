@@ -420,12 +420,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.PutConformancePackRequest.DeliveryS3Bucket</property>
-    <min>3</min>
+    <min>0</min>
     <max>63</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.PutConformancePackRequest.DeliveryS3KeyPrefix</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -457,12 +457,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.PutOrganizationConformancePackRequest.DeliveryS3Bucket</property>
-    <min>3</min>
+    <min>0</min>
     <max>63</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.PutOrganizationConformancePackRequest.DeliveryS3KeyPrefix</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -796,12 +796,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.ConformancePackDetail.DeliveryS3Bucket</property>
-    <min>3</min>
+    <min>0</min>
     <max>63</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.ConformancePackDetail.DeliveryS3KeyPrefix</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -930,12 +930,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.OrganizationConformancePack.DeliveryS3Bucket</property>
-    <min>3</min>
+    <min>0</min>
     <max>63</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.OrganizationConformancePack.DeliveryS3KeyPrefix</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
