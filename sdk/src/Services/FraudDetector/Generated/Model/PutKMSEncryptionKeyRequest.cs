@@ -43,7 +43,7 @@ namespace Amazon.FraudDetector.Model
         /// The KMS encryption key ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=7, Max=80)]
+        [AWSProperty(Required=true, Min=7, Max=90)]
         public string KmsEncryptionKeyArn
         {
             get { return this._kmsEncryptionKeyArn; }

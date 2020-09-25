@@ -357,8 +357,8 @@
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.PutKMSEncryptionKeyRequest.KmsEncryptionKeyArn</property>
     <min>7</min>
-    <max>80</max>
-    <pattern>^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$|DEFAULT|arn:[a-zA-Z0-9-]+:kms:[a-zA-Z0-9-]+:\d{12}:key:[a-zA-Z0-9-_]+|[a-zA-Z0-9-_]\S+</pattern>
+    <max>90</max>
+    <pattern>^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}|DEFAULT|arn:[a-zA-Z0-9-]+:kms:[a-zA-Z0-9-]+:\d{12}:key\/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.PutLabelRequest.Description</property>
@@ -583,8 +583,8 @@
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.KMSKey.KmsEncryptionKeyArn</property>
     <min>7</min>
-    <max>80</max>
-    <pattern>^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$|DEFAULT|arn:[a-zA-Z0-9-]+:kms:[a-zA-Z0-9-]+:\d{12}:key:[a-zA-Z0-9-_]+|[a-zA-Z0-9-_]\S+</pattern>
+    <max>90</max>
+    <pattern>^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}|DEFAULT|arn:[a-zA-Z0-9-]+:kms:[a-zA-Z0-9-]+:\d{12}:key\/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.Label.Arn</property>
