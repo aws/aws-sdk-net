@@ -35,9 +35,11 @@ namespace Amazon.EC2.Model
     public partial class LocalGatewayRouteTableVirtualInterfaceGroupAssociation
     {
         private string _localGatewayId;
+        private string _localGatewayRouteTableArn;
         private string _localGatewayRouteTableId;
         private string _localGatewayRouteTableVirtualInterfaceGroupAssociationId;
         private string _localGatewayVirtualInterfaceGroupId;
+        private string _ownerId;
         private string _state;
         private List<Tag> _tags = new List<Tag>();
 
@@ -57,6 +59,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetLocalGatewayId()
         {
             return this._localGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalGatewayRouteTableArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the local gateway route table for the virtual interface
+        /// group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1283)]
+        public string LocalGatewayRouteTableArn
+        {
+            get { return this._localGatewayRouteTableArn; }
+            set { this._localGatewayRouteTableArn = value; }
+        }
+
+        // Check to see if LocalGatewayRouteTableArn property is set
+        internal bool IsSetLocalGatewayRouteTableArn()
+        {
+            return this._localGatewayRouteTableArn != null;
         }
 
         /// <summary>
@@ -112,6 +134,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLocalGatewayVirtualInterfaceGroupId()
         {
             return this._localGatewayVirtualInterfaceGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// The AWS account ID that owns the local gateway virtual interface group association.
+        /// </para>
+        /// </summary>
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
         }
 
         /// <summary>

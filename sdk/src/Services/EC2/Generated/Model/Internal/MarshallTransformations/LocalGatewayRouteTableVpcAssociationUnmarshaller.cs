@@ -60,6 +60,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LocalGatewayId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("localGatewayRouteTableArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LocalGatewayRouteTableArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("localGatewayRouteTableId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -70,6 +76,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.LocalGatewayRouteTableVpcAssociationId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ownerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("state", targetDepth))

@@ -78,7 +78,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The ID of the AWS account ID that owns the local gateway.
+        /// The AWS account ID that owns the local gateway.
         /// </para>
         /// </summary>
         public string OwnerId
