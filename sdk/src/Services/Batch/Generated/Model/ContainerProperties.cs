@@ -36,15 +36,18 @@ namespace Amazon.Batch.Model
     {
         private List<string> _command = new List<string>();
         private List<KeyValuePair> _environment = new List<KeyValuePair>();
+        private string _executionRoleArn;
         private string _image;
         private string _instanceType;
         private string _jobRoleArn;
         private LinuxParameters _linuxParameters;
+        private LogConfiguration _logConfiguration;
         private int? _memory;
         private List<MountPoint> _mountPoints = new List<MountPoint>();
         private bool? _privileged;
         private bool? _readonlyRootFilesystem;
         private List<ResourceRequirement> _resourceRequirements = new List<ResourceRequirement>();
+        private List<Secret> _secrets = new List<Secret>();
         private List<Ulimit> _ulimits = new List<Ulimit>();
         private string _user;
         private int? _vcpus;
@@ -103,6 +106,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetEnvironment()
         {
             return this._environment != null && this._environment.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+        /// ECS task execution IAM role</a>.
+        /// </para>
+        /// </summary>
+        public string ExecutionRoleArn
+        {
+            get { return this._executionRoleArn; }
+            set { this._executionRoleArn = value; }
+        }
+
+        // Check to see if ExecutionRoleArn property is set
+        internal bool IsSetExecutionRoleArn()
+        {
+            return this._executionRoleArn != null;
         }
 
         /// <summary>
@@ -211,6 +234,59 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogConfiguration. 
+        /// <para>
+        /// The log configuration specification for the container.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+        /// Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// run</a>. By default, containers use the same logging driver that the Docker daemon
+        /// uses. However the container may use a different logging driver than the Docker daemon
+        /// by specifying a log driver with this parameter in the container definition. To use
+        /// a different logging driver for a container, the log system must be configured properly
+        /// on the container instance (or on a different log server for remote logging options).
+        /// For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure
+        /// logging drivers</a> in the Docker documentation.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// AWS Batch currently supports a subset of the logging drivers available to the Docker
+        /// daemon (shown in the <a>LogConfiguration</a> data type).
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This parameter requires version 1.18 of the Docker Remote API or greater on your container
+        /// instance. To check the Docker Remote API version on your container instance, log into
+        /// your container instance and run the following command: <code>sudo docker version |
+        /// grep "Server API version"</code> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The Amazon ECS container agent running on a container instance must register the logging
+        /// drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code>
+        /// environment variable before containers placed on that instance can use these log configuration
+        /// options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+        /// ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public LogConfiguration LogConfiguration
+        {
+            get { return this._logConfiguration; }
+            set { this._logConfiguration = value; }
+        }
+
+        // Check to see if LogConfiguration property is set
+        internal bool IsSetLogConfiguration()
+        {
+            return this._logConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
         /// The hard limit (in MiB) of memory to present to the container. If your container attempts
@@ -218,7 +294,9 @@ namespace Amazon.Batch.Model
         /// to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-        /// run</a>. You must specify at least 4 MiB of memory for a job.
+        /// run</a>. You must specify at least 4 MiB of memory for a job. This is required but
+        /// can be specified in several places for multi-node parallel (MNP) jobs; it must be
+        /// specified for each node at least once.
         /// </para>
         ///  <note> 
         /// <para>
@@ -326,6 +404,25 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Secrets. 
+        /// <para>
+        /// The secrets for the container. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+        /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<Secret> Secrets
+        {
+            get { return this._secrets; }
+            set { this._secrets = value; }
+        }
+
+        // Check to see if Secrets property is set
+        internal bool IsSetSecrets()
+        {
+            return this._secrets != null && this._secrets.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Ulimits. 
         /// <para>
         /// A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code>
@@ -377,7 +474,8 @@ namespace Amazon.Batch.Model
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one
-        /// vCPU.
+        /// vCPU. This is required but can be specified in several places for multi-node parallel
+        /// (MNP) jobs; it must be specified for each node at least once.
         /// </para>
         /// </summary>
         public int Vcpus

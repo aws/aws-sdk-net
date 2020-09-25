@@ -635,6 +635,76 @@ namespace Amazon.Batch
 
 
     /// <summary>
+    /// Constants used for properties of type LogDriver.
+    /// </summary>
+    public class LogDriver : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Awslogs for LogDriver
+        /// </summary>
+        public static readonly LogDriver Awslogs = new LogDriver("awslogs");
+        /// <summary>
+        /// Constant Fluentd for LogDriver
+        /// </summary>
+        public static readonly LogDriver Fluentd = new LogDriver("fluentd");
+        /// <summary>
+        /// Constant Gelf for LogDriver
+        /// </summary>
+        public static readonly LogDriver Gelf = new LogDriver("gelf");
+        /// <summary>
+        /// Constant Journald for LogDriver
+        /// </summary>
+        public static readonly LogDriver Journald = new LogDriver("journald");
+        /// <summary>
+        /// Constant JsonFile for LogDriver
+        /// </summary>
+        public static readonly LogDriver JsonFile = new LogDriver("json-file");
+        /// <summary>
+        /// Constant Splunk for LogDriver
+        /// </summary>
+        public static readonly LogDriver Splunk = new LogDriver("splunk");
+        /// <summary>
+        /// Constant Syslog for LogDriver
+        /// </summary>
+        public static readonly LogDriver Syslog = new LogDriver("syslog");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogDriver(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogDriver FindValue(string value)
+        {
+            return FindValue<LogDriver>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogDriver(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass

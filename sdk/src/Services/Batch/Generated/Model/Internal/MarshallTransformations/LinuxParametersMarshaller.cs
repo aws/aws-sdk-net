@@ -61,6 +61,46 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetInitProcessEnabled())
+            {
+                context.Writer.WritePropertyName("initProcessEnabled");
+                context.Writer.Write(requestObject.InitProcessEnabled);
+            }
+
+            if(requestObject.IsSetMaxSwap())
+            {
+                context.Writer.WritePropertyName("maxSwap");
+                context.Writer.Write(requestObject.MaxSwap);
+            }
+
+            if(requestObject.IsSetSharedMemorySize())
+            {
+                context.Writer.WritePropertyName("sharedMemorySize");
+                context.Writer.Write(requestObject.SharedMemorySize);
+            }
+
+            if(requestObject.IsSetSwappiness())
+            {
+                context.Writer.WritePropertyName("swappiness");
+                context.Writer.Write(requestObject.Swappiness);
+            }
+
+            if(requestObject.IsSetTmpfs())
+            {
+                context.Writer.WritePropertyName("tmpfs");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTmpfsListValue in requestObject.Tmpfs)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TmpfsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTmpfsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

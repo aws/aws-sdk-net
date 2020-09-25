@@ -72,6 +72,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetExecutionRoleArn())
+            {
+                context.Writer.WritePropertyName("executionRoleArn");
+                context.Writer.Write(requestObject.ExecutionRoleArn);
+            }
+
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("image");
@@ -97,6 +103,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
                 var marshaller = LinuxParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.LinuxParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetLogConfiguration())
+            {
+                context.Writer.WritePropertyName("logConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LogConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LogConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -145,6 +162,22 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
                     var marshaller = ResourceRequirementMarshaller.Instance;
                     marshaller.Marshall(requestObjectResourceRequirementsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetSecrets())
+            {
+                context.Writer.WritePropertyName("secrets");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSecretsListValue in requestObject.Secrets)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SecretMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSecretsListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }

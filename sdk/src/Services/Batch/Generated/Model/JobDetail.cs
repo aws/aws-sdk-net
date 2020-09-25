@@ -109,10 +109,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix timestamp (in seconds and milliseconds) for when the job was created. For
-        /// non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code>
-        /// state (at the time <a>SubmitJob</a> was called). For array child jobs, this is when
-        /// the child job was spawned by its parent and entered the <code>PENDING</code> state.
+        /// The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs
+        /// and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state
+        /// (at the time <a>SubmitJob</a> was called). For array child jobs, this is when the
+        /// child job was spawned by its parent and entered the <code>PENDING</code> state.
         /// </para>
         /// </summary>
         public long CreatedAt
@@ -298,9 +298,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The Unix timestamp (in seconds and milliseconds) for when the job was started (when
-        /// the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code>
-        /// state).
+        /// The Unix timestamp (in milliseconds) for when the job was started (when the job transitioned
+        /// from the <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter
+        /// is not provided for child jobs of array jobs or multi-node parallel jobs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -364,9 +364,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StoppedAt. 
         /// <para>
-        /// The Unix timestamp (in seconds and milliseconds) for when the job was stopped (when
-        /// the job transitioned from the <code>RUNNING</code> state to a terminal state, such
-        /// as <code>SUCCEEDED</code> or <code>FAILED</code>).
+        /// The Unix timestamp (in milliseconds) for when the job was stopped (when the job transitioned
+        /// from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code>
+        /// or <code>FAILED</code>).
         /// </para>
         /// </summary>
         public long StoppedAt
