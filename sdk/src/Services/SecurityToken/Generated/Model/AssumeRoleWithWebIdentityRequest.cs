@@ -190,7 +190,7 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
+    ///  <a href="https://aws.amazon.com/blogs/aws/the-aws-web-identity-federation-playground/">
     /// Web Identity Federation Playground</a>. Walk through the process of authenticating
     /// through Login with Amazon, Facebook, or Google, getting temporary security credentials,
     /// and then using those credentials to make a request to AWS. 
