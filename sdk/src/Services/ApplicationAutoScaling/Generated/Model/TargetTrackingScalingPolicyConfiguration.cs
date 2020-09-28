@@ -160,7 +160,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Comprehend document classification endpoints
+        /// Amazon Comprehend document classification and entity recognizer endpoints
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -245,7 +245,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Comprehend document classification endpoints
+        /// Amazon Comprehend document classification and entity recognizer endpoints
         /// </para>
         ///  </li> <li> 
         /// <para>

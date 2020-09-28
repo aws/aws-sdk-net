@@ -373,6 +373,10 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly ScalableDimension ComprehendDocumentClassifierEndpointDesiredInferenceUnits = new ScalableDimension("comprehend:document-classifier-endpoint:DesiredInferenceUnits");
         /// <summary>
+        /// Constant ComprehendEntityRecognizerEndpointDesiredInferenceUnits for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension ComprehendEntityRecognizerEndpointDesiredInferenceUnits = new ScalableDimension("comprehend:entity-recognizer-endpoint:DesiredInferenceUnits");
+        /// <summary>
         /// Constant CustomResourceResourceTypeProperty for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension CustomResourceResourceTypeProperty = new ScalableDimension("custom-resource:ResourceType:Property");

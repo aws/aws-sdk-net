@@ -42,8 +42,10 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property AdjustmentType. 
         /// <para>
-        /// Specifies whether the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a>
-        /// is an absolute number or a percentage of the current capacity. 
+        /// Specifies how the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a>
+        /// is interpreted (for example, an absolute number or a percentage). The valid values
+        /// are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -136,7 +138,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Comprehend document classification endpoints
+        /// Amazon Comprehend document classification and entity recognizer endpoints
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -183,16 +185,12 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinAdjustmentMagnitude. 
         /// <para>
-        /// The minimum value to scale by when scaling by percentages. For example, suppose that
-        /// you create a step scaling policy to scale out an Amazon ECS service by 25 percent
-        /// and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks
-        /// and the scaling policy is performed, 25 percent of 4 is 1. However, because you specified
-        /// a <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the
-        /// service by 2 tasks.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid only if the adjustment type is <code>PercentChangeInCapacity</code>. 
+        /// The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>.
+        /// For example, suppose that you create a step scaling policy to scale out an Amazon
+        /// ECS service by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
+        /// 2. If the service has 4 tasks and the scaling policy is performed, 25 percent of 4
+        /// is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Application
+        /// Auto Scaling scales out the service by 2 tasks.
         /// </para>
         /// </summary>
         public int MinAdjustmentMagnitude

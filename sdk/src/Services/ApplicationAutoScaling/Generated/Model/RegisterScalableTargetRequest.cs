@@ -41,7 +41,8 @@ namespace Amazon.ApplicationAutoScaling.Model
     ///  
     /// <para>
     /// When you register a new scalable target, you must specify values for minimum and maximum
-    /// capacity. Application Auto Scaling scaling policies will not scale capacity to values
+    /// capacity. Current capacity will be adjusted within the specified range when scaling
+    /// starts. Application Auto Scaling scaling policies will not scale capacity to values
     /// that are outside of this range.
     /// </para>
     ///  
@@ -80,6 +81,15 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  
         /// <para>
         /// This parameter is required if you are registering a scalable target.
+        /// </para>
+        ///  
+        /// <para>
+        /// Although you can specify a large maximum capacity, note that service quotas may impose
+        /// lower limits. Each service has its own default quotas for the maximum capacity of
+        /// the resource. If you want to specify a higher limit, you can request an increase.
+        /// For more information, consult the documentation for that service. For information
+        /// about the default quotas for each service, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service
+        /// Endpoints and Quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         public int MaxCapacity
@@ -179,6 +189,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// Amazon Comprehend document classification endpoint - The resource type and unique
         /// identifier are specified using the endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier
+        /// are specified using the endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -299,6 +314,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         ///  <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The
         /// number of inference units for an Amazon Comprehend document classification endpoint.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number
+        /// of inference units for an Amazon Comprehend entity recognizer endpoint.
         /// </para>
         ///  </li> <li> 
         /// <para>

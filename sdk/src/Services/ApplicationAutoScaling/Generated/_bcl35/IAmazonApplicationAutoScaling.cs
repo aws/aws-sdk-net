@@ -66,7 +66,7 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon Comprehend document classification endpoints
+    /// Amazon Comprehend document classification and entity recognizer endpoints
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -804,7 +804,8 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// When you register a new scalable target, you must specify values for minimum and maximum
-        /// capacity. Application Auto Scaling scaling policies will not scale capacity to values
+        /// capacity. Current capacity will be adjusted within the specified range when scaling
+        /// starts. Application Auto Scaling scaling policies will not scale capacity to values
         /// that are outside of this range.
         /// </para>
         ///  
