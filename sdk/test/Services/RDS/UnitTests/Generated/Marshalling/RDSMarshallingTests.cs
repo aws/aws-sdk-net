@@ -9923,6 +9923,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void RegisterDBProxyTargets_InsufficientAvailableIPsInSubnetExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RegisterDBProxyTargets");
+
+            var request = InstantiateClassGenerator.Execute<RegisterDBProxyTargetsRequest>();
+            var marshaller = new RegisterDBProxyTargetsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientAvailableIPsInSubnetException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RegisterDBProxyTargetsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void RegisterDBProxyTargets_InvalidDBClusterStateExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("RegisterDBProxyTargets");

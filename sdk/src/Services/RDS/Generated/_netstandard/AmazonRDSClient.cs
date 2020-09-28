@@ -6403,6 +6403,11 @@ namespace Amazon.RDS
         /// The specified target group isn't available for a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InsufficientAvailableIPsInSubnetException">
+        /// The requested operation can't be performed because there aren't enough available IP
+        /// addresses in the proxy's subnets. Add more CIDR blocks to the VPC or remove IP address
+        /// that aren't required from the subnets.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>

@@ -133,6 +133,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return DBProxyTargetGroupNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientAvailableIPsInSubnetFault"))
+                {
+                    return InsufficientAvailableIPsInSubnetExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBClusterStateFault"))
                 {
                     return InvalidDBClusterStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
