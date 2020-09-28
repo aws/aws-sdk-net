@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.5.24.0",
+    "ProductVersion" : "3.5.25.0",
     "CoreVersion"    : "3.5.1.18",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -282,7 +282,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.5.0.20",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.18"
@@ -554,7 +554,7 @@
             "InPreview"               : false
         },
         "ApplicationAutoScaling"          : {
-            "Version" : "3.5.0.20",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.18"

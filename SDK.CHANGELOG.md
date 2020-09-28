@@ -1,3 +1,9 @@
+### 3.5.25.0 (2020-09-28 18:10 UTC)
+* ApplicationAutoScaling (3.5.1.0)
+	* This release extends Application Auto Scaling support to AWS Comprehend Entity Recognizer endpoint, allowing automatic updates to provisioned Inference Units to maintain targeted utilization level.
+* RDS (3.5.1.0)
+	* This release adds the InsufficientAvailableIPsInSubnetFault error for RDS Proxy.
+
 ### 3.5.24.0 (2020-09-25 18:13 UTC)
 * Batch (3.5.1.0)
 	* Support custom logging, executionRole, secrets, and linuxParameters (initProcessEnabled, maxSwap, swappiness, sharedMemorySize, and tmpfs). Also, add new context keys for awslogs.
