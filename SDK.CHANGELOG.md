@@ -1,3 +1,22 @@
+### 3.5.26.0 (2020-09-29 18:17 UTC)
+* Connect (3.5.1.6)
+	* Update TagResource API documentation to include Contact Flows and Routing Profiles as supported resources.
+* EC2 (3.5.7.1)
+	* This release adds support for Client to Client routing for AWS Client VPN.
+* Schemas (3.5.1.0)
+	* Added support for schemas of type JSONSchemaDraft4. Added ExportSchema API that converts schemas in AWS Events registry and Discovered schemas from OpenApi3  to JSONSchemaDraft4.
+* SimpleSystemsManagement (3.5.1.20)
+	* Simple update to description of ComplianceItemStatus.
+* TimestreamQuery (3.5.0.0)
+	* (New Service) Amazon Timestream is a fast, scalable, fully managed, purpose-built time series database that makes it easy to store and analyze trillions of time series data points per day.
+* TimestreamWrite (3.5.0.0)
+	* (New Service) Amazon Timestream is a fast, scalable, fully managed, purpose-built time series database that makes it easy to store and analyze trillions of time series data points per day.
+* Core 3.5.1.19
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.25.0 (2020-09-28 18:10 UTC)
 * ApplicationAutoScaling (3.5.1.0)
 	* This release extends Application Auto Scaling support to AWS Comprehend Entity Recognizer endpoint, allowing automatic updates to provisioned Inference Units to maintain targeted utilization level.
