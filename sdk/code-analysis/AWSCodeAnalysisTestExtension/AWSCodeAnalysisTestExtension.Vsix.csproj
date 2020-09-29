@@ -924,6 +924,10 @@
       <Project>{7405B582-7CF7-4142-A230-3E9AA662244F}</Project>
       <Name>AWSSDK.Textract.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/TimestreamWrite/AWSSDK.TimestreamWrite.CodeAnalysis.csproj">
+      <Project>{98DF67C0-394D-47FF-82E7-D86EAA973B69}</Project>
+      <Name>AWSSDK.TimestreamWrite.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/TranscribeService/AWSSDK.TranscribeService.CodeAnalysis.csproj">
       <Project>{1569BF27-B6F7-4B32-BD44-36D1D4E028BC}</Project>
       <Name>AWSSDK.TranscribeService.CodeAnalysis</Name>
