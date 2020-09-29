@@ -117,10 +117,11 @@ namespace Amazon.EC2.Model
         /// To add a route for an on-premises network, enter the AWS Site-to-Site VPN connection's
         /// IPv4 CIDR range
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
         /// <para>
-        /// Route address ranges cannot overlap with the CIDR range specified for client allocation.
+        /// To add a route for the local network, enter the client CIDR range
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DestinationCidrBlock
@@ -140,6 +141,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The ID of the subnet through which you want to route traffic. The specified subnet
         /// must be an existing target network of the Client VPN endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// Alternatively, if you're adding a route for the local network, specify <code>local</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

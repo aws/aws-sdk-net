@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyVpnConnectionOptions operation.
-    /// Modifies the connection options for your Site-to-Site VPN VPN connection.
+    /// Modifies the connection options for your Site-to-Site VPN connection.
     /// 
     ///  
     /// <para>
@@ -138,7 +138,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpnConnectionId. 
         /// <para>
-        /// The ID of the Site-to-Site VPN VPN connection. 
+        /// The ID of the Site-to-Site VPN connection. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

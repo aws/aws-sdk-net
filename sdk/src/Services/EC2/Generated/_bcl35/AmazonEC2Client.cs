@@ -23743,7 +23743,7 @@ namespace Amazon.EC2
         #region  ModifyVpnConnectionOptions
 
         /// <summary>
-        /// Modifies the connection options for your Site-to-Site VPN VPN connection.
+        /// Modifies the connection options for your Site-to-Site VPN connection.
         /// 
         ///  
         /// <para>
