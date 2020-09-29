@@ -29,20 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Schemas.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the ExportSchema operation.
     /// </summary>
-    public partial class SchemaVersionSummary
+    public partial class ExportSchemaResponse : AmazonWebServiceResponse
     {
+        private string _content;
         private string _schemaArn;
         private string _schemaName;
         private string _schemaVersion;
-        private Type _type;
+        private string _type;
 
         /// <summary>
-        /// Gets and sets the property SchemaArn. 
-        /// <para>
-        /// The ARN of the schema version.
-        /// </para>
+        /// Gets and sets the property Content.
+        /// </summary>
+        public string Content
+        {
+            get { return this._content; }
+            set { this._content = value; }
+        }
+
+        // Check to see if Content property is set
+        internal bool IsSetContent()
+        {
+            return this._content != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchemaArn.
         /// </summary>
         public string SchemaArn
         {
@@ -57,10 +70,7 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SchemaName. 
-        /// <para>
-        /// The name of the schema.
-        /// </para>
+        /// Gets and sets the property SchemaName.
         /// </summary>
         public string SchemaName
         {
@@ -75,10 +85,7 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SchemaVersion. 
-        /// <para>
-        /// The version number of the schema.
-        /// </para>
+        /// Gets and sets the property SchemaVersion.
         /// </summary>
         public string SchemaVersion
         {
@@ -93,12 +100,9 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of schema.
-        /// </para>
+        /// Gets and sets the property Type.
         /// </summary>
-        public Type Type
+        public string Type
         {
             get { return this._type; }
             set { this._type = value; }

@@ -35,6 +35,7 @@ namespace Amazon.Schemas.Model
     {
         private DateTime? _createdDate;
         private string _schemaVersion;
+        private Type _type;
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
@@ -70,6 +71,24 @@ namespace Amazon.Schemas.Model
         internal bool IsSetSchemaVersion()
         {
             return this._schemaVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of schema.
+        /// </para>
+        /// </summary>
+        public Type Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

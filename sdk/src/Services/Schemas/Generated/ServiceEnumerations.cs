@@ -135,6 +135,10 @@ namespace Amazon.Schemas
     {
 
         /// <summary>
+        /// Constant JSONSchemaDraft4 for Type
+        /// </summary>
+        public static readonly Type JSONSchemaDraft4 = new Type("JSONSchemaDraft4");
+        /// <summary>
         /// Constant OpenApi3 for Type
         /// </summary>
         public static readonly Type OpenApi3 = new Type("OpenApi3");

@@ -1178,6 +1178,89 @@ namespace Amazon.Schemas
 
         #endregion
         
+        #region  ExportSchema
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportSchema service method.</param>
+        /// 
+        /// <returns>The response from the ExportSchema service method, as returned by Schemas.</returns>
+        /// <exception cref="Amazon.Schemas.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.InternalServerErrorException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ExportSchema">REST API Reference for ExportSchema Operation</seealso>
+        public virtual ExportSchemaResponse ExportSchema(ExportSchemaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportSchemaResponseUnmarshaller.Instance;
+
+            return Invoke<ExportSchemaResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportSchema service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportSchema service method, as returned by Schemas.</returns>
+        /// <exception cref="Amazon.Schemas.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.InternalServerErrorException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ExportSchema">REST API Reference for ExportSchema Operation</seealso>
+        public virtual Task<ExportSchemaResponse> ExportSchemaAsync(ExportSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportSchemaResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ExportSchemaResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetCodeBindingSource
 
 

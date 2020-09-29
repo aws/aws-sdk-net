@@ -29,31 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Schemas.Model
 {
     /// <summary>
+    /// Container for the parameters to the ExportSchema operation.
     /// 
     /// </summary>
-    public partial class SchemaVersionSummary
+    public partial class ExportSchemaRequest : AmazonSchemasRequest
     {
-        private string _schemaArn;
+        private string _registryName;
         private string _schemaName;
         private string _schemaVersion;
-        private Type _type;
+        private string _type;
 
         /// <summary>
-        /// Gets and sets the property SchemaArn. 
+        /// Gets and sets the property RegistryName. 
         /// <para>
-        /// The ARN of the schema version.
+        /// The name of the registry.
         /// </para>
         /// </summary>
-        public string SchemaArn
+        [AWSProperty(Required=true)]
+        public string RegistryName
         {
-            get { return this._schemaArn; }
-            set { this._schemaArn = value; }
+            get { return this._registryName; }
+            set { this._registryName = value; }
         }
 
-        // Check to see if SchemaArn property is set
-        internal bool IsSetSchemaArn()
+        // Check to see if RegistryName property is set
+        internal bool IsSetRegistryName()
         {
-            return this._schemaArn != null;
+            return this._registryName != null;
         }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Amazon.Schemas.Model
         /// The name of the schema.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SchemaName
         {
             get { return this._schemaName; }
@@ -77,7 +80,7 @@ namespace Amazon.Schemas.Model
         /// <summary>
         /// Gets and sets the property SchemaVersion. 
         /// <para>
-        /// The version number of the schema.
+        /// Specifying this limits the results to only this schema version.
         /// </para>
         /// </summary>
         public string SchemaVersion
@@ -93,12 +96,10 @@ namespace Amazon.Schemas.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of schema.
-        /// </para>
+        /// Gets and sets the property Type.
         /// </summary>
-        public Type Type
+        [AWSProperty(Required=true)]
+        public string Type
         {
             get { return this._type; }
             set { this._type = value; }
