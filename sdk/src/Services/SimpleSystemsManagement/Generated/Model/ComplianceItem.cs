@@ -182,7 +182,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
+        /// The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or
+        /// an empty string (for Windows patches that aren't applicable).
         /// </para>
         /// </summary>
         public ComplianceStatus Status

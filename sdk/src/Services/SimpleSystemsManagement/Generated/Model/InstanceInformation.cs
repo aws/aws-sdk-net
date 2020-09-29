@@ -313,6 +313,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Connection status of SSM Agent. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The status <code>Inactive</code> has been deprecated and is no longer in use.
+        /// </para>
+        ///  </note>
         /// </summary>
         public PingStatus PingStatus
         {
