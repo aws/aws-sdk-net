@@ -61,6 +61,12 @@ namespace Amazon.Connect
     /// Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
     /// Connect Endpoints</a>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Working with contact flows? Check out the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+    /// Connect Flow language</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AmazonConnectClient : AmazonServiceClient, IAmazonConnect
     {
@@ -344,6 +350,12 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Creates a contact flow for the specified Amazon Connect instance.
+        /// 
+        ///  
+        /// <para>
+        /// You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+        /// Connect Flow language</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContactFlow service method.</param>
         /// <param name="cancellationToken">
@@ -576,6 +588,12 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Describes the specified contact flow.
+        /// 
+        ///  
+        /// <para>
+        /// You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+        /// Connect Flow language</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlow service method.</param>
         /// <param name="cancellationToken">
@@ -1081,6 +1099,11 @@ namespace Amazon.Connect
         /// <summary>
         /// Provides information about the contact flows for the specified Amazon Connect instance.
         /// 
+        ///  
+        /// <para>
+        /// You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+        /// Connect Flow language</a>.
+        /// </para>
         ///  
         /// <para>
         /// For more information about contact flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact
@@ -2099,7 +2122,7 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// The supported resource type is users.
+        /// The supported resource types are users, routing profiles, and contact flows.
         /// </para>
         ///  
         /// <para>
@@ -2222,6 +2245,10 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
+        /// This operation is also available in the Amazon Connect Flow language. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-actions-updatecontactattributes.html">UpdateContactAttributes</a>.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Important:</b> You cannot use the operation to update attributes for contacts
         /// that occurred prior to the release of the API, September 12, 2018. You can update
         /// attributes only for contacts that started after the release of the API. If you attempt
@@ -2275,6 +2302,12 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Updates the specified contact flow.
+        /// 
+        ///  
+        /// <para>
+        /// You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+        /// Connect Flow language</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowContent service method.</param>
         /// <param name="cancellationToken">

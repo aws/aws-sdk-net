@@ -31,6 +31,12 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the UpdateContactFlowContent operation.
     /// Updates the specified contact flow.
+    /// 
+    ///  
+    /// <para>
+    /// You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+    /// Connect Flow language</a>.
+    /// </para>
     /// </summary>
     public partial class UpdateContactFlowContentRequest : AmazonConnectRequest
     {
@@ -60,7 +66,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content of the contact flow.
+        /// The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example
+        /// contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

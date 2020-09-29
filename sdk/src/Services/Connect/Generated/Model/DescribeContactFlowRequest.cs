@@ -31,6 +31,12 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the DescribeContactFlow operation.
     /// Describes the specified contact flow.
+    /// 
+    ///  
+    /// <para>
+    /// You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+    /// Connect Flow language</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeContactFlowRequest : AmazonConnectRequest
     {
