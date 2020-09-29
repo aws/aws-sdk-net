@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{98DF67C0-394D-47FF-82E7-D86EAA973B69}</ProjectGuid>
+    <ProjectGuid>{69DD9851-0751-4D95-A13E-9B2A98EEC412}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Amazon.TimestreamWrite.CodeAnalysis</RootNamespace>
-    <AssemblyName>AWSSDK.TimestreamWrite.CodeAnalysis</AssemblyName>
+    <RootNamespace>Amazon.TimestreamQuery.CodeAnalysis</RootNamespace>
+    <AssemblyName>AWSSDK.TimestreamQuery.CodeAnalysis</AssemblyName>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -35,9 +35,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Generated\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

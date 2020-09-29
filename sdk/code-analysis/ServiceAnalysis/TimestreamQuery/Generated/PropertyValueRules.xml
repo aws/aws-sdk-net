@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.TimestreamQuery.Model.CancelQueryRequest.QueryId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamQuery.Model.QueryRequest.ClientToken</property>
+    <min>32</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamQuery.Model.QueryRequest.MaxRows</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamQuery.Model.QueryResponse.QueryId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+</property-value-rules>
