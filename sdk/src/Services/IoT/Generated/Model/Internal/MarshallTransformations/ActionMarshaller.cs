@@ -254,6 +254,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTimestream())
+            {
+                context.Writer.WritePropertyName("timestream");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TimestreamActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Timestream, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

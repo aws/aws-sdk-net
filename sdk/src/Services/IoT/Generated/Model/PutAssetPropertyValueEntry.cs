@@ -87,7 +87,7 @@ namespace Amazon.IoT.Model
         /// Accepts substitution templates.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1)]
         public string PropertyAlias
         {
             get { return this._propertyAlias; }

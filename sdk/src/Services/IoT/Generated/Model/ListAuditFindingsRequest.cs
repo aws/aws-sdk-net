@@ -31,7 +31,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the ListAuditFindings operation.
     /// Lists the findings (results) of a Device Defender audit or of the audits performed
-    /// during a specified time period. (Findings are retained for 180 days.)
+    /// during a specified time period. (Findings are retained for 90 days.)
     /// </summary>
     public partial class ListAuditFindingsRequest : AmazonIoTRequest
     {

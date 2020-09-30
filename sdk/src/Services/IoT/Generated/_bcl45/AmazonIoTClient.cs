@@ -11730,7 +11730,7 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the findings (results) of a Device Defender audit or of the audits performed
-        /// during a specified time period. (Findings are retained for 180 days.)
+        /// during a specified time period. (Findings are retained for 90 days.)
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAuditFindings service method.</param>
         /// 
@@ -11757,7 +11757,7 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the findings (results) of a Device Defender audit or of the audits performed
-        /// during a specified time period. (Findings are retained for 180 days.)
+        /// during a specified time period. (Findings are retained for 90 days.)
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAuditFindings service method.</param>
         /// <param name="cancellationToken">
@@ -16773,6 +16773,9 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.NotConfiguredException">
         /// The resource is not configured.
         /// </exception>
@@ -16804,6 +16807,9 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.NotConfiguredException">
         /// The resource is not configured.

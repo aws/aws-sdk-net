@@ -52,6 +52,7 @@ namespace Amazon.IoT.Model
         private SnsAction _sns;
         private SqsAction _sqs;
         private StepFunctionsAction _stepFunctions;
+        private TimestreamAction _timestream;
 
         /// <summary>
         /// Gets and sets the property CloudwatchAlarm. 
@@ -395,6 +396,26 @@ namespace Amazon.IoT.Model
         internal bool IsSetStepFunctions()
         {
             return this._stepFunctions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timestream. 
+        /// <para>
+        /// The Timestream rule action writes attributes (measures) from an MQTT message into
+        /// an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
+        /// topic rule action documentation.
+        /// </para>
+        /// </summary>
+        public TimestreamAction Timestream
+        {
+            get { return this._timestream; }
+            set { this._timestream = value; }
+        }
+
+        // Check to see if Timestream property is set
+        internal bool IsSetTimestream()
+        {
+            return this._timestream != null;
         }
 
     }

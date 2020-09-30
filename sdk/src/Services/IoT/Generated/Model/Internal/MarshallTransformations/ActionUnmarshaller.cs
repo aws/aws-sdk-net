@@ -178,6 +178,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.StepFunctions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("timestream", targetDepth))
+                {
+                    var unmarshaller = TimestreamActionUnmarshaller.Instance;
+                    unmarshalledObject.Timestream = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
