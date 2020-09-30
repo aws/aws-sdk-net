@@ -236,4 +236,29 @@ using Amazon.Runtime.Internal.Util;
             request.HostPrefix = $"<#=operation.EndpointHostPrefix.Replace("{", "{hostPrefixLabels.")#>";
 <#+
 	}
+
+	protected void GetArnFieldNamesForOperation(Operation operation) {
+		if (this.Config.ServiceModel.Customizations.ArnFields != null)
+        {
+            if (string.IsNullOrEmpty(operation.RequestStructure.Name)
+            || !this.Config.ServiceModel.Customizations.ArnFields.ContainsKey(operation.RequestStructure.Name))
+            {
+                throw new ArgumentException($"Operation {operation.RequestStructure.Name} does not exist in the operationArnField customization. Please edit the service customization json file.");
+            }
+                                                                                               
+            if (this.Config.ServiceModel.Customizations.ArnFields[operation.RequestStructure.Name].ArnFieldExists)
+            {
+                var arnFieldItem = this.Config.ServiceModel.Customizations.ArnFields[operation.RequestStructure.Name].ArnFieldName;
+#>
+            if (Arn.IsArn(publicRequest.<#=arnFieldItem#>))
+            {
+                publicRequest.AccountId = Amazon.S3Control.Internal.S3ArnUtils.GetAccountIdBasedOnArn(
+                    publicRequest.AccountId,
+                    Arn.Parse(publicRequest.<#=arnFieldItem#>).AccountId
+                );
+            }
+<#+
+            }
+        }
+	}
 #>

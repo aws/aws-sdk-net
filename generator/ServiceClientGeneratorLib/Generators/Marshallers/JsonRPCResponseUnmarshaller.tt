@@ -32,7 +32,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     var payloadIsStream= payload != null && !unmarshallPayload;
     if( this.Operation.ResponseHasBodyMembers || payload != null )
     {
-        if (payloadIsStream)
+        if(this.Operation.AllowEmptyResult){
+            throw new NotImplementedException("AllowEmptyResult is not implemented for JSON unmarshallers");
+        }
+        else if (payloadIsStream)
         {
             if (payload.IsStreaming)
             {

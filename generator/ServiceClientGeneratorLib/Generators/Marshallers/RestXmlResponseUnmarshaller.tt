@@ -29,6 +29,12 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     var shouldMarshallPayload = (payload != null && payload.IsStructure);
     if( this.Operation.ResponseHasBodyMembers || shouldMarshallPayload)
     {
+        if(this.Operation.AllowEmptyResult){
+#>
+            if (context.ResponseData.IsSuccessStatusCode && context.ResponseData.ContentLength == 0)
+                return response;
+<#
+        }
 #>
             UnmarshallResult(context,response);
 <#    

@@ -111,7 +111,8 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
 				{
 #>
 			
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();			
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
 			ResponseUnmarshaller unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)

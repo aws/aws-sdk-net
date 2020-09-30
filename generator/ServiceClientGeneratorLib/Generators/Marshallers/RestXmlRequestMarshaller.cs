@@ -122,6 +122,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line 43 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 	}
+	GetArnFieldNamesForOperation(this.Operation);
 	var requestStructure = this.Operation.RequestStructure;
     var payload = this.Operation.RequestPayloadMember;
     var shouldMarshallPayload = (payload != null && payload.IsStructure);

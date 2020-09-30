@@ -164,6 +164,21 @@ namespace ServiceClientGenerator
             }
         }
 
+        /// <summary>
+        /// Allows the operation to return an empty result when the operation is modeled to return body result structure.
+        /// </summary>
+        public bool AllowEmptyResult
+        {
+            get
+            {
+                var modifiers = this.model.Customizations.GetOperationModifiers(this.name);
+                if (modifiers != null)
+                    return modifiers.AllowEmptyResult;
+
+                return false;
+            }
+        }
+
         public bool WrapsResultShape(string shapeName)
         {
             var modifiers = this.model.Customizations.GetOperationModifiers(this.name);

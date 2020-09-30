@@ -42,6 +42,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			request.HttpMethod = "<#=this.Operation.HttpMethod#>";
 <#
 	}
+	GetArnFieldNamesForOperation(this.Operation);
 	var requestStructure = this.Operation.RequestStructure;
     var payload = this.Operation.RequestPayloadMember;
     var shouldMarshallPayload = (payload != null && payload.IsStructure);
