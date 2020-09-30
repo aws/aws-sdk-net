@@ -35,6 +35,11 @@ namespace Amazon.S3Control.Model
         /// Paginator for ListJobs operation
         ///</summary>
         IListJobsPaginator ListJobs(ListJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRegionalBuckets operation
+        ///</summary>
+        IListRegionalBucketsPaginator ListRegionalBuckets(ListRegionalBucketsRequest request);
     }
 }
 #endif

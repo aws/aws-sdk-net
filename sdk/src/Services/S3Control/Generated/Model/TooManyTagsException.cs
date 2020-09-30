@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// 
+    /// Amazon S3 throws this exception if you have too many tags in your tag set.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

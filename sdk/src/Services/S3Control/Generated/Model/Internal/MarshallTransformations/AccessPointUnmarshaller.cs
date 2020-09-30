@@ -55,6 +55,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AccessPointArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AccessPointArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Bucket", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

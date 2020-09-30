@@ -186,8 +186,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Operation. 
         /// <para>
-        /// The operation that the specified job is configured to execute on the objects listed
-        /// in the manifest.
+        /// The operation that the specified job is configured to run on the objects listed in
+        /// the manifest.
         /// </para>
         /// </summary>
         public JobOperation Operation
@@ -224,8 +224,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property ProgressSummary. 
         /// <para>
-        /// Describes the total number of tasks that the specified job has executed, the number
-        /// of tasks that succeeded, and the number of tasks that failed.
+        /// Describes the total number of tasks that the specified job has run, the number of
+        /// tasks that succeeded, and the number of tasks that failed.
         /// </para>
         /// </summary>
         public JobProgressSummary ProgressSummary
@@ -263,7 +263,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role
-        /// assigned to execute the tasks for this job.
+        /// assigned to run the tasks for this job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -298,7 +298,10 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusUpdateReason.
+        /// Gets and sets the property StatusUpdateReason. 
+        /// <para>
+        /// The reason for updating the job.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string StatusUpdateReason

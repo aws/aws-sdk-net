@@ -33,6 +33,26 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class CreateAccessPointResponse : AmazonWebServiceResponse
     {
+        private string _accessPointArn;
+
+        /// <summary>
+        /// Gets and sets the property AccessPointArn. 
+        /// <para>
+        /// The ARN of the access point.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4, Max=128)]
+        public string AccessPointArn
+        {
+            get { return this._accessPointArn; }
+            set { this._accessPointArn = value; }
+        }
+
+        // Check to see if AccessPointArn property is set
+        internal bool IsSetAccessPointArn()
+        {
+            return this._accessPointArn != null;
+        }
 
     }
 }

@@ -30,10 +30,9 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJobs operation.
-    /// Lists current Amazon S3 Batch Operations jobs and jobs that have ended within the
-    /// last 30 days for the AWS account making the request. For more information, see <a
-    /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
-    /// S3 Batch Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+    /// Lists current S3 Batch Operations jobs and jobs that have ended within the last 30
+    /// days for the AWS account making the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+    /// Batch Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
     /// 
     ///  
     /// <para>
@@ -41,19 +40,23 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///   <ul> <li> 
     /// <para>
-    ///  <a>CreateJob</a> 
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreateJob</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeJob</a> 
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeJob.html">DescribeJob</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateJobPriority</a> 
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobPriority.html">UpdateJobPriority</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateJobStatus</a> 
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -108,7 +111,7 @@ namespace Amazon.S3Control.Model
         /// of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

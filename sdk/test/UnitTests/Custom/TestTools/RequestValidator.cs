@@ -389,7 +389,15 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                             m.PropertyName == property.Name);
                         if (member != null)
                         {
-                            hostPrefixTemplate = hostPrefixTemplate.Replace(string.Format("{{{0}}}", member.MarshallLocationName), (string)property.GetValue(this.Request));                         
+                            // special case for host prefixes such as {AccountId}
+                            if (string.Equals($"{{{member.ModelShape}}}.", hostPrefixTemplate))
+                            {
+                                hostPrefixTemplate = hostPrefixTemplate.Replace(string.Format("{{{0}}}", member.ModelShape), (string)property.GetValue(this.Request));
+                            }
+                            else
+                            {
+                                hostPrefixTemplate = hostPrefixTemplate.Replace(string.Format("{{{0}}}", member.MarshallLocationName), (string)property.GetValue(this.Request));
+                            }                           
                         }
                     }
                 }

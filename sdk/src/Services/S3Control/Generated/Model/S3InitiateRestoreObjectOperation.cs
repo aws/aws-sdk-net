@@ -29,10 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Contains the configuration parameters for an Initiate Glacier Restore job. Amazon
-    /// S3 Batch Operations passes each value through to the underlying POST Object restore
-    /// API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request">Restoring
-    /// Archives</a>.
+    /// Contains the configuration parameters for an Initiate Glacier Restore job. S3 Batch
+    /// Operations passes each value through to the underlying POST Object restore API. For
+    /// more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request">RestoreObject</a>.
     /// </summary>
     public partial class S3InitiateRestoreObjectOperation
     {

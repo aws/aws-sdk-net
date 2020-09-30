@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Contains the configuration parameters for a PUT Copy object operation. Amazon S3 Batch
-    /// Operations passes each value through to the underlying PUT Copy object API. For more
-    /// information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT
+    /// Contains the configuration parameters for a PUT Copy object operation. S3 Batch Operations
+    /// passes each value through to the underlying PUT Copy object API. For more information
+    /// about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT
     /// Object - Copy</a>.
     /// </summary>
     public partial class S3CopyObjectOperation
@@ -146,7 +146,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property ObjectLockLegalHoldStatus. 
         /// <para>
-        /// The Legal Hold status to be applied to all objects in the Batch Operations job.
+        /// The legal hold status to be applied to all objects in the Batch Operations job.
         /// </para>
         /// </summary>
         public S3ObjectLockLegalHoldStatus ObjectLockLegalHoldStatus
@@ -164,7 +164,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property ObjectLockMode. 
         /// <para>
-        /// The Retention mode to be applied to all objects in the Batch Operations job.
+        /// The retention mode to be applied to all objects in the Batch Operations job.
         /// </para>
         /// </summary>
         public S3ObjectLockMode ObjectLockMode
@@ -182,8 +182,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property ObjectLockRetainUntilDate. 
         /// <para>
-        /// The date when the applied Object Retention configuration will expire on all objects
-        /// in the Batch Operations job.
+        /// The date when the applied object retention configuration expires on all objects in
+        /// the Batch Operations job.
         /// </para>
         /// </summary>
         public DateTime ObjectLockRetainUntilDate

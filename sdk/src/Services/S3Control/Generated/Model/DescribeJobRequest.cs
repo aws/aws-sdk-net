@@ -31,8 +31,8 @@ namespace Amazon.S3Control.Model
     /// <summary>
     /// Container for the parameters to the DescribeJob operation.
     /// Retrieves the configuration parameters and status for a Batch Operations job. For
-    /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
-    /// S3 Batch Operations</a> in the Amazon Simple Storage Service Developer Guide.
+    /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+    /// Batch Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
     /// 
     ///   
     /// <para>
@@ -40,19 +40,23 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateJob</a> 
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreateJob</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListJobs</a> 
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListJobs.html">ListJobs</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateJobPriority</a> 
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobPriority.html">UpdateJobPriority</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateJobStatus</a> 
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>

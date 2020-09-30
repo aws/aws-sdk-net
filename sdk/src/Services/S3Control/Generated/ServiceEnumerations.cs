@@ -25,6 +25,200 @@ namespace Amazon.S3Control
 {
 
     /// <summary>
+    /// Constants used for properties of type BucketCannedACL.
+    /// </summary>
+    public class BucketCannedACL : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AuthenticatedRead for BucketCannedACL
+        /// </summary>
+        public static readonly BucketCannedACL AuthenticatedRead = new BucketCannedACL("authenticated-read");
+        /// <summary>
+        /// Constant Private for BucketCannedACL
+        /// </summary>
+        public static readonly BucketCannedACL Private = new BucketCannedACL("private");
+        /// <summary>
+        /// Constant PublicRead for BucketCannedACL
+        /// </summary>
+        public static readonly BucketCannedACL PublicRead = new BucketCannedACL("public-read");
+        /// <summary>
+        /// Constant PublicReadWrite for BucketCannedACL
+        /// </summary>
+        public static readonly BucketCannedACL PublicReadWrite = new BucketCannedACL("public-read-write");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BucketCannedACL(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BucketCannedACL FindValue(string value)
+        {
+            return FindValue<BucketCannedACL>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BucketCannedACL(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BucketLocationConstraint.
+    /// </summary>
+    public class BucketLocationConstraint : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ApNortheast1 for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint ApNortheast1 = new BucketLocationConstraint("ap-northeast-1");
+        /// <summary>
+        /// Constant ApSouth1 for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint ApSouth1 = new BucketLocationConstraint("ap-south-1");
+        /// <summary>
+        /// Constant ApSoutheast1 for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint ApSoutheast1 = new BucketLocationConstraint("ap-southeast-1");
+        /// <summary>
+        /// Constant ApSoutheast2 for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint ApSoutheast2 = new BucketLocationConstraint("ap-southeast-2");
+        /// <summary>
+        /// Constant CnNorth1 for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint CnNorth1 = new BucketLocationConstraint("cn-north-1");
+        /// <summary>
+        /// Constant EU for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint EU = new BucketLocationConstraint("EU");
+        /// <summary>
+        /// Constant EuCentral1 for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint EuCentral1 = new BucketLocationConstraint("eu-central-1");
+        /// <summary>
+        /// Constant EuWest1 for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint EuWest1 = new BucketLocationConstraint("eu-west-1");
+        /// <summary>
+        /// Constant SaEast1 for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint SaEast1 = new BucketLocationConstraint("sa-east-1");
+        /// <summary>
+        /// Constant UsWest1 for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint UsWest1 = new BucketLocationConstraint("us-west-1");
+        /// <summary>
+        /// Constant UsWest2 for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint UsWest2 = new BucketLocationConstraint("us-west-2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BucketLocationConstraint(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BucketLocationConstraint FindValue(string value)
+        {
+            return FindValue<BucketLocationConstraint>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BucketLocationConstraint(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExpirationStatus.
+    /// </summary>
+    public class ExpirationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for ExpirationStatus
+        /// </summary>
+        public static readonly ExpirationStatus Disabled = new ExpirationStatus("Disabled");
+        /// <summary>
+        /// Constant Enabled for ExpirationStatus
+        /// </summary>
+        public static readonly ExpirationStatus Enabled = new ExpirationStatus("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExpirationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExpirationStatus FindValue(string value)
+        {
+            return FindValue<ExpirationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExpirationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobManifestFieldName.
     /// </summary>
     public class JobManifestFieldName : ConstantClass
@@ -1038,6 +1232,68 @@ namespace Amazon.S3Control
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator S3StorageClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TransitionStorageClass.
+    /// </summary>
+    public class TransitionStorageClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEEP_ARCHIVE for TransitionStorageClass
+        /// </summary>
+        public static readonly TransitionStorageClass DEEP_ARCHIVE = new TransitionStorageClass("DEEP_ARCHIVE");
+        /// <summary>
+        /// Constant GLACIER for TransitionStorageClass
+        /// </summary>
+        public static readonly TransitionStorageClass GLACIER = new TransitionStorageClass("GLACIER");
+        /// <summary>
+        /// Constant INTELLIGENT_TIERING for TransitionStorageClass
+        /// </summary>
+        public static readonly TransitionStorageClass INTELLIGENT_TIERING = new TransitionStorageClass("INTELLIGENT_TIERING");
+        /// <summary>
+        /// Constant ONEZONE_IA for TransitionStorageClass
+        /// </summary>
+        public static readonly TransitionStorageClass ONEZONE_IA = new TransitionStorageClass("ONEZONE_IA");
+        /// <summary>
+        /// Constant STANDARD_IA for TransitionStorageClass
+        /// </summary>
+        public static readonly TransitionStorageClass STANDARD_IA = new TransitionStorageClass("STANDARD_IA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransitionStorageClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitionStorageClass FindValue(string value)
+        {
+            return FindValue<TransitionStorageClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitionStorageClass(string value)
         {
             return FindValue(value);
         }

@@ -51,6 +51,14 @@ namespace Amazon.S3Control.Model
         {
             return new ListJobsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListRegionalBuckets operation
+        ///</summary>
+        public IListRegionalBucketsPaginator ListRegionalBuckets(ListRegionalBucketsRequest request) 
+        {
+            return new ListRegionalBucketsPaginator(this.client, request);
+        }
     }
 }
 #endif

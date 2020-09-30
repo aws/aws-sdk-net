@@ -45,9 +45,39 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             CreateAccessPointResponse response = new CreateAccessPointResponse();
+            if (context.ResponseData.IsSuccessStatusCode && context.ResponseData.ContentLength == 0)
+                return response;
+            UnmarshallResult(context,response);
             
             return response;
         }        
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, CreateAccessPointResponse response)
+        {
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            if (context.IsStartOfDocument) 
+                   targetDepth += 1;
+
+            while (context.Read())
+            {
+                if (context.IsStartElement || context.IsAttribute)
+                {
+                    if (context.TestExpression("AccessPointArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.AccessPointArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                }
+                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    return;
+                }
+            }
+          
+            return;
+        }
   
 
         /// <summary>

@@ -33,10 +33,30 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class AccessPoint
     {
+        private string _accessPointArn;
         private string _bucket;
         private string _name;
         private NetworkOrigin _networkOrigin;
         private VpcConfiguration _vpcConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AccessPointArn. 
+        /// <para>
+        /// The ARN for the access point.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4, Max=128)]
+        public string AccessPointArn
+        {
+            get { return this._accessPointArn; }
+            set { this._accessPointArn = value; }
+        }
+
+        // Check to see if AccessPointArn property is set
+        internal bool IsSetAccessPointArn()
+        {
+            return this._accessPointArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Bucket. 

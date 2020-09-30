@@ -105,6 +105,10 @@ namespace Amazon.S3Control.Model
         /// is <code>Internet</code>, and the access point allows access from the public internet,
         /// subject to the access point and bucket access policies.
         /// </para>
+        ///  
+        /// <para>
+        /// This will always be true for an Amazon S3 on Outposts access point
+        /// </para>
         /// </summary>
         public NetworkOrigin NetworkOrigin
         {

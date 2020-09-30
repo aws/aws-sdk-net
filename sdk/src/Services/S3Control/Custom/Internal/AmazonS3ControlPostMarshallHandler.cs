@@ -32,12 +32,6 @@ namespace Amazon.S3Control.Internal
 {
     public class AmazonS3ControlPostMarshallHandler : PipelineHandler
     {
-#if BCL
-        private static Regex accountIdValidationRegex = new Regex(@"^[A-Za-z0-9\-]+$", RegexOptions.Compiled);
-#else
-        private static Regex accountIdValidationRegex = new Regex(@"^[A-Za-z0-9\-]+$");
-#endif
-
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -90,46 +84,47 @@ namespace Amazon.S3Control.Internal
         {
             var request = executionContext.RequestContext.Request;
             var config = executionContext.RequestContext.ClientConfig;
-
-            string accountId;
-            request.Headers.TryGetValue(HeaderKeys.XAmzAccountId, out accountId);
-
-            if (accountId != null)
+            string nonArnOutpostId;
+            Arn s3Arn;
+            if (S3ArnUtils.RequestContainsArn(request, out s3Arn))
             {
-                if (!IsValidAccountId(accountId))
+                IS3Resource s3Resource = null;
+                if (s3Arn.IsOutpostArn())
                 {
-                    throw new AmazonClientException("AccountId can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");
+                    if (!s3Arn.IsValidService())
+                    {
+                        throw new AmazonClientException($"Invalid ARN: {s3Arn.ToString()}, not S3 Outposts ARN");
+                    }
+                    s3Resource = s3Arn.ParseOutpost();
+                    request.Headers[HeaderKeys.XAmzOutpostId] = ((S3OutpostResource) s3Resource).OutpostId;
                 }
-
-                request.Headers.Remove(HeaderKeys.XAmzAccountId);
-
-                var ub = new UriBuilder(EndpointResolver.DetermineEndpoint(config, request));
-
-                // Add account id to host
-                ub.Host = string.Concat(accountId, ".", ub.Host);
-                request.Endpoint = ub.Uri;
+                if (s3Resource != null)
+                {
+                    s3Resource.ValidateArnWithClientConfig(config);
+                    request.Endpoint = s3Resource.GetEndpoint(config);
+                    request.UseSigV4 = true;
+                    request.CanonicalResourcePrefix = string.Concat("/", s3Resource.FullResourceName);
+                    request.OverrideSigningServiceName = s3Arn.Service;
+                    // The access point arn can be using a region different from the configured region for the service client.
+                    // If so be sure to set the authentication region so the signer will use the correct region.
+                    request.AuthenticationRegion = s3Arn.Region;
+                    request.Headers[HeaderKeys.XAmzAccountId] = s3Arn.AccountId;
+                    // replace the ARNs in the resource path or query params with the extracted name of the resource
+                    // These methods assume that there is max 1 Arn in the PathResources or Parameters
+                    S3ArnUtils.ReplacePathResourceArns(request.PathResources, s3Resource.Name);
+                    S3ArnUtils.ReplacePathResourceArns(request.Parameters, s3Resource.Name);
+                }
+            } 
+            else if (S3ArnUtils.DoesRequestHaveOutpostId(request.OriginalRequest, out nonArnOutpostId))
+            {
+                if (!S3ArnUtils.IsValidOutpostId(nonArnOutpostId))
+                {
+                    throw new AmazonClientException($"Invalid outpost ID. ID must contain only alphanumeric characters and dashes");
+                }
+                request.OverrideSigningServiceName = S3ArnUtils.S3OutpostsService;
+                request.Endpoint = S3ArnUtils.GetNonStandardOutpostIdEndpoint(config);
+                request.Headers[HeaderKeys.XAmzOutpostId] = nonArnOutpostId;
             }
         }
-
-        // Returns true if the account id is valid
-        public static bool IsValidAccountId(string accountId)
-        {
-            // Check if the account id is between 1 and 63 characters
-            if (accountId.Length < 1 || accountId.Length > 63)
-                return false;
-
-            // Check if the account id contains a newline character
-            if (accountId.IndexOf('\n') >= 0)
-                return false;
-
-            // Check if the account id only contains:
-            //  uppercase letters, lowercase letters, numbers,
-            //  dashes (-)
-            if (!accountIdValidationRegex.IsMatch(accountId))
-                return false;
-
-            return true;
-        }
-
     }
 }

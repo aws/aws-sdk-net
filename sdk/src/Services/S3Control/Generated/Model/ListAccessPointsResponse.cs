@@ -59,7 +59,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the specified bucket has more access points than can be returned in one call to
-        /// this API, then this field contains a continuation token that you can provide in subsequent
+        /// this API, this field contains a continuation token that you can provide in subsequent
         /// calls to this API to retrieve additional access points.
         /// </para>
         /// </summary>

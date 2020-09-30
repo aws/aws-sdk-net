@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Describes the total number of tasks that the specified job has executed, the number
+    /// Describes the total number of tasks that the specified job has started, the number
     /// of tasks that succeeded, and the number of tasks that failed.
     /// </summary>
     public partial class JobProgressSummary

@@ -73,6 +73,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
 
             request.UseQueryString = true;
+
+            var hostPrefixLabels = new
+            {
+                AccountId = StringUtils.FromString(publicRequest.AccountId),
+            };
+
+            if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.AccountId))
+                throw new AmazonS3ControlException("AccountId can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");        
+            
+            request.HostPrefix = $"{hostPrefixLabels.AccountId}.";
             return request;
         }
         private static ListJobsRequestMarshaller _instance = new ListJobsRequestMarshaller();        

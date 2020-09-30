@@ -32,7 +32,12 @@ namespace Amazon.S3Control.Model
     /// The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon
     /// S3 bucket. You can enable the configuration options in any combination. For more information
     /// about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
-    /// Meaning of "Public"</a> in the Amazon Simple Storage Service Developer Guide.
+    /// Meaning of "Public"</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+    /// 
+    ///  
+    /// <para>
+    /// This is not supported for Amazon S3 on Outposts.
+    /// </para>
     /// </summary>
     public partial class PublicAccessBlockConfiguration
     {
@@ -63,6 +68,10 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// Enabling this setting doesn't affect existing policies or ACLs.
         /// </para>
+        ///  
+        /// <para>
+        /// This is not supported for Amazon S3 on Outposts.
+        /// </para>
         /// </summary>
         public bool BlockPublicAcls
         {
@@ -86,6 +95,10 @@ namespace Amazon.S3Control.Model
         ///  
         /// <para>
         /// Enabling this setting doesn't affect existing bucket policies.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is not supported for Amazon S3 on Outposts.
         /// </para>
         /// </summary>
         public bool BlockPublicPolicy
@@ -112,6 +125,10 @@ namespace Amazon.S3Control.Model
         /// Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't
         /// prevent new public ACLs from being set.
         /// </para>
+        ///  
+        /// <para>
+        /// This is not supported for Amazon S3 on Outposts.
+        /// </para>
         /// </summary>
         public bool IgnorePublicAcls
         {
@@ -137,6 +154,10 @@ namespace Amazon.S3Control.Model
         /// Enabling this setting doesn't affect previously stored bucket policies, except that
         /// public and cross-account access within any public bucket policy, including non-public
         /// delegation to specific accounts, is blocked.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is not supported for Amazon S3 on Outposts.
         /// </para>
         /// </summary>
         public bool RestrictPublicBuckets

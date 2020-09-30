@@ -29,7 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// 
+    /// Contains the S3 Object Lock retention mode to be applied to all objects in the S3
+    /// Batch Operations job. If you don't provide <code>Mode</code> and <code>RetainUntilDate</code>
+    /// data types in your operation, you will remove the retention from your objects. For
+    /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
+    /// S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple Storage
+    /// Service Developer Guide</i>.
     /// </summary>
     public partial class S3Retention
     {
@@ -39,7 +44,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// The Retention mode to be applied to all objects in the Batch Operations job.
+        /// The Object Lock retention mode to be applied to all objects in the Batch Operations
+        /// job.
         /// </para>
         /// </summary>
         public S3ObjectLockRetentionMode Mode
@@ -57,8 +63,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property RetainUntilDate. 
         /// <para>
-        /// The date when the applied Object Retention will expire on all objects in the Batch
-        /// Operations job.
+        /// The date when the applied Object Lock retention will expire on all objects set by
+        /// the Batch Operations job.
         /// </para>
         /// </summary>
         public DateTime RetainUntilDate

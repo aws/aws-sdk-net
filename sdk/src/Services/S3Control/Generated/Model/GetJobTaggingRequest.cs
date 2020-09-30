@@ -30,10 +30,11 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the GetJobTagging operation.
-    /// Returns the tags on an Amazon S3 Batch Operations job. To use this operation, you
-    /// must have permission to perform the <code>s3:GetJobTagging</code> action. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
-    /// Job Tags</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+    /// Returns the tags on an S3 Batch Operations job. To use this operation, you must have
+    /// permission to perform the <code>s3:GetJobTagging</code> action. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
+    /// access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service Developer
+    /// Guide</i>.
     /// 
     ///   
     /// <para>
@@ -41,15 +42,18 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateJob</a> 
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreateJob</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>PutJobTagging</a> 
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutJobTagging.html">PutJobTagging</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteJobTagging</a> 
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteJobTagging.html">DeleteJobTagging</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -61,7 +65,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID associated with the Amazon S3 Batch Operations job.
+        /// The AWS account ID associated with the S3 Batch Operations job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -80,7 +84,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The ID for the Amazon S3 Batch Operations job whose tags you want to retrieve.
+        /// The ID for the S3 Batch Operations job whose tags you want to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=36)]
