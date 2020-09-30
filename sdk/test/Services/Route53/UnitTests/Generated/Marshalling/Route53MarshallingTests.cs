@@ -63,7 +63,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = AssociateVPCWithHostedZoneResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -341,7 +342,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ChangeResourceRecordSetsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -526,7 +528,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ChangeTagsForResourceResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -712,7 +715,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateHealthCheckResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -839,7 +843,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateHostedZoneResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -1158,7 +1163,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateQueryLoggingConfigResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -1381,7 +1387,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateReusableDelegationSetResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -1636,7 +1643,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateTrafficPolicyResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -1795,7 +1803,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateTrafficPolicyInstanceResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -1986,7 +1995,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateTrafficPolicyVersionResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -2176,7 +2186,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateVPCAssociationAuthorizationResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -2361,7 +2372,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteHealthCheckResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -2484,7 +2496,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteHostedZoneResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -2669,7 +2682,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteQueryLoggingConfigResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -2792,7 +2806,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteReusableDelegationSetResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -2946,7 +2961,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteTrafficPolicyResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -3100,7 +3116,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteTrafficPolicyInstanceResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -3223,7 +3240,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteVPCAssociationAuthorizationResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -3408,7 +3426,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DisassociateVPCFromHostedZoneResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -3593,7 +3612,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetAccountLimitResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -3654,7 +3674,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetChangeResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -3746,7 +3767,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetCheckerIpRangesResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -3776,7 +3798,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetGeoLocationResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -3868,7 +3891,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetHealthCheckResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -3991,7 +4015,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetHealthCheckCountResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4021,7 +4046,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetHealthCheckLastFailureReasonResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4113,7 +4139,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetHealthCheckStatusResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4205,7 +4232,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetHostedZoneResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4297,7 +4325,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetHostedZoneCountResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4358,7 +4387,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetHostedZoneLimitResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4481,7 +4511,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetQueryLoggingConfigResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4573,7 +4604,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetReusableDelegationSetResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4696,7 +4728,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetReusableDelegationSetLimitResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4788,7 +4821,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetTrafficPolicyResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4880,7 +4914,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetTrafficPolicyInstanceResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4972,7 +5007,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetTrafficPolicyInstanceCountResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5002,7 +5038,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListGeoLocationsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5063,7 +5100,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListHealthChecksResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5155,7 +5193,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListHostedZonesResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5278,7 +5317,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListHostedZonesByNameResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5370,7 +5410,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListHostedZonesByVPCResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5462,7 +5503,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListQueryLoggingConfigsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5585,7 +5627,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListResourceRecordSetsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5677,7 +5720,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListReusableDelegationSetsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5738,7 +5782,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5923,7 +5968,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListTagsForResourcesResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -6108,7 +6154,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListTrafficPoliciesResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -6169,7 +6216,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListTrafficPolicyInstancesResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -6261,7 +6309,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListTrafficPolicyInstancesByHostedZoneResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -6384,7 +6433,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListTrafficPolicyInstancesByPolicyResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -6507,7 +6557,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListTrafficPolicyVersionsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -6599,7 +6650,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListVPCAssociationAuthorizationsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -6722,7 +6774,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = TestDNSAnswerResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -6814,7 +6867,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UpdateHealthCheckResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -6937,7 +6991,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UpdateHostedZoneCommentResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -7029,7 +7084,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UpdateTrafficPolicyCommentResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -7152,7 +7208,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UpdateTrafficPolicyInstanceResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
