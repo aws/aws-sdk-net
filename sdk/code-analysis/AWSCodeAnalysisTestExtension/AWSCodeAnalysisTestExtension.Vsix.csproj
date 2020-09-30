@@ -808,6 +808,10 @@
       <Project>{D8DE315A-EC9C-41D5-87F9-5C40FBB56FCD}</Project>
       <Name>AWSSDK.S3Control.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/S3Outposts/AWSSDK.S3Outposts.CodeAnalysis.csproj">
+      <Project>{9252CDC4-069F-4025-AE2C-18EE00A73F47}</Project>
+      <Name>AWSSDK.S3Outposts.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SageMaker/AWSSDK.SageMaker.CodeAnalysis.csproj">
       <Project>{3314BA0F-1C6A-4E4A-80F8-EB858D20D048}</Project>
       <Name>AWSSDK.SageMaker.CodeAnalysis</Name>
