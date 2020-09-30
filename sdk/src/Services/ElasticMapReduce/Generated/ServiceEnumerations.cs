@@ -1469,6 +1469,64 @@ namespace Amazon.ElasticMapReduce
 
 
     /// <summary>
+    /// Constants used for properties of type PlacementGroupStrategy.
+    /// </summary>
+    public class PlacementGroupStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLUSTER for PlacementGroupStrategy
+        /// </summary>
+        public static readonly PlacementGroupStrategy CLUSTER = new PlacementGroupStrategy("CLUSTER");
+        /// <summary>
+        /// Constant NONE for PlacementGroupStrategy
+        /// </summary>
+        public static readonly PlacementGroupStrategy NONE = new PlacementGroupStrategy("NONE");
+        /// <summary>
+        /// Constant PARTITION for PlacementGroupStrategy
+        /// </summary>
+        public static readonly PlacementGroupStrategy PARTITION = new PlacementGroupStrategy("PARTITION");
+        /// <summary>
+        /// Constant SPREAD for PlacementGroupStrategy
+        /// </summary>
+        public static readonly PlacementGroupStrategy SPREAD = new PlacementGroupStrategy("SPREAD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PlacementGroupStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PlacementGroupStrategy FindValue(string value)
+        {
+            return FindValue<PlacementGroupStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PlacementGroupStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RepoUpgradeOnBoot.
     /// </summary>
     public class RepoUpgradeOnBoot : ConstantClass

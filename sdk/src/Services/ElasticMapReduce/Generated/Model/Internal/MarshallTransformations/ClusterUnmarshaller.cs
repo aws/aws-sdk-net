@@ -166,6 +166,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.OutpostArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PlacementGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PlacementGroupConfig, PlacementGroupConfigUnmarshaller>(PlacementGroupConfigUnmarshaller.Instance);
+                    unmarshalledObject.PlacementGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReleaseLabel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

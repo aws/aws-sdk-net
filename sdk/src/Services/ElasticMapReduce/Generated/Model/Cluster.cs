@@ -50,6 +50,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _name;
         private int? _normalizedInstanceHours;
         private string _outpostArn;
+        private List<PlacementGroupConfig> _placementGroups = new List<PlacementGroupConfig>();
         private string _releaseLabel;
         private RepoUpgradeOnBoot _repoUpgradeOnBoot;
         private string _requestedAmiVersion;
@@ -392,6 +393,21 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetOutpostArn()
         {
             return this._outpostArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementGroups.
+        /// </summary>
+        public List<PlacementGroupConfig> PlacementGroups
+        {
+            get { return this._placementGroups; }
+            set { this._placementGroups = value; }
+        }
+
+        // Check to see if PlacementGroups property is set
+        internal bool IsSetPlacementGroups()
+        {
+            return this._placementGroups != null && this._placementGroups.Count > 0; 
         }
 
         /// <summary>

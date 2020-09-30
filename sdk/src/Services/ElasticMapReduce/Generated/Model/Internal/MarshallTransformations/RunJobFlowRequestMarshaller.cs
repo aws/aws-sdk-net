@@ -219,6 +219,22 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetPlacementGroupConfigs())
+                {
+                    context.Writer.WritePropertyName("PlacementGroupConfigs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPlacementGroupConfigsListValue in publicRequest.PlacementGroupConfigs)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PlacementGroupConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPlacementGroupConfigsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetReleaseLabel())
                 {
                     context.Writer.WritePropertyName("ReleaseLabel");
