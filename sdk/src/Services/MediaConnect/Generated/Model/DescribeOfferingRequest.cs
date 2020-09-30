@@ -29,42 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateFlowOutput operation.
+    /// Container for the parameters to the DescribeOffering operation.
+    /// Displays the details of an offering. The response includes the offering description,
+    /// duration, outbound bandwidth, price, and Amazon Resource Name (ARN).
     /// </summary>
-    public partial class UpdateFlowOutputResponse : AmazonWebServiceResponse
+    public partial class DescribeOfferingRequest : AmazonMediaConnectRequest
     {
-        private string _flowArn;
-        private Output _output;
+        private string _offeringArn;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that is associated with the
-        /// updated output.
+        /// Gets and sets the property OfferingArn. The Amazon Resource Name (ARN) of the offering.
         /// </summary>
-        public string FlowArn
+        [AWSProperty(Required=true)]
+        public string OfferingArn
         {
-            get { return this._flowArn; }
-            set { this._flowArn = value; }
+            get { return this._offeringArn; }
+            set { this._offeringArn = value; }
         }
 
-        // Check to see if FlowArn property is set
-        internal bool IsSetFlowArn()
+        // Check to see if OfferingArn property is set
+        internal bool IsSetOfferingArn()
         {
-            return this._flowArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Output. The new settings of the output that you updated.
-        /// </summary>
-        public Output Output
-        {
-            get { return this._output; }
-            set { this._output = value; }
-        }
-
-        // Check to see if Output property is set
-        internal bool IsSetOutput()
-        {
-            return this._output != null;
+            return this._offeringArn != null;
         }
 
     }

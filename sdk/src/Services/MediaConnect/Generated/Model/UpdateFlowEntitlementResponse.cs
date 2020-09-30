@@ -37,7 +37,8 @@ namespace Amazon.MediaConnect.Model
         private string _flowArn;
 
         /// <summary>
-        /// Gets and sets the property Entitlement.
+        /// Gets and sets the property Entitlement. The new configuration of the entitlement that
+        /// you updated.
         /// </summary>
         public Entitlement Entitlement
         {

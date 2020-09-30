@@ -51,6 +51,22 @@ namespace Amazon.MediaConnect.Model
         {
             return new ListFlowsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListOfferings operation
+        ///</summary>
+        public IListOfferingsPaginator ListOfferings(ListOfferingsRequest request) 
+        {
+            return new ListOfferingsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListReservations operation
+        ///</summary>
+        public IListReservationsPaginator ListReservations(ListReservationsRequest request) 
+        {
+            return new ListReservationsPaginator(this.client, request);
+        }
     }
 }
 #endif

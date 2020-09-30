@@ -29,42 +29,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateFlowOutput operation.
+    /// A definition of what is being billed for, including the type and amount.
     /// </summary>
-    public partial class UpdateFlowOutputResponse : AmazonWebServiceResponse
+    public partial class ResourceSpecification
     {
-        private string _flowArn;
-        private Output _output;
+        private int? _reservedBitrate;
+        private ResourceType _resourceType;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that is associated with the
-        /// updated output.
+        /// Gets and sets the property ReservedBitrate. The amount of outbound bandwidth that
+        /// is discounted in the offering.
         /// </summary>
-        public string FlowArn
+        public int ReservedBitrate
         {
-            get { return this._flowArn; }
-            set { this._flowArn = value; }
+            get { return this._reservedBitrate.GetValueOrDefault(); }
+            set { this._reservedBitrate = value; }
         }
 
-        // Check to see if FlowArn property is set
-        internal bool IsSetFlowArn()
+        // Check to see if ReservedBitrate property is set
+        internal bool IsSetReservedBitrate()
         {
-            return this._flowArn != null;
+            return this._reservedBitrate.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Output. The new settings of the output that you updated.
+        /// Gets and sets the property ResourceType. The type of resource and the unit that is
+        /// being billed for.
         /// </summary>
-        public Output Output
+        [AWSProperty(Required=true)]
+        public ResourceType ResourceType
         {
-            get { return this._output; }
-            set { this._output = value; }
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
         }
 
-        // Check to see if Output property is set
-        internal bool IsSetOutput()
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
         {
-            return this._output != null;
+            return this._resourceType != null;
         }
 
     }

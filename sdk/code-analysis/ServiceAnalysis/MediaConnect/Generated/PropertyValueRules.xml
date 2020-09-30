@@ -10,4 +10,14 @@
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.ListOfferingsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.ListReservationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
 </property-value-rules>

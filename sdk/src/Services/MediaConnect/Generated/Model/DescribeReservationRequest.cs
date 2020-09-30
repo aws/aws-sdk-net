@@ -29,42 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateFlowOutput operation.
+    /// Container for the parameters to the DescribeReservation operation.
+    /// Displays the details of a reservation. The response includes the reservation name,
+    /// state, start date and time, and the details of the offering that make up the rest
+    /// of the reservation (such as price, duration, and outbound bandwidth).
     /// </summary>
-    public partial class UpdateFlowOutputResponse : AmazonWebServiceResponse
+    public partial class DescribeReservationRequest : AmazonMediaConnectRequest
     {
-        private string _flowArn;
-        private Output _output;
+        private string _reservationArn;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that is associated with the
-        /// updated output.
+        /// Gets and sets the property ReservationArn. The Amazon Resource Name (ARN) of the reservation.
         /// </summary>
-        public string FlowArn
+        [AWSProperty(Required=true)]
+        public string ReservationArn
         {
-            get { return this._flowArn; }
-            set { this._flowArn = value; }
+            get { return this._reservationArn; }
+            set { this._reservationArn = value; }
         }
 
-        // Check to see if FlowArn property is set
-        internal bool IsSetFlowArn()
+        // Check to see if ReservationArn property is set
+        internal bool IsSetReservationArn()
         {
-            return this._flowArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Output. The new settings of the output that you updated.
-        /// </summary>
-        public Output Output
-        {
-            get { return this._output; }
-            set { this._output = value; }
-        }
-
-        // Check to see if Output property is set
-        internal bool IsSetOutput()
-        {
-            return this._output != null;
+            return this._reservationArn != null;
         }
 
     }

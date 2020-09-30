@@ -17,34 +17,24 @@
 /*
  * Do not modify this file. This file is generated from the mediaconnect-2018-11-14.normal.json service model.
  */
+using Amazon.Runtime;
 
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Paginators for the MediaConnect service
+    /// Paginator for the ListReservations operation
     ///</summary>
-    public interface IMediaConnectPaginatorFactory
+    public interface IListReservationsPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListReservationsResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListEntitlements operation
-        ///</summary>
-        IListEntitlementsPaginator ListEntitlements(ListEntitlementsRequest request);
-
-        /// <summary>
-        /// Paginator for ListFlows operation
-        ///</summary>
-        IListFlowsPaginator ListFlows(ListFlowsRequest request);
-
-        /// <summary>
-        /// Paginator for ListOfferings operation
-        ///</summary>
-        IListOfferingsPaginator ListOfferings(ListOfferingsRequest request);
-
-        /// <summary>
-        /// Paginator for ListReservations operation
-        ///</summary>
-        IListReservationsPaginator ListReservations(ListReservationsRequest request);
+        /// Enumerable containing all of the Reservations
+        /// </summary>
+        IPaginatedEnumerable<Reservation> Reservations { get; }
     }
 }
 #endif

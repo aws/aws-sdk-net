@@ -117,6 +117,84 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
             paginator.Responses.ToList();
         }
 
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("MediaConnect")]
+        public void ListOfferingsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListOfferingsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListOfferingsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListOfferingsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListOfferings(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListOfferings(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("MediaConnect")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListOfferingsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListOfferingsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListOfferingsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListOfferings(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListOfferings(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("MediaConnect")]
+        public void ListReservationsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListReservationsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListReservationsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListReservationsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListReservations(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListReservations(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("MediaConnect")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListReservationsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListReservationsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListReservationsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListReservations(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListReservations(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
     }
 }
 #endif

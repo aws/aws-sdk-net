@@ -79,6 +79,52 @@ namespace Amazon.MediaConnect
 
 
     /// <summary>
+    /// Constants used for properties of type DurationUnits.
+    /// </summary>
+    public class DurationUnits : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MONTHS for DurationUnits
+        /// </summary>
+        public static readonly DurationUnits MONTHS = new DurationUnits("MONTHS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DurationUnits(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DurationUnits FindValue(string value)
+        {
+            return FindValue<DurationUnits>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DurationUnits(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EntitlementStatus.
     /// </summary>
     public class EntitlementStatus : ConstantClass
@@ -179,6 +225,52 @@ namespace Amazon.MediaConnect
 
 
     /// <summary>
+    /// Constants used for properties of type PriceUnits.
+    /// </summary>
+    public class PriceUnits : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HOURLY for PriceUnits
+        /// </summary>
+        public static readonly PriceUnits HOURLY = new PriceUnits("HOURLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PriceUnits(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PriceUnits FindValue(string value)
+        {
+            return FindValue<PriceUnits>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PriceUnits(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Protocol.
     /// </summary>
     public class Protocol : ConstantClass
@@ -234,6 +326,110 @@ namespace Amazon.MediaConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Protocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReservationState.
+    /// </summary>
+    public class ReservationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ReservationState
+        /// </summary>
+        public static readonly ReservationState ACTIVE = new ReservationState("ACTIVE");
+        /// <summary>
+        /// Constant CANCELED for ReservationState
+        /// </summary>
+        public static readonly ReservationState CANCELED = new ReservationState("CANCELED");
+        /// <summary>
+        /// Constant EXPIRED for ReservationState
+        /// </summary>
+        public static readonly ReservationState EXPIRED = new ReservationState("EXPIRED");
+        /// <summary>
+        /// Constant PROCESSING for ReservationState
+        /// </summary>
+        public static readonly ReservationState PROCESSING = new ReservationState("PROCESSING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservationState FindValue(string value)
+        {
+            return FindValue<ReservationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceType.
+    /// </summary>
+    public class ResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Mbps_Outbound_Bandwidth for ResourceType
+        /// </summary>
+        public static readonly ResourceType Mbps_Outbound_Bandwidth = new ResourceType("Mbps_Outbound_Bandwidth");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceType FindValue(string value)
+        {
+            return FindValue<ResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceType(string value)
         {
             return FindValue(value);
         }

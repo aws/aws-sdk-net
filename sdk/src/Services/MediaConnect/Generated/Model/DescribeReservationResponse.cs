@@ -29,42 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateFlowOutput operation.
+    /// This is the response object from the DescribeReservation operation.
     /// </summary>
-    public partial class UpdateFlowOutputResponse : AmazonWebServiceResponse
+    public partial class DescribeReservationResponse : AmazonWebServiceResponse
     {
-        private string _flowArn;
-        private Output _output;
+        private Reservation _reservation;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that is associated with the
-        /// updated output.
+        /// Gets and sets the property Reservation.
         /// </summary>
-        public string FlowArn
+        public Reservation Reservation
         {
-            get { return this._flowArn; }
-            set { this._flowArn = value; }
+            get { return this._reservation; }
+            set { this._reservation = value; }
         }
 
-        // Check to see if FlowArn property is set
-        internal bool IsSetFlowArn()
+        // Check to see if Reservation property is set
+        internal bool IsSetReservation()
         {
-            return this._flowArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Output. The new settings of the output that you updated.
-        /// </summary>
-        public Output Output
-        {
-            get { return this._output; }
-            set { this._output = value; }
-        }
-
-        // Check to see if Output property is set
-        internal bool IsSetOutput()
-        {
-            return this._output != null;
+            return this._reservation != null;
         }
 
     }
