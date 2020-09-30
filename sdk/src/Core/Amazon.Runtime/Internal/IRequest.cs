@@ -201,6 +201,13 @@ namespace Amazon.Runtime.Internal
         string ComputeContentStreamHash();
 
         /// <summary>
+        /// If the request needs to be signed with a different service name 
+        /// than the client config AuthenticationServiceName, set it here to override
+        /// the result of DetermineService in AWS4Signer
+        /// </summary>
+        string OverrideSigningServiceName { get; set; }
+
+        /// <summary>
         /// The name of the service to which this request is being sent.
         /// </summary>
         string ServiceName

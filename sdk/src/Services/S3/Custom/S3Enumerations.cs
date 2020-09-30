@@ -629,6 +629,11 @@ namespace Amazon.S3
         public static readonly S3StorageClass DeepArchive = new S3StorageClass("DEEP_ARCHIVE");
 
         /// <summary>
+        /// The OUTPOSTS storage class for objects stored in a S3 Outpost
+        /// </summary>
+        public static readonly S3StorageClass Outposts = new S3StorageClass("OUTPOSTS");
+        
+        /// <summary>
         /// Construct an instance of S3StorageClass.
         /// </summary>
         /// <param name="value"></param>

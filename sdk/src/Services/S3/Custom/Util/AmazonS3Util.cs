@@ -33,6 +33,7 @@ using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml;
+using System.Linq;
 
 namespace Amazon.S3.Util
 {
@@ -569,6 +570,19 @@ namespace Amazon.S3.Util
             return key.StartsWith("/", StringComparison.Ordinal)
                                     ? key.Substring(1)
                                     : key;
+        }
+
+        /// <summary>
+        /// Check if the request resource is an outpost resource
+        /// </summary>
+        /// <param name="request">The S3 request object</param>
+        /// <returns></returns>
+        internal static bool ResourcePathContainsOutpostsResource(IRequest request)
+        {
+            var separators = new char[] { '/', '?' };
+            Func<string, bool> IsOutpostResource = p => Arn.IsArn(p) && Arn.Parse(p).IsOutpostArn();
+            return IsOutpostResource(request.ResourcePath.Trim().Trim(separators))
+                || request.PathResources.Any(pr => IsOutpostResource(pr.Value.Trim().Trim(separators)));
         }
 
 

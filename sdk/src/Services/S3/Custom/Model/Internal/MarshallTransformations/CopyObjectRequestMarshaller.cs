@@ -18,6 +18,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using System.Globalization;
 using Amazon.Util;
+using Amazon.S3.Internal;
 
 #pragma warning disable 1591
 
@@ -152,7 +153,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             string source;
             if (!String.IsNullOrEmpty(key))
             {
-                var isAccessPoint = IsS3AccessPointsArn(bucket);
+                var isAccessPoint = S3ArnUtils.IsS3AccessPointsArn(bucket) || S3ArnUtils.IsS3OutpostsArn(bucket);
                 // 'object/' needed appended to key for copy header with access points
                 source = AmazonS3Util.UrlEncode(String.Concat(bucket, isAccessPoint ? "/object/" : "/", key), !isAccessPoint);
                 if (!String.IsNullOrEmpty(version))
@@ -166,17 +167,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return source;
-        }
-
-        private static bool IsS3AccessPointsArn(string bucket)
-        {
-            Arn arn;
-            if (Arn.TryParse(bucket, out arn))
-            {
-                string accessPointString;
-                return arn.TryParseAccessPoint(out accessPointString);
-            }
-            return false;
         }
 
         private static CopyObjectRequestMarshaller _instance;

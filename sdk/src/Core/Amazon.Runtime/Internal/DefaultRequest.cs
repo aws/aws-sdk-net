@@ -446,6 +446,13 @@ namespace Amazon.Runtime.Internal
         public string DeterminedSigningRegion { get ; set; }
 
         /// <summary>
+        /// If the request needs to be signed with a different service name 
+        /// than the client config AuthenticationServiceName, set it here to override
+        /// the result of DetermineService in AWS4Signer
+        /// </summary>
+        public string OverrideSigningServiceName { get; set; }
+
+        /// <summary>
         /// Checks if the request stream can be rewinded.
         /// </summary>
         /// <returns>Returns true if the request stream can be rewinded ,

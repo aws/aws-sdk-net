@@ -89,5 +89,63 @@ namespace AWSSDK.UnitTests
             Assert.IsFalse(arn.TryParseBucket(out bucketName));
             Assert.IsNull(bucketName);
         }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void ParseOutpost()
+        {
+            Arn arn;
+            S3OutpostResource outpost;
+
+            arn = Arn.Parse("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint");
+            outpost = arn.ParseOutpost();
+            Assert.IsTrue(arn.IsOutpostArn());
+            Assert.AreEqual("op-01234567890123456", outpost.OutpostId);
+            Assert.AreEqual("myaccesspoint", outpost.AccessPointName);
+            Assert.AreEqual("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", outpost.FullAccessPointName);
+
+            arn = Arn.Parse("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint/foo.txt");
+            outpost = arn.ParseOutpost();
+            Assert.IsTrue(arn.IsOutpostArn());
+            Assert.AreEqual("op-01234567890123456", outpost.OutpostId);
+            Assert.AreEqual("myaccesspoint", outpost.AccessPointName);
+            Assert.AreEqual("foo.txt", outpost.Key);
+            Assert.AreEqual("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", outpost.FullAccessPointName);
+
+            arn = Arn.Parse("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint/myaccesspoint");
+            outpost = arn.ParseOutpost();
+            Assert.IsTrue(arn.IsOutpostArn());
+            Assert.AreEqual("op-01234567890123456", outpost.OutpostId);
+            Assert.AreEqual("myaccesspoint", outpost.AccessPointName);
+            Assert.AreEqual("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", outpost.FullAccessPointName);
+
+            arn = Arn.Parse("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint/myaccesspoint/foo.txt");
+            outpost = arn.ParseOutpost();
+            Assert.IsTrue(arn.IsOutpostArn());
+            Assert.AreEqual("op-01234567890123456", outpost.OutpostId);
+            Assert.AreEqual("myaccesspoint", outpost.AccessPointName);
+            Assert.AreEqual("foo.txt", outpost.Key);
+            Assert.AreEqual("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", outpost.FullAccessPointName);
+
+            arn = Arn.Parse("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint/myaccesspoint/folder/foo.txt");
+            outpost = arn.ParseOutpost();
+            Assert.IsTrue(arn.IsOutpostArn());
+            Assert.AreEqual("op-01234567890123456", outpost.OutpostId);
+            Assert.AreEqual("myaccesspoint", outpost.AccessPointName);
+            Assert.AreEqual("folder/foo.txt", outpost.Key);
+            Assert.AreEqual("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", outpost.FullAccessPointName);
+        }
+
+        [DataTestMethod]
+        [TestCategory("S3")]
+        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accespoint:myaccesspoint")]
+        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-012345678.90123456:accespoint:myaccesspoint")]
+        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456/accespoindt/myaccesspoint")]
+        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost::accespoint:myaccesspoint")]
+        [ExpectedException(typeof(AmazonClientException))]
+        public void ParseOutpostBadInput(string input)
+        {
+            Arn.Parse(input).ParseOutpost();
+        }
     }
 }

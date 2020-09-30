@@ -83,8 +83,7 @@ namespace Amazon.S3.Internal
         {
             var request = executionContext.RequestContext.OriginalRequest;
             var config = executionContext.RequestContext.ClientConfig;
-
-
+            
             var putObjectRequest = request as PutObjectRequest;
             if (putObjectRequest != null)
             {
@@ -94,7 +93,6 @@ namespace Amazon.S3.Internal
                     throw new ArgumentException("Please specify one of either a FilePath or the ContentBody to be PUT as an S3 object.");
                 if (putObjectRequest.InputStream != null && !string.IsNullOrEmpty(putObjectRequest.ContentBody))
                     throw new ArgumentException("Please specify one of either an InputStream or the ContentBody to be PUT as an S3 object.");
-
                 if (!putObjectRequest.Headers.IsSetContentType())
                 {
                     // Get the extension of the file from the path.
@@ -175,7 +173,6 @@ namespace Amazon.S3.Internal
             {
                 if (uploadPartRequest.InputStream != null && !string.IsNullOrEmpty(uploadPartRequest.FilePath))
                     throw new ArgumentException("Please specify one of either a InputStream or a FilePath to be PUT as an S3 object.");
-
                 if (uploadPartRequest.IsSetFilePath())
                 {
                     uploadPartRequest.SetupForFilePath();

@@ -55,7 +55,7 @@ namespace AWSSDK.UnitTests
                 ServiceURL = "https://s3.amazonaws.com"
             };
 
-            RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
+            S3ArnTestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
         }
 
 
@@ -78,7 +78,7 @@ namespace AWSSDK.UnitTests
                 RegionEndpoint = RegionEndpoint.USEast2
             };
 
-            RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
+            S3ArnTestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
         }
 
         [TestMethod]
@@ -99,7 +99,7 @@ namespace AWSSDK.UnitTests
                 RegionEndpoint = RegionEndpoint.USEast1
             };
 
-            var internalRequest = RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
+            var internalRequest = S3ArnTestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
             Assert.AreEqual(new Uri("https://testpoint-000011112222.s3-accesspoint.eu-central-1.amazonaws.com"), internalRequest.Endpoint);
         }
 
@@ -123,7 +123,7 @@ namespace AWSSDK.UnitTests
                 UseArnRegion = true
             };
 
-            RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
+            S3ArnTestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
         }
 
         [TestMethod]
@@ -145,7 +145,7 @@ namespace AWSSDK.UnitTests
                 UseArnRegion = true
             };
 
-            var internalRequest = RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
+            var internalRequest = S3ArnTestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
             Assert.AreEqual(new Uri("https://testpoint-000011112222.s3-accesspoint.eu-central-1.amazonaws.com"), internalRequest.Endpoint);
             Assert.AreEqual("/foo.txt", internalRequest.ResourcePath);
             Assert.AreEqual("eu-central-1", internalRequest.AuthenticationRegion);
@@ -165,7 +165,7 @@ namespace AWSSDK.UnitTests
                 ContentBody = "data"
             };
 
-            var internalRequest = RunMockRequest(request, PutObjectRequestMarshaller.Instance);
+            var internalRequest = S3ArnTestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance);
             Assert.AreEqual(new Uri("https://testpoint-000011112222.s3-accesspoint.us-east-1.amazonaws.com"), internalRequest.Endpoint);
             Assert.AreEqual("/foo.txt", internalRequest.ResourcePath);
         }
@@ -182,7 +182,7 @@ namespace AWSSDK.UnitTests
                 Key = "foo.txt"
             };
 
-            var internalRequest = RunMockRequest(request, GetObjectRequestMarshaller.Instance);
+            var internalRequest = S3ArnTestUtils.RunMockRequest(request, GetObjectRequestMarshaller.Instance);
             Assert.AreEqual(new Uri("https://testpoint-000011112222.s3-accesspoint.us-east-1.amazonaws.com"), internalRequest.Endpoint);
             Assert.AreEqual("/foo.txt", internalRequest.ResourcePath);
         }
@@ -199,7 +199,7 @@ namespace AWSSDK.UnitTests
                 Key = "foo.txt"
             };
 
-            var internalRequest = RunMockRequest(request, GetObjectMetadataRequestMarshaller.Instance);
+            var internalRequest = S3ArnTestUtils.RunMockRequest(request, GetObjectMetadataRequestMarshaller.Instance);
             Assert.AreEqual(new Uri("https://testpoint-000011112222.s3-accesspoint.us-east-1.amazonaws.com"), internalRequest.Endpoint);
             Assert.AreEqual("/foo.txt", internalRequest.ResourcePath);
         }
@@ -216,7 +216,7 @@ namespace AWSSDK.UnitTests
                 Key = "foo.txt"
             };
 
-            var internalRequest = RunMockRequest(request, DeleteObjectRequestMarshaller.Instance);
+            var internalRequest = S3ArnTestUtils.RunMockRequest(request, DeleteObjectRequestMarshaller.Instance);
             Assert.AreEqual(new Uri("https://testpoint-000011112222.s3-accesspoint.us-east-1.amazonaws.com"), internalRequest.Endpoint);
             Assert.AreEqual("/foo.txt", internalRequest.ResourcePath);
         }
@@ -237,7 +237,7 @@ namespace AWSSDK.UnitTests
                 }
             };
 
-            var internalRequest = RunMockRequest(request, DeleteObjectsRequestMarshaller.Instance);
+            var internalRequest = S3ArnTestUtils.RunMockRequest(request, DeleteObjectsRequestMarshaller.Instance);
             Assert.AreEqual(new Uri("https://testpoint-000011112222.s3-accesspoint.us-east-1.amazonaws.com"), internalRequest.Endpoint);
         }
 
@@ -254,7 +254,7 @@ namespace AWSSDK.UnitTests
                 Key = "foo.txt"
             };
 
-            var internalRequest = RunMockRequest(request, InitiateMultipartUploadRequestMarshaller.Instance);
+            var internalRequest = S3ArnTestUtils.RunMockRequest(request, InitiateMultipartUploadRequestMarshaller.Instance);
             Assert.AreEqual(new Uri("https://testpoint-000011112222.s3-accesspoint.us-east-1.amazonaws.com"), internalRequest.Endpoint);
             Assert.AreEqual("/foo.txt", internalRequest.ResourcePath);
         }
@@ -271,7 +271,7 @@ namespace AWSSDK.UnitTests
                 Key = "foo.txt"
             };
 
-            var internalRequest = RunMockRequest(request, CompleteMultipartUploadRequestMarshaller.Instance);
+            var internalRequest = S3ArnTestUtils.RunMockRequest(request, CompleteMultipartUploadRequestMarshaller.Instance);
             Assert.AreEqual(new Uri("https://testpoint-000011112222.s3-accesspoint.us-east-1.amazonaws.com"), internalRequest.Endpoint);
             Assert.AreEqual("/foo.txt", internalRequest.ResourcePath);
         }
@@ -288,7 +288,7 @@ namespace AWSSDK.UnitTests
                 Key = "foo.txt"
             };
 
-            var internalRequest = RunMockRequest(request, AbortMultipartUploadRequestMarshaller.Instance);
+            var internalRequest = S3ArnTestUtils.RunMockRequest(request, AbortMultipartUploadRequestMarshaller.Instance);
             Assert.AreEqual(new Uri("https://testpoint-000011112222.s3-accesspoint.us-east-1.amazonaws.com"), internalRequest.Endpoint);
             Assert.AreEqual("/foo.txt", internalRequest.ResourcePath);
         }
@@ -306,7 +306,7 @@ namespace AWSSDK.UnitTests
                 PartNumber = 1
             };
 
-            var internalRequest = RunMockRequest(request, UploadPartRequestMarshaller.Instance);
+            var internalRequest = S3ArnTestUtils.RunMockRequest(request, UploadPartRequestMarshaller.Instance);
             Assert.AreEqual(new Uri("https://testpoint-000011112222.s3-accesspoint.us-east-1.amazonaws.com"), internalRequest.Endpoint);
             Assert.AreEqual("/foo.txt", internalRequest.ResourcePath);
         }
@@ -326,7 +326,7 @@ namespace AWSSDK.UnitTests
                 DestinationKey = "dest.txt"
             };
 
-            var internalRequest = RunMockRequest(request, CopyObjectRequestMarshaller.Instance);
+            var internalRequest = S3ArnTestUtils.RunMockRequest(request, CopyObjectRequestMarshaller.Instance);
             Assert.AreEqual(new Uri("https://destinationpoint-000011112222.s3-accesspoint.us-east-1.amazonaws.com"), internalRequest.Endpoint);
             Assert.AreEqual("/dest.txt", internalRequest.ResourcePath);
             Assert.AreEqual("arn%3Aaws%3As3%3Aus-east-1%3A000011112222%3Aaccesspoint%2Fsourcepoint%2Fobject%2Fsource.txt", internalRequest.Headers["x-amz-copy-source"]);
@@ -355,7 +355,7 @@ namespace AWSSDK.UnitTests
                 }
             };
 
-            var internalRequest = RunMockRequest(request, SelectObjectContentRequestMarshaller.Instance);
+            var internalRequest = S3ArnTestUtils.RunMockRequest(request, SelectObjectContentRequestMarshaller.Instance);
             Assert.AreEqual(new Uri("https://testpoint-000011112222.s3-accesspoint.us-east-1.amazonaws.com"), internalRequest.Endpoint);
             Assert.AreEqual("/foo.txt", internalRequest.ResourcePath);
         }
@@ -423,7 +423,7 @@ namespace AWSSDK.UnitTests
             {
                 try
                 {
-                    RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
+                    S3ArnTestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
                     Assert.Fail("Request should have failed");
                 }
                 catch (AmazonClientException)
@@ -433,75 +433,9 @@ namespace AWSSDK.UnitTests
             }
             else
             {
-                var internalRequest = RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
+                var internalRequest = S3ArnTestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
                 Assert.AreEqual(new Uri($"https://{host}"), internalRequest.Endpoint);
                 Assert.AreEqual("/foo.txt", internalRequest.ResourcePath);
-            }
-
-        }
-
-
-        private IRequest RunMockRequest(AmazonWebServiceRequest request, IMarshaller<IRequest, AmazonWebServiceRequest> marshaller)
-        {
-            var config = new AmazonS3Config
-            {
-                RegionEndpoint = RegionEndpoint.USEast1
-            };
-
-            return RunMockRequest(request, marshaller, config);
-        }
-
-        private IRequest RunMockRequest(AmazonWebServiceRequest request, IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, AmazonS3Config config)
-        {
-            var pipeline = new RuntimePipeline(new List<IPipelineHandler>
-            {
-                new NoopPipelineHandler(),
-                new AmazonS3PostMarshallHandler(),
-                new Marshaller()
-            });
-
-            var requestContext = new RequestContext(config.LogMetrics, new AWS4Signer())
-            {
-                ClientConfig = config,
-                Marshaller = marshaller,
-                OriginalRequest = request,
-                Unmarshaller = null,
-                IsAsync = false
-            };
-            var executionContext = new ExecutionContext(
-                requestContext,
-                new ResponseContext()
-            );
-
-            pipeline.InvokeSync(executionContext);
-
-            return requestContext.Request;
-        }
-
-        public class NoopPipelineHandler : IPipelineHandler
-        {
-            public ILogger Logger { get; set; }
-            public IPipelineHandler InnerHandler { get; set; }
-            public IPipelineHandler OuterHandler { get; set; }
-
-            public void AsyncCallback(IAsyncExecutionContext executionContext)
-            {
-            }
-
-            public IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-            {
-                return null;
-            }
-
-
-            public virtual System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
-                where T : AmazonWebServiceResponse, new()
-            {
-                return null;
-            }
-
-            public void InvokeSync(IExecutionContext executionContext)
-            {
             }
         }
     }

@@ -68,6 +68,5 @@ namespace Amazon.S3.Internal
                 }
             }
         }
-       
     }
 }

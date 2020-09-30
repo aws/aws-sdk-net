@@ -90,7 +90,8 @@ namespace Amazon.S3
 
             Arn arn;
             string accessPoint;
-            if (Arn.TryParse(request.BucketName, out arn) && arn.TryParseAccessPoint(out accessPoint))
+            if (Arn.TryParse(request.BucketName, out arn) && 
+                (arn.TryParseAccessPoint(out accessPoint) || arn.IsOutpostArn()))
             {
                 aws4Signing = true;
             }

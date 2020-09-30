@@ -96,7 +96,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name to which the upload was taking place.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name to which the upload was taking place.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key of the object for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID that identifies the multipart upload.</param>
         /// 
@@ -213,7 +213,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name to which the upload was taking place.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name to which the upload was taking place.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key of the object for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID that identifies the multipart upload.</param>
         /// <param name="cancellationToken">
@@ -2128,9 +2128,7 @@ namespace Amazon.S3
         /// </para>
         ///  <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: NoSuchUpload</i> 
         /// </para>
@@ -2143,9 +2141,7 @@ namespace Amazon.S3
         /// <para>
         ///  <i>HTTP Status Code: 404 Not Found</i> 
         /// </para>
-        ///  </li> </ul> </li> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: InvalidRequest</i> 
         /// </para>
@@ -2328,9 +2324,7 @@ namespace Amazon.S3
         /// </para>
         ///  <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: NoSuchUpload</i> 
         /// </para>
@@ -2343,9 +2337,7 @@ namespace Amazon.S3
         /// <para>
         ///  <i>HTTP Status Code: 404 Not Found</i> 
         /// </para>
-        ///  </li> </ul> </li> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: InvalidRequest</i> 
         /// </para>
@@ -2529,9 +2521,7 @@ namespace Amazon.S3
         /// </para>
         ///  <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: NoSuchUpload</i> 
         /// </para>
@@ -2544,9 +2534,7 @@ namespace Amazon.S3
         /// <para>
         ///  <i>HTTP Status Code: 404 Not Found</i> 
         /// </para>
-        ///  </li> </ul> </li> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: InvalidRequest</i> 
         /// </para>
@@ -2726,9 +2714,7 @@ namespace Amazon.S3
         /// </para>
         ///  <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: NoSuchUpload</i> 
         /// </para>
@@ -2741,9 +2727,7 @@ namespace Amazon.S3
         /// <para>
         ///  <i>HTTP Status Code: 404 Not Found</i> 
         /// </para>
-        ///  </li> </ul> </li> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: InvalidRequest</i> 
         /// </para>
@@ -2929,9 +2913,7 @@ namespace Amazon.S3
         /// </para>
         ///  <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: NoSuchUpload</i> 
         /// </para>
@@ -2944,9 +2926,7 @@ namespace Amazon.S3
         /// <para>
         ///  <i>HTTP Status Code: 404 Not Found</i> 
         /// </para>
-        ///  </li> </ul> </li> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: InvalidRequest</i> 
         /// </para>
@@ -3134,9 +3114,7 @@ namespace Amazon.S3
         /// </para>
         ///  <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: NoSuchUpload</i> 
         /// </para>
@@ -3149,9 +3127,7 @@ namespace Amazon.S3
         /// <para>
         ///  <i>HTTP Status Code: 404 Not Found</i> 
         /// </para>
-        ///  </li> </ul> </li> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: InvalidRequest</i> 
         /// </para>
@@ -3213,7 +3189,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Deletes the bucket. All objects (including all object versions and delete markers)
+        /// Deletes the S3 bucket. All objects (including all object versions and delete markers)
         /// in the bucket must be deleted before the bucket itself can be deleted.
         /// 
         ///  <p class="title"> <b>Related Resources</b> 
@@ -3237,7 +3213,7 @@ namespace Amazon.S3
         DeleteBucketResponse DeleteBucket(string bucketName);
 
         /// <summary>
-        /// Deletes the bucket. All objects (including all object versions and delete markers)
+        /// Deletes the S3 bucket. All objects (including all object versions and delete markers)
         /// in the bucket must be deleted before the bucket itself can be deleted.
         /// 
         ///  <p class="title"> <b>Related Resources</b> 
@@ -3262,7 +3238,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Deletes the bucket. All objects (including all object versions and delete markers)
+        /// Deletes the S3 bucket. All objects (including all object versions and delete markers)
         /// in the bucket must be deleted before the bucket itself can be deleted.
         /// 
         ///  <p class="title"> <b>Related Resources</b> 
@@ -3290,7 +3266,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Deletes the bucket. All objects (including all object versions and delete markers)
+        /// Deletes the S3 bucket. All objects (including all object versions and delete markers)
         /// in the bucket must be deleted before the bucket itself can be deleted.
         /// 
         ///  <p class="title"> <b>Related Resources</b> 
@@ -4705,7 +4681,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
@@ -4757,7 +4733,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
@@ -4862,7 +4838,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4917,7 +4893,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="cancellationToken">
@@ -5466,7 +5442,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Name of the bucket for which the accelerate configuration is retrieved.</param>
+        /// <param name="bucketName">The name of the bucket for which the accelerate configuration is retrieved.</param>
         /// 
         /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">REST API Reference for GetBucketAccelerateConfiguration Operation</seealso>
@@ -5561,7 +5537,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Name of the bucket for which the accelerate configuration is retrieved.</param>
+        /// <param name="bucketName">The name of the bucket for which the accelerate configuration is retrieved.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -6298,7 +6274,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Name of the bucket for which to get the notification configuration.</param>
+        /// <param name="bucketName">The name of the bucket for which to get the notification configuration.</param>
         /// 
         /// <returns>The response from the GetBucketNotification service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">REST API Reference for GetBucketNotification Operation</seealso>
@@ -6379,7 +6355,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Name of the bucket for which to get the notification configuration.</param>
+        /// <param name="bucketName">The name of the bucket for which to get the notification configuration.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -7421,7 +7397,7 @@ namespace Amazon.S3
         /// key name prefix, one or more object tags, or a combination of both. Accordingly, this
         /// section describes the latest API. The response describes the new filter element that
         /// you can use to specify a filter to select a subset of objects to which the rule applies.
-        /// If you are still using previous version of the lifecycle configuration, it works.
+        /// If you are using a previous version of the lifecycle configuration, it still works.
         /// For the earlier API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
         /// </para>
         ///  </note> 
@@ -7492,7 +7468,7 @@ namespace Amazon.S3
         /// key name prefix, one or more object tags, or a combination of both. Accordingly, this
         /// section describes the latest API. The response describes the new filter element that
         /// you can use to specify a filter to select a subset of objects to which the rule applies.
-        /// If you are still using previous version of the lifecycle configuration, it works.
+        /// If you are using a previous version of the lifecycle configuration, it still works.
         /// For the earlier API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
         /// </para>
         ///  </note> 
@@ -7564,7 +7540,7 @@ namespace Amazon.S3
         /// key name prefix, one or more object tags, or a combination of both. Accordingly, this
         /// section describes the latest API. The response describes the new filter element that
         /// you can use to specify a filter to select a subset of objects to which the rule applies.
-        /// If you are still using previous version of the lifecycle configuration, it works.
+        /// If you are using a previous version of the lifecycle configuration, it still works.
         /// For the earlier API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
         /// </para>
         ///  </note> 
@@ -7639,7 +7615,7 @@ namespace Amazon.S3
         /// key name prefix, one or more object tags, or a combination of both. Accordingly, this
         /// section describes the latest API. The response describes the new filter element that
         /// you can use to specify a filter to select a subset of objects to which the rule applies.
-        /// If you are still using previous version of the lifecycle configuration, it works.
+        /// If you are using a previous version of the lifecycle configuration, it still works.
         /// For the earlier API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
         /// </para>
         ///  </note> 
@@ -7917,7 +7893,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
@@ -8130,7 +8106,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
@@ -8557,7 +8533,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -8773,7 +8749,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="cancellationToken">
@@ -9008,6 +8984,11 @@ namespace Amazon.S3
         /// <summary>
         /// Gets an object's current Legal Hold status. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
         /// Objects</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectLegalHold service method.</param>
         /// 
@@ -9020,6 +9001,11 @@ namespace Amazon.S3
         /// <summary>
         /// Gets an object's current Legal Hold status. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
         /// Objects</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectLegalHold service method.</param>
         /// <param name="cancellationToken">
@@ -9191,7 +9177,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the object.</param>
+        /// <param name="bucketName">The name of the bucket containing the object. When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">The object key.</param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
@@ -9320,7 +9306,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the object.</param>
+        /// <param name="bucketName">The name of the bucket containing the object. When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">The object key.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
@@ -9579,7 +9565,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the object.</param>
+        /// <param name="bucketName">The name of the bucket containing the object. When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">The object key.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -9711,7 +9697,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the object.</param>
+        /// <param name="bucketName">The name of the bucket containing the object. When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">The object key.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="cancellationToken">
@@ -9862,6 +9848,11 @@ namespace Amazon.S3
         /// <summary>
         /// Retrieves an object's retention settings. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
         /// Objects</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectRetention service method.</param>
         /// 
@@ -9874,6 +9865,11 @@ namespace Amazon.S3
         /// <summary>
         /// Retrieves an object's retention settings. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
         /// Objects</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectRetention service method.</param>
         /// <param name="cancellationToken">
@@ -9978,18 +9974,22 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Return torrent files from a bucket. BitTorrent can save you bandwidth when you're
-        /// distributing large files. For more information about BitTorrent, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Amazon
-        /// S3 Torrent</a>.
+        /// Returns torrent files from a bucket. BitTorrent can save you bandwidth when you're
+        /// distributing large files. For more information about BitTorrent, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Using
+        /// BitTorrent with Amazon S3</a>.
         /// 
         ///  <note> 
         /// <para>
-        /// You can get torrent only for objects that are less than 5 GB in size and that are
-        /// not encrypted using server-side encryption with customer-provided encryption key.
+        /// You can get torrent only for objects that are less than 5 GB in size, and that are
+        /// not encrypted using server-side encryption with a customer-provided encryption key.
         /// </para>
         ///  </note> 
         /// <para>
         /// To use GET, you must have READ access to the object.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
         /// </para>
         ///  
         /// <para>
@@ -10010,18 +10010,22 @@ namespace Amazon.S3
         GetObjectTorrentResponse GetObjectTorrent(string bucketName, string key);
 
         /// <summary>
-        /// Return torrent files from a bucket. BitTorrent can save you bandwidth when you're
-        /// distributing large files. For more information about BitTorrent, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Amazon
-        /// S3 Torrent</a>.
+        /// Returns torrent files from a bucket. BitTorrent can save you bandwidth when you're
+        /// distributing large files. For more information about BitTorrent, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Using
+        /// BitTorrent with Amazon S3</a>.
         /// 
         ///  <note> 
         /// <para>
-        /// You can get torrent only for objects that are less than 5 GB in size and that are
-        /// not encrypted using server-side encryption with customer-provided encryption key.
+        /// You can get torrent only for objects that are less than 5 GB in size, and that are
+        /// not encrypted using server-side encryption with a customer-provided encryption key.
         /// </para>
         ///  </note> 
         /// <para>
         /// To use GET, you must have READ access to the object.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
         /// </para>
         ///  
         /// <para>
@@ -10042,18 +10046,22 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Return torrent files from a bucket. BitTorrent can save you bandwidth when you're
-        /// distributing large files. For more information about BitTorrent, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Amazon
-        /// S3 Torrent</a>.
+        /// Returns torrent files from a bucket. BitTorrent can save you bandwidth when you're
+        /// distributing large files. For more information about BitTorrent, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Using
+        /// BitTorrent with Amazon S3</a>.
         /// 
         ///  <note> 
         /// <para>
-        /// You can get torrent only for objects that are less than 5 GB in size and that are
-        /// not encrypted using server-side encryption with customer-provided encryption key.
+        /// You can get torrent only for objects that are less than 5 GB in size, and that are
+        /// not encrypted using server-side encryption with a customer-provided encryption key.
         /// </para>
         ///  </note> 
         /// <para>
         /// To use GET, you must have READ access to the object.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
         /// </para>
         ///  
         /// <para>
@@ -10078,18 +10086,22 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Return torrent files from a bucket. BitTorrent can save you bandwidth when you're
-        /// distributing large files. For more information about BitTorrent, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Amazon
-        /// S3 Torrent</a>.
+        /// Returns torrent files from a bucket. BitTorrent can save you bandwidth when you're
+        /// distributing large files. For more information about BitTorrent, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Using
+        /// BitTorrent with Amazon S3</a>.
         /// 
         ///  <note> 
         /// <para>
-        /// You can get torrent only for objects that are less than 5 GB in size and that are
-        /// not encrypted using server-side encryption with customer-provided encryption key.
+        /// You can get torrent only for objects that are less than 5 GB in size, and that are
+        /// not encrypted using server-side encryption with a customer-provided encryption key.
         /// </para>
         ///  </note> 
         /// <para>
         /// To use GET, you must have READ access to the object.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
         /// </para>
         ///  
         /// <para>
@@ -10541,7 +10553,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which to initiate the upload</param>
+        /// <param name="bucketName">The name of the bucket to which to initiate the upload When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload is to be initiated.</param>
         /// 
         /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
@@ -11173,7 +11185,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which to initiate the upload</param>
+        /// <param name="bucketName">The name of the bucket to which to initiate the upload When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload is to be initiated.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -11977,7 +11989,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Name of the bucket to which the multipart upload was initiated.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
@@ -12046,7 +12058,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Name of the bucket to which the multipart upload was initiated.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.)</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
@@ -12186,7 +12198,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Name of the bucket to which the multipart upload was initiated.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -12258,7 +12270,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Name of the bucket to which the multipart upload was initiated.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.)</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -12389,7 +12401,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the objects.</param>
+        /// <param name="bucketName">The name of the bucket containing the objects. When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
@@ -12438,7 +12450,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the objects.</param>
+        /// <param name="bucketName">The name of the bucket containing the objects. When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
@@ -12538,7 +12550,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the objects.</param>
+        /// <param name="bucketName">The name of the bucket containing the objects. When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -12590,7 +12602,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the objects.</param>
+        /// <param name="bucketName">The name of the bucket containing the objects. When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -12834,7 +12846,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Name of the bucket to which the parts are being uploaded.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the parts are being uploaded.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose parts are being listed.</param>
         /// 
@@ -12957,7 +12969,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Name of the bucket to which the parts are being uploaded.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the parts are being uploaded.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose parts are being listed.</param>
         /// <param name="cancellationToken">
@@ -13038,9 +13050,9 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns metadata about all of the versions of objects in a bucket. You can also use
-        /// request parameters as selection criteria to return metadata about a subset of all
-        /// the object versions. 
+        /// Returns metadata about all versions of the objects in a bucket. You can also use request
+        /// parameters as selection criteria to return metadata about a subset of all the object
+        /// versions. 
         /// 
         ///  <note> 
         /// <para>
@@ -13050,6 +13062,10 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// To use this operation, you must have READ access to the bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
         /// </para>
         ///  
         /// <para>
@@ -13077,16 +13093,16 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name that contains the objects.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name that contains the objects. </param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         ListVersionsResponse ListVersions(string bucketName);
 
         /// <summary>
-        /// Returns metadata about all of the versions of objects in a bucket. You can also use
-        /// request parameters as selection criteria to return metadata about a subset of all
-        /// the object versions. 
+        /// Returns metadata about all versions of the objects in a bucket. You can also use request
+        /// parameters as selection criteria to return metadata about a subset of all the object
+        /// versions. 
         /// 
         ///  <note> 
         /// <para>
@@ -13096,6 +13112,10 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// To use this operation, you must have READ access to the bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
         /// </para>
         ///  
         /// <para>
@@ -13123,7 +13143,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name that contains the objects.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name that contains the objects. </param>
         /// <param name="prefix">Use this parameter to select only those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different groupings of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.) You can use prefix with delimiter to roll up numerous objects into a single result under CommonPrefixes. </param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
@@ -13131,9 +13151,9 @@ namespace Amazon.S3
         ListVersionsResponse ListVersions(string bucketName, string prefix);
 
         /// <summary>
-        /// Returns metadata about all of the versions of objects in a bucket. You can also use
-        /// request parameters as selection criteria to return metadata about a subset of all
-        /// the object versions. 
+        /// Returns metadata about all versions of the objects in a bucket. You can also use request
+        /// parameters as selection criteria to return metadata about a subset of all the object
+        /// versions. 
         /// 
         ///  <note> 
         /// <para>
@@ -13143,6 +13163,10 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// To use this operation, you must have READ access to the bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
         /// </para>
         ///  
         /// <para>
@@ -13178,9 +13202,9 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns metadata about all of the versions of objects in a bucket. You can also use
-        /// request parameters as selection criteria to return metadata about a subset of all
-        /// the object versions. 
+        /// Returns metadata about all versions of the objects in a bucket. You can also use request
+        /// parameters as selection criteria to return metadata about a subset of all the object
+        /// versions. 
         /// 
         ///  <note> 
         /// <para>
@@ -13190,6 +13214,10 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// To use this operation, you must have READ access to the bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
         /// </para>
         ///  
         /// <para>
@@ -13217,7 +13245,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name that contains the objects.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name that contains the objects. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -13227,9 +13255,9 @@ namespace Amazon.S3
         Task<ListVersionsResponse> ListVersionsAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Returns metadata about all of the versions of objects in a bucket. You can also use
-        /// request parameters as selection criteria to return metadata about a subset of all
-        /// the object versions. 
+        /// Returns metadata about all versions of the objects in a bucket. You can also use request
+        /// parameters as selection criteria to return metadata about a subset of all the object
+        /// versions. 
         /// 
         ///  <note> 
         /// <para>
@@ -13239,6 +13267,10 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// To use this operation, you must have READ access to the bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
         /// </para>
         ///  
         /// <para>
@@ -13266,7 +13298,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name that contains the objects.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name that contains the objects. </param>
         /// <param name="prefix">Use this parameter to select only those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different groupings of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.) You can use prefix with delimiter to roll up numerous objects into a single result under CommonPrefixes. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -13278,9 +13310,9 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns metadata about all of the versions of objects in a bucket. You can also use
-        /// request parameters as selection criteria to return metadata about a subset of all
-        /// the object versions. 
+        /// Returns metadata about all versions of the objects in a bucket. You can also use request
+        /// parameters as selection criteria to return metadata about a subset of all the object
+        /// versions. 
         /// 
         ///  <note> 
         /// <para>
@@ -13290,6 +13322,10 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// To use this operation, you must have READ access to the bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
         /// </para>
         ///  
         /// <para>
@@ -13828,15 +13864,20 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Creates a new bucket. To create a bucket, you must register with Amazon S3 and have
-        /// a valid AWS Access Key ID to authenticate requests. Anonymous requests are never allowed
-        /// to create buckets. By creating the bucket, you become the bucket owner.
+        /// Creates a new S3 bucket. To create a bucket, you must register with Amazon S3 and
+        /// have a valid AWS Access Key ID to authenticate requests. Anonymous requests are never
+        /// allowed to create buckets. By creating the bucket, you become the bucket owner.
         /// 
         ///  
         /// <para>
-        /// Not every string is an acceptable bucket name. For information on bucket naming restrictions,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">Working
-        /// with Amazon S3 Buckets</a>.
+        /// Not every string is an acceptable bucket name. For information about bucket naming
+        /// restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">Working
+        /// with Amazon S3 Buckets</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to create an <b>Amazon S3 on Outposts</b> bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create
+        /// Bucket</a>. 
         /// </para>
         ///  
         /// <para>
@@ -13974,15 +14015,20 @@ namespace Amazon.S3
         PutBucketResponse PutBucket(string bucketName);
 
         /// <summary>
-        /// Creates a new bucket. To create a bucket, you must register with Amazon S3 and have
-        /// a valid AWS Access Key ID to authenticate requests. Anonymous requests are never allowed
-        /// to create buckets. By creating the bucket, you become the bucket owner.
+        /// Creates a new S3 bucket. To create a bucket, you must register with Amazon S3 and
+        /// have a valid AWS Access Key ID to authenticate requests. Anonymous requests are never
+        /// allowed to create buckets. By creating the bucket, you become the bucket owner.
         /// 
         ///  
         /// <para>
-        /// Not every string is an acceptable bucket name. For information on bucket naming restrictions,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">Working
-        /// with Amazon S3 Buckets</a>.
+        /// Not every string is an acceptable bucket name. For information about bucket naming
+        /// restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">Working
+        /// with Amazon S3 Buckets</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to create an <b>Amazon S3 on Outposts</b> bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create
+        /// Bucket</a>. 
         /// </para>
         ///  
         /// <para>
@@ -14121,15 +14167,20 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Creates a new bucket. To create a bucket, you must register with Amazon S3 and have
-        /// a valid AWS Access Key ID to authenticate requests. Anonymous requests are never allowed
-        /// to create buckets. By creating the bucket, you become the bucket owner.
+        /// Creates a new S3 bucket. To create a bucket, you must register with Amazon S3 and
+        /// have a valid AWS Access Key ID to authenticate requests. Anonymous requests are never
+        /// allowed to create buckets. By creating the bucket, you become the bucket owner.
         /// 
         ///  
         /// <para>
-        /// Not every string is an acceptable bucket name. For information on bucket naming restrictions,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">Working
-        /// with Amazon S3 Buckets</a>.
+        /// Not every string is an acceptable bucket name. For information about bucket naming
+        /// restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">Working
+        /// with Amazon S3 Buckets</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to create an <b>Amazon S3 on Outposts</b> bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create
+        /// Bucket</a>. 
         /// </para>
         ///  
         /// <para>
@@ -14271,15 +14322,20 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Creates a new bucket. To create a bucket, you must register with Amazon S3 and have
-        /// a valid AWS Access Key ID to authenticate requests. Anonymous requests are never allowed
-        /// to create buckets. By creating the bucket, you become the bucket owner.
+        /// Creates a new S3 bucket. To create a bucket, you must register with Amazon S3 and
+        /// have a valid AWS Access Key ID to authenticate requests. Anonymous requests are never
+        /// allowed to create buckets. By creating the bucket, you become the bucket owner.
         /// 
         ///  
         /// <para>
-        /// Not every string is an acceptable bucket name. For information on bucket naming restrictions,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">Working
-        /// with Amazon S3 Buckets</a>.
+        /// Not every string is an acceptable bucket name. For information about bucket naming
+        /// restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">Working
+        /// with Amazon S3 Buckets</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to create an <b>Amazon S3 on Outposts</b> bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create
+        /// Bucket</a>. 
         /// </para>
         ///  
         /// <para>
@@ -18266,6 +18322,10 @@ namespace Amazon.S3
         /// <summary>
         /// Applies a Legal Hold configuration to the specified object.
         /// 
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
         ///  <p class="title"> <b>Related Resources</b> 
         /// </para>
         ///  <ul> <li> 
@@ -18286,6 +18346,10 @@ namespace Amazon.S3
         /// <summary>
         /// Applies a Legal Hold configuration to the specified object.
         /// 
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
         ///  <p class="title"> <b>Related Resources</b> 
         /// </para>
         ///  <ul> <li> 
@@ -18372,6 +18436,10 @@ namespace Amazon.S3
         /// <summary>
         /// Places an Object Retention configuration on an object.
         /// 
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
         ///  <p class="title"> <b>Related Resources</b> 
         /// </para>
         ///  <ul> <li> 
@@ -18392,6 +18460,10 @@ namespace Amazon.S3
         /// <summary>
         /// Places an Object Retention configuration on an object.
         /// 
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
         ///  <p class="title"> <b>Related Resources</b> 
         /// </para>
         ///  <ul> <li> 
@@ -18448,9 +18520,7 @@ namespace Amazon.S3
         /// </para>
         ///  <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: InvalidTagError </i> 
         /// </para>
@@ -18460,9 +18530,7 @@ namespace Amazon.S3
         /// not pass input validation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html">Object
         /// Tagging</a>.</i> 
         /// </para>
-        ///  </li> </ul> </li> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: MalformedXMLError </i> 
         /// </para>
@@ -18537,9 +18605,7 @@ namespace Amazon.S3
         /// </para>
         ///  <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: InvalidTagError </i> 
         /// </para>
@@ -18549,9 +18615,7 @@ namespace Amazon.S3
         /// not pass input validation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html">Object
         /// Tagging</a>.</i> 
         /// </para>
-        ///  </li> </ul> </li> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: MalformedXMLError </i> 
         /// </para>
@@ -18716,7 +18780,11 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// This operation performs the following types of requests: 
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action performs the following types of requests: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -18979,9 +19047,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: RestoreAlreadyInProgress</i> 
         /// </para>
@@ -18998,9 +19064,7 @@ namespace Amazon.S3
         /// <para>
         ///  <i>SOAP Fault Code Prefix: Client</i> 
         /// </para>
-        ///  </li> </ul> </li> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
         /// </para>
@@ -19039,7 +19103,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
@@ -19051,7 +19115,11 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// This operation performs the following types of requests: 
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action performs the following types of requests: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -19314,9 +19382,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: RestoreAlreadyInProgress</i> 
         /// </para>
@@ -19333,9 +19399,7 @@ namespace Amazon.S3
         /// <para>
         ///  <i>SOAP Fault Code Prefix: Client</i> 
         /// </para>
-        ///  </li> </ul> </li> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
         /// </para>
@@ -19374,7 +19438,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// 
@@ -19387,7 +19451,11 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// This operation performs the following types of requests: 
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action performs the following types of requests: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -19650,9 +19718,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: RestoreAlreadyInProgress</i> 
         /// </para>
@@ -19669,9 +19735,7 @@ namespace Amazon.S3
         /// <para>
         ///  <i>SOAP Fault Code Prefix: Client</i> 
         /// </para>
-        ///  </li> </ul> </li> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
         /// </para>
@@ -19710,7 +19774,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
@@ -19723,7 +19787,11 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// This operation performs the following types of requests: 
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action performs the following types of requests: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -19986,9 +20054,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: RestoreAlreadyInProgress</i> 
         /// </para>
@@ -20005,9 +20071,7 @@ namespace Amazon.S3
         /// <para>
         ///  <i>SOAP Fault Code Prefix: Client</i> 
         /// </para>
-        ///  </li> </ul> </li> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
         /// </para>
@@ -20046,7 +20110,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
@@ -20060,7 +20124,11 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// This operation performs the following types of requests: 
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action performs the following types of requests: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -20323,9 +20391,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: RestoreAlreadyInProgress</i> 
         /// </para>
@@ -20342,9 +20408,7 @@ namespace Amazon.S3
         /// <para>
         ///  <i>SOAP Fault Code Prefix: Client</i> 
         /// </para>
-        ///  </li> </ul> </li> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
         /// </para>
@@ -20395,7 +20459,11 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// This operation performs the following types of requests: 
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action performs the following types of requests: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -20658,9 +20726,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: RestoreAlreadyInProgress</i> 
         /// </para>
@@ -20677,9 +20743,7 @@ namespace Amazon.S3
         /// <para>
         ///  <i>SOAP Fault Code Prefix: Client</i> 
         /// </para>
-        ///  </li> </ul> </li> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
         /// </para>
@@ -20718,7 +20782,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -20733,7 +20797,11 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// This operation performs the following types of requests: 
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action performs the following types of requests: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -20996,9 +21064,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: RestoreAlreadyInProgress</i> 
         /// </para>
@@ -21015,9 +21081,7 @@ namespace Amazon.S3
         /// <para>
         ///  <i>SOAP Fault Code Prefix: Client</i> 
         /// </para>
-        ///  </li> </ul> </li> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
         /// </para>
@@ -21056,7 +21120,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// <param name="cancellationToken">
@@ -21072,7 +21136,11 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// This operation performs the following types of requests: 
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action performs the following types of requests: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -21335,9 +21403,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: RestoreAlreadyInProgress</i> 
         /// </para>
@@ -21354,9 +21420,7 @@ namespace Amazon.S3
         /// <para>
         ///  <i>SOAP Fault Code Prefix: Client</i> 
         /// </para>
-        ///  </li> </ul> </li> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
         /// </para>
@@ -21395,7 +21459,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="cancellationToken">
@@ -21411,7 +21475,11 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// This operation performs the following types of requests: 
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action performs the following types of requests: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -21674,9 +21742,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: RestoreAlreadyInProgress</i> 
         /// </para>
@@ -21693,9 +21759,7 @@ namespace Amazon.S3
         /// <para>
         ///  <i>SOAP Fault Code Prefix: Client</i> 
         /// </para>
-        ///  </li> </ul> </li> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
         /// </para>
@@ -21734,7 +21798,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation using an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
@@ -21752,7 +21816,11 @@ namespace Amazon.S3
         /// 
         ///  
         /// <para>
-        /// This operation performs the following types of requests: 
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action performs the following types of requests: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -22015,9 +22083,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: RestoreAlreadyInProgress</i> 
         /// </para>
@@ -22034,9 +22100,7 @@ namespace Amazon.S3
         /// <para>
         ///  <i>SOAP Fault Code Prefix: Client</i> 
         /// </para>
-        ///  </li> </ul> </li> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
         /// </para>
@@ -22097,6 +22161,10 @@ namespace Amazon.S3
         /// only records that match the specified SQL expression. You must also specify the data
         /// serialization format for the response.
         /// 
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
         ///  
         /// <para>
         /// For more information about Amazon S3 Select, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/selecting-content-from-objects.html">Selecting
@@ -22243,6 +22311,10 @@ namespace Amazon.S3
         /// only records that match the specified SQL expression. You must also specify the data
         /// serialization format for the response.
         /// 
+        ///  
+        /// <para>
+        /// This action is not supported by Amazon S3 on Outposts.
+        /// </para>
         ///  
         /// <para>
         /// For more information about Amazon S3 Select, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/selecting-content-from-objects.html">Selecting
@@ -22474,9 +22546,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: NoSuchUpload</i> 
         /// </para>
@@ -22617,9 +22687,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
-        ///  <ul> <li> <p class="title"> <b/> 
-        /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: NoSuchUpload</i> 
         /// </para>
