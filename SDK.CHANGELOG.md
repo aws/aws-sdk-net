@@ -1,3 +1,34 @@
+### 3.5.27.0 (2020-09-30 20:29 UTC)
+* ApplicationAutoScaling (3.5.2.0)
+	* This release extends Auto Scaling support for cluster storage of Managed Streaming for Kafka. Auto Scaling monitors and automatically expands storage capacity when a critical usage threshold is met.
+* DataSync (3.5.1.0)
+	* This release enables customers to create s3 location for S3 bucket's located on an AWS Outpost.
+* DirectConnect (3.5.0.22)
+	* Documentation updates for AWS Direct Connect.
+* ElasticMapReduce (3.5.2.0)
+	* Amazon EMR customers can now use EC2 placement group to influence the placement of master nodes in a high-availability (HA) cluster across distinct underlying hardware to improve cluster availability.
+* Imagebuilder (3.5.1.0)
+	* EC2 Image Builder adds support for copying AMIs created by Image Builder to accounts specific to each Region.
+* IoT (3.5.1.0)
+	* AWS IoT Rules Engine adds Timestream action. The Timestream rule action lets you stream time-series data from IoT sensors and applications to Amazon Timestream databases for time series analysis.
+* MediaConnect (3.5.1.0)
+	* MediaConnect now supports reservations to provide a discounted rate for a specific outbound bandwidth over a period of time.
+* Pinpoint (3.5.1.0)
+	* Amazon Pinpoint - Features - Customers can start a journey based on an event being triggered by an endpoint or user.
+* S3 (3.5.2.0)
+	* Amazon S3 on Outposts expands object storage to on-premises AWS Outposts environments, enabling you to store and retrieve objects using S3 APIs and features.
+* S3Control (3.5.1.0)
+	* Amazon S3 on Outposts expands object storage to on-premises AWS Outposts environments, enabling you to store and retrieve objects using S3 APIs and features.
+* S3Outposts (3.5.0.0)
+	* Amazon S3 on Outposts expands object storage to on-premises AWS Outposts environments, enabling you to store and retrieve objects using S3 APIs and features.
+* SecurityHub (3.5.2.0)
+	* Added several new resource details objects. Added additional details for CloudFront distributions, IAM roles, and IAM access keys. Added a new ResourceRole attribute for resources.
+* Core 3.5.1.20
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.26.0 (2020-09-29 18:17 UTC)
 * Connect (3.5.1.6)
 	* Update TagResource API documentation to include Contact Flows and Routing Profiles as supported resources.
