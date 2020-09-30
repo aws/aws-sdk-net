@@ -39,7 +39,7 @@ namespace Amazon.DataSync.Model
     ///  
     /// <para>
     /// You can activate the agent in a VPC (virtual private cloud) or provide the agent access
-    /// to a VPC endpoint so you can run tasks without going over the public Internet.
+    /// to a VPC endpoint so you can run tasks without going over the public internet.
     /// </para>
     ///  
     /// <para>

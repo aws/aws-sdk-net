@@ -34,19 +34,13 @@ namespace Amazon.DataSync.Model
     /// 
     ///  
     /// <para>
-    /// For AWS DataSync to access a destination S3 bucket, it needs an AWS Identity and Access
-    /// Management (IAM) role that has the required permissions. You can set up the required
-    /// permissions by creating an IAM policy that grants the required permissions and attaching
-    /// the policy to the role. An example of such a policy is shown in the examples section.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information, see https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location
-    /// in the <i>AWS DataSync User Guide.</i> 
+    /// For more information, see https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli
+    /// in the <i>AWS DataSync User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateLocationS3Request : AmazonDataSyncRequest
     {
+        private List<string> _agentArns = new List<string>();
         private string _s3BucketArn;
         private S3Config _s3Config;
         private S3StorageClass _s3StorageClass;
@@ -54,12 +48,34 @@ namespace Amazon.DataSync.Model
         private List<TagListEntry> _tags = new List<TagListEntry>();
 
         /// <summary>
-        /// Gets and sets the property S3BucketArn. 
+        /// Gets and sets the property AgentArns. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon S3 bucket.
+        /// If you are using DataSync on an AWS Outpost, specify the Amazon Resource Names (ARNs)
+        /// of the DataSync agents deployed on your AWS Outpost. For more information about launching
+        /// a DataSync agent on an Amazon Outpost, see <a>outposts-agent</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=76)]
+        [AWSProperty(Min=1, Max=4)]
+        public List<string> AgentArns
+        {
+            get { return this._agentArns; }
+            set { this._agentArns = value; }
+        }
+
+        // Check to see if AgentArns property is set
+        internal bool IsSetAgentArns()
+        {
+            return this._agentArns != null && this._agentArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3BucketArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon S3 bucket. If the bucket is on an AWS
+        /// Outpost, this must be an access point ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Max=156)]
         public string S3BucketArn
         {
             get { return this._s3BucketArn; }
@@ -92,11 +108,15 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property S3StorageClass. 
         /// <para>
         /// The Amazon S3 storage class that you want to store your files in when this location
-        /// is used as a task destination. For more information about S3 storage classes, see
-        /// <a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>
-        /// in the <i>Amazon Simple Storage Service Developer Guide</i>. Some storage classes
-        /// have behaviors that can affect your S3 storage cost. For detailed information, see
-        /// <a>using-storage-classes</a>.
+        /// is used as a task destination. For buckets in AWS Regions, the storage class defaults
+        /// to Standard. For buckets on AWS Outposts, the storage class defaults to AWS S3 Outposts.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about S3 storage classes, see <a href="https://aws.amazon.com/s3/storage-classes/">Amazon
+        /// S3 Storage Classes</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+        /// Some storage classes have behaviors that can affect your S3 storage cost. For detailed
+        /// information, see <a>using-storage-classes</a>.
         /// </para>
         /// </summary>
         public S3StorageClass S3StorageClass

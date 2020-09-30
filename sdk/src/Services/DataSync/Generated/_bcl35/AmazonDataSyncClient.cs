@@ -330,7 +330,7 @@ namespace Amazon.DataSync
         ///  
         /// <para>
         /// You can activate the agent in a VPC (virtual private cloud) or provide the agent access
-        /// to a VPC endpoint so you can run tasks without going over the public Internet.
+        /// to a VPC endpoint so you can run tasks without going over the public internet.
         /// </para>
         ///  
         /// <para>
@@ -584,7 +584,8 @@ namespace Amazon.DataSync
         #region  CreateLocationObjectStorage
 
         /// <summary>
-        /// Creates an endpoint for a self-managed object storage bucket.
+        /// Creates an endpoint for a self-managed object storage bucket. For more information
+        /// about self-managed object storage locations, see <a>create-object-location</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationObjectStorage service method.</param>
         /// 
@@ -648,15 +649,8 @@ namespace Amazon.DataSync
         /// 
         ///  
         /// <para>
-        /// For AWS DataSync to access a destination S3 bucket, it needs an AWS Identity and Access
-        /// Management (IAM) role that has the required permissions. You can set up the required
-        /// permissions by creating an IAM policy that grants the required permissions and attaching
-        /// the policy to the role. An example of such a policy is shown in the examples section.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location
-        /// in the <i>AWS DataSync User Guide.</i> 
+        /// For more information, see https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli
+        /// in the <i>AWS DataSync User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationS3 service method.</param>
@@ -796,7 +790,7 @@ namespace Amazon.DataSync
         /// status for more than a few minutes, it means that your agent might be having trouble
         /// mounting the source NFS file system. Check the task's ErrorCode and ErrorDetail. Mount
         /// issues are often caused by either a misconfigured firewall or a mistyped NFS server
-        /// host name.
+        /// hostname.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTask service method.</param>
@@ -1282,7 +1276,8 @@ namespace Amazon.DataSync
         #region  DescribeLocationObjectStorage
 
         /// <summary>
-        /// Returns metadata about a self-managed object storage server location.
+        /// Returns metadata about a self-managed object storage server location. For more information
+        /// about self-managed object storage locations, see <a>create-object-location</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationObjectStorage service method.</param>
         /// 

@@ -68,6 +68,17 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAgentArns())
+                {
+                    context.Writer.WritePropertyName("AgentArns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAgentArnsListValue in publicRequest.AgentArns)
+                    {
+                            context.Writer.Write(publicRequestAgentArnsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetS3BucketArn())
                 {
                     context.Writer.WritePropertyName("S3BucketArn");

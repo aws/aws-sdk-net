@@ -30,7 +30,8 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLocationObjectStorage operation.
-    /// Returns metadata about a self-managed object storage server location.
+    /// Returns metadata about a self-managed object storage server location. For more information
+    /// about self-managed object storage locations, see <a>create-object-location</a>.
     /// </summary>
     public partial class DescribeLocationObjectStorageRequest : AmazonDataSyncRequest
     {

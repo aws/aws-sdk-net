@@ -30,7 +30,8 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLocationObjectStorage operation.
-    /// Creates an endpoint for a self-managed object storage bucket.
+    /// Creates an endpoint for a self-managed object storage bucket. For more information
+    /// about self-managed object storage locations, see <a>create-object-location</a>.
     /// </summary>
     public partial class CreateLocationObjectStorageRequest : AmazonDataSyncRequest
     {
@@ -48,7 +49,9 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property AccessKey. 
         /// <para>
         /// Optional. The access key is used if credentials are required to access the self-managed
-        /// object storage server.
+        /// object storage server. If your object storage requires a user name and password to
+        /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the
+        /// user name and password, respectively.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8, Max=200)]
@@ -107,7 +110,9 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property SecretKey. 
         /// <para>
         /// Optional. The secret key is used if credentials are required to access the self-managed
-        /// object storage server.
+        /// object storage server. If your object storage requires a user name and password to
+        /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the
+        /// user name and password, respectively.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8, Max=200)]

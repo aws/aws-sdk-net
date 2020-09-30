@@ -39,7 +39,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// ARNs)of the agents to use for an NFS location.
+        /// ARNs of the agents to use for an NFS location.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4)]

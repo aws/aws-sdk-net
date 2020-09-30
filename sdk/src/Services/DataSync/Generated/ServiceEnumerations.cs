@@ -907,6 +907,10 @@ namespace Amazon.DataSync
         /// </summary>
         public static readonly S3StorageClass ONEZONE_IA = new S3StorageClass("ONEZONE_IA");
         /// <summary>
+        /// Constant OUTPOSTS for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass OUTPOSTS = new S3StorageClass("OUTPOSTS");
+        /// <summary>
         /// Constant STANDARD for S3StorageClass
         /// </summary>
         public static readonly S3StorageClass STANDARD = new S3StorageClass("STANDARD");

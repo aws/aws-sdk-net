@@ -380,10 +380,19 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TransferMode. 
         /// <para>
-        /// TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or
-        /// "delta sync", it compares file modification time between source and destination to
-        /// determine which files need to be transferred. ALL skips destination inventory and
-        /// transfers all files discovered on the source.
+        /// A value that determines whether DataSync transfers only the data and metadata that
+        /// differ between the source and the destination location, or whether DataSync transfers
+        /// all the content from the source, without comparing to the destination location. 
+        /// </para>
+        ///  
+        /// <para>
+        /// CHANGED: DataSync copies only data or metadata that is new or different content from
+        /// the source location to the destination location.
+        /// </para>
+        ///  
+        /// <para>
+        /// ALL: DataSync copies all source location content to the destination, without comparing
+        /// to existing content on the destination.
         /// </para>
         /// </summary>
         public TransferMode TransferMode

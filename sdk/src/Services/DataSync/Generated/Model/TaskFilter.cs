@@ -29,7 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// 
+    /// You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>.
+    /// For example, to retrieve all tasks on a source location, you can use <code>ListTasks</code>
+    /// with filter name <code>LocationId</code> and <code>Operator Equals</code> with the
+    /// ARN for the location.
     /// </summary>
     public partial class TaskFilter
     {
@@ -38,7 +41,11 @@ namespace Amazon.DataSync.Model
         private List<string> _values = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the filter being used. Each API call supports a list of filters that are
+        /// available for it. For example, <code>LocationId</code> for <code>ListTasks</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public TaskFilterName Name
@@ -54,7 +61,11 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Operator.
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// The operator that is used to compare filter values (for example, <code>Equals</code>
+        /// or <code>Contains</code>). For more about API filtering operators, see <a>query-resources</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Operator Operator
@@ -70,7 +81,11 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Values.
+        /// Gets and sets the property Values. 
+        /// <para>
+        /// The values that you want to filter for. For example, you might want to display only
+        /// tasks for a specific destination location.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Values

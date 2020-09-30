@@ -33,11 +33,33 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class DescribeLocationS3Response : AmazonWebServiceResponse
     {
+        private List<string> _agentArns = new List<string>();
         private DateTime? _creationTime;
         private string _locationArn;
         private string _locationUri;
         private S3Config _s3Config;
         private S3StorageClass _s3StorageClass;
+
+        /// <summary>
+        /// Gets and sets the property AgentArns. 
+        /// <para>
+        /// If you are using DataSync on an Amazon Outpost, the Amazon Resource Name (ARNs) of
+        /// the EC2 agents deployed on your AWS Outpost. For more information about launching
+        /// a DataSync agent on an Amazon Outpost, see <a>outposts-agent</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4)]
+        public List<string> AgentArns
+        {
+            get { return this._agentArns; }
+            set { this._agentArns = value; }
+        }
+
+        // Check to see if AgentArns property is set
+        internal bool IsSetAgentArns()
+        {
+            return this._agentArns != null && this._agentArns.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -60,7 +82,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon S3 bucket location.
+        /// The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
