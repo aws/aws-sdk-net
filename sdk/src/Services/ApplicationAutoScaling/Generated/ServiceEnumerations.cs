@@ -249,6 +249,10 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly MetricType ECSServiceAverageMemoryUtilization = new MetricType("ECSServiceAverageMemoryUtilization");
         /// <summary>
+        /// Constant KafkaBrokerStorageUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType KafkaBrokerStorageUtilization = new MetricType("KafkaBrokerStorageUtilization");
+        /// <summary>
         /// Constant LambdaProvisionedConcurrencyUtilization for MetricType
         /// </summary>
         public static readonly MetricType LambdaProvisionedConcurrencyUtilization = new MetricType("LambdaProvisionedConcurrencyUtilization");
@@ -409,6 +413,10 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly ScalableDimension ElasticmapreduceInstancegroupInstanceCount = new ScalableDimension("elasticmapreduce:instancegroup:InstanceCount");
         /// <summary>
+        /// Constant KafkaBrokerStorageVolumeSize for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension KafkaBrokerStorageVolumeSize = new ScalableDimension("kafka:broker-storage:VolumeSize");
+        /// <summary>
         /// Constant LambdaFunctionProvisionedConcurrency for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension LambdaFunctionProvisionedConcurrency = new ScalableDimension("lambda:function:ProvisionedConcurrency");
@@ -560,6 +568,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant Elasticmapreduce for ServiceNamespace
         /// </summary>
         public static readonly ServiceNamespace Elasticmapreduce = new ServiceNamespace("elasticmapreduce");
+        /// <summary>
+        /// Constant Kafka for ServiceNamespace
+        /// </summary>
+        public static readonly ServiceNamespace Kafka = new ServiceNamespace("kafka");
         /// <summary>
         /// Constant Lambda for ServiceNamespace
         /// </summary>

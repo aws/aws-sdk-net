@@ -78,6 +78,10 @@ namespace Amazon.ApplicationAutoScaling
     /// <para>
     /// Amazon Keyspaces (for Apache Cassandra) tables
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon Managed Streaming for Apache Kafka cluster storage
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     ///  <b>API Summary</b> 

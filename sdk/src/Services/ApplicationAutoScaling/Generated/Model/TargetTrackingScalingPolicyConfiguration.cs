@@ -170,6 +170,10 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// Amazon Keyspaces tables
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon MSK cluster storage
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public int ScaleInCooldown
@@ -194,9 +198,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// With the <i>scale-out cooldown period</i>, the intention is to continuously (but not
         /// excessively) scale out. After Application Auto Scaling successfully scales out using
-        /// a target tracking scaling policy, it starts to calculate the cooldown time. While
-        /// the scale-out cooldown period is in effect, the capacity added by the initiating scale-out
-        /// activity is calculated as part of the desired capacity for the next scale-out activity.
+        /// a target tracking scaling policy, it starts to calculate the cooldown time. The scaling
+        /// policy won't increase the desired capacity again unless either a larger scale out
+        /// is triggered or the cooldown period ends. While the cooldown period is in effect,
+        /// the capacity added by the initiating scale-out activity is calculated as part of the
+        /// desired capacity for the next scale-out activity.
         /// </para>
         ///  
         /// <para>
@@ -254,6 +260,10 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         /// Amazon Keyspaces tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon MSK cluster storage
         /// </para>
         ///  </li> </ul>
         /// </summary>

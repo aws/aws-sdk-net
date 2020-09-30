@@ -30,6 +30,14 @@ namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
     /// Represents a scaling policy to use with Application Auto Scaling.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about configuring scaling policies for a specific service, see
+    /// <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/getting-started.html">Getting
+    /// started with Application Auto Scaling</a> in the <i>Application Auto Scaling User
+    /// Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ScalingPolicy
     {
@@ -214,6 +222,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier
         /// is the table name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon MSK cluster - The resource type and unique identifier are specified using the
+        /// cluster ARN. Example: <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
@@ -314,6 +327,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         ///  <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
         /// for an Amazon Keyspaces table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB)
+        /// for brokers in an Amazon MSK cluster.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -69,18 +69,21 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property Cooldown. 
         /// <para>
         /// The amount of time, in seconds, to wait for a previous scaling activity to take effect.
+        /// 
         /// </para>
         ///  
         /// <para>
         /// With scale-out policies, the intention is to continuously (but not excessively) scale
         /// out. After Application Auto Scaling successfully scales out using a step scaling policy,
-        /// it starts to calculate the cooldown time. While the cooldown period is in effect,
-        /// capacity added by the initiating scale-out activity is calculated as part of the desired
-        /// capacity for the next scale-out activity. For example, when an alarm triggers a step
-        /// scaling policy to increase the capacity by 2, the scaling activity completes successfully,
-        /// and a cooldown period starts. If the alarm triggers again during the cooldown period
-        /// but at a more aggressive step adjustment of 3, the previous increase of 2 is considered
-        /// part of the current capacity. Therefore, only 1 is added to the capacity.
+        /// it starts to calculate the cooldown time. The scaling policy won't increase the desired
+        /// capacity again unless either a larger scale out is triggered or the cooldown period
+        /// ends. While the cooldown period is in effect, capacity added by the initiating scale-out
+        /// activity is calculated as part of the desired capacity for the next scale-out activity.
+        /// For example, when an alarm triggers a step scaling policy to increase the capacity
+        /// by 2, the scaling activity completes successfully, and a cooldown period starts. If
+        /// the alarm triggers again during the cooldown period but at a more aggressive step
+        /// adjustment of 3, the previous increase of 2 is considered part of the current capacity.
+        /// Therefore, only 1 is added to the capacity.
         /// </para>
         ///  
         /// <para>
@@ -147,6 +150,10 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         /// Amazon Keyspaces tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon MSK cluster storage
         /// </para>
         ///  </li> </ul>
         /// </summary>
