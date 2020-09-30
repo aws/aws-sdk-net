@@ -44,12 +44,13 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property DeliveryUri. 
         /// <para>
-        /// The destination to send the custom message to. This value can be one of the following:
+        /// The destination to send the campaign or treatment to. This value can be one of the
+        /// following:
         /// </para>
         ///  <ul><li>
         /// <para>
         /// The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle
-        /// delivery of the custom message.
+        /// delivery of the campaign or treatment.
         /// </para>
         /// </li> <li>
         /// <para>

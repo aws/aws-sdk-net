@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StartCondition Object
+    /// Response Unmarshaller for EventStartCondition Object
     /// </summary>  
-    public class StartConditionUnmarshaller : IUnmarshaller<StartCondition, XmlUnmarshallerContext>, IUnmarshaller<StartCondition, JsonUnmarshallerContext>
+    public class EventStartConditionUnmarshaller : IUnmarshaller<EventStartCondition, XmlUnmarshallerContext>, IUnmarshaller<EventStartCondition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StartCondition IUnmarshaller<StartCondition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EventStartCondition IUnmarshaller<EventStartCondition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StartCondition Unmarshall(JsonUnmarshallerContext context)
+        public EventStartCondition Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StartCondition unmarshalledObject = new StartCondition();
+            EventStartCondition unmarshalledObject = new EventStartCondition();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("EventFilter", targetDepth))
+                {
+                    var unmarshaller = EventFilterUnmarshaller.Instance;
+                    unmarshalledObject.EventFilter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SegmentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EventStartCondition", targetDepth))
-                {
-                    var unmarshaller = EventStartConditionUnmarshaller.Instance;
-                    unmarshalledObject.EventStartCondition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SegmentStartCondition", targetDepth))
-                {
-                    var unmarshaller = SegmentConditionUnmarshaller.Instance;
-                    unmarshalledObject.SegmentStartCondition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SegmentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         }
 
 
-        private static StartConditionUnmarshaller _instance = new StartConditionUnmarshaller();        
+        private static EventStartConditionUnmarshaller _instance = new EventStartConditionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartConditionUnmarshaller Instance
+        public static EventStartConditionUnmarshaller Instance
         {
             get
             {

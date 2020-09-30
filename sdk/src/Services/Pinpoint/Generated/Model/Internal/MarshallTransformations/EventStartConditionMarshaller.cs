@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartCondition Marshaller
+    /// EventStartCondition Marshaller
     /// </summary>       
-    public class StartConditionMarshaller : IRequestMarshaller<StartCondition, JsonMarshallerContext> 
+    public class EventStartConditionMarshaller : IRequestMarshaller<EventStartCondition, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,23 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(StartCondition requestObject, JsonMarshallerContext context)
+        public void Marshall(EventStartCondition requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDescription())
+            if(requestObject.IsSetEventFilter())
             {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
-            }
-
-            if(requestObject.IsSetEventStartCondition())
-            {
-                context.Writer.WritePropertyName("EventStartCondition");
+                context.Writer.WritePropertyName("EventFilter");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = EventStartConditionMarshaller.Instance;
-                marshaller.Marshall(requestObject.EventStartCondition, context);
+                var marshaller = EventFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.EventFilter, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetSegmentStartCondition())
+            if(requestObject.IsSetSegmentId())
             {
-                context.Writer.WritePropertyName("SegmentStartCondition");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SegmentConditionMarshaller.Instance;
-                marshaller.Marshall(requestObject.SegmentStartCondition, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("SegmentId");
+                context.Writer.Write(requestObject.SegmentId);
             }
 
         }
@@ -78,7 +67,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static StartConditionMarshaller Instance = new StartConditionMarshaller();
+        public readonly static EventStartConditionMarshaller Instance = new EventStartConditionMarshaller();
 
     }
 }

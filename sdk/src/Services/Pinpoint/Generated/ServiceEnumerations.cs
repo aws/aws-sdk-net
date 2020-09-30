@@ -237,6 +237,10 @@ namespace Amazon.Pinpoint
         /// </summary>
         public static readonly CampaignStatus EXECUTING = new CampaignStatus("EXECUTING");
         /// <summary>
+        /// Constant INVALID for CampaignStatus
+        /// </summary>
+        public static readonly CampaignStatus INVALID = new CampaignStatus("INVALID");
+        /// <summary>
         /// Constant PAUSED for CampaignStatus
         /// </summary>
         public static readonly CampaignStatus PAUSED = new CampaignStatus("PAUSED");

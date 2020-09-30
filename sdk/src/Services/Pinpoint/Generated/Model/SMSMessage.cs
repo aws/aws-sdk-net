@@ -82,7 +82,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property MediaUrl. 
         /// <para>
-        /// The URL of an image or video to display in the SMS message.
+        /// This field is reserved for future use.
         /// </para>
         /// </summary>
         public string MediaUrl

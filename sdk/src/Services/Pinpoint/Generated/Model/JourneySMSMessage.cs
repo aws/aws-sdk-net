@@ -61,7 +61,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property SenderId. 
         /// <para>
         /// The sender ID to display as the sender of the message on a recipient's device. Support
-        /// for sender IDs varies by country or region. For more information, see <a href="https://docs.aws.amazon.com.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
+        /// for sender IDs varies by country or region. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
         /// Countries and Regions</a> in the Amazon Pinpoint User Guide.
         /// </para>
         /// </summary>

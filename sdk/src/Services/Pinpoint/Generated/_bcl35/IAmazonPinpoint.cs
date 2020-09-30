@@ -6243,6 +6243,9 @@ namespace Amazon.Pinpoint
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
         /// Provides information about an API request or response.
         /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ConflictException">
+        /// Provides information about an API request or response.
+        /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
         /// Provides information about an API request or response.
         /// </exception>

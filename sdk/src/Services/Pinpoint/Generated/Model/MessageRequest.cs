@@ -43,10 +43,11 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Addresses. 
         /// <para>
-        /// A map of key-value pairs, where each key is an address and each value is an AddressConfiguration
+        /// A map of key-value pairs, where each key is an address and each value is an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
         /// object. An address can be a push notification token, a phone number, or an email address.
-        /// You can use an AddressConfiguration object to tailor the message for an address by
-        /// specifying settings such as content overrides and message variables.
+        /// You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a>
+        /// object to tailor the message for an address by specifying settings such as content
+        /// overrides and message variables.
         /// </para>
         /// </summary>
         public Dictionary<string, AddressConfiguration> Addresses
@@ -84,9 +85,11 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Endpoints. 
         /// <para>
-        /// A map of key-value pairs, where each key is an endpoint ID and each value is an EndpointSendConfiguration
-        /// object. You can use an EndpointSendConfiguration object to tailor the message for
-        /// an endpoint by specifying settings such as content overrides and message variables.
+        /// A map of key-value pairs, where each key is an endpoint ID and each value is an <a
+        /// href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+        /// object. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+        /// object to tailor the message for an endpoint by specifying settings such as content
+        /// overrides and message variables.
         /// </para>
         /// </summary>
         public Dictionary<string, EndpointSendConfiguration> Endpoints

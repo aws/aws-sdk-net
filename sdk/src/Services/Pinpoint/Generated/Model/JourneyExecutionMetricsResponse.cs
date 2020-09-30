@@ -101,7 +101,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property Metrics. 
         /// <para>
         /// A JSON object that contains the results of the query. For information about the structure
-        /// and contents of the results, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
+        /// and contents of the results, see the <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
         /// Pinpoint Developer Guide</a>.
         /// </para>
         /// </summary>

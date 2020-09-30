@@ -35,6 +35,7 @@ namespace Amazon.Pinpoint.Model
     {
         private CampaignHook _campaignHook;
         private bool? _cloudWatchMetricsEnabled;
+        private bool? _eventTaggingEnabled;
         private CampaignLimits _limits;
         private QuietTime _quietTime;
 
@@ -83,13 +84,27 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EventTaggingEnabled.
+        /// </summary>
+        public bool EventTaggingEnabled
+        {
+            get { return this._eventTaggingEnabled.GetValueOrDefault(); }
+            set { this._eventTaggingEnabled = value; }
+        }
+
+        // Check to see if EventTaggingEnabled property is set
+        internal bool IsSetEventTaggingEnabled()
+        {
+            return this._eventTaggingEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Limits. 
         /// <para>
-        /// The default sending limits for campaigns and journeys in the application. To override
-        /// these limits and define custom limits for a specific campaign or journey, use the
-        /// <link  linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource
-        /// or the <link  linkend="apps-application-id-journeys-journey-id">Journey</link> resource,
-        /// respectively.
+        /// The default sending limits for campaigns in the application. To override these limits
+        /// and define custom limits for a specific campaign or journey, use the <link  linkend="apps-application-id-campaigns-campaign-id">Campaign</link>
+        /// resource or the <link  linkend="apps-application-id-journeys-journey-id">Journey</link>
+        /// resource, respectively.
         /// </para>
         /// </summary>
         public CampaignLimits Limits
@@ -107,9 +122,9 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property QuietTime. 
         /// <para>
-        /// The default quiet time for campaigns and journeys in the application. Quiet time is
-        /// a specific time range when messages aren't sent to endpoints, if all the following
-        /// conditions are met:
+        /// The default quiet time for campaigns in the application. Quiet time is a specific
+        /// time range when messages aren't sent to endpoints, if all the following conditions
+        /// are met:
         /// </para>
         ///  <ul><li>
         /// <para>

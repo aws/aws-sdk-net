@@ -35,6 +35,7 @@ namespace Amazon.Pinpoint.Model
     public partial class StartCondition
     {
         private string _description;
+        private EventStartCondition _eventStartCondition;
         private SegmentCondition _segmentStartCondition;
 
         /// <summary>
@@ -53,6 +54,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventStartCondition.
+        /// </summary>
+        public EventStartCondition EventStartCondition
+        {
+            get { return this._eventStartCondition; }
+            set { this._eventStartCondition = value; }
+        }
+
+        // Check to see if EventStartCondition property is set
+        internal bool IsSetEventStartCondition()
+        {
+            return this._eventStartCondition != null;
         }
 
         /// <summary>

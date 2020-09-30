@@ -30,8 +30,8 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// For a campaign, specifies limits on the messages that the campaign can send. For an
-    /// application, specifies the default limits for messages that campaigns and journeys
-    /// in the application can send.
+    /// application, specifies the default limits for messages that campaigns in the application
+    /// can send.
     /// </summary>
     public partial class CampaignLimits
     {
@@ -84,8 +84,8 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property MessagesPerSecond. 
         /// <para>
         /// The maximum number of messages that a campaign can send each second. For an application,
-        /// this value specifies the default limit for the number of messages that campaigns and
-        /// journeys can send each second. The minimum value is 50. The maximum value is 20,000.
+        /// this value specifies the default limit for the number of messages that campaigns can
+        /// send each second. The minimum value is 50. The maximum value is 20,000.
         /// </para>
         /// </summary>
         public int MessagesPerSecond

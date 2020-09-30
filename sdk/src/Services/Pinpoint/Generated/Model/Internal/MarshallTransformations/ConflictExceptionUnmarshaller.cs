@@ -34,52 +34,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StartCondition Object
+    /// Response Unmarshaller for ConflictException Object
     /// </summary>  
-    public class StartConditionUnmarshaller : IUnmarshaller<StartCondition, XmlUnmarshallerContext>, IUnmarshaller<StartCondition, JsonUnmarshallerContext>
+    public class ConflictExceptionUnmarshaller : IErrorResponseUnmarshaller<ConflictException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StartCondition IUnmarshaller<StartCondition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public ConflictException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public StartCondition Unmarshall(JsonUnmarshallerContext context)
+        public ConflictException Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
-            StartCondition unmarshalledObject = new StartCondition();
+            ConflictException unmarshalledObject = new ConflictException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("RequestID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EventStartCondition", targetDepth))
-                {
-                    var unmarshaller = EventStartConditionUnmarshaller.Instance;
-                    unmarshalledObject.EventStartCondition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SegmentStartCondition", targetDepth))
-                {
-                    var unmarshaller = SegmentConditionUnmarshaller.Instance;
-                    unmarshalledObject.SegmentStartCondition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequestID = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -87,13 +75,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-
-        private static StartConditionUnmarshaller _instance = new StartConditionUnmarshaller();        
+        private static ConflictExceptionUnmarshaller _instance = new ConflictExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartConditionUnmarshaller Instance
+        public static ConflictExceptionUnmarshaller Instance
         {
             get
             {
