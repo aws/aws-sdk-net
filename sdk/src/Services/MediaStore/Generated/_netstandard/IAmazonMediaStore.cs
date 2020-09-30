@@ -34,6 +34,9 @@ namespace Amazon.MediaStore
     /// An AWS Elemental MediaStore container is a namespace that holds folders and objects.
     /// You use a container endpoint to create, read, and delete objects.
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial interface IAmazonMediaStore : IAmazonService, IDisposable
     {
 #if AWS_ASYNC_ENUMERABLES_API

@@ -45,6 +45,9 @@ namespace Amazon.DAX
     /// application can begin taking advantage of the DAX cluster and realize significant
     /// improvements in read performance.
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonDAXClient : AmazonServiceClient, IAmazonDAX
     {
         private static IServiceMetadata serviceMetadata = new AmazonDAXMetadata();

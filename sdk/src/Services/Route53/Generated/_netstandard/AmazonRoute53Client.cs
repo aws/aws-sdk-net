@@ -40,6 +40,9 @@ namespace Amazon.Route53
     ///
     /// Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonRoute53Client : AmazonServiceClient, IAmazonRoute53
     {
         private static IServiceMetadata serviceMetadata = new AmazonRoute53Metadata();

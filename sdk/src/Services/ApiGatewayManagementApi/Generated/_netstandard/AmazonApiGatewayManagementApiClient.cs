@@ -44,6 +44,9 @@ namespace Amazon.ApiGatewayManagementApi
     /// or will be the endpoint corresponding to your API's custom domain and base path, if
     /// applicable.
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonApiGatewayManagementApiClient : AmazonServiceClient, IAmazonApiGatewayManagementApi
     {
         private static IServiceMetadata serviceMetadata = new AmazonApiGatewayManagementApiMetadata();

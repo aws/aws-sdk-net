@@ -85,6 +85,9 @@ namespace Amazon.Route53Resolver
     /// from your network to your VPCs (inbound queries), or both.
     /// </para>
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonRoute53ResolverClient : AmazonServiceClient, IAmazonRoute53Resolver
     {
         private static IServiceMetadata serviceMetadata = new AmazonRoute53ResolverMetadata();
