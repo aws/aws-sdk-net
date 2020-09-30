@@ -51,10 +51,42 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AssumeRolePolicyDocument);
             }
 
+            if(requestObject.IsSetAttachedManagedPolicies())
+            {
+                context.Writer.WritePropertyName("AttachedManagedPolicies");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAttachedManagedPoliciesListValue in requestObject.AttachedManagedPolicies)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AwsIamAttachedManagedPolicyMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAttachedManagedPoliciesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetCreateDate())
             {
                 context.Writer.WritePropertyName("CreateDate");
                 context.Writer.Write(requestObject.CreateDate);
+            }
+
+            if(requestObject.IsSetInstanceProfileList())
+            {
+                context.Writer.WritePropertyName("InstanceProfileList");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInstanceProfileListListValue in requestObject.InstanceProfileList)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AwsIamInstanceProfileMarshaller.Instance;
+                    marshaller.Marshall(requestObjectInstanceProfileListListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetMaxSessionDuration())
@@ -69,6 +101,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Path);
             }
 
+            if(requestObject.IsSetPermissionsBoundary())
+            {
+                context.Writer.WritePropertyName("PermissionsBoundary");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsIamPermissionsBoundaryMarshaller.Instance;
+                marshaller.Marshall(requestObject.PermissionsBoundary, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRoleId())
             {
                 context.Writer.WritePropertyName("RoleId");
@@ -79,6 +122,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("RoleName");
                 context.Writer.Write(requestObject.RoleName);
+            }
+
+            if(requestObject.IsSetRolePolicyList())
+            {
+                context.Writer.WritePropertyName("RolePolicyList");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRolePolicyListListValue in requestObject.RolePolicyList)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AwsIamRolePolicyMarshaller.Instance;
+                    marshaller.Marshall(requestObjectRolePolicyListListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }

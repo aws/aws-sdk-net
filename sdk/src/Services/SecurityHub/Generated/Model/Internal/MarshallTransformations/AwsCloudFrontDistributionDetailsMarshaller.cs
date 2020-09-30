@@ -45,6 +45,34 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsCloudFrontDistributionDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCacheBehaviors())
+            {
+                context.Writer.WritePropertyName("CacheBehaviors");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsCloudFrontDistributionCacheBehaviorsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CacheBehaviors, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDefaultCacheBehavior())
+            {
+                context.Writer.WritePropertyName("DefaultCacheBehavior");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsCloudFrontDistributionDefaultCacheBehaviorMarshaller.Instance;
+                marshaller.Marshall(requestObject.DefaultCacheBehavior, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDefaultRootObject())
+            {
+                context.Writer.WritePropertyName("DefaultRootObject");
+                context.Writer.Write(requestObject.DefaultRootObject);
+            }
+
             if(requestObject.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");
@@ -70,6 +98,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsCloudFrontDistributionLoggingMarshaller.Instance;
                 marshaller.Marshall(requestObject.Logging, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetOriginGroups())
+            {
+                context.Writer.WritePropertyName("OriginGroups");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsCloudFrontDistributionOriginGroupsMarshaller.Instance;
+                marshaller.Marshall(requestObject.OriginGroups, context);
 
                 context.Writer.WriteObjectEnd();
             }

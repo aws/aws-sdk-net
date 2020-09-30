@@ -70,10 +70,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssumeRolePolicyDocument = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AttachedManagedPolicies", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AwsIamAttachedManagedPolicy, AwsIamAttachedManagedPolicyUnmarshaller>(AwsIamAttachedManagedPolicyUnmarshaller.Instance);
+                    unmarshalledObject.AttachedManagedPolicies = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreateDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InstanceProfileList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AwsIamInstanceProfile, AwsIamInstanceProfileUnmarshaller>(AwsIamInstanceProfileUnmarshaller.Instance);
+                    unmarshalledObject.InstanceProfileList = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxSessionDuration", targetDepth))
@@ -88,6 +100,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Path = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PermissionsBoundary", targetDepth))
+                {
+                    var unmarshaller = AwsIamPermissionsBoundaryUnmarshaller.Instance;
+                    unmarshalledObject.PermissionsBoundary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RoleId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -98,6 +116,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RolePolicyList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AwsIamRolePolicy, AwsIamRolePolicyUnmarshaller>(AwsIamRolePolicyUnmarshaller.Instance);
+                    unmarshalledObject.RolePolicyList = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

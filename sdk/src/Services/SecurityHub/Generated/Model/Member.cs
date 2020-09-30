@@ -119,6 +119,39 @@ namespace Amazon.SecurityHub.Model
         /// The status of the relationship between the member account and its master account.
         /// 
         /// </para>
+        ///  
+        /// <para>
+        /// The status can have one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATED</code> - Indicates that the master account added the member account,
+        /// but has not yet invited the member account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INVITED</code> - Indicates that the master account invited the member account.
+        /// The member account has not yet responded to the invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ASSOCIATED</code> - Indicates that the member account accepted the invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REMOVED</code> - Indicates that the master account disassociated the member
+        /// account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RESIGNED</code> - Indicates that the member account disassociated themselves
+        /// from the master account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETED</code> - Indicates that the master account deleted the member account.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string MemberStatus
         {

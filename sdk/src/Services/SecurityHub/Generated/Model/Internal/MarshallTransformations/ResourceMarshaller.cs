@@ -74,6 +74,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Region);
             }
 
+            if(requestObject.IsSetResourceRole())
+            {
+                context.Writer.WritePropertyName("ResourceRole");
+                context.Writer.Write(requestObject.ResourceRole);
+            }
+
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

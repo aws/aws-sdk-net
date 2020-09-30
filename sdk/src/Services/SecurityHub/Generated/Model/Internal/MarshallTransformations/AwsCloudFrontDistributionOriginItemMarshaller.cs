@@ -63,6 +63,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.OriginPath);
             }
 
+            if(requestObject.IsSetS3OriginConfig())
+            {
+                context.Writer.WritePropertyName("S3OriginConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsCloudFrontDistributionOriginS3OriginConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3OriginConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

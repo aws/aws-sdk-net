@@ -33,13 +33,74 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsCloudFrontDistributionDetails
     {
+        private AwsCloudFrontDistributionCacheBehaviors _cacheBehaviors;
+        private AwsCloudFrontDistributionDefaultCacheBehavior _defaultCacheBehavior;
+        private string _defaultRootObject;
         private string _domainName;
         private string _eTag;
         private string _lastModifiedTime;
         private AwsCloudFrontDistributionLogging _logging;
+        private AwsCloudFrontDistributionOriginGroups _originGroups;
         private AwsCloudFrontDistributionOrigins _origins;
         private string _status;
         private string _webAclId;
+
+        /// <summary>
+        /// Gets and sets the property CacheBehaviors. 
+        /// <para>
+        /// Provides information about the cache configuration for the distribution.
+        /// </para>
+        /// </summary>
+        public AwsCloudFrontDistributionCacheBehaviors CacheBehaviors
+        {
+            get { return this._cacheBehaviors; }
+            set { this._cacheBehaviors = value; }
+        }
+
+        // Check to see if CacheBehaviors property is set
+        internal bool IsSetCacheBehaviors()
+        {
+            return this._cacheBehaviors != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultCacheBehavior. 
+        /// <para>
+        /// The default cache behavior for the configuration.
+        /// </para>
+        /// </summary>
+        public AwsCloudFrontDistributionDefaultCacheBehavior DefaultCacheBehavior
+        {
+            get { return this._defaultCacheBehavior; }
+            set { this._defaultCacheBehavior = value; }
+        }
+
+        // Check to see if DefaultCacheBehavior property is set
+        internal bool IsSetDefaultCacheBehavior()
+        {
+            return this._defaultCacheBehavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultRootObject. 
+        /// <para>
+        /// The object that CloudFront sends in response to requests from the origin (for example,
+        /// index.html) when a viewer requests the root URL for the distribution (http://www.example.com)
+        /// instead of an object in your distribution (http://www.example.com/product-description.html).
+        /// 
+        /// </para>
+        /// </summary>
+        public string DefaultRootObject
+        {
+            get { return this._defaultRootObject; }
+            set { this._defaultRootObject = value; }
+        }
+
+        // Check to see if DefaultRootObject property is set
+        internal bool IsSetDefaultRootObject()
+        {
+            return this._defaultRootObject != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -117,6 +178,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetLogging()
         {
             return this._logging != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginGroups. 
+        /// <para>
+        /// Provides information about the origin groups in the distribution.
+        /// </para>
+        /// </summary>
+        public AwsCloudFrontDistributionOriginGroups OriginGroups
+        {
+            get { return this._originGroups; }
+            set { this._originGroups = value; }
+        }
+
+        // Check to see if OriginGroups property is set
+        internal bool IsSetOriginGroups()
+        {
+            return this._originGroups != null;
         }
 
         /// <summary>

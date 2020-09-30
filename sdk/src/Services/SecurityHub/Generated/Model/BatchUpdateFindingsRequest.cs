@@ -42,8 +42,8 @@ namespace Amazon.SecurityHub.Model
     /// </para>
     ///  
     /// <para>
-    /// Master accounts can use <code>BatchUpdateFindings</code> to update the following finding
-    /// fields and objects.
+    /// Master and member accounts can use <code>BatchUpdateFindings</code> to update the
+    /// following finding fields and objects.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -83,7 +83,10 @@ namespace Amazon.SecurityHub.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Member accounts can only use <code>BatchUpdateFindings</code> to update the Note object.
+    /// You can configure IAM policies to restrict access to fields and field values. For
+    /// example, you might not want member accounts to be able to suppress findings or change
+    /// the finding severity. See <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
+    /// access to BatchUpdateFindings</a> in the <i>AWS Security Hub User Guide</i>.
     /// </para>
     /// </summary>
     public partial class BatchUpdateFindingsRequest : AmazonSecurityHubRequest

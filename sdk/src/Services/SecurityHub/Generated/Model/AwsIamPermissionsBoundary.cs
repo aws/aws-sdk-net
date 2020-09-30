@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Information about the policy used to set the permissions boundary for an IAM user.
+    /// Information about the policy used to set the permissions boundary for an IAM principal.
     /// </summary>
     public partial class AwsIamPermissionsBoundary
     {
@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property PermissionsBoundaryArn. 
         /// <para>
-        /// The ARN of the policy used to set the permissions boundary for the user.
+        /// The ARN of the policy used to set the permissions boundary.
         /// </para>
         /// </summary>
         public string PermissionsBoundaryArn

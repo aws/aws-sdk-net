@@ -45,6 +45,50 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAwsApiGatewayRestApi())
+            {
+                context.Writer.WritePropertyName("AwsApiGatewayRestApi");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsApiGatewayRestApiDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsApiGatewayRestApi, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsApiGatewayStage())
+            {
+                context.Writer.WritePropertyName("AwsApiGatewayStage");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsApiGatewayStageDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsApiGatewayStage, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsApiGatewayV2Api())
+            {
+                context.Writer.WritePropertyName("AwsApiGatewayV2Api");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsApiGatewayV2ApiDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsApiGatewayV2Api, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsApiGatewayV2Stage())
+            {
+                context.Writer.WritePropertyName("AwsApiGatewayV2Stage");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsApiGatewayV2StageDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsApiGatewayV2Stage, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsAutoScalingAutoScalingGroup())
             {
                 context.Writer.WritePropertyName("AwsAutoScalingAutoScalingGroup");
@@ -56,6 +100,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsCertificateManagerCertificate())
+            {
+                context.Writer.WritePropertyName("AwsCertificateManagerCertificate");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsCertificateManagerCertificateDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsCertificateManagerCertificate, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsCloudFrontDistribution())
             {
                 context.Writer.WritePropertyName("AwsCloudFrontDistribution");
@@ -63,6 +118,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsCloudFrontDistributionDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsCloudFrontDistribution, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsCloudTrailTrail())
+            {
+                context.Writer.WritePropertyName("AwsCloudTrailTrail");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsCloudTrailTrailDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsCloudTrailTrail, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -166,6 +232,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsElbLoadBalancer())
+            {
+                context.Writer.WritePropertyName("AwsElbLoadBalancer");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsElbLoadBalancerDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsElbLoadBalancer, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsElbv2LoadBalancer())
             {
                 context.Writer.WritePropertyName("AwsElbv2LoadBalancer");
@@ -184,6 +261,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsIamAccessKeyDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsIamAccessKey, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsIamGroup())
+            {
+                context.Writer.WritePropertyName("AwsIamGroup");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsIamGroupDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsIamGroup, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -294,6 +382,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsRdsDbSnapshotDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsRdsDbSnapshot, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsRedshiftCluster())
+            {
+                context.Writer.WritePropertyName("AwsRedshiftCluster");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsRedshiftClusterDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsRedshiftCluster, context);
 
                 context.Writer.WriteObjectEnd();
             }

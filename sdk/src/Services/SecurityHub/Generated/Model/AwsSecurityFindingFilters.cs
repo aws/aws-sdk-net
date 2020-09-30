@@ -31,6 +31,12 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// A collection of attributes that are applied to all active Security Hub-aggregated
     /// findings and that result in a subset of findings that are included in this insight.
+    /// 
+    ///  
+    /// <para>
+    /// You can filter by up to 10 finding attributes. For each attribute, you can provide
+    /// up to 20 filter values.
+    /// </para>
     /// </summary>
     public partial class AwsSecurityFindingFilters
     {

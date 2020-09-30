@@ -37,6 +37,7 @@ namespace Amazon.SecurityHub.Model
         private string _id;
         private Partition _partition;
         private string _region;
+        private string _resourceRole;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _type;
 
@@ -111,6 +112,21 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetRegion()
         {
             return this._region != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceRole.
+        /// </summary>
+        public string ResourceRole
+        {
+            get { return this._resourceRole; }
+            set { this._resourceRole = value; }
+        }
+
+        // Check to see if ResourceRole property is set
+        internal bool IsSetResourceRole()
+        {
+            return this._resourceRole != null;
         }
 
         /// <summary>

@@ -33,12 +33,51 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsIamAccessKeyDetails
     {
+        private string _accessKeyId;
+        private string _accountId;
         private string _createdAt;
         private string _principalId;
         private string _principalName;
         private string _principalType;
+        private AwsIamAccessKeySessionContext _sessionContext;
         private AwsIamAccessKeyStatus _status;
         private string _userName;
+
+        /// <summary>
+        /// Gets and sets the property AccessKeyId. 
+        /// <para>
+        /// The identifier of the access key.
+        /// </para>
+        /// </summary>
+        public string AccessKeyId
+        {
+            get { return this._accessKeyId; }
+            set { this._accessKeyId = value; }
+        }
+
+        // Check to see if AccessKeyId property is set
+        internal bool IsSetAccessKeyId()
+        {
+            return this._accessKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The AWS account ID of the account for the key.
+        /// </para>
+        /// </summary>
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -116,6 +155,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetPrincipalType()
         {
             return this._principalType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionContext. 
+        /// <para>
+        /// Information about the session that the key was used for.
+        /// </para>
+        /// </summary>
+        public AwsIamAccessKeySessionContext SessionContext
+        {
+            get { return this._sessionContext; }
+            set { this._sessionContext = value; }
+        }
+
+        // Check to see if SessionContext property is set
+        internal bool IsSetSessionContext()
+        {
+            return this._sessionContext != null;
         }
 
         /// <summary>

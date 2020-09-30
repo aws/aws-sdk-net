@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A managed policy that is attached to an IAM user.
+    /// A managed policy that is attached to an IAM principal.
     /// </summary>
     public partial class AwsIamAttachedManagedPolicy
     {

@@ -38,6 +38,7 @@ namespace Amazon.SecurityHub.Model
         private string _domainName;
         private string _id;
         private string _originPath;
+        private AwsCloudFrontDistributionOriginS3OriginConfig _s3OriginConfig;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -93,6 +94,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetOriginPath()
         {
             return this._originPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3OriginConfig. 
+        /// <para>
+        /// An origin that is an S3 bucket that is not configured with static website hosting.
+        /// </para>
+        /// </summary>
+        public AwsCloudFrontDistributionOriginS3OriginConfig S3OriginConfig
+        {
+            get { return this._s3OriginConfig; }
+            set { this._s3OriginConfig = value; }
+        }
+
+        // Check to see if S3OriginConfig property is set
+        internal bool IsSetS3OriginConfig()
+        {
+            return this._s3OriginConfig != null;
         }
 
     }

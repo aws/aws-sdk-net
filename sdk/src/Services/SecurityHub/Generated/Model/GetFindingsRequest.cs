@@ -46,6 +46,11 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
+        /// You can filter by up to 10 finding attributes. For each attribute, you can provide
+        /// up to 20 filter values.
+        /// </para>
+        ///  
+        /// <para>
         /// Note that in the available filter fields, <code>WorkflowState</code> is deprecated.
         /// To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.
         /// </para>

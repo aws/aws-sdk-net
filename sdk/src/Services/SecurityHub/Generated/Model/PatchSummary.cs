@@ -123,7 +123,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property InstalledPendingReboot. 
         /// <para>
-        /// The number of patches that were installed since the last time the instance was rebooted.
+        /// The number of patches that were applied, but that require the instance to be rebooted
+        /// in order to be marked as installed.
         /// </para>
         /// </summary>
         public int InstalledPendingReboot

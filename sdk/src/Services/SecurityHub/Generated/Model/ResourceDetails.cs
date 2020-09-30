@@ -50,8 +50,14 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class ResourceDetails
     {
+        private AwsApiGatewayRestApiDetails _awsApiGatewayRestApi;
+        private AwsApiGatewayStageDetails _awsApiGatewayStage;
+        private AwsApiGatewayV2ApiDetails _awsApiGatewayV2Api;
+        private AwsApiGatewayV2StageDetails _awsApiGatewayV2Stage;
         private AwsAutoScalingAutoScalingGroupDetails _awsAutoScalingAutoScalingGroup;
+        private AwsCertificateManagerCertificateDetails _awsCertificateManagerCertificate;
         private AwsCloudFrontDistributionDetails _awsCloudFrontDistribution;
+        private AwsCloudTrailTrailDetails _awsCloudTrailTrail;
         private AwsCodeBuildProjectDetails _awsCodeBuildProject;
         private AwsDynamoDbTableDetails _awsDynamoDbTable;
         private AwsEc2EipDetails _awsEc2Eip;
@@ -61,8 +67,10 @@ namespace Amazon.SecurityHub.Model
         private AwsEc2VolumeDetails _awsEc2Volume;
         private AwsEc2VpcDetails _awsEc2Vpc;
         private AwsElasticsearchDomainDetails _awsElasticsearchDomain;
+        private AwsElbLoadBalancerDetails _awsElbLoadBalancer;
         private AwsElbv2LoadBalancerDetails _awsElbv2LoadBalancer;
         private AwsIamAccessKeyDetails _awsIamAccessKey;
+        private AwsIamGroupDetails _awsIamGroup;
         private AwsIamPolicyDetails _awsIamPolicy;
         private AwsIamRoleDetails _awsIamRole;
         private AwsIamUserDetails _awsIamUser;
@@ -73,6 +81,7 @@ namespace Amazon.SecurityHub.Model
         private AwsRdsDbClusterSnapshotDetails _awsRdsDbClusterSnapshot;
         private AwsRdsDbInstanceDetails _awsRdsDbInstance;
         private AwsRdsDbSnapshotDetails _awsRdsDbSnapshot;
+        private AwsRedshiftClusterDetails _awsRedshiftCluster;
         private AwsS3BucketDetails _awsS3Bucket;
         private AwsS3ObjectDetails _awsS3Object;
         private AwsSecretsManagerSecretDetails _awsSecretsManagerSecret;
@@ -81,6 +90,66 @@ namespace Amazon.SecurityHub.Model
         private AwsWafWebAclDetails _awsWafWebAcl;
         private ContainerDetails _container;
         private Dictionary<string, string> _other = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AwsApiGatewayRestApi.
+        /// </summary>
+        public AwsApiGatewayRestApiDetails AwsApiGatewayRestApi
+        {
+            get { return this._awsApiGatewayRestApi; }
+            set { this._awsApiGatewayRestApi = value; }
+        }
+
+        // Check to see if AwsApiGatewayRestApi property is set
+        internal bool IsSetAwsApiGatewayRestApi()
+        {
+            return this._awsApiGatewayRestApi != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsApiGatewayStage.
+        /// </summary>
+        public AwsApiGatewayStageDetails AwsApiGatewayStage
+        {
+            get { return this._awsApiGatewayStage; }
+            set { this._awsApiGatewayStage = value; }
+        }
+
+        // Check to see if AwsApiGatewayStage property is set
+        internal bool IsSetAwsApiGatewayStage()
+        {
+            return this._awsApiGatewayStage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsApiGatewayV2Api.
+        /// </summary>
+        public AwsApiGatewayV2ApiDetails AwsApiGatewayV2Api
+        {
+            get { return this._awsApiGatewayV2Api; }
+            set { this._awsApiGatewayV2Api = value; }
+        }
+
+        // Check to see if AwsApiGatewayV2Api property is set
+        internal bool IsSetAwsApiGatewayV2Api()
+        {
+            return this._awsApiGatewayV2Api != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsApiGatewayV2Stage.
+        /// </summary>
+        public AwsApiGatewayV2StageDetails AwsApiGatewayV2Stage
+        {
+            get { return this._awsApiGatewayV2Stage; }
+            set { this._awsApiGatewayV2Stage = value; }
+        }
+
+        // Check to see if AwsApiGatewayV2Stage property is set
+        internal bool IsSetAwsApiGatewayV2Stage()
+        {
+            return this._awsApiGatewayV2Stage != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AwsAutoScalingAutoScalingGroup. 
@@ -101,6 +170,21 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsCertificateManagerCertificate.
+        /// </summary>
+        public AwsCertificateManagerCertificateDetails AwsCertificateManagerCertificate
+        {
+            get { return this._awsCertificateManagerCertificate; }
+            set { this._awsCertificateManagerCertificate = value; }
+        }
+
+        // Check to see if AwsCertificateManagerCertificate property is set
+        internal bool IsSetAwsCertificateManagerCertificate()
+        {
+            return this._awsCertificateManagerCertificate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsCloudFrontDistribution. 
         /// <para>
         /// Details about a CloudFront distribution.
@@ -116,6 +200,21 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsCloudFrontDistribution()
         {
             return this._awsCloudFrontDistribution != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsCloudTrailTrail.
+        /// </summary>
+        public AwsCloudTrailTrailDetails AwsCloudTrailTrail
+        {
+            get { return this._awsCloudTrailTrail; }
+            set { this._awsCloudTrailTrail = value; }
+        }
+
+        // Check to see if AwsCloudTrailTrail property is set
+        internal bool IsSetAwsCloudTrailTrail()
+        {
+            return this._awsCloudTrailTrail != null;
         }
 
         /// <summary>
@@ -281,6 +380,21 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsElbLoadBalancer.
+        /// </summary>
+        public AwsElbLoadBalancerDetails AwsElbLoadBalancer
+        {
+            get { return this._awsElbLoadBalancer; }
+            set { this._awsElbLoadBalancer = value; }
+        }
+
+        // Check to see if AwsElbLoadBalancer property is set
+        internal bool IsSetAwsElbLoadBalancer()
+        {
+            return this._awsElbLoadBalancer != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsElbv2LoadBalancer. 
         /// <para>
         /// Details about a load balancer.
@@ -314,6 +428,21 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsIamAccessKey()
         {
             return this._awsIamAccessKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsIamGroup.
+        /// </summary>
+        public AwsIamGroupDetails AwsIamGroup
+        {
+            get { return this._awsIamGroup; }
+            set { this._awsIamGroup = value; }
+        }
+
+        // Check to see if AwsIamGroup property is set
+        internal bool IsSetAwsIamGroup()
+        {
+            return this._awsIamGroup != null;
         }
 
         /// <summary>
@@ -494,6 +623,21 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsRdsDbSnapshot()
         {
             return this._awsRdsDbSnapshot != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsRedshiftCluster.
+        /// </summary>
+        public AwsRedshiftClusterDetails AwsRedshiftCluster
+        {
+            get { return this._awsRedshiftCluster; }
+            set { this._awsRedshiftCluster = value; }
+        }
+
+        // Check to see if AwsRedshiftCluster property is set
+        internal bool IsSetAwsRedshiftCluster()
+        {
+            return this._awsRedshiftCluster != null;
         }
 
         /// <summary>

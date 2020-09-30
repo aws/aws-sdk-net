@@ -34,11 +34,15 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsIamRoleDetails
     {
         private string _assumeRolePolicyDocument;
+        private List<AwsIamAttachedManagedPolicy> _attachedManagedPolicies = new List<AwsIamAttachedManagedPolicy>();
         private string _createDate;
+        private List<AwsIamInstanceProfile> _instanceProfileList = new List<AwsIamInstanceProfile>();
         private int? _maxSessionDuration;
         private string _path;
+        private AwsIamPermissionsBoundary _permissionsBoundary;
         private string _roleId;
         private string _roleName;
+        private List<AwsIamRolePolicy> _rolePolicyList = new List<AwsIamRolePolicy>();
 
         /// <summary>
         /// Gets and sets the property AssumeRolePolicyDocument. 
@@ -57,6 +61,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAssumeRolePolicyDocument()
         {
             return this._assumeRolePolicyDocument != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttachedManagedPolicies. 
+        /// <para>
+        /// The list of the managed policies that are attached to the role.
+        /// </para>
+        /// </summary>
+        public List<AwsIamAttachedManagedPolicy> AttachedManagedPolicies
+        {
+            get { return this._attachedManagedPolicies; }
+            set { this._attachedManagedPolicies = value; }
+        }
+
+        // Check to see if AttachedManagedPolicies property is set
+        internal bool IsSetAttachedManagedPolicies()
+        {
+            return this._attachedManagedPolicies != null && this._attachedManagedPolicies.Count > 0; 
         }
 
         /// <summary>
@@ -81,6 +103,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetCreateDate()
         {
             return this._createDate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceProfileList. 
+        /// <para>
+        /// The list of instance profiles that contain this role.
+        /// </para>
+        /// </summary>
+        public List<AwsIamInstanceProfile> InstanceProfileList
+        {
+            get { return this._instanceProfileList; }
+            set { this._instanceProfileList = value; }
+        }
+
+        // Check to see if InstanceProfileList property is set
+        internal bool IsSetInstanceProfileList()
+        {
+            return this._instanceProfileList != null && this._instanceProfileList.Count > 0; 
         }
 
         /// <summary>
@@ -120,6 +160,21 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PermissionsBoundary.
+        /// </summary>
+        public AwsIamPermissionsBoundary PermissionsBoundary
+        {
+            get { return this._permissionsBoundary; }
+            set { this._permissionsBoundary = value; }
+        }
+
+        // Check to see if PermissionsBoundary property is set
+        internal bool IsSetPermissionsBoundary()
+        {
+            return this._permissionsBoundary != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleId. 
         /// <para>
         /// The stable and unique string identifying the role.
@@ -153,6 +208,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetRoleName()
         {
             return this._roleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RolePolicyList. 
+        /// <para>
+        /// The list of inline policies that are embedded in the role.
+        /// </para>
+        /// </summary>
+        public List<AwsIamRolePolicy> RolePolicyList
+        {
+            get { return this._rolePolicyList; }
+            set { this._rolePolicyList = value; }
+        }
+
+        // Check to see if RolePolicyList property is set
+        internal bool IsSetRolePolicyList()
+        {
+            return this._rolePolicyList != null && this._rolePolicyList.Count > 0; 
         }
 
     }

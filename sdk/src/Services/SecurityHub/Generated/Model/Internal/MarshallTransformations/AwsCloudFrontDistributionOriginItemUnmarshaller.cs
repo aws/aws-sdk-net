@@ -82,6 +82,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.OriginPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("S3OriginConfig", targetDepth))
+                {
+                    var unmarshaller = AwsCloudFrontDistributionOriginS3OriginConfigUnmarshaller.Instance;
+                    unmarshalledObject.S3OriginConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
