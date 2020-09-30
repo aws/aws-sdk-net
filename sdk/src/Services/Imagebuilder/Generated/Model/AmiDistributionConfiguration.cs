@@ -38,6 +38,7 @@ namespace Amazon.Imagebuilder.Model
         private string _kmsKeyId;
         private LaunchPermissionConfiguration _launchPermission;
         private string _name;
+        private List<string> _targetAccountIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property AmiTags. 
@@ -132,6 +133,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetAccountIds. 
+        /// <para>
+        ///  The ID of an account to which you want to distribute an image. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<string> TargetAccountIds
+        {
+            get { return this._targetAccountIds; }
+            set { this._targetAccountIds = value; }
+        }
+
+        // Check to see if TargetAccountIds property is set
+        internal bool IsSetTargetAccountIds()
+        {
+            return this._targetAccountIds != null && this._targetAccountIds.Count > 0; 
         }
 
     }

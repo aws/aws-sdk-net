@@ -61,6 +61,7 @@ namespace Amazon.Imagebuilder.Model
         /// The License Manager Configuration to associate with the AMI in the specified Region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<string> LicenseConfigurationArns
         {
             get { return this._licenseConfigurationArns; }

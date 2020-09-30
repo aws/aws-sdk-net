@@ -88,6 +88,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetTargetAccountIds())
+            {
+                context.Writer.WritePropertyName("targetAccountIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTargetAccountIdsListValue in requestObject.TargetAccountIds)
+                {
+                        context.Writer.Write(requestObjectTargetAccountIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>
