@@ -703,6 +703,10 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly DataSourceType TERADATA = new DataSourceType("TERADATA");
         /// <summary>
+        /// Constant TIMESTREAM for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType TIMESTREAM = new DataSourceType("TIMESTREAM");
+        /// <summary>
         /// Constant TWITTER for DataSourceType
         /// </summary>
         public static readonly DataSourceType TWITTER = new DataSourceType("TWITTER");
