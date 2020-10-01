@@ -29,7 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
+    /// Placement group configuration for an Amazon EMR cluster. The configuration specifies
+    /// the placement strategy that can be applied to instance roles during cluster creation.
     /// 
+    ///  
+    /// <para>
+    /// To use this configuration, consider attaching managed policy AmazonElasticMapReducePlacementGroupPolicy
+    /// to the EMR role.
+    /// </para>
     /// </summary>
     public partial class PlacementGroupConfig
     {
@@ -37,7 +44,14 @@ namespace Amazon.ElasticMapReduce.Model
         private PlacementGroupStrategy _placementStrategy;
 
         /// <summary>
-        /// Gets and sets the property InstanceRole.
+        /// Gets and sets the property InstanceRole. 
+        /// <para>
+        /// Role of the instance in the cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Starting with Amazon EMR version 5.23.0, the only supported instance role is <code>MASTER</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public InstanceRoleType InstanceRole
@@ -53,7 +67,15 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PlacementStrategy.
+        /// Gets and sets the property PlacementStrategy. 
+        /// <para>
+        /// EC2 Placement Group strategy associated with instance role.
+        /// </para>
+        ///  
+        /// <para>
+        /// Starting with Amazon EMR version 5.23.0, the only supported placement strategy is
+        /// <code>SPREAD</code> for the <code>MASTER</code> instance role.
+        /// </para>
         /// </summary>
         public PlacementGroupStrategy PlacementStrategy
         {

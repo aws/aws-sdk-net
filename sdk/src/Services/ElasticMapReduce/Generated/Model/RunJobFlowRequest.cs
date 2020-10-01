@@ -482,7 +482,10 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PlacementGroupConfigs.
+        /// Gets and sets the property PlacementGroupConfigs. 
+        /// <para>
+        /// The specified placement group configuration for an Amazon EMR cluster.
+        /// </para>
         /// </summary>
         public List<PlacementGroupConfig> PlacementGroupConfigs
         {
