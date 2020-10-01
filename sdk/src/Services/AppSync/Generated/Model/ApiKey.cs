@@ -72,18 +72,19 @@ namespace Amazon.AppSync.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>ListApiKeys</code> returns the expiration time in seconds.
+    ///  <code>ListApiKeys</code> returns the expiration time and deletion time in seconds.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CreateApiKey</code> returns the expiration time in seconds and accepts a user-provided
-    /// expiration time in seconds.
+    ///  <code>CreateApiKey</code> returns the expiration time and deletion time in seconds
+    /// and accepts a user-provided expiration time in seconds.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdateApiKey</code> returns the expiration time in seconds and accepts a user-provided
-    /// expiration time in seconds. Key expiration can only be updated while the key has not
-    /// expired.
+    ///  <code>UpdateApiKey</code> returns the expiration time and and deletion time in seconds
+    /// and accepts a user-provided expiration time in seconds. Expired API keys are kept
+    /// for 60 days after the expiration time. Key expiration time can be updated while the
+    /// key is not deleted. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -91,15 +92,41 @@ namespace Amazon.AppSync.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Expiration is stored in Amazon DynamoDB as seconds.
+    /// Expiration is stored in Amazon DynamoDB as seconds. After the expiration time, using
+    /// the key to authenticate will fail. But the key can be reinstated before deletion.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Deletion is stored in Amazon DynamoDB as seconds. The key will be deleted after deletion
+    /// time. 
     /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class ApiKey
     {
+        private long? _deletes;
         private string _description;
         private long? _expires;
         private string _id;
+
+        /// <summary>
+        /// Gets and sets the property Deletes. 
+        /// <para>
+        /// The time after which the API key is deleted. The date is represented as seconds since
+        /// the epoch, rounded down to the nearest hour.
+        /// </para>
+        /// </summary>
+        public long Deletes
+        {
+            get { return this._deletes.GetValueOrDefault(); }
+            set { this._deletes = value; }
+        }
+
+        // Check to see if Deletes property is set
+        internal bool IsSetDeletes()
+        {
+            return this._deletes.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

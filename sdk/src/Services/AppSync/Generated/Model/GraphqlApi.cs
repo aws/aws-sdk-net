@@ -43,6 +43,7 @@ namespace Amazon.AppSync.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private Dictionary<string, string> _uris = new Dictionary<string, string>();
         private UserPoolConfig _userPoolConfig;
+        private string _wafWebAclArn;
         private bool? _xrayEnabled;
 
         /// <summary>
@@ -225,6 +226,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetUserPoolConfig()
         {
             return this._userPoolConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WafWebAclArn. 
+        /// <para>
+        /// The ARN of the AWS WAF ACL associated with this <code>GraphqlApi</code> if one exists.
+        /// </para>
+        /// </summary>
+        public string WafWebAclArn
+        {
+            get { return this._wafWebAclArn; }
+            set { this._wafWebAclArn = value; }
+        }
+
+        // Check to see if WafWebAclArn property is set
+        internal bool IsSetWafWebAclArn()
+        {
+            return this._wafWebAclArn != null;
         }
 
         /// <summary>

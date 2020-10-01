@@ -124,6 +124,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.UserPoolConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("wafWebAclArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WafWebAclArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("xrayEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

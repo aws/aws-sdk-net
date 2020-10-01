@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApiKey operation.
-    /// Updates an API key.
+    /// Updates an API key. The key can be updated while it is not deleted.
     /// </summary>
     public partial class UpdateApiKeyRequest : AmazonAppSyncRequest
     {
