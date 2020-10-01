@@ -34,11 +34,30 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetPlanRequest : AmazonGlueRequest
     {
+        private Dictionary<string, string> _additionalPlanOptionsMap = new Dictionary<string, string>();
         private Language _language;
         private Location _location;
         private List<MappingEntry> _mapping = new List<MappingEntry>();
         private List<CatalogEntry> _sinks = new List<CatalogEntry>();
         private CatalogEntry _source;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalPlanOptionsMap. 
+        /// <para>
+        /// A map to hold additional optional key-value parameters.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> AdditionalPlanOptionsMap
+        {
+            get { return this._additionalPlanOptionsMap; }
+            set { this._additionalPlanOptionsMap = value; }
+        }
+
+        // Check to see if AdditionalPlanOptionsMap property is set
+        internal bool IsSetAdditionalPlanOptionsMap()
+        {
+            return this._additionalPlanOptionsMap != null && this._additionalPlanOptionsMap.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Language. 
