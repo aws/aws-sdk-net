@@ -41,7 +41,7 @@ namespace Amazon.WAFV2.Model
         /// The IAM policy that is attached to the specified rule group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=395000)]
         public string Policy
         {
             get { return this._policy; }

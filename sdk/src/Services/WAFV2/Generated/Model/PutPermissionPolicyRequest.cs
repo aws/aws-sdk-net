@@ -99,7 +99,7 @@ namespace Amazon.WAFV2.Model
         /// Policies</a>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=395000)]
         public string Policy
         {
             get { return this._policy; }

@@ -1622,6 +1622,10 @@ namespace Amazon.WAFV2
         /// Constant APPLICATION_LOAD_BALANCER for ResourceType
         /// </summary>
         public static readonly ResourceType APPLICATION_LOAD_BALANCER = new ResourceType("APPLICATION_LOAD_BALANCER");
+        /// <summary>
+        /// Constant APPSYNC for ResourceType
+        /// </summary>
+        public static readonly ResourceType APPSYNC = new ResourceType("APPSYNC");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

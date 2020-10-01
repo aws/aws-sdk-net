@@ -49,8 +49,8 @@ namespace Amazon.WAFV2.Model
     /// block) for any request that does not match any of the rules. The rules in a Web ACL
     /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
     /// group. You can associate a Web ACL with one or more AWS resources to protect. The
-    /// resources can be Amazon CloudFront, an Amazon API Gateway API, or an Application Load
-    /// Balancer. 
+    /// resources can be Amazon CloudFront, an Amazon API Gateway REST API, an Application
+    /// Load Balancer, or an AWS AppSync GraphQL API. 
     /// </para>
     /// </summary>
     public partial class UpdateWebACLRequest : AmazonWAFV2Request
@@ -193,8 +193,8 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property Scope. 
         /// <para>
         /// Specifies whether this is for an AWS CloudFront distribution or for a regional application.
-        /// A regional application can be an Application Load Balancer (ALB) or an API Gateway
-        /// stage. 
+        /// A regional application can be an Application Load Balancer (ALB), an API Gateway REST
+        /// API, or an AppSync GraphQL API. 
         /// </para>
         ///  
         /// <para>

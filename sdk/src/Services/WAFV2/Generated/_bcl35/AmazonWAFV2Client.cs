@@ -59,13 +59,14 @@ namespace Amazon.WAFV2
     ///  </note> 
     /// <para>
     /// AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests
-    /// that are forwarded to Amazon CloudFront, an Amazon API Gateway API, or an Application
-    /// Load Balancer. AWS WAF also lets you control access to your content. Based on conditions
-    /// that you specify, such as the IP addresses that requests originate from or the values
-    /// of query strings, API Gateway, CloudFront, or the Application Load Balancer responds
-    /// to requests either with the requested content or with an HTTP 403 status code (Forbidden).
-    /// You also can configure CloudFront to return a custom error page when a request is
-    /// blocked.
+    /// that are forwarded to Amazon CloudFront, an Amazon API Gateway REST API, an Application
+    /// Load Balancer, or an AWS AppSync GraphQL API. AWS WAF also lets you control access
+    /// to your content. Based on conditions that you specify, such as the IP addresses that
+    /// requests originate from or the values of query strings, the API Gateway REST API,
+    /// CloudFront distribution, the Application Load Balancer, or the AWS AppSync GraphQL
+    /// API responds to requests either with the requested content or with an HTTP 403 status
+    /// code (Forbidden). You also can configure CloudFront to return a custom error page
+    /// when a request is blocked.
     /// </para>
     ///  
     /// <para>
@@ -82,7 +83,8 @@ namespace Amazon.WAFV2
     ///  <ul> <li> 
     /// <para>
     /// For regional applications, you can use any of the endpoints in the list. A regional
-    /// application can be an Application Load Balancer (ALB) or an API Gateway stage. 
+    /// application can be an Application Load Balancer (ALB), an API Gateway REST API, or
+    /// an AppSync GraphQL API. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -334,8 +336,8 @@ namespace Amazon.WAFV2
         ///  </note> 
         /// <para>
         /// Associates a Web ACL with a regional application resource, to protect the resource.
-        /// A regional application can be an Application Load Balancer (ALB) or an API Gateway
-        /// stage. 
+        /// A regional application can be an Application Load Balancer (ALB), an API Gateway REST
+        /// API, or an AppSync GraphQL API. 
         /// </para>
         ///  
         /// <para>
@@ -952,8 +954,8 @@ namespace Amazon.WAFV2
         /// block) for any request that does not match any of the rules. The rules in a Web ACL
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
         /// group. You can associate a Web ACL with one or more AWS resources to protect. The
-        /// resources can be Amazon CloudFront, an Amazon API Gateway API, or an Application Load
-        /// Balancer. 
+        /// resources can be Amazon CloudFront, an Amazon API Gateway REST API, an Application
+        /// Load Balancer, or an AWS AppSync GraphQL API. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebACL service method.</param>
@@ -1950,7 +1952,8 @@ namespace Amazon.WAFV2
         ///  </note> 
         /// <para>
         /// Disassociates a Web ACL from a regional application resource. A regional application
-        /// can be an Application Load Balancer (ALB) or an API Gateway stage. 
+        /// can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync
+        /// GraphQL API. 
         /// </para>
         ///  
         /// <para>
@@ -4647,8 +4650,8 @@ namespace Amazon.WAFV2
         /// block) for any request that does not match any of the rules. The rules in a Web ACL
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
         /// group. You can associate a Web ACL with one or more AWS resources to protect. The
-        /// resources can be Amazon CloudFront, an Amazon API Gateway API, or an Application Load
-        /// Balancer. 
+        /// resources can be Amazon CloudFront, an Amazon API Gateway REST API, an Application
+        /// Load Balancer, or an AWS AppSync GraphQL API. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWebACL service method.</param>

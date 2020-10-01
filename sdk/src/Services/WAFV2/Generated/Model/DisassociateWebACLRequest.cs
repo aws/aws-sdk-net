@@ -40,7 +40,8 @@ namespace Amazon.WAFV2.Model
     ///  </note> 
     /// <para>
     /// Disassociates a Web ACL from a regional application resource. A regional application
-    /// can be an Application Load Balancer (ALB) or an API Gateway stage. 
+    /// can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync
+    /// GraphQL API. 
     /// </para>
     ///  
     /// <para>
@@ -69,7 +70,12 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+        /// For an API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+        /// </code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i>
         /// </code> 
         /// </para>
         ///  </li> </ul>

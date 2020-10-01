@@ -225,6 +225,8 @@
   <property-value-rule>
     <property>Amazon.WAFV2.Model.GetPermissionPolicyResponse.Policy</property>
     <min>1</min>
+    <max>395000</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.GetRateBasedStatementManagedKeysRequest.RuleName</property>
@@ -455,6 +457,8 @@
   <property-value-rule>
     <property>Amazon.WAFV2.Model.PutPermissionPolicyRequest.Policy</property>
     <min>1</min>
+    <max>395000</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.PutPermissionPolicyRequest.ResourceArn</property>
