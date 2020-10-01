@@ -1,3 +1,22 @@
+### 3.5.28.0 (2020-10-01 18:18 UTC)
+* AppSync (3.5.1.0)
+	* Exposes the wafWebAclArn field on GraphQL api records. The wafWebAclArn field contains the amazon resource name of a WAF Web ACL if the AWS AppSync API is associated with one.
+* ElasticMapReduce (3.5.2.1)
+	* Documentation updates for elasticmapreduce
+* Glue (3.5.3.0)
+	* Adding additional optional map parameter to get-plan api
+* Kafka (3.5.3.0)
+	* Added support for Enabling Zookeeper Encryption in Transit for AWS MSK.
+* QuickSight (3.5.3.0)
+	* QuickSight now supports connecting to AWS Timestream data source
+* WAFV2 (3.5.1.0)
+	* AWS WAF is now available for AWS AppSync GraphQL APIs. AWS WAF protects against malicious attacks with AWS Managed Rules or your own custom rules. For more information see the AWS WAF Developer Guide.
+* Core 3.5.1.21
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.27.0 (2020-09-30 20:29 UTC)
 * ApplicationAutoScaling (3.5.2.0)
 	* This release extends Auto Scaling support for cluster storage of Managed Streaming for Kafka. Auto Scaling monitors and automatically expands storage capacity when a critical usage threshold is met.
