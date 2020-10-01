@@ -166,6 +166,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.ZookeeperConnectString = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("zookeeperConnectStringTls", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ZookeeperConnectStringTls = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
