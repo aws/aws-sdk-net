@@ -352,7 +352,8 @@ namespace Amazon.ElasticLoadBalancingV2
 
         /// <summary>
         /// Adds the specified tags to the specified Elastic Load Balancing resource. You can
-        /// tag your Application Load Balancers, Network Load Balancers, and your target groups.
+        /// tag your Application Load Balancers, Network Load Balancers, target groups, listeners,
+        /// and rules.
         /// 
         ///  
         /// <para>
@@ -495,6 +496,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyRegistrationsForTargetIdException">
         /// You've reached the limit on the number of times a target can be registered with a
         /// load balancer.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
+        /// You've reached the limit on the number of tags per load balancer.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetsException">
         /// You've reached the limit on the number of targets.
@@ -733,6 +737,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyRulesException">
         /// You've reached the limit on the number of rules per load balancer.
         /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
+        /// You've reached the limit on the number of tags per load balancer.
+        /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetGroupsException">
         /// You've reached the limit on the number of target groups for your AWS account.
         /// </exception>
@@ -834,6 +841,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidConfigurationRequestException">
         /// The requested configuration is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
+        /// You've reached the limit on the number of tags per load balancer.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetGroupsException">
         /// You've reached the limit on the number of target groups for your AWS account.
@@ -1674,8 +1684,9 @@ namespace Amazon.ElasticLoadBalancingV2
         #region  DescribeTags
 
         /// <summary>
-        /// Describes the tags for the specified resources. You can describe the tags for one
-        /// or more Application Load Balancers, Network Load Balancers, and target groups.
+        /// Describes the tags for the specified Elastic Load Balancing resources. You can describe
+        /// the tags for one or more Application Load Balancers, Network Load Balancers, target
+        /// groups, listeners, or rules.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// 
@@ -2518,7 +2529,9 @@ namespace Amazon.ElasticLoadBalancingV2
         #region  RemoveTags
 
         /// <summary>
-        /// Removes the specified tags from the specified Elastic Load Balancing resource.
+        /// Removes the specified tags from the specified Elastic Load Balancing resources. You
+        /// can remove the tags for one or more Application Load Balancers, Network Load Balancers,
+        /// target groups, listeners, or rules.
         /// 
         ///  
         /// <para>

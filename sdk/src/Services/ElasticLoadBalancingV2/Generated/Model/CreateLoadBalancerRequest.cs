@@ -271,7 +271,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// One or more tags to assign to the load balancer.
+        /// The tags to assign to the load balancer.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

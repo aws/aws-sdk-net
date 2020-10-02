@@ -60,6 +60,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private int? _port;
         private ProtocolEnum _protocol;
         private string _sslPolicy;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AlpnPolicy. 
@@ -294,6 +295,25 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetSslPolicy()
         {
             return this._sslPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to assign to the listener.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

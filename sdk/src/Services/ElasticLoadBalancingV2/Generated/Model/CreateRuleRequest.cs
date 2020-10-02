@@ -55,6 +55,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private List<RuleCondition> _conditions = new List<RuleCondition>();
         private string _listenerArn;
         private int? _priority;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -162,6 +163,25 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetPriority()
         {
             return this._priority.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to assign to the rule.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
