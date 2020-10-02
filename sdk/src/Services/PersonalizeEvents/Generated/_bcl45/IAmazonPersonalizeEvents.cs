@@ -74,5 +74,85 @@ namespace Amazon.PersonalizeEvents
 
         #endregion
         
+        #region  PutItems
+
+
+        /// <summary>
+        /// Adds one or more items to an Items dataset. For more information see <a>importing-items</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutItems service method.</param>
+        /// 
+        /// <returns>The response from the PutItems service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems">REST API Reference for PutItems Operation</seealso>
+        PutItemsResponse PutItems(PutItemsRequest request);
+
+
+
+        /// <summary>
+        /// Adds one or more items to an Items dataset. For more information see <a>importing-items</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutItems service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutItems service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems">REST API Reference for PutItems Operation</seealso>
+        Task<PutItemsResponse> PutItemsAsync(PutItemsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutUsers
+
+
+        /// <summary>
+        /// Adds one or more users to a Users dataset. For more information see <a>importing-users</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutUsers service method.</param>
+        /// 
+        /// <returns>The response from the PutUsers service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers">REST API Reference for PutUsers Operation</seealso>
+        PutUsersResponse PutUsers(PutUsersRequest request);
+
+
+
+        /// <summary>
+        /// Adds one or more users to a Users dataset. For more information see <a>importing-users</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutUsers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutUsers service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers">REST API Reference for PutUsers Operation</seealso>
+        Task<PutUsersResponse> PutUsersAsync(PutUsersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
     }
 }

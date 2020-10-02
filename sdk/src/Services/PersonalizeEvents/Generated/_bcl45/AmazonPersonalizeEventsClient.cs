@@ -287,5 +287,111 @@ namespace Amazon.PersonalizeEvents
 
         #endregion
         
+        #region  PutItems
+
+
+        /// <summary>
+        /// Adds one or more items to an Items dataset. For more information see <a>importing-items</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutItems service method.</param>
+        /// 
+        /// <returns>The response from the PutItems service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems">REST API Reference for PutItems Operation</seealso>
+        public virtual PutItemsResponse PutItems(PutItemsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutItemsResponseUnmarshaller.Instance;
+
+            return Invoke<PutItemsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Adds one or more items to an Items dataset. For more information see <a>importing-items</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutItems service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutItems service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems">REST API Reference for PutItems Operation</seealso>
+        public virtual Task<PutItemsResponse> PutItemsAsync(PutItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutItemsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutItemsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutUsers
+
+
+        /// <summary>
+        /// Adds one or more users to a Users dataset. For more information see <a>importing-users</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutUsers service method.</param>
+        /// 
+        /// <returns>The response from the PutUsers service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers">REST API Reference for PutUsers Operation</seealso>
+        public virtual PutUsersResponse PutUsers(PutUsersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutUsersResponseUnmarshaller.Instance;
+
+            return Invoke<PutUsersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Adds one or more users to a Users dataset. For more information see <a>importing-users</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutUsers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutUsers service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers">REST API Reference for PutUsers Operation</seealso>
+        public virtual Task<PutUsersResponse> PutUsersAsync(PutUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutUsersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutUsersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
     }
 }

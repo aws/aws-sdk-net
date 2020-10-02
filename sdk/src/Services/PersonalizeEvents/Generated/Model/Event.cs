@@ -68,8 +68,8 @@ namespace Amazon.PersonalizeEvents.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The type of event. This property corresponds to the <code>EVENT_TYPE</code> field
-        /// of the Interactions schema.
+        /// The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code>
+        /// field of your Interactions schema and depends on the types of events you are tracking.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

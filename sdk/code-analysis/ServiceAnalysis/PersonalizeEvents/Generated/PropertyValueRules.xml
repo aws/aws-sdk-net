@@ -16,6 +16,16 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.PutItemsRequest.DatasetArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.PutUsersRequest.DatasetArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PersonalizeEvents.Model.Event.EventId</property>
     <min>1</min>
     <max>256</max>
@@ -39,5 +49,25 @@
     <property>Amazon.PersonalizeEvents.Model.Event.RecommendationId</property>
     <min>1</min>
     <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.Item.ItemId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.Item.Properties</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.User.Properties</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.User.UserId</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
 </property-value-rules>

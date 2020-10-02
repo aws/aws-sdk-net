@@ -83,5 +83,97 @@ namespace Amazon.PersonalizeEvents
 
         #endregion
         
+        #region  PutItems
+
+
+        /// <summary>
+        /// Adds one or more items to an Items dataset. For more information see <a>importing-items</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutItems service method.</param>
+        /// 
+        /// <returns>The response from the PutItems service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems">REST API Reference for PutItems Operation</seealso>
+        PutItemsResponse PutItems(PutItemsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutItems operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutItems operation on AmazonPersonalizeEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutItems
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems">REST API Reference for PutItems Operation</seealso>
+        IAsyncResult BeginPutItems(PutItemsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutItems operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutItems.</param>
+        /// 
+        /// <returns>Returns a  PutItemsResult from PersonalizeEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems">REST API Reference for PutItems Operation</seealso>
+        PutItemsResponse EndPutItems(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutUsers
+
+
+        /// <summary>
+        /// Adds one or more users to a Users dataset. For more information see <a>importing-users</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutUsers service method.</param>
+        /// 
+        /// <returns>The response from the PutUsers service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers">REST API Reference for PutUsers Operation</seealso>
+        PutUsersResponse PutUsers(PutUsersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutUsers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutUsers operation on AmazonPersonalizeEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutUsers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers">REST API Reference for PutUsers Operation</seealso>
+        IAsyncResult BeginPutUsers(PutUsersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutUsers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutUsers.</param>
+        /// 
+        /// <returns>Returns a  PutUsersResult from PersonalizeEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers">REST API Reference for PutUsers Operation</seealso>
+        PutUsersResponse EndPutUsers(IAsyncResult asyncResult);
+
+        #endregion
+        
     }
 }
