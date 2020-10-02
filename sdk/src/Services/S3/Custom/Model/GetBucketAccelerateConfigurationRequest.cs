@@ -32,7 +32,7 @@ namespace Amazon.S3.Model
         private string expectedBucketOwner;
 
         /// <summary>
-        /// The name of the bucket.
+        /// <para>The name of the bucket for which the accelerate configuration is retrieved.</para>
         /// </summary>
         public string BucketName
         {

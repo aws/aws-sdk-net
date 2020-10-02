@@ -33,7 +33,7 @@ namespace Amazon.S3.Model
         private string expectedBucketOwner;
 
         /// <summary>
-        /// Gets and sets the BucketName.
+        /// <para>The name of the bucket for which to get the notification configuration.</para>
         /// </summary>
         public string BucketName
         {
