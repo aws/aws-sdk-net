@@ -1,3 +1,22 @@
+### 3.5.29.0 (2020-10-02 18:17 UTC)
+* Batch (3.5.2.0)
+	* Support tagging for Batch resources (compute environment, job queue, job definition and job) and tag based access control on Batch APIs
+* ElasticLoadBalancingV2 (3.5.2.0)
+	* This release adds support for tagging listeners, rules, and target groups on creation. This release also supported tagging operations through tagging api's for listeners and rules.
+* PersonalizeEvents (3.5.1.0)
+	* Adds new APIs to write item and user records to Datasets.
+* RDS (3.5.2.0)
+	* Adds the NCHAR Character Set ID parameter to the CreateDbInstance API for RDS Oracle.
+* S3 (3.5.3.0)
+	* Amazon S3 Object Ownership is a new S3 feature that enables bucket owners to automatically assume ownership of objects that are uploaded to their buckets by other AWS Accounts.
+* ServiceDiscovery (3.5.1.0)
+	* Added support for optional parameters for DiscoverInstances API in AWS Cloud Map
+* Core 3.5.1.22
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.28.0 (2020-10-01 18:18 UTC)
 * AppSync (3.5.1.0)
 	* Exposes the wafWebAclArn field on GraphQL api records. The wafWebAclArn field contains the amazon resource name of a WAF Web ACL if the AWS AppSync API is associated with one.
