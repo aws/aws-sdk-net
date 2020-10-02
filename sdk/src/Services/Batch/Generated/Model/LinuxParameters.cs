@@ -66,8 +66,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property InitProcessEnabled. 
         /// <para>
-        /// Run an <code>init</code> process inside the container that forwards signals and reaps
-        /// processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// If true, run an <code>init</code> process inside the container that forwards signals
+        /// and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. This parameter requires version 1.25 of the Docker Remote API or greater
         /// on your container instance. To check the Docker Remote API version on your container
         /// instance, log into your container instance and run the following command: <code>sudo

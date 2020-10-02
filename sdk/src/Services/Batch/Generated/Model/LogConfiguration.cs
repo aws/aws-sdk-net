@@ -49,12 +49,50 @@ namespace Amazon.Batch.Model
         /// <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>,
         /// and <code>splunk</code>.
         /// </para>
-        ///  
+        ///  <dl> <dt>awslogs</dt> <dd> 
         /// <para>
-        /// For more information about using the <code>awslogs</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
-        /// the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
+        /// href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
+        /// the awslogs Log Driver</a> in the <i>AWS Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+        /// CloudWatch Logs logging driver</a> in the Docker documentation.
         /// </para>
-        ///  <note> 
+        ///  </dd> <dt>fluentd</dt> <dd> 
+        /// <para>
+        /// Specifies the Fluentd logging driver. For more information, including usage and options,
+        /// see <a href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging
+        /// driver</a> in the Docker documentation.
+        /// </para>
+        ///  </dd> <dt>gelf</dt> <dd> 
+        /// <para>
+        /// Specifies the Graylog Extended Format (GELF) logging driver. For more information,
+        /// including usage and options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog
+        /// Extended Format logging driver</a> in the Docker documentation.
+        /// </para>
+        ///  </dd> <dt>journald</dt> <dd> 
+        /// <para>
+        /// Specifies the journald logging driver. For more information, including usage and options,
+        /// see <a href="https://docs.docker.com/config/containers/logging/journald/">Journald
+        /// logging driver</a> in the Docker documentation.
+        /// </para>
+        ///  </dd> <dt>json-file</dt> <dd> 
+        /// <para>
+        /// Specifies the JSON file logging driver. For more information, including usage and
+        /// options, see <a href="https://docs.docker.com/config/containers/logging/json-file/">JSON
+        /// File logging driver</a> in the Docker documentation.
+        /// </para>
+        ///  </dd> <dt>splunk</dt> <dd> 
+        /// <para>
+        /// Specifies the Splunk logging driver. For more information, including usage and options,
+        /// see <a href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging
+        /// driver</a> in the Docker documentation.
+        /// </para>
+        ///  </dd> <dt>syslog</dt> <dd> 
+        /// <para>
+        /// Specifies the syslog logging driver. For more information, including usage and options,
+        /// see <a href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
+        /// driver</a> in the Docker documentation.
+        /// </para>
+        ///  </dd> </dl> <note> 
         /// <para>
         /// If you have a custom driver that is not listed earlier that you would like to work
         /// with the Amazon ECS container agent, you can fork the Amazon ECS container agent project
@@ -109,8 +147,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property SecretOptions. 
         /// <para>
-        /// The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-        /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+        /// Sensitive Data</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         public List<Secret> SecretOptions

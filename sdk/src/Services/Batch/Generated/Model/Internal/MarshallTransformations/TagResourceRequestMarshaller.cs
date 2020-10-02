@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateComputeEnvironment Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateComputeEnvironmentRequestMarshaller : IMarshaller<IRequest, CreateComputeEnvironmentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateComputeEnvironmentRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,49 +52,23 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateComputeEnvironmentRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Batch");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-08-10";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/v1/createcomputeenvironment";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonBatchException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/v1/tags/{resourceArn}";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComputeEnvironmentName())
-                {
-                    context.Writer.WritePropertyName("computeEnvironmentName");
-                    context.Writer.Write(publicRequest.ComputeEnvironmentName);
-                }
-
-                if(publicRequest.IsSetComputeResources())
-                {
-                    context.Writer.WritePropertyName("computeResources");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ComputeResourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ComputeResources, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetServiceRole())
-                {
-                    context.Writer.WritePropertyName("serviceRole");
-                    context.Writer.Write(publicRequest.ServiceRole);
-                }
-
-                if(publicRequest.IsSetState())
-                {
-                    context.Writer.WritePropertyName("state");
-                    context.Writer.Write(publicRequest.State);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -109,12 +83,6 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -124,9 +92,9 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateComputeEnvironmentRequestMarshaller _instance = new CreateComputeEnvironmentRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateComputeEnvironmentRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -134,7 +102,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateComputeEnvironmentRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

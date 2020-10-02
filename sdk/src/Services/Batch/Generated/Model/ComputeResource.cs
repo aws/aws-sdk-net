@@ -361,7 +361,10 @@ namespace Amazon.Batch.Model
         /// Key-value pair tags to be applied to resources that are launched in the compute environment.
         /// For AWS Batch, these take the form of "String1": "String2", where String1 is the tag
         /// key and String2 is the tag value—for example, { "Name": "AWS Batch Instance - C4OnDemand"
-        /// }.
+        /// }. These tags can not be updated or removed after the compute environment has been
+        /// created; any changes require creating a new compute environment and removing the old
+        /// compute environment. These tags are not seen when using the AWS Batch ListTagsForResource
+        /// API operation.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

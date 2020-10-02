@@ -48,6 +48,7 @@ namespace Amazon.Batch.Model
         private string _jobQueueName;
         private int? _priority;
         private JQState _state;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property ComputeEnvironmentOrder. 
@@ -132,6 +133,28 @@ namespace Amazon.Batch.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags that you apply to the job queue to help you categorize and organize your
+        /// resources. Each tag consists of a key and an optional value. For more information,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// AWS Resources</a> in <i>AWS General Reference</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -36,6 +36,7 @@ namespace Amazon.Batch.Model
         private ArrayPropertiesSummary _arrayProperties;
         private ContainerSummary _container;
         private long? _createdAt;
+        private string _jobArn;
         private string _jobId;
         private string _jobName;
         private NodePropertiesSummary _nodeProperties;
@@ -99,6 +100,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the job.
+        /// </para>
+        /// </summary>
+        public string JobArn
+        {
+            get { return this._jobArn; }
+            set { this._jobArn = value; }
+        }
+
+        // Check to see if JobArn property is set
+        internal bool IsSetJobArn()
+        {
+            return this._jobArn != null;
         }
 
         /// <summary>

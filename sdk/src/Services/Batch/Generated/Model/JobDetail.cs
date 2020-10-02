@@ -38,6 +38,7 @@ namespace Amazon.Batch.Model
         private ContainerDetail _container;
         private long? _createdAt;
         private List<JobDependency> _dependsOn = new List<JobDependency>();
+        private string _jobArn;
         private string _jobDefinition;
         private string _jobId;
         private string _jobName;
@@ -50,6 +51,7 @@ namespace Amazon.Batch.Model
         private JobStatus _status;
         private string _statusReason;
         private long? _stoppedAt;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private JobTimeout _timeout;
 
         /// <summary>
@@ -143,6 +145,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetDependsOn()
         {
             return this._dependsOn != null && this._dependsOn.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the job.
+        /// </para>
+        /// </summary>
+        public string JobArn
+        {
+            get { return this._jobArn; }
+            set { this._jobArn = value; }
+        }
+
+        // Check to see if JobArn property is set
+        internal bool IsSetJobArn()
+        {
+            return this._jobArn != null;
         }
 
         /// <summary>
@@ -379,6 +399,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetStoppedAt()
         {
             return this._stoppedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags applied to the job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SubmitJob operation
+    /// Response Unmarshaller for TagResource operation
     /// </summary>  
-    public class SubmitJobResponseUnmarshaller : JsonResponseUnmarshaller
+    public class TagResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,31 +45,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            SubmitJobResponse response = new SubmitJobResponse();
+            TagResourceResponse response = new TagResourceResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("jobArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("jobId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("jobName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -104,9 +81,9 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             return new AmazonBatchException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static SubmitJobResponseUnmarshaller _instance = new SubmitJobResponseUnmarshaller();        
+        private static TagResourceResponseUnmarshaller _instance = new TagResourceResponseUnmarshaller();        
 
-        internal static SubmitJobResponseUnmarshaller GetInstance()
+        internal static TagResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -114,7 +91,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SubmitJobResponseUnmarshaller Instance
+        public static TagResourceResponseUnmarshaller Instance
         {
             get
             {

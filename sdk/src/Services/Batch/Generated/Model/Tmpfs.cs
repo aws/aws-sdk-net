@@ -40,7 +40,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerPath. 
         /// <para>
-        /// The absolute file path where the tmpfs volume is to be mounted.
+        /// The absolute file path in the container where the tmpfs volume is to be mounted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,12 +63,16 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev"
-        /// | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand"
-        /// | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable"
-        /// | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave"
-        /// | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid"
-        /// | "nr_inodes" | "nr_blocks" | "mpol"</code> 
+        /// Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>"
+        /// | "<code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>"
+        /// | "<code>noexec</code>" | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>"
+        /// | "<code>remount</code>" | "<code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>"
+        /// | "<code>noatime</code>" | "<code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>"
+        /// | "<code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared"
+        /// | "rshared" | "slave" | "rslave" | "relatime</code>" | "<code>norelatime</code>" |
+        /// "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>" |
+        /// "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>"
+        /// | "<code>mpol</code>"
         /// </para>
         /// </summary>
         public List<string> MountOptions

@@ -44,6 +44,7 @@ namespace Amazon.Batch.Model
         private NodeOverrides _nodeOverrides;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
         private RetryStrategy _retryStrategy;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private JobTimeout _timeout;
 
         /// <summary>
@@ -233,6 +234,28 @@ namespace Amazon.Batch.Model
         internal bool IsSetRetryStrategy()
         {
             return this._retryStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags that you apply to the job request to help you categorize and organize your
+        /// resources. Each tag consists of a key and an optional value. For more information,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// AWS Resources</a> in <i>AWS General Reference</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

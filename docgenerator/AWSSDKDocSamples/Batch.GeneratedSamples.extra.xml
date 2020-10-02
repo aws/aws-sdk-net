@@ -268,6 +268,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.ListTagsForResource(Amazon.Batch.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.ListTagsForResource(Amazon.Batch.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.Batch.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.Batch.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This demonstrates calling the ListTagsForResource action.
+                </para>
+                <code
+                    title="ListTagsForResource Example"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="listtagsforresource-example-1591293003710" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Batch.IAmazonBatch.RegisterJobDefinition(Amazon.Batch.Model.RegisterJobDefinitionRequest)" />
             <member name="M:Amazon.Batch.AmazonBatchClient.RegisterJobDefinition(Amazon.Batch.Model.RegisterJobDefinitionRequest)" />
             <member name="T:Amazon.Batch.Model.RegisterJobDefinitionRequest" />
@@ -282,6 +301,25 @@
                     title="To register a job definition"
                     source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
                     region="to-register-a-job-definition-1481154325325" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.RegisterJobDefinition(Amazon.Batch.Model.RegisterJobDefinitionRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.RegisterJobDefinition(Amazon.Batch.Model.RegisterJobDefinitionRequest)" />
+            <member name="T:Amazon.Batch.Model.RegisterJobDefinitionRequest" />
+            <member name="T:Amazon.Batch.Model.RegisterJobDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This demonstrates calling the RegisterJobDefinition action, including tags.
+                </para>
+                <code
+                    title="RegisterJobDefinition with tags"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="registerjobdefinition-with-tags-1591290509028" />
             </example>
         </value>
     </doc>
@@ -306,6 +344,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.TagResource(Amazon.Batch.Model.TagResourceRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.TagResource(Amazon.Batch.Model.TagResourceRequest)" />
+            <member name="T:Amazon.Batch.Model.TagResourceRequest" />
+            <member name="T:Amazon.Batch.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This demonstrates calling the TagResource action.
+                </para>
+                <code
+                    title="TagResource Example"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="tagresource-example-1591291959952" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Batch.IAmazonBatch.TerminateJob(Amazon.Batch.Model.TerminateJobRequest)" />
             <member name="M:Amazon.Batch.AmazonBatchClient.TerminateJob(Amazon.Batch.Model.TerminateJobRequest)" />
             <member name="T:Amazon.Batch.Model.TerminateJobRequest" />
@@ -320,6 +377,25 @@
                     title="To terminate a job"
                     source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
                     region="to-terminate-a-job-1481154558276" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.UntagResource(Amazon.Batch.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.UntagResource(Amazon.Batch.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.Batch.Model.UntagResourceRequest" />
+            <member name="T:Amazon.Batch.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This demonstrates calling the UntagResource action.
+                </para>
+                <code
+                    title="UntagResource Example"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="untagresource-example-1591292811042" />
             </example>
         </value>
     </doc>

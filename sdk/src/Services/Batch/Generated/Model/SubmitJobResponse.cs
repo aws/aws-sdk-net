@@ -33,8 +33,27 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class SubmitJobResponse : AmazonWebServiceResponse
     {
+        private string _jobArn;
         private string _jobId;
         private string _jobName;
+
+        /// <summary>
+        /// Gets and sets the property JobArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the job.
+        /// </para>
+        /// </summary>
+        public string JobArn
+        {
+            get { return this._jobArn; }
+            set { this._jobArn = value; }
+        }
+
+        // Check to see if JobArn property is set
+        internal bool IsSetJobArn()
+        {
+            return this._jobArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JobId. 

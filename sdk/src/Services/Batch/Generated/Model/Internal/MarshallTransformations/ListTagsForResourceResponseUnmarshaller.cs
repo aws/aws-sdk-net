@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SubmitJob operation
+    /// Response Unmarshaller for ListTagsForResource operation
     /// </summary>  
-    public class SubmitJobResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListTagsForResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,28 +45,16 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            SubmitJobResponse response = new SubmitJobResponse();
+            ListTagsForResourceResponse response = new ListTagsForResourceResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("jobArn", targetDepth))
+                if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("jobId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("jobName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -104,9 +92,9 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             return new AmazonBatchException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static SubmitJobResponseUnmarshaller _instance = new SubmitJobResponseUnmarshaller();        
+        private static ListTagsForResourceResponseUnmarshaller _instance = new ListTagsForResourceResponseUnmarshaller();        
 
-        internal static SubmitJobResponseUnmarshaller GetInstance()
+        internal static ListTagsForResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -114,7 +102,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SubmitJobResponseUnmarshaller Instance
+        public static ListTagsForResourceResponseUnmarshaller Instance
         {
             get
             {

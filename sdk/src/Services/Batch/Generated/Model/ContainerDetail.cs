@@ -123,8 +123,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
-        /// ECS task execution IAM role</a>.
+        /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
+        /// Batch execution IAM role</a>.
         /// </para>
         /// </summary>
         public string ExecutionRoleArn
@@ -307,7 +307,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// The number of MiB of memory reserved for the job.
+        /// The number of MiB of memory reserved for the job. This is a required parameter.
         /// </para>
         /// </summary>
         public int Memory
@@ -512,7 +512,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Vcpus. 
         /// <para>
-        /// The number of VCPUs allocated for the job.
+        /// The number of VCPUs allocated for the job. This is a required parameter.
         /// </para>
         /// </summary>
         public int Vcpus
