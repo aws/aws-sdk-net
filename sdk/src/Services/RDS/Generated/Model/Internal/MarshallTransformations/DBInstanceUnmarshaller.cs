@@ -287,6 +287,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("NcharCharacterSetName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NcharCharacterSetName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("OptionGroupMemberships/OptionGroupMembership", targetDepth))
                     {
                         var unmarshaller = OptionGroupMembershipUnmarshaller.Instance;

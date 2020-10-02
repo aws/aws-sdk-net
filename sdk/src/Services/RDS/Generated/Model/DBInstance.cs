@@ -77,6 +77,7 @@ namespace Amazon.RDS.Model
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
         private bool? _multiAZ;
+        private string _ncharCharacterSetName;
         private List<OptionGroupMembership> _optionGroupMemberships = new List<OptionGroupMembership>();
         private PendingModifiedValues _pendingModifiedValues;
         private bool? _performanceInsightsEnabled;
@@ -860,6 +861,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetMultiAZ()
         {
             return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NcharCharacterSetName. 
+        /// <para>
+        /// The name of the NCHAR character set for the Oracle DB instance. This character set
+        /// specifies the Unicode encoding for data stored in table columns of type NCHAR, NCLOB,
+        /// or NVARCHAR2. 
+        /// </para>
+        /// </summary>
+        public string NcharCharacterSetName
+        {
+            get { return this._ncharCharacterSetName; }
+            set { this._ncharCharacterSetName = value; }
+        }
+
+        // Check to see if NcharCharacterSetName property is set
+        internal bool IsSetNcharCharacterSetName()
+        {
+            return this._ncharCharacterSetName != null;
         }
 
         /// <summary>
