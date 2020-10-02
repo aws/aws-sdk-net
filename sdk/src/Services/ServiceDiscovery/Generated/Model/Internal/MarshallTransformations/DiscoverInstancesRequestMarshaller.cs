@@ -86,6 +86,20 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NamespaceName);
                 }
 
+                if(publicRequest.IsSetOptionalParameters())
+                {
+                    context.Writer.WritePropertyName("OptionalParameters");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestOptionalParametersKvp in publicRequest.OptionalParameters)
+                    {
+                        context.Writer.WritePropertyName(publicRequestOptionalParametersKvp.Key);
+                        var publicRequestOptionalParametersValue = publicRequestOptionalParametersKvp.Value;
+
+                            context.Writer.Write(publicRequestOptionalParametersValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetQueryParameters())
                 {
                     context.Writer.WritePropertyName("QueryParameters");

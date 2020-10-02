@@ -39,6 +39,7 @@ namespace Amazon.ServiceDiscovery.Model
         private HealthStatusFilter _healthStatus;
         private int? _maxResults;
         private string _namespaceName;
+        private Dictionary<string, string> _optionalParameters = new Dictionary<string, string>();
         private Dictionary<string, string> _queryParameters = new Dictionary<string, string>();
         private string _serviceName;
 
@@ -101,11 +102,33 @@ namespace Amazon.ServiceDiscovery.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OptionalParameters. 
+        /// <para>
+        /// Opportunistic filters to scope the results based on custom attributes. If there are
+        /// instances that match both the filters specified in both the <code>QueryParameters</code>
+        /// parameter and this parameter, they are returned. Otherwise, these filters are ignored
+        /// and only instances that match the filters specified in the <code>QueryParameters</code>
+        /// parameter are returned.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> OptionalParameters
+        {
+            get { return this._optionalParameters; }
+            set { this._optionalParameters = value; }
+        }
+
+        // Check to see if OptionalParameters property is set
+        internal bool IsSetOptionalParameters()
+        {
+            return this._optionalParameters != null && this._optionalParameters.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property QueryParameters. 
         /// <para>
-        /// A string map that contains attributes with values that you can use to filter instances
-        /// by any custom attribute that you specified when you registered the instance. Only
-        /// instances that match all the specified key/value pairs will be returned.
+        /// Filters to scope the results based on custom attributes for the instance. For example,
+        /// <code>{version=v1, az=1a}</code>. Only instances that match all the specified key-value
+        /// pairs will be returned.
         /// </para>
         /// </summary>
         public Dictionary<string, string> QueryParameters
