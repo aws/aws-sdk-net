@@ -93,6 +93,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetMongoDBTargets())
+            {
+                context.Writer.WritePropertyName("MongoDBTargets");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectMongoDBTargetsListValue in requestObject.MongoDBTargets)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MongoDBTargetMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMongoDBTargetsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetS3Targets())
             {
                 context.Writer.WritePropertyName("S3Targets");

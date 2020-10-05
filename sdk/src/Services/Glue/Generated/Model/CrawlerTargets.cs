@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
         private List<CatalogTarget> _catalogTargets = new List<CatalogTarget>();
         private List<DynamoDBTarget> _dynamoDBTargets = new List<DynamoDBTarget>();
         private List<JdbcTarget> _jdbcTargets = new List<JdbcTarget>();
+        private List<MongoDBTarget> _mongoDBTargets = new List<MongoDBTarget>();
         private List<S3Target> _s3Targets = new List<S3Target>();
 
         /// <summary>
@@ -90,6 +91,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetJdbcTargets()
         {
             return this._jdbcTargets != null && this._jdbcTargets.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MongoDBTargets. 
+        /// <para>
+        /// Specifies Amazon DocumentDB or MongoDB targets.
+        /// </para>
+        /// </summary>
+        public List<MongoDBTarget> MongoDBTargets
+        {
+            get { return this._mongoDBTargets; }
+            set { this._mongoDBTargets = value; }
+        }
+
+        // Check to see if MongoDBTargets property is set
+        internal bool IsSetMongoDBTargets()
+        {
+            return this._mongoDBTargets != null && this._mongoDBTargets.Count > 0; 
         }
 
         /// <summary>
