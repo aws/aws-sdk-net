@@ -34,8 +34,8 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     ///  
     /// <para>
-    /// For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-    /// in the <i>Amazon DynamoDB Developer Guide</i>.
+    /// For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+    /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class ProvisionedThroughput

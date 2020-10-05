@@ -46,7 +46,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  
     /// <para>
-    /// There is a soft account limit of 256 tables.
+    /// There is a soft account quota of 256 tables.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

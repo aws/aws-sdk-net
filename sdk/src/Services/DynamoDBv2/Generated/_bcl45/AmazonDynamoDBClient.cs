@@ -404,8 +404,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -508,8 +508,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -611,8 +611,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -722,8 +722,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -829,8 +829,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -935,8 +935,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1081,8 +1081,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1219,8 +1219,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1364,8 +1364,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1505,8 +1505,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1613,7 +1613,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableInUseException">
@@ -1722,7 +1722,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableInUseException">
@@ -1851,7 +1851,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
@@ -1976,7 +1976,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
@@ -2028,7 +2028,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="tableName">The name of the table to create.</param>
         /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <code>KeySchemaElement</code> in the array is composed of: <ul> <li>  <code>AttributeName</code> - The name of this key attribute. </li> <li>  <code>KeyType</code> - The role that the key attribute will assume: <ul> <li>  <code>HASH</code> - partition key </li> <li>  <code>RANGE</code> - sort key </li> </ul> </li> </ul> <note> The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values. The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value. </note> For a simple primary key (partition key), you must provide exactly one element with a <code>KeyType</code> of <code>HASH</code>. For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>, and the second element must have a <code>KeyType</code> of <code>RANGE</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="attributeDefinitions">An array of attributes that describe the key schema for the table and indexes.</param>
-        /// <param name="provisionedThroughput">Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.  If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property.  For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
+        /// <param name="provisionedThroughput">Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.  If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property. For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the CreateTable service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
@@ -2052,7 +2052,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -2121,7 +2121,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -2170,7 +2170,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="tableName">The name of the table to create.</param>
         /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <code>KeySchemaElement</code> in the array is composed of: <ul> <li>  <code>AttributeName</code> - The name of this key attribute. </li> <li>  <code>KeyType</code> - The role that the key attribute will assume: <ul> <li>  <code>HASH</code> - partition key </li> <li>  <code>RANGE</code> - sort key </li> </ul> </li> </ul> <note> The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values. The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value. </note> For a simple primary key (partition key), you must provide exactly one element with a <code>KeyType</code> of <code>HASH</code>. For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>, and the second element must have a <code>KeyType</code> of <code>RANGE</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="attributeDefinitions">An array of attributes that describe the key schema for the table and indexes.</param>
-        /// <param name="provisionedThroughput">Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.  If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property.  For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
+        /// <param name="provisionedThroughput">Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.  If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property. For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2197,7 +2197,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -2269,7 +2269,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -2333,7 +2333,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
@@ -2391,7 +2391,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
@@ -2455,8 +2455,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -2521,8 +2521,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -2586,8 +2586,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -2657,8 +2657,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -2726,8 +2726,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -2794,8 +2794,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -2876,7 +2876,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -2951,7 +2951,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -3033,7 +3033,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -3111,7 +3111,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -3551,24 +3551,24 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// Returns the current provisioned-capacity limits for your AWS account in a Region,
+        /// Returns the current provisioned-capacity quotas for your AWS account in a Region,
         /// both for the Region as a whole and for any one DynamoDB table that you create there.
         /// 
         ///  
         /// <para>
-        /// When you establish an AWS account, the account has initial limits on the maximum read
+        /// When you establish an AWS account, the account has initial quotas on the maximum read
         /// capacity units and write capacity units that you can provision across all of your
-        /// DynamoDB tables in a given Region. Also, there are per-table limits that apply when
-        /// you create a table there. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-        /// page in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// DynamoDB tables in a given Region. Also, there are per-table quotas that apply when
+        /// you create a table there. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+        /// Account, and Table Quotas</a> page in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Although you can increase these limits by filing a case at <a href="https://console.aws.amazon.com/support/home#/">AWS
+        /// Although you can increase these quotas by filing a case at <a href="https://console.aws.amazon.com/support/home#/">AWS
         /// Support Center</a>, obtaining the increase is not instantaneous. The <code>DescribeLimits</code>
         /// action lets you write code to compare the capacity you are currently using to those
-        /// limits imposed by your account so that you have enough time to apply for an increase
-        /// before you hit a limit.
+        /// quotas imposed by your account so that you have enough time to apply for an increase
+        /// before you hit a quota.
         /// </para>
         ///  
         /// <para>
@@ -3577,7 +3577,7 @@ namespace Amazon.DynamoDBv2
         ///  <ol> <li> 
         /// <para>
         /// Call <code>DescribeLimits</code> for a particular Region to obtain your current account
-        /// limits on provisioned capacity there.
+        /// quotas on provisioned capacity there.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3609,25 +3609,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Report the account limits for that Region returned by <code>DescribeLimits</code>,
+        /// Report the account quotas for that Region returned by <code>DescribeLimits</code>,
         /// along with the total current provisioned capacity levels you have calculated.
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// This will let you see whether you are getting close to your account-level limits.
+        /// This will let you see whether you are getting close to your account-level quotas.
         /// </para>
         ///  
         /// <para>
-        /// The per-table limits apply only when you are creating a new table. They restrict the
+        /// The per-table quotas apply only when you are creating a new table. They restrict the
         /// sum of the provisioned capacity of the new table itself and all its global secondary
         /// indexes.
         /// </para>
         ///  
         /// <para>
         /// For existing tables and their GSIs, DynamoDB doesn't let you increase provisioned
-        /// capacity extremely rapidly. But the only upper limit that applies is that the aggregate
+        /// capacity extremely rapidly, but the only quota that applies is that the aggregate
         /// provisioned capacity over all your tables and GSIs cannot exceed either of the per-account
-        /// limits.
+        /// quotas.
         /// </para>
         ///  <note> 
         /// <para>
@@ -3659,24 +3659,24 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// Returns the current provisioned-capacity limits for your AWS account in a Region,
+        /// Returns the current provisioned-capacity quotas for your AWS account in a Region,
         /// both for the Region as a whole and for any one DynamoDB table that you create there.
         /// 
         ///  
         /// <para>
-        /// When you establish an AWS account, the account has initial limits on the maximum read
+        /// When you establish an AWS account, the account has initial quotas on the maximum read
         /// capacity units and write capacity units that you can provision across all of your
-        /// DynamoDB tables in a given Region. Also, there are per-table limits that apply when
-        /// you create a table there. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-        /// page in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// DynamoDB tables in a given Region. Also, there are per-table quotas that apply when
+        /// you create a table there. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+        /// Account, and Table Quotas</a> page in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Although you can increase these limits by filing a case at <a href="https://console.aws.amazon.com/support/home#/">AWS
+        /// Although you can increase these quotas by filing a case at <a href="https://console.aws.amazon.com/support/home#/">AWS
         /// Support Center</a>, obtaining the increase is not instantaneous. The <code>DescribeLimits</code>
         /// action lets you write code to compare the capacity you are currently using to those
-        /// limits imposed by your account so that you have enough time to apply for an increase
-        /// before you hit a limit.
+        /// quotas imposed by your account so that you have enough time to apply for an increase
+        /// before you hit a quota.
         /// </para>
         ///  
         /// <para>
@@ -3685,7 +3685,7 @@ namespace Amazon.DynamoDBv2
         ///  <ol> <li> 
         /// <para>
         /// Call <code>DescribeLimits</code> for a particular Region to obtain your current account
-        /// limits on provisioned capacity there.
+        /// quotas on provisioned capacity there.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3717,25 +3717,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Report the account limits for that Region returned by <code>DescribeLimits</code>,
+        /// Report the account quotas for that Region returned by <code>DescribeLimits</code>,
         /// along with the total current provisioned capacity levels you have calculated.
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// This will let you see whether you are getting close to your account-level limits.
+        /// This will let you see whether you are getting close to your account-level quotas.
         /// </para>
         ///  
         /// <para>
-        /// The per-table limits apply only when you are creating a new table. They restrict the
+        /// The per-table quotas apply only when you are creating a new table. They restrict the
         /// sum of the provisioned capacity of the new table itself and all its global secondary
         /// indexes.
         /// </para>
         ///  
         /// <para>
         /// For existing tables and their GSIs, DynamoDB doesn't let you increase provisioned
-        /// capacity extremely rapidly. But the only upper limit that applies is that the aggregate
+        /// capacity extremely rapidly, but the only quota that applies is that the aggregate
         /// provisioned capacity over all your tables and GSIs cannot exceed either of the per-account
-        /// limits.
+        /// quotas.
         /// </para>
         ///  <note> 
         /// <para>
@@ -4126,8 +4126,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -4173,8 +4173,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -4219,8 +4219,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -4271,8 +4271,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -4321,8 +4321,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -4370,8 +4370,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -4398,13 +4398,13 @@ namespace Amazon.DynamoDBv2
         /// <summary>
         /// List backups associated with an AWS account. To list backups for a given table, specify
         /// <code>TableName</code>. <code>ListBackups</code> returns a paginated list of results
-        /// with at most 1 MB worth of items in a page. You can also specify a limit for the maximum
-        /// number of entries to be returned in a page. 
+        /// with at most 1 MB worth of items in a page. You can also specify a maximum number
+        /// of entries to be returned in a page. 
         /// 
         ///  
         /// <para>
         /// In the request, start time is inclusive, but end time is exclusive. Note that these
-        /// limits are for the time at which the original backup was requested.
+        /// boundaries are for the time at which the original backup was requested.
         /// </para>
         ///  
         /// <para>
@@ -4433,13 +4433,13 @@ namespace Amazon.DynamoDBv2
         /// <summary>
         /// List backups associated with an AWS account. To list backups for a given table, specify
         /// <code>TableName</code>. <code>ListBackups</code> returns a paginated list of results
-        /// with at most 1 MB worth of items in a page. You can also specify a limit for the maximum
-        /// number of entries to be returned in a page. 
+        /// with at most 1 MB worth of items in a page. You can also specify a maximum number
+        /// of entries to be returned in a page. 
         /// 
         ///  
         /// <para>
         /// In the request, start time is inclusive, but end time is exclusive. Note that these
-        /// limits are for the time at which the original backup was requested.
+        /// boundaries are for the time at which the original backup was requested.
         /// </para>
         ///  
         /// <para>
@@ -5005,8 +5005,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -5141,8 +5141,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -5276,8 +5276,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -5417,8 +5417,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -5556,8 +5556,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -5694,8 +5694,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -5803,8 +5803,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -5908,8 +5908,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -6003,7 +6003,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableAlreadyExistsException">
@@ -6098,7 +6098,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableAlreadyExistsException">
@@ -6224,7 +6224,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.PointInTimeRecoveryUnavailableException">
@@ -6356,7 +6356,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.PointInTimeRecoveryUnavailableException">
@@ -6443,8 +6443,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -6515,8 +6515,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -6588,8 +6588,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -6660,8 +6660,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -6738,8 +6738,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -6813,8 +6813,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -6889,8 +6889,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -6964,8 +6964,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -7025,7 +7025,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -7089,7 +7089,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -7164,8 +7164,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -7474,8 +7474,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -7835,8 +7835,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -8198,8 +8198,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -8500,7 +8500,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -8562,7 +8562,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -8913,7 +8913,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ReplicaNotFoundException">
@@ -8973,7 +8973,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ReplicaNotFoundException">
@@ -9037,8 +9037,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -9096,8 +9096,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -9153,8 +9153,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -9216,8 +9216,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -9278,8 +9278,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -9338,8 +9338,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -9425,7 +9425,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -9505,7 +9505,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -9592,7 +9592,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -9675,7 +9675,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -9738,7 +9738,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -9798,7 +9798,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -9890,7 +9890,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -9983,7 +9983,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">

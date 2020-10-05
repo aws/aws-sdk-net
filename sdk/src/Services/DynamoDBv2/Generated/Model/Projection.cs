@@ -75,8 +75,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INCLUDE</code> - Only the specified table attributes are projected into the
-        /// index. The list of projected attributes is in <code>NonKeyAttributes</code>.
+        ///  <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>,
+        /// the secondary index will include other non-key attributes that you specify.
         /// </para>
         ///  </li> <li> 
         /// <para>

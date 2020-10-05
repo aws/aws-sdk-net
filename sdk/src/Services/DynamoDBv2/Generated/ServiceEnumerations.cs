@@ -893,6 +893,10 @@ namespace Amazon.DynamoDBv2
         /// </summary>
         public static readonly ReplicaStatus DELETING = new ReplicaStatus("DELETING");
         /// <summary>
+        /// Constant REGION_DISABLED for ReplicaStatus
+        /// </summary>
+        public static readonly ReplicaStatus REGION_DISABLED = new ReplicaStatus("REGION_DISABLED");
+        /// <summary>
         /// Constant UPDATING for ReplicaStatus
         /// </summary>
         public static readonly ReplicaStatus UPDATING = new ReplicaStatus("UPDATING");
