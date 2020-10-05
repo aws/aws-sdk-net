@@ -181,6 +181,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetInputScanType())
+            {
+                context.Writer.WritePropertyName("inputScanType");
+                context.Writer.Write(requestObject.InputScanType);
+            }
+
             if(requestObject.IsSetPosition())
             {
                 context.Writer.WritePropertyName("position");

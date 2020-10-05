@@ -29,37 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value
-    /// PRORES.
+    /// Required when you set your output video codec to AVC-Intra. For more information about
+    /// the AVC-I settings, see the relevant specification. For detailed information about
+    /// SD and HD in AVC-I, see https://ieeexplore.ieee.org/document/7290936.
     /// </summary>
-    public partial class ProresSettings
+    public partial class AvcIntraSettings
     {
-        private ProresCodecProfile _codecProfile;
-        private ProresFramerateControl _framerateControl;
-        private ProresFramerateConversionAlgorithm _framerateConversionAlgorithm;
+        private AvcIntraClass _avcIntraClass;
+        private AvcIntraFramerateControl _framerateControl;
+        private AvcIntraFramerateConversionAlgorithm _framerateConversionAlgorithm;
         private int? _framerateDenominator;
         private int? _framerateNumerator;
-        private ProresInterlaceMode _interlaceMode;
-        private ProresParControl _parControl;
-        private int? _parDenominator;
-        private int? _parNumerator;
-        private ProresSlowPal _slowPal;
-        private ProresTelecine _telecine;
+        private AvcIntraInterlaceMode _interlaceMode;
+        private AvcIntraSlowPal _slowPal;
+        private AvcIntraTelecine _telecine;
 
         /// <summary>
-        /// Gets and sets the property CodecProfile. Use Profile (ProResCodecProfile) to specifiy
-        /// the type of Apple ProRes codec to use for this output.
+        /// Gets and sets the property AvcIntraClass. Specify the AVC-Intra class of your output.
+        /// The AVC-Intra class selection determines the output video bit rate depending on the
+        /// frame rate of the output. Outputs with higher class values have higher bitrates and
+        /// improved image quality.
         /// </summary>
-        public ProresCodecProfile CodecProfile
+        public AvcIntraClass AvcIntraClass
         {
-            get { return this._codecProfile; }
-            set { this._codecProfile = value; }
+            get { return this._avcIntraClass; }
+            set { this._avcIntraClass = value; }
         }
 
-        // Check to see if CodecProfile property is set
-        internal bool IsSetCodecProfile()
+        // Check to see if AvcIntraClass property is set
+        internal bool IsSetAvcIntraClass()
         {
-            return this._codecProfile != null;
+            return this._avcIntraClass != null;
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.MediaConvert.Model
         /// Choose SPECIFIED if you want the service to use the frame rate you specify in the
         /// settings FramerateNumerator and FramerateDenominator.
         /// </summary>
-        public ProresFramerateControl FramerateControl
+        public AvcIntraFramerateControl FramerateControl
         {
             get { return this._framerateControl; }
             set { this._framerateControl = value; }
@@ -99,7 +99,7 @@ namespace Amazon.MediaConvert.Model
         /// frame by frame. Note that using FrameFormer increases the transcoding time and incurs
         /// a significant add-on cost.
         /// </summary>
-        public ProresFramerateConversionAlgorithm FramerateConversionAlgorithm
+        public AvcIntraFramerateConversionAlgorithm FramerateConversionAlgorithm
         {
             get { return this._framerateConversionAlgorithm; }
             set { this._framerateConversionAlgorithm = value; }
@@ -119,7 +119,7 @@ namespace Amazon.MediaConvert.Model
         /// you use the console for transcode jobs that use frame rate conversion, provide the
         /// value as a decimal number for Framerate. In this example, specify 23.976.
         /// </summary>
-        [AWSProperty(Min=1, Max=2147483647)]
+        [AWSProperty(Min=1, Max=1001)]
         public int FramerateDenominator
         {
             get { return this._framerateDenominator.GetValueOrDefault(); }
@@ -140,7 +140,7 @@ namespace Amazon.MediaConvert.Model
         /// use the console for transcode jobs that use frame rate conversion, provide the value
         /// as a decimal number for Framerate. In this example, specify 23.976.
         /// </summary>
-        [AWSProperty(Min=1, Max=2147483647)]
+        [AWSProperty(Min=24, Max=60000)]
         public int FramerateNumerator
         {
             get { return this._framerateNumerator.GetValueOrDefault(); }
@@ -166,7 +166,7 @@ namespace Amazon.MediaConvert.Model
         /// the source. If the source is progressive, the output will be interlaced with top field
         /// bottom field first, depending on which of the Follow options you choose.
         /// </summary>
-        public ProresInterlaceMode InterlaceMode
+        public AvcIntraInterlaceMode InterlaceMode
         {
             get { return this._interlaceMode; }
             set { this._interlaceMode = value; }
@@ -179,69 +179,6 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ParControl. Optional. Specify how the service determines
-        /// the pixel aspect ratio (PAR) for this output. The default behavior, Follow source
-        /// (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify
-        /// a different PAR in the console, choose any value other than Follow source. To specify
-        /// a different PAR by editing the JSON job specification, choose SPECIFIED. When you
-        /// choose SPECIFIED for this setting, you must also specify values for the parNumerator
-        /// and parDenominator settings.
-        /// </summary>
-        public ProresParControl ParControl
-        {
-            get { return this._parControl; }
-            set { this._parControl = value; }
-        }
-
-        // Check to see if ParControl property is set
-        internal bool IsSetParControl()
-        {
-            return this._parControl != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ParDenominator. Required when you set Pixel aspect ratio
-        /// (parControl) to SPECIFIED. On the console, this corresponds to any value other than
-        /// Follow source. When you specify an output pixel aspect ratio (PAR) that is different
-        /// from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV
-        /// NTSC widescreen, you would specify the ratio 40:33. In this example, the value for
-        /// parDenominator is 33.
-        /// </summary>
-        [AWSProperty(Min=1, Max=2147483647)]
-        public int ParDenominator
-        {
-            get { return this._parDenominator.GetValueOrDefault(); }
-            set { this._parDenominator = value; }
-        }
-
-        // Check to see if ParDenominator property is set
-        internal bool IsSetParDenominator()
-        {
-            return this._parDenominator.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ParNumerator. Required when you set Pixel aspect ratio
-        /// (parControl) to SPECIFIED. On the console, this corresponds to any value other than
-        /// Follow source. When you specify an output pixel aspect ratio (PAR) that is different
-        /// from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV
-        /// NTSC widescreen, you would specify the ratio 40:33. In this example, the value for
-        /// parNumerator is 40.
-        /// </summary>
-        [AWSProperty(Min=1, Max=2147483647)]
-        public int ParNumerator
-        {
-            get { return this._parNumerator.GetValueOrDefault(); }
-            set { this._parNumerator = value; }
-        }
-
-        // Check to see if ParNumerator property is set
-        internal bool IsSetParNumerator()
-        {
-            return this._parNumerator.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property SlowPal. Ignore this setting unless your input frame rate
         /// is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output.
         /// When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples
@@ -250,7 +187,7 @@ namespace Amazon.MediaConvert.Model
         /// set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED),
         /// (framerateNumerator) to 25 and (framerateDenominator) to 1.
         /// </summary>
-        public ProresSlowPal SlowPal
+        public AvcIntraSlowPal SlowPal
         {
             get { return this._slowPal; }
             set { this._slowPal = value; }
@@ -269,7 +206,7 @@ namespace Amazon.MediaConvert.Model
         /// keep the default value, None (NONE), MediaConvert does a standard frame rate conversion
         /// to 29.97 without doing anything with the field polarity to create a smoother picture.
         /// </summary>
-        public ProresTelecine Telecine
+        public AvcIntraTelecine Telecine
         {
             get { return this._telecine; }
             set { this._telecine = value; }

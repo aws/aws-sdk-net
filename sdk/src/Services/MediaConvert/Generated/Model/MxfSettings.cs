@@ -34,6 +34,7 @@ namespace Amazon.MediaConvert.Model
     public partial class MxfSettings
     {
         private MxfAfdSignaling _afdSignaling;
+        private MxfProfile _profile;
 
         /// <summary>
         /// Gets and sets the property AfdSignaling. Optional. When you have AFD signaling set
@@ -55,6 +56,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAfdSignaling()
         {
             return this._afdSignaling != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Profile. Specify the MXF profile, also called shim, for
+        /// this output. When you choose Auto, MediaConvert chooses a profile based on the video
+        /// codec and resolution. For a list of codecs supported with each MXF profile, see https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html.
+        /// For more information about the automatic selection behavior, see https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
+        /// </summary>
+        public MxfProfile Profile
+        {
+            get { return this._profile; }
+            set { this._profile = value; }
+        }
+
+        // Check to see if Profile property is set
+        internal bool IsSetProfile()
+        {
+            return this._profile != null;
         }
 
     }

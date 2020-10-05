@@ -100,6 +100,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.NielsenConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("nielsenNonLinearWatermark", targetDepth))
+                {
+                    var unmarshaller = NielsenNonLinearWatermarkSettingsUnmarshaller.Instance;
+                    unmarshalledObject.NielsenNonLinearWatermark = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("outputGroups", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<OutputGroup, OutputGroupUnmarshaller>(OutputGroupUnmarshaller.Instance);

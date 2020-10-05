@@ -154,6 +154,16 @@
     <pattern>^((s3://(.*?)\.(bmp|BMP|png|PNG))|(https?://(.*?)\.(bmp|BMP|png|PNG)(\?([^&amp;=]+=[^&amp;]+&amp;)*[^&amp;=]+=[^&amp;]+)?))$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AvcIntraSettings.FramerateDenominator</property>
+    <min>1</min>
+    <max>1001</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AvcIntraSettings.FramerateNumerator</property>
+    <min>24</min>
+    <max>60000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.BurninDestinationSettings.BackgroundOpacity</property>
     <min>0</min>
     <max>255</max>
@@ -1220,6 +1230,42 @@
     <max>0</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.AdiFilename</property>
+    <pattern>^s3:\/\/</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.AssetId</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.AssetName</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.CbetSourceId</property>
+    <pattern>(^0x[A-Fa-f0-9]{0,8}$|^[1-9][0-9]{0,8}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.EpisodeId</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.MetadataDestination</property>
+    <pattern>^s3:\/\/</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.SourceId</property>
+    <min>0</min>
+    <max>65534</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.TicServerUrl</property>
+    <pattern>^https:\/\/</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.NoiseReducerFilterSettings.Strength</property>
     <min>0</min>
     <max>3</max>
@@ -1400,6 +1446,16 @@
     <property>Amazon.MediaConvert.Model.TrackSourceSettings.TrackNumber</property>
     <min>1</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Vc3Settings.FramerateDenominator</property>
+    <min>1</min>
+    <max>1001</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Vc3Settings.FramerateNumerator</property>
+    <min>24</min>
+    <max>60000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.VideoDescription.FixedAfd</property>

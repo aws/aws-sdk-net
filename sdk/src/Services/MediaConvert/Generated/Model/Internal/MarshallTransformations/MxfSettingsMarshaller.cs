@@ -51,6 +51,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AfdSignaling);
             }
 
+            if(requestObject.IsSetProfile())
+            {
+                context.Writer.WritePropertyName("profile");
+                context.Writer.Write(requestObject.Profile);
+            }
+
         }
 
         /// <summary>

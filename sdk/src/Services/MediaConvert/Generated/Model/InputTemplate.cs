@@ -43,6 +43,7 @@ namespace Amazon.MediaConvert.Model
         private int? _filterStrength;
         private ImageInserter _imageInserter;
         private List<InputClipping> _inputClippings = new List<InputClipping>();
+        private InputScanType _inputScanType;
         private Rectangle _position;
         private int? _programNumber;
         private InputPsiControl _psiControl;
@@ -154,13 +155,13 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FilterEnable. Use Filter enable (InputFilterEnable) to
-        /// specify how the transcoding service applies the denoise and deblock filters. You must
-        /// also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock
-        /// (InputDeblockFilter). * Auto - The transcoding service determines whether to apply
-        /// filtering, depending on input type and quality. * Disable - The input is not filtered.
-        /// This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter).
-        /// * Force - The in put is filtered regardless of input type.
+        /// Gets and sets the property FilterEnable. Specify how the transcoding service applies
+        /// the denoise and deblock filters. You must also enable the filters separately, with
+        /// Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding
+        /// service determines whether to apply filtering, depending on input type and quality.
+        /// * Disable - The input is not filtered. This is true even if you use the API to enable
+        /// them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
+        /// regardless of input type.
         /// </summary>
         public InputFilterEnable FilterEnable
         {
@@ -227,6 +228,27 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetInputClippings()
         {
             return this._inputClippings != null && this._inputClippings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputScanType. When you have a progressive segmented frame
+        /// (PsF) input, use this setting to flag the input as PsF. MediaConvert doesn't automatically
+        /// detect PsF. Therefore, flagging your input as PsF results in better preservation of
+        /// video quality when you do deinterlacing and frame rate conversion. If you don't specify,
+        /// the default value is Auto (AUTO). Auto is the correct setting for all inputs that
+        /// are not PsF. Don't set this value to PsF when your input is interlaced. Doing so creates
+        /// horizontal interlacing artifacts.
+        /// </summary>
+        public InputScanType InputScanType
+        {
+            get { return this._inputScanType; }
+            set { this._inputScanType = value; }
+        }
+
+        // Check to see if InputScanType property is set
+        internal bool IsSetInputScanType()
+        {
+            return this._inputScanType != null;
         }
 
         /// <summary>

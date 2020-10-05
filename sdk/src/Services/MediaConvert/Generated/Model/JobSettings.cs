@@ -39,6 +39,7 @@ namespace Amazon.MediaConvert.Model
         private List<Input> _inputs = new List<Input>();
         private MotionImageInserter _motionImageInserter;
         private NielsenConfiguration _nielsenConfiguration;
+        private NielsenNonLinearWatermarkSettings _nielsenNonLinearWatermark;
         private List<OutputGroup> _outputGroups = new List<OutputGroup>();
         private TimecodeConfig _timecodeConfig;
         private TimedMetadataInsertion _timedMetadataInsertion;
@@ -147,6 +148,27 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NielsenNonLinearWatermark. Ignore these settings unless
+        /// you are using Nielsen non-linear watermarking. Specify the values that  MediaConvert
+        /// uses to generate and place Nielsen watermarks in your output audio. In addition to
+        ///  specifying these values, you also need to set up your cloud TIC server. These settings
+        /// apply to  every output in your job. The MediaConvert implementation is currently with
+        /// the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark
+        /// Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+        /// </summary>
+        public NielsenNonLinearWatermarkSettings NielsenNonLinearWatermark
+        {
+            get { return this._nielsenNonLinearWatermark; }
+            set { this._nielsenNonLinearWatermark = value; }
+        }
+
+        // Check to see if NielsenNonLinearWatermark property is set
+        internal bool IsSetNielsenNonLinearWatermark()
+        {
+            return this._nielsenNonLinearWatermark != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OutputGroups. (OutputGroups) contains one group of settings
         /// for each set of outputs that share a common package type. All unpackaged files (MPEG-4,
         /// MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group
@@ -186,9 +208,9 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property TimedMetadataInsertion. Enable Timed metadata insertion
-        /// (TimedMetadataInsertion) to include ID3 tags in your job. To include timed metadata,
-        /// you must enable it here, enable it in each output container, and specify tags and
-        /// timecodes in ID3 insertion (Id3Insertion) objects.
+        /// (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed
+        /// metadata, you must enable it here, enable it in each output container, and specify
+        /// tags and timecodes in ID3 insertion (Id3Insertion) objects.
         /// </summary>
         public TimedMetadataInsertion TimedMetadataInsertion
         {

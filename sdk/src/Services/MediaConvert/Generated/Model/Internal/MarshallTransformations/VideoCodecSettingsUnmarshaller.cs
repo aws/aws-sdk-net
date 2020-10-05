@@ -70,6 +70,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Av1Settings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("avcIntraSettings", targetDepth))
+                {
+                    var unmarshaller = AvcIntraSettingsUnmarshaller.Instance;
+                    unmarshalledObject.AvcIntraSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("codec", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ProresSettingsUnmarshaller.Instance;
                     unmarshalledObject.ProresSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vc3Settings", targetDepth))
+                {
+                    var unmarshaller = Vc3SettingsUnmarshaller.Instance;
+                    unmarshalledObject.Vc3Settings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("vp8Settings", targetDepth))

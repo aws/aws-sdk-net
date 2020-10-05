@@ -159,7 +159,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Queue. Optional. When you create a job, you can specify
         /// a queue to send it to. If you don't specify, the job will go to the default queue.
-        /// For more about queues, see the User Guide topic at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+        /// For more about queues, see the User Guide topic at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
         /// </summary>
         public string Queue
         {
@@ -176,7 +176,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Role. Required. The IAM role you use for creating this
         /// job. For details about permissions, see the User Guide topic at the User Guide at
-        /// http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+        /// https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
         /// </summary>
         [AWSProperty(Required=true)]
         public string Role

@@ -124,6 +124,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.InputClippings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inputScanType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InputScanType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("position", targetDepth))
                 {
                     var unmarshaller = RectangleUnmarshaller.Instance;

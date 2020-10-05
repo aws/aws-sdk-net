@@ -111,6 +111,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetNielsenNonLinearWatermark())
+            {
+                context.Writer.WritePropertyName("nielsenNonLinearWatermark");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NielsenNonLinearWatermarkSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.NielsenNonLinearWatermark, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOutputGroups())
             {
                 context.Writer.WritePropertyName("outputGroups");
