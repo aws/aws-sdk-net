@@ -111,6 +111,12 @@ namespace Amazon.SageMaker.Model
         /// stored. This path must point to a single <code>gzip</code> compressed tar archive
         /// (<code>.tar.gz</code> suffix).
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The model artifacts must be in an S3 bucket that is in the same region as the model
+        /// package.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=1024)]
         public string ModelDataUrl

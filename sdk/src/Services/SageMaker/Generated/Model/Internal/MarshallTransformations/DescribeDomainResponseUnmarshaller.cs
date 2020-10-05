@@ -51,6 +51,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AppNetworkAccessType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AppNetworkAccessType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AuthMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

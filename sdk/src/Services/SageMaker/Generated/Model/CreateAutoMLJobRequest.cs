@@ -136,7 +136,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property InputDataConfig. 
         /// <para>
         /// Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum
-        /// of 1000 rows.
+        /// of 500 rows.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

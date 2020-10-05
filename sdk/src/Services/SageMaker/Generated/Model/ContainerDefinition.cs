@@ -167,7 +167,12 @@ namespace Amazon.SageMaker.Model
         /// own algorithms. For more information on built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
         /// Parameters</a>. 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The model artifacts must be in an S3 bucket that is in the same region as the model
+        /// or endpoint you are creating.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token
         /// Service to download model artifacts from the S3 path you provide. AWS STS is activated

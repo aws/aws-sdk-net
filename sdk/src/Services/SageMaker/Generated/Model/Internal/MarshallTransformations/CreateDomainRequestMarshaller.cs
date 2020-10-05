@@ -68,6 +68,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAppNetworkAccessType())
+                {
+                    context.Writer.WritePropertyName("AppNetworkAccessType");
+                    context.Writer.Write(publicRequest.AppNetworkAccessType);
+                }
+
                 if(publicRequest.IsSetAuthMode())
                 {
                     context.Writer.WritePropertyName("AuthMode");

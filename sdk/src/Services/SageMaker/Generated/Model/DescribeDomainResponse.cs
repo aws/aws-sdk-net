@@ -33,6 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DescribeDomainResponse : AmazonWebServiceResponse
     {
+        private AppNetworkAccessType _appNetworkAccessType;
         private AuthMode _authMode;
         private DateTime? _creationTime;
         private UserSettings _defaultUserSettings;
@@ -48,6 +49,34 @@ namespace Amazon.SageMaker.Model
         private List<string> _subnetIds = new List<string>();
         private string _url;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property AppNetworkAccessType. 
+        /// <para>
+        /// Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon
+        /// SageMaker, which allows direct internet access
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public AppNetworkAccessType AppNetworkAccessType
+        {
+            get { return this._appNetworkAccessType; }
+            set { this._appNetworkAccessType = value; }
+        }
+
+        // Check to see if AppNetworkAccessType property is set
+        internal bool IsSetAppNetworkAccessType()
+        {
+            return this._appNetworkAccessType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AuthMode. 
@@ -276,7 +305,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// Security setting to limit to a set of subnets.
+        /// The VPC subnets that Studio uses for communication.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16)]
@@ -314,7 +343,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The ID of the Amazon Virtual Private Cloud.
+        /// The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32)]

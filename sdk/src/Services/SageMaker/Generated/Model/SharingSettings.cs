@@ -84,8 +84,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property S3OutputPath. 
         /// <para>
         /// When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket
-        /// used to save the notebook cell output. If <code>S3OutputPath</code> isn't specified,
-        /// a default bucket is used.
+        /// used to save the notebook cell output.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

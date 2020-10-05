@@ -97,7 +97,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TransformJob. 
         /// <para>
-        /// Information about a transform job that's the source of the trial component.
+        /// Information about a transform job that's the source of a trial component.
         /// </para>
         /// </summary>
         public TransformJob TransformJob

@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The input data must be in CSV format and contain at least 1000 rows.
+        /// The input data must be in CSV format and contain at least 500 rows.
         /// </para>
         ///  </note>
         /// </summary>
