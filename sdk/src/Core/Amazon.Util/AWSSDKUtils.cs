@@ -1423,7 +1423,7 @@ namespace Amazon.Util
                 var standardErrorTask = process.StandardError.ReadToEndAsync();
                 var standardOutputTask = process.StandardOutput.ReadToEndAsync();
 
-                await Task.WhenAll(tcs.Task, standardErrorTask, standardOutputTask);
+                await Task.WhenAll(tcs.Task, standardErrorTask, standardOutputTask).ConfigureAwait(false);
 
                 return new ProcessExecutionResult
                 {
