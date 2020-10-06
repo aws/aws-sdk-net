@@ -33,7 +33,7 @@ namespace Amazon.S3.Model
         private string expectedBucketOwner;
 
         /// <summary>
-        /// The name of the bucket to contain the object.
+        /// <para>The name of the bucket for which the accelerate configuration is set.</para>
         /// </summary>
         public string BucketName
         {

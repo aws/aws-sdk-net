@@ -138,8 +138,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the Name property.
-        /// The bucket's name.
+        /// <para>The bucket name.</para>
         /// </summary>
         public string Name
         {

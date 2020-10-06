@@ -25,7 +25,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// <p>Specifies whether Amazon S3 should replicate delete makers.</p>
+    /// <para>Specifies whether Amazon S3 should replicate delete makers.</para>
     /// </summary>
     public partial class DeleteMarkerReplication
     {
@@ -33,10 +33,10 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Gets and sets the property Status.
-        /// <p>The status of the delete marker replication.</p> <note>
-        /// <p> In the current implementation, Amazon S3 does not replicate
+        /// <para>The status of the delete marker replication.</para> <note>
+        /// <para> In the current implementation, Amazon S3 does not replicate
         /// the delete markers. Therefore, the status must be
-        /// <code>Disabled</code>. </p> </note>
+        /// <code>Disabled</code>. </para> </note>
         /// </summary>
         public DeleteMarkerReplicationStatus Status
         {

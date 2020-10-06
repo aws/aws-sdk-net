@@ -40,8 +40,7 @@ namespace Amazon.S3.Model
         private string prefix;
 
         /// <summary>
-        /// Name of the bucketName to which the multipart upload was initiated.
-        ///  
+        /// <para>The name of the bucket to which the multipart upload was initiated.</para> 
         /// </summary>
         public string BucketName
         {
