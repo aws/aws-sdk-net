@@ -78,6 +78,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LocalGatewayVirtualInterfaceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ownerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("peerAddress", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private int? _localBgpAsn;
         private string _localGatewayId;
         private string _localGatewayVirtualInterfaceId;
+        private string _ownerId;
         private string _peerAddress;
         private int? _peerBgpAsn;
         private List<Tag> _tags = new List<Tag>();
@@ -112,6 +113,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLocalGatewayVirtualInterfaceId()
         {
             return this._localGatewayVirtualInterfaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// The AWS account ID that owns the local gateway virtual interface.
+        /// </para>
+        /// </summary>
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
         }
 
         /// <summary>
