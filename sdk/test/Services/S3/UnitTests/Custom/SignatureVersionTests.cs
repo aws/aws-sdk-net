@@ -74,7 +74,8 @@ namespace AWSSDK.UnitTests
             };
             var config = new AmazonS3Config
             {
-                UseArnRegion = true
+                UseArnRegion = true,
+                RegionEndpoint = RegionEndpoint.USWest2
             };
             var iRequest = S3ArnTestUtils.RunMockRequest(putObjectRequest, PutObjectRequestMarshaller.Instance, config);
             signer.Sign(iRequest, config, new RequestMetrics(), "ACCESS", "SECRET");
