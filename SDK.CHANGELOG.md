@@ -1,3 +1,13 @@
+### 3.5.31.0 (2020-10-06 18:15 UTC)
+* DatabaseMigrationService (3.5.2.0)
+	* Added new S3 endpoint settings to allow partitioning CDC data by date for S3 as target. Exposed some Extra Connection Attributes as endpoint settings for relational databases as target.
+* EC2 (3.5.8.0)
+	* This release supports returning additional information about local gateway virtual interfaces, and virtual interface groups.
+* KinesisAnalyticsV2 (3.5.2.0)
+	* Amazon Kinesis Analytics now supports StopApplication with 'force' option
+* MarketplaceCatalog (3.5.1.0)
+	* AWS Marketplace Catalog now supports FailureCode for change workflows to help differentiate client errors and server faults.
+
 ### 3.5.30.1 (2020-10-06 00:41 UTC)
 * S3 (3.5.3.1)
 	* Add S3 Outposts documentation
