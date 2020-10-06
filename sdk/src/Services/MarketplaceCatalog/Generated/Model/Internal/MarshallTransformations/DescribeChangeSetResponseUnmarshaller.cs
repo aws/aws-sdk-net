@@ -81,6 +81,12 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                     response.EndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FailureCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FailureCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FailureDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -38,6 +38,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private string _changeSetId;
         private string _changeSetName;
         private string _endTime;
+        private FailureCode _failureCode;
         private string _failureDescription;
         private string _startTime;
         private ChangeStatus _status;
@@ -138,6 +139,27 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetEndTime()
         {
             return this._endTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureCode. 
+        /// <para>
+        /// Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>,
+        /// which means that there are issues with the request (see the <code>ErrorDetailList</code>),
+        /// or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and
+        /// you should retry your request.
+        /// </para>
+        /// </summary>
+        public FailureCode FailureCode
+        {
+            get { return this._failureCode; }
+            set { this._failureCode = value; }
+        }
+
+        // Check to see if FailureCode property is set
+        internal bool IsSetFailureCode()
+        {
+            return this._failureCode != null;
         }
 
         /// <summary>

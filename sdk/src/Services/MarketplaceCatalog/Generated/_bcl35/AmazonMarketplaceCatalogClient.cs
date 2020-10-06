@@ -36,7 +36,7 @@ namespace Amazon.MarketplaceCatalog
     /// Implementation for accessing MarketplaceCatalog
     ///
     /// Catalog API actions allow you to manage your entities through list, describe, and
-    /// update capabilities. An entity can be a product or an offer on AWS Marketplace.
+    /// update capabilities. An entity can be a product or an offer on AWS Marketplace. 
     /// 
     ///  
     /// <para>

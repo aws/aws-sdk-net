@@ -94,6 +94,12 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                     unmarshalledObject.EntityIdList = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FailureCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FailureCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
