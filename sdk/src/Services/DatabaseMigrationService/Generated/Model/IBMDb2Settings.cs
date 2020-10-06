@@ -33,11 +33,33 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class IBMDb2Settings
     {
+        private string _currentLsn;
         private string _databaseName;
+        private int? _maxKBytesPerRead;
         private string _password;
         private int? _port;
         private string _serverName;
+        private bool? _setDataCaptureChanges;
         private string _username;
+
+        /// <summary>
+        /// Gets and sets the property CurrentLsn. 
+        /// <para>
+        /// For ongoing replication (CDC), use CurrentLSN to specify a log sequence number (LSN)
+        /// where you want the replication to start.
+        /// </para>
+        /// </summary>
+        public string CurrentLsn
+        {
+            get { return this._currentLsn; }
+            set { this._currentLsn = value; }
+        }
+
+        // Check to see if CurrentLsn property is set
+        internal bool IsSetCurrentLsn()
+        {
+            return this._currentLsn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DatabaseName. 
@@ -55,6 +77,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxKBytesPerRead. 
+        /// <para>
+        /// Maximum number of bytes per read, as a NUMBER value. The default is 64 KB.
+        /// </para>
+        /// </summary>
+        public int MaxKBytesPerRead
+        {
+            get { return this._maxKBytesPerRead.GetValueOrDefault(); }
+            set { this._maxKBytesPerRead = value; }
+        }
+
+        // Check to see if MaxKBytesPerRead property is set
+        internal bool IsSetMaxKBytesPerRead()
+        {
+            return this._maxKBytesPerRead.HasValue; 
         }
 
         /// <summary>
@@ -109,6 +149,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServerName()
         {
             return this._serverName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SetDataCaptureChanges. 
+        /// <para>
+        /// Enables ongoing replication (CDC) as a BOOLEAN value. The default is true.
+        /// </para>
+        /// </summary>
+        public bool SetDataCaptureChanges
+        {
+            get { return this._setDataCaptureChanges.GetValueOrDefault(); }
+            set { this._setDataCaptureChanges = value; }
+        }
+
+        // Check to see if SetDataCaptureChanges property is set
+        internal bool IsSetSetDataCaptureChanges()
+        {
+            return this._setDataCaptureChanges.HasValue; 
         }
 
         /// <summary>

@@ -45,10 +45,34 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MySQLSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAfterConnectScript())
+            {
+                context.Writer.WritePropertyName("AfterConnectScript");
+                context.Writer.Write(requestObject.AfterConnectScript);
+            }
+
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
                 context.Writer.Write(requestObject.DatabaseName);
+            }
+
+            if(requestObject.IsSetEventsPollInterval())
+            {
+                context.Writer.WritePropertyName("EventsPollInterval");
+                context.Writer.Write(requestObject.EventsPollInterval);
+            }
+
+            if(requestObject.IsSetMaxFileSize())
+            {
+                context.Writer.WritePropertyName("MaxFileSize");
+                context.Writer.Write(requestObject.MaxFileSize);
+            }
+
+            if(requestObject.IsSetParallelLoadThreads())
+            {
+                context.Writer.WritePropertyName("ParallelLoadThreads");
+                context.Writer.Write(requestObject.ParallelLoadThreads);
             }
 
             if(requestObject.IsSetPassword())
@@ -67,6 +91,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ServerName");
                 context.Writer.Write(requestObject.ServerName);
+            }
+
+            if(requestObject.IsSetServerTimezone())
+            {
+                context.Writer.WritePropertyName("ServerTimezone");
+                context.Writer.Write(requestObject.ServerTimezone);
+            }
+
+            if(requestObject.IsSetTargetDbType())
+            {
+                context.Writer.WritePropertyName("TargetDbType");
+                context.Writer.Write(requestObject.TargetDbType);
             }
 
             if(requestObject.IsSetUsername())

@@ -118,6 +118,24 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataPageSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DatePartitionDelimiter", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatePartitionDelimiter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DatePartitionEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DatePartitionEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DatePartitionSequence", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatePartitionSequence = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DictPageSizeLimit", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

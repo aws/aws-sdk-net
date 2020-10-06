@@ -129,6 +129,60 @@ namespace Amazon.DatabaseMigrationService
 
 
     /// <summary>
+    /// Constants used for properties of type CharLengthSemantics.
+    /// </summary>
+    public class CharLengthSemantics : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Byte for CharLengthSemantics
+        /// </summary>
+        public static readonly CharLengthSemantics Byte = new CharLengthSemantics("byte");
+        /// <summary>
+        /// Constant Char for CharLengthSemantics
+        /// </summary>
+        public static readonly CharLengthSemantics Char = new CharLengthSemantics("char");
+        /// <summary>
+        /// Constant Default for CharLengthSemantics
+        /// </summary>
+        public static readonly CharLengthSemantics Default = new CharLengthSemantics("default");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CharLengthSemantics(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CharLengthSemantics FindValue(string value)
+        {
+            return FindValue<CharLengthSemantics>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CharLengthSemantics(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CompressionTypeValue.
     /// </summary>
     public class CompressionTypeValue : ConstantClass
@@ -222,6 +276,126 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataFormatValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DatePartitionDelimiterValue.
+    /// </summary>
+    public class DatePartitionDelimiterValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DASH for DatePartitionDelimiterValue
+        /// </summary>
+        public static readonly DatePartitionDelimiterValue DASH = new DatePartitionDelimiterValue("DASH");
+        /// <summary>
+        /// Constant NONE for DatePartitionDelimiterValue
+        /// </summary>
+        public static readonly DatePartitionDelimiterValue NONE = new DatePartitionDelimiterValue("NONE");
+        /// <summary>
+        /// Constant SLASH for DatePartitionDelimiterValue
+        /// </summary>
+        public static readonly DatePartitionDelimiterValue SLASH = new DatePartitionDelimiterValue("SLASH");
+        /// <summary>
+        /// Constant UNDERSCORE for DatePartitionDelimiterValue
+        /// </summary>
+        public static readonly DatePartitionDelimiterValue UNDERSCORE = new DatePartitionDelimiterValue("UNDERSCORE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatePartitionDelimiterValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatePartitionDelimiterValue FindValue(string value)
+        {
+            return FindValue<DatePartitionDelimiterValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatePartitionDelimiterValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DatePartitionSequenceValue.
+    /// </summary>
+    public class DatePartitionSequenceValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DDMMYYYY for DatePartitionSequenceValue
+        /// </summary>
+        public static readonly DatePartitionSequenceValue DDMMYYYY = new DatePartitionSequenceValue("DDMMYYYY");
+        /// <summary>
+        /// Constant MMYYYYDD for DatePartitionSequenceValue
+        /// </summary>
+        public static readonly DatePartitionSequenceValue MMYYYYDD = new DatePartitionSequenceValue("MMYYYYDD");
+        /// <summary>
+        /// Constant YYYYMM for DatePartitionSequenceValue
+        /// </summary>
+        public static readonly DatePartitionSequenceValue YYYYMM = new DatePartitionSequenceValue("YYYYMM");
+        /// <summary>
+        /// Constant YYYYMMDD for DatePartitionSequenceValue
+        /// </summary>
+        public static readonly DatePartitionSequenceValue YYYYMMDD = new DatePartitionSequenceValue("YYYYMMDD");
+        /// <summary>
+        /// Constant YYYYMMDDHH for DatePartitionSequenceValue
+        /// </summary>
+        public static readonly DatePartitionSequenceValue YYYYMMDDHH = new DatePartitionSequenceValue("YYYYMMDDHH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatePartitionSequenceValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatePartitionSequenceValue FindValue(string value)
+        {
+            return FindValue<DatePartitionSequenceValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatePartitionSequenceValue(string value)
         {
             return FindValue(value);
         }
@@ -795,6 +969,60 @@ namespace Amazon.DatabaseMigrationService
 
 
     /// <summary>
+    /// Constants used for properties of type SafeguardPolicy.
+    /// </summary>
+    public class SafeguardPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ExclusiveAutomaticTruncation for SafeguardPolicy
+        /// </summary>
+        public static readonly SafeguardPolicy ExclusiveAutomaticTruncation = new SafeguardPolicy("exclusive-automatic-truncation");
+        /// <summary>
+        /// Constant RelyOnSqlServerReplicationAgent for SafeguardPolicy
+        /// </summary>
+        public static readonly SafeguardPolicy RelyOnSqlServerReplicationAgent = new SafeguardPolicy("rely-on-sql-server-replication-agent");
+        /// <summary>
+        /// Constant SharedAutomaticTruncation for SafeguardPolicy
+        /// </summary>
+        public static readonly SafeguardPolicy SharedAutomaticTruncation = new SafeguardPolicy("shared-automatic-truncation");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SafeguardPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SafeguardPolicy FindValue(string value)
+        {
+            return FindValue<SafeguardPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SafeguardPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SourceType.
     /// </summary>
     public class SourceType : ConstantClass
@@ -888,6 +1116,56 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StartReplicationTaskTypeValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetDbType.
+    /// </summary>
+    public class TargetDbType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MultipleDatabases for TargetDbType
+        /// </summary>
+        public static readonly TargetDbType MultipleDatabases = new TargetDbType("multiple-databases");
+        /// <summary>
+        /// Constant SpecificDatabase for TargetDbType
+        /// </summary>
+        public static readonly TargetDbType SpecificDatabase = new TargetDbType("specific-database");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetDbType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetDbType FindValue(string value)
+        {
+            return FindValue<TargetDbType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetDbType(string value)
         {
             return FindValue(value);
         }

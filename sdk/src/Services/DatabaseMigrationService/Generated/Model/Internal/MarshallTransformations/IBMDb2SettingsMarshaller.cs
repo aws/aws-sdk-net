@@ -45,10 +45,22 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IBMDb2Settings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCurrentLsn())
+            {
+                context.Writer.WritePropertyName("CurrentLsn");
+                context.Writer.Write(requestObject.CurrentLsn);
+            }
+
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
                 context.Writer.Write(requestObject.DatabaseName);
+            }
+
+            if(requestObject.IsSetMaxKBytesPerRead())
+            {
+                context.Writer.WritePropertyName("MaxKBytesPerRead");
+                context.Writer.Write(requestObject.MaxKBytesPerRead);
             }
 
             if(requestObject.IsSetPassword())
@@ -67,6 +79,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ServerName");
                 context.Writer.Write(requestObject.ServerName);
+            }
+
+            if(requestObject.IsSetSetDataCaptureChanges())
+            {
+                context.Writer.WritePropertyName("SetDataCaptureChanges");
+                context.Writer.Write(requestObject.SetDataCaptureChanges);
             }
 
             if(requestObject.IsSetUsername())

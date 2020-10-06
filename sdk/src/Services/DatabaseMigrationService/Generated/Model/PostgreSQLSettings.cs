@@ -33,11 +33,65 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class PostgreSQLSettings
     {
+        private string _afterConnectScript;
+        private bool? _captureDdls;
         private string _databaseName;
+        private string _ddlArtifactsSchema;
+        private int? _executeTimeout;
+        private bool? _failTasksOnLobTruncation;
+        private int? _maxFileSize;
         private string _password;
         private int? _port;
         private string _serverName;
+        private string _slotName;
         private string _username;
+
+        /// <summary>
+        /// Gets and sets the property AfterConnectScript. 
+        /// <para>
+        /// For use with change data capture (CDC) only, this attribute has AWS DMS bypass foreign
+        /// keys and user triggers to reduce the time it takes to bulk load data.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>afterConnectScript=SET session_replication_role='replica'</code> 
+        /// </para>
+        /// </summary>
+        public string AfterConnectScript
+        {
+            get { return this._afterConnectScript; }
+            set { this._afterConnectScript = value; }
+        }
+
+        // Check to see if AfterConnectScript property is set
+        internal bool IsSetAfterConnectScript()
+        {
+            return this._afterConnectScript != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CaptureDdls. 
+        /// <para>
+        /// To capture DDL events, AWS DMS creates various artifacts in the PostgreSQL database
+        /// when the task starts. You can later remove these artifacts.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this value is set to <code>N</code>, you don't have to create tables or triggers
+        /// on the source database.
+        /// </para>
+        /// </summary>
+        public bool CaptureDdls
+        {
+            get { return this._captureDdls.GetValueOrDefault(); }
+            set { this._captureDdls = value; }
+        }
+
+        // Check to see if CaptureDdls property is set
+        internal bool IsSetCaptureDdls()
+        {
+            return this._captureDdls.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DatabaseName. 
@@ -55,6 +109,97 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DdlArtifactsSchema. 
+        /// <para>
+        /// The schema in which the operational DDL database artifacts are created.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>ddlArtifactsSchema=xyzddlschema;</code> 
+        /// </para>
+        /// </summary>
+        public string DdlArtifactsSchema
+        {
+            get { return this._ddlArtifactsSchema; }
+            set { this._ddlArtifactsSchema = value; }
+        }
+
+        // Check to see if DdlArtifactsSchema property is set
+        internal bool IsSetDdlArtifactsSchema()
+        {
+            return this._ddlArtifactsSchema != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecuteTimeout. 
+        /// <para>
+        /// Sets the client statement timeout for the PostgreSQL instance, in seconds. The default
+        /// value is 60 seconds.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>executeTimeout=100;</code> 
+        /// </para>
+        /// </summary>
+        public int ExecuteTimeout
+        {
+            get { return this._executeTimeout.GetValueOrDefault(); }
+            set { this._executeTimeout = value; }
+        }
+
+        // Check to see if ExecuteTimeout property is set
+        internal bool IsSetExecuteTimeout()
+        {
+            return this._executeTimeout.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailTasksOnLobTruncation. 
+        /// <para>
+        /// When set to <code>true</code>, this value causes a task to fail if the actual size
+        /// of a LOB column is greater than the specified <code>LobMaxSize</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If task is set to Limited LOB mode and this option is set to true, the task fails
+        /// instead of truncating the LOB data.
+        /// </para>
+        /// </summary>
+        public bool FailTasksOnLobTruncation
+        {
+            get { return this._failTasksOnLobTruncation.GetValueOrDefault(); }
+            set { this._failTasksOnLobTruncation = value; }
+        }
+
+        // Check to see if FailTasksOnLobTruncation property is set
+        internal bool IsSetFailTasksOnLobTruncation()
+        {
+            return this._failTasksOnLobTruncation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxFileSize. 
+        /// <para>
+        /// Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>maxFileSize=512</code> 
+        /// </para>
+        /// </summary>
+        public int MaxFileSize
+        {
+            get { return this._maxFileSize.GetValueOrDefault(); }
+            set { this._maxFileSize = value; }
+        }
+
+        // Check to see if MaxFileSize property is set
+        internal bool IsSetMaxFileSize()
+        {
+            return this._maxFileSize.HasValue; 
         }
 
         /// <summary>
@@ -109,6 +254,30 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServerName()
         {
             return this._serverName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SlotName. 
+        /// <para>
+        /// Sets the name of a previously created logical replication slot for a CDC load of the
+        /// PostgreSQL source instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// When used with the AWS DMS API <code>CdcStartPosition</code> request parameter, this
+        /// attribute also enables using native CDC start points.
+        /// </para>
+        /// </summary>
+        public string SlotName
+        {
+            get { return this._slotName; }
+            set { this._slotName = value; }
+        }
+
+        // Check to see if SlotName property is set
+        internal bool IsSetSlotName()
+        {
+            return this._slotName != null;
         }
 
         /// <summary>

@@ -31,7 +31,8 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Identifies the name and value of a filter object. This filter is used to limit the
     /// number and type of AWS DMS objects that are returned for a particular <code>Describe*</code>
-    /// or similar operation.
+    /// call or similar operation. Filters are used as an optional parameter to the following
+    /// APIs.
     /// </summary>
     public partial class Filter
     {

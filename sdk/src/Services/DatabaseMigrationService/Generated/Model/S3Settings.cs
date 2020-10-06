@@ -42,6 +42,9 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _csvRowDelimiter;
         private DataFormatValue _dataFormat;
         private int? _dataPageSize;
+        private DatePartitionDelimiterValue _datePartitionDelimiter;
+        private bool? _datePartitionEnabled;
+        private DatePartitionSequenceValue _datePartitionSequence;
         private int? _dictPageSizeLimit;
         private bool? _enableStatistics;
         private EncodingTypeValue _encodingType;
@@ -295,6 +298,67 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDataPageSize()
         {
             return this._dataPageSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatePartitionDelimiter. 
+        /// <para>
+        /// Specifies a date separating delimiter to use during folder partitioning. The default
+        /// value is <code>SLASH</code> (/). Use this parameter when <code>DatePartitionedEnabled</code>
+        /// is set to <code>true</code>.
+        /// </para>
+        /// </summary>
+        public DatePartitionDelimiterValue DatePartitionDelimiter
+        {
+            get { return this._datePartitionDelimiter; }
+            set { this._datePartitionDelimiter = value; }
+        }
+
+        // Check to see if DatePartitionDelimiter property is set
+        internal bool IsSetDatePartitionDelimiter()
+        {
+            return this._datePartitionDelimiter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatePartitionEnabled. 
+        /// <para>
+        /// When set to <code>true</code>, this parameter partitions S3 bucket folders based on
+        /// transaction commit dates. The default value is <code>false</code>. For more information
+        /// about date-based folder partitoning, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Using
+        /// date-based folder partitioning</a> 
+        /// </para>
+        /// </summary>
+        public bool DatePartitionEnabled
+        {
+            get { return this._datePartitionEnabled.GetValueOrDefault(); }
+            set { this._datePartitionEnabled = value; }
+        }
+
+        // Check to see if DatePartitionEnabled property is set
+        internal bool IsSetDatePartitionEnabled()
+        {
+            return this._datePartitionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatePartitionSequence. 
+        /// <para>
+        /// Identifies the sequence of the date format to use during folder partitioning. The
+        /// default value is <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code>
+        /// is set to <code>true</code>.
+        /// </para>
+        /// </summary>
+        public DatePartitionSequenceValue DatePartitionSequence
+        {
+            get { return this._datePartitionSequence; }
+            set { this._datePartitionSequence = value; }
+        }
+
+        // Check to see if DatePartitionSequence property is set
+        internal bool IsSetDatePartitionSequence()
+        {
+            return this._datePartitionSequence != null;
         }
 
         /// <summary>

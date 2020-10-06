@@ -33,11 +33,36 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class MySQLSettings
     {
+        private string _afterConnectScript;
         private string _databaseName;
+        private int? _eventsPollInterval;
+        private int? _maxFileSize;
+        private int? _parallelLoadThreads;
         private string _password;
         private int? _port;
         private string _serverName;
+        private string _serverTimezone;
+        private TargetDbType _targetDbType;
         private string _username;
+
+        /// <summary>
+        /// Gets and sets the property AfterConnectScript. 
+        /// <para>
+        /// Specifies a script to run immediately after AWS DMS connects to the endpoint. The
+        /// migration task continues running regardless if the SQL statement succeeds or fails.
+        /// </para>
+        /// </summary>
+        public string AfterConnectScript
+        {
+            get { return this._afterConnectScript; }
+            set { this._afterConnectScript = value; }
+        }
+
+        // Check to see if AfterConnectScript property is set
+        internal bool IsSetAfterConnectScript()
+        {
+            return this._afterConnectScript != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DatabaseName. 
@@ -55,6 +80,81 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventsPollInterval. 
+        /// <para>
+        /// Specifies how often to check the binary log for new changes/events when the database
+        /// is idle.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>eventsPollInterval=5;</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// In the example, AWS DMS checks for changes in the binary logs every five seconds.
+        /// </para>
+        /// </summary>
+        public int EventsPollInterval
+        {
+            get { return this._eventsPollInterval.GetValueOrDefault(); }
+            set { this._eventsPollInterval = value; }
+        }
+
+        // Check to see if EventsPollInterval property is set
+        internal bool IsSetEventsPollInterval()
+        {
+            return this._eventsPollInterval.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxFileSize. 
+        /// <para>
+        /// Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible
+        /// database.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>maxFileSize=512</code> 
+        /// </para>
+        /// </summary>
+        public int MaxFileSize
+        {
+            get { return this._maxFileSize.GetValueOrDefault(); }
+            set { this._maxFileSize = value; }
+        }
+
+        // Check to see if MaxFileSize property is set
+        internal bool IsSetMaxFileSize()
+        {
+            return this._maxFileSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParallelLoadThreads. 
+        /// <para>
+        /// Improves performance when loading data into the MySQLcompatible target database. Specifies
+        /// how many threads to use to load the data into the MySQL-compatible target database.
+        /// Setting a large number of threads can have an adverse effect on database performance,
+        /// because a separate connection is required for each thread.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>parallelLoadThreads=1</code> 
+        /// </para>
+        /// </summary>
+        public int ParallelLoadThreads
+        {
+            get { return this._parallelLoadThreads.GetValueOrDefault(); }
+            set { this._parallelLoadThreads = value; }
+        }
+
+        // Check to see if ParallelLoadThreads property is set
+        internal bool IsSetParallelLoadThreads()
+        {
+            return this._parallelLoadThreads.HasValue; 
         }
 
         /// <summary>
@@ -109,6 +209,55 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServerName()
         {
             return this._serverName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerTimezone. 
+        /// <para>
+        /// Specifies the time zone for the source MySQL database.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>serverTimezone=US/Pacific;</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: Do not enclose time zones in single quotes.
+        /// </para>
+        /// </summary>
+        public string ServerTimezone
+        {
+            get { return this._serverTimezone; }
+            set { this._serverTimezone = value; }
+        }
+
+        // Check to see if ServerTimezone property is set
+        internal bool IsSetServerTimezone()
+        {
+            return this._serverTimezone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetDbType. 
+        /// <para>
+        /// Specifies where to migrate source tables on the target, either to a single database
+        /// or multiple databases.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>targetDbType=MULTIPLE_DATABASES</code> 
+        /// </para>
+        /// </summary>
+        public TargetDbType TargetDbType
+        {
+            get { return this._targetDbType; }
+            set { this._targetDbType = value; }
+        }
+
+        // Check to see if TargetDbType property is set
+        internal bool IsSetTargetDbType()
+        {
+            return this._targetDbType != null;
         }
 
         /// <summary>

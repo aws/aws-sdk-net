@@ -99,6 +99,24 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DataPageSize);
             }
 
+            if(requestObject.IsSetDatePartitionDelimiter())
+            {
+                context.Writer.WritePropertyName("DatePartitionDelimiter");
+                context.Writer.Write(requestObject.DatePartitionDelimiter);
+            }
+
+            if(requestObject.IsSetDatePartitionEnabled())
+            {
+                context.Writer.WritePropertyName("DatePartitionEnabled");
+                context.Writer.Write(requestObject.DatePartitionEnabled);
+            }
+
+            if(requestObject.IsSetDatePartitionSequence())
+            {
+                context.Writer.WritePropertyName("DatePartitionSequence");
+                context.Writer.Write(requestObject.DatePartitionSequence);
+            }
+
             if(requestObject.IsSetDictPageSizeLimit())
             {
                 context.Writer.WritePropertyName("DictPageSizeLimit");

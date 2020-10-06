@@ -107,8 +107,21 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property BucketFolder. 
         /// <para>
-        /// The location where the comma-separated value (.csv) files are stored before being
-        /// uploaded to the S3 bucket. 
+        /// An S3 folder where the comma-separated-value (.csv) files are stored before being
+        /// uploaded to the target Redshift cluster. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For full load mode, AWS DMS converts source records into .csv files and loads them
+        /// to the <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
+        /// command to upload the .csv files to the target table. The files are deleted once the
+        /// <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+        /// Redshift Database Developer Guide</a> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For change-data-capture (CDC) mode, AWS DMS creates a <i>NetChanges</i> table, and
+        /// loads the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.
         /// </para>
         /// </summary>
         public string BucketFolder
@@ -126,7 +139,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        /// The name of the S3 bucket you want to use
+        /// The name of the intermediate S3 bucket used to store .csv files before uploading data
+        /// to Redshift.
         /// </para>
         /// </summary>
         public string BucketName
@@ -263,6 +277,17 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of threads used to upload a single file. This parameter accepts a value
         /// from 1 through 64. It defaults to 10.
         /// </para>
+        ///  
+        /// <para>
+        /// The number of parallel streams used to upload a single .csv file to an S3 bucket using
+        /// S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
+        /// upload overview</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults
+        /// to 10.
+        /// </para>
         /// </summary>
         public int FileTransferUploadStreams
         {
@@ -279,8 +304,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property LoadTimeout. 
         /// <para>
-        /// The amount of time to wait (in milliseconds) before timing out, beginning from when
-        /// you begin loading.
+        /// The amount of time to wait (in milliseconds) before timing out of operations performed
+        /// by AWS DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.
         /// </para>
         /// </summary>
         public int LoadTimeout
@@ -298,8 +323,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MaxFileSize. 
         /// <para>
-        /// The maximum size (in KB) of any .csv file used to transfer data to Amazon Redshift.
-        /// This accepts a value from 1 through 1,048,576. It defaults to 32,768 KB (32 MB).
+        /// The maximum size (in KB) of any .csv file used to load data on an S3 bucket and transfer
+        /// data to Amazon Redshift. It defaults to 1048576KB (1 GB).
         /// </para>
         /// </summary>
         public int MaxFileSize
@@ -552,8 +577,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property WriteBufferSize. 
         /// <para>
-        /// The size of the write buffer to use in rows. Valid values range from 1 through 2,048.
-        /// The default is 1,024. Use this setting to tune performance. 
+        /// The size (in KB) of the in-memory file write buffer used when generating .csv files
+        /// on the local disk at the DMS replication instance. The default value is 1000 (buffer
+        /// size is 1000KB).
         /// </para>
         /// </summary>
         public int WriteBufferSize

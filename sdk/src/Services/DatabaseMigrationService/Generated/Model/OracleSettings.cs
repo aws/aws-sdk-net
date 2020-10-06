@@ -33,16 +33,163 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class OracleSettings
     {
+        private bool? _accessAlternateDirectly;
+        private int? _additionalArchivedLogDestId;
+        private bool? _addSupplementalLogging;
+        private bool? _allowSelectNestedTables;
+        private int? _archivedLogDestId;
+        private bool? _archivedLogsOnly;
         private string _asmPassword;
         private string _asmServer;
         private string _asmUser;
+        private CharLengthSemantics _charLengthSemantics;
         private string _databaseName;
+        private bool? _directPathNoLog;
+        private bool? _directPathParallelLoad;
+        private bool? _enableHomogenousTablespace;
+        private bool? _failTasksOnLobTruncation;
+        private int? _numberDatatypeScale;
+        private string _oraclePathPrefix;
+        private int? _parallelAsmReadThreads;
         private string _password;
         private int? _port;
+        private int? _readAheadBlocks;
+        private bool? _readTableSpaceName;
+        private bool? _replacePathPrefix;
+        private int? _retryInterval;
         private string _securityDbEncryption;
         private string _securityDbEncryptionName;
         private string _serverName;
+        private bool? _useAlternateFolderForOnline;
+        private string _usePathPrefix;
         private string _username;
+
+        /// <summary>
+        /// Gets and sets the property AccessAlternateDirectly. 
+        /// <para>
+        /// Set this attribute to <code>false</code> in order to use the Binary Reader to capture
+        /// change data for an Amazon RDS for Oracle as the source. This tells the DMS instance
+        /// to not access redo logs through any specified path prefix replacement using direct
+        /// file access.
+        /// </para>
+        /// </summary>
+        public bool AccessAlternateDirectly
+        {
+            get { return this._accessAlternateDirectly.GetValueOrDefault(); }
+            set { this._accessAlternateDirectly = value; }
+        }
+
+        // Check to see if AccessAlternateDirectly property is set
+        internal bool IsSetAccessAlternateDirectly()
+        {
+            return this._accessAlternateDirectly.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalArchivedLogDestId. 
+        /// <para>
+        /// Set this attribute with <code>archivedLogDestId</code> in a primary/ standby setup.
+        /// This attribute is useful in the case of a switchover. In this case, AWS DMS needs
+        /// to know which destination to get archive redo logs from to read changes. This need
+        /// arises because the previous primary instance is now a standby instance after switchover.
+        /// </para>
+        /// </summary>
+        public int AdditionalArchivedLogDestId
+        {
+            get { return this._additionalArchivedLogDestId.GetValueOrDefault(); }
+            set { this._additionalArchivedLogDestId = value; }
+        }
+
+        // Check to see if AdditionalArchivedLogDestId property is set
+        internal bool IsSetAdditionalArchivedLogDestId()
+        {
+            return this._additionalArchivedLogDestId.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AddSupplementalLogging. 
+        /// <para>
+        /// Set this attribute to set up table-level supplemental logging for the Oracle database.
+        /// This attribute enables PRIMARY KEY supplemental logging on all tables selected for
+        /// a migration task.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use this option, you still need to enable database-level supplemental logging.
+        /// </para>
+        /// </summary>
+        public bool AddSupplementalLogging
+        {
+            get { return this._addSupplementalLogging.GetValueOrDefault(); }
+            set { this._addSupplementalLogging = value; }
+        }
+
+        // Check to see if AddSupplementalLogging property is set
+        internal bool IsSetAddSupplementalLogging()
+        {
+            return this._addSupplementalLogging.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllowSelectNestedTables. 
+        /// <para>
+        /// Set this attribute to <code>true</code> to enable replication of Oracle tables containing
+        /// columns that are nested tables or defined types.
+        /// </para>
+        /// </summary>
+        public bool AllowSelectNestedTables
+        {
+            get { return this._allowSelectNestedTables.GetValueOrDefault(); }
+            set { this._allowSelectNestedTables = value; }
+        }
+
+        // Check to see if AllowSelectNestedTables property is set
+        internal bool IsSetAllowSelectNestedTables()
+        {
+            return this._allowSelectNestedTables.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ArchivedLogDestId. 
+        /// <para>
+        /// Specifies the destination of the archived redo logs. The value should be the same
+        /// as the DEST_ID number in the v$archived_log table. When working with multiple log
+        /// destinations (DEST_ID), we recommend that you to specify an archived redo logs location
+        /// identifier. Doing this improves performance by ensuring that the correct logs are
+        /// accessed from the outset.
+        /// </para>
+        /// </summary>
+        public int ArchivedLogDestId
+        {
+            get { return this._archivedLogDestId.GetValueOrDefault(); }
+            set { this._archivedLogDestId = value; }
+        }
+
+        // Check to see if ArchivedLogDestId property is set
+        internal bool IsSetArchivedLogDestId()
+        {
+            return this._archivedLogDestId.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ArchivedLogsOnly. 
+        /// <para>
+        /// When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo
+        /// logs. If the archived redo logs are stored on Oracle ASM only, the AWS DMS user account
+        /// needs to be granted ASM privileges.
+        /// </para>
+        /// </summary>
+        public bool ArchivedLogsOnly
+        {
+            get { return this._archivedLogsOnly.GetValueOrDefault(); }
+            set { this._archivedLogsOnly = value; }
+        }
+
+        // Check to see if ArchivedLogsOnly property is set
+        internal bool IsSetArchivedLogsOnly()
+        {
+            return this._archivedLogsOnly.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AsmPassword. 
@@ -112,6 +259,30 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CharLengthSemantics. 
+        /// <para>
+        /// Specifies whether the length of a character column is in bytes or in characters. To
+        /// indicate that the character column length is in characters, set this attribute to
+        /// <code>CHAR</code>. Otherwise, the character column length is in bytes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>charLengthSemantics=CHAR;</code> 
+        /// </para>
+        /// </summary>
+        public CharLengthSemantics CharLengthSemantics
+        {
+            get { return this._charLengthSemantics; }
+            set { this._charLengthSemantics = value; }
+        }
+
+        // Check to see if CharLengthSemantics property is set
+        internal bool IsSetCharLengthSemantics()
+        {
+            return this._charLengthSemantics != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
         /// Database name for the endpoint.
@@ -127,6 +298,153 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DirectPathNoLog. 
+        /// <para>
+        /// When set to <code>true</code>, this attribute helps to increase the commit rate on
+        /// the Oracle target database by writing directly to tables and not writing a trail to
+        /// database logs.
+        /// </para>
+        /// </summary>
+        public bool DirectPathNoLog
+        {
+            get { return this._directPathNoLog.GetValueOrDefault(); }
+            set { this._directPathNoLog = value; }
+        }
+
+        // Check to see if DirectPathNoLog property is set
+        internal bool IsSetDirectPathNoLog()
+        {
+            return this._directPathNoLog.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DirectPathParallelLoad. 
+        /// <para>
+        /// When set to <code>true</code>, this attribute specifies a parallel load when <code>useDirectPathFullLoad</code>
+        /// is set to <code>Y</code>. This attribute also only applies when you use the AWS DMS
+        /// parallel load feature. Note that the target table cannot have any constraints or indexes.
+        /// </para>
+        /// </summary>
+        public bool DirectPathParallelLoad
+        {
+            get { return this._directPathParallelLoad.GetValueOrDefault(); }
+            set { this._directPathParallelLoad = value; }
+        }
+
+        // Check to see if DirectPathParallelLoad property is set
+        internal bool IsSetDirectPathParallelLoad()
+        {
+            return this._directPathParallelLoad.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableHomogenousTablespace. 
+        /// <para>
+        /// Set this attribute to enable homogenous tablespace replication and create existing
+        /// tables or indexes under the same tablespace on the target.
+        /// </para>
+        /// </summary>
+        public bool EnableHomogenousTablespace
+        {
+            get { return this._enableHomogenousTablespace.GetValueOrDefault(); }
+            set { this._enableHomogenousTablespace = value; }
+        }
+
+        // Check to see if EnableHomogenousTablespace property is set
+        internal bool IsSetEnableHomogenousTablespace()
+        {
+            return this._enableHomogenousTablespace.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailTasksOnLobTruncation. 
+        /// <para>
+        /// When set to <code>true</code>, this attribute causes a task to fail if the actual
+        /// size of an LOB column is greater than the specified <code>LobMaxSize</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a task is set to limited LOB mode and this option is set to <code>true</code>,
+        /// the task fails instead of truncating the LOB data.
+        /// </para>
+        /// </summary>
+        public bool FailTasksOnLobTruncation
+        {
+            get { return this._failTasksOnLobTruncation.GetValueOrDefault(); }
+            set { this._failTasksOnLobTruncation = value; }
+        }
+
+        // Check to see if FailTasksOnLobTruncation property is set
+        internal bool IsSetFailTasksOnLobTruncation()
+        {
+            return this._failTasksOnLobTruncation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberDatatypeScale. 
+        /// <para>
+        /// Specifies the number scale. You can select a scale up to 38, or you can select FLOAT.
+        /// By default, the NUMBER data type is converted to precision 38, scale 10.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>numberDataTypeScale=12</code> 
+        /// </para>
+        /// </summary>
+        public int NumberDatatypeScale
+        {
+            get { return this._numberDatatypeScale.GetValueOrDefault(); }
+            set { this._numberDatatypeScale = value; }
+        }
+
+        // Check to see if NumberDatatypeScale property is set
+        internal bool IsSetNumberDatatypeScale()
+        {
+            return this._numberDatatypeScale.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OraclePathPrefix. 
+        /// <para>
+        /// Set this string attribute to the required value in order to use the Binary Reader
+        /// to capture change data for an Amazon RDS for Oracle as the source. This value specifies
+        /// the default Oracle root used to access the redo logs.
+        /// </para>
+        /// </summary>
+        public string OraclePathPrefix
+        {
+            get { return this._oraclePathPrefix; }
+            set { this._oraclePathPrefix = value; }
+        }
+
+        // Check to see if OraclePathPrefix property is set
+        internal bool IsSetOraclePathPrefix()
+        {
+            return this._oraclePathPrefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParallelAsmReadThreads. 
+        /// <para>
+        /// Set this attribute to change the number of threads that DMS configures to perform
+        /// a Change Data Capture (CDC) load using Oracle Automatic Storage Management (ASM).
+        /// You can specify an integer value between 2 (the default) and 8 (the maximum). Use
+        /// this attribute together with the <code>readAheadBlocks</code> attribute.
+        /// </para>
+        /// </summary>
+        public int ParallelAsmReadThreads
+        {
+            get { return this._parallelAsmReadThreads.GetValueOrDefault(); }
+            set { this._parallelAsmReadThreads = value; }
+        }
+
+        // Check to see if ParallelAsmReadThreads property is set
+        internal bool IsSetParallelAsmReadThreads()
+        {
+            return this._parallelAsmReadThreads.HasValue; 
         }
 
         /// <summary>
@@ -163,6 +481,88 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadAheadBlocks. 
+        /// <para>
+        /// Set this attribute to change the number of read-ahead blocks that DMS configures to
+        /// perform a Change Data Capture (CDC) load using Oracle Automatic Storage Management
+        /// (ASM). You can specify an integer value between 1000 (the default) and 200,000 (the
+        /// maximum).
+        /// </para>
+        /// </summary>
+        public int ReadAheadBlocks
+        {
+            get { return this._readAheadBlocks.GetValueOrDefault(); }
+            set { this._readAheadBlocks = value; }
+        }
+
+        // Check to see if ReadAheadBlocks property is set
+        internal bool IsSetReadAheadBlocks()
+        {
+            return this._readAheadBlocks.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadTableSpaceName. 
+        /// <para>
+        /// When set to <code>true</code>, this attribute supports tablespace replication.
+        /// </para>
+        /// </summary>
+        public bool ReadTableSpaceName
+        {
+            get { return this._readTableSpaceName.GetValueOrDefault(); }
+            set { this._readTableSpaceName = value; }
+        }
+
+        // Check to see if ReadTableSpaceName property is set
+        internal bool IsSetReadTableSpaceName()
+        {
+            return this._readTableSpaceName.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplacePathPrefix. 
+        /// <para>
+        /// Set this attribute to true in order to use the Binary Reader to capture change data
+        /// for an Amazon RDS for Oracle as the source. This setting tells DMS instance to replace
+        /// the default Oracle root with the specified <code>usePathPrefix</code> setting to access
+        /// the redo logs.
+        /// </para>
+        /// </summary>
+        public bool ReplacePathPrefix
+        {
+            get { return this._replacePathPrefix.GetValueOrDefault(); }
+            set { this._replacePathPrefix = value; }
+        }
+
+        // Check to see if ReplacePathPrefix property is set
+        internal bool IsSetReplacePathPrefix()
+        {
+            return this._replacePathPrefix.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryInterval. 
+        /// <para>
+        /// Specifies the number of seconds that the system waits before resending a query.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>retryInterval=6;</code> 
+        /// </para>
+        /// </summary>
+        public int RetryInterval
+        {
+            get { return this._retryInterval.GetValueOrDefault(); }
+            set { this._retryInterval = value; }
+        }
+
+        // Check to see if RetryInterval property is set
+        internal bool IsSetRetryInterval()
+        {
+            return this._retryInterval.HasValue; 
         }
 
         /// <summary>
@@ -231,6 +631,46 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServerName()
         {
             return this._serverName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseAlternateFolderForOnline. 
+        /// <para>
+        /// Set this attribute to <code>true</code> in order to use the Binary Reader to capture
+        /// change data for an Amazon RDS for Oracle as the source. This tells the DMS instance
+        /// to use any specified prefix replacement to access all online redo logs.
+        /// </para>
+        /// </summary>
+        public bool UseAlternateFolderForOnline
+        {
+            get { return this._useAlternateFolderForOnline.GetValueOrDefault(); }
+            set { this._useAlternateFolderForOnline = value; }
+        }
+
+        // Check to see if UseAlternateFolderForOnline property is set
+        internal bool IsSetUseAlternateFolderForOnline()
+        {
+            return this._useAlternateFolderForOnline.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsePathPrefix. 
+        /// <para>
+        /// Set this string attribute to the required value in order to use the Binary Reader
+        /// to capture change data for an Amazon RDS for Oracle as the source. This value specifies
+        /// the path prefix used to replace the default Oracle root to access the redo logs.
+        /// </para>
+        /// </summary>
+        public string UsePathPrefix
+        {
+            get { return this._usePathPrefix; }
+            set { this._usePathPrefix = value; }
+        }
+
+        // Check to see if UsePathPrefix property is set
+        internal bool IsSetUsePathPrefix()
+        {
+            return this._usePathPrefix != null;
         }
 
         /// <summary>

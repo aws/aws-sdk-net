@@ -45,6 +45,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MicrosoftSQLServerSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBcpPacketSize())
+            {
+                context.Writer.WritePropertyName("BcpPacketSize");
+                context.Writer.Write(requestObject.BcpPacketSize);
+            }
+
+            if(requestObject.IsSetControlTablesFileGroup())
+            {
+                context.Writer.WritePropertyName("ControlTablesFileGroup");
+                context.Writer.Write(requestObject.ControlTablesFileGroup);
+            }
+
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
@@ -63,10 +75,28 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Port);
             }
 
+            if(requestObject.IsSetReadBackupOnly())
+            {
+                context.Writer.WritePropertyName("ReadBackupOnly");
+                context.Writer.Write(requestObject.ReadBackupOnly);
+            }
+
+            if(requestObject.IsSetSafeguardPolicy())
+            {
+                context.Writer.WritePropertyName("SafeguardPolicy");
+                context.Writer.Write(requestObject.SafeguardPolicy);
+            }
+
             if(requestObject.IsSetServerName())
             {
                 context.Writer.WritePropertyName("ServerName");
                 context.Writer.Write(requestObject.ServerName);
+            }
+
+            if(requestObject.IsSetUseBcpFullLoad())
+            {
+                context.Writer.WritePropertyName("UseBcpFullLoad");
+                context.Writer.Write(requestObject.UseBcpFullLoad);
             }
 
             if(requestObject.IsSetUsername())

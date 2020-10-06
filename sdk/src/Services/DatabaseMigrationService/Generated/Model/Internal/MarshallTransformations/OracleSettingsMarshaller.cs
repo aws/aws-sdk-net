@@ -45,6 +45,42 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OracleSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAccessAlternateDirectly())
+            {
+                context.Writer.WritePropertyName("AccessAlternateDirectly");
+                context.Writer.Write(requestObject.AccessAlternateDirectly);
+            }
+
+            if(requestObject.IsSetAdditionalArchivedLogDestId())
+            {
+                context.Writer.WritePropertyName("AdditionalArchivedLogDestId");
+                context.Writer.Write(requestObject.AdditionalArchivedLogDestId);
+            }
+
+            if(requestObject.IsSetAddSupplementalLogging())
+            {
+                context.Writer.WritePropertyName("AddSupplementalLogging");
+                context.Writer.Write(requestObject.AddSupplementalLogging);
+            }
+
+            if(requestObject.IsSetAllowSelectNestedTables())
+            {
+                context.Writer.WritePropertyName("AllowSelectNestedTables");
+                context.Writer.Write(requestObject.AllowSelectNestedTables);
+            }
+
+            if(requestObject.IsSetArchivedLogDestId())
+            {
+                context.Writer.WritePropertyName("ArchivedLogDestId");
+                context.Writer.Write(requestObject.ArchivedLogDestId);
+            }
+
+            if(requestObject.IsSetArchivedLogsOnly())
+            {
+                context.Writer.WritePropertyName("ArchivedLogsOnly");
+                context.Writer.Write(requestObject.ArchivedLogsOnly);
+            }
+
             if(requestObject.IsSetAsmPassword())
             {
                 context.Writer.WritePropertyName("AsmPassword");
@@ -63,10 +99,58 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AsmUser);
             }
 
+            if(requestObject.IsSetCharLengthSemantics())
+            {
+                context.Writer.WritePropertyName("CharLengthSemantics");
+                context.Writer.Write(requestObject.CharLengthSemantics);
+            }
+
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
                 context.Writer.Write(requestObject.DatabaseName);
+            }
+
+            if(requestObject.IsSetDirectPathNoLog())
+            {
+                context.Writer.WritePropertyName("DirectPathNoLog");
+                context.Writer.Write(requestObject.DirectPathNoLog);
+            }
+
+            if(requestObject.IsSetDirectPathParallelLoad())
+            {
+                context.Writer.WritePropertyName("DirectPathParallelLoad");
+                context.Writer.Write(requestObject.DirectPathParallelLoad);
+            }
+
+            if(requestObject.IsSetEnableHomogenousTablespace())
+            {
+                context.Writer.WritePropertyName("EnableHomogenousTablespace");
+                context.Writer.Write(requestObject.EnableHomogenousTablespace);
+            }
+
+            if(requestObject.IsSetFailTasksOnLobTruncation())
+            {
+                context.Writer.WritePropertyName("FailTasksOnLobTruncation");
+                context.Writer.Write(requestObject.FailTasksOnLobTruncation);
+            }
+
+            if(requestObject.IsSetNumberDatatypeScale())
+            {
+                context.Writer.WritePropertyName("NumberDatatypeScale");
+                context.Writer.Write(requestObject.NumberDatatypeScale);
+            }
+
+            if(requestObject.IsSetOraclePathPrefix())
+            {
+                context.Writer.WritePropertyName("OraclePathPrefix");
+                context.Writer.Write(requestObject.OraclePathPrefix);
+            }
+
+            if(requestObject.IsSetParallelAsmReadThreads())
+            {
+                context.Writer.WritePropertyName("ParallelAsmReadThreads");
+                context.Writer.Write(requestObject.ParallelAsmReadThreads);
             }
 
             if(requestObject.IsSetPassword())
@@ -79,6 +163,30 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Port");
                 context.Writer.Write(requestObject.Port);
+            }
+
+            if(requestObject.IsSetReadAheadBlocks())
+            {
+                context.Writer.WritePropertyName("ReadAheadBlocks");
+                context.Writer.Write(requestObject.ReadAheadBlocks);
+            }
+
+            if(requestObject.IsSetReadTableSpaceName())
+            {
+                context.Writer.WritePropertyName("ReadTableSpaceName");
+                context.Writer.Write(requestObject.ReadTableSpaceName);
+            }
+
+            if(requestObject.IsSetReplacePathPrefix())
+            {
+                context.Writer.WritePropertyName("ReplacePathPrefix");
+                context.Writer.Write(requestObject.ReplacePathPrefix);
+            }
+
+            if(requestObject.IsSetRetryInterval())
+            {
+                context.Writer.WritePropertyName("RetryInterval");
+                context.Writer.Write(requestObject.RetryInterval);
             }
 
             if(requestObject.IsSetSecurityDbEncryption())
@@ -97,6 +205,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ServerName");
                 context.Writer.Write(requestObject.ServerName);
+            }
+
+            if(requestObject.IsSetUseAlternateFolderForOnline())
+            {
+                context.Writer.WritePropertyName("UseAlternateFolderForOnline");
+                context.Writer.Write(requestObject.UseAlternateFolderForOnline);
+            }
+
+            if(requestObject.IsSetUsePathPrefix())
+            {
+                context.Writer.WritePropertyName("UsePathPrefix");
+                context.Writer.Write(requestObject.UsePathPrefix);
             }
 
             if(requestObject.IsSetUsername())
