@@ -1,3 +1,10 @@
+### 3.5.30.1 (2020-10-06 00:41 UTC)
+* S3 (3.5.3.1)
+	* Add S3 Outposts documentation
+* Core 3.5.1.23
+	* Add maintenance mode message to .NET Standard 1.3 service clients
+	* All services packages updated to require new Core
+
 ### 3.5.30.0 (2020-10-05 18:52 UTC)
 * DynamoDBv2 (3.5.1.0)
 	* This release adds a new ReplicaStatus REGION DISABLED for the Table description. This state indicates that the AWS Region for the replica is inaccessible because the AWS Region is disabled.
