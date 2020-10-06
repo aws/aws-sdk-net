@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes checkpointing parameters for a Java-based Amazon Kinesis Data Analytics
-    /// application.
+    /// Describes checkpointing parameters for a Flink-based Kinesis Data Analytics application.
     /// </summary>
     public partial class CheckpointConfigurationDescription
     {
@@ -42,7 +41,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property CheckpointingEnabled. 
         /// <para>
-        /// Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics
+        /// Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics
         /// application.
         /// </para>
         ///  <note> 

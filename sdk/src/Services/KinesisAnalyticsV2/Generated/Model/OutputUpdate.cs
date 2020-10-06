@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based Amazon Kinesis Data Analytics application, describes updates to
-    /// the output configuration identified by the <code>OutputId</code>.
+    /// For a SQL-based Kinesis Data Analytics application, describes updates to the output
+    /// configuration identified by the <code>OutputId</code>.
     /// </summary>
     public partial class OutputUpdate
     {

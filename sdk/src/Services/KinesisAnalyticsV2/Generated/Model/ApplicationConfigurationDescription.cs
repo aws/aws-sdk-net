@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes details about the application code and starting parameters for an Amazon
-    /// Kinesis Data Analytics application.
+    /// Describes details about the application code and starting parameters for a Kinesis
+    /// Data Analytics application.
     /// </summary>
     public partial class ApplicationConfigurationDescription
     {
@@ -45,7 +45,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationCodeConfigurationDescription. 
         /// <para>
-        /// The details about the application code for a Java-based Kinesis Data Analytics application.
+        /// The details about the application code for a Flink-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
         public ApplicationCodeConfigurationDescription ApplicationCodeConfigurationDescription
@@ -63,7 +63,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationSnapshotConfigurationDescription. 
         /// <para>
-        /// Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+        /// Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
         public ApplicationSnapshotConfigurationDescription ApplicationSnapshotConfigurationDescription
@@ -81,7 +81,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property EnvironmentPropertyDescriptions. 
         /// <para>
-        /// Describes execution properties for a Java-based Kinesis Data Analytics application.
+        /// Describes execution properties for a Flink-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
         public EnvironmentPropertyDescriptions EnvironmentPropertyDescriptions
@@ -99,7 +99,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property FlinkApplicationConfigurationDescription. 
         /// <para>
-        /// The details about a Java-based Kinesis Data Analytics application.
+        /// The details about a Flink-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
         public FlinkApplicationConfigurationDescription FlinkApplicationConfigurationDescription
@@ -135,7 +135,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property SqlApplicationConfigurationDescription. 
         /// <para>
-        /// The details about inputs, outputs, and reference data sources for an SQL-based Kinesis
+        /// The details about inputs, outputs, and reference data sources for a SQL-based Kinesis
         /// Data Analytics application.
         /// </para>
         /// </summary>

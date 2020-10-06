@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based Amazon Kinesis Data Analytics application, when updating application
-    /// input configuration, provides information about a Kinesis Data Firehose delivery stream
+    /// For a SQL-based Kinesis Data Analytics application, when updating application input
+    /// configuration, provides information about a Kinesis Data Firehose delivery stream
     /// as the streaming source.
     /// </summary>
     public partial class KinesisFirehoseInputUpdate

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes configuration parameters for CloudWatch logging for a Java-based Kinesis
+    /// Describes configuration parameters for CloudWatch logging for a Flink-based Kinesis
     /// Data Analytics application.
     /// </summary>
     public partial class MonitoringConfigurationDescription

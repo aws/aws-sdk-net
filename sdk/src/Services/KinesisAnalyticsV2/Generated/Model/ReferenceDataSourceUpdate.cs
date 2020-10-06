@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// When you update a reference data source configuration for a SQL-based Amazon Kinesis
-    /// Data Analytics application, this object provides all the updated values (such as the
-    /// source bucket name and object key name), the in-application table name that is created,
-    /// and updated mapping information that maps the data in the Amazon S3 object to the
-    /// in-application reference table that is created.
+    /// When you update a reference data source configuration for a SQL-based Kinesis Data
+    /// Analytics application, this object provides all the updated values (such as the source
+    /// bucket name and object key name), the in-application table name that is created, and
+    /// updated mapping information that maps the data in the Amazon S3 object to the in-application
+    /// reference table that is created.
     /// </summary>
     public partial class ReferenceDataSourceUpdate
     {

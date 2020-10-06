@@ -37,6 +37,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     public partial class StopApplicationRequest : AmazonKinesisAnalyticsV2Request
     {
         private string _applicationName;
+        private bool? _force;
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -55,6 +56,36 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetApplicationName()
         {
             return this._applicationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Force. 
+        /// <para>
+        /// Set to <code>true</code> to force the application to stop. If you set <code>Force</code>
+        /// to <code>true</code>, Kinesis Data Analytics stops the application without taking
+        /// a snapshot.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only force stop a Flink-based Kinesis Data Analytics application. You can't
+        /// force stop a SQL-based Kinesis Data Analytics application.
+        /// </para>
+        ///  
+        /// <para>
+        /// The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
+        /// <code>AUTOSCALING</code>, or <code>RUNNING</code> state. 
+        /// </para>
+        /// </summary>
+        public bool Force
+        {
+            get { return this._force.GetValueOrDefault(); }
+            set { this._force = value; }
+        }
+
+        // Check to see if Force property is set
+        internal bool IsSetForce()
+        {
+            return this._force.HasValue; 
         }
 
     }

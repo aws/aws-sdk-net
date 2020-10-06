@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based Amazon Kinesis Data Analytics application, provides updates to the
-    /// parallelism count.
+    /// For a SQL-based Kinesis Data Analytics application, provides updates to the parallelism
+    /// count.
     /// </summary>
     public partial class InputParallelismUpdate
     {

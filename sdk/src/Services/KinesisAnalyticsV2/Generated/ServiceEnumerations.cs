@@ -93,6 +93,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// </summary>
         public static readonly ApplicationStatus DELETING = new ApplicationStatus("DELETING");
         /// <summary>
+        /// Constant FORCE_STOPPING for ApplicationStatus
+        /// </summary>
+        public static readonly ApplicationStatus FORCE_STOPPING = new ApplicationStatus("FORCE_STOPPING");
+        /// <summary>
         /// Constant READY for ApplicationStatus
         /// </summary>
         public static readonly ApplicationStatus READY = new ApplicationStatus("READY");

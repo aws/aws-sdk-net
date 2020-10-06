@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes the data format when records are written to the destination in an SQL-based
-    /// Amazon Kinesis Data Analytics application.
+    /// Describes the data format when records are written to the destination in a SQL-based
+    /// Kinesis Data Analytics application.
     /// </summary>
     public partial class DestinationSchema
     {

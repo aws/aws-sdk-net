@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes updates for an SQL-based Amazon Kinesis Data Analytics application's input
-    /// schema.
+    /// Describes updates for an SQL-based Kinesis Data Analytics application's input schema.
     /// </summary>
     public partial class InputSchemaUpdate
     {

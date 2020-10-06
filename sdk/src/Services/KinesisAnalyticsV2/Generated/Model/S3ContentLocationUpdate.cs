@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes an update for the Amazon S3 code content location for a Java-based Amazon
-    /// Kinesis Data Analytics application.
+    /// Describes an update for the Amazon S3 code content location for a Flink-based Kinesis
+    /// Data Analytics application.
     /// </summary>
     public partial class S3ContentLocationUpdate
     {

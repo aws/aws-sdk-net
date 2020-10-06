@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based Amazon Kinesis Data Analytics application, describes the mapping
-    /// of each data element in the streaming source to the corresponding column in the in-application
+    /// For a SQL-based Kinesis Data Analytics application, describes the mapping of each
+    /// data element in the streaming source to the corresponding column in the in-application
     /// stream.
     /// 
     ///  

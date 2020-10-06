@@ -30,7 +30,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes one or more tags from a Kinesis Analytics application. For more information,
+    /// Removes one or more tags from a Kinesis Data Analytics application. For more information,
     /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
     /// Tagging</a>.
     /// </summary>
@@ -42,7 +42,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The ARN of the Kinesis Analytics application from which to remove the tags.
+        /// The ARN of the Kinesis Data Analytics application from which to remove the tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

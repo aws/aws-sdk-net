@@ -57,8 +57,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property FlinkRunConfiguration. 
         /// <para>
-        /// Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics
-        /// application.
+        /// Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
         public FlinkRunConfiguration FlinkRunConfiguration

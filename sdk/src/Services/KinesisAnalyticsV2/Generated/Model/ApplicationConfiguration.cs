@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Specifies the creation parameters for an Amazon Kinesis Data Analytics application.
+    /// Specifies the creation parameters for a Kinesis Data Analytics application.
     /// </summary>
     public partial class ApplicationConfiguration
     {
@@ -43,7 +43,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationCodeConfiguration. 
         /// <para>
-        /// The code location and type parameters for a Java-based Kinesis Data Analytics application.
+        /// The code location and type parameters for a Flink-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +62,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationSnapshotConfiguration. 
         /// <para>
-        /// Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+        /// Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
         public ApplicationSnapshotConfiguration ApplicationSnapshotConfiguration
@@ -80,7 +80,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property EnvironmentProperties. 
         /// <para>
-        /// Describes execution properties for a Java-based Kinesis Data Analytics application.
+        /// Describes execution properties for a Flink-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
         public EnvironmentProperties EnvironmentProperties
@@ -98,7 +98,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property FlinkApplicationConfiguration. 
         /// <para>
-        /// The creation and update parameters for a Java-based Kinesis Data Analytics application.
+        /// The creation and update parameters for a Flink-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
         public FlinkApplicationConfiguration FlinkApplicationConfiguration
@@ -116,7 +116,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property SqlApplicationConfiguration. 
         /// <para>
-        /// The creation and update parameters for an SQL-based Kinesis Data Analytics application.
+        /// The creation and update parameters for a SQL-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
         public SqlApplicationConfiguration SqlApplicationConfiguration

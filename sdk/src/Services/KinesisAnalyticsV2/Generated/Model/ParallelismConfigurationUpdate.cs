@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes updates to parameters for how a Java-based Kinesis Data Analytics application
+    /// Describes updates to parameters for how a Flink-based Kinesis Data Analytics application
     /// executes multiple tasks simultaneously.
     /// </summary>
     public partial class ParallelismConfigurationUpdate

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes the inputs, outputs, and reference data sources for an SQL-based Kinesis
+    /// Describes the inputs, outputs, and reference data sources for a SQL-based Kinesis
     /// Data Analytics application.
     /// </summary>
     public partial class SqlApplicationConfiguration

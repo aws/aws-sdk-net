@@ -30,8 +30,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the AddApplicationInput operation.
-    /// Adds a streaming source to your SQL-based Amazon Kinesis Data Analytics application.
-    /// 
+    /// Adds a streaming source to your SQL-based Kinesis Data Analytics application. 
     /// 
     ///  
     /// <para>

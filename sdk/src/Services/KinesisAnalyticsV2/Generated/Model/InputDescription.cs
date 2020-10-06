@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes the application input configuration for an SQL-based Amazon Kinesis Data
-    /// Analytics application.
+    /// Describes the application input configuration for a SQL-based Kinesis Data Analytics
+    /// application.
     /// </summary>
     public partial class InputDescription
     {

@@ -30,11 +30,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DiscoverInputSchema operation.
-    /// Infers a schema for an SQL-based Amazon Kinesis Data Analytics application by evaluating
-    /// sample records on the specified streaming source (Kinesis data stream or Kinesis Data
-    /// Firehose delivery stream) or Amazon S3 object. In the response, the operation returns
-    /// the inferred schema and also the sample records that the operation used to infer the
-    /// schema.
+    /// Infers a schema for a SQL-based Kinesis Data Analytics application by evaluating sample
+    /// records on the specified streaming source (Kinesis data stream or Kinesis Data Firehose
+    /// delivery stream) or Amazon S3 object. In the response, the operation returns the inferred
+    /// schema and also the sample records that the operation used to infer the schema.
     /// 
     ///  
     /// <para>

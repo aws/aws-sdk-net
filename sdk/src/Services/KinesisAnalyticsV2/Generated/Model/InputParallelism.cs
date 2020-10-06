@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based Amazon Kinesis Data Analytics application, describes the number of
-    /// in-application streams to create for a given streaming source.
+    /// For a SQL-based Kinesis Data Analytics application, describes the number of in-application
+    /// streams to create for a given streaming source.
     /// </summary>
     public partial class InputParallelism
     {

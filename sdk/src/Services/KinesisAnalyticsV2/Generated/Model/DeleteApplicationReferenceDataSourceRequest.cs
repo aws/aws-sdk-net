@@ -30,8 +30,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplicationReferenceDataSource operation.
-    /// Deletes a reference data source configuration from the specified SQL-based Amazon
-    /// Kinesis Data Analytics application's configuration.
+    /// Deletes a reference data source configuration from the specified SQL-based Kinesis
+    /// Data Analytics application's configuration.
     /// 
     ///  
     /// <para>

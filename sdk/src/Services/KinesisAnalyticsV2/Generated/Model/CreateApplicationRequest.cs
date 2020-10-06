@@ -30,8 +30,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
-    /// Creates an Amazon Kinesis Data Analytics application. For information about creating
-    /// a Kinesis Data Analytics application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
+    /// Creates a Kinesis Data Analytics application. For information about creating a Kinesis
+    /// Data Analytics application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
     /// an Application</a>.
     /// </summary>
     public partial class CreateApplicationRequest : AmazonKinesisAnalyticsV2Request
@@ -122,7 +122,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property RuntimeEnvironment. 
         /// <para>
-        /// The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+        /// The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>,
+        /// or <code>FLINK-1_8</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

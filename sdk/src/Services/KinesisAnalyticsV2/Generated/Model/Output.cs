@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes an SQL-based Amazon Kinesis Data Analytics application's output configuration,
+    /// Describes a SQL-based Kinesis Data Analytics application's output configuration,
     /// in which you identify an in-application stream and a destination where you want the
     /// in-application stream data to be written. The destination can be a Kinesis data stream
     /// or a Kinesis Data Firehose delivery stream.
@@ -64,7 +64,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property KinesisFirehoseOutput. 
         /// <para>
-        /// Identifies an Amazon Kinesis Data Firehose delivery stream as the destination.
+        /// Identifies a Kinesis Data Firehose delivery stream as the destination.
         /// </para>
         /// </summary>
         public KinesisFirehoseOutput KinesisFirehoseOutput
@@ -82,7 +82,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property KinesisStreamsOutput. 
         /// <para>
-        /// Identifies an Amazon Kinesis data stream as the destination.
+        /// Identifies a Kinesis data stream as the destination.
         /// </para>
         /// </summary>
         public KinesisStreamsOutput KinesisStreamsOutput

@@ -30,7 +30,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Describes updates to the input streams, destination streams, and reference data sources
-    /// for an SQL-based Kinesis Data Analytics application.
+    /// for a SQL-based Kinesis Data Analytics application.
     /// </summary>
     public partial class SqlApplicationConfigurationUpdate
     {

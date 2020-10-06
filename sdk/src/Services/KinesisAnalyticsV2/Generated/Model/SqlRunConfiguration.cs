@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes the starting parameters for an SQL-based Kinesis Data Analytics application.
+    /// Describes the starting parameters for a SQL-based Kinesis Data Analytics application.
     /// </summary>
     public partial class SqlRunConfiguration
     {

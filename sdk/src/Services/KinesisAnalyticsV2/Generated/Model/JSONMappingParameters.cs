@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based Amazon Kinesis Data Analytics application, provides additional mapping
-    /// information when JSON is the record format on the streaming source.
+    /// For a SQL-based Kinesis Data Analytics application, provides additional mapping information
+    /// when JSON is the record format on the streaming source.
     /// </summary>
     public partial class JSONMappingParameters
     {

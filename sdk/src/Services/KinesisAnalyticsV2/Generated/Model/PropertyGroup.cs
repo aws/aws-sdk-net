@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Property key-value pairs passed into a Java-based Kinesis Data Analytics application.
+    /// Property key-value pairs passed into a Flink-based Kinesis Data Analytics application.
     /// </summary>
     public partial class PropertyGroup
     {

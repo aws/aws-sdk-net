@@ -30,8 +30,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the AddApplicationReferenceDataSource operation.
-    /// Adds a reference data source to an existing SQL-based Amazon Kinesis Data Analytics
-    /// application.
+    /// Adds a reference data source to an existing SQL-based Kinesis Data Analytics application.
     /// 
     ///  
     /// <para>

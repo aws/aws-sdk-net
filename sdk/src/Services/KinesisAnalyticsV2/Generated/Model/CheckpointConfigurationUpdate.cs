@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes updates to the checkpointing parameters for a Java-based Amazon Kinesis
-    /// Data Analytics application.
+    /// Describes updates to the checkpointing parameters for a Flink-based Kinesis Data Analytics
+    /// application.
     /// </summary>
     public partial class CheckpointConfigurationUpdate
     {

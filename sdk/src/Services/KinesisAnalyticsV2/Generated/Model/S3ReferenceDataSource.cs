@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based Amazon Kinesis Data Analytics application, identifies the Amazon
-    /// S3 bucket and object that contains the reference data.
+    /// For a SQL-based Kinesis Data Analytics application, identifies the Amazon S3 bucket
+    /// and object that contains the reference data.
     /// 
     ///  
     /// <para>

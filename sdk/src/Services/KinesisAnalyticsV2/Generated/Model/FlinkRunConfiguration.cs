@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics
-    /// application.
+    /// Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
     /// </summary>
     public partial class FlinkRunConfiguration
     {
@@ -39,14 +38,20 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property AllowNonRestoredState. 
         /// <para>
-        /// When restoring from a savepoint, specifies whether the runtime is allowed to skip
-        /// a state that cannot be mapped to the new program. This will happen if the program
-        /// is updated between savepoints to remove stateful parameters, and state data in the
-        /// savepoint no longer corresponds to valid application data. For more information, see
-        /// <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state">
+        /// When restoring from a snapshot, specifies whether the runtime is allowed to skip a
+        /// state that cannot be mapped to the new program. This will happen if the program is
+        /// updated between snapshots to remove stateful parameters, and state data in the snapshot
+        /// no longer corresponds to valid application data. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state">
         /// Allowing Non-Restored State</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache
         /// Flink documentation</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This value defaults to <code>false</code>. If you update your application without
+        /// specifying this parameter, <code>AllowNonRestoredState</code> will be set to <code>false</code>,
+        /// even if it was previously set to <code>true</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool AllowNonRestoredState
         {

@@ -30,7 +30,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeApplication operation.
-    /// Returns information about a specific Amazon Kinesis Data Analytics application.
+    /// Returns information about a specific Kinesis Data Analytics application.
     /// 
     ///  
     /// <para>

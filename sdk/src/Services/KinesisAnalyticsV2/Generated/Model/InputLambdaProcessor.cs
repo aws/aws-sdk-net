@@ -30,8 +30,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// An object that contains the Amazon Resource Name (ARN) of the AWS Lambda function
-    /// that is used to preprocess records in the stream in an SQL-based Amazon Kinesis Data
-    /// Analytics application.
+    /// that is used to preprocess records in the stream in a SQL-based Kinesis Data Analytics
+    /// application.
     /// </summary>
     public partial class InputLambdaProcessor
     {
@@ -46,7 +46,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <para>
         /// To specify an earlier version of the Lambda function than the latest, include the
         /// Lambda function version in the Lambda function ARN. For more information about Lambda
-        /// ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+        /// ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
         /// ARNs: AWS Lambda</a> 
         /// </para>
         ///  </note>

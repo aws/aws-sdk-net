@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// When you configure the application input for an SQL-based Amazon Kinesis Data Analytics
-    /// application, you specify the streaming source, the in-application stream name that
-    /// is created, and the mapping between the two.
+    /// When you configure the application input for a SQL-based Kinesis Data Analytics application,
+    /// you specify the streaming source, the in-application stream name that is created,
+    /// and the mapping between the two.
     /// </summary>
     public partial class Input
     {

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+    /// Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
     /// </summary>
     public partial class ApplicationSnapshotConfiguration
     {
@@ -38,7 +38,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property SnapshotsEnabled. 
         /// <para>
-        /// Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+        /// Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

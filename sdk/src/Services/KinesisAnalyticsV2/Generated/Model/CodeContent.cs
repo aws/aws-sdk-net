@@ -30,7 +30,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Specifies either the application code, or the location of the application code, for
-    /// a Java-based Amazon Kinesis Data Analytics application.
+    /// a Flink-based Kinesis Data Analytics application.
     /// </summary>
     public partial class CodeContent
     {
@@ -59,7 +59,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property TextContent. 
         /// <para>
-        /// The text-format code for a Java-based Kinesis Data Analytics application.
+        /// The text-format code for a Flink-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=102400)]
@@ -78,7 +78,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ZipFileContent. 
         /// <para>
-        /// The zip-format code for a Java-based Kinesis Data Analytics application.
+        /// The zip-format code for a Flink-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=52428800)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes details about the application code for a Java-based Kinesis Data Analytics
+    /// Describes details about the application code for a Flink-based Kinesis Data Analytics
     /// application.
     /// </summary>
     public partial class CodeContentDescription

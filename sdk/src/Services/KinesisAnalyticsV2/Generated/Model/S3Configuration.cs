@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based Amazon Kinesis Data Analytics application, provides a description
-    /// of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket
-    /// and the name of the Amazon S3 object that contains the data.
+    /// For a SQL-based Kinesis Data Analytics application, provides a description of an Amazon
+    /// S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket and the
+    /// name of the Amazon S3 object that contains the data.
     /// </summary>
     public partial class S3Configuration
     {

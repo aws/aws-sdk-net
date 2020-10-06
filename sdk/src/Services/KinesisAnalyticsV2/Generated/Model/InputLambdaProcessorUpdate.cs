@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based Amazon Kinesis Data Analytics application, represents an update to
-    /// the <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream.
+    /// For a SQL-based Kinesis Data Analytics application, represents an update to the <a>InputLambdaProcessor</a>
+    /// that is used to preprocess the records in the stream.
     /// </summary>
     public partial class InputLambdaProcessorUpdate
     {
@@ -46,7 +46,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <para>
         /// To specify an earlier version of the Lambda function than the latest, include the
         /// Lambda function version in the Lambda function ARN. For more information about Lambda
-        /// ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+        /// ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
         /// ARNs: AWS Lambda</a> 
         /// </para>
         ///  </note>

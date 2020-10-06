@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes parameters for how a Java-based Amazon Kinesis Data Analytics application
+    /// Describes parameters for how a Flink-based Kinesis Data Analytics application application
     /// executes multiple tasks simultaneously. For more information about parallelism, see
-    /// <a href="https://ci.apache.org/projects/flink/flink-docs-stable/dev/parallel.html">Parallel
-    /// Execution</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache
+    /// <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/dev/parallel.html">Parallel
+    /// Execution</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache
     /// Flink Documentation</a>.
     /// </summary>
     public partial class ParallelismConfiguration
@@ -86,7 +86,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property Parallelism. 
         /// <para>
-        /// Describes the initial number of parallel tasks that a Java-based Kinesis Data Analytics
+        /// Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics
         /// application can perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis
         /// Data Analytics increases the <code>CurrentParallelism</code> value in response to
         /// application load. The service can increase the <code>CurrentParallelism</code> value
@@ -113,7 +113,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ParallelismPerKPU. 
         /// <para>
-        /// Describes the number of parallel tasks that a Java-based Kinesis Data Analytics application
+        /// Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application
         /// can perform per Kinesis Processing Unit (KPU) used by the application. For more information
         /// about KPUs, see <a href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon
         /// Kinesis Data Analytics Pricing</a>.

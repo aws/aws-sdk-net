@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes the execution properties for a Java-based Amazon Kinesis Data Analytics
-    /// application.
+    /// Describes the execution properties for a Flink-based Kinesis Data Analytics application.
     /// </summary>
     public partial class EnvironmentPropertyDescriptions
     {

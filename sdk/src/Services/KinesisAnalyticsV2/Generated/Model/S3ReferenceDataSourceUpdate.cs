@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based Amazon Kinesis Data Analytics application, describes the Amazon S3
-    /// bucket name and object key name for an in-application reference table.
+    /// For a SQL-based Kinesis Data Analytics application, describes the Amazon S3 bucket
+    /// name and object key name for an in-application reference table.
     /// </summary>
     public partial class S3ReferenceDataSourceUpdate
     {

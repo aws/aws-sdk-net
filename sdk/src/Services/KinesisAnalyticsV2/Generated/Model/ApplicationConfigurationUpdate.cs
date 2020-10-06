@@ -43,7 +43,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationCodeConfigurationUpdate. 
         /// <para>
-        /// Describes updates to a Java-based Kinesis Data Analytics application's code configuration.
+        /// Describes updates to a Flink-based Kinesis Data Analytics application's code configuration.
         /// </para>
         /// </summary>
         public ApplicationCodeConfigurationUpdate ApplicationCodeConfigurationUpdate
@@ -61,7 +61,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationSnapshotConfigurationUpdate. 
         /// <para>
-        /// Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+        /// Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
         public ApplicationSnapshotConfigurationUpdate ApplicationSnapshotConfigurationUpdate
@@ -79,7 +79,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property EnvironmentPropertyUpdates. 
         /// <para>
-        /// Describes updates to the environment properties for a Java-based Kinesis Data Analytics
+        /// Describes updates to the environment properties for a Flink-based Kinesis Data Analytics
         /// application.
         /// </para>
         /// </summary>
@@ -98,7 +98,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property FlinkApplicationConfigurationUpdate. 
         /// <para>
-        /// Describes updates to a Java-based Kinesis Data Analytics application's configuration.
+        /// Describes updates to a Flink-based Kinesis Data Analytics application's configuration.
         /// </para>
         /// </summary>
         public FlinkApplicationConfigurationUpdate FlinkApplicationConfigurationUpdate
@@ -116,7 +116,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property SqlApplicationConfigurationUpdate. 
         /// <para>
-        /// Describes updates to an SQL-based Kinesis Data Analytics application's configuration.
+        /// Describes updates to a SQL-based Kinesis Data Analytics application's configuration.
         /// </para>
         /// </summary>
         public SqlApplicationConfigurationUpdate SqlApplicationConfigurationUpdate

@@ -30,7 +30,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplicationCloudWatchLoggingOption operation.
-    /// Deletes an Amazon CloudWatch log stream from an Amazon Kinesis Data Analytics application.
+    /// Deletes an Amazon CloudWatch log stream from an Kinesis Data Analytics application.
     /// </summary>
     public partial class DeleteApplicationCloudWatchLoggingOptionRequest : AmazonKinesisAnalyticsV2Request
     {

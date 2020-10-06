@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// The data format is not valid. Amazon Kinesis Data Analytics cannot detect the schema
-    /// for the given streaming source.
+    /// The data format is not valid. Kinesis Data Analytics cannot detect the schema for
+    /// the given streaming source.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

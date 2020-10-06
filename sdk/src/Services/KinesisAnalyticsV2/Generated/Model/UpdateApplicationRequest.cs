@@ -30,14 +30,21 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApplication operation.
-    /// Updates an existing Amazon Kinesis Data Analytics application. Using this operation,
-    /// you can update application code, input configuration, and output configuration. 
+    /// Updates an existing Kinesis Data Analytics application. Using this operation, you
+    /// can update application code, input configuration, and output configuration. 
     /// 
     ///  
     /// <para>
     /// Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you
     /// update your application. 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// You cannot update the <code>RuntimeEnvironment</code> of an existing application.
+    /// If you need to update an application's <code>RuntimeEnvironment</code>, you must delete
+    /// the application and create it again.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateApplicationRequest : AmazonKinesisAnalyticsV2Request
     {

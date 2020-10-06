@@ -30,9 +30,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds one or more key-value tags to a Kinesis Analytics application. Note that the
-    /// maximum number of application tags includes system tags. The maximum number of user-defined
-    /// application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+    /// Adds one or more key-value tags to a Kinesis Data Analytics application. Note that
+    /// the maximum number of application tags includes system tags. The maximum number of
+    /// user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
     /// Tagging</a>.
     /// </summary>
     public partial class TagResourceRequest : AmazonKinesisAnalyticsV2Request

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes parameters for how a Java-based Kinesis Data Analytics application executes
+    /// Describes parameters for how a Flink-based Kinesis Data Analytics application executes
     /// multiple tasks simultaneously.
     /// </summary>
     public partial class ParallelismConfigurationDescription
@@ -81,7 +81,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property CurrentParallelism. 
         /// <para>
-        /// Describes the current number of parallel tasks that a Java-based Kinesis Data Analytics
+        /// Describes the current number of parallel tasks that a Flink-based Kinesis Data Analytics
         /// application can perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis
         /// Data Analytics can increase this value in response to application load. The service
         /// can increase this value up to the maximum parallelism, which is <code>ParalellismPerKPU</code>
@@ -107,7 +107,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property Parallelism. 
         /// <para>
-        /// Describes the initial number of parallel tasks that a Java-based Kinesis Data Analytics
+        /// Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics
         /// application can perform. If <code>AutoScalingEnabled</code> is set to True, then Kinesis
         /// Data Analytics can increase the <code>CurrentParallelism</code> value in response
         /// to application load. The service can increase <code>CurrentParallelism</code> up to
@@ -134,7 +134,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ParallelismPerKPU. 
         /// <para>
-        /// Describes the number of parallel tasks that a Java-based Kinesis Data Analytics application
+        /// Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application
         /// can perform per Kinesis Processing Unit (KPU) used by the application.
         /// </para>
         /// </summary>

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based Amazon Kinesis Data Analytics application, describes the format of
-    /// the data in the streaming source, and how each data element maps to corresponding
-    /// columns created in the in-application stream.
+    /// For a SQL-based Kinesis Data Analytics application, describes the format of the data
+    /// in the streaming source, and how each data element maps to corresponding columns created
+    /// in the in-application stream.
     /// </summary>
     public partial class SourceSchema
     {

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based Amazon Kinesis Data Analytics application's output, describes the
-    /// Kinesis Data Firehose delivery stream that is configured as its destination.
+    /// For a SQL-based Kinesis Data Analytics application's output, describes the Kinesis
+    /// Data Firehose delivery stream that is configured as its destination.
     /// </summary>
     public partial class KinesisFirehoseOutputDescription
     {
