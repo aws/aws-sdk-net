@@ -66,6 +66,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.SubnetIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SubnetOutpost", targetDepth))
+                    {
+                        var unmarshaller = SubnetOutpostUnmarshaller.Instance;
+                        unmarshalledObject.SubnetOutpost = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

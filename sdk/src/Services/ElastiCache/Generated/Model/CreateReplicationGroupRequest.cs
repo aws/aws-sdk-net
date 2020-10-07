@@ -100,6 +100,7 @@ namespace Amazon.ElastiCache.Model
         private string _snapshotWindow;
         private List<Tag> _tags = new List<Tag>();
         private bool? _transitEncryptionEnabled;
+        private List<string> _userGroupIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property AtRestEncryptionEnabled. 
@@ -1077,6 +1078,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetTransitEncryptionEnabled()
         {
             return this._transitEncryptionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserGroupIds. 
+        /// <para>
+        /// The list of user groups to associate with the replication group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<string> UserGroupIds
+        {
+            get { return this._userGroupIds; }
+            set { this._userGroupIds = value; }
+        }
+
+        // Check to see if UserGroupIds property is set
+        internal bool IsSetUserGroupIds()
+        {
+            return this._userGroupIds != null && this._userGroupIds.Count > 0; 
         }
 
     }

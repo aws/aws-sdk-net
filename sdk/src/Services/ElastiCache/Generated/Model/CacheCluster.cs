@@ -55,6 +55,7 @@ namespace Amazon.ElastiCache.Model
         private PendingModifiedValues _pendingModifiedValues;
         private string _preferredAvailabilityZone;
         private string _preferredMaintenanceWindow;
+        private string _preferredOutpostArn;
         private string _replicationGroupId;
         private List<SecurityGroupMembership> _securityGroups = new List<SecurityGroupMembership>();
         private int? _snapshotRetentionLimit;
@@ -652,6 +653,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredOutpostArn. 
+        /// <para>
+        /// The outpost ARN in which the cache cluster is created.
+        /// </para>
+        /// </summary>
+        public string PreferredOutpostArn
+        {
+            get { return this._preferredOutpostArn; }
+            set { this._preferredOutpostArn = value; }
+        }
+
+        // Check to see if PreferredOutpostArn property is set
+        internal bool IsSetPreferredOutpostArn()
+        {
+            return this._preferredOutpostArn != null;
         }
 
         /// <summary>

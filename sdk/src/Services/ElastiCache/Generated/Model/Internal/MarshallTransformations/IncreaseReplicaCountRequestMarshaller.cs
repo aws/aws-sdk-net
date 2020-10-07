@@ -88,6 +88,15 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+                        if(publicRequestlistValue.IsSetPreferredOutpostArns())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PreferredOutpostArns)
+                            {
+                                request.Parameters.Add("ReplicaConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PreferredOutpostArns" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
                         publicRequestlistValueIndex++;
                     }
                 }

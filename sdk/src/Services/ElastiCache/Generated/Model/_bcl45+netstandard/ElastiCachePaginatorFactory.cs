@@ -155,6 +155,22 @@ namespace Amazon.ElastiCache.Model
         {
             return new DescribeUpdateActionsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for DescribeUserGroups operation
+        ///</summary>
+        public IDescribeUserGroupsPaginator DescribeUserGroups(DescribeUserGroupsRequest request) 
+        {
+            return new DescribeUserGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeUsers operation
+        ///</summary>
+        public IDescribeUsersPaginator DescribeUsers(DescribeUsersRequest request) 
+        {
+            return new DescribeUsersPaginator(this.client, request);
+        }
     }
 }
 #endif

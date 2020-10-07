@@ -78,6 +78,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.Resharding = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("UserGroups", targetDepth))
+                    {
+                        var unmarshaller = UserGroupsUpdateStatusUnmarshaller.Instance;
+                        unmarshalledObject.UserGroups = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

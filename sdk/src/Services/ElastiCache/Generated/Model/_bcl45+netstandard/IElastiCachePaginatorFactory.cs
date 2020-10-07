@@ -100,6 +100,16 @@ namespace Amazon.ElastiCache.Model
         /// Paginator for DescribeUpdateActions operation
         ///</summary>
         IDescribeUpdateActionsPaginator DescribeUpdateActions(DescribeUpdateActionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeUserGroups operation
+        ///</summary>
+        IDescribeUserGroupsPaginator DescribeUserGroups(DescribeUserGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeUsers operation
+        ///</summary>
+        IDescribeUsersPaginator DescribeUsers(DescribeUsersRequest request);
     }
 }
 #endif

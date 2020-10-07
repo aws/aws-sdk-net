@@ -127,6 +127,13 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.MemberClusters.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("MemberClustersOutpostArns/ReplicationGroupOutpostArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.MemberClustersOutpostArns.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("MultiAZ", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -180,6 +187,13 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.TransitEncryptionEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("UserGroupIds/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.UserGroupIds.Add(item);
                         continue;
                     }
                 }

@@ -52,10 +52,13 @@ namespace Amazon.ElastiCache.Model
         private string _engineVersion;
         private string _notificationTopicArn;
         private int? _numCacheNodes;
+        private OutpostMode _outpostMode;
         private int? _port;
         private string _preferredAvailabilityZone;
         private List<string> _preferredAvailabilityZones = new List<string>();
         private string _preferredMaintenanceWindow;
+        private string _preferredOutpostArn;
+        private List<string> _preferredOutpostArns = new List<string>();
         private string _replicationGroupId;
         private List<string> _securityGroupIds = new List<string>();
         private List<string> _snapshotArns = new List<string>();
@@ -524,6 +527,25 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutpostMode. 
+        /// <para>
+        /// Specifies whether the nodes in the cluster are created in a single outpost or across
+        /// multiple outposts.
+        /// </para>
+        /// </summary>
+        public OutpostMode OutpostMode
+        {
+            get { return this._outpostMode; }
+            set { this._outpostMode = value; }
+        }
+
+        // Check to see if OutpostMode property is set
+        internal bool IsSetOutpostMode()
+        {
+            return this._outpostMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
         /// The port number on which each of the cache nodes accepts connections.
@@ -671,6 +693,42 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredOutpostArn. 
+        /// <para>
+        /// The outpost ARN in which the cache cluster is created.
+        /// </para>
+        /// </summary>
+        public string PreferredOutpostArn
+        {
+            get { return this._preferredOutpostArn; }
+            set { this._preferredOutpostArn = value; }
+        }
+
+        // Check to see if PreferredOutpostArn property is set
+        internal bool IsSetPreferredOutpostArn()
+        {
+            return this._preferredOutpostArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredOutpostArns. 
+        /// <para>
+        /// The outpost ARNs in which the cache cluster is created.
+        /// </para>
+        /// </summary>
+        public List<string> PreferredOutpostArns
+        {
+            get { return this._preferredOutpostArns; }
+            set { this._preferredOutpostArns = value; }
+        }
+
+        // Check to see if PreferredOutpostArns property is set
+        internal bool IsSetPreferredOutpostArns()
+        {
+            return this._preferredOutpostArns != null && this._preferredOutpostArns.Count > 0; 
         }
 
         /// <summary>

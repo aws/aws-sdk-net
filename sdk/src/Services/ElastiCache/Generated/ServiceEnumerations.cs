@@ -25,6 +25,56 @@ namespace Amazon.ElastiCache
 {
 
     /// <summary>
+    /// Constants used for properties of type AuthenticationType.
+    /// </summary>
+    public class AuthenticationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NoPassword for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType NoPassword = new AuthenticationType("no-password");
+        /// <summary>
+        /// Constant Password for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType Password = new AuthenticationType("password");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthenticationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthenticationType FindValue(string value)
+        {
+            return FindValue<AuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthTokenUpdateStatus.
     /// </summary>
     public class AuthTokenUpdateStatus : ConstantClass
@@ -80,6 +130,10 @@ namespace Amazon.ElastiCache
     public class AuthTokenUpdateStrategyType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DELETE for AuthTokenUpdateStrategyType
+        /// </summary>
+        public static readonly AuthTokenUpdateStrategyType DELETE = new AuthTokenUpdateStrategyType("DELETE");
         /// <summary>
         /// Constant ROTATE for AuthTokenUpdateStrategyType
         /// </summary>
@@ -449,6 +503,56 @@ namespace Amazon.ElastiCache
 
 
     /// <summary>
+    /// Constants used for properties of type OutpostMode.
+    /// </summary>
+    public class OutpostMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CrossOutpost for OutpostMode
+        /// </summary>
+        public static readonly OutpostMode CrossOutpost = new OutpostMode("cross-outpost");
+        /// <summary>
+        /// Constant SingleOutpost for OutpostMode
+        /// </summary>
+        public static readonly OutpostMode SingleOutpost = new OutpostMode("single-outpost");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OutpostMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutpostMode FindValue(string value)
+        {
+            return FindValue<OutpostMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutpostMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PendingAutomaticFailoverStatus.
     /// </summary>
     public class PendingAutomaticFailoverStatus : ConstantClass
@@ -736,6 +840,14 @@ namespace Amazon.ElastiCache
         /// Constant ReplicationGroup for SourceType
         /// </summary>
         public static readonly SourceType ReplicationGroup = new SourceType("replication-group");
+        /// <summary>
+        /// Constant User for SourceType
+        /// </summary>
+        public static readonly SourceType User = new SourceType("user");
+        /// <summary>
+        /// Constant UserGroup for SourceType
+        /// </summary>
+        public static readonly SourceType UserGroup = new SourceType("user-group");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

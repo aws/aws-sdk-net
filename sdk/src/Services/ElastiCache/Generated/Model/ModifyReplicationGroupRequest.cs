@@ -66,12 +66,15 @@ namespace Amazon.ElastiCache.Model
         private string _notificationTopicStatus;
         private string _preferredMaintenanceWindow;
         private string _primaryClusterId;
+        private bool? _removeUserGroups;
         private string _replicationGroupDescription;
         private string _replicationGroupId;
         private List<string> _securityGroupIds = new List<string>();
         private int? _snapshotRetentionLimit;
         private string _snapshottingClusterId;
         private string _snapshotWindow;
+        private List<string> _userGroupIdsToAdd = new List<string>();
+        private List<string> _userGroupIdsToRemove = new List<string>();
 
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
@@ -471,6 +474,24 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RemoveUserGroups. 
+        /// <para>
+        /// Removes the user groups that can access this replication group.
+        /// </para>
+        /// </summary>
+        public bool RemoveUserGroups
+        {
+            get { return this._removeUserGroups.GetValueOrDefault(); }
+            set { this._removeUserGroups = value; }
+        }
+
+        // Check to see if RemoveUserGroups property is set
+        internal bool IsSetRemoveUserGroups()
+        {
+            return this._removeUserGroups.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ReplicationGroupDescription. 
         /// <para>
         /// A description for the replication group. Maximum length is 255 characters.
@@ -601,6 +622,43 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetSnapshotWindow()
         {
             return this._snapshotWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserGroupIdsToAdd. 
+        /// <para>
+        /// A list of user group IDs.
+        /// </para>
+        /// </summary>
+        public List<string> UserGroupIdsToAdd
+        {
+            get { return this._userGroupIdsToAdd; }
+            set { this._userGroupIdsToAdd = value; }
+        }
+
+        // Check to see if UserGroupIdsToAdd property is set
+        internal bool IsSetUserGroupIdsToAdd()
+        {
+            return this._userGroupIdsToAdd != null && this._userGroupIdsToAdd.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserGroupIdsToRemove. 
+        /// <para>
+        /// A list of users groups to remove, meaning the users in the group no longer can access
+        /// thereplication group.
+        /// </para>
+        /// </summary>
+        public List<string> UserGroupIdsToRemove
+        {
+            get { return this._userGroupIdsToRemove; }
+            set { this._userGroupIdsToRemove = value; }
+        }
+
+        // Check to see if UserGroupIdsToRemove property is set
+        internal bool IsSetUserGroupIdsToRemove()
+        {
+            return this._userGroupIdsToRemove != null && this._userGroupIdsToRemove.Count > 0; 
         }
 
     }

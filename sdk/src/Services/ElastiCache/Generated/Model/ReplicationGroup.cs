@@ -45,6 +45,7 @@ namespace Amazon.ElastiCache.Model
         private GlobalReplicationGroupInfo _globalReplicationGroupInfo;
         private string _kmsKeyId;
         private List<string> _memberClusters = new List<string>();
+        private List<string> _memberClustersOutpostArns = new List<string>();
         private MultiAZStatus _multiAZ;
         private List<NodeGroup> _nodeGroups = new List<NodeGroup>();
         private ReplicationGroupPendingModifiedValues _pendingModifiedValues;
@@ -54,6 +55,7 @@ namespace Amazon.ElastiCache.Model
         private string _snapshotWindow;
         private string _status;
         private bool? _transitEncryptionEnabled;
+        private List<string> _userGroupIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property ARN. 
@@ -300,6 +302,24 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MemberClustersOutpostArns. 
+        /// <para>
+        /// The outpost ARNs of the replication group's member clusters.
+        /// </para>
+        /// </summary>
+        public List<string> MemberClustersOutpostArns
+        {
+            get { return this._memberClustersOutpostArns; }
+            set { this._memberClustersOutpostArns = value; }
+        }
+
+        // Check to see if MemberClustersOutpostArns property is set
+        internal bool IsSetMemberClustersOutpostArns()
+        {
+            return this._memberClustersOutpostArns != null && this._memberClustersOutpostArns.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
         /// A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more
@@ -503,6 +523,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetTransitEncryptionEnabled()
         {
             return this._transitEncryptionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserGroupIds. 
+        /// <para>
+        /// The list of user group IDs that have access to the replication group.
+        /// </para>
+        /// </summary>
+        public List<string> UserGroupIds
+        {
+            get { return this._userGroupIds; }
+            set { this._userGroupIds = value; }
+        }
+
+        // Check to see if UserGroupIds property is set
+        internal bool IsSetUserGroupIds()
+        {
+            return this._userGroupIds != null && this._userGroupIds.Count > 0; 
         }
 
     }

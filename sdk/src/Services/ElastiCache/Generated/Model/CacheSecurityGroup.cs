@@ -56,7 +56,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The ARN (Amazon Resource Name) of the cache security group.
+        /// The ARN of the cache security group,
         /// </para>
         /// </summary>
         public string ARN

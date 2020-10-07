@@ -37,6 +37,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheNodeId;
         private string _currentRole;
         private string _preferredAvailabilityZone;
+        private string _preferredOutpostArn;
         private Endpoint _readEndpoint;
 
         /// <summary>
@@ -111,6 +112,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetPreferredAvailabilityZone()
         {
             return this._preferredAvailabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredOutpostArn. 
+        /// <para>
+        /// The outpost ARN of the node group member.
+        /// </para>
+        /// </summary>
+        public string PreferredOutpostArn
+        {
+            get { return this._preferredOutpostArn; }
+            set { this._preferredOutpostArn = value; }
+        }
+
+        // Check to see if PreferredOutpostArn property is set
+        internal bool IsSetPreferredOutpostArn()
+        {
+            return this._preferredOutpostArn != null;
         }
 
         /// <summary>

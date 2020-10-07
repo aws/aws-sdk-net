@@ -163,6 +163,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheNodeId;
         private string _cacheNodeStatus;
         private string _customerAvailabilityZone;
+        private string _customerOutpostArn;
         private Endpoint _endpoint;
         private string _parameterGroupStatus;
         private string _sourceCacheNodeId;
@@ -245,6 +246,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetCustomerAvailabilityZone()
         {
             return this._customerAvailabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerOutpostArn. 
+        /// <para>
+        /// The customer outpost ARN of the cache node.
+        /// </para>
+        /// </summary>
+        public string CustomerOutpostArn
+        {
+            get { return this._customerOutpostArn; }
+            set { this._customerOutpostArn = value; }
+        }
+
+        // Check to see if CustomerOutpostArn property is set
+        internal bool IsSetCustomerOutpostArn()
+        {
+            return this._customerOutpostArn != null;
         }
 
         /// <summary>

@@ -111,6 +111,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NumCacheNodes", StringUtils.FromInt(publicRequest.NumCacheNodes));
                 }
+                if(publicRequest.IsSetOutpostMode())
+                {
+                    request.Parameters.Add("OutpostMode", StringUtils.FromString(publicRequest.OutpostMode));
+                }
                 if(publicRequest.IsSetPort())
                 {
                     request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));
@@ -131,6 +135,19 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPreferredMaintenanceWindow())
                 {
                     request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(publicRequest.PreferredMaintenanceWindow));
+                }
+                if(publicRequest.IsSetPreferredOutpostArn())
+                {
+                    request.Parameters.Add("PreferredOutpostArn", StringUtils.FromString(publicRequest.PreferredOutpostArn));
+                }
+                if(publicRequest.IsSetPreferredOutpostArns())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.PreferredOutpostArns)
+                    {
+                        request.Parameters.Add("PreferredOutpostArns" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
                 if(publicRequest.IsSetReplicationGroupId())
                 {

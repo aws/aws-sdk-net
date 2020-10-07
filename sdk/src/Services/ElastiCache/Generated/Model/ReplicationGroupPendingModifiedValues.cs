@@ -38,6 +38,7 @@ namespace Amazon.ElastiCache.Model
         private PendingAutomaticFailoverStatus _automaticFailoverStatus;
         private string _primaryClusterId;
         private ReshardingStatus _resharding;
+        private UserGroupsUpdateStatus _userGroups;
 
         /// <summary>
         /// Gets and sets the property AuthTokenStatus. 
@@ -110,6 +111,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetResharding()
         {
             return this._resharding != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserGroups. 
+        /// <para>
+        /// The user groups being modified.
+        /// </para>
+        /// </summary>
+        public UserGroupsUpdateStatus UserGroups
+        {
+            get { return this._userGroups; }
+            set { this._userGroups = value; }
+        }
+
+        // Check to see if UserGroups property is set
+        internal bool IsSetUserGroups()
+        {
+            return this._userGroups != null;
         }
 
     }

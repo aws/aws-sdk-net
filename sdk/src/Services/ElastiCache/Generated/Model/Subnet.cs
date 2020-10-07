@@ -36,6 +36,7 @@ namespace Amazon.ElastiCache.Model
     {
         private AvailabilityZone _subnetAvailabilityZone;
         private string _subnetIdentifier;
+        private SubnetOutpost _subnetOutpost;
 
         /// <summary>
         /// Gets and sets the property SubnetAvailabilityZone. 
@@ -71,6 +72,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetSubnetIdentifier()
         {
             return this._subnetIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetOutpost. 
+        /// <para>
+        /// The outpost ARN of the subnet.
+        /// </para>
+        /// </summary>
+        public SubnetOutpost SubnetOutpost
+        {
+            get { return this._subnetOutpost; }
+            set { this._subnetOutpost = value; }
+        }
+
+        // Check to see if SubnetOutpost property is set
+        internal bool IsSetSubnetOutpost()
+        {
+            return this._subnetOutpost != null;
         }
 
     }

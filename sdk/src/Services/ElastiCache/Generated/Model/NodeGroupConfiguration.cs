@@ -37,8 +37,10 @@ namespace Amazon.ElastiCache.Model
     {
         private string _nodeGroupId;
         private string _primaryAvailabilityZone;
+        private string _primaryOutpostArn;
         private List<string> _replicaAvailabilityZones = new List<string>();
         private int? _replicaCount;
+        private List<string> _replicaOutpostArns = new List<string>();
         private string _slots;
 
         /// <summary>
@@ -80,6 +82,24 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PrimaryOutpostArn. 
+        /// <para>
+        /// The output ARN of the primary node.
+        /// </para>
+        /// </summary>
+        public string PrimaryOutpostArn
+        {
+            get { return this._primaryOutpostArn; }
+            set { this._primaryOutpostArn = value; }
+        }
+
+        // Check to see if PrimaryOutpostArn property is set
+        internal bool IsSetPrimaryOutpostArn()
+        {
+            return this._primaryOutpostArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ReplicaAvailabilityZones. 
         /// <para>
         /// A list of Availability Zones to be used for the read replicas. The number of Availability
@@ -115,6 +135,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetReplicaCount()
         {
             return this._replicaCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaOutpostArns. 
+        /// <para>
+        /// The outpost ARN of the node replicas.
+        /// </para>
+        /// </summary>
+        public List<string> ReplicaOutpostArns
+        {
+            get { return this._replicaOutpostArns; }
+            set { this._replicaOutpostArns = value; }
+        }
+
+        // Check to see if ReplicaOutpostArns property is set
+        internal bool IsSetReplicaOutpostArns()
+        {
+            return this._replicaOutpostArns != null && this._replicaOutpostArns.Count > 0; 
         }
 
         /// <summary>

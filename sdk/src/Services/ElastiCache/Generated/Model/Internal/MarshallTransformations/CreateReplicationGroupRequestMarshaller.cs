@@ -128,6 +128,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("NodeGroupConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PrimaryAvailabilityZone", StringUtils.FromString(publicRequestlistValue.PrimaryAvailabilityZone));
                         }
+                        if(publicRequestlistValue.IsSetPrimaryOutpostArn())
+                        {
+                            request.Parameters.Add("NodeGroupConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PrimaryOutpostArn", StringUtils.FromString(publicRequestlistValue.PrimaryOutpostArn));
+                        }
                         if(publicRequestlistValue.IsSetReplicaAvailabilityZones())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -140,6 +144,15 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         if(publicRequestlistValue.IsSetReplicaCount())
                         {
                             request.Parameters.Add("NodeGroupConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReplicaCount", StringUtils.FromInt(publicRequestlistValue.ReplicaCount));
+                        }
+                        if(publicRequestlistValue.IsSetReplicaOutpostArns())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ReplicaOutpostArns)
+                            {
+                                request.Parameters.Add("NodeGroupConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReplicaOutpostArns" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
                         }
                         if(publicRequestlistValue.IsSetSlots())
                         {
@@ -242,6 +255,15 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTransitEncryptionEnabled())
                 {
                     request.Parameters.Add("TransitEncryptionEnabled", StringUtils.FromBool(publicRequest.TransitEncryptionEnabled));
+                }
+                if(publicRequest.IsSetUserGroupIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.UserGroupIds)
+                    {
+                        request.Parameters.Add("UserGroupIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
             return request;
