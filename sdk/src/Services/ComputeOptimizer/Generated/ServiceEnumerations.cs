@@ -159,6 +159,22 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableAutoScalingGroupField UtilizationMetricsCpuMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsCpuMaximum");
         /// <summary>
+        /// Constant UtilizationMetricsEbsReadBytesPerSecondMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsEbsReadBytesPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsEbsReadBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEbsReadOpsPerSecondMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsEbsReadOpsPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsEbsReadOpsPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEbsWriteBytesPerSecondMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsEbsWriteBytesPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsEbsWriteBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEbsWriteOpsPerSecondMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsEbsWriteOpsPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsEbsWriteOpsPerSecondMaximum");
+        /// <summary>
         /// Constant UtilizationMetricsMemoryMaximum for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField UtilizationMetricsMemoryMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsMemoryMaximum");
@@ -316,6 +332,22 @@ namespace Amazon.ComputeOptimizer
         /// Constant UtilizationMetricsCpuMaximum for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField UtilizationMetricsCpuMaximum = new ExportableInstanceField("UtilizationMetricsCpuMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEbsReadBytesPerSecondMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsEbsReadBytesPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsEbsReadBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEbsReadOpsPerSecondMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsEbsReadOpsPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsEbsReadOpsPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEbsWriteBytesPerSecondMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsEbsWriteBytesPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsEbsWriteBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEbsWriteOpsPerSecondMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsEbsWriteOpsPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsEbsWriteOpsPerSecondMaximum");
         /// <summary>
         /// Constant UtilizationMetricsMemoryMaximum for ExportableInstanceField
         /// </summary>
@@ -628,6 +660,22 @@ namespace Amazon.ComputeOptimizer
         /// Constant Cpu for MetricName
         /// </summary>
         public static readonly MetricName Cpu = new MetricName("Cpu");
+        /// <summary>
+        /// Constant EBS_READ_BYTES_PER_SECOND for MetricName
+        /// </summary>
+        public static readonly MetricName EBS_READ_BYTES_PER_SECOND = new MetricName("EBS_READ_BYTES_PER_SECOND");
+        /// <summary>
+        /// Constant EBS_READ_OPS_PER_SECOND for MetricName
+        /// </summary>
+        public static readonly MetricName EBS_READ_OPS_PER_SECOND = new MetricName("EBS_READ_OPS_PER_SECOND");
+        /// <summary>
+        /// Constant EBS_WRITE_BYTES_PER_SECOND for MetricName
+        /// </summary>
+        public static readonly MetricName EBS_WRITE_BYTES_PER_SECOND = new MetricName("EBS_WRITE_BYTES_PER_SECOND");
+        /// <summary>
+        /// Constant EBS_WRITE_OPS_PER_SECOND for MetricName
+        /// </summary>
+        public static readonly MetricName EBS_WRITE_OPS_PER_SECOND = new MetricName("EBS_WRITE_OPS_PER_SECOND");
         /// <summary>
         /// Constant Memory for MetricName
         /// </summary>

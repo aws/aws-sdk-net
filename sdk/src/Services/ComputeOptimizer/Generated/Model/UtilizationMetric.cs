@@ -44,8 +44,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Memory metrics are only returned for resources that have the unified CloudWatch agent
-        /// installed on them. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
+        /// The <code>Memory</code> metric is returned only for resources that have the unified
+        /// CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
         /// Memory Utilization with the CloudWatch Agent</a>.
         /// </para>
         ///  </note>

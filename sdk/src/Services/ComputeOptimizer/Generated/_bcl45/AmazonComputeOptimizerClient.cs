@@ -585,13 +585,9 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  
         /// <para>
-        /// AWS Compute Optimizer currently generates recommendations for Auto Scaling groups
-        /// that are configured to run instances of the M, C, R, T, and X instance families. The
-        /// service does not generate recommendations for Auto Scaling groups that have a scaling
-        /// policy attached to them, or that do not have the same values for desired, minimum,
-        /// and maximum capacity. In order for Compute Optimizer to analyze your Auto Scaling
-        /// groups, they must be of a fixed size. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is.html">AWS
-        /// Compute Optimizer User Guide</a>.
+        /// AWS Compute Optimizer generates recommendations for Amazon EC2 Auto Scaling groups
+        /// that meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+        /// resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAutoScalingGroupRecommendations service method.</param>
@@ -637,13 +633,9 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  
         /// <para>
-        /// AWS Compute Optimizer currently generates recommendations for Auto Scaling groups
-        /// that are configured to run instances of the M, C, R, T, and X instance families. The
-        /// service does not generate recommendations for Auto Scaling groups that have a scaling
-        /// policy attached to them, or that do not have the same values for desired, minimum,
-        /// and maximum capacity. In order for Compute Optimizer to analyze your Auto Scaling
-        /// groups, they must be of a fixed size. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is.html">AWS
-        /// Compute Optimizer User Guide</a>.
+        /// AWS Compute Optimizer generates recommendations for Amazon EC2 Auto Scaling groups
+        /// that meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+        /// resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAutoScalingGroupRecommendations service method.</param>
@@ -696,10 +688,10 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  
         /// <para>
-        /// AWS Compute Optimizer currently generates recommendations for Amazon Elastic Compute
-        /// Cloud (Amazon EC2) and Amazon EC2 Auto Scaling. It generates recommendations for M,
-        /// C, R, T, and X instance families. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is.html">AWS
-        /// Compute Optimizer User Guide</a>.
+        /// AWS Compute Optimizer generates recommendations for Amazon Elastic Compute Cloud (Amazon
+        /// EC2) instances that meet a specific set of requirements. For more information, see
+        /// the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+        /// resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEC2InstanceRecommendations service method.</param>
@@ -745,10 +737,10 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  
         /// <para>
-        /// AWS Compute Optimizer currently generates recommendations for Amazon Elastic Compute
-        /// Cloud (Amazon EC2) and Amazon EC2 Auto Scaling. It generates recommendations for M,
-        /// C, R, T, and X instance families. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is.html">AWS
-        /// Compute Optimizer User Guide</a>.
+        /// AWS Compute Optimizer generates recommendations for Amazon Elastic Compute Cloud (Amazon
+        /// EC2) instances that meet a specific set of requirements. For more information, see
+        /// the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+        /// resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEC2InstanceRecommendations service method.</param>
@@ -798,6 +790,16 @@ namespace Amazon.ComputeOptimizer
 
         /// <summary>
         /// Returns the projected utilization metrics of Amazon EC2 instance recommendations.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization
+        /// metrics returned when you run this action. Additionally, the <code>Memory</code> metric
+        /// is returned only for resources that have the unified CloudWatch agent installed on
+        /// them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+        /// Memory Utilization with the CloudWatch Agent</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEC2RecommendationProjectedMetrics service method.</param>
         /// 
@@ -839,6 +841,16 @@ namespace Amazon.ComputeOptimizer
 
         /// <summary>
         /// Returns the projected utilization metrics of Amazon EC2 instance recommendations.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization
+        /// metrics returned when you run this action. Additionally, the <code>Memory</code> metric
+        /// is returned only for resources that have the unified CloudWatch agent installed on
+        /// them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+        /// Memory Utilization with the CloudWatch Agent</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEC2RecommendationProjectedMetrics service method.</param>
         /// <param name="cancellationToken">

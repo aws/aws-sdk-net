@@ -31,6 +31,17 @@ namespace Amazon.ComputeOptimizer.Model
     /// <summary>
     /// Describes a projected utilization metric of a recommendation option, such as an Amazon
     /// EC2 instance.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization
+    /// metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code>
+    /// action. Additionally, the <code>Memory</code> metric is returned only for resources
+    /// that have the unified CloudWatch agent installed on them. For more information, see
+    /// <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+    /// Memory Utilization with the CloudWatch Agent</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ProjectedMetric
     {
@@ -43,13 +54,6 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         /// The name of the projected utilization metric.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Memory metrics are only returned for resources that have the unified CloudWatch agent
-        /// installed on them. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-        /// Memory Utilization with the CloudWatch Agent</a>.
-        /// </para>
-        ///  </note>
         /// </summary>
         public MetricName Name
         {

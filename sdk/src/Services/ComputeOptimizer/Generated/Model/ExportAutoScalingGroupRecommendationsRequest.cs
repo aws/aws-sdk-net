@@ -93,7 +93,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property FieldsToExport. 
         /// <para>
-        /// The recommendations data to include in the export file.
+        /// The recommendations data to include in the export file. For more information about
+        /// the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+        /// files</a> in the <i>Compute Optimizer User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> FieldsToExport
