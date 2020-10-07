@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaPackage.Model
 {
     /// <summary>
-    /// This is the response object from the RotateIngestEndpointCredentials operation.
+    /// This is the response object from the ConfigureLogs operation.
     /// </summary>
-    public partial class RotateIngestEndpointCredentialsResponse : AmazonWebServiceResponse
+    public partial class ConfigureLogsResponse : AmazonWebServiceResponse
     {
         private string _arn;
         private string _description;

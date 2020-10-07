@@ -29,47 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaPackage.Model
 {
     /// <summary>
-    /// This is the response object from the RotateIngestEndpointCredentials operation.
+    /// Container for the parameters to the ConfigureLogs operation.
+    /// Changes the Channel's properities to configure log subscription
     /// </summary>
-    public partial class RotateIngestEndpointCredentialsResponse : AmazonWebServiceResponse
+    public partial class ConfigureLogsRequest : AmazonMediaPackageRequest
     {
-        private string _arn;
-        private string _description;
         private EgressAccessLogs _egressAccessLogs;
-        private HlsIngest _hlsIngest;
         private string _id;
         private IngressAccessLogs _ingressAccessLogs;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-
-        /// <summary>
-        /// Gets and sets the property Arn. The Amazon Resource Name (ARN) assigned to the Channel.
-        /// </summary>
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Description. A short text description of the Channel.
-        /// </summary>
-        public string Description
-        {
-            get { return this._description; }
-            set { this._description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this._description != null;
-        }
 
         /// <summary>
         /// Gets and sets the property EgressAccessLogs.
@@ -87,23 +54,9 @@ namespace Amazon.MediaPackage.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HlsIngest.
+        /// Gets and sets the property Id. The ID of the channel to log subscription.
         /// </summary>
-        public HlsIngest HlsIngest
-        {
-            get { return this._hlsIngest; }
-            set { this._hlsIngest = value; }
-        }
-
-        // Check to see if HlsIngest property is set
-        internal bool IsSetHlsIngest()
-        {
-            return this._hlsIngest != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Id. The ID of the Channel.
-        /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -129,21 +82,6 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetIngressAccessLogs()
         {
             return this._ingressAccessLogs != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags.
-        /// </summary>
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

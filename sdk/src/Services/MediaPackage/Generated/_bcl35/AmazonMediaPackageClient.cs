@@ -237,6 +237,78 @@ namespace Amazon.MediaPackage
         #endregion
 
 
+        #region  ConfigureLogs
+
+        /// <summary>
+        /// Changes the Channel's properities to configure log subscription
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureLogs service method.</param>
+        /// 
+        /// <returns>The response from the ConfigureLogs service method, as returned by MediaPackage.</returns>
+        /// <exception cref="Amazon.MediaPackage.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ConfigureLogs">REST API Reference for ConfigureLogs Operation</seealso>
+        public virtual ConfigureLogsResponse ConfigureLogs(ConfigureLogsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfigureLogsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfigureLogsResponseUnmarshaller.Instance;
+
+            return Invoke<ConfigureLogsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ConfigureLogs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureLogs operation on AmazonMediaPackageClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConfigureLogs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ConfigureLogs">REST API Reference for ConfigureLogs Operation</seealso>
+        public virtual IAsyncResult BeginConfigureLogs(ConfigureLogsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfigureLogsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfigureLogsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ConfigureLogs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfigureLogs.</param>
+        /// 
+        /// <returns>Returns a  ConfigureLogsResult from MediaPackage.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ConfigureLogs">REST API Reference for ConfigureLogs Operation</seealso>
+        public virtual ConfigureLogsResponse EndConfigureLogs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ConfigureLogsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateChannel
 
         /// <summary>

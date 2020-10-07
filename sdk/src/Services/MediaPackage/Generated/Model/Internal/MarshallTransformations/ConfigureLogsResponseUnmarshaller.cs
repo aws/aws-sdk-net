@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateChannel operation
+    /// Response Unmarshaller for ConfigureLogs operation
     /// </summary>  
-    public class CreateChannelResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ConfigureLogsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateChannelResponse response = new CreateChannelResponse();
+            ConfigureLogsResponse response = new ConfigureLogsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -144,9 +144,9 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             return new AmazonMediaPackageException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateChannelResponseUnmarshaller _instance = new CreateChannelResponseUnmarshaller();        
+        private static ConfigureLogsResponseUnmarshaller _instance = new ConfigureLogsResponseUnmarshaller();        
 
-        internal static CreateChannelResponseUnmarshaller GetInstance()
+        internal static ConfigureLogsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -154,7 +154,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateChannelResponseUnmarshaller Instance
+        public static ConfigureLogsResponseUnmarshaller Instance
         {
             get
             {

@@ -36,8 +36,10 @@ namespace Amazon.MediaPackage.Model
     {
         private string _arn;
         private string _description;
+        private EgressAccessLogs _egressAccessLogs;
         private HlsIngest _hlsIngest;
         private string _id;
+        private IngressAccessLogs _ingressAccessLogs;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -71,6 +73,21 @@ namespace Amazon.MediaPackage.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EgressAccessLogs.
+        /// </summary>
+        public EgressAccessLogs EgressAccessLogs
+        {
+            get { return this._egressAccessLogs; }
+            set { this._egressAccessLogs = value; }
+        }
+
+        // Check to see if EgressAccessLogs property is set
+        internal bool IsSetEgressAccessLogs()
+        {
+            return this._egressAccessLogs != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HlsIngest.
         /// </summary>
         public HlsIngest HlsIngest
@@ -98,6 +115,21 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IngressAccessLogs.
+        /// </summary>
+        public IngressAccessLogs IngressAccessLogs
+        {
+            get { return this._ingressAccessLogs; }
+            set { this._ingressAccessLogs = value; }
+        }
+
+        // Check to see if IngressAccessLogs property is set
+        internal bool IsSetIngressAccessLogs()
+        {
+            return this._ingressAccessLogs != null;
         }
 
         /// <summary>

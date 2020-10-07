@@ -63,6 +63,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("egressAccessLogs", targetDepth))
+                {
+                    var unmarshaller = EgressAccessLogsUnmarshaller.Instance;
+                    response.EgressAccessLogs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hlsIngest", targetDepth))
                 {
                     var unmarshaller = HlsIngestUnmarshaller.Instance;
@@ -73,6 +79,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ingressAccessLogs", targetDepth))
+                {
+                    var unmarshaller = IngressAccessLogsUnmarshaller.Instance;
+                    response.IngressAccessLogs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
