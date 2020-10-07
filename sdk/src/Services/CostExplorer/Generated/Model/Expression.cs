@@ -36,7 +36,9 @@ namespace Amazon.CostExplorer.Model
     /// <para>
     /// Simple dimension values - You can set the dimension name and values for the filters
     /// that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>.
-    /// The <code>Expression</code> for that looks like this:
+    /// For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example,
+    /// <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example looks
+    /// like:
     /// </para>
     ///  
     /// <para>

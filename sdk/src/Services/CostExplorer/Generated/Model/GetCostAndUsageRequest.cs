@@ -35,8 +35,8 @@ namespace Amazon.CostExplorer.Model
     /// that you want the request to return. You can also filter and group your data by various
     /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
     /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-    /// operation. Master accounts in an organization in AWS Organizations have access to
-    /// all member accounts.
+    /// operation. Master account in an organization in AWS Organizations have access to all
+    /// member accounts.
     /// </summary>
     public partial class GetCostAndUsageRequest : AmazonCostExplorerRequest
     {

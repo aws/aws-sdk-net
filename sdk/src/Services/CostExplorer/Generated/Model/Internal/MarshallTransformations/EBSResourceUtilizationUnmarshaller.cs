@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EC2ResourceUtilization Object
+    /// Response Unmarshaller for EBSResourceUtilization Object
     /// </summary>  
-    public class EC2ResourceUtilizationUnmarshaller : IUnmarshaller<EC2ResourceUtilization, XmlUnmarshallerContext>, IUnmarshaller<EC2ResourceUtilization, JsonUnmarshallerContext>
+    public class EBSResourceUtilizationUnmarshaller : IUnmarshaller<EBSResourceUtilization, XmlUnmarshallerContext>, IUnmarshaller<EBSResourceUtilization, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EC2ResourceUtilization IUnmarshaller<EC2ResourceUtilization, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EBSResourceUtilization IUnmarshaller<EBSResourceUtilization, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,39 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EC2ResourceUtilization Unmarshall(JsonUnmarshallerContext context)
+        public EBSResourceUtilization Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EC2ResourceUtilization unmarshalledObject = new EC2ResourceUtilization();
+            EBSResourceUtilization unmarshalledObject = new EBSResourceUtilization();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EBSResourceUtilization", targetDepth))
-                {
-                    var unmarshaller = EBSResourceUtilizationUnmarshaller.Instance;
-                    unmarshalledObject.EBSResourceUtilization = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MaxCpuUtilizationPercentage", targetDepth))
+                if (context.TestExpression("EbsReadBytesPerSecond", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MaxCpuUtilizationPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EbsReadBytesPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MaxMemoryUtilizationPercentage", targetDepth))
+                if (context.TestExpression("EbsReadOpsPerSecond", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MaxMemoryUtilizationPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EbsReadOpsPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MaxStorageUtilizationPercentage", targetDepth))
+                if (context.TestExpression("EbsWriteBytesPerSecond", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MaxStorageUtilizationPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EbsWriteBytesPerSecond = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EbsWriteOpsPerSecond", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EbsWriteOpsPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +94,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         }
 
 
-        private static EC2ResourceUtilizationUnmarshaller _instance = new EC2ResourceUtilizationUnmarshaller();        
+        private static EBSResourceUtilizationUnmarshaller _instance = new EBSResourceUtilizationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EC2ResourceUtilizationUnmarshaller Instance
+        public static EBSResourceUtilizationUnmarshaller Instance
         {
             get
             {

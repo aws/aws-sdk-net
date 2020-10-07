@@ -30,7 +30,7 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// A single daily or monthly Savings Plans utilization rate, and details for your account.
-    /// Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code>
+    /// A master account in an organization have access to member accounts. You can use <code>GetDimensionValues</code>
     /// to determine the possible dimension values.
     /// </summary>
     public partial class SavingsPlansUtilizationDetail

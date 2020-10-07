@@ -852,8 +852,8 @@ namespace Amazon.CostExplorer
         /// that you want the request to return. You can also filter and group your data by various
         /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
         /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-        /// operation. Master accounts in an organization in AWS Organizations have access to
-        /// all member accounts.
+        /// operation. Master account in an organization in AWS Organizations have access to all
+        /// member accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCostAndUsage service method.</param>
         /// 
@@ -891,8 +891,8 @@ namespace Amazon.CostExplorer
         /// that you want the request to return. You can also filter and group your data by various
         /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
         /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-        /// operation. Master accounts in an organization in AWS Organizations have access to
-        /// all member accounts.
+        /// operation. Master account in an organization in AWS Organizations have access to all
+        /// member accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCostAndUsage service method.</param>
         /// <param name="cancellationToken">
@@ -937,9 +937,9 @@ namespace Amazon.CostExplorer
         /// that you want the request to return. You can also filter and group your data by various
         /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
         /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-        /// operation. Master accounts in an organization in AWS Organizations have access to
-        /// all member accounts. This API is currently available for the Amazon Elastic Compute
-        /// Cloud – Compute service only.
+        /// operation. Master account in an organization in AWS Organizations have access to all
+        /// member accounts. This API is currently available for the Amazon Elastic Compute Cloud
+        /// – Compute service only.
         /// 
         ///  <note> 
         /// <para>
@@ -985,9 +985,9 @@ namespace Amazon.CostExplorer
         /// that you want the request to return. You can also filter and group your data by various
         /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
         /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-        /// operation. Master accounts in an organization in AWS Organizations have access to
-        /// all member accounts. This API is currently available for the Amazon Elastic Compute
-        /// Cloud – Compute service only.
+        /// operation. Master account in an organization in AWS Organizations have access to all
+        /// member accounts. This API is currently available for the Amazon Elastic Compute Cloud
+        /// – Compute service only.
         /// 
         ///  <note> 
         /// <para>
@@ -1445,7 +1445,7 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Retrieves the reservation utilization for your account. Master accounts in an organization
+        /// Retrieves the reservation utilization for your account. Master account in an organization
         /// have access to member accounts. You can filter data by dimensions in a time period.
         /// You can use <code>GetDimensionValues</code> to determine the possible dimension values.
         /// Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
@@ -1474,7 +1474,7 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Retrieves the reservation utilization for your account. Master accounts in an organization
+        /// Retrieves the reservation utilization for your account. Master account in an organization
         /// have access to member accounts. You can filter data by dimensions in a time period.
         /// You can use <code>GetDimensionValues</code> to determine the possible dimension values.
         /// Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
@@ -1748,7 +1748,7 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Retrieves the Savings Plans utilization for your account across date ranges with daily
-        /// or monthly granularity. Master accounts in an organization have access to member accounts.
+        /// or monthly granularity. Master account in an organization have access to member accounts.
         /// You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine
         /// the possible dimension values.
         /// 
@@ -1780,7 +1780,7 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Retrieves the Savings Plans utilization for your account across date ranges with daily
-        /// or monthly granularity. Master accounts in an organization have access to member accounts.
+        /// or monthly granularity. Master account in an organization have access to member accounts.
         /// You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine
         /// the possible dimension values.
         /// 

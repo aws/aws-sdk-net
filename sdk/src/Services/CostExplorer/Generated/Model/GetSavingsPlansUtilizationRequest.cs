@@ -31,7 +31,7 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Container for the parameters to the GetSavingsPlansUtilization operation.
     /// Retrieves the Savings Plans utilization for your account across date ranges with daily
-    /// or monthly granularity. Master accounts in an organization have access to member accounts.
+    /// or monthly granularity. Master account in an organization have access to member accounts.
     /// You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine
     /// the possible dimension values.
     /// 
