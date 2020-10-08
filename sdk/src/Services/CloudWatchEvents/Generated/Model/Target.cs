@@ -45,6 +45,7 @@ namespace Amazon.CloudWatchEvents.Model
     {
         private string _arn;
         private BatchParameters _batchParameters;
+        private DeadLetterConfig _deadLetterConfig;
         private EcsParameters _ecsParameters;
         private HttpParameters _httpParameters;
         private string _id;
@@ -53,6 +54,7 @@ namespace Amazon.CloudWatchEvents.Model
         private InputTransformer _inputTransformer;
         private KinesisParameters _kinesisParameters;
         private RedshiftDataParameters _redshiftDataParameters;
+        private RetryPolicy _retryPolicy;
         private string _roleArn;
         private RunCommandParameters _runCommandParameters;
         private SqsParameters _sqsParameters;
@@ -94,6 +96,25 @@ namespace Amazon.CloudWatchEvents.Model
         internal bool IsSetBatchParameters()
         {
             return this._batchParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeadLetterConfig. 
+        /// <para>
+        /// The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter
+        /// queue events to.
+        /// </para>
+        /// </summary>
+        public DeadLetterConfig DeadLetterConfig
+        {
+            get { return this._deadLetterConfig; }
+            set { this._deadLetterConfig = value; }
+        }
+
+        // Check to see if DeadLetterConfig property is set
+        internal bool IsSetDeadLetterConfig()
+        {
+            return this._deadLetterConfig != null;
         }
 
         /// <summary>
@@ -262,6 +283,25 @@ namespace Amazon.CloudWatchEvents.Model
         internal bool IsSetRedshiftDataParameters()
         {
             return this._redshiftDataParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryPolicy. 
+        /// <para>
+        /// The <code>RetryPolicy</code> object that contains the retry policy configuration to
+        /// use for the dead-letter queue.
+        /// </para>
+        /// </summary>
+        public RetryPolicy RetryPolicy
+        {
+            get { return this._retryPolicy; }
+            set { this._retryPolicy = value; }
+        }
+
+        // Check to see if RetryPolicy property is set
+        internal bool IsSetRetryPolicy()
+        {
+            return this._retryPolicy != null;
         }
 
         /// <summary>
