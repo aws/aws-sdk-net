@@ -42,9 +42,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceOptionGroupIdentifier. 
         /// <para>
-        /// The identifier or ARN for the source option group. For information about creating
-        /// an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-        /// Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. 
+        /// The identifier for the source option group. 
         /// </para>
         ///  
         /// <para>
@@ -53,16 +51,6 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         /// Must specify a valid option group.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the source option group is in the same AWS Region as the copy, specify a valid
-        /// option group identifier, for example <code>my-option-group</code>, or a valid ARN.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the source option group is in a different AWS Region than the copy, specify a valid
-        /// option group ARN, for example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

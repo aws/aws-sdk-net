@@ -123,6 +123,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("LicenseModel", StringUtils.FromString(publicRequest.LicenseModel));
                 }
+                if(publicRequest.IsSetMaxAllocatedStorage())
+                {
+                    request.Parameters.Add("MaxAllocatedStorage", StringUtils.FromInt(publicRequest.MaxAllocatedStorage));
+                }
                 if(publicRequest.IsSetMultiAZ())
                 {
                     request.Parameters.Add("MultiAZ", StringUtils.FromBool(publicRequest.MultiAZ));

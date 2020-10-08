@@ -824,6 +824,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        ///  <b>Amazon Aurora</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Not applicable. CloudWatch Logs exports are managed by the DB cluster. 
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>MariaDB</b> 
         /// </para>
         ///  
@@ -1097,8 +1105,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-        /// and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+        /// SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
         /// <para>

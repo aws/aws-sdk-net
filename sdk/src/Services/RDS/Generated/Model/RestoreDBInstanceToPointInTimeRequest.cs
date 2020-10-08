@@ -67,6 +67,7 @@ namespace Amazon.RDS.Model
         private string _engine;
         private int? _iops;
         private string _licenseModel;
+        private int? _maxAllocatedStorage;
         private bool? _multiAZ;
         private string _optionGroupName;
         private int? _port;
@@ -531,6 +532,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetLicenseModel()
         {
             return this._licenseModel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxAllocatedStorage. 
+        /// <para>
+        /// The upper limit to which Amazon RDS can automatically scale the storage of the DB
+        /// instance.
+        /// </para>
+        /// </summary>
+        public int MaxAllocatedStorage
+        {
+            get { return this._maxAllocatedStorage.GetValueOrDefault(); }
+            set { this._maxAllocatedStorage = value; }
+        }
+
+        // Check to see if MaxAllocatedStorage property is set
+        internal bool IsSetMaxAllocatedStorage()
+        {
+            return this._maxAllocatedStorage.HasValue; 
         }
 
         /// <summary>
