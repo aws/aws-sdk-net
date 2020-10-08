@@ -79,7 +79,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property NumberOfChannels. 
         /// <para>
-        /// The number of audio channels in the segement.
+        /// The number of audio channels in the segment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

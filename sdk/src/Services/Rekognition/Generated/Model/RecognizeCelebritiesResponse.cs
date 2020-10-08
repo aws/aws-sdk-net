@@ -41,7 +41,7 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property CelebrityFaces. 
         /// <para>
         /// Details about each celebrity found in the image. Amazon Rekognition can detect a maximum
-        /// of 15 celebrities in an image.
+        /// of 64 celebrities in an image.
         /// </para>
         /// </summary>
         public List<Celebrity> CelebrityFaces

@@ -59,7 +59,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Index. 
         /// <para>
-        /// An Identifier for a shot detection segment detected in a video 
+        /// An Identifier for a shot detection segment detected in a video. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

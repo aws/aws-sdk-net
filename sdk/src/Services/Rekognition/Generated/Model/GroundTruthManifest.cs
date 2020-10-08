@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// The S3 bucket that contains the Ground Truth manifest file.
+    /// The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file.
     /// </summary>
     public partial class GroundTruthManifest
     {

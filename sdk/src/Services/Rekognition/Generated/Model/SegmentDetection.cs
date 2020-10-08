@@ -105,6 +105,7 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property EndTimestampMillis. 
         /// <para>
         /// The end time of the detected segment, in milliseconds, from the start of the video.
+        /// This value is rounded down.
         /// </para>
         /// </summary>
         public long EndTimestampMillis
@@ -161,6 +162,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property StartTimestampMillis. 
         /// <para>
         /// The start time of the detected segment in milliseconds from the start of the video.
+        /// This value is rounded down. For example, if the actual timestamp is 100.6667 milliseconds,
+        /// Amazon Rekognition Video returns a value of 100 millis.
         /// </para>
         /// </summary>
         public long StartTimestampMillis

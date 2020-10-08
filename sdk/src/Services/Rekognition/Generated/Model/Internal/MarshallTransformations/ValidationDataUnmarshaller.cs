@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TestingDataResult Object
+    /// Response Unmarshaller for ValidationData Object
     /// </summary>  
-    public class TestingDataResultUnmarshaller : IUnmarshaller<TestingDataResult, XmlUnmarshallerContext>, IUnmarshaller<TestingDataResult, JsonUnmarshallerContext>
+    public class ValidationDataUnmarshaller : IUnmarshaller<ValidationData, XmlUnmarshallerContext>, IUnmarshaller<ValidationData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TestingDataResult IUnmarshaller<TestingDataResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ValidationData IUnmarshaller<ValidationData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public TestingDataResult Unmarshall(JsonUnmarshallerContext context)
+        public ValidationData Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TestingDataResult unmarshalledObject = new TestingDataResult();
+            ValidationData unmarshalledObject = new ValidationData();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Input", targetDepth))
+                if (context.TestExpression("Assets", targetDepth))
                 {
-                    var unmarshaller = TestingDataUnmarshaller.Instance;
-                    unmarshalledObject.Input = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Output", targetDepth))
-                {
-                    var unmarshaller = TestingDataUnmarshaller.Instance;
-                    unmarshalledObject.Output = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Validation", targetDepth))
-                {
-                    var unmarshaller = ValidationDataUnmarshaller.Instance;
-                    unmarshalledObject.Validation = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Asset, AssetUnmarshaller>(AssetUnmarshaller.Instance);
+                    unmarshalledObject.Assets = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         }
 
 
-        private static TestingDataResultUnmarshaller _instance = new TestingDataResultUnmarshaller();        
+        private static ValidationDataUnmarshaller _instance = new ValidationDataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TestingDataResultUnmarshaller Instance
+        public static ValidationDataUnmarshaller Instance
         {
             get
             {

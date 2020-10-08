@@ -36,6 +36,7 @@ namespace Amazon.Rekognition.Model
         private long? _billableTrainingTimeInSeconds;
         private DateTime? _creationTimestamp;
         private EvaluationResult _evaluationResult;
+        private GroundTruthManifest _manifestSummary;
         private int? _minInferenceUnits;
         private OutputConfig _outputConfig;
         private string _projectVersionArn;
@@ -100,6 +101,25 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetEvaluationResult()
         {
             return this._evaluationResult != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManifestSummary. 
+        /// <para>
+        /// The location of the summary manifest. The summary manifest provides aggregate data
+        /// validation results for the training and test datasets.
+        /// </para>
+        /// </summary>
+        public GroundTruthManifest ManifestSummary
+        {
+            get { return this._manifestSummary; }
+            set { this._manifestSummary = value; }
+        }
+
+        // Check to see if ManifestSummary property is set
+        internal bool IsSetManifestSummary()
+        {
+            return this._manifestSummary != null;
         }
 
         /// <summary>
@@ -198,7 +218,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property TestingDataResult. 
         /// <para>
-        /// The manifest file that represents the testing results.
+        /// Contains information about the testing results.
         /// </para>
         /// </summary>
         public TestingDataResult TestingDataResult
@@ -216,7 +236,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property TrainingDataResult. 
         /// <para>
-        /// The manifest file that represents the training results.
+        /// Contains information about the training results.
         /// </para>
         /// </summary>
         public TrainingDataResult TrainingDataResult

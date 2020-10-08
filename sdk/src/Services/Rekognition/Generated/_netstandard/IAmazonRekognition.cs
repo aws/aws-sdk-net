@@ -95,13 +95,7 @@ namespace Amazon.Rekognition
         /// <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to filter detected faces,
         /// specify <code>NONE</code>. The default value is <code>NONE</code>. 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// To use quality filtering, you need a collection associated with version 3 of the face
-        /// model or higher. To get the version of the face model associated with a collection,
-        /// call <a>DescribeCollection</a>. 
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// If the image doesn't contain Exif metadata, <code>CompareFaces</code> returns orientation
         /// information for the source and target images. Use these values to display the images
@@ -2366,10 +2360,10 @@ namespace Amazon.Rekognition
         /// 
         ///  
         /// <para>
-        ///  <code>RecognizeCelebrities</code> returns the 100 largest faces in the image. It
-        /// lists recognized celebrities in the <code>CelebrityFaces</code> array and unrecognized
-        /// faces in the <code>UnrecognizedFaces</code> array. <code>RecognizeCelebrities</code>
-        /// doesn't return celebrities whose faces aren't among the largest 100 faces in the image.
+        ///  <code>RecognizeCelebrities</code> returns the 64 largest faces in the image. It lists
+        /// recognized celebrities in the <code>CelebrityFaces</code> array and unrecognized faces
+        /// in the <code>UnrecognizedFaces</code> array. <code>RecognizeCelebrities</code> doesn't
+        /// return celebrities whose faces aren't among the largest 64 faces in the image.
         /// </para>
         ///  
         /// <para>

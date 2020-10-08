@@ -76,6 +76,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     unmarshalledObject.Output = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Validation", targetDepth))
+                {
+                    var unmarshaller = ValidationDataUnmarshaller.Instance;
+                    unmarshalledObject.Validation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -82,6 +82,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     unmarshalledObject.EvaluationResult = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ManifestSummary", targetDepth))
+                {
+                    var unmarshaller = GroundTruthManifestUnmarshaller.Instance;
+                    unmarshalledObject.ManifestSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MinInferenceUnits", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
