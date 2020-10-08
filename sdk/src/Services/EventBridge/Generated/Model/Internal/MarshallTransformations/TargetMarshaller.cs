@@ -62,6 +62,17 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDeadLetterConfig())
+            {
+                context.Writer.WritePropertyName("DeadLetterConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DeadLetterConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.DeadLetterConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEcsParameters())
             {
                 context.Writer.WritePropertyName("EcsParameters");
@@ -131,6 +142,17 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 
                 var marshaller = RedshiftDataParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.RedshiftDataParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRetryPolicy())
+            {
+                context.Writer.WritePropertyName("RetryPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RetryPolicyMarshaller.Instance;
+                marshaller.Marshall(requestObject.RetryPolicy, context);
 
                 context.Writer.WriteObjectEnd();
             }

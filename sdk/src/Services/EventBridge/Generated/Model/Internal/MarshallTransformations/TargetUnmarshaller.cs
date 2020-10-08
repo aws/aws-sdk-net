@@ -76,6 +76,12 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                     unmarshalledObject.BatchParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeadLetterConfig", targetDepth))
+                {
+                    var unmarshaller = DeadLetterConfigUnmarshaller.Instance;
+                    unmarshalledObject.DeadLetterConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EcsParameters", targetDepth))
                 {
                     var unmarshaller = EcsParametersUnmarshaller.Instance;
@@ -122,6 +128,12 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = RedshiftDataParametersUnmarshaller.Instance;
                     unmarshalledObject.RedshiftDataParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RetryPolicy", targetDepth))
+                {
+                    var unmarshaller = RetryPolicyUnmarshaller.Instance;
+                    unmarshalledObject.RetryPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RoleArn", targetDepth))
