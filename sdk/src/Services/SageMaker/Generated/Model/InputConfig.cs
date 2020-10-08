@@ -186,7 +186,101 @@ namespace Amazon.SageMaker.Model
         /// <para>
         ///  <code>XGBOOST</code>: input data name and shape are not needed.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
+        /// <a>OutputConfig$TargetDevice</a> (ML Model format):
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>.
+        /// In addition to static input shapes, CoreML converter supports Flexible input shapes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Range Dimension. You can use the Range Dimension feature if you know the input shape
+        /// will be within some specific interval in that dimension, for example: <code>{"input_1":
+        /// {"shape": ["1..10", 224, 224, 3]}}</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Enumerated shapes. Sometimes, the models are trained to work only on a select set
+        /// of inputs. You can enumerate all supported input shapes, for example: <code>{"input_1":
+        /// {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <code>default_shape</code>: Default input shape. You can set a default shape during
+        /// conversion for both Range Dimension and Enumerated Shapes. For example <code>{"input_1":
+        /// {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>.
+        /// By default, the converter generates an ML Model with inputs of type Tensor (MultiArray).
+        /// User can set input type to be Image. Image input type requires additional input parameters
+        /// such as <code>bias</code> and <code>scale</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>bias</code>: If the input type is an Image, you need to provide the bias vector.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>scale</code>: If the input type is an Image, you need to provide a scale factor.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// CoreML <code>ClassifierConfig</code> parameters can be specified using <a>OutputConfig$CompilerOptions</a>.
+        /// CoreML converter supports Tensorflow and PyTorch models. CoreML conversion examples:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Tensor type input:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape":
+        /// [1,224,224,3]}}</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Tensor type input without input name (PyTorch):
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape":
+        /// [1,3,224,224]}]</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Image type input:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape":
+        /// [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Image type input without input name (PyTorch):
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape":
+        /// [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
         public string DataInputConfig

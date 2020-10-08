@@ -49,7 +49,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Specifies additional parameters for compiler options in JSON format. The compiler
         /// options are <code>TargetPlatform</code> specific. It is required for NVIDIA accelerators
-        /// and highly recommended for CPU compliations. For any other cases, it is optional to
+        /// and highly recommended for CPU compilations. For any other cases, it is optional to
         /// specify <code>CompilerOptions.</code> 
         /// </para>
         ///  <ul> <li> 
@@ -115,6 +115,17 @@ namespace Amazon.SageMaker.Model
         /// <para>
         ///  <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
         /// compiling for ARM 32-bit platform with NEON support.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <code>CoreML</code>: Compilation for the CoreML <a>OutputConfig$TargetDevice</a>
+        /// supports the following compiler options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>class_labels</code>: Specifies the classification labels file name inside input
+        /// tar.gz file. For example, <code>{"class_labels": "imagenet_labels_1000.txt"}</code>.
+        /// Labels inside the txt file should be separated by newlines.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

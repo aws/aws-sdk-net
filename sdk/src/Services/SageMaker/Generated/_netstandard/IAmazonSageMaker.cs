@@ -330,9 +330,9 @@ namespace Amazon.SageMaker
         ///  
         /// <para>
         /// All SageMaker Studio traffic between the domain and the EFS volume is through the
-        /// specified VPC and subnets. For other Studio traffic, you specify the <code>AppNetworkAccessType</code>
-        /// parameter. <code>AppNetworkAccessType</code> corresponds to the VPC mode that's chosen
-        /// when you onboard to Studio. The following options are available:
+        /// specified VPC and subnets. For other Studio traffic, you can specify the <code>AppNetworkAccessType</code>
+        /// parameter. <code>AppNetworkAccessType</code> corresponds to the network access type
+        /// that you choose when you onboard to Studio. The following options are available:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -353,11 +353,11 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b> <code>VpcOnly</code> mode</b> 
+        ///  <b> <code>VpcOnly</code> network access type</b> 
         /// </para>
         ///  
         /// <para>
-        /// When you specify <code>VpcOnly</code>, you must specify the following:
+        /// When you choose <code>VpcOnly</code>, you must specify the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
