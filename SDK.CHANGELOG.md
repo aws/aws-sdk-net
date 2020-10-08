@@ -1,3 +1,13 @@
+### 3.5.32.0 (2020-10-07 22:43 UTC)
+* ComputeOptimizer (3.5.1.0)
+	* This release enables AWS Compute Optimizer to analyze EC2 instance-level EBS read and write operations, and throughput when generating recommendations for your EC2 instances and Auto Scaling groups.
+* CostExplorer (3.5.2.0)
+	* Enables Rightsizing Recommendations to analyze and present EC2 instance-level EBS metrics when generating recommendations. Returns AccessDeniedException if the account is not opted into Rightsizing
+* ElastiCache (3.5.1.0)
+	* This release introduces User and UserGroup to allow customers to have access control list of the Redis resources for AWS ElastiCache. This release also adds support for Outposts  for AWS ElastiCache.
+* MediaPackage (3.5.2.0)
+	* AWS Elemental MediaPackage provides access logs that capture detailed information about requests sent to a customer's MediaPackage channel.
+
 ### 3.5.31.0 (2020-10-06 18:15 UTC)
 * DatabaseMigrationService (3.5.2.0)
 	* Added new S3 endpoint settings to allow partitioning CDC data by date for S3 as target. Exposed some Extra Connection Attributes as endpoint settings for relational databases as target.
