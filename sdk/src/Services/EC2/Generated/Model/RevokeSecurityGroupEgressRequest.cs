@@ -31,11 +31,22 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the RevokeSecurityGroupEgress operation.
     /// [VPC only] Removes the specified egress rules from a security group for EC2-VPC. This
-    /// action doesn't apply to security groups for use in EC2-Classic. To remove a rule,
+    /// action does not apply to security groups for use in EC2-Classic. To remove a rule,
     /// the values that you specify (for example, ports) must match the existing rule's values
     /// exactly.
     /// 
+    ///  <note> 
+    /// <para>
+    /// [Default VPC] If the values you specify do not match the existing rule's values, no
+    /// error is returned, and the output describes the security group rules that were not
+    /// revoked. 
+    /// </para>
     ///  
+    /// <para>
+    /// AWS recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule
+    /// has been removed.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Each rule consists of the protocol and the IPv4 or IPv6 CIDR range or source security
     /// group. For the TCP and UDP protocols, you must also specify the destination port or
