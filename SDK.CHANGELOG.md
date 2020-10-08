@@ -1,3 +1,21 @@
+### 3.5.33.0 (2020-10-08 18:13 UTC)
+* CloudWatchEvents (3.5.2.0)
+	* Amazon EventBridge (formerly called CloudWatch Events) adds support for target Dead-letter Queues and custom retry policies.
+* CostExplorer (3.5.3.0)
+	* You can now create hierarchical cost categories by choosing "Cost Category" as a dimension. You can also track the status of your cost category updates to your cost and usage information.
+* EC2 (3.5.9.0)
+	* AWS EC2 RevokeSecurityGroupIngress and RevokeSecurityGroupEgress APIs will return IpPermissions which do not match with any existing IpPermissions for security groups in default VPC and EC2-Classic.
+* EventBridge (3.5.2.0)
+	* Amazon EventBridge adds support for target Dead Letter Queues (DLQs) and custom retry policies.
+* RDS (3.5.3.0)
+	* Supports a new parameter to set the max allocated storage in gigabytes for restore database instance from S3 and restore database instance to a point in time APIs.
+* Rekognition (3.5.1.0)
+	* This release provides location information for the manifest validation files.
+* SageMaker (3.5.3.0)
+	* This release enables Sagemaker customers to convert Tensorflow and PyTorch models to CoreML (ML Model) format.
+* SimpleNotificationService (3.5.0.26)
+	* Documentation updates for SNS.
+
 ### 3.5.32.0 (2020-10-07 22:43 UTC)
 * ComputeOptimizer (3.5.1.0)
 	* This release enables AWS Compute Optimizer to analyze EC2 instance-level EBS read and write operations, and throughput when generating recommendations for your EC2 instances and Auto Scaling groups.
