@@ -233,7 +233,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Sets whether the response from the <code>Subscribe</code> request includes the subscription
         /// ARN, even if the subscription is not yet confirmed.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
         /// If you set this parameter to <code>true</code>, the response includes the ARN in all
         /// cases, even if the subscription is not yet confirmed. In addition to the ARN for confirmed
@@ -242,7 +242,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
         /// token.
         /// </para>
-        ///  </li> </ul>  
+        ///   
         /// <para>
         /// The default value is <code>false</code>.
         /// </para>
