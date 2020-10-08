@@ -283,6 +283,102 @@ namespace Amazon.CostExplorer
 
 
     /// <summary>
+    /// Constants used for properties of type CostCategoryStatus.
+    /// </summary>
+    public class CostCategoryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPLIED for CostCategoryStatus
+        /// </summary>
+        public static readonly CostCategoryStatus APPLIED = new CostCategoryStatus("APPLIED");
+        /// <summary>
+        /// Constant PROCESSING for CostCategoryStatus
+        /// </summary>
+        public static readonly CostCategoryStatus PROCESSING = new CostCategoryStatus("PROCESSING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CostCategoryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CostCategoryStatus FindValue(string value)
+        {
+            return FindValue<CostCategoryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CostCategoryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CostCategoryStatusComponent.
+    /// </summary>
+    public class CostCategoryStatusComponent : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COST_EXPLORER for CostCategoryStatusComponent
+        /// </summary>
+        public static readonly CostCategoryStatusComponent COST_EXPLORER = new CostCategoryStatusComponent("COST_EXPLORER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CostCategoryStatusComponent(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CostCategoryStatusComponent FindValue(string value)
+        {
+            return FindValue<CostCategoryStatusComponent>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CostCategoryStatusComponent(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Dimension.
     /// </summary>
     public class Dimension : ConstantClass

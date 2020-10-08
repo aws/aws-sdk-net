@@ -88,6 +88,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProcessingStatus", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CostCategoryProcessingStatus, CostCategoryProcessingStatusUnmarshaller>(CostCategoryProcessingStatusUnmarshaller.Instance);
+                    unmarshalledObject.ProcessingStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Rules", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<CostCategoryRule, CostCategoryRuleUnmarshaller>(CostCategoryRuleUnmarshaller.Instance);

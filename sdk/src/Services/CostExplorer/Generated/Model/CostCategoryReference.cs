@@ -45,6 +45,8 @@ namespace Amazon.CostExplorer.Model
         private string _effectiveStart;
         private string _name;
         private int? _numberOfRules;
+        private List<CostCategoryProcessingStatus> _processingStatus = new List<CostCategoryProcessingStatus>();
+        private List<string> _values = new List<string>();
 
         /// <summary>
         /// Gets and sets the property CostCategoryArn. 
@@ -136,6 +138,43 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetNumberOfRules()
         {
             return this._numberOfRules.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProcessingStatus. 
+        /// <para>
+        ///  The list of processing statuses for Cost Management products for a specific cost
+        /// category. 
+        /// </para>
+        /// </summary>
+        public List<CostCategoryProcessingStatus> ProcessingStatus
+        {
+            get { return this._processingStatus; }
+            set { this._processingStatus = value; }
+        }
+
+        // Check to see if ProcessingStatus property is set
+        internal bool IsSetProcessingStatus()
+        {
+            return this._processingStatus != null && this._processingStatus.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Values. 
+        /// <para>
+        ///  A list of unique cost category values in a specific cost category. 
+        /// </para>
+        /// </summary>
+        public List<string> Values
+        {
+            get { return this._values; }
+            set { this._values = value; }
+        }
+
+        // Check to see if Values property is set
+        internal bool IsSetValues()
+        {
+            return this._values != null && this._values.Count > 0; 
         }
 
     }

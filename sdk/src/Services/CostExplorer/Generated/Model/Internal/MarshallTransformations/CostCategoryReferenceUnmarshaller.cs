@@ -94,6 +94,18 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.NumberOfRules = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProcessingStatus", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CostCategoryProcessingStatus, CostCategoryProcessingStatusUnmarshaller>(CostCategoryProcessingStatusUnmarshaller.Instance);
+                    unmarshalledObject.ProcessingStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Values", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Values = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

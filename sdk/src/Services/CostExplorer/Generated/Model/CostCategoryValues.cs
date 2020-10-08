@@ -34,6 +34,7 @@ namespace Amazon.CostExplorer.Model
     public partial class CostCategoryValues
     {
         private string _key;
+        private List<string> _matchOptions = new List<string>();
         private List<string> _values = new List<string>();
 
         /// <summary>
@@ -50,6 +51,26 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetKey()
         {
             return this._key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MatchOptions. 
+        /// <para>
+        ///  The match options that you can use to filter your results. MatchOptions is only applicable
+        /// for only applicable for actions related to cost category. The default values for <code>MatchOptions</code>
+        /// is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. 
+        /// </para>
+        /// </summary>
+        public List<string> MatchOptions
+        {
+            get { return this._matchOptions; }
+            set { this._matchOptions = value; }
+        }
+
+        // Check to see if MatchOptions property is set
+        internal bool IsSetMatchOptions()
+        {
+            return this._matchOptions != null && this._matchOptions.Count > 0; 
         }
 
         /// <summary>

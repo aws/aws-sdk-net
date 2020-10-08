@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CostCategoryValues Object
+    /// Response Unmarshaller for CostCategoryProcessingStatus Object
     /// </summary>  
-    public class CostCategoryValuesUnmarshaller : IUnmarshaller<CostCategoryValues, XmlUnmarshallerContext>, IUnmarshaller<CostCategoryValues, JsonUnmarshallerContext>
+    public class CostCategoryProcessingStatusUnmarshaller : IUnmarshaller<CostCategoryProcessingStatus, XmlUnmarshallerContext>, IUnmarshaller<CostCategoryProcessingStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CostCategoryValues IUnmarshaller<CostCategoryValues, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CostCategoryProcessingStatus IUnmarshaller<CostCategoryProcessingStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CostCategoryValues Unmarshall(JsonUnmarshallerContext context)
+        public CostCategoryProcessingStatus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CostCategoryValues unmarshalledObject = new CostCategoryValues();
+            CostCategoryProcessingStatus unmarshalledObject = new CostCategoryProcessingStatus();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Key", targetDepth))
+                if (context.TestExpression("Component", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Key = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Component = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MatchOptions", targetDepth))
+                if (context.TestExpression("Status", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.MatchOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Values", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Values = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         }
 
 
-        private static CostCategoryValuesUnmarshaller _instance = new CostCategoryValuesUnmarshaller();        
+        private static CostCategoryProcessingStatusUnmarshaller _instance = new CostCategoryProcessingStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CostCategoryValuesUnmarshaller Instance
+        public static CostCategoryProcessingStatusUnmarshaller Instance
         {
             get
             {
