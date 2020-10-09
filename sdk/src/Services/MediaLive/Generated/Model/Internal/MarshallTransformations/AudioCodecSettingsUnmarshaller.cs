@@ -94,6 +94,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.PassThroughSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("wavSettings", targetDepth))
+                {
+                    var unmarshaller = WavSettingsUnmarshaller.Instance;
+                    unmarshalledObject.WavSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

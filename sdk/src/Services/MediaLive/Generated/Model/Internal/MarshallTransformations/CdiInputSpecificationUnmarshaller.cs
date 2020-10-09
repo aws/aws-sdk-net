@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MultiplexProgram Object
+    /// Response Unmarshaller for CdiInputSpecification Object
     /// </summary>  
-    public class MultiplexProgramUnmarshaller : IUnmarshaller<MultiplexProgram, XmlUnmarshallerContext>, IUnmarshaller<MultiplexProgram, JsonUnmarshallerContext>
+    public class CdiInputSpecificationUnmarshaller : IUnmarshaller<CdiInputSpecification, XmlUnmarshallerContext>, IUnmarshaller<CdiInputSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MultiplexProgram IUnmarshaller<MultiplexProgram, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CdiInputSpecification IUnmarshaller<CdiInputSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MultiplexProgram Unmarshall(JsonUnmarshallerContext context)
+        public CdiInputSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MultiplexProgram unmarshalledObject = new MultiplexProgram();
+            CdiInputSpecification unmarshalledObject = new CdiInputSpecification();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("channelId", targetDepth))
+                if (context.TestExpression("resolution", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("multiplexProgramSettings", targetDepth))
-                {
-                    var unmarshaller = MultiplexProgramSettingsUnmarshaller.Instance;
-                    unmarshalledObject.MultiplexProgramSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("packetIdentifiersMap", targetDepth))
-                {
-                    var unmarshaller = MultiplexProgramPacketIdentifiersMapUnmarshaller.Instance;
-                    unmarshalledObject.PacketIdentifiersMap = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pipelineDetails", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<MultiplexProgramPipelineDetail, MultiplexProgramPipelineDetailUnmarshaller>(MultiplexProgramPipelineDetailUnmarshaller.Instance);
-                    unmarshalledObject.PipelineDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("programName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProgramName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Resolution = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static MultiplexProgramUnmarshaller _instance = new MultiplexProgramUnmarshaller();        
+        private static CdiInputSpecificationUnmarshaller _instance = new CdiInputSpecificationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MultiplexProgramUnmarshaller Instance
+        public static CdiInputSpecificationUnmarshaller Instance
         {
             get
             {

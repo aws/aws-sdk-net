@@ -36,6 +36,7 @@ namespace Amazon.MediaLive.Model
         private FrameCaptureSettings _frameCaptureSettings;
         private H264Settings _h264Settings;
         private H265Settings _h265Settings;
+        private Mpeg2Settings _mpeg2Settings;
 
         /// <summary>
         /// Gets and sets the property FrameCaptureSettings.
@@ -80,6 +81,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetH265Settings()
         {
             return this._h265Settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mpeg2Settings.
+        /// </summary>
+        public Mpeg2Settings Mpeg2Settings
+        {
+            get { return this._mpeg2Settings; }
+            set { this._mpeg2Settings = value; }
+        }
+
+        // Check to see if Mpeg2Settings property is set
+        internal bool IsSetMpeg2Settings()
+        {
+            return this._mpeg2Settings != null;
         }
 
     }

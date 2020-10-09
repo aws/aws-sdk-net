@@ -29,41 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Archive Container Settings
+    /// Placeholder documentation for CdiInputSpecification
     /// </summary>
-    public partial class ArchiveContainerSettings
+    public partial class CdiInputSpecification
     {
-        private M2tsSettings _m2tsSettings;
-        private RawSettings _rawSettings;
+        private CdiInputResolution _resolution;
 
         /// <summary>
-        /// Gets and sets the property M2tsSettings.
+        /// Gets and sets the property Resolution. Maximum CDI input resolution
         /// </summary>
-        public M2tsSettings M2tsSettings
+        public CdiInputResolution Resolution
         {
-            get { return this._m2tsSettings; }
-            set { this._m2tsSettings = value; }
+            get { return this._resolution; }
+            set { this._resolution = value; }
         }
 
-        // Check to see if M2tsSettings property is set
-        internal bool IsSetM2tsSettings()
+        // Check to see if Resolution property is set
+        internal bool IsSetResolution()
         {
-            return this._m2tsSettings != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RawSettings.
-        /// </summary>
-        public RawSettings RawSettings
-        {
-            get { return this._rawSettings; }
-            set { this._rawSettings = value; }
-        }
-
-        // Check to see if RawSettings property is set
-        internal bool IsSetRawSettings()
-        {
-            return this._rawSettings != null;
+            return this._resolution != null;
         }
 
     }

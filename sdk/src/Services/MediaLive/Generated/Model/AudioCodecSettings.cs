@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         private Eac3Settings _eac3Settings;
         private Mp2Settings _mp2Settings;
         private PassThroughSettings _passThroughSettings;
+        private WavSettings _wavSettings;
 
         /// <summary>
         /// Gets and sets the property AacSettings.
@@ -112,6 +113,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetPassThroughSettings()
         {
             return this._passThroughSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WavSettings.
+        /// </summary>
+        public WavSettings WavSettings
+        {
+            get { return this._wavSettings; }
+            set { this._wavSettings = value; }
+        }
+
+        // Check to see if WavSettings property is set
+        internal bool IsSetWavSettings()
+        {
+            return this._wavSettings != null;
         }
 
     }

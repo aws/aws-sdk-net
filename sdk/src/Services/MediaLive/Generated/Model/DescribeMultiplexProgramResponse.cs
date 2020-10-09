@@ -36,6 +36,7 @@ namespace Amazon.MediaLive.Model
         private string _channelId;
         private MultiplexProgramSettings _multiplexProgramSettings;
         private MultiplexProgramPacketIdentifiersMap _packetIdentifiersMap;
+        private List<MultiplexProgramPipelineDetail> _pipelineDetails = new List<MultiplexProgramPipelineDetail>();
         private string _programName;
 
         /// <summary>
@@ -83,6 +84,25 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetPacketIdentifiersMap()
         {
             return this._packetIdentifiersMap != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineDetails. Contains information about the current
+        /// sources for the specified program in the specified multiplex. Keep in mind that each
+        /// multiplex pipeline connects to both pipelines in a given source channel (the channel
+        /// identified by the program). But only one of those channel pipelines is ever active
+        /// at one time.
+        /// </summary>
+        public List<MultiplexProgramPipelineDetail> PipelineDetails
+        {
+            get { return this._pipelineDetails; }
+            set { this._pipelineDetails = value; }
+        }
+
+        // Check to see if PipelineDetails property is set
+        internal bool IsSetPipelineDetails()
+        {
+            return this._pipelineDetails != null && this._pipelineDetails.Count > 0; 
         }
 
         /// <summary>

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ArchiveContainerSettings Marshaller
+    /// WavSettings Marshaller
     /// </summary>       
-    public class ArchiveContainerSettingsMarshaller : IRequestMarshaller<ArchiveContainerSettings, JsonMarshallerContext> 
+    public class WavSettingsMarshaller : IRequestMarshaller<WavSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,24 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ArchiveContainerSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(WavSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetM2tsSettings())
+            if(requestObject.IsSetBitDepth())
             {
-                context.Writer.WritePropertyName("m2tsSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = M2tsSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.M2tsSettings, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("bitDepth");
+                context.Writer.Write(requestObject.BitDepth);
             }
 
-            if(requestObject.IsSetRawSettings())
+            if(requestObject.IsSetCodingMode())
             {
-                context.Writer.WritePropertyName("rawSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("codingMode");
+                context.Writer.Write(requestObject.CodingMode);
+            }
 
-                var marshaller = RawSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.RawSettings, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetSampleRate())
+            {
+                context.Writer.WritePropertyName("sampleRate");
+                context.Writer.Write(requestObject.SampleRate);
             }
 
         }
@@ -72,7 +68,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ArchiveContainerSettingsMarshaller Instance = new ArchiveContainerSettingsMarshaller();
+        public readonly static WavSettingsMarshaller Instance = new WavSettingsMarshaller();
 
     }
 }

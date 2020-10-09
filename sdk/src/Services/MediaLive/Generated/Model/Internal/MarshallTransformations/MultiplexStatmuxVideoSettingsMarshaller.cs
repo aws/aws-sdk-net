@@ -57,6 +57,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MinimumBitrate);
             }
 
+            if(requestObject.IsSetPriority())
+            {
+                context.Writer.WritePropertyName("priority");
+                context.Writer.Write(requestObject.Priority);
+            }
+
         }
 
         /// <summary>

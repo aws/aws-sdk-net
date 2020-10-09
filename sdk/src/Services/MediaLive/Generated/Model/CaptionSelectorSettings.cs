@@ -33,12 +33,28 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class CaptionSelectorSettings
     {
+        private AncillarySourceSettings _ancillarySourceSettings;
         private AribSourceSettings _aribSourceSettings;
         private DvbSubSourceSettings _dvbSubSourceSettings;
         private EmbeddedSourceSettings _embeddedSourceSettings;
         private Scte20SourceSettings _scte20SourceSettings;
         private Scte27SourceSettings _scte27SourceSettings;
         private TeletextSourceSettings _teletextSourceSettings;
+
+        /// <summary>
+        /// Gets and sets the property AncillarySourceSettings.
+        /// </summary>
+        public AncillarySourceSettings AncillarySourceSettings
+        {
+            get { return this._ancillarySourceSettings; }
+            set { this._ancillarySourceSettings = value; }
+        }
+
+        // Check to see if AncillarySourceSettings property is set
+        internal bool IsSetAncillarySourceSettings()
+        {
+            return this._ancillarySourceSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AribSourceSettings.

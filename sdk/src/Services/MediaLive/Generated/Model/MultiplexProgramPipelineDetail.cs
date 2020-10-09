@@ -29,41 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Archive Container Settings
+    /// The current source for one of the pipelines in the multiplex.
     /// </summary>
-    public partial class ArchiveContainerSettings
+    public partial class MultiplexProgramPipelineDetail
     {
-        private M2tsSettings _m2tsSettings;
-        private RawSettings _rawSettings;
+        private string _activeChannelPipeline;
+        private string _pipelineId;
 
         /// <summary>
-        /// Gets and sets the property M2tsSettings.
+        /// Gets and sets the property ActiveChannelPipeline. Identifies the channel pipeline
+        /// that is currently active for the pipeline (identified by PipelineId) in the multiplex.
         /// </summary>
-        public M2tsSettings M2tsSettings
+        public string ActiveChannelPipeline
         {
-            get { return this._m2tsSettings; }
-            set { this._m2tsSettings = value; }
+            get { return this._activeChannelPipeline; }
+            set { this._activeChannelPipeline = value; }
         }
 
-        // Check to see if M2tsSettings property is set
-        internal bool IsSetM2tsSettings()
+        // Check to see if ActiveChannelPipeline property is set
+        internal bool IsSetActiveChannelPipeline()
         {
-            return this._m2tsSettings != null;
+            return this._activeChannelPipeline != null;
         }
 
         /// <summary>
-        /// Gets and sets the property RawSettings.
+        /// Gets and sets the property PipelineId. Identifies a specific pipeline in the multiplex.
         /// </summary>
-        public RawSettings RawSettings
+        public string PipelineId
         {
-            get { return this._rawSettings; }
-            set { this._rawSettings = value; }
+            get { return this._pipelineId; }
+            set { this._pipelineId = value; }
         }
 
-        // Check to see if RawSettings property is set
-        internal bool IsSetRawSettings()
+        // Check to see if PipelineId property is set
+        internal bool IsSetPipelineId()
         {
-            return this._rawSettings != null;
+            return this._pipelineId != null;
         }
 
     }

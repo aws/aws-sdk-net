@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Net;
 using System.Text;
 using System.Xml.Serialization;
 
@@ -33,46 +34,53 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ArchiveContainerSettings Marshaller
-    /// </summary>       
-    public class ArchiveContainerSettingsMarshaller : IRequestMarshaller<ArchiveContainerSettings, JsonMarshallerContext> 
+    /// Response Unmarshaller for RawSettings Object
+    /// </summary>  
+    public class RawSettingsUnmarshaller : IUnmarshaller<RawSettings, XmlUnmarshallerContext>, IUnmarshaller<RawSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
-        /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ArchiveContainerSettings requestObject, JsonMarshallerContext context)
+        RawSettings IUnmarshaller<RawSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            if(requestObject.IsSetM2tsSettings())
-            {
-                context.Writer.WritePropertyName("m2tsSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = M2tsSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.M2tsSettings, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRawSettings())
-            {
-                context.Writer.WritePropertyName("rawSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RawSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.RawSettings, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Singleton Marshaller.
+        /// Unmarshaller the response from the service to the response class.
         /// </summary>  
-        public readonly static ArchiveContainerSettingsMarshaller Instance = new ArchiveContainerSettingsMarshaller();
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public RawSettings Unmarshall(JsonUnmarshallerContext context)
+        {
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
+            RawSettings unmarshalledObject = new RawSettings();
+        
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+            }
+          
+            return unmarshalledObject;
+        }
+
+
+        private static RawSettingsUnmarshaller _instance = new RawSettingsUnmarshaller();        
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RawSettingsUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
     }
 }

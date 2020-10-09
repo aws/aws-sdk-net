@@ -1737,6 +1737,64 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type CdiInputResolution.
+    /// </summary>
+    public class CdiInputResolution : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FHD for CdiInputResolution
+        /// </summary>
+        public static readonly CdiInputResolution FHD = new CdiInputResolution("FHD");
+        /// <summary>
+        /// Constant HD for CdiInputResolution
+        /// </summary>
+        public static readonly CdiInputResolution HD = new CdiInputResolution("HD");
+        /// <summary>
+        /// Constant SD for CdiInputResolution
+        /// </summary>
+        public static readonly CdiInputResolution SD = new CdiInputResolution("SD");
+        /// <summary>
+        /// Constant UHD for CdiInputResolution
+        /// </summary>
+        public static readonly CdiInputResolution UHD = new CdiInputResolution("UHD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CdiInputResolution(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CdiInputResolution FindValue(string value)
+        {
+            return FindValue<CdiInputResolution>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CdiInputResolution(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChannelClass.
     /// </summary>
     public class ChannelClass : ConstantClass
@@ -9705,6 +9763,418 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type Mpeg2AdaptiveQuantization.
+    /// </summary>
+    public class Mpeg2AdaptiveQuantization : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for Mpeg2AdaptiveQuantization
+        /// </summary>
+        public static readonly Mpeg2AdaptiveQuantization AUTO = new Mpeg2AdaptiveQuantization("AUTO");
+        /// <summary>
+        /// Constant HIGH for Mpeg2AdaptiveQuantization
+        /// </summary>
+        public static readonly Mpeg2AdaptiveQuantization HIGH = new Mpeg2AdaptiveQuantization("HIGH");
+        /// <summary>
+        /// Constant LOW for Mpeg2AdaptiveQuantization
+        /// </summary>
+        public static readonly Mpeg2AdaptiveQuantization LOW = new Mpeg2AdaptiveQuantization("LOW");
+        /// <summary>
+        /// Constant MEDIUM for Mpeg2AdaptiveQuantization
+        /// </summary>
+        public static readonly Mpeg2AdaptiveQuantization MEDIUM = new Mpeg2AdaptiveQuantization("MEDIUM");
+        /// <summary>
+        /// Constant OFF for Mpeg2AdaptiveQuantization
+        /// </summary>
+        public static readonly Mpeg2AdaptiveQuantization OFF = new Mpeg2AdaptiveQuantization("OFF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Mpeg2AdaptiveQuantization(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Mpeg2AdaptiveQuantization FindValue(string value)
+        {
+            return FindValue<Mpeg2AdaptiveQuantization>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Mpeg2AdaptiveQuantization(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Mpeg2ColorMetadata.
+    /// </summary>
+    public class Mpeg2ColorMetadata : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IGNORE for Mpeg2ColorMetadata
+        /// </summary>
+        public static readonly Mpeg2ColorMetadata IGNORE = new Mpeg2ColorMetadata("IGNORE");
+        /// <summary>
+        /// Constant INSERT for Mpeg2ColorMetadata
+        /// </summary>
+        public static readonly Mpeg2ColorMetadata INSERT = new Mpeg2ColorMetadata("INSERT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Mpeg2ColorMetadata(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Mpeg2ColorMetadata FindValue(string value)
+        {
+            return FindValue<Mpeg2ColorMetadata>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Mpeg2ColorMetadata(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Mpeg2ColorSpace.
+    /// </summary>
+    public class Mpeg2ColorSpace : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for Mpeg2ColorSpace
+        /// </summary>
+        public static readonly Mpeg2ColorSpace AUTO = new Mpeg2ColorSpace("AUTO");
+        /// <summary>
+        /// Constant PASSTHROUGH for Mpeg2ColorSpace
+        /// </summary>
+        public static readonly Mpeg2ColorSpace PASSTHROUGH = new Mpeg2ColorSpace("PASSTHROUGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Mpeg2ColorSpace(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Mpeg2ColorSpace FindValue(string value)
+        {
+            return FindValue<Mpeg2ColorSpace>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Mpeg2ColorSpace(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Mpeg2DisplayRatio.
+    /// </summary>
+    public class Mpeg2DisplayRatio : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISPLAYRATIO16X9 for Mpeg2DisplayRatio
+        /// </summary>
+        public static readonly Mpeg2DisplayRatio DISPLAYRATIO16X9 = new Mpeg2DisplayRatio("DISPLAYRATIO16X9");
+        /// <summary>
+        /// Constant DISPLAYRATIO4X3 for Mpeg2DisplayRatio
+        /// </summary>
+        public static readonly Mpeg2DisplayRatio DISPLAYRATIO4X3 = new Mpeg2DisplayRatio("DISPLAYRATIO4X3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Mpeg2DisplayRatio(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Mpeg2DisplayRatio FindValue(string value)
+        {
+            return FindValue<Mpeg2DisplayRatio>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Mpeg2DisplayRatio(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Mpeg2GopSizeUnits.
+    /// </summary>
+    public class Mpeg2GopSizeUnits : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FRAMES for Mpeg2GopSizeUnits
+        /// </summary>
+        public static readonly Mpeg2GopSizeUnits FRAMES = new Mpeg2GopSizeUnits("FRAMES");
+        /// <summary>
+        /// Constant SECONDS for Mpeg2GopSizeUnits
+        /// </summary>
+        public static readonly Mpeg2GopSizeUnits SECONDS = new Mpeg2GopSizeUnits("SECONDS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Mpeg2GopSizeUnits(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Mpeg2GopSizeUnits FindValue(string value)
+        {
+            return FindValue<Mpeg2GopSizeUnits>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Mpeg2GopSizeUnits(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Mpeg2ScanType.
+    /// </summary>
+    public class Mpeg2ScanType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERLACED for Mpeg2ScanType
+        /// </summary>
+        public static readonly Mpeg2ScanType INTERLACED = new Mpeg2ScanType("INTERLACED");
+        /// <summary>
+        /// Constant PROGRESSIVE for Mpeg2ScanType
+        /// </summary>
+        public static readonly Mpeg2ScanType PROGRESSIVE = new Mpeg2ScanType("PROGRESSIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Mpeg2ScanType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Mpeg2ScanType FindValue(string value)
+        {
+            return FindValue<Mpeg2ScanType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Mpeg2ScanType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Mpeg2SubGopLength.
+    /// </summary>
+    public class Mpeg2SubGopLength : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DYNAMIC for Mpeg2SubGopLength
+        /// </summary>
+        public static readonly Mpeg2SubGopLength DYNAMIC = new Mpeg2SubGopLength("DYNAMIC");
+        /// <summary>
+        /// Constant FIXED for Mpeg2SubGopLength
+        /// </summary>
+        public static readonly Mpeg2SubGopLength FIXED = new Mpeg2SubGopLength("FIXED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Mpeg2SubGopLength(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Mpeg2SubGopLength FindValue(string value)
+        {
+            return FindValue<Mpeg2SubGopLength>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Mpeg2SubGopLength(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Mpeg2TimecodeInsertionBehavior.
+    /// </summary>
+    public class Mpeg2TimecodeInsertionBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for Mpeg2TimecodeInsertionBehavior
+        /// </summary>
+        public static readonly Mpeg2TimecodeInsertionBehavior DISABLED = new Mpeg2TimecodeInsertionBehavior("DISABLED");
+        /// <summary>
+        /// Constant GOP_TIMECODE for Mpeg2TimecodeInsertionBehavior
+        /// </summary>
+        public static readonly Mpeg2TimecodeInsertionBehavior GOP_TIMECODE = new Mpeg2TimecodeInsertionBehavior("GOP_TIMECODE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Mpeg2TimecodeInsertionBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Mpeg2TimecodeInsertionBehavior FindValue(string value)
+        {
+            return FindValue<Mpeg2TimecodeInsertionBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Mpeg2TimecodeInsertionBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MsSmoothH265PackagingType.
     /// </summary>
     public class MsSmoothH265PackagingType : ConstantClass
@@ -12216,6 +12686,64 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VideoSelectorColorSpaceUsage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WavCodingMode.
+    /// </summary>
+    public class WavCodingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CODING_MODE_1_0 for WavCodingMode
+        /// </summary>
+        public static readonly WavCodingMode CODING_MODE_1_0 = new WavCodingMode("CODING_MODE_1_0");
+        /// <summary>
+        /// Constant CODING_MODE_2_0 for WavCodingMode
+        /// </summary>
+        public static readonly WavCodingMode CODING_MODE_2_0 = new WavCodingMode("CODING_MODE_2_0");
+        /// <summary>
+        /// Constant CODING_MODE_4_0 for WavCodingMode
+        /// </summary>
+        public static readonly WavCodingMode CODING_MODE_4_0 = new WavCodingMode("CODING_MODE_4_0");
+        /// <summary>
+        /// Constant CODING_MODE_8_0 for WavCodingMode
+        /// </summary>
+        public static readonly WavCodingMode CODING_MODE_8_0 = new WavCodingMode("CODING_MODE_8_0");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WavCodingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WavCodingMode FindValue(string value)
+        {
+            return FindValue<WavCodingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WavCodingMode(string value)
         {
             return FindValue(value);
         }

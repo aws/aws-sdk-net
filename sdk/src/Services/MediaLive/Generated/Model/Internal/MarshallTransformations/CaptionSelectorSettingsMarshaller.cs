@@ -45,6 +45,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CaptionSelectorSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAncillarySourceSettings())
+            {
+                context.Writer.WritePropertyName("ancillarySourceSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AncillarySourceSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AncillarySourceSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAribSourceSettings())
             {
                 context.Writer.WritePropertyName("aribSourceSettings");

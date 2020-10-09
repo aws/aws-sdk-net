@@ -34,6 +34,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class CreateChannelRequest : AmazonMediaLiveRequest
     {
+        private CdiInputSpecification _cdiInputSpecification;
         private ChannelClass _channelClass;
         private List<OutputDestination> _destinations = new List<OutputDestination>();
         private EncoderSettings _encoderSettings;
@@ -45,6 +46,22 @@ namespace Amazon.MediaLive.Model
         private string _reserved;
         private string _roleArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property CdiInputSpecification. Specification of CDI inputs for
+        /// this channel
+        /// </summary>
+        public CdiInputSpecification CdiInputSpecification
+        {
+            get { return this._cdiInputSpecification; }
+            set { this._cdiInputSpecification = value; }
+        }
+
+        // Check to see if CdiInputSpecification property is set
+        internal bool IsSetCdiInputSpecification()
+        {
+            return this._cdiInputSpecification != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ChannelClass. The class for this channel. STANDARD for
@@ -108,8 +125,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InputSpecification. Specification of input for this channel
-        /// (max. bitrate, resolution, codec, etc.)
+        /// Gets and sets the property InputSpecification. Specification of network and file inputs
+        /// for this channel
         /// </summary>
         public InputSpecification InputSpecification
         {

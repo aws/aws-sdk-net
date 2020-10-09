@@ -78,6 +78,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMpeg2Settings())
+            {
+                context.Writer.WritePropertyName("mpeg2Settings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Mpeg2SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Mpeg2Settings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

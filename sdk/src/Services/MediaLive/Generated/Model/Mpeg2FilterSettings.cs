@@ -29,41 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Archive Container Settings
+    /// Mpeg2 Filter Settings
     /// </summary>
-    public partial class ArchiveContainerSettings
+    public partial class Mpeg2FilterSettings
     {
-        private M2tsSettings _m2tsSettings;
-        private RawSettings _rawSettings;
+        private TemporalFilterSettings _temporalFilterSettings;
 
         /// <summary>
-        /// Gets and sets the property M2tsSettings.
+        /// Gets and sets the property TemporalFilterSettings.
         /// </summary>
-        public M2tsSettings M2tsSettings
+        public TemporalFilterSettings TemporalFilterSettings
         {
-            get { return this._m2tsSettings; }
-            set { this._m2tsSettings = value; }
+            get { return this._temporalFilterSettings; }
+            set { this._temporalFilterSettings = value; }
         }
 
-        // Check to see if M2tsSettings property is set
-        internal bool IsSetM2tsSettings()
+        // Check to see if TemporalFilterSettings property is set
+        internal bool IsSetTemporalFilterSettings()
         {
-            return this._m2tsSettings != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RawSettings.
-        /// </summary>
-        public RawSettings RawSettings
-        {
-            get { return this._rawSettings; }
-            set { this._rawSettings = value; }
-        }
-
-        // Check to see if RawSettings property is set
-        internal bool IsSetRawSettings()
-        {
-            return this._rawSettings != null;
+            return this._temporalFilterSettings != null;
         }
 
     }

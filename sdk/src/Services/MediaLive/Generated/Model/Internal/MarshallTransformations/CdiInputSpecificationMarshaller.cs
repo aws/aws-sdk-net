@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ArchiveContainerSettings Marshaller
+    /// CdiInputSpecification Marshaller
     /// </summary>       
-    public class ArchiveContainerSettingsMarshaller : IRequestMarshaller<ArchiveContainerSettings, JsonMarshallerContext> 
+    public class CdiInputSpecificationMarshaller : IRequestMarshaller<CdiInputSpecification, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ArchiveContainerSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(CdiInputSpecification requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetM2tsSettings())
+            if(requestObject.IsSetResolution())
             {
-                context.Writer.WritePropertyName("m2tsSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = M2tsSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.M2tsSettings, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRawSettings())
-            {
-                context.Writer.WritePropertyName("rawSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RawSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.RawSettings, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("resolution");
+                context.Writer.Write(requestObject.Resolution);
             }
 
         }
@@ -72,7 +56,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ArchiveContainerSettingsMarshaller Instance = new ArchiveContainerSettingsMarshaller();
+        public readonly static CdiInputSpecificationMarshaller Instance = new CdiInputSpecificationMarshaller();
 
     }
 }

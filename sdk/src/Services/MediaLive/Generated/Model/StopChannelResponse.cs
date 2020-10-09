@@ -34,6 +34,7 @@ namespace Amazon.MediaLive.Model
     public partial class StopChannelResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private CdiInputSpecification _cdiInputSpecification;
         private ChannelClass _channelClass;
         private List<OutputDestination> _destinations = new List<OutputDestination>();
         private List<ChannelEgressEndpoint> _egressEndpoints = new List<ChannelEgressEndpoint>();
@@ -62,6 +63,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CdiInputSpecification. Specification of CDI inputs for
+        /// this channel
+        /// </summary>
+        public CdiInputSpecification CdiInputSpecification
+        {
+            get { return this._cdiInputSpecification; }
+            set { this._cdiInputSpecification = value; }
+        }
+
+        // Check to see if CdiInputSpecification property is set
+        internal bool IsSetCdiInputSpecification()
+        {
+            return this._cdiInputSpecification != null;
         }
 
         /// <summary>
@@ -159,7 +176,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InputSpecification.
+        /// Gets and sets the property InputSpecification. Specification of network and file inputs
+        /// for this channel
         /// </summary>
         public InputSpecification InputSpecification
         {

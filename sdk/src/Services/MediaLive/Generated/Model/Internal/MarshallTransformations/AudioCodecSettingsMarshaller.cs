@@ -100,6 +100,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetWavSettings())
+            {
+                context.Writer.WritePropertyName("wavSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = WavSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.WavSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

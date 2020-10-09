@@ -70,6 +70,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.M2tsSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("rawSettings", targetDepth))
+                {
+                    var unmarshaller = RawSettingsUnmarshaller.Instance;
+                    unmarshalledObject.RawSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
     {
         private int? _maximumBitrate;
         private int? _minimumBitrate;
+        private int? _priority;
 
         /// <summary>
         /// Gets and sets the property MaximumBitrate. Maximum statmux bitrate.
@@ -66,6 +67,26 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetMinimumBitrate()
         {
             return this._minimumBitrate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Priority. The purpose of the priority is to use a combination
+        /// of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to
+        /// prioritize the video quality of some channels in a\nmultiplex over others.  Channels
+        /// that have a higher priority will\nget higher video quality at the expense of the video
+        /// quality of\nother channels in the multiplex with lower priority.
+        /// </summary>
+        [AWSProperty(Min=-5, Max=5)]
+        public int Priority
+        {
+            get { return this._priority.GetValueOrDefault(); }
+            set { this._priority = value; }
+        }
+
+        // Check to see if Priority property is set
+        internal bool IsSetPriority()
+        {
+            return this._priority.HasValue; 
         }
 
     }

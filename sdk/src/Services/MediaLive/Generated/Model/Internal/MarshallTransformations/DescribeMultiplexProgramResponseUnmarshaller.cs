@@ -69,6 +69,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.PacketIdentifiersMap = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pipelineDetails", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MultiplexProgramPipelineDetail, MultiplexProgramPipelineDetailUnmarshaller>(MultiplexProgramPipelineDetailUnmarshaller.Instance);
+                    response.PipelineDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("programName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

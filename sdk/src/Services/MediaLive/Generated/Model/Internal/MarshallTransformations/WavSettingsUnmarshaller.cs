@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MultiplexProgram Object
+    /// Response Unmarshaller for WavSettings Object
     /// </summary>  
-    public class MultiplexProgramUnmarshaller : IUnmarshaller<MultiplexProgram, XmlUnmarshallerContext>, IUnmarshaller<MultiplexProgram, JsonUnmarshallerContext>
+    public class WavSettingsUnmarshaller : IUnmarshaller<WavSettings, XmlUnmarshallerContext>, IUnmarshaller<WavSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MultiplexProgram IUnmarshaller<MultiplexProgram, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        WavSettings IUnmarshaller<WavSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MultiplexProgram Unmarshall(JsonUnmarshallerContext context)
+        public WavSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MultiplexProgram unmarshalledObject = new MultiplexProgram();
+            WavSettings unmarshalledObject = new WavSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("channelId", targetDepth))
+                if (context.TestExpression("bitDepth", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.BitDepth = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("codingMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CodingMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("multiplexProgramSettings", targetDepth))
+                if (context.TestExpression("sampleRate", targetDepth))
                 {
-                    var unmarshaller = MultiplexProgramSettingsUnmarshaller.Instance;
-                    unmarshalledObject.MultiplexProgramSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("packetIdentifiersMap", targetDepth))
-                {
-                    var unmarshaller = MultiplexProgramPacketIdentifiersMapUnmarshaller.Instance;
-                    unmarshalledObject.PacketIdentifiersMap = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pipelineDetails", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<MultiplexProgramPipelineDetail, MultiplexProgramPipelineDetailUnmarshaller>(MultiplexProgramPipelineDetailUnmarshaller.Instance);
-                    unmarshalledObject.PipelineDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("programName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProgramName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.SampleRate = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static MultiplexProgramUnmarshaller _instance = new MultiplexProgramUnmarshaller();        
+        private static WavSettingsUnmarshaller _instance = new WavSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MultiplexProgramUnmarshaller Instance
+        public static WavSettingsUnmarshaller Instance
         {
             get
             {

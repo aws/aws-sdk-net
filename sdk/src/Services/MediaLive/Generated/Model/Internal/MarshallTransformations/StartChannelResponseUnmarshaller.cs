@@ -57,6 +57,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("cdiInputSpecification", targetDepth))
+                {
+                    var unmarshaller = CdiInputSpecificationUnmarshaller.Instance;
+                    response.CdiInputSpecification = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("channelClass", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

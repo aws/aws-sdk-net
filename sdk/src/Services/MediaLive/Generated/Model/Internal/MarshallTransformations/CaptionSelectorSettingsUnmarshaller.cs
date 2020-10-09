@@ -64,6 +64,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ancillarySourceSettings", targetDepth))
+                {
+                    var unmarshaller = AncillarySourceSettingsUnmarshaller.Instance;
+                    unmarshalledObject.AncillarySourceSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("aribSourceSettings", targetDepth))
                 {
                     var unmarshaller = AribSourceSettingsUnmarshaller.Instance;

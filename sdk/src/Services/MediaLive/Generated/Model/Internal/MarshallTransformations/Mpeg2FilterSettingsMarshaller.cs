@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ArchiveContainerSettings Marshaller
+    /// Mpeg2FilterSettings Marshaller
     /// </summary>       
-    public class ArchiveContainerSettingsMarshaller : IRequestMarshaller<ArchiveContainerSettings, JsonMarshallerContext> 
+    public class Mpeg2FilterSettingsMarshaller : IRequestMarshaller<Mpeg2FilterSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,26 +43,15 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ArchiveContainerSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(Mpeg2FilterSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetM2tsSettings())
+            if(requestObject.IsSetTemporalFilterSettings())
             {
-                context.Writer.WritePropertyName("m2tsSettings");
+                context.Writer.WritePropertyName("temporalFilterSettings");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = M2tsSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.M2tsSettings, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRawSettings())
-            {
-                context.Writer.WritePropertyName("rawSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RawSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.RawSettings, context);
+                var marshaller = TemporalFilterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.TemporalFilterSettings, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -72,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ArchiveContainerSettingsMarshaller Instance = new ArchiveContainerSettingsMarshaller();
+        public readonly static Mpeg2FilterSettingsMarshaller Instance = new Mpeg2FilterSettingsMarshaller();
 
     }
 }
