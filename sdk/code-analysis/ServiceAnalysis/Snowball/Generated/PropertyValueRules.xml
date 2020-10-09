@@ -87,6 +87,12 @@
     <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Snowball.Model.CreateReturnShippingLabelRequest.JobId</property>
+    <min>39</min>
+    <max>39</max>
+    <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Snowball.Model.DescribeAddressRequest.AddressId</property>
     <min>40</min>
     <max>40</max>
@@ -113,6 +119,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.DescribeJobRequest.JobId</property>
+    <min>39</min>
+    <max>39</max>
+    <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Snowball.Model.DescribeReturnShippingLabelRequest.JobId</property>
     <min>39</min>
     <max>39</max>
     <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
@@ -260,6 +272,12 @@
     <pattern>arn:aws.*:iam::[0-9]{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Snowball.Model.UpdateJobShipmentStateRequest.JobId</property>
+    <min>39</min>
+    <max>39</max>
+    <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Snowball.Model.Address.AddressId</property>
     <min>40</min>
     <max>40</max>
@@ -357,6 +375,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CompatibleImage.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Snowball.Model.ConflictException.ConflictResource</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>

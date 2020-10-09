@@ -38,8 +38,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property Address. 
         /// <para>
-        /// The address that you want the Snowball or Snowballs associated with a specific job
-        /// to be shipped to.
+        /// The address that you want the Snow device(s) associated with a specific job to be
+        /// shipped to.
         /// </para>
         /// </summary>
         public Address Address

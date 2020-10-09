@@ -217,18 +217,18 @@ namespace Amazon.Snowball.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// In Australia, you have access to express shipping. Typically, Snowballs shipped express
-        /// are delivered in about a day.
+        /// In Australia, you have access to express shipping. Typically, Snow devices shipped
+        /// express are delivered in about a day.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In the European Union (EU), you have access to express shipping. Typically, Snowballs
+        /// In the European Union (EU), you have access to express shipping. Typically, Snow devices
         /// shipped express are delivered in about a day. In addition, most countries in the EU
         /// have access to standard shipping, which typically takes less than a week, one way.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In India, Snowballs are delivered in one to seven days.
+        /// In India, Snow device are delivered in one to seven days.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -242,14 +242,13 @@ namespace Amazon.Snowball.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In the European Union (EU), you have access to express shipping. Typically, Snowball
-        /// Edges shipped express are delivered in about a day. In addition, most countries in
-        /// the EU have access to standard shipping, which typically takes less than a week, one
-        /// way.
+        /// In the European Union (EU), you have access to express shipping. Typically, Snow devices
+        /// shipped express are delivered in about a day. In addition, most countries in the EU
+        /// have access to standard shipping, which typically takes less than a week, one way.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In India, Snowball Edges are delivered in one to seven days.
+        /// In India, Snow device are delivered in one to seven days.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -273,11 +272,11 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of AWS Snowball device to use for this cluster. 
+        /// The type of AWS Snow Family device to use for this cluster. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
+        /// For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device
         /// type.
         /// </para>
         ///  </note>

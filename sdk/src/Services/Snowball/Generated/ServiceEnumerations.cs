@@ -235,6 +235,114 @@ namespace Amazon.Snowball
 
 
     /// <summary>
+    /// Constants used for properties of type ShipmentState.
+    /// </summary>
+    public class ShipmentState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RECEIVED for ShipmentState
+        /// </summary>
+        public static readonly ShipmentState RECEIVED = new ShipmentState("RECEIVED");
+        /// <summary>
+        /// Constant RETURNED for ShipmentState
+        /// </summary>
+        public static readonly ShipmentState RETURNED = new ShipmentState("RETURNED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ShipmentState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ShipmentState FindValue(string value)
+        {
+            return FindValue<ShipmentState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ShipmentState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ShippingLabelStatus.
+    /// </summary>
+    public class ShippingLabelStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for ShippingLabelStatus
+        /// </summary>
+        public static readonly ShippingLabelStatus Failed = new ShippingLabelStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for ShippingLabelStatus
+        /// </summary>
+        public static readonly ShippingLabelStatus InProgress = new ShippingLabelStatus("InProgress");
+        /// <summary>
+        /// Constant Succeeded for ShippingLabelStatus
+        /// </summary>
+        public static readonly ShippingLabelStatus Succeeded = new ShippingLabelStatus("Succeeded");
+        /// <summary>
+        /// Constant TimedOut for ShippingLabelStatus
+        /// </summary>
+        public static readonly ShippingLabelStatus TimedOut = new ShippingLabelStatus("TimedOut");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ShippingLabelStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ShippingLabelStatus FindValue(string value)
+        {
+            return FindValue<ShippingLabelStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ShippingLabelStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ShippingOption.
     /// </summary>
     public class ShippingOption : ConstantClass

@@ -32,9 +32,9 @@ namespace Amazon.Snowball.Model
     /// Container for the parameters to the CreateJob operation.
     /// Creates a job to import or export data between Amazon S3 and your on-premises data
     /// center. Your AWS account must have the right trust policies and permissions in place
-    /// to create a job for Snowball. If you're creating a job for a node in a cluster, you
-    /// only need to provide the <code>clusterId</code> value; the other job attributes are
-    /// inherited from the cluster.
+    /// to create a job for a Snow device. If you're creating a job for a node in a cluster,
+    /// you only need to provide the <code>clusterId</code> value; the other job attributes
+    /// are inherited from the cluster.
     /// </summary>
     public partial class CreateJobRequest : AmazonSnowballRequest
     {
@@ -56,7 +56,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property AddressId. 
         /// <para>
-        /// The ID for the address that you want the Snowball shipped to.
+        /// The ID for the address that you want the Snow device shipped to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=40, Max=40)]
@@ -264,23 +264,23 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property ShippingOption. 
         /// <para>
         /// The shipping speed for this job. This speed doesn't dictate how soon you'll get the
-        /// Snowball, rather it represents how quickly the Snowball moves to its destination while
-        /// in transit. Regional shipping speeds are as follows:
+        /// Snow device, rather it represents how quickly the Snow device moves to its destination
+        /// while in transit. Regional shipping speeds are as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// In Australia, you have access to express shipping. Typically, Snowballs shipped express
-        /// are delivered in about a day.
+        /// In Australia, you have access to express shipping. Typically, Snow devices shipped
+        /// express are delivered in about a day.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In the European Union (EU), you have access to express shipping. Typically, Snowballs
+        /// In the European Union (EU), you have access to express shipping. Typically, Snow devices
         /// shipped express are delivered in about a day. In addition, most countries in the EU
         /// have access to standard shipping, which typically takes less than a week, one way.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In India, Snowballs are delivered in one to seven days.
+        /// In India, Snow devices are delivered in one to seven days.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -304,8 +304,8 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property SnowballCapacityPreference. 
         /// <para>
         /// If your job is being created in one of the US regions, you have the option of specifying
-        /// what size Snowball you'd like for this job. In all other regions, Snowballs come with
-        /// 80 TB in storage capacity.
+        /// what size Snow device you'd like for this job. In all other regions, Snowballs come
+        /// with 80 TB in storage capacity.
         /// </para>
         /// </summary>
         public SnowballCapacity SnowballCapacityPreference
@@ -323,17 +323,17 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of AWS Snowball device to use for this job. 
+        /// The type of AWS Snow Family device to use for this job. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
+        /// For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device
         /// type.
         /// </para>
         ///  </note> 
         /// <para>
-        /// The type of AWS Snowball device to use for this job. Currently, the only supported
-        /// device type for cluster jobs is <code>EDGE</code>.
+        /// The type of AWS Snow device to use for this job. Currently, the only supported device
+        /// type for cluster jobs is <code>EDGE</code>.
         /// </para>
         ///  
         /// <para>

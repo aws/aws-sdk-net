@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// Defines the real-time status of a Snowball's data transfer while the device is at
-    /// AWS. This data is only available while a job has a <code>JobState</code> value of
-    /// <code>InProgress</code>, for both import and export jobs.
+    /// Defines the real-time status of a Snow device's data transfer while the device is
+    /// at AWS. This data is only available while a job has a <code>JobState</code> value
+    /// of <code>InProgress</code>, for both import and export jobs.
     /// </summary>
     public partial class DataTransfer
     {
@@ -43,7 +43,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property BytesTransferred. 
         /// <para>
-        /// The number of bytes transferred between a Snowball and Amazon S3.
+        /// The number of bytes transferred between a Snow device and Amazon S3.
         /// </para>
         /// </summary>
         public long BytesTransferred
@@ -61,7 +61,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property ObjectsTransferred. 
         /// <para>
-        /// The number of objects transferred between a Snowball and Amazon S3.
+        /// The number of objects transferred between a Snow device and Amazon S3.
         /// </para>
         /// </summary>
         public long ObjectsTransferred
@@ -79,7 +79,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property TotalBytes. 
         /// <para>
-        /// The total bytes of data for a transfer between a Snowball and Amazon S3. This value
+        /// The total bytes of data for a transfer between a Snow device and Amazon S3. This value
         /// is set to 0 (zero) until all the keys that will be transferred have been listed.
         /// </para>
         /// </summary>
@@ -98,7 +98,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property TotalObjects. 
         /// <para>
-        /// The total number of objects for a transfer between a Snowball and Amazon S3. This
+        /// The total number of objects for a transfer between a Snow device and Amazon S3. This
         /// value is set to 0 (zero) until all the keys that will be transferred have been listed.
         /// </para>
         /// </summary>

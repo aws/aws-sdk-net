@@ -29,13 +29,14 @@ namespace Amazon.Snowball
     /// <summary>
     /// Interface for accessing Snowball
     ///
-    /// AWS Snowball is a petabyte-scale data transport solution that uses secure devices
+    /// AWS Snow Family is a petabyte-scale data transport solution that uses secure devices
     /// to transfer large amounts of data between your on-premises data centers and Amazon
-    /// Simple Storage Service (Amazon S3). The Snowball commands described here provide access
-    /// to the same functionality that is available in the AWS Snowball Management Console,
-    /// which enables you to create and manage jobs for Snowball. To transfer data locally
-    /// with a Snowball device, you'll need to use the Snowball client or the Amazon S3 API
-    /// adapter for Snowball. For more information, see the <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
+    /// Simple Storage Service (Amazon S3). The Snow commands described here provide access
+    /// to the same functionality that is available in the AWS Snow Family Management Console,
+    /// which enables you to create and manage jobs for a Snow device. To transfer data locally
+    /// with a Snow device, you'll need to use the Snowball Edge client or the Amazon S3 API
+    /// Interface for Snowball or AWS OpsHub for Snow Family. For more information, see the
+    /// <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
     /// Guide</a>.
     /// </summary>
     public partial interface IAmazonSnowball : IAmazonService, IDisposable
@@ -163,8 +164,8 @@ namespace Amazon.Snowball
 
 
         /// <summary>
-        /// Creates an address for a Snowball to be shipped to. In most regions, addresses are
-        /// validated at the time of creation. The address you provide must be located within
+        /// Creates an address for a Snow device to be shipped to. In most regions, addresses
+        /// are validated at the time of creation. The address you provide must be located within
         /// the serviceable area of your region. If the address is invalid or unsupported, then
         /// an exception is thrown.
         /// </summary>
@@ -276,9 +277,9 @@ namespace Amazon.Snowball
         /// <summary>
         /// Creates a job to import or export data between Amazon S3 and your on-premises data
         /// center. Your AWS account must have the right trust policies and permissions in place
-        /// to create a job for Snowball. If you're creating a job for a node in a cluster, you
-        /// only need to provide the <code>clusterId</code> value; the other job attributes are
-        /// inherited from the cluster.
+        /// to create a job for a Snow device. If you're creating a job for a node in a cluster,
+        /// you only need to provide the <code>clusterId</code> value; the other job attributes
+        /// are inherited from the cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// 
@@ -333,6 +334,68 @@ namespace Amazon.Snowball
         /// <returns>Returns a  CreateJobResult from Snowball.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">REST API Reference for CreateJob Operation</seealso>
         CreateJobResponse EndCreateJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateReturnShippingLabel
+
+
+        /// <summary>
+        /// Creates a shipping label that will be used to return the Snow device to AWS.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReturnShippingLabel service method.</param>
+        /// 
+        /// <returns>The response from the CreateReturnShippingLabel service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.ConflictException">
+        /// You get this exception when you call <code>CreateReturnShippingLabel</code> more than
+        /// once when other requests are not completed.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
+        /// Job or cluster creation failed. One or more inputs were invalid. Confirm that the
+        /// <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>,
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidJobStateException">
+        /// The action can't be performed because the job's current state doesn't allow that action
+        /// to be performed.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.ReturnShippingLabelAlreadyExistsException">
+        /// You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid
+        /// return shipping label already exists. In this case, use <code>DescribeReturnShippingLabel</code>
+        /// to get the url.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateReturnShippingLabel">REST API Reference for CreateReturnShippingLabel Operation</seealso>
+        CreateReturnShippingLabelResponse CreateReturnShippingLabel(CreateReturnShippingLabelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReturnShippingLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReturnShippingLabel operation on AmazonSnowballClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReturnShippingLabel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateReturnShippingLabel">REST API Reference for CreateReturnShippingLabel Operation</seealso>
+        IAsyncResult BeginCreateReturnShippingLabel(CreateReturnShippingLabelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateReturnShippingLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReturnShippingLabel.</param>
+        /// 
+        /// <returns>Returns a  CreateReturnShippingLabelResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateReturnShippingLabel">REST API Reference for CreateReturnShippingLabel Operation</seealso>
+        CreateReturnShippingLabelResponse EndCreateReturnShippingLabel(IAsyncResult asyncResult);
 
         #endregion
         
@@ -522,6 +585,58 @@ namespace Amazon.Snowball
 
         #endregion
         
+        #region  DescribeReturnShippingLabel
+
+
+        /// <summary>
+        /// Information on the shipping label of a Snow device that is being returned to AWS.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReturnShippingLabel service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReturnShippingLabel service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.ConflictException">
+        /// You get this exception when you call <code>CreateReturnShippingLabel</code> more than
+        /// once when other requests are not completed.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidJobStateException">
+        /// The action can't be performed because the job's current state doesn't allow that action
+        /// to be performed.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeReturnShippingLabel">REST API Reference for DescribeReturnShippingLabel Operation</seealso>
+        DescribeReturnShippingLabelResponse DescribeReturnShippingLabel(DescribeReturnShippingLabelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReturnShippingLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReturnShippingLabel operation on AmazonSnowballClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReturnShippingLabel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeReturnShippingLabel">REST API Reference for DescribeReturnShippingLabel Operation</seealso>
+        IAsyncResult BeginDescribeReturnShippingLabel(DescribeReturnShippingLabelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeReturnShippingLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReturnShippingLabel.</param>
+        /// 
+        /// <returns>Returns a  DescribeReturnShippingLabelResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeReturnShippingLabel">REST API Reference for DescribeReturnShippingLabel Operation</seealso>
+        DescribeReturnShippingLabelResponse EndDescribeReturnShippingLabel(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetJobManifest
 
 
@@ -536,14 +651,14 @@ namespace Amazon.Snowball
         /// <para>
         /// The manifest is an encrypted file that you can download after your job enters the
         /// <code>WithCustomer</code> status. The manifest is decrypted by using the <code>UnlockCode</code>
-        /// code value, when you pass both values to the Snowball through the Snowball client
+        /// code value, when you pass both values to the Snow device through the Snowball client
         /// when the client is started for the first time.
         /// </para>
         ///  
         /// <para>
         /// As a best practice, we recommend that you don't save a copy of an <code>UnlockCode</code>
         /// value in the same location as the manifest file for that job. Saving these separately
-        /// helps prevent unauthorized parties from gaining access to the Snowball associated
+        /// helps prevent unauthorized parties from gaining access to the Snow device associated
         /// with that job.
         /// </para>
         ///  
@@ -606,15 +721,15 @@ namespace Amazon.Snowball
         /// <para>
         /// The <code>UnlockCode</code> value is a 29-character code with 25 alphanumeric characters
         /// and 4 hyphens. This code is used to decrypt the manifest file when it is passed along
-        /// with the manifest to the Snowball through the Snowball client when the client is started
-        /// for the first time.
+        /// with the manifest to the Snow device through the Snowball client when the client is
+        /// started for the first time.
         /// </para>
         ///  
         /// <para>
         /// As a best practice, we recommend that you don't save a copy of the <code>UnlockCode</code>
         /// in the same location as the manifest file for that job. Saving these separately helps
-        /// prevent unauthorized parties from gaining access to the Snowball associated with that
-        /// job.
+        /// prevent unauthorized parties from gaining access to the Snow device associated with
+        /// that job.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobUnlockCode service method.</param>
@@ -663,13 +778,13 @@ namespace Amazon.Snowball
 
 
         /// <summary>
-        /// Returns information about the Snowball service limit for your account, and also the
-        /// number of Snowballs your account has in use.
+        /// Returns information about the Snow Family service limit for your account, and also
+        /// the number of Snow devices your account has in use.
         /// 
         ///  
         /// <para>
-        /// The default service limit for the number of Snowballs that you can have at one time
-        /// is 1. If you want to increase your service limit, contact AWS Support.
+        /// The default service limit for the number of Snow devices that you can have at one
+        /// time is 1. If you want to increase your service limit, contact AWS Support.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSnowballUsage service method.</param>
@@ -858,10 +973,10 @@ namespace Amazon.Snowball
 
         /// <summary>
         /// This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs)
-        /// that are owned by your AWS account that would be supported for use on a Snowball Edge
-        /// device. Currently, supported AMIs are based on the CentOS 7 (x86_64) - with Updates
-        /// HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images, available
-        /// on the AWS Marketplace.
+        /// that are owned by your AWS account that would be supported for use on a Snow device.
+        /// Currently, supported AMIs are based on the CentOS 7 (x86_64) - with Updates HVM, Ubuntu
+        /// Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images, available on the
+        /// AWS Marketplace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCompatibleImages service method.</param>
         /// 
@@ -1085,6 +1200,54 @@ namespace Amazon.Snowball
         /// <returns>Returns a  UpdateJobResult from Snowball.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         UpdateJobResponse EndUpdateJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateJobShipmentState
+
+
+        /// <summary>
+        /// Updates the state when a the shipment states changes to a different state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJobShipmentState service method.</param>
+        /// 
+        /// <returns>The response from the UpdateJobShipmentState service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidJobStateException">
+        /// The action can't be performed because the job's current state doesn't allow that action
+        /// to be performed.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJobShipmentState">REST API Reference for UpdateJobShipmentState Operation</seealso>
+        UpdateJobShipmentStateResponse UpdateJobShipmentState(UpdateJobShipmentStateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateJobShipmentState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJobShipmentState operation on AmazonSnowballClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJobShipmentState
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJobShipmentState">REST API Reference for UpdateJobShipmentState Operation</seealso>
+        IAsyncResult BeginUpdateJobShipmentState(UpdateJobShipmentStateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateJobShipmentState operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJobShipmentState.</param>
+        /// 
+        /// <returns>Returns a  UpdateJobShipmentStateResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJobShipmentState">REST API Reference for UpdateJobShipmentState Operation</seealso>
+        UpdateJobShipmentStateResponse EndUpdateJobShipmentState(IAsyncResult asyncResult);
 
         #endregion
         

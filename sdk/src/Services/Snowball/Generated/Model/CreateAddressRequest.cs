@@ -30,8 +30,8 @@ namespace Amazon.Snowball.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAddress operation.
-    /// Creates an address for a Snowball to be shipped to. In most regions, addresses are
-    /// validated at the time of creation. The address you provide must be located within
+    /// Creates an address for a Snow device to be shipped to. In most regions, addresses
+    /// are validated at the time of creation. The address you provide must be located within
     /// the serviceable area of your region. If the address is invalid or unsupported, then
     /// an exception is thrown.
     /// </summary>
@@ -42,7 +42,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property Address. 
         /// <para>
-        /// The address that you want the Snowball shipped to.
+        /// The address that you want the Snow device shipped to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

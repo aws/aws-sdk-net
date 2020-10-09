@@ -29,31 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// This is the response object from the CreateAddress operation.
+    /// This is the response object from the CreateReturnShippingLabel operation.
     /// </summary>
-    public partial class CreateAddressResponse : AmazonWebServiceResponse
+    public partial class CreateReturnShippingLabelResponse : AmazonWebServiceResponse
     {
-        private string _addressId;
+        private ShippingLabelStatus _status;
 
         /// <summary>
-        /// Gets and sets the property AddressId. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// The automatically generated ID for a specific address. You'll use this ID when you
-        /// create a job to specify which address you want the Snow device for that job shipped
-        /// to.
+        /// The status information of the task on a Snow device that is being returned to AWS.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
-        public string AddressId
+        public ShippingLabelStatus Status
         {
-            get { return this._addressId; }
-            set { this._addressId = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if AddressId property is set
-        internal bool IsSetAddressId()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._addressId != null;
+            return this._status != null;
         }
 
     }

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// The address that you want the Snowball or Snowballs associated with a specific job
-    /// to be shipped to. Addresses are validated at the time of creation. The address you
-    /// provide must be located within the serviceable area of your region. Although no individual
+    /// The address that you want the Snow device(s) associated with a specific job to be
+    /// shipped to. Addresses are validated at the time of creation. The address you provide
+    /// must be located within the serviceable area of your region. Although no individual
     /// elements of the <code>Address</code> are required, if the address is invalid or unsupported,
     /// then an exception is thrown.
     /// </summary>
@@ -74,7 +74,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property City. 
         /// <para>
-        /// The city in an address that a Snowball is to be delivered to.
+        /// The city in an address that a Snow device is to be delivered to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -93,7 +93,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property Company. 
         /// <para>
-        /// The name of the company to receive a Snowball at an address.
+        /// The name of the company to receive a Snow device at an address.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -112,7 +112,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property Country. 
         /// <para>
-        /// The country in an address that a Snowball is to be delivered to.
+        /// The country in an address that a Snow device is to be delivered to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -169,7 +169,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of a person to receive a Snowball at an address.
+        /// The name of a person to receive a Snow device at an address.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -188,7 +188,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property PhoneNumber. 
         /// <para>
-        /// The phone number associated with an address that a Snowball is to be delivered to.
+        /// The phone number associated with an address that a Snow device is to be delivered
+        /// to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -207,7 +208,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property PostalCode. 
         /// <para>
-        /// The postal code in an address that a Snowball is to be delivered to.
+        /// The postal code in an address that a Snow device is to be delivered to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -245,7 +246,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property StateOrProvince. 
         /// <para>
-        /// The state or province in an address that a Snowball is to be delivered to.
+        /// The state or province in an address that a Snow device is to be delivered to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -264,7 +265,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property Street1. 
         /// <para>
-        /// The first line in a street address that a Snowball is to be delivered to.
+        /// The first line in a street address that a Snow device is to be delivered to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -283,7 +284,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property Street2. 
         /// <para>
-        /// The second line in a street address that a Snowball is to be delivered to.
+        /// The second line in a street address that a Snow device is to be delivered to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -302,7 +303,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property Street3. 
         /// <para>
-        /// The third line in a street address that a Snowball is to be delivered to.
+        /// The third line in a street address that a Snow device is to be delivered to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

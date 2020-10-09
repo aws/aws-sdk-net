@@ -39,7 +39,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballLimit. 
         /// <para>
-        /// The service limit for number of Snowballs this account can have at once. The default
+        /// The service limit for number of Snow devices this account can have at once. The default
         /// service limit is 1 (one).
         /// </para>
         /// </summary>
@@ -58,7 +58,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballsInUse. 
         /// <para>
-        /// The number of Snowballs that this account is currently using.
+        /// The number of Snow devices that this account is currently using.
         /// </para>
         /// </summary>
         public int SnowballsInUse

@@ -39,7 +39,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property Addresses. 
         /// <para>
-        /// The Snowball shipping addresses that were created for this account.
+        /// The Snow device shipping addresses that were created for this account.
         /// </para>
         /// </summary>
         public List<Address> Addresses

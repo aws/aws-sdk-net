@@ -29,35 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetJobUnlockCode operation.
-    /// Returns the <code>UnlockCode</code> code value for the specified job. A particular
-    /// <code>UnlockCode</code> value can be accessed for up to 90 days after the associated
-    /// job has been created.
-    /// 
-    ///  
-    /// <para>
-    /// The <code>UnlockCode</code> value is a 29-character code with 25 alphanumeric characters
-    /// and 4 hyphens. This code is used to decrypt the manifest file when it is passed along
-    /// with the manifest to the Snow device through the Snowball client when the client is
-    /// started for the first time.
-    /// </para>
-    ///  
-    /// <para>
-    /// As a best practice, we recommend that you don't save a copy of the <code>UnlockCode</code>
-    /// in the same location as the manifest file for that job. Saving these separately helps
-    /// prevent unauthorized parties from gaining access to the Snow device associated with
-    /// that job.
-    /// </para>
+    /// Container for the parameters to the UpdateJobShipmentState operation.
+    /// Updates the state when a the shipment states changes to a different state.
     /// </summary>
-    public partial class GetJobUnlockCodeRequest : AmazonSnowballRequest
+    public partial class UpdateJobShipmentStateRequest : AmazonSnowballRequest
     {
         private string _jobId;
+        private ShipmentState _shipmentState;
 
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The ID for the job that you want to get the <code>UnlockCode</code> value for, for
-        /// example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+        /// The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=39, Max=39)]
@@ -71,6 +54,33 @@ namespace Amazon.Snowball.Model
         internal bool IsSetJobId()
         {
             return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShipmentState. 
+        /// <para>
+        /// The state of a device when it is being shipped. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Set to <code>RECEIVED</code> when the device arrives at your location.
+        /// </para>
+        ///  
+        /// <para>
+        /// Set to <code>RETURNED</code> when you have returned the device to AWS.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public ShipmentState ShipmentState
+        {
+            get { return this._shipmentState; }
+            set { this._shipmentState = value; }
+        }
+
+        // Check to see if ShipmentState property is set
+        internal bool IsSetShipmentState()
+        {
+            return this._shipmentState != null;
         }
 
     }

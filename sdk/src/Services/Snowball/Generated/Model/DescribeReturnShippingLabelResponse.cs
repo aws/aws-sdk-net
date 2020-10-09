@@ -29,52 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including
-    /// the ID and name for a Snow device AMI. This AMI is compatible with the device's physical
-    /// hardware requirements, and it should be able to be run in an SBE1 instance on the
-    /// device.
+    /// This is the response object from the DescribeReturnShippingLabel operation.
     /// </summary>
-    public partial class CompatibleImage
+    public partial class DescribeReturnShippingLabelResponse : AmazonWebServiceResponse
     {
-        private string _amiId;
-        private string _name;
+        private DateTime? _expirationDate;
+        private ShippingLabelStatus _status;
 
         /// <summary>
-        /// Gets and sets the property AmiId. 
+        /// Gets and sets the property ExpirationDate. 
         /// <para>
-        /// The unique identifier for an individual Snow device AMI.
+        /// The expiration date of the current return shipping label.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
-        public string AmiId
+        public DateTime ExpirationDate
         {
-            get { return this._amiId; }
-            set { this._amiId = value; }
+            get { return this._expirationDate.GetValueOrDefault(); }
+            set { this._expirationDate = value; }
         }
 
-        // Check to see if AmiId property is set
-        internal bool IsSetAmiId()
+        // Check to see if ExpirationDate property is set
+        internal bool IsSetExpirationDate()
         {
-            return this._amiId != null;
+            return this._expirationDate.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// The optional name of a compatible image.
+        /// The status information of the task on a Snow device that is being returned to AWS.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
-        public string Name
+        public ShippingLabelStatus Status
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._name != null;
+            return this._status != null;
         }
 
     }

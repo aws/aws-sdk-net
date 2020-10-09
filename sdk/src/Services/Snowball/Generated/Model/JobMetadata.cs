@@ -58,7 +58,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property AddressId. 
         /// <para>
-        /// The ID for the address that you want the Snowball shipped to.
+        /// The ID for the address that you want the Snow device shipped to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=40, Max=40)]
@@ -114,7 +114,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property DataTransferProgress. 
         /// <para>
-        /// A value that defines the real-time status of a Snowball's data transfer while the
+        /// A value that defines the real-time status of a Snow device's data transfer while the
         /// device is at AWS. This data is only available while a job has a <code>JobState</code>
         /// value of <code>InProgress</code>, for both import and export jobs.
         /// </para>
@@ -209,8 +209,8 @@ namespace Amazon.Snowball.Model
         /// <para>
         /// Links to Amazon S3 presigned URLs for the job report and logs. For import jobs, the
         /// PDF job report becomes available at the end of the import process. For export jobs,
-        /// your job report typically becomes available while the Snowball for your job part is
-        /// being delivered to you.
+        /// your job report typically becomes available while the Snow device for your job part
+        /// is being delivered to you.
         /// </para>
         /// </summary>
         public JobLogs JobLogInfo
@@ -364,9 +364,9 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballCapacityPreference. 
         /// <para>
-        /// The Snowball capacity preference for this job, specified at job creation. In US regions,
-        /// you can choose between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity
-        /// Snowballs.
+        /// The Snow device capacity preference for this job, specified at job creation. In US
+        /// regions, you can choose between 50 TB and 80 TB Snowballs. All other regions use 80
+        /// TB capacity Snowballs.
         /// </para>
         /// </summary>
         public SnowballCapacity SnowballCapacityPreference
