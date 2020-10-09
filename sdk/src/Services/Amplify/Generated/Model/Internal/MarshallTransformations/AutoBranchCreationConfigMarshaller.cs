@@ -69,6 +69,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EnableBasicAuth);
             }
 
+            if(requestObject.IsSetEnablePerformanceMode())
+            {
+                context.Writer.WritePropertyName("enablePerformanceMode");
+                context.Writer.Write(requestObject.EnablePerformanceMode);
+            }
+
             if(requestObject.IsSetEnablePullRequestPreview())
             {
                 context.Writer.WritePropertyName("enablePullRequestPreview");

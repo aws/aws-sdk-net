@@ -120,6 +120,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EnableNotification);
                 }
 
+                if(publicRequest.IsSetEnablePerformanceMode())
+                {
+                    context.Writer.WritePropertyName("enablePerformanceMode");
+                    context.Writer.Write(publicRequest.EnablePerformanceMode);
+                }
+
                 if(publicRequest.IsSetEnablePullRequestPreview())
                 {
                     context.Writer.WritePropertyName("enablePullRequestPreview");

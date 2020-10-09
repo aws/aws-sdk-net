@@ -154,6 +154,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnableNotification = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("enablePerformanceMode", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnablePerformanceMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("enablePullRequestPreview", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

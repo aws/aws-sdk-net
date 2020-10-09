@@ -37,6 +37,7 @@ namespace Amazon.Amplify.Model
         private string _buildSpec;
         private bool? _enableAutoBuild;
         private bool? _enableBasicAuth;
+        private bool? _enablePerformanceMode;
         private bool? _enablePullRequestPreview;
         private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
         private string _framework;
@@ -115,6 +116,26 @@ namespace Amazon.Amplify.Model
         internal bool IsSetEnableBasicAuth()
         {
             return this._enableBasicAuth.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnablePerformanceMode. 
+        /// <para>
+        ///  Performance mode optimizes for faster hosting performance by keeping content cached
+        /// at the edge for a longer interval. Enabling performance mode will mean that hosting
+        /// configuration or code changes can take up to 10 minutes to roll out. 
+        /// </para>
+        /// </summary>
+        public bool EnablePerformanceMode
+        {
+            get { return this._enablePerformanceMode.GetValueOrDefault(); }
+            set { this._enablePerformanceMode = value; }
+        }
+
+        // Check to see if EnablePerformanceMode property is set
+        internal bool IsSetEnablePerformanceMode()
+        {
+            return this._enablePerformanceMode.HasValue; 
         }
 
         /// <summary>
