@@ -96,8 +96,8 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the master account of
-        /// your organization.
+        ///  <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account
+        /// of your organization.
         /// </para>
         ///  </li> <li> 
         /// <para>

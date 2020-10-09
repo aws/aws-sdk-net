@@ -73,12 +73,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The provisioned product identifier. You must provide the name or ID, but not both.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code>
-        /// will occur.
+        /// The provisioned product identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -97,12 +92,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the provisioned product. You must provide the name or ID, but not both.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code>
-        /// will occur.
+        /// The name of the provisioned product.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

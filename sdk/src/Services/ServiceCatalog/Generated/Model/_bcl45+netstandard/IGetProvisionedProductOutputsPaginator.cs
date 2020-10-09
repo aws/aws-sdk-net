@@ -1,3 +1,4 @@
+#if !NETSTANDARD13
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -16,25 +17,19 @@
 /*
  * Do not modify this file. This file is generated from the servicecatalog-2015-12-10.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.Net;
-
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetAWSOrganizationsAccessStatus operation.
-    /// Get the Access Status for AWS Organization portfolio share feature. This API can only
-    /// be called by the management account in the organization or by a delegated admin.
-    /// </summary>
-    public partial class GetAWSOrganizationsAccessStatusRequest : AmazonServiceCatalogRequest
+    /// Paginator for the GetProvisionedProductOutputs operation
+    ///</summary>
+    public interface IGetProvisionedProductOutputsPaginator
     {
-
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<GetProvisionedProductOutputsResponse> Responses { get; }
     }
 }
+#endif

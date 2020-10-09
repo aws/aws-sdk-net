@@ -993,7 +993,7 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Shares the specified portfolio with the specified account or organization node. Shares
-        /// to an organization node can only be created by the master account of an organization
+        /// to an organization node can only be created by the management account of an organization
         /// or by a delegated administrator. You can share portfolios to an organization, an organizational
         /// unit, or a specific account.
         /// 
@@ -1046,7 +1046,7 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Shares the specified portfolio with the specified account or organization node. Shares
-        /// to an organization node can only be created by the master account of an organization
+        /// to an organization node can only be created by the management account of an organization
         /// or by a delegated administrator. You can share portfolios to an organization, an organizational
         /// unit, or a specific account.
         /// 
@@ -1613,8 +1613,8 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Stops sharing the specified portfolio with the specified account or organization node.
-        /// Shares to an organization node can only be deleted by the master account of an organization
-        /// or by a delegated administrator.
+        /// Shares to an organization node can only be deleted by the management account of an
+        /// organization or by a delegated administrator.
         /// 
         ///  
         /// <para>
@@ -1651,8 +1651,8 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Stops sharing the specified portfolio with the specified account or organization node.
-        /// Shares to an organization node can only be deleted by the master account of an organization
-        /// or by a delegated administrator.
+        /// Shares to an organization node can only be deleted by the management account of an
+        /// organization or by a delegated administrator.
         /// 
         ///  
         /// <para>
@@ -2196,7 +2196,7 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Gets the status of the specified portfolio share operation. This API can only be called
-        /// by the master account in the organization or by a delegated admin.
+        /// by the management account in the organization or by a delegated admin.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePortfolioShareStatus service method.</param>
         /// 
@@ -2223,7 +2223,7 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Gets the status of the specified portfolio share operation. This API can only be called
-        /// by the master account in the organization or by a delegated admin.
+        /// by the management account in the organization or by a delegated admin.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePortfolioShareStatus service method.</param>
         /// <param name="cancellationToken">
@@ -2890,8 +2890,8 @@ namespace Amazon.ServiceCatalog
         /// Disable portfolio sharing through AWS Organizations feature. This feature will not
         /// delete your current shares but it will prevent you from creating new shares throughout
         /// your organization. Current shares will not be in sync with your organization structure
-        /// if it changes after calling this API. This API can only be called by the master account
-        /// in the organization.
+        /// if it changes after calling this API. This API can only be called by the management
+        /// account in the organization.
         /// 
         ///  
         /// <para>
@@ -2930,8 +2930,8 @@ namespace Amazon.ServiceCatalog
         /// Disable portfolio sharing through AWS Organizations feature. This feature will not
         /// delete your current shares but it will prevent you from creating new shares throughout
         /// your organization. Current shares will not be in sync with your organization structure
-        /// if it changes after calling this API. This API can only be called by the master account
-        /// in the organization.
+        /// if it changes after calling this API. This API can only be called by the management
+        /// account in the organization.
         /// 
         ///  
         /// <para>
@@ -3253,7 +3253,8 @@ namespace Amazon.ServiceCatalog
         /// <summary>
         /// Enable portfolio sharing feature through AWS Organizations. This API will allow Service
         /// Catalog to receive updates on your organization in order to sync your shares with
-        /// the current structure. This API can only be called by the master account in the organization.
+        /// the current structure. This API can only be called by the management account in the
+        /// organization.
         /// 
         ///  
         /// <para>
@@ -3293,7 +3294,8 @@ namespace Amazon.ServiceCatalog
         /// <summary>
         /// Enable portfolio sharing feature through AWS Organizations. This API will allow Service
         /// Catalog to receive updates on your organization in order to sync your shares with
-        /// the current structure. This API can only be called by the master account in the organization.
+        /// the current structure. This API can only be called by the management account in the
+        /// organization.
         /// 
         ///  
         /// <para>
@@ -3461,7 +3463,7 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Get the Access Status for AWS Organization portfolio share feature. This API can only
-        /// be called by the master account in the organization or by a delegated admin.
+        /// be called by the management account in the organization or by a delegated admin.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAWSOrganizationsAccessStatus service method.</param>
         /// 
@@ -3485,7 +3487,7 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Get the Access Status for AWS Organization portfolio share feature. This API can only
-        /// be called by the master account in the organization or by a delegated admin.
+        /// be called by the management account in the organization or by a delegated admin.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAWSOrganizationsAccessStatus service method.</param>
         /// <param name="cancellationToken">
@@ -3507,6 +3509,63 @@ namespace Amazon.ServiceCatalog
             options.ResponseUnmarshaller = GetAWSOrganizationsAccessStatusResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetAWSOrganizationsAccessStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetProvisionedProductOutputs
+
+
+        /// <summary>
+        /// This API takes either a <code>ProvisonedProductId</code> or a <code>ProvisionedProductName</code>,
+        /// along with a list of one or more output keys, and responds with the key/value pairs
+        /// of those outputs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProvisionedProductOutputs service method.</param>
+        /// 
+        /// <returns>The response from the GetProvisionedProductOutputs service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetProvisionedProductOutputs">REST API Reference for GetProvisionedProductOutputs Operation</seealso>
+        public virtual GetProvisionedProductOutputsResponse GetProvisionedProductOutputs(GetProvisionedProductOutputsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProvisionedProductOutputsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProvisionedProductOutputsResponseUnmarshaller.Instance;
+
+            return Invoke<GetProvisionedProductOutputsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API takes either a <code>ProvisonedProductId</code> or a <code>ProvisionedProductName</code>,
+        /// along with a list of one or more output keys, and responds with the key/value pairs
+        /// of those outputs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProvisionedProductOutputs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetProvisionedProductOutputs service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetProvisionedProductOutputs">REST API Reference for GetProvisionedProductOutputs Operation</seealso>
+        public virtual Task<GetProvisionedProductOutputsResponse> GetProvisionedProductOutputsAsync(GetProvisionedProductOutputsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProvisionedProductOutputsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProvisionedProductOutputsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetProvisionedProductOutputsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3732,7 +3791,8 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Lists the organization nodes that have access to the specified portfolio. This API
-        /// can only be called by the master account in the organization or by a delegated admin.
+        /// can only be called by the management account in the organization or by a delegated
+        /// admin.
         /// 
         ///  
         /// <para>
@@ -3764,7 +3824,8 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Lists the organization nodes that have access to the specified portfolio. This API
-        /// can only be called by the master account in the organization or by a delegated admin.
+        /// can only be called by the management account in the organization or by a delegated
+        /// admin.
         /// 
         ///  
         /// <para>

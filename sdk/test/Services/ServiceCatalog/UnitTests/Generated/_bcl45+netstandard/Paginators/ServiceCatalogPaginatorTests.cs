@@ -43,6 +43,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("ServiceCatalog")]
+        public void GetProvisionedProductOutputsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetProvisionedProductOutputsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetProvisionedProductOutputsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetProvisionedProductOutputsResponse>();
+            secondResponse.NextPageToken = null;
+
+            _mockClient.SetupSequence(x => x.GetProvisionedProductOutputs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetProvisionedProductOutputs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ServiceCatalog")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetProvisionedProductOutputsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetProvisionedProductOutputsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetProvisionedProductOutputsResponse>();
+            response.NextPageToken = null;
+
+            _mockClient.Setup(x => x.GetProvisionedProductOutputs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetProvisionedProductOutputs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ServiceCatalog")]
         public void ListAcceptedPortfolioSharesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListAcceptedPortfolioSharesRequest>();

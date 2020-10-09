@@ -38,8 +38,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PortfolioShareToken. 
         /// <para>
-        /// The portfolio share unique identifier. This will only be returned if portfolio is
-        /// shared to an organization node.
+        /// The portfolio shares a unique identifier that only returns if the portfolio is shared
+        /// to an organization node.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

@@ -29,15 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListAcceptedPortfolioShares operation.
-    /// Lists all portfolios for which sharing was accepted by this account.
+    /// Container for the parameters to the GetProvisionedProductOutputs operation.
+    /// This API takes either a <code>ProvisonedProductId</code> or a <code>ProvisionedProductName</code>,
+    /// along with a list of one or more output keys, and responds with the key/value pairs
+    /// of those outputs.
     /// </summary>
-    public partial class ListAcceptedPortfolioSharesRequest : AmazonServiceCatalogRequest
+    public partial class GetProvisionedProductOutputsRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
+        private List<string> _outputKeys = new List<string>();
         private int? _pageSize;
         private string _pageToken;
-        private PortfolioShareType _portfolioShareType;
+        private string _provisionedProductId;
+        private string _provisionedProductName;
 
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
@@ -69,6 +73,26 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetAcceptLanguage()
         {
             return this._acceptLanguage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputKeys. 
+        /// <para>
+        /// The list of keys that the API should return with their values. If none are provided,
+        /// the API will return all outputs of the provisioned product.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=60)]
+        public List<string> OutputKeys
+        {
+            get { return this._outputKeys; }
+            set { this._outputKeys = value; }
+        }
+
+        // Check to see if OutputKeys property is set
+        internal bool IsSetOutputKeys()
+        {
+            return this._outputKeys != null && this._outputKeys.Count > 0; 
         }
 
         /// <summary>
@@ -111,35 +135,41 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PortfolioShareType. 
+        /// Gets and sets the property ProvisionedProductId. 
         /// <para>
-        /// The type of shared portfolios to list. The default is to list imported portfolios.
+        /// The identifier of the provisioned product that you want the outputs from.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account
-        /// of your organization
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>AWS_SERVICECATALOG</code> - List default portfolios
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>IMPORTED</code> - List imported portfolios
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
-        public PortfolioShareType PortfolioShareType
+        [AWSProperty(Min=1, Max=100)]
+        public string ProvisionedProductId
         {
-            get { return this._portfolioShareType; }
-            set { this._portfolioShareType = value; }
+            get { return this._provisionedProductId; }
+            set { this._provisionedProductId = value; }
         }
 
-        // Check to see if PortfolioShareType property is set
-        internal bool IsSetPortfolioShareType()
+        // Check to see if ProvisionedProductId property is set
+        internal bool IsSetProvisionedProductId()
         {
-            return this._portfolioShareType != null;
+            return this._provisionedProductId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionedProductName. 
+        /// <para>
+        /// The name of the provisioned product that you want the outputs from.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ProvisionedProductName
+        {
+            get { return this._provisionedProductName; }
+            set { this._provisionedProductName = value; }
+        }
+
+        // Check to see if ProvisionedProductName property is set
+        internal bool IsSetProvisionedProductName()
+        {
+            return this._provisionedProductName != null;
         }
 
     }

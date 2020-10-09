@@ -27,6 +27,11 @@ namespace Amazon.ServiceCatalog.Model
     {
 
         /// <summary>
+        /// Paginator for GetProvisionedProductOutputs operation
+        ///</summary>
+        IGetProvisionedProductOutputsPaginator GetProvisionedProductOutputs(GetProvisionedProductOutputsRequest request);
+
+        /// <summary>
         /// Paginator for ListAcceptedPortfolioShares operation
         ///</summary>
         IListAcceptedPortfolioSharesPaginator ListAcceptedPortfolioShares(ListAcceptedPortfolioSharesRequest request);

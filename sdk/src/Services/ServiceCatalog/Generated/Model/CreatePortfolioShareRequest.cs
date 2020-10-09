@@ -31,7 +31,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Container for the parameters to the CreatePortfolioShare operation.
     /// Shares the specified portfolio with the specified account or organization node. Shares
-    /// to an organization node can only be created by the master account of an organization
+    /// to an organization node can only be created by the management account of an organization
     /// or by a delegated administrator. You can share portfolios to an organization, an organizational
     /// unit, or a specific account.
     /// 
@@ -112,9 +112,9 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property OrganizationNode. 
         /// <para>
         /// The organization node to whom you are going to share. If <code>OrganizationNode</code>
-        /// is passed in, <code>PortfolioShare</code> will be created for the node and its children
-        /// (when applies), and a <code>PortfolioShareToken</code> will be returned in the output
-        /// in order for the administrator to monitor the status of the <code>PortfolioShare</code>
+        /// is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd
+        /// its children (when applies), and a <code>PortfolioShareToken</code> will be returned
+        /// in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code>
         /// creation process.
         /// </para>
         /// </summary>

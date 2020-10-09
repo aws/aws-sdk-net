@@ -31,7 +31,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Container for the parameters to the DescribePortfolioShareStatus operation.
     /// Gets the status of the specified portfolio share operation. This API can only be called
-    /// by the master account in the organization or by a delegated admin.
+    /// by the management account in the organization or by a delegated admin.
     /// </summary>
     public partial class DescribePortfolioShareStatusRequest : AmazonServiceCatalogRequest
     {
