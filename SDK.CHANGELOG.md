@@ -1,3 +1,20 @@
+### 3.5.34.0 (2020-10-09 18:12 UTC)
+* Amplify (3.5.2.0)
+	* Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval - enabling can make code changes can take up to 10 minutes to roll out.
+* EKS (3.5.2.0)
+	* This release introduces a new Amazon EKS error code: "ClusterUnreachable"
+* MediaLive (3.5.3.0)
+	* WAV audio output. Extracting ancillary captions in MP4 file inputs. Priority on channels feeding a multiplex (higher priority channels will tend to have higher video quality).
+* ServiceCatalog (3.5.2.0)
+	* This new API takes either a ProvisonedProductId or a ProvisionedProductName, along with a list of 1 or more output keys and responds with the (key,value) pairs of those outputs.
+* Snowball (3.5.1.0)
+	* We added new APIs to allow customers to better manage their device shipping. You can check if your shipping label expired, generate a new label, and tell us that you received or shipped your job.
+* Core 3.5.1.24
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.33.0 (2020-10-08 18:13 UTC)
 * CloudWatchEvents (3.5.2.0)
 	* Amazon EventBridge (formerly called CloudWatch Events) adds support for target Dead-letter Queues and custom retry policies.
