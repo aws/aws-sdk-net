@@ -151,6 +151,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly ErrorCode AccessDenied = new ErrorCode("AccessDenied");
         /// <summary>
+        /// Constant ClusterUnreachable for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode ClusterUnreachable = new ErrorCode("ClusterUnreachable");
+        /// <summary>
         /// Constant EniLimitReached for ErrorCode
         /// </summary>
         public static readonly ErrorCode EniLimitReached = new ErrorCode("EniLimitReached");
@@ -372,6 +376,10 @@ namespace Amazon.EKS
         /// Constant AutoScalingGroupNotFound for NodegroupIssueCode
         /// </summary>
         public static readonly NodegroupIssueCode AutoScalingGroupNotFound = new NodegroupIssueCode("AutoScalingGroupNotFound");
+        /// <summary>
+        /// Constant ClusterUnreachable for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode ClusterUnreachable = new NodegroupIssueCode("ClusterUnreachable");
         /// <summary>
         /// Constant Ec2LaunchTemplateNotFound for NodegroupIssueCode
         /// </summary>
