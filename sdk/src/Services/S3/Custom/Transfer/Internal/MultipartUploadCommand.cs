@@ -184,8 +184,10 @@ namespace Amazon.S3.Transfer.Internal
                 ServerSideEncryptionCustomerProvidedKey = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKey,
                 ServerSideEncryptionCustomerProvidedKeyMD5 = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKeyMD5,
 #if (BCL && !BCL45)
-                Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._fileTransporterRequest.Timeout)
-#endif
+                Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._fileTransporterRequest.Timeout),
+#endif                
+                DisableMD5Stream = this._fileTransporterRequest.DisableMD5Stream,
+                DisablePayloadSigning = this._fileTransporterRequest.DisablePayloadSigning
             };
 
             if ((filePosition + this._partSize >= this._contentLength)

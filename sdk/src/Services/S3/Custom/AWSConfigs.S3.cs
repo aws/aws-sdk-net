@@ -109,6 +109,21 @@ namespace Amazon
         }
 
         /// <summary>
+        /// <para><b>WARNING: Setting DisableMD5Stream to true disables the MD5 data integrity check 
+        /// on upload requests.</b></para>
+        /// <para>When true, MD5Stream will not be used in upload requests. This may increase upload 
+        /// performance under high CPU loads. The default value is false. Set this value to true to 
+        /// disable MD5Stream use in all S3 upload requests or override this value per request by 
+        /// setting the DisableMD5Stream property on PutObjectRequest, UploadPartRequest, or 
+        /// TransferUtilityUploadRequest.</para>
+        /// <para>MD5Stream, SigV4 payload signing, and HTTPS each provide some data integrity 
+        /// verification. If DisableMD5Stream is true and DisablePayloadSigning is true, then the 
+        /// possibility of data corruption is completely dependant on HTTPS being the only remaining 
+        /// source of data integrity verification.</para>
+        /// </summary>
+        public static bool DisableMD5Stream { get; set; }
+
+        /// <summary>
         /// Escape and unescape S3 metadata for S3 Put/Get object requests.
         /// Escape only escapes non-ascii values in metadata
         /// Any "%" values in metadata could interfere with this option.

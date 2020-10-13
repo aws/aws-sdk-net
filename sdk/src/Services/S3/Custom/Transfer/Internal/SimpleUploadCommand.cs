@@ -69,8 +69,10 @@ namespace Amazon.S3.Transfer.Internal
                 Metadata = this._fileTransporterRequest.Metadata,
                 TagSet = this._fileTransporterRequest.TagSet,
 #if (BCL && !BCL45)
-                Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._fileTransporterRequest.Timeout)
+                Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._fileTransporterRequest.Timeout),
 #endif
+                DisableMD5Stream = this._fileTransporterRequest.DisableMD5Stream,
+                DisablePayloadSigning = this._fileTransporterRequest.DisablePayloadSigning
             };
 
             // Avoid setting ContentType to null, as that may clear

@@ -116,15 +116,24 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 // Wrap the stream in a stream that has a length
                 var streamWithLength = GetStreamWithLength(putObjectRequest.InputStream, putObjectRequest.Headers.ContentLength);
-                if (streamWithLength.Length > 0)
+                if (streamWithLength.Length > 0 && !(putObjectRequest.DisablePayloadSigning ?? false))
                     request.UseChunkEncoding = putObjectRequest.UseChunkEncoding;
                 var length = streamWithLength.Length - streamWithLength.Position;
                 if (!request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
                     request.Headers.Add(HeaderKeys.ContentLengthHeader, length.ToString(CultureInfo.InvariantCulture));
 
-                // Wrap input stream in MD5Stream
-                var hashStream = new MD5Stream(streamWithLength, null, length);
-                putObjectRequest.InputStream = hashStream;
+                request.DisablePayloadSigning = putObjectRequest.DisablePayloadSigning;
+                
+                if (!(putObjectRequest.DisableMD5Stream ?? AWSConfigsS3.DisableMD5Stream))
+                {
+                    // Wrap input stream in MD5Stream
+                    var hashStream = new MD5Stream(streamWithLength, null, length);
+                    putObjectRequest.InputStream = hashStream;
+                }
+                else
+                {
+                    putObjectRequest.InputStream = streamWithLength;
+                }
             }
         
             request.ContentStream = putObjectRequest.InputStream;

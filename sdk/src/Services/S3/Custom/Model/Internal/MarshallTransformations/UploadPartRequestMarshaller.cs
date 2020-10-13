@@ -80,14 +80,23 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 // Wrap input stream in partial wrapper (to upload only part of the stream)
                 var partialStream = new PartialWrapperStream(uploadPartRequest.InputStream, uploadPartRequest.PartSize);
-                if (partialStream.Length > 0)
+                if (partialStream.Length > 0 && !(uploadPartRequest.DisablePayloadSigning ?? false))
                     request.UseChunkEncoding = uploadPartRequest.UseChunkEncoding;
                 if (!request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
                     request.Headers.Add(HeaderKeys.ContentLengthHeader, partialStream.Length.ToString(CultureInfo.InvariantCulture));
 
-                // Wrap input stream in MD5Stream; after this we can no longer seek or position the stream
-                var hashStream = new MD5Stream(partialStream, null, partialStream.Length);
-                uploadPartRequest.InputStream = hashStream;
+                request.DisablePayloadSigning = uploadPartRequest.DisablePayloadSigning;
+
+                if (!(uploadPartRequest.DisableMD5Stream ?? AWSConfigsS3.DisableMD5Stream))
+                {
+                    // Wrap input stream in MD5Stream; after this we can no longer seek or position the stream
+                    var hashStream = new MD5Stream(partialStream, null, partialStream.Length);
+                    uploadPartRequest.InputStream = hashStream;
+                }
+                else
+                {
+                    uploadPartRequest.InputStream = partialStream;
+                }
             }
 
             request.ContentStream = uploadPartRequest.InputStream;
