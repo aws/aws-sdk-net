@@ -63,7 +63,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier for the organization under which the resource exists.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=34, Max=34)]
         public string OrganizationId
         {
             get { return this._organizationId; }
@@ -82,7 +82,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier of the resource from which delegates' set members are removed. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=34, Max=34)]
         public string ResourceId
         {
             get { return this._resourceId; }

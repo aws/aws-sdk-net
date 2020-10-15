@@ -29,52 +29,54 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListMailboxExportJobs operation.
-    /// Lists the mailbox export jobs started for the specified organization within the last
-    /// seven days.
+    /// Container for the parameters to the DeleteOrganization operation.
+    /// Deletes an Amazon WorkMail organization and all underlying AWS resources managed by
+    /// Amazon WorkMail as part of the organization. You can choose whether to delete the
+    /// associated directory. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing
+    /// an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
     /// </summary>
-    public partial class ListMailboxExportJobsRequest : AmazonWorkMailRequest
+    public partial class DeleteOrganizationRequest : AmazonWorkMailRequest
     {
-        private int? _maxResults;
-        private string _nextToken;
+        private string _clientToken;
+        private bool? _deleteDirectory;
         private string _organizationId;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The maximum number of results to return in a single call.
+        /// The idempotency token associated with the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        [AWSProperty(Min=1, Max=128)]
+        public string ClientToken
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
         {
-            return this._maxResults.HasValue; 
+            return this._clientToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property DeleteDirectory. 
         /// <para>
-        /// The token to use to retrieve the next page of results.
+        /// If true, deletes the AWS Directory Service directory associated with the organization.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string NextToken
+        [AWSProperty(Required=true)]
+        public bool DeleteDirectory
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._deleteDirectory.GetValueOrDefault(); }
+            set { this._deleteDirectory = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if DeleteDirectory property is set
+        internal bool IsSetDeleteDirectory()
         {
-            return this._nextToken != null;
+            return this._deleteDirectory.HasValue; 
         }
 
         /// <summary>

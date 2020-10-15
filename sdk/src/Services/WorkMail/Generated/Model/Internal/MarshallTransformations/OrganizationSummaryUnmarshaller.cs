@@ -70,6 +70,12 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                     unmarshalledObject.Alias = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DefaultMailDomain", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultMailDomain = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ErrorMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

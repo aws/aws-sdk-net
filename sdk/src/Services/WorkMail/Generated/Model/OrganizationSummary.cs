@@ -34,6 +34,7 @@ namespace Amazon.WorkMail.Model
     public partial class OrganizationSummary
     {
         private string _alias;
+        private string _defaultMailDomain;
         private string _errorMessage;
         private string _organizationId;
         private string _state;
@@ -55,6 +56,25 @@ namespace Amazon.WorkMail.Model
         internal bool IsSetAlias()
         {
             return this._alias != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultMailDomain. 
+        /// <para>
+        /// The default email domain associated with the organization.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=255)]
+        public string DefaultMailDomain
+        {
+            get { return this._defaultMailDomain; }
+            set { this._defaultMailDomain = value; }
+        }
+
+        // Check to see if DefaultMailDomain property is set
+        internal bool IsSetDefaultMailDomain()
+        {
+            return this._defaultMailDomain != null;
         }
 
         /// <summary>
@@ -84,6 +104,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier associated with the organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=34, Max=34)]
         public string OrganizationId
         {
             get { return this._organizationId; }

@@ -122,7 +122,7 @@ namespace Amazon.WorkMail.Model
         /// The organization ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=34, Max=34)]
         public string OrganizationId
         {
             get { return this._organizationId; }

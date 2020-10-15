@@ -29,29 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteUser operation.
-    /// Deletes a user from Amazon WorkMail and all subsequent systems. Before you can delete
-    /// a user, the user state must be <code>DISABLED</code>. Use the <a>DescribeUser</a>
-    /// action to confirm the user state.
-    /// 
-    ///  
-    /// <para>
-    /// Deleting a user is permanent and cannot be undone. WorkMail archives user mailboxes
-    /// for 30 days before they are permanently removed.
-    /// </para>
+    /// This is the response object from the DeleteOrganization operation.
     /// </summary>
-    public partial class DeleteUserRequest : AmazonWorkMailRequest
+    public partial class DeleteOrganizationResponse : AmazonWebServiceResponse
     {
         private string _organizationId;
-        private string _userId;
+        private string _state;
 
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The organization that contains the user to be deleted.
+        /// The organization ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=34, Max=34)]
+        [AWSProperty(Min=34, Max=34)]
         public string OrganizationId
         {
             get { return this._organizationId; }
@@ -65,22 +56,22 @@ namespace Amazon.WorkMail.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserId. 
+        /// Gets and sets the property State. 
         /// <para>
-        /// The identifier of the user to be deleted.
+        /// The state of the organization.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=12, Max=256)]
-        public string UserId
+        [AWSProperty(Max=256)]
+        public string State
         {
-            get { return this._userId; }
-            set { this._userId = value; }
+            get { return this._state; }
+            set { this._state = value; }
         }
 
-        // Check to see if UserId property is set
-        internal bool IsSetUserId()
+        // Check to see if State property is set
+        internal bool IsSetState()
         {
-            return this._userId != null;
+            return this._state != null;
         }
 
     }

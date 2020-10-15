@@ -41,6 +41,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier of the new resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=34, Max=34)]
         public string ResourceId
         {
             get { return this._resourceId; }

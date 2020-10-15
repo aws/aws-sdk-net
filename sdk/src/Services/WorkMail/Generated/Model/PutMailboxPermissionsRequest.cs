@@ -83,7 +83,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier of the organization under which the user, group, or resource exists.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=34, Max=34)]
         public string OrganizationId
         {
             get { return this._organizationId; }

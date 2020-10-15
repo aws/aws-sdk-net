@@ -29,53 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListMailboxExportJobs operation.
-    /// Lists the mailbox export jobs started for the specified organization within the last
-    /// seven days.
+    /// This is the response object from the CreateOrganization operation.
     /// </summary>
-    public partial class ListMailboxExportJobsRequest : AmazonWorkMailRequest
+    public partial class CreateOrganizationResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
-        private string _nextToken;
         private string _organizationId;
-
-        /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of results to return in a single call.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
-        {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// The token to use to retrieve the next page of results.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string NextToken
-        {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this._nextToken != null;
-        }
 
         /// <summary>
         /// Gets and sets the property OrganizationId. 
@@ -83,7 +41,7 @@ namespace Amazon.WorkMail.Model
         /// The organization ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=34, Max=34)]
+        [AWSProperty(Min=34, Max=34)]
         public string OrganizationId
         {
             get { return this._organizationId; }

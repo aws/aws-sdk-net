@@ -65,7 +65,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier for the organization under which the Amazon WorkMail entity exists.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=34, Max=34)]
         public string OrganizationId
         {
             get { return this._organizationId; }

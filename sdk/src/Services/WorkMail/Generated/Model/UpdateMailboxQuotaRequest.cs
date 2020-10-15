@@ -64,7 +64,7 @@ namespace Amazon.WorkMail.Model
         /// mailbox quota.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=34, Max=34)]
         public string OrganizationId
         {
             get { return this._organizationId; }

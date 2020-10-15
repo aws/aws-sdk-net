@@ -84,7 +84,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier associated with the organization for which the resource is updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=34, Max=34)]
         public string OrganizationId
         {
             get { return this._organizationId; }
@@ -103,7 +103,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier of the resource to be updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=34, Max=34)]
         public string ResourceId
         {
             get { return this._resourceId; }
