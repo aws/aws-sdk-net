@@ -47,8 +47,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned identifier for a specific file transfer protocol-enabled server.
-        /// That server's user authentication method is tested with a user name and password.
+        /// A system-assigned identifier for a specific server. That server's user authentication
+        /// method is tested with a user name and password.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

@@ -38,8 +38,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Server. 
         /// <para>
-        /// An array containing the properties of a file transfer protocol-enabled server with
-        /// the <code>ServerID</code> you specified.
+        /// An array containing the properties of a server with the <code>ServerID</code> you
+        /// specified.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

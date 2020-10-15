@@ -120,10 +120,10 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property EndpointDetails. 
         /// <para>
-        /// The virtual private cloud (VPC) endpoint settings that are configured for your file
-        /// transfer protocol-enabled server. With a VPC endpoint, you can restrict access to
-        /// your server to resources only within your VPC. To control incoming internet traffic,
-        /// you will need to associate one or more Elastic IP addresses with your server's endpoint.
+        /// The virtual private cloud (VPC) endpoint settings that are configured for your server.
+        /// With a VPC endpoint, you can restrict access to your server to resources only within
+        /// your VPC. To control incoming internet traffic, you will need to associate one or
+        /// more Elastic IP addresses with your server's endpoint.
         /// </para>
         /// </summary>
         public EndpointDetails EndpointDetails
@@ -141,9 +141,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of endpoint that you want your file transfer protocol-enabled server to connect
-        /// to. You can choose to connect to the public internet or a VPC endpoint. With a VPC
-        /// endpoint, you can restrict access to your server and resources only within your VPC.
+        /// The type of endpoint that you want your server to connect to. You can choose to connect
+        /// to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access
+        /// to your server and resources only within your VPC.
         /// </para>
         ///  <note> 
         /// <para>
@@ -174,9 +174,9 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you aren't planning to migrate existing users from an existing file transfer protocol-enabled
-        /// server to a new server, don't update the host key. Accidentally changing a server's
-        /// host key can be disruptive.
+        /// If you aren't planning to migrate existing users from an existing server to a new
+        /// server, don't update the host key. Accidentally changing a server's host key can be
+        /// disruptive.
         /// </para>
         ///  </important> 
         /// <para>
@@ -314,8 +314,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for a file transfer protocol-enabled server instance
-        /// that the user account is assigned to.
+        /// A system-assigned unique identifier for a server instance that the user account is
+        /// assigned to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

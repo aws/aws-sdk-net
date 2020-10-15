@@ -41,8 +41,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Specifies the number of file transfer protocol-enabled servers to return as a response
-        /// to the <code>ListServers</code> query.
+        /// Specifies the number of servers to return as a response to the <code>ListServers</code>
+        /// query.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -64,7 +64,7 @@ namespace Amazon.Transfer.Model
         /// When additional results are obtained from the <code>ListServers</code> command, a
         /// <code>NextToken</code> parameter is returned in the output. You can then pass the
         /// <code>NextToken</code> parameter in a subsequent command to continue listing additional
-        /// file transfer protocol-enabled servers.
+        /// servers.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]

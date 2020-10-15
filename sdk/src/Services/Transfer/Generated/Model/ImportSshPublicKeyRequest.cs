@@ -49,7 +49,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for a file transfer protocol-enabled server.
+        /// A system-assigned unique identifier for a server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]
@@ -87,8 +87,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The name of the user account that is assigned to one or more file transfer protocol-enabled
-        /// servers.
+        /// The name of the user account that is assigned to one or more servers.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=100)]

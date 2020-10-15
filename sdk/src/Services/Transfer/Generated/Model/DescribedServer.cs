@@ -51,8 +51,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Specifies the unique Amazon Resource Name (ARN) of the file transfer protocol-enabled
-        /// server.
+        /// Specifies the unique Amazon Resource Name (ARN) of the server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1600)]
@@ -92,7 +91,7 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property EndpointDetails. 
         /// <para>
         /// Specifies the virtual private cloud (VPC) endpoint settings that you configured for
-        /// your file transfer protocol-enabled server.
+        /// your server.
         /// </para>
         /// </summary>
         public EndpointDetails EndpointDetails
@@ -110,9 +109,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// Defines the type of endpoint that your file transfer protocol-enabled server is connected
-        /// to. If your server is connected to a VPC endpoint, your server isn't accessible over
-        /// the public internet.
+        /// Defines the type of endpoint that your server is connected to. If your server is connected
+        /// to a VPC endpoint, your server isn't accessible over the public internet.
         /// </para>
         /// </summary>
         public EndpointType EndpointType
@@ -151,8 +149,7 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property IdentityProviderDetails. 
         /// <para>
         /// Specifies information to call a customer-supplied authentication API. This field is
-        /// not populated when the <code>IdentityProviderType</code> of a file transfer protocol-enabled
-        /// server is <code>SERVICE_MANAGED</code>.
+        /// not populated when the <code>IdentityProviderType</code> of a server is <code>SERVICE_MANAGED</code>.
         /// </para>
         /// </summary>
         public IdentityProviderDetails IdentityProviderDetails
@@ -171,10 +168,9 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property IdentityProviderType. 
         /// <para>
         /// Specifies the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code>
-        /// means that you are using this file transfer protocol-enabled server to store and access
-        /// user credentials within the service. A value of <code>API_GATEWAY</code> indicates
-        /// that you have integrated an API Gateway endpoint that will be invoked for authenticating
-        /// your user into the service.
+        /// means that you are using this server to store and access user credentials within the
+        /// service. A value of <code>API_GATEWAY</code> indicates that you have integrated an
+        /// API Gateway endpoint that will be invoked for authenticating your user into the service.
         /// </para>
         /// </summary>
         public IdentityProviderType IdentityProviderType
@@ -192,9 +188,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property LoggingRole. 
         /// <para>
-        /// Specifies the AWS Identity and Access Management (IAM) role that allows a file transfer
-        /// protocol-enabled server to turn on Amazon CloudWatch logging for Amazon S3 events.
-        /// When set, user activity can be viewed in your CloudWatch logs.
+        /// Specifies the AWS Identity and Access Management (IAM) role that allows a server to
+        /// turn on Amazon CloudWatch logging for Amazon S3 events. When set, user activity can
+        /// be viewed in your CloudWatch logs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -266,8 +262,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// Specifies the unique system-assigned identifier for a file transfer protocol-enabled
-        /// server that you instantiate.
+        /// Specifies the unique system-assigned identifier for a server that you instantiate.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=19)]
@@ -286,10 +281,10 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Specifies the condition of a file transfer protocol-enabled server for the server
-        /// that was described. A value of <code>ONLINE</code> indicates that the server can accept
-        /// jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means
-        /// that the server cannot perform file transfer operations.
+        /// Specifies the condition of a server for the server that was described. A value of
+        /// <code>ONLINE</code> indicates that the server can accept jobs and transfer files.
+        /// A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform
+        /// file transfer operations.
         /// </para>
         ///  
         /// <para>
@@ -314,8 +309,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Specifies the key-value pairs that you can use to search for and group file transfer
-        /// protocol-enabled servers that were assigned to the server that was described.
+        /// Specifies the key-value pairs that you can use to search for and group servers that
+        /// were assigned to the server that was described.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -334,8 +329,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserCount. 
         /// <para>
-        /// Specifies the number of users that are assigned to a file transfer protocol-enabled
-        /// server you specified with the <code>ServerId</code>.
+        /// Specifies the number of users that are assigned to a server you specified with the
+        /// <code>ServerId</code>.
         /// </para>
         /// </summary>
         public int UserCount

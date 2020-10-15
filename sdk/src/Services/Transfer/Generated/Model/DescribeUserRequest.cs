@@ -47,8 +47,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for a file transfer protocol-enabled server that
-        /// has this user assigned.
+        /// A system-assigned unique identifier for a server that has this user assigned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]
@@ -67,9 +66,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The name of the user assigned to one or more file transfer protocol-enabled servers.
-        /// User names are part of the sign-in credentials to use the AWS Transfer Family service
-        /// and perform file transfer tasks.
+        /// The name of the user assigned to one or more servers. User names are part of the sign-in
+        /// credentials to use the AWS Transfer Family service and perform file transfer tasks.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=100)]

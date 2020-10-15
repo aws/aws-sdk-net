@@ -42,7 +42,7 @@ namespace Amazon.Transfer.Model
         /// When you can get additional results from the <code>ListServers</code> operation, a
         /// <code>NextToken</code> parameter is returned in the output. In a following command,
         /// you can pass in the <code>NextToken</code> parameter to continue listing additional
-        /// file transfer protocol-enabled servers.
+        /// servers.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]
@@ -61,7 +61,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Servers. 
         /// <para>
-        /// An array of file transfer protocol-enabled servers that were listed.
+        /// An array of servers that were listed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

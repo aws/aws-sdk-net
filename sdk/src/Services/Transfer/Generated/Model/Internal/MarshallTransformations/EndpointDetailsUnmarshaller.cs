@@ -70,6 +70,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.AddressAllocationIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SecurityGroupIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SubnetIds", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

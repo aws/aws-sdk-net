@@ -38,6 +38,7 @@ namespace Amazon.Transfer.Model
     public partial class EndpointDetails
     {
         private List<string> _addressAllocationIds = new List<string>();
+        private List<string> _securityGroupIds = new List<string>();
         private List<string> _subnetIds = new List<string>();
         private string _vpcEndpointId;
         private string _vpcId;
@@ -46,12 +47,12 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property AddressAllocationIds. 
         /// <para>
         /// A list of address allocation IDs that are required to attach an Elastic IP address
-        /// to your file transfer protocol-enabled server's endpoint. This is only valid in the
-        /// <code>UpdateServer</code> API.
+        /// to your server's endpoint.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This property can only be use when <code>EndpointType</code> is set to <code>VPC</code>.
+        /// This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>
+        /// and it is only valid in the <code>UpdateServer</code> API.
         /// </para>
         ///  </note>
         /// </summary>
@@ -68,14 +69,42 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubnetIds. 
+        /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// A list of subnet IDs that are required to host your file transfer protocol-enabled
-        /// server endpoint in your VPC.
+        /// A list of security groups IDs that are available to attach to your server's endpoint.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+        /// This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only edit the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code>
+        /// API and only if you are changing the <code>EndpointType</code> from <code>PUBLIC</code>
+        /// or <code>VPC_ENDPOINT</code> to <code>VPC</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<string> SecurityGroupIds
+        {
+            get { return this._securityGroupIds; }
+            set { this._securityGroupIds = value; }
+        }
+
+        // Check to see if SecurityGroupIds property is set
+        internal bool IsSetSecurityGroupIds()
+        {
+            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetIds. 
+        /// <para>
+        /// A list of subnet IDs that are required to host your server endpoint in your VPC.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -98,7 +127,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This property can only be used when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
+        /// This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -118,12 +147,11 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint
-        /// will be hosted.
+        /// The VPC ID of the VPC in which a server's endpoint will be hosted.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+        /// This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
         /// </para>
         ///  </note>
         /// </summary>

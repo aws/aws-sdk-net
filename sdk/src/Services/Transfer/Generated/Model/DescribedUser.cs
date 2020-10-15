@@ -163,9 +163,8 @@ namespace Amazon.Transfer.Model
         /// Specifies the IAM role that controls your users' access to your Amazon S3 bucket.
         /// The policies attached to this role will determine the level of access you want to
         /// provide your users when transferring files into and out of your Amazon S3 bucket or
-        /// buckets. The IAM role should also contain a trust relationship that allows a file
-        /// transfer protocol-enabled server to access your resources when servicing your users'
-        /// transfer requests.
+        /// buckets. The IAM role should also contain a trust relationship that allows a server
+        /// to access your resources when servicing your users' transfer requests.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -226,7 +225,7 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// Specifies the name of the user that was requested to be described. User names are
         /// used for authentication purposes. This is the string that will be used by your user
-        /// when they log in to your file transfer protocol-enabled server.
+        /// when they log in to your server.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=100)]
