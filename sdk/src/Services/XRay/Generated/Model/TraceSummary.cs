@@ -75,7 +75,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// A list of availability zones for any zone corresponding to the trace segments.
+        /// A list of Availability Zones for any zone corresponding to the trace segments.
         /// </para>
         /// </summary>
         public List<AvailabilityZoneDetail> AvailabilityZones
@@ -148,7 +148,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property FaultRootCauses. 
         /// <para>
-        /// A collection of FaultRootCause structures corresponding to the the trace segments.
+        /// A collection of FaultRootCause structures corresponding to the trace segments.
         /// </para>
         /// </summary>
         public List<FaultRootCause> FaultRootCauses

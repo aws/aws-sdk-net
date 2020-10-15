@@ -95,10 +95,19 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property InsightsConfiguration. 
         /// <para>
-        /// The structure containing configurations related to insights. The InsightsEnabled boolean
-        /// can be set to true to enable insights for the groups or false to disable insights
-        /// for the groups.
+        /// The structure containing configurations related to insights.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The InsightsEnabled boolean can be set to true to enable insights for the group or
+        /// false to disable insights for the group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The NotificationsEnabled boolean can be set to true to enable insights notifications.
+        /// Notifications can only be enabled on a group with InsightsEnabled set to true.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public InsightsConfiguration InsightsConfiguration
         {

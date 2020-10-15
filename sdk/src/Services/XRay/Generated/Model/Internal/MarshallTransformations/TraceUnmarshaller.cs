@@ -76,6 +76,12 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LimitExceeded", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.LimitExceeded = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Segments", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Segment, SegmentUnmarshaller>(SegmentUnmarshaller.Instance);

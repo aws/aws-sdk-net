@@ -60,7 +60,7 @@ namespace Amazon.XRay.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the requested time frame contained more than one page of results, you can use this
-        /// token to retrieve the next page. The first page contains the most most recent results,
+        /// token to retrieve the next page. The first page contains the most recent results,
         /// closest to the end of the time frame.
         /// </para>
         /// </summary>

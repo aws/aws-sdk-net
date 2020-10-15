@@ -66,7 +66,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property GroupARN. 
         /// <para>
-        /// The ARN of a group to generate a graph based on.
+        /// The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=400)]
@@ -85,7 +85,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name of a group to generate a graph based on.
+        /// The name of a group based on which you want to generate a graph.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]

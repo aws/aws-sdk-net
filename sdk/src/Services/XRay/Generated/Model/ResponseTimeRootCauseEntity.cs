@@ -41,7 +41,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Coverage. 
         /// <para>
-        /// The types and messages of the exceptions.
+        /// The type and messages of the exceptions.
         /// </para>
         /// </summary>
         public double Coverage

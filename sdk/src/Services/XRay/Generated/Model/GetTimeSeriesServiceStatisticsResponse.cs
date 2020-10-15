@@ -41,7 +41,7 @@ namespace Amazon.XRay.Model
         /// Gets and sets the property ContainsOldGroupVersions. 
         /// <para>
         /// A flag indicating whether or not a group's filter expression has been consistent,
-        /// or if a returned aggregation may show statistics from an older version of the group's
+        /// or if a returned aggregation might show statistics from an older version of the group's
         /// filter expression.
         /// </para>
         /// </summary>

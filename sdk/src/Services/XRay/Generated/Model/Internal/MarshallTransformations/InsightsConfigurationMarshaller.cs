@@ -51,6 +51,12 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InsightsEnabled);
             }
 
+            if(requestObject.IsSetNotificationsEnabled())
+            {
+                context.Writer.WritePropertyName("NotificationsEnabled");
+                context.Writer.Write(requestObject.NotificationsEnabled);
+            }
+
         }
 
         /// <summary>

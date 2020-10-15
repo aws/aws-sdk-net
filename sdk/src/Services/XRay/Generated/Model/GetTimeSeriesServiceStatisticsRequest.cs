@@ -85,7 +85,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property GroupARN. 
         /// <para>
-        /// The ARN of the group for which to pull statistics from.
+        /// The Amazon Resource Name (ARN) of the group for which to pull statistics from.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=400)]

@@ -35,6 +35,7 @@ namespace Amazon.XRay.Model
     {
         private double? _duration;
         private string _id;
+        private bool? _limitExceeded;
         private List<Segment> _segments = new List<Segment>();
 
         /// <summary>
@@ -73,6 +74,26 @@ namespace Amazon.XRay.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LimitExceeded. 
+        /// <para>
+        /// LimitExceeded is set to true when the trace has exceeded one of the defined quotas.
+        /// For more information about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">AWS
+        /// X-Ray endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        public bool LimitExceeded
+        {
+            get { return this._limitExceeded.GetValueOrDefault(); }
+            set { this._limitExceeded = value; }
+        }
+
+        // Check to see if LimitExceeded property is set
+        internal bool IsSetLimitExceeded()
+        {
+            return this._limitExceeded.HasValue; 
         }
 
         /// <summary>

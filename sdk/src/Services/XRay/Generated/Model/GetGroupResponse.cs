@@ -39,7 +39,7 @@ namespace Amazon.XRay.Model
         /// Gets and sets the property Group. 
         /// <para>
         /// The group that was requested. Contains the name of the group, the ARN of the group,
-        /// and the filter expression that assigned to the group.
+        /// the filter expression, and the insight configuration assigned to the group.
         /// </para>
         /// </summary>
         public Group Group

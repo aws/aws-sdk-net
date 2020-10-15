@@ -34,6 +34,7 @@ namespace Amazon.XRay.Model
     public partial class InsightsConfiguration
     {
         private bool? _insightsEnabled;
+        private bool? _notificationsEnabled;
 
         /// <summary>
         /// Gets and sets the property InsightsEnabled. 
@@ -51,6 +52,25 @@ namespace Amazon.XRay.Model
         internal bool IsSetInsightsEnabled()
         {
             return this._insightsEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationsEnabled. 
+        /// <para>
+        /// Set the NotificationsEnabled value to true to enable insights notifications. Notifications
+        /// can only be enabled on a group with InsightsEnabled set to true.
+        /// </para>
+        /// </summary>
+        public bool NotificationsEnabled
+        {
+            get { return this._notificationsEnabled.GetValueOrDefault(); }
+            set { this._notificationsEnabled = value; }
+        }
+
+        // Check to see if NotificationsEnabled property is set
+        internal bool IsSetNotificationsEnabled()
+        {
+            return this._notificationsEnabled.HasValue; 
         }
 
     }

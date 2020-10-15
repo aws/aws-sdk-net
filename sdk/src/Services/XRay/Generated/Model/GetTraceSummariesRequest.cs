@@ -147,7 +147,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property SamplingStrategy. 
         /// <para>
-        /// A paramater to indicate whether to enable sampling on trace summaries. Input parameters
+        /// A parameter to indicate whether to enable sampling on trace summaries. Input parameters
         /// are Name and Value.
         /// </para>
         /// </summary>

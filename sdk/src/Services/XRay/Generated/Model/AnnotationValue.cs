@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// Value of a segment annotation. Has one of three value types: Number, Boolean or String.
+    /// Value of a segment annotation. Has one of three value types: Number, Boolean, or String.
     /// </summary>
     public partial class AnnotationValue
     {

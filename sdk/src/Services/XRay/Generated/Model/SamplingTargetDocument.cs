@@ -80,7 +80,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property ReservoirQuota. 
         /// <para>
-        /// The number of requests per second that X-Ray allocated this service.
+        /// The number of requests per second that X-Ray allocated for this service.
         /// </para>
         /// </summary>
         public int ReservoirQuota

@@ -59,7 +59,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property GroupARN. 
         /// <para>
-        /// The ARN of the group generated based on the GroupName.
+        /// The Amazon Resource Name (ARN) of the group generated based on the GroupName.
         /// </para>
         /// </summary>
         public string GroupARN
@@ -95,10 +95,19 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property InsightsConfiguration. 
         /// <para>
-        /// The structure containing configurations related to insights. The InsightsEnabled boolean
-        /// can be set to true to enable insights for the group or false to disable insights for
-        /// the group.
+        /// The structure containing configurations related to insights.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The InsightsEnabled boolean can be set to true to enable insights for the group or
+        /// false to disable insights for the group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The NotifcationsEnabled boolean can be set to true to enable insights notifications
+        /// through Amazon EventBridge for the group.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public InsightsConfiguration InsightsConfiguration
         {

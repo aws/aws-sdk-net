@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// Aggregated request sampling data for a sampling rule across all services for a 10
-    /// second window.
+    /// Aggregated request sampling data for a sampling rule across all services for a 10-second
+    /// window.
     /// </summary>
     public partial class SamplingStatisticSummary
     {

@@ -1193,7 +1193,8 @@ namespace Amazon.XRay
         /// The request is missing required parameters or has invalid parameters.
         /// </exception>
         /// <exception cref="Amazon.XRay.Model.ResourceNotFoundException">
-        /// The resource was not found. Verify that the name or ARN of the resource is correct.
+        /// The resource was not found. Verify that the name or Amazon Resource Name (ARN) of
+        /// the resource is correct.
         /// </exception>
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
@@ -1378,7 +1379,7 @@ namespace Amazon.XRay
         /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
         /// X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.
         /// </para>
-        ///  <p class="title"> <b>Required Segment Document Fields</b> 
+        ///  <p class="title"> <b>Required segment document fields</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1408,10 +1409,10 @@ namespace Amazon.XRay
         ///  </li> <li> 
         /// <para>
         ///  <code>in_progress</code> - Set to <code>true</code> instead of specifying an <code>end_time</code>
-        /// to record that a segment has been started, but is not complete. Send an in progress
+        /// to record that a segment has been started, but is not complete. Send an in-progress
         /// segment when your application receives a request that will take a long time to serve,
-        /// to trace the fact that the request was received. When the response is sent, send the
-        /// complete segment to overwrite the in-progress segment.
+        /// to trace that the request was received. When the response is sent, send the complete
+        /// segment to overwrite the in-progress segment.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1422,7 +1423,7 @@ namespace Amazon.XRay
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The version number, i.e. <code>1</code>.
+        /// The version number, for instance, <code>1</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1503,7 +1504,8 @@ namespace Amazon.XRay
         /// The request is missing required parameters or has invalid parameters.
         /// </exception>
         /// <exception cref="Amazon.XRay.Model.ResourceNotFoundException">
-        /// The resource was not found. Verify that the name or ARN of the resource is correct.
+        /// The resource was not found. Verify that the name or Amazon Resource Name (ARN) of
+        /// the resource is correct.
         /// </exception>
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
@@ -1570,7 +1572,8 @@ namespace Amazon.XRay
         /// The request is missing required parameters or has invalid parameters.
         /// </exception>
         /// <exception cref="Amazon.XRay.Model.ResourceNotFoundException">
-        /// The resource was not found. Verify that the name or ARN of the resource is correct.
+        /// The resource was not found. Verify that the name or Amazon Resource Name (ARN) of
+        /// the resource is correct.
         /// </exception>
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.

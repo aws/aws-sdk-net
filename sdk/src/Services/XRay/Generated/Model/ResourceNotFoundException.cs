@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// The resource was not found. Verify that the name or ARN of the resource is correct.
+    /// The resource was not found. Verify that the name or Amazon Resource Name (ARN) of
+    /// the resource is correct.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
