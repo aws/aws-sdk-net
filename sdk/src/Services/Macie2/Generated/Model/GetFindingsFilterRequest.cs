@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFindingsFilter operation.
-    /// Retrieves information about the criteria and other settings for a findings filter.
+    /// Retrieves the criteria and other settings for a findings filter.
     /// </summary>
     public partial class GetFindingsFilterRequest : AmazonMacie2Request
     {

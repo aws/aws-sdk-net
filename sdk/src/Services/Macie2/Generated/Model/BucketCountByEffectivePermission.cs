@@ -37,6 +37,7 @@ namespace Amazon.Macie2.Model
         private long? _publiclyAccessible;
         private long? _publiclyReadable;
         private long? _publiclyWritable;
+        private long? _unknown;
 
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
@@ -93,6 +94,25 @@ namespace Amazon.Macie2.Model
         internal bool IsSetPubliclyWritable()
         {
             return this._publiclyWritable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Unknown. 
+        /// <para>
+        /// The total number of buckets that Amazon Macie wasn't able to evaluate permissions
+        /// settings for. Macie can't determine whether these buckets are publicly accessible.
+        /// </para>
+        /// </summary>
+        public long Unknown
+        {
+            get { return this._unknown.GetValueOrDefault(); }
+            set { this._unknown = value; }
+        }
+
+        // Check to see if Unknown property is set
+        internal bool IsSetUnknown()
+        {
+            return this._unknown.HasValue; 
         }
 
     }

@@ -29,11 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides detailed information about a sensitive data finding, including the types
-    /// and number of occurrences of the sensitive data that was found.
+    /// Provides the details of a sensitive data finding, including the types, number of occurrences,
+    /// and locations of the sensitive data that was detected.
     /// </summary>
     public partial class ClassificationResult
     {
+        private bool? _additionalOccurrences;
         private CustomDataIdentifiers _customDataIdentifiers;
         private string _mimeType;
         private List<SensitiveDataItem> _sensitiveData = new List<SensitiveDataItem>();
@@ -41,10 +42,36 @@ namespace Amazon.Macie2.Model
         private ClassificationResultStatus _status;
 
         /// <summary>
+        /// Gets and sets the property AdditionalOccurrences. 
+        /// <para>
+        /// Specifies whether Amazon Macie detected additional occurrences of sensitive data in
+        /// the S3 object. A finding includes location data for a maximum of 15 occurrences of
+        /// sensitive data.
+        /// </para>
+        ///  
+        /// <para>
+        /// This value can help you to determine whether to investigate additional occurrences
+        /// of sensitive data in an object. You can do this by referring to the corresponding
+        /// sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).
+        /// </para>
+        /// </summary>
+        public bool AdditionalOccurrences
+        {
+            get { return this._additionalOccurrences.GetValueOrDefault(); }
+            set { this._additionalOccurrences = value; }
+        }
+
+        // Check to see if AdditionalOccurrences property is set
+        internal bool IsSetAdditionalOccurrences()
+        {
+            return this._additionalOccurrences.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property CustomDataIdentifiers. 
         /// <para>
-        /// The number of occurrences of the data that produced the finding, and the custom data
-        /// identifiers that detected the data.
+        /// The custom data identifiers that detected the sensitive data and the number of occurrences
+        /// of the data that they detected.
         /// </para>
         /// </summary>
         public CustomDataIdentifiers CustomDataIdentifiers
@@ -62,9 +89,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property MimeType. 
         /// <para>
-        /// The type of content, expressed as a MIME type, that the finding applies to. For example,
-        /// application/gzip, for a GNU Gzip compressed archive file, or application/pdf, for
-        /// an Adobe PDF file.
+        /// The type of content, as a MIME type, that the finding applies to. For example, application/gzip,
+        /// for a GNU Gzip compressed archive file, or application/pdf, for an Adobe Portable
+        /// Document Format file.
         /// </para>
         /// </summary>
         public string MimeType
@@ -82,7 +109,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property SensitiveData. 
         /// <para>
-        /// The category and number of occurrences of the sensitive data that produced the finding.
+        /// The category, types, and number of occurrences of the sensitive data that produced
+        /// the finding.
         /// </para>
         /// </summary>
         public List<SensitiveDataItem> SensitiveData

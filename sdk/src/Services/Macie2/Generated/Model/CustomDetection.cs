@@ -30,13 +30,14 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Provides information about a custom data identifier that produced a sensitive data
-    /// finding, and the number of occurrences of the data that it detected for the finding.
+    /// finding, and the sensitive data that it detected for the finding.
     /// </summary>
     public partial class CustomDetection
     {
         private string _arn;
         private long? _count;
         private string _name;
+        private Occurrences _occurrences;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -59,8 +60,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The total number of occurrences of the data that the custom data identifier detected
-        /// for the finding.
+        /// The total number of occurrences of the sensitive data that the custom data identifier
+        /// detected.
         /// </para>
         /// </summary>
         public long Count
@@ -91,6 +92,26 @@ namespace Amazon.Macie2.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Occurrences. 
+        /// <para>
+        /// The location of 1-15 occurrences of the sensitive data that the custom data identifier
+        /// detected. A finding includes location data for a maximum of 15 occurrences of sensitive
+        /// data.
+        /// </para>
+        /// </summary>
+        public Occurrences Occurrences
+        {
+            get { return this._occurrences; }
+            set { this._occurrences = value; }
+        }
+
+        // Check to see if Occurrences property is set
+        internal bool IsSetOccurrences()
+        {
+            return this._occurrences != null;
         }
 
     }

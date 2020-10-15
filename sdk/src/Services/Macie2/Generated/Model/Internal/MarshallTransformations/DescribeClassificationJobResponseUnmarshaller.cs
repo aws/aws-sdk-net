@@ -147,6 +147,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("userPausedDetails", targetDepth))
+                {
+                    var unmarshaller = UserPausedDetailsUnmarshaller.Instance;
+                    response.UserPausedDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -29,11 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeOrganizationConfiguration operation.
-    /// Retrieves the Amazon Macie configuration settings for an AWS organization.
+    /// Specifies the location of an occurrence of sensitive data in an Apache Parquet file.
     /// </summary>
-    public partial class DescribeOrganizationConfigurationRequest : AmazonMacie2Request
+    public partial class Record
     {
+        private long? _recordIndex;
+
+        /// <summary>
+        /// Gets and sets the property RecordIndex. 
+        /// <para>
+        /// The row index, starting from 0, for the row that contains the data.
+        /// </para>
+        /// </summary>
+        public long RecordIndex
+        {
+            get { return this._recordIndex.GetValueOrDefault(); }
+            set { this._recordIndex = value; }
+        }
+
+        // Check to see if RecordIndex property is set
+        internal bool IsSetRecordIndex()
+        {
+            return this._recordIndex.HasValue; 
+        }
 
     }
 }

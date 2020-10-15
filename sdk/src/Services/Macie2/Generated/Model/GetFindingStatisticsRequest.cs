@@ -74,7 +74,7 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// severity.description - The severity of the finding, such as High or Medium.
+        /// severity.description - The severity level of the finding, such as High or Medium.
         /// </para>
         /// </li> <li>
         /// <para>

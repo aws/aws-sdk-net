@@ -212,7 +212,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property ScheduleFrequency. 
         /// <para>
         /// The recurrence pattern for running the job. To run the job only once, don't specify
-        /// a value for this property and set the value of the jobType property to ONE_TIME.
+        /// a value for this property and set the value for the jobType property to ONE_TIME.
         /// </para>
         /// </summary>
         public JobScheduleFrequency ScheduleFrequency

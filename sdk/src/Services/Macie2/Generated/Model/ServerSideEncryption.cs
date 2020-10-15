@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Provides information about the server-side encryption settings for an S3 bucket or
-    /// object.
+    /// S3 object.
     /// </summary>
     public partial class ServerSideEncryption
     {

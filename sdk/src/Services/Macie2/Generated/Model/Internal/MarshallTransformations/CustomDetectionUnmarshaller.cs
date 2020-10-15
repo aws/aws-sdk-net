@@ -82,6 +82,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("occurrences", targetDepth))
+                {
+                    var unmarshaller = OccurrencesUnmarshaller.Instance;
+                    unmarshalledObject.Occurrences = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

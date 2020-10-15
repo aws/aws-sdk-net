@@ -49,6 +49,7 @@ namespace Amazon.Macie2.Model
         private JobScheduleFrequency _scheduleFrequency;
         private Statistics _statistics;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private UserPausedDetails _userPausedDetails;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -185,27 +186,33 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an
-        /// S3 bucket changed while the job was running, and that change affected the job's access
-        /// to the bucket.
+        /// CANCELLED - You cancelled the job, or you paused the job and didn't resume it within
+        /// 30 days of pausing it.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// COMPLETE - Amazon Macie finished processing all the data specified for the job.
+        /// COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified
+        /// for the job. This value doesn't apply to recurring jobs.
         /// </para>
         /// </li> <li>
         /// <para>
         /// IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled
-        /// run is pending. This value doesn't apply to jobs that occur only once.
+        /// run is pending. This value doesn't apply to one-time jobs.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// PAUSED - Amazon Macie started the job, but completion of the job would exceed one
-        /// or more quotas for your account.
+        /// PAUSED - Amazon Macie started running the job but completion of the job would exceed
+        /// one or more quotas for your account.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// RUNNING - The job is in progress.
+        /// RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled
+        /// run is in progress.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing
+        /// it, the job will expire and be cancelled.
         /// </para>
         /// </li></ul>
         /// </summary>
@@ -228,7 +235,7 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// ONE_TIME - The job ran or will run only once.
+        /// ONE_TIME - The job runs only once.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -344,8 +351,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Statistics. 
         /// <para>
-        /// The number of times that the job has run and processing statistics for the job's most
-        /// recent run.
+        /// The number of times that the job has run and processing statistics for the job's current
+        /// run.
         /// </para>
         /// </summary>
         public Statistics Statistics
@@ -363,7 +370,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A map of key-value pairs that identifies the tags (keys and values) that are associated
+        /// A map of key-value pairs that specifies which tags (keys and values) are associated
         /// with the classification job.
         /// </para>
         /// </summary>
@@ -377,6 +384,26 @@ namespace Amazon.Macie2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserPausedDetails. 
+        /// <para>
+        /// If the current status of the job is USER_PAUSED, specifies when the job was paused
+        /// and when the job will expire and be cancelled if it isn't resumed. This value is present
+        /// only if the value for jobStatus is USER_PAUSED.
+        /// </para>
+        /// </summary>
+        public UserPausedDetails UserPausedDetails
+        {
+            get { return this._userPausedDetails; }
+            set { this._userPausedDetails = value; }
+        }
+
+        // Check to see if UserPausedDetails property is set
+        internal bool IsSetUserPausedDetails()
+        {
+            return this._userPausedDetails != null;
         }
 
     }

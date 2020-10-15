@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DefaultDetection Object
+    /// Response Unmarshaller for Occurrences Object
     /// </summary>  
-    public class DefaultDetectionUnmarshaller : IUnmarshaller<DefaultDetection, XmlUnmarshallerContext>, IUnmarshaller<DefaultDetection, JsonUnmarshallerContext>
+    public class OccurrencesUnmarshaller : IUnmarshaller<Occurrences, XmlUnmarshallerContext>, IUnmarshaller<Occurrences, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DefaultDetection IUnmarshaller<DefaultDetection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Occurrences IUnmarshaller<Occurrences, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,45 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DefaultDetection Unmarshall(JsonUnmarshallerContext context)
+        public Occurrences Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DefaultDetection unmarshalledObject = new DefaultDetection();
+            Occurrences unmarshalledObject = new Occurrences();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("count", targetDepth))
+                if (context.TestExpression("cells", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.Count = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Cell, CellUnmarshaller>(CellUnmarshaller.Instance);
+                    unmarshalledObject.Cells = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("occurrences", targetDepth))
+                if (context.TestExpression("lineRanges", targetDepth))
                 {
-                    var unmarshaller = OccurrencesUnmarshaller.Instance;
-                    unmarshalledObject.Occurrences = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Range, RangeUnmarshaller>(RangeUnmarshaller.Instance);
+                    unmarshalledObject.LineRanges = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("offsetRanges", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Range, RangeUnmarshaller>(RangeUnmarshaller.Instance);
+                    unmarshalledObject.OffsetRanges = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pages", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Page, PageUnmarshaller>(PageUnmarshaller.Instance);
+                    unmarshalledObject.Pages = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("records", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Record, RecordUnmarshaller>(RecordUnmarshaller.Instance);
+                    unmarshalledObject.Records = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +100,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         }
 
 
-        private static DefaultDetectionUnmarshaller _instance = new DefaultDetectionUnmarshaller();        
+        private static OccurrencesUnmarshaller _instance = new OccurrencesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DefaultDetectionUnmarshaller Instance
+        public static OccurrencesUnmarshaller Instance
         {
             get
             {

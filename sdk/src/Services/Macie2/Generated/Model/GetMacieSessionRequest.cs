@@ -30,8 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMacieSession operation.
-    /// Retrieves information about the current status and configuration settings for an Amazon
-    /// Macie account.
+    /// Retrieves the current status and configuration settings for an Amazon Macie account.
     /// </summary>
     public partial class GetMacieSessionRequest : AmazonMacie2Request
     {

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies criteria for sorting the results of a request for information about findings.
+    /// Specifies criteria for sorting the results of a request for findings.
     /// </summary>
     public partial class SortCriteria
     {

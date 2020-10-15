@@ -82,6 +82,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     unmarshalledObject.NotShared = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("unknown", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Unknown = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

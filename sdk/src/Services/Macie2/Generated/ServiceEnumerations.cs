@@ -838,6 +838,10 @@ namespace Amazon.Macie2
         /// Constant RUNNING for JobStatus
         /// </summary>
         public static readonly JobStatus RUNNING = new JobStatus("RUNNING");
+        /// <summary>
+        /// Constant USER_PAUSED for JobStatus
+        /// </summary>
+        public static readonly JobStatus USER_PAUSED = new JobStatus("USER_PAUSED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

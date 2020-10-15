@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DefaultDetection Object
+    /// Response Unmarshaller for Range Object
     /// </summary>  
-    public class DefaultDetectionUnmarshaller : IUnmarshaller<DefaultDetection, XmlUnmarshallerContext>, IUnmarshaller<DefaultDetection, JsonUnmarshallerContext>
+    public class RangeUnmarshaller : IUnmarshaller<Range, XmlUnmarshallerContext>, IUnmarshaller<Range, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DefaultDetection IUnmarshaller<DefaultDetection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Range IUnmarshaller<Range, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DefaultDetection Unmarshall(JsonUnmarshallerContext context)
+        public Range Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DefaultDetection unmarshalledObject = new DefaultDetection();
+            Range unmarshalledObject = new Range();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("count", targetDepth))
+                if (context.TestExpression("end", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.Count = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.End = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("occurrences", targetDepth))
+                if (context.TestExpression("start", targetDepth))
                 {
-                    var unmarshaller = OccurrencesUnmarshaller.Instance;
-                    unmarshalledObject.Occurrences = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Start = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("startColumn", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StartColumn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         }
 
 
-        private static DefaultDetectionUnmarshaller _instance = new DefaultDetectionUnmarshaller();        
+        private static RangeUnmarshaller _instance = new RangeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DefaultDetectionUnmarshaller Instance
+        public static RangeUnmarshaller Instance
         {
             get
             {

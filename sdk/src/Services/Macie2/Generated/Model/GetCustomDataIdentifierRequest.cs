@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCustomDataIdentifier operation.
-    /// Retrieves information about the criteria and other settings for a custom data identifier.
+    /// Retrieves the criteria and other settings for a custom data identifier.
     /// </summary>
     public partial class GetCustomDataIdentifierRequest : AmazonMacie2Request
     {

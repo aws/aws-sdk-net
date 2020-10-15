@@ -31,7 +31,7 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Specifies one or more property- and tag-based conditions that refine the scope of
     /// a classification job. These conditions define criteria that determine which objects
-    /// a job analyzes.
+    /// a job analyzes. Exclude conditions take precedence over include conditions.
     /// </summary>
     public partial class Scoping
     {

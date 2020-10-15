@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateClassificationJob operation.
-    /// Cancels a classification job.
+    /// Changes the status of a classification job.
     /// </summary>
     public partial class UpdateClassificationJobRequest : AmazonMacie2Request
     {
@@ -59,9 +59,32 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// The status to change the job's status to. The only supported value is CANCELLED, which
-        /// cancels the job completely.
+        /// The new status for the job. Valid values are:
         /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// CANCELLED - Stops the job permanently and cancels it. You can't resume a job after
+        /// you cancel it. This value is valid only if the job's current status is IDLE, PAUSED,
+        /// RUNNING, or USER_PAUSED.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// RUNNING - Resumes the job. This value is valid only if the job's current status is
+        /// USER_PAUSED. If you specify this value, Amazon Macie immediately resumes the job.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// USER_PAUSED - Pauses the job. This value is valid only if the job's current status
+        /// is IDLE or RUNNING. If you specify this value and the job is currently running, Macie
+        /// immediately stops running the job.
+        /// </para>
+        ///  
+        /// <para>
+        /// To resume a job after you pause it, change the job's status to RUNNING. If you don't
+        /// resume a job within 30 days of pausing it, the job expires and Macie cancels it. You
+        /// can't resume a job after it's cancelled.
+        /// </para>
+        /// </li></ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public JobStatus JobStatus

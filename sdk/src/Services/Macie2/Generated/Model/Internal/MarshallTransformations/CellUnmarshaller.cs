@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DefaultDetection Object
+    /// Response Unmarshaller for Cell Object
     /// </summary>  
-    public class DefaultDetectionUnmarshaller : IUnmarshaller<DefaultDetection, XmlUnmarshallerContext>, IUnmarshaller<DefaultDetection, JsonUnmarshallerContext>
+    public class CellUnmarshaller : IUnmarshaller<Cell, XmlUnmarshallerContext>, IUnmarshaller<Cell, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DefaultDetection IUnmarshaller<DefaultDetection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Cell IUnmarshaller<Cell, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,39 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DefaultDetection Unmarshall(JsonUnmarshallerContext context)
+        public Cell Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DefaultDetection unmarshalledObject = new DefaultDetection();
+            Cell unmarshalledObject = new Cell();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("count", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.Count = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("occurrences", targetDepth))
-                {
-                    var unmarshaller = OccurrencesUnmarshaller.Instance;
-                    unmarshalledObject.Occurrences = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("cellReference", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CellReference = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("column", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Column = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("columnName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ColumnName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("row", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Row = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +94,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         }
 
 
-        private static DefaultDetectionUnmarshaller _instance = new DefaultDetectionUnmarshaller();        
+        private static CellUnmarshaller _instance = new CellUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DefaultDetectionUnmarshaller Instance
+        public static CellUnmarshaller Instance
         {
             get
             {

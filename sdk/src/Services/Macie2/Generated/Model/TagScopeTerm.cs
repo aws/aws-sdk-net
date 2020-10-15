@@ -42,7 +42,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Comparator. 
         /// <para>
-        /// The operator to use in the condition.
+        /// The operator to use in the condition. Valid operators are EQ (equals) or NE (not equals).
         /// </para>
         /// </summary>
         public JobComparator Comparator
@@ -78,7 +78,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property TagValues. 
         /// <para>
-        /// The tag key and value pairs to use in the condition.
+        /// The tag keys or tag key and value pairs to use in the condition.
         /// </para>
         /// </summary>
         public List<TagValuePair> TagValues

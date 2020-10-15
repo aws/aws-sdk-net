@@ -44,7 +44,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property FileType. 
         /// <para>
         /// The total storage size (in bytes) or number of objects that Amazon Macie can't analyze
-        /// because the objects use an unsupported file or storage format.
+        /// because the objects don't have a file name extension for a supported file or storage
+        /// format.
         /// </para>
         /// </summary>
         public long FileType
@@ -82,7 +83,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Total. 
         /// <para>
         /// The total storage size (in bytes) or number of objects that Amazon Macie can't analyze
-        /// because the objects use an unsupported file or storage format or storage class.
+        /// because the objects use an unsupported storage class or don't have a file name extension
+        /// for a supported file or storage format.
         /// </para>
         /// </summary>
         public long Total

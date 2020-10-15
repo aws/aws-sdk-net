@@ -55,7 +55,7 @@ namespace Amazon.Macie2.Model
         /// </li> <li>
         /// <para>
         /// SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For
-        /// example, the object is a malformed file or a file that's in an unsupported format.
+        /// example, the object is a malformed file or a file that uses an unsupported format.
         /// </para>
         /// </li></ul>
         /// </summary>

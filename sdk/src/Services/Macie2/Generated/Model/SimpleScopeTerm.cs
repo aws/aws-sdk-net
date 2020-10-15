@@ -41,8 +41,26 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Comparator. 
         /// <para>
-        /// The operator to use in the condition.
+        /// The operator to use in the condition. Valid operators for each supported property
+        /// (key) are:
         /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// OBJECT_SIZE - Any operator except CONTAINS
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// TAG - EQ (equals) or NE (not equals)
+        /// </para>
+        /// </li></ul>
         /// </summary>
         public JobComparator Comparator
         {
@@ -59,7 +77,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The property to use in the condition.
+        /// The object property to use in the condition.
         /// </para>
         /// </summary>
         public ScopeFilterKey Key
@@ -77,8 +95,32 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// An array that lists one or more values to use in the condition.
+        /// An array that lists the values to use in the condition. If the value for the key property
+        /// is OBJECT_EXTENSION, this array can specify multiple values and Amazon Macie uses
+        /// an OR operator to join the values. Otherwise, this array can specify only one value.
+        /// Valid values for each supported property (key) are:
         /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// OBJECT_EXTENSION - A string that represents the file name extension of an object.
+        /// For example: doc, docx, pdf
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format)
+        /// when an object was created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// TAG - A string that represents a tag key for an object. For advanced options, use
+        /// a TagScopeTerm object, instead of a SimpleScopeTerm object, to define a tag-based
+        /// condition for the job.
+        /// </para>
+        /// </li></ul>
         /// </summary>
         public List<string> Values
         {

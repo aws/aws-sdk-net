@@ -129,7 +129,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property ClassifiableObjectCount. 
         /// <para>
         /// The total number of objects that Amazon Macie can analyze in the bucket. These objects
-        /// use a supported file or storage format and storage class.
+        /// use a supported storage class and have a file name extension for a supported file
+        /// or storage format.
         /// </para>
         /// </summary>
         public long ClassifiableObjectCount
@@ -148,7 +149,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property ClassifiableSizeInBytes. 
         /// <para>
         /// The total storage size, in bytes, of the objects that Amazon Macie can analyze in
-        /// the bucket. These objects use a supported file or storage format and storage class.
+        /// the bucket. These objects use a supported storage class and have a file name extension
+        /// for a supported file or storage format.
         /// </para>
         /// </summary>
         public long ClassifiableSizeInBytes
@@ -284,7 +286,7 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// EXTERNAL - The bucket is shared with an AWS account that isn’t part of the same Amazon
+        /// EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon
         /// Macie organization.
         /// </para>
         /// </li> <li>
@@ -373,7 +375,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property UnclassifiableObjectCount. 
         /// <para>
         /// The total number of objects that Amazon Macie can't analyze in the bucket. These objects
-        /// use an unsupported file or storage format or storage class.
+        /// don't use a supported storage class or don't have a file name extension for a supported
+        /// file or storage format.
         /// </para>
         /// </summary>
         public ObjectLevelStatistics UnclassifiableObjectCount
@@ -392,7 +395,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property UnclassifiableObjectSizeInBytes. 
         /// <para>
         /// The total storage size, in bytes, of the objects that Amazon Macie can't analyze in
-        /// the bucket. These objects use an unsupported file or storage format or storage class.
+        /// the bucket. These objects don't use a supported storage class or don't have a file
+        /// name extension for a supported file or storage format.
         /// </para>
         /// </summary>
         public ObjectLevelStatistics UnclassifiableObjectSizeInBytes

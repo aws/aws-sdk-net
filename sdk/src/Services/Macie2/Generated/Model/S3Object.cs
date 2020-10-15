@@ -179,7 +179,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryption. 
         /// <para>
-        /// The server-side encryption settings for the object.
+        /// The type of server-side encryption that's used for the object.
         /// </para>
         /// </summary>
         public ServerSideEncryption ServerSideEncryption

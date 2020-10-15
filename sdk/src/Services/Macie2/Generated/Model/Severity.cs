@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides the numeric score and textual representation of a severity value.
+    /// Provides the numerical and qualitative representations of a finding's severity.
     /// </summary>
     public partial class Severity
     {
@@ -39,7 +39,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The textual representation of the severity value, such as Low or High.
+        /// The qualitative representation of the finding's severity, ranging from Low (least
+        /// severe) to High (most severe).
         /// </para>
         /// </summary>
         public SeverityDescription Description
@@ -57,8 +58,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
-        /// The numeric score for the severity value, ranging from 0 (least severe) to 4 (most
-        /// severe).
+        /// The numerical representation of the finding's severity, ranging from 1 (least severe)
+        /// to 3 (most severe).
         /// </para>
         /// </summary>
         public long Score

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DefaultDetection Object
+    /// Response Unmarshaller for UserPausedDetails Object
     /// </summary>  
-    public class DefaultDetectionUnmarshaller : IUnmarshaller<DefaultDetection, XmlUnmarshallerContext>, IUnmarshaller<DefaultDetection, JsonUnmarshallerContext>
+    public class UserPausedDetailsUnmarshaller : IUnmarshaller<UserPausedDetails, XmlUnmarshallerContext>, IUnmarshaller<UserPausedDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DefaultDetection IUnmarshaller<DefaultDetection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        UserPausedDetails IUnmarshaller<UserPausedDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DefaultDetection Unmarshall(JsonUnmarshallerContext context)
+        public UserPausedDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DefaultDetection unmarshalledObject = new DefaultDetection();
+            UserPausedDetails unmarshalledObject = new UserPausedDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("count", targetDepth))
+                if (context.TestExpression("jobExpiresAt", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.Count = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.JobExpiresAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("occurrences", targetDepth))
-                {
-                    var unmarshaller = OccurrencesUnmarshaller.Instance;
-                    unmarshalledObject.Occurrences = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("jobImminentExpirationHealthEventArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JobImminentExpirationHealthEventArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("jobPausedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.JobPausedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         }
 
 
-        private static DefaultDetectionUnmarshaller _instance = new DefaultDetectionUnmarshaller();        
+        private static UserPausedDetailsUnmarshaller _instance = new UserPausedDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DefaultDetectionUnmarshaller Instance
+        public static UserPausedDetailsUnmarshaller Instance
         {
             get
             {

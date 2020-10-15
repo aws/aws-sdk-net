@@ -43,8 +43,9 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property DetailedResultsLocation. 
         /// <para>
         /// The path to the folder or file (in Amazon S3) that contains the corresponding sensitive
-        /// data discovery results for the finding. If a finding applies to a large archive or
-        /// compressed file, this is a path to a folder. Otherwise, this is a path to a file.
+        /// data discovery result for the finding. If a finding applies to a large archive or
+        /// compressed file, this value is the path to a folder. Otherwise, this value is the
+        /// path to a file.
         /// </para>
         /// </summary>
         public string DetailedResultsLocation
