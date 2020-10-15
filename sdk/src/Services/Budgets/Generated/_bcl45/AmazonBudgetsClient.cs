@@ -411,6 +411,83 @@ namespace Amazon.Budgets
 
         #endregion
         
+        #region  CreateBudgetAction
+
+
+        /// <summary>
+        /// Creates a budget action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBudgetAction service method.</param>
+        /// 
+        /// <returns>The response from the CreateBudgetAction service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.CreationLimitExceededException">
+        /// You've exceeded the notification or subscriber limit.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.DuplicateRecordException">
+        /// The budget name already exists. Budget names must be unique within an account.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudgetAction">REST API Reference for CreateBudgetAction Operation</seealso>
+        public virtual CreateBudgetActionResponse CreateBudgetAction(CreateBudgetActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBudgetActionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBudgetActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a budget action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBudgetAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateBudgetAction service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.CreationLimitExceededException">
+        /// You've exceeded the notification or subscriber limit.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.DuplicateRecordException">
+        /// The budget name already exists. Budget names must be unique within an account.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudgetAction">REST API Reference for CreateBudgetAction Operation</seealso>
+        public virtual Task<CreateBudgetActionResponse> CreateBudgetActionAsync(CreateBudgetActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBudgetActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateBudgetActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateNotification
 
 
@@ -648,6 +725,79 @@ namespace Amazon.Budgets
 
         #endregion
         
+        #region  DeleteBudgetAction
+
+
+        /// <summary>
+        /// Deletes a budget action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBudgetAction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBudgetAction service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ResourceLockedException">
+        /// The request was received and recognized by the server, but the server rejected that
+        /// particular method for the requested resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudgetAction">REST API Reference for DeleteBudgetAction Operation</seealso>
+        public virtual DeleteBudgetActionResponse DeleteBudgetAction(DeleteBudgetActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBudgetActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBudgetActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a budget action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBudgetAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteBudgetAction service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ResourceLockedException">
+        /// The request was received and recognized by the server, but the server rejected that
+        /// particular method for the requested resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudgetAction">REST API Reference for DeleteBudgetAction Operation</seealso>
+        public virtual Task<DeleteBudgetActionResponse> DeleteBudgetActionAsync(DeleteBudgetActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBudgetActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteBudgetActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteNotification
 
 
@@ -881,6 +1031,278 @@ namespace Amazon.Budgets
             options.ResponseUnmarshaller = DescribeBudgetResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeBudgetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeBudgetAction
+
+
+        /// <summary>
+        /// Describes a budget action detail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBudgetAction service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBudgetAction service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetAction">REST API Reference for DescribeBudgetAction Operation</seealso>
+        public virtual DescribeBudgetActionResponse DescribeBudgetAction(DescribeBudgetActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetActionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBudgetActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes a budget action detail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBudgetAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeBudgetAction service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetAction">REST API Reference for DescribeBudgetAction Operation</seealso>
+        public virtual Task<DescribeBudgetActionResponse> DescribeBudgetActionAsync(DescribeBudgetActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeBudgetActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeBudgetActionHistories
+
+
+        /// <summary>
+        /// Describes a budget action history detail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBudgetActionHistories service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBudgetActionHistories service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidNextTokenException">
+        /// The pagination token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionHistories">REST API Reference for DescribeBudgetActionHistories Operation</seealso>
+        public virtual DescribeBudgetActionHistoriesResponse DescribeBudgetActionHistories(DescribeBudgetActionHistoriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetActionHistoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetActionHistoriesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBudgetActionHistoriesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes a budget action history detail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBudgetActionHistories service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeBudgetActionHistories service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidNextTokenException">
+        /// The pagination token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionHistories">REST API Reference for DescribeBudgetActionHistories Operation</seealso>
+        public virtual Task<DescribeBudgetActionHistoriesResponse> DescribeBudgetActionHistoriesAsync(DescribeBudgetActionHistoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetActionHistoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetActionHistoriesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeBudgetActionHistoriesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeBudgetActionsForAccount
+
+
+        /// <summary>
+        /// Describes all of the budget actions for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBudgetActionsForAccount service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBudgetActionsForAccount service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidNextTokenException">
+        /// The pagination token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForAccount">REST API Reference for DescribeBudgetActionsForAccount Operation</seealso>
+        public virtual DescribeBudgetActionsForAccountResponse DescribeBudgetActionsForAccount(DescribeBudgetActionsForAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetActionsForAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetActionsForAccountResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBudgetActionsForAccountResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes all of the budget actions for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBudgetActionsForAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeBudgetActionsForAccount service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidNextTokenException">
+        /// The pagination token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForAccount">REST API Reference for DescribeBudgetActionsForAccount Operation</seealso>
+        public virtual Task<DescribeBudgetActionsForAccountResponse> DescribeBudgetActionsForAccountAsync(DescribeBudgetActionsForAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetActionsForAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetActionsForAccountResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeBudgetActionsForAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeBudgetActionsForBudget
+
+
+        /// <summary>
+        /// Describes all of the budget actions for a budget.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBudgetActionsForBudget service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBudgetActionsForBudget service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidNextTokenException">
+        /// The pagination token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForBudget">REST API Reference for DescribeBudgetActionsForBudget Operation</seealso>
+        public virtual DescribeBudgetActionsForBudgetResponse DescribeBudgetActionsForBudget(DescribeBudgetActionsForBudgetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetActionsForBudgetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetActionsForBudgetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBudgetActionsForBudgetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes all of the budget actions for a budget.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBudgetActionsForBudget service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeBudgetActionsForBudget service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidNextTokenException">
+        /// The pagination token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForBudget">REST API Reference for DescribeBudgetActionsForBudget Operation</seealso>
+        public virtual Task<DescribeBudgetActionsForBudgetResponse> DescribeBudgetActionsForBudgetAsync(DescribeBudgetActionsForBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetActionsForBudgetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetActionsForBudgetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeBudgetActionsForBudgetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1211,6 +1633,79 @@ namespace Amazon.Budgets
 
         #endregion
         
+        #region  ExecuteBudgetAction
+
+
+        /// <summary>
+        /// Executes a budget action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteBudgetAction service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteBudgetAction service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ResourceLockedException">
+        /// The request was received and recognized by the server, but the server rejected that
+        /// particular method for the requested resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/ExecuteBudgetAction">REST API Reference for ExecuteBudgetAction Operation</seealso>
+        public virtual ExecuteBudgetActionResponse ExecuteBudgetAction(ExecuteBudgetActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteBudgetActionResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteBudgetActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Executes a budget action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteBudgetAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExecuteBudgetAction service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ResourceLockedException">
+        /// The request was received and recognized by the server, but the server rejected that
+        /// particular method for the requested resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/ExecuteBudgetAction">REST API Reference for ExecuteBudgetAction Operation</seealso>
+        public virtual Task<ExecuteBudgetActionResponse> ExecuteBudgetActionAsync(ExecuteBudgetActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteBudgetActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ExecuteBudgetActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateBudget
 
 
@@ -1296,6 +1791,79 @@ namespace Amazon.Budgets
             options.ResponseUnmarshaller = UpdateBudgetResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateBudgetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateBudgetAction
+
+
+        /// <summary>
+        /// Updates a budget action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBudgetAction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBudgetAction service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ResourceLockedException">
+        /// The request was received and recognized by the server, but the server rejected that
+        /// particular method for the requested resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudgetAction">REST API Reference for UpdateBudgetAction Operation</seealso>
+        public virtual UpdateBudgetActionResponse UpdateBudgetAction(UpdateBudgetActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBudgetActionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBudgetActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a budget action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBudgetAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateBudgetAction service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ResourceLockedException">
+        /// The request was received and recognized by the server, but the server rejected that
+        /// particular method for the requested resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudgetAction">REST API Reference for UpdateBudgetAction Operation</seealso>
+        public virtual Task<UpdateBudgetActionResponse> UpdateBudgetActionAsync(UpdateBudgetActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBudgetActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateBudgetActionResponse>(request, options, cancellationToken);
         }
 
         #endregion

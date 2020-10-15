@@ -382,6 +382,78 @@ namespace Amazon.Budgets
 
         #endregion
         
+        #region  CreateBudgetAction
+
+        /// <summary>
+        /// Creates a budget action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBudgetAction service method.</param>
+        /// 
+        /// <returns>The response from the CreateBudgetAction service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.CreationLimitExceededException">
+        /// You've exceeded the notification or subscriber limit.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.DuplicateRecordException">
+        /// The budget name already exists. Budget names must be unique within an account.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudgetAction">REST API Reference for CreateBudgetAction Operation</seealso>
+        public virtual CreateBudgetActionResponse CreateBudgetAction(CreateBudgetActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBudgetActionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBudgetActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBudgetAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBudgetAction operation on AmazonBudgetsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBudgetAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudgetAction">REST API Reference for CreateBudgetAction Operation</seealso>
+        public virtual IAsyncResult BeginCreateBudgetAction(CreateBudgetActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBudgetActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateBudgetAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBudgetAction.</param>
+        /// 
+        /// <returns>Returns a  CreateBudgetActionResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudgetAction">REST API Reference for CreateBudgetAction Operation</seealso>
+        public virtual CreateBudgetActionResponse EndCreateBudgetAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateBudgetActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateNotification
 
         /// <summary>
@@ -601,6 +673,76 @@ namespace Amazon.Budgets
 
         #endregion
         
+        #region  DeleteBudgetAction
+
+        /// <summary>
+        /// Deletes a budget action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBudgetAction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBudgetAction service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ResourceLockedException">
+        /// The request was received and recognized by the server, but the server rejected that
+        /// particular method for the requested resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudgetAction">REST API Reference for DeleteBudgetAction Operation</seealso>
+        public virtual DeleteBudgetActionResponse DeleteBudgetAction(DeleteBudgetActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBudgetActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBudgetActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBudgetAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBudgetAction operation on AmazonBudgetsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBudgetAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudgetAction">REST API Reference for DeleteBudgetAction Operation</seealso>
+        public virtual IAsyncResult BeginDeleteBudgetAction(DeleteBudgetActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBudgetActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBudgetAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBudgetAction.</param>
+        /// 
+        /// <returns>Returns a  DeleteBudgetActionResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudgetAction">REST API Reference for DeleteBudgetAction Operation</seealso>
+        public virtual DeleteBudgetActionResponse EndDeleteBudgetAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteBudgetActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteNotification
 
         /// <summary>
@@ -816,6 +958,276 @@ namespace Amazon.Budgets
         public virtual DescribeBudgetResponse EndDescribeBudget(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeBudgetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeBudgetAction
+
+        /// <summary>
+        /// Describes a budget action detail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBudgetAction service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBudgetAction service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetAction">REST API Reference for DescribeBudgetAction Operation</seealso>
+        public virtual DescribeBudgetActionResponse DescribeBudgetAction(DescribeBudgetActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetActionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBudgetActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBudgetAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBudgetAction operation on AmazonBudgetsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBudgetAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetAction">REST API Reference for DescribeBudgetAction Operation</seealso>
+        public virtual IAsyncResult BeginDescribeBudgetAction(DescribeBudgetActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBudgetAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBudgetAction.</param>
+        /// 
+        /// <returns>Returns a  DescribeBudgetActionResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetAction">REST API Reference for DescribeBudgetAction Operation</seealso>
+        public virtual DescribeBudgetActionResponse EndDescribeBudgetAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeBudgetActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeBudgetActionHistories
+
+        /// <summary>
+        /// Describes a budget action history detail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBudgetActionHistories service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBudgetActionHistories service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidNextTokenException">
+        /// The pagination token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionHistories">REST API Reference for DescribeBudgetActionHistories Operation</seealso>
+        public virtual DescribeBudgetActionHistoriesResponse DescribeBudgetActionHistories(DescribeBudgetActionHistoriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetActionHistoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetActionHistoriesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBudgetActionHistoriesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBudgetActionHistories operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBudgetActionHistories operation on AmazonBudgetsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBudgetActionHistories
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionHistories">REST API Reference for DescribeBudgetActionHistories Operation</seealso>
+        public virtual IAsyncResult BeginDescribeBudgetActionHistories(DescribeBudgetActionHistoriesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetActionHistoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetActionHistoriesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBudgetActionHistories operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBudgetActionHistories.</param>
+        /// 
+        /// <returns>Returns a  DescribeBudgetActionHistoriesResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionHistories">REST API Reference for DescribeBudgetActionHistories Operation</seealso>
+        public virtual DescribeBudgetActionHistoriesResponse EndDescribeBudgetActionHistories(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeBudgetActionHistoriesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeBudgetActionsForAccount
+
+        /// <summary>
+        /// Describes all of the budget actions for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBudgetActionsForAccount service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBudgetActionsForAccount service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidNextTokenException">
+        /// The pagination token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForAccount">REST API Reference for DescribeBudgetActionsForAccount Operation</seealso>
+        public virtual DescribeBudgetActionsForAccountResponse DescribeBudgetActionsForAccount(DescribeBudgetActionsForAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetActionsForAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetActionsForAccountResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBudgetActionsForAccountResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBudgetActionsForAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBudgetActionsForAccount operation on AmazonBudgetsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBudgetActionsForAccount
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForAccount">REST API Reference for DescribeBudgetActionsForAccount Operation</seealso>
+        public virtual IAsyncResult BeginDescribeBudgetActionsForAccount(DescribeBudgetActionsForAccountRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetActionsForAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetActionsForAccountResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBudgetActionsForAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBudgetActionsForAccount.</param>
+        /// 
+        /// <returns>Returns a  DescribeBudgetActionsForAccountResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForAccount">REST API Reference for DescribeBudgetActionsForAccount Operation</seealso>
+        public virtual DescribeBudgetActionsForAccountResponse EndDescribeBudgetActionsForAccount(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeBudgetActionsForAccountResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeBudgetActionsForBudget
+
+        /// <summary>
+        /// Describes all of the budget actions for a budget.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBudgetActionsForBudget service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBudgetActionsForBudget service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidNextTokenException">
+        /// The pagination token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForBudget">REST API Reference for DescribeBudgetActionsForBudget Operation</seealso>
+        public virtual DescribeBudgetActionsForBudgetResponse DescribeBudgetActionsForBudget(DescribeBudgetActionsForBudgetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetActionsForBudgetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetActionsForBudgetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBudgetActionsForBudgetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBudgetActionsForBudget operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBudgetActionsForBudget operation on AmazonBudgetsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBudgetActionsForBudget
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForBudget">REST API Reference for DescribeBudgetActionsForBudget Operation</seealso>
+        public virtual IAsyncResult BeginDescribeBudgetActionsForBudget(DescribeBudgetActionsForBudgetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetActionsForBudgetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetActionsForBudgetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBudgetActionsForBudget operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBudgetActionsForBudget.</param>
+        /// 
+        /// <returns>Returns a  DescribeBudgetActionsForBudgetResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForBudget">REST API Reference for DescribeBudgetActionsForBudget Operation</seealso>
+        public virtual DescribeBudgetActionsForBudgetResponse EndDescribeBudgetActionsForBudget(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeBudgetActionsForBudgetResponse>(asyncResult);
         }
 
         #endregion
@@ -1117,6 +1529,76 @@ namespace Amazon.Budgets
 
         #endregion
         
+        #region  ExecuteBudgetAction
+
+        /// <summary>
+        /// Executes a budget action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteBudgetAction service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteBudgetAction service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ResourceLockedException">
+        /// The request was received and recognized by the server, but the server rejected that
+        /// particular method for the requested resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/ExecuteBudgetAction">REST API Reference for ExecuteBudgetAction Operation</seealso>
+        public virtual ExecuteBudgetActionResponse ExecuteBudgetAction(ExecuteBudgetActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteBudgetActionResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteBudgetActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExecuteBudgetAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteBudgetAction operation on AmazonBudgetsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecuteBudgetAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/ExecuteBudgetAction">REST API Reference for ExecuteBudgetAction Operation</seealso>
+        public virtual IAsyncResult BeginExecuteBudgetAction(ExecuteBudgetActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteBudgetActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExecuteBudgetAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecuteBudgetAction.</param>
+        /// 
+        /// <returns>Returns a  ExecuteBudgetActionResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/ExecuteBudgetAction">REST API Reference for ExecuteBudgetAction Operation</seealso>
+        public virtual ExecuteBudgetActionResponse EndExecuteBudgetAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ExecuteBudgetActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateBudget
 
         /// <summary>
@@ -1191,6 +1673,76 @@ namespace Amazon.Budgets
         public virtual UpdateBudgetResponse EndUpdateBudget(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateBudgetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateBudgetAction
+
+        /// <summary>
+        /// Updates a budget action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBudgetAction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBudgetAction service method, as returned by Budgets.</returns>
+        /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ResourceLockedException">
+        /// The request was received and recognized by the server, but the server rejected that
+        /// particular method for the requested resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudgetAction">REST API Reference for UpdateBudgetAction Operation</seealso>
+        public virtual UpdateBudgetActionResponse UpdateBudgetAction(UpdateBudgetActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBudgetActionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBudgetActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBudgetAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBudgetAction operation on AmazonBudgetsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBudgetAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudgetAction">REST API Reference for UpdateBudgetAction Operation</seealso>
+        public virtual IAsyncResult BeginUpdateBudgetAction(UpdateBudgetActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBudgetActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBudgetActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateBudgetAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBudgetAction.</param>
+        /// 
+        /// <returns>Returns a  UpdateBudgetActionResult from Budgets.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudgetAction">REST API Reference for UpdateBudgetAction Operation</seealso>
+        public virtual UpdateBudgetActionResponse EndUpdateBudgetAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateBudgetActionResponse>(asyncResult);
         }
 
         #endregion

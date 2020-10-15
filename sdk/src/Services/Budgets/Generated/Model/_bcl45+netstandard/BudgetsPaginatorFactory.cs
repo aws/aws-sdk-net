@@ -37,6 +37,30 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeBudgetActionHistories operation
+        ///</summary>
+        public IDescribeBudgetActionHistoriesPaginator DescribeBudgetActionHistories(DescribeBudgetActionHistoriesRequest request) 
+        {
+            return new DescribeBudgetActionHistoriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeBudgetActionsForAccount operation
+        ///</summary>
+        public IDescribeBudgetActionsForAccountPaginator DescribeBudgetActionsForAccount(DescribeBudgetActionsForAccountRequest request) 
+        {
+            return new DescribeBudgetActionsForAccountPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeBudgetActionsForBudget operation
+        ///</summary>
+        public IDescribeBudgetActionsForBudgetPaginator DescribeBudgetActionsForBudget(DescribeBudgetActionsForBudgetRequest request) 
+        {
+            return new DescribeBudgetActionsForBudgetPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeBudgetPerformanceHistory operation
         ///</summary>
         public IDescribeBudgetPerformanceHistoryPaginator DescribeBudgetPerformanceHistory(DescribeBudgetPerformanceHistoryRequest request) 

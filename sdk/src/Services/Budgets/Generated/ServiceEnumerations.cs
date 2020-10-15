@@ -25,6 +25,242 @@ namespace Amazon.Budgets
 {
 
     /// <summary>
+    /// Constants used for properties of type ActionStatus.
+    /// </summary>
+    public class ActionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXECUTION_FAILURE for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus EXECUTION_FAILURE = new ActionStatus("EXECUTION_FAILURE");
+        /// <summary>
+        /// Constant EXECUTION_IN_PROGRESS for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus EXECUTION_IN_PROGRESS = new ActionStatus("EXECUTION_IN_PROGRESS");
+        /// <summary>
+        /// Constant EXECUTION_SUCCESS for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus EXECUTION_SUCCESS = new ActionStatus("EXECUTION_SUCCESS");
+        /// <summary>
+        /// Constant PENDING for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus PENDING = new ActionStatus("PENDING");
+        /// <summary>
+        /// Constant RESET_FAILURE for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus RESET_FAILURE = new ActionStatus("RESET_FAILURE");
+        /// <summary>
+        /// Constant RESET_IN_PROGRESS for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus RESET_IN_PROGRESS = new ActionStatus("RESET_IN_PROGRESS");
+        /// <summary>
+        /// Constant REVERSE_FAILURE for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus REVERSE_FAILURE = new ActionStatus("REVERSE_FAILURE");
+        /// <summary>
+        /// Constant REVERSE_IN_PROGRESS for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus REVERSE_IN_PROGRESS = new ActionStatus("REVERSE_IN_PROGRESS");
+        /// <summary>
+        /// Constant REVERSE_SUCCESS for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus REVERSE_SUCCESS = new ActionStatus("REVERSE_SUCCESS");
+        /// <summary>
+        /// Constant STANDBY for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus STANDBY = new ActionStatus("STANDBY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionStatus FindValue(string value)
+        {
+            return FindValue<ActionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ActionSubType.
+    /// </summary>
+    public class ActionSubType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant STOP_EC2_INSTANCES for ActionSubType
+        /// </summary>
+        public static readonly ActionSubType STOP_EC2_INSTANCES = new ActionSubType("STOP_EC2_INSTANCES");
+        /// <summary>
+        /// Constant STOP_RDS_INSTANCES for ActionSubType
+        /// </summary>
+        public static readonly ActionSubType STOP_RDS_INSTANCES = new ActionSubType("STOP_RDS_INSTANCES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActionSubType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionSubType FindValue(string value)
+        {
+            return FindValue<ActionSubType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionSubType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ActionType.
+    /// </summary>
+    public class ActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPLY_IAM_POLICY for ActionType
+        /// </summary>
+        public static readonly ActionType APPLY_IAM_POLICY = new ActionType("APPLY_IAM_POLICY");
+        /// <summary>
+        /// Constant APPLY_SCP_POLICY for ActionType
+        /// </summary>
+        public static readonly ActionType APPLY_SCP_POLICY = new ActionType("APPLY_SCP_POLICY");
+        /// <summary>
+        /// Constant RUN_SSM_DOCUMENTS for ActionType
+        /// </summary>
+        public static readonly ActionType RUN_SSM_DOCUMENTS = new ActionType("RUN_SSM_DOCUMENTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionType FindValue(string value)
+        {
+            return FindValue<ActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ApprovalModel.
+    /// </summary>
+    public class ApprovalModel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for ApprovalModel
+        /// </summary>
+        public static readonly ApprovalModel AUTOMATIC = new ApprovalModel("AUTOMATIC");
+        /// <summary>
+        /// Constant MANUAL for ApprovalModel
+        /// </summary>
+        public static readonly ApprovalModel MANUAL = new ApprovalModel("MANUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApprovalModel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApprovalModel FindValue(string value)
+        {
+            return FindValue<ApprovalModel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApprovalModel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BudgetType.
     /// </summary>
     public class BudgetType : ConstantClass
@@ -138,6 +374,126 @@ namespace Amazon.Budgets
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ComparisonOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EventType.
+    /// </summary>
+    public class EventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_ACTION for EventType
+        /// </summary>
+        public static readonly EventType CREATE_ACTION = new EventType("CREATE_ACTION");
+        /// <summary>
+        /// Constant DELETE_ACTION for EventType
+        /// </summary>
+        public static readonly EventType DELETE_ACTION = new EventType("DELETE_ACTION");
+        /// <summary>
+        /// Constant EXECUTE_ACTION for EventType
+        /// </summary>
+        public static readonly EventType EXECUTE_ACTION = new EventType("EXECUTE_ACTION");
+        /// <summary>
+        /// Constant SYSTEM for EventType
+        /// </summary>
+        public static readonly EventType SYSTEM = new EventType("SYSTEM");
+        /// <summary>
+        /// Constant UPDATE_ACTION for EventType
+        /// </summary>
+        public static readonly EventType UPDATE_ACTION = new EventType("UPDATE_ACTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventType FindValue(string value)
+        {
+            return FindValue<EventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExecutionType.
+    /// </summary>
+    public class ExecutionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVE_BUDGET_ACTION for ExecutionType
+        /// </summary>
+        public static readonly ExecutionType APPROVE_BUDGET_ACTION = new ExecutionType("APPROVE_BUDGET_ACTION");
+        /// <summary>
+        /// Constant RESET_BUDGET_ACTION for ExecutionType
+        /// </summary>
+        public static readonly ExecutionType RESET_BUDGET_ACTION = new ExecutionType("RESET_BUDGET_ACTION");
+        /// <summary>
+        /// Constant RETRY_BUDGET_ACTION for ExecutionType
+        /// </summary>
+        public static readonly ExecutionType RETRY_BUDGET_ACTION = new ExecutionType("RETRY_BUDGET_ACTION");
+        /// <summary>
+        /// Constant REVERSE_BUDGET_ACTION for ExecutionType
+        /// </summary>
+        public static readonly ExecutionType REVERSE_BUDGET_ACTION = new ExecutionType("REVERSE_BUDGET_ACTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionType FindValue(string value)
+        {
+            return FindValue<ExecutionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionType(string value)
         {
             return FindValue(value);
         }
