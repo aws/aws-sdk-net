@@ -1,3 +1,40 @@
+### 3.5.35.0 (2020-10-15 18:20 UTC)
+* AccessAnalyzer (3.5.1.0)
+	* This release adds support for the ApplyArchiveRule api in IAM Access Analyzer.  The ApplyArchiveRule api allows users to apply an archive rule retroactively to existing findings in an analyzer.
+* Budgets (3.5.1.0)
+	* This release introduces AWS Budgets Actions, allowing you to define an explicit response(or set of responses)  to take when your budget exceeds it's action threshold.
+* CostExplorer (3.5.4.0)
+	* This release improves email validation for subscriptions on the SDK endpoints.
+* DatabaseMigrationService (3.5.3.0)
+	* When creating Endpoints, Replication Instances, and Replication Tasks, the feature provides you the option to specify friendly name to the resources.
+* Glue (3.5.4.3)
+	* API Documentation updates for Glue Get-Plan API
+* GroundStation (3.5.1.0)
+	* Adds error message attribute to DescribeContact DataflowDetails
+* IoT (3.5.2.0)
+	* Add new variable, lastStatusChangeDate, to DescribeDomainConfiguration  API
+* Macie2 (3.5.2.0)
+	* This release of the Amazon Macie API adds support for pausing and resuming classification jobs. Also, sensitive data findings now include location data for up to 15 occurrences of sensitive data.
+* RDS (3.5.4.0)
+	* Return tags for all resources in the output of DescribeDBInstances, DescribeDBSnapshots, DescribeDBClusters, and DescribeDBClusterSnapshots API operations.
+* Rekognition (3.5.2.0)
+	* This SDK Release introduces new API (DetectProtectiveEquipment) for Amazon Rekognition. This release also adds ServiceQuotaExceeded exception to Amazon Rekognition IndexFaces API.
+* SimpleSystemsManagement (3.5.2.0)
+	* This Patch Manager release now supports searching for available packages from Amazon Linux and Amazon Linux 2 via the DescribeAvailablePatches API.
+* Transfer (3.5.1.0)
+	* Add support to associate VPC Security Groups at server creation.
+* WorkMail (3.5.2.0)
+	* Add CreateOrganization and DeleteOrganization API operations.
+* WorkSpaces (3.5.2.15)
+	* Documentation updates for WorkSpaces
+* XRay (3.5.3.0)
+	* Enhancing CreateGroup, UpdateGroup, GetGroup and GetGroups APIs to support configuring X-Ray Insights Notifications. Adding TraceLimit information into X-Ray BatchGetTraces API response.
+* Core 3.5.1.25
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.34.0 (2020-10-09 18:12 UTC)
 * Amplify (3.5.2.0)
 	* Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval - enabling can make code changes can take up to 10 minutes to roll out.
