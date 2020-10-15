@@ -69,6 +69,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.BucketName);
             }
 
+            if(requestObject.IsSetCaseSensitiveNames())
+            {
+                context.Writer.WritePropertyName("CaseSensitiveNames");
+                context.Writer.Write(requestObject.CaseSensitiveNames);
+            }
+
+            if(requestObject.IsSetCompUpdate())
+            {
+                context.Writer.WritePropertyName("CompUpdate");
+                context.Writer.Write(requestObject.CompUpdate);
+            }
+
             if(requestObject.IsSetConnectionTimeout())
             {
                 context.Writer.WritePropertyName("ConnectionTimeout");
@@ -97,6 +109,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("EncryptionMode");
                 context.Writer.Write(requestObject.EncryptionMode);
+            }
+
+            if(requestObject.IsSetExplicitIds())
+            {
+                context.Writer.WritePropertyName("ExplicitIds");
+                context.Writer.Write(requestObject.ExplicitIds);
             }
 
             if(requestObject.IsSetFileTransferUploadStreams())

@@ -88,6 +88,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.BucketName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CaseSensitiveNames", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.CaseSensitiveNames = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CompUpdate", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.CompUpdate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ConnectionTimeout", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -116,6 +128,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EncryptionMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExplicitIds", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ExplicitIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FileTransferUploadStreams", targetDepth))

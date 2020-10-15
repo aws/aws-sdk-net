@@ -271,6 +271,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetResourceIdentifier())
+                {
+                    context.Writer.WritePropertyName("ResourceIdentifier");
+                    context.Writer.Write(publicRequest.ResourceIdentifier);
+                }
+
                 if(publicRequest.IsSetS3Settings())
                 {
                     context.Writer.WritePropertyName("S3Settings");

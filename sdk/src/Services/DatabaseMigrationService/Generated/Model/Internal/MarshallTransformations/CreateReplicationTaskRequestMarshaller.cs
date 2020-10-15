@@ -110,6 +110,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ReplicationTaskSettings);
                 }
 
+                if(publicRequest.IsSetResourceIdentifier())
+                {
+                    context.Writer.WritePropertyName("ResourceIdentifier");
+                    context.Writer.Write(publicRequest.ResourceIdentifier);
+                }
+
                 if(publicRequest.IsSetSourceEndpointArn())
                 {
                     context.Writer.WritePropertyName("SourceEndpointArn");

@@ -56,6 +56,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _replicationInstanceClass;
         private string _replicationInstanceIdentifier;
         private string _replicationSubnetGroupIdentifier;
+        private string _resourceIdentifier;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
@@ -353,6 +354,31 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetReplicationSubnetGroupIdentifier()
         {
             return this._replicationSubnetGroupIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceIdentifier. 
+        /// <para>
+        /// A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
+        /// response parameter that is returned in the created <code>Endpoint</code> object. The
+        /// value for this parameter can have up to 31 characters. It can contain only ASCII letters,
+        /// digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive
+        /// hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>.
+        /// For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>.
+        /// If you don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+        /// default identifier value for the end of <code>EndpointArn</code>.
+        /// </para>
+        /// </summary>
+        public string ResourceIdentifier
+        {
+            get { return this._resourceIdentifier; }
+            set { this._resourceIdentifier = value; }
+        }
+
+        // Check to see if ResourceIdentifier property is set
+        internal bool IsSetResourceIdentifier()
+        {
+            return this._resourceIdentifier != null;
         }
 
         /// <summary>

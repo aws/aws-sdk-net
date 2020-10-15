@@ -165,7 +165,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property StartReplicationTaskType. 
         /// <para>
-        /// The type of replication task.
+        /// A type of replication task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

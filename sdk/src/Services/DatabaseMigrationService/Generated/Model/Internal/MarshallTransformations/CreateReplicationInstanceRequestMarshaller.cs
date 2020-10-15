@@ -140,6 +140,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ReplicationSubnetGroupIdentifier);
                 }
 
+                if(publicRequest.IsSetResourceIdentifier())
+                {
+                    context.Writer.WritePropertyName("ResourceIdentifier");
+                    context.Writer.Write(publicRequest.ResourceIdentifier);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

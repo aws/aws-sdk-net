@@ -304,7 +304,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property DatePartitionDelimiter. 
         /// <para>
         /// Specifies a date separating delimiter to use during folder partitioning. The default
-        /// value is <code>SLASH</code> (/). Use this parameter when <code>DatePartitionedEnabled</code>
+        /// value is <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code>
         /// is set to <code>true</code>.
         /// </para>
         /// </summary>

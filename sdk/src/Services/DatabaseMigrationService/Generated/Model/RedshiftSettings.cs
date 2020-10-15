@@ -37,11 +37,14 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _afterConnectScript;
         private string _bucketFolder;
         private string _bucketName;
+        private bool? _caseSensitiveNames;
+        private bool? _compUpdate;
         private int? _connectionTimeout;
         private string _databaseName;
         private string _dateFormat;
         private bool? _emptyAsNull;
         private EncryptionModeValue _encryptionMode;
+        private bool? _explicitIds;
         private int? _fileTransferUploadStreams;
         private int? _loadTimeout;
         private int? _maxFileSize;
@@ -153,6 +156,47 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetBucketName()
         {
             return this._bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CaseSensitiveNames. 
+        /// <para>
+        /// If Amazon Redshift is configured to support case sensitive schema names, set <code>CaseSensitiveNames</code>
+        /// to <code>true</code>. The default is <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool CaseSensitiveNames
+        {
+            get { return this._caseSensitiveNames.GetValueOrDefault(); }
+            set { this._caseSensitiveNames = value; }
+        }
+
+        // Check to see if CaseSensitiveNames property is set
+        internal bool IsSetCaseSensitiveNames()
+        {
+            return this._caseSensitiveNames.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompUpdate. 
+        /// <para>
+        /// If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift applies automatic
+        /// compression if the table is empty. This applies even if the table columns already
+        /// have encodings other than <code>RAW</code>. If you set <code>CompUpdate</code> to
+        /// <code>false</code>, automatic compression is disabled and existing column encodings
+        /// aren't changed. The default is <code>true</code>.
+        /// </para>
+        /// </summary>
+        public bool CompUpdate
+        {
+            get { return this._compUpdate.GetValueOrDefault(); }
+            set { this._compUpdate = value; }
+        }
+
+        // Check to see if CompUpdate property is set
+        internal bool IsSetCompUpdate()
+        {
+            return this._compUpdate.HasValue; 
         }
 
         /// <summary>
@@ -269,6 +313,27 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetEncryptionMode()
         {
             return this._encryptionMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExplicitIds. 
+        /// <para>
+        /// This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code>
+        /// to <code>true</code> to have tables with <code>IDENTITY</code> columns override their
+        /// auto-generated values with explicit values loaded from the source data files used
+        /// to populate the tables. The default is <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool ExplicitIds
+        {
+            get { return this._explicitIds.GetValueOrDefault(); }
+            set { this._explicitIds = value; }
+        }
+
+        // Check to see if ExplicitIds property is set
+        internal bool IsSetExplicitIds()
+        {
+            return this._explicitIds.HasValue; 
         }
 
         /// <summary>
