@@ -54,6 +54,66 @@ namespace Amazon.AccessAnalyzer
         IAccessAnalyzerPaginatorFactory Paginators { get; }
 
         
+        #region  ApplyArchiveRule
+
+
+        /// <summary>
+        /// Retroactively applies the archive rule to existing findings that meet the archive
+        /// rule criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ApplyArchiveRule service method.</param>
+        /// 
+        /// <returns>The response from the ApplyArchiveRule service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ApplyArchiveRule">REST API Reference for ApplyArchiveRule Operation</seealso>
+        ApplyArchiveRuleResponse ApplyArchiveRule(ApplyArchiveRuleRequest request);
+
+
+
+        /// <summary>
+        /// Retroactively applies the archive rule to existing findings that meet the archive
+        /// rule criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ApplyArchiveRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ApplyArchiveRule service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ApplyArchiveRule">REST API Reference for ApplyArchiveRule Operation</seealso>
+        Task<ApplyArchiveRuleResponse> ApplyArchiveRuleAsync(ApplyArchiveRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateAnalyzer
 
 
@@ -123,7 +183,7 @@ namespace Amazon.AccessAnalyzer
 
         /// <summary>
         /// Creates an archive rule for the specified analyzer. Archive rules automatically archive
-        /// findings that meet the criteria you define when you create the rule.
+        /// new findings that meet the criteria you define when you create the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateArchiveRule service method.</param>
         /// 
@@ -156,7 +216,7 @@ namespace Amazon.AccessAnalyzer
 
         /// <summary>
         /// Creates an archive rule for the specified analyzer. Archive rules automatically archive
-        /// findings that meet the criteria you define when you create the rule.
+        /// new findings that meet the criteria you define when you create the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateArchiveRule service method.</param>
         /// <param name="cancellationToken">

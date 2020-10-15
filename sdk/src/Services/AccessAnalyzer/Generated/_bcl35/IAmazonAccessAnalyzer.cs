@@ -56,6 +56,62 @@ namespace Amazon.AccessAnalyzer
 
 
         
+        #region  ApplyArchiveRule
+
+
+        /// <summary>
+        /// Retroactively applies the archive rule to existing findings that meet the archive
+        /// rule criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ApplyArchiveRule service method.</param>
+        /// 
+        /// <returns>The response from the ApplyArchiveRule service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ApplyArchiveRule">REST API Reference for ApplyArchiveRule Operation</seealso>
+        ApplyArchiveRuleResponse ApplyArchiveRule(ApplyArchiveRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ApplyArchiveRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ApplyArchiveRule operation on AmazonAccessAnalyzerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndApplyArchiveRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ApplyArchiveRule">REST API Reference for ApplyArchiveRule Operation</seealso>
+        IAsyncResult BeginApplyArchiveRule(ApplyArchiveRuleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ApplyArchiveRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginApplyArchiveRule.</param>
+        /// 
+        /// <returns>Returns a  ApplyArchiveRuleResult from AccessAnalyzer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ApplyArchiveRule">REST API Reference for ApplyArchiveRule Operation</seealso>
+        ApplyArchiveRuleResponse EndApplyArchiveRule(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateAnalyzer
 
 
@@ -119,7 +175,7 @@ namespace Amazon.AccessAnalyzer
 
         /// <summary>
         /// Creates an archive rule for the specified analyzer. Archive rules automatically archive
-        /// findings that meet the criteria you define when you create the rule.
+        /// new findings that meet the criteria you define when you create the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateArchiveRule service method.</param>
         /// 

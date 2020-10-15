@@ -29,34 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateArchiveRule operation.
-    /// Creates an archive rule for the specified analyzer. Archive rules automatically archive
-    /// new findings that meet the criteria you define when you create the rule.
+    /// Container for the parameters to the ApplyArchiveRule operation.
+    /// Retroactively applies the archive rule to existing findings that meet the archive
+    /// rule criteria.
     /// </summary>
-    public partial class CreateArchiveRuleRequest : AmazonAccessAnalyzerRequest
+    public partial class ApplyArchiveRuleRequest : AmazonAccessAnalyzerRequest
     {
-        private string _analyzerName;
+        private string _analyzerArn;
         private string _clientToken;
-        private Dictionary<string, Criterion> _filter = new Dictionary<string, Criterion>();
         private string _ruleName;
 
         /// <summary>
-        /// Gets and sets the property AnalyzerName. 
+        /// Gets and sets the property AnalyzerArn. 
         /// <para>
-        /// The name of the created analyzer.
+        /// The Amazon resource name (ARN) of the analyzer.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string AnalyzerName
+        [AWSProperty(Required=true)]
+        public string AnalyzerArn
         {
-            get { return this._analyzerName; }
-            set { this._analyzerName = value; }
+            get { return this._analyzerArn; }
+            set { this._analyzerArn = value; }
         }
 
-        // Check to see if AnalyzerName property is set
-        internal bool IsSetAnalyzerName()
+        // Check to see if AnalyzerArn property is set
+        internal bool IsSetAnalyzerArn()
         {
-            return this._analyzerName != null;
+            return this._analyzerArn != null;
         }
 
         /// <summary>
@@ -78,28 +77,9 @@ namespace Amazon.AccessAnalyzer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Filter. 
-        /// <para>
-        /// The criteria for the rule.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public Dictionary<string, Criterion> Filter
-        {
-            get { return this._filter; }
-            set { this._filter = value; }
-        }
-
-        // Check to see if Filter property is set
-        internal bool IsSetFilter()
-        {
-            return this._filter != null && this._filter.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property RuleName. 
         /// <para>
-        /// The name of the rule to create.
+        /// The name of the rule to apply.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

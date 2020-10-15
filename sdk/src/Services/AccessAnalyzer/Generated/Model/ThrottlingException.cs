@@ -38,6 +38,8 @@ namespace Amazon.AccessAnalyzer.Model
     {
         private int? _retryAfterSeconds;
 
+        private RetryableDetails _retryableDetails = new RetryableDetails(true);
+
         /// <summary>
         /// Constructs a new ThrottlingException with the specified error
         /// message.
@@ -141,5 +143,16 @@ namespace Amazon.AccessAnalyzer.Model
             return this._retryAfterSeconds.HasValue; 
         }
 
+        /// <summary>
+        /// Flag indicating if the exception is retryable and the associated retry
+        /// details. A null value indicates that the exception is not retryable.
+        /// </summary>
+        public override RetryableDetails Retryable
+        {
+            get
+            {
+                return _retryableDetails;
+            }
+        }
     }
 }
