@@ -108,8 +108,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property GroupBy. 
         /// <para>
-        /// You can group Amazon Web Services costs using up to two different groups: either dimensions,
-        /// tag keys, or both.
+        /// You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+        /// <code>TAG</code>, <code>COST_CATEGORY</code>.
         /// </para>
         /// </summary>
         public List<GroupDefinition> GroupBy
