@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         /// A marker used to get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string NextMarker
         {
             get { return this._nextMarker; }

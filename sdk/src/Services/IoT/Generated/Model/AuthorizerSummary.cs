@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         /// The authorizer ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string AuthorizerArn
         {
             get { return this._authorizerArn; }

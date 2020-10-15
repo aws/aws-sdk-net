@@ -5221,6 +5221,10 @@ namespace Amazon.IoT
         /// <param name="request">Container for the necessary parameters to execute the DeleteProvisioningTemplate service method.</param>
         /// 
         /// <returns>The response from the DeleteProvisioningTemplate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
         /// You can't delete the resource because it is attached to one or more resources.
         /// </exception>
@@ -5253,6 +5257,10 @@ namespace Amazon.IoT
         /// </param>
         /// 
         /// <returns>The response from the DeleteProvisioningTemplate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
         /// You can't delete the resource because it is attached to one or more resources.
         /// </exception>
@@ -5285,6 +5293,10 @@ namespace Amazon.IoT
         /// <param name="request">Container for the necessary parameters to execute the DeleteProvisioningTemplateVersion service method.</param>
         /// 
         /// <returns>The response from the DeleteProvisioningTemplateVersion service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
         /// You can't delete the resource because it is attached to one or more resources.
         /// </exception>
@@ -5317,6 +5329,10 @@ namespace Amazon.IoT
         /// </param>
         /// 
         /// <returns>The response from the DeleteProvisioningTemplateVersion service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
         /// You can't delete the resource because it is attached to one or more resources.
         /// </exception>

@@ -46,6 +46,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the authorizer's Lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string AuthorizerFunctionArn
         {
             get { return this._authorizerFunctionArn; }

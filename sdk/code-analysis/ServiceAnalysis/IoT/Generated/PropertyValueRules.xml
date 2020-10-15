@@ -148,6 +148,10 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.CreateAuthorizerRequest.AuthorizerFunctionArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.CreateAuthorizerRequest.AuthorizerName</property>
     <min>1</min>
     <max>128</max>
@@ -158,6 +162,10 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateAuthorizerResponse.AuthorizerArn</property>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateAuthorizerResponse.AuthorizerName</property>
@@ -231,7 +239,7 @@
     <property>Amazon.IoT.Model.CreateDomainConfigurationRequest.ValidationCertificateArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:acm:[a-z]{2}-(gov-)?[a-z]{4,9}-\d{1}:\d{12}:certificate/?[a-zA-Z0-9/-]+</pattern>
+    <pattern>arn:aws(-cn|-us-gov|-iso-b|-iso)?:acm:[a-z]{2}-(gov-|iso-|isob-)?[a-z]{4,9}-\d{1}:\d{12}:certificate/[a-zA-Z0-9/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateDomainConfigurationResponse.DomainConfigurationName</property>
@@ -1222,6 +1230,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListAttachedPoliciesRequest.Marker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1231,6 +1240,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListAttachedPoliciesResponse.NextMarker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1290,6 +1300,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListAuthorizersRequest.Marker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1299,6 +1310,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListAuthorizersResponse.NextMarker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1314,6 +1326,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListCACertificatesRequest.Marker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1323,10 +1336,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListCACertificatesResponse.NextMarker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListCertificatesRequest.Marker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1336,6 +1351,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListCertificatesResponse.NextMarker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1346,6 +1362,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListCertificatesByCARequest.Marker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1355,6 +1372,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListCertificatesByCAResponse.NextMarker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1364,6 +1382,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListDomainConfigurationsRequest.Marker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1373,6 +1392,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListDomainConfigurationsResponse.NextMarker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1431,6 +1451,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListOutgoingCertificatesRequest.Marker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1440,10 +1461,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListOutgoingCertificatesResponse.NextMarker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListPoliciesRequest.Marker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1453,10 +1476,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListPoliciesResponse.NextMarker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListPolicyPrincipalsRequest.Marker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1472,6 +1497,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListPolicyPrincipalsResponse.NextMarker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1482,6 +1508,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListPrincipalPoliciesRequest.Marker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1491,6 +1518,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListPrincipalPoliciesResponse.NextMarker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1516,6 +1544,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListRoleAliasesRequest.Marker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1525,6 +1554,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListRoleAliasesResponse.NextMarker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1555,6 +1585,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListTargetsForPolicyRequest.Marker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1570,6 +1601,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListTargetsForPolicyResponse.NextMarker</property>
+    <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1826,6 +1858,10 @@
     <pattern>[\w=,@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.SetDefaultAuthorizerResponse.AuthorizerArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.SetDefaultAuthorizerResponse.AuthorizerName</property>
     <min>1</min>
     <max>128</max>
@@ -1939,6 +1975,10 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateAuthorizerRequest.AuthorizerFunctionArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.UpdateAuthorizerRequest.AuthorizerName</property>
     <min>1</min>
     <max>128</max>
@@ -1949,6 +1989,10 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateAuthorizerResponse.AuthorizerArn</property>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.UpdateAuthorizerResponse.AuthorizerName</property>
@@ -2275,6 +2319,14 @@
     <pattern>[\w=,@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.AuthorizerDescription.AuthorizerArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.AuthorizerDescription.AuthorizerFunctionArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.AuthorizerDescription.AuthorizerName</property>
     <min>1</min>
     <max>128</max>
@@ -2285,6 +2337,10 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.AuthorizerSummary.AuthorizerArn</property>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.AuthorizerSummary.AuthorizerName</property>
@@ -2793,7 +2849,7 @@
     <property>Amazon.IoT.Model.ServerCertificateSummary.ServerCertificateArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:acm:[a-z]{2}-(gov-)?[a-z]{4,9}-\d{1}:\d{12}:certificate/?[a-zA-Z0-9/-]+</pattern>
+    <pattern>arn:aws(-cn|-us-gov|-iso-b|-iso)?:acm:[a-z]{2}-(gov-|iso-|isob-)?[a-z]{4,9}-\d{1}:\d{12}:certificate/[a-zA-Z0-9/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.StatisticalThreshold.Statistic</property>

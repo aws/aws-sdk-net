@@ -63,6 +63,7 @@ namespace Amazon.IoT.Model
         /// The marker for the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Marker
         {
             get { return this._marker; }

@@ -60,6 +60,7 @@ namespace Amazon.IoT.Model
         /// The current position within the list of CA certificates.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string NextMarker
         {
             get { return this._nextMarker; }

@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         /// The token to retrieve the next set of results, or ``null`` if there are no more results.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string NextMarker
         {
             get { return this._nextMarker; }
