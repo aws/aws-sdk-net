@@ -3405,13 +3405,37 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant ADVISORY_ID for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey ADVISORY_ID = new PatchFilterKey("ADVISORY_ID");
+        /// <summary>
+        /// Constant ARCH for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey ARCH = new PatchFilterKey("ARCH");
+        /// <summary>
+        /// Constant BUGZILLA_ID for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey BUGZILLA_ID = new PatchFilterKey("BUGZILLA_ID");
+        /// <summary>
         /// Constant CLASSIFICATION for PatchFilterKey
         /// </summary>
         public static readonly PatchFilterKey CLASSIFICATION = new PatchFilterKey("CLASSIFICATION");
         /// <summary>
+        /// Constant CVE_ID for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey CVE_ID = new PatchFilterKey("CVE_ID");
+        /// <summary>
+        /// Constant EPOCH for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey EPOCH = new PatchFilterKey("EPOCH");
+        /// <summary>
         /// Constant MSRC_SEVERITY for PatchFilterKey
         /// </summary>
         public static readonly PatchFilterKey MSRC_SEVERITY = new PatchFilterKey("MSRC_SEVERITY");
+        /// <summary>
+        /// Constant NAME for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey NAME = new PatchFilterKey("NAME");
         /// <summary>
         /// Constant PATCH_ID for PatchFilterKey
         /// </summary>
@@ -3433,13 +3457,29 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly PatchFilterKey PRODUCT_FAMILY = new PatchFilterKey("PRODUCT_FAMILY");
         /// <summary>
+        /// Constant RELEASE for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey RELEASE = new PatchFilterKey("RELEASE");
+        /// <summary>
+        /// Constant REPOSITORY for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey REPOSITORY = new PatchFilterKey("REPOSITORY");
+        /// <summary>
         /// Constant SECTION for PatchFilterKey
         /// </summary>
         public static readonly PatchFilterKey SECTION = new PatchFilterKey("SECTION");
         /// <summary>
+        /// Constant SECURITY for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey SECURITY = new PatchFilterKey("SECURITY");
+        /// <summary>
         /// Constant SEVERITY for PatchFilterKey
         /// </summary>
         public static readonly PatchFilterKey SEVERITY = new PatchFilterKey("SEVERITY");
+        /// <summary>
+        /// Constant VERSION for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey VERSION = new PatchFilterKey("VERSION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

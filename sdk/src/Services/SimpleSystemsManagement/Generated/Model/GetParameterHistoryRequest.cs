@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetParameterHistory operation.
-    /// Query a list of all parameters used by the AWS account.
+    /// Retrieves the history of all changes to a parameter.
     /// </summary>
     public partial class GetParameterHistoryRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -62,7 +62,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of a parameter you want to query.
+        /// The name of the parameter for which you want to review history.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

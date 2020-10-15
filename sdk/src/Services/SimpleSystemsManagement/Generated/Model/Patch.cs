@@ -33,24 +33,93 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class Patch
     {
+        private List<string> _advisoryIds = new List<string>();
+        private string _arch;
+        private List<string> _bugzillaIds = new List<string>();
         private string _classification;
         private string _contentUrl;
+        private List<string> _cveIds = new List<string>();
         private string _description;
+        private int? _epoch;
         private string _id;
         private string _kbNumber;
         private string _language;
         private string _msrcNumber;
         private string _msrcSeverity;
+        private string _name;
         private string _product;
         private string _productFamily;
+        private string _release;
         private DateTime? _releaseDate;
+        private string _repository;
+        private string _severity;
         private string _title;
         private string _vendor;
+        private string _version;
+
+        /// <summary>
+        /// Gets and sets the property AdvisoryIds. 
+        /// <para>
+        /// The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to
+        /// Linux-based instances only.
+        /// </para>
+        /// </summary>
+        public List<string> AdvisoryIds
+        {
+            get { return this._advisoryIds; }
+            set { this._advisoryIds = value; }
+        }
+
+        // Check to see if AdvisoryIds property is set
+        internal bool IsSetAdvisoryIds()
+        {
+            return this._advisoryIds != null && this._advisoryIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Arch. 
+        /// <para>
+        /// The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>,
+        /// the architecture is indicated by <code>x86_64</code>. Applies to Linux-based instances
+        /// only.
+        /// </para>
+        /// </summary>
+        public string Arch
+        {
+            get { return this._arch; }
+            set { this._arch = value; }
+        }
+
+        // Check to see if Arch property is set
+        internal bool IsSetArch()
+        {
+            return this._arch != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BugzillaIds. 
+        /// <para>
+        /// The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based
+        /// instances only.
+        /// </para>
+        /// </summary>
+        public List<string> BugzillaIds
+        {
+            get { return this._bugzillaIds; }
+            set { this._bugzillaIds = value; }
+        }
+
+        // Check to see if BugzillaIds property is set
+        internal bool IsSetBugzillaIds()
+        {
+            return this._bugzillaIds != null && this._bugzillaIds.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Classification. 
         /// <para>
-        /// The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+        /// The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>,
+        /// or <code>CriticalUpdates</code>.
         /// </para>
         /// </summary>
         public string Classification
@@ -84,6 +153,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CVEIds. 
+        /// <para>
+        /// The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>.
+        /// Applies to Linux-based instances only.
+        /// </para>
+        /// </summary>
+        public List<string> CVEIds
+        {
+            get { return this._cveIds; }
+            set { this._cveIds = value; }
+        }
+
+        // Check to see if CVEIds property is set
+        internal bool IsSetCVEIds()
+        {
+            return this._cveIds != null && this._cveIds.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the patch.
@@ -102,10 +190,34 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Epoch. 
+        /// <para>
+        /// The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>,
+        /// the epoch value is <code>20180914-2</code>. Applies to Linux-based instances only.
+        /// </para>
+        /// </summary>
+        public int Epoch
+        {
+            get { return this._epoch.GetValueOrDefault(); }
+            set { this._epoch = value; }
+        }
+
+        // Check to see if Epoch property is set
+        internal bool IsSetEpoch()
+        {
+            return this._epoch.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the patch (this is different than the Microsoft Knowledge Base ID).
+        /// The ID of the patch. Applies to Windows patches only.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This ID is not the same as the Microsoft Knowledge Base ID.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public string Id
@@ -123,7 +235,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property KbNumber. 
         /// <para>
-        /// The Microsoft Knowledge Base ID of the patch.
+        /// The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.
         /// </para>
         /// </summary>
         public string KbNumber
@@ -159,7 +271,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MsrcNumber. 
         /// <para>
-        /// The ID of the MSRC bulletin the patch is related to.
+        /// The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related
+        /// to. For example, <code>MS14-045</code>. Applies to Windows patches only.
         /// </para>
         /// </summary>
         public string MsrcNumber
@@ -177,7 +290,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MsrcSeverity. 
         /// <para>
-        /// The severity of the patch (for example Critical, Important, Moderate).
+        /// The severity of the patch, such as <code>Critical</code>, <code>Important</code>,
+        /// or <code>Moderate</code>. Applies to Windows patches only.
         /// </para>
         /// </summary>
         public string MsrcSeverity
@@ -193,9 +307,28 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the patch. Applies to Linux-based instances only.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Product. 
         /// <para>
-        /// The specific product the patch is applicable for (for example, WindowsServer2016).
+        /// The specific product the patch is applicable for. For example, <code>WindowsServer2016</code>
+        /// or <code>AmazonLinux2018.03</code>.
         /// </para>
         /// </summary>
         public string Product
@@ -213,7 +346,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ProductFamily. 
         /// <para>
-        /// The product family the patch is applicable for (for example, Windows).
+        /// The product family the patch is applicable for. For example, <code>Windows</code>
+        /// or <code>Amazon Linux 2</code>.
         /// </para>
         /// </summary>
         public string ProductFamily
@@ -226,6 +360,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetProductFamily()
         {
             return this._productFamily != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Release. 
+        /// <para>
+        /// The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>,
+        /// the release is <code>2.amaz1</code>. Applies to Linux-based instances only.
+        /// </para>
+        /// </summary>
+        public string Release
+        {
+            get { return this._release; }
+            set { this._release = value; }
+        }
+
+        // Check to see if Release property is set
+        internal bool IsSetRelease()
+        {
+            return this._release != null;
         }
 
         /// <summary>
@@ -244,6 +397,44 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetReleaseDate()
         {
             return this._releaseDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Repository. 
+        /// <para>
+        /// The source patch repository for the operating system and version, such as <code>trusty-security</code>
+        /// for Ubuntu Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04
+        /// LTE. Applies to Linux-based instances only.
+        /// </para>
+        /// </summary>
+        public string Repository
+        {
+            get { return this._repository; }
+            set { this._repository = value; }
+        }
+
+        // Check to see if Repository property is set
+        internal bool IsSetRepository()
+        {
+            return this._repository != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Severity. 
+        /// <para>
+        /// The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.
+        /// </para>
+        /// </summary>
+        public string Severity
+        {
+            get { return this._severity; }
+            set { this._severity = value; }
+        }
+
+        // Check to see if Severity property is set
+        internal bool IsSetSeverity()
+        {
+            return this._severity != null;
         }
 
         /// <summary>
@@ -280,6 +471,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetVendor()
         {
             return this._vendor != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>,
+        /// the version number is indicated by <code>-1</code>. Applies to Linux-based instances
+        /// only.
+        /// </para>
+        /// </summary>
+        public string Version
+        {
+            get { return this._version; }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version != null;
         }
 
     }

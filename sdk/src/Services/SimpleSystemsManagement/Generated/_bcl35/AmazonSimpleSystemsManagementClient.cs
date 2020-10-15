@@ -5995,7 +5995,7 @@ namespace Amazon.SimpleSystemsManagement
         #region  GetParameterHistory
 
         /// <summary>
-        /// Query a list of all parameters used by the AWS account.
+        /// Retrieves the history of all changes to a parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameterHistory service method.</param>
         /// 
