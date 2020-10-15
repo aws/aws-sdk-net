@@ -75,6 +75,64 @@ namespace Amazon.Rekognition
 
 
     /// <summary>
+    /// Constants used for properties of type BodyPart.
+    /// </summary>
+    public class BodyPart : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FACE for BodyPart
+        /// </summary>
+        public static readonly BodyPart FACE = new BodyPart("FACE");
+        /// <summary>
+        /// Constant HEAD for BodyPart
+        /// </summary>
+        public static readonly BodyPart HEAD = new BodyPart("HEAD");
+        /// <summary>
+        /// Constant LEFT_HAND for BodyPart
+        /// </summary>
+        public static readonly BodyPart LEFT_HAND = new BodyPart("LEFT_HAND");
+        /// <summary>
+        /// Constant RIGHT_HAND for BodyPart
+        /// </summary>
+        public static readonly BodyPart RIGHT_HAND = new BodyPart("RIGHT_HAND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BodyPart(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BodyPart FindValue(string value)
+        {
+            return FindValue<BodyPart>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BodyPart(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CelebrityRecognitionSortBy.
     /// </summary>
     public class CelebrityRecognitionSortBy : ConstantClass
@@ -898,6 +956,60 @@ namespace Amazon.Rekognition
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProjectVersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProtectiveEquipmentType.
+    /// </summary>
+    public class ProtectiveEquipmentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FACE_COVER for ProtectiveEquipmentType
+        /// </summary>
+        public static readonly ProtectiveEquipmentType FACE_COVER = new ProtectiveEquipmentType("FACE_COVER");
+        /// <summary>
+        /// Constant HAND_COVER for ProtectiveEquipmentType
+        /// </summary>
+        public static readonly ProtectiveEquipmentType HAND_COVER = new ProtectiveEquipmentType("HAND_COVER");
+        /// <summary>
+        /// Constant HEAD_COVER for ProtectiveEquipmentType
+        /// </summary>
+        public static readonly ProtectiveEquipmentType HEAD_COVER = new ProtectiveEquipmentType("HEAD_COVER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProtectiveEquipmentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProtectiveEquipmentType FindValue(string value)
+        {
+            return FindValue<ProtectiveEquipmentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProtectiveEquipmentType(string value)
         {
             return FindValue(value);
         }

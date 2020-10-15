@@ -1618,6 +1618,132 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  DetectProtectiveEquipment
+
+
+        /// <summary>
+        /// Detects Personal Protective Equipment (PPE) worn by people detected in an image. Amazon
+        /// Rekognition can detect the following types of PPE.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Face cover
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Hand cover
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Head cover
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You pass the input image as base64-encoded image bytes or as a reference to an image
+        /// in an Amazon S3 bucket. The image must be either a PNG or JPG formatted file. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>DetectProtectiveEquipment</code> detects PPE worn by up to 15 persons detected
+        /// in an image.
+        /// </para>
+        ///  
+        /// <para>
+        /// For each person detected in the image the API returns an array of body parts (face,
+        /// head, left-hand, right-hand). For each body part, an array of detected items of PPE
+        /// is returned, including an indicator of whether or not the PPE covers the body part.
+        /// The API returns the confidence it has in each detection (person, PPE, body part and
+        /// body part coverage). It also returns a bounding box (<a>BoundingBox</a>) for each
+        /// detected person and each detected item of PPE. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally request a summary of detected PPE items with the <code>SummarizationAttributes</code>
+        /// input parameter. The summary provides the following information. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The persons detected as wearing all of the types of PPE that you specify.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The persons detected as not wearing all of the types PPE that you specify.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The persons detected where PPE adornment could not be determined. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This is a stateless API operation. That is, the operation does not persist any data.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:DetectProtectiveEquipment</code>
+        /// action. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetectProtectiveEquipment service method.</param>
+        /// 
+        /// <returns>The response from the DetectProtectiveEquipment service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ImageTooLargeException">
+        /// The input image size exceeds the allowed limit. For more information, see Limits in
+        /// Amazon Rekognition in the Amazon Rekognition Developer Guide.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidImageFormatException">
+        /// The provided image format is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidS3ObjectException">
+        /// Amazon Rekognition is unable to access the S3 object specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectProtectiveEquipment">REST API Reference for DetectProtectiveEquipment Operation</seealso>
+        DetectProtectiveEquipmentResponse DetectProtectiveEquipment(DetectProtectiveEquipmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetectProtectiveEquipment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetectProtectiveEquipment operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetectProtectiveEquipment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectProtectiveEquipment">REST API Reference for DetectProtectiveEquipment Operation</seealso>
+        IAsyncResult BeginDetectProtectiveEquipment(DetectProtectiveEquipmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetectProtectiveEquipment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetectProtectiveEquipment.</param>
+        /// 
+        /// <returns>Returns a  DetectProtectiveEquipmentResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectProtectiveEquipment">REST API Reference for DetectProtectiveEquipment Operation</seealso>
+        DetectProtectiveEquipmentResponse EndDetectProtectiveEquipment(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DetectText
 
 
@@ -2811,6 +2937,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
         /// The collection specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ServiceQuotaExceededException">
+        /// The size of the collection exceeds the allowed limit. For more information, see Limits
+        /// in Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.

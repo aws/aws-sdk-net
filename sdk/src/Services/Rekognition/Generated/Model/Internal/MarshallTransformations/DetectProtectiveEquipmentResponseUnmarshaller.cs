@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for IndexFaces operation
+    /// Response Unmarshaller for DetectProtectiveEquipment operation
     /// </summary>  
-    public class IndexFacesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DetectProtectiveEquipmentResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,34 +45,28 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            IndexFacesResponse response = new IndexFacesResponse();
+            DetectProtectiveEquipmentResponse response = new DetectProtectiveEquipmentResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FaceModelVersion", targetDepth))
+                if (context.TestExpression("Persons", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ProtectiveEquipmentPerson, ProtectiveEquipmentPersonUnmarshaller>(ProtectiveEquipmentPersonUnmarshaller.Instance);
+                    response.Persons = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProtectiveEquipmentModelVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FaceModelVersion = unmarshaller.Unmarshall(context);
+                    response.ProtectiveEquipmentModelVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("FaceRecords", targetDepth))
+                if (context.TestExpression("Summary", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FaceRecord, FaceRecordUnmarshaller>(FaceRecordUnmarshaller.Instance);
-                    response.FaceRecords = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OrientationCorrection", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.OrientationCorrection = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UnindexedFaces", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<UnindexedFace, UnindexedFaceUnmarshaller>(UnindexedFaceUnmarshaller.Instance);
-                    response.UnindexedFaces = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ProtectiveEquipmentSummaryUnmarshaller.Instance;
+                    response.Summary = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -126,14 +120,6 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 {
                     return ProvisionedThroughputExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
-                {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -142,9 +128,9 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             return new AmazonRekognitionException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static IndexFacesResponseUnmarshaller _instance = new IndexFacesResponseUnmarshaller();        
+        private static DetectProtectiveEquipmentResponseUnmarshaller _instance = new DetectProtectiveEquipmentResponseUnmarshaller();        
 
-        internal static IndexFacesResponseUnmarshaller GetInstance()
+        internal static DetectProtectiveEquipmentResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -152,7 +138,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static IndexFacesResponseUnmarshaller Instance
+        public static DetectProtectiveEquipmentResponseUnmarshaller Instance
         {
             get
             {
