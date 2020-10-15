@@ -519,7 +519,19 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Copies the specified image from the specified Region to the current Region.
+        /// Copies the specified image from the specified Region to the current Region. For more
+        /// information about copying images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html">
+        /// Copy a Custom WorkSpaces Image</a>.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Before copying a shared image, be sure to verify that it has been shared from the
+        /// correct AWS account. To determine if an image has been shared and to see the AWS account
+        /// ID that owns an image, use the <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a>
+        /// and <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html">DescribeWorkspaceImagePermissions</a>
+        /// API operations. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyWorkspaceImage service method.</param>
         /// 
@@ -557,7 +569,19 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Copies the specified image from the specified Region to the current Region.
+        /// Copies the specified image from the specified Region to the current Region. For more
+        /// information about copying images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html">
+        /// Copy a Custom WorkSpaces Image</a>.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Before copying a shared image, be sure to verify that it has been shared from the
+        /// correct AWS account. To determine if an image has been shared and to see the AWS account
+        /// ID that owns an image, use the <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a>
+        /// and <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html">DescribeWorkspaceImagePermissions</a>
+        /// API operations. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyWorkspaceImage service method.</param>
         /// <param name="cancellationToken">
@@ -2443,6 +2467,12 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
+        /// This operation can be run only by AWS accounts that are enabled for BYOL. If your
+        /// account isn't enabled for BYOL, you'll receive an <code>AccessDeniedException</code>
+        /// error.
+        /// </para>
+        ///  
+        /// <para>
         /// The management network interface is connected to a secure Amazon WorkSpaces management
         /// network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces
         /// clients, and to allow Amazon WorkSpaces to manage the WorkSpace.
@@ -2473,6 +2503,12 @@ namespace Amazon.WorkSpaces
         /// use for the network management interface when you enable Bring Your Own License (BYOL).
         /// 
         /// 
+        ///  
+        /// <para>
+        /// This operation can be run only by AWS accounts that are enabled for BYOL. If your
+        /// account isn't enabled for BYOL, you'll receive an <code>AccessDeniedException</code>
+        /// error.
+        /// </para>
         ///  
         /// <para>
         /// The management network interface is connected to a secure Amazon WorkSpaces management
@@ -3609,20 +3645,25 @@ namespace Amazon.WorkSpaces
         /// <summary>
         /// Terminates the specified WorkSpaces.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
         /// Terminating a WorkSpace is a permanent action and cannot be undone. The user's data
-        /// is destroyed. If you need to archive any user data, contact Amazon Web Services before
-        /// terminating the WorkSpace.
+        /// is destroyed. If you need to archive any user data, contact AWS Support before terminating
+        /// the WorkSpace.
         /// </para>
-        ///  
+        ///  </important> 
         /// <para>
         /// You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.
         /// </para>
         ///  
         /// <para>
         /// This operation is asynchronous and returns before the WorkSpaces have been completely
-        /// terminated.
+        /// terminated. After a WorkSpace is terminated, the <code>TERMINATED</code> state is
+        /// returned only briefly before the WorkSpace directory metadata is cleaned up, so this
+        /// state is rarely returned. To confirm that a WorkSpace is terminated, check for the
+        /// WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+        /// DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has
+        /// been successfully terminated.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateWorkspaces service method.</param>
@@ -3642,20 +3683,25 @@ namespace Amazon.WorkSpaces
         /// <summary>
         /// Terminates the specified WorkSpaces.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
         /// Terminating a WorkSpace is a permanent action and cannot be undone. The user's data
-        /// is destroyed. If you need to archive any user data, contact Amazon Web Services before
-        /// terminating the WorkSpace.
+        /// is destroyed. If you need to archive any user data, contact AWS Support before terminating
+        /// the WorkSpace.
         /// </para>
-        ///  
+        ///  </important> 
         /// <para>
         /// You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.
         /// </para>
         ///  
         /// <para>
         /// This operation is asynchronous and returns before the WorkSpaces have been completely
-        /// terminated.
+        /// terminated. After a WorkSpace is terminated, the <code>TERMINATED</code> state is
+        /// returned only briefly before the WorkSpace directory metadata is cleaned up, so this
+        /// state is rarely returned. To confirm that a WorkSpace is terminated, check for the
+        /// WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+        /// DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has
+        /// been successfully terminated.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateWorkspaces service method.</param>
@@ -3881,7 +3927,8 @@ namespace Amazon.WorkSpaces
         /// Shares or unshares an image with one account by specifying whether that account has
         /// permission to copy the image. If the copy image permission is granted, the image is
         /// shared with that account. If the copy image permission is revoked, the image is unshared
-        /// with the account.
+        /// with the account. For more information about sharing images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
+        /// Share or Unshare a Custom WorkSpaces Image</a>.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -3929,7 +3976,8 @@ namespace Amazon.WorkSpaces
         /// Shares or unshares an image with one account by specifying whether that account has
         /// permission to copy the image. If the copy image permission is granted, the image is
         /// shared with that account. If the copy image permission is revoked, the image is unshared
-        /// with the account.
+        /// with the account. For more information about sharing images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
+        /// Share or Unshare a Custom WorkSpaces Image</a>.
         /// 
         ///  <note> <ul> <li> 
         /// <para>

@@ -33,7 +33,8 @@ namespace Amazon.WorkSpaces.Model
     /// Shares or unshares an image with one account by specifying whether that account has
     /// permission to copy the image. If the copy image permission is granted, the image is
     /// shared with that account. If the copy image permission is revoked, the image is unshared
-    /// with the account.
+    /// with the account. For more information about sharing images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
+    /// Share or Unshare a Custom WorkSpaces Image</a>.
     /// 
     ///  <note> <ul> <li> 
     /// <para>
@@ -98,6 +99,12 @@ namespace Amazon.WorkSpaces.Model
         /// <para>
         /// The identifier of the AWS account to share or unshare the image with.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Before sharing the image, confirm that you are sharing to the correct AWS account
+        /// ID.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SharedAccountId
