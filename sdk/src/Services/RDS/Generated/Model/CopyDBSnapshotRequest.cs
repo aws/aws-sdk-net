@@ -31,7 +31,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the CopyDBSnapshot operation.
     /// Copies the specified DB snapshot. The source DB snapshot must be in the <code>available</code>
-    /// or <code>storage-optimization</code> state.
+    /// state.
     /// 
     ///  
     /// <para>

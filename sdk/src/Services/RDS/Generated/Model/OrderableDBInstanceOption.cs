@@ -383,13 +383,6 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A list of the supported DB engine modes.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <code>global</code> engine mode only applies for global database clusters created
-        /// with Aurora MySQL version 5.6.10a. For higher Aurora MySQL versions, the clusters
-        /// in a global database use <code>provisioned</code> engine mode. 
-        /// </para>
-        ///  </note>
         /// </summary>
         public List<string> SupportedEngineModes
         {

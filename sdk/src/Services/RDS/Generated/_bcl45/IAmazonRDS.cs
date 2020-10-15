@@ -990,7 +990,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Copies the specified DB snapshot. The source DB snapshot must be in the <code>available</code>
-        /// or <code>storage-optimization</code> state.
+        /// state.
         /// 
         ///  
         /// <para>
@@ -1029,7 +1029,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Copies the specified DB snapshot. The source DB snapshot must be in the <code>available</code>
-        /// or <code>storage-optimization</code> state.
+        /// state.
         /// 
         ///  
         /// <para>
@@ -2207,7 +2207,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a DBSnapshot. The source DBInstance must be in "available" state.
+        /// Creates a snapshot of a DB instance. The source DB instance must be in the <code>available</code>
+        /// or <code>storage-optimization</code>state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBSnapshot service method.</param>
         /// 
@@ -2230,7 +2231,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a DBSnapshot. The source DBInstance must be in "available" state.
+        /// Creates a snapshot of a DB instance. The source DB instance must be in the <code>available</code>
+        /// or <code>storage-optimization</code>state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBSnapshot service method.</param>
         /// <param name="cancellationToken">

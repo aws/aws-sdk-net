@@ -64,6 +64,7 @@ namespace Amazon.RDS.Model
         private string _sourceRegion;
         private string _status;
         private string _storageType;
+        private List<Tag> _tagList = new List<Tag>();
         private string _tdeCredentialArn;
         private string _timezone;
         private string _vpcId;
@@ -525,6 +526,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageType()
         {
             return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagList.
+        /// </summary>
+        public List<Tag> TagList
+        {
+            get { return this._tagList; }
+            set { this._tagList = value; }
+        }
+
+        // Check to see if TagList property is set
+        internal bool IsSetTagList()
+        {
+            return this._tagList != null && this._tagList.Count > 0; 
         }
 
         /// <summary>

@@ -92,6 +92,7 @@ namespace Amazon.RDS.Model
         private ScalingConfigurationInfo _scalingConfigurationInfo;
         private string _status;
         private bool? _storageEncrypted;
+        private List<Tag> _tagList = new List<Tag>();
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
 
         /// <summary>
@@ -707,15 +708,11 @@ namespace Amazon.RDS.Model
         /// The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
         /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        ///  <code>global</code> engine mode only applies for global database clusters created
-        /// with Aurora MySQL version 5.6.10a. For higher Aurora MySQL versions, the clusters
-        /// in a global database use <code>provisioned</code> engine mode. To check if a DB cluster
-        /// is part of a global database, use <code>DescribeGlobalClusters</code> instead of checking
-        /// the <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+        /// CreateDBCluster</a>.
         /// </para>
-        ///  </note>
         /// </summary>
         public string EngineMode
         {
@@ -1115,6 +1112,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageEncrypted()
         {
             return this._storageEncrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagList.
+        /// </summary>
+        public List<Tag> TagList
+        {
+            get { return this._tagList; }
+            set { this._tagList = value; }
+        }
+
+        // Check to see if TagList property is set
+        internal bool IsSetTagList()
+        {
+            return this._tagList != null && this._tagList.Count > 0; 
         }
 
         /// <summary>
