@@ -209,6 +209,10 @@ namespace Amazon.GroundStation
         /// </summary>
         public static readonly ContactStatus AWS_CANCELLED = new ContactStatus("AWS_CANCELLED");
         /// <summary>
+        /// Constant AWS_FAILED for ContactStatus
+        /// </summary>
+        public static readonly ContactStatus AWS_FAILED = new ContactStatus("AWS_FAILED");
+        /// <summary>
         /// Constant CANCELLED for ContactStatus
         /// </summary>
         public static readonly ContactStatus CANCELLED = new ContactStatus("CANCELLED");

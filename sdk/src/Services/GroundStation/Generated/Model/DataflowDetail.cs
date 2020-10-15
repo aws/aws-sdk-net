@@ -34,6 +34,7 @@ namespace Amazon.GroundStation.Model
     public partial class DataflowDetail
     {
         private Destination _destination;
+        private string _errorMessage;
         private Source _source;
 
         /// <summary>
@@ -49,6 +50,24 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetDestination()
         {
             return this._destination != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorMessage. 
+        /// <para>
+        /// Error message for a dataflow.
+        /// </para>
+        /// </summary>
+        public string ErrorMessage
+        {
+            get { return this._errorMessage; }
+            set { this._errorMessage = value; }
+        }
+
+        // Check to see if ErrorMessage property is set
+        internal bool IsSetErrorMessage()
+        {
+            return this._errorMessage != null;
         }
 
         /// <summary>
