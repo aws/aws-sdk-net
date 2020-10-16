@@ -39,8 +39,9 @@ namespace Amazon.Organizations.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Use the <code>OperationId</code> response element from this operation to provide as
-    /// a parameter to the <a>DescribeCreateAccountStatus</a> operation.
+    /// Use the <code>Id</code> member of the <code>CreateAccountStatus</code> response element
+    /// from this operation to provide as a parameter to the <a>DescribeCreateAccountStatus</a>
+    /// operation.
     /// </para>
     ///  </li> <li> 
     /// <para>

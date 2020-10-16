@@ -40,8 +40,8 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You already have an account in the AWS GovCloud (US) Region that is associated with
-    /// your master account in the commercial Region.
+    /// You already have an account in the AWS GovCloud (US) Region that is paired with a
+    /// master account of an organization in the commercial Region.
     /// </para>
     ///  </li> <li> 
     /// <para>

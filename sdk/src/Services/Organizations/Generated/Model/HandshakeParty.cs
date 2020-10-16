@@ -44,7 +44,7 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-        /// requires "h-" followed by from 8 to 32 lower-case letters or digits.
+        /// requires "h-" followed by from 8 to 32 lowercase letters or digits.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

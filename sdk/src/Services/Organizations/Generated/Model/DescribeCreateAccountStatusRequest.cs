@@ -45,9 +45,10 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property CreateAccountRequestId. 
         /// <para>
-        /// Specifies the <code>operationId</code> that uniquely identifies the request. You can
-        /// get the ID from the response to an earlier <a>CreateAccount</a> request, or from the
-        /// <a>ListCreateAccountStatus</a> operation.
+        /// Specifies the <code>Id</code> value that uniquely identifies the <code>CreateAccount</code>
+        /// request. You can get the value from the <code>CreateAccountStatus.Id</code> response
+        /// in an earlier <a>CreateAccount</a> request, or from the <a>ListCreateAccountStatus</a>
+        /// operation.
         /// </para>
         ///  
         /// <para>

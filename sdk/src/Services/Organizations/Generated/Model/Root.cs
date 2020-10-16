@@ -30,10 +30,8 @@ namespace Amazon.Organizations.Model
 {
     /// <summary>
     /// Contains details about a root. A root is a top-level parent node in the hierarchy
-    /// of an organization that can contain organizational units (OUs) and accounts. Every
-    /// root contains every AWS account in the organization. Each root enables the accounts
-    /// to be organized in a different way and to have different policy types enabled for
-    /// use in that root.
+    /// of an organization that can contain organizational units (OUs) and accounts. The root
+    /// contains every AWS account in the organization.
     /// </summary>
     public partial class Root
     {
@@ -73,7 +71,7 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-        /// requires "r-" followed by from 4 to 32 lower-case letters or digits.
+        /// requires "r-" followed by from 4 to 32 lowercase letters or digits.
         /// </para>
         /// </summary>
         [AWSProperty(Max=34)]

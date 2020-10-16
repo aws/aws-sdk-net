@@ -120,7 +120,7 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization
-        /// ID string requires "o-" followed by from 10 to 32 lower-case letters or digits.
+        /// ID string requires "o-" followed by from 10 to 32 lowercase letters or digits.
         /// </para>
         /// </summary>
         public string Id
