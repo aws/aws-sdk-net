@@ -61,6 +61,14 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Paginator for ListInputDeviceTransfers operation
+        ///</summary>
+        public IListInputDeviceTransfersPaginator ListInputDeviceTransfers(ListInputDeviceTransfersRequest request) 
+        {
+            return new ListInputDeviceTransfersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListInputs operation
         ///</summary>
         public IListInputsPaginator ListInputs(ListInputsRequest request) 

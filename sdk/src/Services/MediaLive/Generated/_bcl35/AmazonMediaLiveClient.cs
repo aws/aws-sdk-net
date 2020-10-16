@@ -237,6 +237,88 @@ namespace Amazon.MediaLive
         #endregion
 
 
+        #region  AcceptInputDeviceTransfer
+
+        /// <summary>
+        /// Accept an incoming input device transfer. The ownership of the device will transfer
+        /// to your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptInputDeviceTransfer service method.</param>
+        /// 
+        /// <returns>The response from the AcceptInputDeviceTransfer service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AcceptInputDeviceTransfer">REST API Reference for AcceptInputDeviceTransfer Operation</seealso>
+        public virtual AcceptInputDeviceTransferResponse AcceptInputDeviceTransfer(AcceptInputDeviceTransferRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptInputDeviceTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptInputDeviceTransferResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptInputDeviceTransferResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptInputDeviceTransfer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptInputDeviceTransfer operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptInputDeviceTransfer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AcceptInputDeviceTransfer">REST API Reference for AcceptInputDeviceTransfer Operation</seealso>
+        public virtual IAsyncResult BeginAcceptInputDeviceTransfer(AcceptInputDeviceTransferRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptInputDeviceTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptInputDeviceTransferResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AcceptInputDeviceTransfer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptInputDeviceTransfer.</param>
+        /// 
+        /// <returns>Returns a  AcceptInputDeviceTransferResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AcceptInputDeviceTransfer">REST API Reference for AcceptInputDeviceTransfer Operation</seealso>
+        public virtual AcceptInputDeviceTransferResponse EndAcceptInputDeviceTransfer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AcceptInputDeviceTransferResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchDelete
 
         /// <summary>
@@ -545,6 +627,87 @@ namespace Amazon.MediaLive
         public virtual BatchUpdateScheduleResponse EndBatchUpdateSchedule(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchUpdateScheduleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CancelInputDeviceTransfer
+
+        /// <summary>
+        /// Cancel an input device transfer that you have requested.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelInputDeviceTransfer service method.</param>
+        /// 
+        /// <returns>The response from the CancelInputDeviceTransfer service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CancelInputDeviceTransfer">REST API Reference for CancelInputDeviceTransfer Operation</seealso>
+        public virtual CancelInputDeviceTransferResponse CancelInputDeviceTransfer(CancelInputDeviceTransferRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelInputDeviceTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelInputDeviceTransferResponseUnmarshaller.Instance;
+
+            return Invoke<CancelInputDeviceTransferResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelInputDeviceTransfer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelInputDeviceTransfer operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelInputDeviceTransfer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CancelInputDeviceTransfer">REST API Reference for CancelInputDeviceTransfer Operation</seealso>
+        public virtual IAsyncResult BeginCancelInputDeviceTransfer(CancelInputDeviceTransferRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelInputDeviceTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelInputDeviceTransferResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelInputDeviceTransfer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelInputDeviceTransfer.</param>
+        /// 
+        /// <returns>Returns a  CancelInputDeviceTransferResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CancelInputDeviceTransfer">REST API Reference for CancelInputDeviceTransfer Operation</seealso>
+        public virtual CancelInputDeviceTransferResponse EndCancelInputDeviceTransfer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CancelInputDeviceTransferResponse>(asyncResult);
         }
 
         #endregion
@@ -2493,6 +2656,83 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  ListInputDeviceTransfers
+
+        /// <summary>
+        /// List input devices that are currently being transferred. List input devices that you
+        /// are transferring from your AWS account or input devices that another AWS account is
+        /// transferring to you.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInputDeviceTransfers service method.</param>
+        /// 
+        /// <returns>The response from the ListInputDeviceTransfers service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputDeviceTransfers">REST API Reference for ListInputDeviceTransfers Operation</seealso>
+        public virtual ListInputDeviceTransfersResponse ListInputDeviceTransfers(ListInputDeviceTransfersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInputDeviceTransfersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInputDeviceTransfersResponseUnmarshaller.Instance;
+
+            return Invoke<ListInputDeviceTransfersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInputDeviceTransfers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInputDeviceTransfers operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInputDeviceTransfers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputDeviceTransfers">REST API Reference for ListInputDeviceTransfers Operation</seealso>
+        public virtual IAsyncResult BeginListInputDeviceTransfers(ListInputDeviceTransfersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInputDeviceTransfersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInputDeviceTransfersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInputDeviceTransfers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInputDeviceTransfers.</param>
+        /// 
+        /// <returns>Returns a  ListInputDeviceTransfersResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputDeviceTransfers">REST API Reference for ListInputDeviceTransfers Operation</seealso>
+        public virtual ListInputDeviceTransfersResponse EndListInputDeviceTransfers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListInputDeviceTransfersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListInputs
 
         /// <summary>
@@ -3072,6 +3312,87 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  RejectInputDeviceTransfer
+
+        /// <summary>
+        /// Reject the transfer of the specified input device to your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectInputDeviceTransfer service method.</param>
+        /// 
+        /// <returns>The response from the RejectInputDeviceTransfer service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RejectInputDeviceTransfer">REST API Reference for RejectInputDeviceTransfer Operation</seealso>
+        public virtual RejectInputDeviceTransferResponse RejectInputDeviceTransfer(RejectInputDeviceTransferRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectInputDeviceTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectInputDeviceTransferResponseUnmarshaller.Instance;
+
+            return Invoke<RejectInputDeviceTransferResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RejectInputDeviceTransfer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RejectInputDeviceTransfer operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectInputDeviceTransfer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RejectInputDeviceTransfer">REST API Reference for RejectInputDeviceTransfer Operation</seealso>
+        public virtual IAsyncResult BeginRejectInputDeviceTransfer(RejectInputDeviceTransferRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectInputDeviceTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectInputDeviceTransferResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RejectInputDeviceTransfer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRejectInputDeviceTransfer.</param>
+        /// 
+        /// <returns>Returns a  RejectInputDeviceTransferResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RejectInputDeviceTransfer">REST API Reference for RejectInputDeviceTransfer Operation</seealso>
+        public virtual RejectInputDeviceTransferResponse EndRejectInputDeviceTransfer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RejectInputDeviceTransferResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartChannel
 
         /// <summary>
@@ -3381,6 +3702,88 @@ namespace Amazon.MediaLive
         public virtual StopMultiplexResponse EndStopMultiplex(IAsyncResult asyncResult)
         {
             return EndInvoke<StopMultiplexResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  TransferInputDevice
+
+        /// <summary>
+        /// Start an input device transfer to another AWS account. After you make the request,
+        /// the other account must accept or reject the transfer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TransferInputDevice service method.</param>
+        /// 
+        /// <returns>The response from the TransferInputDevice service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/TransferInputDevice">REST API Reference for TransferInputDevice Operation</seealso>
+        public virtual TransferInputDeviceResponse TransferInputDevice(TransferInputDeviceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TransferInputDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TransferInputDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<TransferInputDeviceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TransferInputDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TransferInputDevice operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTransferInputDevice
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/TransferInputDevice">REST API Reference for TransferInputDevice Operation</seealso>
+        public virtual IAsyncResult BeginTransferInputDevice(TransferInputDeviceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TransferInputDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TransferInputDeviceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TransferInputDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTransferInputDevice.</param>
+        /// 
+        /// <returns>Returns a  TransferInputDeviceResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/TransferInputDevice">REST API Reference for TransferInputDevice Operation</seealso>
+        public virtual TransferInputDeviceResponse EndTransferInputDevice(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TransferInputDeviceResponse>(asyncResult);
         }
 
         #endregion
