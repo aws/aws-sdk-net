@@ -38,13 +38,12 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Use the <code>S3OriginConfig</code> type to specify an Amazon S3 bucket that is <i>
-    /// <b>not</b> </i> configured with static website hosting.
+    /// Use <code>S3OriginConfig</code> to specify an Amazon S3 bucket that is not configured
+    /// with static website hosting.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use the <code>CustomOriginConfig</code> type to specify various other kinds of content
-    /// containers or HTTP servers, including:
+    /// Use <code>CustomOriginConfig</code> to specify all other kinds of origins, including:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -56,7 +55,7 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// An AWS Elemental MediaPackage origin
+    /// An AWS Elemental MediaPackage endpoint
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -83,6 +82,7 @@ namespace Amazon.CloudFront.Model
         private string _domainName;
         private string _id;
         private string _originPath;
+        private OriginShield _originShield;
         private S3OriginConfig _s3OriginConfig;
 
         /// <summary>
@@ -145,8 +145,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CustomHeaders. 
         /// <para>
-        /// A list of HTTP header names and values that CloudFront adds to requests it sends to
-        /// the origin.
+        /// A list of HTTP header names and values that CloudFront adds to the requests that it
+        /// sends to the origin.
         /// </para>
         ///  
         /// <para>
@@ -169,10 +169,10 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CustomOriginConfig. 
         /// <para>
-        /// Use this type to specify an origin that is a content container or HTTP server, including
-        /// an Amazon S3 bucket that is configured with static website hosting. To specify an
-        /// Amazon S3 bucket that is <i> <b>not</b> </i> configured with static website hosting,
-        /// use the <code>S3OriginConfig</code> type instead.
+        /// Use this type to specify an origin that is not an Amazon S3 bucket, with one exception.
+        /// If the Amazon S3 bucket is configured with static website hosting, use this type.
+        /// If the Amazon S3 bucket is not configured with static website hosting, use the <code>S3OriginConfig</code>
+        /// type instead.
         /// </para>
         /// </summary>
         public CustomOriginConfig CustomOriginConfig
@@ -260,12 +260,35 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OriginShield. 
+        /// <para>
+        /// CloudFront Origin Shield. Using Origin Shield can help reduce the load on your origin.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using
+        /// Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public OriginShield OriginShield
+        {
+            get { return this._originShield; }
+            set { this._originShield = value; }
+        }
+
+        // Check to see if OriginShield property is set
+        internal bool IsSetOriginShield()
+        {
+            return this._originShield != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property S3OriginConfig. 
         /// <para>
-        /// Use this type to specify an origin that is an Amazon S3 bucket that is <i> <b>not</b>
-        /// </i> configured with static website hosting. To specify any other type of origin,
-        /// including an Amazon S3 bucket that is configured with static website hosting, use
-        /// the <code>CustomOriginConfig</code> type instead.
+        /// Use this type to specify an origin that is an Amazon S3 bucket that is not configured
+        /// with static website hosting. To specify any other type of origin, including an Amazon
+        /// S3 bucket that is configured with static website hosting, use the <code>CustomOriginConfig</code>
+        /// type instead.
         /// </para>
         /// </summary>
         public S3OriginConfig S3OriginConfig

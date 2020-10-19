@@ -97,8 +97,8 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Cache
-        /// compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Compression
+        /// support</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -155,8 +155,8 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Cache
-        /// compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Compression
+        /// support</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>

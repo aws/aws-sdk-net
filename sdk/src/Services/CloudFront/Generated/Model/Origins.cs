@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that contains information about origins and origin groups for this
-    /// distribution.
+    /// Contains information about the origins for this distribution.
     /// </summary>
     public partial class Origins
     {
@@ -40,7 +39,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// A complex type that contains origins or origin groups for this distribution.
+        /// A list of origins.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -59,7 +58,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The number of origins or origin groups for this distribution.
+        /// The number of origins for this distribution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

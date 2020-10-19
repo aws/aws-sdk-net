@@ -97,6 +97,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.OriginPath = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("OriginShield", targetDepth))
+                    {
+                        var unmarshaller = OriginShieldUnmarshaller.Instance;
+                        unmarshalledObject.OriginShield = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("S3OriginConfig", targetDepth))
                     {
                         var unmarshaller = S3OriginConfigUnmarshaller.Instance;

@@ -806,6 +806,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteElementString("OriginPath", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigOriginsItemsValue.OriginPath));                 
                 
                                 
+                                if (publicRequestDistributionConfigOriginsItemsValue.OriginShield != null) 
+                                {
+                                    xmlWriter.WriteStartElement("OriginShield", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                                    if(publicRequestDistributionConfigOriginsItemsValue.OriginShield.IsSetEnabled())
+                                        xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestDistributionConfigOriginsItemsValue.OriginShield.Enabled));                 
+                    
+                                    if(publicRequestDistributionConfigOriginsItemsValue.OriginShield.IsSetOriginShieldRegion())
+                                        xmlWriter.WriteElementString("OriginShieldRegion", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigOriginsItemsValue.OriginShield.OriginShieldRegion));                 
+                    
+                                    xmlWriter.WriteEndElement();
+                                }
+                                
                                 if (publicRequestDistributionConfigOriginsItemsValue.S3OriginConfig != null) 
                                 {
                                     xmlWriter.WriteStartElement("S3OriginConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
