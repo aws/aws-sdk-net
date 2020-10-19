@@ -1,3 +1,15 @@
+### 3.5.37.0 (2020-10-19 18:12 UTC)
+* Backup (3.5.1.11)
+	* Documentation updates for Cryo
+* CloudFront (3.5.4.0)
+	* Amazon CloudFront adds support for Origin Shield.
+* DocDB (3.5.1.16)
+	* Documentation updates for docdb
+* ServiceCatalog (3.5.3.0)
+	* An Admin can now update the launch role associated with a Provisioned Product. Admins and End Users can now view the launch role associated with a Provisioned Product.
+* SimpleSystemsManagement (3.5.3.0)
+	* This Patch Manager release now supports Common Vulnerabilities and Exposure (CVE) Ids for missing packages via the DescribeInstancePatches API.
+
 ### 3.5.36.0 (2020-10-16 18:13 UTC)
 * MediaLive (3.5.4.0)
 	* The AWS Elemental MediaLive APIs and SDKs now support the ability to transfer the ownership of MediaLive Link devices across AWS accounts.
