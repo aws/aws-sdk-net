@@ -705,6 +705,10 @@ namespace Amazon.ServiceCatalog
     {
 
         /// <summary>
+        /// Constant LAUNCH_ROLE for PropertyKey
+        /// </summary>
+        public static readonly PropertyKey LAUNCH_ROLE = new PropertyKey("LAUNCH_ROLE");
+        /// <summary>
         /// Constant OWNER for PropertyKey
         /// </summary>
         public static readonly PropertyKey OWNER = new PropertyKey("OWNER");

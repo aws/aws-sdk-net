@@ -34,6 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class RecordDetail
     {
         private DateTime? _createdTime;
+        private string _launchRoleArn;
         private string _pathId;
         private string _productId;
         private string _provisionedProductId;
@@ -63,6 +64,25 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetCreatedTime()
         {
             return this._createdTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchRoleArn. 
+        /// <para>
+        /// The ARN of the launch role associated with the provisioned product.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
+        public string LaunchRoleArn
+        {
+            get { return this._launchRoleArn; }
+            set { this._launchRoleArn = value; }
+        }
+
+        // Check to see if LaunchRoleArn property is set
+        internal bool IsSetLaunchRoleArn()
+        {
+            return this._launchRoleArn != null;
         }
 
         /// <summary>

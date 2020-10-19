@@ -40,6 +40,7 @@ namespace Amazon.ServiceCatalog.Model
         private string _lastProvisioningRecordId;
         private string _lastRecordId;
         private string _lastSuccessfulProvisioningRecordId;
+        private string _launchRoleArn;
         private string _name;
         private string _productId;
         private string _provisioningArtifactId;
@@ -212,6 +213,25 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetLastSuccessfulProvisioningRecordId()
         {
             return this._lastSuccessfulProvisioningRecordId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchRoleArn. 
+        /// <para>
+        /// The ARN of the launch role associated with the provisioned product.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
+        public string LaunchRoleArn
+        {
+            get { return this._launchRoleArn; }
+            set { this._launchRoleArn = value; }
+        }
+
+        // Check to see if LaunchRoleArn property is set
+        internal bool IsSetLaunchRoleArn()
+        {
+            return this._launchRoleArn != null;
         }
 
         /// <summary>
