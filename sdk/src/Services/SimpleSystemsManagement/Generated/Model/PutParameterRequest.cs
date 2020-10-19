@@ -462,8 +462,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>SecureString</code> is not currently supported for AWS CloudFormation templates
-        /// or in the China Regions.
+        ///  <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
         /// </para>
         ///  </note> 
         /// <para>

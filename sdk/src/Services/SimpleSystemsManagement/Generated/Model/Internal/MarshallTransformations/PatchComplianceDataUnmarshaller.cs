@@ -70,6 +70,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.Classification = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CVEIds", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CVEIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InstalledTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

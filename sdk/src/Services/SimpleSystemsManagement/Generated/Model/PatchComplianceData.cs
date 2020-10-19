@@ -35,6 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class PatchComplianceData
     {
         private string _classification;
+        private string _cveIds;
         private DateTime? _installedTime;
         private string _kbId;
         private string _severity;
@@ -58,6 +59,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetClassification()
         {
             return this._classification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CVEIds. 
+        /// <para>
+        /// The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved
+        /// by the patch.
+        /// </para>
+        /// </summary>
+        public string CVEIds
+        {
+            get { return this._cveIds; }
+            set { this._cveIds = value; }
+        }
+
+        // Check to see if CVEIds property is set
+        internal bool IsSetCVEIds()
+        {
+            return this._cveIds != null;
         }
 
         /// <summary>
