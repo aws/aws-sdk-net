@@ -1428,14 +1428,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Recovers the saved resource identified by an Amazon Resource Name (ARN). 
-        /// 
-        ///  
-        /// <para>
-        /// If the resource ARN is included in the request, then the last complete backup of that
-        /// resource is recovered. If the ARN of a recovery point is supplied, then that recovery
-        /// point is restored.
-        /// </para>
+        /// Recovers the saved resource identified by an Amazon Resource Name (ARN).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartRestoreJob service method.</param>
         /// <param name="cancellationToken">

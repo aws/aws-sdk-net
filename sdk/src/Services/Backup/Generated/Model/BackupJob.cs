@@ -98,9 +98,10 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows
-        /// backup; otherwise, creates a regular backup. If you specify an invalid option, you
-        /// get an <code>InvalidParameterValueException</code> exception.
+        /// Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup
+        /// option and create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a
+        /// regular backup. If you specify an invalid option, you get an <code>InvalidParameterValueException</code>
+        /// exception.
         /// </para>
         /// </summary>
         public Dictionary<string, string> BackupOptions
