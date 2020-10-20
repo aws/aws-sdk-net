@@ -32,7 +32,7 @@ namespace Amazon.SimpleDB
     public partial class AmazonSimpleDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.5.0.28");
+            InternalSDKUtils.BuildUserAgentString("3.5.0.29");
 
         private string _userAgent = UserAgentString;
 

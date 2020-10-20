@@ -1,3 +1,16 @@
+### 3.5.38.0 (2020-10-20 18:10 UTC)
+* AppSync (3.5.1.6)
+	* Documentation updates to AppSync to correct several typos.
+* Batch (3.5.3.0)
+	* Adding evaluateOnExit to job retry strategies.
+* ElasticBeanstalk (3.5.1.0)
+	* EnvironmentStatus enum update to include Aborting, LinkingFrom and LinkingTo
+* Core 3.5.1.27
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.37.0 (2020-10-19 18:12 UTC)
 * Backup (3.5.1.11)
 	* Documentation updates for Cryo
