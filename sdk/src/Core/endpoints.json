@@ -5784,6 +5784,12 @@
             "eu-west-1": {},
             "eu-west-2": {},
             "eu-west-3": {},
+            "fips-ca-central-1": {
+              "credentialScope": {
+                "region": "ca-central-1"
+              },
+              "hostname": "ssm-fips.ca-central-1.amazonaws.com"
+            },
             "fips-us-east-1": {
               "credentialScope": {
                 "region": "us-east-1"
@@ -5810,30 +5816,6 @@
             },
             "me-south-1": {},
             "sa-east-1": {},
-            "ssm-facade-fips-us-east-1": {
-              "credentialScope": {
-                "region": "us-east-1"
-              },
-              "hostname": "ssm-facade-fips.us-east-1.amazonaws.com"
-            },
-            "ssm-facade-fips-us-east-2": {
-              "credentialScope": {
-                "region": "us-east-2"
-              },
-              "hostname": "ssm-facade-fips.us-east-2.amazonaws.com"
-            },
-            "ssm-facade-fips-us-west-1": {
-              "credentialScope": {
-                "region": "us-west-1"
-              },
-              "hostname": "ssm-facade-fips.us-west-1.amazonaws.com"
-            },
-            "ssm-facade-fips-us-west-2": {
-              "credentialScope": {
-                "region": "us-west-2"
-              },
-              "hostname": "ssm-facade-fips.us-west-2.amazonaws.com"
-            },
             "us-east-1": {},
             "us-east-2": {},
             "us-west-1": {},
@@ -7053,6 +7035,11 @@
             "cn-northwest-1": {}
           }
         },
+        "iotanalytics": {
+          "endpoints": {
+            "cn-north-1": {}
+          }
+        },
         "iotevents": {
           "endpoints": {
             "cn-north-1": {}
@@ -7582,8 +7569,18 @@
             ]
           },
           "endpoints": {
-            "us-gov-east-1": {},
-            "us-gov-west-1": {}
+            "us-gov-east-1": {
+              "protocols": [
+                "http",
+                "https"
+              ]
+            },
+            "us-gov-west-1": {
+              "protocols": [
+                "http",
+                "https"
+              ]
+            }
           }
         },
         "appstream2": {
@@ -7647,8 +7644,18 @@
             ]
           },
           "endpoints": {
-            "us-gov-east-1": {},
-            "us-gov-west-1": {}
+            "us-gov-east-1": {
+              "protocols": [
+                "http",
+                "https"
+              ]
+            },
+            "us-gov-west-1": {
+              "protocols": [
+                "http",
+                "https"
+              ]
+            }
           }
         },
         "backup": {
@@ -7789,6 +7796,12 @@
         },
         "cognito-identity": {
           "endpoints": {
+            "fips-us-gov-west-1": {
+              "credentialScope": {
+                "region": "us-gov-west-1"
+              },
+              "hostname": "cognito-identity-fips.us-gov-west-1.amazonaws.com"
+            },
             "us-gov-west-1": {}
           }
         },
@@ -8187,6 +8200,12 @@
             ]
           },
           "endpoints": {
+            "dataplane-us-gov-west-1": {
+              "credentialScope": {
+                "region": "us-gov-west-1"
+              },
+              "hostname": "greengrass-ats.iot.us-gov-west-1.amazonaws.com"
+            },
             "us-gov-west-1": {
               "credentialScope": {
                 "region": "us-gov-west-1"
@@ -8830,18 +8849,6 @@
                 "region": "us-gov-west-1"
               },
               "hostname": "ssm.us-gov-west-1.amazonaws.com"
-            },
-            "ssm-facade-fips-us-gov-east-1": {
-              "credentialScope": {
-                "region": "us-gov-east-1"
-              },
-              "hostname": "ssm-facade.us-gov-east-1.amazonaws.com"
-            },
-            "ssm-facade-fips-us-gov-west-1": {
-              "credentialScope": {
-                "region": "us-gov-west-1"
-              },
-              "hostname": "ssm-facade.us-gov-west-1.amazonaws.com"
             },
             "us-gov-east-1": {},
             "us-gov-west-1": {}
