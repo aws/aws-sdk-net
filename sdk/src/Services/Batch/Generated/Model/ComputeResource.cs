@@ -66,8 +66,8 @@ namespace Amazon.Batch.Model
         /// is only available for Spot Instance compute resources and will select additional instance
         /// types that are large enough to meet the requirements of the jobs in the queue, with
         /// a preference for instance types that are less likely to be interrupted. For more information,
-        /// see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html
-        /// ">Allocation Strategies</a> in the <i>AWS Batch User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
+        /// Strategies</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         public CRAllocationStrategy AllocationStrategy

@@ -34,6 +34,7 @@ namespace Amazon.Batch.Model
     public partial class RetryStrategy
     {
         private int? _attempts;
+        private List<EvaluateOnExit> _evaluateOnExit = new List<EvaluateOnExit>();
 
         /// <summary>
         /// Gets and sets the property Attempts. 
@@ -53,6 +54,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetAttempts()
         {
             return this._attempts.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluateOnExit. 
+        /// <para>
+        /// Array of up to 5 objects that specify conditions under which the job should be retried
+        /// or failed. If this parameter is specified, then the <code>attempts</code> parameter
+        /// must also be specified.
+        /// </para>
+        /// </summary>
+        public List<EvaluateOnExit> EvaluateOnExit
+        {
+            get { return this._evaluateOnExit; }
+            set { this._evaluateOnExit = value; }
+        }
+
+        // Check to see if EvaluateOnExit property is set
+        internal bool IsSetEvaluateOnExit()
+        {
+            return this._evaluateOnExit != null && this._evaluateOnExit.Count > 0; 
         }
 
     }

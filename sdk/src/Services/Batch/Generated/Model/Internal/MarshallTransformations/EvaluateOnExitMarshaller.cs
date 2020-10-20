@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RetryStrategy Marshaller
+    /// EvaluateOnExit Marshaller
     /// </summary>       
-    public class RetryStrategyMarshaller : IRequestMarshaller<RetryStrategy, JsonMarshallerContext> 
+    public class EvaluateOnExitMarshaller : IRequestMarshaller<EvaluateOnExit, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,30 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RetryStrategy requestObject, JsonMarshallerContext context)
+        public void Marshall(EvaluateOnExit requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAttempts())
+            if(requestObject.IsSetAction())
             {
-                context.Writer.WritePropertyName("attempts");
-                context.Writer.Write(requestObject.Attempts);
+                context.Writer.WritePropertyName("action");
+                context.Writer.Write(requestObject.Action);
             }
 
-            if(requestObject.IsSetEvaluateOnExit())
+            if(requestObject.IsSetOnExitCode())
             {
-                context.Writer.WritePropertyName("evaluateOnExit");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectEvaluateOnExitListValue in requestObject.EvaluateOnExit)
-                {
-                    context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("onExitCode");
+                context.Writer.Write(requestObject.OnExitCode);
+            }
 
-                    var marshaller = EvaluateOnExitMarshaller.Instance;
-                    marshaller.Marshall(requestObjectEvaluateOnExitListValue, context);
+            if(requestObject.IsSetOnReason())
+            {
+                context.Writer.WritePropertyName("onReason");
+                context.Writer.Write(requestObject.OnReason);
+            }
 
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+            if(requestObject.IsSetOnStatusReason())
+            {
+                context.Writer.WritePropertyName("onStatusReason");
+                context.Writer.Write(requestObject.OnStatusReason);
             }
 
         }
@@ -72,7 +74,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static RetryStrategyMarshaller Instance = new RetryStrategyMarshaller();
+        public readonly static EvaluateOnExitMarshaller Instance = new EvaluateOnExitMarshaller();
 
     }
 }

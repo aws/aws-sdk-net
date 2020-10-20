@@ -92,7 +92,8 @@ namespace Amazon.Batch.Model
         /// The total amount of swap memory (in MiB) a container can use. This parameter will
         /// be translated to the <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code>
-        /// value.
+        /// value. For more information, see <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
+        /// <code>--memory-swap</code> details</a> in the Docker documentation.
         /// </para>
         ///  
         /// <para>

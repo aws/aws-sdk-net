@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RetryStrategy Object
+    /// Response Unmarshaller for EvaluateOnExit Object
     /// </summary>  
-    public class RetryStrategyUnmarshaller : IUnmarshaller<RetryStrategy, XmlUnmarshallerContext>, IUnmarshaller<RetryStrategy, JsonUnmarshallerContext>
+    public class EvaluateOnExitUnmarshaller : IUnmarshaller<EvaluateOnExit, XmlUnmarshallerContext>, IUnmarshaller<EvaluateOnExit, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RetryStrategy IUnmarshaller<RetryStrategy, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EvaluateOnExit IUnmarshaller<EvaluateOnExit, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,39 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RetryStrategy Unmarshall(JsonUnmarshallerContext context)
+        public EvaluateOnExit Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RetryStrategy unmarshalledObject = new RetryStrategy();
+            EvaluateOnExit unmarshalledObject = new EvaluateOnExit();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("attempts", targetDepth))
+                if (context.TestExpression("action", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Attempts = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("evaluateOnExit", targetDepth))
+                if (context.TestExpression("onExitCode", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EvaluateOnExit, EvaluateOnExitUnmarshaller>(EvaluateOnExitUnmarshaller.Instance);
-                    unmarshalledObject.EvaluateOnExit = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OnExitCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("onReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OnReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("onStatusReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OnStatusReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +94,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         }
 
 
-        private static RetryStrategyUnmarshaller _instance = new RetryStrategyUnmarshaller();        
+        private static EvaluateOnExitUnmarshaller _instance = new EvaluateOnExitUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RetryStrategyUnmarshaller Instance
+        public static EvaluateOnExitUnmarshaller Instance
         {
             get
             {
