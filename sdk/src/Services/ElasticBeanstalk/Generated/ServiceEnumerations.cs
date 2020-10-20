@@ -677,9 +677,21 @@ namespace Amazon.ElasticBeanstalk
     {
 
         /// <summary>
+        /// Constant Aborting for EnvironmentStatus
+        /// </summary>
+        public static readonly EnvironmentStatus Aborting = new EnvironmentStatus("Aborting");
+        /// <summary>
         /// Constant Launching for EnvironmentStatus
         /// </summary>
         public static readonly EnvironmentStatus Launching = new EnvironmentStatus("Launching");
+        /// <summary>
+        /// Constant LinkingFrom for EnvironmentStatus
+        /// </summary>
+        public static readonly EnvironmentStatus LinkingFrom = new EnvironmentStatus("LinkingFrom");
+        /// <summary>
+        /// Constant LinkingTo for EnvironmentStatus
+        /// </summary>
+        public static readonly EnvironmentStatus LinkingTo = new EnvironmentStatus("LinkingTo");
         /// <summary>
         /// Constant Ready for EnvironmentStatus
         /// </summary>
