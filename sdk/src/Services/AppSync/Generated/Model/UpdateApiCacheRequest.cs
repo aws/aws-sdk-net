@@ -50,7 +50,7 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+        ///  <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -153,7 +153,7 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  
         /// <para>
-        /// The following legacy instance types are avaible, but their use is discouraged:
+        /// The following legacy instance types are available, but their use is discouraged:
         /// </para>
         ///  <ul> <li> 
         /// <para>

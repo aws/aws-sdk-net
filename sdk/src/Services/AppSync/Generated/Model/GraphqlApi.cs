@@ -231,7 +231,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property WafWebAclArn. 
         /// <para>
-        /// The ARN of the AWS WAF ACL associated with this <code>GraphqlApi</code> if one exists.
+        /// The ARN of the AWS Web Application Firewall (WAF) ACL associated with this <code>GraphqlApi</code>,
+        /// if one exists.
         /// </para>
         /// </summary>
         public string WafWebAclArn
