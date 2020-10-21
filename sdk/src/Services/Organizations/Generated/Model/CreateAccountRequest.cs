@@ -66,14 +66,14 @@ namespace Amazon.Organizations.Model
     ///  
     /// <para>
     /// AWS Organizations preconfigures the new member account with a role (named <code>OrganizationAccountAccessRole</code>
-    /// by default) that grants users in the master account administrator permissions in the
-    /// new member account. Principals in the master account can assume the role. AWS Organizations
-    /// clones the company name and address information for the new account from the organization's
-    /// master account.
+    /// by default) that grants users in the management account administrator permissions
+    /// in the new member account. Principals in the management account can assume the role.
+    /// AWS Organizations clones the company name and address information for the new account
+    /// from the organization's management account.
     /// </para>
     ///  
     /// <para>
-    /// This operation can be called only from the organization's master account.
+    /// This operation can be called only from the organization's management account.
     /// </para>
     ///  
     /// <para>
@@ -210,9 +210,9 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// The name of an IAM role that AWS Organizations automatically preconfigures in the
-        /// new member account. This role trusts the master account, allowing users in the master
-        /// account to assume the role, as permitted by the master account administrator. The
-        /// role has administrator permissions in the new member account.
+        /// new member account. This role trusts the management account, allowing users in the
+        /// management account to assume the role, as permitted by the management account administrator.
+        /// The role has administrator permissions in the new member account.
         /// </para>
         ///  
         /// <para>

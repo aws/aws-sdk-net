@@ -55,7 +55,7 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     ///  <b>Enable all features final confirmation</b> handshake: only a principal from the
-    /// master account.
+    /// management account.
     /// </para>
     ///  
     /// <para>

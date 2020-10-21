@@ -41,11 +41,11 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     /// You already have an account in the AWS GovCloud (US) Region that is paired with a
-    /// master account of an organization in the commercial Region.
+    /// management account of an organization in the commercial Region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You call this action from the master account of your organization in the commercial
+    /// You call this action from the management account of your organization in the commercial
     /// Region.
     /// </para>
     ///  </li> <li> 
@@ -87,10 +87,10 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// You call this action from the master account of your organization in the commercial
+    /// You call this action from the management account of your organization in the commercial
     /// Region to create a standalone AWS account in the AWS GovCloud (US) Region. After the
-    /// account is created, the master account of an organization in the AWS GovCloud (US)
-    /// Region can invite it to that organization. For more information on inviting standalone
+    /// account is created, the management account of an organization in the AWS GovCloud
+    /// (US) Region can invite it to that organization. For more information on inviting standalone
     /// accounts in the AWS GovCloud (US) to join an organization, see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
     /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
     /// </para>
@@ -124,12 +124,12 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// A role is created in the new account in the commercial Region that allows the master
+    /// A role is created in the new account in the commercial Region that allows the management
     /// account in the organization in the commercial Region to assume it. An AWS GovCloud
     /// (US) account is then created and associated with the commercial account that you just
     /// created. A role is also created in the new AWS GovCloud (US) account that can be assumed
-    /// by the AWS GovCloud (US) account that is associated with the master account of the
-    /// commercial organization. For more information and to view a diagram that explains
+    /// by the AWS GovCloud (US) account that is associated with the management account of
+    /// the commercial organization. For more information and to view a diagram that explains
     /// how account access works, see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
     /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
     /// </para>
@@ -272,9 +272,9 @@ namespace Amazon.Organizations.Model
         /// <para>
         /// The name of an IAM role that AWS Organizations automatically preconfigures in the
         /// new member accounts in both the AWS GovCloud (US) Region and in the commercial Region.
-        /// This role trusts the master account, allowing users in the master account to assume
-        /// the role, as permitted by the master account administrator. The role has administrator
-        /// permissions in the new member account.
+        /// This role trusts the management account, allowing users in the management account
+        /// to assume the role, as permitted by the management account administrator. The role
+        /// has administrator permissions in the new member account.
         /// </para>
         ///  
         /// <para>

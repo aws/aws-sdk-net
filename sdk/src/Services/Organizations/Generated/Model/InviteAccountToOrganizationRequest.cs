@@ -37,11 +37,11 @@ namespace Amazon.Organizations.Model
     /// 
     ///  <important> <ul> <li> 
     /// <para>
-    /// You can invite AWS accounts only from the same seller as the master account. For example,
-    /// if your organization's master account was created by Amazon Internet Services Pvt.
-    /// Ltd (AISPL), an AWS seller in India, you can invite only other AISPL accounts to your
-    /// organization. You can't combine accounts from AISPL and AWS or from any other AWS
-    /// seller. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
+    /// You can invite AWS accounts only from the same seller as the management account. For
+    /// example, if your organization's management account was created by Amazon Internet
+    /// Services Pvt. Ltd (AISPL), an AWS seller in India, you can invite only other AISPL
+    /// accounts to your organization. You can't combine accounts from AISPL and AWS or from
+    /// any other AWS seller. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
     /// Billing in India</a>.
     /// </para>
     ///  </li> <li> 
@@ -58,7 +58,7 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation can be called only from the organization's master account.
+    /// This operation can be called only from the organization's management account.
     /// </para>
     /// </summary>
     public partial class InviteAccountToOrganizationRequest : AmazonOrganizationsRequest

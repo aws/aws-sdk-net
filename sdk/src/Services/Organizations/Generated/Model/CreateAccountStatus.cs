@@ -150,8 +150,8 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  MISSING_PAYMENT_INSTRUMENT: You must configure the master account with a valid payment
-        /// method, such as a credit card.
+        ///  MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid
+        /// payment method, such as a credit card.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -76,12 +76,12 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OWNER_EMAIL</code> - Specifies the email address associated with the master
+        ///  <code>OWNER_EMAIL</code> - Specifies the email address associated with the management
         /// account. Included as information about an organization. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OWNER_NAME</code> - Specifies the name associated with the master account.
+        ///  <code>OWNER_NAME</code> - Specifies the name associated with the management account.
         /// Included as information about an organization. 
         /// </para>
         ///  </li> <li> 

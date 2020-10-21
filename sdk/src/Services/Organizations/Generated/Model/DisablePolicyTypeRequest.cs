@@ -45,7 +45,7 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation can be called only from the organization's master account.
+    /// This operation can be called only from the organization's management account.
     /// </para>
     ///  
     /// <para>

@@ -54,7 +54,7 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation can be called only from the organization's master account and only
+    /// This operation can be called only from the organization's management account and only
     /// if the organization has <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled
     /// all features</a>.
     /// </para>

@@ -47,8 +47,8 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation can be called only from the organization's master account or by a member
-    /// account that is a delegated administrator for an AWS service.
+    /// This operation can be called only from the organization's management account or by
+    /// a member account that is a delegated administrator for an AWS service.
     /// </para>
     /// </summary>
     public partial class DescribeEffectivePolicyRequest : AmazonOrganizationsRequest
@@ -95,9 +95,9 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// When you're signed in as the master account, specify the ID of the account that you
-        /// want details about. Specifying an organization root or organizational unit (OU) as
-        /// the target is not supported.
+        /// When you're signed in as the management account, specify the ID of the account that
+        /// you want details about. Specifying an organization root or organizational unit (OU)
+        /// as the target is not supported.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

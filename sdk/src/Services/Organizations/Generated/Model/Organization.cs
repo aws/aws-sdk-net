@@ -138,8 +138,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property MasterAccountArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the account that is designated as the master account
-        /// for the organization.
+        /// The Amazon Resource Name (ARN) of the account that is designated as the management
+        /// account for the organization.
         /// </para>
         ///  
         /// <para>
@@ -163,7 +163,7 @@ namespace Amazon.Organizations.Model
         /// Gets and sets the property MasterAccountEmail. 
         /// <para>
         /// The email address that is associated with the AWS account that is designated as the
-        /// master account for the organization.
+        /// management account for the organization.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=64)]
@@ -182,7 +182,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property MasterAccountId. 
         /// <para>
-        /// The unique identifier (ID) of the master account of an organization.
+        /// The unique identifier (ID) of the management account of an organization.
         /// </para>
         ///  
         /// <para>
