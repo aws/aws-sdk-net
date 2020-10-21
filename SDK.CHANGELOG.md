@@ -1,3 +1,11 @@
+### 3.5.39.1 (2020-10-21 21:14 UTC)
+* S3 (3.5.3.6)
+	* Updated to use new Core, version 3.5.1.28
+	* Added flags to disable payload signing and MD5Stream for S3 uploads.
+* Core 3.5.1.28
+	* Added flags to disable payload signing and MD5Stream for S3 uploads. Enabling the CA2007 reliability warning: Do not directly await a Task.
+	* All services packages updated to require new Core
+
 ### 3.5.39.0 (2020-10-21 18:17 UTC)
 * CloudFront (3.5.5.0)
 	* CloudFront adds support for managing the public keys for signed URLs and signed cookies directly in CloudFront (it no longer requires the AWS root account).
