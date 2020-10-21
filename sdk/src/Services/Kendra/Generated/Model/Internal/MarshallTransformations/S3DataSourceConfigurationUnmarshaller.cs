@@ -88,6 +88,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExclusionPatterns = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InclusionPatterns", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.InclusionPatterns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InclusionPrefixes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

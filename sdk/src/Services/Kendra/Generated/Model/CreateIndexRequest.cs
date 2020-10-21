@@ -56,7 +56,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// A token that you provide to identify the request to create an index. Multiple calls
         /// to the <code>CreateIndex</code> operation with the same client token will create only
-        /// one index.”
+        /// one index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -78,7 +78,7 @@ namespace Amazon.Kendra.Model
         /// A description for the index.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -139,9 +139,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// An IAM role that gives Amazon Kendra permissions to access your Amazon CloudWatch
-        /// logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code>
-        /// operation to index documents from an Amazon S3 bucket.
+        /// An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions
+        /// to access your Amazon CloudWatch logs and metrics. This is also the role used when
+        /// you use the <code>BatchPutDocument</code> operation to index documents from an Amazon
+        /// S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1284)]

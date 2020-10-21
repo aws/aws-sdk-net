@@ -329,6 +329,10 @@ namespace Amazon.Kendra
     {
 
         /// <summary>
+        /// Constant CUSTOM for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType CUSTOM = new DataSourceType("CUSTOM");
+        /// <summary>
         /// Constant DATABASE for DataSourceType
         /// </summary>
         public static readonly DataSourceType DATABASE = new DataSourceType("DATABASE");

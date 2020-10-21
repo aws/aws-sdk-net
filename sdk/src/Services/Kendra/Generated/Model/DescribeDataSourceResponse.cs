@@ -90,7 +90,7 @@ namespace Amazon.Kendra.Model
         /// The description of the data source.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public string Description
         {
             get { return this._description; }

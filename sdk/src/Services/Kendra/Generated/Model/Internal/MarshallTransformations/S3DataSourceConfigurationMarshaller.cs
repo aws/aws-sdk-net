@@ -84,6 +84,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetInclusionPatterns())
+            {
+                context.Writer.WritePropertyName("InclusionPatterns");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInclusionPatternsListValue in requestObject.InclusionPatterns)
+                {
+                        context.Writer.Write(requestObjectInclusionPatternsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetInclusionPrefixes())
             {
                 context.Writer.WritePropertyName("InclusionPrefixes");

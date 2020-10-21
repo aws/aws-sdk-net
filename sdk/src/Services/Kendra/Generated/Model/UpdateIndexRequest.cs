@@ -71,7 +71,7 @@ namespace Amazon.Kendra.Model
         /// A new description for the index.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public string Description
         {
             get { return this._description; }

@@ -38,6 +38,7 @@ namespace Amazon.Kendra.Model
         private string _bucketName;
         private DocumentsMetadataConfiguration _documentsMetadataConfiguration;
         private List<string> _exclusionPatterns = new List<string>();
+        private List<string> _inclusionPatterns = new List<string>();
         private List<string> _inclusionPrefixes = new List<string>();
 
         /// <summary>
@@ -97,8 +98,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ExclusionPatterns. 
         /// <para>
         /// A list of glob patterns for documents that should not be indexed. If a document that
-        /// matches an inclusion prefix also matches an exclusion pattern, the document is not
-        /// indexed.
+        /// matches an inclusion prefix or inclusion pattern also matches an exclusion pattern,
+        /// the document is not indexed.
         /// </para>
         ///  
         /// <para>
@@ -117,6 +118,31 @@ namespace Amazon.Kendra.Model
         internal bool IsSetExclusionPatterns()
         {
             return this._exclusionPatterns != null && this._exclusionPatterns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InclusionPatterns. 
+        /// <para>
+        /// A list of glob patterns for documents that should be indexed. If a document that matches
+        /// an inclusion pattern also matches an exclusion pattern, the document is not indexed.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
+        /// (programming)</a> in <i>Wikipedia</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<string> InclusionPatterns
+        {
+            get { return this._inclusionPatterns; }
+            set { this._inclusionPatterns = value; }
+        }
+
+        // Check to see if InclusionPatterns property is set
+        internal bool IsSetInclusionPatterns()
+        {
+            return this._inclusionPatterns != null && this._inclusionPatterns.Count > 0; 
         }
 
         /// <summary>
