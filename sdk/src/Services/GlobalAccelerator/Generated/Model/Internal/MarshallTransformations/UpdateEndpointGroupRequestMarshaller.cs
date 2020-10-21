@@ -114,6 +114,22 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.HealthCheckProtocol);
                 }
 
+                if(publicRequest.IsSetPortOverrides())
+                {
+                    context.Writer.WritePropertyName("PortOverrides");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPortOverridesListValue in publicRequest.PortOverrides)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PortOverrideMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPortOverridesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetThresholdCount())
                 {
                     context.Writer.WritePropertyName("ThresholdCount");

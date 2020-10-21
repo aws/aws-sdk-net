@@ -35,7 +35,8 @@ namespace Amazon.GlobalAccelerator.Model
     /// 
     ///  <important> 
     /// <para>
-    /// You must specify the US West (Oregon) Region to create or update accelerators.
+    /// Global Accelerator is a global service that supports endpoints in multiple AWS Regions
+    /// but you must specify the US West (Oregon) Region to create or update accelerators.
     /// </para>
     ///  </important>
     /// </summary>

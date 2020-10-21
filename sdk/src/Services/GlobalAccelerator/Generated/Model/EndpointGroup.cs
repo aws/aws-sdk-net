@@ -41,6 +41,7 @@ namespace Amazon.GlobalAccelerator.Model
         private string _healthCheckPath;
         private int? _healthCheckPort;
         private HealthCheckProtocol _healthCheckProtocol;
+        private List<PortOverride> _portOverrides = new List<PortOverride>();
         private int? _thresholdCount;
         private float? _trafficDialPercentage;
 
@@ -84,7 +85,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property EndpointGroupRegion. 
         /// <para>
-        /// The AWS Region that this endpoint group belongs.
+        /// The AWS Region where the endpoint group is located.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -184,6 +185,28 @@ namespace Amazon.GlobalAccelerator.Model
         internal bool IsSetHealthCheckProtocol()
         {
             return this._healthCheckProtocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PortOverrides. 
+        /// <para>
+        /// Allows you to override the destination ports used to route traffic to an endpoint.
+        /// Using a port override lets you to map a list of external destination ports (that your
+        /// users send traffic to) to a list of internal destination ports that you want an application
+        /// endpoint to receive traffic on. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<PortOverride> PortOverrides
+        {
+            get { return this._portOverrides; }
+            set { this._portOverrides = value; }
+        }
+
+        // Check to see if PortOverrides property is set
+        internal bool IsSetPortOverrides()
+        {
+            return this._portOverrides != null && this._portOverrides.Count > 0; 
         }
 
         /// <summary>

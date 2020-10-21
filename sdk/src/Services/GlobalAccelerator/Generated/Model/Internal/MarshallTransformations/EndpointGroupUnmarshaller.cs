@@ -106,6 +106,12 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                     unmarshalledObject.HealthCheckProtocol = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PortOverrides", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PortOverride, PortOverrideUnmarshaller>(PortOverrideUnmarshaller.Instance);
+                    unmarshalledObject.PortOverrides = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ThresholdCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

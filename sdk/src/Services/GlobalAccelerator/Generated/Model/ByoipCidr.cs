@@ -126,8 +126,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        /// A history of status changes for an IP address range that that you bring to AWS Global
-        /// Accelerator through bring your own IP address (BYOIP).
+        /// A history of status changes for an IP address range that you bring to AWS Global Accelerator
+        /// through bring your own IP address (BYOIP).
         /// </para>
         /// </summary>
         public List<ByoipCidrEvent> Events

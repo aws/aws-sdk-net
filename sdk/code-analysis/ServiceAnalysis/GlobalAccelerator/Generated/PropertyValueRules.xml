@@ -322,6 +322,16 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.PortOverride.EndpointPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.PortOverride.ListenerPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.PortRange.FromPort</property>
     <min>1</min>
     <max>65535</max>

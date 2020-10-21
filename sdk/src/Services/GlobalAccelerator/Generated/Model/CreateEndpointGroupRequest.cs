@@ -31,8 +31,13 @@ namespace Amazon.GlobalAccelerator.Model
     /// <summary>
     /// Container for the parameters to the CreateEndpointGroup operation.
     /// Create an endpoint group for the specified listener. An endpoint group is a collection
-    /// of endpoints in one AWS Region. To see an AWS CLI example of creating an endpoint
-    /// group, scroll down to <b>Example</b>.
+    /// of endpoints in one AWS Region. A resource must be valid and active when you add it
+    /// as an endpoint.
+    /// 
+    ///  
+    /// <para>
+    /// To see an AWS CLI example of creating an endpoint group, scroll down to <b>Example</b>.
+    /// </para>
     /// </summary>
     public partial class CreateEndpointGroupRequest : AmazonGlobalAcceleratorRequest
     {
@@ -44,6 +49,7 @@ namespace Amazon.GlobalAccelerator.Model
         private HealthCheckProtocol _healthCheckProtocol;
         private string _idempotencyToken;
         private string _listenerArn;
+        private List<PortOverride> _portOverrides = new List<PortOverride>();
         private int? _thresholdCount;
         private float? _trafficDialPercentage;
 
@@ -69,8 +75,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property EndpointGroupRegion. 
         /// <para>
-        /// The name of the AWS Region where the endpoint group is located. A listener can have
-        /// only one endpoint group in a specific Region.
+        /// The AWS Region where the endpoint group is located. A listener can have only one endpoint
+        /// group in a specific Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -204,6 +210,33 @@ namespace Amazon.GlobalAccelerator.Model
         internal bool IsSetListenerArn()
         {
             return this._listenerArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PortOverrides. 
+        /// <para>
+        /// Override specific listener ports used to route traffic to endpoints that are part
+        /// of this endpoint group. For example, you can create a port override in which the listener
+        /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic
+        /// to ports 1080 and 1443, respectively, on the endpoints.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+        /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<PortOverride> PortOverrides
+        {
+            get { return this._portOverrides; }
+            set { this._portOverrides = value; }
+        }
+
+        // Check to see if PortOverrides property is set
+        internal bool IsSetPortOverrides()
+        {
+            return this._portOverrides != null && this._portOverrides.Count > 0; 
         }
 
         /// <summary>
