@@ -39,7 +39,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ETag. 
         /// <para>
-        /// The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+        /// The identifier for this version of the public key.
         /// </para>
         /// </summary>
         public string ETag
@@ -57,7 +57,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property PublicKey. 
         /// <para>
-        /// Return the public key.
+        /// The public key.
         /// </para>
         /// </summary>
         public PublicKey PublicKey

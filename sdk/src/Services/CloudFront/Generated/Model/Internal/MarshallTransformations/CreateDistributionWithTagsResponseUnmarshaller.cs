@@ -250,6 +250,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return TooManyDistributionsAssociatedToFieldLevelEncryptionConfigExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsAssociatedToKeyGroup"))
+                {
+                    return TooManyDistributionsAssociatedToKeyGroupExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsAssociatedToOriginRequestPolicy"))
                 {
                     return TooManyDistributionsAssociatedToOriginRequestPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -269,6 +273,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyHeadersInForwardedValues"))
                 {
                     return TooManyHeadersInForwardedValuesExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyKeyGroupsAssociatedToDistribution"))
+                {
+                    return TooManyKeyGroupsAssociatedToDistributionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyLambdaFunctionAssociations"))
                 {
@@ -293,6 +301,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyTrustedSigners"))
                 {
                     return TooManyTrustedSignersExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TrustedKeyGroupDoesNotExist"))
+                {
+                    return TrustedKeyGroupDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TrustedSignerDoesNotExist"))
                 {

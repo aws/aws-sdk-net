@@ -29,35 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that specifies the AWS accounts, if any, that you want to allow to
-    /// create signed URLs for private content.
-    /// 
-    ///  
-    /// <para>
-    /// If you want to require signed URLs in requests for objects in the target origin that
-    /// match the <code>PathPattern</code> for this cache behavior, specify <code>true</code>
-    /// for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code>
-    /// and <code>Items</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-    /// Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>,
-    /// specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>.
-    /// Omit <code>Items</code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// To add, change, or remove one or more trusted signers, change <code>Enabled</code>
-    /// to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code>
-    /// as applicable, and specify all of the trusted signers that you want to include in
-    /// the updated distribution.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information about updating the distribution configuration, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/DistributionConfig.html">DistributionConfig</a>
-    /// in the <i>Amazon CloudFront API Reference</i>.
-    /// </para>
+    /// A list of AWS accounts whose public keys CloudFront can use to verify the signatures
+    /// of signed URLs and signed cookies.
     /// </summary>
     public partial class TrustedSigners
     {
@@ -73,7 +46,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates TrustedSigners with the parameterized properties
         /// </summary>
-        /// <param name="items"> <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</param>
+        /// <param name="items">A list of AWS account identifiers.</param>
         public TrustedSigners(List<string> items)
         {
             _items = items;
@@ -82,8 +55,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specifies whether you want to require viewers to use signed URLs to access the files
-        /// specified by <code>PathPattern</code> and <code>TargetOriginId</code>.
+        /// This field is <code>true</code> if any of the AWS accounts have public keys that CloudFront
+        /// can use to verify the signatures of signed URLs and signed cookies. If not, this field
+        /// is <code>false</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,8 +76,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        ///  <b>Optional</b>: A complex type that contains trusted signers for this cache behavior.
-        /// If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.
+        /// A list of AWS account identifiers.
         /// </para>
         /// </summary>
         public List<string> Items
@@ -121,7 +94,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The number of trusted signers for this cache behavior.
+        /// The number of AWS accounts in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Information about a public key you add to CloudFront to use with features like field-level
-    /// encryption.
+    /// Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed
+    /// URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+    /// encryption</a>.
     /// </summary>
     public partial class PublicKeyConfig
     {
@@ -42,7 +43,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CallerReference. 
         /// <para>
-        /// A unique number that ensures that the request can't be replayed.
+        /// A string included in the request to help make sure that the request can’t be replayed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +62,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// An optional comment about a public key.
+        /// A comment to describe the public key.
         /// </para>
         /// </summary>
         public string Comment
@@ -79,8 +80,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property EncodedKey. 
         /// <para>
-        /// The encoded public key that you want to add to CloudFront to use with features like
-        /// field-level encryption.
+        /// The public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed
+        /// URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+        /// encryption</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,8 +101,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name for a public key you add to CloudFront to use with features like field-level
-        /// encryption.
+        /// A name to help identify the public key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

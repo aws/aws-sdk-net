@@ -34,6 +34,7 @@ namespace Amazon.CloudFront.Model
     /// </summary>
     public partial class Distribution
     {
+        private ActiveTrustedKeyGroups _activeTrustedKeyGroups;
         private ActiveTrustedSigners _activeTrustedSigners;
         private List<AliasICPRecordal> _aliasICPRecordals = new List<AliasICPRecordal>();
         private string _arn;
@@ -63,19 +64,40 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ActiveTrustedSigners. 
+        /// Gets and sets the property ActiveTrustedKeyGroups. 
         /// <para>
-        /// CloudFront automatically adds this element to the response only if you've set up the
-        /// distribution to serve private content with signed URLs. The element lists the key
-        /// pair IDs that CloudFront is aware of for each trusted signer. The <code>Signer</code>
-        /// child element lists the AWS account number of the trusted signer (or an empty <code>Self</code>
-        /// element if the signer is you). The <code>Signer</code> element also includes the IDs
-        /// of any active key pairs associated with the trusted signer's AWS account. If no <code>KeyPairId</code>
-        /// element appears for a <code>Signer</code>, that signer can't create working signed
-        /// URLs.
+        /// CloudFront automatically adds this field to the response if you’ve configured a cache
+        /// behavior in this distribution to serve private content using key groups. This field
+        /// contains a list of key groups and the public keys in each key group that CloudFront
+        /// can use to verify the signatures of signed URLs or signed cookies.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        public ActiveTrustedKeyGroups ActiveTrustedKeyGroups
+        {
+            get { return this._activeTrustedKeyGroups; }
+            set { this._activeTrustedKeyGroups = value; }
+        }
+
+        // Check to see if ActiveTrustedKeyGroups property is set
+        internal bool IsSetActiveTrustedKeyGroups()
+        {
+            return this._activeTrustedKeyGroups != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActiveTrustedSigners. <important> 
+        /// <para>
+        /// We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// CloudFront automatically adds this field to the response if you’ve configured a cache
+        /// behavior in this distribution to serve private content using trusted signers. This
+        /// field contains a list of AWS account IDs and the active CloudFront key pairs in each
+        /// account that CloudFront can use to verify the signatures of signed URLs or signed
+        /// cookies.
+        /// </para>
+        /// </summary>
         public ActiveTrustedSigners ActiveTrustedSigners
         {
             get { return this._activeTrustedSigners; }

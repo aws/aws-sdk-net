@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex data type of public keys you add to CloudFront to use with features like
-    /// field-level encryption.
+    /// A public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed
+    /// URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+    /// encryption</a>.
     /// </summary>
     public partial class PublicKey
     {
@@ -41,7 +42,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// A time you added a public key to CloudFront.
+        /// The date and time when the public key was uploaded.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +61,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// A unique ID assigned to a public key you've added to CloudFront.
+        /// The identifier of the public key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,8 +80,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property PublicKeyConfig. 
         /// <para>
-        /// A complex data type for a public key you add to CloudFront to use with features like
-        /// field-level encryption.
+        /// Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed
+        /// URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+        /// encryption</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

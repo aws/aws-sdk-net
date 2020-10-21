@@ -139,6 +139,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.TargetOriginId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("TrustedKeyGroups", targetDepth))
+                    {
+                        var unmarshaller = TrustedKeyGroupsUnmarshaller.Instance;
+                        unmarshalledObject.TrustedKeyGroups = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("TrustedSigners", targetDepth))
                     {
                         var unmarshaller = TrustedSignersUnmarshaller.Instance;

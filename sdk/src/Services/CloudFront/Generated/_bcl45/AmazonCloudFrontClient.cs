@@ -665,6 +665,11 @@ namespace Amazon.CloudFront
         /// The maximum number of distributions have been associated with the specified configuration
         /// for field-level encryption.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
         /// The maximum number of distributions have been associated with the specified origin
         /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
@@ -685,6 +690,11 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
         /// Your request contains too many headers in forwarded values.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
         /// Your request contains more Lambda function associations than are allowed per distribution.
         /// </exception>
@@ -703,6 +713,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
         /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
@@ -867,6 +880,11 @@ namespace Amazon.CloudFront
         /// The maximum number of distributions have been associated with the specified configuration
         /// for field-level encryption.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
         /// The maximum number of distributions have been associated with the specified origin
         /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
@@ -887,6 +905,11 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
         /// Your request contains too many headers in forwarded values.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
         /// Your request contains more Lambda function associations than are allowed per distribution.
         /// </exception>
@@ -905,6 +928,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
         /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
@@ -1058,6 +1084,11 @@ namespace Amazon.CloudFront
         /// The maximum number of distributions have been associated with the specified configuration
         /// for field-level encryption.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
         /// The maximum number of distributions have been associated with the specified origin
         /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
@@ -1078,6 +1109,11 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
         /// Your request contains too many headers in forwarded values.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
         /// Your request contains more Lambda function associations than are allowed per distribution.
         /// </exception>
@@ -1096,6 +1132,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
         /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
@@ -1248,6 +1287,11 @@ namespace Amazon.CloudFront
         /// The maximum number of distributions have been associated with the specified configuration
         /// for field-level encryption.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
         /// The maximum number of distributions have been associated with the specified origin
         /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
@@ -1268,6 +1312,11 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
         /// Your request contains too many headers in forwarded values.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
         /// Your request contains more Lambda function associations than are allowed per distribution.
         /// </exception>
@@ -1286,6 +1335,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
         /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
@@ -1567,6 +1619,107 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  CreateKeyGroup
+
+
+        /// <summary>
+        /// Creates a key group that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront
+        /// signed URLs and signed cookies</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To create a key group, you must specify at least one public key for the key group.
+        /// After you create a key group, you can reference it from one or more cache behaviors.
+        /// When you reference a key group in a cache behavior, CloudFront requires signed URLs
+        /// or signed cookies for all requests that match the cache behavior. The URLs or cookies
+        /// must be signed with a private key whose corresponding public key is in the key group.
+        /// The signed URL or cookie contains information about which public key CloudFront should
+        /// use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateKeyGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.KeyGroupAlreadyExistsException">
+        /// A key group with this name already exists. You must provide a unique name. To modify
+        /// an existing key group, use <code>UpdateKeyGroup</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsException">
+        /// You have reached the maximum number of key groups for this AWS account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyPublicKeysInKeyGroupException">
+        /// The number of public keys in this key group is more than the maximum allowed. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyGroup">REST API Reference for CreateKeyGroup Operation</seealso>
+        public virtual CreateKeyGroupResponse CreateKeyGroup(CreateKeyGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateKeyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateKeyGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateKeyGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a key group that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront
+        /// signed URLs and signed cookies</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To create a key group, you must specify at least one public key for the key group.
+        /// After you create a key group, you can reference it from one or more cache behaviors.
+        /// When you reference a key group in a cache behavior, CloudFront requires signed URLs
+        /// or signed cookies for all requests that match the cache behavior. The URLs or cookies
+        /// must be signed with a private key whose corresponding public key is in the key group.
+        /// The signed URL or cookie contains information about which public key CloudFront should
+        /// use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateKeyGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.KeyGroupAlreadyExistsException">
+        /// A key group with this name already exists. You must provide a unique name. To modify
+        /// an existing key group, use <code>UpdateKeyGroup</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsException">
+        /// You have reached the maximum number of key groups for this AWS account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyPublicKeysInKeyGroupException">
+        /// The number of public keys in this key group is more than the maximum allowed. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyGroup">REST API Reference for CreateKeyGroup Operation</seealso>
+        public virtual Task<CreateKeyGroupResponse> CreateKeyGroupAsync(CreateKeyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateKeyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateKeyGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateKeyGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateMonitoringSubscription
 
 
@@ -1815,8 +1968,9 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Add a new public key to CloudFront to use, for example, for field-level encryption.
-        /// You can add a maximum of 10 public keys with one AWS account.
+        /// Uploads a public key to CloudFront that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed
+        /// URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+        /// encryption</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePublicKey service method.</param>
         /// 
@@ -1843,8 +1997,9 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Add a new public key to CloudFront to use, for example, for field-level encryption.
-        /// You can add a maximum of 10 public keys with one AWS account.
+        /// Uploads a public key to CloudFront that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed
+        /// URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+        /// encryption</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePublicKey service method.</param>
         /// <param name="cancellationToken">
@@ -1894,6 +2049,9 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the CreateRealtimeLogConfig service method.</param>
         /// 
         /// <returns>The response from the CreateRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
@@ -1937,6 +2095,9 @@ namespace Amazon.CloudFront
         /// </param>
         /// 
         /// <returns>The response from the CreateRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
@@ -2776,6 +2937,97 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  DeleteKeyGroup
+
+
+        /// <summary>
+        /// Deletes a key group.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a key group that is referenced in a cache behavior. First update
+        /// your distributions to remove the key group from all cache behaviors, then delete the
+        /// key group.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a key group, you must provide the key group’s identifier and version. To
+        /// get these values, use <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code>
+        /// or <code>GetKeyGroupConfig</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKeyGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
+        /// Cannot delete this resource because it is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyGroup">REST API Reference for DeleteKeyGroup Operation</seealso>
+        public virtual DeleteKeyGroupResponse DeleteKeyGroup(DeleteKeyGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteKeyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteKeyGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteKeyGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a key group.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a key group that is referenced in a cache behavior. First update
+        /// your distributions to remove the key group from all cache behaviors, then delete the
+        /// key group.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a key group, you must provide the key group’s identifier and version. To
+        /// get these values, use <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code>
+        /// or <code>GetKeyGroupConfig</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKeyGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
+        /// Cannot delete this resource because it is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyGroup">REST API Reference for DeleteKeyGroup Operation</seealso>
+        public virtual Task<DeleteKeyGroupResponse> DeleteKeyGroupAsync(DeleteKeyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteKeyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteKeyGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteKeyGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteMonitoringSubscription
 
 
@@ -3025,6 +3277,9 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the DeleteRealtimeLogConfig service method.</param>
         /// 
         /// <returns>The response from the DeleteRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
@@ -3068,6 +3323,9 @@ namespace Amazon.CloudFront
         /// </param>
         /// 
         /// <returns>The response from the DeleteRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
@@ -4244,6 +4502,134 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  GetKeyGroup
+
+
+        /// <summary>
+        /// Gets a key group, including the date and time when the key group was last modified.
+        /// 
+        ///  
+        /// <para>
+        /// To get a key group, you must provide the key group’s identifier. If the key group
+        /// is referenced in a distribution’s cache behavior, you can get the key group’s identifier
+        /// using <code>ListDistributions</code> or <code>GetDistribution</code>. If the key group
+        /// is not referenced in a cache behavior, you can get the identifier using <code>ListKeyGroups</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetKeyGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroup">REST API Reference for GetKeyGroup Operation</seealso>
+        public virtual GetKeyGroupResponse GetKeyGroup(GetKeyGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetKeyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetKeyGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetKeyGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a key group, including the date and time when the key group was last modified.
+        /// 
+        ///  
+        /// <para>
+        /// To get a key group, you must provide the key group’s identifier. If the key group
+        /// is referenced in a distribution’s cache behavior, you can get the key group’s identifier
+        /// using <code>ListDistributions</code> or <code>GetDistribution</code>. If the key group
+        /// is not referenced in a cache behavior, you can get the identifier using <code>ListKeyGroups</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetKeyGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroup">REST API Reference for GetKeyGroup Operation</seealso>
+        public virtual Task<GetKeyGroupResponse> GetKeyGroupAsync(GetKeyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetKeyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetKeyGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetKeyGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetKeyGroupConfig
+
+
+        /// <summary>
+        /// Gets a key group configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To get a key group configuration, you must provide the key group’s identifier. If
+        /// the key group is referenced in a distribution’s cache behavior, you can get the key
+        /// group’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// If the key group is not referenced in a cache behavior, you can get the identifier
+        /// using <code>ListKeyGroups</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetKeyGroupConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetKeyGroupConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroupConfig">REST API Reference for GetKeyGroupConfig Operation</seealso>
+        public virtual GetKeyGroupConfigResponse GetKeyGroupConfig(GetKeyGroupConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetKeyGroupConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetKeyGroupConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetKeyGroupConfigResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a key group configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To get a key group configuration, you must provide the key group’s identifier. If
+        /// the key group is referenced in a distribution’s cache behavior, you can get the key
+        /// group’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// If the key group is not referenced in a cache behavior, you can get the identifier
+        /// using <code>ListKeyGroups</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetKeyGroupConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetKeyGroupConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroupConfig">REST API Reference for GetKeyGroupConfig Operation</seealso>
+        public virtual Task<GetKeyGroupConfigResponse> GetKeyGroupConfigAsync(GetKeyGroupConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetKeyGroupConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetKeyGroupConfigResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetKeyGroupConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetMonitoringSubscription
 
 
@@ -4461,7 +4847,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Get the public key information.
+        /// Gets a public key.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicKey service method.</param>
         /// 
@@ -4484,7 +4870,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Get the public key information.
+        /// Gets a public key.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicKey service method.</param>
         /// <param name="cancellationToken">
@@ -4514,7 +4900,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Return public key configuration informaation
+        /// Gets a public key configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicKeyConfig service method.</param>
         /// 
@@ -4537,7 +4923,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Return public key configuration informaation
+        /// Gets a public key configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicKeyConfig service method.</param>
         /// <param name="cancellationToken">
@@ -4579,6 +4965,9 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the GetRealtimeLogConfig service method.</param>
         /// 
         /// <returns>The response from the GetRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
@@ -4612,6 +5001,9 @@ namespace Amazon.CloudFront
         /// </param>
         /// 
         /// <returns>The response from the GetRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
@@ -5136,6 +5528,79 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListDistributionsByKeyGroup
+
+
+        /// <summary>
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that
+        /// references the specified key group.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByKeyGroup service method.</param>
+        /// 
+        /// <returns>The response from the ListDistributionsByKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByKeyGroup">REST API Reference for ListDistributionsByKeyGroup Operation</seealso>
+        public virtual ListDistributionsByKeyGroupResponse ListDistributionsByKeyGroup(ListDistributionsByKeyGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionsByKeyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsByKeyGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ListDistributionsByKeyGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that
+        /// references the specified key group.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByKeyGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDistributionsByKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByKeyGroup">REST API Reference for ListDistributionsByKeyGroup Operation</seealso>
+        public virtual Task<ListDistributionsByKeyGroupResponse> ListDistributionsByKeyGroupAsync(ListDistributionsByKeyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionsByKeyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsByKeyGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDistributionsByKeyGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDistributionsByOriginRequestPolicyId
 
 
@@ -5508,6 +5973,71 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListKeyGroups
+
+
+        /// <summary>
+        /// Gets a list of key groups.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKeyGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListKeyGroups service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyGroups">REST API Reference for ListKeyGroups Operation</seealso>
+        public virtual ListKeyGroupsResponse ListKeyGroups(ListKeyGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListKeyGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListKeyGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListKeyGroupsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a list of key groups.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKeyGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListKeyGroups service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyGroups">REST API Reference for ListKeyGroups Operation</seealso>
+        public virtual Task<ListKeyGroupsResponse> ListKeyGroupsAsync(ListKeyGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListKeyGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListKeyGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListKeyGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListOriginRequestPolicies
 
 
@@ -5660,6 +6190,15 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the ListRealtimeLogConfigs service method.</param>
         /// 
         /// <returns>The response from the ListRealtimeLogConfigs service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListRealtimeLogConfigs">REST API Reference for ListRealtimeLogConfigs Operation</seealso>
         public virtual ListRealtimeLogConfigsResponse ListRealtimeLogConfigs(ListRealtimeLogConfigsRequest request)
         {
@@ -5689,6 +6228,15 @@ namespace Amazon.CloudFront
         /// </param>
         /// 
         /// <returns>The response from the ListRealtimeLogConfigs service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListRealtimeLogConfigs">REST API Reference for ListRealtimeLogConfigs Operation</seealso>
         public virtual Task<ListRealtimeLogConfigsResponse> ListRealtimeLogConfigsAsync(ListRealtimeLogConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -6460,6 +7008,11 @@ namespace Amazon.CloudFront
         /// The maximum number of distributions have been associated with the specified configuration
         /// for field-level encryption.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
         /// The maximum number of distributions have been associated with the specified origin
         /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
@@ -6475,6 +7028,11 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
         /// Your request contains too many headers in forwarded values.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
         /// Your request contains more Lambda function associations than are allowed per distribution.
@@ -6494,6 +7052,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
         /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
@@ -6740,6 +7301,11 @@ namespace Amazon.CloudFront
         /// The maximum number of distributions have been associated with the specified configuration
         /// for field-level encryption.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
         /// The maximum number of distributions have been associated with the specified origin
         /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
@@ -6755,6 +7321,11 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
         /// Your request contains too many headers in forwarded values.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
         /// Your request contains more Lambda function associations than are allowed per distribution.
@@ -6774,6 +7345,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
         /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
@@ -7006,6 +7580,133 @@ namespace Amazon.CloudFront
             options.ResponseUnmarshaller = UpdateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateFieldLevelEncryptionProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateKeyGroup
+
+
+        /// <summary>
+        /// Updates a key group.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a key group, all the fields are updated with the values provided in
+        /// the request. You cannot update some fields independent of others. To update a key
+        /// group:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Get the current key group with <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Locally modify the fields in the key group that you want to update. For example, add
+        /// or remove public key IDs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields
+        /// that you modified and those that you didn’t.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKeyGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.KeyGroupAlreadyExistsException">
+        /// A key group with this name already exists. You must provide a unique name. To modify
+        /// an existing key group, use <code>UpdateKeyGroup</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyPublicKeysInKeyGroupException">
+        /// The number of public keys in this key group is more than the maximum allowed. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyGroup">REST API Reference for UpdateKeyGroup Operation</seealso>
+        public virtual UpdateKeyGroupResponse UpdateKeyGroup(UpdateKeyGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateKeyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateKeyGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateKeyGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a key group.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a key group, all the fields are updated with the values provided in
+        /// the request. You cannot update some fields independent of others. To update a key
+        /// group:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Get the current key group with <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Locally modify the fields in the key group that you want to update. For example, add
+        /// or remove public key IDs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields
+        /// that you modified and those that you didn’t.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKeyGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateKeyGroup service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.KeyGroupAlreadyExistsException">
+        /// A key group with this name already exists. You must provide a unique name. To modify
+        /// an existing key group, use <code>UpdateKeyGroup</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// A resource that was specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyPublicKeysInKeyGroupException">
+        /// The number of public keys in this key group is more than the maximum allowed. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyGroup">REST API Reference for UpdateKeyGroup Operation</seealso>
+        public virtual Task<UpdateKeyGroupResponse> UpdateKeyGroupAsync(UpdateKeyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateKeyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateKeyGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateKeyGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7292,6 +7993,9 @@ namespace Amazon.CloudFront
         /// <param name="request">Container for the necessary parameters to execute the UpdateRealtimeLogConfig service method.</param>
         /// 
         /// <returns>The response from the UpdateRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
@@ -7343,6 +8047,9 @@ namespace Amazon.CloudFront
         /// </param>
         /// 
         /// <returns>The response from the UpdateRealtimeLogConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>

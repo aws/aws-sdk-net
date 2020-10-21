@@ -29,13 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that lists the active CloudFront key pairs, if any, that are associated
-    /// with <code>AwsAccountNumber</code>. 
-    /// 
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.
-    /// </para>
+    /// A list of CloudFront key pair identifiers.
     /// </summary>
     public partial class KeyPairIds
     {
@@ -45,12 +39,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// A complex type that lists the active CloudFront key pairs, if any, that are associated
-        /// with <code>AwsAccountNumber</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.
+        /// A list of CloudFront key pair identifiers.
         /// </para>
         /// </summary>
         public List<string> Items
@@ -68,11 +57,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.
+        /// The number of key pair identifiers in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A list of public keys you've added to CloudFront to use with features like field-level
-    /// encryption.
+    /// A list of public keys that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed
+    /// URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+    /// encryption</a>.
     /// </summary>
     public partial class PublicKeyList
     {
@@ -42,8 +43,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// An array of information about a public key you add to CloudFront to use with features
-        /// like field-level encryption.
+        /// A list of public keys.
         /// </para>
         /// </summary>
         public List<PublicKeySummary> Items
@@ -61,7 +61,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of public keys you want in the response body. 
+        /// The maximum number of public keys you want in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,8 +100,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The number of public keys you added to CloudFront to use with features like field-level
-        /// encryption.
+        /// The number of public keys in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

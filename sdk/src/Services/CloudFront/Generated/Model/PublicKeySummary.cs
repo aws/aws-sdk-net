@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex data type for public key information.
+    /// Contains information about a public key.
     /// </summary>
     public partial class PublicKeySummary
     {
@@ -42,7 +42,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        ///  Comment for public key information summary. 
+        /// A comment to describe the public key.
         /// </para>
         /// </summary>
         public string Comment
@@ -60,7 +60,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        ///  Creation time for public key information summary. 
+        /// The date and time when the public key was uploaded.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property EncodedKey. 
         /// <para>
-        ///  Encoded key for public key information summary. 
+        /// The public key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -98,7 +98,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  ID for public key information summary. 
+        /// The identifier of the public key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -117,7 +117,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  Name for public key information summary. 
+        /// A name to help identify the public key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

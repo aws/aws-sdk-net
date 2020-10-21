@@ -55,6 +55,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ActiveTrustedKeyGroups", targetDepth))
+                    {
+                        var unmarshaller = ActiveTrustedKeyGroupsUnmarshaller.Instance;
+                        unmarshalledObject.ActiveTrustedKeyGroups = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ActiveTrustedSigners", targetDepth))
                     {
                         var unmarshaller = ActiveTrustedSignersUnmarshaller.Instance;

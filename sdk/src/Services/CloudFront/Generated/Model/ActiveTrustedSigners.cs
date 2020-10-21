@@ -29,23 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code>
-    /// complex type for this distribution. These are the accounts that you want to allow
-    /// to create signed URLs for private content.
-    /// 
-    ///  
-    /// <para>
-    /// The <code>Signer</code> complex type lists the AWS account number of the trusted signer
-    /// or <code>self</code> if the signer is the AWS account that created the distribution.
-    /// The <code>Signer</code> element also includes the IDs of any active CloudFront key
-    /// pairs that are associated with the trusted signer's AWS account. If no <code>KeyPairId</code>
-    /// element appears for a <code>Signer</code>, that signer can't create signed URLs. 
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-    /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
-    /// </para>
+    /// A list of AWS accounts and the active CloudFront key pairs in each account that CloudFront
+    /// can use to verify the signatures of signed URLs and signed cookies.
     /// </summary>
     public partial class ActiveTrustedSigners
     {
@@ -61,7 +46,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates ActiveTrustedSigners with the parameterized properties
         /// </summary>
-        /// <param name="items">A complex type that contains one <code>Signer</code> complex type for each trusted signer that is specified in the <code>TrustedSigners</code> complex type.</param>
+        /// <param name="items">A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</param>
         public ActiveTrustedSigners(List<Signer> items)
         {
             _items = items;
@@ -70,9 +55,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code>
-        /// complex type for this distribution have active CloudFront key pairs. If not, <code>Enabled</code>
-        /// is <code>false</code>.
+        /// This field is <code>true</code> if any of the AWS accounts in the list have active
+        /// CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs
+        /// and signed cookies. If not, this field is <code>false</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -91,8 +76,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// A complex type that contains one <code>Signer</code> complex type for each trusted
-        /// signer that is specified in the <code>TrustedSigners</code> complex type.
+        /// A list of AWS accounts and the identifiers of active CloudFront key pairs in each
+        /// account that CloudFront can use to verify the signatures of signed URLs and signed
+        /// cookies.
         /// </para>
         /// </summary>
         public List<Signer> Items
@@ -110,8 +96,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The number of trusted signers specified in the <code>TrustedSigners</code> complex
-        /// type.
+        /// The number of AWS accounts in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

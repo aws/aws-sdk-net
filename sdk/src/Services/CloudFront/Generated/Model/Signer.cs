@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that lists the AWS accounts that were included in the <code>TrustedSigners</code>
-    /// complex type, as well as their active CloudFront key pair IDs, if any.
+    /// A list of AWS accounts and the active CloudFront key pairs in each account that CloudFront
+    /// can use to verify the signatures of signed URLs and signed cookies.
     /// </summary>
     public partial class Signer
     {
@@ -45,18 +45,11 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property AwsAccountNumber. 
         /// <para>
-        /// An AWS account that is included in the <code>TrustedSigners</code> complex type for
-        /// this distribution. Valid values include:
+        /// An AWS account number that contains active CloudFront key pairs that CloudFront can
+        /// use to verify the signatures of signed URLs and signed cookies. If the AWS account
+        /// that owns the key pairs is the same account that owns the CloudFront distribution,
+        /// the value of this field is <code>self</code>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>self</code>, which is the AWS account used to create the distribution.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// An AWS account number.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public string AwsAccountNumber
         {
@@ -73,8 +66,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property KeyPairIds. 
         /// <para>
-        /// A complex type that lists the active CloudFront key pairs, if any, that are associated
-        /// with <code>AwsAccountNumber</code>.
+        /// A list of CloudFront key pair identifiers.
         /// </para>
         /// </summary>
         public KeyPairIds KeyPairIds

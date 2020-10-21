@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPublicKeyConfig operation.
-    /// Return public key configuration informaation
+    /// Gets a public key configuration.
     /// </summary>
     public partial class GetPublicKeyConfigRequest : AmazonCloudFrontRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Request the ID for the public key configuration.
+        /// The identifier of the public key whose configuration you are getting.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

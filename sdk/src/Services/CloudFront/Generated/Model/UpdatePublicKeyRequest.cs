@@ -41,7 +41,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// ID of the public key to be updated.
+        /// The identifier of the public key that you are updating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property PublicKeyConfig. 
         /// <para>
-        /// Request to update public key information.
+        /// A public key configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
