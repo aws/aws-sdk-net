@@ -30,8 +30,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Describes the launch specification for one or more Spot Instances. If you include
-    /// On-Demand capacity in your fleet request, you can't use <code>SpotFleetLaunchSpecification</code>;
-    /// you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.
+    /// On-Demand capacity in your fleet request or want to specify an EFA network device,
+    /// you can't use <code>SpotFleetLaunchSpecification</code>; you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.
     /// </summary>
     public partial class SpotFleetLaunchSpecification
     {
@@ -232,6 +232,12 @@ namespace Amazon.EC2.Model
         /// One or more network interfaces. If you specify a network interface, you must specify
         /// subnet IDs and security group IDs using the network interface.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric
+        /// Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<InstanceNetworkInterfaceSpecification> NetworkInterfaces
         {

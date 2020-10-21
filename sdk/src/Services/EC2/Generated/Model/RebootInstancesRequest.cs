@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// If an instance does not cleanly shut down within four minutes, Amazon EC2 performs
+    /// If an instance does not cleanly shut down within a few minutes, Amazon EC2 performs
     /// a hard reboot.
     /// </para>
     ///  

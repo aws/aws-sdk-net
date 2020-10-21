@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class InstanceStorageInfo
     {
         private List<DiskInfo> _disks = new List<DiskInfo>();
+        private EphemeralNvmeSupport _nvmeSupport;
         private long? _totalSizeInGB;
 
         /// <summary>
@@ -52,6 +53,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDisks()
         {
             return this._disks != null && this._disks.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NvmeSupport. 
+        /// <para>
+        /// Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+        /// </para>
+        /// </summary>
+        public EphemeralNvmeSupport NvmeSupport
+        {
+            get { return this._nvmeSupport; }
+            set { this._nvmeSupport = value; }
+        }
+
+        // Check to see if NvmeSupport property is set
+        internal bool IsSetNvmeSupport()
+        {
+            return this._nvmeSupport != null;
         }
 
         /// <summary>

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a reservation.
+    /// Describes a launch request for one or more instances, and includes owner, requester,
+    /// and security group information that applies to all instances in the launch request.
     /// </summary>
     public partial class Reservation
     {

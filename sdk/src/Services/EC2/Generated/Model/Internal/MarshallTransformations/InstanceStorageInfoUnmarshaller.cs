@@ -61,6 +61,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Disks.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("nvmeSupport", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NvmeSupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("totalSizeInGB", targetDepth))
                     {
                         var unmarshaller = LongUnmarshaller.Instance;

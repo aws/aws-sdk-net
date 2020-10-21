@@ -387,12 +387,21 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ValidUntil. 
         /// <para>
-        /// The end date of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// If this is a one-time request, it remains active until all instances launch, the request
-        /// is canceled, or this date is reached. If the request is persistent, it remains active
-        /// until it is canceled or this date is reached. The default end date is 7 days from
-        /// the current date.
+        /// The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For a persistent request, the request remains active until the <code>validUntil</code>
+        /// date and time is reached. Otherwise, the request remains active until you cancel it.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a one-time request, the request remains active until all instances launch, the
+        /// request is canceled, or the <code>validUntil</code> date and time is reached. By default,
+        /// the request is valid for 7 days from the date the request was created.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public DateTime ValidUntil
         {

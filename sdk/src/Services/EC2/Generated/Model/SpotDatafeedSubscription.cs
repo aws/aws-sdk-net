@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The Amazon S3 bucket where the Spot Instance data feed is located.
+        /// The name of the Amazon S3 bucket where the Spot Instance data feed is located.
         /// </para>
         /// </summary>
         public string Bucket
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// The prefix that is prepended to data feed files.
+        /// The prefix for the data feed files.
         /// </para>
         /// </summary>
         public string Prefix
