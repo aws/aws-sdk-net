@@ -124,6 +124,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RecrawlPolicy", targetDepth))
+                {
+                    var unmarshaller = RecrawlPolicyUnmarshaller.Instance;
+                    unmarshalledObject.RecrawlPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Role", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

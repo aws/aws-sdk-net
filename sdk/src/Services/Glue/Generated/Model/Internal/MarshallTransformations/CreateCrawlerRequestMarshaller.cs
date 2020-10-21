@@ -109,6 +109,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetRecrawlPolicy())
+                {
+                    context.Writer.WritePropertyName("RecrawlPolicy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RecrawlPolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RecrawlPolicy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRole())
                 {
                     context.Writer.WritePropertyName("Role");

@@ -45,6 +45,7 @@ namespace Amazon.Glue.Model
         private LastCrawlInfo _lastCrawl;
         private DateTime? _lastUpdated;
         private string _name;
+        private RecrawlPolicy _recrawlPolicy;
         private string _role;
         private Schedule _schedule;
         private SchemaChangePolicy _schemaChangePolicy;
@@ -237,6 +238,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecrawlPolicy. 
+        /// <para>
+        /// A policy that specifies whether to crawl the entire dataset again, or to crawl only
+        /// folders that were added since the last crawler run.
+        /// </para>
+        /// </summary>
+        public RecrawlPolicy RecrawlPolicy
+        {
+            get { return this._recrawlPolicy; }
+            set { this._recrawlPolicy = value; }
+        }
+
+        // Check to see if RecrawlPolicy property is set
+        internal bool IsSetRecrawlPolicy()
+        {
+            return this._recrawlPolicy != null;
         }
 
         /// <summary>
