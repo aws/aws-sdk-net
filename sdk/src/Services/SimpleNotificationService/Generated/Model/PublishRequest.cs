@@ -66,6 +66,8 @@ namespace Amazon.SimpleNotificationService.Model
     {
         private string _message;
         private Dictionary<string, MessageAttributeValue> _messageAttributes = new Dictionary<string, MessageAttributeValue>();
+        private string _messageDeduplicationId;
+        private string _messageGroupId;
         private string _messageStructure;
         private string _phoneNumber;
         private string _subject;
@@ -214,6 +216,64 @@ namespace Amazon.SimpleNotificationService.Model
         internal bool IsSetMessageAttributes()
         {
             return this._messageAttributes != null && this._messageAttributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageDeduplicationId. 
+        /// <para>
+        /// This parameter applies only to FIFO (first-in-first-out) topics. The <code>MessageDeduplicationId</code>
+        /// can contain up to 128 alphanumeric characters (a-z, A-Z, 0-9) and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Every message must have a unique <code>MessageDeduplicationId</code>, which is a token
+        /// used for deduplication of sent messages. If a message with a particular <code>MessageDeduplicationId</code>
+        /// is sent successfully, any message sent with the same <code>MessageDeduplicationId</code>
+        /// during the 5-minute deduplication interval is treated as a duplicate. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the topic has <code>ContentBasedDeduplication</code> set, the system generates
+        /// a <code>MessageDeduplicationId</code> based on the contents of the message. Your <code>MessageDeduplicationId</code>
+        /// overrides the generated one.
+        /// </para>
+        /// </summary>
+        public string MessageDeduplicationId
+        {
+            get { return this._messageDeduplicationId; }
+            set { this._messageDeduplicationId = value; }
+        }
+
+        // Check to see if MessageDeduplicationId property is set
+        internal bool IsSetMessageDeduplicationId()
+        {
+            return this._messageDeduplicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageGroupId. 
+        /// <para>
+        /// This parameter applies only to FIFO (first-in-first-out) topics. The <code>MessageGroupId</code>
+        /// can contain up to 128 alphanumeric characters (a-z, A-Z, 0-9) and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>MessageGroupId</code> is a tag that specifies that a message belongs to
+        /// a specific message group. Messages that belong to the same message group are processed
+        /// in a FIFO manner (however, messages in different message groups might be processed
+        /// out of order). Every message must include a <code>MessageGroupId</code>.
+        /// </para>
+        /// </summary>
+        public string MessageGroupId
+        {
+            get { return this._messageGroupId; }
+            set { this._messageGroupId = value; }
+        }
+
+        // Check to see if MessageGroupId property is set
+        internal bool IsSetMessageGroupId()
+        {
+            return this._messageGroupId != null;
         }
 
         /// <summary>

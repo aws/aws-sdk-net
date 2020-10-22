@@ -87,6 +87,12 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                         response.MessageId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SequenceNumber", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.SequenceNumber = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
            }
 

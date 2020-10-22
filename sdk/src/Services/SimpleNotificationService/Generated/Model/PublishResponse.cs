@@ -34,6 +34,7 @@ namespace Amazon.SimpleNotificationService.Model
     public partial class PublishResponse : AmazonWebServiceResponse
     {
         private string _messageId;
+        private string _sequenceNumber;
 
         /// <summary>
         /// Gets and sets the property MessageId. 
@@ -55,6 +56,30 @@ namespace Amazon.SimpleNotificationService.Model
         internal bool IsSetMessageId()
         {
             return this._messageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SequenceNumber. 
+        /// <para>
+        /// This response element applies only to FIFO (first-in-first-out) topics. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The sequence number is a large, non-consecutive number that Amazon SNS assigns to
+        /// each message. The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code>
+        /// continues to increase for each <code>MessageGroupId</code>.
+        /// </para>
+        /// </summary>
+        public string SequenceNumber
+        {
+            get { return this._sequenceNumber; }
+            set { this._sequenceNumber = value; }
+        }
+
+        // Check to see if SequenceNumber property is set
+        internal bool IsSetSequenceNumber()
+        {
+            return this._sequenceNumber != null;
         }
 
     }

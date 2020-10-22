@@ -88,6 +88,14 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                         mapIndex++;
                     }
                 }
+                if(publicRequest.IsSetMessageDeduplicationId())
+                {
+                    request.Parameters.Add("MessageDeduplicationId", StringUtils.FromString(publicRequest.MessageDeduplicationId));
+                }
+                if(publicRequest.IsSetMessageGroupId())
+                {
+                    request.Parameters.Add("MessageGroupId", StringUtils.FromString(publicRequest.MessageGroupId));
+                }
                 if(publicRequest.IsSetMessageStructure())
                 {
                     request.Parameters.Add("MessageStructure", StringUtils.FromString(publicRequest.MessageStructure));
