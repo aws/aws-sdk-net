@@ -34,7 +34,9 @@ namespace Amazon.Appflow.Model
     public partial class SalesforceDestinationProperties
     {
         private ErrorHandlingConfig _errorHandlingConfig;
+        private List<string> _idFieldNames = new List<string>();
         private string _object;
+        private WriteOperationType _writeOperationType;
 
         /// <summary>
         /// Gets and sets the property ErrorHandlingConfig. 
@@ -59,6 +61,26 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdFieldNames. 
+        /// <para>
+        ///  The name of the field that Amazon AppFlow uses as an ID when performing a write operation
+        /// such as update or delete. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<string> IdFieldNames
+        {
+            get { return this._idFieldNames; }
+            set { this._idFieldNames = value; }
+        }
+
+        // Check to see if IdFieldNames property is set
+        internal bool IsSetIdFieldNames()
+        {
+            return this._idFieldNames != null && this._idFieldNames.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Object. 
         /// <para>
         ///  The object specified in the Salesforce flow destination. 
@@ -75,6 +97,25 @@ namespace Amazon.Appflow.Model
         internal bool IsSetObject()
         {
             return this._object != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WriteOperationType. 
+        /// <para>
+        ///  This specifies the type of write operation to be performed in Salesforce. When the
+        /// value is <code>UPSERT</code>, then <code>idFieldNames</code> is required. 
+        /// </para>
+        /// </summary>
+        public WriteOperationType WriteOperationType
+        {
+            get { return this._writeOperationType; }
+            set { this._writeOperationType = value; }
+        }
+
+        // Check to see if WriteOperationType property is set
+        internal bool IsSetWriteOperationType()
+        {
+            return this._writeOperationType != null;
         }
 
     }

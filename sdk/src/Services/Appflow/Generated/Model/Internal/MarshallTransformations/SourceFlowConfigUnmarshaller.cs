@@ -76,6 +76,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConnectorType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("incrementalPullConfig", targetDepth))
+                {
+                    var unmarshaller = IncrementalPullConfigUnmarshaller.Instance;
+                    unmarshalledObject.IncrementalPullConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sourceConnectorProperties", targetDepth))
                 {
                     var unmarshaller = SourceConnectorPropertiesUnmarshaller.Instance;

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SalesforceDestinationProperties Object
+    /// Response Unmarshaller for IncrementalPullConfig Object
     /// </summary>  
-    public class SalesforceDestinationPropertiesUnmarshaller : IUnmarshaller<SalesforceDestinationProperties, XmlUnmarshallerContext>, IUnmarshaller<SalesforceDestinationProperties, JsonUnmarshallerContext>
+    public class IncrementalPullConfigUnmarshaller : IUnmarshaller<IncrementalPullConfig, XmlUnmarshallerContext>, IUnmarshaller<IncrementalPullConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SalesforceDestinationProperties IUnmarshaller<SalesforceDestinationProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IncrementalPullConfig IUnmarshaller<IncrementalPullConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SalesforceDestinationProperties Unmarshall(JsonUnmarshallerContext context)
+        public IncrementalPullConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SalesforceDestinationProperties unmarshalledObject = new SalesforceDestinationProperties();
+            IncrementalPullConfig unmarshalledObject = new IncrementalPullConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("errorHandlingConfig", targetDepth))
-                {
-                    var unmarshaller = ErrorHandlingConfigUnmarshaller.Instance;
-                    unmarshalledObject.ErrorHandlingConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("idFieldNames", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.IdFieldNames = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("object", targetDepth))
+                if (context.TestExpression("datetimeTypeFieldName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Object = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("writeOperationType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WriteOperationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatetimeTypeFieldName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         }
 
 
-        private static SalesforceDestinationPropertiesUnmarshaller _instance = new SalesforceDestinationPropertiesUnmarshaller();        
+        private static IncrementalPullConfigUnmarshaller _instance = new IncrementalPullConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SalesforceDestinationPropertiesUnmarshaller Instance
+        public static IncrementalPullConfigUnmarshaller Instance
         {
             get
             {

@@ -33,8 +33,29 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class StartFlowResponse : AmazonWebServiceResponse
     {
+        private string _executionId;
         private string _flowArn;
         private FlowStatus _flowStatus;
+
+        /// <summary>
+        /// Gets and sets the property ExecutionId. 
+        /// <para>
+        ///  Returns the internal execution ID of an on-demand flow when the flow is started.
+        /// For scheduled or event-triggered flows, this value is null. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string ExecutionId
+        {
+            get { return this._executionId; }
+            set { this._executionId = value; }
+        }
+
+        // Check to see if ExecutionId property is set
+        internal bool IsSetExecutionId()
+        {
+            return this._executionId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FlowArn. 

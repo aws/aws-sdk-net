@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SalesforceConnectorProfileCredentials Marshaller
+    /// IncrementalPullConfig Marshaller
     /// </summary>       
-    public class SalesforceConnectorProfileCredentialsMarshaller : IRequestMarshaller<SalesforceConnectorProfileCredentials, JsonMarshallerContext> 
+    public class IncrementalPullConfigMarshaller : IRequestMarshaller<IncrementalPullConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SalesforceConnectorProfileCredentials requestObject, JsonMarshallerContext context)
+        public void Marshall(IncrementalPullConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAccessToken())
+            if(requestObject.IsSetDatetimeTypeFieldName())
             {
-                context.Writer.WritePropertyName("accessToken");
-                context.Writer.Write(requestObject.AccessToken);
-            }
-
-            if(requestObject.IsSetClientCredentialsArn())
-            {
-                context.Writer.WritePropertyName("clientCredentialsArn");
-                context.Writer.Write(requestObject.ClientCredentialsArn);
-            }
-
-            if(requestObject.IsSetOAuthRequest())
-            {
-                context.Writer.WritePropertyName("oAuthRequest");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ConnectorOAuthRequestMarshaller.Instance;
-                marshaller.Marshall(requestObject.OAuthRequest, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRefreshToken())
-            {
-                context.Writer.WritePropertyName("refreshToken");
-                context.Writer.Write(requestObject.RefreshToken);
+                context.Writer.WritePropertyName("datetimeTypeFieldName");
+                context.Writer.Write(requestObject.DatetimeTypeFieldName);
             }
 
         }
@@ -79,7 +56,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static SalesforceConnectorProfileCredentialsMarshaller Instance = new SalesforceConnectorProfileCredentialsMarshaller();
+        public readonly static IncrementalPullConfigMarshaller Instance = new IncrementalPullConfigMarshaller();
 
     }
 }

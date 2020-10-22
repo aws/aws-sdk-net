@@ -51,6 +51,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("executionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ExecutionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("flowArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

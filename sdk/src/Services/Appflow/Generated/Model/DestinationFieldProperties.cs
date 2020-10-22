@@ -35,7 +35,9 @@ namespace Amazon.Appflow.Model
     {
         private bool? _isCreatable;
         private bool? _isNullable;
+        private bool? _isUpdatable;
         private bool? _isUpsertable;
+        private List<string> _supportedWriteOperations = new List<string>();
 
         /// <summary>
         /// Gets and sets the property IsCreatable. 
@@ -74,6 +76,25 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsUpdatable. 
+        /// <para>
+        ///  Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code>
+        /// write operation. 
+        /// </para>
+        /// </summary>
+        public bool IsUpdatable
+        {
+            get { return this._isUpdatable.GetValueOrDefault(); }
+            set { this._isUpdatable = value; }
+        }
+
+        // Check to see if IsUpdatable property is set
+        internal bool IsSetIsUpdatable()
+        {
+            return this._isUpdatable.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property IsUpsertable. 
         /// <para>
         ///  Specifies if the flow run can either insert new rows in the destination field if
@@ -90,6 +111,26 @@ namespace Amazon.Appflow.Model
         internal bool IsSetIsUpsertable()
         {
             return this._isUpsertable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedWriteOperations. 
+        /// <para>
+        ///  A list of supported write operations. For each write operation listed, this field
+        /// can be used in <code>idFieldNames</code> when that write operation is present as a
+        /// destination option. 
+        /// </para>
+        /// </summary>
+        public List<string> SupportedWriteOperations
+        {
+            get { return this._supportedWriteOperations; }
+            set { this._supportedWriteOperations = value; }
+        }
+
+        // Check to see if SupportedWriteOperations property is set
+        internal bool IsSetSupportedWriteOperations()
+        {
+            return this._supportedWriteOperations != null && this._supportedWriteOperations.Count > 0; 
         }
 
     }

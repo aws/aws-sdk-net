@@ -36,6 +36,7 @@ namespace Amazon.Appflow.Model
     {
         private string _connectorProfileName;
         private ConnectorType _connectorType;
+        private IncrementalPullConfig _incrementalPullConfig;
         private SourceConnectorProperties _sourceConnectorProperties;
 
         /// <summary>
@@ -75,6 +76,26 @@ namespace Amazon.Appflow.Model
         internal bool IsSetConnectorType()
         {
             return this._connectorType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncrementalPullConfig. 
+        /// <para>
+        ///  Defines the configuration for a scheduled incremental data pull. If a valid configuration
+        /// is provided, the fields specified in the configuration are used when querying for
+        /// the incremental data pull. 
+        /// </para>
+        /// </summary>
+        public IncrementalPullConfig IncrementalPullConfig
+        {
+            get { return this._incrementalPullConfig; }
+            set { this._incrementalPullConfig = value; }
+        }
+
+        // Check to see if IncrementalPullConfig property is set
+        internal bool IsSetIncrementalPullConfig()
+        {
+            return this._incrementalPullConfig != null;
         }
 
         /// <summary>

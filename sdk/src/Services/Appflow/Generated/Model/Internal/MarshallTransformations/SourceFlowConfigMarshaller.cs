@@ -57,6 +57,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ConnectorType);
             }
 
+            if(requestObject.IsSetIncrementalPullConfig())
+            {
+                context.Writer.WritePropertyName("incrementalPullConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IncrementalPullConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.IncrementalPullConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSourceConnectorProperties())
             {
                 context.Writer.WritePropertyName("sourceConnectorProperties");
