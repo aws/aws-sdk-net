@@ -1,3 +1,18 @@
+### 3.5.40.0 (2020-10-22 18:11 UTC)
+* AccessAnalyzer (3.5.1.4)
+	* API Documentation updates for IAM Access Analyzer.
+* Appflow (3.5.1.0)
+	* Salesforce connector creation with customer provided client id and client secret, incremental pull configuration, salesforce upsert write operations and execution ID when on-demand flows are executed.
+* ServiceCatalog (3.5.3.3)
+	* Documentation updates for servicecatalog
+* SimpleNotificationService (3.5.1.0)
+	* SNS now supports a new class of topics: FIFO (First-In-First-Out). FIFO topics provide strictly-ordered, deduplicated, filterable, encryptable, many-to-many messaging at scale.
+* Core 3.5.1.29
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.39.1 (2020-10-21 21:14 UTC)
 * S3 (3.5.3.6)
 	* Updated to use new Core, version 3.5.1.28
