@@ -1,3 +1,11 @@
+### 3.5.41.0 (2020-10-23 18:12 UTC)
+* Macie2 (3.5.2.5)
+	* This release of the Amazon Macie API includes miscellaneous updates and improvements to the documentation.
+* MediaTailor (3.5.1.0)
+	* MediaTailor now supports ad marker passthrough for HLS. Use AdMarkerPassthrough to pass EXT-X-CUE-IN, EXT-X-CUE-OUT, and EXT-X-SPLICEPOINT-SCTE35 from origin manifests into personalized manifests.
+* QuickSight (3.5.4.0)
+	* Support description on columns.
+
 ### 3.5.40.0 (2020-10-22 18:11 UTC)
 * AccessAnalyzer (3.5.1.4)
 	* API Documentation updates for IAM Access Analyzer.

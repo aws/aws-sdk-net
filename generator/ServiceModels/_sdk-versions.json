@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.5.40.0",
+    "ProductVersion" : "3.5.41.0",
     "CoreVersion"    : "3.5.1.29",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -1130,7 +1130,7 @@
             "InPreview"               : false
         },
         "MediaTailor"                     : {
-            "Version" : "3.5.0.31",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.29"
@@ -1226,7 +1226,7 @@
             "InPreview"               : false
         },
         "QuickSight"                      : {
-            "Version" : "3.5.3.8",
+            "Version" : "3.5.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.29"
@@ -1778,7 +1778,7 @@
             "InPreview"               : false
         },
         "Macie2"                          : {
-            "Version" : "3.5.2.4",
+            "Version" : "3.5.2.5",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.29"
