@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about an account that's designated as a delegated administrator
-    /// of Amazon Macie for an AWS organization.
+    /// Provides information about the delegated Amazon Macie administrator account for an
+    /// AWS organization.
     /// </summary>
     public partial class AdminAccount
     {

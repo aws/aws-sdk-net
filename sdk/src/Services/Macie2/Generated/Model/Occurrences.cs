@@ -93,7 +93,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property OffsetRanges. 
         /// <para>
         /// An array of objects, one for each occurrence of sensitive data in a binary text file.
-        /// Each object specifies the position of the data relative to the start of the file.
+        /// Each object specifies the position of the data relative to the beginning of the file.
         /// </para>
         ///  
         /// <para>

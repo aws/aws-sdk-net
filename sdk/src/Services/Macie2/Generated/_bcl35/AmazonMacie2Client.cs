@@ -1624,7 +1624,8 @@ namespace Amazon.Macie2
         #region  DisableOrganizationAdminAccount
 
         /// <summary>
-        /// Disables an account as a delegated administrator of Amazon Macie for an AWS organization.
+        /// Disables an account as the delegated Amazon Macie administrator account for an AWS
+        /// organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationAdminAccount service method.</param>
         /// 
@@ -1948,7 +1949,8 @@ namespace Amazon.Macie2
         #region  EnableOrganizationAdminAccount
 
         /// <summary>
-        /// Enables an account as a delegated administrator of Amazon Macie for an AWS organization.
+        /// Designates an account as the delegated Amazon Macie administrator account for an AWS
+        /// organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationAdminAccount service method.</param>
         /// 
@@ -3492,8 +3494,8 @@ namespace Amazon.Macie2
         #region  ListOrganizationAdminAccounts
 
         /// <summary>
-        /// Retrieves information about the account that's designated as the delegated administrator
-        /// of Amazon Macie for an AWS organization.
+        /// Retrieves information about the delegated Amazon Macie administrator account for an
+        /// AWS organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationAdminAccounts service method.</param>
         /// 
@@ -4226,7 +4228,7 @@ namespace Amazon.Macie2
         #region  UpdateOrganizationConfiguration
 
         /// <summary>
-        /// Updates Amazon Macie configuration settings for an AWS organization.
+        /// Updates the Amazon Macie configuration settings for an AWS organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationConfiguration service method.</param>
         /// 

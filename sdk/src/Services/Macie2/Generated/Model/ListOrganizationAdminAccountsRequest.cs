@@ -30,8 +30,8 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListOrganizationAdminAccounts operation.
-    /// Retrieves information about the account that's designated as the delegated administrator
-    /// of Amazon Macie for an AWS organization.
+    /// Retrieves information about the delegated Amazon Macie administrator account for an
+    /// AWS organization.
     /// </summary>
     public partial class ListOrganizationAdminAccountsRequest : AmazonMacie2Request
     {

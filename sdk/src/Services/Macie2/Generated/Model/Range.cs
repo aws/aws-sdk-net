@@ -46,17 +46,18 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// In an Occurrences.lineRanges array, the number of lines from the end of the file.
+        /// In an Occurrences.lineRanges array, the number of lines from the beginning of the
+        /// file to the end of the sensitive data.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// In an Occurrences.offsetRanges array, the number of characters from the end of the
-        /// file.
+        /// In an Occurrences.offsetRanges array, the number of characters from the beginning
+        /// of the file to the end of the sensitive data.
         /// </para>
         /// </li> <li>
         /// <para>
         /// In a Page object, the number of lines (lineRange) or characters (offsetRange) from
-        /// the end of the page.
+        /// the beginning of the page to the end of the sensitive data.
         /// </para>
         /// </li></ul>
         /// </summary>
@@ -79,17 +80,18 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// In an Occurrences.lineRanges array, the number of lines from the start of the file.
+        /// In an Occurrences.lineRanges array, the number of lines from the beginning of the
+        /// file to the beginning of the sensitive data.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// In an Occurrences.offsetRanges array, the number of characters from the start of the
-        /// file.
+        /// In an Occurrences.offsetRanges array, the number of characters from the beginning
+        /// of the file to the beginning of the sensitive data.
         /// </para>
         /// </li> <li>
         /// <para>
         /// In a Page object, the number of lines (lineRange) or characters (offsetRange) from
-        /// the start of the page.
+        /// the beginning of the page to the beginning of the sensitive data.
         /// </para>
         /// </li></ul>
         /// </summary>

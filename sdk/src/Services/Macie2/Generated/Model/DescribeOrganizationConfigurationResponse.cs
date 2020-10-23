@@ -58,8 +58,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property MaxAccountLimitReached. 
         /// <para>
-        /// Specifies whether the maximum number of Amazon Macie member accounts are already associated
-        /// with the AWS organization.
+        /// Specifies whether the maximum number of Amazon Macie member accounts are part of the
+        /// AWS organization.
         /// </para>
         /// </summary>
         public bool MaxAccountLimitReached

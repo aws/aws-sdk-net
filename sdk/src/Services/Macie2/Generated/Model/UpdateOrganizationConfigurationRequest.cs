@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateOrganizationConfiguration operation.
-    /// Updates Amazon Macie configuration settings for an AWS organization.
+    /// Updates the Amazon Macie configuration settings for an AWS organization.
     /// </summary>
     public partial class UpdateOrganizationConfigurationRequest : AmazonMacie2Request
     {

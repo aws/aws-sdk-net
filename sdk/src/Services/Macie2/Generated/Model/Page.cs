@@ -59,7 +59,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property OffsetRange. 
         /// <para>
-        /// The position of the data on the page, relative to the start and end of the page.
+        /// The position of the data on the page, relative to the beginning of the page.
         /// </para>
         /// </summary>
         public Range OffsetRange

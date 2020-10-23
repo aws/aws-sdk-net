@@ -30,7 +30,8 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableOrganizationAdminAccount operation.
-    /// Disables an account as a delegated administrator of Amazon Macie for an AWS organization.
+    /// Disables an account as the delegated Amazon Macie administrator account for an AWS
+    /// organization.
     /// </summary>
     public partial class DisableOrganizationAdminAccountRequest : AmazonMacie2Request
     {

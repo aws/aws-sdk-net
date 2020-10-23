@@ -39,9 +39,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AdminAccounts. 
         /// <para>
-        /// An array of objects, one for each account that's designated as a delegated administrator
-        /// of Amazon Macie for the AWS organization. Of those accounts, only one can have a status
-        /// of ENABLED.
+        /// An array of objects, one for each delegated Amazon Macie administrator account for
+        /// the organization. Only one of these accounts can have a status of ENABLED.
         /// </para>
         /// </summary>
         public List<AdminAccount> AdminAccounts
