@@ -34,7 +34,26 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ColumnTag
     {
+        private ColumnDescription _columnDescription;
         private GeoSpatialDataRole _columnGeographicRole;
+
+        /// <summary>
+        /// Gets and sets the property ColumnDescription. 
+        /// <para>
+        /// A description for a column.
+        /// </para>
+        /// </summary>
+        public ColumnDescription ColumnDescription
+        {
+            get { return this._columnDescription; }
+            set { this._columnDescription = value; }
+        }
+
+        // Check to see if ColumnDescription property is set
+        internal bool IsSetColumnDescription()
+        {
+            return this._columnDescription != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ColumnGeographicRole. 

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ColumnTag Marshaller
+    /// ColumnDescription Marshaller
     /// </summary>       
-    public class ColumnTagMarshaller : IRequestMarshaller<ColumnTag, JsonMarshallerContext> 
+    public class ColumnDescriptionMarshaller : IRequestMarshaller<ColumnDescription, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ColumnTag requestObject, JsonMarshallerContext context)
+        public void Marshall(ColumnDescription requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetColumnDescription())
+            if(requestObject.IsSetText())
             {
-                context.Writer.WritePropertyName("ColumnDescription");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ColumnDescriptionMarshaller.Instance;
-                marshaller.Marshall(requestObject.ColumnDescription, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetColumnGeographicRole())
-            {
-                context.Writer.WritePropertyName("ColumnGeographicRole");
-                context.Writer.Write(requestObject.ColumnGeographicRole);
+                context.Writer.WritePropertyName("Text");
+                context.Writer.Write(requestObject.Text);
             }
 
         }
@@ -67,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ColumnTagMarshaller Instance = new ColumnTagMarshaller();
+        public readonly static ColumnDescriptionMarshaller Instance = new ColumnDescriptionMarshaller();
 
     }
 }

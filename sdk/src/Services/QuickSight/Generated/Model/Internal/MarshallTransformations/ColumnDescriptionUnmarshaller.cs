@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ColumnTag Object
+    /// Response Unmarshaller for ColumnDescription Object
     /// </summary>  
-    public class ColumnTagUnmarshaller : IUnmarshaller<ColumnTag, XmlUnmarshallerContext>, IUnmarshaller<ColumnTag, JsonUnmarshallerContext>
+    public class ColumnDescriptionUnmarshaller : IUnmarshaller<ColumnDescription, XmlUnmarshallerContext>, IUnmarshaller<ColumnDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ColumnTag IUnmarshaller<ColumnTag, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ColumnDescription IUnmarshaller<ColumnDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ColumnTag Unmarshall(JsonUnmarshallerContext context)
+        public ColumnDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ColumnTag unmarshalledObject = new ColumnTag();
+            ColumnDescription unmarshalledObject = new ColumnDescription();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ColumnDescription", targetDepth))
-                {
-                    var unmarshaller = ColumnDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.ColumnDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ColumnGeographicRole", targetDepth))
+                if (context.TestExpression("Text", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ColumnGeographicRole = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static ColumnTagUnmarshaller _instance = new ColumnTagUnmarshaller();        
+        private static ColumnDescriptionUnmarshaller _instance = new ColumnDescriptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ColumnTagUnmarshaller Instance
+        public static ColumnDescriptionUnmarshaller Instance
         {
             get
             {

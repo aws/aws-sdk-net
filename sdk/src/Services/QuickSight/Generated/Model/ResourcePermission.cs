@@ -62,7 +62,13 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The ARN of an Amazon QuickSight user, group, or namespace. (This is most common.)
+        /// The ARN of an Amazon QuickSight user or group associated with a data source or dataset.
+        /// (This is common.)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis,
+        /// dashboard, template, or theme. (This is common.)
         /// </para>
         ///  </li> <li> 
         /// <para>

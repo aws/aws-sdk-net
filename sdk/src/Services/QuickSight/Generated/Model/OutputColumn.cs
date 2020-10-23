@@ -33,8 +33,28 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class OutputColumn
     {
+        private string _description;
         private string _name;
         private ColumnDataType _type;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description for a column.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=500)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

@@ -1774,6 +1774,11 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.ColumnDescription.Text</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.CredentialPair.Password</property>
     <min>1</min>
     <max>1024</max>
@@ -2012,6 +2017,11 @@
     <property>Amazon.QuickSight.Model.NamespaceInfoV2.Name</property>
     <max>64</max>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.OutputColumn.Description</property>
+    <min>0</min>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.OutputColumn.Name</property>
