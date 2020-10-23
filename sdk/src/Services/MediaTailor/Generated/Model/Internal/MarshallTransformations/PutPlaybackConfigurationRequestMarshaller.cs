@@ -127,6 +127,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetManifestProcessingRules())
+                {
+                    context.Writer.WritePropertyName("ManifestProcessingRules");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ManifestProcessingRulesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ManifestProcessingRules, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

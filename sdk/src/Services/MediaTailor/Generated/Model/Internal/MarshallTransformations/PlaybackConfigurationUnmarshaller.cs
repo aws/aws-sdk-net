@@ -100,6 +100,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.HlsConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ManifestProcessingRules", targetDepth))
+                {
+                    var unmarshaller = ManifestProcessingRulesUnmarshaller.Instance;
+                    unmarshalledObject.ManifestProcessingRules = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

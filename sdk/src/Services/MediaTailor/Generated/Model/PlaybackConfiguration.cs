@@ -39,6 +39,7 @@ namespace Amazon.MediaTailor.Model
         private CdnConfiguration _cdnConfiguration;
         private DashConfiguration _dashConfiguration;
         private HlsConfiguration _hlsConfiguration;
+        private ManifestProcessingRules _manifestProcessingRules;
         private string _name;
         private int? _personalizationThresholdSeconds;
         private string _playbackConfigurationArn;
@@ -161,6 +162,25 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetHlsConfiguration()
         {
             return this._hlsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManifestProcessingRules. 
+        /// <para>
+        /// The configuration for manifest processing rules. Manifest processing rules enable
+        /// customization of the personalized manifests created by MediaTailor.
+        /// </para>
+        /// </summary>
+        public ManifestProcessingRules ManifestProcessingRules
+        {
+            get { return this._manifestProcessingRules; }
+            set { this._manifestProcessingRules = value; }
+        }
+
+        // Check to see if ManifestProcessingRules property is set
+        internal bool IsSetManifestProcessingRules()
+        {
+            return this._manifestProcessingRules != null;
         }
 
         /// <summary>
