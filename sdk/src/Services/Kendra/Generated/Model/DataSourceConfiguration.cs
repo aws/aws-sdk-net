@@ -33,12 +33,31 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class DataSourceConfiguration
     {
+        private ConfluenceConfiguration _confluenceConfiguration;
         private DatabaseConfiguration _databaseConfiguration;
         private OneDriveConfiguration _oneDriveConfiguration;
         private S3DataSourceConfiguration _s3Configuration;
         private SalesforceConfiguration _salesforceConfiguration;
         private ServiceNowConfiguration _serviceNowConfiguration;
         private SharePointConfiguration _sharePointConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property ConfluenceConfiguration. 
+        /// <para>
+        /// Provides configuration information for connecting to a Confluence data source.
+        /// </para>
+        /// </summary>
+        public ConfluenceConfiguration ConfluenceConfiguration
+        {
+            get { return this._confluenceConfiguration; }
+            set { this._confluenceConfiguration = value; }
+        }
+
+        // Check to see if ConfluenceConfiguration property is set
+        internal bool IsSetConfluenceConfiguration()
+        {
+            return this._confluenceConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DatabaseConfiguration. 

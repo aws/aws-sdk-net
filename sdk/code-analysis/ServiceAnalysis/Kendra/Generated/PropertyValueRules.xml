@@ -559,6 +559,66 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.ConfluenceAttachmentToIndexFieldMapping.DateFieldFormat</property>
+    <min>4</min>
+    <max>40</max>
+    <pattern>^(?!\s).*(?&lt;!\s)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ConfluenceAttachmentToIndexFieldMapping.IndexFieldName</property>
+    <min>1</min>
+    <max>30</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ConfluenceBlogToIndexFieldMapping.DateFieldFormat</property>
+    <min>4</min>
+    <max>40</max>
+    <pattern>^(?!\s).*(?&lt;!\s)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ConfluenceBlogToIndexFieldMapping.IndexFieldName</property>
+    <min>1</min>
+    <max>30</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ConfluenceConfiguration.SecretArn</property>
+    <min>1</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ConfluenceConfiguration.ServerUrl</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(https?|ftp|file):\/\/([^\s]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ConfluencePageToIndexFieldMapping.DateFieldFormat</property>
+    <min>4</min>
+    <max>40</max>
+    <pattern>^(?!\s).*(?&lt;!\s)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ConfluencePageToIndexFieldMapping.IndexFieldName</property>
+    <min>1</min>
+    <max>30</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ConfluenceSpaceToIndexFieldMapping.DateFieldFormat</property>
+    <min>4</min>
+    <max>40</max>
+    <pattern>^(?!\s).*(?&lt;!\s)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ConfluenceSpaceToIndexFieldMapping.IndexFieldName</property>
+    <min>1</min>
+    <max>30</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.ConnectionConfiguration.DatabaseHost</property>
     <min>1</min>
     <max>253</max>

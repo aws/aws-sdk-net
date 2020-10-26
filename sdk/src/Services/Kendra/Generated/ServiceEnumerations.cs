@@ -71,6 +71,364 @@ namespace Amazon.Kendra
 
 
     /// <summary>
+    /// Constants used for properties of type ConfluenceAttachmentFieldName.
+    /// </summary>
+    public class ConfluenceAttachmentFieldName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHOR for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName AUTHOR = new ConfluenceAttachmentFieldName("AUTHOR");
+        /// <summary>
+        /// Constant CONTENT_TYPE for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName CONTENT_TYPE = new ConfluenceAttachmentFieldName("CONTENT_TYPE");
+        /// <summary>
+        /// Constant CREATED_DATE for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName CREATED_DATE = new ConfluenceAttachmentFieldName("CREATED_DATE");
+        /// <summary>
+        /// Constant DISPLAY_URL for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName DISPLAY_URL = new ConfluenceAttachmentFieldName("DISPLAY_URL");
+        /// <summary>
+        /// Constant FILE_SIZE for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName FILE_SIZE = new ConfluenceAttachmentFieldName("FILE_SIZE");
+        /// <summary>
+        /// Constant ITEM_TYPE for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName ITEM_TYPE = new ConfluenceAttachmentFieldName("ITEM_TYPE");
+        /// <summary>
+        /// Constant PARENT_ID for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName PARENT_ID = new ConfluenceAttachmentFieldName("PARENT_ID");
+        /// <summary>
+        /// Constant SPACE_KEY for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName SPACE_KEY = new ConfluenceAttachmentFieldName("SPACE_KEY");
+        /// <summary>
+        /// Constant SPACE_NAME for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName SPACE_NAME = new ConfluenceAttachmentFieldName("SPACE_NAME");
+        /// <summary>
+        /// Constant URL for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName URL = new ConfluenceAttachmentFieldName("URL");
+        /// <summary>
+        /// Constant VERSION for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName VERSION = new ConfluenceAttachmentFieldName("VERSION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfluenceAttachmentFieldName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfluenceAttachmentFieldName FindValue(string value)
+        {
+            return FindValue<ConfluenceAttachmentFieldName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfluenceAttachmentFieldName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfluenceBlogFieldName.
+    /// </summary>
+    public class ConfluenceBlogFieldName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHOR for ConfluenceBlogFieldName
+        /// </summary>
+        public static readonly ConfluenceBlogFieldName AUTHOR = new ConfluenceBlogFieldName("AUTHOR");
+        /// <summary>
+        /// Constant DISPLAY_URL for ConfluenceBlogFieldName
+        /// </summary>
+        public static readonly ConfluenceBlogFieldName DISPLAY_URL = new ConfluenceBlogFieldName("DISPLAY_URL");
+        /// <summary>
+        /// Constant ITEM_TYPE for ConfluenceBlogFieldName
+        /// </summary>
+        public static readonly ConfluenceBlogFieldName ITEM_TYPE = new ConfluenceBlogFieldName("ITEM_TYPE");
+        /// <summary>
+        /// Constant LABELS for ConfluenceBlogFieldName
+        /// </summary>
+        public static readonly ConfluenceBlogFieldName LABELS = new ConfluenceBlogFieldName("LABELS");
+        /// <summary>
+        /// Constant PUBLISH_DATE for ConfluenceBlogFieldName
+        /// </summary>
+        public static readonly ConfluenceBlogFieldName PUBLISH_DATE = new ConfluenceBlogFieldName("PUBLISH_DATE");
+        /// <summary>
+        /// Constant SPACE_KEY for ConfluenceBlogFieldName
+        /// </summary>
+        public static readonly ConfluenceBlogFieldName SPACE_KEY = new ConfluenceBlogFieldName("SPACE_KEY");
+        /// <summary>
+        /// Constant SPACE_NAME for ConfluenceBlogFieldName
+        /// </summary>
+        public static readonly ConfluenceBlogFieldName SPACE_NAME = new ConfluenceBlogFieldName("SPACE_NAME");
+        /// <summary>
+        /// Constant URL for ConfluenceBlogFieldName
+        /// </summary>
+        public static readonly ConfluenceBlogFieldName URL = new ConfluenceBlogFieldName("URL");
+        /// <summary>
+        /// Constant VERSION for ConfluenceBlogFieldName
+        /// </summary>
+        public static readonly ConfluenceBlogFieldName VERSION = new ConfluenceBlogFieldName("VERSION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfluenceBlogFieldName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfluenceBlogFieldName FindValue(string value)
+        {
+            return FindValue<ConfluenceBlogFieldName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfluenceBlogFieldName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfluencePageFieldName.
+    /// </summary>
+    public class ConfluencePageFieldName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHOR for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName AUTHOR = new ConfluencePageFieldName("AUTHOR");
+        /// <summary>
+        /// Constant CONTENT_STATUS for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName CONTENT_STATUS = new ConfluencePageFieldName("CONTENT_STATUS");
+        /// <summary>
+        /// Constant CREATED_DATE for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName CREATED_DATE = new ConfluencePageFieldName("CREATED_DATE");
+        /// <summary>
+        /// Constant DISPLAY_URL for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName DISPLAY_URL = new ConfluencePageFieldName("DISPLAY_URL");
+        /// <summary>
+        /// Constant ITEM_TYPE for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName ITEM_TYPE = new ConfluencePageFieldName("ITEM_TYPE");
+        /// <summary>
+        /// Constant LABELS for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName LABELS = new ConfluencePageFieldName("LABELS");
+        /// <summary>
+        /// Constant MODIFIED_DATE for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName MODIFIED_DATE = new ConfluencePageFieldName("MODIFIED_DATE");
+        /// <summary>
+        /// Constant PARENT_ID for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName PARENT_ID = new ConfluencePageFieldName("PARENT_ID");
+        /// <summary>
+        /// Constant SPACE_KEY for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName SPACE_KEY = new ConfluencePageFieldName("SPACE_KEY");
+        /// <summary>
+        /// Constant SPACE_NAME for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName SPACE_NAME = new ConfluencePageFieldName("SPACE_NAME");
+        /// <summary>
+        /// Constant URL for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName URL = new ConfluencePageFieldName("URL");
+        /// <summary>
+        /// Constant VERSION for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName VERSION = new ConfluencePageFieldName("VERSION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfluencePageFieldName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfluencePageFieldName FindValue(string value)
+        {
+            return FindValue<ConfluencePageFieldName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfluencePageFieldName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfluenceSpaceFieldName.
+    /// </summary>
+    public class ConfluenceSpaceFieldName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISPLAY_URL for ConfluenceSpaceFieldName
+        /// </summary>
+        public static readonly ConfluenceSpaceFieldName DISPLAY_URL = new ConfluenceSpaceFieldName("DISPLAY_URL");
+        /// <summary>
+        /// Constant ITEM_TYPE for ConfluenceSpaceFieldName
+        /// </summary>
+        public static readonly ConfluenceSpaceFieldName ITEM_TYPE = new ConfluenceSpaceFieldName("ITEM_TYPE");
+        /// <summary>
+        /// Constant SPACE_KEY for ConfluenceSpaceFieldName
+        /// </summary>
+        public static readonly ConfluenceSpaceFieldName SPACE_KEY = new ConfluenceSpaceFieldName("SPACE_KEY");
+        /// <summary>
+        /// Constant URL for ConfluenceSpaceFieldName
+        /// </summary>
+        public static readonly ConfluenceSpaceFieldName URL = new ConfluenceSpaceFieldName("URL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfluenceSpaceFieldName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfluenceSpaceFieldName FindValue(string value)
+        {
+            return FindValue<ConfluenceSpaceFieldName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfluenceSpaceFieldName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfluenceVersion.
+    /// </summary>
+    public class ConfluenceVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SERVER for ConfluenceVersion
+        /// </summary>
+        public static readonly ConfluenceVersion SERVER = new ConfluenceVersion("SERVER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfluenceVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfluenceVersion FindValue(string value)
+        {
+            return FindValue<ConfluenceVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfluenceVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContentType.
     /// </summary>
     public class ContentType : ConstantClass
@@ -328,6 +686,10 @@ namespace Amazon.Kendra
     public class DataSourceType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CONFLUENCE for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType CONFLUENCE = new DataSourceType("CONFLUENCE");
         /// <summary>
         /// Constant CUSTOM for DataSourceType
         /// </summary>
