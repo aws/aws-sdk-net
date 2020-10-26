@@ -352,6 +352,42 @@ namespace Amazon.Neptune
 
         #endregion
                 
+        #region  CreateDBClusterEndpoint
+
+
+
+        /// <summary>
+        /// Creates a new custom endpoint and associates it with an Amazon Neptune DB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDBClusterEndpoint service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterEndpointAlreadyExistsException">
+        /// The specified custom endpoint cannot be created because it already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterEndpointQuotaExceededException">
+        /// The cluster already has the maximum number of custom endpoints.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterEndpoint">REST API Reference for CreateDBClusterEndpoint Operation</seealso>
+        Task<CreateDBClusterEndpointResponse> CreateDBClusterEndpointAsync(CreateDBClusterEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateDBClusterParameterGroup
 
 
@@ -707,6 +743,34 @@ namespace Amazon.Neptune
 
         #endregion
                 
+        #region  DeleteDBClusterEndpoint
+
+
+
+        /// <summary>
+        /// Deletes a custom endpoint and removes it from an Amazon Neptune DB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDBClusterEndpoint service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterEndpointNotFoundException">
+        /// The specified custom endpoint doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterEndpointStateException">
+        /// The requested operation cannot be performed on the endpoint while the endpoint is
+        /// in this state.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterEndpoint">REST API Reference for DeleteDBClusterEndpoint Operation</seealso>
+        Task<DeleteDBClusterEndpointResponse> DeleteDBClusterEndpointAsync(DeleteDBClusterEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteDBClusterParameterGroup
 
 
@@ -901,6 +965,34 @@ namespace Amazon.Neptune
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         Task<DeleteEventSubscriptionResponse> DeleteEventSubscriptionAsync(DeleteEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeDBClusterEndpoints
+
+
+
+        /// <summary>
+        /// Returns information about endpoints for an Amazon Neptune DB cluster.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation can also return information for Amazon RDS clusters and Amazon DocDB
+        /// clusters.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBClusterEndpoints service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterEndpoints">REST API Reference for DescribeDBClusterEndpoints Operation</seealso>
+        Task<DescribeDBClusterEndpointsResponse> DescribeDBClusterEndpointsAsync(DescribeDBClusterEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1444,6 +1536,40 @@ namespace Amazon.Neptune
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         Task<ModifyDBClusterResponse> ModifyDBClusterAsync(ModifyDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyDBClusterEndpoint
+
+
+
+        /// <summary>
+        /// Modifies the properties of an endpoint in an Amazon Neptune DB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBClusterEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyDBClusterEndpoint service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterEndpointNotFoundException">
+        /// The specified custom endpoint doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterEndpointStateException">
+        /// The requested operation cannot be performed on the endpoint while the endpoint is
+        /// in this state.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterEndpoint">REST API Reference for ModifyDBClusterEndpoint Operation</seealso>
+        Task<ModifyDBClusterEndpointResponse> ModifyDBClusterEndpointAsync(ModifyDBClusterEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

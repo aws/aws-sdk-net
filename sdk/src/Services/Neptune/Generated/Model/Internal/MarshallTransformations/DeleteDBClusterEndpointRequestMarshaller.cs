@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Neptune.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AddRoleToDBCluster Request Marshaller
+    /// DeleteDBClusterEndpoint Request Marshaller
     /// </summary>       
-    public class AddRoleToDBClusterRequestMarshaller : IMarshaller<IRequest, AddRoleToDBClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteDBClusterEndpointRequestMarshaller : IMarshaller<IRequest, DeleteDBClusterEndpointRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((AddRoleToDBClusterRequest)input);
+            return this.Marshall((DeleteDBClusterEndpointRequest)input);
         }
     
         /// <summary>
@@ -50,32 +50,24 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(AddRoleToDBClusterRequest publicRequest)
+        public IRequest Marshall(DeleteDBClusterEndpointRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Neptune");
-            request.Parameters.Add("Action", "AddRoleToDBCluster");
+            request.Parameters.Add("Action", "DeleteDBClusterEndpoint");
             request.Parameters.Add("Version", "2014-10-31");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetDBClusterIdentifier())
+                if(publicRequest.IsSetDBClusterEndpointIdentifier())
                 {
-                    request.Parameters.Add("DBClusterIdentifier", StringUtils.FromString(publicRequest.DBClusterIdentifier));
-                }
-                if(publicRequest.IsSetFeatureName())
-                {
-                    request.Parameters.Add("FeatureName", StringUtils.FromString(publicRequest.FeatureName));
-                }
-                if(publicRequest.IsSetRoleArn())
-                {
-                    request.Parameters.Add("RoleArn", StringUtils.FromString(publicRequest.RoleArn));
+                    request.Parameters.Add("DBClusterEndpointIdentifier", StringUtils.FromString(publicRequest.DBClusterEndpointIdentifier));
                 }
             }
             return request;
         }
-                    private static AddRoleToDBClusterRequestMarshaller _instance = new AddRoleToDBClusterRequestMarshaller();        
+                    private static DeleteDBClusterEndpointRequestMarshaller _instance = new DeleteDBClusterEndpointRequestMarshaller();        
 
-        internal static AddRoleToDBClusterRequestMarshaller GetInstance()
+        internal static DeleteDBClusterEndpointRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -83,7 +75,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AddRoleToDBClusterRequestMarshaller Instance
+        public static DeleteDBClusterEndpointRequestMarshaller Instance
         {
             get
             {

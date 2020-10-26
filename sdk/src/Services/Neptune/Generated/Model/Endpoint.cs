@@ -30,6 +30,11 @@ namespace Amazon.Neptune.Model
 {
     /// <summary>
     /// Specifies a connection endpoint.
+    /// 
+    ///  
+    /// <para>
+    /// For the data structure that represents Amazon Neptune DB cluster endpoints, see <code>DBClusterEndpoint</code>.
+    /// </para>
     /// </summary>
     public partial class Endpoint
     {

@@ -37,6 +37,14 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeDBClusterEndpoints operation
+        ///</summary>
+        public IDescribeDBClusterEndpointsPaginator DescribeDBClusterEndpoints(DescribeDBClusterEndpointsRequest request) 
+        {
+            return new DescribeDBClusterEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeDBEngineVersions operation
         ///</summary>
         public IDescribeDBEngineVersionsPaginator DescribeDBEngineVersions(DescribeDBEngineVersionsRequest request) 

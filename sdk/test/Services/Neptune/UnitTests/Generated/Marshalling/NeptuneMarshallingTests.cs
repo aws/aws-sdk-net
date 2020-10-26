@@ -1061,6 +1061,166 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Neptune")]
+        public void CreateDBClusterEndpointMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBClusterEndpointRequest>();
+            var marshaller = new CreateDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateDBClusterEndpointResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateDBClusterEndpointResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
+        public void CreateDBClusterEndpoint_DBClusterEndpointAlreadyExistsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBClusterEndpointRequest>();
+            var marshaller = new CreateDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBClusterEndpointAlreadyExistsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBClusterEndpointResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
+        public void CreateDBClusterEndpoint_DBClusterEndpointQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBClusterEndpointRequest>();
+            var marshaller = new CreateDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBClusterEndpointQuotaExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBClusterEndpointResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
+        public void CreateDBClusterEndpoint_DBClusterNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBClusterEndpointRequest>();
+            var marshaller = new CreateDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBClusterNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBClusterEndpointResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
+        public void CreateDBClusterEndpoint_DBInstanceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBClusterEndpointRequest>();
+            var marshaller = new CreateDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBInstanceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBClusterEndpointResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
+        public void CreateDBClusterEndpoint_InvalidDBClusterStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBClusterEndpointRequest>();
+            var marshaller = new CreateDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBClusterStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBClusterEndpointResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
+        public void CreateDBClusterEndpoint_InvalidDBInstanceStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBClusterEndpointRequest>();
+            var marshaller = new CreateDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBInstanceStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBClusterEndpointResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
         public void CreateDBClusterParameterGroupMarshallTest()
         {
             var operation = service_model.FindOperation("CreateDBClusterParameterGroup");
@@ -2227,6 +2387,97 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Neptune")]
+        public void DeleteDBClusterEndpointMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDBClusterEndpointRequest>();
+            var marshaller = new DeleteDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteDBClusterEndpointResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteDBClusterEndpointResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
+        public void DeleteDBClusterEndpoint_DBClusterEndpointNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDBClusterEndpointRequest>();
+            var marshaller = new DeleteDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBClusterEndpointNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteDBClusterEndpointResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
+        public void DeleteDBClusterEndpoint_InvalidDBClusterEndpointStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDBClusterEndpointRequest>();
+            var marshaller = new DeleteDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBClusterEndpointStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteDBClusterEndpointResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
+        public void DeleteDBClusterEndpoint_InvalidDBClusterStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDBClusterEndpointRequest>();
+            var marshaller = new DeleteDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBClusterStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteDBClusterEndpointResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
         public void DeleteDBClusterParameterGroupMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteDBClusterParameterGroup");
@@ -2704,6 +2955,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = DeleteEventSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
+        public void DescribeDBClusterEndpointsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDBClusterEndpoints");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDBClusterEndpointsRequest>();
+            var marshaller = new DescribeDBClusterEndpointsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeDBClusterEndpointsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeDBClusterEndpointsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
+        public void DescribeDBClusterEndpoints_DBClusterNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDBClusterEndpoints");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDBClusterEndpointsRequest>();
+            var marshaller = new DescribeDBClusterEndpointsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBClusterNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeDBClusterEndpointsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3856,6 +4152,143 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = ModifyDBClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
+        public void ModifyDBClusterEndpointMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDBClusterEndpointRequest>();
+            var marshaller = new ModifyDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyDBClusterEndpointResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyDBClusterEndpointResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
+        public void ModifyDBClusterEndpoint_DBClusterEndpointNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDBClusterEndpointRequest>();
+            var marshaller = new ModifyDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBClusterEndpointNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyDBClusterEndpointResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
+        public void ModifyDBClusterEndpoint_DBInstanceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDBClusterEndpointRequest>();
+            var marshaller = new ModifyDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBInstanceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyDBClusterEndpointResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
+        public void ModifyDBClusterEndpoint_InvalidDBClusterEndpointStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDBClusterEndpointRequest>();
+            var marshaller = new ModifyDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBClusterEndpointStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyDBClusterEndpointResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
+        public void ModifyDBClusterEndpoint_InvalidDBClusterStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDBClusterEndpointRequest>();
+            var marshaller = new ModifyDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBClusterStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyDBClusterEndpointResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Neptune")]
+        public void ModifyDBClusterEndpoint_InvalidDBInstanceStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDBClusterEndpointRequest>();
+            var marshaller = new ModifyDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBInstanceStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyDBClusterEndpointResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

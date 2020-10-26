@@ -43,6 +43,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Neptune")]
+        public void DescribeDBClusterEndpointsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDBClusterEndpointsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeDBClusterEndpointsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeDBClusterEndpointsResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.DescribeDBClusterEndpoints(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeDBClusterEndpoints(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Neptune")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeDBClusterEndpointsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDBClusterEndpointsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeDBClusterEndpointsResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.DescribeDBClusterEndpoints(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeDBClusterEndpoints(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Neptune")]
         public void DescribeDBEngineVersionsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<DescribeDBEngineVersionsRequest>();

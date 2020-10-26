@@ -527,6 +527,64 @@ namespace Amazon.Neptune
 
         #endregion
         
+        #region  CreateDBClusterEndpoint
+
+
+        /// <summary>
+        /// Creates a new custom endpoint and associates it with an Amazon Neptune DB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateDBClusterEndpoint service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterEndpointAlreadyExistsException">
+        /// The specified custom endpoint cannot be created because it already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterEndpointQuotaExceededException">
+        /// The cluster already has the maximum number of custom endpoints.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterEndpoint">REST API Reference for CreateDBClusterEndpoint Operation</seealso>
+        CreateDBClusterEndpointResponse CreateDBClusterEndpoint(CreateDBClusterEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDBClusterEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterEndpoint operation on AmazonNeptuneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDBClusterEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterEndpoint">REST API Reference for CreateDBClusterEndpoint Operation</seealso>
+        IAsyncResult BeginCreateDBClusterEndpoint(CreateDBClusterEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDBClusterEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDBClusterEndpoint.</param>
+        /// 
+        /// <returns>Returns a  CreateDBClusterEndpointResult from Neptune.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterEndpoint">REST API Reference for CreateDBClusterEndpoint Operation</seealso>
+        CreateDBClusterEndpointResponse EndCreateDBClusterEndpoint(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateDBClusterParameterGroup
 
 
@@ -1036,6 +1094,56 @@ namespace Amazon.Neptune
 
         #endregion
         
+        #region  DeleteDBClusterEndpoint
+
+
+        /// <summary>
+        /// Deletes a custom endpoint and removes it from an Amazon Neptune DB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDBClusterEndpoint service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterEndpointNotFoundException">
+        /// The specified custom endpoint doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterEndpointStateException">
+        /// The requested operation cannot be performed on the endpoint while the endpoint is
+        /// in this state.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterEndpoint">REST API Reference for DeleteDBClusterEndpoint Operation</seealso>
+        DeleteDBClusterEndpointResponse DeleteDBClusterEndpoint(DeleteDBClusterEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDBClusterEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterEndpoint operation on AmazonNeptuneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDBClusterEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterEndpoint">REST API Reference for DeleteDBClusterEndpoint Operation</seealso>
+        IAsyncResult BeginDeleteDBClusterEndpoint(DeleteDBClusterEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDBClusterEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDBClusterEndpoint.</param>
+        /// 
+        /// <returns>Returns a  DeleteDBClusterEndpointResult from Neptune.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterEndpoint">REST API Reference for DeleteDBClusterEndpoint Operation</seealso>
+        DeleteDBClusterEndpointResponse EndDeleteDBClusterEndpoint(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteDBClusterParameterGroup
 
 
@@ -1362,6 +1470,56 @@ namespace Amazon.Neptune
         /// <returns>Returns a  DeleteEventSubscriptionResult from Neptune.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         DeleteEventSubscriptionResponse EndDeleteEventSubscription(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeDBClusterEndpoints
+
+
+        /// <summary>
+        /// Returns information about endpoints for an Amazon Neptune DB cluster.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation can also return information for Amazon RDS clusters and Amazon DocDB
+        /// clusters.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBClusterEndpoints service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterEndpoints">REST API Reference for DescribeDBClusterEndpoints Operation</seealso>
+        DescribeDBClusterEndpointsResponse DescribeDBClusterEndpoints(DescribeDBClusterEndpointsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBClusterEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterEndpoints operation on AmazonNeptuneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBClusterEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterEndpoints">REST API Reference for DescribeDBClusterEndpoints Operation</seealso>
+        IAsyncResult BeginDescribeDBClusterEndpoints(DescribeDBClusterEndpointsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDBClusterEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBClusterEndpoints.</param>
+        /// 
+        /// <returns>Returns a  DescribeDBClusterEndpointsResult from Neptune.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterEndpoints">REST API Reference for DescribeDBClusterEndpoints Operation</seealso>
+        DescribeDBClusterEndpointsResponse EndDescribeDBClusterEndpoints(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2367,6 +2525,62 @@ namespace Amazon.Neptune
         /// <returns>Returns a  ModifyDBClusterResult from Neptune.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         ModifyDBClusterResponse EndModifyDBCluster(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyDBClusterEndpoint
+
+
+        /// <summary>
+        /// Modifies the properties of an endpoint in an Amazon Neptune DB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBClusterEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDBClusterEndpoint service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterEndpointNotFoundException">
+        /// The specified custom endpoint doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterEndpointStateException">
+        /// The requested operation cannot be performed on the endpoint while the endpoint is
+        /// in this state.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterEndpoint">REST API Reference for ModifyDBClusterEndpoint Operation</seealso>
+        ModifyDBClusterEndpointResponse ModifyDBClusterEndpoint(ModifyDBClusterEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyDBClusterEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBClusterEndpoint operation on AmazonNeptuneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyDBClusterEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterEndpoint">REST API Reference for ModifyDBClusterEndpoint Operation</seealso>
+        IAsyncResult BeginModifyDBClusterEndpoint(ModifyDBClusterEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyDBClusterEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyDBClusterEndpoint.</param>
+        /// 
+        /// <returns>Returns a  ModifyDBClusterEndpointResult from Neptune.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterEndpoint">REST API Reference for ModifyDBClusterEndpoint Operation</seealso>
+        ModifyDBClusterEndpointResponse EndModifyDBClusterEndpoint(IAsyncResult asyncResult);
 
         #endregion
         

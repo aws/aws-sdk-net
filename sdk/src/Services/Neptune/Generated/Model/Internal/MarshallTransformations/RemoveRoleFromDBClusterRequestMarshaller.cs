@@ -62,6 +62,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBClusterIdentifier", StringUtils.FromString(publicRequest.DBClusterIdentifier));
                 }
+                if(publicRequest.IsSetFeatureName())
+                {
+                    request.Parameters.Add("FeatureName", StringUtils.FromString(publicRequest.FeatureName));
+                }
                 if(publicRequest.IsSetRoleArn())
                 {
                     request.Parameters.Add("RoleArn", StringUtils.FromString(publicRequest.RoleArn));

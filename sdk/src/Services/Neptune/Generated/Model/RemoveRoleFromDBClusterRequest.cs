@@ -35,6 +35,7 @@ namespace Amazon.Neptune.Model
     public partial class RemoveRoleFromDBClusterRequest : AmazonNeptuneRequest
     {
         private string _dbClusterIdentifier;
+        private string _featureName;
         private string _roleArn;
 
         /// <summary>
@@ -54,6 +55,25 @@ namespace Amazon.Neptune.Model
         internal bool IsSetDBClusterIdentifier()
         {
             return this._dbClusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FeatureName. 
+        /// <para>
+        /// The name of the feature for the DB cluster that the IAM role is to be disassociated
+        /// from. For the list of supported feature names, see <a>DBEngineVersion</a>.
+        /// </para>
+        /// </summary>
+        public string FeatureName
+        {
+            get { return this._featureName; }
+            set { this._featureName = value; }
+        }
+
+        // Check to see if FeatureName property is set
+        internal bool IsSetFeatureName()
+        {
+            return this._featureName != null;
         }
 
         /// <summary>

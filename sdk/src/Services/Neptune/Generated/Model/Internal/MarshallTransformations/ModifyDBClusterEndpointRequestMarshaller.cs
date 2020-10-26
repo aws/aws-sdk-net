@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Neptune.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AddRoleToDBCluster Request Marshaller
+    /// ModifyDBClusterEndpoint Request Marshaller
     /// </summary>       
-    public class AddRoleToDBClusterRequestMarshaller : IMarshaller<IRequest, AddRoleToDBClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ModifyDBClusterEndpointRequestMarshaller : IMarshaller<IRequest, ModifyDBClusterEndpointRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((AddRoleToDBClusterRequest)input);
+            return this.Marshall((ModifyDBClusterEndpointRequest)input);
         }
     
         /// <summary>
@@ -50,32 +50,46 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(AddRoleToDBClusterRequest publicRequest)
+        public IRequest Marshall(ModifyDBClusterEndpointRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Neptune");
-            request.Parameters.Add("Action", "AddRoleToDBCluster");
+            request.Parameters.Add("Action", "ModifyDBClusterEndpoint");
             request.Parameters.Add("Version", "2014-10-31");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetDBClusterIdentifier())
+                if(publicRequest.IsSetDBClusterEndpointIdentifier())
                 {
-                    request.Parameters.Add("DBClusterIdentifier", StringUtils.FromString(publicRequest.DBClusterIdentifier));
+                    request.Parameters.Add("DBClusterEndpointIdentifier", StringUtils.FromString(publicRequest.DBClusterEndpointIdentifier));
                 }
-                if(publicRequest.IsSetFeatureName())
+                if(publicRequest.IsSetEndpointType())
                 {
-                    request.Parameters.Add("FeatureName", StringUtils.FromString(publicRequest.FeatureName));
+                    request.Parameters.Add("EndpointType", StringUtils.FromString(publicRequest.EndpointType));
                 }
-                if(publicRequest.IsSetRoleArn())
+                if(publicRequest.IsSetExcludedMembers())
                 {
-                    request.Parameters.Add("RoleArn", StringUtils.FromString(publicRequest.RoleArn));
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ExcludedMembers)
+                    {
+                        request.Parameters.Add("ExcludedMembers" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetStaticMembers())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.StaticMembers)
+                    {
+                        request.Parameters.Add("StaticMembers" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
             return request;
         }
-                    private static AddRoleToDBClusterRequestMarshaller _instance = new AddRoleToDBClusterRequestMarshaller();        
+                    private static ModifyDBClusterEndpointRequestMarshaller _instance = new ModifyDBClusterEndpointRequestMarshaller();        
 
-        internal static AddRoleToDBClusterRequestMarshaller GetInstance()
+        internal static ModifyDBClusterEndpointRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -83,7 +97,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AddRoleToDBClusterRequestMarshaller Instance
+        public static ModifyDBClusterEndpointRequestMarshaller Instance
         {
             get
             {
