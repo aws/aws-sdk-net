@@ -1,3 +1,16 @@
+### 3.5.42.0 (2020-10-26 18:18 UTC)
+* Kendra (3.5.5.0)
+	* Amazon Kendra now supports indexing data from Confluence Server.
+* Neptune (3.5.1.0)
+	* This feature enables custom endpoints for Amazon Neptune clusters. Custom endpoints simplify connection management when clusters contain instances with different capacities and configuration settings.
+* SageMaker (3.5.4.0)
+	* This release enables customers to bring custom images for use with SageMaker Studio notebooks.
+* Core 3.5.1.30
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.41.0 (2020-10-23 18:12 UTC)
 * Macie2 (3.5.2.5)
 	* This release of the Amazon Macie API includes miscellaneous updates and improvements to the documentation.
