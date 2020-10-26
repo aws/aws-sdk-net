@@ -29,17 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The kernel gateway app settings.
+    /// The KernelGateway app settings.
     /// </summary>
     public partial class KernelGatewayAppSettings
     {
+        private List<CustomImage> _customImages = new List<CustomImage>();
         private ResourceSpec _defaultResourceSpec;
+
+        /// <summary>
+        /// Gets and sets the property CustomImages. 
+        /// <para>
+        /// A list of custom images that are configured to run as a KernelGateway app.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=30)]
+        public List<CustomImage> CustomImages
+        {
+            get { return this._customImages; }
+            set { this._customImages = value; }
+        }
+
+        // Check to see if CustomImages property is set
+        internal bool IsSetCustomImages()
+        {
+            return this._customImages != null && this._customImages.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DefaultResourceSpec. 
         /// <para>
-        /// The default instance type and the Amazon Resource Name (ARN) of the SageMaker image
-        /// created on the instance.
+        /// The default instance type and the Amazon Resource Name (ARN) of the default SageMaker
+        /// image used by the KernelGateway app.
         /// </para>
         /// </summary>
         public ResourceSpec DefaultResourceSpec

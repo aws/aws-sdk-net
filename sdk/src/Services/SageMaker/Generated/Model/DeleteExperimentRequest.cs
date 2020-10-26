@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the experiment to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=82)]
+        [AWSProperty(Required=true, Min=1, Max=120)]
         public string ExperimentName
         {
             get { return this._experimentName; }

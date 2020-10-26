@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The app's Amazon Resource Name (ARN).
+        /// The Amazon Resource Name (ARN) of the app.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

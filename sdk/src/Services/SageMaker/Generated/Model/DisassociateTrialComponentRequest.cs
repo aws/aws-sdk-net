@@ -53,7 +53,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the component to disassociate from the trial.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=82)]
+        [AWSProperty(Required=true, Min=1, Max=120)]
         public string TrialComponentName
         {
             get { return this._trialComponentName; }
@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the trial to disassociate from.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=82)]
+        [AWSProperty(Required=true, Min=1, Max=120)]
         public string TrialName
         {
             get { return this._trialName; }

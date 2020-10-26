@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model
         /// cannot be required.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Max=2500)]
         public string DefaultValue
         {
             get { return this._defaultValue; }

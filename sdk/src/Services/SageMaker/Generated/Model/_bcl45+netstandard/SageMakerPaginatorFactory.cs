@@ -141,6 +141,22 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListImages operation
+        ///</summary>
+        public IListImagesPaginator ListImages(ListImagesRequest request) 
+        {
+            return new ListImagesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListImageVersions operation
+        ///</summary>
+        public IListImageVersionsPaginator ListImageVersions(ListImageVersionsRequest request) 
+        {
+            return new ListImageVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListLabelingJobs operation
         ///</summary>
         public IListLabelingJobsPaginator ListLabelingJobs(ListLabelingJobsRequest request) 

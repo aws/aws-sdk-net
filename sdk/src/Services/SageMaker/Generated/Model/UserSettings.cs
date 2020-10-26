@@ -98,7 +98,18 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// The security groups.
+        /// The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for
+        /// communication.
+        /// </para>
+        ///  
+        /// <para>
+        /// Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set
+        /// to <code>PublicInternetOnly</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set
+        /// to <code>VpcOnly</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]

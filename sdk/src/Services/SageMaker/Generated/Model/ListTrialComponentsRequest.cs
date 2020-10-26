@@ -104,7 +104,7 @@ namespace Amazon.SageMaker.Model
         /// or <code>TrialName</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=82)]
+        [AWSProperty(Min=1, Max=120)]
         public string ExperimentName
         {
             get { return this._experimentName; }
@@ -221,7 +221,7 @@ namespace Amazon.SageMaker.Model
         /// <code>SourceArn</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=82)]
+        [AWSProperty(Min=1, Max=120)]
         public string TrialName
         {
             get { return this._trialName; }

@@ -92,6 +92,16 @@ namespace Amazon.SageMaker.Model
         IListHyperParameterTuningJobsPaginator ListHyperParameterTuningJobs(ListHyperParameterTuningJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListImages operation
+        ///</summary>
+        IListImagesPaginator ListImages(ListImagesRequest request);
+
+        /// <summary>
+        /// Paginator for ListImageVersions operation
+        ///</summary>
+        IListImageVersionsPaginator ListImageVersions(ListImageVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListLabelingJobs operation
         ///</summary>
         IListLabelingJobsPaginator ListLabelingJobs(ListLabelingJobsRequest request);

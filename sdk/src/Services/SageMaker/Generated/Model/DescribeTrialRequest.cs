@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the trial to describe.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=82)]
+        [AWSProperty(Required=true, Min=1, Max=120)]
         public string TrialName
         {
             get { return this._trialName; }

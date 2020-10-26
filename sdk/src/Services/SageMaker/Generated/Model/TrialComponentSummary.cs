@@ -89,7 +89,7 @@ namespace Amazon.SageMaker.Model
         /// <code>TrialComponentName</code> is displayed.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=82)]
+        [AWSProperty(Min=1, Max=120)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -230,7 +230,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the trial component.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=82)]
+        [AWSProperty(Min=1, Max=120)]
         public string TrialComponentName
         {
             get { return this._trialComponentName; }

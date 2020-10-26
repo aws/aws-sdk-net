@@ -121,8 +121,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EndpointName. 
         /// <para>
-        /// The name of the endpoint. The name must be unique within an AWS Region in your AWS
-        /// account.
+        /// The name of the endpoint.The name must be unique within an AWS Region in your AWS
+        /// account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case
+        /// is preserved and must be matched in .
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]

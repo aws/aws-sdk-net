@@ -82,6 +82,7 @@ namespace Amazon.SageMaker.Model
         private OutputConfig _outputConfig;
         private string _roleArn;
         private StoppingCondition _stoppingCondition;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property CompilationJobName. 
@@ -209,6 +210,28 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetStoppingCondition()
         {
             return this._stoppingCondition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An array of key-value pairs that you want to use to organize and track your AWS resource
+        /// costs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

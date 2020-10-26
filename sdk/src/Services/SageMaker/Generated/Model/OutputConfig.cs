@@ -118,6 +118,17 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
+        ///  <code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler options passed
+        /// in as a JSON string. For example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores
+        /// 2 -O2\""</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about supported compiler options, see <a href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
+        /// Neuron Compiler CLI</a>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>CoreML</code>: Compilation for the CoreML <a>OutputConfig$TargetDevice</a>
         /// supports the following compiler options:
         /// </para>
@@ -129,7 +140,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
-        [AWSProperty(Min=7, Max=1024)]
+        [AWSProperty(Min=3, Max=1024)]
         public string CompilerOptions
         {
             get { return this._compilerOptions; }

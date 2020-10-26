@@ -89,7 +89,7 @@ namespace Amazon.SageMaker.Model
         /// A filter that returns only trials that are part of the specified experiment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=82)]
+        [AWSProperty(Min=1, Max=120)]
         public string ExperimentName
         {
             get { return this._experimentName; }
@@ -183,7 +183,7 @@ namespace Amazon.SageMaker.Model
         /// A filter that returns only trials that are associated with the specified trial component.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=82)]
+        [AWSProperty(Min=1, Max=120)]
         public string TrialComponentName
         {
             get { return this._trialComponentName; }

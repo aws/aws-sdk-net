@@ -509,6 +509,63 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateAppImageConfig
+
+        /// <summary>
+        /// Creates a configuration for running an Amazon SageMaker image as a KernelGateway app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppImageConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateAppImageConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAppImageConfig">REST API Reference for CreateAppImageConfig Operation</seealso>
+        public virtual CreateAppImageConfigResponse CreateAppImageConfig(CreateAppImageConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppImageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppImageConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAppImageConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAppImageConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppImageConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAppImageConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAppImageConfig">REST API Reference for CreateAppImageConfig Operation</seealso>
+        public virtual IAsyncResult BeginCreateAppImageConfig(CreateAppImageConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppImageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppImageConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAppImageConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAppImageConfig.</param>
+        /// 
+        /// <returns>Returns a  CreateAppImageConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAppImageConfig">REST API Reference for CreateAppImageConfig Operation</seealso>
+        public virtual CreateAppImageConfigResponse EndCreateAppImageConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAppImageConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateAutoMLJob
 
         /// <summary>
@@ -789,52 +846,15 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// When internet access is disabled, you won't be able to train or host models unless
-        /// your VPC has an interface endpoint (PrivateLink) or a NAT gateway and your security
-        /// groups allow outbound connections.
+        /// When internet access is disabled, you won't be able to run a Studio notebook or to
+        /// train or host models unless your VPC has an interface endpoint to the SageMaker API
+        /// and runtime or a NAT gateway and your security groups allow outbound connections.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b> <code>VpcOnly</code> network access type</b> 
+        /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
+        /// SageMaker Studio Notebooks to Resources in a VPC</a>.
         /// </para>
-        ///  
-        /// <para>
-        /// When you choose <code>VpcOnly</code>, you must specify the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Security group inbound and outbound rules to allow NFS traffic over TCP on port 2049
-        /// between the domain and the EFS volume
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Security group inbound and outbound rules to allow traffic between the JupyterServer
-        /// app and the KernelGateway apps
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Interface endpoints to access the SageMaker API and SageMaker runtime
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information, see:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
-        /// groups for your VPC</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html">VPC
-        /// with public and private subnets (NAT)</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html">Connect
-        /// to SageMaker through a VPC interface endpoint</a> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
         /// 
@@ -1394,6 +1414,134 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateImage
+
+        /// <summary>
+        /// Creates a SageMaker <code>Image</code>. A SageMaker image represents a set of container
+        /// images. Each of these container images is represented by a SageMaker <code>ImageVersion</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateImage service method.</param>
+        /// 
+        /// <returns>The response from the CreateImage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImage">REST API Reference for CreateImage Operation</seealso>
+        public virtual CreateImageResponse CreateImage(CreateImageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImageResponseUnmarshaller.Instance;
+
+            return Invoke<CreateImageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateImage operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImage">REST API Reference for CreateImage Operation</seealso>
+        public virtual IAsyncResult BeginCreateImage(CreateImageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateImage.</param>
+        /// 
+        /// <returns>Returns a  CreateImageResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImage">REST API Reference for CreateImage Operation</seealso>
+        public virtual CreateImageResponse EndCreateImage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateImageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateImageVersion
+
+        /// <summary>
+        /// Creates a version of the SageMaker image specified by <code>ImageName</code>. The
+        /// version represents the Amazon Container Registry (ECR) container image specified by
+        /// <code>BaseImage</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateImageVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateImageVersion service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion">REST API Reference for CreateImageVersion Operation</seealso>
+        public virtual CreateImageVersionResponse CreateImageVersion(CreateImageVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImageVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateImageVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateImageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateImageVersion operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateImageVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion">REST API Reference for CreateImageVersion Operation</seealso>
+        public virtual IAsyncResult BeginCreateImageVersion(CreateImageVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImageVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateImageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateImageVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateImageVersionResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion">REST API Reference for CreateImageVersion Operation</seealso>
+        public virtual CreateImageVersionResponse EndCreateImageVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateImageVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateLabelingJob
 
         /// <summary>
@@ -1616,6 +1764,13 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the CreateModelPackage service method.</param>
         /// 
         /// <returns>The response from the CreateModelPackage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify an experiment, trial, or trial component.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackage">REST API Reference for CreateModelPackage Operation</seealso>
         public virtual CreateModelPackageResponse CreateModelPackage(CreateModelPackageRequest request)
         {
@@ -2868,6 +3023,63 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteAppImageConfig
+
+        /// <summary>
+        /// Deletes an AppImageConfig.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppImageConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAppImageConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAppImageConfig">REST API Reference for DeleteAppImageConfig Operation</seealso>
+        public virtual DeleteAppImageConfigResponse DeleteAppImageConfig(DeleteAppImageConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppImageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppImageConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAppImageConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAppImageConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppImageConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAppImageConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAppImageConfig">REST API Reference for DeleteAppImageConfig Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAppImageConfig(DeleteAppImageConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppImageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppImageConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAppImageConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAppImageConfig.</param>
+        /// 
+        /// <returns>Returns a  DeleteAppImageConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAppImageConfig">REST API Reference for DeleteAppImageConfig Operation</seealso>
+        public virtual DeleteAppImageConfigResponse EndDeleteAppImageConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAppImageConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteCodeRepository
 
         /// <summary>
@@ -3294,6 +3506,128 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteImage
+
+        /// <summary>
+        /// Deletes a SageMaker image and all versions of the image. The container images aren't
+        /// deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImage service method.</param>
+        /// 
+        /// <returns>The response from the DeleteImage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
+        public virtual DeleteImageResponse DeleteImage(DeleteImageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImageResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteImageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImage operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
+        public virtual IAsyncResult BeginDeleteImage(DeleteImageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteImage.</param>
+        /// 
+        /// <returns>Returns a  DeleteImageResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
+        public virtual DeleteImageResponse EndDeleteImage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteImageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteImageVersion
+
+        /// <summary>
+        /// Deletes a version of a SageMaker image. The container image the version represents
+        /// isn't deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImageVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteImageVersion service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImageVersion">REST API Reference for DeleteImageVersion Operation</seealso>
+        public virtual DeleteImageVersionResponse DeleteImageVersion(DeleteImageVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImageVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteImageVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteImageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImageVersion operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteImageVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImageVersion">REST API Reference for DeleteImageVersion Operation</seealso>
+        public virtual IAsyncResult BeginDeleteImageVersion(DeleteImageVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImageVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteImageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteImageVersion.</param>
+        /// 
+        /// <returns>Returns a  DeleteImageVersionResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImageVersion">REST API Reference for DeleteImageVersion Operation</seealso>
+        public virtual DeleteImageVersionResponse EndDeleteImageVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteImageVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteModel
 
         /// <summary>
@@ -3366,6 +3700,9 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the DeleteModelPackage service method.</param>
         /// 
         /// <returns>The response from the DeleteModelPackage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify an experiment, trial, or trial component.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelPackage">REST API Reference for DeleteModelPackage Operation</seealso>
         public virtual DeleteModelPackageResponse DeleteModelPackage(DeleteModelPackageRequest request)
         {
@@ -4068,6 +4405,63 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeAppImageConfig
+
+        /// <summary>
+        /// Describes an AppImageConfig.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppImageConfig service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAppImageConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAppImageConfig">REST API Reference for DescribeAppImageConfig Operation</seealso>
+        public virtual DescribeAppImageConfigResponse DescribeAppImageConfig(DescribeAppImageConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAppImageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppImageConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAppImageConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAppImageConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppImageConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAppImageConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAppImageConfig">REST API Reference for DescribeAppImageConfig Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAppImageConfig(DescribeAppImageConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAppImageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppImageConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAppImageConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAppImageConfig.</param>
+        /// 
+        /// <returns>Returns a  DescribeAppImageConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAppImageConfig">REST API Reference for DescribeAppImageConfig Operation</seealso>
+        public virtual DescribeAppImageConfigResponse EndDescribeAppImageConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAppImageConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeAutoMLJob
 
         /// <summary>
@@ -4632,6 +5026,120 @@ namespace Amazon.SageMaker
         public virtual DescribeHyperParameterTuningJobResponse EndDescribeHyperParameterTuningJob(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeHyperParameterTuningJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeImage
+
+        /// <summary>
+        /// Describes a SageMaker image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImage service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImage">REST API Reference for DescribeImage Operation</seealso>
+        public virtual DescribeImageResponse DescribeImage(DescribeImageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImage operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImage">REST API Reference for DescribeImage Operation</seealso>
+        public virtual IAsyncResult BeginDescribeImage(DescribeImageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeImage.</param>
+        /// 
+        /// <returns>Returns a  DescribeImageResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImage">REST API Reference for DescribeImage Operation</seealso>
+        public virtual DescribeImageResponse EndDescribeImage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeImageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeImageVersion
+
+        /// <summary>
+        /// Describes a version of a SageMaker image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageVersion service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImageVersion service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImageVersion">REST API Reference for DescribeImageVersion Operation</seealso>
+        public virtual DescribeImageVersionResponse DescribeImageVersion(DescribeImageVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImageVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageVersion operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImageVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImageVersion">REST API Reference for DescribeImageVersion Operation</seealso>
+        public virtual IAsyncResult BeginDescribeImageVersion(DescribeImageVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeImageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeImageVersion.</param>
+        /// 
+        /// <returns>Returns a  DescribeImageVersionResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImageVersion">REST API Reference for DescribeImageVersion Operation</seealso>
+        public virtual DescribeImageVersionResponse EndDescribeImageVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeImageVersionResponse>(asyncResult);
         }
 
         #endregion
@@ -5673,6 +6181,62 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListAppImageConfigs
+
+        /// <summary>
+        /// Lists the AppImageConfigs in your account and their properties. The list can be filtered
+        /// by creation time or modified time, and whether the AppImageConfig name contains a
+        /// specified string.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAppImageConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListAppImageConfigs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAppImageConfigs">REST API Reference for ListAppImageConfigs Operation</seealso>
+        public virtual ListAppImageConfigsResponse ListAppImageConfigs(ListAppImageConfigsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAppImageConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAppImageConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAppImageConfigsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAppImageConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAppImageConfigs operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAppImageConfigs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAppImageConfigs">REST API Reference for ListAppImageConfigs Operation</seealso>
+        public virtual IAsyncResult BeginListAppImageConfigs(ListAppImageConfigsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAppImageConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAppImageConfigsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAppImageConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAppImageConfigs.</param>
+        /// 
+        /// <returns>Returns a  ListAppImageConfigsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAppImageConfigs">REST API Reference for ListAppImageConfigs Operation</seealso>
+        public virtual ListAppImageConfigsResponse EndListAppImageConfigs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAppImageConfigsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListApps
 
         /// <summary>
@@ -6329,6 +6893,119 @@ namespace Amazon.SageMaker
         public virtual ListHyperParameterTuningJobsResponse EndListHyperParameterTuningJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListHyperParameterTuningJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListImages
+
+        /// <summary>
+        /// Lists the images in your account and their properties. The list can be filtered by
+        /// creation time or modified time, and whether the image name contains a specified string.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImages service method.</param>
+        /// 
+        /// <returns>The response from the ListImages service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImages">REST API Reference for ListImages Operation</seealso>
+        public virtual ListImagesResponse ListImages(ListImagesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImagesResponseUnmarshaller.Instance;
+
+            return Invoke<ListImagesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImages operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImages">REST API Reference for ListImages Operation</seealso>
+        public virtual IAsyncResult BeginListImages(ListImagesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImagesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListImages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListImages.</param>
+        /// 
+        /// <returns>Returns a  ListImagesResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImages">REST API Reference for ListImages Operation</seealso>
+        public virtual ListImagesResponse EndListImages(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListImagesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListImageVersions
+
+        /// <summary>
+        /// Lists the versions of a specified image and their properties. The list can be filtered
+        /// by creation time or modified time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImageVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListImageVersions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImageVersions">REST API Reference for ListImageVersions Operation</seealso>
+        public virtual ListImageVersionsResponse ListImageVersions(ListImageVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImageVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImageVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListImageVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImageVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImageVersions operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImageVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImageVersions">REST API Reference for ListImageVersions Operation</seealso>
+        public virtual IAsyncResult BeginListImageVersions(ListImageVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImageVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImageVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListImageVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListImageVersions.</param>
+        /// 
+        /// <returns>Returns a  ListImageVersionsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImageVersions">REST API Reference for ListImageVersions Operation</seealso>
+        public virtual ListImageVersionsResponse EndListImageVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListImageVersionsResponse>(asyncResult);
         }
 
         #endregion
@@ -8202,6 +8879,63 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  UpdateAppImageConfig
+
+        /// <summary>
+        /// Updates the properties of an AppImageConfig.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAppImageConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAppImageConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAppImageConfig">REST API Reference for UpdateAppImageConfig Operation</seealso>
+        public virtual UpdateAppImageConfigResponse UpdateAppImageConfig(UpdateAppImageConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAppImageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAppImageConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAppImageConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAppImageConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAppImageConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAppImageConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAppImageConfig">REST API Reference for UpdateAppImageConfig Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAppImageConfig(UpdateAppImageConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAppImageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAppImageConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAppImageConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAppImageConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateAppImageConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAppImageConfig">REST API Reference for UpdateAppImageConfig Operation</seealso>
+        public virtual UpdateAppImageConfigResponse EndUpdateAppImageConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAppImageConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateCodeRepository
 
         /// <summary>
@@ -8520,6 +9254,67 @@ namespace Amazon.SageMaker
         public virtual UpdateExperimentResponse EndUpdateExperiment(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateExperimentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateImage
+
+        /// <summary>
+        /// Updates the properties of a SageMaker image. To change the image's tags, use the <a>AddTags</a>
+        /// and <a>DeleteTags</a> APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImage service method.</param>
+        /// 
+        /// <returns>The response from the UpdateImage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImage">REST API Reference for UpdateImage Operation</seealso>
+        public virtual UpdateImageResponse UpdateImage(UpdateImageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateImageResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateImageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImage operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImage">REST API Reference for UpdateImage Operation</seealso>
+        public virtual IAsyncResult BeginUpdateImage(UpdateImageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateImageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateImage.</param>
+        /// 
+        /// <returns>Returns a  UpdateImageResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImage">REST API Reference for UpdateImage Operation</seealso>
+        public virtual UpdateImageResponse EndUpdateImage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateImageResponse>(asyncResult);
         }
 
         #endregion

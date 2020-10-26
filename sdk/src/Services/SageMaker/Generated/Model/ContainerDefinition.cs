@@ -207,7 +207,7 @@ namespace Amazon.SageMaker.Model
         /// The name or Amazon Resource Name (ARN) of the model package to use to create the model.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=170)]
+        [AWSProperty(Min=1, Max=176)]
         public string ModelPackageName
         {
             get { return this._modelPackageName; }

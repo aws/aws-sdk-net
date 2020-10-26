@@ -137,6 +137,60 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type AppImageConfigSortKey.
+    /// </summary>
+    public class AppImageConfigSortKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreationTime for AppImageConfigSortKey
+        /// </summary>
+        public static readonly AppImageConfigSortKey CreationTime = new AppImageConfigSortKey("CreationTime");
+        /// <summary>
+        /// Constant LastModifiedTime for AppImageConfigSortKey
+        /// </summary>
+        public static readonly AppImageConfigSortKey LastModifiedTime = new AppImageConfigSortKey("LastModifiedTime");
+        /// <summary>
+        /// Constant Name for AppImageConfigSortKey
+        /// </summary>
+        public static readonly AppImageConfigSortKey Name = new AppImageConfigSortKey("Name");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppImageConfigSortKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppImageConfigSortKey FindValue(string value)
+        {
+            return FindValue<AppImageConfigSortKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppImageConfigSortKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AppInstanceType.
     /// </summary>
     public class AppInstanceType : ConstantClass
@@ -1941,6 +1995,10 @@ namespace Amazon.SageMaker
     {
 
         /// <summary>
+        /// Constant Delete_Failed for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus Delete_Failed = new DomainStatus("Delete_Failed");
+        /// <summary>
         /// Constant Deleting for DomainStatus
         /// </summary>
         public static readonly DomainStatus Deleting = new DomainStatus("Deleting");
@@ -1956,6 +2014,14 @@ namespace Amazon.SageMaker
         /// Constant Pending for DomainStatus
         /// </summary>
         public static readonly DomainStatus Pending = new DomainStatus("Pending");
+        /// <summary>
+        /// Constant Update_Failed for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus Update_Failed = new DomainStatus("Update_Failed");
+        /// <summary>
+        /// Constant Updating for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus Updating = new DomainStatus("Updating");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2405,6 +2471,10 @@ namespace Amazon.SageMaker
     {
 
         /// <summary>
+        /// Constant DARKNET for Framework
+        /// </summary>
+        public static readonly Framework DARKNET = new Framework("DARKNET");
+        /// <summary>
         /// Constant KERAS for Framework
         /// </summary>
         public static readonly Framework KERAS = new Framework("KERAS");
@@ -2836,6 +2906,346 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HyperParameterTuningJobWarmStartType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageSortBy.
+    /// </summary>
+    public class ImageSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATION_TIME for ImageSortBy
+        /// </summary>
+        public static readonly ImageSortBy CREATION_TIME = new ImageSortBy("CREATION_TIME");
+        /// <summary>
+        /// Constant IMAGE_NAME for ImageSortBy
+        /// </summary>
+        public static readonly ImageSortBy IMAGE_NAME = new ImageSortBy("IMAGE_NAME");
+        /// <summary>
+        /// Constant LAST_MODIFIED_TIME for ImageSortBy
+        /// </summary>
+        public static readonly ImageSortBy LAST_MODIFIED_TIME = new ImageSortBy("LAST_MODIFIED_TIME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageSortBy FindValue(string value)
+        {
+            return FindValue<ImageSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageSortOrder.
+    /// </summary>
+    public class ImageSortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASCENDING for ImageSortOrder
+        /// </summary>
+        public static readonly ImageSortOrder ASCENDING = new ImageSortOrder("ASCENDING");
+        /// <summary>
+        /// Constant DESCENDING for ImageSortOrder
+        /// </summary>
+        public static readonly ImageSortOrder DESCENDING = new ImageSortOrder("DESCENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageSortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageSortOrder FindValue(string value)
+        {
+            return FindValue<ImageSortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageSortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageStatus.
+    /// </summary>
+    public class ImageStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for ImageStatus
+        /// </summary>
+        public static readonly ImageStatus CREATE_FAILED = new ImageStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATED for ImageStatus
+        /// </summary>
+        public static readonly ImageStatus CREATED = new ImageStatus("CREATED");
+        /// <summary>
+        /// Constant CREATING for ImageStatus
+        /// </summary>
+        public static readonly ImageStatus CREATING = new ImageStatus("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for ImageStatus
+        /// </summary>
+        public static readonly ImageStatus DELETE_FAILED = new ImageStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for ImageStatus
+        /// </summary>
+        public static readonly ImageStatus DELETING = new ImageStatus("DELETING");
+        /// <summary>
+        /// Constant UPDATE_FAILED for ImageStatus
+        /// </summary>
+        public static readonly ImageStatus UPDATE_FAILED = new ImageStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for ImageStatus
+        /// </summary>
+        public static readonly ImageStatus UPDATING = new ImageStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageStatus FindValue(string value)
+        {
+            return FindValue<ImageStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageVersionSortBy.
+    /// </summary>
+    public class ImageVersionSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATION_TIME for ImageVersionSortBy
+        /// </summary>
+        public static readonly ImageVersionSortBy CREATION_TIME = new ImageVersionSortBy("CREATION_TIME");
+        /// <summary>
+        /// Constant LAST_MODIFIED_TIME for ImageVersionSortBy
+        /// </summary>
+        public static readonly ImageVersionSortBy LAST_MODIFIED_TIME = new ImageVersionSortBy("LAST_MODIFIED_TIME");
+        /// <summary>
+        /// Constant VERSION for ImageVersionSortBy
+        /// </summary>
+        public static readonly ImageVersionSortBy VERSION = new ImageVersionSortBy("VERSION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageVersionSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageVersionSortBy FindValue(string value)
+        {
+            return FindValue<ImageVersionSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageVersionSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageVersionSortOrder.
+    /// </summary>
+    public class ImageVersionSortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASCENDING for ImageVersionSortOrder
+        /// </summary>
+        public static readonly ImageVersionSortOrder ASCENDING = new ImageVersionSortOrder("ASCENDING");
+        /// <summary>
+        /// Constant DESCENDING for ImageVersionSortOrder
+        /// </summary>
+        public static readonly ImageVersionSortOrder DESCENDING = new ImageVersionSortOrder("DESCENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageVersionSortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageVersionSortOrder FindValue(string value)
+        {
+            return FindValue<ImageVersionSortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageVersionSortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageVersionStatus.
+    /// </summary>
+    public class ImageVersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for ImageVersionStatus
+        /// </summary>
+        public static readonly ImageVersionStatus CREATE_FAILED = new ImageVersionStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATED for ImageVersionStatus
+        /// </summary>
+        public static readonly ImageVersionStatus CREATED = new ImageVersionStatus("CREATED");
+        /// <summary>
+        /// Constant CREATING for ImageVersionStatus
+        /// </summary>
+        public static readonly ImageVersionStatus CREATING = new ImageVersionStatus("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for ImageVersionStatus
+        /// </summary>
+        public static readonly ImageVersionStatus DELETE_FAILED = new ImageVersionStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for ImageVersionStatus
+        /// </summary>
+        public static readonly ImageVersionStatus DELETING = new ImageVersionStatus("DELETING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageVersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageVersionStatus FindValue(string value)
+        {
+            return FindValue<ImageVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageVersionStatus(string value)
         {
             return FindValue(value);
         }
@@ -6662,6 +7072,10 @@ namespace Amazon.SageMaker
         /// Constant MlP3dn24xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlP3dn24xlarge = new TrainingInstanceType("ml.p3dn.24xlarge");
+        /// <summary>
+        /// Constant MlP4d24xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlP4d24xlarge = new TrainingInstanceType("ml.p4d.24xlarge");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -7195,6 +7609,10 @@ namespace Amazon.SageMaker
     {
 
         /// <summary>
+        /// Constant Delete_Failed for UserProfileStatus
+        /// </summary>
+        public static readonly UserProfileStatus Delete_Failed = new UserProfileStatus("Delete_Failed");
+        /// <summary>
         /// Constant Deleting for UserProfileStatus
         /// </summary>
         public static readonly UserProfileStatus Deleting = new UserProfileStatus("Deleting");
@@ -7210,6 +7628,14 @@ namespace Amazon.SageMaker
         /// Constant Pending for UserProfileStatus
         /// </summary>
         public static readonly UserProfileStatus Pending = new UserProfileStatus("Pending");
+        /// <summary>
+        /// Constant Update_Failed for UserProfileStatus
+        /// </summary>
+        public static readonly UserProfileStatus Update_Failed = new UserProfileStatus("Update_Failed");
+        /// <summary>
+        /// Constant Updating for UserProfileStatus
+        /// </summary>
+        public static readonly UserProfileStatus Updating = new UserProfileStatus("Updating");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

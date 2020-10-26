@@ -8,13 +8,13 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AssociateTrialComponentRequest.TrialComponentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AssociateTrialComponentRequest.TrialName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -62,6 +62,16 @@
     <property>Amazon.SageMaker.Model.CreateAppResponse.AppArn</property>
     <max>256</max>
     <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:app/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateAppImageConfigRequest.AppImageConfigName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateAppImageConfigResponse.AppImageConfigArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:app-image-config/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateAutoMLJobRequest.AutoMLJobName</property>
@@ -174,13 +184,13 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateExperimentRequest.DisplayName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateExperimentRequest.ExperimentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -226,6 +236,58 @@
     <property>Amazon.SageMaker.Model.CreateHyperParameterTuningJobResponse.HyperParameterTuningJobArn</property>
     <max>256</max>
     <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:hyper-parameter-tuning-job/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateImageRequest.Description</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateImageRequest.DisplayName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateImageRequest.ImageName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateImageRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateImageResponse.ImageArn</property>
+    <max>256</max>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-z0-9]([-.]?[a-z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateImageVersionRequest.BaseImage</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateImageVersionRequest.ClientToken</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateImageVersionRequest.ImageName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateImageVersionResponse.ImageVersionArn</property>
+    <max>256</max>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image-version/[a-z0-9]([-.]?[a-z0-9])*/[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateLabelingJobRequest.LabelAttributeName</property>
@@ -435,19 +497,19 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateTrialRequest.DisplayName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateTrialRequest.ExperimentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateTrialRequest.TrialName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -458,13 +520,13 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateTrialComponentRequest.DisplayName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateTrialComponentRequest.TrialComponentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -549,6 +611,11 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeleteAppImageConfigRequest.AppImageConfigName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteCodeRepositoryRequest.CodeRepositoryName</property>
     <min>1</min>
     <max>63</max>
@@ -571,7 +638,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteExperimentRequest.ExperimentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -592,6 +659,22 @@
     <pattern>^[a-z0-9](-*[a-z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeleteImageRequest.ImageName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeleteImageVersionRequest.ImageName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeleteImageVersionRequest.Version</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteModelRequest.ModelName</property>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
@@ -599,8 +682,8 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteModelPackageRequest.ModelPackageName</property>
     <min>1</min>
-    <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <max>176</max>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?&lt;!-)(\/[0-9]{1,5})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteMonitoringScheduleRequest.MonitoringScheduleName</property>
@@ -626,7 +709,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteTrialRequest.TrialName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -637,7 +720,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteTrialComponentRequest.TrialComponentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -728,6 +811,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeAppResponse.UserProfileName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeAppImageConfigRequest.AppImageConfigName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeAppImageConfigResponse.AppImageConfigArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:app-image-config/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeAppImageConfigResponse.AppImageConfigName</property>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
@@ -897,7 +995,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeExperimentRequest.ExperimentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -908,7 +1006,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeExperimentResponse.DisplayName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -919,7 +1017,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeExperimentResponse.ExperimentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -986,6 +1084,84 @@
     <min>1</min>
     <max>32</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageRequest.ImageName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageResponse.Description</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageResponse.DisplayName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageResponse.FailureReason</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageResponse.ImageArn</property>
+    <max>256</max>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-z0-9]([-.]?[a-z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageResponse.ImageName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageResponse.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageVersionRequest.ImageName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageVersionRequest.Version</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageVersionResponse.BaseImage</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageVersionResponse.ContainerImage</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageVersionResponse.FailureReason</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageVersionResponse.ImageArn</property>
+    <max>256</max>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-z0-9]([-.]?[a-z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageVersionResponse.ImageVersionArn</property>
+    <max>256</max>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image-version/[a-z0-9]([-.]?[a-z0-9])*/[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeImageVersionResponse.Version</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeLabelingJobRequest.LabelingJobName</property>
@@ -1055,8 +1231,8 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeModelPackageRequest.ModelPackageName</property>
     <min>1</min>
-    <max>170</max>
-    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?&lt;!-)$</pattern>
+    <max>176</max>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?&lt;!-)(\/[0-9]{1,5})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeModelPackageResponse.ModelPackageArn</property>
@@ -1317,19 +1493,19 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeTrialRequest.TrialName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeTrialResponse.DisplayName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeTrialResponse.ExperimentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1340,19 +1516,19 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeTrialResponse.TrialName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeTrialComponentRequest.TrialComponentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeTrialComponentResponse.DisplayName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1363,7 +1539,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeTrialComponentResponse.TrialComponentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1421,13 +1597,13 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DisassociateTrialComponentRequest.TrialComponentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DisassociateTrialComponentRequest.TrialName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1457,6 +1633,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListAlgorithmsResponse.NextToken</property>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListAppImageConfigsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListAppImageConfigsRequest.NameContains</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListAppImageConfigsRequest.NextToken</property>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListAppImageConfigsResponse.NextToken</property>
     <max>8192</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -1687,6 +1883,47 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListHyperParameterTuningJobsResponse.NextToken</property>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListImagesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListImagesRequest.NameContains</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9\-.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListImagesRequest.NextToken</property>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListImagesResponse.NextToken</property>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListImageVersionsRequest.ImageName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListImageVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListImageVersionsRequest.NextToken</property>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListImageVersionsResponse.NextToken</property>
     <max>8192</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -2002,7 +2239,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTrialComponentsRequest.ExperimentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2022,7 +2259,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTrialComponentsRequest.TrialName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2033,7 +2270,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTrialsRequest.ExperimentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2049,7 +2286,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTrialsRequest.TrialComponentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2220,6 +2457,16 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateAppImageConfigRequest.AppImageConfigName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateAppImageConfigResponse.AppImageConfigArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:app-image-config/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateCodeRepositoryRequest.CodeRepositoryName</property>
     <min>1</min>
     <max>63</max>
@@ -2275,19 +2522,48 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateExperimentRequest.DisplayName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateExperimentRequest.ExperimentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateExperimentResponse.ExperimentArn</property>
     <max>256</max>
     <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:experiment/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateImageRequest.Description</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateImageRequest.DisplayName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateImageRequest.ImageName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateImageRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateImageResponse.ImageArn</property>
+    <max>256</max>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-z0-9]([-.]?[a-z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateMonitoringScheduleRequest.MonitoringScheduleName</property>
@@ -2335,13 +2611,13 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateTrialRequest.DisplayName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateTrialRequest.TrialName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2352,13 +2628,13 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateTrialComponentRequest.DisplayName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateTrialComponentRequest.TrialComponentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2460,6 +2736,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AppDetails.UserProfileName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.AppImageConfigDetails.AppImageConfigArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:app-image-config/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.AppImageConfigDetails.AppImageConfigName</property>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
@@ -2672,8 +2958,8 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ContainerDefinition.ModelPackageName</property>
     <min>1</min>
-    <max>170</max>
-    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?&lt;!-)$</pattern>
+    <max>176</max>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?&lt;!-)(\/[0-9]{1,5})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ContinuousParameterRange.MaxValue</property>
@@ -2699,6 +2985,21 @@
     <property>Amazon.SageMaker.Model.ContinuousParameterRangeSpecification.MinValue</property>
     <max>256</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CustomImage.AppImageConfigName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CustomImage.ImageName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CustomImage.ImageVersionNumber</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DataCaptureConfig.DestinationS3Uri</property>
@@ -2872,7 +3173,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Experiment.DisplayName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2883,25 +3184,25 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Experiment.ExperimentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ExperimentConfig.ExperimentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ExperimentConfig.TrialComponentDisplayName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ExperimentConfig.TrialName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2916,7 +3217,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ExperimentSummary.DisplayName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2927,8 +3228,23 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ExperimentSummary.ExperimentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.FileSystemConfig.DefaultGid</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.FileSystemConfig.DefaultUid</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.FileSystemConfig.MountPath</property>
+    <max>1024</max>
+    <pattern>^\/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.FileSystemDataSource.DirectoryPath</property>
@@ -3112,7 +3428,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HyperParameterSpecification.DefaultValue</property>
-    <max>256</max>
+    <max>2500</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -3182,6 +3498,51 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.Image.Description</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.Image.DisplayName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.Image.FailureReason</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.Image.ImageArn</property>
+    <max>256</max>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-z0-9]([-.]?[a-z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.Image.ImageName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ImageVersion.FailureReason</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ImageVersion.ImageArn</property>
+    <max>256</max>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-z0-9]([-.]?[a-z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ImageVersion.ImageVersionArn</property>
+    <max>256</max>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image-version/[a-z0-9]([-.]?[a-z0-9])*/[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ImageVersion.Version</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.InputConfig.DataInputConfig</property>
     <min>1</min>
     <max>1024</max>
@@ -3216,6 +3577,14 @@
     <property>Amazon.SageMaker.Model.IntegerParameterRangeSpecification.MinValue</property>
     <max>256</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.KernelSpec.DisplayName</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.KernelSpec.Name</property>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelCounters.FailedNonRetryableError</property>
@@ -3304,7 +3673,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobOutputConfig.SnsTopicArn</property>
     <max>2048</max>
-    <pattern>arn:aws[a-z\-]*:sns:[a-z0-9\-]*:[0-9]{12}:[a-zA-Z0-9_.-]*</pattern>
+    <pattern>arn:aws[a-z\-]*:sns:[a-z0-9\-]*:[0-9]{12}:[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobResourceConfig.VolumeKmsKeyId</property>
@@ -3319,7 +3688,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobSnsDataSource.SnsTopicArn</property>
     <max>2048</max>
-    <pattern>arn:aws[a-z\-]*:sns:[a-z0-9\-]*:[0-9]{12}:[a-zA-Z0-9_.-]*</pattern>
+    <pattern>arn:aws[a-z\-]*:sns:[a-z0-9\-]*:[0-9]{12}:[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobStoppingConditions.MaxHumanLabeledObjectCount</property>
@@ -3703,9 +4072,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.OutputConfig.CompilerOptions</property>
-    <min>7</min>
+    <min>3</min>
     <max>1024</max>
-    <pattern>^\{.+\}$</pattern>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.OutputConfig.S3OutputLocation</property>
@@ -3725,13 +4094,13 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Parent.ExperimentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Parent.TrialName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -3929,6 +4298,11 @@
     <property>Amazon.SageMaker.Model.ResourceSpec.SageMakerImageArn</property>
     <max>256</max>
     <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image/[a-z0-9]([-.]?[a-z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ResourceSpec.SageMakerImageVersionArn</property>
+    <max>256</max>
+    <pattern>^arn:aws(-[\w]+)*:sagemaker:.+:[0-9]{12}:image-version/[a-z0-9]([-.]?[a-z0-9])*/[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.S3DataSource.S3Uri</property>
@@ -4193,13 +4567,13 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Trial.DisplayName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Trial.ExperimentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -4210,13 +4584,13 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Trial.TrialName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TrialComponent.DisplayName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -4227,13 +4601,13 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TrialComponent.TrialComponentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TrialComponentArtifact.MediaType</property>
     <max>64</max>
-    <pattern>^[\w]+\/[\w+]+$</pattern>
+    <pattern>^[-\w]+\/[-\w+]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TrialComponentArtifact.Value</property>
@@ -4264,7 +4638,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TrialComponentSimpleSummary.TrialComponentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -4289,7 +4663,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TrialComponentSummary.DisplayName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -4300,7 +4674,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TrialComponentSummary.TrialComponentName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -4315,7 +4689,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TrialSummary.DisplayName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -4326,7 +4700,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TrialSummary.TrialName</property>
     <min>1</min>
-    <max>82</max>
+    <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>

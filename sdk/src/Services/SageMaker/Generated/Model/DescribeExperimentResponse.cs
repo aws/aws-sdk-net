@@ -105,7 +105,7 @@ namespace Amazon.SageMaker.Model
         /// <code>ExperimentName</code> is displayed.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=82)]
+        [AWSProperty(Min=1, Max=120)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -143,7 +143,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the experiment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=82)]
+        [AWSProperty(Min=1, Max=120)]
         public string ExperimentName
         {
             get { return this._experimentName; }

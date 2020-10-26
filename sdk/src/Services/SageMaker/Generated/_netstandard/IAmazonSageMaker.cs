@@ -173,6 +173,27 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  CreateAppImageConfig
+
+
+
+        /// <summary>
+        /// Creates a configuration for running an Amazon SageMaker image as a KernelGateway app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppImageConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAppImageConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAppImageConfig">REST API Reference for CreateAppImageConfig Operation</seealso>
+        Task<CreateAppImageConfigResponse> CreateAppImageConfigAsync(CreateAppImageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateAutoMLJob
 
 
@@ -347,52 +368,15 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// When internet access is disabled, you won't be able to train or host models unless
-        /// your VPC has an interface endpoint (PrivateLink) or a NAT gateway and your security
-        /// groups allow outbound connections.
+        /// When internet access is disabled, you won't be able to run a Studio notebook or to
+        /// train or host models unless your VPC has an interface endpoint to the SageMaker API
+        /// and runtime or a NAT gateway and your security groups allow outbound connections.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b> <code>VpcOnly</code> network access type</b> 
+        /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
+        /// SageMaker Studio Notebooks to Resources in a VPC</a>.
         /// </para>
-        ///  
-        /// <para>
-        /// When you choose <code>VpcOnly</code>, you must specify the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Security group inbound and outbound rules to allow NFS traffic over TCP on port 2049
-        /// between the domain and the EFS volume
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Security group inbound and outbound rules to allow traffic between the JupyterServer
-        /// app and the KernelGateway apps
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Interface endpoints to access the SageMaker API and SageMaker runtime
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information, see:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
-        /// groups for your VPC</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html">VPC
-        /// with public and private subnets (NAT)</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html">Connect
-        /// to SageMaker through a VPC interface endpoint</a> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
         /// <param name="cancellationToken">
@@ -698,6 +682,62 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  CreateImage
+
+
+
+        /// <summary>
+        /// Creates a SageMaker <code>Image</code>. A SageMaker image represents a set of container
+        /// images. Each of these container images is represented by a SageMaker <code>ImageVersion</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateImage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateImage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImage">REST API Reference for CreateImage Operation</seealso>
+        Task<CreateImageResponse> CreateImageAsync(CreateImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateImageVersion
+
+
+
+        /// <summary>
+        /// Creates a version of the SageMaker image specified by <code>ImageName</code>. The
+        /// version represents the Amazon Container Registry (ECR) container image specified by
+        /// <code>BaseImage</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateImageVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateImageVersion service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion">REST API Reference for CreateImageVersion Operation</seealso>
+        Task<CreateImageVersionResponse> CreateImageVersionAsync(CreateImageVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateLabelingJob
 
 
@@ -853,6 +893,13 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the CreateModelPackage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify an experiment, trial, or trial component.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackage">REST API Reference for CreateModelPackage Operation</seealso>
         Task<CreateModelPackageResponse> CreateModelPackageAsync(CreateModelPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1524,6 +1571,27 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  DeleteAppImageConfig
+
+
+
+        /// <summary>
+        /// Deletes an AppImageConfig.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppImageConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAppImageConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAppImageConfig">REST API Reference for DeleteAppImageConfig Operation</seealso>
+        Task<DeleteAppImageConfigResponse> DeleteAppImageConfigAsync(DeleteAppImageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteCodeRepository
 
 
@@ -1698,6 +1766,56 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  DeleteImage
+
+
+
+        /// <summary>
+        /// Deletes a SageMaker image and all versions of the image. The container images aren't
+        /// deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteImage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
+        Task<DeleteImageResponse> DeleteImageAsync(DeleteImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteImageVersion
+
+
+
+        /// <summary>
+        /// Deletes a version of a SageMaker image. The container image the version represents
+        /// isn't deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImageVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteImageVersion service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImageVersion">REST API Reference for DeleteImageVersion Operation</seealso>
+        Task<DeleteImageVersionResponse> DeleteImageVersionAsync(DeleteImageVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteModel
 
 
@@ -1739,6 +1857,9 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the DeleteModelPackage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify an experiment, trial, or trial component.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelPackage">REST API Reference for DeleteModelPackage Operation</seealso>
         Task<DeleteModelPackageResponse> DeleteModelPackageAsync(DeleteModelPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -2004,6 +2125,27 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  DescribeAppImageConfig
+
+
+
+        /// <summary>
+        /// Describes an AppImageConfig.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppImageConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAppImageConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAppImageConfig">REST API Reference for DescribeAppImageConfig Operation</seealso>
+        Task<DescribeAppImageConfigResponse> DescribeAppImageConfigAsync(DescribeAppImageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeAutoMLJob
 
 
@@ -2209,6 +2351,48 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob">REST API Reference for DescribeHyperParameterTuningJob Operation</seealso>
         Task<DescribeHyperParameterTuningJobResponse> DescribeHyperParameterTuningJobAsync(DescribeHyperParameterTuningJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeImage
+
+
+
+        /// <summary>
+        /// Describes a SageMaker image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImage">REST API Reference for DescribeImage Operation</seealso>
+        Task<DescribeImageResponse> DescribeImageAsync(DescribeImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeImageVersion
+
+
+
+        /// <summary>
+        /// Describes a version of a SageMaker image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImageVersion service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImageVersion">REST API Reference for DescribeImageVersion Operation</seealso>
+        Task<DescribeImageVersionResponse> DescribeImageVersionAsync(DescribeImageVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2601,6 +2785,26 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  ListAppImageConfigs
+
+
+
+        /// <summary>
+        /// Lists the AppImageConfigs in your account and their properties. The list can be filtered
+        /// by creation time or modified time, and whether the AppImageConfig name contains a
+        /// specified string.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAppImageConfigs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAppImageConfigs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAppImageConfigs">REST API Reference for ListAppImageConfigs Operation</seealso>
+        Task<ListAppImageConfigsResponse> ListAppImageConfigsAsync(ListAppImageConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListApps
 
 
@@ -2826,6 +3030,47 @@ namespace Amazon.SageMaker
         /// <returns>The response from the ListHyperParameterTuningJobs service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHyperParameterTuningJobs">REST API Reference for ListHyperParameterTuningJobs Operation</seealso>
         Task<ListHyperParameterTuningJobsResponse> ListHyperParameterTuningJobsAsync(ListHyperParameterTuningJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListImages
+
+
+
+        /// <summary>
+        /// Lists the images in your account and their properties. The list can be filtered by
+        /// creation time or modified time, and whether the image name contains a specified string.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListImages service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImages">REST API Reference for ListImages Operation</seealso>
+        Task<ListImagesResponse> ListImagesAsync(ListImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListImageVersions
+
+
+
+        /// <summary>
+        /// Lists the versions of a specified image and their properties. The list can be filtered
+        /// by creation time or modified time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImageVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListImageVersions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImageVersions">REST API Reference for ListImageVersions Operation</seealso>
+        Task<ListImageVersionsResponse> ListImageVersionsAsync(ListImageVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3546,6 +3791,27 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  UpdateAppImageConfig
+
+
+
+        /// <summary>
+        /// Updates the properties of an AppImageConfig.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAppImageConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAppImageConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAppImageConfig">REST API Reference for UpdateAppImageConfig Operation</seealso>
+        Task<UpdateAppImageConfigResponse> UpdateAppImageConfigAsync(UpdateAppImageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateCodeRepository
 
 
@@ -3685,6 +3951,31 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateExperiment">REST API Reference for UpdateExperiment Operation</seealso>
         Task<UpdateExperimentResponse> UpdateExperimentAsync(UpdateExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateImage
+
+
+
+        /// <summary>
+        /// Updates the properties of a SageMaker image. To change the image's tags, use the <a>AddTags</a>
+        /// and <a>DeleteTags</a> APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateImage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImage">REST API Reference for UpdateImage Operation</seealso>
+        Task<UpdateImageResponse> UpdateImageAsync(UpdateImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

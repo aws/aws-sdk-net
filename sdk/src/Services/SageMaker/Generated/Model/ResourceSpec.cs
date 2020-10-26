@@ -29,18 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The instance type and the Amazon Resource Name (ARN) of the SageMaker image created
-    /// on the instance. The ARN is stored as metadata in SageMaker Studio notebooks.
+    /// Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance
+    /// type that the version runs on.
     /// </summary>
     public partial class ResourceSpec
     {
         private AppInstanceType _instanceType;
         private string _sageMakerImageArn;
+        private string _sageMakerImageVersionArn;
 
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type.
+        /// The instance type that the image version runs on.
         /// </para>
         /// </summary>
         public AppInstanceType InstanceType
@@ -58,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SageMakerImageArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+        /// The ARN of the SageMaker image that the image version belongs to.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -72,6 +73,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSageMakerImageArn()
         {
             return this._sageMakerImageArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SageMakerImageVersionArn. 
+        /// <para>
+        /// The ARN of the image version created on the instance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string SageMakerImageVersionArn
+        {
+            get { return this._sageMakerImageVersionArn; }
+            set { this._sageMakerImageVersionArn = value; }
+        }
+
+        // Check to see if SageMakerImageVersionArn property is set
+        internal bool IsSetSageMakerImageVersionArn()
+        {
+            return this._sageMakerImageVersionArn != null;
         }
 
     }

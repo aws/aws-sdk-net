@@ -45,6 +45,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KernelGatewayAppSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCustomImages())
+            {
+                context.Writer.WritePropertyName("CustomImages");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCustomImagesListValue in requestObject.CustomImages)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomImageMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCustomImagesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetDefaultResourceSpec())
             {
                 context.Writer.WritePropertyName("DefaultResourceSpec");

@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the component to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=82)]
+        [AWSProperty(Required=true, Min=1, Max=120)]
         public string TrialComponentName
         {
             get { return this._trialComponentName; }

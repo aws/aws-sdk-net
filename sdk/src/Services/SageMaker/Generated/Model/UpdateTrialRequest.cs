@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// isn't specified, <code>TrialName</code> is displayed.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=82)]
+        [AWSProperty(Min=1, Max=120)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the trial to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=82)]
+        [AWSProperty(Required=true, Min=1, Max=120)]
         public string TrialName
         {
             get { return this._trialName; }
