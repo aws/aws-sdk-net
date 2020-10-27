@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Defines a string column statistics data.
+    /// Defines column statistics supported for character sequence data values.
     /// </summary>
     public partial class StringColumnStatisticsData
     {
@@ -41,7 +41,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AverageLength. 
         /// <para>
-        /// Average value of the column.
+        /// The average string length in the column.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -60,7 +60,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MaximumLength. 
         /// <para>
-        /// Maximum value of the column.
+        /// The size of the longest string in the column.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -79,7 +79,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfDistinctValues. 
         /// <para>
-        /// Number of distinct values.
+        /// The number of distinct values in a column.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -98,7 +98,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfNulls. 
         /// <para>
-        /// Number of nulls.
+        /// The number of null values in the column.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

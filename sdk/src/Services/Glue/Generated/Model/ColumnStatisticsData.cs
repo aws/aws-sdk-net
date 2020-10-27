@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Defines a column statistics data.
+    /// Contains the individual types of column statistics data. Only one data object should
+    /// be set and indicated by the <code>Type</code> attribute.
     /// </summary>
     public partial class ColumnStatisticsData
     {
@@ -45,7 +46,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property BinaryColumnStatisticsData. 
         /// <para>
-        /// Binary Column Statistics Data.
+        /// Binary column statistics data.
         /// </para>
         /// </summary>
         public BinaryColumnStatisticsData BinaryColumnStatisticsData
@@ -63,7 +64,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property BooleanColumnStatisticsData. 
         /// <para>
-        /// Boolean Column Statistics Data.
+        /// Boolean column statistics data.
         /// </para>
         /// </summary>
         public BooleanColumnStatisticsData BooleanColumnStatisticsData
@@ -81,7 +82,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DateColumnStatisticsData. 
         /// <para>
-        /// Date Column Statistics Data.
+        /// Date column statistics data.
         /// </para>
         /// </summary>
         public DateColumnStatisticsData DateColumnStatisticsData
@@ -99,7 +100,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DecimalColumnStatisticsData. 
         /// <para>
-        /// Decimal Column Statistics Data.
+        /// Decimal column statistics data.
         /// </para>
         /// </summary>
         public DecimalColumnStatisticsData DecimalColumnStatisticsData
@@ -117,7 +118,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DoubleColumnStatisticsData. 
         /// <para>
-        /// Double Column Statistics Data.
+        /// Double column statistics data.
         /// </para>
         /// </summary>
         public DoubleColumnStatisticsData DoubleColumnStatisticsData
@@ -135,7 +136,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LongColumnStatisticsData. 
         /// <para>
-        /// Long Column Statistics Data.
+        /// Long column statistics data.
         /// </para>
         /// </summary>
         public LongColumnStatisticsData LongColumnStatisticsData
@@ -153,7 +154,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property StringColumnStatisticsData. 
         /// <para>
-        /// String Column Statistics Data.
+        /// String column statistics data.
         /// </para>
         /// </summary>
         public StringColumnStatisticsData StringColumnStatisticsData
@@ -171,7 +172,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The name of the column.
+        /// The type of column statistics data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

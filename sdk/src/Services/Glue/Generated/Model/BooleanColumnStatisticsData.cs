@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Defines a boolean column statistics.
+    /// Defines column statistics supported for Boolean data columns.
     /// </summary>
     public partial class BooleanColumnStatisticsData
     {
@@ -40,7 +40,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfFalses. 
         /// <para>
-        /// Number of false value.
+        /// The number of false values in the column.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -59,7 +59,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfNulls. 
         /// <para>
-        /// Number of nulls.
+        /// The number of null values in the column.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -78,7 +78,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfTrues. 
         /// <para>
-        /// Number of true value.
+        /// The number of true values in the column.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

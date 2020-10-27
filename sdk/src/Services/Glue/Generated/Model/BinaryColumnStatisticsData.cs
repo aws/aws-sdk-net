@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Defines a binary column statistics data.
+    /// Defines column statistics supported for bit sequence data values.
     /// </summary>
     public partial class BinaryColumnStatisticsData
     {
@@ -40,7 +40,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AverageLength. 
         /// <para>
-        /// Average length of the column.
+        /// The average bit sequence length in the column.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -59,7 +59,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MaximumLength. 
         /// <para>
-        /// Maximum length of the column.
+        /// The size of the longest bit sequence in the column.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -78,7 +78,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfNulls. 
         /// <para>
-        /// Number of nulls.
+        /// The number of null values in the column.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

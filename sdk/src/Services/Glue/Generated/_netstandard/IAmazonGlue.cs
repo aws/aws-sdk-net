@@ -1046,6 +1046,12 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Delete the partition column statistics of a column.
+        /// 
+        ///  
+        /// <para>
+        /// The Identity and Access Management (IAM) permission required for this operation is
+        /// <code>DeletePartition</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteColumnStatisticsForPartition service method.</param>
         /// <param name="cancellationToken">
@@ -1079,6 +1085,12 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Retrieves table statistics of columns.
+        /// 
+        ///  
+        /// <para>
+        /// The Identity and Access Management (IAM) permission required for this operation is
+        /// <code>DeleteTable</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteColumnStatisticsForTable service method.</param>
         /// <param name="cancellationToken">
@@ -1633,6 +1645,12 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Retrieves partition statistics of columns.
+        /// 
+        ///  
+        /// <para>
+        /// The Identity and Access Management (IAM) permission required for this operation is
+        /// <code>GetPartition</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetColumnStatisticsForPartition service method.</param>
         /// <param name="cancellationToken">
@@ -1666,6 +1684,12 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Retrieves table statistics of columns.
+        /// 
+        ///  
+        /// <para>
+        /// The Identity and Access Management (IAM) permission required for this operation is
+        /// <code>GetTable</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetColumnStatisticsForTable service method.</param>
         /// <param name="cancellationToken">
@@ -4042,6 +4066,12 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Creates or updates partition statistics of columns.
+        /// 
+        ///  
+        /// <para>
+        /// The Identity and Access Management (IAM) permission required for this operation is
+        /// <code>UpdatePartition</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateColumnStatisticsForPartition service method.</param>
         /// <param name="cancellationToken">
@@ -4075,6 +4105,12 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Creates or updates table statistics of columns.
+        /// 
+        ///  
+        /// <para>
+        /// The Identity and Access Management (IAM) permission required for this operation is
+        /// <code>UpdateTable</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateColumnStatisticsForTable service method.</param>
         /// <param name="cancellationToken">

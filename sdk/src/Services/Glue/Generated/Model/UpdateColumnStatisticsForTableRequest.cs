@@ -31,6 +31,12 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the UpdateColumnStatisticsForTable operation.
     /// Creates or updates table statistics of columns.
+    /// 
+    ///  
+    /// <para>
+    /// The Identity and Access Management (IAM) permission required for this operation is
+    /// <code>UpdateTable</code>.
+    /// </para>
     /// </summary>
     public partial class UpdateColumnStatisticsForTableRequest : AmazonGlueRequest
     {

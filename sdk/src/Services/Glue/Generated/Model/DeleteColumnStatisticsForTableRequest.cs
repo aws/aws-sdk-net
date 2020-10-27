@@ -31,6 +31,12 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the DeleteColumnStatisticsForTable operation.
     /// Retrieves table statistics of columns.
+    /// 
+    ///  
+    /// <para>
+    /// The Identity and Access Management (IAM) permission required for this operation is
+    /// <code>DeleteTable</code>.
+    /// </para>
     /// </summary>
     public partial class DeleteColumnStatisticsForTableRequest : AmazonGlueRequest
     {

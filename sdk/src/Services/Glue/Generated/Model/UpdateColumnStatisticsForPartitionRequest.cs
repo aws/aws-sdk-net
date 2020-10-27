@@ -31,6 +31,12 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the UpdateColumnStatisticsForPartition operation.
     /// Creates or updates partition statistics of columns.
+    /// 
+    ///  
+    /// <para>
+    /// The Identity and Access Management (IAM) permission required for this operation is
+    /// <code>UpdatePartition</code>.
+    /// </para>
     /// </summary>
     public partial class UpdateColumnStatisticsForPartitionRequest : AmazonGlueRequest
     {

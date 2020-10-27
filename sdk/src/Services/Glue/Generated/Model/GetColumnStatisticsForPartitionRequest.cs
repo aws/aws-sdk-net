@@ -31,6 +31,12 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the GetColumnStatisticsForPartition operation.
     /// Retrieves partition statistics of columns.
+    /// 
+    ///  
+    /// <para>
+    /// The Identity and Access Management (IAM) permission required for this operation is
+    /// <code>GetPartition</code>.
+    /// </para>
     /// </summary>
     public partial class GetColumnStatisticsForPartitionRequest : AmazonGlueRequest
     {

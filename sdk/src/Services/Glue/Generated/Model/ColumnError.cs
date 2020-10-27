@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Defines a column containing error.
+    /// Encapsulates a column name that failed and the reason for failure.
     /// </summary>
     public partial class ColumnError
     {
@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ColumnName. 
         /// <para>
-        /// The name of the column.
+        /// The name of the column that failed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -58,7 +58,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// The error message occurred during operation.
+        /// An error message with the reason for the failure of an operation.
         /// </para>
         /// </summary>
         public ErrorDetail Error

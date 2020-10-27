@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Defines a decimal column statistics data.
+    /// Defines column statistics supported for fixed-point number data columns.
     /// </summary>
     public partial class DecimalColumnStatisticsData
     {
@@ -41,7 +41,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MaximumValue. 
         /// <para>
-        /// Maximum value of the column.
+        /// The highest value in the column.
         /// </para>
         /// </summary>
         public DecimalNumber MaximumValue
@@ -59,7 +59,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MinimumValue. 
         /// <para>
-        /// Minimum value of the column.
+        /// The lowest value in the column.
         /// </para>
         /// </summary>
         public DecimalNumber MinimumValue
@@ -77,7 +77,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfDistinctValues. 
         /// <para>
-        /// Number of distinct values.
+        /// The number of distinct values in a column.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -96,7 +96,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfNulls. 
         /// <para>
-        /// Number of nulls.
+        /// The number of null values in the column.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

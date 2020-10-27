@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Defines a column statistics.
+    /// Represents the generated column-level statistics for a table or partition.
     /// </summary>
     public partial class ColumnStatistics
     {
@@ -41,7 +41,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AnalyzedTime. 
         /// <para>
-        /// The analyzed time of the column statistics.
+        /// The timestamp of when column statistics were generated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ColumnName. 
         /// <para>
-        /// The name of the column.
+        /// Name of column which statistics belong to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -79,7 +79,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ColumnType. 
         /// <para>
-        /// The type of the column.
+        /// The data type of the column.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=20000)]
@@ -98,7 +98,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property StatisticsData. 
         /// <para>
-        /// The statistics of the column.
+        /// A <code>ColumnStatisticData</code> object that contains the statistics data values.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

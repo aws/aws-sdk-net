@@ -147,6 +147,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     response.Timeout = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TransformEncryption", targetDepth))
+                {
+                    var unmarshaller = TransformEncryptionUnmarshaller.Instance;
+                    response.TransformEncryption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TransformId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

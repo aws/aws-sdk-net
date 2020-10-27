@@ -157,6 +157,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Timeout);
                 }
 
+                if(publicRequest.IsSetTransformEncryption())
+                {
+                    context.Writer.WritePropertyName("TransformEncryption");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TransformEncryptionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TransformEncryption, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetWorkerType())
                 {
                     context.Writer.WritePropertyName("WorkerType");

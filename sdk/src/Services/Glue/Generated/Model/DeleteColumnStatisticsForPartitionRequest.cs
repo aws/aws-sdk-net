@@ -31,6 +31,12 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the DeleteColumnStatisticsForPartition operation.
     /// Delete the partition column statistics of a column.
+    /// 
+    ///  
+    /// <para>
+    /// The Identity and Access Management (IAM) permission required for this operation is
+    /// <code>DeletePartition</code>.
+    /// </para>
     /// </summary>
     public partial class DeleteColumnStatisticsForPartitionRequest : AmazonGlueRequest
     {

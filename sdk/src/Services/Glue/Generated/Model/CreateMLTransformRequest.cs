@@ -61,6 +61,7 @@ namespace Amazon.Glue.Model
         private string _role;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private int? _timeout;
+        private TransformEncryption _transformEncryption;
         private WorkerType _workerType;
 
         /// <summary>
@@ -336,6 +337,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetTimeout()
         {
             return this._timeout.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransformEncryption. 
+        /// <para>
+        /// The encryption-at-rest settings of the transform that apply to accessing user data.
+        /// Machine learning transforms can access user data encrypted in Amazon S3 using KMS.
+        /// </para>
+        /// </summary>
+        public TransformEncryption TransformEncryption
+        {
+            get { return this._transformEncryption; }
+            set { this._transformEncryption = value; }
+        }
+
+        // Check to see if TransformEncryption property is set
+        internal bool IsSetTransformEncryption()
+        {
+            return this._transformEncryption != null;
         }
 
         /// <summary>
