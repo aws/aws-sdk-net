@@ -1,3 +1,12 @@
+### 3.5.43.0 (2020-10-27 18:15 UTC)
+* Glue (3.5.6.0)
+	* AWS Glue machine learning transforms now support encryption-at-rest for labels and trained models.
+* Core 3.5.1.31
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.42.0 (2020-10-26 18:18 UTC)
 * Kendra (3.5.5.0)
 	* Amazon Kendra now supports indexing data from Confluence Server.
