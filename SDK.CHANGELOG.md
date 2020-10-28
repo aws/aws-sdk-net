@@ -1,3 +1,16 @@
+### 3.5.44.0 (2020-10-28 18:17 UTC)
+* EC2 (3.5.11.0)
+	* AWS Nitro Enclaves general availability. Added support to RunInstances for creating enclave-enabled EC2 instances. New APIs to associate an ACM certificate with an IAM role, for enclave consumption.
+* IoT (3.5.3.0)
+	* This release adds support for GG-Managed Job Namespace
+* WorkMail (3.5.2.7)
+	* Documentation update for Amazon WorkMail
+* Core 3.5.1.32
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.43.0 (2020-10-27 18:15 UTC)
 * Glue (3.5.6.0)
 	* AWS Glue machine learning transforms now support encryption-at-rest for labels and trained models.
