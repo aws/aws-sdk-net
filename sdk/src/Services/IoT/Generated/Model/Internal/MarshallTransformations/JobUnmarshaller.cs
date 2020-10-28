@@ -130,6 +130,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("namespaceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NamespaceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("presignedUrlConfig", targetDepth))
                 {
                     var unmarshaller = PresignedUrlConfigUnmarshaller.Instance;

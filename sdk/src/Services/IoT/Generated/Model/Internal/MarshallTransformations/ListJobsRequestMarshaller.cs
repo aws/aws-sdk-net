@@ -62,6 +62,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
+            if (publicRequest.IsSetNamespaceId())
+                request.Parameters.Add("namespaceId", StringUtils.FromString(publicRequest.NamespaceId));
+            
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             

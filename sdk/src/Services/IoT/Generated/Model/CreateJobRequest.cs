@@ -40,6 +40,7 @@ namespace Amazon.IoT.Model
         private string _documentSource;
         private JobExecutionsRolloutConfig _jobExecutionsRolloutConfig;
         private string _jobId;
+        private string _namespaceId;
         private PresignedUrlConfig _presignedUrlConfig;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _targets = new List<string>();
@@ -177,6 +178,40 @@ namespace Amazon.IoT.Model
         internal bool IsSetJobId()
         {
             return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NamespaceId. 
+        /// <para>
+        /// The namespace used to indicate that a job is a customer-managed job.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you specify a value for this parameter, AWS IoT Core sends jobs notifications
+        /// to MQTT topics that contain the value in the following format.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>namespaceId</code> feature is in public preview.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string NamespaceId
+        {
+            get { return this._namespaceId; }
+            set { this._namespaceId = value; }
+        }
+
+        // Check to see if NamespaceId property is set
+        internal bool IsSetNamespaceId()
+        {
+            return this._namespaceId != null;
         }
 
         /// <summary>

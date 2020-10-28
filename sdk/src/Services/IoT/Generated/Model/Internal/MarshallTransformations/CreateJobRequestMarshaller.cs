@@ -109,6 +109,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetNamespaceId())
+                {
+                    context.Writer.WritePropertyName("namespaceId");
+                    context.Writer.Write(publicRequest.NamespaceId);
+                }
+
                 if(publicRequest.IsSetPresignedUrlConfig())
                 {
                     context.Writer.WritePropertyName("presignedUrlConfig");
