@@ -1280,6 +1280,82 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AssociateEnclaveCertificateIamRole
+
+        /// <summary>
+        /// Associates an AWS Identity and Access Management (IAM) role with an AWS Certificate
+        /// Manager (ACM) certificate. This enables the certificate to be used by the ACM for
+        /// Nitro Enclaves application inside an enclave. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">AWS
+        /// Certificate Manager for Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud
+        /// User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// When the IAM role is associated with the ACM certificate, places the certificate,
+        /// certificate chain, and encrypted private key in an Amazon S3 bucket that only the
+        /// associated IAM role can access. The private key of the certificate is encrypted with
+        /// an AWS-managed KMS key that has an attached attestation-based key policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// To enable the IAM role to access the Amazon S3 object, you must grant it permission
+        /// to call <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command.
+        /// To enable the IAM role to access the AWS KMS key, you must grant it permission to
+        /// call <code>kms:Decrypt</code> on AWS KMS key returned by the command. For more information,
+        /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
+        /// Grant the role permission to access the certificate and encryption key</a> in the
+        /// <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEnclaveCertificateIamRole service method.</param>
+        /// 
+        /// <returns>The response from the AssociateEnclaveCertificateIamRole service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateEnclaveCertificateIamRole">REST API Reference for AssociateEnclaveCertificateIamRole Operation</seealso>
+        public virtual AssociateEnclaveCertificateIamRoleResponse AssociateEnclaveCertificateIamRole(AssociateEnclaveCertificateIamRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateEnclaveCertificateIamRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEnclaveCertificateIamRoleResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateEnclaveCertificateIamRoleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateEnclaveCertificateIamRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEnclaveCertificateIamRole operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateEnclaveCertificateIamRole
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateEnclaveCertificateIamRole">REST API Reference for AssociateEnclaveCertificateIamRole Operation</seealso>
+        public virtual IAsyncResult BeginAssociateEnclaveCertificateIamRole(AssociateEnclaveCertificateIamRoleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateEnclaveCertificateIamRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEnclaveCertificateIamRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateEnclaveCertificateIamRole operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateEnclaveCertificateIamRole.</param>
+        /// 
+        /// <returns>Returns a  AssociateEnclaveCertificateIamRoleResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateEnclaveCertificateIamRole">REST API Reference for AssociateEnclaveCertificateIamRole Operation</seealso>
+        public virtual AssociateEnclaveCertificateIamRoleResponse EndAssociateEnclaveCertificateIamRole(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateEnclaveCertificateIamRoleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateIamInstanceProfile
 
         /// <summary>
@@ -18498,6 +18574,65 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateEnclaveCertificateIamRole
+
+        /// <summary>
+        /// Disassociates an IAM role from an AWS Certificate Manager (ACM) certificate. Disassociating
+        /// an IAM role from an ACM certificate removes the Amazon S3 object that contains the
+        /// certificate, certificate chain, and encrypted private key from the Amazon S3 bucket.
+        /// It also revokes the IAM role's permission to use the AWS Key Management Service (KMS)
+        /// key used to encrypt the private key. This effectively revokes the role's permission
+        /// to use the certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEnclaveCertificateIamRole service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateEnclaveCertificateIamRole service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateEnclaveCertificateIamRole">REST API Reference for DisassociateEnclaveCertificateIamRole Operation</seealso>
+        public virtual DisassociateEnclaveCertificateIamRoleResponse DisassociateEnclaveCertificateIamRole(DisassociateEnclaveCertificateIamRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateEnclaveCertificateIamRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEnclaveCertificateIamRoleResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateEnclaveCertificateIamRoleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateEnclaveCertificateIamRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEnclaveCertificateIamRole operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateEnclaveCertificateIamRole
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateEnclaveCertificateIamRole">REST API Reference for DisassociateEnclaveCertificateIamRole Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateEnclaveCertificateIamRole(DisassociateEnclaveCertificateIamRoleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateEnclaveCertificateIamRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEnclaveCertificateIamRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateEnclaveCertificateIamRole operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateEnclaveCertificateIamRole.</param>
+        /// 
+        /// <returns>Returns a  DisassociateEnclaveCertificateIamRoleResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateEnclaveCertificateIamRole">REST API Reference for DisassociateEnclaveCertificateIamRole Operation</seealso>
+        public virtual DisassociateEnclaveCertificateIamRoleResponse EndDisassociateEnclaveCertificateIamRole(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateEnclaveCertificateIamRoleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateIamInstanceProfile
 
         /// <summary>
@@ -19506,6 +19641,64 @@ namespace Amazon.EC2
         public virtual ExportTransitGatewayRoutesResponse EndExportTransitGatewayRoutes(IAsyncResult asyncResult)
         {
             return EndInvoke<ExportTransitGatewayRoutesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAssociatedEnclaveCertificateIamRoles
+
+        /// <summary>
+        /// Returns the IAM roles that are associated with the specified AWS Certificate Manager
+        /// (ACM) certificate. It also returns the name of the Amazon S3 bucket and the Amazon
+        /// S3 object key where the certificate, certificate chain, and encrypted private key
+        /// bundle are stored, and the ARN of the AWS Key Management Service (KMS) key that's
+        /// used to encrypt the private key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAssociatedEnclaveCertificateIamRoles service method.</param>
+        /// 
+        /// <returns>The response from the GetAssociatedEnclaveCertificateIamRoles service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedEnclaveCertificateIamRoles">REST API Reference for GetAssociatedEnclaveCertificateIamRoles Operation</seealso>
+        public virtual GetAssociatedEnclaveCertificateIamRolesResponse GetAssociatedEnclaveCertificateIamRoles(GetAssociatedEnclaveCertificateIamRolesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAssociatedEnclaveCertificateIamRolesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAssociatedEnclaveCertificateIamRolesResponseUnmarshaller.Instance;
+
+            return Invoke<GetAssociatedEnclaveCertificateIamRolesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAssociatedEnclaveCertificateIamRoles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAssociatedEnclaveCertificateIamRoles operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAssociatedEnclaveCertificateIamRoles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedEnclaveCertificateIamRoles">REST API Reference for GetAssociatedEnclaveCertificateIamRoles Operation</seealso>
+        public virtual IAsyncResult BeginGetAssociatedEnclaveCertificateIamRoles(GetAssociatedEnclaveCertificateIamRolesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAssociatedEnclaveCertificateIamRolesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAssociatedEnclaveCertificateIamRolesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAssociatedEnclaveCertificateIamRoles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAssociatedEnclaveCertificateIamRoles.</param>
+        /// 
+        /// <returns>Returns a  GetAssociatedEnclaveCertificateIamRolesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedEnclaveCertificateIamRoles">REST API Reference for GetAssociatedEnclaveCertificateIamRoles Operation</seealso>
+        public virtual GetAssociatedEnclaveCertificateIamRolesResponse EndGetAssociatedEnclaveCertificateIamRoles(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAssociatedEnclaveCertificateIamRolesResponse>(asyncResult);
         }
 
         #endregion

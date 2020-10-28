@@ -187,6 +187,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestLaunchTemplateDatalistValueIndex++;
                         }
                     }
+                    if(publicRequest.LaunchTemplateData.IsSetEnclaveOptions())
+                    {
+                        if(publicRequest.LaunchTemplateData.EnclaveOptions.IsSetEnabled())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "EnclaveOptions" + "." + "Enabled", StringUtils.FromBool(publicRequest.LaunchTemplateData.EnclaveOptions.Enabled));
+                        }
+                    }
                     if(publicRequest.LaunchTemplateData.IsSetHibernationOptions())
                     {
                         if(publicRequest.LaunchTemplateData.HibernationOptions.IsSetConfigured())

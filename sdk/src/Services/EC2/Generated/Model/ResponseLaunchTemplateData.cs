@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private bool? _ebsOptimized;
         private List<ElasticGpuSpecificationResponse> _elasticGpuSpecifications = new List<ElasticGpuSpecificationResponse>();
         private List<LaunchTemplateElasticInferenceAcceleratorResponse> _elasticInferenceAccelerators = new List<LaunchTemplateElasticInferenceAcceleratorResponse>();
+        private LaunchTemplateEnclaveOptions _enclaveOptions;
         private LaunchTemplateHibernationOptions _hibernationOptions;
         private LaunchTemplateIamInstanceProfileSpecification _iamInstanceProfile;
         private string _imageId;
@@ -204,6 +205,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetElasticInferenceAccelerators()
         {
             return this._elasticInferenceAccelerators != null && this._elasticInferenceAccelerators.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnclaveOptions. 
+        /// <para>
+        /// Indicates whether the instance is enabled for AWS Nitro Enclaves.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateEnclaveOptions EnclaveOptions
+        {
+            get { return this._enclaveOptions; }
+            set { this._enclaveOptions = value; }
+        }
+
+        // Check to see if EnclaveOptions property is set
+        internal bool IsSetEnclaveOptions()
+        {
+            return this._enclaveOptions != null;
         }
 
         /// <summary>

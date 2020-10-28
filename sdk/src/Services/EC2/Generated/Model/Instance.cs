@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         private List<ElasticGpuAssociation> _elasticGpuAssociations = new List<ElasticGpuAssociation>();
         private List<ElasticInferenceAcceleratorAssociation> _elasticInferenceAcceleratorAssociations = new List<ElasticInferenceAcceleratorAssociation>();
         private bool? _enaSupport;
+        private EnclaveOptions _enclaveOptions;
         private HibernationOptions _hibernationOptions;
         private HypervisorType _hypervisor;
         private IamInstanceProfile _iamInstanceProfile;
@@ -280,6 +281,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetEnaSupport()
         {
             return this._enaSupport.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnclaveOptions. 
+        /// <para>
+        /// Indicates whether the instance is enabled for AWS Nitro Enclaves.
+        /// </para>
+        /// </summary>
+        public EnclaveOptions EnclaveOptions
+        {
+            get { return this._enclaveOptions; }
+            set { this._enclaveOptions = value; }
+        }
+
+        // Check to see if EnclaveOptions property is set
+        internal bool IsSetEnclaveOptions()
+        {
+            return this._enclaveOptions != null;
         }
 
         /// <summary>

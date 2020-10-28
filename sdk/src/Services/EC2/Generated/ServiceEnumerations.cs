@@ -4555,6 +4555,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceAttributeName EnaSupport = new InstanceAttributeName("enaSupport");
         /// <summary>
+        /// Constant EnclaveOptions for InstanceAttributeName
+        /// </summary>
+        public static readonly InstanceAttributeName EnclaveOptions = new InstanceAttributeName("enclaveOptions");
+        /// <summary>
         /// Constant GroupSet for InstanceAttributeName
         /// </summary>
         public static readonly InstanceAttributeName GroupSet = new InstanceAttributeName("groupSet");

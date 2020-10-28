@@ -105,6 +105,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ElasticInferenceAccelerators.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("enclaveOptions", targetDepth))
+                    {
+                        var unmarshaller = LaunchTemplateEnclaveOptionsUnmarshaller.Instance;
+                        unmarshalledObject.EnclaveOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("hibernationOptions", targetDepth))
                     {
                         var unmarshaller = LaunchTemplateHibernationOptionsUnmarshaller.Instance;

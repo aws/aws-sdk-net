@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.EC2.Model.AssociateEnclaveCertificateIamRoleRequest.CertificateArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.AssociateEnclaveCertificateIamRoleRequest.RoleArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.CreateLaunchTemplateRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
@@ -339,6 +349,21 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DisassociateEnclaveCertificateIamRoleRequest.CertificateArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DisassociateEnclaveCertificateIamRoleRequest.RoleArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetAssociatedEnclaveCertificateIamRolesRequest.CertificateArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.GetAssociatedIpv6PoolCidrsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -408,6 +433,11 @@
     <property>Amazon.EC2.Model.SearchTransitGatewayRoutesRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.AssociatedRole.AssociatedRoleArn</property>
+    <min>1</min>
+    <max>1283</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CoipPool.PoolArn</property>

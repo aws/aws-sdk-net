@@ -933,6 +933,78 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AssociateEnclaveCertificateIamRole
+
+
+        /// <summary>
+        /// Associates an AWS Identity and Access Management (IAM) role with an AWS Certificate
+        /// Manager (ACM) certificate. This enables the certificate to be used by the ACM for
+        /// Nitro Enclaves application inside an enclave. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">AWS
+        /// Certificate Manager for Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud
+        /// User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// When the IAM role is associated with the ACM certificate, places the certificate,
+        /// certificate chain, and encrypted private key in an Amazon S3 bucket that only the
+        /// associated IAM role can access. The private key of the certificate is encrypted with
+        /// an AWS-managed KMS key that has an attached attestation-based key policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// To enable the IAM role to access the Amazon S3 object, you must grant it permission
+        /// to call <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command.
+        /// To enable the IAM role to access the AWS KMS key, you must grant it permission to
+        /// call <code>kms:Decrypt</code> on AWS KMS key returned by the command. For more information,
+        /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
+        /// Grant the role permission to access the certificate and encryption key</a> in the
+        /// <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEnclaveCertificateIamRole service method.</param>
+        /// 
+        /// <returns>The response from the AssociateEnclaveCertificateIamRole service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateEnclaveCertificateIamRole">REST API Reference for AssociateEnclaveCertificateIamRole Operation</seealso>
+        AssociateEnclaveCertificateIamRoleResponse AssociateEnclaveCertificateIamRole(AssociateEnclaveCertificateIamRoleRequest request);
+
+
+
+        /// <summary>
+        /// Associates an AWS Identity and Access Management (IAM) role with an AWS Certificate
+        /// Manager (ACM) certificate. This enables the certificate to be used by the ACM for
+        /// Nitro Enclaves application inside an enclave. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">AWS
+        /// Certificate Manager for Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud
+        /// User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// When the IAM role is associated with the ACM certificate, places the certificate,
+        /// certificate chain, and encrypted private key in an Amazon S3 bucket that only the
+        /// associated IAM role can access. The private key of the certificate is encrypted with
+        /// an AWS-managed KMS key that has an attached attestation-based key policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// To enable the IAM role to access the Amazon S3 object, you must grant it permission
+        /// to call <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command.
+        /// To enable the IAM role to access the AWS KMS key, you must grant it permission to
+        /// call <code>kms:Decrypt</code> on AWS KMS key returned by the command. For more information,
+        /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
+        /// Grant the role permission to access the certificate and encryption key</a> in the
+        /// <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEnclaveCertificateIamRole service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateEnclaveCertificateIamRole service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateEnclaveCertificateIamRole">REST API Reference for AssociateEnclaveCertificateIamRole Operation</seealso>
+        Task<AssociateEnclaveCertificateIamRoleResponse> AssociateEnclaveCertificateIamRoleAsync(AssociateEnclaveCertificateIamRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AssociateIamInstanceProfile
 
 
@@ -14052,6 +14124,44 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateEnclaveCertificateIamRole
+
+
+        /// <summary>
+        /// Disassociates an IAM role from an AWS Certificate Manager (ACM) certificate. Disassociating
+        /// an IAM role from an ACM certificate removes the Amazon S3 object that contains the
+        /// certificate, certificate chain, and encrypted private key from the Amazon S3 bucket.
+        /// It also revokes the IAM role's permission to use the AWS Key Management Service (KMS)
+        /// key used to encrypt the private key. This effectively revokes the role's permission
+        /// to use the certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEnclaveCertificateIamRole service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateEnclaveCertificateIamRole service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateEnclaveCertificateIamRole">REST API Reference for DisassociateEnclaveCertificateIamRole Operation</seealso>
+        DisassociateEnclaveCertificateIamRoleResponse DisassociateEnclaveCertificateIamRole(DisassociateEnclaveCertificateIamRoleRequest request);
+
+
+
+        /// <summary>
+        /// Disassociates an IAM role from an AWS Certificate Manager (ACM) certificate. Disassociating
+        /// an IAM role from an ACM certificate removes the Amazon S3 object that contains the
+        /// certificate, certificate chain, and encrypted private key from the Amazon S3 bucket.
+        /// It also revokes the IAM role's permission to use the AWS Key Management Service (KMS)
+        /// key used to encrypt the private key. This effectively revokes the role's permission
+        /// to use the certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEnclaveCertificateIamRole service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateEnclaveCertificateIamRole service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateEnclaveCertificateIamRole">REST API Reference for DisassociateEnclaveCertificateIamRole Operation</seealso>
+        Task<DisassociateEnclaveCertificateIamRoleResponse> DisassociateEnclaveCertificateIamRoleAsync(DisassociateEnclaveCertificateIamRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisassociateIamInstanceProfile
 
 
@@ -14713,6 +14823,42 @@ namespace Amazon.EC2
         /// <returns>The response from the ExportTransitGatewayRoutes service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportTransitGatewayRoutes">REST API Reference for ExportTransitGatewayRoutes Operation</seealso>
         Task<ExportTransitGatewayRoutesResponse> ExportTransitGatewayRoutesAsync(ExportTransitGatewayRoutesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAssociatedEnclaveCertificateIamRoles
+
+
+        /// <summary>
+        /// Returns the IAM roles that are associated with the specified AWS Certificate Manager
+        /// (ACM) certificate. It also returns the name of the Amazon S3 bucket and the Amazon
+        /// S3 object key where the certificate, certificate chain, and encrypted private key
+        /// bundle are stored, and the ARN of the AWS Key Management Service (KMS) key that's
+        /// used to encrypt the private key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAssociatedEnclaveCertificateIamRoles service method.</param>
+        /// 
+        /// <returns>The response from the GetAssociatedEnclaveCertificateIamRoles service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedEnclaveCertificateIamRoles">REST API Reference for GetAssociatedEnclaveCertificateIamRoles Operation</seealso>
+        GetAssociatedEnclaveCertificateIamRolesResponse GetAssociatedEnclaveCertificateIamRoles(GetAssociatedEnclaveCertificateIamRolesRequest request);
+
+
+
+        /// <summary>
+        /// Returns the IAM roles that are associated with the specified AWS Certificate Manager
+        /// (ACM) certificate. It also returns the name of the Amazon S3 bucket and the Amazon
+        /// S3 object key where the certificate, certificate chain, and encrypted private key
+        /// bundle are stored, and the ARN of the AWS Key Management Service (KMS) key that's
+        /// used to encrypt the private key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAssociatedEnclaveCertificateIamRoles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAssociatedEnclaveCertificateIamRoles service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedEnclaveCertificateIamRoles">REST API Reference for GetAssociatedEnclaveCertificateIamRoles Operation</seealso>
+        Task<GetAssociatedEnclaveCertificateIamRolesResponse> GetAssociatedEnclaveCertificateIamRolesAsync(GetAssociatedEnclaveCertificateIamRolesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

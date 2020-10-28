@@ -376,6 +376,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void AssociateEnclaveCertificateIamRoleMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateEnclaveCertificateIamRole");
+
+            var request = InstantiateClassGenerator.Execute<AssociateEnclaveCertificateIamRoleRequest>();
+            var marshaller = new AssociateEnclaveCertificateIamRoleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = AssociateEnclaveCertificateIamRoleResponseUnmarshaller.Instance.Unmarshall(context)
+                as AssociateEnclaveCertificateIamRoleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void AssociateIamInstanceProfileMarshallTest()
         {
             var operation = service_model.FindOperation("AssociateIamInstanceProfile");
@@ -6590,6 +6614,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DisassociateEnclaveCertificateIamRoleMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateEnclaveCertificateIamRole");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateEnclaveCertificateIamRoleRequest>();
+            var marshaller = new DisassociateEnclaveCertificateIamRoleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisassociateEnclaveCertificateIamRoleResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisassociateEnclaveCertificateIamRoleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DisassociateIamInstanceProfileMarshallTest()
         {
             var operation = service_model.FindOperation("DisassociateIamInstanceProfile");
@@ -6974,6 +7022,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = ExportTransitGatewayRoutesResponseUnmarshaller.Instance.Unmarshall(context)
                 as ExportTransitGatewayRoutesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetAssociatedEnclaveCertificateIamRolesMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAssociatedEnclaveCertificateIamRoles");
+
+            var request = InstantiateClassGenerator.Execute<GetAssociatedEnclaveCertificateIamRolesRequest>();
+            var marshaller = new GetAssociatedEnclaveCertificateIamRolesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetAssociatedEnclaveCertificateIamRolesResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetAssociatedEnclaveCertificateIamRolesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

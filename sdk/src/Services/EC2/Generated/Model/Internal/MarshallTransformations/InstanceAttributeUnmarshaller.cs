@@ -79,6 +79,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.EnaSupport = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("enclaveOptions", targetDepth))
+                    {
+                        var unmarshaller = EnclaveOptionsUnmarshaller.Instance;
+                        unmarshalledObject.EnclaveOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("groupSet/item", targetDepth))
                     {
                         var unmarshaller = GroupIdentifierUnmarshaller.Instance;

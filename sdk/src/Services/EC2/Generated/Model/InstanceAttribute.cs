@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
         private bool? _enaSupport;
+        private EnclaveOptions _enclaveOptions;
         private List<GroupIdentifier> _groups = new List<GroupIdentifier>();
         private string _instanceId;
         private string _instanceInitiatedShutdownBehavior;
@@ -120,6 +121,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetEnaSupport()
         {
             return this._enaSupport.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnclaveOptions. 
+        /// <para>
+        /// To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>;
+        /// otherwise, set it to <code>false</code>.
+        /// </para>
+        /// </summary>
+        public EnclaveOptions EnclaveOptions
+        {
+            get { return this._enclaveOptions; }
+            set { this._enclaveOptions = value; }
+        }
+
+        // Check to see if EnclaveOptions property is set
+        internal bool IsSetEnclaveOptions()
+        {
+            return this._enclaveOptions != null;
         }
 
         /// <summary>
