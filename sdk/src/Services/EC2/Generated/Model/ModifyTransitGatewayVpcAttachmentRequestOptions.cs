@@ -33,8 +33,29 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyTransitGatewayVpcAttachmentRequestOptions
     {
+        private ApplianceModeSupportValue _applianceModeSupport;
         private DnsSupportValue _dnsSupport;
         private Ipv6SupportValue _ipv6Support;
+
+        /// <summary>
+        /// Gets and sets the property ApplianceModeSupport. 
+        /// <para>
+        /// Enable or disable support for appliance mode. If enabled, a traffic flow between a
+        /// source and destination uses the same Availability Zone for the VPC attachment for
+        /// the lifetime of that flow. The default is <code>disable</code>.
+        /// </para>
+        /// </summary>
+        public ApplianceModeSupportValue ApplianceModeSupport
+        {
+            get { return this._applianceModeSupport; }
+            set { this._applianceModeSupport = value; }
+        }
+
+        // Check to see if ApplianceModeSupport property is set
+        internal bool IsSetApplianceModeSupport()
+        {
+            return this._applianceModeSupport != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DnsSupport. 

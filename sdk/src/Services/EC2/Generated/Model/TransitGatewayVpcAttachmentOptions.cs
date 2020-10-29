@@ -33,8 +33,27 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class TransitGatewayVpcAttachmentOptions
     {
+        private ApplianceModeSupportValue _applianceModeSupport;
         private DnsSupportValue _dnsSupport;
         private Ipv6SupportValue _ipv6Support;
+
+        /// <summary>
+        /// Gets and sets the property ApplianceModeSupport. 
+        /// <para>
+        /// Indicates whether appliance mode support is enabled.
+        /// </para>
+        /// </summary>
+        public ApplianceModeSupportValue ApplianceModeSupport
+        {
+            get { return this._applianceModeSupport; }
+            set { this._applianceModeSupport = value; }
+        }
+
+        // Check to see if ApplianceModeSupport property is set
+        internal bool IsSetApplianceModeSupport()
+        {
+            return this._applianceModeSupport != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DnsSupport. 

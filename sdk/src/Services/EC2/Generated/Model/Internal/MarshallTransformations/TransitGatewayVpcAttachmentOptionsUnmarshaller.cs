@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("applianceModeSupport", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ApplianceModeSupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("dnsSupport", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

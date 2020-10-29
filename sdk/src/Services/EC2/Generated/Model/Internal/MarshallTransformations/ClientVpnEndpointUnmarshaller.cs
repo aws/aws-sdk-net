@@ -124,6 +124,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SecurityGroupIds.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("selfServicePortalUrl", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SelfServicePortalUrl = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("serverCertificateArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

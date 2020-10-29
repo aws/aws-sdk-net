@@ -60,6 +60,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetOptions())
                 {
+                    if(publicRequest.Options.IsSetApplianceModeSupport())
+                    {
+                        request.Parameters.Add("Options" + "." + "ApplianceModeSupport", StringUtils.FromString(publicRequest.Options.ApplianceModeSupport));
+                    }
                     if(publicRequest.Options.IsSetDnsSupport())
                     {
                         request.Parameters.Add("Options" + "." + "DnsSupport", StringUtils.FromString(publicRequest.Options.DnsSupport));

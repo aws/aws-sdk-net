@@ -76,6 +76,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "FederatedAuthentication" + "." + "SAMLProviderArn", StringUtils.FromString(publicRequestlistValue.FederatedAuthentication.SAMLProviderArn));
                             }
+                            if(publicRequestlistValue.FederatedAuthentication.IsSetSelfServiceSAMLProviderArn())
+                            {
+                                request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "FederatedAuthentication" + "." + "SelfServiceSAMLProviderArn", StringUtils.FromString(publicRequestlistValue.FederatedAuthentication.SelfServiceSAMLProviderArn));
+                            }
                         }
                         if(publicRequestlistValue.IsSetMutualAuthentication())
                         {
@@ -139,6 +143,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("SecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
+                }
+                if(publicRequest.IsSetSelfServicePortal())
+                {
+                    request.Parameters.Add("SelfServicePortal", StringUtils.FromString(publicRequest.SelfServicePortal));
                 }
                 if(publicRequest.IsSetServerCertificateArn())
                 {

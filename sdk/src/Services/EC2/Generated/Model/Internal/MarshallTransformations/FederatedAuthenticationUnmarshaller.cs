@@ -60,6 +60,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SamlProviderArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("selfServiceSamlProviderArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SelfServiceSamlProviderArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

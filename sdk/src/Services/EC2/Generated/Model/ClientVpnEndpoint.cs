@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         private string _dnsName;
         private List<string> _dnsServers = new List<string>();
         private List<string> _securityGroupIds = new List<string>();
+        private string _selfServicePortalUrl;
         private string _serverCertificateArn;
         private bool? _splitTunnel;
         private ClientVpnEndpointStatus _status;
@@ -251,6 +252,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSecurityGroupIds()
         {
             return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelfServicePortalUrl. 
+        /// <para>
+        /// The URL of the self-service portal.
+        /// </para>
+        /// </summary>
+        public string SelfServicePortalUrl
+        {
+            get { return this._selfServicePortalUrl; }
+            set { this._selfServicePortalUrl = value; }
+        }
+
+        // Check to see if SelfServicePortalUrl property is set
+        internal bool IsSetSelfServicePortalUrl()
+        {
+            return this._selfServicePortalUrl != null;
         }
 
         /// <summary>
