@@ -68,6 +68,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccessBasedEnumeration())
+                {
+                    context.Writer.WritePropertyName("AccessBasedEnumeration");
+                    context.Writer.Write(publicRequest.AccessBasedEnumeration);
+                }
+
                 if(publicRequest.IsSetAdminUserList())
                 {
                     context.Writer.WritePropertyName("AdminUserList");
@@ -147,6 +153,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("KMSKey");
                     context.Writer.Write(publicRequest.KMSKey);
+                }
+
+                if(publicRequest.IsSetNotificationPolicy())
+                {
+                    context.Writer.WritePropertyName("NotificationPolicy");
+                    context.Writer.Write(publicRequest.NotificationPolicy);
                 }
 
                 if(publicRequest.IsSetObjectACL())

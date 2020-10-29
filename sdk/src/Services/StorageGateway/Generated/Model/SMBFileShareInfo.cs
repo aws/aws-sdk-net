@@ -35,6 +35,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class SMBFileShareInfo
     {
+        private bool? _accessBasedEnumeration;
         private List<string> _adminUserList = new List<string>();
         private string _auditDestinationARN;
         private string _authentication;
@@ -51,6 +52,7 @@ namespace Amazon.StorageGateway.Model
         private bool? _kmsEncrypted;
         private string _kmsKey;
         private string _locationARN;
+        private string _notificationPolicy;
         private ObjectACL _objectACL;
         private string _path;
         private bool? _readOnly;
@@ -59,6 +61,24 @@ namespace Amazon.StorageGateway.Model
         private bool? _smbaclEnabled;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _validUserList = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AccessBasedEnumeration. 
+        /// <para>
+        /// Indicates whether <code>AccessBasedEnumeration</code> is enabled.
+        /// </para>
+        /// </summary>
+        public bool AccessBasedEnumeration
+        {
+            get { return this._accessBasedEnumeration.GetValueOrDefault(); }
+            set { this._accessBasedEnumeration = value; }
+        }
+
+        // Check to see if AccessBasedEnumeration property is set
+        internal bool IsSetAccessBasedEnumeration()
+        {
+            return this._accessBasedEnumeration.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AdminUserList. 
@@ -367,6 +387,25 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetLocationARN()
         {
             return this._locationARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationPolicy. 
+        /// <para>
+        /// The notification policy of the file share.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=100)]
+        public string NotificationPolicy
+        {
+            get { return this._notificationPolicy; }
+            set { this._notificationPolicy = value; }
+        }
+
+        // Check to see if NotificationPolicy property is set
+        internal bool IsSetNotificationPolicy()
+        {
+            return this._notificationPolicy != null;
         }
 
         /// <summary>

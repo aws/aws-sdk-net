@@ -142,6 +142,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.NFSFileShareDefaults = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NotificationPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NotificationPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ObjectACL", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

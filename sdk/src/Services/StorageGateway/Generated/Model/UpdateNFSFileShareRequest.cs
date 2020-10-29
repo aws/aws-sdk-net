@@ -39,7 +39,7 @@ namespace Amazon.StorageGateway.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Updates the following file share setting:
+    /// Updates the following file share settings:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -61,12 +61,7 @@ namespace Amazon.StorageGateway.Model
     /// <para>
     /// Write status of your file share
     /// </para>
-    ///  </li> </ul> <note> 
-    /// <para>
-    /// To leave a file share field unchanged, set the corresponding input field to null.
-    /// This operation is only supported in file gateways.
-    /// </para>
-    ///  </note>
+    ///  </li> </ul>
     /// </summary>
     public partial class UpdateNFSFileShareRequest : AmazonStorageGatewayRequest
     {
@@ -79,6 +74,7 @@ namespace Amazon.StorageGateway.Model
         private bool? _kmsEncrypted;
         private string _kmsKey;
         private NFSFileShareDefaults _nfsFileShareDefaults;
+        private string _notificationPolicy;
         private ObjectACL _objectACL;
         private bool? _readOnly;
         private bool? _requesterPays;
@@ -274,6 +270,25 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetNFSFileShareDefaults()
         {
             return this._nfsFileShareDefaults != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationPolicy. 
+        /// <para>
+        /// The notification policy of the file share.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=100)]
+        public string NotificationPolicy
+        {
+            get { return this._notificationPolicy; }
+            set { this._notificationPolicy = value; }
+        }
+
+        // Check to see if NotificationPolicy property is set
+        internal bool IsSetNotificationPolicy()
+        {
+            return this._notificationPolicy != null;
         }
 
         /// <summary>

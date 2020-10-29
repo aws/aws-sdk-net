@@ -63,6 +63,7 @@ namespace Amazon.StorageGateway.Model
         private string _kmsKey;
         private string _locationARN;
         private NFSFileShareDefaults _nfsFileShareDefaults;
+        private string _notificationPolicy;
         private ObjectACL _objectACL;
         private bool? _readOnly;
         private bool? _requesterPays;
@@ -301,6 +302,25 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetNFSFileShareDefaults()
         {
             return this._nfsFileShareDefaults != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationPolicy. 
+        /// <para>
+        /// The notification policy of the file share.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=100)]
+        public string NotificationPolicy
+        {
+            get { return this._notificationPolicy; }
+            set { this._notificationPolicy = value; }
+        }
+
+        // Check to see if NotificationPolicy property is set
+        internal bool IsSetNotificationPolicy()
+        {
+            return this._notificationPolicy != null;
         }
 
         /// <summary>

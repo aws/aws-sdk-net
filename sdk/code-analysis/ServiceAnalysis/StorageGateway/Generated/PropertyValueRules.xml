@@ -244,6 +244,12 @@
     <max>1400</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.NotificationPolicy</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>^\{[\w\s:\{\}\[\]"]*}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.Role</property>
     <min>20</min>
     <max>2048</max>
@@ -298,6 +304,12 @@
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.LocationARN</property>
     <min>16</min>
     <max>1400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.NotificationPolicy</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>^\{[\w\s:\{\}\[\]"]*}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.Role</property>
@@ -1369,6 +1381,12 @@
     <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.NotificationPolicy</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>^\{[\w\s:\{\}\[\]"]*}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.Squash</property>
     <min>5</min>
     <max>15</max>
@@ -1404,7 +1422,23 @@
     <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateSMBFileShareRequest.NotificationPolicy</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>^\{[\w\s:\{\}\[\]"]*}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateSMBFileShareResponse.FileShareARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateSMBFileShareVisibilityRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateSMBFileShareVisibilityResponse.GatewayARN</property>
     <min>50</min>
     <max>500</max>
   </property-value-rule>
@@ -1664,6 +1698,12 @@
     <max>1400</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareInfo.NotificationPolicy</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>^\{[\w\s:\{\}\[\]"]*}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.NFSFileShareInfo.Role</property>
     <min>20</min>
     <max>2048</max>
@@ -1739,6 +1779,12 @@
     <property>Amazon.StorageGateway.Model.SMBFileShareInfo.LocationARN</property>
     <min>16</min>
     <max>1400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SMBFileShareInfo.NotificationPolicy</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>^\{[\w\s:\{\}\[\]"]*}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.SMBFileShareInfo.Role</property>

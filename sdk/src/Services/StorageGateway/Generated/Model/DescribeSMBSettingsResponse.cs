@@ -35,6 +35,7 @@ namespace Amazon.StorageGateway.Model
     {
         private ActiveDirectoryStatus _activeDirectoryStatus;
         private string _domainName;
+        private bool? _fileSharesVisible;
         private string _gatewayARN;
         private bool? _smbGuestPasswordSet;
         private SMBSecurityStrategy _smbSecurityStrategy;
@@ -107,6 +108,24 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileSharesVisible. 
+        /// <para>
+        /// The shares on this gateway appear when listing shares.
+        /// </para>
+        /// </summary>
+        public bool FileSharesVisible
+        {
+            get { return this._fileSharesVisible.GetValueOrDefault(); }
+            set { this._fileSharesVisible = value; }
+        }
+
+        // Check to see if FileSharesVisible property is set
+        internal bool IsSetFileSharesVisible()
+        {
+            return this._fileSharesVisible.HasValue; 
         }
 
         /// <summary>

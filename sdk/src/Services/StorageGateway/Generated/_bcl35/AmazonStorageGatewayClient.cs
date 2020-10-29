@@ -5851,7 +5851,7 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  </note> 
         /// <para>
-        /// Updates the following file share setting:
+        /// Updates the following file share settings:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5873,12 +5873,7 @@ namespace Amazon.StorageGateway
         /// <para>
         /// Write status of your file share
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// To leave a file share field unchanged, set the corresponding input field to null.
-        /// This operation is only supported in file gateways.
-        /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNFSFileShare service method.</param>
         /// 
@@ -5940,12 +5935,12 @@ namespace Amazon.StorageGateway
         #region  UpdateSMBFileShare
 
         /// <summary>
-        /// Updates a Server Message Block (SMB) file share.
+        /// Updates a Server Message Block (SMB) file share. This operation is only supported
+        /// for file gateways.
         /// 
         ///  <note> 
         /// <para>
         /// To leave a file share field unchanged, set the corresponding input field to null.
-        /// This operation is only supported for file gateways.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -6015,6 +6010,68 @@ namespace Amazon.StorageGateway
         public virtual UpdateSMBFileShareResponse EndUpdateSMBFileShare(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateSMBFileShareResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSMBFileShareVisibility
+
+        /// <summary>
+        /// Controls whether the shares on a gateway are visible in a net view or browse list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSMBFileShareVisibility service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSMBFileShareVisibility service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShareVisibility">REST API Reference for UpdateSMBFileShareVisibility Operation</seealso>
+        public virtual UpdateSMBFileShareVisibilityResponse UpdateSMBFileShareVisibility(UpdateSMBFileShareVisibilityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSMBFileShareVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSMBFileShareVisibilityResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSMBFileShareVisibilityResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSMBFileShareVisibility operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSMBFileShareVisibility operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSMBFileShareVisibility
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShareVisibility">REST API Reference for UpdateSMBFileShareVisibility Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSMBFileShareVisibility(UpdateSMBFileShareVisibilityRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSMBFileShareVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSMBFileShareVisibilityResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSMBFileShareVisibility operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSMBFileShareVisibility.</param>
+        /// 
+        /// <returns>Returns a  UpdateSMBFileShareVisibilityResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShareVisibility">REST API Reference for UpdateSMBFileShareVisibility Operation</seealso>
+        public virtual UpdateSMBFileShareVisibilityResponse EndUpdateSMBFileShareVisibility(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSMBFileShareVisibilityResponse>(asyncResult);
         }
 
         #endregion

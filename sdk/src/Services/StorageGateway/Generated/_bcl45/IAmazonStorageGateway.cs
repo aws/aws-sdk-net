@@ -5089,7 +5089,7 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  </note> 
         /// <para>
-        /// Updates the following file share setting:
+        /// Updates the following file share settings:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5111,12 +5111,7 @@ namespace Amazon.StorageGateway
         /// <para>
         /// Write status of your file share
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// To leave a file share field unchanged, set the corresponding input field to null.
-        /// This operation is only supported in file gateways.
-        /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNFSFileShare service method.</param>
         /// 
@@ -5144,7 +5139,7 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  </note> 
         /// <para>
-        /// Updates the following file share setting:
+        /// Updates the following file share settings:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5166,12 +5161,7 @@ namespace Amazon.StorageGateway
         /// <para>
         /// Write status of your file share
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// To leave a file share field unchanged, set the corresponding input field to null.
-        /// This operation is only supported in file gateways.
-        /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNFSFileShare service method.</param>
         /// <param name="cancellationToken">
@@ -5196,12 +5186,12 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Updates a Server Message Block (SMB) file share.
+        /// Updates a Server Message Block (SMB) file share. This operation is only supported
+        /// for file gateways.
         /// 
         ///  <note> 
         /// <para>
         /// To leave a file share field unchanged, set the corresponding input field to null.
-        /// This operation is only supported for file gateways.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -5235,12 +5225,12 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Updates a Server Message Block (SMB) file share.
+        /// Updates a Server Message Block (SMB) file share. This operation is only supported
+        /// for file gateways.
         /// 
         ///  <note> 
         /// <para>
         /// To leave a file share field unchanged, set the corresponding input field to null.
-        /// This operation is only supported for file gateways.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -5273,6 +5263,50 @@ namespace Amazon.StorageGateway
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShare">REST API Reference for UpdateSMBFileShare Operation</seealso>
         Task<UpdateSMBFileShareResponse> UpdateSMBFileShareAsync(UpdateSMBFileShareRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateSMBFileShareVisibility
+
+
+        /// <summary>
+        /// Controls whether the shares on a gateway are visible in a net view or browse list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSMBFileShareVisibility service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSMBFileShareVisibility service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShareVisibility">REST API Reference for UpdateSMBFileShareVisibility Operation</seealso>
+        UpdateSMBFileShareVisibilityResponse UpdateSMBFileShareVisibility(UpdateSMBFileShareVisibilityRequest request);
+
+
+
+        /// <summary>
+        /// Controls whether the shares on a gateway are visible in a net view or browse list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSMBFileShareVisibility service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSMBFileShareVisibility service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShareVisibility">REST API Reference for UpdateSMBFileShareVisibility Operation</seealso>
+        Task<UpdateSMBFileShareVisibilityResponse> UpdateSMBFileShareVisibilityAsync(UpdateSMBFileShareVisibilityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -64,6 +64,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AccessBasedEnumeration", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AccessBasedEnumeration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AdminUserList", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -158,6 +164,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LocationARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NotificationPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NotificationPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ObjectACL", targetDepth))

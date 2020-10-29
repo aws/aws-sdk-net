@@ -149,6 +149,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetNotificationPolicy())
+                {
+                    context.Writer.WritePropertyName("NotificationPolicy");
+                    context.Writer.Write(publicRequest.NotificationPolicy);
+                }
+
                 if(publicRequest.IsSetObjectACL())
                 {
                     context.Writer.WritePropertyName("ObjectACL");
