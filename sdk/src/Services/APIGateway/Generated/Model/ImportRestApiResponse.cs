@@ -40,6 +40,7 @@ namespace Amazon.APIGateway.Model
         private List<string> _binaryMediaTypes = new List<string>();
         private DateTime? _createdDate;
         private string _description;
+        private bool? _disableExecuteApiEndpoint;
         private EndpointConfiguration _endpointConfiguration;
         private string _id;
         private int? _minimumCompressionSize;
@@ -55,7 +56,7 @@ namespace Amazon.APIGateway.Model
         /// The source of the API key for metering requests according to a usage plan. Valid values
         /// are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code>
         /// header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the
-        /// <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul> 
+        /// <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul>
         /// </para>
         /// </summary>
         public ApiKeySourceType ApiKeySource
@@ -126,10 +127,31 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DisableExecuteApiEndpoint. 
+        /// <para>
+        /// Specifies whether clients can invoke your API by using the default <code>execute-api</code>
+        /// endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com
+        /// endpoint. To require that clients use a custom domain name to invoke your API, disable
+        /// the default endpoint.
+        /// </para>
+        /// </summary>
+        public bool DisableExecuteApiEndpoint
+        {
+            get { return this._disableExecuteApiEndpoint.GetValueOrDefault(); }
+            set { this._disableExecuteApiEndpoint = value; }
+        }
+
+        // Check to see if DisableExecuteApiEndpoint property is set
+        internal bool IsSetDisableExecuteApiEndpoint()
+        {
+            return this._disableExecuteApiEndpoint.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EndpointConfiguration. 
         /// <para>
         /// The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the
-        /// API. 
+        /// API.
         /// </para>
         /// </summary>
         public EndpointConfiguration EndpointConfiguration
@@ -203,8 +225,11 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Policy. A stringified JSON policy document that applies
-        /// to this RestApi regardless of the caller and <a>Method</a> configuration.
+        /// Gets and sets the property Policy. 
+        /// <para>
+        /// A stringified JSON policy document that applies to this RestApi regardless of the
+        /// caller and <a>Method</a> configuration.
+        /// </para>
         /// </summary>
         public string Policy
         {

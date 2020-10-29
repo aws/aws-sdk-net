@@ -67,11 +67,7 @@ namespace Amazon.APIGateway.Model
     /// \"$context.error.responseType\",\n \"stage\": \"$context.stage\",\n \"resourcePath\":
     /// \"$context.resourcePath\",\n \"stageVariables.a\": \"$stageVariables.a\",\n \"statusCode\":
     /// \"&apos;404&apos;\"\n}" }, "responseType": "MISSING_AUTHENTICATION_TOKEN", "statusCode":
-    /// "404" }</code></pre> 
-    /// <para>
-    /// 
-    /// </para>
-    ///  </div> </div> <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html">Customize
+    /// "404" }</code></pre>  </div> </div> <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html">Customize
     /// Gateway Responses</a> </div>
     /// </summary>
     public partial class GetGatewayResponseResponse : AmazonWebServiceResponse

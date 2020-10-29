@@ -45,11 +45,8 @@ namespace Amazon.APIGateway.Model
     /// Content-Type: application/json X-Amz-Date: 20170503T220604Z Authorization: AWS4-HMAC-SHA256
     /// Credential={access-key-id}/20170503/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date,
     /// Signature=59b42fe54a76a5de8adf2c67baa6d39206f8e9ad49a1d77ccc6a5da3103a398a Cache-Control:
-    /// no-cache Postman-Token: 5637af27-dc29-fc5c-9dfe-0645d52cb515 </code></pre> 
-    /// <para>
+    /// no-cache Postman-Token: 5637af27-dc29-fc5c-9dfe-0645d52cb515 </code></pre>  <h5>Response</h5>
     /// 
-    /// </para>
-    ///  <h5>Response</h5> 
     /// <para>
     /// The successful operation returns the <code>200 OK</code> status code and a payload
     /// similar to the following:
@@ -172,11 +169,7 @@ namespace Amazon.APIGateway.Model
     /// "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/AUTHORIZER_FAILURE"
     /// } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json":
     /// "{\"message\":$context.error.messageString}" }, "responseType": "AUTHORIZER_FAILURE",
-    /// "statusCode": "500" } ] } }</code></pre> 
-    /// <para>
-    /// 
-    /// </para>
-    ///  </div> </div> <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html">Customize
+    /// "statusCode": "500" } ] } }</code></pre>  </div> </div> <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html">Customize
     /// Gateway Responses</a> </div>
     /// </summary>
     public partial class GetGatewayResponsesResponse : AmazonWebServiceResponse

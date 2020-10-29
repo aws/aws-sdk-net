@@ -75,6 +75,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("disableExecuteApiEndpoint", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.DisableExecuteApiEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("endpointConfiguration", targetDepth))
                 {
                     var unmarshaller = EndpointConfigurationUnmarshaller.Instance;

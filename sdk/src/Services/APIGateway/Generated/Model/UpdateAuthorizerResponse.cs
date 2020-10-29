@@ -234,7 +234,6 @@ namespace Amazon.APIGateway.Model
         /// A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code>
         /// authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
         /// For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.
-        /// 
         /// </para>
         /// </summary>
         public List<string> ProviderARNs
