@@ -73,6 +73,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private string _name;
         private int? _port;
         private ProtocolEnum _protocol;
+        private string _protocolVersion;
         private List<Tag> _tags = new List<Tag>();
         private TargetTypeEnum _targetType;
         private int? _unhealthyThresholdCount;
@@ -124,8 +125,16 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property HealthCheckPath. 
         /// <para>
-        /// [HTTP/HTTPS health checks] The ping path that is the destination on the targets for
-        /// health checks. The default is /.
+        /// [HTTP/HTTPS health checks] The destination for health checks on the targets.
+        /// </para>
+        ///  
+        /// <para>
+        /// [HTTP1 or HTTP2 protocol version] The ping path. The default is /.
+        /// </para>
+        ///  
+        /// <para>
+        /// [GRPC protocol version] The path of a custom health check method with the format /package.service/method.
+        /// The default is /AWS.ALB/healthcheck.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -231,8 +240,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Matcher. 
         /// <para>
-        /// [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response
-        /// from a target.
+        /// [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful
+        /// response from a target.
         /// </para>
         /// </summary>
         public Matcher Matcher
@@ -313,6 +322,26 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetProtocol()
         {
             return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProtocolVersion. 
+        /// <para>
+        /// [HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests
+        /// to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using
+        /// HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.
+        /// </para>
+        /// </summary>
+        public string ProtocolVersion
+        {
+            get { return this._protocolVersion; }
+            set { this._protocolVersion = value; }
+        }
+
+        // Check to see if ProtocolVersion property is set
+        internal bool IsSetProtocolVersion()
+        {
+            return this._protocolVersion != null;
         }
 
         /// <summary>

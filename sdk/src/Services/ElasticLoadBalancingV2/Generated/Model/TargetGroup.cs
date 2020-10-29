@@ -44,6 +44,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private Matcher _matcher;
         private int? _port;
         private ProtocolEnum _protocol;
+        private string _protocolVersion;
         private string _targetGroupArn;
         private string _targetGroupName;
         private TargetTypeEnum _targetType;
@@ -91,7 +92,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property HealthCheckPath. 
         /// <para>
-        /// The destination for the health check request.
+        /// The destination for health checks on the targets.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -204,7 +205,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Matcher. 
         /// <para>
-        /// The HTTP codes to use when checking for a successful response from a target.
+        /// The HTTP or gRPC codes to use when checking for a successful response from a target.
         /// </para>
         /// </summary>
         public Matcher Matcher
@@ -254,6 +255,25 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetProtocol()
         {
             return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProtocolVersion. 
+        /// <para>
+        /// [HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>,
+        /// <code>HTTP1</code>, and <code>HTTP2</code>.
+        /// </para>
+        /// </summary>
+        public string ProtocolVersion
+        {
+            get { return this._protocolVersion; }
+            set { this._protocolVersion = value; }
+        }
+
+        // Check to see if ProtocolVersion property is set
+        internal bool IsSetProtocolVersion()
+        {
+            return this._protocolVersion != null;
         }
 
         /// <summary>

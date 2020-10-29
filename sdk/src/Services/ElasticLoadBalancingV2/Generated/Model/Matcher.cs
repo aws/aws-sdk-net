@@ -29,18 +29,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Information to use when checking for a successful response from a target.
+    /// The codes to use when checking for a successful response from a target. If the protocol
+    /// version is gRPC, these are gRPC codes. Otherwise, these are HTTP codes.
     /// </summary>
     public partial class Matcher
     {
+        private string _grpcCode;
         private string _httpCode;
 
         /// <summary>
-        /// Gets and sets the property HttpCode. 
+        /// Gets and sets the property GrpcCode. 
         /// <para>
-        /// The HTTP codes.
+        /// You can specify values between 0 and 99. You can specify multiple values (for example,
+        /// "0,1") or a range of values (for example, "0-5"). The default value is 12.
         /// </para>
-        ///  
+        /// </summary>
+        public string GrpcCode
+        {
+            get { return this._grpcCode; }
+            set { this._grpcCode = value; }
+        }
+
+        // Check to see if GrpcCode property is set
+        internal bool IsSetGrpcCode()
+        {
+            return this._grpcCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HttpCode. 
         /// <para>
         /// For Application Load Balancers, you can specify values between 200 and 499, and the
         /// default value is 200. You can specify multiple values (for example, "200,202") or
@@ -48,10 +65,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For Network Load Balancers, this is 200–399.
+        /// For Network Load Balancers, this is "200–399".
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string HttpCode
         {
             get { return this._httpCode; }

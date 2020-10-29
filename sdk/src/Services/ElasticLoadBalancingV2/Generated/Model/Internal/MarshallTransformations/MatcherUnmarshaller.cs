@@ -54,6 +54,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("GrpcCode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GrpcCode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("HttpCode", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -88,6 +88,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetMatcher())
                 {
+                    if(publicRequest.Matcher.IsSetGrpcCode())
+                    {
+                        request.Parameters.Add("Matcher" + "." + "GrpcCode", StringUtils.FromString(publicRequest.Matcher.GrpcCode));
+                    }
                     if(publicRequest.Matcher.IsSetHttpCode())
                     {
                         request.Parameters.Add("Matcher" + "." + "HttpCode", StringUtils.FromString(publicRequest.Matcher.HttpCode));
