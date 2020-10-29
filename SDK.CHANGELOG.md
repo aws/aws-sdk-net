@@ -1,3 +1,19 @@
+### 3.5.45.0 (2020-10-29 18:18 UTC)
+* APIGateway (3.5.2.0)
+	* Support disabling the default execute-api endpoint for REST APIs.
+* AWSMarketplaceCommerceAnalytics (3.5.0.35)
+	* Documentation updates for marketplacecommerceanalytics to specify four data sets which are deprecated.
+* CodeArtifact (3.5.1.0)
+	* Add support for tagging of CodeArtifact domain and repository resources.
+* EC2 (3.5.12.0)
+	* Support for Appliance mode on Transit Gateway that simplifies deployment of stateful network appliances. Added support for AWS Client VPN Self-Service Portal.
+* ElasticLoadBalancingV2 (3.5.3.0)
+	* Application Load Balancer (ALB) now supports the gRPC protocol-version. With this release, customers can use ALB to route and load balance gRPC traffic between gRPC enabled clients and microservices.
+* SimpleEmailV2 (3.5.1.0)
+	* This release enables customers to manage their own contact lists and end-user subscription preferences.
+* StorageGateway (3.5.1.0)
+	* Adding support for access based enumeration on SMB file shares, file share visibility on SMB file shares, and file upload notifications for all file shares
+
 ### 3.5.44.0 (2020-10-28 18:17 UTC)
 * EC2 (3.5.11.0)
 	* AWS Nitro Enclaves general availability. Added support to RunInstances for creating enclave-enabled EC2 instances. New APIs to associate an ACM certificate with an IAM role, for enclave consumption.
