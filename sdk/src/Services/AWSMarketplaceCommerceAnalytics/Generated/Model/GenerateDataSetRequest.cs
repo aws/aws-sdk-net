@@ -189,6 +189,22 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00
         /// UTC.
         /// </para>
+        ///  </li> <li> <strong>disbursed_amount_by_product_with_uncollected_funds</strong> 
+        /// <para>
+        /// This data set is deprecated. Download related reports from AMMP instead!
+        /// </para>
+        ///  </li> <li> <strong>customer_profile_by_industry</strong> 
+        /// <para>
+        /// This data set is deprecated. Download related reports from AMMP instead!
+        /// </para>
+        ///  </li> <li> <strong>customer_profile_by_revenue</strong> 
+        /// <para>
+        /// This data set is deprecated. Download related reports from AMMP instead!
+        /// </para>
+        ///  </li> <li> <strong>customer_profile_by_geography</strong> 
+        /// <para>
+        /// This data set is deprecated. Download related reports from AMMP instead!
+        /// </para>
         ///  </li> </ul> 
         /// </para>
         /// </summary>
