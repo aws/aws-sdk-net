@@ -41,6 +41,7 @@ namespace Amazon.CodeArtifact.Model
         private string _name;
         private string _owner;
         private int? _repositoryCount;
+        private string _s3BucketArn;
         private DomainStatus _status;
 
         /// <summary>
@@ -49,7 +50,7 @@ namespace Amazon.CodeArtifact.Model
         ///  The Amazon Resource Name (ARN) of the domain. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=1011)]
         public string Arn
         {
             get { return this._arn; }
@@ -105,7 +106,7 @@ namespace Amazon.CodeArtifact.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=1011)]
         public string EncryptionKey
         {
             get { return this._encryptionKey; }
@@ -172,6 +173,26 @@ namespace Amazon.CodeArtifact.Model
         internal bool IsSetRepositoryCount()
         {
             return this._repositoryCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3BucketArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store package
+        /// assets in the domain.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1011)]
+        public string S3BucketArn
+        {
+            get { return this._s3BucketArn; }
+            set { this._s3BucketArn = value; }
+        }
+
+        // Check to see if S3BucketArn property is set
+        internal bool IsSetS3BucketArn()
+        {
+            return this._s3BucketArn != null;
         }
 
         /// <summary>

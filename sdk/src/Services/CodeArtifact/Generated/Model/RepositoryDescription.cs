@@ -72,7 +72,7 @@ namespace Amazon.CodeArtifact.Model
         ///  The Amazon Resource Name (ARN) of the repository. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=1011)]
         public string Arn
         {
             get { return this._arn; }

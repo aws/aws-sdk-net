@@ -29,41 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
-    /// An AWS CodeArtifact resource policy that contains a resource ARN, document details,
-    /// and a revision.
+    /// Container for the parameters to the UntagResource operation.
+    /// Removes tags from a resource in AWS CodeArtifact.
     /// </summary>
-    public partial class ResourcePolicy
+    public partial class UntagResourceRequest : AmazonCodeArtifactRequest
     {
-        private string _document;
         private string _resourceArn;
-        private string _revision;
-
-        /// <summary>
-        /// Gets and sets the property Document. 
-        /// <para>
-        ///  The resource policy formatted in JSON. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=5120)]
-        public string Document
-        {
-            get { return this._document; }
-            set { this._document = value; }
-        }
-
-        // Check to see if Document property is set
-        internal bool IsSetDocument()
-        {
-            return this._document != null;
-        }
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The ARN of the resource associated with the resource policy 
+        /// The Amazon Resource Name (ARN) of the resource to which you want to remove tags.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1011)]
+        [AWSProperty(Required=true, Min=1, Max=1011)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -77,22 +57,22 @@ namespace Amazon.CodeArtifact.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Revision. 
+        /// Gets and sets the property TagKeys. 
         /// <para>
-        ///  The current revision of the resource policy. 
+        /// The tag key for each tag that you want to remove from the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public string Revision
+        [AWSProperty(Required=true, Min=0, Max=200)]
+        public List<string> TagKeys
         {
-            get { return this._revision; }
-            set { this._revision = value; }
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
         }
 
-        // Check to see if Revision property is set
-        internal bool IsSetRevision()
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
         {
-            return this._revision != null;
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

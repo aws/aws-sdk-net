@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateRepository Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateRepositoryRequestMarshaller : IMarshaller<IRequest, CreateRepositoryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateRepositoryRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateRepositoryRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeArtifact");
             request.Headers["Content-Type"] = "application/json";
@@ -60,27 +60,15 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             
-            if (publicRequest.IsSetDomain())
-                request.Parameters.Add("domain", StringUtils.FromString(publicRequest.Domain));
-            
-            if (publicRequest.IsSetDomainOwner())
-                request.Parameters.Add("domain-owner", StringUtils.FromString(publicRequest.DomainOwner));
-            
-            if (publicRequest.IsSetRepository())
-                request.Parameters.Add("repository", StringUtils.FromString(publicRequest.Repository));
-            request.ResourcePath = "/v1/repository";
+            if (publicRequest.IsSetResourceArn())
+                request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/v1/tag";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -97,22 +85,6 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetUpstreams())
-                {
-                    context.Writer.WritePropertyName("upstreams");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestUpstreamsListValue in publicRequest.Upstreams)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UpstreamRepositoryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestUpstreamsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -123,9 +95,9 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateRepositoryRequestMarshaller _instance = new CreateRepositoryRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateRepositoryRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -133,7 +105,7 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateRepositoryRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

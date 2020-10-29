@@ -31,6 +31,15 @@ namespace Amazon.CodeArtifact.Model
     /// <summary>
     /// Container for the parameters to the PutRepositoryPermissionsPolicy operation.
     /// Sets the resource policy on a repository that specifies permissions to access it.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    ///  When you call <code>PutRepositoryPermissionsPolicy</code>, the resource policy on
+    /// the repository is ignored when evaluting permissions. This ensures that the owner
+    /// of a repository cannot lock themselves out of the repository, which would prevent
+    /// them from being able to update the resource policy. 
+    /// </para>
     /// </summary>
     public partial class PutRepositoryPermissionsPolicyRequest : AmazonCodeArtifactRequest
     {

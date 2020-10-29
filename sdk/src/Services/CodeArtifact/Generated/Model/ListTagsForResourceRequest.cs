@@ -29,41 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
-    /// An AWS CodeArtifact resource policy that contains a resource ARN, document details,
-    /// and a revision.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
+    /// CodeArtifact.
     /// </summary>
-    public partial class ResourcePolicy
+    public partial class ListTagsForResourceRequest : AmazonCodeArtifactRequest
     {
-        private string _document;
         private string _resourceArn;
-        private string _revision;
-
-        /// <summary>
-        /// Gets and sets the property Document. 
-        /// <para>
-        ///  The resource policy formatted in JSON. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=5120)]
-        public string Document
-        {
-            get { return this._document; }
-            set { this._document = value; }
-        }
-
-        // Check to see if Document property is set
-        internal bool IsSetDocument()
-        {
-            return this._document != null;
-        }
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The ARN of the resource associated with the resource policy 
+        /// The Amazon Resource Name (ARN) of the resource to get tags for.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1011)]
+        [AWSProperty(Required=true, Min=1, Max=1011)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -74,25 +54,6 @@ namespace Amazon.CodeArtifact.Model
         internal bool IsSetResourceArn()
         {
             return this._resourceArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Revision. 
-        /// <para>
-        ///  The current revision of the resource policy. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public string Revision
-        {
-            get { return this._revision; }
-            set { this._revision = value; }
-        }
-
-        // Check to see if Revision property is set
-        internal bool IsSetRevision()
-        {
-            return this._revision != null;
         }
 
     }

@@ -30,9 +30,10 @@ namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAuthorizationToken operation.
-    /// Generates a temporary authentication token for accessing repositories in the domain.
+    /// Generates a temporary authorization token for accessing repositories in the domain.
     /// This API requires the <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code>
-    /// permissions. 
+    /// permissions. For more information about authorization tokens, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">AWS
+    /// CodeArtifact authentication and tokens</a>. 
     /// 
     ///  <note> 
     /// <para>
@@ -107,7 +108,10 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property DurationSeconds. 
         /// <para>
-        /// The time, in seconds, that the generated authorization token is valid.
+        /// The time, in seconds, that the generated authorization token is valid. Valid values
+        /// are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code>
+        /// (12 hours). A value of <code>0</code> will set the expiration of the authorization
+        /// token to the same expiration of the user's role's temporary credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=43200)]

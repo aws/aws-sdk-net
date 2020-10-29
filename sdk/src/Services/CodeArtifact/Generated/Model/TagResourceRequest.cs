@@ -29,41 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
-    /// An AWS CodeArtifact resource policy that contains a resource ARN, document details,
-    /// and a revision.
+    /// Container for the parameters to the TagResource operation.
+    /// Adds or updates tags for a resource in AWS CodeArtifact.
     /// </summary>
-    public partial class ResourcePolicy
+    public partial class TagResourceRequest : AmazonCodeArtifactRequest
     {
-        private string _document;
         private string _resourceArn;
-        private string _revision;
-
-        /// <summary>
-        /// Gets and sets the property Document. 
-        /// <para>
-        ///  The resource policy formatted in JSON. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=5120)]
-        public string Document
-        {
-            get { return this._document; }
-            set { this._document = value; }
-        }
-
-        // Check to see if Document property is set
-        internal bool IsSetDocument()
-        {
-            return this._document != null;
-        }
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The ARN of the resource associated with the resource policy 
+        /// The Amazon Resource Name (ARN) of the resource to which you want to add or update
+        /// tags.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1011)]
+        [AWSProperty(Required=true, Min=1, Max=1011)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -77,22 +58,22 @@ namespace Amazon.CodeArtifact.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Revision. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        ///  The current revision of the resource policy. 
+        /// The tags you want to modify or add to the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public string Revision
+        [AWSProperty(Required=true, Min=0, Max=200)]
+        public List<Tag> Tags
         {
-            get { return this._revision; }
-            set { this._revision = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if Revision property is set
-        internal bool IsSetRevision()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._revision != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

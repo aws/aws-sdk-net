@@ -49,7 +49,7 @@ namespace Amazon.CodeArtifact.Model
         ///  The ARN of the domain. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=1011)]
         public string Arn
         {
             get { return this._arn; }
@@ -86,7 +86,7 @@ namespace Amazon.CodeArtifact.Model
         ///  The key used to encrypt the domain. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=1011)]
         public string EncryptionKey
         {
             get { return this._encryptionKey; }

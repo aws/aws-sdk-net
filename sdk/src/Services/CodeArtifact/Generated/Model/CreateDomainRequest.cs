@@ -47,6 +47,7 @@ namespace Amazon.CodeArtifact.Model
     {
         private string _domain;
         private string _encryptionKey;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Domain. 
@@ -91,7 +92,7 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </important>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=1011)]
         public string EncryptionKey
         {
             get { return this._encryptionKey; }
@@ -102,6 +103,25 @@ namespace Amazon.CodeArtifact.Model
         internal bool IsSetEncryptionKey()
         {
             return this._encryptionKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// One or more tag key-value pairs for the domain.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

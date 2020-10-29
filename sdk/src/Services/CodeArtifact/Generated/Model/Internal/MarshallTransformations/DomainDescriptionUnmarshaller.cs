@@ -106,6 +106,12 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
                     unmarshalledObject.RepositoryCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("s3BucketArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3BucketArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
