@@ -134,6 +134,17 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FromEmailAddressIdentityArn);
                 }
 
+                if(publicRequest.IsSetListManagementOptions())
+                {
+                    context.Writer.WritePropertyName("ListManagementOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ListManagementOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ListManagementOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetReplyToAddresses())
                 {
                     context.Writer.WritePropertyName("ReplyToAddresses");

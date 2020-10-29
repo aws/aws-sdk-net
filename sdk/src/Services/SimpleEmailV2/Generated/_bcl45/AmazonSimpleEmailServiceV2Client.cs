@@ -463,6 +463,138 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  CreateContact
+
+
+        /// <summary>
+        /// Creates a contact, which is an end-user who is receiving the email, and adds them
+        /// to a contact list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContact service method.</param>
+        /// 
+        /// <returns>The response from the CreateContact service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.AlreadyExistsException">
+        /// The resource specified in your request already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        public virtual CreateContactResponse CreateContact(CreateContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContactResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a contact, which is an end-user who is receiving the email, and adds them
+        /// to a contact list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateContact service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.AlreadyExistsException">
+        /// The resource specified in your request already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        public virtual Task<CreateContactResponse> CreateContactAsync(CreateContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateContactList
+
+
+        /// <summary>
+        /// Creates a contact list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactList service method.</param>
+        /// 
+        /// <returns>The response from the CreateContactList service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.AlreadyExistsException">
+        /// The resource specified in your request already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateContactList">REST API Reference for CreateContactList Operation</seealso>
+        public virtual CreateContactListResponse CreateContactList(CreateContactListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateContactListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactListResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContactListResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a contact list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateContactList service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.AlreadyExistsException">
+        /// The resource specified in your request already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateContactList">REST API Reference for CreateContactList Operation</seealso>
+        public virtual Task<CreateContactListResponse> CreateContactListAsync(CreateContactListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateContactListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactListResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateContactListResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateCustomVerificationEmailTemplate
 
 
@@ -1274,6 +1406,130 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  DeleteContact
+
+
+        /// <summary>
+        /// Removes a contact from a contact list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContact service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContact service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
+        public virtual DeleteContactResponse DeleteContact(DeleteContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContactResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes a contact from a contact list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteContact service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
+        public virtual Task<DeleteContactResponse> DeleteContactAsync(DeleteContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteContactList
+
+
+        /// <summary>
+        /// Deletes a contact list and all of the contacts on that list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactList service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContactList service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.ConcurrentModificationException">
+        /// The resource is being modified by another operation or thread.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteContactList">REST API Reference for DeleteContactList Operation</seealso>
+        public virtual DeleteContactListResponse DeleteContactList(DeleteContactListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteContactListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactListResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContactListResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a contact list and all of the contacts on that list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteContactList service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.ConcurrentModificationException">
+        /// The resource is being modified by another operation or thread.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteContactList">REST API Reference for DeleteContactList Operation</seealso>
+        public virtual Task<DeleteContactListResponse> DeleteContactListAsync(DeleteContactListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteContactListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactListResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteContactListResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCustomVerificationEmailTemplate
 
 
@@ -1974,6 +2230,126 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetConfigurationSetEventDestinationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetContact
+
+
+        /// <summary>
+        /// Returns a contact from a contact list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContact service method.</param>
+        /// 
+        /// <returns>The response from the GetContact service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetContact">REST API Reference for GetContact Operation</seealso>
+        public virtual GetContactResponse GetContact(GetContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContactResponseUnmarshaller.Instance;
+
+            return Invoke<GetContactResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a contact from a contact list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetContact service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetContact">REST API Reference for GetContact Operation</seealso>
+        public virtual Task<GetContactResponse> GetContactAsync(GetContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContactResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetContactList
+
+
+        /// <summary>
+        /// Returns contact list metadata. It does not return any information about the contacts
+        /// present in the list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContactList service method.</param>
+        /// 
+        /// <returns>The response from the GetContactList service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetContactList">REST API Reference for GetContactList Operation</seealso>
+        public virtual GetContactListResponse GetContactList(GetContactListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContactListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContactListResponseUnmarshaller.Instance;
+
+            return Invoke<GetContactListResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns contact list metadata. It does not return any information about the contacts
+        /// present in the list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContactList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetContactList service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetContactList">REST API Reference for GetContactList Operation</seealso>
+        public virtual Task<GetContactListResponse> GetContactListAsync(GetContactListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContactListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContactListResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetContactListResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2859,6 +3235,118 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListConfigurationSetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListContactLists
+
+
+        /// <summary>
+        /// Lists all of the contact lists available.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactLists service method.</param>
+        /// 
+        /// <returns>The response from the ListContactLists service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContactLists">REST API Reference for ListContactLists Operation</seealso>
+        public virtual ListContactListsResponse ListContactLists(ListContactListsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContactListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactListsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContactListsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all of the contact lists available.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactLists service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListContactLists service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContactLists">REST API Reference for ListContactLists Operation</seealso>
+        public virtual Task<ListContactListsResponse> ListContactListsAsync(ListContactListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContactListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactListsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListContactListsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListContacts
+
+
+        /// <summary>
+        /// Lists the contacts present in a specific contact list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContacts service method.</param>
+        /// 
+        /// <returns>The response from the ListContacts service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContacts">REST API Reference for ListContacts Operation</seealso>
+        public virtual ListContactsResponse ListContacts(ListContactsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContactsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContactsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the contacts present in a specific contact list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContacts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListContacts service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContacts">REST API Reference for ListContacts Operation</seealso>
+        public virtual Task<ListContactsResponse> ListContactsAsync(ListContactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContactsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListContactsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5176,6 +5664,138 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateContact
+
+
+        /// <summary>
+        /// Updates a contact's preferences for a list. It is not necessary to specify all existing
+        /// topic preferences in the TopicPreferences object, just the ones that need updating.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContact service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContact service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.ConcurrentModificationException">
+        /// The resource is being modified by another operation or thread.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        public virtual UpdateContactResponse UpdateContact(UpdateContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContactResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a contact's preferences for a list. It is not necessary to specify all existing
+        /// topic preferences in the TopicPreferences object, just the ones that need updating.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateContact service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.ConcurrentModificationException">
+        /// The resource is being modified by another operation or thread.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        public virtual Task<UpdateContactResponse> UpdateContactAsync(UpdateContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateContactList
+
+
+        /// <summary>
+        /// Updates contact list metadata. This operation does a complete replacement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactList service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContactList service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.ConcurrentModificationException">
+        /// The resource is being modified by another operation or thread.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContactList">REST API Reference for UpdateContactList Operation</seealso>
+        public virtual UpdateContactListResponse UpdateContactList(UpdateContactListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactListResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContactListResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates contact list metadata. This operation does a complete replacement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateContactList service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.ConcurrentModificationException">
+        /// The resource is being modified by another operation or thread.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContactList">REST API Reference for UpdateContactList Operation</seealso>
+        public virtual Task<UpdateContactListResponse> UpdateContactListAsync(UpdateContactListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactListResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateContactListResponse>(request, options, cancellationToken);
         }
 
         #endregion

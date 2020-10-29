@@ -34,7 +34,26 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class ImportDestination
     {
+        private ContactListDestination _contactListDestination;
         private SuppressionListDestination _suppressionListDestination;
+
+        /// <summary>
+        /// Gets and sets the property ContactListDestination. 
+        /// <para>
+        /// An object that contains the action of the import job towards a contact list.
+        /// </para>
+        /// </summary>
+        public ContactListDestination ContactListDestination
+        {
+            get { return this._contactListDestination; }
+            set { this._contactListDestination = value; }
+        }
+
+        // Check to see if ContactListDestination property is set
+        internal bool IsSetContactListDestination()
+        {
+            return this._contactListDestination != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SuppressionListDestination. 
@@ -42,7 +61,6 @@ namespace Amazon.SimpleEmailV2.Model
         /// An object that contains the action of the import job towards suppression list.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public SuppressionListDestination SuppressionListDestination
         {
             get { return this._suppressionListDestination; }

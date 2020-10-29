@@ -39,7 +39,10 @@ namespace Amazon.SimpleEmailV2.Model
         private JobStatus _jobStatus;
 
         /// <summary>
-        /// Gets and sets the property CreatedTimestamp.
+        /// Gets and sets the property CreatedTimestamp. 
+        /// <para>
+        /// The date and time when the import job was created.
+        /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
         {

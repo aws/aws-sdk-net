@@ -223,6 +223,56 @@ namespace Amazon.SimpleEmailV2
 
 
     /// <summary>
+    /// Constants used for properties of type ContactListImportAction.
+    /// </summary>
+    public class ContactListImportAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETE for ContactListImportAction
+        /// </summary>
+        public static readonly ContactListImportAction DELETE = new ContactListImportAction("DELETE");
+        /// <summary>
+        /// Constant PUT for ContactListImportAction
+        /// </summary>
+        public static readonly ContactListImportAction PUT = new ContactListImportAction("PUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContactListImportAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactListImportAction FindValue(string value)
+        {
+            return FindValue<ContactListImportAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactListImportAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataFormat.
     /// </summary>
     public class DataFormat : ConstantClass
@@ -584,6 +634,10 @@ namespace Amazon.SimpleEmailV2
         /// Constant SEND for EventType
         /// </summary>
         public static readonly EventType SEND = new EventType("SEND");
+        /// <summary>
+        /// Constant SUBSCRIPTION for EventType
+        /// </summary>
+        public static readonly EventType SUBSCRIPTION = new EventType("SUBSCRIPTION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -680,6 +734,10 @@ namespace Amazon.SimpleEmailV2
     public class ImportDestinationType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CONTACT_LIST for ImportDestinationType
+        /// </summary>
+        public static readonly ImportDestinationType CONTACT_LIST = new ImportDestinationType("CONTACT_LIST");
         /// <summary>
         /// Constant SUPPRESSION_LIST for ImportDestinationType
         /// </summary>
@@ -938,6 +996,56 @@ namespace Amazon.SimpleEmailV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReviewStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SubscriptionStatus.
+    /// </summary>
+    public class SubscriptionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OPT_IN for SubscriptionStatus
+        /// </summary>
+        public static readonly SubscriptionStatus OPT_IN = new SubscriptionStatus("OPT_IN");
+        /// <summary>
+        /// Constant OPT_OUT for SubscriptionStatus
+        /// </summary>
+        public static readonly SubscriptionStatus OPT_OUT = new SubscriptionStatus("OPT_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SubscriptionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubscriptionStatus FindValue(string value)
+        {
+            return FindValue<SubscriptionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubscriptionStatus(string value)
         {
             return FindValue(value);
         }

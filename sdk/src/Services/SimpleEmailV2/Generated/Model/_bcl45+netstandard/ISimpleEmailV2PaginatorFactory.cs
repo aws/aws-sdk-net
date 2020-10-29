@@ -37,6 +37,16 @@ namespace Amazon.SimpleEmailV2.Model
         IListConfigurationSetsPaginator ListConfigurationSets(ListConfigurationSetsRequest request);
 
         /// <summary>
+        /// Paginator for ListContactLists operation
+        ///</summary>
+        IListContactListsPaginator ListContactLists(ListContactListsRequest request);
+
+        /// <summary>
+        /// Paginator for ListContacts operation
+        ///</summary>
+        IListContactsPaginator ListContacts(ListContactsRequest request);
+
+        /// <summary>
         /// Paginator for ListCustomVerificationEmailTemplates operation
         ///</summary>
         IListCustomVerificationEmailTemplatesPaginator ListCustomVerificationEmailTemplates(ListCustomVerificationEmailTemplatesRequest request);
