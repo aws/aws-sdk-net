@@ -325,8 +325,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// When set to <code>true</code>, this parameter partitions S3 bucket folders based on
         /// transaction commit dates. The default value is <code>false</code>. For more information
-        /// about date-based folder partitoning, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Using
-        /// date-based folder partitioning</a> 
+        /// about date-based folder partitoning, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+        /// date-based folder partitioning</a>.
         /// </para>
         /// </summary>
         public bool DatePartitionEnabled

@@ -37,6 +37,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _certificateArn;
         private string _databaseName;
         private DmsTransferSettings _dmsTransferSettings;
+        private DocDbSettings _docDbSettings;
         private DynamoDbSettings _dynamoDbSettings;
         private ElasticsearchSettings _elasticsearchSettings;
         private string _endpointArn;
@@ -145,6 +146,27 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDmsTransferSettings()
         {
             return this._dmsTransferSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocDbSettings. 
+        /// <para>
+        /// Settings in JSON format for the source DocumentDB endpoint. For more information about
+        /// the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html">
+        /// Using DocumentDB as a Target for AWS Database Migration Service</a> in the <i>AWS
+        /// Database Migration Service User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public DocDbSettings DocDbSettings
+        {
+            get { return this._docDbSettings; }
+            set { this._docDbSettings = value; }
+        }
+
+        // Check to see if DocDbSettings property is set
+        internal bool IsSetDocDbSettings()
+        {
+            return this._docDbSettings != null;
         }
 
         /// <summary>
