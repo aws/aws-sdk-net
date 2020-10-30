@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Braket.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateQuantumTask Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateQuantumTaskRequestMarshaller : IMarshaller<IRequest, CreateQuantumTaskRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateQuantumTaskRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,67 +52,23 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateQuantumTaskRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Braket");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-01";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/quantum-task";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonBraketException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/tags/{resourceArn}";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAction())
-                {
-                    context.Writer.WritePropertyName("action");
-                    context.Writer.Write(publicRequest.Action);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
-                }
-                if(publicRequest.IsSetDeviceArn())
-                {
-                    context.Writer.WritePropertyName("deviceArn");
-                    context.Writer.Write(publicRequest.DeviceArn);
-                }
-
-                if(publicRequest.IsSetDeviceParameters())
-                {
-                    context.Writer.WritePropertyName("deviceParameters");
-                    context.Writer.Write(publicRequest.DeviceParameters);
-                }
-
-                if(publicRequest.IsSetOutputS3Bucket())
-                {
-                    context.Writer.WritePropertyName("outputS3Bucket");
-                    context.Writer.Write(publicRequest.OutputS3Bucket);
-                }
-
-                if(publicRequest.IsSetOutputS3KeyPrefix())
-                {
-                    context.Writer.WritePropertyName("outputS3KeyPrefix");
-                    context.Writer.Write(publicRequest.OutputS3KeyPrefix);
-                }
-
-                if(publicRequest.IsSetShots())
-                {
-                    context.Writer.WritePropertyName("shots");
-                    context.Writer.Write(publicRequest.Shots);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -136,9 +92,9 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateQuantumTaskRequestMarshaller _instance = new CreateQuantumTaskRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateQuantumTaskRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -146,7 +102,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateQuantumTaskRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

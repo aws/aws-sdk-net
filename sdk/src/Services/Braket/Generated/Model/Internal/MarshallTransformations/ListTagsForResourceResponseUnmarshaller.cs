@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Braket.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetQuantumTask operation
+    /// Response Unmarshaller for ListTagsForResource operation
     /// </summary>  
-    public class GetQuantumTaskResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListTagsForResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,72 +45,12 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetQuantumTaskResponse response = new GetQuantumTaskResponse();
+            ListTagsForResourceResponse response = new ListTagsForResourceResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("createdAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("deviceArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeviceArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("deviceParameters", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeviceParameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("endedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.EndedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("failureReason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FailureReason = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("outputS3Bucket", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.OutputS3Bucket = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("outputS3Directory", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.OutputS3Directory = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("quantumTaskArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.QuantumTaskArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("shots", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    response.Shots = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
@@ -140,10 +80,6 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
-                {
-                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
                 {
                     return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -151,10 +87,6 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
-                {
-                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
@@ -164,9 +96,9 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             return new AmazonBraketException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetQuantumTaskResponseUnmarshaller _instance = new GetQuantumTaskResponseUnmarshaller();        
+        private static ListTagsForResourceResponseUnmarshaller _instance = new ListTagsForResourceResponseUnmarshaller();        
 
-        internal static GetQuantumTaskResponseUnmarshaller GetInstance()
+        internal static ListTagsForResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -174,7 +106,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetQuantumTaskResponseUnmarshaller Instance
+        public static ListTagsForResourceResponseUnmarshaller Instance
         {
             get
             {

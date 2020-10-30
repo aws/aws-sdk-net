@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// The request processing has failed because of an unknown error, exception or failure.
+    /// The request processing has failed because of an unknown error, exception, or failure.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

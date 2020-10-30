@@ -59,7 +59,7 @@ namespace Amazon.Braket
         /// An error occurred due to a conflict.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -91,7 +91,7 @@ namespace Amazon.Braket
         /// An error occurred due to a conflict.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -123,10 +123,10 @@ namespace Amazon.Braket
         /// The specified device is currently offline.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ServiceQuotaExceededException">
-        /// The request failed because a service quota is met.
+        /// The request failed because a service quota is exceeded.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ThrottlingException">
         /// The throttling rate limit is met.
@@ -155,10 +155,10 @@ namespace Amazon.Braket
         /// The specified device is currently offline.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ServiceQuotaExceededException">
-        /// The request failed because a service quota is met.
+        /// The request failed because a service quota is exceeded.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ThrottlingException">
         /// The throttling rate limit is met.
@@ -184,7 +184,7 @@ namespace Amazon.Braket
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -213,7 +213,7 @@ namespace Amazon.Braket
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -242,7 +242,7 @@ namespace Amazon.Braket
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -271,7 +271,7 @@ namespace Amazon.Braket
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -284,6 +284,52 @@ namespace Amazon.Braket
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/GetQuantumTask">REST API Reference for GetQuantumTask Operation</seealso>
         Task<GetQuantumTaskResponse> GetQuantumTaskAsync(GetQuantumTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Shows the tags associated with this resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+
+        /// <summary>
+        /// Shows the tags associated with this resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -300,7 +346,7 @@ namespace Amazon.Braket
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ThrottlingException">
         /// The throttling rate limit is met.
@@ -326,7 +372,7 @@ namespace Amazon.Braket
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ThrottlingException">
         /// The throttling rate limit is met.
@@ -352,7 +398,7 @@ namespace Amazon.Braket
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ThrottlingException">
         /// The throttling rate limit is met.
@@ -378,7 +424,7 @@ namespace Amazon.Braket
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ThrottlingException">
         /// The throttling rate limit is met.
@@ -388,6 +434,98 @@ namespace Amazon.Braket
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/SearchQuantumTasks">REST API Reference for SearchQuantumTasks Operation</seealso>
         Task<SearchQuantumTasksResponse> SearchQuantumTasksAsync(SearchQuantumTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Add a tag to the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Add a tag to the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Remove tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Remove tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

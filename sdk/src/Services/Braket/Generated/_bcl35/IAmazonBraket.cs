@@ -61,7 +61,7 @@ namespace Amazon.Braket
         /// An error occurred due to a conflict.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -119,10 +119,10 @@ namespace Amazon.Braket
         /// The specified device is currently offline.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ServiceQuotaExceededException">
-        /// The request failed because a service quota is met.
+        /// The request failed because a service quota is exceeded.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ThrottlingException">
         /// The throttling rate limit is met.
@@ -174,7 +174,7 @@ namespace Amazon.Braket
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -229,7 +229,7 @@ namespace Amazon.Braket
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -271,6 +271,55 @@ namespace Amazon.Braket
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Shows the tags associated with this resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonBraketClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from Braket.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  SearchDevices
 
 
@@ -284,7 +333,7 @@ namespace Amazon.Braket
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ThrottlingException">
         /// The throttling rate limit is met.
@@ -336,7 +385,7 @@ namespace Amazon.Braket
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ThrottlingException">
         /// The throttling rate limit is met.
@@ -372,6 +421,104 @@ namespace Amazon.Braket
         /// <returns>Returns a  SearchQuantumTasksResult from Braket.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/SearchQuantumTasks">REST API Reference for SearchQuantumTasks Operation</seealso>
         SearchQuantumTasksResponse EndSearchQuantumTasks(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Add a tag to the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonBraketClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from Braket.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Remove tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonBraketClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from Braket.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
         

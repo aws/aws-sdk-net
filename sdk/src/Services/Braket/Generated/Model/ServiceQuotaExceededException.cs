@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// The request failed because a service quota is met.
+    /// The request failed because a service quota is exceeded.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
