@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutomaticInputFailoverSettings Object
+    /// Response Unmarshaller for FailoverCondition Object
     /// </summary>  
-    public class AutomaticInputFailoverSettingsUnmarshaller : IUnmarshaller<AutomaticInputFailoverSettings, XmlUnmarshallerContext>, IUnmarshaller<AutomaticInputFailoverSettings, JsonUnmarshallerContext>
+    public class FailoverConditionUnmarshaller : IUnmarshaller<FailoverCondition, XmlUnmarshallerContext>, IUnmarshaller<FailoverCondition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutomaticInputFailoverSettings IUnmarshaller<AutomaticInputFailoverSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FailoverCondition IUnmarshaller<FailoverCondition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AutomaticInputFailoverSettings Unmarshall(JsonUnmarshallerContext context)
+        public FailoverCondition Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AutomaticInputFailoverSettings unmarshalledObject = new AutomaticInputFailoverSettings();
+            FailoverCondition unmarshalledObject = new FailoverCondition();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("errorClearTimeMsec", targetDepth))
+                if (context.TestExpression("failoverConditionSettings", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ErrorClearTimeMsec = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("failoverConditions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<FailoverCondition, FailoverConditionUnmarshaller>(FailoverConditionUnmarshaller.Instance);
-                    unmarshalledObject.FailoverConditions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inputPreference", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InputPreference = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("secondaryInputId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecondaryInputId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FailoverConditionSettingsUnmarshaller.Instance;
+                    unmarshalledObject.FailoverConditionSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutomaticInputFailoverSettingsUnmarshaller _instance = new AutomaticInputFailoverSettingsUnmarshaller();        
+        private static FailoverConditionUnmarshaller _instance = new FailoverConditionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutomaticInputFailoverSettingsUnmarshaller Instance
+        public static FailoverConditionUnmarshaller Instance
         {
             get
             {

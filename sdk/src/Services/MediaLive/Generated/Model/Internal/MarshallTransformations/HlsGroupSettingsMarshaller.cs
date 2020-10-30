@@ -137,6 +137,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DirectoryStructure);
             }
 
+            if(requestObject.IsSetDiscontinuityTags())
+            {
+                context.Writer.WritePropertyName("discontinuityTags");
+                context.Writer.Write(requestObject.DiscontinuityTags);
+            }
+
             if(requestObject.IsSetEncryptionType())
             {
                 context.Writer.WritePropertyName("encryptionType");
@@ -164,6 +170,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("iFrameOnlyPlaylists");
                 context.Writer.Write(requestObject.IFrameOnlyPlaylists);
+            }
+
+            if(requestObject.IsSetIncompleteSegmentBehavior())
+            {
+                context.Writer.WritePropertyName("incompleteSegmentBehavior");
+                context.Writer.Write(requestObject.IncompleteSegmentBehavior);
             }
 
             if(requestObject.IsSetIndexNSegments())

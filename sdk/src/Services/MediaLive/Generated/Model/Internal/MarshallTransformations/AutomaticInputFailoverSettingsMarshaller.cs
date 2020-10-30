@@ -45,6 +45,28 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutomaticInputFailoverSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetErrorClearTimeMsec())
+            {
+                context.Writer.WritePropertyName("errorClearTimeMsec");
+                context.Writer.Write(requestObject.ErrorClearTimeMsec);
+            }
+
+            if(requestObject.IsSetFailoverConditions())
+            {
+                context.Writer.WritePropertyName("failoverConditions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFailoverConditionsListValue in requestObject.FailoverConditions)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FailoverConditionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFailoverConditionsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetInputPreference())
             {
                 context.Writer.WritePropertyName("inputPreference");

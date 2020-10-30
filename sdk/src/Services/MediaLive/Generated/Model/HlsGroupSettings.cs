@@ -45,10 +45,12 @@ namespace Amazon.MediaLive.Model
         private string _constantIv;
         private OutputLocationRef _destination;
         private HlsDirectoryStructure _directoryStructure;
+        private HlsDiscontinuityTags _discontinuityTags;
         private HlsEncryptionType _encryptionType;
         private HlsCdnSettings _hlsCdnSettings;
         private HlsId3SegmentTaggingState _hlsId3SegmentTagging;
         private IFrameOnlyPlaylistType _iFrameOnlyPlaylists;
+        private HlsIncompleteSegmentBehavior _incompleteSegmentBehavior;
         private int? _indexNSegments;
         private InputLossActionForHlsOut _inputLossAction;
         private HlsIvInManifest _ivInManifest;
@@ -282,6 +284,26 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DiscontinuityTags. Specifies whether to insert EXT-X-DISCONTINUITY
+        /// tags in the HLS child manifests for this output group.Typically, choose Insert because
+        /// these tags are required in the manifest (according to the HLS specification) and serve
+        /// an important purpose.Choose Never Insert only if the downstream system is doing real-time
+        /// failover (without using the MediaLive automatic failover feature) and only if that
+        /// downstream system has advised you to exclude the tags.
+        /// </summary>
+        public HlsDiscontinuityTags DiscontinuityTags
+        {
+            get { return this._discontinuityTags; }
+            set { this._discontinuityTags = value; }
+        }
+
+        // Check to see if DiscontinuityTags property is set
+        internal bool IsSetDiscontinuityTags()
+        {
+            return this._discontinuityTags != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EncryptionType. Encrypts the segments with the given encryption
         /// scheme.  Exclude this parameter if no encryption is desired.
         /// </summary>
@@ -346,6 +368,26 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetIFrameOnlyPlaylists()
         {
             return this._iFrameOnlyPlaylists != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncompleteSegmentBehavior. Specifies whether to include
+        /// the final (incomplete) segment in the media output when the pipeline stops producing
+        /// output because of a channel stop, a channel pause or a loss of input to the pipeline.Auto
+        /// means that MediaLive decides whether to include the final segment, depending on the
+        /// channel class and the types of output groups.Suppress means to never include the incomplete
+        /// segment. We recommend you choose Auto and let MediaLive control the behavior.
+        /// </summary>
+        public HlsIncompleteSegmentBehavior IncompleteSegmentBehavior
+        {
+            get { return this._incompleteSegmentBehavior; }
+            set { this._incompleteSegmentBehavior = value; }
+        }
+
+        // Check to see if IncompleteSegmentBehavior property is set
+        internal bool IsSetIncompleteSegmentBehavior()
+        {
+            return this._incompleteSegmentBehavior != null;
         }
 
         /// <summary>

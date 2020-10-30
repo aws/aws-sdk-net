@@ -6163,6 +6163,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type HlsDiscontinuityTags.
+    /// </summary>
+    public class HlsDiscontinuityTags : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INSERT for HlsDiscontinuityTags
+        /// </summary>
+        public static readonly HlsDiscontinuityTags INSERT = new HlsDiscontinuityTags("INSERT");
+        /// <summary>
+        /// Constant NEVER_INSERT for HlsDiscontinuityTags
+        /// </summary>
+        public static readonly HlsDiscontinuityTags NEVER_INSERT = new HlsDiscontinuityTags("NEVER_INSERT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsDiscontinuityTags(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsDiscontinuityTags FindValue(string value)
+        {
+            return FindValue<HlsDiscontinuityTags>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsDiscontinuityTags(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HlsEncryptionType.
     /// </summary>
     public class HlsEncryptionType : ConstantClass
@@ -6306,6 +6356,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HlsId3SegmentTaggingState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HlsIncompleteSegmentBehavior.
+    /// </summary>
+    public class HlsIncompleteSegmentBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for HlsIncompleteSegmentBehavior
+        /// </summary>
+        public static readonly HlsIncompleteSegmentBehavior AUTO = new HlsIncompleteSegmentBehavior("AUTO");
+        /// <summary>
+        /// Constant SUPPRESS for HlsIncompleteSegmentBehavior
+        /// </summary>
+        public static readonly HlsIncompleteSegmentBehavior SUPPRESS = new HlsIncompleteSegmentBehavior("SUPPRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsIncompleteSegmentBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsIncompleteSegmentBehavior FindValue(string value)
+        {
+            return FindValue<HlsIncompleteSegmentBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsIncompleteSegmentBehavior(string value)
         {
             return FindValue(value);
         }

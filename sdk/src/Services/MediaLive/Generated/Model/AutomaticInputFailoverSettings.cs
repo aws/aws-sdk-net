@@ -33,8 +33,46 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class AutomaticInputFailoverSettings
     {
+        private int? _errorClearTimeMsec;
+        private List<FailoverCondition> _failoverConditions = new List<FailoverCondition>();
         private InputPreference _inputPreference;
         private string _secondaryInputId;
+
+        /// <summary>
+        /// Gets and sets the property ErrorClearTimeMsec. This clear time defines the requirement
+        /// a recovered input must meet to be considered healthy. The input must have no failover
+        /// conditions for this length of time. Enter a time in milliseconds. This value is particularly
+        /// important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED,
+        /// because after this time, MediaLive will switch back to the primary input.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int ErrorClearTimeMsec
+        {
+            get { return this._errorClearTimeMsec.GetValueOrDefault(); }
+            set { this._errorClearTimeMsec = value; }
+        }
+
+        // Check to see if ErrorClearTimeMsec property is set
+        internal bool IsSetErrorClearTimeMsec()
+        {
+            return this._errorClearTimeMsec.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailoverConditions. A list of failover conditions. If any
+        /// of these conditions occur, MediaLive will perform a failover to the other input.
+        /// </summary>
+        public List<FailoverCondition> FailoverConditions
+        {
+            get { return this._failoverConditions; }
+            set { this._failoverConditions = value; }
+        }
+
+        // Check to see if FailoverConditions property is set
+        internal bool IsSetFailoverConditions()
+        {
+            return this._failoverConditions != null && this._failoverConditions.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property InputPreference. Input preference when deciding which input

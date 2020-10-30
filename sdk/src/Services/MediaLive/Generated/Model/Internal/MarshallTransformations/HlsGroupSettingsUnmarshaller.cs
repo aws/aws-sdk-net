@@ -136,6 +136,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.DirectoryStructure = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("discontinuityTags", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DiscontinuityTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("encryptionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -158,6 +164,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IFrameOnlyPlaylists = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("incompleteSegmentBehavior", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IncompleteSegmentBehavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("indexNSegments", targetDepth))
