@@ -184,7 +184,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The Elasticache Redis engine version. For preview, it is Redis version 5.0.5 only.
+        /// The Elasticache Redis engine version.
         /// </para>
         /// </summary>
         public string EngineVersion

@@ -1848,7 +1848,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis engine version 6.04 onwards: Creates a Redis user. For more information,
+        /// For Redis engine version 6.x onwards: Creates a Redis user. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>.
         /// </summary>
@@ -1882,7 +1882,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis engine version 6.04 onwards: Creates a Redis user. For more information,
+        /// For Redis engine version 6.x onwards: Creates a Redis user. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>.
         /// </summary>
@@ -1923,7 +1923,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis engine version 6.04 onwards: Creates a Redis user group. For more information,
+        /// For Redis engine version 6.x onwards: Creates a Redis user group. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>
         /// </summary>
@@ -1960,7 +1960,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis engine version 6.04 onwards: Creates a Redis user group. For more information,
+        /// For Redis engine version 6.x onwards: Creates a Redis user group. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>
         /// </summary>
@@ -6482,12 +6482,12 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cache cluster message: <code>Failover from master node &lt;primary-node-id&gt; to
+        /// Cache cluster message: <code>Failover from primary node &lt;primary-node-id&gt; to
         /// replica node &lt;node-id&gt; completed</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replication group message: <code>Failover from master node &lt;primary-node-id&gt;
+        /// Replication group message: <code>Failover from primary node &lt;primary-node-id&gt;
         /// to replica node &lt;node-id&gt; completed</code> 
         /// </para>
         ///  </li> <li> 
@@ -6602,12 +6602,12 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cache cluster message: <code>Failover from master node &lt;primary-node-id&gt; to
+        /// Cache cluster message: <code>Failover from primary node &lt;primary-node-id&gt; to
         /// replica node &lt;node-id&gt; completed</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replication group message: <code>Failover from master node &lt;primary-node-id&gt;
+        /// Replication group message: <code>Failover from primary node &lt;primary-node-id&gt;
         /// to replica node &lt;node-id&gt; completed</code> 
         /// </para>
         ///  </li> <li> 

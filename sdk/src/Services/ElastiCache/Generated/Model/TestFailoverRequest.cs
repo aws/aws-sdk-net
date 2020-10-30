@@ -69,12 +69,12 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Cache cluster message: <code>Failover from master node &lt;primary-node-id&gt; to
+    /// Cache cluster message: <code>Failover from primary node &lt;primary-node-id&gt; to
     /// replica node &lt;node-id&gt; completed</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Replication group message: <code>Failover from master node &lt;primary-node-id&gt;
+    /// Replication group message: <code>Failover from primary node &lt;primary-node-id&gt;
     /// to replica node &lt;node-id&gt; completed</code> 
     /// </para>
     ///  </li> <li> 

@@ -63,6 +63,22 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
+        ///  <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for
+        /// Memcached engine version 1.5.16 onward).
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+        /// <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+        /// <code>cache.m6g.16xlarge</code> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// At this time, M6g node types are available in the following regions: us-east-1, us-west-2,
+        /// us-east-2, eu-central-1, eu-west-1 and ap-northeast-1.
+        /// </para>
+        ///  </note> 
+        /// <para>
         ///  <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
         /// <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
         /// <code>cache.m5.24xlarge</code> 
@@ -122,6 +138,22 @@ namespace Amazon.ElastiCache.Model
         /// Current generation: 
         /// </para>
         ///  
+        /// <para>
+        ///  <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for
+        /// Memcached engine version 1.5.16 onward).
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+        /// <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+        /// <code>cache.r6g.16xlarge</code> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// At this time, R6g node types are available in the following regions: us-east-1, us-west-2,
+        /// us-east-2, eu-central-1, eu-west-1 and ap-northeast-1.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
         /// <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
