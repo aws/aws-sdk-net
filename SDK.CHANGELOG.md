@@ -1,3 +1,19 @@
+### 3.5.46.0 (2020-10-30 18:14 UTC)
+* Braket (3.5.1.0)
+	* This release supports tagging for Amazon Braket quantum-task resources. It also supports tag-based access control for quantum-task APIs.
+* DatabaseMigrationService (3.5.4.0)
+	* Adding DocDbSettings to support DocumentDB as a source.
+* ElastiCache (3.5.1.10)
+	* Documentation updates for AWS ElastiCache
+* Imagebuilder (3.5.2.0)
+	* This feature increases the number of accounts that can be added to the Launch permissions within an Image Builder Distribution configuration.
+* Macie2 (3.5.3.0)
+	* This release of the Amazon Macie API adds an eqExactMatch operator for filtering findings. With this operator you can increase the precision of your finding filters and suppression rules.
+* MediaLive (3.5.5.0)
+	* Support for HLS discontinuity tags in the child manifests. Support for incomplete segment behavior in the media output. Support for automatic input failover condition settings.
+* SimpleNotificationService (3.5.1.4)
+	* Documentation updates for Amazon SNS
+
 ### 3.5.45.0 (2020-10-29 18:18 UTC)
 * APIGateway (3.5.2.0)
 	* Support disabling the default execute-api endpoint for REST APIs.
