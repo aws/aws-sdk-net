@@ -84,7 +84,7 @@ namespace Amazon.Imagebuilder.Model
         /// truncated response. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=65535)]
         public string NextToken
         {
             get { return this._nextToken; }

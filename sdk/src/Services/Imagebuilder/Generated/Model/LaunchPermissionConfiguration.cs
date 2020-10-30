@@ -65,7 +65,7 @@ namespace Amazon.Imagebuilder.Model
         /// The AWS account ID. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=1536)]
         public List<string> UserIds
         {
             get { return this._userIds; }

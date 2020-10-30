@@ -491,12 +491,12 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListComponentBuildVersionsRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListComponentBuildVersionsResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListComponentBuildVersionsResponse.RequestId</property>
@@ -511,12 +511,12 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListComponentsRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListComponentsResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListComponentsResponse.RequestId</property>
@@ -531,12 +531,12 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListDistributionConfigurationsRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListDistributionConfigurationsResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListDistributionConfigurationsResponse.RequestId</property>
@@ -555,12 +555,12 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImageBuildVersionsRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImageBuildVersionsResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImageBuildVersionsResponse.RequestId</property>
@@ -579,12 +579,12 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagePipelineImagesRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagePipelineImagesResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagePipelineImagesResponse.RequestId</property>
@@ -599,12 +599,12 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagePipelinesRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagePipelinesResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagePipelinesResponse.RequestId</property>
@@ -619,12 +619,12 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImageRecipesRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImageRecipesResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImageRecipesResponse.RequestId</property>
@@ -639,12 +639,12 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagesRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagesResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagesResponse.RequestId</property>
@@ -659,12 +659,12 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListInfrastructureConfigurationsRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListInfrastructureConfigurationsResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListInfrastructureConfigurationsResponse.RequestId</property>
