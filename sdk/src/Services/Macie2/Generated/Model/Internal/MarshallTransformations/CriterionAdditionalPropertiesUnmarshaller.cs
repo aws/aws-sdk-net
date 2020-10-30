@@ -70,6 +70,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Eq = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eqExactMatch", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.EqExactMatch = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("gt", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

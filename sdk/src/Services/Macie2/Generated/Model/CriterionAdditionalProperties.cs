@@ -35,6 +35,7 @@ namespace Amazon.Macie2.Model
     public partial class CriterionAdditionalProperties
     {
         private List<string> _eq = new List<string>();
+        private List<string> _eqExactMatch = new List<string>();
         private long? _gt;
         private long? _gte;
         private long? _lt;
@@ -57,6 +58,58 @@ namespace Amazon.Macie2.Model
         internal bool IsSetEq()
         {
             return this._eq != null && this._eq.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EqExactMatch. 
+        /// <para>
+        /// A condition that requires an array field on a finding to exactly match the specified
+        /// property values. You can use this operator with the following properties:
+        /// </para>
+        /// <ul><li>
+        /// <para>
+        /// customDataIdentifiers.detections.arn
+        /// </para>
+        /// </li><li>
+        /// <para>
+        /// customDataIdentifiers.detections.name
+        /// </para>
+        /// </li><li>
+        /// <para>
+        /// resourcesAffected.s3Bucket.tags.key
+        /// </para>
+        /// </li><li>
+        /// <para>
+        /// resourcesAffected.s3Bucket.tags.value
+        /// </para>
+        /// </li><li>
+        /// <para>
+        /// resourcesAffected.s3Object.tags.key
+        /// </para>
+        /// </li><li>
+        /// <para>
+        /// resourcesAffected.s3Object.tags.value
+        /// </para>
+        /// </li><li>
+        /// <para>
+        /// sensitiveData.category
+        /// </para>
+        /// </li><li>
+        /// <para>
+        /// sensitiveData.detections.type
+        /// </para>
+        /// </li></ul>
+        /// </summary>
+        public List<string> EqExactMatch
+        {
+            get { return this._eqExactMatch; }
+            set { this._eqExactMatch = value; }
+        }
+
+        // Check to see if EqExactMatch property is set
+        internal bool IsSetEqExactMatch()
+        {
+            return this._eqExactMatch != null && this._eqExactMatch.Count > 0; 
         }
 
         /// <summary>

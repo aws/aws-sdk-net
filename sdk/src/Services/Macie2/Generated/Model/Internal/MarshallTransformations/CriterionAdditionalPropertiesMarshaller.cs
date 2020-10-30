@@ -56,6 +56,17 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetEqExactMatch())
+            {
+                context.Writer.WritePropertyName("eqExactMatch");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEqExactMatchListValue in requestObject.EqExactMatch)
+                {
+                        context.Writer.Write(requestObjectEqExactMatchListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetGt())
             {
                 context.Writer.WritePropertyName("gt");
