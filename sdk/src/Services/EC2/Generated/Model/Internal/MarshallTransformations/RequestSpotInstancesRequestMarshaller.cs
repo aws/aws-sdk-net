@@ -228,6 +228,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     publicRequestLaunchSpecificationlistValuelistValueIndex++;
                                 }
                             }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetNetworkCardIndex())
+                            {
+                                request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "NetworkCardIndex", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.NetworkCardIndex));
+                            }
                             if(publicRequestLaunchSpecificationlistValue.IsSetNetworkInterfaceId())
                             {
                                 request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "NetworkInterfaceId", StringUtils.FromString(publicRequestLaunchSpecificationlistValue.NetworkInterfaceId));

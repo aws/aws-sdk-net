@@ -61,6 +61,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.AttachmentId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("networkCardIndex", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        response.NetworkCardIndex = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
             }
 

@@ -110,6 +110,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Ipv6Addresses.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("networkCardIndex", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.NetworkCardIndex = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("networkInterfaceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

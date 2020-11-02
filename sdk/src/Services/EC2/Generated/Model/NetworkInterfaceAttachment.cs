@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private int? _deviceIndex;
         private string _instanceId;
         private string _instanceOwnerId;
+        private int? _networkCardIndex;
         private AttachmentStatus _status;
 
         /// <summary>
@@ -147,6 +148,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceOwnerId()
         {
             return this._instanceOwnerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkCardIndex. 
+        /// <para>
+        /// The index of the network card.
+        /// </para>
+        /// </summary>
+        public int NetworkCardIndex
+        {
+            get { return this._networkCardIndex.GetValueOrDefault(); }
+            set { this._networkCardIndex = value; }
+        }
+
+        // Check to see if NetworkCardIndex property is set
+        internal bool IsSetNetworkCardIndex()
+        {
+            return this._networkCardIndex.HasValue; 
         }
 
         /// <summary>

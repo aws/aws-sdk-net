@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
     {
         private int? _deviceIndex;
         private string _instanceId;
+        private int? _networkCardIndex;
         private string _networkInterfaceId;
 
         /// <summary>
@@ -74,6 +75,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkCardIndex. 
+        /// <para>
+        /// The index of the network card. Some instance types support multiple network cards.
+        /// The primary network interface must be assigned to network card index 0. The default
+        /// is network card index 0.
+        /// </para>
+        /// </summary>
+        public int NetworkCardIndex
+        {
+            get { return this._networkCardIndex.GetValueOrDefault(); }
+            set { this._networkCardIndex = value; }
+        }
+
+        // Check to see if NetworkCardIndex property is set
+        internal bool IsSetNetworkCardIndex()
+        {
+            return this._networkCardIndex.HasValue; 
         }
 
         /// <summary>

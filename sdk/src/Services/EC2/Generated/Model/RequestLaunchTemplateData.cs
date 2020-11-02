@@ -221,14 +221,12 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property EnclaveOptions. 
         /// <para>
         /// Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">
-        /// AWS Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">
+        /// What is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// You can't enable AWS Nitro Enclaves and hibernation on the same instance. For more
-        /// information about AWS Nitro Enclaves requirements, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs">
-        /// AWS Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// You can't enable AWS Nitro Enclaves and hibernation on the same instance.
         /// </para>
         /// </summary>
         public LaunchTemplateEnclaveOptionsRequest EnclaveOptions

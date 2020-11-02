@@ -158,7 +158,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PublicIp. 
         /// <para>
-        /// The address of the Elastic IP address or Carrier IP address bound to the network interface.
+        /// The address of the Elastic IP address bound to the network interface.
         /// </para>
         /// </summary>
         public string PublicIp

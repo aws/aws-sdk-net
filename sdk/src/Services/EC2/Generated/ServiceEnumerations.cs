@@ -5995,6 +5995,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType P3dn24xlarge = new InstanceType("p3dn.24xlarge");
         /// <summary>
+        /// Constant P4d24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType P4d24xlarge = new InstanceType("p4d.24xlarge");
+        /// <summary>
         /// Constant R32xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R32xlarge = new InstanceType("r3.2xlarge");

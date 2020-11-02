@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         private string _interfaceType;
         private int? _ipv6AddressCount;
         private List<InstanceIpv6AddressRequest> _ipv6Addresses = new List<InstanceIpv6AddressRequest>();
+        private int? _networkCardIndex;
         private string _networkInterfaceId;
         private string _privateIpAddress;
         private List<PrivateIpAddressSpecification> _privateIpAddresses = new List<PrivateIpAddressSpecification>();
@@ -228,6 +229,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpv6Addresses()
         {
             return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkCardIndex. 
+        /// <para>
+        /// The index of the network card. Some instance types support multiple network cards.
+        /// The primary network interface must be assigned to network card index 0. The default
+        /// is network card index 0.
+        /// </para>
+        /// </summary>
+        public int NetworkCardIndex
+        {
+            get { return this._networkCardIndex.GetValueOrDefault(); }
+            set { this._networkCardIndex = value; }
+        }
+
+        // Check to see if NetworkCardIndex property is set
+        internal bool IsSetNetworkCardIndex()
+        {
+            return this._networkCardIndex.HasValue; 
         }
 
         /// <summary>
