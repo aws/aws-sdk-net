@@ -1,3 +1,7 @@
+### 3.5.47.0 (2020-11-02 19:47 UTC)
+* EC2 (3.5.13.0)
+	* This release adds support for the following features: 1. P4d instances based on NVIDIA A100 GPUs.  2. NetworkCardIndex attribute to support multiple network cards.
+
 ### 3.5.46.0 (2020-10-30 18:14 UTC)
 * Braket (3.5.1.0)
 	* This release supports tagging for Amazon Braket quantum-task resources. It also supports tag-based access control for quantum-task APIs.
