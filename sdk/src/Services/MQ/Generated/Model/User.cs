@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MQ.Model
 {
     /// <summary>
-    /// An ActiveMQ user associated with the broker.
+    /// A user associated with the broker.
     /// </summary>
     public partial class User
     {
@@ -39,8 +39,8 @@ namespace Amazon.MQ.Model
         private string _username;
 
         /// <summary>
-        /// Gets and sets the property ConsoleAccess. Enables access to the the ActiveMQ Web Console
-        /// for the ActiveMQ user.
+        /// Gets and sets the property ConsoleAccess. Enables access to the ActiveMQ Web Console
+        /// for the ActiveMQ user (Does not apply to RabbitMQ brokers).
         /// </summary>
         public bool ConsoleAccess
         {
@@ -72,8 +72,8 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Password. Required. The password of the ActiveMQ user.
-        /// This value must be at least 12 characters long, must contain at least 4 unique characters,
+        /// Gets and sets the property Password. Required. The password of the broker user. This
+        /// value must be at least 12 characters long, must contain at least 4 unique characters,
         /// and must not contain commas.
         /// </summary>
         public string Password
@@ -89,9 +89,9 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Username. Required. The username of the ActiveMQ user.
-        /// This value can contain only alphanumeric characters, dashes, periods, underscores,
-        /// and tildes (- . _ ~). This value must be 2-100 characters long.
+        /// Gets and sets the property Username. Required. The username of the broker user. This
+        /// value can contain only alphanumeric characters, dashes, periods, underscores, and
+        /// tildes (- . _ ~). This value must be 2-100 characters long.
         /// </summary>
         public string Username
         {

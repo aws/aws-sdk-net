@@ -108,7 +108,7 @@ namespace Amazon.MQ.Model
 
         /// <summary>
         /// Gets and sets the property EngineType. Required. The type of broker engine. Note:
-        /// Currently, Amazon MQ supports only ACTIVEMQ.
+        /// Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
         /// </summary>
         public EngineType EngineType
         {
