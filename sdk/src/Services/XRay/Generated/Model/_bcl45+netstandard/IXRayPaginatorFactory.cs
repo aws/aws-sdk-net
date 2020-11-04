@@ -37,6 +37,16 @@ namespace Amazon.XRay.Model
         IGetGroupsPaginator GetGroups(GetGroupsRequest request);
 
         /// <summary>
+        /// Paginator for GetInsightEvents operation
+        ///</summary>
+        IGetInsightEventsPaginator GetInsightEvents(GetInsightEventsRequest request);
+
+        /// <summary>
+        /// Paginator for GetInsightSummaries operation
+        ///</summary>
+        IGetInsightSummariesPaginator GetInsightSummaries(GetInsightSummariesRequest request);
+
+        /// <summary>
         /// Paginator for GetSamplingRules operation
         ///</summary>
         IGetSamplingRulesPaginator GetSamplingRules(GetSamplingRulesRequest request);

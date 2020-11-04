@@ -424,6 +424,197 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  GetInsight
+
+
+        /// <summary>
+        /// Retrieves the summary information of an insight. This includes impact to clients and
+        /// root cause services, the top anomalous services, the category, the state of the insight,
+        /// and the start and end time of the insight.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsight service method.</param>
+        /// 
+        /// <returns>The response from the GetInsight service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsight">REST API Reference for GetInsight Operation</seealso>
+        GetInsightResponse GetInsight(GetInsightRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInsight operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInsight operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInsight
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsight">REST API Reference for GetInsight Operation</seealso>
+        IAsyncResult BeginGetInsight(GetInsightRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetInsight operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInsight.</param>
+        /// 
+        /// <returns>Returns a  GetInsightResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsight">REST API Reference for GetInsight Operation</seealso>
+        GetInsightResponse EndGetInsight(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetInsightEvents
+
+
+        /// <summary>
+        /// X-Ray reevaluates insights periodically until they're resolved, and records each intermediate
+        /// state as an event. You can review an insight's events in the Impact Timeline on the
+        /// Inspect page in the X-Ray console.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightEvents service method.</param>
+        /// 
+        /// <returns>The response from the GetInsightEvents service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightEvents">REST API Reference for GetInsightEvents Operation</seealso>
+        GetInsightEventsResponse GetInsightEvents(GetInsightEventsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInsightEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightEvents operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInsightEvents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightEvents">REST API Reference for GetInsightEvents Operation</seealso>
+        IAsyncResult BeginGetInsightEvents(GetInsightEventsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetInsightEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInsightEvents.</param>
+        /// 
+        /// <returns>Returns a  GetInsightEventsResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightEvents">REST API Reference for GetInsightEvents Operation</seealso>
+        GetInsightEventsResponse EndGetInsightEvents(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetInsightImpactGraph
+
+
+        /// <summary>
+        /// Retrieves a service graph structure filtered by the specified insight. The service
+        /// graph is limited to only structural information. For a complete service graph, use
+        /// this API with the GetServiceGraph API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightImpactGraph service method.</param>
+        /// 
+        /// <returns>The response from the GetInsightImpactGraph service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightImpactGraph">REST API Reference for GetInsightImpactGraph Operation</seealso>
+        GetInsightImpactGraphResponse GetInsightImpactGraph(GetInsightImpactGraphRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInsightImpactGraph operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightImpactGraph operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInsightImpactGraph
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightImpactGraph">REST API Reference for GetInsightImpactGraph Operation</seealso>
+        IAsyncResult BeginGetInsightImpactGraph(GetInsightImpactGraphRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetInsightImpactGraph operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInsightImpactGraph.</param>
+        /// 
+        /// <returns>Returns a  GetInsightImpactGraphResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightImpactGraph">REST API Reference for GetInsightImpactGraph Operation</seealso>
+        GetInsightImpactGraphResponse EndGetInsightImpactGraph(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetInsightSummaries
+
+
+        /// <summary>
+        /// Retrieves the summaries of all insights in the specified group matching the provided
+        /// filter values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightSummaries service method.</param>
+        /// 
+        /// <returns>The response from the GetInsightSummaries service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightSummaries">REST API Reference for GetInsightSummaries Operation</seealso>
+        GetInsightSummariesResponse GetInsightSummaries(GetInsightSummariesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInsightSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightSummaries operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInsightSummaries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightSummaries">REST API Reference for GetInsightSummaries Operation</seealso>
+        IAsyncResult BeginGetInsightSummaries(GetInsightSummariesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetInsightSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInsightSummaries.</param>
+        /// 
+        /// <returns>Returns a  GetInsightSummariesResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightSummaries">REST API Reference for GetInsightSummaries Operation</seealso>
+        GetInsightSummariesResponse EndGetInsightSummaries(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetSamplingRules
 
 

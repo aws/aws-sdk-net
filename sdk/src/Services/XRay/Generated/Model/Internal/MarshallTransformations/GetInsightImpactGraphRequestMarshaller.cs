@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetTimeSeriesServiceStatistics Request Marshaller
+    /// GetInsightImpactGraph Request Marshaller
     /// </summary>       
-    public class GetTimeSeriesServiceStatisticsRequestMarshaller : IMarshaller<IRequest, GetTimeSeriesServiceStatisticsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetInsightImpactGraphRequestMarshaller : IMarshaller<IRequest, GetInsightImpactGraphRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetTimeSeriesServiceStatisticsRequest)input);
+            return this.Marshall((GetInsightImpactGraphRequest)input);
         }
 
         /// <summary>
@@ -52,14 +52,14 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetTimeSeriesServiceStatisticsRequest publicRequest)
+        public IRequest Marshall(GetInsightImpactGraphRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.XRay");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-04-12";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/TimeSeriesServiceStatistics";
+            request.ResourcePath = "/InsightImpactGraph";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -72,40 +72,16 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EndTime);
                 }
 
-                if(publicRequest.IsSetEntitySelectorExpression())
+                if(publicRequest.IsSetInsightId())
                 {
-                    context.Writer.WritePropertyName("EntitySelectorExpression");
-                    context.Writer.Write(publicRequest.EntitySelectorExpression);
-                }
-
-                if(publicRequest.IsSetForecastStatistics())
-                {
-                    context.Writer.WritePropertyName("ForecastStatistics");
-                    context.Writer.Write(publicRequest.ForecastStatistics);
-                }
-
-                if(publicRequest.IsSetGroupARN())
-                {
-                    context.Writer.WritePropertyName("GroupARN");
-                    context.Writer.Write(publicRequest.GroupARN);
-                }
-
-                if(publicRequest.IsSetGroupName())
-                {
-                    context.Writer.WritePropertyName("GroupName");
-                    context.Writer.Write(publicRequest.GroupName);
+                    context.Writer.WritePropertyName("InsightId");
+                    context.Writer.Write(publicRequest.InsightId);
                 }
 
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("NextToken");
                     context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPeriod())
-                {
-                    context.Writer.WritePropertyName("Period");
-                    context.Writer.Write(publicRequest.Period);
                 }
 
                 if(publicRequest.IsSetStartTime())
@@ -123,9 +99,9 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetTimeSeriesServiceStatisticsRequestMarshaller _instance = new GetTimeSeriesServiceStatisticsRequestMarshaller();        
+        private static GetInsightImpactGraphRequestMarshaller _instance = new GetInsightImpactGraphRequestMarshaller();        
 
-        internal static GetTimeSeriesServiceStatisticsRequestMarshaller GetInstance()
+        internal static GetInsightImpactGraphRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -133,7 +109,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetTimeSeriesServiceStatisticsRequestMarshaller Instance
+        public static GetInsightImpactGraphRequestMarshaller Instance
         {
             get
             {

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetTimeSeriesServiceStatistics Request Marshaller
+    /// GetInsightSummaries Request Marshaller
     /// </summary>       
-    public class GetTimeSeriesServiceStatisticsRequestMarshaller : IMarshaller<IRequest, GetTimeSeriesServiceStatisticsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetInsightSummariesRequestMarshaller : IMarshaller<IRequest, GetInsightSummariesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetTimeSeriesServiceStatisticsRequest)input);
+            return this.Marshall((GetInsightSummariesRequest)input);
         }
 
         /// <summary>
@@ -52,14 +52,14 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetTimeSeriesServiceStatisticsRequest publicRequest)
+        public IRequest Marshall(GetInsightSummariesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.XRay");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-04-12";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/TimeSeriesServiceStatistics";
+            request.ResourcePath = "/InsightSummaries";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -70,18 +70,6 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("EndTime");
                     context.Writer.Write(publicRequest.EndTime);
-                }
-
-                if(publicRequest.IsSetEntitySelectorExpression())
-                {
-                    context.Writer.WritePropertyName("EntitySelectorExpression");
-                    context.Writer.Write(publicRequest.EntitySelectorExpression);
-                }
-
-                if(publicRequest.IsSetForecastStatistics())
-                {
-                    context.Writer.WritePropertyName("ForecastStatistics");
-                    context.Writer.Write(publicRequest.ForecastStatistics);
                 }
 
                 if(publicRequest.IsSetGroupARN())
@@ -96,22 +84,33 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GroupName);
                 }
 
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("NextToken");
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetPeriod())
-                {
-                    context.Writer.WritePropertyName("Period");
-                    context.Writer.Write(publicRequest.Period);
-                }
-
                 if(publicRequest.IsSetStartTime())
                 {
                     context.Writer.WritePropertyName("StartTime");
                     context.Writer.Write(publicRequest.StartTime);
+                }
+
+                if(publicRequest.IsSetStates())
+                {
+                    context.Writer.WritePropertyName("States");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestStatesListValue in publicRequest.States)
+                    {
+                            context.Writer.Write(publicRequestStatesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         
@@ -123,9 +122,9 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetTimeSeriesServiceStatisticsRequestMarshaller _instance = new GetTimeSeriesServiceStatisticsRequestMarshaller();        
+        private static GetInsightSummariesRequestMarshaller _instance = new GetInsightSummariesRequestMarshaller();        
 
-        internal static GetTimeSeriesServiceStatisticsRequestMarshaller GetInstance()
+        internal static GetInsightSummariesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -133,7 +132,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetTimeSeriesServiceStatisticsRequestMarshaller Instance
+        public static GetInsightSummariesRequestMarshaller Instance
         {
             get
             {

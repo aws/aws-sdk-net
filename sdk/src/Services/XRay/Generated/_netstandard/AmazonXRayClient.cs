@@ -593,6 +593,173 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  GetInsight
+
+        internal virtual GetInsightResponse GetInsight(GetInsightRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightResponseUnmarshaller.Instance;
+
+            return Invoke<GetInsightResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the summary information of an insight. This includes impact to clients and
+        /// root cause services, the top anomalous services, the category, the state of the insight,
+        /// and the start and end time of the insight.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsight service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInsight service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsight">REST API Reference for GetInsight Operation</seealso>
+        public virtual Task<GetInsightResponse> GetInsightAsync(GetInsightRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetInsightResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetInsightEvents
+
+        internal virtual GetInsightEventsResponse GetInsightEvents(GetInsightEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightEventsResponseUnmarshaller.Instance;
+
+            return Invoke<GetInsightEventsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// X-Ray reevaluates insights periodically until they're resolved, and records each intermediate
+        /// state as an event. You can review an insight's events in the Impact Timeline on the
+        /// Inspect page in the X-Ray console.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInsightEvents service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightEvents">REST API Reference for GetInsightEvents Operation</seealso>
+        public virtual Task<GetInsightEventsResponse> GetInsightEventsAsync(GetInsightEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetInsightEventsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetInsightImpactGraph
+
+        internal virtual GetInsightImpactGraphResponse GetInsightImpactGraph(GetInsightImpactGraphRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightImpactGraphRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightImpactGraphResponseUnmarshaller.Instance;
+
+            return Invoke<GetInsightImpactGraphResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a service graph structure filtered by the specified insight. The service
+        /// graph is limited to only structural information. For a complete service graph, use
+        /// this API with the GetServiceGraph API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightImpactGraph service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInsightImpactGraph service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightImpactGraph">REST API Reference for GetInsightImpactGraph Operation</seealso>
+        public virtual Task<GetInsightImpactGraphResponse> GetInsightImpactGraphAsync(GetInsightImpactGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightImpactGraphRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightImpactGraphResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetInsightImpactGraphResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetInsightSummaries
+
+        internal virtual GetInsightSummariesResponse GetInsightSummaries(GetInsightSummariesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<GetInsightSummariesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the summaries of all insights in the specified group matching the provided
+        /// filter values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInsightSummaries service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightSummaries">REST API Reference for GetInsightSummaries Operation</seealso>
+        public virtual Task<GetInsightSummariesResponse> GetInsightSummariesAsync(GetInsightSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightSummariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetInsightSummariesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetSamplingRules
 
         internal virtual GetSamplingRulesResponse GetSamplingRules(GetSamplingRulesRequest request)
