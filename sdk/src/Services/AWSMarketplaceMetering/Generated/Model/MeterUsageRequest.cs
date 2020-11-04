@@ -38,12 +38,19 @@ namespace Amazon.AWSMarketplaceMetering.Model
     /// MeterUsage is authenticated on the buyer's AWS account using credentials from the
     /// EC2 instance, ECS task, or EKS pod.
     /// </para>
+    ///  
+    /// <para>
+    /// MeterUsage can optionally include multiple usage allocations, to provide customers
+    /// with usage data split into buckets by tags that you define (or allow the customer
+    /// to define).
+    /// </para>
     /// </summary>
     public partial class MeterUsageRequest : AmazonAWSMarketplaceMeteringRequest
     {
         private bool? _dryRun;
         private string _productCode;
         private DateTime? _timestamp;
+        private List<UsageAllocation> _usageAllocations = new List<UsageAllocation>();
         private string _usageDimension;
         private int? _usageQuantity;
 
@@ -106,6 +113,30 @@ namespace Amazon.AWSMarketplaceMetering.Model
         internal bool IsSetTimestamp()
         {
             return this._timestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsageAllocations. 
+        /// <para>
+        /// The set of UsageAllocations to submit.
+        /// </para>
+        ///  
+        /// <para>
+        /// The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage
+        /// request, and each UsageAllocation must have a unique set of tags (include no tags).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=500)]
+        public List<UsageAllocation> UsageAllocations
+        {
+            get { return this._usageAllocations; }
+            set { this._usageAllocations = value; }
+        }
+
+        // Check to see if UsageAllocations property is set
+        internal bool IsSetUsageAllocations()
+        {
+            return this._usageAllocations != null && this._usageAllocations.Count > 0; 
         }
 
         /// <summary>

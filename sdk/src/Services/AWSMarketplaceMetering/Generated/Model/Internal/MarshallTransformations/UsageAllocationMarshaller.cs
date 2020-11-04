@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UsageRecord Marshaller
+    /// UsageAllocation Marshaller
     /// </summary>       
-    public class UsageRecordMarshaller : IRequestMarshaller<UsageRecord, JsonMarshallerContext> 
+    public class UsageAllocationMarshaller : IRequestMarshaller<UsageAllocation, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,42 +43,24 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UsageRecord requestObject, JsonMarshallerContext context)
+        public void Marshall(UsageAllocation requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCustomerIdentifier())
+            if(requestObject.IsSetAllocatedUsageQuantity())
             {
-                context.Writer.WritePropertyName("CustomerIdentifier");
-                context.Writer.Write(requestObject.CustomerIdentifier);
+                context.Writer.WritePropertyName("AllocatedUsageQuantity");
+                context.Writer.Write(requestObject.AllocatedUsageQuantity);
             }
 
-            if(requestObject.IsSetDimension())
+            if(requestObject.IsSetTags())
             {
-                context.Writer.WritePropertyName("Dimension");
-                context.Writer.Write(requestObject.Dimension);
-            }
-
-            if(requestObject.IsSetQuantity())
-            {
-                context.Writer.WritePropertyName("Quantity");
-                context.Writer.Write(requestObject.Quantity);
-            }
-
-            if(requestObject.IsSetTimestamp())
-            {
-                context.Writer.WritePropertyName("Timestamp");
-                context.Writer.Write(requestObject.Timestamp);
-            }
-
-            if(requestObject.IsSetUsageAllocations())
-            {
-                context.Writer.WritePropertyName("UsageAllocations");
+                context.Writer.WritePropertyName("Tags");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectUsageAllocationsListValue in requestObject.UsageAllocations)
+                foreach(var requestObjectTagsListValue in requestObject.Tags)
                 {
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = UsageAllocationMarshaller.Instance;
-                    marshaller.Marshall(requestObjectUsageAllocationsListValue, context);
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTagsListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -90,7 +72,7 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static UsageRecordMarshaller Instance = new UsageRecordMarshaller();
+        public readonly static UsageAllocationMarshaller Instance = new UsageAllocationMarshaller();
 
     }
 }

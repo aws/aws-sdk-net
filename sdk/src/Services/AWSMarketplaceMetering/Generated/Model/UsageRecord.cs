@@ -44,6 +44,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         private string _dimension;
         private int? _quantity;
         private DateTime? _timestamp;
+        private List<UsageAllocation> _usageAllocations = new List<UsageAllocation>();
 
         /// <summary>
         /// Gets and sets the property CustomerIdentifier. 
@@ -127,6 +128,26 @@ namespace Amazon.AWSMarketplaceMetering.Model
         internal bool IsSetTimestamp()
         {
             return this._timestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsageAllocations. 
+        /// <para>
+        /// The set of UsageAllocations to submit. The sum of all UsageAllocation quantities must
+        /// equal the Quantity of the UsageRecord.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=500)]
+        public List<UsageAllocation> UsageAllocations
+        {
+            get { return this._usageAllocations; }
+            set { this._usageAllocations = value; }
+        }
+
+        // Check to see if UsageAllocations property is set
+        internal bool IsSetUsageAllocations()
+        {
+            return this._usageAllocations != null && this._usageAllocations.Count > 0; 
         }
 
     }

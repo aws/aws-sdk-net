@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UsageRecord Object
+    /// Response Unmarshaller for Tag Object
     /// </summary>  
-    public class UsageRecordUnmarshaller : IUnmarshaller<UsageRecord, XmlUnmarshallerContext>, IUnmarshaller<UsageRecord, JsonUnmarshallerContext>
+    public class TagUnmarshaller : IUnmarshaller<Tag, XmlUnmarshallerContext>, IUnmarshaller<Tag, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        UsageRecord IUnmarshaller<UsageRecord, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Tag IUnmarshaller<Tag, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public UsageRecord Unmarshall(JsonUnmarshallerContext context)
+        public Tag Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            UsageRecord unmarshalledObject = new UsageRecord();
+            Tag unmarshalledObject = new Tag();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CustomerIdentifier", targetDepth))
+                if (context.TestExpression("Key", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomerIdentifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Key = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Dimension", targetDepth))
+                if (context.TestExpression("Value", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Dimension = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Quantity", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Timestamp", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UsageAllocations", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<UsageAllocation, UsageAllocationUnmarshaller>(UsageAllocationUnmarshaller.Instance);
-                    unmarshalledObject.UsageAllocations = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
         }
 
 
-        private static UsageRecordUnmarshaller _instance = new UsageRecordUnmarshaller();        
+        private static TagUnmarshaller _instance = new TagUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UsageRecordUnmarshaller Instance
+        public static TagUnmarshaller Instance
         {
             get
             {
