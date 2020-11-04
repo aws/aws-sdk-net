@@ -73,6 +73,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZones.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("CapacityRebalance", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.CapacityRebalance = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CreatedTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

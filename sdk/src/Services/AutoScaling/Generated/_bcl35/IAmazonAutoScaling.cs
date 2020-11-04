@@ -2865,6 +2865,11 @@ namespace Amazon.AutoScaling
         /// Amazon SNS Notifications When Your Auto Scaling Group Scales</a> in the <i>Amazon
         /// EC2 Auto Scaling User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// If you exceed your maximum limit of SNS topics, which is 10 per Auto Scaling group,
+        /// the call fails.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutNotificationConfiguration service method.</param>
         /// 
@@ -3291,6 +3296,11 @@ namespace Amazon.AutoScaling
         /// For more information about preventing instances that are part of an Auto Scaling group
         /// from terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
         /// Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you exceed your maximum limit of instance IDs, which is 50 per Auto Scaling group,
+        /// the call fails.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetInstanceProtection service method.</param>

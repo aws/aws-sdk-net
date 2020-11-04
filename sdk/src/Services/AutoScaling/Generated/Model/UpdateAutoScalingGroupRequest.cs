@@ -90,6 +90,7 @@ namespace Amazon.AutoScaling.Model
     {
         private string _autoScalingGroupName;
         private List<string> _availabilityZones = new List<string>();
+        private bool? _capacityRebalance;
         private int? _defaultCooldown;
         private int? _desiredCapacity;
         private int? _healthCheckGracePeriod;
@@ -142,6 +143,33 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAvailabilityZones()
         {
             return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityRebalance. 
+        /// <para>
+        /// Enables or disables capacity rebalance.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can enable capacity rebalancing for your Auto Scaling groups when using Spot Instances.
+        /// When you turn on capacity rebalancing, Amazon EC2 Auto Scaling attempts to launch
+        /// a Spot Instance whenever Amazon EC2 predicts that a Spot Instance is at an elevated
+        /// risk of interruption. After launching a new instance, it then terminates an old instance.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon
+        /// EC2 Auto Scaling capacity rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool CapacityRebalance
+        {
+            get { return this._capacityRebalance.GetValueOrDefault(); }
+            set { this._capacityRebalance = value; }
+        }
+
+        // Check to see if CapacityRebalance property is set
+        internal bool IsSetCapacityRebalance()
+        {
+            return this._capacityRebalance.HasValue; 
         }
 
         /// <summary>
