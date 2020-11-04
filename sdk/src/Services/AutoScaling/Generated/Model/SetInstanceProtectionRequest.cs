@@ -38,6 +38,11 @@ namespace Amazon.AutoScaling.Model
     /// from terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
     /// Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    /// If you exceed your maximum limit of instance IDs, which is 50 per Auto Scaling group,
+    /// the call fails.
+    /// </para>
     /// </summary>
     public partial class SetInstanceProtectionRequest : AmazonAutoScalingRequest
     {
