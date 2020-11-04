@@ -121,7 +121,10 @@ namespace Amazon.ServiceCatalog.Model
         /// the launch role that is associated with a provisioned product. This role is used when
         /// an end-user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>,
         /// <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>.
-        /// Only an ARN role is valid. A user ARN is invalid. 
+        /// Only an ARN role or <code>null</code> is valid. A user ARN is invalid. For example,
+        /// if an admin user passes <code>null</code> as the value for the key <code>LAUNCH_ROLE</code>,
+        /// the admin removes the launch role that is associated with the provisioned product.
+        /// As a result, the end user operations use the credentials of the end user.
         /// </para>
         ///  
         /// <para>
