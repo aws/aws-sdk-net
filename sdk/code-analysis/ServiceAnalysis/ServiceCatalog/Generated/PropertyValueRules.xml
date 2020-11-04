@@ -967,7 +967,7 @@
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ListPortfolioAccessRequest.PageSize</property>
     <min>0</min>
-    <max>20</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ListPortfolioAccessRequest.PageToken</property>
