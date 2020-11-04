@@ -172,8 +172,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Include this value, if it was returned by the previous call, to get the next set of
-        /// data points.
+        /// Include this value, if it was returned by the previous <code>GetMetricData</code>
+        /// operation, to get the next set of data points.
         /// </para>
         /// </summary>
         public string NextToken

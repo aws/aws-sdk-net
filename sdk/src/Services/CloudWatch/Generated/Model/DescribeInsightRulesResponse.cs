@@ -57,7 +57,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Reserved for future use.
+        /// If this parameter is present, it is a token that marks the start of the next batch
+        /// of returned results. 
         /// </para>
         /// </summary>
         public string NextToken

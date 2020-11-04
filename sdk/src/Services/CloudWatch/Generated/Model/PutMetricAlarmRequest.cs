@@ -440,7 +440,7 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// One item in the <code>Metrics</code> array is the expression that the alarm watches.
-        /// You designate this expression by setting <code>ReturnValue</code> to true for this
+        /// You designate this expression by setting <code>ReturnData</code> to true for this
         /// object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.
         /// </para>
         ///  
