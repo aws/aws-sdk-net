@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MQ.Model
 {
     /// <summary>
-    /// A list of information about the configuration.
+    /// A list of information about the configuration. <important>Does not apply to RabbitMQ
+    /// brokers.</important>
     /// </summary>
     public partial class ConfigurationId
     {

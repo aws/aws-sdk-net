@@ -171,7 +171,7 @@ namespace Amazon.MQ.Model
 
         /// <summary>
         /// Gets and sets the property EngineType. Required. The type of broker engine. Note:
-        /// Currently, Amazon MQ supports only ACTIVEMQ.
+        /// Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
         /// </summary>
         public EngineType EngineType
         {
@@ -311,10 +311,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubnetIds. The list of groups (2 maximum) that define which
-        /// subnets and IP ranges the broker can use from different Availability Zones. A SINGLE_INSTANCE
+        /// Gets and sets the property SubnetIds. The list of groups that define which subnets
+        /// and IP ranges the broker can use from different Availability Zones. A SINGLE_INSTANCE
         /// deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
-        /// deployment requires two subnets.
+        /// deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ)
+        /// has no subnet requirements when deployed with public accessibility, deployment without
+        /// public accessibility requires at least one subnet.
         /// </summary>
         public List<string> SubnetIds
         {
@@ -344,10 +346,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Users. Required. The list of ActiveMQ users (persons or
-        /// applications) who can access queues and topics. This value can contain only alphanumeric
-        /// characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
-        /// 2-100 characters long.
+        /// Gets and sets the property Users. Required. The list of broker users (persons or applications)
+        /// who can access queues and topics. For RabbitMQ brokers, one and only one administrative
+        /// user is accepted and created when a broker is first provisioned. All subsequent broker
+        /// users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ
+        /// Web Console. This value can contain only alphanumeric characters, dashes, periods,
+        /// underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
         /// </summary>
         public List<User> Users
         {

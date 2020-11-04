@@ -100,6 +100,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeploymentMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("engineType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EngineType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hostInstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
