@@ -36,6 +36,7 @@ namespace Amazon.Elasticsearch.Model
     {
         private bool? _enabled;
         private bool? _internalUserDatabaseEnabled;
+        private SAMLOptionsOutput _samlOptions;
 
         /// <summary>
         /// Gets and sets the property Enabled. 
@@ -71,6 +72,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetInternalUserDatabaseEnabled()
         {
             return this._internalUserDatabaseEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SAMLOptions. 
+        /// <para>
+        /// Describes the SAML application configured for a domain.
+        /// </para>
+        /// </summary>
+        public SAMLOptionsOutput SAMLOptions
+        {
+            get { return this._samlOptions; }
+            set { this._samlOptions = value; }
+        }
+
+        // Check to see if SAMLOptions property is set
+        internal bool IsSetSAMLOptions()
+        {
+            return this._samlOptions != null;
         }
 
     }
