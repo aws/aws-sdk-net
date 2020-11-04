@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AdvancedSecurityOptions Object
+    /// Response Unmarshaller for SAMLOptionsOutput Object
     /// </summary>  
-    public class AdvancedSecurityOptionsUnmarshaller : IUnmarshaller<AdvancedSecurityOptions, XmlUnmarshallerContext>, IUnmarshaller<AdvancedSecurityOptions, JsonUnmarshallerContext>
+    public class SAMLOptionsOutputUnmarshaller : IUnmarshaller<SAMLOptionsOutput, XmlUnmarshallerContext>, IUnmarshaller<SAMLOptionsOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AdvancedSecurityOptions IUnmarshaller<AdvancedSecurityOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SAMLOptionsOutput IUnmarshaller<SAMLOptionsOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AdvancedSecurityOptions Unmarshall(JsonUnmarshallerContext context)
+        public SAMLOptionsOutput Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AdvancedSecurityOptions unmarshalledObject = new AdvancedSecurityOptions();
+            SAMLOptionsOutput unmarshalledObject = new SAMLOptionsOutput();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,16 +70,28 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("InternalUserDatabaseEnabled", targetDepth))
+                if (context.TestExpression("Idp", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.InternalUserDatabaseEnabled = unmarshaller.Unmarshall(context);
+                    var unmarshaller = SAMLIdpUnmarshaller.Instance;
+                    unmarshalledObject.Idp = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SAMLOptions", targetDepth))
+                if (context.TestExpression("RolesKey", targetDepth))
                 {
-                    var unmarshaller = SAMLOptionsOutputUnmarshaller.Instance;
-                    unmarshalledObject.SAMLOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RolesKey = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SessionTimeoutMinutes", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SessionTimeoutMinutes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SubjectKey", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubjectKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +100,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         }
 
 
-        private static AdvancedSecurityOptionsUnmarshaller _instance = new AdvancedSecurityOptionsUnmarshaller();        
+        private static SAMLOptionsOutputUnmarshaller _instance = new SAMLOptionsOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AdvancedSecurityOptionsUnmarshaller Instance
+        public static SAMLOptionsOutputUnmarshaller Instance
         {
             get
             {

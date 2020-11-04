@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AdvancedSecurityOptionsInput Marshaller
+    /// SAMLOptionsInput Marshaller
     /// </summary>       
-    public class AdvancedSecurityOptionsInputMarshaller : IRequestMarshaller<AdvancedSecurityOptionsInput, JsonMarshallerContext> 
+    public class SAMLOptionsInputMarshaller : IRequestMarshaller<SAMLOptionsInput, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AdvancedSecurityOptionsInput requestObject, JsonMarshallerContext context)
+        public void Marshall(SAMLOptionsInput requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetEnabled())
             {
@@ -51,32 +51,45 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Enabled);
             }
 
-            if(requestObject.IsSetInternalUserDatabaseEnabled())
+            if(requestObject.IsSetIdp())
             {
-                context.Writer.WritePropertyName("InternalUserDatabaseEnabled");
-                context.Writer.Write(requestObject.InternalUserDatabaseEnabled);
-            }
-
-            if(requestObject.IsSetMasterUserOptions())
-            {
-                context.Writer.WritePropertyName("MasterUserOptions");
+                context.Writer.WritePropertyName("Idp");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = MasterUserOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.MasterUserOptions, context);
+                var marshaller = SAMLIdpMarshaller.Instance;
+                marshaller.Marshall(requestObject.Idp, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetSAMLOptions())
+            if(requestObject.IsSetMasterBackendRole())
             {
-                context.Writer.WritePropertyName("SAMLOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("MasterBackendRole");
+                context.Writer.Write(requestObject.MasterBackendRole);
+            }
 
-                var marshaller = SAMLOptionsInputMarshaller.Instance;
-                marshaller.Marshall(requestObject.SAMLOptions, context);
+            if(requestObject.IsSetMasterUserName())
+            {
+                context.Writer.WritePropertyName("MasterUserName");
+                context.Writer.Write(requestObject.MasterUserName);
+            }
 
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetRolesKey())
+            {
+                context.Writer.WritePropertyName("RolesKey");
+                context.Writer.Write(requestObject.RolesKey);
+            }
+
+            if(requestObject.IsSetSessionTimeoutMinutes())
+            {
+                context.Writer.WritePropertyName("SessionTimeoutMinutes");
+                context.Writer.Write(requestObject.SessionTimeoutMinutes);
+            }
+
+            if(requestObject.IsSetSubjectKey())
+            {
+                context.Writer.WritePropertyName("SubjectKey");
+                context.Writer.Write(requestObject.SubjectKey);
             }
 
         }
@@ -84,7 +97,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static AdvancedSecurityOptionsInputMarshaller Instance = new AdvancedSecurityOptionsInputMarshaller();
+        public readonly static SAMLOptionsInputMarshaller Instance = new SAMLOptionsInputMarshaller();
 
     }
 }
