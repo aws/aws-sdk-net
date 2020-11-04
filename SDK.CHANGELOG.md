@@ -1,3 +1,28 @@
+### 3.5.48.0 (2020-11-04 20:14 UTC)
+* AutoScaling (3.5.1.0)
+	* Capacity Rebalance helps you manage and maintain workload availability during Spot interruptions by proactively augmenting your Auto Scaling group with a new instance before interrupting an old one.
+* AWSMarketplaceMetering (3.5.1.0)
+	* Adding Vendor Tagging Support in MeterUsage and BatchMeterUsage API.
+* CloudWatch (3.5.0.35)
+	* Documentation updates for monitoring
+* EC2 (3.5.14.0)
+	* Added support for Client Connect Handler for AWS Client VPN. Fleet supports launching replacement instances in response to Capacity Rebalance recommendation.
+* Elasticsearch (3.5.2.0)
+	* Amazon Elasticsearch Service now supports native SAML authentication that seamlessly integrates with the customers' existing SAML 2.0 Identity Provider (IdP).
+* IoT (3.5.4.0)
+	* Updated API documentation and added paginator for AWS Iot Registry ListThingPrincipals API.
+* MQ (3.5.1.0)
+	* Amazon MQ introduces support for RabbitMQ, a popular message-broker with native support for AMQP 0.9.1. You can now create fully-managed RabbitMQ brokers in the cloud.
+* ServiceCatalog (3.5.4.0)
+	* Service Catalog API ListPortfolioAccess can now support a maximum PageSize of 100.
+* XRay (3.5.4.0)
+	* Releasing new APIs GetInsightSummaries, GetInsightEvents, GetInsight, GetInsightImpactGraph and updating GetTimeSeriesServiceStatistics API for AWS X-Ray Insights feature
+* Core 3.5.1.33
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.47.0 (2020-11-02 19:47 UTC)
 * EC2 (3.5.13.0)
 	* This release adds support for the following features: 1. P4d instances based on NVIDIA A100 GPUs.  2. NetworkCardIndex attribute to support multiple network cards.
