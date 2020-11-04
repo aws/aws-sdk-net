@@ -30,8 +30,7 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInsightRules operation.
-    /// Returns a list of all the Contributor Insights rules in your account. All rules in
-    /// your account are returned with a single operation.
+    /// Returns a list of all the Contributor Insights rules in your account.
     /// 
     ///  
     /// <para>
@@ -47,8 +46,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// This parameter is not currently used. Reserved for future use. If it is used in the
-        /// future, the maximum value might be different.
+        /// The maximum number of results to return in one operation. If you omit this parameter,
+        /// the default of 500 is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -67,7 +66,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Reserved for future use.
+        /// Include this value, if it was returned by the previous operation, to get the next
+        /// set of rules.
         /// </para>
         /// </summary>
         public string NextToken

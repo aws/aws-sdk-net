@@ -58,10 +58,6 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// The configuration can also include the time zone to use for the metric.
         /// </para>
-        ///  
-        /// <para>
-        /// You can in
-        /// </para>
         /// </summary>
         public AnomalyDetectorConfiguration Configuration
         {
