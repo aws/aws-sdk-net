@@ -207,6 +207,11 @@ namespace Amazon.IoT.Model
         IListThingGroupsForThingPaginator ListThingGroupsForThing(ListThingGroupsForThingRequest request);
 
         /// <summary>
+        /// Paginator for ListThingPrincipals operation
+        ///</summary>
+        IListThingPrincipalsPaginator ListThingPrincipals(ListThingPrincipalsRequest request);
+
+        /// <summary>
         /// Paginator for ListThingRegistrationTaskReports operation
         ///</summary>
         IListThingRegistrationTaskReportsPaginator ListThingRegistrationTaskReports(ListThingRegistrationTaskReportsRequest request);

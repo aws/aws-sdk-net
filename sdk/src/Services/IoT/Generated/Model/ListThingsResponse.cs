@@ -39,8 +39,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// The token used to get the next set of results. Will not be returned if operation has
-        /// returned all results.
+        /// The token to use to get the next set of results. Will not be returned if operation
+        /// has returned all results.
         /// </para>
         /// </summary>
         public string NextMarker

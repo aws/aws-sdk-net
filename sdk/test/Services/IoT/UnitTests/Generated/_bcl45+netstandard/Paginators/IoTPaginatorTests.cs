@@ -1447,6 +1447,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("IoT")]
+        public void ListThingPrincipalsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListThingPrincipalsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListThingPrincipalsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListThingPrincipalsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListThingPrincipals(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListThingPrincipals(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("IoT")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListThingPrincipalsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListThingPrincipalsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListThingPrincipalsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListThingPrincipals(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListThingPrincipals(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("IoT")]
         public void ListThingRegistrationTaskReportsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListThingRegistrationTaskReportsRequest>();
