@@ -318,6 +318,16 @@ namespace Amazon.AWSMarketplaceMetering
         /// <para>
         /// BatchMeterUsage can process up to 25 UsageRecords at a time.
         /// </para>
+        ///  
+        /// <para>
+        /// A UsageRecord can optionally include multiple usage allocations, to provide customers
+        /// with usagedata split into buckets by tags that you define (or allow the customer to
+        /// define).
+        /// </para>
+        ///  
+        /// <para>
+        /// BatchMeterUsage requests must be less than 1MB in size.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchMeterUsage service method.</param>
         /// 
@@ -334,6 +344,13 @@ namespace Amazon.AWSMarketplaceMetering
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidProductCodeException">
         /// The product code passed does not match the product code used for publishing the product.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidTagException">
+        /// The tag is invalid, or the number of tags is greater than 5.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageAllocationsException">
+        /// The usage allocation objects are invalid, or the number of allocations is greater
+        /// than 500 for a single usage record.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageDimensionException">
         /// The usage dimension does not match one of the UsageDimensions associated with products.
@@ -401,6 +418,12 @@ namespace Amazon.AWSMarketplaceMetering
         /// MeterUsage is authenticated on the buyer's AWS account using credentials from the
         /// EC2 instance, ECS task, or EKS pod.
         /// </para>
+        ///  
+        /// <para>
+        /// MeterUsage can optionally include multiple usage allocations, to provide customers
+        /// with usage data split into buckets by tags that you define (or allow the customer
+        /// to define).
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MeterUsage service method.</param>
         /// 
@@ -423,6 +446,13 @@ namespace Amazon.AWSMarketplaceMetering
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidProductCodeException">
         /// The product code passed does not match the product code used for publishing the product.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidTagException">
+        /// The tag is invalid, or the number of tags is greater than 5.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageAllocationsException">
+        /// The usage allocation objects are invalid, or the number of allocations is greater
+        /// than 500 for a single usage record.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageDimensionException">
         /// The usage dimension does not match one of the UsageDimensions associated with products.

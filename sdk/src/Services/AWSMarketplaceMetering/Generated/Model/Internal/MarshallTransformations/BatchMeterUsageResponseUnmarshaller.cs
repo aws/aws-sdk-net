@@ -102,6 +102,14 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                 {
                     return InvalidProductCodeExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTagException"))
+                {
+                    return InvalidTagExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidUsageAllocationsException"))
+                {
+                    return InvalidUsageAllocationsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidUsageDimensionException"))
                 {
                     return InvalidUsageDimensionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
