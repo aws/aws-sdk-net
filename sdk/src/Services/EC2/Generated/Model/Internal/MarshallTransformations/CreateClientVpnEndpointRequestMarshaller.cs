@@ -99,6 +99,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientCidrBlock", StringUtils.FromString(publicRequest.ClientCidrBlock));
                 }
+                if(publicRequest.IsSetClientConnectOptions())
+                {
+                    if(publicRequest.ClientConnectOptions.IsSetEnabled())
+                    {
+                        request.Parameters.Add("ClientConnectOptions" + "." + "Enabled", StringUtils.FromBool(publicRequest.ClientConnectOptions.Enabled));
+                    }
+                    if(publicRequest.ClientConnectOptions.IsSetLambdaFunctionArn())
+                    {
+                        request.Parameters.Add("ClientConnectOptions" + "." + "LambdaFunctionArn", StringUtils.FromString(publicRequest.ClientConnectOptions.LambdaFunctionArn));
+                    }
+                }
                 if(publicRequest.IsSetClientToken())
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));

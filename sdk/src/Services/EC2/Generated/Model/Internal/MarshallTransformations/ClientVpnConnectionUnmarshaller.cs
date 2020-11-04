@@ -114,6 +114,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.IngressPackets = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("postureComplianceStatusSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PostureComplianceStatuses.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("status", targetDepth))
                     {
                         var unmarshaller = ClientVpnConnectionStatusUnmarshaller.Instance;

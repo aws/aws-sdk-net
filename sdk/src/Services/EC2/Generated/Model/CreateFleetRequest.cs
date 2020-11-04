@@ -177,7 +177,7 @@ namespace Amazon.EC2.Model
         /// must be <code>fleet</code>, otherwise the fleet request fails. To tag instances at
         /// launch, specify the tags in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
         /// template</a>. For information about tagging after launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
-        /// Your Resources</a>. 
+        /// your resources</a>.
         /// </para>
         /// </summary>
         public List<TagSpecification> TagSpecifications
@@ -232,14 +232,30 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the request. By default, the EC2 Fleet places an asynchronous request
-        /// for your desired capacity, and maintains it by replenishing interrupted Spot Instances
-        /// (<code>maintain</code>). A value of <code>instant</code> places a synchronous one-time
-        /// request, and returns errors for any instances that could not be launched. A value
-        /// of <code>request</code> places an asynchronous one-time request without maintaining
-        /// capacity or submitting requests in alternative capacity pools if capacity is unavailable.
+        /// The type of request. The default value is <code>maintain</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>maintain</code> - The EC2 Fleet plaees an asynchronous request for your desired
+        /// capacity, and continues to maintain your desired Spot capacity by replenishing interrupted
+        /// Spot Instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>request</code> - The EC2 Fleet places an asynchronous one-time request for
+        /// your desired capacity, but does submit Spot requests in alternative capacity pools
+        /// if Spot capacity is unavailable, and does not maintain Spot capacity if Spot Instances
+        /// are interrupted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>instant</code> - The EC2 Fleet places a synchronous one-time request for your
+        /// desired capacity, and returns errors for any instances that could not be launched.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
-        /// Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public FleetType Type

@@ -29,30 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information,
-    /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">
-    /// What is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.
+    /// The strategies for managing your Spot Instances that are at an elevated risk of being
+    /// interrupted.
     /// </summary>
-    public partial class EnclaveOptionsRequest
+    public partial class SpotMaintenanceStrategies
     {
-        private bool? _enabled;
+        private SpotCapacityRebalance _capacityRebalance;
 
         /// <summary>
-        /// Gets and sets the property Enabled. 
+        /// Gets and sets the property CapacityRebalance. 
         /// <para>
-        /// To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>.
+        /// The strategy to use when Amazon EC2 emits a signal that your Spot Instance is at an
+        /// elevated risk of being interrupted.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public SpotCapacityRebalance CapacityRebalance
         {
-            get { return this._enabled.GetValueOrDefault(); }
-            set { this._enabled = value; }
+            get { return this._capacityRebalance; }
+            set { this._capacityRebalance = value; }
         }
 
-        // Check to see if Enabled property is set
-        internal bool IsSetEnabled()
+        // Check to see if CapacityRebalance property is set
+        internal bool IsSetCapacityRebalance()
         {
-            return this._enabled.HasValue; 
+            return this._capacityRebalance != null;
         }
 
     }

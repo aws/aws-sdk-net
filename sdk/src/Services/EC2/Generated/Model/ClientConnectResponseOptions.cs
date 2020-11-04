@@ -29,18 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information,
-    /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">
-    /// What is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.
+    /// The options for managing connection authorization for new client connections.
     /// </summary>
-    public partial class EnclaveOptionsRequest
+    public partial class ClientConnectResponseOptions
     {
         private bool? _enabled;
+        private string _lambdaFunctionArn;
+        private ClientVpnEndpointAttributeStatus _status;
 
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>.
+        /// Indicates whether client connect options are enabled.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -53,6 +53,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the AWS Lambda function used for connection authorization.
+        /// </para>
+        /// </summary>
+        public string LambdaFunctionArn
+        {
+            get { return this._lambdaFunctionArn; }
+            set { this._lambdaFunctionArn = value; }
+        }
+
+        // Check to see if LambdaFunctionArn property is set
+        internal bool IsSetLambdaFunctionArn()
+        {
+            return this._lambdaFunctionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of any updates to the client connect options.
+        /// </para>
+        /// </summary>
+        public ClientVpnEndpointAttributeStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

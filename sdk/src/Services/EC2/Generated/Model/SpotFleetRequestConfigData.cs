@@ -48,6 +48,7 @@ namespace Amazon.EC2.Model
         private string _onDemandMaxTotalPrice;
         private int? _onDemandTargetCapacity;
         private bool? _replaceUnhealthyInstances;
+        private SpotMaintenanceStrategies _spotMaintenanceStrategies;
         private string _spotMaxTotalPrice;
         private string _spotPrice;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
@@ -385,6 +386,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetReplaceUnhealthyInstances()
         {
             return this._replaceUnhealthyInstances.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpotMaintenanceStrategies. 
+        /// <para>
+        /// The strategies for managing your Spot Instances that are at an elevated risk of being
+        /// interrupted.
+        /// </para>
+        /// </summary>
+        public SpotMaintenanceStrategies SpotMaintenanceStrategies
+        {
+            get { return this._spotMaintenanceStrategies; }
+            set { this._spotMaintenanceStrategies = value; }
+        }
+
+        // Check to see if SpotMaintenanceStrategies property is set
+        internal bool IsSetSpotMaintenanceStrategies()
+        {
+            return this._spotMaintenanceStrategies != null;
         }
 
         /// <summary>

@@ -469,6 +469,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "ReplaceUnhealthyInstances", StringUtils.FromBool(publicRequest.SpotFleetRequestConfig.ReplaceUnhealthyInstances));
                     }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetSpotMaintenanceStrategies())
+                    {
+                        if(publicRequest.SpotFleetRequestConfig.SpotMaintenanceStrategies.IsSetCapacityRebalance())
+                        {
+                            if(publicRequest.SpotFleetRequestConfig.SpotMaintenanceStrategies.CapacityRebalance.IsSetReplacementStrategy())
+                            {
+                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "SpotMaintenanceStrategies" + "." + "CapacityRebalance" + "." + "ReplacementStrategy", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.SpotMaintenanceStrategies.CapacityRebalance.ReplacementStrategy));
+                            }
+                        }
+                    }
                     if(publicRequest.SpotFleetRequestConfig.IsSetSpotMaxTotalPrice())
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "SpotMaxTotalPrice", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.SpotMaxTotalPrice));
