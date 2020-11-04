@@ -29,30 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information,
-    /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">
-    /// What is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.
+    /// Describes the status of the Client VPN endpoint attribute.
     /// </summary>
-    public partial class EnclaveOptionsRequest
+    public partial class ClientVpnEndpointAttributeStatus
     {
-        private bool? _enabled;
+        private ClientVpnEndpointAttributeStatusCode _code;
+        private string _message;
 
         /// <summary>
-        /// Gets and sets the property Enabled. 
+        /// Gets and sets the property Code. 
         /// <para>
-        /// To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>.
+        /// The status code.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public ClientVpnEndpointAttributeStatusCode Code
         {
-            get { return this._enabled.GetValueOrDefault(); }
-            set { this._enabled = value; }
+            get { return this._code; }
+            set { this._code = value; }
         }
 
-        // Check to see if Enabled property is set
-        internal bool IsSetEnabled()
+        // Check to see if Code property is set
+        internal bool IsSetCode()
         {
-            return this._enabled.HasValue; 
+            return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The status message.
+        /// </para>
+        /// </summary>
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
         }
 
     }

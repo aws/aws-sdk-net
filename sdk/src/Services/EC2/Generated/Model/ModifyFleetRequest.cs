@@ -141,7 +141,6 @@ namespace Amazon.EC2.Model
         /// The size of the EC2 Fleet.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public TargetCapacitySpecificationRequest TargetCapacitySpecification
         {
             get { return this._targetCapacitySpecification; }

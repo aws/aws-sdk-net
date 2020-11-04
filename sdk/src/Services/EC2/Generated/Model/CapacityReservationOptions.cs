@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
     /// For more information about Capacity Reservations, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">On-Demand
     /// Capacity Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For
     /// examples of using Capacity Reservations in an EC2 Fleet, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-examples.html">EC2
-    /// Fleet Example Configurations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Fleet example configurations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CapacityReservationOptions

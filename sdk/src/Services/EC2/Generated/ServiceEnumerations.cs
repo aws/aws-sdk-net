@@ -1749,6 +1749,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type ClientVpnEndpointAttributeStatusCode.
+    /// </summary>
+    public class ClientVpnEndpointAttributeStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Applied for ClientVpnEndpointAttributeStatusCode
+        /// </summary>
+        public static readonly ClientVpnEndpointAttributeStatusCode Applied = new ClientVpnEndpointAttributeStatusCode("applied");
+        /// <summary>
+        /// Constant Applying for ClientVpnEndpointAttributeStatusCode
+        /// </summary>
+        public static readonly ClientVpnEndpointAttributeStatusCode Applying = new ClientVpnEndpointAttributeStatusCode("applying");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClientVpnEndpointAttributeStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientVpnEndpointAttributeStatusCode FindValue(string value)
+        {
+            return FindValue<ClientVpnEndpointAttributeStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientVpnEndpointAttributeStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClientVpnEndpointStatusCode.
     /// </summary>
     public class ClientVpnEndpointStatusCode : ConstantClass
@@ -3784,6 +3834,52 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FleetOnDemandAllocationStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetReplacementStrategy.
+    /// </summary>
+    public class FleetReplacementStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Launch for FleetReplacementStrategy
+        /// </summary>
+        public static readonly FleetReplacementStrategy Launch = new FleetReplacementStrategy("launch");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetReplacementStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetReplacementStrategy FindValue(string value)
+        {
+            return FindValue<FleetReplacementStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetReplacementStrategy(string value)
         {
             return FindValue(value);
         }
@@ -8662,6 +8758,52 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RecurringChargeFrequency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReplacementStrategy.
+    /// </summary>
+    public class ReplacementStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Launch for ReplacementStrategy
+        /// </summary>
+        public static readonly ReplacementStrategy Launch = new ReplacementStrategy("launch");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplacementStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplacementStrategy FindValue(string value)
+        {
+            return FindValue<ReplacementStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplacementStrategy(string value)
         {
             return FindValue(value);
         }

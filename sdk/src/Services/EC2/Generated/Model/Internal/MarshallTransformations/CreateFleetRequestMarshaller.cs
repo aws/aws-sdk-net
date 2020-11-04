@@ -204,6 +204,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("SpotOptions" + "." + "InstancePoolsToUseCount", StringUtils.FromInt(publicRequest.SpotOptions.InstancePoolsToUseCount));
                     }
+                    if(publicRequest.SpotOptions.IsSetMaintenanceStrategies())
+                    {
+                        if(publicRequest.SpotOptions.MaintenanceStrategies.IsSetCapacityRebalance())
+                        {
+                            if(publicRequest.SpotOptions.MaintenanceStrategies.CapacityRebalance.IsSetReplacementStrategy())
+                            {
+                                request.Parameters.Add("SpotOptions" + "." + "MaintenanceStrategies" + "." + "CapacityRebalance" + "." + "ReplacementStrategy", StringUtils.FromString(publicRequest.SpotOptions.MaintenanceStrategies.CapacityRebalance.ReplacementStrategy));
+                            }
+                        }
+                    }
                     if(publicRequest.SpotOptions.IsSetMaxTotalPrice())
                     {
                         request.Parameters.Add("SpotOptions" + "." + "MaxTotalPrice", StringUtils.FromString(publicRequest.SpotOptions.MaxTotalPrice));
