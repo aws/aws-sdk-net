@@ -33,7 +33,27 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListThingPrincipalsResponse : AmazonWebServiceResponse
     {
+        private string _nextToken;
         private List<string> _principals = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use to get the next set of results, or <b>null</b> if there are no additional
+        /// results.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Principals. 

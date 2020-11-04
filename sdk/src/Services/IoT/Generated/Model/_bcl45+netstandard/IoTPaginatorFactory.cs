@@ -325,6 +325,14 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Paginator for ListThingPrincipals operation
+        ///</summary>
+        public IListThingPrincipalsPaginator ListThingPrincipals(ListThingPrincipalsRequest request) 
+        {
+            return new ListThingPrincipalsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListThingRegistrationTaskReports operation
         ///</summary>
         public IListThingRegistrationTaskReportsPaginator ListThingRegistrationTaskReports(ListThingRegistrationTaskReportsRequest request) 
