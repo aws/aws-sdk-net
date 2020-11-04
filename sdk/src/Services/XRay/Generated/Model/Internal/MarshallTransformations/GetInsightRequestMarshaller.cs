@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetTimeSeriesServiceStatistics Request Marshaller
+    /// GetInsight Request Marshaller
     /// </summary>       
-    public class GetTimeSeriesServiceStatisticsRequestMarshaller : IMarshaller<IRequest, GetTimeSeriesServiceStatisticsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetInsightRequestMarshaller : IMarshaller<IRequest, GetInsightRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetTimeSeriesServiceStatisticsRequest)input);
+            return this.Marshall((GetInsightRequest)input);
         }
 
         /// <summary>
@@ -52,66 +52,24 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetTimeSeriesServiceStatisticsRequest publicRequest)
+        public IRequest Marshall(GetInsightRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.XRay");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-04-12";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/TimeSeriesServiceStatistics";
+            request.ResourcePath = "/Insight";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndTime())
+                if(publicRequest.IsSetInsightId())
                 {
-                    context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime);
-                }
-
-                if(publicRequest.IsSetEntitySelectorExpression())
-                {
-                    context.Writer.WritePropertyName("EntitySelectorExpression");
-                    context.Writer.Write(publicRequest.EntitySelectorExpression);
-                }
-
-                if(publicRequest.IsSetForecastStatistics())
-                {
-                    context.Writer.WritePropertyName("ForecastStatistics");
-                    context.Writer.Write(publicRequest.ForecastStatistics);
-                }
-
-                if(publicRequest.IsSetGroupARN())
-                {
-                    context.Writer.WritePropertyName("GroupARN");
-                    context.Writer.Write(publicRequest.GroupARN);
-                }
-
-                if(publicRequest.IsSetGroupName())
-                {
-                    context.Writer.WritePropertyName("GroupName");
-                    context.Writer.Write(publicRequest.GroupName);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetPeriod())
-                {
-                    context.Writer.WritePropertyName("Period");
-                    context.Writer.Write(publicRequest.Period);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime);
+                    context.Writer.WritePropertyName("InsightId");
+                    context.Writer.Write(publicRequest.InsightId);
                 }
 
         
@@ -123,9 +81,9 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetTimeSeriesServiceStatisticsRequestMarshaller _instance = new GetTimeSeriesServiceStatisticsRequestMarshaller();        
+        private static GetInsightRequestMarshaller _instance = new GetInsightRequestMarshaller();        
 
-        internal static GetTimeSeriesServiceStatisticsRequestMarshaller GetInstance()
+        internal static GetInsightRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -133,7 +91,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetTimeSeriesServiceStatisticsRequestMarshaller Instance
+        public static GetInsightRequestMarshaller Instance
         {
             get
             {

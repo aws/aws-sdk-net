@@ -125,6 +125,102 @@ namespace Amazon.XRay
 
 
     /// <summary>
+    /// Constants used for properties of type InsightCategory.
+    /// </summary>
+    public class InsightCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAULT for InsightCategory
+        /// </summary>
+        public static readonly InsightCategory FAULT = new InsightCategory("FAULT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsightCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightCategory FindValue(string value)
+        {
+            return FindValue<InsightCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InsightState.
+    /// </summary>
+    public class InsightState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for InsightState
+        /// </summary>
+        public static readonly InsightState ACTIVE = new InsightState("ACTIVE");
+        /// <summary>
+        /// Constant CLOSED for InsightState
+        /// </summary>
+        public static readonly InsightState CLOSED = new InsightState("CLOSED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsightState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightState FindValue(string value)
+        {
+            return FindValue<InsightState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SamplingStrategyName.
     /// </summary>
     public class SamplingStrategyName : ConstantClass

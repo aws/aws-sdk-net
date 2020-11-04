@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TimeSeriesServiceStatistics Object
+    /// Response Unmarshaller for InsightEvent Object
     /// </summary>  
-    public class TimeSeriesServiceStatisticsUnmarshaller : IUnmarshaller<TimeSeriesServiceStatistics, XmlUnmarshallerContext>, IUnmarshaller<TimeSeriesServiceStatistics, JsonUnmarshallerContext>
+    public class InsightEventUnmarshaller : IUnmarshaller<InsightEvent, XmlUnmarshallerContext>, IUnmarshaller<InsightEvent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TimeSeriesServiceStatistics IUnmarshaller<TimeSeriesServiceStatistics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InsightEvent IUnmarshaller<InsightEvent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,45 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public TimeSeriesServiceStatistics Unmarshall(JsonUnmarshallerContext context)
+        public InsightEvent Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TimeSeriesServiceStatistics unmarshalledObject = new TimeSeriesServiceStatistics();
+            InsightEvent unmarshalledObject = new InsightEvent();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EdgeSummaryStatistics", targetDepth))
+                if (context.TestExpression("ClientRequestImpactStatistics", targetDepth))
                 {
-                    var unmarshaller = EdgeStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.EdgeSummaryStatistics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = RequestImpactStatisticsUnmarshaller.Instance;
+                    unmarshalledObject.ClientRequestImpactStatistics = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResponseTimeHistogram", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<HistogramEntry, HistogramEntryUnmarshaller>(HistogramEntryUnmarshaller.Instance);
-                    unmarshalledObject.ResponseTimeHistogram = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ServiceForecastStatistics", targetDepth))
-                {
-                    var unmarshaller = ForecastStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.ServiceForecastStatistics = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ServiceSummaryStatistics", targetDepth))
-                {
-                    var unmarshaller = ServiceStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.ServiceSummaryStatistics = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Timestamp", targetDepth))
+                if (context.TestExpression("EventTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EventTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RootCauseServiceRequestImpactStatistics", targetDepth))
+                {
+                    var unmarshaller = RequestImpactStatisticsUnmarshaller.Instance;
+                    unmarshalledObject.RootCauseServiceRequestImpactStatistics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Summary", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Summary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TopAnomalousServices", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AnomalousService, AnomalousServiceUnmarshaller>(AnomalousServiceUnmarshaller.Instance);
+                    unmarshalledObject.TopAnomalousServices = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +100,12 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         }
 
 
-        private static TimeSeriesServiceStatisticsUnmarshaller _instance = new TimeSeriesServiceStatisticsUnmarshaller();        
+        private static InsightEventUnmarshaller _instance = new InsightEventUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TimeSeriesServiceStatisticsUnmarshaller Instance
+        public static InsightEventUnmarshaller Instance
         {
             get
             {

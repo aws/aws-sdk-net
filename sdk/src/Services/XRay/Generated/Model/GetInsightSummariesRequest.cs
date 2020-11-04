@@ -29,24 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetTimeSeriesServiceStatistics operation.
-    /// Get an aggregation of service statistics defined by a specific time range.
+    /// Container for the parameters to the GetInsightSummaries operation.
+    /// Retrieves the summaries of all insights in the specified group matching the provided
+    /// filter values.
     /// </summary>
-    public partial class GetTimeSeriesServiceStatisticsRequest : AmazonXRayRequest
+    public partial class GetInsightSummariesRequest : AmazonXRayRequest
     {
         private DateTime? _endTime;
-        private string _entitySelectorExpression;
-        private bool? _forecastStatistics;
         private string _groupARN;
         private string _groupName;
+        private int? _maxResults;
         private string _nextToken;
-        private int? _period;
         private DateTime? _startTime;
+        private List<string> _states = new List<string>();
 
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end of the time frame for which to aggregate statistics.
+        /// The end of the time frame in which the insights ended. The end time can't be more
+        /// than 30 days old.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,49 +64,9 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EntitySelectorExpression. 
-        /// <para>
-        /// A filter expression defining entities that will be aggregated for statistics. Supports
-        /// ID, service, and edge functions. If no selector expression is specified, edge statistics
-        /// are returned. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=500)]
-        public string EntitySelectorExpression
-        {
-            get { return this._entitySelectorExpression; }
-            set { this._entitySelectorExpression = value; }
-        }
-
-        // Check to see if EntitySelectorExpression property is set
-        internal bool IsSetEntitySelectorExpression()
-        {
-            return this._entitySelectorExpression != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ForecastStatistics. 
-        /// <para>
-        /// The forecasted high and low fault count values. Forecast enabled requests require
-        /// the EntitySelectorExpression ID be provided.
-        /// </para>
-        /// </summary>
-        public bool ForecastStatistics
-        {
-            get { return this._forecastStatistics.GetValueOrDefault(); }
-            set { this._forecastStatistics = value; }
-        }
-
-        // Check to see if ForecastStatistics property is set
-        internal bool IsSetForecastStatistics()
-        {
-            return this._forecastStatistics.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property GroupARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the group for which to pull statistics from.
+        /// The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=400)]
@@ -124,7 +85,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The case-sensitive name of the group for which to pull statistics from.
+        /// The name of the group. Required if the GroupARN isn't provided.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -141,11 +102,31 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to display.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Pagination token.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -159,27 +140,10 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Period. 
-        /// <para>
-        /// Aggregation period in seconds.
-        /// </para>
-        /// </summary>
-        public int Period
-        {
-            get { return this._period.GetValueOrDefault(); }
-            set { this._period = value; }
-        }
-
-        // Check to see if Period property is set
-        internal bool IsSetPeriod()
-        {
-            return this._period.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start of the time frame for which to aggregate statistics.
+        /// The beginning of the time frame in which the insights started. The start time can't
+        /// be more than 30 days old.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -193,6 +157,25 @@ namespace Amazon.XRay.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property States. 
+        /// <para>
+        /// The list of insight states. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<string> States
+        {
+            get { return this._states; }
+            set { this._states = value; }
+        }
+
+        // Check to see if States property is set
+        internal bool IsSetStates()
+        {
+            return this._states != null && this._states.Count > 0; 
         }
 
     }

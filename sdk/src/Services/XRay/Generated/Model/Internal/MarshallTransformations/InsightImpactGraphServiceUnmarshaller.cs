@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TimeSeriesServiceStatistics Object
+    /// Response Unmarshaller for InsightImpactGraphService Object
     /// </summary>  
-    public class TimeSeriesServiceStatisticsUnmarshaller : IUnmarshaller<TimeSeriesServiceStatistics, XmlUnmarshallerContext>, IUnmarshaller<TimeSeriesServiceStatistics, JsonUnmarshallerContext>
+    public class InsightImpactGraphServiceUnmarshaller : IUnmarshaller<InsightImpactGraphService, XmlUnmarshallerContext>, IUnmarshaller<InsightImpactGraphService, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TimeSeriesServiceStatistics IUnmarshaller<TimeSeriesServiceStatistics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InsightImpactGraphService IUnmarshaller<InsightImpactGraphService, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,51 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public TimeSeriesServiceStatistics Unmarshall(JsonUnmarshallerContext context)
+        public InsightImpactGraphService Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TimeSeriesServiceStatistics unmarshalledObject = new TimeSeriesServiceStatistics();
+            InsightImpactGraphService unmarshalledObject = new InsightImpactGraphService();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EdgeSummaryStatistics", targetDepth))
+                if (context.TestExpression("AccountId", targetDepth))
                 {
-                    var unmarshaller = EdgeStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.EdgeSummaryStatistics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResponseTimeHistogram", targetDepth))
+                if (context.TestExpression("Edges", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<HistogramEntry, HistogramEntryUnmarshaller>(HistogramEntryUnmarshaller.Instance);
-                    unmarshalledObject.ResponseTimeHistogram = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<InsightImpactGraphEdge, InsightImpactGraphEdgeUnmarshaller>(InsightImpactGraphEdgeUnmarshaller.Instance);
+                    unmarshalledObject.Edges = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ServiceForecastStatistics", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
-                    var unmarshaller = ForecastStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.ServiceForecastStatistics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ServiceSummaryStatistics", targetDepth))
+                if (context.TestExpression("Names", targetDepth))
                 {
-                    var unmarshaller = ServiceStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.ServiceSummaryStatistics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Names = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Timestamp", targetDepth))
+                if (context.TestExpression("ReferenceId", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ReferenceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +106,12 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         }
 
 
-        private static TimeSeriesServiceStatisticsUnmarshaller _instance = new TimeSeriesServiceStatisticsUnmarshaller();        
+        private static InsightImpactGraphServiceUnmarshaller _instance = new InsightImpactGraphServiceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TimeSeriesServiceStatisticsUnmarshaller Instance
+        public static InsightImpactGraphServiceUnmarshaller Instance
         {
             get
             {

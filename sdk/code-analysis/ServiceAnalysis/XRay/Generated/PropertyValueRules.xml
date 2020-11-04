@@ -31,6 +31,72 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.XRay.Model.GetInsightRequest.InsightId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.GetInsightEventsRequest.InsightId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.GetInsightEventsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.GetInsightEventsRequest.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.GetInsightEventsResponse.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.GetInsightImpactGraphRequest.InsightId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.GetInsightImpactGraphRequest.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.GetInsightImpactGraphResponse.InsightId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.GetInsightImpactGraphResponse.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.GetInsightSummariesRequest.GroupARN</property>
+    <min>1</min>
+    <max>400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.GetInsightSummariesRequest.GroupName</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.GetInsightSummariesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.GetInsightSummariesRequest.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.GetInsightSummariesResponse.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.XRay.Model.GetServiceGraphRequest.GroupARN</property>
     <min>1</min>
     <max>400</max>
@@ -96,6 +162,34 @@
     <property>Amazon.XRay.Model.UpdateGroupRequest.GroupName</property>
     <min>1</min>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.Insight.GroupARN</property>
+    <min>1</min>
+    <max>400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.Insight.GroupName</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.Insight.InsightId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.InsightSummary.GroupARN</property>
+    <min>1</min>
+    <max>400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.InsightSummary.GroupName</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.InsightSummary.InsightId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.ResourceNotFoundException.ResourceName</property>
