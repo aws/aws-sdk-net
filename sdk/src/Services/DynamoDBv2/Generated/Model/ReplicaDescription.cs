@@ -167,6 +167,17 @@ namespace Amazon.DynamoDBv2.Model
         /// this replica from the replication group. The replica will not be deleted and replication
         /// will stop from and to this region.
         /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        ///  <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to encrypt
+        /// the table is inaccessible.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the AWS KMS key remains inaccessible for more than 20 hours, DynamoDB will remove
+        /// this replica from the replication group. The replica will not be deleted and replication
+        /// will stop from and to this region.
+        /// </para>
         ///  </note> </li> </ul>
         /// </summary>
         public ReplicaStatus ReplicaStatus
