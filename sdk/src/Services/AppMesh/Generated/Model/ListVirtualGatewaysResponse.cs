@@ -40,10 +40,9 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code>
-        ///         request. When the results of a <code>ListVirtualGateways</code> request exceed
-        ///            <code>limit</code>, you can use this value to retrieve the next page of
-        /// results. This         value is <code>null</code> when there are no more results to
-        /// return.
+        /// request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>,
+        /// you can use this value to retrieve the next page of results. This value is <code>null</code>
+        /// when there are no more results to return.
         /// </para>
         /// </summary>
         public string NextToken

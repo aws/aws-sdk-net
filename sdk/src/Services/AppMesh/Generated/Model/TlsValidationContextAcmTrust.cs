@@ -30,7 +30,7 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// An object that represents a TLS validation context trust for an AWS Certicate Manager
-    /// (ACM)         certificate.
+    /// (ACM) certificate.
     /// </summary>
     public partial class TlsValidationContextAcmTrust
     {

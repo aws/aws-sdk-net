@@ -30,7 +30,13 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// An object that represents the AWS Cloud Map service discovery information for your
-    /// virtual         node.
+    /// virtual node.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// AWS Cloud Map is not available in the eu-south-1 Region.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AwsCloudMapServiceDiscovery
     {
@@ -42,8 +48,8 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Attributes. 
         /// <para>
         /// A string map that contains attributes with values that you can use to filter instances
-        ///         by any custom attribute that you specified when you registered the instance.
-        /// Only instances         that match all of the specified key/value pairs will be returned.
+        /// by any custom attribute that you specified when you registered the instance. Only
+        /// instances that match all of the specified key/value pairs will be returned.
         /// </para>
         /// </summary>
         public List<AwsCloudMapInstanceAttribute> Attributes

@@ -32,14 +32,14 @@ namespace Amazon.AppMesh.Model
     /// Container for the parameters to the CreateMesh operation.
     /// Creates a service mesh.
     /// 
-    ///          
+    ///  
     /// <para>
     ///  A service mesh is a logical boundary for network traffic between services that are
-    ///         represented by resources within the mesh. After you create your service mesh,
-    /// you can         create virtual services, virtual nodes, virtual routers, and routes
-    /// to distribute traffic         between the applications in your mesh.
+    /// represented by resources within the mesh. After you create your service mesh, you
+    /// can create virtual services, virtual nodes, virtual routers, and routes to distribute
+    /// traffic between the applications in your mesh.
     /// </para>
-    ///          
+    ///  
     /// <para>
     /// For more information about service meshes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/meshes.html">Service
     /// meshes</a>.
@@ -55,8 +55,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of therequest.
-        /// Up to 36 letters, numbers, hyphens, and underscores are allowed.
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -112,9 +112,9 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Optional metadata that you can apply to the service mesh to assist with categorization
-        ///         and organization. Each tag consists of a key and an optional value, both of
-        /// which you         define. Tag keys can have a maximum character length of 128 characters,
-        /// and tag values can have            a maximum length of 256 characters.
+        /// and organization. Each tag consists of a key and an optional value, both of which
+        /// you define. Tag keys can have a maximum character length of 128 characters, and tag
+        /// values can have a maximum length of 256 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

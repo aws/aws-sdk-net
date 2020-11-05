@@ -36,7 +36,11 @@ namespace Amazon.AppMesh.Model
         private Duration _idle;
 
         /// <summary>
-        /// Gets and sets the property Idle.
+        /// Gets and sets the property Idle. 
+        /// <para>
+        /// An object that represents an idle timeout. An idle timeout bounds the amount of time
+        /// that a connection may be idle. The default value is none.
+        /// </para>
         /// </summary>
         public Duration Idle
         {

@@ -40,7 +40,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property CertificateChain. 
         /// <para>
         /// The certificate trust chain for a certificate stored on the file system of the virtual
-        ///         node that the proxy is running on.
+        /// node that the proxy is running on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

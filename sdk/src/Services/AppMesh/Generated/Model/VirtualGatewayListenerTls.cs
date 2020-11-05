@@ -60,22 +60,19 @@ namespace Amazon.AppMesh.Model
         /// <para>
         /// Specify one of the following modes.
         /// </para>
-        ///          <ul>            <li>               
+        ///  <ul> <li> 
         /// <para>
-        ///                   <b/>STRICT – Listener only accepts connections with TLS        
-        ///       enabled. 
+        ///  <b/>STRICT – Listener only accepts connections with TLS enabled. 
         /// </para>
-        ///             </li>            <li>               
+        ///  </li> <li> 
         /// <para>
-        ///                   <b/>PERMISSIVE – Listener accepts connections with or          
-        ///     without TLS enabled.
+        ///  <b/>PERMISSIVE – Listener accepts connections with or without TLS enabled.
         /// </para>
-        ///             </li>            <li>               
+        ///  </li> <li> 
         /// <para>
-        ///                   <b/>DISABLED – Listener only accepts connections without       
-        ///        TLS. 
+        ///  <b/>DISABLED – Listener only accepts connections without TLS. 
         /// </para>
-        ///             </li>         </ul>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public VirtualGatewayListenerTlsMode Mode

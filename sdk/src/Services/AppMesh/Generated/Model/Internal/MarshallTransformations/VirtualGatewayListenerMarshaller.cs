@@ -45,6 +45,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VirtualGatewayListener requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetConnectionPool())
+            {
+                context.Writer.WritePropertyName("connectionPool");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VirtualGatewayConnectionPoolMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConnectionPool, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetHealthCheck())
             {
                 context.Writer.WritePropertyName("healthCheck");

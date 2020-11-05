@@ -30,7 +30,7 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// The request contains a client token that was used for a previous update resource call
-    ///         with different specifications. Try the request again with a new client token.
+    /// with different specifications. Try the request again with a new client token.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

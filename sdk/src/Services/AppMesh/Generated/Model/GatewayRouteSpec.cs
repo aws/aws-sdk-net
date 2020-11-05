@@ -30,7 +30,7 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// An object that represents a gateway route specification. Specify one gateway route
-    ///         type.
+    /// type.
     /// </summary>
     public partial class GatewayRouteSpec
     {

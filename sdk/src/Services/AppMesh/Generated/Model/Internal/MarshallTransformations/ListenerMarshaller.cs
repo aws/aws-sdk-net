@@ -45,6 +45,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Listener requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetConnectionPool())
+            {
+                context.Writer.WritePropertyName("connectionPool");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VirtualNodeConnectionPoolMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConnectionPool, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetHealthCheck())
             {
                 context.Writer.WritePropertyName("healthCheck");
@@ -52,6 +63,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
                 var marshaller = HealthCheckPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.HealthCheck, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetOutlierDetection())
+            {
+                context.Writer.WritePropertyName("outlierDetection");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OutlierDetectionMarshaller.Instance;
+                marshaller.Marshall(requestObject.OutlierDetection, context);
 
                 context.Writer.WriteObjectEnd();
             }

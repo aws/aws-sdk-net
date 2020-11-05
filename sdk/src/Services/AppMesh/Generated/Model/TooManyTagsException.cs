@@ -30,8 +30,8 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// The request exceeds the maximum allowed number of tags allowed per resource. The current
-    ///         limit is 50 user tags per resource. You must reduce the number of tags in
-    /// the request. None         of the tags in this request were applied.
+    /// limit is 50 user tags per resource. You must reduce the number of tags in the request.
+    /// None of the tags in this request were applied.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

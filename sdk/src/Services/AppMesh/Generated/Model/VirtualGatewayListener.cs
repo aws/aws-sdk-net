@@ -33,9 +33,28 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class VirtualGatewayListener
     {
+        private VirtualGatewayConnectionPool _connectionPool;
         private VirtualGatewayHealthCheckPolicy _healthCheck;
         private VirtualGatewayPortMapping _portMapping;
         private VirtualGatewayListenerTls _tls;
+
+        /// <summary>
+        /// Gets and sets the property ConnectionPool. 
+        /// <para>
+        /// The connection pool information for the virtual gateway listener.
+        /// </para>
+        /// </summary>
+        public VirtualGatewayConnectionPool ConnectionPool
+        {
+            get { return this._connectionPool; }
+            set { this._connectionPool = value; }
+        }
+
+        // Check to see if ConnectionPool property is set
+        internal bool IsSetConnectionPool()
+        {
+            return this._connectionPool != null;
+        }
 
         /// <summary>
         /// Gets and sets the property HealthCheck. 

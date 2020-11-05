@@ -30,8 +30,7 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    ///         account. For best results, use an increasing or variable sleep interval between
-    ///         requests.
+    /// account. For best results, use an increasing or variable sleep interval between requests.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

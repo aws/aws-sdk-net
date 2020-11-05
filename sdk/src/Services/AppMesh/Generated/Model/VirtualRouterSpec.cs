@@ -39,7 +39,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Listeners. 
         /// <para>
         /// The listeners that the virtual router is expected to receive inbound traffic from.
-        /// You         can specify one listener.
+        /// You can specify one listener.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

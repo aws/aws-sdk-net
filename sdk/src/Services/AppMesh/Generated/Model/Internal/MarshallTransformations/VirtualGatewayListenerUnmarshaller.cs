@@ -64,6 +64,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("connectionPool", targetDepth))
+                {
+                    var unmarshaller = VirtualGatewayConnectionPoolUnmarshaller.Instance;
+                    unmarshalledObject.ConnectionPool = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("healthCheck", targetDepth))
                 {
                     var unmarshaller = VirtualGatewayHealthCheckPolicyUnmarshaller.Instance;

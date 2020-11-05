@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteVirtualNode operation.
+    /// <zonbook></zonbook><xhtml></xhtml>
     /// </summary>
     public partial class DeleteVirtualNodeResponse : AmazonWebServiceResponse
     {
