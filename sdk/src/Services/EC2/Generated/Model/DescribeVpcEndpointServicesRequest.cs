@@ -31,6 +31,16 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeVpcEndpointServices operation.
     /// Describes available services to which you can create a VPC endpoint.
+    /// 
+    ///  
+    /// <para>
+    /// When the service provider and the consumer have different accounts multiple Availability
+    /// Zones, and the consumer views the VPC endpoint service information, the response only
+    /// includes the common Availability Zones. For example, when the service provider account
+    /// uses <code>us-east-1a</code> and <code>us-east-1c</code> and the consumer uses <code>us-east-1a</code>
+    /// and us-east-1a and us-east-1b, the response includes the VPC endpoint services in
+    /// the common Availability Zone, <code>us-east-1a</code>.
+    /// </para>
     /// </summary>
     public partial class DescribeVpcEndpointServicesRequest : AmazonEC2Request
     {

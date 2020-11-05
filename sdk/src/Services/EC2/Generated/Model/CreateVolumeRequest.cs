@@ -188,7 +188,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID. For example, key/1234abcd-12ab-34cd-56ef-1234567890ab.
+        /// Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -196,11 +196,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+        /// Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias ARN. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+        /// Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
         /// </para>
         ///  </li> </ul> 
         /// <para>

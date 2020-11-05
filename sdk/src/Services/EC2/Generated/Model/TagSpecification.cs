@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The type of resource to tag. Currently, the resource types that support tagging on
-        /// creation are: <code>capacity-reservation</code> | <code>client-vpn-endpoint</code>
+        /// creation are: <code>capacity-reservation</code> | <code>carrier-gateway</code> | <code>client-vpn-endpoint</code>
         /// | <code>customer-gateway</code> | <code>dedicated-host</code> | <code>dhcp-options</code>
         /// | <code>export-image-task</code> | <code>export-instance-task</code> | <code>fleet</code>
         /// | <code>fpga-image</code> | <code>host-reservation</code> | <code>import-image-task</code>

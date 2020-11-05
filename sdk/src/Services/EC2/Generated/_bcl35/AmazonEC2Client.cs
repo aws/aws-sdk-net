@@ -1286,25 +1286,25 @@ namespace Amazon.EC2
         /// Associates an AWS Identity and Access Management (IAM) role with an AWS Certificate
         /// Manager (ACM) certificate. This enables the certificate to be used by the ACM for
         /// Nitro Enclaves application inside an enclave. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">AWS
-        /// Certificate Manager for Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud
-        /// User Guide</i>.
+        /// Certificate Manager for Nitro Enclaves</a> in the <i>AWS Nitro Enclaves User Guide</i>.
         /// 
         ///  
         /// <para>
         /// When the IAM role is associated with the ACM certificate, places the certificate,
         /// certificate chain, and encrypted private key in an Amazon S3 bucket that only the
         /// associated IAM role can access. The private key of the certificate is encrypted with
-        /// an AWS-managed KMS key that has an attached attestation-based key policy.
+        /// an AWS-managed KMS customer master (CMK) that has an attached attestation-based CMK
+        /// policy.
         /// </para>
         ///  
         /// <para>
         /// To enable the IAM role to access the Amazon S3 object, you must grant it permission
         /// to call <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command.
-        /// To enable the IAM role to access the AWS KMS key, you must grant it permission to
-        /// call <code>kms:Decrypt</code> on AWS KMS key returned by the command. For more information,
+        /// To enable the IAM role to access the AWS KMS CMK, you must grant it permission to
+        /// call <code>kms:Decrypt</code> on AWS KMS CMK returned by the command. For more information,
         /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
         /// Grant the role permission to access the certificate and encryption key</a> in the
-        /// <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// <i>AWS Nitro Enclaves User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateEnclaveCertificateIamRole service method.</param>
@@ -17448,6 +17448,16 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes available services to which you can create a VPC endpoint.
+        /// 
+        ///  
+        /// <para>
+        /// When the service provider and the consumer have different accounts multiple Availability
+        /// Zones, and the consumer views the VPC endpoint service information, the response only
+        /// includes the common Availability Zones. For example, when the service provider account
+        /// uses <code>us-east-1a</code> and <code>us-east-1c</code> and the consumer uses <code>us-east-1a</code>
+        /// and us-east-1a and us-east-1b, the response includes the VPC endpoint services in
+        /// the common Availability Zone, <code>us-east-1a</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServices service method.</param>
         /// 
@@ -18581,8 +18591,8 @@ namespace Amazon.EC2
         /// an IAM role from an ACM certificate removes the Amazon S3 object that contains the
         /// certificate, certificate chain, and encrypted private key from the Amazon S3 bucket.
         /// It also revokes the IAM role's permission to use the AWS Key Management Service (KMS)
-        /// key used to encrypt the private key. This effectively revokes the role's permission
-        /// to use the certificate.
+        /// customer master key (CMK) used to encrypt the private key. This effectively revokes
+        /// the role's permission to use the certificate.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateEnclaveCertificateIamRole service method.</param>
         /// 
@@ -19651,8 +19661,8 @@ namespace Amazon.EC2
         /// Returns the IAM roles that are associated with the specified AWS Certificate Manager
         /// (ACM) certificate. It also returns the name of the Amazon S3 bucket and the Amazon
         /// S3 object key where the certificate, certificate chain, and encrypted private key
-        /// bundle are stored, and the ARN of the AWS Key Management Service (KMS) key that's
-        /// used to encrypt the private key.
+        /// bundle are stored, and the ARN of the AWS Key Management Service (KMS) customer master
+        /// key (CMK) that's used to encrypt the private key.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssociatedEnclaveCertificateIamRoles service method.</param>
         /// 
@@ -27037,7 +27047,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// Before the service provider runs this command, they must add a record to the DNS server.
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/ndpoint-services-dns-validation.html#add-dns-txt-record">Adding
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html#add-dns-txt-record">Adding
         /// a TXT Record to Your Domain's DNS Server </a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
