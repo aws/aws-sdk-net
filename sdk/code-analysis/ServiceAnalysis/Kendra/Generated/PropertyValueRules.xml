@@ -791,6 +791,52 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.JsonTokenTypeConfiguration.GroupAttributeField</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.JsonTokenTypeConfiguration.UserNameAttributeField</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.JwtTokenTypeConfiguration.ClaimRegex</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.JwtTokenTypeConfiguration.GroupAttributeField</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.JwtTokenTypeConfiguration.Issuer</property>
+    <min>1</min>
+    <max>65</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.JwtTokenTypeConfiguration.SecretManagerArn</property>
+    <min>1</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.JwtTokenTypeConfiguration.URL</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(https?|ftp|file):\/\/([^\s]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.JwtTokenTypeConfiguration.UserNameAttributeField</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.OneDriveConfiguration.SecretArn</property>
     <min>1</min>
     <max>1284</max>
@@ -1010,5 +1056,11 @@
     <property>Amazon.Kendra.Model.TextWithHighlights.Text</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.UserContext.Token</property>
+    <min>1</min>
+    <max>100000</max>
+    <pattern>^\P{C}*$</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -154,8 +154,8 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// username - The user name of a user with administrative privileges for the Confluence
-        /// server.
+        /// username - The user name or email address of a user with administrative privileges
+        /// for the Confluence server.
         /// </para>
         ///  </li> <li> 
         /// <para>

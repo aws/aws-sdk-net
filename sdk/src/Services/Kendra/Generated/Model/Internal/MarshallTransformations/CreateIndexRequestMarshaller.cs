@@ -130,6 +130,28 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetUserContextPolicy())
+                {
+                    context.Writer.WritePropertyName("UserContextPolicy");
+                    context.Writer.Write(publicRequest.UserContextPolicy);
+                }
+
+                if(publicRequest.IsSetUserTokenConfigurations())
+                {
+                    context.Writer.WritePropertyName("UserTokenConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestUserTokenConfigurationsListValue in publicRequest.UserTokenConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UserTokenConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestUserTokenConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

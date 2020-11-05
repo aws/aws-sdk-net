@@ -129,6 +129,18 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     response.UpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UserContextPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.UserContextPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UserTokenConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<UserTokenConfiguration, UserTokenConfigurationUnmarshaller>(UserTokenConfigurationUnmarshaller.Instance);
+                    response.UserTokenConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

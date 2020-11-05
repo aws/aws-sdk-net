@@ -147,6 +147,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetUserContext())
+                {
+                    context.Writer.WritePropertyName("UserContext");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UserContextMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UserContext, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

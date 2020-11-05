@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OneDriveConfiguration Object
+    /// Response Unmarshaller for JwtTokenTypeConfiguration Object
     /// </summary>  
-    public class OneDriveConfigurationUnmarshaller : IUnmarshaller<OneDriveConfiguration, XmlUnmarshallerContext>, IUnmarshaller<OneDriveConfiguration, JsonUnmarshallerContext>
+    public class JwtTokenTypeConfigurationUnmarshaller : IUnmarshaller<JwtTokenTypeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<JwtTokenTypeConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OneDriveConfiguration IUnmarshaller<OneDriveConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        JwtTokenTypeConfiguration IUnmarshaller<JwtTokenTypeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,57 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OneDriveConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public JwtTokenTypeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OneDriveConfiguration unmarshalledObject = new OneDriveConfiguration();
+            JwtTokenTypeConfiguration unmarshalledObject = new JwtTokenTypeConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DisableLocalGroups", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.DisableLocalGroups = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExclusionPatterns", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ExclusionPatterns = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FieldMappings", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<DataSourceToIndexFieldMapping, DataSourceToIndexFieldMappingUnmarshaller>(DataSourceToIndexFieldMappingUnmarshaller.Instance);
-                    unmarshalledObject.FieldMappings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InclusionPatterns", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.InclusionPatterns = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OneDriveUsers", targetDepth))
-                {
-                    var unmarshaller = OneDriveUsersUnmarshaller.Instance;
-                    unmarshalledObject.OneDriveUsers = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SecretArn", targetDepth))
+                if (context.TestExpression("ClaimRegex", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClaimRegex = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TenantDomain", targetDepth))
+                if (context.TestExpression("GroupAttributeField", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TenantDomain = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GroupAttributeField = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Issuer", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Issuer = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeyLocation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeyLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecretManagerArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecretManagerArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("URL", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.URL = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UserNameAttributeField", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UserNameAttributeField = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +112,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         }
 
 
-        private static OneDriveConfigurationUnmarshaller _instance = new OneDriveConfigurationUnmarshaller();        
+        private static JwtTokenTypeConfigurationUnmarshaller _instance = new JwtTokenTypeConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OneDriveConfigurationUnmarshaller Instance
+        public static JwtTokenTypeConfigurationUnmarshaller Instance
         {
             get
             {
