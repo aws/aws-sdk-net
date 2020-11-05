@@ -1,3 +1,30 @@
+### 3.5.49.0 (2020-11-05 19:27 UTC)
+* AppMesh (3.5.1.0)
+	* This release adds circuit breaking capabilities to your mesh with connection pooling and outlier detection support.
+* CloudWatchEvents (3.5.3.0)
+	* With this release, customers can now reprocess past events by storing the events published on event bus in an encrypted archive.
+* DynamoDBv2 (3.5.2.0)
+	* This release adds a new ReplicaStatus INACCESSIBLE_ENCRYPTION_CREDENTIALS for the Table description, indicating when a key used to encrypt a regional replica table is not accessible.
+* EC2 (3.5.15.0)
+	* Documentation updates for EC2.
+* Elasticsearch (3.5.3.0)
+	* Amazon Elasticsearch Service now provides the ability to define a custom endpoint for your domain and link an SSL certificate from ACM, making it easier to refer to Kibana and the domain endpoint.
+* EventBridge (3.5.3.0)
+	* With this release, customers can now reprocess past events by storing the events published on event bus in an encrypted archive.
+* FraudDetector (3.5.2.0)
+	* Added support for deleting resources like Variables, ExternalModels, Outcomes, Models, ModelVersions, Labels, EventTypes and EntityTypes. Updated DeleteEvent operation to catch missing exceptions.
+* Kendra (3.5.6.0)
+	* Amazon Kendra now supports providing user context in your query requests, Tokens can be JSON or JWT format. This release also introduces support for Confluence cloud datasources.
+* Lambda (3.5.1.0)
+	* Support Amazon MQ as an Event Source.
+* RDS (3.5.5.0)
+	* Supports a new parameter to set the max allocated storage in gigabytes for the CreateDBInstanceReadReplica API.
+* Core 3.5.1.34
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.48.0 (2020-11-04 20:14 UTC)
 * AutoScaling (3.5.1.0)
 	* Capacity Rebalance helps you manage and maintain workload availability during Spot interruptions by proactively augmenting your Auto Scaling group with a new instance before interrupting an old one.
