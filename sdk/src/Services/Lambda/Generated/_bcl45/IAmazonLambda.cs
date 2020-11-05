@@ -387,13 +387,14 @@ namespace Amazon.Lambda
         ///  </li> <li> 
         /// <para>
         ///  <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified
-        /// age. Default -1 (infinite). Minimum 60. Maximum 604800.
+        /// age. The default value is infinite (-1). When set to infinite (-1), failed records
+        /// are retried until the record expires
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
-        /// retries. Default -1 (infinite). Minimum 0. Maximum 10000. When infinite, failed records
-        /// will be retried until the record expires.
+        /// retries. The default value is infinite (-1). When set to infinite (-1), failed records
+        /// are retried until the record expires.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -470,13 +471,14 @@ namespace Amazon.Lambda
         ///  </li> <li> 
         /// <para>
         ///  <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified
-        /// age. Default -1 (infinite). Minimum 60. Maximum 604800.
+        /// age. The default value is infinite (-1). When set to infinite (-1), failed records
+        /// are retried until the record expires
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
-        /// retries. Default -1 (infinite). Minimum 0. Maximum 10000. When infinite, failed records
-        /// will be retried until the record expires.
+        /// retries. The default value is infinite (-1). When set to infinite (-1), failed records
+        /// are retried until the record expires.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3639,13 +3641,14 @@ namespace Amazon.Lambda
         ///  </li> <li> 
         /// <para>
         ///  <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified
-        /// age. Default -1 (infinite). Minimum 60. Maximum 604800.
+        /// age. The default value is infinite (-1). When set to infinite (-1), failed records
+        /// are retried until the record expires
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
-        /// retries. Default -1 (infinite). Minimum 0. Maximum 10000. When infinite, failed records
-        /// will be retried until the record expires.
+        /// retries. The default value is infinite (-1). When set to infinite (-1), failed records
+        /// are retried until the record expires.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3703,13 +3706,14 @@ namespace Amazon.Lambda
         ///  </li> <li> 
         /// <para>
         ///  <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified
-        /// age. Default -1 (infinite). Minimum 60. Maximum 604800.
+        /// age. The default value is infinite (-1). When set to infinite (-1), failed records
+        /// are retried until the record expires
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
-        /// retries. Default -1 (infinite). Minimum 0. Maximum 10000. When infinite, failed records
-        /// will be retried until the record expires.
+        /// retries. The default value is infinite (-1). When set to infinite (-1), failed records
+        /// are retried until the record expires.
         /// </para>
         ///  </li> <li> 
         /// <para>

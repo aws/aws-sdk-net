@@ -1350,4 +1350,8 @@
     <property>Amazon.Lambda.Model.ProvisionedConcurrencyConfigListItem.RequestedProvisionedConcurrentExecutions</property>
     <min>1</min>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.SourceAccessConfiguration.URI</property>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
+  </property-value-rule>
 </property-value-rules>

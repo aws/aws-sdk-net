@@ -45,6 +45,8 @@ namespace Amazon.Lambda.Model
         private int? _maximumRecordAgeInSeconds;
         private int? _maximumRetryAttempts;
         private int? _parallelizationFactor;
+        private List<string> _queues = new List<string>();
+        private List<SourceAccessConfiguration> _sourceAccessConfigurations = new List<SourceAccessConfiguration>();
         private string _state;
         private string _stateTransitionReason;
         private List<string> _topics = new List<string>();
@@ -72,7 +74,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property BisectBatchOnFunctionError. 
         /// <para>
-        /// (Streams) If the function returns an error, split the batch in two and retry.
+        /// (Streams) If the function returns an error, split the batch in two and retry. The
+        /// default value is false.
         /// </para>
         /// </summary>
         public bool BisectBatchOnFunctionError
@@ -181,7 +184,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property MaximumBatchingWindowInSeconds. 
         /// <para>
         /// (Streams) The maximum amount of time to gather records before invoking the function,
-        /// in seconds.
+        /// in seconds. The default value is zero.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
@@ -200,7 +203,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRecordAgeInSeconds. 
         /// <para>
-        /// (Streams) The maximum age of a record that Lambda sends to a function for processing.
+        /// (Streams) Discard records older than the specified age. The default value is infinite
+        /// (-1). When set to infinite (-1), failed records are retried until the record expires.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=604800)]
@@ -219,7 +223,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRetryAttempts. 
         /// <para>
-        /// (Streams) The maximum number of times to retry when the function returns an error.
+        /// (Streams) Discard records after the specified number of retries. The default value
+        /// is infinite (-1). When set to infinite (-1), failed records are retried until the
+        /// record expires.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=10000)]
@@ -238,7 +244,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ParallelizationFactor. 
         /// <para>
-        /// (Streams) The number of batches to process from each shard concurrently.
+        /// (Streams) The number of batches to process from each shard concurrently. The default
+        /// value is 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -252,6 +259,57 @@ namespace Amazon.Lambda.Model
         internal bool IsSetParallelizationFactor()
         {
             return this._parallelizationFactor.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Queues. 
+        /// <para>
+        ///  (MQ) The name of the Amazon MQ broker destination queue to consume. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> Queues
+        {
+            get { return this._queues; }
+            set { this._queues = value; }
+        }
+
+        // Check to see if Queues property is set
+        internal bool IsSetQueues()
+        {
+            return this._queues != null && this._queues.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceAccessConfigurations. 
+        /// <para>
+        ///  (MQ) The Secrets Manager secret that stores your broker credentials. To store your
+        /// secret, use the following format: <code> { "username": "your username", "password":
+        /// "your password" }</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH",
+        /// "URI": "secretARN" } ]</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret,
+        /// you can use customer or service managed keys. When using a customer managed KMS key,
+        /// the Lambda execution role requires <code>kms:Decrypt</code> permissions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<SourceAccessConfiguration> SourceAccessConfigurations
+        {
+            get { return this._sourceAccessConfigurations; }
+            set { this._sourceAccessConfigurations = value; }
+        }
+
+        // Check to see if SourceAccessConfigurations property is set
+        internal bool IsSetSourceAccessConfigurations()
+        {
+            return this._sourceAccessConfigurations != null && this._sourceAccessConfigurations.Count > 0; 
         }
 
         /// <summary>
@@ -296,7 +354,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Topics. 
         /// <para>
-        ///  (MSK) The name of the Kafka topic. 
+        ///  (MSK) The name of the Kafka topic to consume. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

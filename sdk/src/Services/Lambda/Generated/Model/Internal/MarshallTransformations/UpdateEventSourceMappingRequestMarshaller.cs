@@ -128,6 +128,22 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ParallelizationFactor);
                 }
 
+                if(publicRequest.IsSetSourceAccessConfigurations())
+                {
+                    context.Writer.WritePropertyName("SourceAccessConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSourceAccessConfigurationsListValue in publicRequest.SourceAccessConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SourceAccessConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSourceAccessConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

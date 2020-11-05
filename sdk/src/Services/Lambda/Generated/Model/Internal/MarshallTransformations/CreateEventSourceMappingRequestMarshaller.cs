@@ -131,6 +131,33 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ParallelizationFactor);
                 }
 
+                if(publicRequest.IsSetQueues())
+                {
+                    context.Writer.WritePropertyName("Queues");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestQueuesListValue in publicRequest.Queues)
+                    {
+                            context.Writer.Write(publicRequestQueuesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetSourceAccessConfigurations())
+                {
+                    context.Writer.WritePropertyName("SourceAccessConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSourceAccessConfigurationsListValue in publicRequest.SourceAccessConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SourceAccessConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSourceAccessConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetStartingPosition())
                 {
                     context.Writer.WritePropertyName("StartingPosition");
