@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+    /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
     /// the specified AWS Region.
     /// </summary>
     #if !NETSTANDARD

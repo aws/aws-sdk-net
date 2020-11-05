@@ -712,8 +712,12 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
         /// A value that indicates whether to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts. By default, mapping is disabled. For information
-        /// about the supported DB engines, see <a>CreateDBInstance</a>.
+        /// (IAM) accounts to database accounts. By default, mapping is disabled.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database
+        /// accounts is managed by the DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -763,7 +767,7 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  The version number of the database engine to upgrade to. Changing this parameter
         /// results in an outage and the change is applied during the next maintenance window
-        /// unless the <code>ApplyImmediately</code> parameter is eanbled for this request. 
+        /// unless the <code>ApplyImmediately</code> parameter is enabled for this request. 
         /// </para>
         ///  
         /// <para>

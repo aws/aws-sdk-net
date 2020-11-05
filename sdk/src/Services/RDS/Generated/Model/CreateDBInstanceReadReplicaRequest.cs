@@ -69,6 +69,7 @@ namespace Amazon.RDS.Model
         private bool? _enablePerformanceInsights;
         private int? _iops;
         private string _kmsKeyId;
+        private int? _maxAllocatedStorage;
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
         private bool? _multiAZ;
@@ -409,8 +410,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
         /// A value that indicates whether to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts. By default, mapping is disabled. For information
-        /// about the supported DB engines, see <a>CreateDBInstance</a>.
+        /// (IAM) accounts to database accounts. By default, mapping is disabled.
         /// </para>
         ///  
         /// <para>
@@ -508,6 +508,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxAllocatedStorage. 
+        /// <para>
+        /// The upper limit to which Amazon RDS can automatically scale the storage of the DB
+        /// instance.
+        /// </para>
+        /// </summary>
+        public int MaxAllocatedStorage
+        {
+            get { return this._maxAllocatedStorage.GetValueOrDefault(); }
+            set { this._maxAllocatedStorage = value; }
+        }
+
+        // Check to see if MaxAllocatedStorage property is set
+        internal bool IsSetMaxAllocatedStorage()
+        {
+            return this._maxAllocatedStorage.HasValue; 
         }
 
         /// <summary>
