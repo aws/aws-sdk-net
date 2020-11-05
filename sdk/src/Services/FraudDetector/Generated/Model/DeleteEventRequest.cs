@@ -31,6 +31,12 @@ namespace Amazon.FraudDetector.Model
     /// <summary>
     /// Container for the parameters to the DeleteEvent operation.
     /// Deletes the specified event.
+    /// 
+    ///  
+    /// <para>
+    /// When you delete an event, Amazon Fraud Detector permanently deletes that event from
+    /// the evaluation history, and the event data is no longer stored in Amazon Fraud Detector.
+    /// </para>
     /// </summary>
     public partial class DeleteEventRequest : AmazonFraudDetectorRequest
     {
@@ -43,7 +49,7 @@ namespace Amazon.FraudDetector.Model
         /// The ID of the event to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string EventId
         {
             get { return this._eventId; }
@@ -62,7 +68,7 @@ namespace Amazon.FraudDetector.Model
         /// The name of the event type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string EventTypeName
         {
             get { return this._eventTypeName; }

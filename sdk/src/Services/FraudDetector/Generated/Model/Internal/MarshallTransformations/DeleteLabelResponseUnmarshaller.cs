@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetEventPrediction operation
+    /// Response Unmarshaller for DeleteLabel operation
     /// </summary>  
-    public class GetEventPredictionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteLabelResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,25 +45,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetEventPredictionResponse response = new GetEventPredictionResponse();
+            DeleteLabelResponse response = new DeleteLabelResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("modelScores", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ModelScores, ModelScoresUnmarshaller>(ModelScoresUnmarshaller.Instance);
-                    response.ModelScores = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ruleResults", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<RuleResult, RuleResultUnmarshaller>(RuleResultUnmarshaller.Instance);
-                    response.RuleResults = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -86,10 +69,6 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
-                {
-                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
                 {
                     return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -97,14 +76,6 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
-                {
-                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
@@ -114,9 +85,9 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             return new AmazonFraudDetectorException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetEventPredictionResponseUnmarshaller _instance = new GetEventPredictionResponseUnmarshaller();        
+        private static DeleteLabelResponseUnmarshaller _instance = new DeleteLabelResponseUnmarshaller();        
 
-        internal static GetEventPredictionResponseUnmarshaller GetInstance()
+        internal static DeleteLabelResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -124,7 +95,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetEventPredictionResponseUnmarshaller Instance
+        public static DeleteLabelResponseUnmarshaller Instance
         {
             get
             {

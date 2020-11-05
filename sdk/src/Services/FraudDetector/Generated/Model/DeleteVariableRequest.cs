@@ -29,37 +29,45 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDetector operation.
-    /// Deletes the detector. Before deleting a detector, you must first delete all detector
-    /// versions and rule versions associated with the detector.
+    /// Container for the parameters to the DeleteVariable operation.
+    /// Deletes a variable.
     /// 
     ///  
     /// <para>
-    /// When you delete a detector, Amazon Fraud Detector permanently deletes the detector
-    /// and the data is no longer stored in Amazon Fraud Detector.
+    /// You can't delete variables that are included in an event type in Amazon Fraud Detector.
+    /// </para>
+    ///  
+    /// <para>
+    /// Amazon Fraud Detector automatically deletes model output variables and SageMaker model
+    /// output variables when you delete the model. You can't delete these variables manually.
+    /// </para>
+    ///  
+    /// <para>
+    /// When you delete a variable, Amazon Fraud Detector permanently deletes that variable
+    /// from the evaluation history, and the data is no longer stored in Amazon Fraud Detector.
     /// </para>
     /// </summary>
-    public partial class DeleteDetectorRequest : AmazonFraudDetectorRequest
+    public partial class DeleteVariableRequest : AmazonFraudDetectorRequest
     {
-        private string _detectorId;
+        private string _name;
 
         /// <summary>
-        /// Gets and sets the property DetectorId. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The ID of the detector to delete.
+        /// The name of the variable to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
-        public string DetectorId
+        [AWSProperty(Required=true)]
+        public string Name
         {
-            get { return this._detectorId; }
-            set { this._detectorId = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if DetectorId property is set
-        internal bool IsSetDetectorId()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._detectorId != null;
+            return this._name != null;
         }
 
     }

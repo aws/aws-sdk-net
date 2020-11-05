@@ -29,35 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteRule operation.
-    /// Deletes the rule. You cannot delete a rule if it is used by an <code>ACTIVE</code>
-    /// or <code>INACTIVE</code> detector version.
-    /// 
-    ///  
-    /// <para>
-    /// When you delete a rule, Amazon Fraud Detector permanently deletes that rule from the
-    /// evaluation history, and the data is no longer stored in Amazon Fraud Detector.
-    /// </para>
+    /// This is the response object from the DeleteExternalModel operation.
     /// </summary>
-    public partial class DeleteRuleRequest : AmazonFraudDetectorRequest
+    public partial class DeleteExternalModelResponse : AmazonWebServiceResponse
     {
-        private Rule _rule;
-
-        /// <summary>
-        /// Gets and sets the property Rule.
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public Rule Rule
-        {
-            get { return this._rule; }
-            set { this._rule = value; }
-        }
-
-        // Check to see if Rule property is set
-        internal bool IsSetRule()
-        {
-            return this._rule != null;
-        }
 
     }
 }

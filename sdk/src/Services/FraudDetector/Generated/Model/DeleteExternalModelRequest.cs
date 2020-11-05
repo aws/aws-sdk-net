@@ -29,37 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDetector operation.
-    /// Deletes the detector. Before deleting a detector, you must first delete all detector
-    /// versions and rule versions associated with the detector.
+    /// Container for the parameters to the DeleteExternalModel operation.
+    /// Removes a SageMaker model from Amazon Fraud Detector.
     /// 
     ///  
     /// <para>
-    /// When you delete a detector, Amazon Fraud Detector permanently deletes the detector
-    /// and the data is no longer stored in Amazon Fraud Detector.
+    /// You can remove an Amazon SageMaker model if it is not associated with a detector version.
+    /// Removing a SageMaker model disconnects it from Amazon Fraud Detector, but the model
+    /// remains available in SageMaker.
     /// </para>
     /// </summary>
-    public partial class DeleteDetectorRequest : AmazonFraudDetectorRequest
+    public partial class DeleteExternalModelRequest : AmazonFraudDetectorRequest
     {
-        private string _detectorId;
+        private string _modelEndpoint;
 
         /// <summary>
-        /// Gets and sets the property DetectorId. 
+        /// Gets and sets the property ModelEndpoint. 
         /// <para>
-        /// The ID of the detector to delete.
+        /// The endpoint of the Amazon Sagemaker model to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
-        public string DetectorId
+        [AWSProperty(Required=true, Min=1, Max=63)]
+        public string ModelEndpoint
         {
-            get { return this._detectorId; }
-            set { this._detectorId = value; }
+            get { return this._modelEndpoint; }
+            set { this._modelEndpoint = value; }
         }
 
-        // Check to see if DetectorId property is set
-        internal bool IsSetDetectorId()
+        // Check to see if ModelEndpoint property is set
+        internal bool IsSetModelEndpoint()
         {
-            return this._detectorId != null;
+            return this._modelEndpoint != null;
         }
 
     }

@@ -431,6 +431,12 @@ namespace Amazon.FraudDetector
         /// <summary>
         /// Deletes the detector. Before deleting a detector, you must first delete all detector
         /// versions and rule versions associated with the detector.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a detector, Amazon Fraud Detector permanently deletes the detector
+        /// and the data is no longer stored in Amazon Fraud Detector.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDetector service method.</param>
         /// 
@@ -508,6 +514,12 @@ namespace Amazon.FraudDetector
         /// <summary>
         /// Deletes the detector version. You cannot delete detector versions that are in <code>ACTIVE</code>
         /// status.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a detector version, Amazon Fraud Detector permanently deletes the
+        /// detector and the data is no longer stored in Amazon Fraud Detector.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDetectorVersion service method.</param>
         /// 
@@ -582,11 +594,101 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  DeleteEntityType
+
+
+        /// <summary>
+        /// Deletes an entity type.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete an entity type that is included in an event type.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete an entity type, Amazon Fraud Detector permanently deletes that entity
+        /// type from the evaluation history, and the data is no longer stored in Amazon Fraud
+        /// Detector.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEntityType service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEntityType service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEntityType">REST API Reference for DeleteEntityType Operation</seealso>
+        DeleteEntityTypeResponse DeleteEntityType(DeleteEntityTypeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEntityType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEntityType operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEntityType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEntityType">REST API Reference for DeleteEntityType Operation</seealso>
+        IAsyncResult BeginDeleteEntityType(DeleteEntityTypeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEntityType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEntityType.</param>
+        /// 
+        /// <returns>Returns a  DeleteEntityTypeResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEntityType">REST API Reference for DeleteEntityType Operation</seealso>
+        DeleteEntityTypeResponse EndDeleteEntityType(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteEvent
 
 
         /// <summary>
         /// Deletes the specified event.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete an event, Amazon Fraud Detector permanently deletes that event from
+        /// the evaluation history, and the event data is no longer stored in Amazon Fraud Detector.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEvent service method.</param>
         /// 
@@ -601,6 +703,9 @@ namespace Amazon.FraudDetector
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEvent">REST API Reference for DeleteEvent Operation</seealso>
         DeleteEventResponse DeleteEvent(DeleteEventRequest request);
@@ -633,12 +738,523 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  DeleteEventType
+
+
+        /// <summary>
+        /// Deletes an event type.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete an event type that is used in a detector or a model.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete an entity type, Amazon Fraud Detector permanently deletes that entity
+        /// type from the evaluation history, and the data is no longer stored in Amazon Fraud
+        /// Detector.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventType service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEventType service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventType">REST API Reference for DeleteEventType Operation</seealso>
+        DeleteEventTypeResponse DeleteEventType(DeleteEventTypeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEventType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventType operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEventType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventType">REST API Reference for DeleteEventType Operation</seealso>
+        IAsyncResult BeginDeleteEventType(DeleteEventTypeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEventType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEventType.</param>
+        /// 
+        /// <returns>Returns a  DeleteEventTypeResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventType">REST API Reference for DeleteEventType Operation</seealso>
+        DeleteEventTypeResponse EndDeleteEventType(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteExternalModel
+
+
+        /// <summary>
+        /// Removes a SageMaker model from Amazon Fraud Detector.
+        /// 
+        ///  
+        /// <para>
+        /// You can remove an Amazon SageMaker model if it is not associated with a detector version.
+        /// Removing a SageMaker model disconnects it from Amazon Fraud Detector, but the model
+        /// remains available in SageMaker.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExternalModel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteExternalModel service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteExternalModel">REST API Reference for DeleteExternalModel Operation</seealso>
+        DeleteExternalModelResponse DeleteExternalModel(DeleteExternalModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteExternalModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExternalModel operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteExternalModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteExternalModel">REST API Reference for DeleteExternalModel Operation</seealso>
+        IAsyncResult BeginDeleteExternalModel(DeleteExternalModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteExternalModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteExternalModel.</param>
+        /// 
+        /// <returns>Returns a  DeleteExternalModelResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteExternalModel">REST API Reference for DeleteExternalModel Operation</seealso>
+        DeleteExternalModelResponse EndDeleteExternalModel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteLabel
+
+
+        /// <summary>
+        /// Deletes a label.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete labels that are included in an event type in Amazon Fraud Detector.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot delete a label assigned to an event ID. You must first delete the relevant
+        /// event ID.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete a label, Amazon Fraud Detector permanently deletes that label from
+        /// the evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLabel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLabel service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
+        DeleteLabelResponse DeleteLabel(DeleteLabelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLabel operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLabel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
+        IAsyncResult BeginDeleteLabel(DeleteLabelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLabel.</param>
+        /// 
+        /// <returns>Returns a  DeleteLabelResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
+        DeleteLabelResponse EndDeleteLabel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteModel
+
+
+        /// <summary>
+        /// Deletes a model.
+        /// 
+        ///  
+        /// <para>
+        /// You can delete models and model versions in Amazon Fraud Detector, provided that they
+        /// are not associated with a detector version.
+        /// </para>
+        ///  
+        /// <para>
+        ///  When you delete a model, Amazon Fraud Detector permanently deletes that model from
+        /// the evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteModel service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
+        DeleteModelResponse DeleteModel(DeleteModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModel operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
+        IAsyncResult BeginDeleteModel(DeleteModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteModel.</param>
+        /// 
+        /// <returns>Returns a  DeleteModelResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
+        DeleteModelResponse EndDeleteModel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteModelVersion
+
+
+        /// <summary>
+        /// Deletes a model version.
+        /// 
+        ///  
+        /// <para>
+        /// You can delete models and model versions in Amazon Fraud Detector, provided that they
+        /// are not associated with a detector version.
+        /// </para>
+        ///  
+        /// <para>
+        ///  When you delete a model version, Amazon Fraud Detector permanently deletes that model
+        /// version from the evaluation history, and the data is no longer stored in Amazon Fraud
+        /// Detector.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModelVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteModelVersion service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModelVersion">REST API Reference for DeleteModelVersion Operation</seealso>
+        DeleteModelVersionResponse DeleteModelVersion(DeleteModelVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteModelVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModelVersion operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteModelVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModelVersion">REST API Reference for DeleteModelVersion Operation</seealso>
+        IAsyncResult BeginDeleteModelVersion(DeleteModelVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteModelVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteModelVersion.</param>
+        /// 
+        /// <returns>Returns a  DeleteModelVersionResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModelVersion">REST API Reference for DeleteModelVersion Operation</seealso>
+        DeleteModelVersionResponse EndDeleteModelVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteOutcome
+
+
+        /// <summary>
+        /// Deletes an outcome.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete an outcome that is used in a rule version.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete an outcome, Amazon Fraud Detector permanently deletes that outcome
+        /// from the evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOutcome service method.</param>
+        /// 
+        /// <returns>The response from the DeleteOutcome service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteOutcome">REST API Reference for DeleteOutcome Operation</seealso>
+        DeleteOutcomeResponse DeleteOutcome(DeleteOutcomeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteOutcome operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOutcome operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteOutcome
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteOutcome">REST API Reference for DeleteOutcome Operation</seealso>
+        IAsyncResult BeginDeleteOutcome(DeleteOutcomeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteOutcome operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteOutcome.</param>
+        /// 
+        /// <returns>Returns a  DeleteOutcomeResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteOutcome">REST API Reference for DeleteOutcome Operation</seealso>
+        DeleteOutcomeResponse EndDeleteOutcome(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteRule
 
 
         /// <summary>
         /// Deletes the rule. You cannot delete a rule if it is used by an <code>ACTIVE</code>
         /// or <code>INACTIVE</code> detector version.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a rule, Amazon Fraud Detector permanently deletes that rule from the
+        /// evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRule service method.</param>
         /// 
@@ -707,6 +1323,97 @@ namespace Amazon.FraudDetector
         /// <returns>Returns a  DeleteRuleResult from FraudDetector.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         DeleteRuleResponse EndDeleteRule(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteVariable
+
+
+        /// <summary>
+        /// Deletes a variable.
+        /// 
+        ///  
+        /// <para>
+        /// You can't delete variables that are included in an event type in Amazon Fraud Detector.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Fraud Detector automatically deletes model output variables and SageMaker model
+        /// output variables when you delete the model. You can't delete these variables manually.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete a variable, Amazon Fraud Detector permanently deletes that variable
+        /// from the evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVariable service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVariable service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteVariable">REST API Reference for DeleteVariable Operation</seealso>
+        DeleteVariableResponse DeleteVariable(DeleteVariableRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVariable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVariable operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVariable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteVariable">REST API Reference for DeleteVariable Operation</seealso>
+        IAsyncResult BeginDeleteVariable(DeleteVariableRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVariable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVariable.</param>
+        /// 
+        /// <returns>Returns a  DeleteVariableResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteVariable">REST API Reference for DeleteVariable Operation</seealso>
+        DeleteVariableResponse EndDeleteVariable(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1014,6 +1721,28 @@ namespace Amazon.FraudDetector
         /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
         /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
         /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
