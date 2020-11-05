@@ -33,8 +33,66 @@ namespace Amazon.Elasticsearch.Model
     /// </summary>
     public partial class DomainEndpointOptions
     {
+        private string _customEndpoint;
+        private string _customEndpointCertificateArn;
+        private bool? _customEndpointEnabled;
         private bool? _enforceHTTPS;
         private TLSSecurityPolicy _tlsSecurityPolicy;
+
+        /// <summary>
+        /// Gets and sets the property CustomEndpoint. 
+        /// <para>
+        /// Specify the fully qualified domain for your custom endpoint.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string CustomEndpoint
+        {
+            get { return this._customEndpoint; }
+            set { this._customEndpoint = value; }
+        }
+
+        // Check to see if CustomEndpoint property is set
+        internal bool IsSetCustomEndpoint()
+        {
+            return this._customEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomEndpointCertificateArn. 
+        /// <para>
+        /// Specify ACM certificate ARN for your custom endpoint.
+        /// </para>
+        /// </summary>
+        public string CustomEndpointCertificateArn
+        {
+            get { return this._customEndpointCertificateArn; }
+            set { this._customEndpointCertificateArn = value; }
+        }
+
+        // Check to see if CustomEndpointCertificateArn property is set
+        internal bool IsSetCustomEndpointCertificateArn()
+        {
+            return this._customEndpointCertificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomEndpointEnabled. 
+        /// <para>
+        /// Specify if custom endpoint should be enabled for the Elasticsearch domain.
+        /// </para>
+        /// </summary>
+        public bool CustomEndpointEnabled
+        {
+            get { return this._customEndpointEnabled.GetValueOrDefault(); }
+            set { this._customEndpointEnabled = value; }
+        }
+
+        // Check to see if CustomEndpointEnabled property is set
+        internal bool IsSetCustomEndpointEnabled()
+        {
+            return this._customEndpointEnabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property EnforceHTTPS. 
