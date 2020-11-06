@@ -1,3 +1,15 @@
+### 3.5.50.0 (2020-11-06 19:11 UTC)
+* DLM (3.5.2.0)
+	* Amazon Data Lifecycle Manager now supports the creation and retention of EBS-backed Amazon Machine Images
+* EC2 (3.5.16.0)
+	* Network card support with four new attributes: NetworkCardIndex, NetworkPerformance, DefaultNetworkCardIndex, and MaximumNetworkInterfaces, added to the DescribeInstanceTypes API.
+* IoTSiteWise (3.5.3.0)
+	* Remove the CreatePresignedPortalUrl API
+* MediaLive (3.5.6.0)
+	* Support for SCTE35 ad markers in OnCuePoint style in RTMP outputs.
+* SimpleSystemsManagement (3.5.3.9)
+	* Documentation updates for Systems Manager
+
 ### 3.5.49.0 (2020-11-05 19:27 UTC)
 * AppMesh (3.5.1.0)
 	* This release adds circuit breaking capabilities to your mesh with connection pooling and outlier detection support.
