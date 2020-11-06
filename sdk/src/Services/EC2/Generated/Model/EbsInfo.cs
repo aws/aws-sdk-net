@@ -59,8 +59,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EbsOptimizedSupport. 
         /// <para>
-        /// Indicates that the instance type is Amazon EBS-optimized. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
+        /// Indicates whether the instance type is Amazon EBS-optimized. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
         /// EBS-Optimized Instances</a> in <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>

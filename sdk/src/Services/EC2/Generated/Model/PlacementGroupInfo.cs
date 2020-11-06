@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SupportedStrategies. 
         /// <para>
-        /// A list of supported placement groups types.
+        /// The supported placement group types.
         /// </para>
         /// </summary>
         public List<string> SupportedStrategies

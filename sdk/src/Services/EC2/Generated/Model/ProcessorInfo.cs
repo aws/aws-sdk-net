@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SupportedArchitectures. 
         /// <para>
-        /// A list of architectures supported by the instance type.
+        /// The architectures supported by the instance type.
         /// </para>
         /// </summary>
         public List<string> SupportedArchitectures

@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ValidCores. 
         /// <para>
-        /// List of the valid number of cores that can be configured for the instance type.
+        /// The valid number of cores that can be configured for the instance type.
         /// </para>
         /// </summary>
         public List<int> ValidCores
@@ -114,8 +114,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ValidThreadsPerCore. 
         /// <para>
-        /// List of the valid number of threads per core that can be configured for the instance
-        /// type. 
+        /// The valid number of threads per core that can be configured for the instance type.
+        /// 
         /// </para>
         /// </summary>
         public List<int> ValidThreadsPerCore
