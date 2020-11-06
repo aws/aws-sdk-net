@@ -45,6 +45,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RtmpGroupSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAdMarkers())
+            {
+                context.Writer.WritePropertyName("adMarkers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAdMarkersListValue in requestObject.AdMarkers)
+                {
+                        context.Writer.Write(requestObjectAdMarkersListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetAuthenticationScheme())
             {
                 context.Writer.WritePropertyName("authenticationScheme");

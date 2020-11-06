@@ -64,6 +64,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("adMarkers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AdMarkers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("authenticationScheme", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
