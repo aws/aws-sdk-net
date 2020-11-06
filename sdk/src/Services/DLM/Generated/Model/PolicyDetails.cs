@@ -60,7 +60,10 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property PolicyType. 
         /// <para>
-        /// The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
+        /// The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code>
+        /// to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify
+        /// <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle
+        /// of EBS-backed AMIs. The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
         /// </para>
         /// </summary>
         public PolicyTypeValues PolicyType
