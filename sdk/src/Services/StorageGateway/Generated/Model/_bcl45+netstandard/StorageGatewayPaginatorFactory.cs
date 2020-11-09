@@ -93,6 +93,14 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Paginator for ListTapePools operation
+        ///</summary>
+        public IListTapePoolsPaginator ListTapePools(ListTapePoolsRequest request) 
+        {
+            return new ListTapePoolsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTapes operation
         ///</summary>
         public IListTapesPaginator ListTapes(ListTapesRequest request) 

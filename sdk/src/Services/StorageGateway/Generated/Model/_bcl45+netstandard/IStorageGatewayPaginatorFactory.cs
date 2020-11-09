@@ -62,6 +62,11 @@ namespace Amazon.StorageGateway.Model
         IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
 
         /// <summary>
+        /// Paginator for ListTapePools operation
+        ///</summary>
+        IListTapePoolsPaginator ListTapePools(ListTapePoolsRequest request);
+
+        /// <summary>
         /// Paginator for ListTapes operation
         ///</summary>
         IListTapesPaginator ListTapes(ListTapesRequest request);
