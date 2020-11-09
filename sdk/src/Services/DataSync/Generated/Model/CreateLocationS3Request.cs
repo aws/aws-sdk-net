@@ -51,8 +51,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property AgentArns. 
         /// <para>
         /// If you are using DataSync on an AWS Outpost, specify the Amazon Resource Names (ARNs)
-        /// of the DataSync agents deployed on your AWS Outpost. For more information about launching
-        /// a DataSync agent on an Amazon Outpost, see <a>outposts-agent</a>.
+        /// of the DataSync agents deployed on your Outpost. For more information about launching
+        /// a DataSync agent on an AWS Outpost, see <a>outposts-agent</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
@@ -71,8 +71,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property S3BucketArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon S3 bucket. If the bucket is on an AWS
-        /// Outpost, this must be an access point ARN.
+        /// The ARN of the Amazon S3 bucket. If the bucket is on an AWS Outpost, this must be
+        /// an access point ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=156)]
@@ -113,10 +113,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about S3 storage classes, see <a href="https://aws.amazon.com/s3/storage-classes/">Amazon
-        /// S3 Storage Classes</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
-        /// Some storage classes have behaviors that can affect your S3 storage cost. For detailed
-        /// information, see <a>using-storage-classes</a>.
+        /// For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon
+        /// S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3
+        /// storage cost. For detailed information, see <a>using-storage-classes</a>.
         /// </para>
         /// </summary>
         public S3StorageClass S3StorageClass

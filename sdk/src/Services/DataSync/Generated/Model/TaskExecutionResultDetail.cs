@@ -162,7 +162,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TransferStatus. 
         /// <para>
-        /// The status of the TRANSFERRING Phase.
+        /// The status of the TRANSFERRING phase.
         /// </para>
         /// </summary>
         public PhaseStatus TransferStatus
@@ -199,7 +199,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property VerifyStatus. 
         /// <para>
-        /// The status of the VERIFYING Phase.
+        /// The status of the VERIFYING phase.
         /// </para>
         /// </summary>
         public PhaseStatus VerifyStatus

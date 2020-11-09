@@ -106,7 +106,7 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// A list of filter rules that determines which files to exclude from a task. The list
         /// should contain a single filter string that consists of the patterns to exclude. The
-        /// patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>
+        /// patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.
         /// 
         /// </para>
         ///  

@@ -2208,5 +2208,79 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  UpdateTaskExecution
+
+        /// <summary>
+        /// Updates execution of a task.
+        /// 
+        ///  
+        /// <para>
+        /// You can modify bandwidth throttling for a task execution that is running or queued.
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
+        /// Bandwidth Throttling for a Task Execution</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The only <code>Option</code> that can be modified by <code>UpdateTaskExecution</code>
+        /// is <code> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
+        /// </code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTaskExecution service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTaskExecution service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">REST API Reference for UpdateTaskExecution Operation</seealso>
+        public virtual UpdateTaskExecutionResponse UpdateTaskExecution(UpdateTaskExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTaskExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTaskExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTaskExecutionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTaskExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTaskExecution operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTaskExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">REST API Reference for UpdateTaskExecution Operation</seealso>
+        public virtual IAsyncResult BeginUpdateTaskExecution(UpdateTaskExecutionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTaskExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTaskExecutionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTaskExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTaskExecution.</param>
+        /// 
+        /// <returns>Returns a  UpdateTaskExecutionResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">REST API Reference for UpdateTaskExecution Operation</seealso>
+        public virtual UpdateTaskExecutionResponse EndUpdateTaskExecution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateTaskExecutionResponse>(asyncResult);
+        }
+
+        #endregion
+        
     }
 }

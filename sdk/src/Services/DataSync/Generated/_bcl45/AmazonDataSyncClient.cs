@@ -2109,5 +2109,86 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  UpdateTaskExecution
+
+
+        /// <summary>
+        /// Updates execution of a task.
+        /// 
+        ///  
+        /// <para>
+        /// You can modify bandwidth throttling for a task execution that is running or queued.
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
+        /// Bandwidth Throttling for a Task Execution</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The only <code>Option</code> that can be modified by <code>UpdateTaskExecution</code>
+        /// is <code> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
+        /// </code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTaskExecution service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTaskExecution service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">REST API Reference for UpdateTaskExecution Operation</seealso>
+        public virtual UpdateTaskExecutionResponse UpdateTaskExecution(UpdateTaskExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTaskExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTaskExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTaskExecutionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates execution of a task.
+        /// 
+        ///  
+        /// <para>
+        /// You can modify bandwidth throttling for a task execution that is running or queued.
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
+        /// Bandwidth Throttling for a Task Execution</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The only <code>Option</code> that can be modified by <code>UpdateTaskExecution</code>
+        /// is <code> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
+        /// </code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTaskExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTaskExecution service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">REST API Reference for UpdateTaskExecution Operation</seealso>
+        public virtual Task<UpdateTaskExecutionResponse> UpdateTaskExecutionAsync(UpdateTaskExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTaskExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTaskExecutionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateTaskExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
     }
 }

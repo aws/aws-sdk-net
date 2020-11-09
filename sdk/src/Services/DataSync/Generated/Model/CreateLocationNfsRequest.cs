@@ -125,7 +125,7 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// To see all the paths exported by your NFS server. run "<code>showmount -e nfs-server-name</code>"
+        /// To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>"
         /// from an NFS client that has access to your server. You can specify any directory that
         /// appears in the results, and any subdirectory of that directory. Ensure that the NFS
         /// export is accessible without Kerberos authentication. 
