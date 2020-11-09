@@ -40,11 +40,12 @@ namespace AWSSDKDocSamples.Amazon.FSx.Generated
             {
                 ClientRequestToken = "a8ca07e4-61ec-4399-99f4-19853801bcd5",
                 FileSystemType = "WINDOWS",
-                KmsKeyId = "arn:aws:kms:us-east-1:012345678912:key/0ff3ea8d-130e-4133-877f-93908b6fdbd6",
+                KmsKeyId = "arn:aws:kms:us-east-1:012345678912:key/1111abcd-2222-3333-4444-55556666eeff",
                 SecurityGroupIds = new List<string> {
                     "sg-edcd9784"
                 },
-                StorageCapacity = 300,
+                StorageCapacity = 3200,
+                StorageType = "HDD",
                 SubnetIds = new List<string> {
                     "subnet-1234abcd"
                 },
@@ -56,9 +57,12 @@ namespace AWSSDKDocSamples.Amazon.FSx.Generated
                 },
                 WindowsConfiguration = new CreateFileSystemWindowsConfiguration {
                     ActiveDirectoryId = "d-1234abcd12",
+                    Aliases = new List<string> {
+                        "accounting.corp.example.com"
+                    },
                     AutomaticBackupRetentionDays = 30,
                     DailyAutomaticBackupStartTime = "05:00",
-                    ThroughputCapacity = 8,
+                    ThroughputCapacity = 32,
                     WeeklyMaintenanceStartTime = "1:05:00"
                 }
             });

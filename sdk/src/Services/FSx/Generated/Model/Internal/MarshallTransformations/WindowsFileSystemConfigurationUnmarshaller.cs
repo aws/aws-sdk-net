@@ -70,6 +70,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.ActiveDirectoryId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Aliases", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Alias, AliasUnmarshaller>(AliasUnmarshaller.Instance);
+                    unmarshalledObject.Aliases = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AutomaticBackupRetentionDays", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

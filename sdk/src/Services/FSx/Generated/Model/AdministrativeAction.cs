@@ -75,7 +75,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property ProgressPercent. 
         /// <para>
         /// Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative
-        /// action.
+        /// action. Does not apply to any other administrative action type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -154,9 +154,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property TargetFileSystemValues. 
         /// <para>
-        /// Describes the target <code>StorageCapacity</code> or <code>ThroughputCapacity</code>
-        /// value provided in the <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code>
-        /// administrative actions. 
+        /// Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code>
+        /// operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions. 
         /// </para>
         /// </summary>
         public FileSystem TargetFileSystemValues

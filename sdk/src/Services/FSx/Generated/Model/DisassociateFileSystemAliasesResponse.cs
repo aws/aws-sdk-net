@@ -29,29 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Provides information about a failed administrative action.
+    /// The system generated response showing the DNS aliases that Amazon FSx is attempting
+    /// to disassociate from the file system. Use the API operation to monitor the status
+    /// of the aliases Amazon FSx is removing from the file system.
     /// </summary>
-    public partial class AdministrativeActionFailureDetails
+    public partial class DisassociateFileSystemAliasesResponse : AmazonWebServiceResponse
     {
-        private string _message;
+        private List<Alias> _aliases = new List<Alias>();
 
         /// <summary>
-        /// Gets and sets the property Message. 
+        /// Gets and sets the property Aliases. 
         /// <para>
-        /// Error message providing details about the failed administrative action.
+        /// An array of one or more DNS aliases that Amazon FSx is attempting to disassociate
+        /// from the file system.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
-        public string Message
+        [AWSProperty(Max=50)]
+        public List<Alias> Aliases
         {
-            get { return this._message; }
-            set { this._message = value; }
+            get { return this._aliases; }
+            set { this._aliases = value; }
         }
 
-        // Check to see if Message property is set
-        internal bool IsSetMessage()
+        // Check to see if Aliases property is set
+        internal bool IsSetAliases()
         {
-            return this._message != null;
+            return this._aliases != null && this._aliases.Count > 0; 
         }
 
     }
