@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents a Contributor Insights summary entry..
+    /// Represents a Contributor Insights summary entry.
     /// </summary>
     public partial class ContributorInsightsSummary
     {

@@ -601,6 +601,110 @@ namespace Amazon.DynamoDBv2
 
 
     /// <summary>
+    /// Constants used for properties of type ExportFormat.
+    /// </summary>
+    public class ExportFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DYNAMODB_JSON for ExportFormat
+        /// </summary>
+        public static readonly ExportFormat DYNAMODB_JSON = new ExportFormat("DYNAMODB_JSON");
+        /// <summary>
+        /// Constant ION for ExportFormat
+        /// </summary>
+        public static readonly ExportFormat ION = new ExportFormat("ION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportFormat FindValue(string value)
+        {
+            return FindValue<ExportFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExportStatus.
+    /// </summary>
+    public class ExportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus COMPLETED = new ExportStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus FAILED = new ExportStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus IN_PROGRESS = new ExportStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportStatus FindValue(string value)
+        {
+            return FindValue<ExportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GlobalTableStatus.
     /// </summary>
     public class GlobalTableStatus : ConstantClass
@@ -1150,6 +1254,56 @@ namespace Amazon.DynamoDBv2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReturnValuesOnConditionCheckFailure(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3SseAlgorithm.
+    /// </summary>
+    public class S3SseAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AES256 for S3SseAlgorithm
+        /// </summary>
+        public static readonly S3SseAlgorithm AES256 = new S3SseAlgorithm("AES256");
+        /// <summary>
+        /// Constant KMS for S3SseAlgorithm
+        /// </summary>
+        public static readonly S3SseAlgorithm KMS = new S3SseAlgorithm("KMS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3SseAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3SseAlgorithm FindValue(string value)
+        {
+            return FindValue<S3SseAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3SseAlgorithm(string value)
         {
             return FindValue(value);
         }

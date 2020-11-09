@@ -2057,6 +2057,67 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeExport
+
+        internal virtual DescribeExportResponse DescribeExport(DescribeExportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExportResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeExportResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes an existing table export.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeExport service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ExportNotFoundException">
+        /// The specified export was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 50 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 25 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 256 tables.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport">REST API Reference for DescribeExport Operation</seealso>
+        public virtual Task<DescribeExportResponse> DescribeExportAsync(DescribeExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeExportResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeGlobalTable
 
         internal virtual DescribeGlobalTableResponse DescribeGlobalTable(DescribeGlobalTableRequest request)
@@ -2498,6 +2559,78 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  ExportTableToPointInTime
+
+        internal virtual ExportTableToPointInTimeResponse ExportTableToPointInTime(ExportTableToPointInTimeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportTableToPointInTimeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportTableToPointInTimeResponseUnmarshaller.Instance;
+
+            return Invoke<ExportTableToPointInTimeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Exports table data to an S3 bucket. The table must have point in time recovery enabled,
+        /// and you can export data from any time within the point in time recovery window.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportTableToPointInTime service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportTableToPointInTime service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ExportConflictException">
+        /// There was a conflict when writing to the specified S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InvalidExportTimeException">
+        /// The specified <code>ExportTime</code> is outside of the point in time recovery window.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 50 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 25 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 256 tables.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.PointInTimeRecoveryUnavailableException">
+        /// Point in time recovery has not yet been enabled for this source table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
+        /// A source table with the name <code>TableName</code> does not currently exist within
+        /// the subscriber's account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime">REST API Reference for ExportTableToPointInTime Operation</seealso>
+        public virtual Task<ExportTableToPointInTimeResponse> ExportTableToPointInTimeAsync(ExportTableToPointInTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportTableToPointInTimeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportTableToPointInTimeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExportTableToPointInTimeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetItem
 
         internal virtual GetItemResponse GetItem(GetItemRequest request)
@@ -2757,6 +2890,64 @@ namespace Amazon.DynamoDBv2
             options.ResponseUnmarshaller = ListContributorInsightsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListContributorInsightsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListExports
+
+        internal virtual ListExportsResponse ListExports(ListExportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExportsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists completed exports within the past 90 days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExports service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 50 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 25 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 256 tables.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports">REST API Reference for ListExports Operation</seealso>
+        public virtual Task<ListExportsResponse> ListExportsAsync(ListExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListExportsResponse>(request, options, cancellationToken);
         }
 
         #endregion
