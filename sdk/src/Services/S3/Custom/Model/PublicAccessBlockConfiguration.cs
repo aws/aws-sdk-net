@@ -174,18 +174,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RestrictPublicBuckets. 
-        /// <para>
-        /// Specifies whether Amazon S3 should restrict public bucket policies for this bucket.
-        /// If this element is set to <code>TRUE</code>, then only the bucket owner and AWS Services
-        /// can access this bucket if it has a public policy.
-        /// </para>
-        ///  
-        /// <para>
-        /// Note that enabling this setting doesn't affect previously stored bucket policies,
-        /// except that public and cross-account access within any public bucket policy, including
-        /// non-public delegation to specific accounts, is blocked.
-        /// </para>
+        /// <para>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. 
+        /// Setting this element to <code>TRUE</code> restricts access to this bucket to only AWS 
+        /// service principals and authorized users within this account if the bucket has a 
+        /// public policy.</para> <para>Enabling this setting doesn't affect previously stored bucket policies, 
+        /// except that public and cross-account access within any public bucket policy, 
+        /// including non-public delegation to specific accounts, is blocked.</para>
         /// </summary>
         public bool RestrictPublicBuckets
         {

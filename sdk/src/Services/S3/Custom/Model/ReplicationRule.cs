@@ -55,16 +55,16 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>The priority associated with the rule. If you specify multiple rules in a
-        /// replication configuration, then Amazon S3 applies rule priority in the event
-        /// there are conflicts (two or more rules identify the same object based on
-        /// filter specified). The rule with higher priority takes precedence. For
-        /// example,</para> <ul> <li> <para>Same object quality prefix based filter criteria
-        /// If prefixes you specified in multiple rules overlap. </para> </li> <li> <para>Same
-        /// object qualify tag based filter criteria specified in multiple rules</para> </li>
-        /// </ul> <para>For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">
-        /// Cross-Region Replication (CRR)</a> in the Amazon S3 Developer Guide.</para>
+        /// <para>The priority associated with the rule. 
+        /// If you specify multiple rules in a replication configuration, 
+        /// Amazon S3 prioritizes the rules to prevent conflicts when filtering. 
+        /// If two or more rules identify the same object based on a specified filter, 
+        /// the rule with higher priority takes precedence. For example:</para> <ul> <li> 
+        /// <para>Same object quality prefix-based filter criteria if prefixes you specified in multiple 
+        /// rules overlap </para> </li> <li> <p>Same object qualify tag-based filter criteria specified 
+        /// in multiple rules</p> </li> </ul> <p>For more information, 
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html\">Replication</a> 
+        /// in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
         /// </summary>
         public int Priority
         {

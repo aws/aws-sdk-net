@@ -65,7 +65,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Token.
+        /// <para>A token to allow Object Lock to be enabled for an existing bucket.</para>
         /// </summary>
         public string Token
         {

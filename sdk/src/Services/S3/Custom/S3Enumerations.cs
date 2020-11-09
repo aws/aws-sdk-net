@@ -2233,4 +2233,126 @@ namespace Amazon.S3
             return FindValue(value);
         }
     }
+
+    public sealed class IntelligentTieringStatus : ConstantClass
+    {
+        private IntelligentTieringStatus(string value)
+            : base(value)
+        {
+
+        }
+
+        /// <summary>
+        /// intelligent tiering is enabled.
+        /// </summary>
+        public static readonly IntelligentTieringStatus Enabled = new IntelligentTieringStatus("Enabled");
+
+        /// <summary>
+        /// intelligent tiering is disabled.
+        /// </summary>
+        public static readonly IntelligentTieringStatus Disabled = new IntelligentTieringStatus("Disabled");
+
+        /// <summary>
+        /// Finds the IntelligentTieringStatus instance for the string value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static IntelligentTieringStatus FindValue(string value)
+        {
+            return FindValue<IntelligentTieringStatus>(value);
+        }
+
+        /// <summary>
+        /// Converts the string to IntelligentTieringStatus instance
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator IntelligentTieringStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    public sealed class IntelligentTieringAccessTier : ConstantClass
+    {
+        private IntelligentTieringAccessTier(string value)
+            : base(value)
+        {
+
+        }
+
+        /// <summary>
+        /// Access Tier is set to Archive Access.
+        /// </summary>
+        public static readonly IntelligentTieringAccessTier ARCHIVE_ACCESS = new IntelligentTieringAccessTier("ARCHIVE_ACCESS");
+
+        /// <summary>
+        /// Access Tier is set to Deep Archive Access.
+        /// </summary>
+        public static readonly IntelligentTieringAccessTier DEEP_ARCHIVE_ACCESS = new IntelligentTieringAccessTier("DEEP_ARCHIVE_ACCESS");
+
+        /// <summary>
+        /// Finds the IntelligentTieringAccessTier instance for the string value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static IntelligentTieringAccessTier FindValue(string value)
+        {
+            return FindValue<IntelligentTieringAccessTier>(value);
+        }
+
+        /// <summary>
+        /// Converts the string to IntelligentTieringAccessTier instance
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator IntelligentTieringAccessTier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// The Archive status  associated with this source object.
+    /// </summary>
+    public sealed class ArchiveStatus : ConstantClass
+    {
+        /// <summary>
+        ///  The Status is ARCHIVE_ACCESS.
+        /// </summary>
+        public static readonly ArchiveStatus ARCHIVE_ACCESS = new ArchiveStatus("ARCHIVE_ACCESS");
+
+        /// <summary>
+        /// The Status is DEEP_ARCHIVE_ACCESS.
+        /// </summary>
+        public static readonly ArchiveStatus DEEP_ARCHIVE_ACCESS = new ArchiveStatus("DEEP_ARCHIVE_ACCESS");
+
+        /// <summary>
+        /// Construct instance of ArchiveStatus.
+        /// </summary>
+        /// <param name="value"></param>
+        public ArchiveStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The string representation of the ArchiveStatus.</param>
+        /// <returns>The ArchiveStatus object for that string.</returns>
+        public static ArchiveStatus FindValue(string value)
+        {
+            return FindValue<ArchiveStatus>(value);
+        }
+
+        /// <summary>
+        /// Convert string to ArchiveStatus.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static implicit operator ArchiveStatus(string value)
+        {
+            return FindValue<ArchiveStatus>(value);
+        }
+
+    }
 }

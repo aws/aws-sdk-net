@@ -2204,6 +2204,83 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  DeleteBucketIntelligentTieringConfiguration
+
+        internal virtual DeleteBucketIntelligentTieringConfigurationResponse DeleteBucketIntelligentTieringConfiguration(DeleteBucketIntelligentTieringConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketIntelligentTieringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketIntelligentTieringConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBucketIntelligentTieringConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the S3 Intelligent-Tiering configuration from the specified bucket.
+        /// 
+        ///  
+        /// <para>
+        /// The S3 Intelligent-Tiering storage class is designed to optimize storage costs by
+        /// automatically moving data to the most cost-effective storage access tier, without
+        /// additional operational overhead. S3 Intelligent-Tiering delivers automatic cost savings
+        /// by moving data between access tiers, when access patterns change.
+        /// </para>
+        ///  
+        /// <para>
+        /// The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB
+        /// that you plan to store for at least 30 days. If the size of an object is less than
+        /// 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they
+        /// are always charged at the frequent access tier rates in the S3 Intelligent-Tiering
+        /// storage class. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you delete an object before the end of the 30-day minimum storage duration period,
+        /// you are charged for 30 days. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+        /// class for automatically optimizing frequently and infrequently accessed objects</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Operations related to <code>DeleteBucketIntelligentTieringConfiguration</code> include:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html">GetBucketIntelligentTieringConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html">PutBucketIntelligentTieringConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketIntelligentTieringConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteBucketIntelligentTieringConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketIntelligentTieringConfiguration">REST API Reference for DeleteBucketIntelligentTieringConfiguration Operation</seealso>
+        public virtual Task<DeleteBucketIntelligentTieringConfigurationResponse> DeleteBucketIntelligentTieringConfigurationAsync(DeleteBucketIntelligentTieringConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketIntelligentTieringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketIntelligentTieringConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBucketIntelligentTieringConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteBucketInventoryConfiguration
 
         internal virtual DeleteBucketInventoryConfigurationResponse DeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request)
@@ -3803,6 +3880,83 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetBucketIntelligentTieringConfiguration
+
+        internal virtual GetBucketIntelligentTieringConfigurationResponse GetBucketIntelligentTieringConfiguration(GetBucketIntelligentTieringConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketIntelligentTieringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketIntelligentTieringConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketIntelligentTieringConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the S3 Intelligent-Tiering configuration from the specified bucket.
+        /// 
+        ///  
+        /// <para>
+        /// The S3 Intelligent-Tiering storage class is designed to optimize storage costs by
+        /// automatically moving data to the most cost-effective storage access tier, without
+        /// additional operational overhead. S3 Intelligent-Tiering delivers automatic cost savings
+        /// by moving data between access tiers, when access patterns change.
+        /// </para>
+        ///  
+        /// <para>
+        /// The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB
+        /// that you plan to store for at least 30 days. If the size of an object is less than
+        /// 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they
+        /// are always charged at the frequent access tier rates in the S3 Intelligent-Tiering
+        /// storage class. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you delete an object before the end of the 30-day minimum storage duration period,
+        /// you are charged for 30 days. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+        /// class for automatically optimizing frequently and infrequently accessed objects</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Operations related to <code>GetBucketIntelligentTieringConfiguration</code> include:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html">DeleteBucketIntelligentTieringConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html">PutBucketIntelligentTieringConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketIntelligentTieringConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBucketIntelligentTieringConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketIntelligentTieringConfiguration">REST API Reference for GetBucketIntelligentTieringConfiguration Operation</seealso>
+        public virtual Task<GetBucketIntelligentTieringConfigurationResponse> GetBucketIntelligentTieringConfigurationAsync(GetBucketIntelligentTieringConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketIntelligentTieringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketIntelligentTieringConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBucketIntelligentTieringConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetBucketInventoryConfiguration
 
         internal virtual GetBucketInventoryConfigurationResponse GetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request)
@@ -5204,9 +5358,9 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If the object you are retrieving is stored in the GLACIER or DEEP_ARCHIVE storage
-        /// classes, before you can retrieve the object you must first restore a copy using <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
+        /// If the object you are retrieving is stored in the S3 Glacier, S3 Glacier Deep Archive,
+        /// S3 Intelligent-Tiering Archive, or S3 Intelligent-Tiering Deep Archive storage classes,
+        /// before you can retrieve the object you must first restore a copy using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// Otherwise, this operation returns an <code>InvalidObjectStateError</code> error. For
         /// information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
         /// Archived Objects</a>.
@@ -5427,9 +5581,9 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If the object you are retrieving is stored in the GLACIER or DEEP_ARCHIVE storage
-        /// classes, before you can retrieve the object you must first restore a copy using <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
+        /// If the object you are retrieving is stored in the S3 Glacier, S3 Glacier Deep Archive,
+        /// S3 Intelligent-Tiering Archive, or S3 Intelligent-Tiering Deep Archive storage classes,
+        /// before you can retrieve the object you must first restore a copy using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// Otherwise, this operation returns an <code>InvalidObjectStateError</code> error. For
         /// information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
         /// Archived Objects</a>.
@@ -5653,9 +5807,9 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If the object you are retrieving is stored in the GLACIER or DEEP_ARCHIVE storage
-        /// classes, before you can retrieve the object you must first restore a copy using <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
+        /// If the object you are retrieving is stored in the S3 Glacier, S3 Glacier Deep Archive,
+        /// S3 Intelligent-Tiering Archive, or S3 Intelligent-Tiering Deep Archive storage classes,
+        /// before you can retrieve the object you must first restore a copy using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// Otherwise, this operation returns an <code>InvalidObjectStateError</code> error. For
         /// information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
         /// Archived Objects</a>.
@@ -7430,6 +7584,83 @@ namespace Amazon.S3
             options.ResponseUnmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListBucketAnalyticsConfigurationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListBucketIntelligentTieringConfigurations
+
+        internal virtual ListBucketIntelligentTieringConfigurationsResponse ListBucketIntelligentTieringConfigurations(ListBucketIntelligentTieringConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBucketIntelligentTieringConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBucketIntelligentTieringConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBucketIntelligentTieringConfigurationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the S3 Intelligent-Tiering configuration from the specified bucket.
+        /// 
+        ///  
+        /// <para>
+        /// The S3 Intelligent-Tiering storage class is designed to optimize storage costs by
+        /// automatically moving data to the most cost-effective storage access tier, without
+        /// additional operational overhead. S3 Intelligent-Tiering delivers automatic cost savings
+        /// by moving data between access tiers, when access patterns change.
+        /// </para>
+        ///  
+        /// <para>
+        /// The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB
+        /// that you plan to store for at least 30 days. If the size of an object is less than
+        /// 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they
+        /// are always charged at the frequent access tier rates in the S3 Intelligent-Tiering
+        /// storage class. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you delete an object before the end of the 30-day minimum storage duration period,
+        /// you are charged for 30 days. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+        /// class for automatically optimizing frequently and infrequently accessed objects</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Operations related to <code>ListBucketIntelligentTieringConfigurations</code> include:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html">DeleteBucketIntelligentTieringConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html">PutBucketIntelligentTieringConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html">GetBucketIntelligentTieringConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketIntelligentTieringConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBucketIntelligentTieringConfigurations service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketIntelligentTieringConfigurations">REST API Reference for ListBucketIntelligentTieringConfigurations Operation</seealso>
+        public virtual Task<ListBucketIntelligentTieringConfigurationsResponse> ListBucketIntelligentTieringConfigurationsAsync(ListBucketIntelligentTieringConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBucketIntelligentTieringConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBucketIntelligentTieringConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBucketIntelligentTieringConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -9414,6 +9645,83 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  PutBucketIntelligentTieringConfiguration
+
+        internal virtual PutBucketIntelligentTieringConfigurationResponse PutBucketIntelligentTieringConfiguration(PutBucketIntelligentTieringConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketIntelligentTieringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketIntelligentTieringConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketIntelligentTieringConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Puts a S3 Intelligent-Tiering configuration to the specified bucket.
+        /// 
+        ///  
+        /// <para>
+        /// The S3 Intelligent-Tiering storage class is designed to optimize storage costs by
+        /// automatically moving data to the most cost-effective storage access tier, without
+        /// additional operational overhead. S3 Intelligent-Tiering delivers automatic cost savings
+        /// by moving data between access tiers, when access patterns change.
+        /// </para>
+        ///  
+        /// <para>
+        /// The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB
+        /// that you plan to store for at least 30 days. If the size of an object is less than
+        /// 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they
+        /// are always charged at the frequent access tier rates in the S3 Intelligent-Tiering
+        /// storage class. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you delete an object before the end of the 30-day minimum storage duration period,
+        /// you are charged for 30 days. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+        /// class for automatically optimizing frequently and infrequently accessed objects</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Operations related to <code>PutBucketIntelligentTieringConfiguration</code> include:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html">DeleteBucketIntelligentTieringConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html">GetBucketIntelligentTieringConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketIntelligentTieringConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutBucketIntelligentTieringConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketIntelligentTieringConfiguration">REST API Reference for PutBucketIntelligentTieringConfiguration Operation</seealso>
+        public virtual Task<PutBucketIntelligentTieringConfigurationResponse> PutBucketIntelligentTieringConfigurationAsync(PutBucketIntelligentTieringConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketIntelligentTieringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketIntelligentTieringConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutBucketIntelligentTieringConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutBucketInventoryConfiguration
 
         internal virtual PutBucketInventoryConfigurationResponse PutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request)
@@ -9886,7 +10194,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Creates or modifies <code>OwnershipControls</code> for an Amazon S3 bucket. To use
-        /// this operation, you must have the <code>s3:GetBucketOwnershipControls</code> permission.
+        /// this operation, you must have the <code>s3:PutBucketOwnershipControls</code> permission.
         /// For more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
         /// Permissions in a Policy</a>. 
         /// 
@@ -9897,7 +10205,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// The following operations are related to <code>GetBucketOwnershipControls</code>:
+        /// The following operations are related to <code>PutBucketOwnershipControls</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -11980,22 +12288,19 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// Objects in the GLACIER and DEEP_ARCHIVE storage classes are archived. To access an
-        /// archived object, you must first initiate a restore request. This restores a temporary
-        /// copy of the archived object. In a restore request, you specify the number of days
-        /// that you want the restored copy to exist. After the specified period, Amazon S3 deletes
-        /// the temporary copy but the object remains archived in the GLACIER or DEEP_ARCHIVE
-        /// storage class that object was restored from. 
+        /// Objects that you archive to the S3 Glacier, S3 Glacier Deep Archive, S3 Intelligent-Tiering
+        /// Archive, or S3 Intelligent-Tiering Deep Archive storage classes are not accessible
+        /// in real time. For objects in Archive Access tier or Deep Archive Access tier you must
+        /// first initiate a restore request, and then wait until the object is moved into the
+        /// Frequent Access tier. For objects in S3 Glacier or S3 Glacier Deep Archive you must
+        /// first initiate a restore request, and then wait until a temporary copy of the object
+        /// is available. To access an archived object, you must restore the object for the duration
+        /// (number of days) that you specify.
         /// </para>
         ///  
         /// <para>
         /// To restore a specific object version, you can provide a version ID. If you don't provide
         /// a version ID, Amazon S3 restores the current version.
-        /// </para>
-        ///  
-        /// <para>
-        /// The time it takes restore jobs to finish depends on which storage class the object
-        /// is being restored from and which data access tier you specify. 
         /// </para>
         ///  
         /// <para>
@@ -12006,28 +12311,32 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         ///  <b> <code>Expedited</code> </b> - Expedited retrievals allow you to quickly access
-        /// your data stored in the GLACIER storage class when occasional urgent requests for
-        /// a subset of archives are required. For all but the largest archived objects (250 MB+),
-        /// data accessed using Expedited retrievals are typically made available within 1–5 minutes.
-        /// Provisioned capacity ensures that retrieval capacity for Expedited retrievals is available
-        /// when you need it. Expedited retrievals and provisioned capacity are not available
-        /// for the DEEP_ARCHIVE storage class.
+        /// your data stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage class
+        /// when occasional urgent requests for a subset of archives are required. For all but
+        /// the largest archived objects (250 MB+), data accessed using Expedited retrievals is
+        /// typically made available within 1–5 minutes. Provisioned capacity ensures that retrieval
+        /// capacity for Expedited retrievals is available when you need it. Expedited retrievals
+        /// and provisioned capacity are not available for objects stored in the S3 Glacier Deep
+        /// Archive or S3 Intelligent-Tiering Deep Archive storage class.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Standard</code> </b> - S3 Standard retrievals allow you to access any of
-        /// your archived objects within several hours. This is the default option for the GLACIER
-        /// and DEEP_ARCHIVE retrieval requests that do not specify the retrieval option. S3 Standard
-        /// retrievals typically complete within 3-5 hours from the GLACIER storage class and
-        /// typically complete within 12 hours from the DEEP_ARCHIVE storage class. 
+        ///  <b> <code>Standard</code> </b> - Standard retrievals allow you to access any of your
+        /// archived objects within several hours. This is the default option for retrieval requests
+        /// that do not specify the retrieval option. Standard retrievals typically finish within
+        /// 3–5 hours for objects stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage
+        /// class. They typically finish within 12 hours for objects stored in the S3 Glacier
+        /// Deep Archive or S3 Intelligent-Tiering Deep Archive storage class. Standard retrievals
+        /// are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon S3 Glacier’s lowest-cost
-        /// retrieval option, enabling you to retrieve large amounts, even petabytes, of data
-        /// inexpensively in a day. Bulk retrievals typically complete within 5-12 hours from
-        /// the GLACIER storage class and typically complete within 48 hours from the DEEP_ARCHIVE
-        /// storage class.
+        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are the lowest-cost retrieval option
+        /// in S3 Glacier, enabling you to retrieve large amounts, even petabytes, of data inexpensively.
+        /// Bulk retrievals typically finish within 5–12 hours for objects stored in the S3 Glacier
+        /// or S3 Intelligent-Tiering Archive storage class. They typically finish within 48 hours
+        /// for objects stored in the S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep Archive
+        /// storage class. Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -12039,13 +12348,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// You can use Amazon S3 restore speed upgrade to change the restore speed to a faster
-        /// speed while it is in progress. You upgrade the speed of an in-progress restoration
-        /// by issuing another restore request to the same object, setting a new <code>Tier</code>
-        /// request element. When issuing a request to upgrade the restore tier, you must choose
-        /// a tier that is faster than the tier that the in-progress restore is using. You must
-        /// not change any other parameters, such as the <code>Days</code> request element. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html#restoring-objects-upgrade-tier.title.html">
-        /// Upgrading the Speed of an In-Progress Restore</a> in the <i>Amazon Simple Storage
+        /// speed while it is in progress. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html#restoring-objects-upgrade-tier.title.html">
+        /// Upgrading the speed of an in-progress restore</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>. 
         /// </para>
         ///  
@@ -12087,13 +12391,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the object copy is not previously restored, then Amazon S3 returns <code>202 Accepted</code>
+        /// If the object is not previously restored, then Amazon S3 returns <code>202 Accepted</code>
         /// in the response. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the object copy is previously restored, Amazon S3 returns <code>200 OK</code> in
-        /// the response. 
+        /// If the object is previously restored, Amazon S3 returns <code>200 OK</code> in the
+        /// response. 
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
@@ -12120,10 +12424,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: S3 Glacier expedited retrievals are currently not available. Try again
-        /// later. (Returned if there is insufficient capacity to process the Expedited request.
-        /// This error applies only to Expedited retrievals and not to S3 Standard or Bulk retrievals.)</i>
-        /// 
+        ///  <i>Cause: expedited retrievals are currently not available. Try again later. (Returned
+        /// if there is insufficient capacity to process the Expedited request. This error applies
+        /// only to Expedited retrievals and not to S3 Standard or Bulk retrievals.)</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12153,7 +12456,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -12325,22 +12628,19 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// Objects in the GLACIER and DEEP_ARCHIVE storage classes are archived. To access an
-        /// archived object, you must first initiate a restore request. This restores a temporary
-        /// copy of the archived object. In a restore request, you specify the number of days
-        /// that you want the restored copy to exist. After the specified period, Amazon S3 deletes
-        /// the temporary copy but the object remains archived in the GLACIER or DEEP_ARCHIVE
-        /// storage class that object was restored from. 
+        /// Objects that you archive to the S3 Glacier, S3 Glacier Deep Archive, S3 Intelligent-Tiering
+        /// Archive, or S3 Intelligent-Tiering Deep Archive storage classes are not accessible
+        /// in real time. For objects in Archive Access tier or Deep Archive Access tier you must
+        /// first initiate a restore request, and then wait until the object is moved into the
+        /// Frequent Access tier. For objects in S3 Glacier or S3 Glacier Deep Archive you must
+        /// first initiate a restore request, and then wait until a temporary copy of the object
+        /// is available. To access an archived object, you must restore the object for the duration
+        /// (number of days) that you specify.
         /// </para>
         ///  
         /// <para>
         /// To restore a specific object version, you can provide a version ID. If you don't provide
         /// a version ID, Amazon S3 restores the current version.
-        /// </para>
-        ///  
-        /// <para>
-        /// The time it takes restore jobs to finish depends on which storage class the object
-        /// is being restored from and which data access tier you specify. 
         /// </para>
         ///  
         /// <para>
@@ -12351,28 +12651,32 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         ///  <b> <code>Expedited</code> </b> - Expedited retrievals allow you to quickly access
-        /// your data stored in the GLACIER storage class when occasional urgent requests for
-        /// a subset of archives are required. For all but the largest archived objects (250 MB+),
-        /// data accessed using Expedited retrievals are typically made available within 1–5 minutes.
-        /// Provisioned capacity ensures that retrieval capacity for Expedited retrievals is available
-        /// when you need it. Expedited retrievals and provisioned capacity are not available
-        /// for the DEEP_ARCHIVE storage class.
+        /// your data stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage class
+        /// when occasional urgent requests for a subset of archives are required. For all but
+        /// the largest archived objects (250 MB+), data accessed using Expedited retrievals is
+        /// typically made available within 1–5 minutes. Provisioned capacity ensures that retrieval
+        /// capacity for Expedited retrievals is available when you need it. Expedited retrievals
+        /// and provisioned capacity are not available for objects stored in the S3 Glacier Deep
+        /// Archive or S3 Intelligent-Tiering Deep Archive storage class.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Standard</code> </b> - S3 Standard retrievals allow you to access any of
-        /// your archived objects within several hours. This is the default option for the GLACIER
-        /// and DEEP_ARCHIVE retrieval requests that do not specify the retrieval option. S3 Standard
-        /// retrievals typically complete within 3-5 hours from the GLACIER storage class and
-        /// typically complete within 12 hours from the DEEP_ARCHIVE storage class. 
+        ///  <b> <code>Standard</code> </b> - Standard retrievals allow you to access any of your
+        /// archived objects within several hours. This is the default option for retrieval requests
+        /// that do not specify the retrieval option. Standard retrievals typically finish within
+        /// 3–5 hours for objects stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage
+        /// class. They typically finish within 12 hours for objects stored in the S3 Glacier
+        /// Deep Archive or S3 Intelligent-Tiering Deep Archive storage class. Standard retrievals
+        /// are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon S3 Glacier’s lowest-cost
-        /// retrieval option, enabling you to retrieve large amounts, even petabytes, of data
-        /// inexpensively in a day. Bulk retrievals typically complete within 5-12 hours from
-        /// the GLACIER storage class and typically complete within 48 hours from the DEEP_ARCHIVE
-        /// storage class.
+        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are the lowest-cost retrieval option
+        /// in S3 Glacier, enabling you to retrieve large amounts, even petabytes, of data inexpensively.
+        /// Bulk retrievals typically finish within 5–12 hours for objects stored in the S3 Glacier
+        /// or S3 Intelligent-Tiering Archive storage class. They typically finish within 48 hours
+        /// for objects stored in the S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep Archive
+        /// storage class. Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -12384,13 +12688,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// You can use Amazon S3 restore speed upgrade to change the restore speed to a faster
-        /// speed while it is in progress. You upgrade the speed of an in-progress restoration
-        /// by issuing another restore request to the same object, setting a new <code>Tier</code>
-        /// request element. When issuing a request to upgrade the restore tier, you must choose
-        /// a tier that is faster than the tier that the in-progress restore is using. You must
-        /// not change any other parameters, such as the <code>Days</code> request element. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html#restoring-objects-upgrade-tier.title.html">
-        /// Upgrading the Speed of an In-Progress Restore</a> in the <i>Amazon Simple Storage
+        /// speed while it is in progress. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html#restoring-objects-upgrade-tier.title.html">
+        /// Upgrading the speed of an in-progress restore</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>. 
         /// </para>
         ///  
@@ -12432,13 +12731,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the object copy is not previously restored, then Amazon S3 returns <code>202 Accepted</code>
+        /// If the object is not previously restored, then Amazon S3 returns <code>202 Accepted</code>
         /// in the response. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the object copy is previously restored, Amazon S3 returns <code>200 OK</code> in
-        /// the response. 
+        /// If the object is previously restored, Amazon S3 returns <code>200 OK</code> in the
+        /// response. 
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
@@ -12465,10 +12764,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: S3 Glacier expedited retrievals are currently not available. Try again
-        /// later. (Returned if there is insufficient capacity to process the Expedited request.
-        /// This error applies only to Expedited retrievals and not to S3 Standard or Bulk retrievals.)</i>
-        /// 
+        ///  <i>Cause: expedited retrievals are currently not available. Try again later. (Returned
+        /// if there is insufficient capacity to process the Expedited request. This error applies
+        /// only to Expedited retrievals and not to S3 Standard or Bulk retrievals.)</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12498,7 +12796,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// <param name="cancellationToken">
@@ -12672,22 +12970,19 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// Objects in the GLACIER and DEEP_ARCHIVE storage classes are archived. To access an
-        /// archived object, you must first initiate a restore request. This restores a temporary
-        /// copy of the archived object. In a restore request, you specify the number of days
-        /// that you want the restored copy to exist. After the specified period, Amazon S3 deletes
-        /// the temporary copy but the object remains archived in the GLACIER or DEEP_ARCHIVE
-        /// storage class that object was restored from. 
+        /// Objects that you archive to the S3 Glacier, S3 Glacier Deep Archive, S3 Intelligent-Tiering
+        /// Archive, or S3 Intelligent-Tiering Deep Archive storage classes are not accessible
+        /// in real time. For objects in Archive Access tier or Deep Archive Access tier you must
+        /// first initiate a restore request, and then wait until the object is moved into the
+        /// Frequent Access tier. For objects in S3 Glacier or S3 Glacier Deep Archive you must
+        /// first initiate a restore request, and then wait until a temporary copy of the object
+        /// is available. To access an archived object, you must restore the object for the duration
+        /// (number of days) that you specify.
         /// </para>
         ///  
         /// <para>
         /// To restore a specific object version, you can provide a version ID. If you don't provide
         /// a version ID, Amazon S3 restores the current version.
-        /// </para>
-        ///  
-        /// <para>
-        /// The time it takes restore jobs to finish depends on which storage class the object
-        /// is being restored from and which data access tier you specify. 
         /// </para>
         ///  
         /// <para>
@@ -12698,28 +12993,32 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         ///  <b> <code>Expedited</code> </b> - Expedited retrievals allow you to quickly access
-        /// your data stored in the GLACIER storage class when occasional urgent requests for
-        /// a subset of archives are required. For all but the largest archived objects (250 MB+),
-        /// data accessed using Expedited retrievals are typically made available within 1–5 minutes.
-        /// Provisioned capacity ensures that retrieval capacity for Expedited retrievals is available
-        /// when you need it. Expedited retrievals and provisioned capacity are not available
-        /// for the DEEP_ARCHIVE storage class.
+        /// your data stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage class
+        /// when occasional urgent requests for a subset of archives are required. For all but
+        /// the largest archived objects (250 MB+), data accessed using Expedited retrievals is
+        /// typically made available within 1–5 minutes. Provisioned capacity ensures that retrieval
+        /// capacity for Expedited retrievals is available when you need it. Expedited retrievals
+        /// and provisioned capacity are not available for objects stored in the S3 Glacier Deep
+        /// Archive or S3 Intelligent-Tiering Deep Archive storage class.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Standard</code> </b> - S3 Standard retrievals allow you to access any of
-        /// your archived objects within several hours. This is the default option for the GLACIER
-        /// and DEEP_ARCHIVE retrieval requests that do not specify the retrieval option. S3 Standard
-        /// retrievals typically complete within 3-5 hours from the GLACIER storage class and
-        /// typically complete within 12 hours from the DEEP_ARCHIVE storage class. 
+        ///  <b> <code>Standard</code> </b> - Standard retrievals allow you to access any of your
+        /// archived objects within several hours. This is the default option for retrieval requests
+        /// that do not specify the retrieval option. Standard retrievals typically finish within
+        /// 3–5 hours for objects stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage
+        /// class. They typically finish within 12 hours for objects stored in the S3 Glacier
+        /// Deep Archive or S3 Intelligent-Tiering Deep Archive storage class. Standard retrievals
+        /// are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon S3 Glacier’s lowest-cost
-        /// retrieval option, enabling you to retrieve large amounts, even petabytes, of data
-        /// inexpensively in a day. Bulk retrievals typically complete within 5-12 hours from
-        /// the GLACIER storage class and typically complete within 48 hours from the DEEP_ARCHIVE
-        /// storage class.
+        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are the lowest-cost retrieval option
+        /// in S3 Glacier, enabling you to retrieve large amounts, even petabytes, of data inexpensively.
+        /// Bulk retrievals typically finish within 5–12 hours for objects stored in the S3 Glacier
+        /// or S3 Intelligent-Tiering Archive storage class. They typically finish within 48 hours
+        /// for objects stored in the S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep Archive
+        /// storage class. Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -12731,13 +13030,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// You can use Amazon S3 restore speed upgrade to change the restore speed to a faster
-        /// speed while it is in progress. You upgrade the speed of an in-progress restoration
-        /// by issuing another restore request to the same object, setting a new <code>Tier</code>
-        /// request element. When issuing a request to upgrade the restore tier, you must choose
-        /// a tier that is faster than the tier that the in-progress restore is using. You must
-        /// not change any other parameters, such as the <code>Days</code> request element. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html#restoring-objects-upgrade-tier.title.html">
-        /// Upgrading the Speed of an In-Progress Restore</a> in the <i>Amazon Simple Storage
+        /// speed while it is in progress. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html#restoring-objects-upgrade-tier.title.html">
+        /// Upgrading the speed of an in-progress restore</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>. 
         /// </para>
         ///  
@@ -12779,13 +13073,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the object copy is not previously restored, then Amazon S3 returns <code>202 Accepted</code>
+        /// If the object is not previously restored, then Amazon S3 returns <code>202 Accepted</code>
         /// in the response. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the object copy is previously restored, Amazon S3 returns <code>200 OK</code> in
-        /// the response. 
+        /// If the object is previously restored, Amazon S3 returns <code>200 OK</code> in the
+        /// response. 
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
@@ -12812,10 +13106,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: S3 Glacier expedited retrievals are currently not available. Try again
-        /// later. (Returned if there is insufficient capacity to process the Expedited request.
-        /// This error applies only to Expedited retrievals and not to S3 Standard or Bulk retrievals.)</i>
-        /// 
+        ///  <i>Cause: expedited retrievals are currently not available. Try again later. (Returned
+        /// if there is insufficient capacity to process the Expedited request. This error applies
+        /// only to Expedited retrievals and not to S3 Standard or Bulk retrievals.)</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12845,7 +13138,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="cancellationToken">
@@ -13019,22 +13312,19 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// Objects in the GLACIER and DEEP_ARCHIVE storage classes are archived. To access an
-        /// archived object, you must first initiate a restore request. This restores a temporary
-        /// copy of the archived object. In a restore request, you specify the number of days
-        /// that you want the restored copy to exist. After the specified period, Amazon S3 deletes
-        /// the temporary copy but the object remains archived in the GLACIER or DEEP_ARCHIVE
-        /// storage class that object was restored from. 
+        /// Objects that you archive to the S3 Glacier, S3 Glacier Deep Archive, S3 Intelligent-Tiering
+        /// Archive, or S3 Intelligent-Tiering Deep Archive storage classes are not accessible
+        /// in real time. For objects in Archive Access tier or Deep Archive Access tier you must
+        /// first initiate a restore request, and then wait until the object is moved into the
+        /// Frequent Access tier. For objects in S3 Glacier or S3 Glacier Deep Archive you must
+        /// first initiate a restore request, and then wait until a temporary copy of the object
+        /// is available. To access an archived object, you must restore the object for the duration
+        /// (number of days) that you specify.
         /// </para>
         ///  
         /// <para>
         /// To restore a specific object version, you can provide a version ID. If you don't provide
         /// a version ID, Amazon S3 restores the current version.
-        /// </para>
-        ///  
-        /// <para>
-        /// The time it takes restore jobs to finish depends on which storage class the object
-        /// is being restored from and which data access tier you specify. 
         /// </para>
         ///  
         /// <para>
@@ -13045,28 +13335,32 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         ///  <b> <code>Expedited</code> </b> - Expedited retrievals allow you to quickly access
-        /// your data stored in the GLACIER storage class when occasional urgent requests for
-        /// a subset of archives are required. For all but the largest archived objects (250 MB+),
-        /// data accessed using Expedited retrievals are typically made available within 1–5 minutes.
-        /// Provisioned capacity ensures that retrieval capacity for Expedited retrievals is available
-        /// when you need it. Expedited retrievals and provisioned capacity are not available
-        /// for the DEEP_ARCHIVE storage class.
+        /// your data stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage class
+        /// when occasional urgent requests for a subset of archives are required. For all but
+        /// the largest archived objects (250 MB+), data accessed using Expedited retrievals is
+        /// typically made available within 1–5 minutes. Provisioned capacity ensures that retrieval
+        /// capacity for Expedited retrievals is available when you need it. Expedited retrievals
+        /// and provisioned capacity are not available for objects stored in the S3 Glacier Deep
+        /// Archive or S3 Intelligent-Tiering Deep Archive storage class.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Standard</code> </b> - S3 Standard retrievals allow you to access any of
-        /// your archived objects within several hours. This is the default option for the GLACIER
-        /// and DEEP_ARCHIVE retrieval requests that do not specify the retrieval option. S3 Standard
-        /// retrievals typically complete within 3-5 hours from the GLACIER storage class and
-        /// typically complete within 12 hours from the DEEP_ARCHIVE storage class. 
+        ///  <b> <code>Standard</code> </b> - Standard retrievals allow you to access any of your
+        /// archived objects within several hours. This is the default option for retrieval requests
+        /// that do not specify the retrieval option. Standard retrievals typically finish within
+        /// 3–5 hours for objects stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage
+        /// class. They typically finish within 12 hours for objects stored in the S3 Glacier
+        /// Deep Archive or S3 Intelligent-Tiering Deep Archive storage class. Standard retrievals
+        /// are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon S3 Glacier’s lowest-cost
-        /// retrieval option, enabling you to retrieve large amounts, even petabytes, of data
-        /// inexpensively in a day. Bulk retrievals typically complete within 5-12 hours from
-        /// the GLACIER storage class and typically complete within 48 hours from the DEEP_ARCHIVE
-        /// storage class.
+        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are the lowest-cost retrieval option
+        /// in S3 Glacier, enabling you to retrieve large amounts, even petabytes, of data inexpensively.
+        /// Bulk retrievals typically finish within 5–12 hours for objects stored in the S3 Glacier
+        /// or S3 Intelligent-Tiering Archive storage class. They typically finish within 48 hours
+        /// for objects stored in the S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep Archive
+        /// storage class. Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -13078,13 +13372,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// You can use Amazon S3 restore speed upgrade to change the restore speed to a faster
-        /// speed while it is in progress. You upgrade the speed of an in-progress restoration
-        /// by issuing another restore request to the same object, setting a new <code>Tier</code>
-        /// request element. When issuing a request to upgrade the restore tier, you must choose
-        /// a tier that is faster than the tier that the in-progress restore is using. You must
-        /// not change any other parameters, such as the <code>Days</code> request element. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html#restoring-objects-upgrade-tier.title.html">
-        /// Upgrading the Speed of an In-Progress Restore</a> in the <i>Amazon Simple Storage
+        /// speed while it is in progress. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html#restoring-objects-upgrade-tier.title.html">
+        /// Upgrading the speed of an in-progress restore</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>. 
         /// </para>
         ///  
@@ -13126,13 +13415,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the object copy is not previously restored, then Amazon S3 returns <code>202 Accepted</code>
+        /// If the object is not previously restored, then Amazon S3 returns <code>202 Accepted</code>
         /// in the response. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the object copy is previously restored, Amazon S3 returns <code>200 OK</code> in
-        /// the response. 
+        /// If the object is previously restored, Amazon S3 returns <code>200 OK</code> in the
+        /// response. 
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
@@ -13159,10 +13448,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: S3 Glacier expedited retrievals are currently not available. Try again
-        /// later. (Returned if there is insufficient capacity to process the Expedited request.
-        /// This error applies only to Expedited retrievals and not to S3 Standard or Bulk retrievals.)</i>
-        /// 
+        ///  <i>Cause: expedited retrievals are currently not available. Try again later. (Returned
+        /// if there is insufficient capacity to process the Expedited request. This error applies
+        /// only to Expedited retrievals and not to S3 Standard or Bulk retrievals.)</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13192,7 +13480,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name or containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object to restore.  When using this API with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this operation with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</param>
         /// <param name="key">Object key for which the operation was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
@@ -13369,22 +13657,19 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// Objects in the GLACIER and DEEP_ARCHIVE storage classes are archived. To access an
-        /// archived object, you must first initiate a restore request. This restores a temporary
-        /// copy of the archived object. In a restore request, you specify the number of days
-        /// that you want the restored copy to exist. After the specified period, Amazon S3 deletes
-        /// the temporary copy but the object remains archived in the GLACIER or DEEP_ARCHIVE
-        /// storage class that object was restored from. 
+        /// Objects that you archive to the S3 Glacier, S3 Glacier Deep Archive, S3 Intelligent-Tiering
+        /// Archive, or S3 Intelligent-Tiering Deep Archive storage classes are not accessible
+        /// in real time. For objects in Archive Access tier or Deep Archive Access tier you must
+        /// first initiate a restore request, and then wait until the object is moved into the
+        /// Frequent Access tier. For objects in S3 Glacier or S3 Glacier Deep Archive you must
+        /// first initiate a restore request, and then wait until a temporary copy of the object
+        /// is available. To access an archived object, you must restore the object for the duration
+        /// (number of days) that you specify.
         /// </para>
         ///  
         /// <para>
         /// To restore a specific object version, you can provide a version ID. If you don't provide
         /// a version ID, Amazon S3 restores the current version.
-        /// </para>
-        ///  
-        /// <para>
-        /// The time it takes restore jobs to finish depends on which storage class the object
-        /// is being restored from and which data access tier you specify. 
         /// </para>
         ///  
         /// <para>
@@ -13395,28 +13680,32 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         ///  <b> <code>Expedited</code> </b> - Expedited retrievals allow you to quickly access
-        /// your data stored in the GLACIER storage class when occasional urgent requests for
-        /// a subset of archives are required. For all but the largest archived objects (250 MB+),
-        /// data accessed using Expedited retrievals are typically made available within 1–5 minutes.
-        /// Provisioned capacity ensures that retrieval capacity for Expedited retrievals is available
-        /// when you need it. Expedited retrievals and provisioned capacity are not available
-        /// for the DEEP_ARCHIVE storage class.
+        /// your data stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage class
+        /// when occasional urgent requests for a subset of archives are required. For all but
+        /// the largest archived objects (250 MB+), data accessed using Expedited retrievals is
+        /// typically made available within 1–5 minutes. Provisioned capacity ensures that retrieval
+        /// capacity for Expedited retrievals is available when you need it. Expedited retrievals
+        /// and provisioned capacity are not available for objects stored in the S3 Glacier Deep
+        /// Archive or S3 Intelligent-Tiering Deep Archive storage class.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Standard</code> </b> - S3 Standard retrievals allow you to access any of
-        /// your archived objects within several hours. This is the default option for the GLACIER
-        /// and DEEP_ARCHIVE retrieval requests that do not specify the retrieval option. S3 Standard
-        /// retrievals typically complete within 3-5 hours from the GLACIER storage class and
-        /// typically complete within 12 hours from the DEEP_ARCHIVE storage class. 
+        ///  <b> <code>Standard</code> </b> - Standard retrievals allow you to access any of your
+        /// archived objects within several hours. This is the default option for retrieval requests
+        /// that do not specify the retrieval option. Standard retrievals typically finish within
+        /// 3–5 hours for objects stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage
+        /// class. They typically finish within 12 hours for objects stored in the S3 Glacier
+        /// Deep Archive or S3 Intelligent-Tiering Deep Archive storage class. Standard retrievals
+        /// are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon S3 Glacier’s lowest-cost
-        /// retrieval option, enabling you to retrieve large amounts, even petabytes, of data
-        /// inexpensively in a day. Bulk retrievals typically complete within 5-12 hours from
-        /// the GLACIER storage class and typically complete within 48 hours from the DEEP_ARCHIVE
-        /// storage class.
+        ///  <b> <code>Bulk</code> </b> - Bulk retrievals are the lowest-cost retrieval option
+        /// in S3 Glacier, enabling you to retrieve large amounts, even petabytes, of data inexpensively.
+        /// Bulk retrievals typically finish within 5–12 hours for objects stored in the S3 Glacier
+        /// or S3 Intelligent-Tiering Archive storage class. They typically finish within 48 hours
+        /// for objects stored in the S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep Archive
+        /// storage class. Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -13428,13 +13717,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// You can use Amazon S3 restore speed upgrade to change the restore speed to a faster
-        /// speed while it is in progress. You upgrade the speed of an in-progress restoration
-        /// by issuing another restore request to the same object, setting a new <code>Tier</code>
-        /// request element. When issuing a request to upgrade the restore tier, you must choose
-        /// a tier that is faster than the tier that the in-progress restore is using. You must
-        /// not change any other parameters, such as the <code>Days</code> request element. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html#restoring-objects-upgrade-tier.title.html">
-        /// Upgrading the Speed of an In-Progress Restore</a> in the <i>Amazon Simple Storage
+        /// speed while it is in progress. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html#restoring-objects-upgrade-tier.title.html">
+        /// Upgrading the speed of an in-progress restore</a> in the <i>Amazon Simple Storage
         /// Service Developer Guide</i>. 
         /// </para>
         ///  
@@ -13476,13 +13760,13 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the object copy is not previously restored, then Amazon S3 returns <code>202 Accepted</code>
+        /// If the object is not previously restored, then Amazon S3 returns <code>202 Accepted</code>
         /// in the response. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the object copy is previously restored, Amazon S3 returns <code>200 OK</code> in
-        /// the response. 
+        /// If the object is previously restored, Amazon S3 returns <code>200 OK</code> in the
+        /// response. 
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Special Errors</b> 
         /// </para>
@@ -13509,10 +13793,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: S3 Glacier expedited retrievals are currently not available. Try again
-        /// later. (Returned if there is insufficient capacity to process the Expedited request.
-        /// This error applies only to Expedited retrievals and not to S3 Standard or Bulk retrievals.)</i>
-        /// 
+        ///  <i>Cause: expedited retrievals are currently not available. Try again later. (Returned
+        /// if there is insufficient capacity to process the Expedited request. This error applies
+        /// only to Expedited retrievals and not to S3 Standard or Bulk retrievals.)</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
