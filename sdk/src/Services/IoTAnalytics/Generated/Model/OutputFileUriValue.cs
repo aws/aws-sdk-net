@@ -38,7 +38,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property FileName. 
         /// <para>
-        /// The URI of the location where data set contents are stored, usually the URI of a file
+        /// The URI of the location where dataset contents are stored, usually the URI of a file
         /// in an S3 bucket.
         /// </para>
         /// </summary>

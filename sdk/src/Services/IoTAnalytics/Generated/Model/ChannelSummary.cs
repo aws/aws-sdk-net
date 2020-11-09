@@ -36,6 +36,7 @@ namespace Amazon.IoTAnalytics.Model
         private string _channelName;
         private ChannelStorageSummary _channelStorage;
         private DateTime? _creationTime;
+        private DateTime? _lastMessageArrivalTime;
         private DateTime? _lastUpdateTime;
         private ChannelStatus _status;
 
@@ -92,6 +93,34 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastMessageArrivalTime. 
+        /// <para>
+        /// The last time when a new message arrived in the channel.
+        /// </para>
+        ///  
+        /// <para>
+        /// AWS IoT Analytics updates this value at most once per minute for one channel. Hence,
+        /// the <code>lastMessageArrivalTime</code> value is an approximation.
+        /// </para>
+        ///  
+        /// <para>
+        /// This feature only applies to messages that arrived in the data store after October
+        /// 23, 2020. 
+        /// </para>
+        /// </summary>
+        public DateTime LastMessageArrivalTime
+        {
+            get { return this._lastMessageArrivalTime.GetValueOrDefault(); }
+            set { this._lastMessageArrivalTime = value; }
+        }
+
+        // Check to see if LastMessageArrivalTime property is set
+        internal bool IsSetLastMessageArrivalTime()
+        {
+            return this._lastMessageArrivalTime.HasValue; 
         }
 
         /// <summary>

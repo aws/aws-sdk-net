@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// An instance of a variable to be passed to the "containerAction" execution. Each variable
-    /// must have a name and a value given by one of "stringValue", "datasetContentVersionValue",
-    /// or "outputFileUriValue".
+    /// An instance of a variable to be passed to the <code>containerAction</code> execution.
+    /// Each variable must have a name and a value given by one of <code>stringValue</code>,
+    /// <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.
     /// </summary>
     public partial class Variable
     {
@@ -44,7 +44,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatasetContentVersionValue. 
         /// <para>
-        /// The value of the variable as a structure that specifies a data set content version.
+        /// The value of the variable as a structure that specifies a dataset content version.
         /// </para>
         /// </summary>
         public DatasetContentVersionValue DatasetContentVersionValue

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Information which is used to filter message data, to segregate it according to the
-    /// time frame in which it arrives.
+    /// Information that is used to filter message data, to segregate it according to the
+    /// timeframe in which it arrives.
     /// </summary>
     public partial class QueryFilter
     {

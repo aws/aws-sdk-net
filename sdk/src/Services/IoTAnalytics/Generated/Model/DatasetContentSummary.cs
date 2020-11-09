@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Summary information about data set contents.
+    /// Summary information about dataset contents.
     /// </summary>
     public partial class DatasetContentSummary
     {
@@ -60,7 +60,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The actual time the creation of the data set contents was started.
+        /// The actual time the creation of the dataset contents was started.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -78,7 +78,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ScheduleTime. 
         /// <para>
-        /// The time the creation of the data set contents was scheduled to start.
+        /// The time the creation of the dataset contents was scheduled to start.
         /// </para>
         /// </summary>
         public DateTime ScheduleTime
@@ -114,7 +114,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the data set contents.
+        /// The version of the dataset contents.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=36)]

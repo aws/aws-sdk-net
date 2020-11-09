@@ -42,16 +42,17 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property PipelineActivities. 
         /// <para>
-        /// A list of "PipelineActivity" objects. Activities perform transformations on your messages,
-        /// such as removing, renaming or adding message attributes; filtering messages based
-        /// on attribute values; invoking your Lambda functions on messages for advanced processing;
-        /// or performing mathematical transformations to normalize device data.
+        /// A list of <code>PipelineActivity</code> objects. Activities perform transformations
+        /// on your messages, such as removing, renaming or adding message attributes; filtering
+        /// messages based on attribute values; invoking your Lambda functions on messages for
+        /// advanced processing; or performing mathematical transformations to normalize device
+        /// data.
         /// </para>
         ///  
         /// <para>
-        /// The list can be 2-25 <b>PipelineActivity</b> objects and must contain both a <code>channel</code>
-        /// and a <code>datastore</code> activity. Each entry in the list must contain only one
-        /// activity, for example:
+        /// The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
+        /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list
+        /// must contain only one activity. For example:
         /// </para>
         ///  
         /// <para>

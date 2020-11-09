@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// The destination to which data set contents are delivered.
+    /// The destination to which dataset contents are delivered.
     /// </summary>
     public partial class DatasetContentDeliveryDestination
     {
@@ -39,7 +39,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property IotEventsDestinationConfiguration. 
         /// <para>
-        /// Configuration information for delivery of data set contents to AWS IoT Events.
+        /// Configuration information for delivery of dataset contents to AWS IoT Events.
         /// </para>
         /// </summary>
         public IotEventsDestinationConfiguration IotEventsDestinationConfiguration
@@ -57,7 +57,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property S3DestinationConfiguration. 
         /// <para>
-        /// Configuration information for delivery of data set contents to Amazon S3.
+        /// Configuration information for delivery of dataset contents to Amazon S3.
         /// </para>
         /// </summary>
         public S3DestinationConfiguration S3DestinationConfiguration

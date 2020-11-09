@@ -80,7 +80,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property MaxMessages. 
         /// <para>
-        /// The number of sample messages to be retrieved. The limit is 10, the default is also
+        /// The number of sample messages to be retrieved. The limit is 10. The default is also
         /// 10.
         /// </para>
         /// </summary>

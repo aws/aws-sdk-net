@@ -30,8 +30,9 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Use this to store channel data in an S3 bucket that you manage. If customer managed
-    /// storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed
-    /// or customer-managed S3 storage cannot be changed after creation of the channel.
+    /// storage is selected, the <code>retentionPeriod</code> parameter is ignored. You cannot
+    /// change the choice of service-managed or customer-managed S3 storage after the channel
+    /// is created.
     /// </summary>
     public partial class CustomerManagedChannelS3Storage
     {
@@ -42,7 +43,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The name of the Amazon S3 bucket in which channel data is stored.
+        /// The name of the S3 bucket in which channel data is stored.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=255)]
@@ -61,9 +62,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property KeyPrefix. 
         /// <para>
-        /// [Optional] The prefix used to create the keys of the channel data objects. Each object
-        /// in an Amazon S3 bucket has a key that is its unique identifier within the bucket (each
-        /// object in a bucket has exactly one key). The prefix must end with a '/'.
+        /// Optional. The prefix used to create the keys of the channel data objects. Each object
+        /// in an S3 bucket has a key that is its unique identifier in the bucket. Each object
+        /// in a bucket has exactly one key. The prefix must end with a forward slash (/).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -82,7 +83,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the role which grants AWS IoT Analytics permission to interact with your
+        /// The ARN of the role that grants AWS IoT Analytics permission to interact with your
         /// Amazon S3 resources.
         /// </para>
         /// </summary>

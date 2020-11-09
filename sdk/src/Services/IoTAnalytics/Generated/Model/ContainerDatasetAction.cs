@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Information needed to run the "containerAction" to produce data set contents.
+    /// Information required to run the <code>containerAction</code> to produce dataset contents.
     /// </summary>
     public partial class ContainerDatasetAction
     {
@@ -41,9 +41,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
-        /// The ARN of the role which gives permission to the system to access needed resources
-        /// in order to run the "containerAction". This includes, at minimum, permission to retrieve
-        /// the data set contents which are the input to the containerized application.
+        /// The ARN of the role that gives permission to the system to access required resources
+        /// to run the <code>containerAction</code>. This includes, at minimum, permission to
+        /// retrieve the dataset contents that are the input to the containerized application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -63,7 +63,7 @@ namespace Amazon.IoTAnalytics.Model
         /// Gets and sets the property Image. 
         /// <para>
         /// The ARN of the Docker container stored in your account. The Docker container contains
-        /// an application and needed support libraries and is used to generate data set contents.
+        /// an application and required support libraries and is used to generate dataset contents.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -82,7 +82,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ResourceConfiguration. 
         /// <para>
-        /// Configuration of the resource which executes the "containerAction".
+        /// Configuration of the resource that executes the <code>containerAction</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,10 +101,10 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Variables. 
         /// <para>
-        /// The values of variables used within the context of the execution of the containerized
+        /// The values of variables used in the context of the execution of the containerized
         /// application (basically, parameters passed to the application). Each variable must
-        /// have a name and a value given by one of "stringValue", "datasetContentVersionValue",
-        /// or "outputFileUriValue".
+        /// have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>,
+        /// or <code>outputFileUriValue</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

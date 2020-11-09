@@ -40,13 +40,13 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// A list of 1-50 "AttributeNameMapping" objects that map an existing attribute to a
-        /// new attribute.
+        /// A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute
+        /// to a new attribute.
         /// </para>
         ///  <note> 
         /// <para>
         /// The existing attributes remain in the message, so if you want to remove the originals,
-        /// use "RemoveAttributeActivity".
+        /// use <code>RemoveAttributeActivity</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -66,7 +66,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the 'addAttributes' activity.
+        /// The name of the addAttributes activity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Information about the action which automatically creates the data set's contents.
+    /// Information about the action that automatically creates the dataset's contents.
     /// </summary>
     public partial class DatasetActionSummary
     {
@@ -39,7 +39,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ActionName. 
         /// <para>
-        /// The name of the action which automatically creates the data set's contents.
+        /// The name of the action that automatically creates the dataset's contents.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -58,7 +58,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ActionType. 
         /// <para>
-        /// The type of action by which the data set's contents are automatically created.
+        /// The type of action by which the dataset's contents are automatically created.
         /// </para>
         /// </summary>
         public DatasetActionType ActionType

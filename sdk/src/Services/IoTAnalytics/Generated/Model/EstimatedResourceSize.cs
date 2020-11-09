@@ -57,7 +57,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property EstimatedSizeInBytes. 
         /// <para>
-        /// The estimated size of the resource in bytes.
+        /// The estimated size of the resource, in bytes.
         /// </para>
         /// </summary>
         public double EstimatedSizeInBytes

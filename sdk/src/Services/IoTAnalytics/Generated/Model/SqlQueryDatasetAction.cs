@@ -39,7 +39,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Pre-filters applied to message data.
+        /// Prefilters applied to message data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

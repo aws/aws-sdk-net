@@ -38,7 +38,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags (metadata) which you have assigned to the resource.
+        /// The tags (metadata) that you have assigned to the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

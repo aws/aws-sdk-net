@@ -40,7 +40,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatasetArn. 
         /// <para>
-        /// The ARN of the data set.
+        /// The ARN of the dataset.
         /// </para>
         /// </summary>
         public string DatasetArn
@@ -58,7 +58,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatasetName. 
         /// <para>
-        /// The name of the data set.
+        /// The name of the dataset.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -77,7 +77,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        /// How long, in days, data set contents are kept for the data set.
+        /// How long, in days, dataset contents are kept for the dataset.
         /// </para>
         /// </summary>
         public RetentionPeriod RetentionPeriod

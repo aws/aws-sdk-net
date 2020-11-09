@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// The "DatasetTrigger" that specifies when the data set is automatically updated.
+    /// The <code>DatasetTrigger</code> that specifies when the data set is automatically
+    /// updated.
     /// </summary>
     public partial class DatasetTrigger
     {
@@ -57,7 +58,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// The "Schedule" when the trigger is initiated.
+        /// The Schedule when the trigger is initiated.
         /// </para>
         /// </summary>
         public Schedule Schedule

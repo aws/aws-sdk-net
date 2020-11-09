@@ -61,7 +61,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the 'deviceRegistryEnrich' activity.
+        /// The name of the <code>deviceRegistryEnrich</code> activity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

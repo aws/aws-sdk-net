@@ -29,48 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// This is the response object from the ListDatasets operation.
+    /// A structure that contains the name and configuration information of a late data rule.
     /// </summary>
-    public partial class ListDatasetsResponse : AmazonWebServiceResponse
+    public partial class LateDataRule
     {
-        private List<DatasetSummary> _datasetSummaries = new List<DatasetSummary>();
-        private string _nextToken;
+        private LateDataRuleConfiguration _ruleConfiguration;
+        private string _ruleName;
 
         /// <summary>
-        /// Gets and sets the property DatasetSummaries. 
+        /// Gets and sets the property RuleConfiguration. 
         /// <para>
-        /// A list of <code>DatasetSummary</code> objects.
+        /// The information needed to configure the late data rule.
         /// </para>
         /// </summary>
-        public List<DatasetSummary> DatasetSummaries
+        [AWSProperty(Required=true)]
+        public LateDataRuleConfiguration RuleConfiguration
         {
-            get { return this._datasetSummaries; }
-            set { this._datasetSummaries = value; }
+            get { return this._ruleConfiguration; }
+            set { this._ruleConfiguration = value; }
         }
 
-        // Check to see if DatasetSummaries property is set
-        internal bool IsSetDatasetSummaries()
+        // Check to see if RuleConfiguration property is set
+        internal bool IsSetRuleConfiguration()
         {
-            return this._datasetSummaries != null && this._datasetSummaries.Count > 0; 
+            return this._ruleConfiguration != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property RuleName. 
         /// <para>
-        /// The token to retrieve the next set of results, or <code>null</code> if there are no
-        /// more results.
+        /// The name of the late data rule.
         /// </para>
         /// </summary>
-        public string NextToken
+        [AWSProperty(Min=1, Max=128)]
+        public string RuleName
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._ruleName; }
+            set { this._ruleName = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if RuleName property is set
+        internal bool IsSetRuleName()
         {
-            return this._nextToken != null;
+            return this._ruleName != null;
         }
 
     }

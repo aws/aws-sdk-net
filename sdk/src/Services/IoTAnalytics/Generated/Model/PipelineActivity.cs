@@ -119,7 +119,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DeviceShadowEnrich. 
         /// <para>
-        /// Adds information from the AWS IoT Device Shadows service to a message.
+        /// Adds information from the AWS IoT Device Shadow service to a message.
         /// </para>
         /// </summary>
         public DeviceShadowEnrichActivity DeviceShadowEnrich

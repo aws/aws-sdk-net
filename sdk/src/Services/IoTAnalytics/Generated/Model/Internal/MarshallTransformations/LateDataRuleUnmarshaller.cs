@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DatastoreSummary Object
+    /// Response Unmarshaller for LateDataRule Object
     /// </summary>  
-    public class DatastoreSummaryUnmarshaller : IUnmarshaller<DatastoreSummary, XmlUnmarshallerContext>, IUnmarshaller<DatastoreSummary, JsonUnmarshallerContext>
+    public class LateDataRuleUnmarshaller : IUnmarshaller<LateDataRule, XmlUnmarshallerContext>, IUnmarshaller<LateDataRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DatastoreSummary IUnmarshaller<DatastoreSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LateDataRule IUnmarshaller<LateDataRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DatastoreSummary Unmarshall(JsonUnmarshallerContext context)
+        public LateDataRule Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DatastoreSummary unmarshalledObject = new DatastoreSummary();
+            LateDataRule unmarshalledObject = new LateDataRule();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("creationTime", targetDepth))
+                if (context.TestExpression("ruleConfiguration", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LateDataRuleConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RuleConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("datastoreName", targetDepth))
+                if (context.TestExpression("ruleName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatastoreName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("datastoreStorage", targetDepth))
-                {
-                    var unmarshaller = DatastoreStorageSummaryUnmarshaller.Instance;
-                    unmarshalledObject.DatastoreStorage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastMessageArrivalTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastMessageArrivalTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RuleName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         }
 
 
-        private static DatastoreSummaryUnmarshaller _instance = new DatastoreSummaryUnmarshaller();        
+        private static LateDataRuleUnmarshaller _instance = new LateDataRuleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DatastoreSummaryUnmarshaller Instance
+        public static LateDataRuleUnmarshaller Instance
         {
             get
             {

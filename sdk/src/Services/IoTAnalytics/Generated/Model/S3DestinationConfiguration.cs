@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Configuration information for delivery of data set contents to Amazon S3.
+    /// Configuration information for delivery of dataset contents to Amazon Simple Storage
+    /// Service (Amazon S3).
     /// </summary>
     public partial class S3DestinationConfiguration
     {
@@ -41,7 +42,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The name of the Amazon S3 bucket to which data set contents are delivered.
+        /// The name of the S3 bucket to which dataset contents are delivered.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=255)]
@@ -60,8 +61,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property GlueConfiguration. 
         /// <para>
-        /// Configuration information for coordination with the AWS Glue ETL (extract, transform
-        /// and load) service.
+        /// Configuration information for coordination with AWS Glue, a fully managed extract,
+        /// transform and load (ETL) service.
         /// </para>
         /// </summary>
         public GlueConfiguration GlueConfiguration
@@ -79,12 +80,41 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key of the data set contents object. Each object in an Amazon S3 bucket has a
-        /// key that is its unique identifier within the bucket (each object in a bucket has exactly
-        /// one key). To produce a unique key, you can use "!{iotanalytics:scheduledTime}" to
-        /// insert the time of the scheduled SQL query run, or "!{iotanalytics:versioned} to insert
-        /// a unique hash identifying the data set, for example: "/DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".
+        /// The key of the dataset contents object in an S3 bucket. Each object has a key that
+        /// is a unique identifier. Each object has exactly one key.
         /// </para>
+        ///  
+        /// <para>
+        /// You can create a unique key with the following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL
+        /// query run.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies
+        /// a dataset content.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset
+        /// content.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code>
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might
+        /// get duplicate keys. For example, you might have two dataset contents with the same
+        /// <code>scheduleTime</code> but different <code>versionId</code>s. This means that one
+        /// dataset content overwrites the other. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string Key
@@ -102,7 +132,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the role which grants AWS IoT Analytics permission to interact with your
+        /// The ARN of the role that grants AWS IoT Analytics permission to interact with your
         /// Amazon S3 and AWS Glue resources.
         /// </para>
         /// </summary>

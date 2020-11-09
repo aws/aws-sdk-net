@@ -29,12 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Use this to store channel data in an S3 bucket managed by AWS IoT Analytics. You cannot
-    /// change the choice of service-managed or customer-managed S3 storage after the channel
-    /// is created.
+    /// The information needed to configure a delta time session window.
     /// </summary>
-    public partial class ServiceManagedChannelS3Storage
+    public partial class LateDataRuleConfiguration
     {
+        private DeltaTimeSessionWindowConfiguration _deltaTimeSessionWindowConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property DeltaTimeSessionWindowConfiguration. 
+        /// <para>
+        /// The information needed to configure a delta time session window.
+        /// </para>
+        /// </summary>
+        public DeltaTimeSessionWindowConfiguration DeltaTimeSessionWindowConfiguration
+        {
+            get { return this._deltaTimeSessionWindowConfiguration; }
+            set { this._deltaTimeSessionWindowConfiguration = value; }
+        }
+
+        // Check to see if DeltaTimeSessionWindowConfiguration property is set
+        internal bool IsSetDeltaTimeSessionWindowConfiguration()
+        {
+            return this._deltaTimeSessionWindowConfiguration != null;
+        }
 
     }
 }

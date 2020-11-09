@@ -30,7 +30,7 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDatasetContent operation.
-    /// Retrieves the contents of a data set as pre-signed URIs.
+    /// Retrieves the contents of a data set as presigned URIs.
     /// </summary>
     public partial class GetDatasetContentRequest : AmazonIoTAnalyticsRequest
     {

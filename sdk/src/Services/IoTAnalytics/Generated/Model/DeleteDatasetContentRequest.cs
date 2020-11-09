@@ -30,7 +30,7 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDatasetContent operation.
-    /// Deletes the content of the specified data set.
+    /// Deletes the content of the specified dataset.
     /// </summary>
     public partial class DeleteDatasetContentRequest : AmazonIoTAnalyticsRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatasetName. 
         /// <para>
-        /// The name of the data set whose content is deleted.
+        /// The name of the dataset whose content is deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -59,7 +59,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The version of the data set whose content is deleted. You can also use the strings
+        /// The version of the dataset whose content is deleted. You can also use the strings
         /// "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed
         /// data set. If not specified, "$LATEST_SUCCEEDED" is the default.
         /// </para>

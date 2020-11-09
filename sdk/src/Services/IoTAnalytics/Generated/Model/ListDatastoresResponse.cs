@@ -39,7 +39,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatastoreSummaries. 
         /// <para>
-        /// A list of "DatastoreSummary" objects.
+        /// A list of <code>DatastoreSummary</code> objects.
         /// </para>
         /// </summary>
         public List<DatastoreSummary> DatastoreSummaries
