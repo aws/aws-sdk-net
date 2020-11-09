@@ -1,3 +1,25 @@
+### 3.5.51.0 (2020-11-09 17:21 UTC)
+* DataSync (3.5.2.0)
+	* DataSync now enables customers to adjust the network bandwidth used by a running AWS DataSync task.
+* DynamoDBv2 (3.5.3.0)
+	* This release adds supports for exporting Amazon DynamoDB table data to Amazon S3 to perform analytics at any scale.
+* ECS (3.5.1.0)
+	* This release provides native support for specifying Amazon FSx for Windows File Server file systems as volumes in your Amazon ECS task definitions.
+* Elasticsearch (3.5.4.0)
+	* Adding support for package versioning in Amazon Elasticsearch Service
+* FSx (3.5.1.0)
+	* This release adds support for creating DNS aliases for Amazon FSx for Windows File Server, and using AWS Backup to automate scheduled, policy-driven backup plans for Amazon FSx file systems.
+* IoTAnalytics (3.5.1.0)
+	* AWS IoT Analytics now supports Late Data Notifications for datasets, dataset content creation using previous version IDs, and includes the LastMessageArrivalTime attribute for channels and datastores.
+* Macie2 (3.5.4.0)
+	* Sensitive data findings in Amazon Macie now include enhanced location data for Apache Avro object containers and Apache Parquet files.
+* S3 (3.5.4.0)
+	* S3 Intelligent-Tiering adds support for Archive and Deep Archive Access tiers; S3 Replication adds replication metrics and failure notifications, brings feature parity for delete marker replication
+* SimpleSystemsManagement (3.5.4.0)
+	* add a new filter to allow customer to filter automation executions by using resource-group which used for execute automation
+* StorageGateway (3.5.2.0)
+	* Added bandwidth rate limit schedule for Tape and Volume Gateways
+
 ### 3.5.50.0 (2020-11-06 19:11 UTC)
 * DLM (3.5.2.0)
 	* Amazon Data Lifecycle Manager now supports the creation and retention of EBS-backed Amazon Machine Images
