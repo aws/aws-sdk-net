@@ -99,6 +99,10 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.GetPackageVersionHistoryRequest.MaxResults</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Elasticsearch.Model.GetUpgradeHistoryRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -173,6 +177,14 @@
     <min>3</min>
     <max>28</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.UpdatePackageRequest.CommitMessage</property>
+    <max>160</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.UpdatePackageRequest.PackageDescription</property>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.UpgradeElasticsearchDomainRequest.DomainName</property>
@@ -288,6 +300,10 @@
     <property>Amazon.Elasticsearch.Model.PackageSource.S3BucketName</property>
     <min>3</min>
     <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.PackageVersionHistory.CommitMessage</property>
+    <max>160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.ReservedElasticsearchInstance.ReservationName</property>

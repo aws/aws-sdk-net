@@ -106,6 +106,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.PackageType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PackageVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PackageVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReferencePath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

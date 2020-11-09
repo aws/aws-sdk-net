@@ -1875,6 +1875,79 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  GetPackageVersionHistory
+
+        /// <summary>
+        /// Returns a list of versions of the package, along with their creation time and commit
+        /// message.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPackageVersionHistory service method.</param>
+        /// 
+        /// <returns>The response from the GetPackageVersionHistory service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetPackageVersionHistory">REST API Reference for GetPackageVersionHistory Operation</seealso>
+        public virtual GetPackageVersionHistoryResponse GetPackageVersionHistory(GetPackageVersionHistoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPackageVersionHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPackageVersionHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<GetPackageVersionHistoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPackageVersionHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPackageVersionHistory operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPackageVersionHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetPackageVersionHistory">REST API Reference for GetPackageVersionHistory Operation</seealso>
+        public virtual IAsyncResult BeginGetPackageVersionHistory(GetPackageVersionHistoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPackageVersionHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPackageVersionHistoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPackageVersionHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPackageVersionHistory.</param>
+        /// 
+        /// <returns>Returns a  GetPackageVersionHistoryResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetPackageVersionHistory">REST API Reference for GetPackageVersionHistory Operation</seealso>
+        public virtual GetPackageVersionHistoryResponse EndGetPackageVersionHistory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPackageVersionHistoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetUpgradeHistory
 
         /// <summary>
@@ -2774,6 +2847,82 @@ namespace Amazon.Elasticsearch
         public virtual UpdateElasticsearchDomainConfigResponse EndUpdateElasticsearchDomainConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateElasticsearchDomainConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdatePackage
+
+        /// <summary>
+        /// Updates a package for use with Amazon ES domains.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackage service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePackage service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.LimitExceededException">
+        /// An exception for trying to create more than allowed resources or sub-resources. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
+        public virtual UpdatePackageResponse UpdatePackage(UpdatePackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePackageResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePackageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackage operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePackage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
+        public virtual IAsyncResult BeginUpdatePackage(UpdatePackageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePackageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePackage.</param>
+        /// 
+        /// <returns>Returns a  UpdatePackageResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
+        public virtual UpdatePackageResponse EndUpdatePackage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdatePackageResponse>(asyncResult);
         }
 
         #endregion

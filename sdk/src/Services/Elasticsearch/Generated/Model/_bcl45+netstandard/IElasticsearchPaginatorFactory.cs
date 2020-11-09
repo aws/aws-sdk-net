@@ -52,6 +52,11 @@ namespace Amazon.Elasticsearch.Model
         IDescribeReservedElasticsearchInstancesPaginator DescribeReservedElasticsearchInstances(DescribeReservedElasticsearchInstancesRequest request);
 
         /// <summary>
+        /// Paginator for GetPackageVersionHistory operation
+        ///</summary>
+        IGetPackageVersionHistoryPaginator GetPackageVersionHistory(GetPackageVersionHistoryRequest request);
+
+        /// <summary>
         /// Paginator for GetUpgradeHistory operation
         ///</summary>
         IGetUpgradeHistoryPaginator GetUpgradeHistory(GetUpgradeHistoryRequest request);

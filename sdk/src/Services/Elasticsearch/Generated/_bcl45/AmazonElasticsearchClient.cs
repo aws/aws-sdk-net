@@ -1972,6 +1972,85 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  GetPackageVersionHistory
+
+
+        /// <summary>
+        /// Returns a list of versions of the package, along with their creation time and commit
+        /// message.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPackageVersionHistory service method.</param>
+        /// 
+        /// <returns>The response from the GetPackageVersionHistory service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetPackageVersionHistory">REST API Reference for GetPackageVersionHistory Operation</seealso>
+        public virtual GetPackageVersionHistoryResponse GetPackageVersionHistory(GetPackageVersionHistoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPackageVersionHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPackageVersionHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<GetPackageVersionHistoryResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of versions of the package, along with their creation time and commit
+        /// message.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPackageVersionHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPackageVersionHistory service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetPackageVersionHistory">REST API Reference for GetPackageVersionHistory Operation</seealso>
+        public virtual Task<GetPackageVersionHistoryResponse> GetPackageVersionHistoryAsync(GetPackageVersionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPackageVersionHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPackageVersionHistoryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPackageVersionHistoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetUpgradeHistory
 
 
@@ -2903,6 +2982,91 @@ namespace Amazon.Elasticsearch
             options.ResponseUnmarshaller = UpdateElasticsearchDomainConfigResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateElasticsearchDomainConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePackage
+
+
+        /// <summary>
+        /// Updates a package for use with Amazon ES domains.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackage service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePackage service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.LimitExceededException">
+        /// An exception for trying to create more than allowed resources or sub-resources. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
+        public virtual UpdatePackageResponse UpdatePackage(UpdatePackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePackageResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePackageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a package for use with Amazon ES domains.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePackage service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.AccessDeniedException">
+        /// An error occurred because user does not have permissions to access the resource. Returns
+        /// HTTP status code 403.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.LimitExceededException">
+        /// An exception for trying to create more than allowed resources or sub-resources. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
+        public virtual Task<UpdatePackageResponse> UpdatePackageAsync(UpdatePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePackageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdatePackageResponse>(request, options, cancellationToken);
         }
 
         #endregion

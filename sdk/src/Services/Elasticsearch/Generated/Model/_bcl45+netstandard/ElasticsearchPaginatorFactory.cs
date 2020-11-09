@@ -77,6 +77,14 @@ namespace Amazon.Elasticsearch.Model
         }
 
         /// <summary>
+        /// Paginator for GetPackageVersionHistory operation
+        ///</summary>
+        public IGetPackageVersionHistoryPaginator GetPackageVersionHistory(GetPackageVersionHistoryRequest request) 
+        {
+            return new GetPackageVersionHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetUpgradeHistory operation
         ///</summary>
         public IGetUpgradeHistoryPaginator GetUpgradeHistory(GetUpgradeHistoryRequest request) 

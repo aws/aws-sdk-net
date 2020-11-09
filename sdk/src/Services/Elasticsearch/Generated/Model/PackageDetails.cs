@@ -33,13 +33,30 @@ namespace Amazon.Elasticsearch.Model
     /// </summary>
     public partial class PackageDetails
     {
+        private string _availablePackageVersion;
         private DateTime? _createdAt;
         private ErrorDetails _errorDetails;
+        private DateTime? _lastUpdatedAt;
         private string _packageDescription;
         private string _packageID;
         private string _packageName;
         private PackageStatus _packageStatus;
         private PackageType _packageType;
+
+        /// <summary>
+        /// Gets and sets the property AvailablePackageVersion.
+        /// </summary>
+        public string AvailablePackageVersion
+        {
+            get { return this._availablePackageVersion; }
+            set { this._availablePackageVersion = value; }
+        }
+
+        // Check to see if AvailablePackageVersion property is set
+        internal bool IsSetAvailablePackageVersion()
+        {
+            return this._availablePackageVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -75,6 +92,21 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetErrorDetails()
         {
             return this._errorDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdatedAt.
+        /// </summary>
+        public DateTime LastUpdatedAt
+        {
+            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            set { this._lastUpdatedAt = value; }
+        }
+
+        // Check to see if LastUpdatedAt property is set
+        internal bool IsSetLastUpdatedAt()
+        {
+            return this._lastUpdatedAt.HasValue; 
         }
 
         /// <summary>
