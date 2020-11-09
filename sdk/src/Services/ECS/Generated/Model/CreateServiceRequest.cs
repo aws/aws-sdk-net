@@ -422,10 +422,10 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// If the service is using the rolling update (<code>ECS</code>) deployment controller
-        /// and using either an Application Load Balancer or Network Load Balancer, you can specify
-        /// multiple target groups to attach to the service. The service-linked role is required
-        /// for services that make use of multiple target groups. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// and using either an Application Load Balancer or Network Load Balancer, you must specify
+        /// one or more target group ARNs to attach to the service. The service-linked role is
+        /// required for services that make use of multiple target groups. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
         /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
@@ -452,16 +452,18 @@ namespace Amazon.ECS.Model
         /// <para>
         /// For Application Load Balancers and Network Load Balancers, this object must contain
         /// the load balancer target group ARN, the container name (as it appears in a container
-        /// definition), and the container port to access from the load balancer. When a task
-        /// from this service is placed on a container instance, the container instance and port
-        /// combination is registered as a target in the target group specified here.
+        /// definition), and the container port to access from the load balancer. The load balancer
+        /// name parameter must be omitted. When a task from this service is placed on a container
+        /// instance, the container instance and port combination is registered as a target in
+        /// the target group specified here.
         /// </para>
         ///  
         /// <para>
         /// For Classic Load Balancers, this object must contain the load balancer name, the container
         /// name (as it appears in a container definition), and the container port to access from
-        /// the load balancer. When a task from this service is placed on a container instance,
-        /// the container instance is registered with the load balancer specified here.
+        /// the load balancer. The target group ARN parameter must be omitted. When a task from
+        /// this service is placed on a container instance, the container instance is registered
+        /// with the load balancer specified here.
         /// </para>
         ///  
         /// <para>
@@ -796,8 +798,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// A task definition must be specified if the service is using the <code>ECS</code> deployment
-        /// controller.
+        /// A task definition must be specified if the service is using either the <code>ECS</code>
+        /// or <code>CODE_DEPLOY</code> deployment controllers.
         /// </para>
         /// </summary>
         public string TaskDefinition

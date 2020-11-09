@@ -273,8 +273,11 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If using the EC2 launch type, this field is optional and any value can be used. If
-        /// a task-level memory value is specified then the container-level memory value is optional.
+        /// If using the EC2 launch type, you must specify either a task-level memory value or
+        /// a container-level memory value. This field is optional and any value can be used.
+        /// If a task-level memory value is specified then the container-level memory value is
+        /// optional. For more information regarding container-level memory and memory reservation,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.
         /// </para>
         ///  
         /// <para>

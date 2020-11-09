@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Volume Object
+    /// Response Unmarshaller for FSxWindowsFileServerVolumeConfiguration Object
     /// </summary>  
-    public class VolumeUnmarshaller : IUnmarshaller<Volume, XmlUnmarshallerContext>, IUnmarshaller<Volume, JsonUnmarshallerContext>
+    public class FSxWindowsFileServerVolumeConfigurationUnmarshaller : IUnmarshaller<FSxWindowsFileServerVolumeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<FSxWindowsFileServerVolumeConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Volume IUnmarshaller<Volume, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FSxWindowsFileServerVolumeConfiguration IUnmarshaller<FSxWindowsFileServerVolumeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Volume Unmarshall(JsonUnmarshallerContext context)
+        public FSxWindowsFileServerVolumeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Volume unmarshalledObject = new Volume();
+            FSxWindowsFileServerVolumeConfiguration unmarshalledObject = new FSxWindowsFileServerVolumeConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("dockerVolumeConfiguration", targetDepth))
+                if (context.TestExpression("authorizationConfig", targetDepth))
                 {
-                    var unmarshaller = DockerVolumeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DockerVolumeConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FSxWindowsFileServerAuthorizationConfigUnmarshaller.Instance;
+                    unmarshalledObject.AuthorizationConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("efsVolumeConfiguration", targetDepth))
-                {
-                    var unmarshaller = EFSVolumeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EfsVolumeConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("fsxWindowsFileServerVolumeConfiguration", targetDepth))
-                {
-                    var unmarshaller = FSxWindowsFileServerVolumeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.FsxWindowsFileServerVolumeConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("host", targetDepth))
-                {
-                    var unmarshaller = HostVolumePropertiesUnmarshaller.Instance;
-                    unmarshalledObject.Host = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("fileSystemId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FileSystemId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rootDirectory", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RootDirectory = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static VolumeUnmarshaller _instance = new VolumeUnmarshaller();        
+        private static FSxWindowsFileServerVolumeConfigurationUnmarshaller _instance = new FSxWindowsFileServerVolumeConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VolumeUnmarshaller Instance
+        public static FSxWindowsFileServerVolumeConfigurationUnmarshaller Instance
         {
             get
             {

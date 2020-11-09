@@ -479,7 +479,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RequiresCompatibilities. 
         /// <para>
-        /// The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+        /// The task launch type that Amazon ECS should validate the task definition against.
+        /// This ensures that the task definition parameters are compatible with the specified
+        /// launch type. If no value is specified, it defaults to <code>EC2</code>.
         /// </para>
         /// </summary>
         public List<string> RequiresCompatibilities

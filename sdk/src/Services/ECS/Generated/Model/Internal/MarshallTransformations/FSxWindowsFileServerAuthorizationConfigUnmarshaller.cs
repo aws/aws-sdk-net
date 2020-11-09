@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Volume Object
+    /// Response Unmarshaller for FSxWindowsFileServerAuthorizationConfig Object
     /// </summary>  
-    public class VolumeUnmarshaller : IUnmarshaller<Volume, XmlUnmarshallerContext>, IUnmarshaller<Volume, JsonUnmarshallerContext>
+    public class FSxWindowsFileServerAuthorizationConfigUnmarshaller : IUnmarshaller<FSxWindowsFileServerAuthorizationConfig, XmlUnmarshallerContext>, IUnmarshaller<FSxWindowsFileServerAuthorizationConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Volume IUnmarshaller<Volume, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FSxWindowsFileServerAuthorizationConfig IUnmarshaller<FSxWindowsFileServerAuthorizationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Volume Unmarshall(JsonUnmarshallerContext context)
+        public FSxWindowsFileServerAuthorizationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Volume unmarshalledObject = new Volume();
+            FSxWindowsFileServerAuthorizationConfig unmarshalledObject = new FSxWindowsFileServerAuthorizationConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("dockerVolumeConfiguration", targetDepth))
-                {
-                    var unmarshaller = DockerVolumeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DockerVolumeConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("efsVolumeConfiguration", targetDepth))
-                {
-                    var unmarshaller = EFSVolumeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EfsVolumeConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("fsxWindowsFileServerVolumeConfiguration", targetDepth))
-                {
-                    var unmarshaller = FSxWindowsFileServerVolumeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.FsxWindowsFileServerVolumeConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("host", targetDepth))
-                {
-                    var unmarshaller = HostVolumePropertiesUnmarshaller.Instance;
-                    unmarshalledObject.Host = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("credentialsParameter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CredentialsParameter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("domain", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Domain = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static VolumeUnmarshaller _instance = new VolumeUnmarshaller();        
+        private static FSxWindowsFileServerAuthorizationConfigUnmarshaller _instance = new FSxWindowsFileServerAuthorizationConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VolumeUnmarshaller Instance
+        public static FSxWindowsFileServerAuthorizationConfigUnmarshaller Instance
         {
             get
             {

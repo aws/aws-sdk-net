@@ -73,7 +73,7 @@ namespace Amazon.ECS.Model
         /// Any host devices to expose to the container. This parameter maps to <code>Devices</code>
         /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-        /// Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>.
         /// </para>
         ///  <note> 
@@ -99,7 +99,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property InitProcessEnabled. 
         /// <para>
         /// Run an <code>init</code> process inside the container that forwards signals and reaps
-        /// processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>. This parameter requires version 1.25 of the Docker Remote API or greater
         /// on your container instance. To check the Docker Remote API version on your container
         /// instance, log in to your container instance and run the following command: <code>sudo
@@ -122,7 +122,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property MaxSwap. 
         /// <para>
         /// The total amount of swap memory (in MiB) a container can use. This parameter will
-        /// be translated to the <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// be translated to the <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code>
         /// value.
         /// </para>
@@ -157,7 +157,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property SharedMemorySize. 
         /// <para>
         /// The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter
-        /// maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>.
         /// </para>
         ///  <note> 
@@ -189,7 +189,8 @@ namespace Amazon.ECS.Model
         /// If the <code>swappiness</code> parameter is not specified, a default value of <code>60</code>
         /// is used. If a value is not specified for <code>maxSwap</code> then this parameter
         /// is ignored. This parameter maps to the <code>--memory-swappiness</code> option to
-        /// <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+        /// <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -214,7 +215,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Tmpfs. 
         /// <para>
         /// The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter
-        /// maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>.
         /// </para>
         ///  <note> 
