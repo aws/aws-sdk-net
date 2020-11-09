@@ -30,8 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Provides details about the location of an occurrence of sensitive data in an Adobe
-    /// Portable Document Format file, Apache Avro object container, Microsoft Word document,
-    /// or non-binary text file.
+    /// Portable Document Format file, Microsoft Word document, or non-binary text file.
     /// </summary>
     public partial class Range
     {

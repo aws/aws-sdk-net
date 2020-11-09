@@ -64,6 +64,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("jsonPath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.JsonPath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("recordIndex", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
