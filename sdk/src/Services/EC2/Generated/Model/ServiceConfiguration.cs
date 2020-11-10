@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private bool? _acceptanceRequired;
         private List<string> _availabilityZones = new List<string>();
         private List<string> _baseEndpointDnsNames = new List<string>();
+        private List<string> _gatewayLoadBalancerArns = new List<string>();
         private bool? _managesVpcEndpoints;
         private List<string> _networkLoadBalancerArns = new List<string>();
         private string _privateDnsName;
@@ -99,6 +100,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetBaseEndpointDnsNames()
         {
             return this._baseEndpointDnsNames != null && this._baseEndpointDnsNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GatewayLoadBalancerArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+        /// </para>
+        /// </summary>
+        public List<string> GatewayLoadBalancerArns
+        {
+            get { return this._gatewayLoadBalancerArns; }
+            set { this._gatewayLoadBalancerArns = value; }
+        }
+
+        // Check to see if GatewayLoadBalancerArns property is set
+        internal bool IsSetGatewayLoadBalancerArns()
+        {
+            return this._gatewayLoadBalancerArns != null && this._gatewayLoadBalancerArns.Count > 0; 
         }
 
         /// <summary>

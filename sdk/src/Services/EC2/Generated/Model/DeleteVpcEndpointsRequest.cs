@@ -32,7 +32,9 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DeleteVpcEndpoints operation.
     /// Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also deletes
     /// the endpoint routes in the route tables that were associated with the endpoint. Deleting
-    /// an interface endpoint deletes the endpoint network interfaces.
+    /// an interface endpoint or a Gateway Load Balancer endpoint deletes the endpoint network
+    /// interfaces. Gateway Load Balancer endpoints can only be deleted if the routes that
+    /// are associated with the endpoint are deleted.
     /// </summary>
     public partial class DeleteVpcEndpointsRequest : AmazonEC2Request
     {

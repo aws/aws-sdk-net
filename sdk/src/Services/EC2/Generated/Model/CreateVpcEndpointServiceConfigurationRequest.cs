@@ -31,13 +31,27 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CreateVpcEndpointServiceConfiguration operation.
     /// Creates a VPC endpoint service configuration to which service consumers (AWS accounts,
-    /// IAM users, and IAM roles) can connect. Service consumers can create an interface VPC
-    /// endpoint to connect to your service.
+    /// IAM users, and IAM roles) can connect.
     /// 
     ///  
     /// <para>
-    /// To create an endpoint service configuration, you must first create a Network Load
-    /// Balancer for your service. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
+    /// To create an endpoint service configuration, you must first create one of the following
+    /// for your service:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// A <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html">Network
+    /// Load Balancer</a>. Service consumers connect to your service using an interface endpoint.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/introduction.html">Gateway
+    /// Load Balancer</a>. Service consumers connect to your service using a Gateway Load
+    /// Balancer endpoint.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
     /// Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. 
     /// </para>
     ///  
@@ -52,6 +66,7 @@ namespace Amazon.EC2.Model
     {
         private bool? _acceptanceRequired;
         private string _clientToken;
+        private List<string> _gatewayLoadBalancerArns = new List<string>();
         private List<string> _networkLoadBalancerArns = new List<string>();
         private string _privateDnsName;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
@@ -96,12 +111,29 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GatewayLoadBalancerArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+        /// </para>
+        /// </summary>
+        public List<string> GatewayLoadBalancerArns
+        {
+            get { return this._gatewayLoadBalancerArns; }
+            set { this._gatewayLoadBalancerArns = value; }
+        }
+
+        // Check to see if GatewayLoadBalancerArns property is set
+        internal bool IsSetGatewayLoadBalancerArns()
+        {
+            return this._gatewayLoadBalancerArns != null && this._gatewayLoadBalancerArns.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkLoadBalancerArns. 
         /// <para>
         /// The Amazon Resource Names (ARNs) of one or more Network Load Balancers for your service.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> NetworkLoadBalancerArns
         {
             get { return this._networkLoadBalancerArns; }
@@ -117,7 +149,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateDnsName. 
         /// <para>
-        /// The private DNS name to assign to the VPC endpoint service.
+        /// (Interface endpoint configuration) The private DNS name to assign to the VPC endpoint
+        /// service.
         /// </para>
         /// </summary>
         public string PrivateDnsName

@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     {
         private DateTime? _creationTimestamp;
         private List<DnsEntry> _dnsEntries = new List<DnsEntry>();
+        private List<string> _gatewayLoadBalancerArns = new List<string>();
         private List<string> _networkLoadBalancerArns = new List<string>();
         private string _serviceId;
         private string _vpcEndpointId;
@@ -75,6 +76,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDnsEntries()
         {
             return this._dnsEntries != null && this._dnsEntries.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GatewayLoadBalancerArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+        /// </para>
+        /// </summary>
+        public List<string> GatewayLoadBalancerArns
+        {
+            get { return this._gatewayLoadBalancerArns; }
+            set { this._gatewayLoadBalancerArns = value; }
+        }
+
+        // Check to see if GatewayLoadBalancerArns property is set
+        internal bool IsSetGatewayLoadBalancerArns()
+        {
+            return this._gatewayLoadBalancerArns != null && this._gatewayLoadBalancerArns.Count > 0; 
         }
 
         /// <summary>

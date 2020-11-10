@@ -6493,6 +6493,12 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
+        /// A <code>GatewayLoadBalancer</code> endpoint is a network interface in your subnet
+        /// that serves an endpoint for communicating with a Gateway Load Balancer that you've
+        /// configured as a VPC endpoint service.
+        /// </para>
+        ///  
+        /// <para>
         /// Use <a>DescribeVpcEndpointServices</a> to get a list of supported services.
         /// </para>
         /// </summary>
@@ -6530,6 +6536,12 @@ namespace Amazon.EC2
         /// as an endpoint for communicating with the specified service. You can specify the subnets
         /// in which to create an endpoint, and the security groups to associate with the endpoint
         /// network interface.
+        /// </para>
+        ///  
+        /// <para>
+        /// A <code>GatewayLoadBalancer</code> endpoint is a network interface in your subnet
+        /// that serves an endpoint for communicating with a Gateway Load Balancer that you've
+        /// configured as a VPC endpoint service.
         /// </para>
         ///  
         /// <para>
@@ -6616,13 +6628,27 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a VPC endpoint service configuration to which service consumers (AWS accounts,
-        /// IAM users, and IAM roles) can connect. Service consumers can create an interface VPC
-        /// endpoint to connect to your service.
+        /// IAM users, and IAM roles) can connect.
         /// 
         ///  
         /// <para>
-        /// To create an endpoint service configuration, you must first create a Network Load
-        /// Balancer for your service. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
+        /// To create an endpoint service configuration, you must first create one of the following
+        /// for your service:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html">Network
+        /// Load Balancer</a>. Service consumers connect to your service using an interface endpoint.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/introduction.html">Gateway
+        /// Load Balancer</a>. Service consumers connect to your service using a Gateway Load
+        /// Balancer endpoint.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
         /// Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. 
         /// </para>
         ///  
@@ -6649,13 +6675,27 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a VPC endpoint service configuration to which service consumers (AWS accounts,
-        /// IAM users, and IAM roles) can connect. Service consumers can create an interface VPC
-        /// endpoint to connect to your service.
+        /// IAM users, and IAM roles) can connect.
         /// 
         ///  
         /// <para>
-        /// To create an endpoint service configuration, you must first create a Network Load
-        /// Balancer for your service. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
+        /// To create an endpoint service configuration, you must first create one of the following
+        /// for your service:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html">Network
+        /// Load Balancer</a>. Service consumers connect to your service using an interface endpoint.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/introduction.html">Gateway
+        /// Load Balancer</a>. Service consumers connect to your service using a Gateway Load
+        /// Balancer endpoint.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
         /// Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. 
         /// </para>
         ///  
@@ -9012,7 +9052,9 @@ namespace Amazon.EC2
         /// <summary>
         /// Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also deletes
         /// the endpoint routes in the route tables that were associated with the endpoint. Deleting
-        /// an interface endpoint deletes the endpoint network interfaces.
+        /// an interface endpoint or a Gateway Load Balancer endpoint deletes the endpoint network
+        /// interfaces. Gateway Load Balancer endpoints can only be deleted if the routes that
+        /// are associated with the endpoint are deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoints service method.</param>
         /// 
@@ -9031,7 +9073,9 @@ namespace Amazon.EC2
         /// <summary>
         /// Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also deletes
         /// the endpoint routes in the route tables that were associated with the endpoint. Deleting
-        /// an interface endpoint deletes the endpoint network interfaces.
+        /// an interface endpoint or a Gateway Load Balancer endpoint deletes the endpoint network
+        /// interfaces. Gateway Load Balancer endpoints can only be deleted if the routes that
+        /// are associated with the endpoint are deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoints service method.</param>
         /// <param name="cancellationToken">
@@ -22700,8 +22744,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies attributes of a specified VPC endpoint. The attributes that you can modify
-        /// depend on the type of VPC endpoint (interface or gateway). For more information, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
+        /// depend on the type of VPC endpoint (interface, gateway, or Gateway Load Balancer).
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
         /// Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpoint service method.</param>
@@ -22720,8 +22764,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies attributes of a specified VPC endpoint. The attributes that you can modify
-        /// depend on the type of VPC endpoint (interface or gateway). For more information, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
+        /// depend on the type of VPC endpoint (interface, gateway, or Gateway Load Balancer).
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
         /// Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpoint service method.</param>
@@ -22790,9 +22834,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the attributes of your VPC endpoint service configuration. You can change
-        /// the Network Load Balancers for your service, and you can specify whether acceptance
-        /// is required for requests to connect to your endpoint service through an interface
-        /// VPC endpoint.
+        /// the Network Load Balancers or Gateway Load Balancers for your service, and you can
+        /// specify whether acceptance is required for requests to connect to your endpoint service
+        /// through an interface VPC endpoint.
         /// 
         ///  
         /// <para>
@@ -22818,9 +22862,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the attributes of your VPC endpoint service configuration. You can change
-        /// the Network Load Balancers for your service, and you can specify whether acceptance
-        /// is required for requests to connect to your endpoint service through an interface
-        /// VPC endpoint.
+        /// the Network Load Balancers or Gateway Load Balancers for your service, and you can
+        /// specify whether acceptance is required for requests to connect to your endpoint service
+        /// through an interface VPC endpoint.
         /// 
         ///  
         /// <para>

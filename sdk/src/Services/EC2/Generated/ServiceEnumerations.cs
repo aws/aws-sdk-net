@@ -9869,6 +9869,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ServiceType Gateway = new ServiceType("Gateway");
         /// <summary>
+        /// Constant GatewayLoadBalancer for ServiceType
+        /// </summary>
+        public static readonly ServiceType GatewayLoadBalancer = new ServiceType("GatewayLoadBalancer");
+        /// <summary>
         /// Constant Interface for ServiceType
         /// </summary>
         public static readonly ServiceType Interface = new ServiceType("Interface");
@@ -12684,6 +12688,10 @@ namespace Amazon.EC2
         /// Constant Gateway for VpcEndpointType
         /// </summary>
         public static readonly VpcEndpointType Gateway = new VpcEndpointType("Gateway");
+        /// <summary>
+        /// Constant GatewayLoadBalancer for VpcEndpointType
+        /// </summary>
+        public static readonly VpcEndpointType GatewayLoadBalancer = new VpcEndpointType("GatewayLoadBalancer");
         /// <summary>
         /// Constant Interface for VpcEndpointType
         /// </summary>

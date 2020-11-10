@@ -31,9 +31,9 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ModifyVpcEndpointServiceConfiguration operation.
     /// Modifies the attributes of your VPC endpoint service configuration. You can change
-    /// the Network Load Balancers for your service, and you can specify whether acceptance
-    /// is required for requests to connect to your endpoint service through an interface
-    /// VPC endpoint.
+    /// the Network Load Balancers or Gateway Load Balancers for your service, and you can
+    /// specify whether acceptance is required for requests to connect to your endpoint service
+    /// through an interface VPC endpoint.
     /// 
     ///  
     /// <para>
@@ -46,8 +46,10 @@ namespace Amazon.EC2.Model
     public partial class ModifyVpcEndpointServiceConfigurationRequest : AmazonEC2Request
     {
         private bool? _acceptanceRequired;
+        private List<string> _addGatewayLoadBalancerArns = new List<string>();
         private List<string> _addNetworkLoadBalancerArns = new List<string>();
         private string _privateDnsName;
+        private List<string> _removeGatewayLoadBalancerArns = new List<string>();
         private List<string> _removeNetworkLoadBalancerArns = new List<string>();
         private bool? _removePrivateDnsName;
         private string _serviceId;
@@ -68,6 +70,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetAcceptanceRequired()
         {
             return this._acceptanceRequired.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AddGatewayLoadBalancerArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service
+        /// configuration.
+        /// </para>
+        /// </summary>
+        public List<string> AddGatewayLoadBalancerArns
+        {
+            get { return this._addGatewayLoadBalancerArns; }
+            set { this._addGatewayLoadBalancerArns = value; }
+        }
+
+        // Check to see if AddGatewayLoadBalancerArns property is set
+        internal bool IsSetAddGatewayLoadBalancerArns()
+        {
+            return this._addGatewayLoadBalancerArns != null && this._addGatewayLoadBalancerArns.Count > 0; 
         }
 
         /// <summary>
@@ -92,7 +113,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateDnsName. 
         /// <para>
-        /// The private DNS name to assign to the endpoint service.
+        /// (Interface endpoint configuration) The private DNS name to assign to the endpoint
+        /// service.
         /// </para>
         /// </summary>
         public string PrivateDnsName
@@ -105,6 +127,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetPrivateDnsName()
         {
             return this._privateDnsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoveGatewayLoadBalancerArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service
+        /// configuration.
+        /// </para>
+        /// </summary>
+        public List<string> RemoveGatewayLoadBalancerArns
+        {
+            get { return this._removeGatewayLoadBalancerArns; }
+            set { this._removeGatewayLoadBalancerArns = value; }
+        }
+
+        // Check to see if RemoveGatewayLoadBalancerArns property is set
+        internal bool IsSetRemoveGatewayLoadBalancerArns()
+        {
+            return this._removeGatewayLoadBalancerArns != null && this._removeGatewayLoadBalancerArns.Count > 0; 
         }
 
         /// <summary>
@@ -129,7 +170,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RemovePrivateDnsName. 
         /// <para>
-        /// Removes the private DNS name of the endpoint service.
+        /// (Interface endpoint configuration) Removes the private DNS name of the endpoint service.
         /// </para>
         /// </summary>
         public bool RemovePrivateDnsName

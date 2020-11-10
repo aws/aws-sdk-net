@@ -67,6 +67,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DnsEntries.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("gatewayLoadBalancerArnSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.GatewayLoadBalancerArns.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("networkLoadBalancerArnSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

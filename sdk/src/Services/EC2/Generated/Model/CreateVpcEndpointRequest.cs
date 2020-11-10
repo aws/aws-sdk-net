@@ -52,6 +52,12 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
+    /// A <code>GatewayLoadBalancer</code> endpoint is a network interface in your subnet
+    /// that serves an endpoint for communicating with a Gateway Load Balancer that you've
+    /// configured as a VPC endpoint service.
+    /// </para>
+    ///  
+    /// <para>
     /// Use <a>DescribeVpcEndpointServices</a> to get a list of supported services.
     /// </para>
     /// </summary>
@@ -91,9 +97,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PolicyDocument. 
         /// <para>
-        /// A policy to attach to the endpoint that controls access to the service. The policy
-        /// must be in valid JSON format. If this parameter is not specified, we attach a default
-        /// policy that allows full access to the service.
+        /// (Interface and gateway endpoints) A policy to attach to the endpoint that controls
+        /// access to the service. The policy must be in valid JSON format. If this parameter
+        /// is not specified, we attach a default policy that allows full access to the service.
         /// </para>
         /// </summary>
         public string PolicyDocument
@@ -202,8 +208,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// (Interface endpoint) The ID of one or more subnets in which to create an endpoint
-        /// network interface.
+        /// (Interface and Gateway Load Balancer endpoints) The ID of one or more subnets in which
+        /// to create an endpoint network interface. For a Gateway Load Balancer endpoint, you
+        /// can specify one subnet only.
         /// </para>
         /// </summary>
         public List<string> SubnetIds
