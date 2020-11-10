@@ -121,7 +121,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property CapacityRebalance. 
         /// <para>
-        /// Indicates whether capacity rebalance is enabled.
+        /// Indicates whether Capacity Rebalancing is enabled.
         /// </para>
         /// </summary>
         public bool CapacityRebalance

@@ -36,8 +36,8 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     /// For more information about using scaling policies to scale your Auto Scaling group,
     /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
-    /// Tracking Scaling Policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
-    /// and Simple Scaling Policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
+    /// and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class PutScalingPolicyRequest : AmazonAutoScalingRequest
@@ -67,7 +67,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
-        /// Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -113,7 +113,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Valid only if the policy type is <code>SimpleScaling</code>. For more information,
         /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-        /// Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public int Cooldown
@@ -133,7 +133,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Indicates whether the scaling policy is enabled or disabled. The default is enabled.
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling
-        /// a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
+        /// a scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -212,7 +212,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
-        /// Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>

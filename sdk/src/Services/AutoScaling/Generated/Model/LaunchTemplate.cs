@@ -53,8 +53,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateSpecification. 
         /// <para>
-        /// The launch template to use. You must specify either the launch template ID or launch
-        /// template name in the request.
+        /// The launch template to use.
         /// </para>
         /// </summary>
         public LaunchTemplateSpecification LaunchTemplateSpecification
@@ -74,12 +73,8 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Any parameters that you specify override the same parameters in the launch template.
         /// Currently, the only supported override is instance type. You can specify between 1
-        /// and 20 instance types.
-        /// </para>
-        ///  
-        /// <para>
-        /// If not provided, Amazon EC2 Auto Scaling will use the instance type specified in the
-        /// launch template to launch instances. 
+        /// and 20 instance types. If not provided, Amazon EC2 Auto Scaling will use the instance
+        /// type specified in the launch template when it launches an instance. 
         /// </para>
         /// </summary>
         public List<LaunchTemplateOverrides> Overrides

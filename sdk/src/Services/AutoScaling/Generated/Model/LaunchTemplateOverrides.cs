@@ -46,13 +46,10 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type. You must use an instance type that is supported in your requested
-        /// Region and Availability Zones. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-        /// Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> 
+        /// The instance type, such as <code>m3.xlarge</code>. You must use an instance type that
+        /// is supported in your requested Region and Availability Zones. For information about
+        /// available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+        /// instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -71,16 +68,16 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property WeightedCapacity. 
         /// <para>
-        /// The number of capacity units, which gives the instance type a proportional weight
-        /// to other instance types. For example, larger instance types are generally weighted
-        /// more than smaller instance types. These are the same units that you chose to set the
-        /// desired capacity in terms of instances, or a performance attribute such as vCPUs,
-        /// memory, or I/O.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-        /// Weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// The number of capacity units provided by the specified instance type in terms of virtual
+        /// CPUs, memory, storage, throughput, or other relative performance characteristic. When
+        /// a Spot or On-Demand Instance is provisioned, the capacity units count toward the desired
+        /// capacity. Amazon EC2 Auto Scaling provisions instances until the desired capacity
+        /// is totally fulfilled, even if this results in an overage. For example, if there are
+        /// 2 units remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only provision
+        /// an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned,
+        /// and the desired capacity is exceeded by 3 units. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
+        /// weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// 
         /// </para>
         ///  
         /// <para>

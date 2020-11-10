@@ -277,8 +277,8 @@ namespace Amazon.AutoScaling.Model
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
-        /// Tracking Scaling Policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
-        /// and Simple Scaling Policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
+        /// and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

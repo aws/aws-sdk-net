@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes an automatic scaling process that has been suspended.
+    /// Describes an auto scaling process that has been suspended.
     /// 
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling
-    /// Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class SuspendedProcess

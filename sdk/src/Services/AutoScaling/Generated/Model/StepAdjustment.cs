@@ -71,7 +71,7 @@ namespace Amazon.AutoScaling.Model
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-steps">Step
-    /// Adjustments</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// adjustments</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class StepAdjustment
