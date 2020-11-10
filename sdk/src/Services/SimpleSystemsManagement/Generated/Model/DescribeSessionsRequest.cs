@@ -46,7 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// One or more filters to limit the type of sessions returned by the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Min=1, Max=6)]
         public List<SessionFilter> Filters
         {
             get { return this._filters; }

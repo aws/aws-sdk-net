@@ -4025,6 +4025,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly SessionFilterKey Owner = new SessionFilterKey("Owner");
         /// <summary>
+        /// Constant SessionId for SessionFilterKey
+        /// </summary>
+        public static readonly SessionFilterKey SessionId = new SessionFilterKey("SessionId");
+        /// <summary>
         /// Constant Status for SessionFilterKey
         /// </summary>
         public static readonly SessionFilterKey Status = new SessionFilterKey("Status");
