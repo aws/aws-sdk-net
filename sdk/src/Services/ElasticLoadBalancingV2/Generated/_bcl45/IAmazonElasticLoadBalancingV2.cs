@@ -45,16 +45,26 @@ namespace Amazon.ElasticLoadBalancingV2
     ///  
     /// <para>
     /// Elastic Load Balancing supports the following types of load balancers: Application
-    /// Load Balancers, Network Load Balancers, and Classic Load Balancers. This reference
-    /// covers Application Load Balancers and Network Load Balancers.
+    /// Load Balancers, Network Load Balancers, Gateway Load Balancers, and Classic Load Balancers.
+    /// This reference covers the following load balancer types:
     /// </para>
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// An Application Load Balancer makes routing and load balancing decisions at the application
-    /// layer (HTTP/HTTPS). A Network Load Balancer makes routing and load balancing decisions
-    /// at the transport layer (TCP/TLS). Both Application Load Balancers and Network Load
-    /// Balancers can route requests to one or more ports on each EC2 instance or container
-    /// instance in your virtual private cloud (VPC). For more information, see the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic
+    /// Application Load Balancer - Operates at the application layer (layer 7) and supports
+    /// HTTP and HTTPS.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Network Load Balancer - Operates at the transport layer (layer 4) and supports TCP,
+    /// TLS, and UDP.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Gateway Load Balancer - Operates at the network layer (layer 3).
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic
     /// Load Balancing User Guide</a>.
     /// </para>
     ///  
@@ -86,14 +96,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </para>
         ///  
         /// <para>
-        /// To get the certificate list for a listener, use <a>DescribeListenerCertificates</a>.
-        /// To remove certificates from the certificate list for a listener, use <a>RemoveListenerCertificates</a>.
-        /// To replace the default certificate for a listener, use <a>ModifyListener</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates">SSL
-        /// Certificates</a> in the <i>Application Load Balancers Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html">HTTPS
+        /// listeners</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS
+        /// listeners</a> in the <i>Network Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddListenerCertificates service method.</param>
@@ -124,14 +129,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </para>
         ///  
         /// <para>
-        /// To get the certificate list for a listener, use <a>DescribeListenerCertificates</a>.
-        /// To remove certificates from the certificate list for a listener, use <a>RemoveListenerCertificates</a>.
-        /// To replace the default certificate for a listener, use <a>ModifyListener</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates">SSL
-        /// Certificates</a> in the <i>Application Load Balancers Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html">HTTPS
+        /// listeners</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS
+        /// listeners</a> in the <i>Network Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddListenerCertificates service method.</param>
@@ -159,18 +159,13 @@ namespace Amazon.ElasticLoadBalancingV2
 
         /// <summary>
         /// Adds the specified tags to the specified Elastic Load Balancing resource. You can
-        /// tag your Application Load Balancers, Network Load Balancers, target groups, listeners,
-        /// and rules.
+        /// tag your Application Load Balancers, Network Load Balancers, Gateway Load Balancers,
+        /// target groups, listeners, and rules.
         /// 
         ///  
         /// <para>
         /// Each tag consists of a key and an optional value. If a resource already has a tag
         /// with the same key, <code>AddTags</code> updates its value.
-        /// </para>
-        ///  
-        /// <para>
-        /// To list the current tags for your resources, use <a>DescribeTags</a>. To remove tags
-        /// from your resources, use <a>RemoveTags</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
@@ -195,18 +190,13 @@ namespace Amazon.ElasticLoadBalancingV2
 
         /// <summary>
         /// Adds the specified tags to the specified Elastic Load Balancing resource. You can
-        /// tag your Application Load Balancers, Network Load Balancers, target groups, listeners,
-        /// and rules.
+        /// tag your Application Load Balancers, Network Load Balancers, Gateway Load Balancers,
+        /// target groups, listeners, and rules.
         /// 
         ///  
         /// <para>
         /// Each tag consists of a key and an optional value. If a resource already has a tag
         /// with the same key, <code>AddTags</code> updates its value.
-        /// </para>
-        ///  
-        /// <para>
-        /// To list the current tags for your resources, use <a>DescribeTags</a>. To remove tags
-        /// from your resources, use <a>RemoveTags</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
@@ -236,25 +226,32 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Creates a listener for the specified Application Load Balancer or Network Load Balancer.
+        /// Creates a listener for the specified Application Load Balancer, Network Load Balancer.
+        /// or Gateway Load Balancer.
         /// 
         ///  
         /// <para>
-        /// To update a listener, use <a>ModifyListener</a>. When you are finished with a listener,
-        /// you can delete it using <a>DeleteListener</a>. If you are finished with both the listener
-        /// and the load balancer, you can delete them both using <a>DeleteLoadBalancer</a>.
+        /// For more information, see the following:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
+        /// for your Application Load Balancers</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners
+        /// for your Network Load Balancers</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-listeners.html">Listeners
+        /// for your Gateway Load Balancers</a> 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// This operation is idempotent, which means that it completes at most one time. If you
         /// attempt to create multiple listeners with the same settings, each call succeeds.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
-        /// for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i>
-        /// and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners
-        /// for Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateListener service method.</param>
@@ -323,25 +320,32 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Creates a listener for the specified Application Load Balancer or Network Load Balancer.
+        /// Creates a listener for the specified Application Load Balancer, Network Load Balancer.
+        /// or Gateway Load Balancer.
         /// 
         ///  
         /// <para>
-        /// To update a listener, use <a>ModifyListener</a>. When you are finished with a listener,
-        /// you can delete it using <a>DeleteListener</a>. If you are finished with both the listener
-        /// and the load balancer, you can delete them both using <a>DeleteLoadBalancer</a>.
+        /// For more information, see the following:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
+        /// for your Application Load Balancers</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners
+        /// for your Network Load Balancers</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-listeners.html">Listeners
+        /// for your Gateway Load Balancers</a> 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// This operation is idempotent, which means that it completes at most one time. If you
         /// attempt to create multiple listeners with the same settings, each call succeeds.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
-        /// for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i>
-        /// and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners
-        /// for Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateListener service method.</param>
@@ -416,37 +420,31 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Creates an Application Load Balancer or a Network Load Balancer.
+        /// Creates an Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.
         /// 
         ///  
         /// <para>
-        /// When you create a load balancer, you can specify security groups, public subnets,
-        /// IP address type, and tags. Otherwise, you could do so later using <a>SetSecurityGroups</a>,
-        /// <a>SetSubnets</a>, <a>SetIpAddressType</a>, and <a>AddTags</a>.
+        /// For more information, see the following:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// To create listeners for your load balancer, use <a>CreateListener</a>. To describe
-        /// your current load balancers, see <a>DescribeLoadBalancers</a>. When you are finished
-        /// with a load balancer, you can delete it using <a>DeleteLoadBalancer</a>.
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
+        /// Load Balancers</a> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// For limit information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
-        /// for Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i>
-        /// and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
-        /// for Your Network Load Balancer</a> in the <i>Network Load Balancers Guide</i>.
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network
+        /// Load Balancers</a> 
         /// </para>
-        ///  
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-load-balancers.html">Gateway
+        /// Load Balancers</a> 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// This operation is idempotent, which means that it completes at most one time. If you
         /// attempt to create multiple load balancers with the same settings, each call succeeds.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
-        /// Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network
-        /// Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancer service method.</param>
@@ -497,37 +495,31 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Creates an Application Load Balancer or a Network Load Balancer.
+        /// Creates an Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.
         /// 
         ///  
         /// <para>
-        /// When you create a load balancer, you can specify security groups, public subnets,
-        /// IP address type, and tags. Otherwise, you could do so later using <a>SetSecurityGroups</a>,
-        /// <a>SetSubnets</a>, <a>SetIpAddressType</a>, and <a>AddTags</a>.
+        /// For more information, see the following:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// To create listeners for your load balancer, use <a>CreateListener</a>. To describe
-        /// your current load balancers, see <a>DescribeLoadBalancers</a>. When you are finished
-        /// with a load balancer, you can delete it using <a>DeleteLoadBalancer</a>.
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
+        /// Load Balancers</a> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// For limit information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
-        /// for Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i>
-        /// and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
-        /// for Your Network Load Balancer</a> in the <i>Network Load Balancers Guide</i>.
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network
+        /// Load Balancers</a> 
         /// </para>
-        ///  
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-load-balancers.html">Gateway
+        /// Load Balancers</a> 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// This operation is idempotent, which means that it completes at most one time. If you
         /// attempt to create multiple load balancers with the same settings, each call succeeds.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
-        /// Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network
-        /// Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancer service method.</param>
@@ -594,13 +586,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// When the conditions for a rule are met, its actions are performed. If the conditions
         /// for no rules are met, the actions for the default rule are performed. For more information,
         /// see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
-        /// Rules</a> in the <i>Application Load Balancers Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To view your current rules, use <a>DescribeRules</a>. To update a rule, use <a>ModifyRule</a>.
-        /// To set the priorities of your rules, use <a>SetRulePriorities</a>. To delete a rule,
-        /// use <a>DeleteRule</a>.
+        /// rules</a> in the <i>Application Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRule service method.</param>
@@ -670,13 +656,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// When the conditions for a rule are met, its actions are performed. If the conditions
         /// for no rules are met, the actions for the default rule are performed. For more information,
         /// see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
-        /// Rules</a> in the <i>Application Load Balancers Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To view your current rules, use <a>DescribeRules</a>. To update a rule, use <a>ModifyRule</a>.
-        /// To set the priorities of your rules, use <a>SetRulePriorities</a>. To delete a rule,
-        /// use <a>DeleteRule</a>.
+        /// rules</a> in the <i>Application Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRule service method.</param>
@@ -746,30 +726,27 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// To register targets with the target group, use <a>RegisterTargets</a>. To update the
-        /// health check settings for the target group, use <a>ModifyTargetGroup</a>. To monitor
-        /// the health of targets in the target group, use <a>DescribeTargetHealth</a>.
+        /// For more information, see the following:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// To route traffic to the targets in a target group, specify the target group in an
-        /// action using <a>CreateListener</a> or <a>CreateRule</a>.
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
+        /// groups for your Application Load Balancers</a> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// To delete a target group, use <a>DeleteTargetGroup</a>.
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
+        /// groups for your Network Load Balancers</a> 
         /// </para>
-        ///  
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html">Target
+        /// groups for your Gateway Load Balancers</a> 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// This operation is idempotent, which means that it completes at most one time. If you
         /// attempt to create multiple target groups with the same settings, each call succeeds.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
-        /// Groups for Your Application Load Balancers</a> in the <i>Application Load Balancers
-        /// Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
-        /// Groups for Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTargetGroup service method.</param>
@@ -797,30 +774,27 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// To register targets with the target group, use <a>RegisterTargets</a>. To update the
-        /// health check settings for the target group, use <a>ModifyTargetGroup</a>. To monitor
-        /// the health of targets in the target group, use <a>DescribeTargetHealth</a>.
+        /// For more information, see the following:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// To route traffic to the targets in a target group, specify the target group in an
-        /// action using <a>CreateListener</a> or <a>CreateRule</a>.
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
+        /// groups for your Application Load Balancers</a> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// To delete a target group, use <a>DeleteTargetGroup</a>.
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
+        /// groups for your Network Load Balancers</a> 
         /// </para>
-        ///  
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html">Target
+        /// groups for your Gateway Load Balancers</a> 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// This operation is idempotent, which means that it completes at most one time. If you
         /// attempt to create multiple target groups with the same settings, each call succeeds.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
-        /// Groups for Your Application Load Balancers</a> in the <i>Application Load Balancers
-        /// Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
-        /// Groups for Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTargetGroup service method.</param>
@@ -855,7 +829,7 @@ namespace Amazon.ElasticLoadBalancingV2
         ///  
         /// <para>
         /// Alternatively, your listener is deleted when you delete the load balancer to which
-        /// it is attached, using <a>DeleteLoadBalancer</a>.
+        /// it is attached.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteListener service method.</param>
@@ -875,7 +849,7 @@ namespace Amazon.ElasticLoadBalancingV2
         ///  
         /// <para>
         /// Alternatively, your listener is deleted when you delete the load balancer to which
-        /// it is attached, using <a>DeleteLoadBalancer</a>.
+        /// it is attached.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteListener service method.</param>
@@ -896,8 +870,8 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Deletes the specified Application Load Balancer or Network Load Balancer and its attached
-        /// listeners.
+        /// Deletes the specified Application Load Balancer, Network Load Balancer, or Gateway
+        /// Load Balancer. Deleting a load balancer also deletes its listeners.
         /// 
         ///  
         /// <para>
@@ -929,8 +903,8 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Deletes the specified Application Load Balancer or Network Load Balancer and its attached
-        /// listeners.
+        /// Deletes the specified Application Load Balancer, Network Load Balancer, or Gateway
+        /// Load Balancer. Deleting a load balancer also deletes its listeners.
         /// 
         ///  
         /// <para>
@@ -1023,7 +997,9 @@ namespace Amazon.ElasticLoadBalancingV2
         ///  
         /// <para>
         /// You can delete a target group if it is not referenced by any actions. Deleting a target
-        /// group also deletes any associated health checks.
+        /// group also deletes any associated health checks. Deleting a target group does not
+        /// affect its registered targets. For example, any EC2 instances continue to run until
+        /// you stop or terminate them.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTargetGroup service method.</param>
@@ -1043,7 +1019,9 @@ namespace Amazon.ElasticLoadBalancingV2
         ///  
         /// <para>
         /// You can delete a target group if it is not referenced by any actions. Deleting a target
-        /// group also deletes any associated health checks.
+        /// group also deletes any associated health checks. Deleting a target group does not
+        /// affect its registered targets. For example, any EC2 instances continue to run until
+        /// you stop or terminate them.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTargetGroup service method.</param>
@@ -1112,11 +1090,24 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
-        /// for Your Application Load Balancers</a> in the <i>Application Load Balancer Guide</i>
-        /// or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
-        /// for Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
+        /// For more information, see the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Quotas
+        /// for your Application Load Balancers</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Quotas
+        /// for your Network Load Balancers</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/quotas-limits.html">Quotas
+        /// for your Gateway Load Balancers</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
         /// 
@@ -1131,11 +1122,24 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
-        /// for Your Application Load Balancers</a> in the <i>Application Load Balancer Guide</i>
-        /// or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
-        /// for Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
+        /// For more information, see the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Quotas
+        /// for your Application Load Balancers</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Quotas
+        /// for your Network Load Balancers</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/quotas-limits.html">Quotas
+        /// for your Gateway Load Balancers</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
         /// <param name="cancellationToken">
@@ -1164,7 +1168,8 @@ namespace Amazon.ElasticLoadBalancingV2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates">SSL
-        /// Certificates</a> in the <i>Application Load Balancers Guide</i>.
+        /// certificates</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#tls-listener-certificate">Server
+        /// certificates</a> in the <i>Network Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeListenerCertificates service method.</param>
@@ -1191,7 +1196,8 @@ namespace Amazon.ElasticLoadBalancingV2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates">SSL
-        /// Certificates</a> in the <i>Application Load Balancers Guide</i>.
+        /// certificates</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#tls-listener-certificate">Server
+        /// certificates</a> in the <i>Network Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeListenerCertificates service method.</param>
@@ -1213,14 +1219,8 @@ namespace Amazon.ElasticLoadBalancingV2
 
         /// <summary>
         /// Describes the specified listeners or the listeners for the specified Application Load
-        /// Balancer or Network Load Balancer. You must specify either a load balancer or one
-        /// or more listeners.
-        /// 
-        ///  
-        /// <para>
-        /// For an HTTPS or TLS listener, the output includes the default certificate for the
-        /// listener. To describe the certificate list for the listener, use <a>DescribeListenerCertificates</a>.
-        /// </para>
+        /// Balancer, Network Load Balancer, or Gateway Load Balancer. You must specify either
+        /// a load balancer or one or more listeners.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeListeners service method.</param>
         /// 
@@ -1241,14 +1241,8 @@ namespace Amazon.ElasticLoadBalancingV2
 
         /// <summary>
         /// Describes the specified listeners or the listeners for the specified Application Load
-        /// Balancer or Network Load Balancer. You must specify either a load balancer or one
-        /// or more listeners.
-        /// 
-        ///  
-        /// <para>
-        /// For an HTTPS or TLS listener, the output includes the default certificate for the
-        /// listener. To describe the certificate list for the listener, use <a>DescribeListenerCertificates</a>.
-        /// </para>
+        /// Balancer, Network Load Balancer, or Gateway Load Balancer. You must specify either
+        /// a load balancer or one or more listeners.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeListeners service method.</param>
         /// <param name="cancellationToken">
@@ -1274,15 +1268,29 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Describes the attributes for the specified Application Load Balancer or Network Load
-        /// Balancer.
+        /// Describes the attributes for the specified Application Load Balancer, Network Load
+        /// Balancer, or Gateway Load Balancer.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
-        /// Balancer Attributes</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
-        /// Balancer Attributes</a> in the <i>Network Load Balancers Guide</i>.
+        /// For more information, see the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
+        /// balancer attributes</a> in the <i>Application Load Balancers Guide</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
+        /// balancer attributes</a> in the <i>Network Load Balancers Guide</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-load-balancers.html#load-balancer-attributes">Load
+        /// balancer attributes</a> in the <i>Gateway Load Balancers Guide</i> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerAttributes service method.</param>
         /// 
@@ -1296,15 +1304,29 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Describes the attributes for the specified Application Load Balancer or Network Load
-        /// Balancer.
+        /// Describes the attributes for the specified Application Load Balancer, Network Load
+        /// Balancer, or Gateway Load Balancer.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
-        /// Balancer Attributes</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
-        /// Balancer Attributes</a> in the <i>Network Load Balancers Guide</i>.
+        /// For more information, see the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
+        /// balancer attributes</a> in the <i>Application Load Balancers Guide</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
+        /// balancer attributes</a> in the <i>Network Load Balancers Guide</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-load-balancers.html#load-balancer-attributes">Load
+        /// balancer attributes</a> in the <i>Gateway Load Balancers Guide</i> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -1325,12 +1347,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
         /// <summary>
         /// Describes the specified load balancers or all of your load balancers.
-        /// 
-        ///  
-        /// <para>
-        /// To describe the listeners for a load balancer, use <a>DescribeListeners</a>. To describe
-        /// the attributes for a load balancer, use <a>DescribeLoadBalancerAttributes</a>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers service method.</param>
         /// 
@@ -1345,12 +1361,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
         /// <summary>
         /// Describes the specified load balancers or all of your load balancers.
-        /// 
-        ///  
-        /// <para>
-        /// To describe the listeners for a load balancer, use <a>DescribeListeners</a>. To describe
-        /// the attributes for a load balancer, use <a>DescribeLoadBalancerAttributes</a>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers service method.</param>
         /// <param name="cancellationToken">
@@ -1423,7 +1433,8 @@ namespace Amazon.ElasticLoadBalancingV2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
-        /// Policies</a> in the <i>Application Load Balancers Guide</i>.
+        /// policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security
+        /// policies</a> in the <i>Network Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSSLPolicies service method.</param>
@@ -1443,7 +1454,8 @@ namespace Amazon.ElasticLoadBalancingV2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
-        /// Policies</a> in the <i>Application Load Balancers Guide</i>.
+        /// policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security
+        /// policies</a> in the <i>Network Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSSLPolicies service method.</param>
@@ -1465,8 +1477,8 @@ namespace Amazon.ElasticLoadBalancingV2
 
         /// <summary>
         /// Describes the tags for the specified Elastic Load Balancing resources. You can describe
-        /// the tags for one or more Application Load Balancers, Network Load Balancers, target
-        /// groups, listeners, or rules.
+        /// the tags for one or more Application Load Balancers, Network Load Balancers, Gateway
+        /// Load Balancers, target groups, listeners, or rules.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// 
@@ -1490,8 +1502,8 @@ namespace Amazon.ElasticLoadBalancingV2
 
         /// <summary>
         /// Describes the tags for the specified Elastic Load Balancing resources. You can describe
-        /// the tags for one or more Application Load Balancers, Network Load Balancers, target
-        /// groups, listeners, or rules.
+        /// the tags for one or more Application Load Balancers, Network Load Balancers, Gateway
+        /// Load Balancers, target groups, listeners, or rules.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// <param name="cancellationToken">
@@ -1524,10 +1536,24 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target
-        /// Group Attributes</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target
-        /// Group Attributes</a> in the <i>Network Load Balancers Guide</i>.
+        /// For more information, see the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target
+        /// group attributes</a> in the <i>Application Load Balancers Guide</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target
+        /// group attributes</a> in the <i>Network Load Balancers Guide</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html#target-group-attributes">Target
+        /// group attributes</a> in the <i>Gateway Load Balancers Guide</i> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTargetGroupAttributes service method.</param>
         /// 
@@ -1545,10 +1571,24 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target
-        /// Group Attributes</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target
-        /// Group Attributes</a> in the <i>Network Load Balancers Guide</i>.
+        /// For more information, see the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target
+        /// group attributes</a> in the <i>Application Load Balancers Guide</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target
+        /// group attributes</a> in the <i>Network Load Balancers Guide</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html#target-group-attributes">Target
+        /// group attributes</a> in the <i>Gateway Load Balancers Guide</i> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTargetGroupAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -1572,12 +1612,6 @@ namespace Amazon.ElasticLoadBalancingV2
         /// target groups are described. Alternatively, you can specify one of the following to
         /// filter the results: the ARN of the load balancer, the names of one or more target
         /// groups, or the ARNs of one or more target groups.
-        /// 
-        ///  
-        /// <para>
-        /// To describe the targets for a target group, use <a>DescribeTargetHealth</a>. To describe
-        /// the attributes of a target group, use <a>DescribeTargetGroupAttributes</a>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTargetGroups service method.</param>
         /// 
@@ -1598,12 +1632,6 @@ namespace Amazon.ElasticLoadBalancingV2
         /// target groups are described. Alternatively, you can specify one of the following to
         /// filter the results: the ARN of the load balancer, the names of one or more target
         /// groups, or the ARNs of one or more target groups.
-        /// 
-        ///  
-        /// <para>
-        /// To describe the targets for a target group, use <a>DescribeTargetHealth</a>. To describe
-        /// the attributes of a target group, use <a>DescribeTargetGroupAttributes</a>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTargetGroups service method.</param>
         /// <param name="cancellationToken">
@@ -1840,8 +1868,8 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Modifies the specified attributes of the specified Application Load Balancer or Network
-        /// Load Balancer.
+        /// Modifies the specified attributes of the specified Application Load Balancer, Network
+        /// Load Balancer, or Gateway Load Balancer.
         /// 
         ///  
         /// <para>
@@ -1864,8 +1892,8 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Modifies the specified attributes of the specified Application Load Balancer or Network
-        /// Load Balancer.
+        /// Modifies the specified attributes of the specified Application Load Balancer, Network
+        /// Load Balancer, or Gateway Load Balancer.
         /// 
         ///  
         /// <para>
@@ -1902,10 +1930,6 @@ namespace Amazon.ElasticLoadBalancingV2
         /// To add an item to a list, remove an item from a list, or update an item in a list,
         /// you must provide the entire list. For example, to add an action, specify a list with
         /// the current actions plus the new action.
-        /// </para>
-        ///  
-        /// <para>
-        /// To modify the actions for the default rule, use <a>ModifyListener</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyRule service method.</param>
@@ -1962,10 +1986,6 @@ namespace Amazon.ElasticLoadBalancingV2
         /// you must provide the entire list. For example, to add an action, specify a list with
         /// the current actions plus the new action.
         /// </para>
-        ///  
-        /// <para>
-        /// To modify the actions for the default rule, use <a>ModifyListener</a>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyRule service method.</param>
         /// <param name="cancellationToken">
@@ -2020,11 +2040,6 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <summary>
         /// Modifies the health checks used when evaluating the health state of the targets in
         /// the specified target group.
-        /// 
-        ///  
-        /// <para>
-        /// To monitor the health of the targets, use <a>DescribeTargetHealth</a>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyTargetGroup service method.</param>
         /// 
@@ -2043,11 +2058,6 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <summary>
         /// Modifies the health checks used when evaluating the health state of the targets in
         /// the specified target group.
-        /// 
-        ///  
-        /// <para>
-        /// To monitor the health of the targets, use <a>DescribeTargetHealth</a>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyTargetGroup service method.</param>
         /// <param name="cancellationToken">
@@ -2130,10 +2140,6 @@ namespace Amazon.ElasticLoadBalancingV2
         /// have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1,
         /// HS1, M1, M2, M3, and T1. You can register instances of these types by IP address.
         /// </para>
-        ///  
-        /// <para>
-        /// To remove a target from a target group, use <a>DeregisterTargets</a>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterTargets service method.</param>
         /// 
@@ -2178,10 +2184,6 @@ namespace Amazon.ElasticLoadBalancingV2
         /// have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1,
         /// HS1, M1, M2, M3, and T1. You can register instances of these types by IP address.
         /// </para>
-        ///  
-        /// <para>
-        /// To remove a target from a target group, use <a>DeregisterTargets</a>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterTargets service method.</param>
         /// <param name="cancellationToken">
@@ -2214,16 +2216,6 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <summary>
         /// Removes the specified certificate from the certificate list for the specified HTTPS
         /// or TLS listener.
-        /// 
-        ///  
-        /// <para>
-        /// You can't remove the default certificate for a listener. To replace the default certificate,
-        /// call <a>ModifyListener</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To list the certificates for your listener, use <a>DescribeListenerCertificates</a>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveListenerCertificates service method.</param>
         /// 
@@ -2242,16 +2234,6 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <summary>
         /// Removes the specified certificate from the certificate list for the specified HTTPS
         /// or TLS listener.
-        /// 
-        ///  
-        /// <para>
-        /// You can't remove the default certificate for a listener. To replace the default certificate,
-        /// call <a>ModifyListener</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To list the certificates for your listener, use <a>DescribeListenerCertificates</a>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveListenerCertificates service method.</param>
         /// <param name="cancellationToken">
@@ -2276,12 +2258,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <summary>
         /// Removes the specified tags from the specified Elastic Load Balancing resources. You
         /// can remove the tags for one or more Application Load Balancers, Network Load Balancers,
-        /// target groups, listeners, or rules.
-        /// 
-        ///  
-        /// <para>
-        /// To list the current tags for your resources, use <a>DescribeTags</a>.
-        /// </para>
+        /// Gateway Load Balancers, target groups, listeners, or rules.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTags service method.</param>
         /// 
@@ -2309,12 +2286,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <summary>
         /// Removes the specified tags from the specified Elastic Load Balancing resources. You
         /// can remove the tags for one or more Application Load Balancers, Network Load Balancers,
-        /// target groups, listeners, or rules.
-        /// 
-        ///  
-        /// <para>
-        /// To list the current tags for your resources, use <a>DescribeTags</a>.
-        /// </para>
+        /// Gateway Load Balancers, target groups, listeners, or rules.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTags service method.</param>
         /// <param name="cancellationToken">
@@ -2457,7 +2429,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// You can't specify a security group for a Network Load Balancer.
+        /// You can't specify a security group for a Network Load Balancer or Gateway Load Balancer.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetSecurityGroups service method.</param>
@@ -2483,7 +2455,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// You can't specify a security group for a Network Load Balancer.
+        /// You can't specify a security group for a Network Load Balancer or Gateway Load Balancer.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetSecurityGroups service method.</param>
@@ -2511,7 +2483,8 @@ namespace Amazon.ElasticLoadBalancingV2
 
         /// <summary>
         /// Enables the Availability Zones for the specified public subnets for the specified
-        /// load balancer. The specified subnets replace the previously enabled subnets.
+        /// Application Load Balancer or Network Load Balancer. The specified subnets replace
+        /// the previously enabled subnets.
         /// 
         ///  
         /// <para>
@@ -2548,7 +2521,8 @@ namespace Amazon.ElasticLoadBalancingV2
 
         /// <summary>
         /// Enables the Availability Zones for the specified public subnets for the specified
-        /// load balancer. The specified subnets replace the previously enabled subnets.
+        /// Application Load Balancer or Network Load Balancer. The specified subnets replace
+        /// the previously enabled subnets.
         /// 
         ///  
         /// <para>

@@ -31,14 +31,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// <summary>
     /// Container for the parameters to the DescribeListeners operation.
     /// Describes the specified listeners or the listeners for the specified Application Load
-    /// Balancer or Network Load Balancer. You must specify either a load balancer or one
-    /// or more listeners.
-    /// 
-    ///  
-    /// <para>
-    /// For an HTTPS or TLS listener, the output includes the default certificate for the
-    /// listener. To describe the certificate list for the listener, use <a>DescribeListenerCertificates</a>.
-    /// </para>
+    /// Balancer, Network Load Balancer, or Gateway Load Balancer. You must specify either
+    /// a load balancer or one or more listeners.
     /// </summary>
     public partial class DescribeListenersRequest : AmazonElasticLoadBalancingV2Request
     {

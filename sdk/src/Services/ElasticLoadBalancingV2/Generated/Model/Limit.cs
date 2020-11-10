@@ -65,6 +65,26 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// condition-values-per-alb-rule
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// condition-wildcards-per-alb-rule
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// gateway-load-balancers
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// gateway-load-balancers-per-vpc
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// geneve-target-groups
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// listeners-per-application-load-balancer
         /// </para>
         ///  </li> <li> 
@@ -98,6 +118,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  </li> <li> 
         /// <para>
         /// targets-per-application-load-balancer
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// targets-per-availability-zone-per-gateway-load-balancer
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// 
     ///  
     /// <para>
-    /// You can't specify a security group for a Network Load Balancer.
+    /// You can't specify a security group for a Network Load Balancer or Gateway Load Balancer.
     /// </para>
     /// </summary>
     public partial class SetSecurityGroupsRequest : AmazonElasticLoadBalancingV2Request

@@ -31,7 +31,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// <summary>
     /// Container for the parameters to the SetSubnets operation.
     /// Enables the Availability Zones for the specified public subnets for the specified
-    /// load balancer. The specified subnets replace the previously enabled subnets.
+    /// Application Load Balancer or Network Load Balancer. The specified subnets replace
+    /// the previously enabled subnets.
     /// 
     ///  
     /// <para>

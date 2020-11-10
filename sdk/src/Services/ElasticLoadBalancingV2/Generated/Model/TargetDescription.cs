@@ -101,7 +101,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port on which the target is listening. Not used if the target is a Lambda function.
+        /// The port on which the target is listening. If the target group protocol is GENEVE,
+        /// the supported port is 6081. Not used if the target is a Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]

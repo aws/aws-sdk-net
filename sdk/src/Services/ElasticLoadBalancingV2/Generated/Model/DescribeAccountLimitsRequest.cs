@@ -34,11 +34,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
-    /// for Your Application Load Balancers</a> in the <i>Application Load Balancer Guide</i>
-    /// or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
-    /// for Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
+    /// For more information, see the following:
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Quotas
+    /// for your Application Load Balancers</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Quotas
+    /// for your Network Load Balancers</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/quotas-limits.html">Quotas
+    /// for your Gateway Load Balancers</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeAccountLimitsRequest : AmazonElasticLoadBalancingV2Request
     {

@@ -32,11 +32,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// Container for the parameters to the ModifyTargetGroup operation.
     /// Modifies the health checks used when evaluating the health state of the targets in
     /// the specified target group.
-    /// 
-    ///  
-    /// <para>
-    /// To monitor the health of the targets, use <a>DescribeTargetHealth</a>.
-    /// </para>
     /// </summary>
     public partial class ModifyTargetGroupRequest : AmazonElasticLoadBalancingV2Request
     {
@@ -73,8 +68,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property HealthCheckIntervalSeconds. 
         /// <para>
         /// The approximate amount of time, in seconds, between health checks of an individual
-        /// target. For HTTP and HTTPS health checks, the range is 5 to 300 seconds. For TPC health
-        /// checks, the supported values are 10 or 30 seconds.
+        /// target. For TCP health checks, the supported values are 10 or 30 seconds.
         /// </para>
         ///  
         /// <para>
@@ -145,8 +139,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The protocol the load balancer uses when performing health checks on targets. The
         /// TCP protocol is supported for health checks only if the protocol of the target group
-        /// is TCP, TLS, UDP, or TCP_UDP. The TLS, UDP, and TCP_UDP protocols are not supported
-        /// for health checks.
+        /// is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not
+        /// supported for health checks.
         /// </para>
         ///  
         /// <para>

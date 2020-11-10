@@ -35,7 +35,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
-    /// Policies</a> in the <i>Application Load Balancers Guide</i>.
+    /// policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security
+    /// policies</a> in the <i>Network Load Balancers Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeSSLPoliciesRequest : AmazonElasticLoadBalancingV2Request

@@ -30,8 +30,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyLoadBalancerAttributes operation.
-    /// Modifies the specified attributes of the specified Application Load Balancer or Network
-    /// Load Balancer.
+    /// Modifies the specified attributes of the specified Application Load Balancer, Network
+    /// Load Balancer, or Gateway Load Balancer.
     /// 
     ///  
     /// <para>

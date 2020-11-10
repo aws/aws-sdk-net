@@ -43,8 +43,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The following attributes are supported by both Application Load Balancers and Network
-        /// Load Balancers:
+        /// The following attribute is supported by all load balancers:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -54,7 +53,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// default value is 300 seconds. If the target is a Lambda function, this attribute is
         /// not supported.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> 
+        /// <para>
+        /// The following attributes are supported by both Application Load Balancers and Network
+        /// Load Balancers:
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
         /// The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
