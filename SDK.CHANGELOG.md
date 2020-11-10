@@ -1,3 +1,13 @@
+### 3.5.52.0 (2020-11-10 19:12 UTC)
+* AutoScaling (3.5.1.2)
+	* Documentation updates and corrections for Amazon EC2 Auto Scaling API Reference and SDKs.
+* EC2 (3.5.17.0)
+	* This release adds support for Gateway Load Balancer VPC endpoints and VPC endpoint services
+* ElasticLoadBalancingV2 (3.5.4.0)
+	* Added support for Gateway Load Balancers, which make it easy to deploy, scale, and run third-party virtual networking appliances.
+* SimpleSystemsManagement (3.5.5.0)
+	* Add SessionId as a filter for DescribeSessions API
+
 ### 3.5.51.0 (2020-11-09 17:21 UTC)
 * DataSync (3.5.2.0)
 	* DataSync now enables customers to adjust the network bandwidth used by a running AWS DataSync task.
