@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -58,6 +59,16 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
+        /// Adds a parameter with a list-of-doubles value.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="values"></param>
+        public void Add(string key, List<double> values)
+        {
+            Add(key, new DoubleListParameterValue(values));
+        }
+
+        /// <summary>
         /// Converts the current parameters into a list of key-value pairs.
         /// </summary>
         /// <returns></returns>
@@ -73,21 +84,25 @@ namespace Amazon.Runtime.Internal
                 var name = kvp.Key;
                 var value = kvp.Value;
 
-                var spv = value as StringParameterValue;
-                var slpv = value as StringListParameterValue;
-
-                if (spv != null)
-                    yield return new KeyValuePair<string, string>(name, spv.Value);
-                else if (slpv != null)
+                switch (value)
                 {
-                    var sortedList = slpv.Value;
-                    sortedList.Sort(StringComparer.Ordinal);
-                    foreach (var listValue in sortedList)
-                        yield return new KeyValuePair<string, string>(name, listValue);
-                }
-                else
-                {
-                    throw new AmazonClientException("Unsupported parameter value type '" + value.GetType().FullName + "'");
+                    case StringParameterValue stringParameterValue:
+                        yield return new KeyValuePair<string, string>(name, stringParameterValue.Value);
+                        break;
+                    case StringListParameterValue stringListParameterValue:
+                        var sortedStringListParameterValue = stringListParameterValue.Value;
+                        sortedStringListParameterValue.Sort(StringComparer.Ordinal);
+                        foreach (var listValue in sortedStringListParameterValue)
+                            yield return new KeyValuePair<string, string>(name, listValue);
+                        break;
+                    case DoubleListParameterValue doubleListParameterValue:
+                        var sortedDoubleListParameterValue = doubleListParameterValue.Value;
+                        sortedDoubleListParameterValue.Sort();
+                        foreach (var listValue in sortedDoubleListParameterValue)
+                            yield return new KeyValuePair<string, string>(name, listValue.ToString(CultureInfo.InvariantCulture));
+                        break;
+                    default:
+                        throw new AmazonClientException("Unsupported parameter value type '" + value.GetType().FullName + "'");
                 }
             }
         }
