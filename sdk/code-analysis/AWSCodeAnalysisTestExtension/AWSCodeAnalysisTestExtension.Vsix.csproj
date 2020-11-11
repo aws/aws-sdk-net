@@ -448,6 +448,10 @@
       <Project>{27740509-BBD9-4E6F-A880-73ADC6B5CEB4}</Project>
       <Name>AWSSDK.Glue.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/GlueDataBrew/AWSSDK.GlueDataBrew.CodeAnalysis.csproj">
+      <Project>{9BBDE0BF-C3FA-4862-9B3B-0DF678722F7A}</Project>
+      <Name>AWSSDK.GlueDataBrew.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Greengrass/AWSSDK.Greengrass.CodeAnalysis.csproj">
       <Project>{30C980A1-7313-47B7-82FB-BB1DDFAD0307}</Project>
       <Name>AWSSDK.Greengrass.CodeAnalysis</Name>
