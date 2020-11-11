@@ -181,10 +181,14 @@ namespace Amazon.Runtime
             CredentialsRefreshState state;
 
             var region = Options.STSRegion;
-            if (region == null && !string.IsNullOrEmpty(AWSConfigs.AWSRegion))
-                region = RegionEndpoint.GetBySystemName(AWSConfigs.AWSRegion);
-            else
+            if (region == null)
+            {
+                region = FallbackRegionFactory.GetRegionEndpoint();
+            }
+            if (region == null)
+            {
                 region = DefaultSTSClientRegion;
+            }
 
             ICoreAmazonSTS coreSTSClient = null;
             try
