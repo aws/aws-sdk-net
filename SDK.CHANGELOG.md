@@ -1,3 +1,17 @@
+### 3.5.53.0 (2020-11-11 19:17 UTC)
+* Amplify (3.5.3.0)
+	* Whereas previously custom headers were set via the app's buildspec, custom headers can now be set directly on the Amplify app for both ci/cd and manual deploy apps.
+* ForecastService (3.5.1.0)
+	* Providing support of custom quantiles in CreatePredictor API.
+* GlueDataBrew (3.5.0.0)
+	* This is the initial SDK release for AWS Glue DataBrew. DataBrew is a visual data preparation tool that enables users to clean and normalize data without writing any code.
+* MediaConvert (3.5.3.0)
+	* AWS Elemental MediaConvert SDK has added support for Automated ABR encoding and improved the reliability of embedded captions in accelerated outputs.
+* QuickSight (3.5.5.0)
+	* QuickSight now supports Column-level security and connecting to Oracle data source.
+* ServiceCatalog (3.5.5.0)
+	* Adding support to remove a Provisioned Product launch role via UpdateProvisionedProductProperties
+
 ### 3.5.52.1 (2020-11-10 23:33 UTC)
 * Core 3.5.1.35
 	* Add support for list of doubles in query parameter.
