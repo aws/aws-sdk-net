@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OutputGroup Object
+    /// Response Unmarshaller for AutomatedEncodingSettings Object
     /// </summary>  
-    public class OutputGroupUnmarshaller : IUnmarshaller<OutputGroup, XmlUnmarshallerContext>, IUnmarshaller<OutputGroup, JsonUnmarshallerContext>
+    public class AutomatedEncodingSettingsUnmarshaller : IUnmarshaller<AutomatedEncodingSettings, XmlUnmarshallerContext>, IUnmarshaller<AutomatedEncodingSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OutputGroup IUnmarshaller<OutputGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AutomatedEncodingSettings IUnmarshaller<AutomatedEncodingSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OutputGroup Unmarshall(JsonUnmarshallerContext context)
+        public AutomatedEncodingSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OutputGroup unmarshalledObject = new OutputGroup();
+            AutomatedEncodingSettings unmarshalledObject = new AutomatedEncodingSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("automatedEncodingSettings", targetDepth))
+                if (context.TestExpression("abrSettings", targetDepth))
                 {
-                    var unmarshaller = AutomatedEncodingSettingsUnmarshaller.Instance;
-                    unmarshalledObject.AutomatedEncodingSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("customName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("outputGroupSettings", targetDepth))
-                {
-                    var unmarshaller = OutputGroupSettingsUnmarshaller.Instance;
-                    unmarshalledObject.OutputGroupSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("outputs", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Output, OutputUnmarshaller>(OutputUnmarshaller.Instance);
-                    unmarshalledObject.Outputs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AutomatedAbrSettingsUnmarshaller.Instance;
+                    unmarshalledObject.AbrSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static OutputGroupUnmarshaller _instance = new OutputGroupUnmarshaller();        
+        private static AutomatedEncodingSettingsUnmarshaller _instance = new AutomatedEncodingSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OutputGroupUnmarshaller Instance
+        public static AutomatedEncodingSettingsUnmarshaller Instance
         {
             get
             {

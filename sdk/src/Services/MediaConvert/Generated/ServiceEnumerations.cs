@@ -6445,6 +6445,10 @@ namespace Amazon.MediaConvert
     {
 
         /// <summary>
+        /// Constant AUTO for H264AdaptiveQuantization
+        /// </summary>
+        public static readonly H264AdaptiveQuantization AUTO = new H264AdaptiveQuantization("AUTO");
+        /// <summary>
         /// Constant HIGH for H264AdaptiveQuantization
         /// </summary>
         public static readonly H264AdaptiveQuantization HIGH = new H264AdaptiveQuantization("HIGH");
