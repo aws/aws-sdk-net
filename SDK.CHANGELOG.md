@@ -1,3 +1,7 @@
+### 3.5.52.1 (2020-11-10 23:33 UTC)
+* Core 3.5.1.35
+	* Add support for list of doubles in query parameter.
+
 ### 3.5.52.0 (2020-11-10 19:12 UTC)
 * AutoScaling (3.5.1.2)
 	* Documentation updates and corrections for Amazon EC2 Auto Scaling API Reference and SDKs.
