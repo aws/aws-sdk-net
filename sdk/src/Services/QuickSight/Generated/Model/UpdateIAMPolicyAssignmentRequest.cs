@@ -31,7 +31,8 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the UpdateIAMPolicyAssignment operation.
     /// Updates an existing IAM policy assignment. This operation updates only the optional
-    /// parameter or parameters that are specified in the request.
+    /// parameter or parameters that are specified in the request. This overwrites all of
+    /// the users included in <code>Identities</code>.
     /// </summary>
     public partial class UpdateIAMPolicyAssignmentRequest : AmazonQuickSightRequest
     {
@@ -45,7 +46,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AssignmentName. 
         /// <para>
-        /// The name of the assignment. This name must be unique within an AWS account.
+        /// The name of the assignment, also called a rule. This name must be unique within an
+        /// AWS account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -97,7 +99,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the AWS account that contains the IAM policy assignment.
+        /// The ID of the AWS account that contains the IAM policy assignment. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

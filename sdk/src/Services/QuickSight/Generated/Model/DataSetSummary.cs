@@ -34,6 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class DataSetSummary
     {
         private string _arn;
+        private bool? _columnLevelPermissionRulesApplied;
         private DateTime? _createdTime;
         private string _dataSetId;
         private DataSetImportMode _importMode;
@@ -57,6 +58,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ColumnLevelPermissionRulesApplied. 
+        /// <para>
+        /// Indicates if the dataset has column level permission configured. 
+        /// </para>
+        /// </summary>
+        public bool ColumnLevelPermissionRulesApplied
+        {
+            get { return this._columnLevelPermissionRulesApplied.GetValueOrDefault(); }
+            set { this._columnLevelPermissionRulesApplied = value; }
+        }
+
+        // Check to see if ColumnLevelPermissionRulesApplied property is set
+        internal bool IsSetColumnLevelPermissionRulesApplied()
+        {
+            return this._columnLevelPermissionRulesApplied.HasValue; 
         }
 
         /// <summary>

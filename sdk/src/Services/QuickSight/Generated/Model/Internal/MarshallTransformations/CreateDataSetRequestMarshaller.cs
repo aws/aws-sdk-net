@@ -85,6 +85,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetColumnLevelPermissionRules())
+                {
+                    context.Writer.WritePropertyName("ColumnLevelPermissionRules");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestColumnLevelPermissionRulesListValue in publicRequest.ColumnLevelPermissionRules)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ColumnLevelPermissionRuleMarshaller.Instance;
+                        marshaller.Marshall(publicRequestColumnLevelPermissionRulesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDataSetId())
                 {
                     context.Writer.WritePropertyName("DataSetId");

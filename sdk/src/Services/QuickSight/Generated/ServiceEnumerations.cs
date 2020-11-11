@@ -663,6 +663,10 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly DataSourceType MYSQL = new DataSourceType("MYSQL");
         /// <summary>
+        /// Constant ORACLE for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType ORACLE = new DataSourceType("ORACLE");
+        /// <summary>
         /// Constant POSTGRESQL for DataSourceType
         /// </summary>
         public static readonly DataSourceType POSTGRESQL = new DataSourceType("POSTGRESQL");
