@@ -46,7 +46,7 @@ namespace Amazon.Amplify.Model
         ///  The unique ID for an Amplify app. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public string AppId
         {
             get { return this._appId; }
@@ -103,7 +103,7 @@ namespace Amazon.Amplify.Model
         ///  The maximum number of records to list in a single response. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

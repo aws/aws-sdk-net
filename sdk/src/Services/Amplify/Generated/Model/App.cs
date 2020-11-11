@@ -41,6 +41,7 @@ namespace Amazon.Amplify.Model
         private string _basicAuthCredentials;
         private string _buildSpec;
         private DateTime? _createTime;
+        private string _customHeaders;
         private List<CustomRule> _customRules = new List<CustomRule>();
         private string _defaultDomain;
         private string _description;
@@ -82,7 +83,7 @@ namespace Amazon.Amplify.Model
         ///  The unique ID of the Amplify app. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public string AppId
         {
             get { return this._appId; }
@@ -187,6 +188,25 @@ namespace Amazon.Amplify.Model
         internal bool IsSetCreateTime()
         {
             return this._createTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomHeaders. 
+        /// <para>
+        /// Describes the custom HTTP headers for the Amplify app.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25000)]
+        public string CustomHeaders
+        {
+            get { return this._customHeaders; }
+            set { this._customHeaders = value; }
+        }
+
+        // Check to see if CustomHeaders property is set
+        internal bool IsSetCustomHeaders()
+        {
+            return this._customHeaders != null;
         }
 
         /// <summary>

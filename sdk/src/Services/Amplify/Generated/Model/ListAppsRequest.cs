@@ -43,7 +43,7 @@ namespace Amazon.Amplify.Model
         ///  The maximum number of records to list in a single response. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
