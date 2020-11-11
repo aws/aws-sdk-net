@@ -131,7 +131,13 @@ namespace Amazon.ForecastService.Model
         ///  <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>,
         /// <code>mean</code>, <code>min</code>, <code>max</code> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// To set a filling method to a specific value, set the fill parameter to <code>value</code>
+        /// and define the value in a corresponding <code>_value</code> parameter. For example,
+        /// to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code>
+        /// and <code>"backfill_value":"2"</code>. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public Dictionary<string, string> FeaturizationMethodParameters

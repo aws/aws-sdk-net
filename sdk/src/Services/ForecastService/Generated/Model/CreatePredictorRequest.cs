@@ -34,27 +34,25 @@ namespace Amazon.ForecastService.Model
     /// 
     ///  
     /// <para>
-    /// In the request, you provide a dataset group and either specify an algorithm or let
-    /// Amazon Forecast choose the algorithm for you using AutoML. If you specify an algorithm,
-    /// you also can override algorithm-specific hyperparameters.
+    /// In the request, provide a dataset group and either specify an algorithm or let Amazon
+    /// Forecast choose an algorithm for you using AutoML. If you specify an algorithm, you
+    /// also can override algorithm-specific hyperparameters.
     /// </para>
     ///  
     /// <para>
-    /// Amazon Forecast uses the chosen algorithm to train a model using the latest version
-    /// of the datasets in the specified dataset group. The result is called a predictor.
-    /// You then generate a forecast using the <a>CreateForecast</a> operation.
+    /// Amazon Forecast uses the algorithm to train a predictor using the latest version of
+    /// the datasets in the specified dataset group. You can then generate a forecast using
+    /// the <a>CreateForecast</a> operation.
     /// </para>
     ///  
     /// <para>
-    /// After training a model, the <code>CreatePredictor</code> operation also evaluates
-    /// it. To see the evaluation metrics, use the <a>GetAccuracyMetrics</a> operation. Always
-    /// review the evaluation metrics before deciding to use the predictor to generate a forecast.
+    ///  To see the evaluation metrics, use the <a>GetAccuracyMetrics</a> operation. 
     /// </para>
     ///  
     /// <para>
-    /// Optionally, you can specify a featurization configuration to fill and aggregate the
-    /// data fields in the <code>TARGET_TIME_SERIES</code> dataset to improve model training.
-    /// For more information, see <a>FeaturizationConfig</a>.
+    /// You can specify a featurization configuration to fill and aggregate the data fields
+    /// in the <code>TARGET_TIME_SERIES</code> dataset to improve model training. For more
+    /// information, see <a>FeaturizationConfig</a>.
     /// </para>
     ///  
     /// <para>
@@ -65,14 +63,21 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  
     /// <para>
+    /// By default, predictors are trained and evaluated at the 0.1 (P10), 0.5 (P50), and
+    /// 0.9 (P90) quantiles. You can choose custom forecast types to train and evaluate your
+    /// predictor by setting the <code>ForecastTypes</code>. 
+    /// </para>
+    ///  
+    /// <para>
     ///  <b>AutoML</b> 
     /// </para>
     ///  
     /// <para>
     /// If you want Amazon Forecast to evaluate each algorithm and choose the one that minimizes
     /// the <code>objective function</code>, set <code>PerformAutoML</code> to <code>true</code>.
-    /// The <code>objective function</code> is defined as the mean of the weighted p10, p50,
-    /// and p90 quantile losses. For more information, see <a>EvaluationResult</a>.
+    /// The <code>objective function</code> is defined as the mean of the weighted losses
+    /// over the forecast types. By default, these are the p10, p50, and p90 quantile losses.
+    /// For more information, see <a>EvaluationResult</a>.
     /// </para>
     ///  
     /// <para>
@@ -113,6 +118,7 @@ namespace Amazon.ForecastService.Model
         private EvaluationParameters _evaluationParameters;
         private FeaturizationConfig _featurizationConfig;
         private int? _forecastHorizon;
+        private List<string> _forecastTypes = new List<string>();
         private HyperParameterTuningJobConfig _hpoConfig;
         private InputDataConfig _inputDataConfig;
         private bool? _performAutoML;
@@ -135,11 +141,11 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> 
+        ///  <code>arn:aws:forecast:::algorithm/CNN-QR</code> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Supports hyperparameter optimization (HPO)
+        ///  <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -259,6 +265,31 @@ namespace Amazon.ForecastService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ForecastTypes. 
+        /// <para>
+        /// Specifies the forecast types used to train a predictor. You can specify up to five
+        /// forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of
+        /// 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>["0.10", "0.50", "0.9"]</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public List<string> ForecastTypes
+        {
+            get { return this._forecastTypes; }
+            set { this._forecastTypes = value; }
+        }
+
+        // Check to see if ForecastTypes property is set
+        internal bool IsSetForecastTypes()
+        {
+            return this._forecastTypes != null && this._forecastTypes.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property HPOConfig. 
         /// <para>
         /// Provides hyperparameter override values for the algorithm. If you don't provide this
@@ -356,11 +387,15 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        /// The following algorithm supports HPO:
+        /// The following algorithms support HPO:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// DeepAR+
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CNN-QR
         /// </para>
         ///  </li> </ul>
         /// </summary>

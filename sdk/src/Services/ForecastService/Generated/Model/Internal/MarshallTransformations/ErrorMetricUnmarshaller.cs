@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Metrics Object
+    /// Response Unmarshaller for ErrorMetric Object
     /// </summary>  
-    public class MetricsUnmarshaller : IUnmarshaller<Metrics, XmlUnmarshallerContext>, IUnmarshaller<Metrics, JsonUnmarshallerContext>
+    public class ErrorMetricUnmarshaller : IUnmarshaller<ErrorMetric, XmlUnmarshallerContext>, IUnmarshaller<ErrorMetric, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Metrics IUnmarshaller<Metrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ErrorMetric IUnmarshaller<ErrorMetric, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,21 +53,21 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Metrics Unmarshall(JsonUnmarshallerContext context)
+        public ErrorMetric Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Metrics unmarshalledObject = new Metrics();
+            ErrorMetric unmarshalledObject = new ErrorMetric();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ErrorMetrics", targetDepth))
+                if (context.TestExpression("ForecastType", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ErrorMetric, ErrorMetricUnmarshaller>(ErrorMetricUnmarshaller.Instance);
-                    unmarshalledObject.ErrorMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ForecastType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RMSE", targetDepth))
@@ -76,10 +76,10 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     unmarshalledObject.RMSE = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("WeightedQuantileLosses", targetDepth))
+                if (context.TestExpression("WAPE", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<WeightedQuantileLoss, WeightedQuantileLossUnmarshaller>(WeightedQuantileLossUnmarshaller.Instance);
-                    unmarshalledObject.WeightedQuantileLosses = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.WAPE = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         }
 
 
-        private static MetricsUnmarshaller _instance = new MetricsUnmarshaller();        
+        private static ErrorMetricUnmarshaller _instance = new ErrorMetricUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MetricsUnmarshaller Instance
+        public static ErrorMetricUnmarshaller Instance
         {
             get
             {

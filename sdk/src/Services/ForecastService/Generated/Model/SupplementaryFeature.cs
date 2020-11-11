@@ -34,69 +34,10 @@ namespace Amazon.ForecastService.Model
     /// 
     ///  
     /// <para>
-    /// The only supported feature is a holiday calendar. If you use the calendar, all data
-    /// in the datasets should belong to the same country as the calendar. For the holiday
-    /// calendar data, see the <a href="http://jollyday.sourceforge.net/data.html">Jollyday</a>
-    /// web site.
+    /// The only supported feature is Holidays. If you use the calendar, all data in the datasets
+    /// should belong to the same country as the calendar. For the holiday calendar data,
+    /// see the <a href="http://jollyday.sourceforge.net/data.html">Jollyday</a> website.
     /// </para>
-    ///  
-    /// <para>
-    /// India and Korea's holidays are not included in the Jollyday library, but both are
-    /// supported by Amazon Forecast. Their holidays are:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>"IN" - INDIA</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <code>JANUARY 26 - REPUBLIC DAY</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>AUGUST 15 - INDEPENDENCE DAY</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>OCTOBER 2 GANDHI'S BIRTHDAY</code> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>"KR" - KOREA</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <code>JANUARY 1 - NEW YEAR</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>MARCH 1 - INDEPENDENCE MOVEMENT DAY</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>MAY 5 - CHILDREN'S DAY</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>JUNE 6 - MEMORIAL DAY</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>AUGUST 15 - LIBERATION DAY</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>OCTOBER 3 - NATIONAL FOUNDATION DAY</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>OCTOBER 9 - HANGEUL DAY</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>DECEMBER 25 - CHRISTMAS DAY</code> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class SupplementaryFeature
     {
@@ -129,6 +70,10 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// "AL" - ALBANIA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// "AR" - ARGENTINA
         /// </para>
         ///  </li> <li> 
@@ -141,7 +86,19 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// "BA" - BOSNIA HERZEGOVINA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// "BE" - BELGIUM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "BG" - BULGARIA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "BO" - BOLIVIA
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -149,11 +106,27 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// "BY" - BELARUS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// "CA" - CANADA
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// "CN" - CHINA
+        /// "CL" - CHILE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "CO" - COLOMBIA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "CR" - COSTA RICA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "HR" - CROATIA
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -169,6 +142,14 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// "EE" - ESTONIA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "ET" - ETHIOPIA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// "FI" - FINLAND
         /// </para>
         ///  </li> <li> 
@@ -181,15 +162,23 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// "GR" - GREECE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// "HU" - HUNGARY
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// "IE" - IRELAND
+        /// "IS" - ICELAND
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// "IN" - INDIA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "IE" - IRELAND
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -201,7 +190,23 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// "KZ" - KAZAKHSTAN
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// "KR" - KOREA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "LV" - LATVIA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "LI" - LIECHTENSTEIN
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "LT" - LITHUANIA
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -209,7 +214,23 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// "MK" - MACEDONIA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "MT" - MALTA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// "MX" - MEXICO
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "MD" - MOLDOVA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "ME" - MONTENEGRO
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -217,7 +238,31 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// "NZ" - NEW ZEALAND
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "NI" - NICARAGUA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "NG" - NIGERIA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// "NO" - NORWAY
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "PA" - PANAMA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "PY" - PARAGUAY
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "PE" - PERU
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -229,7 +274,23 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// "RO" - ROMANIA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// "RU" - RUSSIA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "RS" - SERBIA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "SK" - SLOVAKIA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "SI" - SLOVENIA
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -249,11 +310,27 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// "UA" - UKRAINE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "AE" - UNITED ARAB EMIRATES
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// "US" - UNITED STATES
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// "UK" - UNITED KINGDOM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "UY" - URUGUAY
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "VE" - VENEZUELA
         /// </para>
         ///  </li> </ul>
         /// </summary>

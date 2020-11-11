@@ -377,8 +377,8 @@ namespace Amazon.ForecastService
         ///  <note> 
         /// <para>
         /// The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you
-        /// can create use the dataset group to create a predictor. To get the status, use the
-        /// <a>DescribeDatasetGroup</a> operation.
+        /// can use the dataset group to create a predictor. To get the status, use the <a>DescribeDatasetGroup</a>
+        /// operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -684,27 +684,25 @@ namespace Amazon.ForecastService
         /// 
         ///  
         /// <para>
-        /// In the request, you provide a dataset group and either specify an algorithm or let
-        /// Amazon Forecast choose the algorithm for you using AutoML. If you specify an algorithm,
-        /// you also can override algorithm-specific hyperparameters.
+        /// In the request, provide a dataset group and either specify an algorithm or let Amazon
+        /// Forecast choose an algorithm for you using AutoML. If you specify an algorithm, you
+        /// also can override algorithm-specific hyperparameters.
         /// </para>
         ///  
         /// <para>
-        /// Amazon Forecast uses the chosen algorithm to train a model using the latest version
-        /// of the datasets in the specified dataset group. The result is called a predictor.
-        /// You then generate a forecast using the <a>CreateForecast</a> operation.
+        /// Amazon Forecast uses the algorithm to train a predictor using the latest version of
+        /// the datasets in the specified dataset group. You can then generate a forecast using
+        /// the <a>CreateForecast</a> operation.
         /// </para>
         ///  
         /// <para>
-        /// After training a model, the <code>CreatePredictor</code> operation also evaluates
-        /// it. To see the evaluation metrics, use the <a>GetAccuracyMetrics</a> operation. Always
-        /// review the evaluation metrics before deciding to use the predictor to generate a forecast.
+        ///  To see the evaluation metrics, use the <a>GetAccuracyMetrics</a> operation. 
         /// </para>
         ///  
         /// <para>
-        /// Optionally, you can specify a featurization configuration to fill and aggregate the
-        /// data fields in the <code>TARGET_TIME_SERIES</code> dataset to improve model training.
-        /// For more information, see <a>FeaturizationConfig</a>.
+        /// You can specify a featurization configuration to fill and aggregate the data fields
+        /// in the <code>TARGET_TIME_SERIES</code> dataset to improve model training. For more
+        /// information, see <a>FeaturizationConfig</a>.
         /// </para>
         ///  
         /// <para>
@@ -715,14 +713,21 @@ namespace Amazon.ForecastService
         /// </para>
         ///  
         /// <para>
+        /// By default, predictors are trained and evaluated at the 0.1 (P10), 0.5 (P50), and
+        /// 0.9 (P90) quantiles. You can choose custom forecast types to train and evaluate your
+        /// predictor by setting the <code>ForecastTypes</code>. 
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>AutoML</b> 
         /// </para>
         ///  
         /// <para>
         /// If you want Amazon Forecast to evaluate each algorithm and choose the one that minimizes
         /// the <code>objective function</code>, set <code>PerformAutoML</code> to <code>true</code>.
-        /// The <code>objective function</code> is defined as the mean of the weighted p10, p50,
-        /// and p90 quantile losses. For more information, see <a>EvaluationResult</a>.
+        /// The <code>objective function</code> is defined as the mean of the weighted losses
+        /// over the forecast types. By default, these are the p10, p50, and p90 quantile losses.
+        /// For more information, see <a>EvaluationResult</a>.
         /// </para>
         ///  
         /// <para>
@@ -1518,7 +1523,8 @@ namespace Amazon.ForecastService
         /// <summary>
         /// Provides metrics on the accuracy of the models that were trained by the <a>CreatePredictor</a>
         /// operation. Use metrics to see how well the model performed and to decide whether to
-        /// use the predictor to generate a forecast. For more information, see <a>metrics</a>.
+        /// use the predictor to generate a forecast. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">Predictor
+        /// Metrics</a>.
         /// 
         ///  
         /// <para>

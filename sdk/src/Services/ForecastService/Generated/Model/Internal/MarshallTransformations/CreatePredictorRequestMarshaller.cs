@@ -113,6 +113,17 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ForecastHorizon);
                 }
 
+                if(publicRequest.IsSetForecastTypes())
+                {
+                    context.Writer.WritePropertyName("ForecastTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestForecastTypesListValue in publicRequest.ForecastTypes)
+                    {
+                            context.Writer.Write(publicRequestForecastTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetHPOConfig())
                 {
                     context.Writer.WritePropertyName("HPOConfig");

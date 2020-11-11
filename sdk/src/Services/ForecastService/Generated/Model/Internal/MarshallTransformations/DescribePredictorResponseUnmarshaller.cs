@@ -99,6 +99,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     response.ForecastHorizon = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ForecastTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.ForecastTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("HPOConfig", targetDepth))
                 {
                     var unmarshaller = HyperParameterTuningJobConfigUnmarshaller.Instance;

@@ -414,6 +414,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.ErrorMetric.ForecastType</property>
+    <pattern>(^0?\.\d\d?$|^mean$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.EvaluationResult.AlgorithmArn</property>
     <max>256</max>
   </property-value-rule>

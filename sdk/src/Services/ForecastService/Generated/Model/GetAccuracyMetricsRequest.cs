@@ -32,7 +32,8 @@ namespace Amazon.ForecastService.Model
     /// Container for the parameters to the GetAccuracyMetrics operation.
     /// Provides metrics on the accuracy of the models that were trained by the <a>CreatePredictor</a>
     /// operation. Use metrics to see how well the model performed and to decide whether to
-    /// use the predictor to generate a forecast. For more information, see <a>metrics</a>.
+    /// use the predictor to generate a forecast. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">Predictor
+    /// Metrics</a>.
     /// 
     ///  
     /// <para>
