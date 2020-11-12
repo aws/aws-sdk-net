@@ -108,6 +108,20 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetWorldTags())
+                {
+                    context.Writer.WritePropertyName("worldTags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestWorldTagsKvp in publicRequest.WorldTags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestWorldTagsKvp.Key);
+                        var publicRequestWorldTagsValue = publicRequestWorldTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestWorldTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

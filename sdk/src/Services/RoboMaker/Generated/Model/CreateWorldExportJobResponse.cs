@@ -125,7 +125,16 @@ namespace Amazon.RoboMaker.Model
         /// <para>
         /// An input parameter in the request is not valid.
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> <dt>AllWorldGenerationFailed</dt> <dd> 
+        /// <para>
+        /// All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code>
+        /// is greater than 50 or less than 1. 
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting
+        /// Simulation WorldForge</a>. 
+        /// </para>
         /// </summary>
         public WorldExportJobErrorCode FailureCode
         {
