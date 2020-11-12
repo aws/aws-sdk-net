@@ -92,6 +92,20 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FilterArn);
                 }
 
+                if(publicRequest.IsSetFilterValues())
+                {
+                    context.Writer.WritePropertyName("filterValues");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestFilterValuesKvp in publicRequest.FilterValues)
+                    {
+                        context.Writer.WritePropertyName(publicRequestFilterValuesKvp.Key);
+                        var publicRequestFilterValuesValue = publicRequestFilterValuesKvp.Value;
+
+                            context.Writer.Write(publicRequestFilterValuesValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetInputList())
                 {
                     context.Writer.WritePropertyName("inputList");
