@@ -62,6 +62,23 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.CreateContainerServiceRequest.Scale</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.CreateContainerServiceRequest.ServiceName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9]{1,2}|[a-z0-9][a-z0-9-]+[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.CreateContainerServiceDeploymentRequest.ServiceName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9]{1,2}|[a-z0-9][a-z0-9-]+[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateDiskRequest.AvailabilityZone</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -195,6 +212,18 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.DeleteContainerImageRequest.ServiceName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9]{1,2}|[a-z0-9][a-z0-9-]+[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.DeleteContainerServiceRequest.ServiceName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9]{1,2}|[a-z0-9][a-z0-9-]+[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteDiskRequest.DiskName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
@@ -289,6 +318,41 @@
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetAutoSnapshotsResponse.ResourceName</property>
     <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetContainerImagesRequest.ServiceName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9]{1,2}|[a-z0-9][a-z0-9-]+[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetContainerLogRequest.ServiceName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9]{1,2}|[a-z0-9][a-z0-9-]+[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetContainerServiceDeploymentsRequest.ServiceName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9]{1,2}|[a-z0-9][a-z0-9-]+[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetContainerServiceMetricDataRequest.Period</property>
+    <min>60</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetContainerServiceMetricDataRequest.ServiceName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9]{1,2}|[a-z0-9][a-z0-9-]+[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetContainerServicesRequest.ServiceName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9]{1,2}|[a-z0-9][a-z0-9-]+[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetDiskRequest.DiskName</property>
@@ -443,6 +507,18 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.RegisterContainerImageRequest.Label</property>
+    <min>1</min>
+    <max>53</max>
+    <pattern>^[a-z0-9]{1,2}|[a-z0-9][a-z0-9-]+[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.RegisterContainerImageRequest.ServiceName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9]{1,2}|[a-z0-9][a-z0-9-]+[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.ReleaseStaticIpRequest.StaticIpName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
@@ -489,6 +565,17 @@
   <property-value-rule>
     <property>Amazon.Lightsail.Model.UntagResourceRequest.ResourceName</property>
     <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.UpdateContainerServiceRequest.Scale</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.UpdateContainerServiceRequest.ServiceName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9]{1,2}|[a-z0-9][a-z0-9-]+[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.UpdateDistributionRequest.DistributionName</property>
@@ -607,6 +694,21 @@
   <property-value-rule>
     <property>Amazon.Lightsail.Model.ContactMethod.Name</property>
     <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.ContainerService.Arn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.ContainerService.ContainerServiceName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9]{1,2}|[a-z0-9][a-z0-9-]+[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.ContainerService.Scale</property>
+    <min>1</min>
+    <max>20</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DestinationInfo.Id</property>
