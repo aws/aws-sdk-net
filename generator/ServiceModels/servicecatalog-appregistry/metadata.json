@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "AWS Service Catalog AppRegistry provides a repository of your applications, their resources, and the application metadata that you use within your enterprise.",
+  "generate-client-constructors": true
+}
