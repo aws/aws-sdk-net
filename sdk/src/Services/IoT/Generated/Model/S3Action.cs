@@ -80,7 +80,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The object key.
+        /// The object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
+        /// resources, and condition keys for Amazon S3</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

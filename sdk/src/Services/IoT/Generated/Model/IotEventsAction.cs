@@ -33,9 +33,40 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class IotEventsAction
     {
+        private bool? _batchMode;
         private string _inputName;
         private string _messageId;
         private string _roleArn;
+
+        /// <summary>
+        /// Gets and sets the property BatchMode. 
+        /// <para>
+        /// Whether to process the event actions as a batch. The default value is <code>false</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
+        /// to an Array, each Array element is treated as a separate message when it's sent to
+        /// AWS IoT Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
+        /// <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.
+        /// </para>
+        /// </summary>
+        public bool BatchMode
+        {
+            get { return this._batchMode.GetValueOrDefault(); }
+            set { this._batchMode = value; }
+        }
+
+        // Check to see if BatchMode property is set
+        internal bool IsSetBatchMode()
+        {
+            return this._batchMode.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property InputName. 
@@ -59,8 +90,17 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// [Optional] Use this to ensure that only one input (message) with a given messageId
-        /// will be processed by an AWS IoT Events detector.
+        /// The ID of the message. The default <code>messageId</code> is a new UUID value.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a
+        /// new UUID value will be assigned.
+        /// </para>
+        ///  
+        /// <para>
+        /// Assign a value to this property to ensure that only one input (message) with a given
+        /// <code>messageId</code> will be processed by an AWS IoT Events detector.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

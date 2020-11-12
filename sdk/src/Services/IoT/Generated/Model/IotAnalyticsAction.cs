@@ -33,9 +33,36 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class IotAnalyticsAction
     {
+        private bool? _batchMode;
         private string _channelArn;
         private string _channelName;
         private string _roleArn;
+
+        /// <summary>
+        /// Gets and sets the property BatchMode. 
+        /// <para>
+        /// Whether to process the action as a batch. The default value is <code>false</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
+        /// to an Array, each Array element is delivered as a separate message when passed by
+        /// <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
+        /// <code>BatchPutMessage</code> </a> to the AWS IoT Analytics channel. The resulting
+        /// array can't have more than 100 messages.
+        /// </para>
+        /// </summary>
+        public bool BatchMode
+        {
+            get { return this._batchMode.GetValueOrDefault(); }
+            set { this._batchMode = value; }
+        }
+
+        // Check to see if BatchMode property is set
+        internal bool IsSetBatchMode()
+        {
+            return this._batchMode.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 

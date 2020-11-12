@@ -45,6 +45,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IotAnalyticsAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBatchMode())
+            {
+                context.Writer.WritePropertyName("batchMode");
+                context.Writer.Write(requestObject.BatchMode);
+            }
+
             if(requestObject.IsSetChannelArn())
             {
                 context.Writer.WritePropertyName("channelArn");
