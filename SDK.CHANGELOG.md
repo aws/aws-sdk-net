@@ -1,3 +1,16 @@
+### 3.5.55.0 (2020-11-13 19:16 UTC)
+* ElasticLoadBalancingV2 (3.5.5.0)
+	* Adds dualstack support for Network Load Balancers (TCP/TLS only), an attribute for WAF fail open for Application Load Balancers, and an attribute for connection draining for Network Load Balancers.
+* Shield (3.5.1.0)
+	* This release adds APIs for two new features: 1) Allow customers to bundle resources into protection groups and treat as a single unit. 2) Provide per-account event summaries to all AWS customers.
+* Textract (3.5.2.0)
+	* AWS Textract now allows customers to specify their own KMS key to be used for asynchronous jobs output results, AWS Textract now also recognizes handwritten text from English documents.
+* Core 3.5.1.36
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.54.0 (2020-11-12 19:25 UTC)
 * AppRegistry (3.5.0.0)
 	* AWS Service Catalog AppRegistry provides a repository of your applications, their resources, and the application metadata that you use within your enterprise.
