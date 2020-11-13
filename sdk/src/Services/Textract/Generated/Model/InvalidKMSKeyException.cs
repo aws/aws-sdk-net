@@ -29,43 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Textract.Model
 {
     /// <summary>
-    /// The document can't be processed because it's too large. The maximum document size
-    /// for synchronous operations 10 MB. The maximum document size for asynchronous operations
-    /// is 500 MB for PDF files.
+    /// Indicates you do not have decrypt permissions with the KMS key entered, or the KMS
+    /// key was entered incorrectly.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class DocumentTooLargeException : AmazonTextractException
+    public partial class InvalidKMSKeyException : AmazonTextractException
     {
 
         /// <summary>
-        /// Constructs a new DocumentTooLargeException with the specified error
+        /// Constructs a new InvalidKMSKeyException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public DocumentTooLargeException(string message) 
+        public InvalidKMSKeyException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of DocumentTooLargeException
+        /// Construct instance of InvalidKMSKeyException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public DocumentTooLargeException(string message, Exception innerException) 
+        public InvalidKMSKeyException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of DocumentTooLargeException
+        /// Construct instance of InvalidKMSKeyException
         /// </summary>
         /// <param name="innerException"></param>
-        public DocumentTooLargeException(Exception innerException) 
+        public InvalidKMSKeyException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of DocumentTooLargeException
+        /// Construct instance of InvalidKMSKeyException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -73,30 +72,30 @@ namespace Amazon.Textract.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public DocumentTooLargeException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public InvalidKMSKeyException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of DocumentTooLargeException
+        /// Construct instance of InvalidKMSKeyException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public DocumentTooLargeException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public InvalidKMSKeyException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the DocumentTooLargeException class with serialized data.
+        /// Constructs a new instance of the InvalidKMSKeyException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected DocumentTooLargeException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected InvalidKMSKeyException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }

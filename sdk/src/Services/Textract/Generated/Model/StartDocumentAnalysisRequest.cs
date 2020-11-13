@@ -61,6 +61,7 @@ namespace Amazon.Textract.Model
         private DocumentLocation _documentLocation;
         private List<string> _featureTypes = new List<string>();
         private string _jobTag;
+        private string _kmsKeyId;
         private NotificationChannel _notificationChannel;
         private OutputConfig _outputConfig;
 
@@ -149,6 +150,28 @@ namespace Amazon.Textract.Model
         internal bool IsSetJobTag()
         {
             return this._jobTag != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSKeyId. 
+        /// <para>
+        /// The KMS key used to encrypt the inference results. This can be in either Key ID or
+        /// Key Alias format. When a KMS key is provided, the KMS key will be used for server-side
+        /// encryption of the objects in the customer bucket. When this parameter is not enabled,
+        /// the result will be encrypted server side,using SSE-S3.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KMSKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KMSKeyId property is set
+        internal bool IsSetKMSKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

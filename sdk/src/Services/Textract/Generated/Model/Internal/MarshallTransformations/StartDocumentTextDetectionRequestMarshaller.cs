@@ -91,6 +91,12 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.JobTag);
                 }
 
+                if(publicRequest.IsSetKMSKeyId())
+                {
+                    context.Writer.WritePropertyName("KMSKeyId");
+                    context.Writer.Write(publicRequest.KMSKeyId);
+                }
+
                 if(publicRequest.IsSetNotificationChannel())
                 {
                     context.Writer.WritePropertyName("NotificationChannel");

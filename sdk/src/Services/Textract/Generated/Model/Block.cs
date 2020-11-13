@@ -64,6 +64,7 @@ namespace Amazon.Textract.Model
         private int? _rowSpan;
         private SelectionStatus _selectionStatus;
         private string _text;
+        private TextType _textType;
 
         /// <summary>
         /// Gets and sets the property BlockType. 
@@ -404,6 +405,25 @@ namespace Amazon.Textract.Model
         internal bool IsSetText()
         {
             return this._text != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TextType. 
+        /// <para>
+        /// The kind of text that Amazon Textract has detected. Can check for handwritten text
+        /// and printed text.
+        /// </para>
+        /// </summary>
+        public TextType TextType
+        {
+            get { return this._textType; }
+            set { this._textType = value; }
+        }
+
+        // Check to see if TextType property is set
+        internal bool IsSetTextType()
+        {
+            return this._textType != null;
         }
 
     }
