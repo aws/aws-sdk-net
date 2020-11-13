@@ -32,9 +32,19 @@ namespace Amazon.Shield.Model
         IListAttacksPaginator ListAttacks(ListAttacksRequest request);
 
         /// <summary>
+        /// Paginator for ListProtectionGroups operation
+        ///</summary>
+        IListProtectionGroupsPaginator ListProtectionGroups(ListProtectionGroupsRequest request);
+
+        /// <summary>
         /// Paginator for ListProtections operation
         ///</summary>
         IListProtectionsPaginator ListProtections(ListProtectionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListResourcesInProtectionGroup operation
+        ///</summary>
+        IListResourcesInProtectionGroupPaginator ListResourcesInProtectionGroup(ListResourcesInProtectionGroupRequest request);
     }
 }
 #endif

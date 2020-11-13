@@ -64,9 +64,9 @@ namespace Amazon.Shield.Model
         /// </para>
         ///  
         /// <para>
-        /// AWS WAF might return the list of <a>AttackSummary</a> objects in batches smaller than
-        /// the number specified by MaxResults. If there are more <a>AttackSummary</a> objects
-        /// to return, AWS WAF will always also return a <code>NextToken</code>.
+        /// Shield Advanced might return the list of <a>AttackSummary</a> objects in batches smaller
+        /// than the number specified by MaxResults. If there are more attack summary objects
+        /// to return, Shield Advanced will always also return a <code>NextToken</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

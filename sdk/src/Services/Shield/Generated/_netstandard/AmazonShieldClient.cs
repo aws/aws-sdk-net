@@ -314,7 +314,8 @@ namespace Amazon.Shield
         /// Exception that indicates that the operation would not cause any change to occur.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
-        /// Exception that indicates that the parameters passed to the API are invalid.
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.LimitsExceededException">
         /// Exception that indicates that the operation would exceed a limit.
@@ -336,7 +337,8 @@ namespace Amazon.Shield
         /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTLogBucket">REST API Reference for AssociateDRTLogBucket Operation</seealso>
         public virtual Task<AssociateDRTLogBucketResponse> AssociateDRTLogBucketAsync(AssociateDRTLogBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -427,14 +429,16 @@ namespace Amazon.Shield
         /// Exception that indicates that the operation would not cause any change to occur.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
-        /// Exception that indicates that the parameters passed to the API are invalid.
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.
         /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTRole">REST API Reference for AssociateDRTRole Operation</seealso>
         public virtual Task<AssociateDRTRoleResponse> AssociateDRTRoleAsync(AssociateDRTRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -485,7 +489,8 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
-        /// Exception that indicates that the parameters passed to the API are invalid.
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.LimitsExceededException">
         /// Exception that indicates that the operation would exceed a limit.
@@ -504,7 +509,8 @@ namespace Amazon.Shield
         /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateHealthCheck">REST API Reference for AssociateHealthCheck Operation</seealso>
         public virtual Task<AssociateHealthCheckResponse> AssociateHealthCheckAsync(AssociateHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -571,14 +577,16 @@ namespace Amazon.Shield
         /// Exception that indicates that the operation would not cause any change to occur.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
-        /// Exception that indicates that the parameters passed to the API are invalid.
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.
         /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateProactiveEngagementDetails">REST API Reference for AssociateProactiveEngagementDetails Operation</seealso>
         public virtual Task<AssociateProactiveEngagementDetailsResponse> AssociateProactiveEngagementDetailsAsync(AssociateProactiveEngagementDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -653,10 +661,12 @@ namespace Amazon.Shield
         /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceAlreadyExistsException">
-        /// Exception indicating the specified resource already exists.
+        /// Exception indicating the specified resource already exists. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection">REST API Reference for CreateProtection Operation</seealso>
         public virtual Task<CreateProtectionResponse> CreateProtectionAsync(CreateProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -666,6 +676,73 @@ namespace Amazon.Shield
             options.ResponseUnmarshaller = CreateProtectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateProtectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateProtectionGroup
+
+        internal virtual CreateProtectionGroupResponse CreateProtectionGroup(CreateProtectionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProtectionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProtectionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProtectionGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a grouping of protected resources so they can be handled as a collective.
+        /// This resource grouping improves the accuracy of detection and reduces false positives.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProtectionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProtectionGroup service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.LimitsExceededException">
+        /// Exception that indicates that the operation would exceed a limit.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>Type</code> is the type of limit that would be exceeded.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Limit</code> is the threshold that would be exceeded.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.ResourceAlreadyExistsException">
+        /// Exception indicating the specified resource already exists. If available, this exception
+        /// includes details in additional properties.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtectionGroup">REST API Reference for CreateProtectionGroup Operation</seealso>
+        public virtual Task<CreateProtectionGroupResponse> CreateProtectionGroupAsync(CreateProtectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProtectionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProtectionGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateProtectionGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -704,7 +781,8 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceAlreadyExistsException">
-        /// Exception indicating the specified resource already exists.
+        /// Exception indicating the specified resource already exists. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription">REST API Reference for CreateSubscription Operation</seealso>
         public virtual Task<CreateSubscriptionResponse> CreateSubscriptionAsync(CreateSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -749,7 +827,8 @@ namespace Amazon.Shield
         /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtection">REST API Reference for DeleteProtection Operation</seealso>
         public virtual Task<DeleteProtectionResponse> DeleteProtectionAsync(DeleteProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -759,6 +838,52 @@ namespace Amazon.Shield
             options.ResponseUnmarshaller = DeleteProtectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteProtectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteProtectionGroup
+
+        internal virtual DeleteProtectionGroupResponse DeleteProtectionGroup(DeleteProtectionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProtectionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProtectionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProtectionGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the specified protection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProtectionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProtectionGroup service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtectionGroup">REST API Reference for DeleteProtectionGroup Operation</seealso>
+        public virtual Task<DeleteProtectionGroupResponse> DeleteProtectionGroupAsync(DeleteProtectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProtectionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProtectionGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteProtectionGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -799,7 +924,8 @@ namespace Amazon.Shield
         /// prior to that period.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription">REST API Reference for DeleteSubscription Operation</seealso>
         [Obsolete("Use UpdateSubscription operation to disable automatic subscription renewal instead.")]
@@ -856,6 +982,60 @@ namespace Amazon.Shield
 
         #endregion
         
+        #region  DescribeAttackStatistics
+
+        internal virtual DescribeAttackStatisticsResponse DescribeAttackStatistics(DescribeAttackStatisticsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAttackStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAttackStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAttackStatisticsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides information about the number and type of attacks AWS Shield has detected
+        /// in the last year for all resources that belong to your account, regardless of whether
+        /// you've defined Shield protections for them. This operation is available to Shield
+        /// customers as well as to Shield Advanced customers.
+        /// 
+        ///  
+        /// <para>
+        /// The operation returns data for the time range of midnight UTC, one year ago, to midnight
+        /// UTC, today. For example, if the current time is <code>2020-10-26 15:39:32 PDT</code>,
+        /// equal to <code>2020-10-26 22:39:32 UTC</code>, then the time range for the attack
+        /// data returned is from <code>2019-10-26 00:00:00 UTC</code> to <code>2020-10-26 00:00:00
+        /// UTC</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The time range indicates the period covered by the attack statistics data items.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAttackStatistics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAttackStatistics service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttackStatistics">REST API Reference for DescribeAttackStatistics Operation</seealso>
+        public virtual Task<DescribeAttackStatisticsResponse> DescribeAttackStatisticsAsync(DescribeAttackStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAttackStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAttackStatisticsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAttackStatisticsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDRTAccess
 
         internal virtual DescribeDRTAccessResponse DescribeDRTAccess(DescribeDRTAccessRequest request)
@@ -884,7 +1064,8 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeDRTAccess">REST API Reference for DescribeDRTAccess Operation</seealso>
         public virtual Task<DescribeDRTAccessResponse> DescribeDRTAccessAsync(DescribeDRTAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -927,7 +1108,8 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeEmergencyContactSettings">REST API Reference for DescribeEmergencyContactSettings Operation</seealso>
         public virtual Task<DescribeEmergencyContactSettingsResponse> DescribeEmergencyContactSettingsAsync(DescribeEmergencyContactSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -968,10 +1150,12 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
-        /// Exception that indicates that the parameters passed to the API are invalid.
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtection">REST API Reference for DescribeProtection Operation</seealso>
         public virtual Task<DescribeProtectionResponse> DescribeProtectionAsync(DescribeProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -981,6 +1165,48 @@ namespace Amazon.Shield
             options.ResponseUnmarshaller = DescribeProtectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeProtectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeProtectionGroup
+
+        internal virtual DescribeProtectionGroupResponse DescribeProtectionGroup(DescribeProtectionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProtectionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProtectionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeProtectionGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the specification for the specified protection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProtectionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeProtectionGroup service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtectionGroup">REST API Reference for DescribeProtectionGroup Operation</seealso>
+        public virtual Task<DescribeProtectionGroupResponse> DescribeProtectionGroupAsync(DescribeProtectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProtectionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProtectionGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeProtectionGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1012,7 +1238,8 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription">REST API Reference for DescribeSubscription Operation</seealso>
         public virtual Task<DescribeSubscriptionResponse> DescribeSubscriptionAsync(DescribeSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1057,14 +1284,16 @@ namespace Amazon.Shield
         /// Exception that indicates that the operation would not cause any change to occur.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
-        /// Exception that indicates that the parameters passed to the API are invalid.
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.
         /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableProactiveEngagement">REST API Reference for DisableProactiveEngagement Operation</seealso>
         public virtual Task<DisableProactiveEngagementResponse> DisableProactiveEngagementAsync(DisableProactiveEngagementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1132,7 +1361,8 @@ namespace Amazon.Shield
         /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTLogBucket">REST API Reference for DisassociateDRTLogBucket Operation</seealso>
         public virtual Task<DisassociateDRTLogBucketResponse> DisassociateDRTLogBucketAsync(DisassociateDRTLogBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1190,7 +1420,8 @@ namespace Amazon.Shield
         /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTRole">REST API Reference for DisassociateDRTRole Operation</seealso>
         public virtual Task<DisassociateDRTRoleResponse> DisassociateDRTRoleAsync(DisassociateDRTRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1241,14 +1472,16 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
-        /// Exception that indicates that the parameters passed to the API are invalid.
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.
         /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateHealthCheck">REST API Reference for DisassociateHealthCheck Operation</seealso>
         public virtual Task<DisassociateHealthCheckResponse> DisassociateHealthCheckAsync(DisassociateHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1293,14 +1526,16 @@ namespace Amazon.Shield
         /// Exception that indicates that the operation would not cause any change to occur.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
-        /// Exception that indicates that the parameters passed to the API are invalid.
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.
         /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableProactiveEngagement">REST API Reference for EnableProactiveEngagement Operation</seealso>
         public virtual Task<EnableProactiveEngagementResponse> EnableProactiveEngagementAsync(EnableProactiveEngagementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1382,7 +1617,8 @@ namespace Amazon.Shield
         /// Exception that indicates that the operation would not cause any change to occur.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
-        /// Exception that indicates that the parameters passed to the API are invalid.
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListAttacks">REST API Reference for ListAttacks Operation</seealso>
         public virtual Task<ListAttacksResponse> ListAttacksAsync(ListAttacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1392,6 +1628,52 @@ namespace Amazon.Shield
             options.ResponseUnmarshaller = ListAttacksResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAttacksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListProtectionGroups
+
+        internal virtual ListProtectionGroupsResponse ListProtectionGroups(ListProtectionGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProtectionGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProtectionGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListProtectionGroupsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the <a>ProtectionGroup</a> objects for the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProtectionGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProtectionGroups service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidPaginationTokenException">
+        /// Exception that indicates that the NextToken specified in the request is invalid. Submit
+        /// the request using the NextToken value that was returned in the response.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtectionGroups">REST API Reference for ListProtectionGroups Operation</seealso>
+        public virtual Task<ListProtectionGroupsResponse> ListProtectionGroupsAsync(ListProtectionGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProtectionGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProtectionGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListProtectionGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1427,7 +1709,8 @@ namespace Amazon.Shield
         /// the request using the NextToken value that was returned in the response.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections">REST API Reference for ListProtections Operation</seealso>
         public virtual Task<ListProtectionsResponse> ListProtectionsAsync(ListProtectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1437,6 +1720,52 @@ namespace Amazon.Shield
             options.ResponseUnmarshaller = ListProtectionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListProtectionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListResourcesInProtectionGroup
+
+        internal virtual ListResourcesInProtectionGroupResponse ListResourcesInProtectionGroup(ListResourcesInProtectionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourcesInProtectionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourcesInProtectionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourcesInProtectionGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the resources that are included in the protection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourcesInProtectionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourcesInProtectionGroup service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidPaginationTokenException">
+        /// Exception that indicates that the NextToken specified in the request is invalid. Submit
+        /// the request using the NextToken value that was returned in the response.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListResourcesInProtectionGroup">REST API Reference for ListResourcesInProtectionGroup Operation</seealso>
+        public virtual Task<ListResourcesInProtectionGroupResponse> ListResourcesInProtectionGroupAsync(ListResourcesInProtectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourcesInProtectionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourcesInProtectionGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResourcesInProtectionGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1470,14 +1799,16 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
-        /// Exception that indicates that the parameters passed to the API are invalid.
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.
         /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateEmergencyContactSettings">REST API Reference for UpdateEmergencyContactSettings Operation</seealso>
         public virtual Task<UpdateEmergencyContactSettingsResponse> UpdateEmergencyContactSettingsAsync(UpdateEmergencyContactSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1487,6 +1818,58 @@ namespace Amazon.Shield
             options.ResponseUnmarshaller = UpdateEmergencyContactSettingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateEmergencyContactSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateProtectionGroup
+
+        internal virtual UpdateProtectionGroupResponse UpdateProtectionGroup(UpdateProtectionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProtectionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProtectionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProtectionGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing protection group. A protection group is a grouping of protected
+        /// resources so they can be handled as a collective. This resource grouping improves
+        /// the accuracy of detection and reduces false positives.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProtectionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProtectionGroup service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateProtectionGroup">REST API Reference for UpdateProtectionGroup Operation</seealso>
+        public virtual Task<UpdateProtectionGroupResponse> UpdateProtectionGroupAsync(UpdateProtectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProtectionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProtectionGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateProtectionGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1519,7 +1902,8 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
-        /// Exception that indicates that the parameters passed to the API are invalid.
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.LockedSubscriptionException">
         /// You are trying to update a subscription that has not yet completed the 1-year commitment.
@@ -1532,7 +1916,8 @@ namespace Amazon.Shield
         /// Retrieve the resource and then retry your request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
-        /// Exception indicating the specified resource does not exist.
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateSubscription">REST API Reference for UpdateSubscription Operation</seealso>
         public virtual Task<UpdateSubscriptionResponse> UpdateSubscriptionAsync(UpdateSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

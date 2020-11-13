@@ -82,6 +82,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Shield")]
+        public void ListProtectionGroupsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListProtectionGroupsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListProtectionGroupsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListProtectionGroupsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListProtectionGroups(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListProtectionGroups(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Shield")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListProtectionGroupsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListProtectionGroupsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListProtectionGroupsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListProtectionGroups(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListProtectionGroups(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Shield")]
         public void ListProtectionsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListProtectionsRequest>();
@@ -109,6 +148,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListProtections(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListProtections(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Shield")]
+        public void ListResourcesInProtectionGroupTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListResourcesInProtectionGroupRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListResourcesInProtectionGroupResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListResourcesInProtectionGroupResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListResourcesInProtectionGroup(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListResourcesInProtectionGroup(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Shield")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListResourcesInProtectionGroupTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListResourcesInProtectionGroupRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListResourcesInProtectionGroupResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListResourcesInProtectionGroup(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListResourcesInProtectionGroup(request);
 
             // Should work the first time
             paginator.Responses.ToList();
