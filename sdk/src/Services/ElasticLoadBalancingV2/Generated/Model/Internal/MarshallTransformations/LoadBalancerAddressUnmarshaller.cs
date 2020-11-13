@@ -66,6 +66,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IPv6Address", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IPv6Address = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PrivateIPv4Address", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

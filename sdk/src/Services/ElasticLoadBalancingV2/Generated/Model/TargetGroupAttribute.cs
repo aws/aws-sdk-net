@@ -110,9 +110,15 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following attribute is supported only by Network Load Balancers:
+        /// The following attributes are supported only by Network Load Balancers:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether
+        /// the load balancer terminates connections at the end of the deregistration timeout.
+        /// The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version
         /// 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is

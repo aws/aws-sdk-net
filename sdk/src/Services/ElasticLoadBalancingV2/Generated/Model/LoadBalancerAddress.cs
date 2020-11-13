@@ -35,6 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
         private string _allocationId;
         private string _ipAddress;
+        private string _iPv6Address;
         private string _privateIPv4Address;
 
         /// <summary>
@@ -72,6 +73,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetIpAddress()
         {
             return this._ipAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IPv6Address. 
+        /// <para>
+        /// [Network Load Balancers] The IPv6 address.
+        /// </para>
+        /// </summary>
+        public string IPv6Address
+        {
+            get { return this._iPv6Address; }
+            set { this._iPv6Address = value; }
+        }
+
+        // Check to see if IPv6Address property is set
+        internal bool IsSetIPv6Address()
+        {
+            return this._iPv6Address != null;
         }
 
         /// <summary>

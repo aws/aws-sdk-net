@@ -34,6 +34,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     public partial class SubnetMapping
     {
         private string _allocationId;
+        private string _iPv6Address;
         private string _privateIPv4Address;
         private string _subnetId;
 
@@ -54,6 +55,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetAllocationId()
         {
             return this._allocationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IPv6Address. 
+        /// <para>
+        /// [Network Load Balancers] The IPv6 address.
+        /// </para>
+        /// </summary>
+        public string IPv6Address
+        {
+            get { return this._iPv6Address; }
+            set { this._iPv6Address = value; }
+        }
+
+        // Check to see if IPv6Address property is set
+        internal bool IsSetIPv6Address()
+        {
+            return this._iPv6Address != null;
         }
 
         /// <summary>
