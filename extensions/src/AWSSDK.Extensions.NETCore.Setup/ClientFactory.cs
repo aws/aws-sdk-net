@@ -23,6 +23,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
+
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
@@ -86,6 +87,12 @@ namespace Amazon.Extensions.NETCore.Setup
         internal static IAmazonService CreateServiceClient(ILogger logger, Type serviceInterfaceType, AWSOptions options)
         {
             var credentials = CreateCredentials(logger, options);
+
+            if (!string.IsNullOrEmpty(options.SessionRoleArn))
+            {
+                credentials = new AssumeRoleAWSCredentials(credentials, options.SessionRoleArn, options.SessionName);
+            }
+
             var config = CreateConfig(serviceInterfaceType, options);
             var client = CreateClient(serviceInterfaceType, credentials, config);
             return client as IAmazonService;
@@ -109,7 +116,7 @@ namespace Amazon.Extensions.NETCore.Setup
             var constructor = clientType.GetConstructor(new Type[] { typeof(AWSCredentials), config.GetType() });
             if (constructor == null)
             {
-                throw new AmazonClientException($"Service client {clientTypeName} misisng a constructor with parameters AWSCredentials and {config.GetType().FullName}.");
+                throw new AmazonClientException($"Service client {clientTypeName} missing a constructor with parameters AWSCredentials and {config.GetType().FullName}.");
             }
 
             var client = constructor.Invoke(new object[] { credentials, config }) as AmazonServiceClient;
