@@ -1,3 +1,7 @@
+### 3.5.56.1 (2020-11-16 21:23 UTC)
+* Core 3.5.1.37
+	* Updates to code generators.
+
 ### 3.5.56.0 (2020-11-16 19:14 UTC)
 * CodePipeline (3.5.1.0)
 	* We show details about inbound executions and id of action executions in GetPipelineState API. We also add ConflictException to StartPipelineExecution, RetryStageExecution, StopPipelineExecution APIs.

@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.5.56.0",
-    "CoreVersion"    : "3.5.1.36",
+    "ProductVersion" : "3.5.56.1",
+    "CoreVersion"    : "3.5.1.37",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
     "ServiceVersions"     : {
