@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateEndpoint operation
+    /// Response Unmarshaller for MoveReplicationTask operation
     /// </summary>  
-    public class CreateEndpointResponseUnmarshaller : JsonResponseUnmarshaller
+    public class MoveReplicationTaskResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateEndpointResponse response = new CreateEndpointResponse();
+            MoveReplicationTaskResponse response = new MoveReplicationTaskResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Endpoint", targetDepth))
+                if (context.TestExpression("ReplicationTask", targetDepth))
                 {
-                    var unmarshaller = EndpointUnmarshaller.Instance;
-                    response.Endpoint = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ReplicationTaskUnmarshaller.Instance;
+                    response.ReplicationTask = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,33 +88,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     return InvalidResourceStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("KMSKeyNotAccessibleFault"))
-                {
-                    return KMSKeyNotAccessibleExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceAlreadyExistsFault"))
-                {
-                    return ResourceAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundFault"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceQuotaExceededFault"))
-                {
-                    return ResourceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("S3AccessDeniedFault"))
-                {
-                    return S3AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonDatabaseMigrationServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateEndpointResponseUnmarshaller _instance = new CreateEndpointResponseUnmarshaller();        
+        private static MoveReplicationTaskResponseUnmarshaller _instance = new MoveReplicationTaskResponseUnmarshaller();        
 
-        internal static CreateEndpointResponseUnmarshaller GetInstance()
+        internal static MoveReplicationTaskResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -122,7 +106,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateEndpointResponseUnmarshaller Instance
+        public static MoveReplicationTaskResponseUnmarshaller Instance
         {
             get
             {
