@@ -330,6 +330,49 @@ namespace ServiceClientGenerator
             }
         }
 
+        /// <summary>
+        /// Finds all structure shapes under the current shape that contain no members
+        /// </summary>
+        public IList<Shape> FindStructureShapesWithoutMembers()
+        {
+            List<Shape> foundShapes = new List<Shape>();            
+            HashSet<string> processedShapes = new HashSet<string>();
+            Queue<Shape> shapes = new Queue<Shape>();
+            shapes.Enqueue(this);
+            
+            while(shapes.Count > 0)
+            {
+                var current = shapes.Dequeue();
+                var marshallName = current.IsList ? current.ListMarshallName ?? "member" : current.MarshallName;
+                if (processedShapes.Contains(marshallName))
+                {
+                    continue;
+                }
+
+                processedShapes.Add(marshallName);
+                
+                if (this != current && current.Members.Count == 0)
+                {
+                    foundShapes.Add(current);
+                    continue;
+                }
+                
+                foreach (var child in current.Members.Where(m => m.IsStructure || m.IsList))
+                {
+                    var shape = child.Shape.IsList ? child.Shape.ListShape : child.Shape;
+                    if(!shape.IsStructure && !shape.IsList)
+                    {
+                        continue;
+                    }
+                    
+                    shapes.Enqueue(shape);
+                }
+            }
+
+            return foundShapes;
+        }
+
+
 
         /// <summary>
         /// Find the member that is marked as payload

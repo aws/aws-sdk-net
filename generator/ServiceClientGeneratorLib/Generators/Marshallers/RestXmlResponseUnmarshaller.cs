@@ -103,12 +103,31 @@ namespace ServiceClientGenerator.Generators.Marshallers
 
         }
 
+		foreach(var shape in this.Structure.FindStructureShapesWithoutMembers())
+		{
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tcontext.AllowEmptyElementLookup.Add(\"");
+            
+            #line 42 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(shape.MarshallName));
+            
+            #line default
+            #line hidden
+            this.Write("\");\r\n");
+            
+            #line 43 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+
+		}
+
             
             #line default
             #line hidden
             this.Write("            UnmarshallResult(context,response);\r\n");
             
-            #line 40 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 47 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
     
 	}
 	UnmarshallHeaders();
@@ -119,7 +138,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            \r\n            return response;\r\n\t\t}\t\t\r\n");
             
-            #line 47 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 54 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     if( this.Operation.ResponseHasBodyMembers || shouldMarshallPayload)
     {
@@ -129,7 +148,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\r\n");
             
-            #line 52 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 59 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     	if (this.Operation.ResponseBodyMembers.Count == 0 && !shouldMarshallPayload)
 	    {
@@ -140,7 +159,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("\t\t[System.Diagnostics.CodeAnalysis.SuppressMessage(\"Microsoft.Usage\", \"CA1801:Rev" +
                     "iewUnusedParameters\", MessageId=\"response\")]\r\n");
             
-            #line 57 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 64 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
 	    }
 
@@ -149,7 +168,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\tprivate static void UnmarshallResult(XmlUnmarshallerContext context, ");
             
-            #line 60 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 67 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -157,7 +176,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("Response response)\r\n        {\r\n            int originalDepth = context.CurrentDep" +
                     "th;\r\n            int targetDepth = originalDepth + 1;\r\n");
             
-            #line 64 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 71 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
 	if (payload == null)
 	{
@@ -167,7 +186,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\tif (context.IsStartOfDocument) \r\n\t\t\t\t   targetDepth += 1;\r\n");
             
-            #line 70 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 77 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
 	}
 
@@ -177,7 +196,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("\r\n            while (context.Read())\r\n            {\r\n\t\t\t\tif (context.IsStartEleme" +
                     "nt || context.IsAttribute)\r\n                {\r\n");
             
-            #line 78 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 85 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
     
         foreach (var member in this.Operation.ResponseBodyMembers)
         {
@@ -185,42 +204,80 @@ namespace ServiceClientGenerator.Generators.Marshallers
 			{
 				var listMarshallName = member.Shape.ListMarshallName ?? "member";
 
+                if(member.Shape.IsFlattened)
+                {
+
             
             #line default
             #line hidden
             this.Write("\t\t\t\t\tif (context.TestExpression(\"");
             
-            #line 85 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
-            
-            #line default
-            #line hidden
-            this.Write("/");
-            
-            #line 85 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 95 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(listMarshallName));
             
             #line default
             #line hidden
             this.Write("\", targetDepth))\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tvar unmarshaller = ");
             
-            #line 87 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 97 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineTypeUnmarshallerInstantiate()));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\tresponse.");
             
-            #line 88 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 98 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(".Add(unmarshaller.Unmarshall(context));\r\n\t\t\t\t\t\tcontinue;\r\n\t\t\t\t\t}\r\n");
             
-            #line 91 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 101 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+              
+                }
 
-			}
+
+                else
+                {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t    if (context.TestExpression(\"");
+            
+            #line 108 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
+            
+            #line default
+            #line hidden
+            this.Write("/");
+            
+            #line 108 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(listMarshallName));
+            
+            #line default
+            #line hidden
+            this.Write("\", targetDepth))\r\n\t\t\t\t    {\r\n\t\t\t\t\t    var unmarshaller = ");
+            
+            #line 110 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineTypeUnmarshallerInstantiate()));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\n\t\t\t\t\t    response.");
+            
+            #line 111 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+            
+            #line default
+            #line hidden
+            this.Write(".Add(unmarshaller.Unmarshall(context));\r\n\t\t\t\t\t    continue;\r\n\t\t\t\t    }\r\n");
+            
+            #line 114 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+
+			    }
+            }
 			else
 			{
 
@@ -229,28 +286,28 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\t\t\tif (context.TestExpression(\"");
             
-            #line 96 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 120 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
             
             #line default
             #line hidden
             this.Write("\", targetDepth))\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tvar unmarshaller = ");
             
-            #line 98 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 122 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineTypeUnmarshallerInstantiate()));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\tresponse.");
             
-            #line 99 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 123 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = unmarshaller.Unmarshall(context);\r\n\t\t\t\t\t\tcontinue;\r\n\t\t\t\t\t}\r\n");
             
-            #line 102 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 126 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
 			}
         }
@@ -263,28 +320,28 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\t\t\tif (context.TestExpression(\"");
             
-            #line 109 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 133 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(payload.MarshallName));
             
             #line default
             #line hidden
             this.Write("\", targetDepth))\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tvar unmarshaller = ");
             
-            #line 111 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 135 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(payload.DetermineTypeUnmarshallerInstantiate()));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\tresponse.");
             
-            #line 112 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 136 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(payload.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = unmarshaller.Unmarshall(context);\r\n\t\t\t\t\t\tcontinue;\r\n\t\t\t\t\t}\r\n");
             
-            #line 115 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 139 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
         }
 
@@ -295,7 +352,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
                     "\r\n                {\r\n                    return;\r\n                }\r\n           " +
                     " }\r\n          \r\n            return;\r\n        }\r\n");
             
-            #line 127 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 151 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     }
 
@@ -324,7 +381,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             {
 ");
             
-            #line 149 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 173 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     foreach (var exception in this.Operation.Exceptions)
     {
@@ -334,14 +391,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("                if (errorResponse.Code != null && errorResponse.Code.Equals(\"");
             
-            #line 153 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 177 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Code));
             
             #line default
             #line hidden
             this.Write("\"))\r\n                {\r\n                    return ");
             
-            #line 155 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 179 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
             
             #line default
@@ -349,7 +406,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse);\r\n                }\r" +
                     "\n");
             
-            #line 157 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 181 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     }
 
@@ -358,7 +415,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            }\r\n            return new ");
             
-            #line 161 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 185 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.BaseException));
             
             #line default
@@ -366,7 +423,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, e" +
                     "rrorResponse.RequestId, statusCode);\r\n        }\r\n\r\n");
             
-            #line 164 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
+            #line 188 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     this.AddResponseSingletonMethod();
 
