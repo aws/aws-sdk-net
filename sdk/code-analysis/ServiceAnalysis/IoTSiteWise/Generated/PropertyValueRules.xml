@@ -241,6 +241,23 @@
     <pattern>^[!-~]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.CreatePresignedPortalUrlRequest.PortalId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.CreatePresignedPortalUrlRequest.SessionDurationSeconds</property>
+    <min>900</min>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.CreatePresignedPortalUrlResponse.PresignedPortalUrl</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^(http|https)\://\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.CreateProjectRequest.ClientToken</property>
     <min>36</min>
     <max>64</max>
@@ -1467,7 +1484,6 @@
     <property>Amazon.IoTSiteWise.Model.Metric.Expression</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^[a-z0-9._+\-*%/^, ()]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.PortalResource.Id</property>
@@ -1595,7 +1611,6 @@
     <property>Amazon.IoTSiteWise.Model.Transform.Expression</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^[a-z0-9._+\-*%/^, ()]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.TumblingWindow.Interval</property>
