@@ -47,6 +47,7 @@ namespace Amazon.ServiceCatalog.Model
         private bool? _ignoreErrors;
         private string _provisionedProductId;
         private string _provisionedProductName;
+        private bool? _retainPhysicalResources;
         private string _terminateToken;
 
         /// <summary>
@@ -138,6 +139,27 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetProvisionedProductName()
         {
             return this._provisionedProductName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetainPhysicalResources. 
+        /// <para>
+        /// When this boolean parameter is set to true, the TerminateProvisionedProduct API deletes
+        /// the Service Catalog provisioned product. However, it does not remove the CloudFormation
+        /// stack, stack set, or the underlying resources of the deleted provisioned product.
+        /// The default value is false.
+        /// </para>
+        /// </summary>
+        public bool RetainPhysicalResources
+        {
+            get { return this._retainPhysicalResources.GetValueOrDefault(); }
+            set { this._retainPhysicalResources = value; }
+        }
+
+        // Check to see if RetainPhysicalResources property is set
+        internal bool IsSetRetainPhysicalResources()
+        {
+            return this._retainPhysicalResources.HasValue; 
         }
 
         /// <summary>

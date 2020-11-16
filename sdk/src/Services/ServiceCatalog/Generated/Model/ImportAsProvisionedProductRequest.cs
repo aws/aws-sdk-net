@@ -29,20 +29,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateProvisioningArtifact operation.
-    /// Creates a provisioning artifact (also known as a version) for the specified product.
+    /// Container for the parameters to the ImportAsProvisionedProduct operation.
+    /// Requests the import of a resource as a Service Catalog provisioned product that is
+    /// associated to a Service Catalog product and provisioning artifact. Once imported all
+    /// supported Service Catalog governance actions are supported on the provisioned product.
     /// 
     ///  
     /// <para>
-    /// You cannot create a provisioning artifact for a product that was shared with you.
+    /// Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets
+    /// and non-root nested stacks are not supported.
+    /// </para>
+    ///  
+    /// <para>
+    /// The CloudFormation stack must have one of the following statuses to be imported: CREATE_COMPLETE,
+    /// UPDATE_COMPLETE, UPDATE_ROLLBACK_COMPLETE, IMPORT_COMPLETE, IMPORT_ROLLBACK_COMPLETE.
+    /// </para>
+    ///  
+    /// <para>
+    /// Import of the resource requires that the CloudFormation stack template matches the
+    /// associated Service Catalog product provisioning artifact. 
     /// </para>
     /// </summary>
-    public partial class CreateProvisioningArtifactRequest : AmazonServiceCatalogRequest
+    public partial class ImportAsProvisionedProductRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
         private string _idempotencyToken;
-        private ProvisioningArtifactProperties _parameters;
+        private string _physicalId;
         private string _productId;
+        private string _provisionedProductName;
+        private string _provisioningArtifactId;
 
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
@@ -97,23 +112,23 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Parameters. 
+        /// Gets and sets the property PhysicalId. 
         /// <para>
-        /// The configuration for the provisioning artifact. The <code>info</code> field accepts
-        /// <code>ImportFromPhysicalID</code>. 
+        /// The unique identifier of the resource to be imported. It only currently supports CloudFormation
+        /// stack IDs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public ProvisioningArtifactProperties Parameters
+        public string PhysicalId
         {
-            get { return this._parameters; }
-            set { this._parameters = value; }
+            get { return this._physicalId; }
+            set { this._physicalId = value; }
         }
 
-        // Check to see if Parameters property is set
-        internal bool IsSetParameters()
+        // Check to see if PhysicalId property is set
+        internal bool IsSetPhysicalId()
         {
-            return this._parameters != null;
+            return this._physicalId != null;
         }
 
         /// <summary>
@@ -133,6 +148,45 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetProductId()
         {
             return this._productId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionedProductName. 
+        /// <para>
+        /// The user-friendly name of the provisioned product. The value must be unique for the
+        /// AWS account. The name cannot be updated after the product is provisioned. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
+        public string ProvisionedProductName
+        {
+            get { return this._provisionedProductName; }
+            set { this._provisionedProductName = value; }
+        }
+
+        // Check to see if ProvisionedProductName property is set
+        internal bool IsSetProvisionedProductName()
+        {
+            return this._provisionedProductName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisioningArtifactId. 
+        /// <para>
+        /// The identifier of the provisioning artifact.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
+        public string ProvisioningArtifactId
+        {
+            get { return this._provisioningArtifactId; }
+            set { this._provisioningArtifactId = value; }
+        }
+
+        // Check to see if ProvisioningArtifactId property is set
+        internal bool IsSetProvisioningArtifactId()
+        {
+            return this._provisioningArtifactId != null;
         }
 
     }

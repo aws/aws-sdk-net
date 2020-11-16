@@ -38,9 +38,9 @@ namespace Amazon.ServiceCatalog
     /// AWS Service Catalog 
     /// <para>
     ///  <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> enables
-    /// organizations to create and manage catalogs of IT services that are approved for use
-    /// on AWS. To get the most out of this documentation, you should be familiar with the
-    /// terminology discussed in <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS
+    /// organizations to create and manage catalogs of IT services that are approved for AWS.
+    /// To get the most out of this documentation, you should be familiar with the terminology
+    /// discussed in <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS
     /// Service Catalog Concepts</a>.
     /// </para>
     /// </summary>
@@ -3603,6 +3603,91 @@ namespace Amazon.ServiceCatalog
         public virtual GetProvisionedProductOutputsResponse EndGetProvisionedProductOutputs(IAsyncResult asyncResult)
         {
             return EndInvoke<GetProvisionedProductOutputsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ImportAsProvisionedProduct
+
+        /// <summary>
+        /// Requests the import of a resource as a Service Catalog provisioned product that is
+        /// associated to a Service Catalog product and provisioning artifact. Once imported all
+        /// supported Service Catalog governance actions are supported on the provisioned product.
+        /// 
+        ///  
+        /// <para>
+        /// Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets
+        /// and non-root nested stacks are not supported.
+        /// </para>
+        ///  
+        /// <para>
+        /// The CloudFormation stack must have one of the following statuses to be imported: CREATE_COMPLETE,
+        /// UPDATE_COMPLETE, UPDATE_ROLLBACK_COMPLETE, IMPORT_COMPLETE, IMPORT_ROLLBACK_COMPLETE.
+        /// </para>
+        ///  
+        /// <para>
+        /// Import of the resource requires that the CloudFormation stack template matches the
+        /// associated Service Catalog product provisioning artifact. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportAsProvisionedProduct service method.</param>
+        /// 
+        /// <returns>The response from the ImportAsProvisionedProduct service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.DuplicateResourceException">
+        /// The specified resource is a duplicate.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ImportAsProvisionedProduct">REST API Reference for ImportAsProvisionedProduct Operation</seealso>
+        public virtual ImportAsProvisionedProductResponse ImportAsProvisionedProduct(ImportAsProvisionedProductRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportAsProvisionedProductRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportAsProvisionedProductResponseUnmarshaller.Instance;
+
+            return Invoke<ImportAsProvisionedProductResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportAsProvisionedProduct operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportAsProvisionedProduct operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportAsProvisionedProduct
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ImportAsProvisionedProduct">REST API Reference for ImportAsProvisionedProduct Operation</seealso>
+        public virtual IAsyncResult BeginImportAsProvisionedProduct(ImportAsProvisionedProductRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportAsProvisionedProductRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportAsProvisionedProductResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportAsProvisionedProduct operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportAsProvisionedProduct.</param>
+        /// 
+        /// <returns>Returns a  ImportAsProvisionedProductResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ImportAsProvisionedProduct">REST API Reference for ImportAsProvisionedProduct Operation</seealso>
+        public virtual ImportAsProvisionedProductResponse EndImportAsProvisionedProduct(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ImportAsProvisionedProductResponse>(asyncResult);
         }
 
         #endregion

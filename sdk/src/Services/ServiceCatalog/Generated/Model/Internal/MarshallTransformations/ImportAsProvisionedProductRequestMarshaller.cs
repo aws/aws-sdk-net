@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TerminateProvisionedProduct Request Marshaller
+    /// ImportAsProvisionedProduct Request Marshaller
     /// </summary>       
-    public class TerminateProvisionedProductRequestMarshaller : IMarshaller<IRequest, TerminateProvisionedProductRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ImportAsProvisionedProductRequestMarshaller : IMarshaller<IRequest, ImportAsProvisionedProductRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((TerminateProvisionedProductRequest)input);
+            return this.Marshall((ImportAsProvisionedProductRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(TerminateProvisionedProductRequest publicRequest)
+        public IRequest Marshall(ImportAsProvisionedProductRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ServiceCatalog");
-            string target = "AWS242ServiceCatalogService.TerminateProvisionedProduct";
+            string target = "AWS242ServiceCatalogService.ImportAsProvisionedProduct";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-12-10";            
@@ -74,16 +74,27 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AcceptLanguage);
                 }
 
-                if(publicRequest.IsSetIgnoreErrors())
+                if(publicRequest.IsSetIdempotencyToken())
                 {
-                    context.Writer.WritePropertyName("IgnoreErrors");
-                    context.Writer.Write(publicRequest.IgnoreErrors);
+                    context.Writer.WritePropertyName("IdempotencyToken");
+                    context.Writer.Write(publicRequest.IdempotencyToken);
                 }
 
-                if(publicRequest.IsSetProvisionedProductId())
+                else if(!(publicRequest.IsSetIdempotencyToken()))
                 {
-                    context.Writer.WritePropertyName("ProvisionedProductId");
-                    context.Writer.Write(publicRequest.ProvisionedProductId);
+                    context.Writer.WritePropertyName("IdempotencyToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                }
+                if(publicRequest.IsSetPhysicalId())
+                {
+                    context.Writer.WritePropertyName("PhysicalId");
+                    context.Writer.Write(publicRequest.PhysicalId);
+                }
+
+                if(publicRequest.IsSetProductId())
+                {
+                    context.Writer.WritePropertyName("ProductId");
+                    context.Writer.Write(publicRequest.ProductId);
                 }
 
                 if(publicRequest.IsSetProvisionedProductName())
@@ -92,23 +103,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ProvisionedProductName);
                 }
 
-                if(publicRequest.IsSetRetainPhysicalResources())
+                if(publicRequest.IsSetProvisioningArtifactId())
                 {
-                    context.Writer.WritePropertyName("RetainPhysicalResources");
-                    context.Writer.Write(publicRequest.RetainPhysicalResources);
+                    context.Writer.WritePropertyName("ProvisioningArtifactId");
+                    context.Writer.Write(publicRequest.ProvisioningArtifactId);
                 }
 
-                if(publicRequest.IsSetTerminateToken())
-                {
-                    context.Writer.WritePropertyName("TerminateToken");
-                    context.Writer.Write(publicRequest.TerminateToken);
-                }
-
-                else if(!(publicRequest.IsSetTerminateToken()))
-                {
-                    context.Writer.WritePropertyName("TerminateToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
-                }
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -118,9 +118,9 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static TerminateProvisionedProductRequestMarshaller _instance = new TerminateProvisionedProductRequestMarshaller();        
+        private static ImportAsProvisionedProductRequestMarshaller _instance = new ImportAsProvisionedProductRequestMarshaller();        
 
-        internal static TerminateProvisionedProductRequestMarshaller GetInstance()
+        internal static ImportAsProvisionedProductRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -128,7 +128,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TerminateProvisionedProductRequestMarshaller Instance
+        public static ImportAsProvisionedProductRequestMarshaller Instance
         {
             get
             {
