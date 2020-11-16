@@ -1,3 +1,23 @@
+### 3.5.56.0 (2020-11-16 19:14 UTC)
+* CodePipeline (3.5.1.0)
+	* We show details about inbound executions and id of action executions in GetPipelineState API. We also add ConflictException to StartPipelineExecution, RetryStageExecution, StopPipelineExecution APIs.
+* DatabaseMigrationService (3.5.5.0)
+	* Adding MoveReplicationTask feature to move replication tasks between instances
+* IoTSecureTunneling (3.5.1.0)
+	* Support using multiple data streams per tunnel using the Secure Tunneling multiplexing feature.
+* IoTSiteWise (3.5.4.0)
+	* This release supports Unicode characters for string operations in formulae computes in SiteWise. For more information, search for SiteWise in Amazon What's new or refer the SiteWise documentation.
+* QuickSight (3.5.6.0)
+	* Adding new parameters for dashboard persistence
+* SageMaker (3.5.5.0)
+	* This feature enables customers to encrypt their Amazon SageMaker Studio storage volumes with customer master keys (CMKs) managed by them in AWS Key Management Service (KMS).
+* ServiceCatalog (3.5.6.0)
+	* Support import of CloudFormation stacks into Service Catalog provisioned products.
+* SimpleNotificationService (3.5.1.8)
+	* Documentation updates for Amazon SNS.
+* Synthetics (3.5.2.0)
+	* AWS Synthetics now supports Environment Variables  to assign runtime parameters in the canary scripts.
+
 ### 3.5.55.0 (2020-11-13 19:16 UTC)
 * ElasticLoadBalancingV2 (3.5.5.0)
 	* Adds dualstack support for Network Load Balancers (TCP/TLS only), an attribute for WAF fail open for Application Load Balancers, and an attribute for connection draining for Network Load Balancers.
