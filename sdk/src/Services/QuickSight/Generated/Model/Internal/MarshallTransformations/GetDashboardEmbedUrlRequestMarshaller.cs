@@ -74,6 +74,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSessionLifetimeInMinutes())
                 request.Parameters.Add("session-lifetime", StringUtils.FromLong(publicRequest.SessionLifetimeInMinutes));
             
+            if (publicRequest.IsSetStatePersistenceEnabled())
+                request.Parameters.Add("state-persistence-enabled", StringUtils.FromBool(publicRequest.StatePersistenceEnabled));
+            
             if (publicRequest.IsSetUndoRedoDisabled())
                 request.Parameters.Add("undo-redo-disabled", StringUtils.FromBool(publicRequest.UndoRedoDisabled));
             
