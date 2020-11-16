@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The Amazon Elastic File System (EFS) storage configuration for an image.
+    /// The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
     /// </summary>
     public partial class FileSystemConfig
     {
@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DefaultGid. 
         /// <para>
-        /// The default POSIX group ID. If not specified, defaults to <code>100</code>.
+        /// The default POSIX group ID (GID). If not specified, defaults to <code>100</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DefaultUid. 
         /// <para>
-        /// The default POSIX user ID. If not specified, defaults to <code>1000</code>.
+        /// The default POSIX user ID (UID). If not specified, defaults to <code>1000</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]

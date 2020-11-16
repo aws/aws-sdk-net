@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Defines how a kernel is started and the arguments, environment variables, and metadata
-    /// that are available to the kernel.
+    /// The specification of a Jupyter kernel.
     /// </summary>
     public partial class KernelSpec
     {
@@ -59,7 +58,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the kernel. Must be unique to your account.
+        /// The name of the kernel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

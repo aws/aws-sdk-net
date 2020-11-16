@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The configuration for an Amazon SageMaker KernelGateway app.
+    /// The configuration for the file system and kernels in a SageMaker image running as
+    /// a KernelGateway app.
     /// </summary>
     public partial class KernelGatewayImageConfig
     {
@@ -39,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FileSystemConfig. 
         /// <para>
-        /// The file system configuration.
+        /// The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
         /// </para>
         /// </summary>
         public FileSystemConfig FileSystemConfig
@@ -57,8 +58,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KernelSpecs. 
         /// <para>
-        /// Defines how a kernel is started and the arguments, environment variables, and metadata
-        /// that are available to the kernel.
+        /// The specification of the Jupyter kernels in the image.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]

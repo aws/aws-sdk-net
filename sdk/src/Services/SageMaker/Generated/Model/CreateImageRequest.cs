@@ -30,8 +30,10 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateImage operation.
-    /// Creates a SageMaker <code>Image</code>. A SageMaker image represents a set of container
-    /// images. Each of these container images is represented by a SageMaker <code>ImageVersion</code>.
+    /// Creates a custom SageMaker image. A SageMaker image is a set of image versions. Each
+    /// image version represents a container image stored in Amazon Container Registry (ECR).
+    /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring
+    /// your own SageMaker image</a>.
     /// </summary>
     public partial class CreateImageRequest : AmazonSageMakerRequest
     {
@@ -63,8 +65,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The display name of the image. When the image is added to a domain, <code>DisplayName</code>
-        /// must be unique to the domain.
+        /// The display name of the image. If not provided, <code>ImageName</code> is displayed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

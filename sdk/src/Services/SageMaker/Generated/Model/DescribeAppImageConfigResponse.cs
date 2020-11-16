@@ -98,7 +98,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KernelGatewayImageConfig. 
         /// <para>
-        /// The KernelGateway app.
+        /// The configuration of a KernelGateway app.
         /// </para>
         /// </summary>
         public KernelGatewayImageConfig KernelGatewayImageConfig

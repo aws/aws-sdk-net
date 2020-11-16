@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The configuration for running an Amazon SageMaker image as a KernelGateway app.
+    /// The configuration for running a SageMaker image as a KernelGateway app.
     /// </summary>
     public partial class AppImageConfigDetails
     {
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AppImageConfigName. 
         /// <para>
-        /// The name of the AppImageConfig.
+        /// The name of the AppImageConfig. Must be unique to your account.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]
@@ -98,7 +98,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KernelGatewayImageConfig. 
         /// <para>
-        /// The KernelGateway app.
+        /// The configuration for the file system and kernels in the SageMaker image.
         /// </para>
         /// </summary>
         public KernelGatewayImageConfig KernelGatewayImageConfig
