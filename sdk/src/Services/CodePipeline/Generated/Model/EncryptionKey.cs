@@ -51,7 +51,7 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=400)]
         public string Id
         {
             get { return this._id; }

@@ -3439,6 +3439,10 @@ namespace Amazon.CodePipeline
         /// <param name="request">Container for the necessary parameters to execute the RetryStageExecution service method.</param>
         /// 
         /// <returns>The response from the RetryStageExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConflictException">
+        /// Your request cannot be handled because the pipeline is busy handling ongoing activities.
+        /// Try again later.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.NotLatestPipelineExecutionException">
         /// The stage has failed in a later run of the pipeline and the pipelineExecutionId associated
         /// with the request is out of date.
@@ -3479,6 +3483,10 @@ namespace Amazon.CodePipeline
         /// </param>
         /// 
         /// <returns>The response from the RetryStageExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConflictException">
+        /// Your request cannot be handled because the pipeline is busy handling ongoing activities.
+        /// Try again later.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.NotLatestPipelineExecutionException">
         /// The stage has failed in a later run of the pipeline and the pipelineExecutionId associated
         /// with the request is out of date.
@@ -3518,6 +3526,10 @@ namespace Amazon.CodePipeline
         /// <param name="name">The name of the pipeline to start.</param>
         /// 
         /// <returns>The response from the StartPipelineExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConflictException">
+        /// Your request cannot be handled because the pipeline is busy handling ongoing activities.
+        /// Try again later.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
         /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
@@ -3540,6 +3552,10 @@ namespace Amazon.CodePipeline
         /// <param name="request">Container for the necessary parameters to execute the StartPipelineExecution service method.</param>
         /// 
         /// <returns>The response from the StartPipelineExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConflictException">
+        /// Your request cannot be handled because the pipeline is busy handling ongoing activities.
+        /// Try again later.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
         /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
@@ -3567,6 +3583,10 @@ namespace Amazon.CodePipeline
         /// </param>
         /// 
         /// <returns>The response from the StartPipelineExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConflictException">
+        /// Your request cannot be handled because the pipeline is busy handling ongoing activities.
+        /// Try again later.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
         /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
@@ -3592,6 +3612,10 @@ namespace Amazon.CodePipeline
         /// </param>
         /// 
         /// <returns>The response from the StartPipelineExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConflictException">
+        /// Your request cannot be handled because the pipeline is busy handling ongoing activities.
+        /// Try again later.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
         /// The pipeline was specified in an invalid format or cannot be found.
         /// </exception>
@@ -3623,6 +3647,10 @@ namespace Amazon.CodePipeline
         /// <param name="request">Container for the necessary parameters to execute the StopPipelineExecution service method.</param>
         /// 
         /// <returns>The response from the StopPipelineExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConflictException">
+        /// Your request cannot be handled because the pipeline is busy handling ongoing activities.
+        /// Try again later.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.DuplicatedStopRequestException">
         /// The pipeline execution is already in a <code>Stopping</code> state. If you already
         /// chose to stop and wait, you cannot make that request again. You can choose to stop
@@ -3664,6 +3692,10 @@ namespace Amazon.CodePipeline
         /// </param>
         /// 
         /// <returns>The response from the StopPipelineExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConflictException">
+        /// Your request cannot be handled because the pipeline is busy handling ongoing activities.
+        /// Try again later.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.DuplicatedStopRequestException">
         /// The pipeline execution is already in a <code>Stopping</code> state. If you already
         /// chose to stop and wait, you cannot make that request again. You can choose to stop
