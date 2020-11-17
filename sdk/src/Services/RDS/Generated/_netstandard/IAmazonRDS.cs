@@ -622,6 +622,10 @@ namespace Amazon.RDS
         /// </param>
         /// 
         /// <returns>The response from the CopyDBSnapshot service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneNotFoundException">
+        /// <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability
+        /// Zone identifier.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
         /// <code>DBSnapshotIdentifier</code> is already used by an existing snapshot.
         /// </exception>

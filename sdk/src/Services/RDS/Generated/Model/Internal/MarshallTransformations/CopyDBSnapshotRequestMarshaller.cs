@@ -94,6 +94,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetTargetCustomAvailabilityZone())
+                {
+                    request.Parameters.Add("TargetCustomAvailabilityZone", StringUtils.FromString(publicRequest.TargetCustomAvailabilityZone));
+                }
                 if(publicRequest.IsSetTargetDBSnapshotIdentifier())
                 {
                     request.Parameters.Add("TargetDBSnapshotIdentifier", StringUtils.FromString(publicRequest.TargetDBSnapshotIdentifier));

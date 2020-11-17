@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
         private string _preSignedUrl;
         private string _sourceDBSnapshotIdentifier;
         private List<Tag> _tags = new List<Tag>();
+        private string _targetCustomAvailabilityZone;
         private string _targetDBSnapshotIdentifier;
 
         /// <summary>
@@ -292,6 +293,28 @@ namespace Amazon.RDS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetCustomAvailabilityZone. 
+        /// <para>
+        /// The external custom Availability Zone (CAZ) identifier for the target CAZ.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>rds-caz-aiqhTgQv</code>.
+        /// </para>
+        /// </summary>
+        public string TargetCustomAvailabilityZone
+        {
+            get { return this._targetCustomAvailabilityZone; }
+            set { this._targetCustomAvailabilityZone = value; }
+        }
+
+        // Check to see if TargetCustomAvailabilityZone property is set
+        internal bool IsSetTargetCustomAvailabilityZone()
+        {
+            return this._targetCustomAvailabilityZone != null;
         }
 
         /// <summary>
