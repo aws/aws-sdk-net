@@ -95,8 +95,8 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  
         /// <para>
-        /// This value is typically null. For binary text files, Macie adds location data to a
-        /// lineRanges.Range or Page object, depending on the file type.
+        /// This value is typically null. For binary text files, Amazon Macie adds location data
+        /// to a lineRanges.Range or Page object, depending on the file type.
         /// </para>
         /// </summary>
         public List<Range> OffsetRanges
@@ -135,8 +135,9 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Records. 
         /// <para>
         /// An array of objects, one for each occurrence of sensitive data in an Apache Avro object
-        /// container or Apache Parquet file. Each object specifies the field or record that contains
-        /// the data. This value is null for all other types of files.
+        /// container or Apache Parquet file. Each object specifies the record index and the path
+        /// to the field in the record that contains the data. This value is null for all other
+        /// types of files.
         /// </para>
         /// </summary>
         public List<Record> Records

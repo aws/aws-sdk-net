@@ -105,6 +105,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     response.JobType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lastRunErrorStatus", targetDepth))
+                {
+                    var unmarshaller = LastRunErrorStatusUnmarshaller.Instance;
+                    response.LastRunErrorStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastRunTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

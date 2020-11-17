@@ -48,9 +48,9 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// PARTIAL - Macie was able to analyze only a subset of the data in the object that the
-        /// finding applies to. For example, the object is a compressed or archive file that contains
-        /// files in an unsupported format.
+        /// PARTIAL - Macie analyzed only a subset of the data in the object that the finding
+        /// applies to. For example, the object is an archive file that contains files in an unsupported
+        /// format.
         /// </para>
         /// </li> <li>
         /// <para>

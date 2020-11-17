@@ -42,6 +42,7 @@ namespace Amazon.Macie2.Model
         private string _jobId;
         private JobStatus _jobStatus;
         private JobType _jobType;
+        private LastRunErrorStatus _lastRunErrorStatus;
         private DateTime? _lastRunTime;
         private string _name;
         private S3JobDefinition _s3JobDefinition;
@@ -254,6 +255,26 @@ namespace Amazon.Macie2.Model
         internal bool IsSetJobType()
         {
             return this._jobType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastRunErrorStatus. 
+        /// <para>
+        /// Specifies whether any account- or bucket-level access errors occurred when the job
+        /// ran. For a recurring job, this value indicates the error status of the job's most
+        /// recent run.
+        /// </para>
+        /// </summary>
+        public LastRunErrorStatus LastRunErrorStatus
+        {
+            get { return this._lastRunErrorStatus; }
+            set { this._lastRunErrorStatus = value; }
+        }
+
+        // Check to see if LastRunErrorStatus property is set
+        internal bool IsSetLastRunErrorStatus()
+        {
+            return this._lastRunErrorStatus != null;
         }
 
         /// <summary>

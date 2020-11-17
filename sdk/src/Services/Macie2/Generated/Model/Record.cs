@@ -40,8 +40,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property JsonPath. 
         /// <para>
-        /// The path, as a JSONPath expression, to the field (in an Apache Avro object container)
-        /// or record (in an Apache Parquet file) that contains the data.
+        /// The path, as a JSONPath expression, to the field in the record that contains the data.
         /// </para>
         ///  
         /// <para>
