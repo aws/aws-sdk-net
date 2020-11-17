@@ -39,7 +39,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// List of Amazon Chime accounts and account details.
+        /// The list of accounts.
         /// </para>
         /// </summary>
         public List<Account> Accounts
@@ -57,7 +57,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use to retrieve the next page of results.
+        /// The account's user token.
         /// </para>
         /// </summary>
         public string NextToken

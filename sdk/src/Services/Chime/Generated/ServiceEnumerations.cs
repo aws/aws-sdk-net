@@ -827,6 +827,10 @@ namespace Amazon.Chime
         /// </summary>
         public static readonly PhoneNumberAssociationName AccountId = new PhoneNumberAssociationName("AccountId");
         /// <summary>
+        /// Constant SipRuleId for PhoneNumberAssociationName
+        /// </summary>
+        public static readonly PhoneNumberAssociationName SipRuleId = new PhoneNumberAssociationName("SipRuleId");
+        /// <summary>
         /// Constant UserId for PhoneNumberAssociationName
         /// </summary>
         public static readonly PhoneNumberAssociationName UserId = new PhoneNumberAssociationName("UserId");
@@ -1258,6 +1262,56 @@ namespace Amazon.Chime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RoomMembershipRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SipRuleTriggerType.
+    /// </summary>
+    public class SipRuleTriggerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RequestUriHostname for SipRuleTriggerType
+        /// </summary>
+        public static readonly SipRuleTriggerType RequestUriHostname = new SipRuleTriggerType("RequestUriHostname");
+        /// <summary>
+        /// Constant ToPhoneNumber for SipRuleTriggerType
+        /// </summary>
+        public static readonly SipRuleTriggerType ToPhoneNumber = new SipRuleTriggerType("ToPhoneNumber");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SipRuleTriggerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SipRuleTriggerType FindValue(string value)
+        {
+            return FindValue<SipRuleTriggerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SipRuleTriggerType(string value)
         {
             return FindValue(value);
         }

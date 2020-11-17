@@ -80,6 +80,28 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.CreateMeetingDialOutRequest.FromPhoneNumber</property>
+    <pattern>^\+?[1-9]\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateMeetingDialOutRequest.JoinToken</property>
+    <min>2</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9+/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateMeetingDialOutRequest.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateMeetingDialOutRequest.ToPhoneNumber</property>
+    <pattern>^\+?[1-9]\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateMeetingDialOutResponse.TransactionId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.CreateMeetingWithAttendeesRequest.ClientRequestToken</property>
     <min>2</min>
     <max>64</max>
@@ -129,6 +151,32 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.CreateRoomMembershipRequest.RoomId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateSipMediaApplicationRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateSipMediaApplicationCallRequest.FromPhoneNumber</property>
+    <pattern>^\+?[1-9]\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateSipMediaApplicationCallRequest.SipMediaApplicationId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateSipMediaApplicationCallRequest.ToPhoneNumber</property>
+    <pattern>^\+?[1-9]\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateSipRuleRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateSipRuleRequest.TriggerValue</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -203,6 +251,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.DeleteRoomMembershipRequest.RoomId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteSipMediaApplicationRequest.SipMediaApplicationId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteSipRuleRequest.SipRuleId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -317,6 +373,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.GetRoomRequest.RoomId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.GetSipMediaApplicationRequest.SipMediaApplicationId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.GetSipMediaApplicationLoggingConfigurationRequest.SipMediaApplicationId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.GetSipRuleRequest.SipRuleId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -471,6 +539,36 @@
     <max>99</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.ListSipMediaApplicationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListSipMediaApplicationsRequest.NextToken</property>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListSipMediaApplicationsResponse.NextToken</property>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListSipRulesRequest.MaxResults</property>
+    <min>1</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListSipRulesRequest.NextToken</property>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListSipRulesRequest.SipMediaApplicationId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListSipRulesResponse.NextToken</property>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1024</max>
@@ -520,6 +618,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.PutRetentionSettingsRequest.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.PutSipMediaApplicationLoggingConfigurationRequest.SipMediaApplicationId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -712,6 +814,24 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.UpdateSipMediaApplicationRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.UpdateSipMediaApplicationRequest.SipMediaApplicationId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.UpdateSipRuleRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.UpdateSipRuleRequest.SipRuleId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.UpdateUserRequest.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -750,6 +870,7 @@
     <property>Amazon.Chime.Model.Attendee.JoinToken</property>
     <min>2</min>
     <max>2048</max>
+    <pattern>^[a-zA-Z0-9+/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.ConversationRetentionSettings.RetentionDays</property>
@@ -947,6 +1068,45 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.SigninDelegateGroup.GroupName</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.SipMediaApplication.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.SipMediaApplication.SipMediaApplicationId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.SipMediaApplicationCall.TransactionId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.SipMediaApplicationEndpoint.LambdaArn</property>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.SipRule.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.SipRule.SipRuleId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.SipRule.TriggerValue</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.SipRuleTargetApplication.Priority</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.SipRuleTargetApplication.SipMediaApplicationId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

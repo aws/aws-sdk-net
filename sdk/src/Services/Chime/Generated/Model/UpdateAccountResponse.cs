@@ -36,10 +36,7 @@ namespace Amazon.Chime.Model
         private Account _account;
 
         /// <summary>
-        /// Gets and sets the property Account. 
-        /// <para>
-        /// The updated Amazon Chime account details.
-        /// </para>
+        /// Gets and sets the property Account.
         /// </summary>
         public Account Account
         {
