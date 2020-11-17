@@ -29,58 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateContactFlowName operation.
-    /// The name of the contact flow.
-    /// 
-    ///  
-    /// <para>
-    /// You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
-    /// Connect Flow language</a>.
-    /// </para>
+    /// Container for the parameters to the CreateUserHierarchyGroup operation.
+    /// Creates a new user hierarchy group.
     /// </summary>
-    public partial class UpdateContactFlowNameRequest : AmazonConnectRequest
+    public partial class CreateUserHierarchyGroupRequest : AmazonConnectRequest
     {
-        private string _contactFlowId;
-        private string _description;
         private string _instanceId;
         private string _name;
-
-        /// <summary>
-        /// Gets and sets the property ContactFlowId. 
-        /// <para>
-        /// The identifier of the contact flow.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Max=500)]
-        public string ContactFlowId
-        {
-            get { return this._contactFlowId; }
-            set { this._contactFlowId = value; }
-        }
-
-        // Check to see if ContactFlowId property is set
-        internal bool IsSetContactFlowId()
-        {
-            return this._contactFlowId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Description. 
-        /// <para>
-        /// The description of the contact flow.
-        /// </para>
-        /// </summary>
-        public string Description
-        {
-            get { return this._description; }
-            set { this._description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this._description != null;
-        }
+        private string _parentGroupId;
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -104,10 +60,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the contact flow.
+        /// The name of the user hierarchy group. Must not be more than 100 characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -118,6 +74,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentGroupId. 
+        /// <para>
+        /// The identifier for the parent hierarchy group. The user hierarchy is created at level
+        /// one if the parent group ID is null.
+        /// </para>
+        /// </summary>
+        public string ParentGroupId
+        {
+            get { return this._parentGroupId; }
+            set { this._parentGroupId = value; }
+        }
+
+        // Check to see if ParentGroupId property is set
+        internal bool IsSetParentGroupId()
+        {
+            return this._parentGroupId != null;
         }
 
     }
