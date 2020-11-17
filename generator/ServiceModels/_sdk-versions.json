@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.5.56.1",
+    "ProductVersion" : "3.5.57.0",
     "CoreVersion"    : "3.5.1.37",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -282,7 +282,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.5.5.1",
+            "Version" : "3.5.6.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.36"
@@ -1058,7 +1058,7 @@
             "InPreview"               : false
         },
         "Connect"                         : {
-            "Version" : "3.5.1.22",
+            "Version" : "3.5.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.36"
@@ -1066,7 +1066,7 @@
             "InPreview"               : false
         },
         "FMS"                             : {
-            "Version" : "3.5.0.37",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.36"
@@ -1170,7 +1170,7 @@
             "InPreview"               : false
         },
         "Chime"                           : {
-            "Version" : "3.5.0.37",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.36"
@@ -1778,7 +1778,7 @@
             "InPreview"               : false
         },
         "Macie2"                          : {
-            "Version" : "3.5.4.1",
+            "Version" : "3.5.5.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.36"
@@ -1886,6 +1886,14 @@
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.36"
+            },
+            "InPreview"               : false
+        },
+        "NetworkFirewall"                 : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.1.37"
             },
             "InPreview"               : false
         }
