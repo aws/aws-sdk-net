@@ -29,18 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// Details of the resource that is not protected by the policy.
+    /// AWS Network Firewall stateful rule group, used in a <a>NetworkFirewallPolicyDescription</a>.
     /// </summary>
-    public partial class ComplianceViolator
+    public partial class StatefulRuleGroup
     {
         private string _resourceId;
-        private string _resourceType;
-        private ViolationReason _violationReason;
+        private string _ruleGroupName;
 
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The resource ID.
+        /// The resource ID of the rule group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -57,42 +56,22 @@ namespace Amazon.FMS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceType. 
+        /// Gets and sets the property RuleGroupName. 
         /// <para>
-        /// The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-        /// Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
-        /// <code>AWS::CloudFront::Distribution</code>, or <code>AWS::NetworkFirewall::FirewallPolicy</code>.
+        /// The name of the rule group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
-        public string ResourceType
+        public string RuleGroupName
         {
-            get { return this._resourceType; }
-            set { this._resourceType = value; }
+            get { return this._ruleGroupName; }
+            set { this._ruleGroupName = value; }
         }
 
-        // Check to see if ResourceType property is set
-        internal bool IsSetResourceType()
+        // Check to see if RuleGroupName property is set
+        internal bool IsSetRuleGroupName()
         {
-            return this._resourceType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ViolationReason. 
-        /// <para>
-        /// The reason that the resource is not protected by the policy.
-        /// </para>
-        /// </summary>
-        public ViolationReason ViolationReason
-        {
-            get { return this._violationReason; }
-            set { this._violationReason = value; }
-        }
-
-        // Check to see if ViolationReason property is set
-        internal bool IsSetViolationReason()
-        {
-            return this._violationReason != null;
+            return this._ruleGroupName != null;
         }
 
     }

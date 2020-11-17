@@ -36,6 +36,10 @@ namespace Amazon.FMS.Model
         private AwsEc2InstanceViolation _awsEc2InstanceViolation;
         private AwsEc2NetworkInterfaceViolation _awsEc2NetworkInterfaceViolation;
         private AwsVPCSecurityGroupViolation _awsVPCSecurityGroupViolation;
+        private NetworkFirewallMissingExpectedRTViolation _networkFirewallMissingExpectedRTViolation;
+        private NetworkFirewallMissingFirewallViolation _networkFirewallMissingFirewallViolation;
+        private NetworkFirewallMissingSubnetViolation _networkFirewallMissingSubnetViolation;
+        private NetworkFirewallPolicyModifiedViolation _networkFirewallPolicyModifiedViolation;
 
         /// <summary>
         /// Gets and sets the property AwsEc2InstanceViolation. 
@@ -89,6 +93,84 @@ namespace Amazon.FMS.Model
         internal bool IsSetAwsVPCSecurityGroupViolation()
         {
             return this._awsVPCSecurityGroupViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkFirewallMissingExpectedRTViolation. 
+        /// <para>
+        /// Violation detail for an Network Firewall policy that indicates that a subnet is not
+        /// associated with the expected Firewall Manager managed route table. 
+        /// </para>
+        /// </summary>
+        public NetworkFirewallMissingExpectedRTViolation NetworkFirewallMissingExpectedRTViolation
+        {
+            get { return this._networkFirewallMissingExpectedRTViolation; }
+            set { this._networkFirewallMissingExpectedRTViolation = value; }
+        }
+
+        // Check to see if NetworkFirewallMissingExpectedRTViolation property is set
+        internal bool IsSetNetworkFirewallMissingExpectedRTViolation()
+        {
+            return this._networkFirewallMissingExpectedRTViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkFirewallMissingFirewallViolation. 
+        /// <para>
+        /// Violation detail for an Network Firewall policy that indicates that a subnet has no
+        /// Firewall Manager managed firewall in its VPC. 
+        /// </para>
+        /// </summary>
+        public NetworkFirewallMissingFirewallViolation NetworkFirewallMissingFirewallViolation
+        {
+            get { return this._networkFirewallMissingFirewallViolation; }
+            set { this._networkFirewallMissingFirewallViolation = value; }
+        }
+
+        // Check to see if NetworkFirewallMissingFirewallViolation property is set
+        internal bool IsSetNetworkFirewallMissingFirewallViolation()
+        {
+            return this._networkFirewallMissingFirewallViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkFirewallMissingSubnetViolation. 
+        /// <para>
+        /// Violation detail for an Network Firewall policy that indicates that an Availability
+        /// Zone is missing the expected Firewall Manager managed subnet.
+        /// </para>
+        /// </summary>
+        public NetworkFirewallMissingSubnetViolation NetworkFirewallMissingSubnetViolation
+        {
+            get { return this._networkFirewallMissingSubnetViolation; }
+            set { this._networkFirewallMissingSubnetViolation = value; }
+        }
+
+        // Check to see if NetworkFirewallMissingSubnetViolation property is set
+        internal bool IsSetNetworkFirewallMissingSubnetViolation()
+        {
+            return this._networkFirewallMissingSubnetViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkFirewallPolicyModifiedViolation. 
+        /// <para>
+        /// Violation detail for an Network Firewall policy that indicates that a firewall policy
+        /// in an individual account has been modified in a way that makes it noncompliant. For
+        /// example, the individual account owner might have deleted a rule group, changed the
+        /// priority of a stateless rule group, or changed a policy default action.
+        /// </para>
+        /// </summary>
+        public NetworkFirewallPolicyModifiedViolation NetworkFirewallPolicyModifiedViolation
+        {
+            get { return this._networkFirewallPolicyModifiedViolation; }
+            set { this._networkFirewallPolicyModifiedViolation = value; }
+        }
+
+        // Check to see if NetworkFirewallPolicyModifiedViolation property is set
+        internal bool IsSetNetworkFirewallPolicyModifiedViolation()
+        {
+            return this._networkFirewallPolicyModifiedViolation != null;
         }
 
     }

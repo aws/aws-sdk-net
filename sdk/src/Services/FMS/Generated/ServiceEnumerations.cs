@@ -301,6 +301,10 @@ namespace Amazon.FMS
     {
 
         /// <summary>
+        /// Constant NETWORK_FIREWALL for SecurityServiceType
+        /// </summary>
+        public static readonly SecurityServiceType NETWORK_FIREWALL = new SecurityServiceType("NETWORK_FIREWALL");
+        /// <summary>
         /// Constant SECURITY_GROUPS_COMMON for SecurityServiceType
         /// </summary>
         public static readonly SecurityServiceType SECURITY_GROUPS_COMMON = new SecurityServiceType("SECURITY_GROUPS_COMMON");
@@ -366,6 +370,22 @@ namespace Amazon.FMS
     public class ViolationReason : ConstantClass
     {
 
+        /// <summary>
+        /// Constant MISSING_EXPECTED_ROUTE_TABLE for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason MISSING_EXPECTED_ROUTE_TABLE = new ViolationReason("MISSING_EXPECTED_ROUTE_TABLE");
+        /// <summary>
+        /// Constant MISSING_FIREWALL for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason MISSING_FIREWALL = new ViolationReason("MISSING_FIREWALL");
+        /// <summary>
+        /// Constant MISSING_FIREWALL_SUBNET_IN_AZ for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason MISSING_FIREWALL_SUBNET_IN_AZ = new ViolationReason("MISSING_FIREWALL_SUBNET_IN_AZ");
+        /// <summary>
+        /// Constant NETWORK_FIREWALL_POLICY_MODIFIED for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason NETWORK_FIREWALL_POLICY_MODIFIED = new ViolationReason("NETWORK_FIREWALL_POLICY_MODIFIED");
         /// <summary>
         /// Constant RESOURCE_INCORRECT_WEB_ACL for ViolationReason
         /// </summary>
