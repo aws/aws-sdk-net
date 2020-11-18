@@ -125,6 +125,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         response.ExecutionStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IncludeNestedStacks", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        response.IncludeNestedStacks = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("NextToken", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -145,10 +151,22 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         response.Parameters.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ParentChangeSetId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.ParentChangeSetId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("RollbackConfiguration", targetDepth))
                     {
                         var unmarshaller = RollbackConfigurationUnmarshaller.Instance;
                         response.RollbackConfiguration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("RootChangeSetId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.RootChangeSetId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("StackId", targetDepth))

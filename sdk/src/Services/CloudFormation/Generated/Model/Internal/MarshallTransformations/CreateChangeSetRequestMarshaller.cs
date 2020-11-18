@@ -83,6 +83,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetIncludeNestedStacks())
+                {
+                    request.Parameters.Add("IncludeNestedStacks", StringUtils.FromBool(publicRequest.IncludeNestedStacks));
+                }
                 if(publicRequest.IsSetNotificationARNs())
                 {
                     int publicRequestlistValueIndex = 1;

@@ -39,6 +39,9 @@ namespace Amazon.CloudFormation.Model
         private DateTime? _creationTime;
         private string _description;
         private ExecutionStatus _executionStatus;
+        private bool? _includeNestedStacks;
+        private string _parentChangeSetId;
+        private string _rootChangeSetId;
         private string _stackId;
         private string _stackName;
         private ChangeSetStatus _status;
@@ -139,6 +142,62 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetExecutionStatus()
         {
             return this._executionStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeNestedStacks. 
+        /// <para>
+        /// Specifies the current setting of <code>IncludeNestedStacks</code> for the change set.
+        /// </para>
+        /// </summary>
+        public bool IncludeNestedStacks
+        {
+            get { return this._includeNestedStacks.GetValueOrDefault(); }
+            set { this._includeNestedStacks = value; }
+        }
+
+        // Check to see if IncludeNestedStacks property is set
+        internal bool IsSetIncludeNestedStacks()
+        {
+            return this._includeNestedStacks.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentChangeSetId. 
+        /// <para>
+        /// The parent change set ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string ParentChangeSetId
+        {
+            get { return this._parentChangeSetId; }
+            set { this._parentChangeSetId = value; }
+        }
+
+        // Check to see if ParentChangeSetId property is set
+        internal bool IsSetParentChangeSetId()
+        {
+            return this._parentChangeSetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RootChangeSetId. 
+        /// <para>
+        /// The root change set ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string RootChangeSetId
+        {
+            get { return this._rootChangeSetId; }
+            set { this._rootChangeSetId = value; }
+        }
+
+        // Check to see if RootChangeSetId property is set
+        internal bool IsSetRootChangeSetId()
+        {
+            return this._rootChangeSetId != null;
         }
 
         /// <summary>

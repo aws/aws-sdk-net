@@ -46,6 +46,11 @@ namespace Amazon.CloudFormation.Model
     /// during the update. You can't specify a temporary stack policy that overrides the current
     /// policy.
     /// </para>
+    ///  
+    /// <para>
+    /// To create a change set for the entire stack hierachy, <code>IncludeNestedStacks</code>
+    /// must have been set to <code>True</code>.
+    /// </para>
     /// </summary>
     public partial class ExecuteChangeSetRequest : AmazonCloudFormationRequest
     {

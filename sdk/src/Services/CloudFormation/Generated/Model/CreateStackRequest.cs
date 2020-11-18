@@ -154,9 +154,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Change sets do not currently support nested stacks. If you want to create a stack
-        /// from a stack template that contains macros <i>and</i> nested stacks, you must create
-        /// the stack directly from the template using this capability.
+        /// If you want to create a stack from a stack template that contains macros <i>and</i>
+        /// nested stacks, you must create the stack directly from the template using this capability.
         /// </para>
         ///  <important> 
         /// <para>

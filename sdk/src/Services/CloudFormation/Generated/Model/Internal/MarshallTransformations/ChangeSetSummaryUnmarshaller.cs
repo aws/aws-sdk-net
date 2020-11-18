@@ -84,6 +84,24 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.ExecutionStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IncludeNestedStacks", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IncludeNestedStacks = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ParentChangeSetId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ParentChangeSetId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("RootChangeSetId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RootChangeSetId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("StackId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

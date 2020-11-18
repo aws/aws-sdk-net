@@ -40,10 +40,13 @@ namespace Amazon.CloudFormation.Model
         private DateTime? _creationTime;
         private string _description;
         private ExecutionStatus _executionStatus;
+        private bool? _includeNestedStacks;
         private string _nextToken;
         private List<string> _notificationARNs = new List<string>();
         private List<Parameter> _parameters = new List<Parameter>();
+        private string _parentChangeSetId;
         private RollbackConfiguration _rollbackConfiguration;
+        private string _rootChangeSetId;
         private string _stackId;
         private string _stackName;
         private ChangeSetStatus _status;
@@ -186,6 +189,24 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IncludeNestedStacks. 
+        /// <para>
+        /// Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.
+        /// </para>
+        /// </summary>
+        public bool IncludeNestedStacks
+        {
+            get { return this._includeNestedStacks.GetValueOrDefault(); }
+            set { this._includeNestedStacks = value; }
+        }
+
+        // Check to see if IncludeNestedStacks property is set
+        internal bool IsSetIncludeNestedStacks()
+        {
+            return this._includeNestedStacks.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the output exceeds 1 MB, a string that identifies the next page of changes. If
@@ -246,6 +267,26 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ParentChangeSetId. 
+        /// <para>
+        /// Specifies the change set ID of the parent change set in the current nested change
+        /// set hierarchy.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string ParentChangeSetId
+        {
+            get { return this._parentChangeSetId; }
+            set { this._parentChangeSetId = value; }
+        }
+
+        // Check to see if ParentChangeSetId property is set
+        internal bool IsSetParentChangeSetId()
+        {
+            return this._parentChangeSetId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RollbackConfiguration. 
         /// <para>
         /// The rollback triggers for AWS CloudFormation to monitor during stack creation and
@@ -262,6 +303,26 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetRollbackConfiguration()
         {
             return this._rollbackConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RootChangeSetId. 
+        /// <para>
+        /// Specifies the change set ID of the root change set in the current nested change set
+        /// hierarchy.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string RootChangeSetId
+        {
+            get { return this._rootChangeSetId; }
+            set { this._rootChangeSetId = value; }
+        }
+
+        // Check to see if RootChangeSetId property is set
+        internal bool IsSetRootChangeSetId()
+        {
+            return this._rootChangeSetId != null;
         }
 
         /// <summary>
