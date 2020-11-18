@@ -52,8 +52,8 @@ namespace Amazon.EC2.Model
         ///  <note> 
         /// <para>
         /// When a replacement instance is launched, the instance marked for rebalance is not
-        /// automatically terminated. You can terminate it, or you can wait until Amazon EC2 interrupts
-        /// it. You are charged for all instances while they are running.
+        /// automatically terminated. You can terminate it, or you can leave it running. You are
+        /// charged for all instances while they are running.
         /// </para>
         ///  </note>
         /// </summary>

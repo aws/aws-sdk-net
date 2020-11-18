@@ -34,11 +34,38 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// After you delete an EC2 Fleet, it launches no new instances. You must specify whether
-    /// an EC2 Fleet should also terminate its instances. If you terminate the instances,
-    /// the EC2 Fleet enters the <code>deleted_terminating</code> state. Otherwise, the EC2
-    /// Fleet enters the <code>deleted_running</code> state, and the instances continue to
-    /// run until they are interrupted or you terminate them manually. 
+    /// After you delete an EC2 Fleet, it launches no new instances.
+    /// </para>
+    ///  
+    /// <para>
+    /// You must specify whether a deleted EC2 Fleet should also terminate its instances.
+    /// If you choose to terminate the instances, the EC2 Fleet enters the <code>deleted_terminating</code>
+    /// state. Otherwise, the EC2 Fleet enters the <code>deleted_running</code> state, and
+    /// the instances continue to run until they are interrupted or you terminate them manually.
+    /// </para>
+    ///  
+    /// <para>
+    /// For <code>instant</code> fleets, EC2 Fleet must terminate the instances when the fleet
+    /// is deleted. A deleted <code>instant</code> fleet with running instances is not supported.
+    /// </para>
+    ///  <p class="title"> <b>Restrictions</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// You can delete up to 25 <code>instant</code> fleets in a single request. If you exceed
+    /// this number, no <code>instant</code> fleets are deleted and an error is returned.
+    /// There is no restriction on the number of fleets of type <code>maintain</code> or <code>request</code>
+    /// that can be deleted in a single request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Up to 1000 instances can be terminated in a single request to delete <code>instant</code>
+    /// fleets.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Deleting
+    /// an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DeleteFleetsRequest : AmazonEC2Request
@@ -68,7 +95,18 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TerminateInstances. 
         /// <para>
-        /// Indicates whether to terminate instances for an EC2 Fleet if it is deleted successfully.
+        /// Indicates whether to terminate the instances when the EC2 Fleet is deleted. The default
+        /// is to terminate the instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// To let the instances continue to run after the EC2 Fleet is deleted, specify <code>NoTerminateInstances</code>.
+        /// Supported only for fleets of type <code>maintain</code> and <code>request</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <code>instant</code> fleets, you cannot specify <code>NoTerminateInstances</code>.
+        /// A deleted <code>instant</code> fleet with running instances is not supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
