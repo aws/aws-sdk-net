@@ -199,7 +199,11 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RedirectLocation.
+        /// Gets and sets the property RedirectLocation. 
+        /// <para>
+        /// Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>.
+        /// Allows webpage redirects if the object is accessed through a website endpoint.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string RedirectLocation
@@ -261,7 +265,12 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetKeyPrefix.
+        /// Gets and sets the property TargetKeyPrefix. 
+        /// <para>
+        /// Specifies the folder prefix into which you would like the objects to be copied. For
+        /// example, to copy objects into a folder named "Folder1" in the destination bucket,
+        /// set the TargetKeyPrefix to "Folder1/".
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
         public string TargetKeyPrefix
@@ -277,7 +286,11 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetResource.
+        /// Gets and sets the property TargetResource. 
+        /// <para>
+        /// Specifies the destination bucket ARN for the batch copy operation. For example, to
+        /// copy objects to a bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string TargetResource

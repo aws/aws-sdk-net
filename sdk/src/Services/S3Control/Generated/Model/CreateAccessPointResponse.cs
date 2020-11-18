@@ -40,6 +40,11 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// The ARN of the access point.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This is only supported by Amazon S3 on Outposts.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=4, Max=128)]
         public string AccessPointArn

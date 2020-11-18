@@ -219,6 +219,56 @@ namespace Amazon.S3Control
 
 
     /// <summary>
+    /// Constants used for properties of type Format.
+    /// </summary>
+    public class Format : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CSV for Format
+        /// </summary>
+        public static readonly Format CSV = new Format("CSV");
+        /// <summary>
+        /// Constant Parquet for Format
+        /// </summary>
+        public static readonly Format Parquet = new Format("Parquet");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Format(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Format FindValue(string value)
+        {
+            return FindValue<Format>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Format(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobManifestFieldName.
     /// </summary>
     public class JobManifestFieldName : ConstantClass
@@ -630,6 +680,52 @@ namespace Amazon.S3Control
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OperationName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OutputSchemaVersion.
+    /// </summary>
+    public class OutputSchemaVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant V_1 for OutputSchemaVersion
+        /// </summary>
+        public static readonly OutputSchemaVersion V_1 = new OutputSchemaVersion("V_1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OutputSchemaVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutputSchemaVersion FindValue(string value)
+        {
+            return FindValue<OutputSchemaVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutputSchemaVersion(string value)
         {
             return FindValue(value);
         }

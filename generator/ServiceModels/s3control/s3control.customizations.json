@@ -157,6 +157,27 @@
     },
     "UpdateJobStatusRequest": {
       "containsArnField": false
+    },
+    "DeleteStorageLensConfigurationRequest": {
+      "containsArnField": false
+    },
+    "GetStorageLensConfigurationRequest":{
+      "containsArnField": false
+    },
+    "ListStorageLensConfigurationsRequest":{
+      "containsArnField": false
+    },
+    "PutStorageLensConfigurationRequest":{
+      "containsArnField": false
+    },
+    "DeleteStorageLensConfigurationTaggingRequest":{
+      "containsArnField": false
+    },
+    "GetStorageLensConfigurationTaggingRequest":{
+      "containsArnField": false
+    },
+    "PutStorageLensConfigurationTaggingRequest":{
+      "containsArnField": false
     }
   }
 }
