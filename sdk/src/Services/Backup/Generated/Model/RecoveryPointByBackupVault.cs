@@ -48,6 +48,7 @@ namespace Amazon.Backup.Model
         private string _recoveryPointArn;
         private string _resourceArn;
         private string _resourceType;
+        private string _sourceBackupVaultArn;
         private RecoveryPointStatus _status;
 
         /// <summary>
@@ -348,6 +349,25 @@ namespace Amazon.Backup.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceBackupVaultArn. 
+        /// <para>
+        /// The backup vault where the recovery point was originally copied from. If the recovery
+        /// point is restored to the same account this value will be <code>null</code>.
+        /// </para>
+        /// </summary>
+        public string SourceBackupVaultArn
+        {
+            get { return this._sourceBackupVaultArn; }
+            set { this._sourceBackupVaultArn = value; }
+        }
+
+        // Check to see if SourceBackupVaultArn property is set
+        internal bool IsSetSourceBackupVaultArn()
+        {
+            return this._sourceBackupVaultArn != null;
         }
 
         /// <summary>

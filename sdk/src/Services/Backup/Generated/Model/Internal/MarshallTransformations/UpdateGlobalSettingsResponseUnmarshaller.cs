@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StartBackupJob operation
+    /// Response Unmarshaller for UpdateGlobalSettings operation
     /// </summary>  
-    public class StartBackupJobResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateGlobalSettingsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,31 +45,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            StartBackupJobResponse response = new StartBackupJobResponse();
+            UpdateGlobalSettingsResponse response = new UpdateGlobalSettingsResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("BackupJobId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.BackupJobId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CreationDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RecoveryPointArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RecoveryPointArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -100,17 +77,9 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterValueException"))
                 {
                     return MissingParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
                 {
@@ -120,9 +89,9 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             return new AmazonBackupException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static StartBackupJobResponseUnmarshaller _instance = new StartBackupJobResponseUnmarshaller();        
+        private static UpdateGlobalSettingsResponseUnmarshaller _instance = new UpdateGlobalSettingsResponseUnmarshaller();        
 
-        internal static StartBackupJobResponseUnmarshaller GetInstance()
+        internal static UpdateGlobalSettingsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -130,7 +99,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartBackupJobResponseUnmarshaller Instance
+        public static UpdateGlobalSettingsResponseUnmarshaller Instance
         {
             get
             {

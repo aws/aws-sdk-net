@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StartBackupJob operation
+    /// Response Unmarshaller for DescribeGlobalSettings operation
     /// </summary>  
-    public class StartBackupJobResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeGlobalSettingsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,28 +45,22 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            StartBackupJobResponse response = new StartBackupJobResponse();
+            DescribeGlobalSettingsResponse response = new DescribeGlobalSettingsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BackupJobId", targetDepth))
+                if (context.TestExpression("GlobalSettings", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.BackupJobId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.GlobalSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CreationDate", targetDepth))
+                if (context.TestExpression("LastUpdateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RecoveryPointArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RecoveryPointArn = unmarshaller.Unmarshall(context);
+                    response.LastUpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -92,26 +86,6 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
-                {
-                    return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
-                {
-                    return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterValueException"))
-                {
-                    return MissingParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
                 {
                     return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -120,9 +94,9 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             return new AmazonBackupException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static StartBackupJobResponseUnmarshaller _instance = new StartBackupJobResponseUnmarshaller();        
+        private static DescribeGlobalSettingsResponseUnmarshaller _instance = new DescribeGlobalSettingsResponseUnmarshaller();        
 
-        internal static StartBackupJobResponseUnmarshaller GetInstance()
+        internal static DescribeGlobalSettingsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -130,7 +104,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartBackupJobResponseUnmarshaller Instance
+        public static DescribeGlobalSettingsResponseUnmarshaller Instance
         {
             get
             {

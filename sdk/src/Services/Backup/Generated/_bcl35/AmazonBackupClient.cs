@@ -1143,6 +1143,63 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  DescribeGlobalSettings
+
+        /// <summary>
+        /// The current feature settings for the AWS Account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalSettings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeGlobalSettings service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeGlobalSettings">REST API Reference for DescribeGlobalSettings Operation</seealso>
+        public virtual DescribeGlobalSettingsResponse DescribeGlobalSettings(DescribeGlobalSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGlobalSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGlobalSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGlobalSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGlobalSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalSettings operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeGlobalSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeGlobalSettings">REST API Reference for DescribeGlobalSettings Operation</seealso>
+        public virtual IAsyncResult BeginDescribeGlobalSettings(DescribeGlobalSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGlobalSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGlobalSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeGlobalSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeGlobalSettings.</param>
+        /// 
+        /// <returns>Returns a  DescribeGlobalSettingsResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeGlobalSettings">REST API Reference for DescribeGlobalSettings Operation</seealso>
+        public virtual DescribeGlobalSettingsResponse EndDescribeGlobalSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeGlobalSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeProtectedResource
 
         /// <summary>
@@ -1282,11 +1339,11 @@ namespace Amazon.Backup
         #region  DescribeRegionSettings
 
         /// <summary>
-        /// Returns the current service opt-in settings for the Region. If the service has a value
-        /// set to <code>true</code>, AWS Backup tries to protect that service's resources in
-        /// this Region, when included in an on-demand backup or scheduled backup plan. If the
-        /// value is set to <code>false</code> for a service, AWS Backup does not try to protect
-        /// that service's resources in this Region.
+        /// Returns the current service opt-in settings for the Region. If service-opt-in is enabled
+        /// for a service, AWS Backup tries to protect that service's resources in this Region,
+        /// when the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
+        /// AWS Backup does not try to protect that service's resources in this Region, AWS Backup
+        /// does not try to protect that service's resources in this Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRegionSettings service method.</param>
         /// 
@@ -2961,6 +3018,10 @@ namespace Amazon.Backup
         /// Indicates that something is wrong with a parameter's value. For example, the value
         /// is out of range.
         /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
         /// <exception cref="Amazon.Backup.Model.LimitExceededException">
         /// A limit in the request has been exceeded; for example, a maximum number of items allowed
         /// in a request.
@@ -3437,6 +3498,75 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  UpdateGlobalSettings
+
+        /// <summary>
+        /// Updates the current global settings for the AWS Account. Use the <code>DescribeGlobalSettings</code>
+        /// API to determine the current settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGlobalSettings service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings">REST API Reference for UpdateGlobalSettings Operation</seealso>
+        public virtual UpdateGlobalSettingsResponse UpdateGlobalSettings(UpdateGlobalSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGlobalSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGlobalSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGlobalSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGlobalSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGlobalSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings">REST API Reference for UpdateGlobalSettings Operation</seealso>
+        public virtual IAsyncResult BeginUpdateGlobalSettings(UpdateGlobalSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGlobalSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGlobalSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateGlobalSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGlobalSettings.</param>
+        /// 
+        /// <returns>Returns a  UpdateGlobalSettingsResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings">REST API Reference for UpdateGlobalSettings Operation</seealso>
+        public virtual UpdateGlobalSettingsResponse EndUpdateGlobalSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateGlobalSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateRecoveryPointLifecycle
 
         /// <summary>
@@ -3521,11 +3651,11 @@ namespace Amazon.Backup
         #region  UpdateRegionSettings
 
         /// <summary>
-        /// Updates the current service opt-in settings for the Region. If the service has a value
-        /// set to <code>true</code>, AWS Backup tries to protect that service's resources in
-        /// this Region, when included in an on-demand backup or scheduled backup plan. If the
-        /// value is set to <code>false</code> for a service, AWS Backup does not try to protect
-        /// that service's resources in this Region.
+        /// Updates the current service opt-in settings for the Region. If service-opt-in is enabled
+        /// for a service, AWS Backup tries to protect that service's resources in this Region,
+        /// when the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
+        /// AWS Backup does not try to protect that service's resources in this Region. Use the
+        /// <code>DescribeRegionSettings</code> API to determine the resource types that are supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRegionSettings service method.</param>
         /// 

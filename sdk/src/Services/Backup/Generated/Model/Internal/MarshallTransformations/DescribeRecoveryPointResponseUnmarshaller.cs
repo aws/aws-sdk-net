@@ -141,6 +141,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SourceBackupVaultArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SourceBackupVaultArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
