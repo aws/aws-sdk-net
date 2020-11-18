@@ -1,3 +1,24 @@
+### 3.5.58.0 (2020-11-18 19:12 UTC)
+* Backup (3.5.2.0)
+	* AWS Backup now supports cross-account backup, enabling AWS customers to securely copy their backups across their AWS accounts within their AWS organizations.
+* CloudFormation (3.5.1.0)
+	* This release adds ChangeSets support for Nested Stacks. ChangeSets offer a preview of how proposed changes to a stack might impact existing resources or create new ones.
+* CodeBuild (3.5.2.0)
+	* AWS CodeBuild - Adding Status field for Report Group
+* EC2 (3.5.18.0)
+	* EC2 Fleet adds support of DeleteFleets API for instant type fleets. Now you can delete an instant type fleet and terminate all associated instances with a single API call.
+* ElastiCache (3.5.1.14)
+	* Adding Memcached 1.6 to parameter family
+* Outposts (3.5.1.0)
+	* Mark the Name parameter in CreateOutpost as required.
+* S3Control (3.5.2.0)
+	* AWS S3 Storage Lens provides visibility into your storage usage and activity trends at the organization or account level, with aggregations by Region, storage class, bucket, and prefix.
+* Core 3.5.1.38
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.57.0 (2020-11-17 19:13 UTC)
 * Chime (3.5.1.0)
 	* This release adds CRUD APIs for Amazon Chime SipMediaApplications and SipRules. It also adds the API for creating outbound PSTN calls for Amazon Chime meetings.
