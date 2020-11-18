@@ -91,7 +91,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property Name.
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
