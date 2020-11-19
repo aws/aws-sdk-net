@@ -368,7 +368,7 @@ namespace Amazon.AutoScaling.Model
         /// An embedded object that specifies a mixed instances policy. When you make changes
         /// to an existing policy, all optional parameters are left unchanged if not specified.
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-        /// Scaling Groups with Multiple Instance Types and Purchase Options</a> in the <i>Amazon
+        /// Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon
         /// EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>

@@ -60,6 +60,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("LaunchTemplateSpecification", targetDepth))
+                    {
+                        var unmarshaller = LaunchTemplateSpecificationUnmarshaller.Instance;
+                        unmarshalledObject.LaunchTemplateSpecification = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("WeightedCapacity", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

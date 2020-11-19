@@ -29,27 +29,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes an override for a launch template. Currently, the only supported override
-    /// is instance type.
-    /// 
-    ///  
-    /// <para>
-    /// The maximum number of instance type overrides that can be associated with an Auto
-    /// Scaling group is 20.
-    /// </para>
+    /// Describes an override for a launch template. The maximum number of instance types
+    /// that can be associated with an Auto Scaling group is 20. For more information, see
+    /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-override-options.html">Configuring
+    /// overrides</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </summary>
     public partial class LaunchTemplateOverrides
     {
         private string _instanceType;
+        private LaunchTemplateSpecification _launchTemplateSpecification;
         private string _weightedCapacity;
 
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The instance type, such as <code>m3.xlarge</code>. You must use an instance type that
-        /// is supported in your requested Region and Availability Zones. For information about
-        /// available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-        /// instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> 
+        /// is supported in your requested Region and Availability Zones. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+        /// types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -63,6 +60,29 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchTemplateSpecification. 
+        /// <para>
+        /// Provides the launch template to be used when launching the instance type. For example,
+        /// some instance types might require a launch template with a different AMI. If not provided,
+        /// Amazon EC2 Auto Scaling uses the launch template that's defined for your mixed instances
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying
+        /// a different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling
+        /// User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public LaunchTemplateSpecification LaunchTemplateSpecification
+        {
+            get { return this._launchTemplateSpecification; }
+            set { this._launchTemplateSpecification = value; }
+        }
+
+        // Check to see if LaunchTemplateSpecification property is set
+        internal bool IsSetLaunchTemplateSpecification()
+        {
+            return this._launchTemplateSpecification != null;
         }
 
         /// <summary>
