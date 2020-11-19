@@ -51,6 +51,12 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("activeContexts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ActiveContext, ActiveContextUnmarshaller>(ActiveContextUnmarshaller.Instance);
+                    response.ActiveContexts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dialogAction", targetDepth))
                 {
                     var unmarshaller = DialogActionUnmarshaller.Instance;

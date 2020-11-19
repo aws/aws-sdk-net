@@ -117,6 +117,7 @@ namespace Amazon.Lex.Model
     public partial class PostContentRequest : AmazonLexRequest
     {
         private string _accept;
+        private string _activeContexts;
         private string _botAlias;
         private string _botName;
         private string _contentType;
@@ -188,6 +189,30 @@ namespace Amazon.Lex.Model
         internal bool IsSetAccept()
         {
             return this._accept != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActiveContexts. 
+        /// <para>
+        /// A list of contexts active for the request. A context can be activated when a previous
+        /// intent is fulfilled, or by including the context in the request,
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a list of contexts, Amazon Lex will use the current list of contexts
+        /// for the session. If you specify an empty list, all contexts for the session are cleared.
+        /// </para>
+        /// </summary>
+        public string ActiveContexts
+        {
+            get { return this._activeContexts; }
+            set { this._activeContexts = value; }
+        }
+
+        // Check to see if ActiveContexts property is set
+        internal bool IsSetActiveContexts()
+        {
+            return this._activeContexts != null;
         }
 
         /// <summary>

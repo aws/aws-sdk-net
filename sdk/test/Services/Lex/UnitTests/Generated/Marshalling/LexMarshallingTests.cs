@@ -408,6 +408,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"x-amz-lex-alternative-intents",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-alternative-intents_Value"))},
                     {"x-amz-lex-bot-version","x-amz-lex-bot-version_Value"},
                     {"Content-Type","Content-Type_Value"},
@@ -454,6 +455,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"x-amz-lex-alternative-intents",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-alternative-intents_Value"))},
                     {"x-amz-lex-bot-version","x-amz-lex-bot-version_Value"},
                     {"Content-Type","Content-Type_Value"},
@@ -500,6 +502,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"x-amz-lex-alternative-intents",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-alternative-intents_Value"))},
                     {"x-amz-lex-bot-version","x-amz-lex-bot-version_Value"},
                     {"Content-Type","Content-Type_Value"},
@@ -546,6 +549,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"x-amz-lex-alternative-intents",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-alternative-intents_Value"))},
                     {"x-amz-lex-bot-version","x-amz-lex-bot-version_Value"},
                     {"Content-Type","Content-Type_Value"},
@@ -592,6 +596,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"x-amz-lex-alternative-intents",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-alternative-intents_Value"))},
                     {"x-amz-lex-bot-version","x-amz-lex-bot-version_Value"},
                     {"Content-Type","Content-Type_Value"},
@@ -638,6 +643,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"x-amz-lex-alternative-intents",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-alternative-intents_Value"))},
                     {"x-amz-lex-bot-version","x-amz-lex-bot-version_Value"},
                     {"Content-Type","Content-Type_Value"},
@@ -684,6 +690,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"x-amz-lex-alternative-intents",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-alternative-intents_Value"))},
                     {"x-amz-lex-bot-version","x-amz-lex-bot-version_Value"},
                     {"Content-Type","Content-Type_Value"},
@@ -730,6 +737,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"x-amz-lex-alternative-intents",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-alternative-intents_Value"))},
                     {"x-amz-lex-bot-version","x-amz-lex-bot-version_Value"},
                     {"Content-Type","Content-Type_Value"},
@@ -776,6 +784,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"x-amz-lex-alternative-intents",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-alternative-intents_Value"))},
                     {"x-amz-lex-bot-version","x-amz-lex-bot-version_Value"},
                     {"Content-Type","Content-Type_Value"},
@@ -822,6 +831,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"x-amz-lex-alternative-intents",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-alternative-intents_Value"))},
                     {"x-amz-lex-bot-version","x-amz-lex-bot-version_Value"},
                     {"Content-Type","Content-Type_Value"},
@@ -868,6 +878,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"x-amz-lex-alternative-intents",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-alternative-intents_Value"))},
                     {"x-amz-lex-bot-version","x-amz-lex-bot-version_Value"},
                     {"Content-Type","Content-Type_Value"},
@@ -914,6 +925,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"x-amz-lex-alternative-intents",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-alternative-intents_Value"))},
                     {"x-amz-lex-bot-version","x-amz-lex-bot-version_Value"},
                     {"Content-Type","Content-Type_Value"},
@@ -1246,6 +1258,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"Content-Type","Content-Type_Value"},
                     {"x-amz-lex-dialog-state","x-amz-lex-dialog-state_Value"},
                     {"x-amz-lex-intent-name","x-amz-lex-intent-name_Value"},
@@ -1287,6 +1300,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"Content-Type","Content-Type_Value"},
                     {"x-amz-lex-dialog-state","x-amz-lex-dialog-state_Value"},
                     {"x-amz-lex-intent-name","x-amz-lex-intent-name_Value"},
@@ -1328,6 +1342,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"Content-Type","Content-Type_Value"},
                     {"x-amz-lex-dialog-state","x-amz-lex-dialog-state_Value"},
                     {"x-amz-lex-intent-name","x-amz-lex-intent-name_Value"},
@@ -1369,6 +1384,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"Content-Type","Content-Type_Value"},
                     {"x-amz-lex-dialog-state","x-amz-lex-dialog-state_Value"},
                     {"x-amz-lex-intent-name","x-amz-lex-intent-name_Value"},
@@ -1410,6 +1426,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"Content-Type","Content-Type_Value"},
                     {"x-amz-lex-dialog-state","x-amz-lex-dialog-state_Value"},
                     {"x-amz-lex-intent-name","x-amz-lex-intent-name_Value"},
@@ -1451,6 +1468,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"Content-Type","Content-Type_Value"},
                     {"x-amz-lex-dialog-state","x-amz-lex-dialog-state_Value"},
                     {"x-amz-lex-intent-name","x-amz-lex-intent-name_Value"},
@@ -1492,6 +1510,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"Content-Type","Content-Type_Value"},
                     {"x-amz-lex-dialog-state","x-amz-lex-dialog-state_Value"},
                     {"x-amz-lex-intent-name","x-amz-lex-intent-name_Value"},
@@ -1533,6 +1552,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"Content-Type","Content-Type_Value"},
                     {"x-amz-lex-dialog-state","x-amz-lex-dialog-state_Value"},
                     {"x-amz-lex-intent-name","x-amz-lex-intent-name_Value"},
@@ -1574,6 +1594,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
+                    {"x-amz-lex-active-contexts",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-active-contexts_Value"))},
                     {"Content-Type","Content-Type_Value"},
                     {"x-amz-lex-dialog-state","x-amz-lex-dialog-state_Value"},
                     {"x-amz-lex-intent-name","x-amz-lex-intent-name_Value"},

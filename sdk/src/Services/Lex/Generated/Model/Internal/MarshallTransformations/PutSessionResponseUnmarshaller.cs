@@ -48,6 +48,11 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             PutSessionResponse response = new PutSessionResponse();
 
             response.AudioStream = context.Stream;
+            if (context.ResponseData.IsHeaderPresent("x-amz-lex-active-contexts"))
+            {
+                var headerBytes = Convert.FromBase64String(context.ResponseData.GetHeaderValue("x-amz-lex-active-contexts"));
+                response.ActiveContexts = Encoding.UTF8.GetString(headerBytes, 0, headerBytes.Length);
+            }
             if (context.ResponseData.IsHeaderPresent("Content-Type"))
                 response.ContentType = context.ResponseData.GetHeaderValue("Content-Type");
             if (context.ResponseData.IsHeaderPresent("x-amz-lex-dialog-state"))
