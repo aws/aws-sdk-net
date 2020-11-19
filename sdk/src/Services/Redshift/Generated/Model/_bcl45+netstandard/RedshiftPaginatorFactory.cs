@@ -37,6 +37,14 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeClusterDbRevisions operation
+        ///</summary>
+        public IDescribeClusterDbRevisionsPaginator DescribeClusterDbRevisions(DescribeClusterDbRevisionsRequest request) 
+        {
+            return new DescribeClusterDbRevisionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeClusterParameterGroups operation
         ///</summary>
         public IDescribeClusterParameterGroupsPaginator DescribeClusterParameterGroups(DescribeClusterParameterGroupsRequest request) 
@@ -82,6 +90,14 @@ namespace Amazon.Redshift.Model
         public IDescribeClusterSubnetGroupsPaginator DescribeClusterSubnetGroups(DescribeClusterSubnetGroupsRequest request) 
         {
             return new DescribeClusterSubnetGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeClusterTracks operation
+        ///</summary>
+        public IDescribeClusterTracksPaginator DescribeClusterTracks(DescribeClusterTracksRequest request) 
+        {
+            return new DescribeClusterTracksPaginator(this.client, request);
         }
 
         /// <summary>
@@ -173,11 +189,51 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeSnapshotCopyGrants operation
+        ///</summary>
+        public IDescribeSnapshotCopyGrantsPaginator DescribeSnapshotCopyGrants(DescribeSnapshotCopyGrantsRequest request) 
+        {
+            return new DescribeSnapshotCopyGrantsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeSnapshotSchedules operation
+        ///</summary>
+        public IDescribeSnapshotSchedulesPaginator DescribeSnapshotSchedules(DescribeSnapshotSchedulesRequest request) 
+        {
+            return new DescribeSnapshotSchedulesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeTableRestoreStatus operation
+        ///</summary>
+        public IDescribeTableRestoreStatusPaginator DescribeTableRestoreStatus(DescribeTableRestoreStatusRequest request) 
+        {
+            return new DescribeTableRestoreStatusPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeTags operation
+        ///</summary>
+        public IDescribeTagsPaginator DescribeTags(DescribeTagsRequest request) 
+        {
+            return new DescribeTagsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeUsageLimits operation
         ///</summary>
         public IDescribeUsageLimitsPaginator DescribeUsageLimits(DescribeUsageLimitsRequest request) 
         {
             return new DescribeUsageLimitsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetReservedNodeExchangeOfferings operation
+        ///</summary>
+        public IGetReservedNodeExchangeOfferingsPaginator GetReservedNodeExchangeOfferings(GetReservedNodeExchangeOfferingsRequest request) 
+        {
+            return new GetReservedNodeExchangeOfferingsPaginator(this.client, request);
         }
     }
 }
