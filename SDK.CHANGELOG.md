@@ -1,3 +1,34 @@
+### 3.5.59.0 (2020-11-19 19:30 UTC)
+* AutoScaling (3.5.2.0)
+	* You can now create Auto Scaling groups with multiple launch templates using a mixed instances policy, making it easy to deploy an AMI with an architecture that is different from the rest of the group.
+* CloudWatchEvents (3.5.4.0)
+	* EventBridge now supports Resource-based policy authorization on event buses. This enables cross-account PutEvents API calls, creating cross-account rules, and simplifies permission management.
+* CostExplorer (3.5.5.0)
+	* Additional metadata that may be applicable to the recommendation.
+* DirectoryService (3.5.1.0)
+	* Adding multi-region replication feature for AWS Managed Microsoft AD
+* EventBridge (3.5.4.0)
+	* EventBridge now supports Resource-based policy authorization on event buses. This enables cross-account PutEvents API calls, creating cross-account rules, and simplifies permission management.
+* Glue (3.5.7.0)
+	* Adding support for Glue Schema Registry. The AWS Glue Schema Registry is a new feature that allows you to centrally discover, control, and evolve data stream schemas.
+* KinesisAnalyticsV2 (3.5.3.0)
+	* Amazon Kinesis Data Analytics now supports building and running streaming applications using Apache Flink 1.11 and provides a way to access the Apache Flink dashboard for supported Flink versions.
+* Lambda (3.5.2.0)
+	* Added the starting position and starting position timestamp to ESM Configuration. Now customers will be able to view these fields for their ESM.
+* Lex (3.5.1.0)
+	* Amazon Lex now supports the ability to view and manage active contexts associated with a user session.
+* LexModelBuildingService (3.5.4.0)
+	* Amazon Lex supports managing input and output contexts as well as default values for slots.
+* MediaLive (3.5.7.0)
+	* The AWS Elemental MediaLive APIs and SDKs now support the ability to see the software update status on Link devices
+* Redshift (3.5.1.0)
+	* Amazon Redshift support for returning ClusterNamespaceArn in describeClusters
+* Core 3.5.1.39
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.58.0 (2020-11-18 19:12 UTC)
 * Backup (3.5.2.0)
 	* AWS Backup now supports cross-account backup, enabling AWS customers to securely copy their backups across their AWS accounts within their AWS organizations.

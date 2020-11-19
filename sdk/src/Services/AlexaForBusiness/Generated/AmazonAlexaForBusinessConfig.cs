@@ -32,7 +32,7 @@ namespace Amazon.AlexaForBusiness
     public partial class AmazonAlexaForBusinessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.5.0.38");
+            InternalSDKUtils.BuildUserAgentString("3.5.0.39");
 
         private string _userAgent = UserAgentString;
 
