@@ -637,6 +637,84 @@ namespace Amazon.KinesisAnalyticsV2
 
         #endregion
         
+        #region  CreateApplicationPresignedUrl
+
+
+        /// <summary>
+        /// Creates and returns a URL that you can use to connect to an application's extension.
+        /// Currently, the only available extension is the Apache Flink dashboard.
+        /// 
+        ///  
+        /// <para>
+        /// The IAM role or user used to call this API defines the permissions to access the extension.
+        /// Once the presigned URL is created, no additional permission is required to access
+        /// this URL. IAM authorization policies for this API are also enforced for every HTTP
+        /// request that attempts to connect to the extension. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The URL that you get from a call to CreateApplicationPresignedUrl must be used within
+        /// 3 minutes to be valid. If you first try to use the URL after the 3-minute limit expires,
+        /// the service returns an HTTP 403 Forbidden error.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplicationPresignedUrl service method.</param>
+        /// 
+        /// <returns>The response from the CreateApplicationPresignedUrl service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationPresignedUrl">REST API Reference for CreateApplicationPresignedUrl Operation</seealso>
+        CreateApplicationPresignedUrlResponse CreateApplicationPresignedUrl(CreateApplicationPresignedUrlRequest request);
+
+
+
+        /// <summary>
+        /// Creates and returns a URL that you can use to connect to an application's extension.
+        /// Currently, the only available extension is the Apache Flink dashboard.
+        /// 
+        ///  
+        /// <para>
+        /// The IAM role or user used to call this API defines the permissions to access the extension.
+        /// Once the presigned URL is created, no additional permission is required to access
+        /// this URL. IAM authorization policies for this API are also enforced for every HTTP
+        /// request that attempts to connect to the extension. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The URL that you get from a call to CreateApplicationPresignedUrl must be used within
+        /// 3 minutes to be valid. If you first try to use the URL after the 3-minute limit expires,
+        /// the service returns an HTTP 403 Forbidden error.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplicationPresignedUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateApplicationPresignedUrl service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationPresignedUrl">REST API Reference for CreateApplicationPresignedUrl Operation</seealso>
+        Task<CreateApplicationPresignedUrlResponse> CreateApplicationPresignedUrlAsync(CreateApplicationPresignedUrlRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateApplicationSnapshot
 
 
@@ -1576,8 +1654,18 @@ namespace Amazon.KinesisAnalyticsV2
 
         /// <summary>
         /// Stops the application from processing data. You can stop an application only if it
-        /// is in the running state. You can use the <a>DescribeApplication</a> operation to find
-        /// the application state.
+        /// is in the running status, unless you set the <code>Force</code> parameter to <code>true</code>.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the <a>DescribeApplication</a> operation to find the application status.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Kinesis Data Analytics takes a snapshot when the application is stopped, unless <code>Force</code>
+        /// is set to <code>true</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopApplication service method.</param>
         /// 
@@ -1609,8 +1697,18 @@ namespace Amazon.KinesisAnalyticsV2
 
         /// <summary>
         /// Stops the application from processing data. You can stop an application only if it
-        /// is in the running state. You can use the <a>DescribeApplication</a> operation to find
-        /// the application state.
+        /// is in the running status, unless you set the <code>Force</code> parameter to <code>true</code>.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the <a>DescribeApplication</a> operation to find the application status.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Kinesis Data Analytics takes a snapshot when the application is stopped, unless <code>Force</code>
+        /// is set to <code>true</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopApplication service method.</param>
         /// <param name="cancellationToken">
