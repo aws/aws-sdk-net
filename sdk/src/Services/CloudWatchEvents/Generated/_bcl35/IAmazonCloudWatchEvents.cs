@@ -177,7 +177,9 @@ namespace Amazon.CloudWatchEvents
         /// <summary>
         /// Creates an archive of events with the specified settings. When you create an archive,
         /// incoming events might not immediately start being sent to the archive. Allow a short
-        /// period of time for changes to take effect.
+        /// period of time for changes to take effect. If you do not specify a pattern to filter
+        /// events sent to the archive, all events are sent to the archive except replayed events.
+        /// Replayed events are not sent to an archive.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateArchive service method.</param>
         /// 
@@ -1750,6 +1752,9 @@ namespace Amazon.CloudWatchEvents
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.PolicyLengthExceededException">
         /// The event bus policy is too long. For more information, see the limits.
         /// </exception>
@@ -2179,6 +2184,9 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.

@@ -77,6 +77,10 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                 {
                     return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OperationDisabledException"))
+                {
+                    return OperationDisabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("PolicyLengthExceededException"))
                 {
                     return PolicyLengthExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

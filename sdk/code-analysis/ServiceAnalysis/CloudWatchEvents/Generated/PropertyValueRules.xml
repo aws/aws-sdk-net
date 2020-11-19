@@ -111,8 +111,8 @@
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.DeleteRuleRequest.EventBusName</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[/\.\-_A-Za-z0-9]+</pattern>
+    <max>1600</max>
+    <pattern>(arn:aws[\w-]*:events:[a-z]{2}-[a-z]+-[\w-]+:[0-9]{12}:event-bus\/)?[/\.\-_A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.DeleteRuleRequest.Name</property>
@@ -160,8 +160,8 @@
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.DescribeEventBusRequest.Name</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[/\.\-_A-Za-z0-9]+</pattern>
+    <max>1600</max>
+    <pattern>(arn:aws[\w-]*:events:[a-z]{2}-[a-z]+-[\w-]+:[0-9]{12}:event-bus\/)?[/\.\-_A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.DescribeEventSourceRequest.Name</property>
@@ -211,8 +211,8 @@
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.DescribeRuleRequest.EventBusName</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[/\.\-_A-Za-z0-9]+</pattern>
+    <max>1600</max>
+    <pattern>(arn:aws[\w-]*:events:[a-z]{2}-[a-z]+-[\w-]+:[0-9]{12}:event-bus\/)?[/\.\-_A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.DescribeRuleRequest.Name</property>
@@ -224,6 +224,11 @@
     <property>Amazon.CloudWatchEvents.Model.DescribeRuleResponse.Arn</property>
     <min>1</min>
     <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchEvents.Model.DescribeRuleResponse.CreatedBy</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.DescribeRuleResponse.Description</property>
@@ -258,8 +263,8 @@
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.DisableRuleRequest.EventBusName</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[/\.\-_A-Za-z0-9]+</pattern>
+    <max>1600</max>
+    <pattern>(arn:aws[\w-]*:events:[a-z]{2}-[a-z]+-[\w-]+:[0-9]{12}:event-bus\/)?[/\.\-_A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.DisableRuleRequest.Name</property>
@@ -270,8 +275,8 @@
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.EnableRuleRequest.EventBusName</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[/\.\-_A-Za-z0-9]+</pattern>
+    <max>1600</max>
+    <pattern>(arn:aws[\w-]*:events:[a-z]{2}-[a-z]+-[\w-]+:[0-9]{12}:event-bus\/)?[/\.\-_A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.EnableRuleRequest.Name</property>
@@ -418,8 +423,8 @@
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.ListRuleNamesByTargetRequest.EventBusName</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[/\.\-_A-Za-z0-9]+</pattern>
+    <max>1600</max>
+    <pattern>(arn:aws[\w-]*:events:[a-z]{2}-[a-z]+-[\w-]+:[0-9]{12}:event-bus\/)?[/\.\-_A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.ListRuleNamesByTargetRequest.Limit</property>
@@ -444,8 +449,8 @@
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.ListRulesRequest.EventBusName</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[/\.\-_A-Za-z0-9]+</pattern>
+    <max>1600</max>
+    <pattern>(arn:aws[\w-]*:events:[a-z]{2}-[a-z]+-[\w-]+:[0-9]{12}:event-bus\/)?[/\.\-_A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.ListRulesRequest.Limit</property>
@@ -476,8 +481,8 @@
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.ListTargetsByRuleRequest.EventBusName</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[/\.\-_A-Za-z0-9]+</pattern>
+    <max>1600</max>
+    <pattern>(arn:aws[\w-]*:events:[a-z]{2}-[a-z]+-[\w-]+:[0-9]{12}:event-bus\/)?[/\.\-_A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.ListTargetsByRuleRequest.Limit</property>
@@ -531,8 +536,8 @@
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.PutRuleRequest.EventBusName</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[/\.\-_A-Za-z0-9]+</pattern>
+    <max>1600</max>
+    <pattern>(arn:aws[\w-]*:events:[a-z]{2}-[a-z]+-[\w-]+:[0-9]{12}:event-bus\/)?[/\.\-_A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.PutRuleRequest.Name</property>
@@ -557,8 +562,8 @@
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.PutTargetsRequest.EventBusName</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[/\.\-_A-Za-z0-9]+</pattern>
+    <max>1600</max>
+    <pattern>(arn:aws[\w-]*:events:[a-z]{2}-[a-z]+-[\w-]+:[0-9]{12}:event-bus\/)?[/\.\-_A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.PutTargetsRequest.Rule</property>
@@ -581,8 +586,8 @@
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.RemoveTargetsRequest.EventBusName</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[/\.\-_A-Za-z0-9]+</pattern>
+    <max>1600</max>
+    <pattern>(arn:aws[\w-]*:events:[a-z]{2}-[a-z]+-[\w-]+:[0-9]{12}:event-bus\/)?[/\.\-_A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.RemoveTargetsRequest.Rule</property>
@@ -705,8 +710,8 @@
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.PutEventsRequestEntry.EventBusName</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+    <max>1600</max>
+    <pattern>(arn:aws[\w-]*:events:[a-z]{2}-[a-z]+-[\w-]+:[0-9]{12}:event-bus\/)?[\.\-_A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.PutPartnerEventsRequestEntry.Source</property>
