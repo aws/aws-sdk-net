@@ -142,6 +142,18 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     unmarshalledObject.SourceAccessConfigurations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StartingPosition", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StartingPosition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartingPositionTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartingPositionTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

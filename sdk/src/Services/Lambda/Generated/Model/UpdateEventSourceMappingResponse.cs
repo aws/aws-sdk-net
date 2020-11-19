@@ -47,6 +47,8 @@ namespace Amazon.Lambda.Model
         private int? _parallelizationFactor;
         private List<string> _queues = new List<string>();
         private List<SourceAccessConfiguration> _sourceAccessConfigurations = new List<SourceAccessConfiguration>();
+        private EventSourcePosition _startingPosition;
+        private DateTime? _startingPositionTimestamp;
         private string _state;
         private string _stateTransitionReason;
         private List<string> _topics = new List<string>();
@@ -310,6 +312,45 @@ namespace Amazon.Lambda.Model
         internal bool IsSetSourceAccessConfigurations()
         {
             return this._sourceAccessConfigurations != null && this._sourceAccessConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartingPosition. 
+        /// <para>
+        /// The position in a stream from which to start reading. Required for Amazon Kinesis,
+        /// Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only
+        /// supported for Amazon Kinesis streams.
+        /// </para>
+        /// </summary>
+        public EventSourcePosition StartingPosition
+        {
+            get { return this._startingPosition; }
+            set { this._startingPosition = value; }
+        }
+
+        // Check to see if StartingPosition property is set
+        internal bool IsSetStartingPosition()
+        {
+            return this._startingPosition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartingPositionTimestamp. 
+        /// <para>
+        /// With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from
+        /// which to start reading.
+        /// </para>
+        /// </summary>
+        public DateTime StartingPositionTimestamp
+        {
+            get { return this._startingPositionTimestamp.GetValueOrDefault(); }
+            set { this._startingPositionTimestamp = value; }
+        }
+
+        // Check to see if StartingPositionTimestamp property is set
+        internal bool IsSetStartingPositionTimestamp()
+        {
+            return this._startingPositionTimestamp.HasValue; 
         }
 
         /// <summary>

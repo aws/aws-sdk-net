@@ -366,6 +366,11 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS Lambda
+        /// with Amazon MQ</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS Lambda
         /// with Amazon MSK</a> 
         /// </para>
@@ -447,6 +452,11 @@ namespace Amazon.Lambda
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS Lambda
         /// with Amazon SQS</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS Lambda
+        /// with Amazon MQ</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
