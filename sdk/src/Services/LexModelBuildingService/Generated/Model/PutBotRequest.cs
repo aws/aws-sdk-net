@@ -348,23 +348,6 @@ namespace Amazon.LexModelBuildingService.Model
         /// by default. In these Regions setting the parameter to <code>false</code> throws a
         /// <code>ValidationException</code> exception.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Asia Pacific (Singapore) (ap-southeast-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Asia Pacific (Tokyo) (ap-northeast-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// EU (Frankfurt) (eu-central-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// EU (London) (eu-west-2)
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public bool EnableModelImprovements
         {
@@ -496,7 +479,7 @@ namespace Amazon.LexModelBuildingService.Model
         ///  
         /// <para>
         /// You must set the <code>enableModelImprovements</code> parameter to <code>true</code>
-        /// to use confidence scores.
+        /// to use confidence scores in the following regions.
         /// </para>
         ///  <ul> <li> 
         /// <para>

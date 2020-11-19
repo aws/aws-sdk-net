@@ -781,6 +781,12 @@
     <max>140</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.InputContext.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^([A-Za-z]_?)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.Intent.IntentName</property>
     <min>1</min>
     <max>100</max>
@@ -864,6 +870,22 @@
     <max>5</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.OutputContext.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^([A-Za-z]_?)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.OutputContext.TimeToLiveInSeconds</property>
+    <min>5</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.OutputContext.TurnsToLive</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.Prompt.MaxAttempts</property>
     <min>1</min>
     <max>5</max>
@@ -917,6 +939,11 @@
     <min>1</min>
     <max>64</max>
     <pattern>\$LATEST|[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelBuildingService.Model.SlotDefaultValue.DefaultValue</property>
+    <min>1</min>
+    <max>202</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.SlotTypeMetadata.Description</property>

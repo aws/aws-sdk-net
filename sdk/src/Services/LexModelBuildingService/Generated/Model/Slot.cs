@@ -33,6 +33,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// </summary>
     public partial class Slot
     {
+        private SlotDefaultValueSpec _defaultValueSpec;
         private string _description;
         private string _name;
         private ObfuscationSetting _obfuscationSetting;
@@ -43,6 +44,26 @@ namespace Amazon.LexModelBuildingService.Model
         private string _slotType;
         private string _slotTypeVersion;
         private Prompt _valueElicitationPrompt;
+
+        /// <summary>
+        /// Gets and sets the property DefaultValueSpec. 
+        /// <para>
+        /// A list of default values for the slot. Default values are used when Amazon Lex hasn't
+        /// determined a value for a slot. You can specify default values from context variables,
+        /// session attributes, and defined values.
+        /// </para>
+        /// </summary>
+        public SlotDefaultValueSpec DefaultValueSpec
+        {
+            get { return this._defaultValueSpec; }
+            set { this._defaultValueSpec = value; }
+        }
+
+        // Check to see if DefaultValueSpec property is set
+        internal bool IsSetDefaultValueSpec()
+        {
+            return this._defaultValueSpec != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

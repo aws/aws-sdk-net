@@ -142,6 +142,22 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetInputContexts())
+                {
+                    context.Writer.WritePropertyName("inputContexts");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestInputContextsListValue in publicRequest.InputContexts)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InputContextMarshaller.Instance;
+                        marshaller.Marshall(publicRequestInputContextsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetKendraConfiguration())
                 {
                     context.Writer.WritePropertyName("kendraConfiguration");
@@ -151,6 +167,22 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.KendraConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetOutputContexts())
+                {
+                    context.Writer.WritePropertyName("outputContexts");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestOutputContextsListValue in publicRequest.OutputContexts)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OutputContextMarshaller.Instance;
+                        marshaller.Marshall(publicRequestOutputContextsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetParentIntentSignature())
