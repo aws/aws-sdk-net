@@ -30,8 +30,7 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateComputer operation.
-    /// Creates a computer account in the specified directory, and joins the computer to the
-    /// directory.
+    /// Creates an Active Directory computer object in the specified directory.
     /// </summary>
     public partial class CreateComputerRequest : AmazonDirectoryServiceRequest
     {

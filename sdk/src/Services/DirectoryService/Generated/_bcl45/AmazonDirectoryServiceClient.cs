@@ -452,6 +452,111 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  AddRegion
+
+
+        /// <summary>
+        /// Adds two domain controllers in the specified Region for the specified directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddRegion service method.</param>
+        /// 
+        /// <returns>The response from the AddRegion service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryAlreadyInRegionException">
+        /// The Region you specified is the same Region where the AWS Managed Microsoft AD directory
+        /// was created. Specify a different Region and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.RegionLimitExceededException">
+        /// You have reached the limit for maximum number of simultaneous region replications
+        /// per directory.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddRegion">REST API Reference for AddRegion Operation</seealso>
+        public virtual AddRegionResponse AddRegion(AddRegionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddRegionResponseUnmarshaller.Instance;
+
+            return Invoke<AddRegionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Adds two domain controllers in the specified Region for the specified directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddRegion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddRegion service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryAlreadyInRegionException">
+        /// The Region you specified is the same Region where the AWS Managed Microsoft AD directory
+        /// was created. Specify a different Region and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.RegionLimitExceededException">
+        /// You have reached the limit for maximum number of simultaneous region replications
+        /// per directory.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddRegion">REST API Reference for AddRegion Operation</seealso>
+        public virtual Task<AddRegionResponse> AddRegionAsync(AddRegionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddRegionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AddRegionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AddTagsToResource
 
 
@@ -766,8 +871,7 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Creates a computer account in the specified directory, and joins the computer to the
-        /// directory.
+        /// Creates an Active Directory computer object in the specified directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComputer service method.</param>
         /// 
@@ -808,8 +912,7 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Creates a computer account in the specified directory, and joins the computer to the
-        /// directory.
+        /// Creates an Active Directory computer object in the specified directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComputer service method.</param>
         /// <param name="cancellationToken">
@@ -2494,6 +2597,89 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  DescribeRegions
+
+
+        /// <summary>
+        /// Provides information about the Regions that are configured for multi-Region replication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRegions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRegions service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeRegions">REST API Reference for DescribeRegions Operation</seealso>
+        public virtual DescribeRegionsResponse DescribeRegions(DescribeRegionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRegionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRegionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRegionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Provides information about the Regions that are configured for multi-Region replication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRegions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRegions service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeRegions">REST API Reference for DescribeRegions Operation</seealso>
+        public virtual Task<DescribeRegionsResponse> DescribeRegionsAsync(DescribeRegionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRegionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRegionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeRegionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeSharedDirectories
 
 
@@ -4028,6 +4214,87 @@ namespace Amazon.DirectoryService
             options.ResponseUnmarshaller = RemoveIpRoutesResponseUnmarshaller.Instance;
             
             return InvokeAsync<RemoveIpRoutesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveRegion
+
+
+        /// <summary>
+        /// Stops all replication and removes the domain controllers from the specified Region.
+        /// You cannot remove the primary Region with this operation. Instead, use the <code>DeleteDirectory</code>
+        /// API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRegion service method.</param>
+        /// 
+        /// <returns>The response from the RemoveRegion service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveRegion">REST API Reference for RemoveRegion Operation</seealso>
+        public virtual RemoveRegionResponse RemoveRegion(RemoveRegionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveRegionResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveRegionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops all replication and removes the domain controllers from the specified Region.
+        /// You cannot remove the primary Region with this operation. Instead, use the <code>DeleteDirectory</code>
+        /// API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRegion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveRegion service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveRegion">REST API Reference for RemoveRegion Operation</seealso>
+        public virtual Task<RemoveRegionResponse> RemoveRegionAsync(RemoveRegionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveRegionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RemoveRegionResponse>(request, options, cancellationToken);
         }
 
         #endregion

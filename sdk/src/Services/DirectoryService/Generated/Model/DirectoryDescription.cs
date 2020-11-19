@@ -46,6 +46,7 @@ namespace Amazon.DirectoryService.Model
         private OwnerDirectoryDescription _ownerDirectoryDescription;
         private RadiusSettings _radiusSettings;
         private RadiusStatus _radiusStatus;
+        private RegionsInfo _regionsInfo;
         private ShareMethod _shareMethod;
         private string _shareNotes;
         private ShareStatus _shareStatus;
@@ -304,6 +305,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetRadiusStatus()
         {
             return this._radiusStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegionsInfo. 
+        /// <para>
+        /// Lists the Regions where the directory has replicated.
+        /// </para>
+        /// </summary>
+        public RegionsInfo RegionsInfo
+        {
+            get { return this._regionsInfo; }
+            set { this._regionsInfo = value; }
+        }
+
+        // Check to see if RegionsInfo property is set
+        internal bool IsSetRegionsInfo()
+        {
+            return this._regionsInfo != null;
         }
 
         /// <summary>

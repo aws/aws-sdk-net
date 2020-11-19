@@ -9,6 +9,15 @@
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.AddRegionRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.AddRegionRequest.RegionName</property>
+    <min>8</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.AddTagsToResourceRequest.ResourceId</property>
     <pattern>^[d]-[0-9a-f]{10}$</pattern>
   </property-value-rule>
@@ -37,7 +46,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.ConnectDirectoryRequest.ShortName</property>
-    <pattern>^[^\\/:*?\"\&lt;\&gt;|.]+[^\\/:*?\"&lt;&gt;|]*$</pattern>
+    <pattern>^[^\\/:*?"&lt;&gt;|.]+[^\\/:*?"&lt;&gt;|]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.ConnectDirectoryResponse.DirectoryId</property>
@@ -107,7 +116,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateDirectoryRequest.ShortName</property>
-    <pattern>^[^\\/:*?\"\&lt;\&gt;|.]+[^\\/:*?\"&lt;&gt;|]*$</pattern>
+    <pattern>^[^\\/:*?"&lt;&gt;|.]+[^\\/:*?"&lt;&gt;|]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateDirectoryResponse.DirectoryId</property>
@@ -139,7 +148,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateMicrosoftADRequest.ShortName</property>
-    <pattern>^[^\\/:*?\"\&lt;\&gt;|.]+[^\\/:*?\"&lt;&gt;|]*$</pattern>
+    <pattern>^[^\\/:*?"&lt;&gt;|.]+[^\\/:*?"&lt;&gt;|]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateMicrosoftADResponse.DirectoryId</property>
@@ -267,6 +276,15 @@
     <property>Amazon.DirectoryService.Model.DescribeLDAPSSettingsRequest.Limit</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeRegionsRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeRegionsRequest.RegionName</property>
+    <min>8</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DescribeSharedDirectoriesRequest.Limit</property>
@@ -414,6 +432,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.RemoveIpRoutesRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.RemoveRegionRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -574,6 +596,10 @@
     <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DirectoryAlreadyInRegionException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryAlreadySharedException.RequestId</property>
     <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
   </property-value-rule>
@@ -634,7 +660,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryDescription.ShortName</property>
-    <pattern>^[^\\/:*?\"\&lt;\&gt;|.]+[^\\/:*?\"&lt;&gt;|]*$</pattern>
+    <pattern>^[^\\/:*?"&lt;&gt;|.]+[^\\/:*?"&lt;&gt;|]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryDoesNotExistException.RequestId</property>
@@ -836,6 +862,28 @@
     <property>Amazon.DirectoryService.Model.RadiusSettings.SharedSecret</property>
     <min>8</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.RegionDescription.DesiredNumberOfDomainControllers</property>
+    <min>2</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.RegionDescription.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.RegionDescription.RegionName</property>
+    <min>8</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.RegionLimitExceededException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.RegionsInfo.PrimaryRegion</property>
+    <min>8</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.SchemaExtensionInfo.Description</property>
