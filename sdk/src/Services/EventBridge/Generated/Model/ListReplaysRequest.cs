@@ -82,8 +82,8 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property NamePrefix. 
         /// <para>
-        /// A name prefix to filter the archives returned. Only archives with name that match
-        /// the prefix are returned.
+        /// A name prefix to filter the replays returned. Only replays with name that match the
+        /// prefix are returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
