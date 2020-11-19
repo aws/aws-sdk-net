@@ -27,7 +27,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         protected override JsonData GetMarshalledProperty(JsonData marshalledData, string propertyName)
         {
             var childData = marshalledData[propertyName];
-            Assert.IsNotNull(childData);
+            Assert.IsNotNull(childData, $"Expected to find data in Property [{propertyName}].");
             return childData;
         }
 
