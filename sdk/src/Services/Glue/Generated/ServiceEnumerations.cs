@@ -257,6 +257,80 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type Compatibility.
+    /// </summary>
+    public class Compatibility : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BACKWARD for Compatibility
+        /// </summary>
+        public static readonly Compatibility BACKWARD = new Compatibility("BACKWARD");
+        /// <summary>
+        /// Constant BACKWARD_ALL for Compatibility
+        /// </summary>
+        public static readonly Compatibility BACKWARD_ALL = new Compatibility("BACKWARD_ALL");
+        /// <summary>
+        /// Constant DISABLED for Compatibility
+        /// </summary>
+        public static readonly Compatibility DISABLED = new Compatibility("DISABLED");
+        /// <summary>
+        /// Constant FORWARD for Compatibility
+        /// </summary>
+        public static readonly Compatibility FORWARD = new Compatibility("FORWARD");
+        /// <summary>
+        /// Constant FORWARD_ALL for Compatibility
+        /// </summary>
+        public static readonly Compatibility FORWARD_ALL = new Compatibility("FORWARD_ALL");
+        /// <summary>
+        /// Constant FULL for Compatibility
+        /// </summary>
+        public static readonly Compatibility FULL = new Compatibility("FULL");
+        /// <summary>
+        /// Constant FULL_ALL for Compatibility
+        /// </summary>
+        public static readonly Compatibility FULL_ALL = new Compatibility("FULL_ALL");
+        /// <summary>
+        /// Constant NONE for Compatibility
+        /// </summary>
+        public static readonly Compatibility NONE = new Compatibility("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Compatibility(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Compatibility FindValue(string value)
+        {
+            return FindValue<Compatibility>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Compatibility(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectionPropertyKey.
     /// </summary>
     public class ConnectionPropertyKey : ConstantClass
@@ -608,6 +682,52 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CsvHeaderOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataFormat.
+    /// </summary>
+    public class DataFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVRO for DataFormat
+        /// </summary>
+        public static readonly DataFormat AVRO = new DataFormat("AVRO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataFormat FindValue(string value)
+        {
+            return FindValue<DataFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataFormat(string value)
         {
             return FindValue(value);
         }
@@ -1425,6 +1545,56 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type RegistryStatus.
+    /// </summary>
+    public class RegistryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for RegistryStatus
+        /// </summary>
+        public static readonly RegistryStatus AVAILABLE = new RegistryStatus("AVAILABLE");
+        /// <summary>
+        /// Constant DELETING for RegistryStatus
+        /// </summary>
+        public static readonly RegistryStatus DELETING = new RegistryStatus("DELETING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RegistryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegistryStatus FindValue(string value)
+        {
+            return FindValue<RegistryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegistryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceShareType.
     /// </summary>
     public class ResourceShareType : ConstantClass
@@ -1630,6 +1800,164 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ScheduleState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SchemaDiffType.
+    /// </summary>
+    public class SchemaDiffType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SYNTAX_DIFF for SchemaDiffType
+        /// </summary>
+        public static readonly SchemaDiffType SYNTAX_DIFF = new SchemaDiffType("SYNTAX_DIFF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SchemaDiffType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SchemaDiffType FindValue(string value)
+        {
+            return FindValue<SchemaDiffType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SchemaDiffType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SchemaStatus.
+    /// </summary>
+    public class SchemaStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for SchemaStatus
+        /// </summary>
+        public static readonly SchemaStatus AVAILABLE = new SchemaStatus("AVAILABLE");
+        /// <summary>
+        /// Constant DELETING for SchemaStatus
+        /// </summary>
+        public static readonly SchemaStatus DELETING = new SchemaStatus("DELETING");
+        /// <summary>
+        /// Constant PENDING for SchemaStatus
+        /// </summary>
+        public static readonly SchemaStatus PENDING = new SchemaStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SchemaStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SchemaStatus FindValue(string value)
+        {
+            return FindValue<SchemaStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SchemaStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SchemaVersionStatus.
+    /// </summary>
+    public class SchemaVersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for SchemaVersionStatus
+        /// </summary>
+        public static readonly SchemaVersionStatus AVAILABLE = new SchemaVersionStatus("AVAILABLE");
+        /// <summary>
+        /// Constant DELETING for SchemaVersionStatus
+        /// </summary>
+        public static readonly SchemaVersionStatus DELETING = new SchemaVersionStatus("DELETING");
+        /// <summary>
+        /// Constant FAILURE for SchemaVersionStatus
+        /// </summary>
+        public static readonly SchemaVersionStatus FAILURE = new SchemaVersionStatus("FAILURE");
+        /// <summary>
+        /// Constant PENDING for SchemaVersionStatus
+        /// </summary>
+        public static readonly SchemaVersionStatus PENDING = new SchemaVersionStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SchemaVersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SchemaVersionStatus FindValue(string value)
+        {
+            return FindValue<SchemaVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SchemaVersionStatus(string value)
         {
             return FindValue(value);
         }

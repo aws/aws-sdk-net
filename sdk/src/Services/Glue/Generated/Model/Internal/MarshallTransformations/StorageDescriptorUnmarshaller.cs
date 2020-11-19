@@ -112,6 +112,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SchemaReference", targetDepth))
+                {
+                    var unmarshaller = SchemaReferenceUnmarshaller.Instance;
+                    unmarshalledObject.SchemaReference = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SerdeInfo", targetDepth))
                 {
                     var unmarshaller = SerDeInfoUnmarshaller.Instance;
