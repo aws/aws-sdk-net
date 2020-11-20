@@ -41,8 +41,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Application. 
         /// <para>
-        /// The name or ID of the application. The name must be unique in the region in which
-        /// you are updating the attribute group.
+        /// The name or ID of the application that will be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -61,7 +60,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the application.
+        /// The new description of the application.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -80,8 +79,8 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The anme of the application. The name must be unique in the region in which you are
-        /// creating the application.
+        /// The new name of the application. The name must be unique in the region in which you
+        /// are updating the application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

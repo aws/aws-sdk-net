@@ -30,7 +30,7 @@ namespace Amazon.AppRegistry.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAttributeGroup operation.
-    /// Creates a new attribute group as a container for user-defined attributes. This approach
+    /// Creates a new attribute group as a container for user-defined attributes. This feature
     /// enables users to have full control over their cloud application's metadata in a rich
     /// machine-readable format to facilitate integration with automated workflows and third-party
     /// tools.
@@ -66,8 +66,11 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique identifier that you provide to ensure idempotency. If multiple requests differ
-        /// only by the clientToken, the same response is returned for each repeated request.
+        /// A unique identifier that you provide to ensure idempotency. If you retry a request
+        /// that completed successfully using the same client token and the same parameters, the
+        /// retry succeeds without performing any further actions. If you retry a successful request
+        /// using the same client token, but one or more of the parameters are different, the
+        /// retry fails.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

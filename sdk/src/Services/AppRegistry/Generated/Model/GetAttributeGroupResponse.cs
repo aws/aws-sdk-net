@@ -45,7 +45,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon resource name (ARN) that specifies the application across services.
+        /// The Amazon resource name (ARN) that specifies the attribute group across services.
         /// </para>
         /// </summary>
         public string Arn
@@ -120,7 +120,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the application.
+        /// The identifier of the attribute group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -177,7 +177,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Key-value pairs you can use to associate with the attribute group.
+        /// Key-value pairs associated with the attribute group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

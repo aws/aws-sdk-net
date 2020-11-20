@@ -58,7 +58,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// The name or ID of the resource of which the application will be associated.
+        /// Information about the resources.
         /// </para>
         /// </summary>
         public List<ResourceInfo> Resources

@@ -78,7 +78,10 @@ namespace Amazon.AppRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceType.
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// The type of resource of which the application will be associated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ResourceType ResourceType

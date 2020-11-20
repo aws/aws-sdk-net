@@ -175,7 +175,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Key-value pairs you can use to associate with the application.
+        /// Key-value pairs associated with the application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

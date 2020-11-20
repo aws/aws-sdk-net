@@ -32,7 +32,7 @@ namespace Amazon.AppRegistry.Model
     /// Container for the parameters to the DisassociateAttributeGroup operation.
     /// Disassociates an attribute group from an application to remove the extra attributes
     /// contained in the attribute group from the application's metadata. This operation reverts
-    /// AssociateAttributeGroup.
+    /// <code>AssociateAttributeGroup</code>.
     /// </summary>
     public partial class DisassociateAttributeGroupRequest : AmazonAppRegistryRequest
     {

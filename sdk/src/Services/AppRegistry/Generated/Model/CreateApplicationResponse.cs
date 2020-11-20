@@ -38,7 +38,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Application. 
         /// <para>
-        /// The name or ID of the application.
+        /// Information about the application.
         /// </para>
         /// </summary>
         public Application Application

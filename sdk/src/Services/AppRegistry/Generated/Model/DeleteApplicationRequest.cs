@@ -30,7 +30,9 @@ namespace Amazon.AppRegistry.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplication operation.
-    /// Delete an application, specified either by its application ID or name.
+    /// Deletes an application that is specified either by its application ID or name. All
+    /// associated attribute groups and resources must be disassociated from it before deleting
+    /// an application.
     /// </summary>
     public partial class DeleteApplicationRequest : AmazonAppRegistryRequest
     {

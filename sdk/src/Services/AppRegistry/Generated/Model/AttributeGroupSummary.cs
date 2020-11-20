@@ -43,7 +43,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon resource name (ARN) that specifies the application across services.
+        /// The Amazon resource name (ARN) that specifies the attribute group across services.
         /// </para>
         /// </summary>
         public string Arn

@@ -61,7 +61,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The name or ID of the resource of which the application will be associated.
+        /// The name or ID of the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -80,7 +80,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of the resource that's being disassociated.
+        /// The type of the resource that is being disassociated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

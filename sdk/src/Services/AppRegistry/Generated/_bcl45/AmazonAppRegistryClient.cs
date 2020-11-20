@@ -261,8 +261,8 @@ namespace Amazon.AppRegistry
 
         /// <summary>
         /// Associates an attribute group with an application to augment the application's metadata
-        /// with the group's attributes. This way applications can be described with user-defined
-        /// details which are machine-readable (e.g. for third-party integrations).
+        /// with the group's attributes. This feature enables applications to be described with
+        /// user-defined details that are machine-readable, such as third-party integrations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAttributeGroup service method.</param>
         /// 
@@ -279,7 +279,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/AssociateAttributeGroup">REST API Reference for AssociateAttributeGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateAttributeGroup">REST API Reference for AssociateAttributeGroup Operation</seealso>
         public virtual AssociateAttributeGroupResponse AssociateAttributeGroup(AssociateAttributeGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -292,8 +292,8 @@ namespace Amazon.AppRegistry
 
         /// <summary>
         /// Associates an attribute group with an application to augment the application's metadata
-        /// with the group's attributes. This way applications can be described with user-defined
-        /// details which are machine-readable (e.g. for third-party integrations).
+        /// with the group's attributes. This feature enables applications to be described with
+        /// user-defined details that are machine-readable, such as third-party integrations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAttributeGroup service method.</param>
         /// <param name="cancellationToken">
@@ -313,7 +313,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/AssociateAttributeGroup">REST API Reference for AssociateAttributeGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateAttributeGroup">REST API Reference for AssociateAttributeGroup Operation</seealso>
         public virtual Task<AssociateAttributeGroupResponse> AssociateAttributeGroupAsync(AssociateAttributeGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -348,7 +348,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ServiceQuotaExceededException">
         /// The maximum number of resources per account has been reached.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/AssociateResource">REST API Reference for AssociateResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource">REST API Reference for AssociateResource Operation</seealso>
         public virtual AssociateResourceResponse AssociateResource(AssociateResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -382,7 +382,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ServiceQuotaExceededException">
         /// The maximum number of resources per account has been reached.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/AssociateResource">REST API Reference for AssociateResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource">REST API Reference for AssociateResource Operation</seealso>
         public virtual Task<AssociateResourceResponse> AssociateResourceAsync(AssociateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -414,7 +414,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ServiceQuotaExceededException">
         /// The maximum number of resources per account has been reached.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
             var options = new InvokeOptions();
@@ -445,7 +445,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ServiceQuotaExceededException">
         /// The maximum number of resources per account has been reached.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -461,7 +461,7 @@ namespace Amazon.AppRegistry
 
 
         /// <summary>
-        /// Creates a new attribute group as a container for user-defined attributes. This approach
+        /// Creates a new attribute group as a container for user-defined attributes. This feature
         /// enables users to have full control over their cloud application's metadata in a rich
         /// machine-readable format to facilitate integration with automated workflows and third-party
         /// tools.
@@ -482,7 +482,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/CreateAttributeGroup">REST API Reference for CreateAttributeGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateAttributeGroup">REST API Reference for CreateAttributeGroup Operation</seealso>
         public virtual CreateAttributeGroupResponse CreateAttributeGroup(CreateAttributeGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -494,7 +494,7 @@ namespace Amazon.AppRegistry
 
 
         /// <summary>
-        /// Creates a new attribute group as a container for user-defined attributes. This approach
+        /// Creates a new attribute group as a container for user-defined attributes. This feature
         /// enables users to have full control over their cloud application's metadata in a rich
         /// machine-readable format to facilitate integration with automated workflows and third-party
         /// tools.
@@ -518,7 +518,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/CreateAttributeGroup">REST API Reference for CreateAttributeGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateAttributeGroup">REST API Reference for CreateAttributeGroup Operation</seealso>
         public virtual Task<CreateAttributeGroupResponse> CreateAttributeGroupAsync(CreateAttributeGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -534,7 +534,9 @@ namespace Amazon.AppRegistry
 
 
         /// <summary>
-        /// Delete an application, specified either by its application ID or name.
+        /// Deletes an application that is specified either by its application ID or name. All
+        /// associated attribute groups and resources must be disassociated from it before deleting
+        /// an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
         /// 
@@ -548,7 +550,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
             var options = new InvokeOptions();
@@ -560,7 +562,9 @@ namespace Amazon.AppRegistry
 
 
         /// <summary>
-        /// Delete an application, specified either by its application ID or name.
+        /// Deletes an application that is specified either by its application ID or name. All
+        /// associated attribute groups and resources must be disassociated from it before deleting
+        /// an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
         /// <param name="cancellationToken">
@@ -577,7 +581,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -607,7 +611,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DeleteAttributeGroup">REST API Reference for DeleteAttributeGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteAttributeGroup">REST API Reference for DeleteAttributeGroup Operation</seealso>
         public virtual DeleteAttributeGroupResponse DeleteAttributeGroup(DeleteAttributeGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -636,7 +640,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DeleteAttributeGroup">REST API Reference for DeleteAttributeGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteAttributeGroup">REST API Reference for DeleteAttributeGroup Operation</seealso>
         public virtual Task<DeleteAttributeGroupResponse> DeleteAttributeGroupAsync(DeleteAttributeGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -654,7 +658,7 @@ namespace Amazon.AppRegistry
         /// <summary>
         /// Disassociates an attribute group from an application to remove the extra attributes
         /// contained in the attribute group from the application's metadata. This operation reverts
-        /// AssociateAttributeGroup.
+        /// <code>AssociateAttributeGroup</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAttributeGroup service method.</param>
         /// 
@@ -668,7 +672,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DisassociateAttributeGroup">REST API Reference for DisassociateAttributeGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateAttributeGroup">REST API Reference for DisassociateAttributeGroup Operation</seealso>
         public virtual DisassociateAttributeGroupResponse DisassociateAttributeGroup(DisassociateAttributeGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -682,7 +686,7 @@ namespace Amazon.AppRegistry
         /// <summary>
         /// Disassociates an attribute group from an application to remove the extra attributes
         /// contained in the attribute group from the application's metadata. This operation reverts
-        /// AssociateAttributeGroup.
+        /// <code>AssociateAttributeGroup</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAttributeGroup service method.</param>
         /// <param name="cancellationToken">
@@ -699,7 +703,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DisassociateAttributeGroup">REST API Reference for DisassociateAttributeGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateAttributeGroup">REST API Reference for DisassociateAttributeGroup Operation</seealso>
         public virtual Task<DisassociateAttributeGroupResponse> DisassociateAttributeGroupAsync(DisassociateAttributeGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -727,7 +731,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DisassociateResource">REST API Reference for DisassociateResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateResource">REST API Reference for DisassociateResource Operation</seealso>
         public virtual DisassociateResourceResponse DisassociateResource(DisassociateResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -754,7 +758,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DisassociateResource">REST API Reference for DisassociateResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateResource">REST API Reference for DisassociateResource Operation</seealso>
         public virtual Task<DisassociateResourceResponse> DisassociateResourceAsync(DisassociateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -773,7 +777,7 @@ namespace Amazon.AppRegistry
         /// Retrieves metadata information about one of your applications. The application can
         /// be specified either by its unique ID or by its name (which is unique within one account
         /// in one region at a given point in time). Specify by ID in automated workflows if you
-        /// want to make sure that the exact same application is returned or a ResourceNotFoundException
+        /// want to make sure that the exact same application is returned or a <code>ResourceNotFoundException</code>
         /// is thrown, avoiding the ABA addressing problem.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApplication service method.</param>
@@ -788,7 +792,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/GetApplication">REST API Reference for GetApplication Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual GetApplicationResponse GetApplication(GetApplicationRequest request)
         {
             var options = new InvokeOptions();
@@ -803,7 +807,7 @@ namespace Amazon.AppRegistry
         /// Retrieves metadata information about one of your applications. The application can
         /// be specified either by its unique ID or by its name (which is unique within one account
         /// in one region at a given point in time). Specify by ID in automated workflows if you
-        /// want to make sure that the exact same application is returned or a ResourceNotFoundException
+        /// want to make sure that the exact same application is returned or a <code>ResourceNotFoundException</code>
         /// is thrown, avoiding the ABA addressing problem.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApplication service method.</param>
@@ -821,7 +825,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/GetApplication">REST API Reference for GetApplication Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual Task<GetApplicationResponse> GetApplicationAsync(GetApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -837,7 +841,8 @@ namespace Amazon.AppRegistry
 
 
         /// <summary>
-        /// Retrieves an attribute group, either by its name or its ID.
+        /// Retrieves an attribute group, either by its name or its ID. The attribute group can
+        /// be specified either by its unique ID or by its name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAttributeGroup service method.</param>
         /// 
@@ -851,7 +856,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/GetAttributeGroup">REST API Reference for GetAttributeGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAttributeGroup">REST API Reference for GetAttributeGroup Operation</seealso>
         public virtual GetAttributeGroupResponse GetAttributeGroup(GetAttributeGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -863,7 +868,8 @@ namespace Amazon.AppRegistry
 
 
         /// <summary>
-        /// Retrieves an attribute group, either by its name or its ID.
+        /// Retrieves an attribute group, either by its name or its ID. The attribute group can
+        /// be specified either by its unique ID or by its name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAttributeGroup service method.</param>
         /// <param name="cancellationToken">
@@ -880,7 +886,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/GetAttributeGroup">REST API Reference for GetAttributeGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAttributeGroup">REST API Reference for GetAttributeGroup Operation</seealso>
         public virtual Task<GetAttributeGroupResponse> GetAttributeGroupAsync(GetAttributeGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -907,7 +913,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListApplications">REST API Reference for ListApplications Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
         {
             var options = new InvokeOptions();
@@ -933,7 +939,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListApplications">REST API Reference for ListApplications Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -964,7 +970,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAssociatedAttributeGroups">REST API Reference for ListAssociatedAttributeGroups Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedAttributeGroups">REST API Reference for ListAssociatedAttributeGroups Operation</seealso>
         public virtual ListAssociatedAttributeGroupsResponse ListAssociatedAttributeGroups(ListAssociatedAttributeGroupsRequest request)
         {
             var options = new InvokeOptions();
@@ -994,7 +1000,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAssociatedAttributeGroups">REST API Reference for ListAssociatedAttributeGroups Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedAttributeGroups">REST API Reference for ListAssociatedAttributeGroups Operation</seealso>
         public virtual Task<ListAssociatedAttributeGroupsResponse> ListAssociatedAttributeGroupsAsync(ListAssociatedAttributeGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1024,7 +1030,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAssociatedResources">REST API Reference for ListAssociatedResources Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedResources">REST API Reference for ListAssociatedResources Operation</seealso>
         public virtual ListAssociatedResourcesResponse ListAssociatedResources(ListAssociatedResourcesRequest request)
         {
             var options = new InvokeOptions();
@@ -1053,7 +1059,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAssociatedResources">REST API Reference for ListAssociatedResources Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedResources">REST API Reference for ListAssociatedResources Operation</seealso>
         public virtual Task<ListAssociatedResourcesResponse> ListAssociatedResourcesAsync(ListAssociatedResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1080,7 +1086,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAttributeGroups">REST API Reference for ListAttributeGroups Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroups">REST API Reference for ListAttributeGroups Operation</seealso>
         public virtual ListAttributeGroupsResponse ListAttributeGroups(ListAttributeGroupsRequest request)
         {
             var options = new InvokeOptions();
@@ -1106,7 +1112,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAttributeGroups">REST API Reference for ListAttributeGroups Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroups">REST API Reference for ListAttributeGroups Operation</seealso>
         public virtual Task<ListAttributeGroupsResponse> ListAttributeGroupsAsync(ListAttributeGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1137,7 +1143,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
             var options = new InvokeOptions();
@@ -1167,7 +1173,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1201,7 +1207,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/UpdateAttributeGroup">REST API Reference for UpdateAttributeGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateAttributeGroup">REST API Reference for UpdateAttributeGroup Operation</seealso>
         public virtual UpdateAttributeGroupResponse UpdateAttributeGroup(UpdateAttributeGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -1234,7 +1240,7 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/UpdateAttributeGroup">REST API Reference for UpdateAttributeGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateAttributeGroup">REST API Reference for UpdateAttributeGroup Operation</seealso>
         public virtual Task<UpdateAttributeGroupResponse> UpdateAttributeGroupAsync(UpdateAttributeGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();

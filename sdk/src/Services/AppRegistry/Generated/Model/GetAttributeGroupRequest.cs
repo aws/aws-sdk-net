@@ -30,7 +30,8 @@ namespace Amazon.AppRegistry.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAttributeGroup operation.
-    /// Retrieves an attribute group, either by its name or its ID.
+    /// Retrieves an attribute group, either by its name or its ID. The attribute group can
+    /// be specified either by its unique ID or by its name.
     /// </summary>
     public partial class GetAttributeGroupRequest : AmazonAppRegistryRequest
     {

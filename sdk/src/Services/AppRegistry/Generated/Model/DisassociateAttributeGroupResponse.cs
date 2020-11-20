@@ -39,7 +39,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property ApplicationArn. 
         /// <para>
-        /// The Amazon resource name (ARN) of the application that was augmented with attributes.
+        /// The Amazon resource name (ARN) that specifies the application.
         /// </para>
         /// </summary>
         public string ApplicationArn
@@ -57,8 +57,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property AttributeGroupArn. 
         /// <para>
-        /// The Amazon resource name (ARN) of the attribute group that contains the application's
-        /// new attributes.
+        /// The Amazon resource name (ARN) that specifies the attribute group.
         /// </para>
         /// </summary>
         public string AttributeGroupArn
