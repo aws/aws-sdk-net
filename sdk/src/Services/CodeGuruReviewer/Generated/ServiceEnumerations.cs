@@ -205,6 +205,10 @@ namespace Amazon.CodeGuruReviewer
         /// </summary>
         public static readonly RepositoryAssociationState Associating = new RepositoryAssociationState("Associating");
         /// <summary>
+        /// Constant Disassociated for RepositoryAssociationState
+        /// </summary>
+        public static readonly RepositoryAssociationState Disassociated = new RepositoryAssociationState("Disassociated");
+        /// <summary>
         /// Constant Disassociating for RepositoryAssociationState
         /// </summary>
         public static readonly RepositoryAssociationState Disassociating = new RepositoryAssociationState("Disassociating");

@@ -64,6 +64,12 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AssociationArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AssociationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CodeReviewArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

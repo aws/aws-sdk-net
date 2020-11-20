@@ -56,7 +56,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <para>
         ///  A code review that analyzes all code under a specified branch in an associated respository.
         /// The assocated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-        /// <code>CreateCodeReview</code> </a> 
+        /// <code>CreateCodeReview</code> </a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

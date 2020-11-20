@@ -63,6 +63,7 @@ namespace Amazon.CodeGuruReviewer.Model
     {
         private string _clientRequestToken;
         private Repository _repository;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -101,6 +102,38 @@ namespace Amazon.CodeGuruReviewer.Model
         internal bool IsSetRepository()
         {
             return this._repository != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  An array of key-value pairs used to tag an associated repository. A tag is a custom
+        /// attribute label with two parts: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>,
+        /// <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>,
+        /// <code>Production</code>, or a team name). Omitting the tag value is the same as using
+        /// an empty string. Like tag keys, tag values are case sensitive.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

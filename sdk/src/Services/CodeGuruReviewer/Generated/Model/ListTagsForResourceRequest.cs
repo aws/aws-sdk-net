@@ -29,17 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeRepositoryAssociation operation.
-    /// Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-    /// <code>RepositoryAssociation</code> </a> object that contains information about the
-    /// requested repository association.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Returns the list of tags associated with an associated repository resource.
     /// </summary>
-    public partial class DescribeRepositoryAssociationRequest : AmazonCodeGuruReviewerRequest
+    public partial class ListTagsForResourceRequest : AmazonCodeGuruReviewerRequest
     {
-        private string _associationArn;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property AssociationArn. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
         /// <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
@@ -48,16 +46,16 @@ namespace Amazon.CodeGuruReviewer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
-        public string AssociationArn
+        public string ResourceArn
         {
-            get { return this._associationArn; }
-            set { this._associationArn = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if AssociationArn property is set
-        internal bool IsSetAssociationArn()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._associationArn != null;
+            return this._resourceArn != null;
         }
 
     }

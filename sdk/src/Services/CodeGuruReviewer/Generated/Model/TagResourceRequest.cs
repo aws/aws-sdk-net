@@ -29,29 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// This is the response object from the DisassociateRepository operation.
+    /// Container for the parameters to the TagResource operation.
+    /// Adds one or more tags to an associated repository.
     /// </summary>
-    public partial class DisassociateRepositoryResponse : AmazonWebServiceResponse
+    public partial class TagResourceRequest : AmazonCodeGuruReviewerRequest
     {
-        private RepositoryAssociation _repositoryAssociation;
+        private string _resourceArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property RepositoryAssociation. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Information about the disassociated repository.
+        ///  The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+        /// <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+        /// <code>ListRepositoryAssociations</code> </a>. 
         /// </para>
         /// </summary>
-        public RepositoryAssociation RepositoryAssociation
+        [AWSProperty(Required=true, Min=1, Max=1600)]
+        public string ResourceArn
         {
-            get { return this._repositoryAssociation; }
-            set { this._repositoryAssociation = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if RepositoryAssociation property is set
-        internal bool IsSetRepositoryAssociation()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._repositoryAssociation != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
@@ -73,7 +78,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

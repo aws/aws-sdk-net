@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AssociateRepository Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class AssociateRepositoryRequestMarshaller : IMarshaller<IRequest, AssociateRepositoryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((AssociateRepositoryRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,42 +52,23 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(AssociateRepositoryRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeGuruReviewer");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-19";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/associations";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonCodeGuruReviewerException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/tags/{resourceArn}";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
-                }
-                if(publicRequest.IsSetRepository())
-                {
-                    context.Writer.WritePropertyName("Repository");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RepositoryMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Repository, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
@@ -111,9 +92,9 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static AssociateRepositoryRequestMarshaller _instance = new AssociateRepositoryRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static AssociateRepositoryRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -121,7 +102,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssociateRepositoryRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

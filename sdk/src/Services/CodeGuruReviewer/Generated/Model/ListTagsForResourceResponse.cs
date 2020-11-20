@@ -29,30 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// This is the response object from the DisassociateRepository operation.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class DisassociateRepositoryResponse : AmazonWebServiceResponse
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private RepositoryAssociation _repositoryAssociation;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
-
-        /// <summary>
-        /// Gets and sets the property RepositoryAssociation. 
-        /// <para>
-        /// Information about the disassociated repository.
-        /// </para>
-        /// </summary>
-        public RepositoryAssociation RepositoryAssociation
-        {
-            get { return this._repositoryAssociation; }
-            set { this._repositoryAssociation = value; }
-        }
-
-        // Check to see if RepositoryAssociation property is set
-        internal bool IsSetRepositoryAssociation()
-        {
-            return this._repositoryAssociation != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Tags. 

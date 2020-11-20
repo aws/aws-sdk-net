@@ -29,17 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeRepositoryAssociation operation.
-    /// Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-    /// <code>RepositoryAssociation</code> </a> object that contains information about the
-    /// requested repository association.
+    /// Container for the parameters to the UntagResource operation.
+    /// Removes a tag from an associated repository.
     /// </summary>
-    public partial class DescribeRepositoryAssociationRequest : AmazonCodeGuruReviewerRequest
+    public partial class UntagResourceRequest : AmazonCodeGuruReviewerRequest
     {
-        private string _associationArn;
+        private string _resourceArn;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property AssociationArn. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
         /// <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
@@ -48,16 +47,35 @@ namespace Amazon.CodeGuruReviewer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
-        public string AssociationArn
+        public string ResourceArn
         {
-            get { return this._associationArn; }
-            set { this._associationArn = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if AssociationArn property is set
-        internal bool IsSetAssociationArn()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._associationArn != null;
+            return this._resourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// A list of the keys for each tag you want to remove from an associated repository.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
+        public List<string> TagKeys
+        {
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
+        }
+
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
+        {
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

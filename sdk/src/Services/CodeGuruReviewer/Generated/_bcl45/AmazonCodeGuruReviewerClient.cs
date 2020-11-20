@@ -51,6 +51,14 @@ namespace Amazon.CodeGuruReviewer
     /// about CodeGuru Reviewer, see the <i> <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html">Amazon
     /// CodeGuru Reviewer User Guide</a>.</i> 
     /// </para>
+    ///  
+    /// <para>
+    ///  To improve the security of your CodeGuru Reviewer API calls, you can establish a
+    /// private connection between your VPC and CodeGuru Reviewer by creating an <i>interface
+    /// VPC endpoint</i>. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/vpc-interface-endpoints.html">CodeGuru
+    /// Reviewer and interface VPC endpoints (AWS PrivateLink)</a> in the <i>Amazon CodeGuru
+    /// Reviewer User Guide</i>. 
+    /// </para>
     /// </summary>
     public partial class AmazonCodeGuruReviewerClient : AmazonServiceClient, IAmazonCodeGuruReviewer
     {
@@ -397,7 +405,11 @@ namespace Amazon.CodeGuruReviewer
 
 
         /// <summary>
-        /// Use to create a code review for a repository analysis.
+        /// Use to create a code review with a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
+        /// <code>CodeReviewType</code> </a> of <code>RepositoryAnalysis</code>. This type of
+        /// code review analyzes all code under a specified branch in an associated repository.
+        /// <code>PullRequest</code> code reviews are automatically triggered by a pull request
+        /// so cannot be created using this method.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCodeReview service method.</param>
         /// 
@@ -433,7 +445,11 @@ namespace Amazon.CodeGuruReviewer
 
 
         /// <summary>
-        /// Use to create a code review for a repository analysis.
+        /// Use to create a code review with a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
+        /// <code>CodeReviewType</code> </a> of <code>RepositoryAnalysis</code>. This type of
+        /// code review analyzes all code under a specified branch in an associated repository.
+        /// <code>PullRequest</code> code reviews are automatically triggered by a pull request
+        /// so cannot be created using this method.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCodeReview service method.</param>
         /// <param name="cancellationToken">
@@ -1050,6 +1066,65 @@ namespace Amazon.CodeGuruReviewer
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Returns the list of tags associated with an associated repository resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CodeGuruReviewer.</returns>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the list of tags associated with an associated repository resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CodeGuruReviewer.</returns>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutRecommendationFeedback
 
 
@@ -1119,6 +1194,124 @@ namespace Amazon.CodeGuruReviewer
             options.ResponseUnmarshaller = PutRecommendationFeedbackResponseUnmarshaller.Instance;
             
             return InvokeAsync<PutRecommendationFeedbackResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds one or more tags to an associated repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CodeGuruReviewer.</returns>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Adds one or more tags to an associated repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CodeGuruReviewer.</returns>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes a tag from an associated repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CodeGuruReviewer.</returns>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes a tag from an associated repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CodeGuruReviewer.</returns>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruReviewer.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
