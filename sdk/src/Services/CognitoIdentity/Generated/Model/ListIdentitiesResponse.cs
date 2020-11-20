@@ -80,7 +80,7 @@ namespace Amazon.CognitoIdentity.Model
         /// A pagination token.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=65535)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -168,6 +168,7 @@
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.ListIdentitiesRequest.NextToken</property>
     <min>1</min>
+    <max>65535</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -179,6 +180,7 @@
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.ListIdentitiesResponse.NextToken</property>
     <min>1</min>
+    <max>65535</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -189,11 +191,13 @@
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.ListIdentityPoolsRequest.NextToken</property>
     <min>1</min>
+    <max>65535</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.ListIdentityPoolsResponse.NextToken</property>
     <min>1</min>
+    <max>65535</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -226,6 +230,7 @@
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.LookupDeveloperIdentityRequest.NextToken</property>
     <min>1</min>
+    <max>65535</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -237,6 +242,7 @@
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.LookupDeveloperIdentityResponse.NextToken</property>
     <min>1</min>
+    <max>65535</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
