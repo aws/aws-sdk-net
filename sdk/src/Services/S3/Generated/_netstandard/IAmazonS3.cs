@@ -4287,9 +4287,9 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If the object you are retrieving is stored in the S3 Glacier, S3 Glacier Deep Archive,
-        /// S3 Intelligent-Tiering Archive, or S3 Intelligent-Tiering Deep Archive storage classes,
-        /// before you can retrieve the object you must first restore a copy using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
+        /// If the object you are retrieving is stored in the S3 Glacier or S3 Glacier Deep Archive
+        /// storage class, or S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive
+        /// tiers, before you can retrieve the object you must first restore a copy using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// Otherwise, this operation returns an <code>InvalidObjectStateError</code> error. For
         /// information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
         /// Archived Objects</a>.
@@ -4503,9 +4503,9 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If the object you are retrieving is stored in the S3 Glacier, S3 Glacier Deep Archive,
-        /// S3 Intelligent-Tiering Archive, or S3 Intelligent-Tiering Deep Archive storage classes,
-        /// before you can retrieve the object you must first restore a copy using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
+        /// If the object you are retrieving is stored in the S3 Glacier or S3 Glacier Deep Archive
+        /// storage class, or S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive
+        /// tiers, before you can retrieve the object you must first restore a copy using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// Otherwise, this operation returns an <code>InvalidObjectStateError</code> error. For
         /// information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
         /// Archived Objects</a>.
@@ -4721,9 +4721,9 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If the object you are retrieving is stored in the S3 Glacier, S3 Glacier Deep Archive,
-        /// S3 Intelligent-Tiering Archive, or S3 Intelligent-Tiering Deep Archive storage classes,
-        /// before you can retrieve the object you must first restore a copy using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
+        /// If the object you are retrieving is stored in the S3 Glacier or S3 Glacier Deep Archive
+        /// storage class, or S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive
+        /// tiers, before you can retrieve the object you must first restore a copy using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// Otherwise, this operation returns an <code>InvalidObjectStateError</code> error. For
         /// information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
         /// Archived Objects</a>.
@@ -8638,7 +8638,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="bucketName">The name of the bucket.</param>
         /// <param name="policy">The bucket policy as a JSON document.</param>
-        /// <param name="contentMD5">The MD5 hash of the request body.</param>
+        /// <param name="contentMD5">The MD5 hash of the request body. For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -8738,12 +8738,9 @@ namespace Amazon.S3
         /// </para>
         ///  <note> 
         /// <para>
-        /// The latest version of the replication configuration XML is V2. XML V2 replication
-        /// configurations are those that contain the <code>Filter</code> element for rules, and
-        /// rules that specify S3 Replication Time Control (S3 RTC). In XML V2 replication configurations,
-        /// Amazon S3 doesn't replicate delete markers. Therefore, you must set the <code>DeleteMarkerReplication</code>
-        /// element to <code>Disabled</code>. For backward compatibility, Amazon S3 continues
-        /// to support the XML V1 replication configuration.
+        /// If you are using an earlier version of the replication configuration, Amazon S3 handles
+        /// replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward
+        /// Compatibility</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -10309,18 +10306,18 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Restoring Archives</b> 
+        ///  <b>Restoring objects</b> 
         /// </para>
         ///  
         /// <para>
-        /// Objects that you archive to the S3 Glacier, S3 Glacier Deep Archive, S3 Intelligent-Tiering
-        /// Archive, or S3 Intelligent-Tiering Deep Archive storage classes are not accessible
-        /// in real time. For objects in Archive Access tier or Deep Archive Access tier you must
-        /// first initiate a restore request, and then wait until the object is moved into the
-        /// Frequent Access tier. For objects in S3 Glacier or S3 Glacier Deep Archive you must
-        /// first initiate a restore request, and then wait until a temporary copy of the object
-        /// is available. To access an archived object, you must restore the object for the duration
-        /// (number of days) that you specify.
+        /// Objects that you archive to the S3 Glacier or S3 Glacier Deep Archive storage class,
+        /// and S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive tiers are
+        /// not accessible in real time. For objects in Archive Access or Deep Archive Access
+        /// tiers you must first initiate a restore request, and then wait until the object is
+        /// moved into the Frequent Access tier. For objects in S3 Glacier or S3 Glacier Deep
+        /// Archive storage classes you must first initiate a restore request, and then wait until
+        /// a temporary copy of the object is available. To access an archived object, you must
+        /// restore the object for the duration (number of days) that you specify.
         /// </para>
         ///  
         /// <para>
@@ -10336,22 +10333,22 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         ///  <b> <code>Expedited</code> </b> - Expedited retrievals allow you to quickly access
-        /// your data stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage class
-        /// when occasional urgent requests for a subset of archives are required. For all but
-        /// the largest archived objects (250 MB+), data accessed using Expedited retrievals is
-        /// typically made available within 1–5 minutes. Provisioned capacity ensures that retrieval
-        /// capacity for Expedited retrievals is available when you need it. Expedited retrievals
-        /// and provisioned capacity are not available for objects stored in the S3 Glacier Deep
-        /// Archive or S3 Intelligent-Tiering Deep Archive storage class.
+        /// your data stored in the S3 Glacier storage class or S3 Intelligent-Tiering Archive
+        /// tier when occasional urgent requests for a subset of archives are required. For all
+        /// but the largest archived objects (250 MB+), data accessed using Expedited retrievals
+        /// is typically made available within 1–5 minutes. Provisioned capacity ensures that
+        /// retrieval capacity for Expedited retrievals is available when you need it. Expedited
+        /// retrievals and provisioned capacity are not available for objects stored in the S3
+        /// Glacier Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b> <code>Standard</code> </b> - Standard retrievals allow you to access any of your
         /// archived objects within several hours. This is the default option for retrieval requests
         /// that do not specify the retrieval option. Standard retrievals typically finish within
-        /// 3–5 hours for objects stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage
-        /// class. They typically finish within 12 hours for objects stored in the S3 Glacier
-        /// Deep Archive or S3 Intelligent-Tiering Deep Archive storage class. Standard retrievals
+        /// 3–5 hours for objects stored in the S3 Glacier storage class or S3 Intelligent-Tiering
+        /// Archive tier. They typically finish within 12 hours for objects stored in the S3 Glacier
+        /// Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier. Standard retrievals
         /// are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> <li> 
@@ -10359,9 +10356,9 @@ namespace Amazon.S3
         ///  <b> <code>Bulk</code> </b> - Bulk retrievals are the lowest-cost retrieval option
         /// in S3 Glacier, enabling you to retrieve large amounts, even petabytes, of data inexpensively.
         /// Bulk retrievals typically finish within 5–12 hours for objects stored in the S3 Glacier
-        /// or S3 Intelligent-Tiering Archive storage class. They typically finish within 48 hours
-        /// for objects stored in the S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep Archive
-        /// storage class. Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.
+        /// storage class or S3 Intelligent-Tiering Archive tier. They typically finish within
+        /// 48 hours for objects stored in the S3 Glacier Deep Archive storage class or S3 Intelligent-Tiering
+        /// Deep Archive tier. Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -10642,18 +10639,18 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Restoring Archives</b> 
+        ///  <b>Restoring objects</b> 
         /// </para>
         ///  
         /// <para>
-        /// Objects that you archive to the S3 Glacier, S3 Glacier Deep Archive, S3 Intelligent-Tiering
-        /// Archive, or S3 Intelligent-Tiering Deep Archive storage classes are not accessible
-        /// in real time. For objects in Archive Access tier or Deep Archive Access tier you must
-        /// first initiate a restore request, and then wait until the object is moved into the
-        /// Frequent Access tier. For objects in S3 Glacier or S3 Glacier Deep Archive you must
-        /// first initiate a restore request, and then wait until a temporary copy of the object
-        /// is available. To access an archived object, you must restore the object for the duration
-        /// (number of days) that you specify.
+        /// Objects that you archive to the S3 Glacier or S3 Glacier Deep Archive storage class,
+        /// and S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive tiers are
+        /// not accessible in real time. For objects in Archive Access or Deep Archive Access
+        /// tiers you must first initiate a restore request, and then wait until the object is
+        /// moved into the Frequent Access tier. For objects in S3 Glacier or S3 Glacier Deep
+        /// Archive storage classes you must first initiate a restore request, and then wait until
+        /// a temporary copy of the object is available. To access an archived object, you must
+        /// restore the object for the duration (number of days) that you specify.
         /// </para>
         ///  
         /// <para>
@@ -10669,22 +10666,22 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         ///  <b> <code>Expedited</code> </b> - Expedited retrievals allow you to quickly access
-        /// your data stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage class
-        /// when occasional urgent requests for a subset of archives are required. For all but
-        /// the largest archived objects (250 MB+), data accessed using Expedited retrievals is
-        /// typically made available within 1–5 minutes. Provisioned capacity ensures that retrieval
-        /// capacity for Expedited retrievals is available when you need it. Expedited retrievals
-        /// and provisioned capacity are not available for objects stored in the S3 Glacier Deep
-        /// Archive or S3 Intelligent-Tiering Deep Archive storage class.
+        /// your data stored in the S3 Glacier storage class or S3 Intelligent-Tiering Archive
+        /// tier when occasional urgent requests for a subset of archives are required. For all
+        /// but the largest archived objects (250 MB+), data accessed using Expedited retrievals
+        /// is typically made available within 1–5 minutes. Provisioned capacity ensures that
+        /// retrieval capacity for Expedited retrievals is available when you need it. Expedited
+        /// retrievals and provisioned capacity are not available for objects stored in the S3
+        /// Glacier Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b> <code>Standard</code> </b> - Standard retrievals allow you to access any of your
         /// archived objects within several hours. This is the default option for retrieval requests
         /// that do not specify the retrieval option. Standard retrievals typically finish within
-        /// 3–5 hours for objects stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage
-        /// class. They typically finish within 12 hours for objects stored in the S3 Glacier
-        /// Deep Archive or S3 Intelligent-Tiering Deep Archive storage class. Standard retrievals
+        /// 3–5 hours for objects stored in the S3 Glacier storage class or S3 Intelligent-Tiering
+        /// Archive tier. They typically finish within 12 hours for objects stored in the S3 Glacier
+        /// Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier. Standard retrievals
         /// are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> <li> 
@@ -10692,9 +10689,9 @@ namespace Amazon.S3
         ///  <b> <code>Bulk</code> </b> - Bulk retrievals are the lowest-cost retrieval option
         /// in S3 Glacier, enabling you to retrieve large amounts, even petabytes, of data inexpensively.
         /// Bulk retrievals typically finish within 5–12 hours for objects stored in the S3 Glacier
-        /// or S3 Intelligent-Tiering Archive storage class. They typically finish within 48 hours
-        /// for objects stored in the S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep Archive
-        /// storage class. Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.
+        /// storage class or S3 Intelligent-Tiering Archive tier. They typically finish within
+        /// 48 hours for objects stored in the S3 Glacier Deep Archive storage class or S3 Intelligent-Tiering
+        /// Deep Archive tier. Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -10976,18 +10973,18 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Restoring Archives</b> 
+        ///  <b>Restoring objects</b> 
         /// </para>
         ///  
         /// <para>
-        /// Objects that you archive to the S3 Glacier, S3 Glacier Deep Archive, S3 Intelligent-Tiering
-        /// Archive, or S3 Intelligent-Tiering Deep Archive storage classes are not accessible
-        /// in real time. For objects in Archive Access tier or Deep Archive Access tier you must
-        /// first initiate a restore request, and then wait until the object is moved into the
-        /// Frequent Access tier. For objects in S3 Glacier or S3 Glacier Deep Archive you must
-        /// first initiate a restore request, and then wait until a temporary copy of the object
-        /// is available. To access an archived object, you must restore the object for the duration
-        /// (number of days) that you specify.
+        /// Objects that you archive to the S3 Glacier or S3 Glacier Deep Archive storage class,
+        /// and S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive tiers are
+        /// not accessible in real time. For objects in Archive Access or Deep Archive Access
+        /// tiers you must first initiate a restore request, and then wait until the object is
+        /// moved into the Frequent Access tier. For objects in S3 Glacier or S3 Glacier Deep
+        /// Archive storage classes you must first initiate a restore request, and then wait until
+        /// a temporary copy of the object is available. To access an archived object, you must
+        /// restore the object for the duration (number of days) that you specify.
         /// </para>
         ///  
         /// <para>
@@ -11003,22 +11000,22 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         ///  <b> <code>Expedited</code> </b> - Expedited retrievals allow you to quickly access
-        /// your data stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage class
-        /// when occasional urgent requests for a subset of archives are required. For all but
-        /// the largest archived objects (250 MB+), data accessed using Expedited retrievals is
-        /// typically made available within 1–5 minutes. Provisioned capacity ensures that retrieval
-        /// capacity for Expedited retrievals is available when you need it. Expedited retrievals
-        /// and provisioned capacity are not available for objects stored in the S3 Glacier Deep
-        /// Archive or S3 Intelligent-Tiering Deep Archive storage class.
+        /// your data stored in the S3 Glacier storage class or S3 Intelligent-Tiering Archive
+        /// tier when occasional urgent requests for a subset of archives are required. For all
+        /// but the largest archived objects (250 MB+), data accessed using Expedited retrievals
+        /// is typically made available within 1–5 minutes. Provisioned capacity ensures that
+        /// retrieval capacity for Expedited retrievals is available when you need it. Expedited
+        /// retrievals and provisioned capacity are not available for objects stored in the S3
+        /// Glacier Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b> <code>Standard</code> </b> - Standard retrievals allow you to access any of your
         /// archived objects within several hours. This is the default option for retrieval requests
         /// that do not specify the retrieval option. Standard retrievals typically finish within
-        /// 3–5 hours for objects stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage
-        /// class. They typically finish within 12 hours for objects stored in the S3 Glacier
-        /// Deep Archive or S3 Intelligent-Tiering Deep Archive storage class. Standard retrievals
+        /// 3–5 hours for objects stored in the S3 Glacier storage class or S3 Intelligent-Tiering
+        /// Archive tier. They typically finish within 12 hours for objects stored in the S3 Glacier
+        /// Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier. Standard retrievals
         /// are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> <li> 
@@ -11026,9 +11023,9 @@ namespace Amazon.S3
         ///  <b> <code>Bulk</code> </b> - Bulk retrievals are the lowest-cost retrieval option
         /// in S3 Glacier, enabling you to retrieve large amounts, even petabytes, of data inexpensively.
         /// Bulk retrievals typically finish within 5–12 hours for objects stored in the S3 Glacier
-        /// or S3 Intelligent-Tiering Archive storage class. They typically finish within 48 hours
-        /// for objects stored in the S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep Archive
-        /// storage class. Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.
+        /// storage class or S3 Intelligent-Tiering Archive tier. They typically finish within
+        /// 48 hours for objects stored in the S3 Glacier Deep Archive storage class or S3 Intelligent-Tiering
+        /// Deep Archive tier. Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -11310,18 +11307,18 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Restoring Archives</b> 
+        ///  <b>Restoring objects</b> 
         /// </para>
         ///  
         /// <para>
-        /// Objects that you archive to the S3 Glacier, S3 Glacier Deep Archive, S3 Intelligent-Tiering
-        /// Archive, or S3 Intelligent-Tiering Deep Archive storage classes are not accessible
-        /// in real time. For objects in Archive Access tier or Deep Archive Access tier you must
-        /// first initiate a restore request, and then wait until the object is moved into the
-        /// Frequent Access tier. For objects in S3 Glacier or S3 Glacier Deep Archive you must
-        /// first initiate a restore request, and then wait until a temporary copy of the object
-        /// is available. To access an archived object, you must restore the object for the duration
-        /// (number of days) that you specify.
+        /// Objects that you archive to the S3 Glacier or S3 Glacier Deep Archive storage class,
+        /// and S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive tiers are
+        /// not accessible in real time. For objects in Archive Access or Deep Archive Access
+        /// tiers you must first initiate a restore request, and then wait until the object is
+        /// moved into the Frequent Access tier. For objects in S3 Glacier or S3 Glacier Deep
+        /// Archive storage classes you must first initiate a restore request, and then wait until
+        /// a temporary copy of the object is available. To access an archived object, you must
+        /// restore the object for the duration (number of days) that you specify.
         /// </para>
         ///  
         /// <para>
@@ -11337,22 +11334,22 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         ///  <b> <code>Expedited</code> </b> - Expedited retrievals allow you to quickly access
-        /// your data stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage class
-        /// when occasional urgent requests for a subset of archives are required. For all but
-        /// the largest archived objects (250 MB+), data accessed using Expedited retrievals is
-        /// typically made available within 1–5 minutes. Provisioned capacity ensures that retrieval
-        /// capacity for Expedited retrievals is available when you need it. Expedited retrievals
-        /// and provisioned capacity are not available for objects stored in the S3 Glacier Deep
-        /// Archive or S3 Intelligent-Tiering Deep Archive storage class.
+        /// your data stored in the S3 Glacier storage class or S3 Intelligent-Tiering Archive
+        /// tier when occasional urgent requests for a subset of archives are required. For all
+        /// but the largest archived objects (250 MB+), data accessed using Expedited retrievals
+        /// is typically made available within 1–5 minutes. Provisioned capacity ensures that
+        /// retrieval capacity for Expedited retrievals is available when you need it. Expedited
+        /// retrievals and provisioned capacity are not available for objects stored in the S3
+        /// Glacier Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b> <code>Standard</code> </b> - Standard retrievals allow you to access any of your
         /// archived objects within several hours. This is the default option for retrieval requests
         /// that do not specify the retrieval option. Standard retrievals typically finish within
-        /// 3–5 hours for objects stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage
-        /// class. They typically finish within 12 hours for objects stored in the S3 Glacier
-        /// Deep Archive or S3 Intelligent-Tiering Deep Archive storage class. Standard retrievals
+        /// 3–5 hours for objects stored in the S3 Glacier storage class or S3 Intelligent-Tiering
+        /// Archive tier. They typically finish within 12 hours for objects stored in the S3 Glacier
+        /// Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier. Standard retrievals
         /// are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> <li> 
@@ -11360,9 +11357,9 @@ namespace Amazon.S3
         ///  <b> <code>Bulk</code> </b> - Bulk retrievals are the lowest-cost retrieval option
         /// in S3 Glacier, enabling you to retrieve large amounts, even petabytes, of data inexpensively.
         /// Bulk retrievals typically finish within 5–12 hours for objects stored in the S3 Glacier
-        /// or S3 Intelligent-Tiering Archive storage class. They typically finish within 48 hours
-        /// for objects stored in the S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep Archive
-        /// storage class. Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.
+        /// storage class or S3 Intelligent-Tiering Archive tier. They typically finish within
+        /// 48 hours for objects stored in the S3 Glacier Deep Archive storage class or S3 Intelligent-Tiering
+        /// Deep Archive tier. Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -11646,18 +11643,18 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Restoring Archives</b> 
+        ///  <b>Restoring objects</b> 
         /// </para>
         ///  
         /// <para>
-        /// Objects that you archive to the S3 Glacier, S3 Glacier Deep Archive, S3 Intelligent-Tiering
-        /// Archive, or S3 Intelligent-Tiering Deep Archive storage classes are not accessible
-        /// in real time. For objects in Archive Access tier or Deep Archive Access tier you must
-        /// first initiate a restore request, and then wait until the object is moved into the
-        /// Frequent Access tier. For objects in S3 Glacier or S3 Glacier Deep Archive you must
-        /// first initiate a restore request, and then wait until a temporary copy of the object
-        /// is available. To access an archived object, you must restore the object for the duration
-        /// (number of days) that you specify.
+        /// Objects that you archive to the S3 Glacier or S3 Glacier Deep Archive storage class,
+        /// and S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive tiers are
+        /// not accessible in real time. For objects in Archive Access or Deep Archive Access
+        /// tiers you must first initiate a restore request, and then wait until the object is
+        /// moved into the Frequent Access tier. For objects in S3 Glacier or S3 Glacier Deep
+        /// Archive storage classes you must first initiate a restore request, and then wait until
+        /// a temporary copy of the object is available. To access an archived object, you must
+        /// restore the object for the duration (number of days) that you specify.
         /// </para>
         ///  
         /// <para>
@@ -11673,22 +11670,22 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         ///  <b> <code>Expedited</code> </b> - Expedited retrievals allow you to quickly access
-        /// your data stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage class
-        /// when occasional urgent requests for a subset of archives are required. For all but
-        /// the largest archived objects (250 MB+), data accessed using Expedited retrievals is
-        /// typically made available within 1–5 minutes. Provisioned capacity ensures that retrieval
-        /// capacity for Expedited retrievals is available when you need it. Expedited retrievals
-        /// and provisioned capacity are not available for objects stored in the S3 Glacier Deep
-        /// Archive or S3 Intelligent-Tiering Deep Archive storage class.
+        /// your data stored in the S3 Glacier storage class or S3 Intelligent-Tiering Archive
+        /// tier when occasional urgent requests for a subset of archives are required. For all
+        /// but the largest archived objects (250 MB+), data accessed using Expedited retrievals
+        /// is typically made available within 1–5 minutes. Provisioned capacity ensures that
+        /// retrieval capacity for Expedited retrievals is available when you need it. Expedited
+        /// retrievals and provisioned capacity are not available for objects stored in the S3
+        /// Glacier Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b> <code>Standard</code> </b> - Standard retrievals allow you to access any of your
         /// archived objects within several hours. This is the default option for retrieval requests
         /// that do not specify the retrieval option. Standard retrievals typically finish within
-        /// 3–5 hours for objects stored in the S3 Glacier or S3 Intelligent-Tiering Archive storage
-        /// class. They typically finish within 12 hours for objects stored in the S3 Glacier
-        /// Deep Archive or S3 Intelligent-Tiering Deep Archive storage class. Standard retrievals
+        /// 3–5 hours for objects stored in the S3 Glacier storage class or S3 Intelligent-Tiering
+        /// Archive tier. They typically finish within 12 hours for objects stored in the S3 Glacier
+        /// Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier. Standard retrievals
         /// are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> <li> 
@@ -11696,9 +11693,9 @@ namespace Amazon.S3
         ///  <b> <code>Bulk</code> </b> - Bulk retrievals are the lowest-cost retrieval option
         /// in S3 Glacier, enabling you to retrieve large amounts, even petabytes, of data inexpensively.
         /// Bulk retrievals typically finish within 5–12 hours for objects stored in the S3 Glacier
-        /// or S3 Intelligent-Tiering Archive storage class. They typically finish within 48 hours
-        /// for objects stored in the S3 Glacier Deep Archive or S3 Intelligent-Tiering Deep Archive
-        /// storage class. Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.
+        /// storage class or S3 Intelligent-Tiering Archive tier. They typically finish within
+        /// 48 hours for objects stored in the S3 Glacier Deep Archive storage class or S3 Intelligent-Tiering
+        /// Deep Archive tier. Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.
         /// </para>
         ///  </li> </ul> 
         /// <para>
