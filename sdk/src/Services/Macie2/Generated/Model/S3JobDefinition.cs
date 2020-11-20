@@ -40,7 +40,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property BucketDefinitions. 
         /// <para>
-        /// An array of objects, one for each bucket that contains objects to analyze.
+        /// An array of objects, one for each AWS account that owns buckets to analyze. Each object
+        /// specifies the account ID for an account and one or more buckets to analyze for the
+        /// account.
         /// </para>
         /// </summary>
         public List<S3BucketDefinitionForJob> BucketDefinitions

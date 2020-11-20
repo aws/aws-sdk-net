@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies which S3 buckets contain the objects that a classification job analyzes.
+    /// Specifies which AWS account owns the S3 buckets that a classification job analyzes,
+    /// and the buckets to analyze for the account.
     /// </summary>
     public partial class S3BucketDefinitionForJob
     {
@@ -39,9 +40,10 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The unique identifier for the AWS account that owns one or more of the buckets. If
-        /// specified, the job analyzes objects in all the buckets that are owned by the account
-        /// and meet other conditions specified for the job.
+        /// The unique identifier for the AWS account that owns the buckets. If you specify this
+        /// value and don't specify a value for the buckets array, the job analyzes objects in
+        /// all the buckets that are owned by the account and meet other conditions specified
+        /// for the job.
         /// </para>
         /// </summary>
         public string AccountId

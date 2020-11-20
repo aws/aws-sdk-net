@@ -63,8 +63,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property EqExactMatch. 
         /// <para>
-        /// A condition that requires an array field on a finding to exactly match the specified
-        /// property values. You can use this operator with the following properties: customDataIdentifiers.detections.arn,
+        /// A condition that requires an array field to exactly match the specified property values.
+        /// You can use this operator with the following properties: customDataIdentifiers.detections.arn,
         /// customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key, resourcesAffected.s3Bucket.tags.value,
         /// resourcesAffected.s3Object.tags.key, resourcesAffected.s3Object.tags.value, sensitiveData.category,
         /// and sensitiveData.detections.type.

@@ -100,6 +100,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClassifiableSizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("jobDetails", targetDepth))
+                {
+                    var unmarshaller = JobDetailsUnmarshaller.Instance;
+                    unmarshalledObject.JobDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdated", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

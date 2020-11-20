@@ -31,7 +31,8 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Provides information about when a classification job was paused and when it will expire
     /// and be cancelled if it isn't resumed. This object is present only if a job's current
-    /// status (jobStatus) is USER_PAUSED.
+    /// status (jobStatus) is USER_PAUSED. The information in this object applies only to
+    /// a job that was paused while it had a status of RUNNING.
     /// </summary>
     public partial class UserPausedDetails
     {
