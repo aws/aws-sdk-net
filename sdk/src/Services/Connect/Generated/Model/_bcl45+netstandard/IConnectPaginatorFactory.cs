@@ -37,6 +37,11 @@ namespace Amazon.Connect.Model
         IGetMetricDataPaginator GetMetricData(GetMetricDataRequest request);
 
         /// <summary>
+        /// Paginator for ListApprovedOrigins operation
+        ///</summary>
+        IListApprovedOriginsPaginator ListApprovedOrigins(ListApprovedOriginsRequest request);
+
+        /// <summary>
         /// Paginator for ListContactFlows operation
         ///</summary>
         IListContactFlowsPaginator ListContactFlows(ListContactFlowsRequest request);
@@ -45,6 +50,31 @@ namespace Amazon.Connect.Model
         /// Paginator for ListHoursOfOperations operation
         ///</summary>
         IListHoursOfOperationsPaginator ListHoursOfOperations(ListHoursOfOperationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListInstanceAttributes operation
+        ///</summary>
+        IListInstanceAttributesPaginator ListInstanceAttributes(ListInstanceAttributesRequest request);
+
+        /// <summary>
+        /// Paginator for ListInstances operation
+        ///</summary>
+        IListInstancesPaginator ListInstances(ListInstancesRequest request);
+
+        /// <summary>
+        /// Paginator for ListInstanceStorageConfigs operation
+        ///</summary>
+        IListInstanceStorageConfigsPaginator ListInstanceStorageConfigs(ListInstanceStorageConfigsRequest request);
+
+        /// <summary>
+        /// Paginator for ListLambdaFunctions operation
+        ///</summary>
+        IListLambdaFunctionsPaginator ListLambdaFunctions(ListLambdaFunctionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListLexBots operation
+        ///</summary>
+        IListLexBotsPaginator ListLexBots(ListLexBotsRequest request);
 
         /// <summary>
         /// Paginator for ListPhoneNumbers operation
@@ -70,6 +100,11 @@ namespace Amazon.Connect.Model
         /// Paginator for ListRoutingProfiles operation
         ///</summary>
         IListRoutingProfilesPaginator ListRoutingProfiles(ListRoutingProfilesRequest request);
+
+        /// <summary>
+        /// Paginator for ListSecurityKeys operation
+        ///</summary>
+        IListSecurityKeysPaginator ListSecurityKeys(ListSecurityKeysRequest request);
 
         /// <summary>
         /// Paginator for ListSecurityProfiles operation

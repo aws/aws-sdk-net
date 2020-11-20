@@ -265,6 +265,312 @@ namespace Amazon.Connect
         #endregion
 
 
+        #region  AssociateApprovedOrigin
+
+        /// <summary>
+        /// Associates an approved origin to an Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApprovedOrigin service method.</param>
+        /// 
+        /// <returns>The response from the AssociateApprovedOrigin service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateApprovedOrigin">REST API Reference for AssociateApprovedOrigin Operation</seealso>
+        public virtual AssociateApprovedOriginResponse AssociateApprovedOrigin(AssociateApprovedOriginRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateApprovedOriginRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateApprovedOriginResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateApprovedOriginResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateApprovedOrigin operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApprovedOrigin operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateApprovedOrigin
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateApprovedOrigin">REST API Reference for AssociateApprovedOrigin Operation</seealso>
+        public virtual IAsyncResult BeginAssociateApprovedOrigin(AssociateApprovedOriginRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateApprovedOriginRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateApprovedOriginResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateApprovedOrigin operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateApprovedOrigin.</param>
+        /// 
+        /// <returns>Returns a  AssociateApprovedOriginResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateApprovedOrigin">REST API Reference for AssociateApprovedOrigin Operation</seealso>
+        public virtual AssociateApprovedOriginResponse EndAssociateApprovedOrigin(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateApprovedOriginResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateInstanceStorageConfig
+
+        /// <summary>
+        /// Associates a storage resource type for the first time. You can only associate one
+        /// type of storage configuration in a single call. This means, for example, that you
+        /// can't define an instance with multiple S3 buckets for storing chat transcripts.
+        /// 
+        ///  
+        /// <para>
+        /// This API does not create a resource that doesn't exist. It only associates it to the
+        /// instance. Ensure that the resource being specified in the storage configuration, like
+        /// an Amazon S3 bucket, exists when being used for association.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateInstanceStorageConfig service method.</param>
+        /// 
+        /// <returns>The response from the AssociateInstanceStorageConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateInstanceStorageConfig">REST API Reference for AssociateInstanceStorageConfig Operation</seealso>
+        public virtual AssociateInstanceStorageConfigResponse AssociateInstanceStorageConfig(AssociateInstanceStorageConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateInstanceStorageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateInstanceStorageConfigResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateInstanceStorageConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateInstanceStorageConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateInstanceStorageConfig operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateInstanceStorageConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateInstanceStorageConfig">REST API Reference for AssociateInstanceStorageConfig Operation</seealso>
+        public virtual IAsyncResult BeginAssociateInstanceStorageConfig(AssociateInstanceStorageConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateInstanceStorageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateInstanceStorageConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateInstanceStorageConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateInstanceStorageConfig.</param>
+        /// 
+        /// <returns>Returns a  AssociateInstanceStorageConfigResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateInstanceStorageConfig">REST API Reference for AssociateInstanceStorageConfig Operation</seealso>
+        public virtual AssociateInstanceStorageConfigResponse EndAssociateInstanceStorageConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateInstanceStorageConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateLambdaFunction
+
+        /// <summary>
+        /// Allows the specified Amazon Connect instance to access the specified Lambda function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateLambdaFunction service method.</param>
+        /// 
+        /// <returns>The response from the AssociateLambdaFunction service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLambdaFunction">REST API Reference for AssociateLambdaFunction Operation</seealso>
+        public virtual AssociateLambdaFunctionResponse AssociateLambdaFunction(AssociateLambdaFunctionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateLambdaFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateLambdaFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateLambdaFunctionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateLambdaFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateLambdaFunction operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateLambdaFunction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLambdaFunction">REST API Reference for AssociateLambdaFunction Operation</seealso>
+        public virtual IAsyncResult BeginAssociateLambdaFunction(AssociateLambdaFunctionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateLambdaFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateLambdaFunctionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateLambdaFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateLambdaFunction.</param>
+        /// 
+        /// <returns>Returns a  AssociateLambdaFunctionResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLambdaFunction">REST API Reference for AssociateLambdaFunction Operation</seealso>
+        public virtual AssociateLambdaFunctionResponse EndAssociateLambdaFunction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateLambdaFunctionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateLexBot
+
+        /// <summary>
+        /// Allows the specified Amazon Connect instance to access the specified Amazon Lex bot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateLexBot service method.</param>
+        /// 
+        /// <returns>The response from the AssociateLexBot service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLexBot">REST API Reference for AssociateLexBot Operation</seealso>
+        public virtual AssociateLexBotResponse AssociateLexBot(AssociateLexBotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateLexBotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateLexBotResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateLexBotResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateLexBot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateLexBot operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateLexBot
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLexBot">REST API Reference for AssociateLexBot Operation</seealso>
+        public virtual IAsyncResult BeginAssociateLexBot(AssociateLexBotRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateLexBotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateLexBotResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateLexBot operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateLexBot.</param>
+        /// 
+        /// <returns>Returns a  AssociateLexBotResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLexBot">REST API Reference for AssociateLexBot Operation</seealso>
+        public virtual AssociateLexBotResponse EndAssociateLexBot(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateLexBotResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateRoutingProfileQueues
 
         /// <summary>
@@ -330,6 +636,81 @@ namespace Amazon.Connect
         public virtual AssociateRoutingProfileQueuesResponse EndAssociateRoutingProfileQueues(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateRoutingProfileQueuesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateSecurityKey
+
+        /// <summary>
+        /// Associates a security key to the instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSecurityKey service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSecurityKey service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityKey">REST API Reference for AssociateSecurityKey Operation</seealso>
+        public virtual AssociateSecurityKeyResponse AssociateSecurityKey(AssociateSecurityKeyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSecurityKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSecurityKeyResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSecurityKeyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSecurityKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSecurityKey operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateSecurityKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityKey">REST API Reference for AssociateSecurityKey Operation</seealso>
+        public virtual IAsyncResult BeginAssociateSecurityKey(AssociateSecurityKeyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSecurityKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSecurityKeyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateSecurityKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateSecurityKey.</param>
+        /// 
+        /// <returns>Returns a  AssociateSecurityKeyResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityKey">REST API Reference for AssociateSecurityKey Operation</seealso>
+        public virtual AssociateSecurityKeyResponse EndAssociateSecurityKey(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateSecurityKeyResponse>(asyncResult);
         }
 
         #endregion
@@ -414,6 +795,77 @@ namespace Amazon.Connect
         public virtual CreateContactFlowResponse EndCreateContactFlow(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateContactFlowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateInstance
+
+        /// <summary>
+        /// Initiates an Amazon Connect instance with all the supported channels enabled. It does
+        /// not attach any storage (such as Amazon S3, or Kinesis) or allow for any configurations
+        /// on features such as Contact Lens for Amazon Connect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstance service method.</param>
+        /// 
+        /// <returns>The response from the CreateInstance service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
+        public virtual CreateInstanceResponse CreateInstance(CreateInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstance operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
+        public virtual IAsyncResult BeginCreateInstance(CreateInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInstance.</param>
+        /// 
+        /// <returns>Returns a  CreateInstanceResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
+        public virtual CreateInstanceResponse EndCreateInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateInstanceResponse>(asyncResult);
         }
 
         #endregion
@@ -650,6 +1102,69 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DeleteInstance
+
+        /// <summary>
+        /// Deletes the Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstance service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInstance service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
+        public virtual DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstance operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
+        public virtual IAsyncResult BeginDeleteInstance(DeleteInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInstance.</param>
+        /// 
+        /// <returns>Returns a  DeleteInstanceResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
+        public virtual DeleteInstanceResponse EndDeleteInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteUser
 
         /// <summary>
@@ -874,6 +1389,216 @@ namespace Amazon.Connect
         public virtual DescribeContactFlowResponse EndDescribeContactFlow(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeContactFlowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeInstance
+
+        /// <summary>
+        /// Returns the current state of the specified instance identifier. It tracks the instance
+        /// while it is being created and returns an error status if applicable. 
+        /// 
+        ///  
+        /// <para>
+        /// If an instance is not created successfully, the instance status reason field returns
+        /// details relevant to the reason. The instance in a failed state is returned only for
+        /// 24 hours after the CreateInstance API was invoked.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstance service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstance service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstance">REST API Reference for DescribeInstance Operation</seealso>
+        public virtual DescribeInstanceResponse DescribeInstance(DescribeInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstance operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstance">REST API Reference for DescribeInstance Operation</seealso>
+        public virtual IAsyncResult BeginDescribeInstance(DescribeInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstance.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstanceResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstance">REST API Reference for DescribeInstance Operation</seealso>
+        public virtual DescribeInstanceResponse EndDescribeInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeInstanceAttribute
+
+        /// <summary>
+        /// Describes the specified instance attribute.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAttribute service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceAttribute">REST API Reference for DescribeInstanceAttribute Operation</seealso>
+        public virtual DescribeInstanceAttributeResponse DescribeInstanceAttribute(DescribeInstanceAttributeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstanceAttributeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAttribute operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceAttribute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceAttribute">REST API Reference for DescribeInstanceAttribute Operation</seealso>
+        public virtual IAsyncResult BeginDescribeInstanceAttribute(DescribeInstanceAttributeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceAttributeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstanceAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceAttribute.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstanceAttributeResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceAttribute">REST API Reference for DescribeInstanceAttribute Operation</seealso>
+        public virtual DescribeInstanceAttributeResponse EndDescribeInstanceAttribute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeInstanceAttributeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeInstanceStorageConfig
+
+        /// <summary>
+        /// Retrieves the current storage configurations for the specified resource type, association
+        /// ID, and instance ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceStorageConfig service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceStorageConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceStorageConfig">REST API Reference for DescribeInstanceStorageConfig Operation</seealso>
+        public virtual DescribeInstanceStorageConfigResponse DescribeInstanceStorageConfig(DescribeInstanceStorageConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceStorageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceStorageConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstanceStorageConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceStorageConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceStorageConfig operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceStorageConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceStorageConfig">REST API Reference for DescribeInstanceStorageConfig Operation</seealso>
+        public virtual IAsyncResult BeginDescribeInstanceStorageConfig(DescribeInstanceStorageConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceStorageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceStorageConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstanceStorageConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceStorageConfig.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstanceStorageConfigResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceStorageConfig">REST API Reference for DescribeInstanceStorageConfig Operation</seealso>
+        public virtual DescribeInstanceStorageConfigResponse EndDescribeInstanceStorageConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeInstanceStorageConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -1156,6 +1881,285 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateApprovedOrigin
+
+        /// <summary>
+        /// Revokes access to integrated applications from Amazon Connect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApprovedOrigin service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateApprovedOrigin service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateApprovedOrigin">REST API Reference for DisassociateApprovedOrigin Operation</seealso>
+        public virtual DisassociateApprovedOriginResponse DisassociateApprovedOrigin(DisassociateApprovedOriginRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateApprovedOriginRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateApprovedOriginResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateApprovedOriginResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateApprovedOrigin operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApprovedOrigin operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateApprovedOrigin
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateApprovedOrigin">REST API Reference for DisassociateApprovedOrigin Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateApprovedOrigin(DisassociateApprovedOriginRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateApprovedOriginRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateApprovedOriginResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateApprovedOrigin operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateApprovedOrigin.</param>
+        /// 
+        /// <returns>Returns a  DisassociateApprovedOriginResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateApprovedOrigin">REST API Reference for DisassociateApprovedOrigin Operation</seealso>
+        public virtual DisassociateApprovedOriginResponse EndDisassociateApprovedOrigin(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateApprovedOriginResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateInstanceStorageConfig
+
+        /// <summary>
+        /// Removes the storage type configurations for the specified resource type and association
+        /// ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateInstanceStorageConfig service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateInstanceStorageConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateInstanceStorageConfig">REST API Reference for DisassociateInstanceStorageConfig Operation</seealso>
+        public virtual DisassociateInstanceStorageConfigResponse DisassociateInstanceStorageConfig(DisassociateInstanceStorageConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateInstanceStorageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateInstanceStorageConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateInstanceStorageConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateInstanceStorageConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateInstanceStorageConfig operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateInstanceStorageConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateInstanceStorageConfig">REST API Reference for DisassociateInstanceStorageConfig Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateInstanceStorageConfig(DisassociateInstanceStorageConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateInstanceStorageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateInstanceStorageConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateInstanceStorageConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateInstanceStorageConfig.</param>
+        /// 
+        /// <returns>Returns a  DisassociateInstanceStorageConfigResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateInstanceStorageConfig">REST API Reference for DisassociateInstanceStorageConfig Operation</seealso>
+        public virtual DisassociateInstanceStorageConfigResponse EndDisassociateInstanceStorageConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateInstanceStorageConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateLambdaFunction
+
+        /// <summary>
+        /// Remove the Lambda function from the drop-down options available in the relevant contact
+        /// flow blocks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateLambdaFunction service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateLambdaFunction service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction">REST API Reference for DisassociateLambdaFunction Operation</seealso>
+        public virtual DisassociateLambdaFunctionResponse DisassociateLambdaFunction(DisassociateLambdaFunctionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateLambdaFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateLambdaFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateLambdaFunctionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateLambdaFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateLambdaFunction operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateLambdaFunction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction">REST API Reference for DisassociateLambdaFunction Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateLambdaFunction(DisassociateLambdaFunctionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateLambdaFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateLambdaFunctionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateLambdaFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateLambdaFunction.</param>
+        /// 
+        /// <returns>Returns a  DisassociateLambdaFunctionResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction">REST API Reference for DisassociateLambdaFunction Operation</seealso>
+        public virtual DisassociateLambdaFunctionResponse EndDisassociateLambdaFunction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateLambdaFunctionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateLexBot
+
+        /// <summary>
+        /// Revokes authorization from the specified instance to access the specified Amazon Lex
+        /// bot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateLexBot service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateLexBot service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLexBot">REST API Reference for DisassociateLexBot Operation</seealso>
+        public virtual DisassociateLexBotResponse DisassociateLexBot(DisassociateLexBotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateLexBotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateLexBotResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateLexBotResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateLexBot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateLexBot operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateLexBot
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLexBot">REST API Reference for DisassociateLexBot Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateLexBot(DisassociateLexBotRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateLexBotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateLexBotResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateLexBot operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateLexBot.</param>
+        /// 
+        /// <returns>Returns a  DisassociateLexBotResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLexBot">REST API Reference for DisassociateLexBot Operation</seealso>
+        public virtual DisassociateLexBotResponse EndDisassociateLexBot(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateLexBotResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateRoutingProfileQueues
 
         /// <summary>
@@ -1221,6 +2225,75 @@ namespace Amazon.Connect
         public virtual DisassociateRoutingProfileQueuesResponse EndDisassociateRoutingProfileQueues(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateRoutingProfileQueuesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateSecurityKey
+
+        /// <summary>
+        /// Deletes the specified security key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSecurityKey service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateSecurityKey service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityKey">REST API Reference for DisassociateSecurityKey Operation</seealso>
+        public virtual DisassociateSecurityKeyResponse DisassociateSecurityKey(DisassociateSecurityKeyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSecurityKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSecurityKeyResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSecurityKeyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateSecurityKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSecurityKey operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateSecurityKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityKey">REST API Reference for DisassociateSecurityKey Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateSecurityKey(DisassociateSecurityKeyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSecurityKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSecurityKeyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateSecurityKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateSecurityKey.</param>
+        /// 
+        /// <returns>Returns a  DisassociateSecurityKeyResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityKey">REST API Reference for DisassociateSecurityKey Operation</seealso>
+        public virtual DisassociateSecurityKeyResponse EndDisassociateSecurityKey(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateSecurityKeyResponse>(asyncResult);
         }
 
         #endregion
@@ -1510,6 +2583,75 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListApprovedOrigins
+
+        /// <summary>
+        /// Returns a paginated list of all approved origins associated with the instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApprovedOrigins service method.</param>
+        /// 
+        /// <returns>The response from the ListApprovedOrigins service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListApprovedOrigins">REST API Reference for ListApprovedOrigins Operation</seealso>
+        public virtual ListApprovedOriginsResponse ListApprovedOrigins(ListApprovedOriginsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApprovedOriginsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApprovedOriginsResponseUnmarshaller.Instance;
+
+            return Invoke<ListApprovedOriginsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListApprovedOrigins operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListApprovedOrigins operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListApprovedOrigins
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListApprovedOrigins">REST API Reference for ListApprovedOrigins Operation</seealso>
+        public virtual IAsyncResult BeginListApprovedOrigins(ListApprovedOriginsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApprovedOriginsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApprovedOriginsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListApprovedOrigins operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListApprovedOrigins.</param>
+        /// 
+        /// <returns>Returns a  ListApprovedOriginsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListApprovedOrigins">REST API Reference for ListApprovedOrigins Operation</seealso>
+        public virtual ListApprovedOriginsResponse EndListApprovedOrigins(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListApprovedOriginsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListContactFlows
 
         /// <summary>
@@ -1662,6 +2804,347 @@ namespace Amazon.Connect
         public virtual ListHoursOfOperationsResponse EndListHoursOfOperations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListHoursOfOperationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListInstanceAttributes
+
+        /// <summary>
+        /// Returns a paginated list of all attribute types for the given instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceAttributes service method.</param>
+        /// 
+        /// <returns>The response from the ListInstanceAttributes service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceAttributes">REST API Reference for ListInstanceAttributes Operation</seealso>
+        public virtual ListInstanceAttributesResponse ListInstanceAttributes(ListInstanceAttributesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstanceAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstanceAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<ListInstanceAttributesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInstanceAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceAttributes operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInstanceAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceAttributes">REST API Reference for ListInstanceAttributes Operation</seealso>
+        public virtual IAsyncResult BeginListInstanceAttributes(ListInstanceAttributesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstanceAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstanceAttributesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInstanceAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstanceAttributes.</param>
+        /// 
+        /// <returns>Returns a  ListInstanceAttributesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceAttributes">REST API Reference for ListInstanceAttributes Operation</seealso>
+        public virtual ListInstanceAttributesResponse EndListInstanceAttributes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListInstanceAttributesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListInstances
+
+        /// <summary>
+        /// Return a list of instances which are in active state, creation-in-progress state,
+        /// and failed state. Instances that aren't successfully created (they are in a failed
+        /// state) are returned only for 24 hours after the CreateInstance API was invoked.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInstances service method.</param>
+        /// 
+        /// <returns>The response from the ListInstances service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstances">REST API Reference for ListInstances Operation</seealso>
+        public virtual ListInstancesResponse ListInstances(ListInstancesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<ListInstancesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInstances operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInstances
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstances">REST API Reference for ListInstances Operation</seealso>
+        public virtual IAsyncResult BeginListInstances(ListInstancesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstances.</param>
+        /// 
+        /// <returns>Returns a  ListInstancesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstances">REST API Reference for ListInstances Operation</seealso>
+        public virtual ListInstancesResponse EndListInstances(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListInstanceStorageConfigs
+
+        /// <summary>
+        /// Returns a paginated list of storage configs for the identified instance and resource
+        /// type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceStorageConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListInstanceStorageConfigs service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceStorageConfigs">REST API Reference for ListInstanceStorageConfigs Operation</seealso>
+        public virtual ListInstanceStorageConfigsResponse ListInstanceStorageConfigs(ListInstanceStorageConfigsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstanceStorageConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstanceStorageConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInstanceStorageConfigsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInstanceStorageConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceStorageConfigs operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInstanceStorageConfigs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceStorageConfigs">REST API Reference for ListInstanceStorageConfigs Operation</seealso>
+        public virtual IAsyncResult BeginListInstanceStorageConfigs(ListInstanceStorageConfigsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstanceStorageConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstanceStorageConfigsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInstanceStorageConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstanceStorageConfigs.</param>
+        /// 
+        /// <returns>Returns a  ListInstanceStorageConfigsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceStorageConfigs">REST API Reference for ListInstanceStorageConfigs Operation</seealso>
+        public virtual ListInstanceStorageConfigsResponse EndListInstanceStorageConfigs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListInstanceStorageConfigsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListLambdaFunctions
+
+        /// <summary>
+        /// Returns a paginated list of all the Lambda functions that show up in the drop-down
+        /// options in the relevant contact flow blocks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLambdaFunctions service method.</param>
+        /// 
+        /// <returns>The response from the ListLambdaFunctions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions">REST API Reference for ListLambdaFunctions Operation</seealso>
+        public virtual ListLambdaFunctionsResponse ListLambdaFunctions(ListLambdaFunctionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLambdaFunctionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLambdaFunctionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLambdaFunctionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLambdaFunctions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLambdaFunctions operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLambdaFunctions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions">REST API Reference for ListLambdaFunctions Operation</seealso>
+        public virtual IAsyncResult BeginListLambdaFunctions(ListLambdaFunctionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLambdaFunctionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLambdaFunctionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLambdaFunctions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLambdaFunctions.</param>
+        /// 
+        /// <returns>Returns a  ListLambdaFunctionsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions">REST API Reference for ListLambdaFunctions Operation</seealso>
+        public virtual ListLambdaFunctionsResponse EndListLambdaFunctions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListLambdaFunctionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListLexBots
+
+        /// <summary>
+        /// Returns a paginated list of all the Amazon Lex bots currently associated with the
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLexBots service method.</param>
+        /// 
+        /// <returns>The response from the ListLexBots service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLexBots">REST API Reference for ListLexBots Operation</seealso>
+        public virtual ListLexBotsResponse ListLexBots(ListLexBotsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLexBotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLexBotsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLexBotsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLexBots operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLexBots operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLexBots
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLexBots">REST API Reference for ListLexBots Operation</seealso>
+        public virtual IAsyncResult BeginListLexBots(ListLexBotsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLexBotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLexBotsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLexBots operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLexBots.</param>
+        /// 
+        /// <returns>Returns a  ListLexBotsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLexBots">REST API Reference for ListLexBots Operation</seealso>
+        public virtual ListLexBotsResponse EndListLexBots(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListLexBotsResponse>(asyncResult);
         }
 
         #endregion
@@ -2029,6 +3512,75 @@ namespace Amazon.Connect
         public virtual ListRoutingProfilesResponse EndListRoutingProfiles(IAsyncResult asyncResult)
         {
             return EndInvoke<ListRoutingProfilesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSecurityKeys
+
+        /// <summary>
+        /// Returns a paginated list of all security keys associated with the instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityKeys service method.</param>
+        /// 
+        /// <returns>The response from the ListSecurityKeys service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityKeys">REST API Reference for ListSecurityKeys Operation</seealso>
+        public virtual ListSecurityKeysResponse ListSecurityKeys(ListSecurityKeysRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityKeysResponseUnmarshaller.Instance;
+
+            return Invoke<ListSecurityKeysResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSecurityKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityKeys operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSecurityKeys
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityKeys">REST API Reference for ListSecurityKeys Operation</seealso>
+        public virtual IAsyncResult BeginListSecurityKeys(ListSecurityKeysRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityKeysResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSecurityKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSecurityKeys.</param>
+        /// 
+        /// <returns>Returns a  ListSecurityKeysResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityKeys">REST API Reference for ListSecurityKeys Operation</seealso>
+        public virtual ListSecurityKeysResponse EndListSecurityKeys(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSecurityKeysResponse>(asyncResult);
         }
 
         #endregion
@@ -3282,6 +4834,144 @@ namespace Amazon.Connect
         public virtual UpdateContactFlowNameResponse EndUpdateContactFlowName(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateContactFlowNameResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateInstanceAttribute
+
+        /// <summary>
+        /// Updates the value for the specified attribute type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceAttribute service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInstanceAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceAttribute">REST API Reference for UpdateInstanceAttribute Operation</seealso>
+        public virtual UpdateInstanceAttributeResponse UpdateInstanceAttribute(UpdateInstanceAttributeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInstanceAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInstanceAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateInstanceAttributeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateInstanceAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceAttribute operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateInstanceAttribute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceAttribute">REST API Reference for UpdateInstanceAttribute Operation</seealso>
+        public virtual IAsyncResult BeginUpdateInstanceAttribute(UpdateInstanceAttributeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInstanceAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInstanceAttributeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateInstanceAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateInstanceAttribute.</param>
+        /// 
+        /// <returns>Returns a  UpdateInstanceAttributeResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceAttribute">REST API Reference for UpdateInstanceAttribute Operation</seealso>
+        public virtual UpdateInstanceAttributeResponse EndUpdateInstanceAttribute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateInstanceAttributeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateInstanceStorageConfig
+
+        /// <summary>
+        /// Updates an existing configuration for a resource type. This API is idempotent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceStorageConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInstanceStorageConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceStorageConfig">REST API Reference for UpdateInstanceStorageConfig Operation</seealso>
+        public virtual UpdateInstanceStorageConfigResponse UpdateInstanceStorageConfig(UpdateInstanceStorageConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInstanceStorageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInstanceStorageConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateInstanceStorageConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateInstanceStorageConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceStorageConfig operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateInstanceStorageConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceStorageConfig">REST API Reference for UpdateInstanceStorageConfig Operation</seealso>
+        public virtual IAsyncResult BeginUpdateInstanceStorageConfig(UpdateInstanceStorageConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInstanceStorageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInstanceStorageConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateInstanceStorageConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateInstanceStorageConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateInstanceStorageConfigResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceStorageConfig">REST API Reference for UpdateInstanceStorageConfig Operation</seealso>
+        public virtual UpdateInstanceStorageConfigResponse EndUpdateInstanceStorageConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateInstanceStorageConfigResponse>(asyncResult);
         }
 
         #endregion
