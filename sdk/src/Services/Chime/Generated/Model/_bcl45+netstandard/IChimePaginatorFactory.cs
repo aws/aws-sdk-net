@@ -32,6 +32,21 @@ namespace Amazon.Chime.Model
         IListAccountsPaginator ListAccounts(ListAccountsRequest request);
 
         /// <summary>
+        /// Paginator for ListAppInstanceAdmins operation
+        ///</summary>
+        IListAppInstanceAdminsPaginator ListAppInstanceAdmins(ListAppInstanceAdminsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAppInstances operation
+        ///</summary>
+        IListAppInstancesPaginator ListAppInstances(ListAppInstancesRequest request);
+
+        /// <summary>
+        /// Paginator for ListAppInstanceUsers operation
+        ///</summary>
+        IListAppInstanceUsersPaginator ListAppInstanceUsers(ListAppInstanceUsersRequest request);
+
+        /// <summary>
         /// Paginator for ListAttendees operation
         ///</summary>
         IListAttendeesPaginator ListAttendees(ListAttendeesRequest request);
@@ -40,6 +55,41 @@ namespace Amazon.Chime.Model
         /// Paginator for ListBots operation
         ///</summary>
         IListBotsPaginator ListBots(ListBotsRequest request);
+
+        /// <summary>
+        /// Paginator for ListChannelBans operation
+        ///</summary>
+        IListChannelBansPaginator ListChannelBans(ListChannelBansRequest request);
+
+        /// <summary>
+        /// Paginator for ListChannelMemberships operation
+        ///</summary>
+        IListChannelMembershipsPaginator ListChannelMemberships(ListChannelMembershipsRequest request);
+
+        /// <summary>
+        /// Paginator for ListChannelMembershipsForAppInstanceUser operation
+        ///</summary>
+        IListChannelMembershipsForAppInstanceUserPaginator ListChannelMembershipsForAppInstanceUser(ListChannelMembershipsForAppInstanceUserRequest request);
+
+        /// <summary>
+        /// Paginator for ListChannelMessages operation
+        ///</summary>
+        IListChannelMessagesPaginator ListChannelMessages(ListChannelMessagesRequest request);
+
+        /// <summary>
+        /// Paginator for ListChannelModerators operation
+        ///</summary>
+        IListChannelModeratorsPaginator ListChannelModerators(ListChannelModeratorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListChannels operation
+        ///</summary>
+        IListChannelsPaginator ListChannels(ListChannelsRequest request);
+
+        /// <summary>
+        /// Paginator for ListChannelsModeratedByAppInstanceUser operation
+        ///</summary>
+        IListChannelsModeratedByAppInstanceUserPaginator ListChannelsModeratedByAppInstanceUser(ListChannelsModeratedByAppInstanceUserRequest request);
 
         /// <summary>
         /// Paginator for ListMeetings operation
@@ -70,6 +120,16 @@ namespace Amazon.Chime.Model
         /// Paginator for ListRooms operation
         ///</summary>
         IListRoomsPaginator ListRooms(ListRoomsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSipMediaApplications operation
+        ///</summary>
+        IListSipMediaApplicationsPaginator ListSipMediaApplications(ListSipMediaApplicationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSipRules operation
+        ///</summary>
+        IListSipRulesPaginator ListSipRules(ListSipRulesRequest request);
 
         /// <summary>
         /// Paginator for ListUsers operation

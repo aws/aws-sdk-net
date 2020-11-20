@@ -59,7 +59,7 @@ namespace Amazon.Chime
     /// For a list of available Amazon Chime commands, see the <a href="https://docs.aws.amazon.com/cli/latest/reference/chime/index.html">Amazon
     /// Chime commands</a> in the <i>AWS CLI Command Reference</i>.
     /// </para>
-    ///  </dd> <dt>Using REST API</dt> <dd> 
+    ///  </dd> <dt>Using REST</dt> <dd> 
     /// <para>
     /// If you use REST to make API calls, you must authenticate your request by providing
     /// a signature. Amazon Chime supports Signature Version 4. For more information, see
@@ -107,8 +107,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -172,8 +171,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -237,8 +235,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -299,8 +296,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -363,8 +359,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -430,8 +425,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -499,8 +493,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -582,8 +575,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -654,8 +646,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -730,8 +721,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -794,8 +784,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -859,8 +848,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -908,6 +896,219 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  CreateAppInstance
+
+
+        /// <summary>
+        /// Creates an Amazon Chime Messaging SDK <code>AppInstance</code> under an AWS Account.
+        /// Only Messaging SDK customers use this API. <code>CreateAppInstance</code> supports
+        /// <code>idempotency</code> behavior as described in the AWS API Standard.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppInstance service method.</param>
+        /// 
+        /// <returns>The response from the CreateAppInstance service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstance">REST API Reference for CreateAppInstance Operation</seealso>
+        CreateAppInstanceResponse CreateAppInstance(CreateAppInstanceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAppInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppInstance operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAppInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstance">REST API Reference for CreateAppInstance Operation</seealso>
+        IAsyncResult BeginCreateAppInstance(CreateAppInstanceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAppInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAppInstance.</param>
+        /// 
+        /// <returns>Returns a  CreateAppInstanceResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstance">REST API Reference for CreateAppInstance Operation</seealso>
+        CreateAppInstanceResponse EndCreateAppInstance(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateAppInstanceAdmin
+
+
+        /// <summary>
+        /// Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The
+        /// promoted user can perform the following actions. 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ChannelModerator</code> actions across all channels in the app instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DeleteChannelMessage</code> actions.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code>
+        /// role.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppInstanceAdmin service method.</param>
+        /// 
+        /// <returns>The response from the CreateAppInstanceAdmin service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceAdmin">REST API Reference for CreateAppInstanceAdmin Operation</seealso>
+        CreateAppInstanceAdminResponse CreateAppInstanceAdmin(CreateAppInstanceAdminRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAppInstanceAdmin operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppInstanceAdmin operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAppInstanceAdmin
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceAdmin">REST API Reference for CreateAppInstanceAdmin Operation</seealso>
+        IAsyncResult BeginCreateAppInstanceAdmin(CreateAppInstanceAdminRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAppInstanceAdmin operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAppInstanceAdmin.</param>
+        /// 
+        /// <returns>Returns a  CreateAppInstanceAdminResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceAdmin">REST API Reference for CreateAppInstanceAdmin Operation</seealso>
+        CreateAppInstanceAdminResponse EndCreateAppInstanceAdmin(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateAppInstanceUser
+
+
+        /// <summary>
+        /// Creates a user under an Amazon Chime <code>AppInstance</code>. The request consists
+        /// of a unique <code>appInstanceUserId</code> and <code>Name</code> for that user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppInstanceUser service method.</param>
+        /// 
+        /// <returns>The response from the CreateAppInstanceUser service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceUser">REST API Reference for CreateAppInstanceUser Operation</seealso>
+        CreateAppInstanceUserResponse CreateAppInstanceUser(CreateAppInstanceUserRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAppInstanceUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppInstanceUser operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAppInstanceUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceUser">REST API Reference for CreateAppInstanceUser Operation</seealso>
+        IAsyncResult BeginCreateAppInstanceUser(CreateAppInstanceUserRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAppInstanceUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAppInstanceUser.</param>
+        /// 
+        /// <returns>Returns a  CreateAppInstanceUserResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceUser">REST API Reference for CreateAppInstanceUser Operation</seealso>
+        CreateAppInstanceUserResponse EndCreateAppInstanceUser(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateAttendee
 
 
@@ -923,8 +1124,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -988,8 +1188,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1040,6 +1239,338 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  CreateChannel
+
+
+        /// <summary>
+        /// Creates a channel to which you can add users and send messages.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Restriction</b>: You can't change a channel's privacy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannel service method.</param>
+        /// 
+        /// <returns>The response from the CreateChannel service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
+        CreateChannelResponse CreateChannel(CreateChannelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannel operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
+        IAsyncResult BeginCreateChannel(CreateChannelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateChannel.</param>
+        /// 
+        /// <returns>Returns a  CreateChannelResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
+        CreateChannelResponse EndCreateChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateChannelBan
+
+
+        /// <summary>
+        /// Permanently bans a member from a channel. Moderators can't add banned members to a
+        /// channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then
+        /// <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or
+        /// channels. 
+        /// 
+        ///  
+        /// <para>
+        /// If you ban a user who is already part of a channel, that user is automatically kicked
+        /// from the channel.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannelBan service method.</param>
+        /// 
+        /// <returns>The response from the CreateChannelBan service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelBan">REST API Reference for CreateChannelBan Operation</seealso>
+        CreateChannelBanResponse CreateChannelBan(CreateChannelBanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateChannelBan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannelBan operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateChannelBan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelBan">REST API Reference for CreateChannelBan Operation</seealso>
+        IAsyncResult BeginCreateChannelBan(CreateChannelBanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateChannelBan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateChannelBan.</param>
+        /// 
+        /// <returns>Returns a  CreateChannelBanResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelBan">REST API Reference for CreateChannelBan Operation</seealso>
+        CreateChannelBanResponse EndCreateChannelBan(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateChannelMembership
+
+
+        /// <summary>
+        /// Adds a user to a channel. The <code>InvitedBy</code> response field is derived from
+        /// the request header. A channel member can:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// List messages
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Send messages
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Receive messages
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Edit their own messages
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Leave the channel
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Privacy settings impact this action as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Public Channels: You do not need to be a member to list messages, but you must be
+        /// a member to send messages.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Private Channels: You must be a member to list or send messages.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannelMembership service method.</param>
+        /// 
+        /// <returns>The response from the CreateChannelMembership service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelMembership">REST API Reference for CreateChannelMembership Operation</seealso>
+        CreateChannelMembershipResponse CreateChannelMembership(CreateChannelMembershipRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateChannelMembership operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannelMembership operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateChannelMembership
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelMembership">REST API Reference for CreateChannelMembership Operation</seealso>
+        IAsyncResult BeginCreateChannelMembership(CreateChannelMembershipRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateChannelMembership operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateChannelMembership.</param>
+        /// 
+        /// <returns>Returns a  CreateChannelMembershipResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelMembership">REST API Reference for CreateChannelMembership Operation</seealso>
+        CreateChannelMembershipResponse EndCreateChannelMembership(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateChannelModerator
+
+
+        /// <summary>
+        /// Creates a new <code>ChannelModerator</code>. A channel moderator can:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Add and remove other members of the channel.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Add and remove other moderators of the channel.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Add and remove user bans for the channel.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Redact messages in the channel.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// List messages in the channel.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannelModerator service method.</param>
+        /// 
+        /// <returns>The response from the CreateChannelModerator service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelModerator">REST API Reference for CreateChannelModerator Operation</seealso>
+        CreateChannelModeratorResponse CreateChannelModerator(CreateChannelModeratorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateChannelModerator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannelModerator operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateChannelModerator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelModerator">REST API Reference for CreateChannelModerator Operation</seealso>
+        IAsyncResult BeginCreateChannelModerator(CreateChannelModeratorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateChannelModerator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateChannelModerator.</param>
+        /// 
+        /// <returns>Returns a  CreateChannelModeratorResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelModerator">REST API Reference for CreateChannelModerator Operation</seealso>
+        CreateChannelModeratorResponse EndCreateChannelModerator(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateMeeting
 
 
@@ -1057,8 +1588,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
         /// The request exceeds the resource limit.
@@ -1128,8 +1658,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
         /// The request exceeds the resource limit.
@@ -1194,8 +1723,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
         /// The request exceeds the resource limit.
@@ -1261,8 +1789,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
         /// The request exceeds the resource limit.
@@ -1324,8 +1851,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1386,8 +1912,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1457,8 +1982,7 @@ namespace Amazon.Chime
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1529,8 +2053,7 @@ namespace Amazon.Chime
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
         /// The request exceeds the resource limit.
@@ -1592,8 +2115,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
         /// The request exceeds the resource limit.
@@ -1662,8 +2184,7 @@ namespace Amazon.Chime
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
         /// The request exceeds the resource limit.
@@ -1728,8 +2249,7 @@ namespace Amazon.Chime
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1801,8 +2321,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
         /// The request exceeds the resource limit.
@@ -1874,8 +2393,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
         /// The request exceeds the resource limit.
@@ -1956,8 +2474,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2008,6 +2525,249 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  DeleteAppInstance
+
+
+        /// <summary>
+        /// Deletes an <code>AppInstance</code> and all associated data asynchronously.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppInstance service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAppInstance service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstance">REST API Reference for DeleteAppInstance Operation</seealso>
+        DeleteAppInstanceResponse DeleteAppInstance(DeleteAppInstanceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAppInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppInstance operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAppInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstance">REST API Reference for DeleteAppInstance Operation</seealso>
+        IAsyncResult BeginDeleteAppInstance(DeleteAppInstanceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAppInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAppInstance.</param>
+        /// 
+        /// <returns>Returns a  DeleteAppInstanceResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstance">REST API Reference for DeleteAppInstance Operation</seealso>
+        DeleteAppInstanceResponse EndDeleteAppInstance(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteAppInstanceAdmin
+
+
+        /// <summary>
+        /// Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This
+        /// action does not delete the user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppInstanceAdmin service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAppInstanceAdmin service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceAdmin">REST API Reference for DeleteAppInstanceAdmin Operation</seealso>
+        DeleteAppInstanceAdminResponse DeleteAppInstanceAdmin(DeleteAppInstanceAdminRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAppInstanceAdmin operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppInstanceAdmin operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAppInstanceAdmin
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceAdmin">REST API Reference for DeleteAppInstanceAdmin Operation</seealso>
+        IAsyncResult BeginDeleteAppInstanceAdmin(DeleteAppInstanceAdminRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAppInstanceAdmin operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAppInstanceAdmin.</param>
+        /// 
+        /// <returns>Returns a  DeleteAppInstanceAdminResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceAdmin">REST API Reference for DeleteAppInstanceAdmin Operation</seealso>
+        DeleteAppInstanceAdminResponse EndDeleteAppInstanceAdmin(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteAppInstanceStreamingConfigurations
+
+
+        /// <summary>
+        /// Deletes the streaming configurations of an app instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppInstanceStreamingConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAppInstanceStreamingConfigurations service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceStreamingConfigurations">REST API Reference for DeleteAppInstanceStreamingConfigurations Operation</seealso>
+        DeleteAppInstanceStreamingConfigurationsResponse DeleteAppInstanceStreamingConfigurations(DeleteAppInstanceStreamingConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAppInstanceStreamingConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppInstanceStreamingConfigurations operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAppInstanceStreamingConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceStreamingConfigurations">REST API Reference for DeleteAppInstanceStreamingConfigurations Operation</seealso>
+        IAsyncResult BeginDeleteAppInstanceStreamingConfigurations(DeleteAppInstanceStreamingConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAppInstanceStreamingConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAppInstanceStreamingConfigurations.</param>
+        /// 
+        /// <returns>Returns a  DeleteAppInstanceStreamingConfigurationsResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceStreamingConfigurations">REST API Reference for DeleteAppInstanceStreamingConfigurations Operation</seealso>
+        DeleteAppInstanceStreamingConfigurationsResponse EndDeleteAppInstanceStreamingConfigurations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteAppInstanceUser
+
+
+        /// <summary>
+        /// Deletes an <code>AppInstanceUser</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppInstanceUser service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAppInstanceUser service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceUser">REST API Reference for DeleteAppInstanceUser Operation</seealso>
+        DeleteAppInstanceUserResponse DeleteAppInstanceUser(DeleteAppInstanceUserRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAppInstanceUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppInstanceUser operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAppInstanceUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceUser">REST API Reference for DeleteAppInstanceUser Operation</seealso>
+        IAsyncResult BeginDeleteAppInstanceUser(DeleteAppInstanceUserRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAppInstanceUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAppInstanceUser.</param>
+        /// 
+        /// <returns>Returns a  DeleteAppInstanceUserResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceUser">REST API Reference for DeleteAppInstanceUser Operation</seealso>
+        DeleteAppInstanceUserResponse EndDeleteAppInstanceUser(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteAttendee
 
 
@@ -2024,8 +2784,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2073,6 +2832,298 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  DeleteChannel
+
+
+        /// <summary>
+        /// Immediately makes a channel and its memberships inaccessible and marks them for deletion.
+        /// This is an irreversible process.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteChannel service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
+        DeleteChannelResponse DeleteChannel(DeleteChannelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannel operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
+        IAsyncResult BeginDeleteChannel(DeleteChannelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteChannel.</param>
+        /// 
+        /// <returns>Returns a  DeleteChannelResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
+        DeleteChannelResponse EndDeleteChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteChannelBan
+
+
+        /// <summary>
+        /// Removes a user from a channel's ban list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannelBan service method.</param>
+        /// 
+        /// <returns>The response from the DeleteChannelBan service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelBan">REST API Reference for DeleteChannelBan Operation</seealso>
+        DeleteChannelBanResponse DeleteChannelBan(DeleteChannelBanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteChannelBan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannelBan operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteChannelBan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelBan">REST API Reference for DeleteChannelBan Operation</seealso>
+        IAsyncResult BeginDeleteChannelBan(DeleteChannelBanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteChannelBan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteChannelBan.</param>
+        /// 
+        /// <returns>Returns a  DeleteChannelBanResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelBan">REST API Reference for DeleteChannelBan Operation</seealso>
+        DeleteChannelBanResponse EndDeleteChannelBan(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteChannelMembership
+
+
+        /// <summary>
+        /// Removes a member from a channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannelMembership service method.</param>
+        /// 
+        /// <returns>The response from the DeleteChannelMembership service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMembership">REST API Reference for DeleteChannelMembership Operation</seealso>
+        DeleteChannelMembershipResponse DeleteChannelMembership(DeleteChannelMembershipRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteChannelMembership operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannelMembership operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteChannelMembership
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMembership">REST API Reference for DeleteChannelMembership Operation</seealso>
+        IAsyncResult BeginDeleteChannelMembership(DeleteChannelMembershipRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteChannelMembership operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteChannelMembership.</param>
+        /// 
+        /// <returns>Returns a  DeleteChannelMembershipResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMembership">REST API Reference for DeleteChannelMembership Operation</seealso>
+        DeleteChannelMembershipResponse EndDeleteChannelMembership(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteChannelMessage
+
+
+        /// <summary>
+        /// Deletes a channel message. Only admins can perform this action. Deletion makes messages
+        /// inaccessible immediately. A background process deletes any revisions created by <code>UpdateChannelMessage</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannelMessage service method.</param>
+        /// 
+        /// <returns>The response from the DeleteChannelMessage service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMessage">REST API Reference for DeleteChannelMessage Operation</seealso>
+        DeleteChannelMessageResponse DeleteChannelMessage(DeleteChannelMessageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteChannelMessage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannelMessage operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteChannelMessage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMessage">REST API Reference for DeleteChannelMessage Operation</seealso>
+        IAsyncResult BeginDeleteChannelMessage(DeleteChannelMessageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteChannelMessage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteChannelMessage.</param>
+        /// 
+        /// <returns>Returns a  DeleteChannelMessageResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMessage">REST API Reference for DeleteChannelMessage Operation</seealso>
+        DeleteChannelMessageResponse EndDeleteChannelMessage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteChannelModerator
+
+
+        /// <summary>
+        /// Deletes a channel moderator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannelModerator service method.</param>
+        /// 
+        /// <returns>The response from the DeleteChannelModerator service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelModerator">REST API Reference for DeleteChannelModerator Operation</seealso>
+        DeleteChannelModeratorResponse DeleteChannelModerator(DeleteChannelModeratorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteChannelModerator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannelModerator operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteChannelModerator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelModerator">REST API Reference for DeleteChannelModerator Operation</seealso>
+        IAsyncResult BeginDeleteChannelModerator(DeleteChannelModeratorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteChannelModerator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteChannelModerator.</param>
+        /// 
+        /// <returns>Returns a  DeleteChannelModeratorResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelModerator">REST API Reference for DeleteChannelModerator Operation</seealso>
+        DeleteChannelModeratorResponse EndDeleteChannelModerator(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteEventsConfiguration
 
 
@@ -2086,8 +3137,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
         /// The request exceeds the resource limit.
@@ -2148,8 +3198,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2218,8 +3267,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2280,8 +3328,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2342,8 +3389,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2404,8 +3450,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2470,8 +3515,7 @@ namespace Amazon.Chime
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2536,8 +3580,7 @@ namespace Amazon.Chime
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2603,8 +3646,7 @@ namespace Amazon.Chime
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2666,8 +3708,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2733,8 +3774,7 @@ namespace Amazon.Chime
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2802,8 +3842,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2864,8 +3903,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2926,8 +3964,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2995,8 +4032,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -3058,8 +4094,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -3107,6 +4142,538 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  DescribeAppInstance
+
+
+        /// <summary>
+        /// Returns the full details of an <code>AppInstance</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppInstance service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAppInstance service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstance">REST API Reference for DescribeAppInstance Operation</seealso>
+        DescribeAppInstanceResponse DescribeAppInstance(DescribeAppInstanceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAppInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppInstance operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAppInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstance">REST API Reference for DescribeAppInstance Operation</seealso>
+        IAsyncResult BeginDescribeAppInstance(DescribeAppInstanceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAppInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAppInstance.</param>
+        /// 
+        /// <returns>Returns a  DescribeAppInstanceResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstance">REST API Reference for DescribeAppInstance Operation</seealso>
+        DescribeAppInstanceResponse EndDescribeAppInstance(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeAppInstanceAdmin
+
+
+        /// <summary>
+        /// Returns the full details of an <code>AppInstanceAdmin</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppInstanceAdmin service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAppInstanceAdmin service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceAdmin">REST API Reference for DescribeAppInstanceAdmin Operation</seealso>
+        DescribeAppInstanceAdminResponse DescribeAppInstanceAdmin(DescribeAppInstanceAdminRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAppInstanceAdmin operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppInstanceAdmin operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAppInstanceAdmin
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceAdmin">REST API Reference for DescribeAppInstanceAdmin Operation</seealso>
+        IAsyncResult BeginDescribeAppInstanceAdmin(DescribeAppInstanceAdminRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAppInstanceAdmin operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAppInstanceAdmin.</param>
+        /// 
+        /// <returns>Returns a  DescribeAppInstanceAdminResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceAdmin">REST API Reference for DescribeAppInstanceAdmin Operation</seealso>
+        DescribeAppInstanceAdminResponse EndDescribeAppInstanceAdmin(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeAppInstanceUser
+
+
+        /// <summary>
+        /// Returns the full details of an <code>AppInstanceUser</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppInstanceUser service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAppInstanceUser service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceUser">REST API Reference for DescribeAppInstanceUser Operation</seealso>
+        DescribeAppInstanceUserResponse DescribeAppInstanceUser(DescribeAppInstanceUserRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAppInstanceUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppInstanceUser operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAppInstanceUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceUser">REST API Reference for DescribeAppInstanceUser Operation</seealso>
+        IAsyncResult BeginDescribeAppInstanceUser(DescribeAppInstanceUserRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAppInstanceUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAppInstanceUser.</param>
+        /// 
+        /// <returns>Returns a  DescribeAppInstanceUserResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceUser">REST API Reference for DescribeAppInstanceUser Operation</seealso>
+        DescribeAppInstanceUserResponse EndDescribeAppInstanceUser(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeChannel
+
+
+        /// <summary>
+        /// Returns the full details of a channel in an Amazon Chime app instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChannel service method.</param>
+        /// 
+        /// <returns>The response from the DescribeChannel service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
+        DescribeChannelResponse DescribeChannel(DescribeChannelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChannel operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
+        IAsyncResult BeginDescribeChannel(DescribeChannelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeChannel.</param>
+        /// 
+        /// <returns>Returns a  DescribeChannelResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
+        DescribeChannelResponse EndDescribeChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeChannelBan
+
+
+        /// <summary>
+        /// Returns the full details of a channel ban.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChannelBan service method.</param>
+        /// 
+        /// <returns>The response from the DescribeChannelBan service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelBan">REST API Reference for DescribeChannelBan Operation</seealso>
+        DescribeChannelBanResponse DescribeChannelBan(DescribeChannelBanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeChannelBan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChannelBan operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeChannelBan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelBan">REST API Reference for DescribeChannelBan Operation</seealso>
+        IAsyncResult BeginDescribeChannelBan(DescribeChannelBanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeChannelBan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeChannelBan.</param>
+        /// 
+        /// <returns>Returns a  DescribeChannelBanResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelBan">REST API Reference for DescribeChannelBan Operation</seealso>
+        DescribeChannelBanResponse EndDescribeChannelBan(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeChannelMembership
+
+
+        /// <summary>
+        /// Returns the full details of a user's channel membership.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChannelMembership service method.</param>
+        /// 
+        /// <returns>The response from the DescribeChannelMembership service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembership">REST API Reference for DescribeChannelMembership Operation</seealso>
+        DescribeChannelMembershipResponse DescribeChannelMembership(DescribeChannelMembershipRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeChannelMembership operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChannelMembership operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeChannelMembership
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembership">REST API Reference for DescribeChannelMembership Operation</seealso>
+        IAsyncResult BeginDescribeChannelMembership(DescribeChannelMembershipRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeChannelMembership operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeChannelMembership.</param>
+        /// 
+        /// <returns>Returns a  DescribeChannelMembershipResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembership">REST API Reference for DescribeChannelMembership Operation</seealso>
+        DescribeChannelMembershipResponse EndDescribeChannelMembership(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeChannelMembershipForAppInstanceUser
+
+
+        /// <summary>
+        /// Returns the details of a channel based on the membership of the <code>AppInstanceUser</code>
+        /// specified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChannelMembershipForAppInstanceUser service method.</param>
+        /// 
+        /// <returns>The response from the DescribeChannelMembershipForAppInstanceUser service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembershipForAppInstanceUser">REST API Reference for DescribeChannelMembershipForAppInstanceUser Operation</seealso>
+        DescribeChannelMembershipForAppInstanceUserResponse DescribeChannelMembershipForAppInstanceUser(DescribeChannelMembershipForAppInstanceUserRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeChannelMembershipForAppInstanceUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChannelMembershipForAppInstanceUser operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeChannelMembershipForAppInstanceUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembershipForAppInstanceUser">REST API Reference for DescribeChannelMembershipForAppInstanceUser Operation</seealso>
+        IAsyncResult BeginDescribeChannelMembershipForAppInstanceUser(DescribeChannelMembershipForAppInstanceUserRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeChannelMembershipForAppInstanceUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeChannelMembershipForAppInstanceUser.</param>
+        /// 
+        /// <returns>Returns a  DescribeChannelMembershipForAppInstanceUserResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembershipForAppInstanceUser">REST API Reference for DescribeChannelMembershipForAppInstanceUser Operation</seealso>
+        DescribeChannelMembershipForAppInstanceUserResponse EndDescribeChannelMembershipForAppInstanceUser(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeChannelModeratedByAppInstanceUser
+
+
+        /// <summary>
+        /// Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChannelModeratedByAppInstanceUser service method.</param>
+        /// 
+        /// <returns>The response from the DescribeChannelModeratedByAppInstanceUser service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModeratedByAppInstanceUser">REST API Reference for DescribeChannelModeratedByAppInstanceUser Operation</seealso>
+        DescribeChannelModeratedByAppInstanceUserResponse DescribeChannelModeratedByAppInstanceUser(DescribeChannelModeratedByAppInstanceUserRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeChannelModeratedByAppInstanceUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChannelModeratedByAppInstanceUser operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeChannelModeratedByAppInstanceUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModeratedByAppInstanceUser">REST API Reference for DescribeChannelModeratedByAppInstanceUser Operation</seealso>
+        IAsyncResult BeginDescribeChannelModeratedByAppInstanceUser(DescribeChannelModeratedByAppInstanceUserRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeChannelModeratedByAppInstanceUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeChannelModeratedByAppInstanceUser.</param>
+        /// 
+        /// <returns>Returns a  DescribeChannelModeratedByAppInstanceUserResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModeratedByAppInstanceUser">REST API Reference for DescribeChannelModeratedByAppInstanceUser Operation</seealso>
+        DescribeChannelModeratedByAppInstanceUserResponse EndDescribeChannelModeratedByAppInstanceUser(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeChannelModerator
+
+
+        /// <summary>
+        /// Returns the full details of a single ChannelModerator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChannelModerator service method.</param>
+        /// 
+        /// <returns>The response from the DescribeChannelModerator service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModerator">REST API Reference for DescribeChannelModerator Operation</seealso>
+        DescribeChannelModeratorResponse DescribeChannelModerator(DescribeChannelModeratorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeChannelModerator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChannelModerator operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeChannelModerator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModerator">REST API Reference for DescribeChannelModerator Operation</seealso>
+        IAsyncResult BeginDescribeChannelModerator(DescribeChannelModeratorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeChannelModerator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeChannelModerator.</param>
+        /// 
+        /// <returns>Returns a  DescribeChannelModeratorResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModerator">REST API Reference for DescribeChannelModerator Operation</seealso>
+        DescribeChannelModeratorResponse EndDescribeChannelModerator(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisassociatePhoneNumberFromUser
 
 
@@ -3121,8 +4688,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -3183,8 +4749,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -3246,8 +4811,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -3309,8 +4873,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -3372,8 +4935,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -3436,8 +4998,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -3485,6 +5046,128 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  GetAppInstanceRetentionSettings
+
+
+        /// <summary>
+        /// Gets the retention settings for an app instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAppInstanceRetentionSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetAppInstanceRetentionSettings service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceRetentionSettings">REST API Reference for GetAppInstanceRetentionSettings Operation</seealso>
+        GetAppInstanceRetentionSettingsResponse GetAppInstanceRetentionSettings(GetAppInstanceRetentionSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAppInstanceRetentionSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAppInstanceRetentionSettings operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAppInstanceRetentionSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceRetentionSettings">REST API Reference for GetAppInstanceRetentionSettings Operation</seealso>
+        IAsyncResult BeginGetAppInstanceRetentionSettings(GetAppInstanceRetentionSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAppInstanceRetentionSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAppInstanceRetentionSettings.</param>
+        /// 
+        /// <returns>Returns a  GetAppInstanceRetentionSettingsResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceRetentionSettings">REST API Reference for GetAppInstanceRetentionSettings Operation</seealso>
+        GetAppInstanceRetentionSettingsResponse EndGetAppInstanceRetentionSettings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAppInstanceStreamingConfigurations
+
+
+        /// <summary>
+        /// Gets the streaming settings for an app instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAppInstanceStreamingConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the GetAppInstanceStreamingConfigurations service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceStreamingConfigurations">REST API Reference for GetAppInstanceStreamingConfigurations Operation</seealso>
+        GetAppInstanceStreamingConfigurationsResponse GetAppInstanceStreamingConfigurations(GetAppInstanceStreamingConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAppInstanceStreamingConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAppInstanceStreamingConfigurations operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAppInstanceStreamingConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceStreamingConfigurations">REST API Reference for GetAppInstanceStreamingConfigurations Operation</seealso>
+        IAsyncResult BeginGetAppInstanceStreamingConfigurations(GetAppInstanceStreamingConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAppInstanceStreamingConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAppInstanceStreamingConfigurations.</param>
+        /// 
+        /// <returns>Returns a  GetAppInstanceStreamingConfigurationsResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceStreamingConfigurations">REST API Reference for GetAppInstanceStreamingConfigurations Operation</seealso>
+        GetAppInstanceStreamingConfigurationsResponse EndGetAppInstanceStreamingConfigurations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetAttendee
 
 
@@ -3500,8 +5183,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -3563,8 +5245,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -3612,6 +5293,67 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  GetChannelMessage
+
+
+        /// <summary>
+        /// Gets the full details of a channel message.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChannelMessage service method.</param>
+        /// 
+        /// <returns>The response from the GetChannelMessage service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetChannelMessage">REST API Reference for GetChannelMessage Operation</seealso>
+        GetChannelMessageResponse GetChannelMessage(GetChannelMessageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetChannelMessage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetChannelMessage operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetChannelMessage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetChannelMessage">REST API Reference for GetChannelMessage Operation</seealso>
+        IAsyncResult BeginGetChannelMessage(GetChannelMessageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetChannelMessage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetChannelMessage.</param>
+        /// 
+        /// <returns>Returns a  GetChannelMessageResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetChannelMessage">REST API Reference for GetChannelMessage Operation</seealso>
+        GetChannelMessageResponse EndGetChannelMessage(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetEventsConfiguration
 
 
@@ -3626,8 +5368,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -3689,8 +5430,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -3750,8 +5490,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -3799,6 +5538,61 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  GetMessagingSessionEndpoint
+
+
+        /// <summary>
+        /// The endpoint for the messaging session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMessagingSessionEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the GetMessagingSessionEndpoint service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMessagingSessionEndpoint">REST API Reference for GetMessagingSessionEndpoint Operation</seealso>
+        GetMessagingSessionEndpointResponse GetMessagingSessionEndpoint(GetMessagingSessionEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMessagingSessionEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMessagingSessionEndpoint operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMessagingSessionEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMessagingSessionEndpoint">REST API Reference for GetMessagingSessionEndpoint Operation</seealso>
+        IAsyncResult BeginGetMessagingSessionEndpoint(GetMessagingSessionEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMessagingSessionEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMessagingSessionEndpoint.</param>
+        /// 
+        /// <returns>Returns a  GetMessagingSessionEndpointResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMessagingSessionEndpoint">REST API Reference for GetMessagingSessionEndpoint Operation</seealso>
+        GetMessagingSessionEndpointResponse EndGetMessagingSessionEndpoint(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetPhoneNumber
 
 
@@ -3813,8 +5607,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -3876,8 +5669,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -3939,8 +5731,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -3998,8 +5789,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -4062,8 +5852,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -4125,8 +5914,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -4188,8 +5976,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -4250,8 +6037,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -4313,8 +6099,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -4382,8 +6167,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -4445,8 +6229,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -4508,8 +6291,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -4571,8 +6353,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -4634,8 +6415,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -4688,7 +6468,7 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Retrieves the logging configuration details for the specified Amazon Chime Voice Connector.
-        /// Shows whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.
+        /// Shows whether SIP message logs are enabled for sending to Amazon CloudWatch.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorLoggingConfiguration service method.</param>
         /// 
@@ -4697,8 +6477,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -4759,8 +6538,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -4821,8 +6599,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -4885,8 +6662,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -4947,8 +6723,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -5010,8 +6785,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -5074,8 +6848,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -5138,8 +6911,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -5187,6 +6959,183 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  ListAppInstanceAdmins
+
+
+        /// <summary>
+        /// Returns a list of the administrators in the app instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAppInstanceAdmins service method.</param>
+        /// 
+        /// <returns>The response from the ListAppInstanceAdmins service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceAdmins">REST API Reference for ListAppInstanceAdmins Operation</seealso>
+        ListAppInstanceAdminsResponse ListAppInstanceAdmins(ListAppInstanceAdminsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAppInstanceAdmins operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAppInstanceAdmins operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAppInstanceAdmins
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceAdmins">REST API Reference for ListAppInstanceAdmins Operation</seealso>
+        IAsyncResult BeginListAppInstanceAdmins(ListAppInstanceAdminsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAppInstanceAdmins operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAppInstanceAdmins.</param>
+        /// 
+        /// <returns>Returns a  ListAppInstanceAdminsResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceAdmins">REST API Reference for ListAppInstanceAdmins Operation</seealso>
+        ListAppInstanceAdminsResponse EndListAppInstanceAdmins(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAppInstances
+
+
+        /// <summary>
+        /// Lists all Amazon Chime app instances created under a single AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAppInstances service method.</param>
+        /// 
+        /// <returns>The response from the ListAppInstances service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstances">REST API Reference for ListAppInstances Operation</seealso>
+        ListAppInstancesResponse ListAppInstances(ListAppInstancesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAppInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAppInstances operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAppInstances
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstances">REST API Reference for ListAppInstances Operation</seealso>
+        IAsyncResult BeginListAppInstances(ListAppInstancesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAppInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAppInstances.</param>
+        /// 
+        /// <returns>Returns a  ListAppInstancesResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstances">REST API Reference for ListAppInstances Operation</seealso>
+        ListAppInstancesResponse EndListAppInstances(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAppInstanceUsers
+
+
+        /// <summary>
+        /// List all <code>AppInstanceUsers</code> created under a single app instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAppInstanceUsers service method.</param>
+        /// 
+        /// <returns>The response from the ListAppInstanceUsers service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceUsers">REST API Reference for ListAppInstanceUsers Operation</seealso>
+        ListAppInstanceUsersResponse ListAppInstanceUsers(ListAppInstanceUsersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAppInstanceUsers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAppInstanceUsers operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAppInstanceUsers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceUsers">REST API Reference for ListAppInstanceUsers Operation</seealso>
+        IAsyncResult BeginListAppInstanceUsers(ListAppInstanceUsersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAppInstanceUsers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAppInstanceUsers.</param>
+        /// 
+        /// <returns>Returns a  ListAppInstanceUsersResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceUsers">REST API Reference for ListAppInstanceUsers Operation</seealso>
+        ListAppInstanceUsersResponse EndListAppInstanceUsers(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListAttendees
 
 
@@ -5202,8 +7151,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -5264,8 +7212,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -5327,8 +7274,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -5376,6 +7322,437 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  ListChannelBans
+
+
+        /// <summary>
+        /// Lists all the users banned from a particular channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannelBans service method.</param>
+        /// 
+        /// <returns>The response from the ListChannelBans service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelBans">REST API Reference for ListChannelBans Operation</seealso>
+        ListChannelBansResponse ListChannelBans(ListChannelBansRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChannelBans operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChannelBans operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChannelBans
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelBans">REST API Reference for ListChannelBans Operation</seealso>
+        IAsyncResult BeginListChannelBans(ListChannelBansRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListChannelBans operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChannelBans.</param>
+        /// 
+        /// <returns>Returns a  ListChannelBansResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelBans">REST API Reference for ListChannelBans Operation</seealso>
+        ListChannelBansResponse EndListChannelBans(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListChannelMemberships
+
+
+        /// <summary>
+        /// Lists all channel memberships in a channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannelMemberships service method.</param>
+        /// 
+        /// <returns>The response from the ListChannelMemberships service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMemberships">REST API Reference for ListChannelMemberships Operation</seealso>
+        ListChannelMembershipsResponse ListChannelMemberships(ListChannelMembershipsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChannelMemberships operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChannelMemberships operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChannelMemberships
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMemberships">REST API Reference for ListChannelMemberships Operation</seealso>
+        IAsyncResult BeginListChannelMemberships(ListChannelMembershipsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListChannelMemberships operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChannelMemberships.</param>
+        /// 
+        /// <returns>Returns a  ListChannelMembershipsResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMemberships">REST API Reference for ListChannelMemberships Operation</seealso>
+        ListChannelMembershipsResponse EndListChannelMemberships(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListChannelMembershipsForAppInstanceUser
+
+
+        /// <summary>
+        /// Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only
+        /// an <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their
+        /// own.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannelMembershipsForAppInstanceUser service method.</param>
+        /// 
+        /// <returns>The response from the ListChannelMembershipsForAppInstanceUser service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMembershipsForAppInstanceUser">REST API Reference for ListChannelMembershipsForAppInstanceUser Operation</seealso>
+        ListChannelMembershipsForAppInstanceUserResponse ListChannelMembershipsForAppInstanceUser(ListChannelMembershipsForAppInstanceUserRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChannelMembershipsForAppInstanceUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChannelMembershipsForAppInstanceUser operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChannelMembershipsForAppInstanceUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMembershipsForAppInstanceUser">REST API Reference for ListChannelMembershipsForAppInstanceUser Operation</seealso>
+        IAsyncResult BeginListChannelMembershipsForAppInstanceUser(ListChannelMembershipsForAppInstanceUserRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListChannelMembershipsForAppInstanceUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChannelMembershipsForAppInstanceUser.</param>
+        /// 
+        /// <returns>Returns a  ListChannelMembershipsForAppInstanceUserResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMembershipsForAppInstanceUser">REST API Reference for ListChannelMembershipsForAppInstanceUser Operation</seealso>
+        ListChannelMembershipsForAppInstanceUserResponse EndListChannelMembershipsForAppInstanceUser(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListChannelMessages
+
+
+        /// <summary>
+        /// List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>.
+        /// Sorted in descending order by default, based on the creation timestamp.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Redacted messages appear in the results as empty, since they are only redacted, not
+        /// deleted. Deleted messages do not appear in the results. This action always returns
+        /// the latest version of an edited message.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannelMessages service method.</param>
+        /// 
+        /// <returns>The response from the ListChannelMessages service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMessages">REST API Reference for ListChannelMessages Operation</seealso>
+        ListChannelMessagesResponse ListChannelMessages(ListChannelMessagesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChannelMessages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChannelMessages operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChannelMessages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMessages">REST API Reference for ListChannelMessages Operation</seealso>
+        IAsyncResult BeginListChannelMessages(ListChannelMessagesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListChannelMessages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChannelMessages.</param>
+        /// 
+        /// <returns>Returns a  ListChannelMessagesResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMessages">REST API Reference for ListChannelMessages Operation</seealso>
+        ListChannelMessagesResponse EndListChannelMessages(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListChannelModerators
+
+
+        /// <summary>
+        /// Lists all the moderators for a channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannelModerators service method.</param>
+        /// 
+        /// <returns>The response from the ListChannelModerators service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelModerators">REST API Reference for ListChannelModerators Operation</seealso>
+        ListChannelModeratorsResponse ListChannelModerators(ListChannelModeratorsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChannelModerators operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChannelModerators operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChannelModerators
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelModerators">REST API Reference for ListChannelModerators Operation</seealso>
+        IAsyncResult BeginListChannelModerators(ListChannelModeratorsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListChannelModerators operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChannelModerators.</param>
+        /// 
+        /// <returns>Returns a  ListChannelModeratorsResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelModerators">REST API Reference for ListChannelModerators Operation</seealso>
+        ListChannelModeratorsResponse EndListChannelModerators(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListChannels
+
+
+        /// <summary>
+        /// Lists all Channels created under a single Chime App as a paginated list. You can specify
+        /// filters to narrow results.
+        /// 
+        ///  <p class="title"> <b>Functionality &amp; restrictions</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list
+        /// the private channels in an account.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
+        /// 
+        /// <returns>The response from the ListChannels service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        ListChannelsResponse ListChannels(ListChannelsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChannels operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChannels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        IAsyncResult BeginListChannels(ListChannelsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChannels.</param>
+        /// 
+        /// <returns>Returns a  ListChannelsResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        ListChannelsResponse EndListChannels(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListChannelsModeratedByAppInstanceUser
+
+
+        /// <summary>
+        /// A list of the channels moderated by an app instance user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannelsModeratedByAppInstanceUser service method.</param>
+        /// 
+        /// <returns>The response from the ListChannelsModeratedByAppInstanceUser service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelsModeratedByAppInstanceUser">REST API Reference for ListChannelsModeratedByAppInstanceUser Operation</seealso>
+        ListChannelsModeratedByAppInstanceUserResponse ListChannelsModeratedByAppInstanceUser(ListChannelsModeratedByAppInstanceUserRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChannelsModeratedByAppInstanceUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChannelsModeratedByAppInstanceUser operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChannelsModeratedByAppInstanceUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelsModeratedByAppInstanceUser">REST API Reference for ListChannelsModeratedByAppInstanceUser Operation</seealso>
+        IAsyncResult BeginListChannelsModeratedByAppInstanceUser(ListChannelsModeratedByAppInstanceUserRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListChannelsModeratedByAppInstanceUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChannelsModeratedByAppInstanceUser.</param>
+        /// 
+        /// <returns>Returns a  ListChannelsModeratedByAppInstanceUserResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelsModeratedByAppInstanceUser">REST API Reference for ListChannelsModeratedByAppInstanceUser Operation</seealso>
+        ListChannelsModeratedByAppInstanceUserResponse EndListChannelsModeratedByAppInstanceUser(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListMeetings
 
 
@@ -5391,8 +7768,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -5450,8 +7826,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -5512,8 +7887,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -5572,8 +7946,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -5631,8 +8004,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -5694,8 +8066,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -5758,8 +8129,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -5820,8 +8190,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -5879,8 +8248,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -5938,8 +8306,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -5998,8 +8365,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -6060,8 +8426,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -6119,8 +8484,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -6178,8 +8542,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -6240,8 +8603,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -6289,6 +8651,132 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  PutAppInstanceRetentionSettings
+
+
+        /// <summary>
+        /// Sets the amount of time in days that a given app instance retains data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAppInstanceRetentionSettings service method.</param>
+        /// 
+        /// <returns>The response from the PutAppInstanceRetentionSettings service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceRetentionSettings">REST API Reference for PutAppInstanceRetentionSettings Operation</seealso>
+        PutAppInstanceRetentionSettingsResponse PutAppInstanceRetentionSettings(PutAppInstanceRetentionSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAppInstanceRetentionSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAppInstanceRetentionSettings operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAppInstanceRetentionSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceRetentionSettings">REST API Reference for PutAppInstanceRetentionSettings Operation</seealso>
+        IAsyncResult BeginPutAppInstanceRetentionSettings(PutAppInstanceRetentionSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAppInstanceRetentionSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAppInstanceRetentionSettings.</param>
+        /// 
+        /// <returns>Returns a  PutAppInstanceRetentionSettingsResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceRetentionSettings">REST API Reference for PutAppInstanceRetentionSettings Operation</seealso>
+        PutAppInstanceRetentionSettingsResponse EndPutAppInstanceRetentionSettings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutAppInstanceStreamingConfigurations
+
+
+        /// <summary>
+        /// The data streaming configurations of an app instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAppInstanceStreamingConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the PutAppInstanceStreamingConfigurations service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceStreamingConfigurations">REST API Reference for PutAppInstanceStreamingConfigurations Operation</seealso>
+        PutAppInstanceStreamingConfigurationsResponse PutAppInstanceStreamingConfigurations(PutAppInstanceStreamingConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAppInstanceStreamingConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAppInstanceStreamingConfigurations operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAppInstanceStreamingConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceStreamingConfigurations">REST API Reference for PutAppInstanceStreamingConfigurations Operation</seealso>
+        IAsyncResult BeginPutAppInstanceStreamingConfigurations(PutAppInstanceStreamingConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAppInstanceStreamingConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAppInstanceStreamingConfigurations.</param>
+        /// 
+        /// <returns>Returns a  PutAppInstanceStreamingConfigurationsResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceStreamingConfigurations">REST API Reference for PutAppInstanceStreamingConfigurations Operation</seealso>
+        PutAppInstanceStreamingConfigurationsResponse EndPutAppInstanceStreamingConfigurations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutEventsConfiguration
 
 
@@ -6304,8 +8792,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -6382,8 +8869,7 @@ namespace Amazon.Chime
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -6444,8 +8930,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -6509,8 +8994,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -6573,8 +9057,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -6642,8 +9125,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -6707,8 +9189,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -6772,8 +9253,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -6844,8 +9324,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -6906,8 +9385,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -6955,6 +9433,65 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  RedactChannelMessage
+
+
+        /// <summary>
+        /// Redacts message content, but not metadata. The message exists in the back end, but
+        /// the action returns null content, and the state shows as redacted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RedactChannelMessage service method.</param>
+        /// 
+        /// <returns>The response from the RedactChannelMessage service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactChannelMessage">REST API Reference for RedactChannelMessage Operation</seealso>
+        RedactChannelMessageResponse RedactChannelMessage(RedactChannelMessageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RedactChannelMessage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RedactChannelMessage operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRedactChannelMessage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactChannelMessage">REST API Reference for RedactChannelMessage Operation</seealso>
+        IAsyncResult BeginRedactChannelMessage(RedactChannelMessageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RedactChannelMessage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRedactChannelMessage.</param>
+        /// 
+        /// <returns>Returns a  RedactChannelMessageResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactChannelMessage">REST API Reference for RedactChannelMessage Operation</seealso>
+        RedactChannelMessageResponse EndRedactChannelMessage(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RedactConversationMessage
 
 
@@ -6968,8 +9505,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -7021,7 +9557,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Redacts the specified message from the specified Amazon Chime chat room.
+        /// Redacts the specified message from the specified Amazon Chime channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RedactRoomMessage service method.</param>
         /// 
@@ -7030,8 +9566,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -7092,8 +9627,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -7155,8 +9689,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -7217,8 +9750,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -7285,8 +9817,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -7331,6 +9862,75 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  SendChannelMessage
+
+
+        /// <summary>
+        /// Sends a message to a particular channel that the member is a part of.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code>
+        /// messages can contain 30 bytes of data and no metadata.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendChannelMessage service method.</param>
+        /// 
+        /// <returns>The response from the SendChannelMessage service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SendChannelMessage">REST API Reference for SendChannelMessage Operation</seealso>
+        SendChannelMessageResponse SendChannelMessage(SendChannelMessageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendChannelMessage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendChannelMessage operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendChannelMessage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SendChannelMessage">REST API Reference for SendChannelMessage Operation</seealso>
+        IAsyncResult BeginSendChannelMessage(SendChannelMessageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendChannelMessage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendChannelMessage.</param>
+        /// 
+        /// <returns>Returns a  SendChannelMessageResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SendChannelMessage">REST API Reference for SendChannelMessage Operation</seealso>
+        SendChannelMessageResponse EndSendChannelMessage(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  TagAttendee
 
 
@@ -7344,8 +9944,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -7409,8 +10008,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -7474,8 +10072,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -7533,8 +10130,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -7595,8 +10191,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -7657,8 +10252,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -7717,8 +10311,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -7786,8 +10379,7 @@ namespace Amazon.Chime
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -7835,6 +10427,131 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  UpdateAppInstance
+
+
+        /// <summary>
+        /// Updates <code>AppInstance</code> metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAppInstance service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAppInstance service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstance">REST API Reference for UpdateAppInstance Operation</seealso>
+        UpdateAppInstanceResponse UpdateAppInstance(UpdateAppInstanceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAppInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAppInstance operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAppInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstance">REST API Reference for UpdateAppInstance Operation</seealso>
+        IAsyncResult BeginUpdateAppInstance(UpdateAppInstanceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAppInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAppInstance.</param>
+        /// 
+        /// <returns>Returns a  UpdateAppInstanceResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstance">REST API Reference for UpdateAppInstance Operation</seealso>
+        UpdateAppInstanceResponse EndUpdateAppInstance(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateAppInstanceUser
+
+
+        /// <summary>
+        /// Updates the details for an <code>AppInstanceUser</code>. You can update names and
+        /// metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAppInstanceUser service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAppInstanceUser service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstanceUser">REST API Reference for UpdateAppInstanceUser Operation</seealso>
+        UpdateAppInstanceUserResponse UpdateAppInstanceUser(UpdateAppInstanceUserRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAppInstanceUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAppInstanceUser operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAppInstanceUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstanceUser">REST API Reference for UpdateAppInstanceUser Operation</seealso>
+        IAsyncResult BeginUpdateAppInstanceUser(UpdateAppInstanceUserRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAppInstanceUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAppInstanceUser.</param>
+        /// 
+        /// <returns>Returns a  UpdateAppInstanceUserResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstanceUser">REST API Reference for UpdateAppInstanceUser Operation</seealso>
+        UpdateAppInstanceUserResponse EndUpdateAppInstanceUser(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateBot
 
 
@@ -7849,8 +10566,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -7898,6 +10614,197 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  UpdateChannel
+
+
+        /// <summary>
+        /// Update a channel's attributes.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Restriction</b>: You can't change a channel's privacy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateChannel service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
+        UpdateChannelResponse UpdateChannel(UpdateChannelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannel operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
+        IAsyncResult BeginUpdateChannel(UpdateChannelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateChannel.</param>
+        /// 
+        /// <returns>Returns a  UpdateChannelResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
+        UpdateChannelResponse EndUpdateChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateChannelMessage
+
+
+        /// <summary>
+        /// Updates the content of a message.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannelMessage service method.</param>
+        /// 
+        /// <returns>The response from the UpdateChannelMessage service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelMessage">REST API Reference for UpdateChannelMessage Operation</seealso>
+        UpdateChannelMessageResponse UpdateChannelMessage(UpdateChannelMessageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateChannelMessage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannelMessage operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateChannelMessage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelMessage">REST API Reference for UpdateChannelMessage Operation</seealso>
+        IAsyncResult BeginUpdateChannelMessage(UpdateChannelMessageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateChannelMessage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateChannelMessage.</param>
+        /// 
+        /// <returns>Returns a  UpdateChannelMessageResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelMessage">REST API Reference for UpdateChannelMessage Operation</seealso>
+        UpdateChannelMessageResponse EndUpdateChannelMessage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateChannelReadMarker
+
+
+        /// <summary>
+        /// Sets the timestamp to the point when a user last read messages in a channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannelReadMarker service method.</param>
+        /// 
+        /// <returns>The response from the UpdateChannelReadMarker service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelReadMarker">REST API Reference for UpdateChannelReadMarker Operation</seealso>
+        UpdateChannelReadMarkerResponse UpdateChannelReadMarker(UpdateChannelReadMarkerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateChannelReadMarker operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannelReadMarker operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateChannelReadMarker
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelReadMarker">REST API Reference for UpdateChannelReadMarker Operation</seealso>
+        IAsyncResult BeginUpdateChannelReadMarker(UpdateChannelReadMarkerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateChannelReadMarker operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateChannelReadMarker.</param>
+        /// 
+        /// <returns>Returns a  UpdateChannelReadMarkerResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelReadMarker">REST API Reference for UpdateChannelReadMarker Operation</seealso>
+        UpdateChannelReadMarkerResponse EndUpdateChannelReadMarker(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateGlobalSettings
 
 
@@ -7912,8 +10819,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -7983,8 +10889,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -8047,8 +10952,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -8106,8 +11010,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -8169,8 +11072,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -8234,8 +11136,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -8300,8 +11201,7 @@ namespace Amazon.Chime
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -8366,8 +11266,7 @@ namespace Amazon.Chime
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -8432,8 +11331,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -8494,8 +11392,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -8556,8 +11453,7 @@ namespace Amazon.Chime
         /// The input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -8623,8 +11519,7 @@ namespace Amazon.Chime
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
-        /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported Region.
+        /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
