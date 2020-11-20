@@ -1,3 +1,30 @@
+### 3.5.60.0 (2020-11-20 19:16 UTC)
+* AppMesh (3.5.2.0)
+	* This release makes tag value a required attribute of the tag's key-value pair.
+* AppRegistry (3.5.1.0)
+	* AWS Service Catalog AppRegistry Documentation update
+* Chime (3.5.2.0)
+	* The Amazon Chime SDK for messaging provides the building blocks needed to build chat and other real-time collaboration features.
+* CloudHSMV2 (3.5.1.0)
+	* Added managed backup retention, a feature that enables customers to retain backups for a configurable period after which CloudHSM service will automatically delete them.
+* CodeGuruReviewer (3.5.2.0)
+	* This release supports tagging repository association resources in Amazon CodeGuru Reviewer.
+* CognitoIdentity (3.5.1.0)
+	* Added SDK pagination support for ListIdentityPools
+* Connect (3.5.3.0)
+	* This release adds a set of Amazon Connect APIs to programmatically control instance creation, modification, description and deletion.
+* Kafka (3.5.4.0)
+	* This release adds support for PER TOPIC PER PARTITION monitoring on AWS MSK clusters.
+* Macie2 (3.5.6.0)
+	* The Amazon Macie API now provides S3 bucket metadata that indicates whether any one-time or recurring classification jobs are configured to analyze data in a bucket.
+* S3 (3.5.5.0)
+	* Add new documentation regarding automatically generated Content-MD5 headers when using the SDK or CLI.
+* Core 3.5.1.40
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.59.0 (2020-11-19 19:30 UTC)
 * AutoScaling (3.5.2.0)
 	* You can now create Auto Scaling groups with multiple launch templates using a mixed instances policy, making it easy to deploy an AMI with an architecture that is different from the rest of the group.
