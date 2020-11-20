@@ -59,7 +59,7 @@
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.DescribeBackupsRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.DescribeBackupsRequest.NextToken</property>
@@ -74,7 +74,7 @@
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.DescribeClustersRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>25</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.DescribeClustersRequest.NextToken</property>
@@ -125,6 +125,14 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.ModifyBackupAttributesRequest.BackupId</property>
+    <pattern>backup-[2-7a-zA-Z]{11,16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.ModifyClusterRequest.ClusterId</property>
+    <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.RestoreBackupRequest.BackupId</property>
     <pattern>backup-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
@@ -155,6 +163,12 @@
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Backup.SourceRegion</property>
     <pattern>[a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\d</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.BackupRetentionPolicy.Value</property>
+    <min>1</min>
+    <max>3</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Certificates.AwsHardwareCertificate</property>

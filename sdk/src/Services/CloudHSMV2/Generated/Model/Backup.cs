@@ -30,10 +30,11 @@ namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
     /// Contains information about a backup of an AWS CloudHSM cluster. All backup objects
-    /// contain the BackupId, BackupState, ClusterId, and CreateTimestamp parameters. Backups
-    /// that were copied into a destination region additionally contain the CopyTimestamp,
-    /// SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending
-    /// deletion will include the DeleteTimestamp parameter.
+    /// contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>,
+    /// and <code>CreateTimestamp</code> parameters. Backups that were copied into a destination
+    /// region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>,
+    /// <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that
+    /// is pending deletion will include the <code>DeleteTimestamp</code> parameter.
     /// </summary>
     public partial class Backup
     {
@@ -43,6 +44,7 @@ namespace Amazon.CloudHSMV2.Model
         private DateTime? _copyTimestamp;
         private DateTime? _createTimestamp;
         private DateTime? _deleteTimestamp;
+        private bool? _neverExpires;
         private string _sourceBackup;
         private string _sourceCluster;
         private string _sourceRegion;
@@ -155,6 +157,26 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetDeleteTimestamp()
         {
             return this._deleteTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NeverExpires. 
+        /// <para>
+        /// Specifies whether the service should exempt a backup from the retention policy for
+        /// the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code>
+        /// means the service applies the backup retention policy defined at the cluster.
+        /// </para>
+        /// </summary>
+        public bool NeverExpires
+        {
+            get { return this._neverExpires.GetValueOrDefault(); }
+            set { this._neverExpires = value; }
+        }
+
+        // Check to see if NeverExpires property is set
+        internal bool IsSetNeverExpires()
+        {
+            return this._neverExpires.HasValue; 
         }
 
         /// <summary>

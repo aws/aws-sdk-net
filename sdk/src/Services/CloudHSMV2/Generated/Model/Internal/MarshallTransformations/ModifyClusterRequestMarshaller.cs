@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateCluster Request Marshaller
+    /// ModifyCluster Request Marshaller
     /// </summary>       
-    public class CreateClusterRequestMarshaller : IMarshaller<IRequest, CreateClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ModifyClusterRequestMarshaller : IMarshaller<IRequest, ModifyClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateClusterRequest)input);
+            return this.Marshall((ModifyClusterRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateClusterRequest publicRequest)
+        public IRequest Marshall(ModifyClusterRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudHSMV2");
-            string target = "BaldrApiService.CreateCluster";
+            string target = "BaldrApiService.ModifyCluster";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-28";            
@@ -79,43 +79,10 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetHsmType())
+                if(publicRequest.IsSetClusterId())
                 {
-                    context.Writer.WritePropertyName("HsmType");
-                    context.Writer.Write(publicRequest.HsmType);
-                }
-
-                if(publicRequest.IsSetSourceBackupId())
-                {
-                    context.Writer.WritePropertyName("SourceBackupId");
-                    context.Writer.Write(publicRequest.SourceBackupId);
-                }
-
-                if(publicRequest.IsSetSubnetIds())
-                {
-                    context.Writer.WritePropertyName("SubnetIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
-                    {
-                            context.Writer.Write(publicRequestSubnetIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTagList())
-                {
-                    context.Writer.WritePropertyName("TagList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagListListValue in publicRequest.TagList)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagListListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("ClusterId");
+                    context.Writer.Write(publicRequest.ClusterId);
                 }
 
         
@@ -127,9 +94,9 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateClusterRequestMarshaller _instance = new CreateClusterRequestMarshaller();        
+        private static ModifyClusterRequestMarshaller _instance = new ModifyClusterRequestMarshaller();        
 
-        internal static CreateClusterRequestMarshaller GetInstance()
+        internal static ModifyClusterRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -137,7 +104,7 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateClusterRequestMarshaller Instance
+        public static ModifyClusterRequestMarshaller Instance
         {
             get
             {

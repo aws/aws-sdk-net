@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateCluster Request Marshaller
+    /// ModifyBackupAttributes Request Marshaller
     /// </summary>       
-    public class CreateClusterRequestMarshaller : IMarshaller<IRequest, CreateClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ModifyBackupAttributesRequestMarshaller : IMarshaller<IRequest, ModifyBackupAttributesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateClusterRequest)input);
+            return this.Marshall((ModifyBackupAttributesRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateClusterRequest publicRequest)
+        public IRequest Marshall(ModifyBackupAttributesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudHSMV2");
-            string target = "BaldrApiService.CreateCluster";
+            string target = "BaldrApiService.ModifyBackupAttributes";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-28";            
@@ -68,54 +68,16 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBackupRetentionPolicy())
+                if(publicRequest.IsSetBackupId())
                 {
-                    context.Writer.WritePropertyName("BackupRetentionPolicy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BackupRetentionPolicyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BackupRetentionPolicy, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("BackupId");
+                    context.Writer.Write(publicRequest.BackupId);
                 }
 
-                if(publicRequest.IsSetHsmType())
+                if(publicRequest.IsSetNeverExpires())
                 {
-                    context.Writer.WritePropertyName("HsmType");
-                    context.Writer.Write(publicRequest.HsmType);
-                }
-
-                if(publicRequest.IsSetSourceBackupId())
-                {
-                    context.Writer.WritePropertyName("SourceBackupId");
-                    context.Writer.Write(publicRequest.SourceBackupId);
-                }
-
-                if(publicRequest.IsSetSubnetIds())
-                {
-                    context.Writer.WritePropertyName("SubnetIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
-                    {
-                            context.Writer.Write(publicRequestSubnetIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTagList())
-                {
-                    context.Writer.WritePropertyName("TagList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagListListValue in publicRequest.TagList)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagListListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("NeverExpires");
+                    context.Writer.Write(publicRequest.NeverExpires);
                 }
 
         
@@ -127,9 +89,9 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateClusterRequestMarshaller _instance = new CreateClusterRequestMarshaller();        
+        private static ModifyBackupAttributesRequestMarshaller _instance = new ModifyBackupAttributesRequestMarshaller();        
 
-        internal static CreateClusterRequestMarshaller GetInstance()
+        internal static ModifyBackupAttributesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -137,7 +99,7 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateClusterRequestMarshaller Instance
+        public static ModifyBackupAttributesRequestMarshaller Instance
         {
             get
             {

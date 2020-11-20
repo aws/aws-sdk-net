@@ -87,7 +87,7 @@ namespace Amazon.CloudHSMV2.Model
         /// than the number you specify, the response contains a <code>NextToken</code> value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=25)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
