@@ -142,7 +142,7 @@ namespace Amazon.Kafka.Model
         /// Gets and sets the property EnhancedMonitoring.             
         /// <para>
         /// Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT,
-        /// PER_BROKER, and PER_TOPIC_PER_BROKER.
+        /// PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.
         /// </para>
         /// </summary>
         public EnhancedMonitoring EnhancedMonitoring

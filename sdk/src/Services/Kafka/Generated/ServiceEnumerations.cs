@@ -258,6 +258,10 @@ namespace Amazon.Kafka
         /// Constant PER_TOPIC_PER_BROKER for EnhancedMonitoring
         /// </summary>
         public static readonly EnhancedMonitoring PER_TOPIC_PER_BROKER = new EnhancedMonitoring("PER_TOPIC_PER_BROKER");
+        /// <summary>
+        /// Constant PER_TOPIC_PER_PARTITION for EnhancedMonitoring
+        /// </summary>
+        public static readonly EnhancedMonitoring PER_TOPIC_PER_PARTITION = new EnhancedMonitoring("PER_TOPIC_PER_PARTITION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
