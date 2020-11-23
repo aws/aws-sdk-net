@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetHost operation
+    /// Response Unmarshaller for UpdateHost operation
     /// </summary>  
-    public class GetHostResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateHostResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,43 +45,8 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetHostResponse response = new GetHostResponse();
+            UpdateHostResponse response = new UpdateHostResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProviderEndpoint", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ProviderEndpoint = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProviderType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ProviderType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VpcConfiguration", targetDepth))
-                {
-                    var unmarshaller = VpcConfigurationUnmarshaller.Instance;
-                    response.VpcConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -104,6 +69,10 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -112,13 +81,17 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
                 {
                     return ResourceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperationException"))
+                {
+                    return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonCodeStarconnectionsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetHostResponseUnmarshaller _instance = new GetHostResponseUnmarshaller();        
+        private static UpdateHostResponseUnmarshaller _instance = new UpdateHostResponseUnmarshaller();        
 
-        internal static GetHostResponseUnmarshaller GetInstance()
+        internal static UpdateHostResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -126,7 +99,7 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetHostResponseUnmarshaller Instance
+        public static UpdateHostResponseUnmarshaller Instance
         {
             get
             {

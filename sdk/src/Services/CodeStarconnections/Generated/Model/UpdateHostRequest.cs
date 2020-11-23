@@ -29,39 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStarconnections.Model
 {
     /// <summary>
-    /// This is the response object from the GetHost operation.
+    /// Container for the parameters to the UpdateHost operation.
+    /// Updates a specified host with the provided configurations.
     /// </summary>
-    public partial class GetHostResponse : AmazonWebServiceResponse
+    public partial class UpdateHostRequest : AmazonCodeStarconnectionsRequest
     {
-        private string _name;
+        private string _hostArn;
         private string _providerEndpoint;
-        private ProviderType _providerType;
-        private string _status;
         private VpcConfiguration _vpcConfiguration;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property HostArn. 
         /// <para>
-        /// The name of the requested host.
+        /// The Amazon Resource Name (ARN) of the host to be updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string Name
+        [AWSProperty(Required=true, Min=0, Max=256)]
+        public string HostArn
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._hostArn; }
+            set { this._hostArn = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if HostArn property is set
+        internal bool IsSetHostArn()
         {
-            return this._name != null;
+            return this._hostArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property ProviderEndpoint. 
         /// <para>
-        /// The endpoint of the infrastructure represented by the requested host.
+        /// The URL or endpoint of the host to be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -78,45 +77,10 @@ namespace Amazon.CodeStarconnections.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProviderType. 
-        /// <para>
-        /// The provider type of the requested host, such as GitHub Enterprise Server.
-        /// </para>
-        /// </summary>
-        public ProviderType ProviderType
-        {
-            get { return this._providerType; }
-            set { this._providerType = value; }
-        }
-
-        // Check to see if ProviderType property is set
-        internal bool IsSetProviderType()
-        {
-            return this._providerType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The status of the requested host.
-        /// </para>
-        /// </summary>
-        public string Status
-        {
-            get { return this._status; }
-            set { this._status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this._status != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property VpcConfiguration. 
         /// <para>
-        /// The VPC configuration of the requested host.
+        /// The VPC configuration of the host to be updated. A VPC must be configured and the
+        /// infrastructure to be represented by the host must already be connected to the VPC.
         /// </para>
         /// </summary>
         public VpcConfiguration VpcConfiguration

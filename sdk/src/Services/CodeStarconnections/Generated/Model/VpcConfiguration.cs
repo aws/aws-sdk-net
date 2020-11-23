@@ -105,7 +105,7 @@ namespace Amazon.CodeStarconnections.Model
         /// is installed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=12, Max=21)]
         public string VpcId
         {
             get { return this._vpcId; }
