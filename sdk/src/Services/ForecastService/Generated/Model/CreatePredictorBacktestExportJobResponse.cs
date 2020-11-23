@@ -29,32 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
-    /// The destination for an export job, an AWS Identity and Access Management (IAM) role
-    /// that allows Amazon Forecast to access the location and, optionally, an AWS Key Management
-    /// Service (KMS) key.
+    /// This is the response object from the CreatePredictorBacktestExportJob operation.
     /// </summary>
-    public partial class DataDestination
+    public partial class CreatePredictorBacktestExportJobResponse : AmazonWebServiceResponse
     {
-        private S3Config _s3Config;
+        private string _predictorBacktestExportJobArn;
 
         /// <summary>
-        /// Gets and sets the property S3Config. 
+        /// Gets and sets the property PredictorBacktestExportJobArn. 
         /// <para>
-        /// The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials
-        /// to access the bucket.
+        /// The Amazon Resource Name (ARN) of the predictor backtest export job that you want
+        /// to export.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public S3Config S3Config
+        [AWSProperty(Max=256)]
+        public string PredictorBacktestExportJobArn
         {
-            get { return this._s3Config; }
-            set { this._s3Config = value; }
+            get { return this._predictorBacktestExportJobArn; }
+            set { this._predictorBacktestExportJobArn = value; }
         }
 
-        // Check to see if S3Config property is set
-        internal bool IsSetS3Config()
+        // Check to see if PredictorBacktestExportJobArn property is set
+        internal bool IsSetPredictorBacktestExportJobArn()
         {
-            return this._s3Config != null;
+            return this._predictorBacktestExportJobArn != null;
         }
 
     }

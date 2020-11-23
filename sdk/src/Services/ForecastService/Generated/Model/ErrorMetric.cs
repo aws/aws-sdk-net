@@ -41,8 +41,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property ForecastType. 
         /// <para>
-        ///  Forecast types can be quantiles from 0.01 to 0.99 (by increments of 0.01), and the
-        /// mean. 
+        ///  The Forecast type used to compute WAPE and RMSE. 
         /// </para>
         /// </summary>
         public string ForecastType
