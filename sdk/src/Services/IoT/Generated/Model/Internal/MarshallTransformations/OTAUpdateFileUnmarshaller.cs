@@ -88,6 +88,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.FileName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fileType", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.FileType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fileVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

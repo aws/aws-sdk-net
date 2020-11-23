@@ -37,6 +37,7 @@ namespace Amazon.IoT.Model
         private CodeSigning _codeSigning;
         private FileLocation _fileLocation;
         private string _fileName;
+        private int? _fileType;
         private string _fileVersion;
 
         /// <summary>
@@ -109,6 +110,26 @@ namespace Amazon.IoT.Model
         internal bool IsSetFileName()
         {
             return this._fileName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileType. 
+        /// <para>
+        /// An integer value you can include in the job document to allow your devices to identify
+        /// the type of file received from the cloud.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=255)]
+        public int FileType
+        {
+            get { return this._fileType.GetValueOrDefault(); }
+            set { this._fileType = value; }
+        }
+
+        // Check to see if FileType property is set
+        internal bool IsSetFileType()
+        {
+            return this._fileType.HasValue; 
         }
 
         /// <summary>
