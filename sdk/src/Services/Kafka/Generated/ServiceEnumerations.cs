@@ -147,6 +147,14 @@ namespace Amazon.Kafka
         /// </summary>
         public static readonly ClusterState FAILED = new ClusterState("FAILED");
         /// <summary>
+        /// Constant MAINTENANCE for ClusterState
+        /// </summary>
+        public static readonly ClusterState MAINTENANCE = new ClusterState("MAINTENANCE");
+        /// <summary>
+        /// Constant REBOOTING_BROKER for ClusterState
+        /// </summary>
+        public static readonly ClusterState REBOOTING_BROKER = new ClusterState("REBOOTING_BROKER");
+        /// <summary>
         /// Constant UPDATING for ClusterState
         /// </summary>
         public static readonly ClusterState UPDATING = new ClusterState("UPDATING");
