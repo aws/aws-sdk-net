@@ -42,6 +42,7 @@ namespace Amazon.Translate.Model
         private JobStatus _jobStatus;
         private string _message;
         private OutputDataConfig _outputDataConfig;
+        private List<string> _parallelDataNames = new List<string>();
         private string _sourceLanguageCode;
         private DateTime? _submittedTime;
         private List<string> _targetLanguageCodes = new List<string>();
@@ -212,6 +213,25 @@ namespace Amazon.Translate.Model
         internal bool IsSetOutputDataConfig()
         {
             return this._outputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParallelDataNames. 
+        /// <para>
+        /// A list containing the names of the parallel data resources applied to the translation
+        /// job.
+        /// </para>
+        /// </summary>
+        public List<string> ParallelDataNames
+        {
+            get { return this._parallelDataNames; }
+            set { this._parallelDataNames = value; }
+        }
+
+        // Check to see if ParallelDataNames property is set
+        internal bool IsSetParallelDataNames()
+        {
+            return this._parallelDataNames != null && this._parallelDataNames.Count > 0; 
         }
 
         /// <summary>

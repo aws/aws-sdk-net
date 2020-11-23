@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartTextTranslationJob Request Marshaller
+    /// CreateParallelData Request Marshaller
     /// </summary>       
-    public class StartTextTranslationJobRequestMarshaller : IMarshaller<IRequest, StartTextTranslationJobRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateParallelDataRequestMarshaller : IMarshaller<IRequest, CreateParallelDataRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartTextTranslationJobRequest)input);
+            return this.Marshall((CreateParallelDataRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartTextTranslationJobRequest publicRequest)
+        public IRequest Marshall(CreateParallelDataRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Translate");
-            string target = "AWSShineFrontendService_20170701.StartTextTranslationJob";
+            string target = "AWSShineFrontendService_20170701.CreateParallelData";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-01";            
@@ -79,77 +79,38 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
-                if(publicRequest.IsSetDataAccessRoleArn())
+                if(publicRequest.IsSetDescription())
                 {
-                    context.Writer.WritePropertyName("DataAccessRoleArn");
-                    context.Writer.Write(publicRequest.DataAccessRoleArn);
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
                 }
 
-                if(publicRequest.IsSetInputDataConfig())
+                if(publicRequest.IsSetEncryptionKey())
                 {
-                    context.Writer.WritePropertyName("InputDataConfig");
+                    context.Writer.WritePropertyName("EncryptionKey");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = InputDataConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InputDataConfig, context);
+                    var marshaller = EncryptionKeyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EncryptionKey, context);
 
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetJobName())
+                if(publicRequest.IsSetName())
                 {
-                    context.Writer.WritePropertyName("JobName");
-                    context.Writer.Write(publicRequest.JobName);
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
                 }
 
-                if(publicRequest.IsSetOutputDataConfig())
+                if(publicRequest.IsSetParallelDataConfig())
                 {
-                    context.Writer.WritePropertyName("OutputDataConfig");
+                    context.Writer.WritePropertyName("ParallelDataConfig");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = OutputDataConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputDataConfig, context);
+                    var marshaller = ParallelDataConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ParallelDataConfig, context);
 
                     context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetParallelDataNames())
-                {
-                    context.Writer.WritePropertyName("ParallelDataNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestParallelDataNamesListValue in publicRequest.ParallelDataNames)
-                    {
-                            context.Writer.Write(publicRequestParallelDataNamesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetSourceLanguageCode())
-                {
-                    context.Writer.WritePropertyName("SourceLanguageCode");
-                    context.Writer.Write(publicRequest.SourceLanguageCode);
-                }
-
-                if(publicRequest.IsSetTargetLanguageCodes())
-                {
-                    context.Writer.WritePropertyName("TargetLanguageCodes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTargetLanguageCodesListValue in publicRequest.TargetLanguageCodes)
-                    {
-                            context.Writer.Write(publicRequestTargetLanguageCodesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTerminologyNames())
-                {
-                    context.Writer.WritePropertyName("TerminologyNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTerminologyNamesListValue in publicRequest.TerminologyNames)
-                    {
-                            context.Writer.Write(publicRequestTerminologyNamesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
                 }
 
         
@@ -161,9 +122,9 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static StartTextTranslationJobRequestMarshaller _instance = new StartTextTranslationJobRequestMarshaller();        
+        private static CreateParallelDataRequestMarshaller _instance = new CreateParallelDataRequestMarshaller();        
 
-        internal static StartTextTranslationJobRequestMarshaller GetInstance()
+        internal static CreateParallelDataRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -171,7 +132,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartTextTranslationJobRequestMarshaller Instance
+        public static CreateParallelDataRequestMarshaller Instance
         {
             get
             {

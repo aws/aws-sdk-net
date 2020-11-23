@@ -29,50 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Translate.Model
 {
     /// <summary>
-    /// The encryption key used to encrypt this object.
+    /// This is the response object from the DeleteParallelData operation.
     /// </summary>
-    public partial class EncryptionKey
+    public partial class DeleteParallelDataResponse : AmazonWebServiceResponse
     {
-        private string _id;
-        private EncryptionKeyType _type;
+        private string _name;
+        private ParallelDataStatus _status;
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the encryption key being used to encrypt the custom
-        /// terminology.
+        /// The name of the parallel data resource that is being deleted.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=400)]
-        public string Id
+        [AWSProperty(Min=1, Max=256)]
+        public string Name
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._id != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Type. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// The type of encryption key used by Amazon Translate to encrypt custom terminologies.
+        /// The status of the parallel data deletion.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public EncryptionKeyType Type
+        public ParallelDataStatus Status
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._type != null;
+            return this._status != null;
         }
 
     }

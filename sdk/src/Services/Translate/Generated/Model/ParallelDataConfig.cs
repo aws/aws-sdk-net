@@ -29,50 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Translate.Model
 {
     /// <summary>
-    /// The encryption key used to encrypt this object.
+    /// Specifies the format and S3 location of the parallel data input file.
     /// </summary>
-    public partial class EncryptionKey
+    public partial class ParallelDataConfig
     {
-        private string _id;
-        private EncryptionKeyType _type;
+        private ParallelDataFormat _format;
+        private string _s3Uri;
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property Format. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the encryption key being used to encrypt the custom
-        /// terminology.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=400)]
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of encryption key used by Amazon Translate to encrypt custom terminologies.
+        /// The format of the parallel data input file.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public EncryptionKeyType Type
+        public ParallelDataFormat Format
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._format; }
+            set { this._format = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
         {
-            return this._type != null;
+            return this._format != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Uri. 
+        /// <para>
+        /// The URI of the Amazon S3 folder that contains the parallel data input file. The folder
+        /// must be in the same Region as the API endpoint you are calling.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
+        public string S3Uri
+        {
+            get { return this._s3Uri; }
+            set { this._s3Uri = value; }
+        }
+
+        // Check to see if S3Uri property is set
+        internal bool IsSetS3Uri()
+        {
+            return this._s3Uri != null;
         }
 
     }

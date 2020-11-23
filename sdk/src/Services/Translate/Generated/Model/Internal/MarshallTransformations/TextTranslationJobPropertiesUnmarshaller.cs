@@ -118,6 +118,12 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
                     unmarshalledObject.OutputDataConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ParallelDataNames", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ParallelDataNames = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceLanguageCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

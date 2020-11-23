@@ -29,50 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Translate.Model
 {
     /// <summary>
-    /// The encryption key used to encrypt this object.
+    /// Container for the parameters to the ListParallelData operation.
+    /// Provides a list of your parallel data resources in Amazon Translate.
     /// </summary>
-    public partial class EncryptionKey
+    public partial class ListParallelDataRequest : AmazonTranslateRequest
     {
-        private string _id;
-        private EncryptionKeyType _type;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the encryption key being used to encrypt the custom
-        /// terminology.
+        /// The maximum number of parallel data resources returned for each request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=400)]
-        public string Id
+        [AWSProperty(Min=1, Max=500)]
+        public int MaxResults
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._id != null;
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Type. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The type of encryption key used by Amazon Translate to encrypt custom terminologies.
+        /// A string that specifies the next page of results to return in a paginated response.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public EncryptionKeyType Type
+        [AWSProperty(Max=8192)]
+        public string NextToken
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._type != null;
+            return this._nextToken != null;
         }
 
     }

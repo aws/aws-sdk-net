@@ -17,29 +17,19 @@
 /*
  * Do not modify this file. This file is generated from the translate-2017-07-01.normal.json service model.
  */
+using Amazon.Runtime;
 
 namespace Amazon.Translate.Model
 {
     /// <summary>
-    /// Paginators for the Translate service
+    /// Paginator for the ListParallelData operation
     ///</summary>
-    public interface ITranslatePaginatorFactory
+    public interface IListParallelDataPaginator
     {
-
         /// <summary>
-        /// Paginator for ListParallelData operation
-        ///</summary>
-        IListParallelDataPaginator ListParallelData(ListParallelDataRequest request);
-
-        /// <summary>
-        /// Paginator for ListTerminologies operation
-        ///</summary>
-        IListTerminologiesPaginator ListTerminologies(ListTerminologiesRequest request);
-
-        /// <summary>
-        /// Paginator for ListTextTranslationJobs operation
-        ///</summary>
-        IListTextTranslationJobsPaginator ListTextTranslationJobs(ListTextTranslationJobsRequest request);
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListParallelDataResponse> Responses { get; }
     }
 }
 #endif
