@@ -47,7 +47,7 @@ namespace Amazon.Lambda.Model
         /// The layer's compatible runtimes.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Max=15)]
         public List<string> CompatibleRuntimes
         {
             get { return this._compatibleRuntimes; }

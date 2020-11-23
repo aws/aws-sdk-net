@@ -171,6 +171,18 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.Runtime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SigningJobArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SigningJobArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SigningProfileVersionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SigningProfileVersionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

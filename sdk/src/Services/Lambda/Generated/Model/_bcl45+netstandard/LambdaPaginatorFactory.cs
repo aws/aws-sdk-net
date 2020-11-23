@@ -45,6 +45,14 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Paginator for ListCodeSigningConfigs operation
+        ///</summary>
+        public IListCodeSigningConfigsPaginator ListCodeSigningConfigs(ListCodeSigningConfigsRequest request) 
+        {
+            return new ListCodeSigningConfigsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEventSourceMappings operation
         ///</summary>
         public IListEventSourceMappingsPaginator ListEventSourceMappings(ListEventSourceMappingsRequest request) 
@@ -66,6 +74,14 @@ namespace Amazon.Lambda.Model
         public IListFunctionsPaginator ListFunctions(ListFunctionsRequest request) 
         {
             return new ListFunctionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFunctionsByCodeSigningConfig operation
+        ///</summary>
+        public IListFunctionsByCodeSigningConfigPaginator ListFunctionsByCodeSigningConfig(ListFunctionsByCodeSigningConfigRequest request) 
+        {
+            return new ListFunctionsByCodeSigningConfigPaginator(this.client, request);
         }
 
         /// <summary>

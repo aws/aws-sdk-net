@@ -77,6 +77,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCodeSigningConfigArn())
+                {
+                    context.Writer.WritePropertyName("CodeSigningConfigArn");
+                    context.Writer.Write(publicRequest.CodeSigningConfigArn);
+                }
+
                 if(publicRequest.IsSetDeadLetterConfig())
                 {
                     context.Writer.WritePropertyName("DeadLetterConfig");

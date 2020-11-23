@@ -65,6 +65,14 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  
     /// <para>
+    /// To enable code signing for this function, specify the ARN of a code-signing configuration.
+    /// When a user attempts to deploy a code package with <a>UpdateFunctionCode</a>, Lambda
+    /// checks that the code package has a valid signature from a trusted publisher. The code-signing
+    /// configuration includes set set of signing profiles, which define the trusted publishers
+    /// for this function.
+    /// </para>
+    ///  
+    /// <para>
     /// If another account or an AWS service invokes your function, use <a>AddPermission</a>
     /// to grant permission by creating a resource-based IAM policy. You can grant permissions
     /// at the function level, on a version, or on an alias.
@@ -81,6 +89,7 @@ namespace Amazon.Lambda.Model
     public partial class CreateFunctionRequest : AmazonLambdaRequest
     {
         private FunctionCode _code;
+        private string _codeSigningConfigArn;
         private DeadLetterConfig _deadLetterConfig;
         private string _description;
         private Environment _environment;
@@ -115,6 +124,27 @@ namespace Amazon.Lambda.Model
         internal bool IsSetCode()
         {
             return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeSigningConfigArn. 
+        /// <para>
+        /// To enable code signing for this function, specify the ARN of a code-signing configuration.
+        /// A code-signing configuration includes set set of signing profiles, which define the
+        /// trusted publishers for this function.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=200)]
+        public string CodeSigningConfigArn
+        {
+            get { return this._codeSigningConfigArn; }
+            set { this._codeSigningConfigArn = value; }
+        }
+
+        // Check to see if CodeSigningConfigArn property is set
+        internal bool IsSetCodeSigningConfigArn()
+        {
+            return this._codeSigningConfigArn != null;
         }
 
         /// <summary>

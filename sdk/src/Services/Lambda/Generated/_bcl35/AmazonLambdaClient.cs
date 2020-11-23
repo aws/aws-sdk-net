@@ -510,6 +510,69 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  CreateCodeSigningConfig
+
+        /// <summary>
+        /// Creates a code signing configuration. A <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">code
+        /// signing configuration</a> defines a list of allowed signing profiles and defines the
+        /// code-signing validation policy (action to be taken if deployment validation checks
+        /// fail).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCodeSigningConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateCodeSigningConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateCodeSigningConfig">REST API Reference for CreateCodeSigningConfig Operation</seealso>
+        public virtual CreateCodeSigningConfigResponse CreateCodeSigningConfig(CreateCodeSigningConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCodeSigningConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCodeSigningConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCodeSigningConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCodeSigningConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCodeSigningConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCodeSigningConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateCodeSigningConfig">REST API Reference for CreateCodeSigningConfig Operation</seealso>
+        public virtual IAsyncResult BeginCreateCodeSigningConfig(CreateCodeSigningConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCodeSigningConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCodeSigningConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCodeSigningConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCodeSigningConfig.</param>
+        /// 
+        /// <returns>Returns a  CreateCodeSigningConfigResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateCodeSigningConfig">REST API Reference for CreateCodeSigningConfig Operation</seealso>
+        public virtual CreateCodeSigningConfigResponse EndCreateCodeSigningConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateCodeSigningConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateEventSourceMapping
 
         /// <summary>
@@ -680,6 +743,14 @@ namespace Amazon.Lambda
         /// </para>
         ///  
         /// <para>
+        /// To enable code signing for this function, specify the ARN of a code-signing configuration.
+        /// When a user attempts to deploy a code package with <a>UpdateFunctionCode</a>, Lambda
+        /// checks that the code package has a valid signature from a trusted publisher. The code-signing
+        /// configuration includes set set of signing profiles, which define the trusted publishers
+        /// for this function.
+        /// </para>
+        ///  
+        /// <para>
         /// If another account or an AWS service invokes your function, use <a>AddPermission</a>
         /// to grant permission by creating a resource-based IAM policy. You can grant permissions
         /// at the function level, on a version, or on an alias.
@@ -696,9 +767,20 @@ namespace Amazon.Lambda
         /// <param name="request">Container for the necessary parameters to execute the CreateFunction service method.</param>
         /// 
         /// <returns>The response from the CreateFunction service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CodeSigningConfigNotFoundException">
+        /// The specified code signing configuration does not exist.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
         /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
         /// more</a>
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.CodeVerificationFailedException">
+        /// The code signature failed one or more of the validation checks for signature mismatch
+        /// or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidCodeSignatureException">
+        /// The code signature failed the integrity check. Lambda always blocks deployment if
+        /// the integrity check fails, even if code signing policy is set to WARN.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid.
@@ -823,6 +905,73 @@ namespace Amazon.Lambda
         public virtual DeleteAliasResponse EndDeleteAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAliasResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteCodeSigningConfig
+
+        /// <summary>
+        /// Deletes the code signing configuration. You can delete the code signing configuration
+        /// only if no function is using it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCodeSigningConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCodeSigningConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteCodeSigningConfig">REST API Reference for DeleteCodeSigningConfig Operation</seealso>
+        public virtual DeleteCodeSigningConfigResponse DeleteCodeSigningConfig(DeleteCodeSigningConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCodeSigningConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCodeSigningConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCodeSigningConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCodeSigningConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCodeSigningConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCodeSigningConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteCodeSigningConfig">REST API Reference for DeleteCodeSigningConfig Operation</seealso>
+        public virtual IAsyncResult BeginDeleteCodeSigningConfig(DeleteCodeSigningConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCodeSigningConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCodeSigningConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCodeSigningConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCodeSigningConfig.</param>
+        /// 
+        /// <returns>Returns a  DeleteCodeSigningConfigResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteCodeSigningConfig">REST API Reference for DeleteCodeSigningConfig Operation</seealso>
+        public virtual DeleteCodeSigningConfigResponse EndDeleteCodeSigningConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteCodeSigningConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -1016,6 +1165,78 @@ namespace Amazon.Lambda
         public virtual DeleteFunctionResponse EndDeleteFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFunctionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteFunctionCodeSigningConfig
+
+        /// <summary>
+        /// Removes the code signing configuration from the function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunctionCodeSigningConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFunctionCodeSigningConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CodeSigningConfigNotFoundException">
+        /// The specified code signing configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionCodeSigningConfig">REST API Reference for DeleteFunctionCodeSigningConfig Operation</seealso>
+        public virtual DeleteFunctionCodeSigningConfigResponse DeleteFunctionCodeSigningConfig(DeleteFunctionCodeSigningConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFunctionCodeSigningConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFunctionCodeSigningConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFunctionCodeSigningConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFunctionCodeSigningConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunctionCodeSigningConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFunctionCodeSigningConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionCodeSigningConfig">REST API Reference for DeleteFunctionCodeSigningConfig Operation</seealso>
+        public virtual IAsyncResult BeginDeleteFunctionCodeSigningConfig(DeleteFunctionCodeSigningConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFunctionCodeSigningConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFunctionCodeSigningConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFunctionCodeSigningConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFunctionCodeSigningConfig.</param>
+        /// 
+        /// <returns>Returns a  DeleteFunctionCodeSigningConfigResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionCodeSigningConfig">REST API Reference for DeleteFunctionCodeSigningConfig Operation</seealso>
+        public virtual DeleteFunctionCodeSigningConfigResponse EndDeleteFunctionCodeSigningConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteFunctionCodeSigningConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -1420,6 +1641,69 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  GetCodeSigningConfig
+
+        /// <summary>
+        /// Returns information about the specified code signing configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCodeSigningConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetCodeSigningConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetCodeSigningConfig">REST API Reference for GetCodeSigningConfig Operation</seealso>
+        public virtual GetCodeSigningConfigResponse GetCodeSigningConfig(GetCodeSigningConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCodeSigningConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCodeSigningConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetCodeSigningConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCodeSigningConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCodeSigningConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCodeSigningConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetCodeSigningConfig">REST API Reference for GetCodeSigningConfig Operation</seealso>
+        public virtual IAsyncResult BeginGetCodeSigningConfig(GetCodeSigningConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCodeSigningConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCodeSigningConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCodeSigningConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCodeSigningConfig.</param>
+        /// 
+        /// <returns>Returns a  GetCodeSigningConfigResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetCodeSigningConfig">REST API Reference for GetCodeSigningConfig Operation</seealso>
+        public virtual GetCodeSigningConfigResponse EndGetCodeSigningConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCodeSigningConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetEventSourceMapping
 
         /// <summary>
@@ -1580,6 +1864,72 @@ namespace Amazon.Lambda
         public virtual GetFunctionResponse EndGetFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFunctionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetFunctionCodeSigningConfig
+
+        /// <summary>
+        /// Returns the code signing configuration for the specified function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFunctionCodeSigningConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetFunctionCodeSigningConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionCodeSigningConfig">REST API Reference for GetFunctionCodeSigningConfig Operation</seealso>
+        public virtual GetFunctionCodeSigningConfigResponse GetFunctionCodeSigningConfig(GetFunctionCodeSigningConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFunctionCodeSigningConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFunctionCodeSigningConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetFunctionCodeSigningConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFunctionCodeSigningConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFunctionCodeSigningConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFunctionCodeSigningConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionCodeSigningConfig">REST API Reference for GetFunctionCodeSigningConfig Operation</seealso>
+        public virtual IAsyncResult BeginGetFunctionCodeSigningConfig(GetFunctionCodeSigningConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFunctionCodeSigningConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFunctionCodeSigningConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFunctionCodeSigningConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFunctionCodeSigningConfig.</param>
+        /// 
+        /// <returns>Returns a  GetFunctionCodeSigningConfigResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionCodeSigningConfig">REST API Reference for GetFunctionCodeSigningConfig Operation</seealso>
+        public virtual GetFunctionCodeSigningConfigResponse EndGetFunctionCodeSigningConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFunctionCodeSigningConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -2509,6 +2859,69 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  ListCodeSigningConfigs
+
+        /// <summary>
+        /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuring-codesigning.html">code
+        /// signing configurations</a> for the specified function. A request returns up to 10,000
+        /// configurations per call. You can use the <code>MaxItems</code> parameter to return
+        /// fewer configurations per call.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCodeSigningConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListCodeSigningConfigs service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCodeSigningConfigs">REST API Reference for ListCodeSigningConfigs Operation</seealso>
+        public virtual ListCodeSigningConfigsResponse ListCodeSigningConfigs(ListCodeSigningConfigsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCodeSigningConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodeSigningConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCodeSigningConfigsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCodeSigningConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCodeSigningConfigs operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCodeSigningConfigs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCodeSigningConfigs">REST API Reference for ListCodeSigningConfigs Operation</seealso>
+        public virtual IAsyncResult BeginListCodeSigningConfigs(ListCodeSigningConfigsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCodeSigningConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodeSigningConfigsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCodeSigningConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCodeSigningConfigs.</param>
+        /// 
+        /// <returns>Returns a  ListCodeSigningConfigsResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCodeSigningConfigs">REST API Reference for ListCodeSigningConfigs Operation</seealso>
+        public virtual ListCodeSigningConfigsResponse EndListCodeSigningConfigs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCodeSigningConfigsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListEventSourceMappings
 
         /// <summary>
@@ -2744,6 +3157,71 @@ namespace Amazon.Lambda
         public virtual ListFunctionsResponse EndListFunctions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFunctionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListFunctionsByCodeSigningConfig
+
+        /// <summary>
+        /// List the functions that use the specified code signing configuration. You can use
+        /// this method prior to deleting a code signing configuration, to verify that no functions
+        /// are using it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctionsByCodeSigningConfig service method.</param>
+        /// 
+        /// <returns>The response from the ListFunctionsByCodeSigningConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionsByCodeSigningConfig">REST API Reference for ListFunctionsByCodeSigningConfig Operation</seealso>
+        public virtual ListFunctionsByCodeSigningConfigResponse ListFunctionsByCodeSigningConfig(ListFunctionsByCodeSigningConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFunctionsByCodeSigningConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFunctionsByCodeSigningConfigResponseUnmarshaller.Instance;
+
+            return Invoke<ListFunctionsByCodeSigningConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFunctionsByCodeSigningConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctionsByCodeSigningConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFunctionsByCodeSigningConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionsByCodeSigningConfig">REST API Reference for ListFunctionsByCodeSigningConfig Operation</seealso>
+        public virtual IAsyncResult BeginListFunctionsByCodeSigningConfig(ListFunctionsByCodeSigningConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFunctionsByCodeSigningConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFunctionsByCodeSigningConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFunctionsByCodeSigningConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFunctionsByCodeSigningConfig.</param>
+        /// 
+        /// <returns>Returns a  ListFunctionsByCodeSigningConfigResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionsByCodeSigningConfig">REST API Reference for ListFunctionsByCodeSigningConfig Operation</seealso>
+        public virtual ListFunctionsByCodeSigningConfigResponse EndListFunctionsByCodeSigningConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFunctionsByCodeSigningConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -3249,6 +3727,80 @@ namespace Amazon.Lambda
         public virtual PublishVersionResponse EndPublishVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<PublishVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutFunctionCodeSigningConfig
+
+        /// <summary>
+        /// Update the code signing configuration for the function. Changes to the code signing
+        /// configuration take effect the next time a user tries to deploy a code package to the
+        /// function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFunctionCodeSigningConfig service method.</param>
+        /// 
+        /// <returns>The response from the PutFunctionCodeSigningConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CodeSigningConfigNotFoundException">
+        /// The specified code signing configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionCodeSigningConfig">REST API Reference for PutFunctionCodeSigningConfig Operation</seealso>
+        public virtual PutFunctionCodeSigningConfigResponse PutFunctionCodeSigningConfig(PutFunctionCodeSigningConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutFunctionCodeSigningConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutFunctionCodeSigningConfigResponseUnmarshaller.Instance;
+
+            return Invoke<PutFunctionCodeSigningConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutFunctionCodeSigningConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutFunctionCodeSigningConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutFunctionCodeSigningConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionCodeSigningConfig">REST API Reference for PutFunctionCodeSigningConfig Operation</seealso>
+        public virtual IAsyncResult BeginPutFunctionCodeSigningConfig(PutFunctionCodeSigningConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutFunctionCodeSigningConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutFunctionCodeSigningConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutFunctionCodeSigningConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutFunctionCodeSigningConfig.</param>
+        /// 
+        /// <returns>Returns a  PutFunctionCodeSigningConfigResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionCodeSigningConfig">REST API Reference for PutFunctionCodeSigningConfig Operation</seealso>
+        public virtual PutFunctionCodeSigningConfigResponse EndPutFunctionCodeSigningConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutFunctionCodeSigningConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -3853,6 +4405,70 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  UpdateCodeSigningConfig
+
+        /// <summary>
+        /// Update the code signing configuration. Changes to the code signing configuration take
+        /// effect the next time a user tries to deploy a code package to the function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCodeSigningConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCodeSigningConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateCodeSigningConfig">REST API Reference for UpdateCodeSigningConfig Operation</seealso>
+        public virtual UpdateCodeSigningConfigResponse UpdateCodeSigningConfig(UpdateCodeSigningConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCodeSigningConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCodeSigningConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCodeSigningConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCodeSigningConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCodeSigningConfig operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCodeSigningConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateCodeSigningConfig">REST API Reference for UpdateCodeSigningConfig Operation</seealso>
+        public virtual IAsyncResult BeginUpdateCodeSigningConfig(UpdateCodeSigningConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCodeSigningConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCodeSigningConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCodeSigningConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCodeSigningConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateCodeSigningConfigResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateCodeSigningConfig">REST API Reference for UpdateCodeSigningConfig Operation</seealso>
+        public virtual UpdateCodeSigningConfigResponse EndUpdateCodeSigningConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateCodeSigningConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateEventSourceMapping
 
         /// <summary>
@@ -3964,7 +4580,9 @@ namespace Amazon.Lambda
         #region  UpdateFunctionCode
 
         /// <summary>
-        /// Updates a Lambda function's code.
+        /// Updates a Lambda function's code. If code signing is enabled for the function, the
+        /// code package must be signed by a trusted publisher. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">Configuring
+        /// code signing</a>.
         /// 
         ///  
         /// <para>
@@ -3975,9 +4593,20 @@ namespace Amazon.Lambda
         /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionCode service method.</param>
         /// 
         /// <returns>The response from the UpdateFunctionCode service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CodeSigningConfigNotFoundException">
+        /// The specified code signing configuration does not exist.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
         /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
         /// more</a>
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.CodeVerificationFailedException">
+        /// The code signature failed one or more of the validation checks for signature mismatch
+        /// or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidCodeSignatureException">
+        /// The code signature failed the integrity check. Lambda always blocks deployment if
+        /// the integrity check fails, even if code signing policy is set to WARN.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid.
@@ -4076,6 +4705,17 @@ namespace Amazon.Lambda
         /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionConfiguration service method.</param>
         /// 
         /// <returns>The response from the UpdateFunctionConfiguration service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CodeSigningConfigNotFoundException">
+        /// The specified code signing configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.CodeVerificationFailedException">
+        /// The code signature failed one or more of the validation checks for signature mismatch
+        /// or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidCodeSignatureException">
+        /// The code signature failed the integrity check. Lambda always blocks deployment if
+        /// the integrity check fails, even if code signing policy is set to WARN.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid.
         /// </exception>

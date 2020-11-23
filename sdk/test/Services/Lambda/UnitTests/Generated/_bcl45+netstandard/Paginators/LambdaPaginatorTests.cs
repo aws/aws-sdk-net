@@ -82,6 +82,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Lambda")]
+        public void ListCodeSigningConfigsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListCodeSigningConfigsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListCodeSigningConfigsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListCodeSigningConfigsResponse>();
+            secondResponse.NextMarker = null;
+
+            _mockClient.SetupSequence(x => x.ListCodeSigningConfigs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListCodeSigningConfigs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Lambda")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListCodeSigningConfigsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListCodeSigningConfigsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListCodeSigningConfigsResponse>();
+            response.NextMarker = null;
+
+            _mockClient.Setup(x => x.ListCodeSigningConfigs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListCodeSigningConfigs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Lambda")]
         public void ListEventSourceMappingsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListEventSourceMappingsRequest>();
@@ -187,6 +226,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListFunctions(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListFunctions(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Lambda")]
+        public void ListFunctionsByCodeSigningConfigTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFunctionsByCodeSigningConfigRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListFunctionsByCodeSigningConfigResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListFunctionsByCodeSigningConfigResponse>();
+            secondResponse.NextMarker = null;
+
+            _mockClient.SetupSequence(x => x.ListFunctionsByCodeSigningConfig(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListFunctionsByCodeSigningConfig(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Lambda")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListFunctionsByCodeSigningConfigTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFunctionsByCodeSigningConfigRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListFunctionsByCodeSigningConfigResponse>();
+            response.NextMarker = null;
+
+            _mockClient.Setup(x => x.ListFunctionsByCodeSigningConfig(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListFunctionsByCodeSigningConfig(request);
 
             // Should work the first time
             paginator.Responses.ToList();
