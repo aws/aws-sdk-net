@@ -45,6 +45,12 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LicenseSpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAmiAssociationScope())
+            {
+                context.Writer.WritePropertyName("AmiAssociationScope");
+                context.Writer.Write(requestObject.AmiAssociationScope);
+            }
+
             if(requestObject.IsSetLicenseConfigurationArn())
             {
                 context.Writer.WritePropertyName("LicenseConfigurationArn");
