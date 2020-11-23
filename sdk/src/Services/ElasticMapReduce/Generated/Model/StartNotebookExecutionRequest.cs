@@ -186,7 +186,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags associated with a notebook execution. Tags are user-defined key value
+        /// A list of tags associated with a notebook execution. Tags are user-defined key-value
         /// pairs that consist of a required key string with a maximum of 128 characters and an
         /// optional value string with a maximum of 256 characters.
         /// </para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// A key value pair.
+    /// A key-value pair.
     /// </summary>
     public partial class KeyValue
     {
@@ -44,7 +44,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Instantiates KeyValue with the parameterized properties
         /// </summary>
-        /// <param name="key">The unique identifier of a key value pair.</param>
+        /// <param name="key">The unique identifier of a key-value pair.</param>
         /// <param name="value">The value part of the identified key.</param>
         public KeyValue(string key, string value)
         {
@@ -55,7 +55,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The unique identifier of a key value pair.
+        /// The unique identifier of a key-value pair.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10280)]

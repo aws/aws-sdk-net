@@ -31,7 +31,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// An instance type configuration for each instance type in an instance fleet, which
     /// determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand
-    /// and Spot target capacities. There can be a maximum of 5 instance type configurations
+    /// and Spot target capacities. There can be a maximum of five instance type configurations
     /// in a fleet.
     /// 
     ///  <note> 
@@ -53,7 +53,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property BidPrice. 
         /// <para>
-        /// The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>.
+        /// The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>.
         /// Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code>
         /// is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. 
         /// </para>
@@ -74,7 +74,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property BidPriceAsPercentageOfOnDemandPrice. 
         /// <para>
-        /// The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined
+        /// The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined
         /// by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
         /// If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code>
         /// is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
@@ -115,7 +115,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EbsConfiguration. 
         /// <para>
-        /// The configuration of Amazon Elastic Block Storage (EBS) attached to each instance
+        /// The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance
         /// as defined by <code>InstanceType</code>. 
         /// </para>
         /// </summary>

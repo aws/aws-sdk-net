@@ -30,9 +30,9 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeJobFlows operation.
-    /// This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>,
-    /// <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a> and <a>ListBootstrapActions</a>
-    /// instead.
+    /// This API is no longer supported and will eventually be removed. We recommend you use
+    /// <a>ListClusters</a>, <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a>
+    /// and <a>ListBootstrapActions</a> instead.
     /// 
     ///  
     /// <para>

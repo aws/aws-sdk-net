@@ -39,7 +39,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ClusterId. 
         /// <para>
-        ///  Specifies the ID of the cluster for which the managed scaling policy will be fetched.
+        /// Specifies the ID of the cluster for which the managed scaling policy will be fetched.
         /// 
         /// </para>
         /// </summary>

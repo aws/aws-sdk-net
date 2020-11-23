@@ -38,7 +38,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ManagedScalingPolicy. 
         /// <para>
-        ///  Specifies the managed scaling policy that is attached to an Amazon EMR cluster. 
+        /// Specifies the managed scaling policy that is attached to an Amazon EMR cluster. 
         /// </para>
         /// </summary>
         public ManagedScalingPolicy ManagedScalingPolicy

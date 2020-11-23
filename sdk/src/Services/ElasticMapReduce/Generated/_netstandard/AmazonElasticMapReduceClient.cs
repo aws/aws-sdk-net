@@ -38,10 +38,10 @@ namespace Amazon.ElasticMapReduce
     /// <summary>
     /// Implementation for accessing ElasticMapReduce
     ///
-    /// Amazon EMR is a web service that makes it easy to process large amounts of data efficiently.
-    /// Amazon EMR uses Hadoop processing combined with several AWS products to do tasks such
-    /// as web indexing, data mining, log file analysis, machine learning, scientific simulation,
-    /// and data warehousing.
+    /// Amazon EMR is a web service that makes it easier to process large amounts of data
+    /// efficiently. Amazon EMR uses Hadoop processing combined with several AWS services
+    /// to do tasks such as web indexing, data mining, log file analysis, machine learning,
+    /// scientific simulation, and data warehouse management.
     /// </summary>
 #if NETSTANDARD13
     [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
@@ -476,7 +476,7 @@ namespace Amazon.ElasticMapReduce
         /// Cancels a pending step or steps in a running cluster. Available only in Amazon EMR
         /// versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256 steps are allowed
         /// in each CancelSteps request. CancelSteps is idempotent but asynchronous; it does not
-        /// guarantee a step will be canceled, even if the request is successfully submitted.
+        /// guarantee that a step will be canceled, even if the request is successfully submitted.
         /// You can only cancel steps that are in a <code>PENDING</code> state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelSteps service method.</param>
@@ -545,6 +545,104 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  CreateStudio
+
+        internal virtual CreateStudioResponse CreateStudio(CreateStudioRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStudioRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStudioResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStudioResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Creates a new Amazon EMR Studio.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStudio service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateStudio service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudio">REST API Reference for CreateStudio Operation</seealso>
+        public virtual Task<CreateStudioResponse> CreateStudioAsync(CreateStudioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStudioRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStudioResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateStudioResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateStudioSessionMapping
+
+        internal virtual CreateStudioSessionMappingResponse CreateStudioSessionMapping(CreateStudioSessionMappingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStudioSessionMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStudioSessionMappingResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStudioSessionMappingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>,
+        /// and applies a session policy to refine Studio permissions for that user or group.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStudioSessionMapping service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateStudioSessionMapping service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudioSessionMapping">REST API Reference for CreateStudioSessionMapping Operation</seealso>
+        public virtual Task<CreateStudioSessionMappingResponse> CreateStudioSessionMappingAsync(CreateStudioSessionMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStudioSessionMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStudioSessionMappingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateStudioSessionMappingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteSecurityConfiguration
 
         internal virtual DeleteSecurityConfigurationResponse DeleteSecurityConfiguration(DeleteSecurityConfigurationRequest request)
@@ -581,6 +679,103 @@ namespace Amazon.ElasticMapReduce
             options.ResponseUnmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteSecurityConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteStudio
+
+        internal virtual DeleteStudioResponse DeleteStudio(DeleteStudioRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStudioRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStudioResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteStudioResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Removes an Amazon EMR Studio from the Studio metadata store.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStudio service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteStudio service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudio">REST API Reference for DeleteStudio Operation</seealso>
+        public virtual Task<DeleteStudioResponse> DeleteStudioAsync(DeleteStudioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStudioRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStudioResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteStudioResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteStudioSessionMapping
+
+        internal virtual DeleteStudioSessionMappingResponse DeleteStudioSessionMapping(DeleteStudioSessionMappingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStudioSessionMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStudioSessionMappingResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteStudioSessionMappingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Removes a user or group from an Amazon EMR Studio.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStudioSessionMapping service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteStudioSessionMapping service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudioSessionMapping">REST API Reference for DeleteStudioSessionMapping Operation</seealso>
+        public virtual Task<DeleteStudioSessionMappingResponse> DeleteStudioSessionMappingAsync(DeleteStudioSessionMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStudioSessionMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStudioSessionMappingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteStudioSessionMappingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -671,9 +866,9 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>,
-        /// <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a> and <a>ListBootstrapActions</a>
-        /// instead.
+        /// This API is no longer supported and will eventually be removed. We recommend you use
+        /// <a>ListClusters</a>, <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a>
+        /// and <a>ListBootstrapActions</a> instead.
         /// 
         ///  
         /// <para>
@@ -725,9 +920,9 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>,
-        /// <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a> and <a>ListBootstrapActions</a>
-        /// instead.
+        /// This API is no longer supported and will eventually be removed. We recommend you use
+        /// <a>ListClusters</a>, <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a>
+        /// and <a>ListBootstrapActions</a> instead.
         /// 
         ///  
         /// <para>
@@ -929,6 +1124,55 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  DescribeStudio
+
+        internal virtual DescribeStudioResponse DescribeStudio(DescribeStudioRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStudioRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStudioResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStudioResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio
+        /// access URL, and so on.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStudio service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeStudio service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStudio">REST API Reference for DescribeStudio Operation</seealso>
+        public virtual Task<DescribeStudioResponse> DescribeStudioAsync(DescribeStudioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStudioRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStudioResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeStudioResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetBlockPublicAccessConfiguration
 
         internal virtual GetBlockPublicAccessConfigurationResponse GetBlockPublicAccessConfiguration(GetBlockPublicAccessConfigurationRequest request)
@@ -1001,6 +1245,56 @@ namespace Amazon.ElasticMapReduce
             options.ResponseUnmarshaller = GetManagedScalingPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetManagedScalingPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetStudioSessionMapping
+
+        internal virtual GetStudioSessionMappingResponse GetStudioSessionMapping(GetStudioSessionMappingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStudioSessionMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStudioSessionMappingResponseUnmarshaller.Instance;
+
+            return Invoke<GetStudioSessionMappingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Fetches mapping details for the specified Amazon EMR Studio and identity (user or
+        /// group).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStudioSessionMapping service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetStudioSessionMapping service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetStudioSessionMapping">REST API Reference for GetStudioSessionMapping Operation</seealso>
+        public virtual Task<GetStudioSessionMappingResponse> GetStudioSessionMappingAsync(GetStudioSessionMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStudioSessionMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStudioSessionMappingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetStudioSessionMappingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1476,6 +1770,105 @@ namespace Amazon.ElasticMapReduce
             options.ResponseUnmarshaller = ListStepsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListStepsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListStudios
+
+        internal virtual ListStudiosResponse ListStudios(ListStudiosRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStudiosRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStudiosResponseUnmarshaller.Instance;
+
+            return Invoke<ListStudiosResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns a list of all Amazon EMR Studios associated with the AWS account. The list
+        /// includes details such as ID, Studio Access URL, and creation time for each Studio.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStudios service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStudios service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudios">REST API Reference for ListStudios Operation</seealso>
+        public virtual Task<ListStudiosResponse> ListStudiosAsync(ListStudiosRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStudiosRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStudiosResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListStudiosResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListStudioSessionMappings
+
+        internal virtual ListStudioSessionMappingsResponse ListStudioSessionMappings(ListStudioSessionMappingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStudioSessionMappingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStudioSessionMappingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStudioSessionMappingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns a list of all user or group session mappings for the EMR Studio specified
+        /// by <code>StudioId</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStudioSessionMappings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStudioSessionMappings service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudioSessionMappings">REST API Reference for ListStudioSessionMappings Operation</seealso>
+        public virtual Task<ListStudioSessionMappingsResponse> ListStudioSessionMappingsAsync(ListStudioSessionMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStudioSessionMappingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStudioSessionMappingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListStudioSessionMappingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2150,6 +2543,56 @@ namespace Amazon.ElasticMapReduce
             options.ResponseUnmarshaller = TerminateJobFlowsResponseUnmarshaller.Instance;
 
             return InvokeAsync<TerminateJobFlowsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateStudioSessionMapping
+
+        internal virtual UpdateStudioSessionMappingResponse UpdateStudioSessionMapping(UpdateStudioSessionMappingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStudioSessionMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStudioSessionMappingResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateStudioSessionMappingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Updates the session policy attached to the user or group for the specified Amazon
+        /// EMR Studio.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStudioSessionMapping service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateStudioSessionMapping service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudioSessionMapping">REST API Reference for UpdateStudioSessionMapping Operation</seealso>
+        public virtual Task<UpdateStudioSessionMappingResponse> UpdateStudioSessionMappingAsync(UpdateStudioSessionMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStudioSessionMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStudioSessionMappingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateStudioSessionMappingResponse>(request, options, cancellationToken);
         }
 
         #endregion

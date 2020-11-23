@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// The launch specification for On-Demand instances in the instance fleet, which determines
+    /// The launch specification for On-Demand Instances in the instance fleet, which determines
     /// the allocation strategy. 
     /// 
     ///  <note> 
     /// <para>
     /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
-    /// later, excluding 5.0.x versions. On-Demand instances allocation strategy is available
+    /// later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available
     /// in Amazon EMR version 5.12.1 and later.
     /// </para>
     ///  </note>
@@ -47,7 +47,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property AllocationStrategy. 
         /// <para>
-        ///  Specifies the strategy to use in launching On-Demand instance fleets. Currently,
+        ///  Specifies the strategy to use in launching On-Demand Instance fleets. Currently,
         /// the only option is lowest-price (the default), which launches the lowest price first.
         /// 
         /// </para>

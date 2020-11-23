@@ -31,7 +31,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Describes an instance fleet, which is a group of EC2 instances that host a particular
     /// node type (master, core, or task) in an Amazon EMR cluster. Instance fleets can consist
-    /// of a mix of instance types and On-Demand and Spot instances, which are provisioned
+    /// of a mix of instance types and On-Demand and Spot Instances, which are provisioned
     /// to meet a defined target capacity. 
     /// 
     ///  <note> 
@@ -211,10 +211,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property TargetOnDemandCapacity. 
         /// <para>
         /// The target capacity of On-Demand units for the instance fleet, which determines how
-        /// many On-Demand instances to provision. When the instance fleet launches, Amazon EMR
-        /// tries to provision On-Demand instances as specified by <a>InstanceTypeConfig</a>.
+        /// many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR
+        /// tries to provision On-Demand Instances as specified by <a>InstanceTypeConfig</a>.
         /// Each instance configuration has a specified <code>WeightedCapacity</code>. When an
-        /// On-Demand instance is provisioned, the <code>WeightedCapacity</code> units count toward
+        /// On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward
         /// the target capacity. Amazon EMR provisions instances until the target capacity is
         /// totally fulfilled, even if this results in an overage. For example, if there are 2
         /// units remaining to fulfill capacity, and Amazon EMR can only provision an instance
@@ -224,7 +224,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If not specified or set to 0, only Spot instances are provisioned for the instance
+        /// If not specified or set to 0, only Spot Instances are provisioned for the instance
         /// fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code>
         /// and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance
         /// fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code>

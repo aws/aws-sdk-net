@@ -33,7 +33,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// Cancels a pending step or steps in a running cluster. Available only in Amazon EMR
     /// versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256 steps are allowed
     /// in each CancelSteps request. CancelSteps is idempotent but asynchronous; it does not
-    /// guarantee a step will be canceled, even if the request is successfully submitted.
+    /// guarantee that a step will be canceled, even if the request is successfully submitted.
     /// You can only cancel steps that are in a <code>PENDING</code> state.
     /// </summary>
     public partial class CancelStepsRequest : AmazonElasticMapReduceRequest
@@ -45,7 +45,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ClusterId. 
         /// <para>
-        /// The <code>ClusterID</code> for which specified steps will be canceled. Use <a>RunJobFlow</a>
+        /// The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a>
         /// and <a>ListClusters</a> to get ClusterIDs. 
         /// </para>
         /// </summary>
@@ -65,8 +65,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property StepCancellationOption. 
         /// <para>
-        /// The option to choose for cancelling <code>RUNNING</code> steps. By default, the value
-        /// is <code>SEND_INTERRUPT</code>.
+        /// The option to choose to cancel <code>RUNNING</code> steps. By default, the value is
+        /// <code>SEND_INTERRUPT</code>.
         /// </para>
         /// </summary>
         public StepCancellationOption StepCancellationOption

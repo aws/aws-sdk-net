@@ -99,6 +99,22 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return new ListStepsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListStudios operation
+        ///</summary>
+        public IListStudiosPaginator ListStudios(ListStudiosRequest request) 
+        {
+            return new ListStudiosPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListStudioSessionMappings operation
+        ///</summary>
+        public IListStudioSessionMappingsPaginator ListStudioSessionMappings(ListStudioSessionMappingsRequest request) 
+        {
+            return new ListStudioSessionMappingsPaginator(this.client, request);
+        }
     }
 }
 #endif
