@@ -36,6 +36,7 @@ namespace Amazon.TimestreamQuery.Model
         private List<ColumnInfo> _columnInfo = new List<ColumnInfo>();
         private string _nextToken;
         private string _queryId;
+        private QueryStatus _queryStatus;
         private List<Row> _rows = new List<Row>();
 
         /// <summary>
@@ -93,6 +94,24 @@ namespace Amazon.TimestreamQuery.Model
         internal bool IsSetQueryId()
         {
             return this._queryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryStatus. 
+        /// <para>
+        /// Information about the status of the query, including progress and bytes scannned.
+        /// </para>
+        /// </summary>
+        public QueryStatus QueryStatus
+        {
+            get { return this._queryStatus; }
+            set { this._queryStatus = value; }
+        }
+
+        // Check to see if QueryStatus property is set
+        internal bool IsSetQueryStatus()
+        {
+            return this._queryStatus != null;
         }
 
         /// <summary>
