@@ -1,3 +1,52 @@
+### 3.5.61.0 (2020-11-23 19:22 UTC)
+* ApplicationInsights (3.5.1.0)
+	* Add Detected Workload to ApplicationComponent which shows the workloads that installed in the component
+* AutoScaling (3.5.2.2)
+	* Documentation updates and corrections for Amazon EC2 Auto Scaling API Reference and SDKs.
+* CodeArtifact (3.5.2.0)
+	* Add support for the NuGet package format.
+* CodeStarconnections (3.5.2.0)
+	* Added support for the UpdateHost API.
+* DynamoDBv2 (3.5.4.0)
+	* With this release, you can capture data changes in any Amazon DynamoDB table as an Amazon Kinesis data stream. You also can use PartiQL (SQL-compatible language) to manipulate data in DynamoDB tables.
+* EC2 (3.5.19.0)
+	* This release adds support for Multiple Private DNS names to DescribeVpcEndpointServices response.
+* ECS (3.5.2.0)
+	* This release adds support for updating capacity providers, specifying custom instance warmup periods for capacity providers, and using deployment circuit breaker for your ECS Services.
+* ElastiCache (3.5.1.17)
+	* Documentation updates for elasticache
+* ElasticMapReduce (3.5.3.0)
+	* Add API support for EMR Studio, a new notebook-first IDE for data scientists and data engineers with single sign-on, Jupyter notebooks, automated infrastructure provisioning, and job diagnosis.
+* ForecastService (3.5.2.0)
+	* Releasing the set of PredictorBacktestExportJob APIs which allow customers to export backtest values and item-level metrics data from Predictor training.
+* Glue (3.5.8.0)
+	* Feature1 - Glue crawler adds data lineage configuration option. Feature2 - AWS Glue Data Catalog adds APIs for PartitionIndex creation and deletion as part of Enhancement Partition Management feature.
+* IoT (3.5.6.0)
+	* This release enables users to identify different file types in the over-the-air update (OTA) functionality using fileType parameter for CreateOTAUpdate API
+* Kafka (3.5.5.0)
+	* Adding MAINTENANCE and REBOOTING_BROKER to Cluster states.
+* Lambda (3.5.3.0)
+	* This release includes support for new feature: Code Signing for AWS Lambda. This adds new resources and APIs to configure Lambda functions to accept and verify signed code artifacts at deployment.
+* LicenseManager (3.5.1.0)
+	* AWS License Manager now provides the ability for license administrators to be able to associate license configurations to AMIs shared with their AWS account
+* Outposts (3.5.2.0)
+	* Support specifying tags during the creation of the Outpost resource. Tags are now returned in the response body of Outpost APIs.
+* SecurityHub (3.5.3.0)
+	* Updated the account management API to support the integration with AWS Organizations. Added new methods to allow users to view and manage the delegated administrator account for Security Hub.
+* Signer (3.5.1.0)
+	* AWS Signer is launching code-signing for AWS Lambda. Now customers can cryptographically sign Lambda code to ensure trust, integrity, and functionality.
+* SSOAdmin (3.5.1.0)
+	* AWS Single Sign-On now enables attribute-based access control for workforce identities to simplify permissions in AWS
+* TimestreamQuery (3.5.1.0)
+	* Amazon Timestream now supports "QueryStatus" in Query API which has information about cumulative bytes scanned, metered, as well as progress percentage for the query.
+* Translate (3.5.2.0)
+	* This update adds new operations to create and manage parallel data in Amazon Translate. Parallel data is a resource that you can use to run Active Custom Translation jobs.
+* Core 3.5.1.41
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.60.0 (2020-11-20 19:16 UTC)
 * AppMesh (3.5.2.0)
 	* This release makes tag value a required attribute of the tag's key-value pair.
