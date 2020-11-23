@@ -1409,6 +1409,61 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  CreatePartitionIndex
+
+        internal virtual CreatePartitionIndexResponse CreatePartitionIndex(CreatePartitionIndexRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePartitionIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePartitionIndexResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePartitionIndexResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a specified partition index in an existing table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePartitionIndex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePartitionIndex service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartitionIndex">REST API Reference for CreatePartitionIndex Operation</seealso>
+        public virtual Task<CreatePartitionIndexResponse> CreatePartitionIndexAsync(CreatePartitionIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePartitionIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePartitionIndexResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePartitionIndexResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateRegistry
 
         internal virtual CreateRegistryResponse CreateRegistry(CreateRegistryRequest request)
@@ -2324,6 +2379,58 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = DeletePartitionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeletePartitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePartitionIndex
+
+        internal virtual DeletePartitionIndexResponse DeletePartitionIndex(DeletePartitionIndexRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePartitionIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePartitionIndexResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePartitionIndexResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a specified partition index from an existing table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePartitionIndex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePartitionIndex service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConflictException">
+        /// The <code>CreatePartitions</code> API was called on a table that has indexes enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartitionIndex">REST API Reference for DeletePartitionIndex Operation</seealso>
+        public virtual Task<DeletePartitionIndexResponse> DeletePartitionIndexAsync(DeletePartitionIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePartitionIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePartitionIndexResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePartitionIndexResponse>(request, options, cancellationToken);
         }
 
         #endregion

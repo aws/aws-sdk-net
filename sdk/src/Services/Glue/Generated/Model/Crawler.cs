@@ -44,6 +44,7 @@ namespace Amazon.Glue.Model
         private string _description;
         private LastCrawlInfo _lastCrawl;
         private DateTime? _lastUpdated;
+        private LineageConfiguration _lineageConfiguration;
         private string _name;
         private RecrawlPolicy _recrawlPolicy;
         private string _role;
@@ -219,6 +220,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetLastUpdated()
         {
             return this._lastUpdated.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LineageConfiguration. 
+        /// <para>
+        /// A configuration that specifies whether data lineage is enabled for the crawler.
+        /// </para>
+        /// </summary>
+        public LineageConfiguration LineageConfiguration
+        {
+            get { return this._lineageConfiguration; }
+            set { this._lineageConfiguration = value; }
+        }
+
+        // Check to see if LineageConfiguration property is set
+        internal bool IsSetLineageConfiguration()
+        {
+            return this._lineageConfiguration != null;
         }
 
         /// <summary>

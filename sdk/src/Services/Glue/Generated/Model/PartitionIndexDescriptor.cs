@@ -33,9 +33,29 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class PartitionIndexDescriptor
     {
+        private List<BackfillError> _backfillErrors = new List<BackfillError>();
         private string _indexName;
         private PartitionIndexStatus _indexStatus;
         private List<KeySchemaElement> _keys = new List<KeySchemaElement>();
+
+        /// <summary>
+        /// Gets and sets the property BackfillErrors. 
+        /// <para>
+        /// A list of errors that can occur when registering partition indexes for an existing
+        /// table.
+        /// </para>
+        /// </summary>
+        public List<BackfillError> BackfillErrors
+        {
+            get { return this._backfillErrors; }
+            set { this._backfillErrors = value; }
+        }
+
+        // Check to see if BackfillErrors property is set
+        internal bool IsSetBackfillErrors()
+        {
+            return this._backfillErrors != null && this._backfillErrors.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property IndexName. 
@@ -61,6 +81,28 @@ namespace Amazon.Glue.Model
         /// <para>
         /// The status of the partition index. 
         /// </para>
+        ///  
+        /// <para>
+        /// The possible statuses are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CREATING: The index is being created. When an index is in a CREATING state, the index
+        /// or its table cannot be deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACTIVE: The index creation succeeds.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FAILED: The index creation fails. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELETING: The index is deleted from the list of indexes.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public PartitionIndexStatus IndexStatus

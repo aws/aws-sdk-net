@@ -40,6 +40,7 @@ namespace Amazon.Glue.Model
         private string _crawlerSecurityConfiguration;
         private string _databaseName;
         private string _description;
+        private LineageConfiguration _lineageConfiguration;
         private string _name;
         private RecrawlPolicy _recrawlPolicy;
         private string _role;
@@ -142,6 +143,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LineageConfiguration. 
+        /// <para>
+        /// Specifies data lineage configuration settings for the crawler.
+        /// </para>
+        /// </summary>
+        public LineageConfiguration LineageConfiguration
+        {
+            get { return this._lineageConfiguration; }
+            set { this._lineageConfiguration = value; }
+        }
+
+        // Check to see if LineageConfiguration property is set
+        internal bool IsSetLineageConfiguration()
+        {
+            return this._lineageConfiguration != null;
         }
 
         /// <summary>

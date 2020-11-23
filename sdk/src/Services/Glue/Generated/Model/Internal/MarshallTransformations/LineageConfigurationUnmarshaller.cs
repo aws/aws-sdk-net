@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PartitionIndexDescriptor Object
+    /// Response Unmarshaller for LineageConfiguration Object
     /// </summary>  
-    public class PartitionIndexDescriptorUnmarshaller : IUnmarshaller<PartitionIndexDescriptor, XmlUnmarshallerContext>, IUnmarshaller<PartitionIndexDescriptor, JsonUnmarshallerContext>
+    public class LineageConfigurationUnmarshaller : IUnmarshaller<LineageConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LineageConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PartitionIndexDescriptor IUnmarshaller<PartitionIndexDescriptor, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LineageConfiguration IUnmarshaller<LineageConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PartitionIndexDescriptor Unmarshall(JsonUnmarshallerContext context)
+        public LineageConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PartitionIndexDescriptor unmarshalledObject = new PartitionIndexDescriptor();
+            LineageConfiguration unmarshalledObject = new LineageConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BackfillErrors", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<BackfillError, BackfillErrorUnmarshaller>(BackfillErrorUnmarshaller.Instance);
-                    unmarshalledObject.BackfillErrors = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IndexName", targetDepth))
+                if (context.TestExpression("CrawlerLineageSettings", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IndexStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Keys", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<KeySchemaElement, KeySchemaElementUnmarshaller>(KeySchemaElementUnmarshaller.Instance);
-                    unmarshalledObject.Keys = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CrawlerLineageSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static PartitionIndexDescriptorUnmarshaller _instance = new PartitionIndexDescriptorUnmarshaller();        
+        private static LineageConfigurationUnmarshaller _instance = new LineageConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PartitionIndexDescriptorUnmarshaller Instance
+        public static LineageConfigurationUnmarshaller Instance
         {
             get
             {

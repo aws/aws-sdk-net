@@ -25,6 +25,68 @@ namespace Amazon.Glue
 {
 
     /// <summary>
+    /// Constants used for properties of type BackfillErrorCode.
+    /// </summary>
+    public class BackfillErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENCRYPTED_PARTITION_ERROR for BackfillErrorCode
+        /// </summary>
+        public static readonly BackfillErrorCode ENCRYPTED_PARTITION_ERROR = new BackfillErrorCode("ENCRYPTED_PARTITION_ERROR");
+        /// <summary>
+        /// Constant INTERNAL_ERROR for BackfillErrorCode
+        /// </summary>
+        public static readonly BackfillErrorCode INTERNAL_ERROR = new BackfillErrorCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant INVALID_PARTITION_TYPE_DATA_ERROR for BackfillErrorCode
+        /// </summary>
+        public static readonly BackfillErrorCode INVALID_PARTITION_TYPE_DATA_ERROR = new BackfillErrorCode("INVALID_PARTITION_TYPE_DATA_ERROR");
+        /// <summary>
+        /// Constant MISSING_PARTITION_VALUE_ERROR for BackfillErrorCode
+        /// </summary>
+        public static readonly BackfillErrorCode MISSING_PARTITION_VALUE_ERROR = new BackfillErrorCode("MISSING_PARTITION_VALUE_ERROR");
+        /// <summary>
+        /// Constant UNSUPPORTED_PARTITION_CHARACTER_ERROR for BackfillErrorCode
+        /// </summary>
+        public static readonly BackfillErrorCode UNSUPPORTED_PARTITION_CHARACTER_ERROR = new BackfillErrorCode("UNSUPPORTED_PARTITION_CHARACTER_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BackfillErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BackfillErrorCode FindValue(string value)
+        {
+            return FindValue<BackfillErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BackfillErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CatalogEncryptionMode.
     /// </summary>
     public class CatalogEncryptionMode : ConstantClass
@@ -512,6 +574,56 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConnectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CrawlerLineageSettings.
+    /// </summary>
+    public class CrawlerLineageSettings : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLE for CrawlerLineageSettings
+        /// </summary>
+        public static readonly CrawlerLineageSettings DISABLE = new CrawlerLineageSettings("DISABLE");
+        /// <summary>
+        /// Constant ENABLE for CrawlerLineageSettings
+        /// </summary>
+        public static readonly CrawlerLineageSettings ENABLE = new CrawlerLineageSettings("ENABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CrawlerLineageSettings(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CrawlerLineageSettings FindValue(string value)
+        {
+            return FindValue<CrawlerLineageSettings>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CrawlerLineageSettings(string value)
         {
             return FindValue(value);
         }
@@ -1326,6 +1438,18 @@ namespace Amazon.Glue
         /// Constant ACTIVE for PartitionIndexStatus
         /// </summary>
         public static readonly PartitionIndexStatus ACTIVE = new PartitionIndexStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for PartitionIndexStatus
+        /// </summary>
+        public static readonly PartitionIndexStatus CREATING = new PartitionIndexStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for PartitionIndexStatus
+        /// </summary>
+        public static readonly PartitionIndexStatus DELETING = new PartitionIndexStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for PartitionIndexStatus
+        /// </summary>
+        public static readonly PartitionIndexStatus FAILED = new PartitionIndexStatus("FAILED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

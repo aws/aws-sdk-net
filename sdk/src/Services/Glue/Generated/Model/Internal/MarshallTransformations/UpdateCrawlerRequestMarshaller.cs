@@ -103,6 +103,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetLineageConfiguration())
+                {
+                    context.Writer.WritePropertyName("LineageConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LineageConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LineageConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");
