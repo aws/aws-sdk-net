@@ -38,6 +38,7 @@ namespace Amazon.Signer.Model
         private SigningPlatformOverrides _overrides;
         private string _platformId;
         private string _profileName;
+        private SignatureValidityPeriod _signatureValidityPeriod;
         private SigningMaterial _signingMaterial;
         private Dictionary<string, string> _signingParameters = new Dictionary<string, string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -101,13 +102,31 @@ namespace Amazon.Signer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SignatureValidityPeriod. 
+        /// <para>
+        /// The default validity period override for any signature generated using this signing
+        /// profile. If unspecified, the default is 135 months.
+        /// </para>
+        /// </summary>
+        public SignatureValidityPeriod SignatureValidityPeriod
+        {
+            get { return this._signatureValidityPeriod; }
+            set { this._signatureValidityPeriod = value; }
+        }
+
+        // Check to see if SignatureValidityPeriod property is set
+        internal bool IsSetSignatureValidityPeriod()
+        {
+            return this._signatureValidityPeriod != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SigningMaterial. 
         /// <para>
         /// The AWS Certificate Manager certificate that will be used to sign code with the new
         /// signing profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public SigningMaterial SigningMaterial
         {
             get { return this._signingMaterial; }

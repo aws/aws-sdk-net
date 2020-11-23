@@ -45,6 +45,261 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Signer")]
+        public void AddProfilePermissionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddProfilePermission");
+
+            var request = InstantiateClassGenerator.Execute<AddProfilePermissionRequest>();
+            var marshaller = new AddProfilePermissionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("AddProfilePermission", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = AddProfilePermissionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as AddProfilePermissionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void AddProfilePermission_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddProfilePermission");
+
+            var request = InstantiateClassGenerator.Execute<AddProfilePermissionRequest>();
+            var marshaller = new AddProfilePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("AddProfilePermission", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = AddProfilePermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void AddProfilePermission_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddProfilePermission");
+
+            var request = InstantiateClassGenerator.Execute<AddProfilePermissionRequest>();
+            var marshaller = new AddProfilePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("AddProfilePermission", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = AddProfilePermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void AddProfilePermission_InternalServiceErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddProfilePermission");
+
+            var request = InstantiateClassGenerator.Execute<AddProfilePermissionRequest>();
+            var marshaller = new AddProfilePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("AddProfilePermission", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServiceErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServiceErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = AddProfilePermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void AddProfilePermission_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddProfilePermission");
+
+            var request = InstantiateClassGenerator.Execute<AddProfilePermissionRequest>();
+            var marshaller = new AddProfilePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("AddProfilePermission", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = AddProfilePermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void AddProfilePermission_ServiceLimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddProfilePermission");
+
+            var request = InstantiateClassGenerator.Execute<AddProfilePermissionRequest>();
+            var marshaller = new AddProfilePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("AddProfilePermission", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceLimitExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceLimitExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = AddProfilePermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void AddProfilePermission_TooManyRequestsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddProfilePermission");
+
+            var request = InstantiateClassGenerator.Execute<AddProfilePermissionRequest>();
+            var marshaller = new AddProfilePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("AddProfilePermission", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = AddProfilePermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void AddProfilePermission_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddProfilePermission");
+
+            var request = InstantiateClassGenerator.Execute<AddProfilePermissionRequest>();
+            var marshaller = new AddProfilePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("AddProfilePermission", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = AddProfilePermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
         public void CancelSigningProfileMarshallTest()
         {
             var operation = service_model.FindOperation("CancelSigningProfile");
@@ -157,7 +412,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Signer")]
-        public void CancelSigningProfile_ThrottlingExceptionMarshallTest()
+        public void CancelSigningProfile_TooManyRequestsExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CancelSigningProfile");
 
@@ -167,13 +422,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("CancelSigningProfile", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
                 }
             };
 
@@ -316,6 +571,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Signer")]
+        public void DescribeSigningJob_TooManyRequestsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeSigningJob");
+
+            var request = InstantiateClassGenerator.Execute<DescribeSigningJobRequest>();
+            var marshaller = new DescribeSigningJobRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeSigningJob", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeSigningJobResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
         public void GetSigningPlatformMarshallTest()
         {
             var operation = service_model.FindOperation("GetSigningPlatform");
@@ -428,6 +715,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
                     {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetSigningPlatformResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void GetSigningPlatform_TooManyRequestsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSigningPlatform");
+
+            var request = InstantiateClassGenerator.Execute<GetSigningPlatformRequest>();
+            var marshaller = new GetSigningPlatformRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetSigningPlatform", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
                 }
             };
 
@@ -570,7 +889,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Signer")]
-        public void GetSigningProfile_ThrottlingExceptionMarshallTest()
+        public void GetSigningProfile_TooManyRequestsExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("GetSigningProfile");
 
@@ -580,13 +899,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("GetSigningProfile", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
                 }
             };
 
@@ -594,6 +913,197 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = GetSigningProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void ListProfilePermissionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListProfilePermissions");
+
+            var request = InstantiateClassGenerator.Execute<ListProfilePermissionsRequest>();
+            var marshaller = new ListProfilePermissionsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListProfilePermissions", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListProfilePermissionsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListProfilePermissionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void ListProfilePermissions_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListProfilePermissions");
+
+            var request = InstantiateClassGenerator.Execute<ListProfilePermissionsRequest>();
+            var marshaller = new ListProfilePermissionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListProfilePermissions", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListProfilePermissionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void ListProfilePermissions_InternalServiceErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListProfilePermissions");
+
+            var request = InstantiateClassGenerator.Execute<ListProfilePermissionsRequest>();
+            var marshaller = new ListProfilePermissionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListProfilePermissions", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServiceErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServiceErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListProfilePermissionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void ListProfilePermissions_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListProfilePermissions");
+
+            var request = InstantiateClassGenerator.Execute<ListProfilePermissionsRequest>();
+            var marshaller = new ListProfilePermissionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListProfilePermissions", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListProfilePermissionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void ListProfilePermissions_TooManyRequestsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListProfilePermissions");
+
+            var request = InstantiateClassGenerator.Execute<ListProfilePermissionsRequest>();
+            var marshaller = new ListProfilePermissionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListProfilePermissions", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListProfilePermissionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void ListProfilePermissions_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListProfilePermissions");
+
+            var request = InstantiateClassGenerator.Execute<ListProfilePermissionsRequest>();
+            var marshaller = new ListProfilePermissionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListProfilePermissions", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListProfilePermissionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -697,7 +1207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Signer")]
-        public void ListSigningJobs_ThrottlingExceptionMarshallTest()
+        public void ListSigningJobs_TooManyRequestsExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("ListSigningJobs");
 
@@ -707,13 +1217,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("ListSigningJobs", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
                 }
             };
 
@@ -856,7 +1366,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Signer")]
-        public void ListSigningPlatforms_ThrottlingExceptionMarshallTest()
+        public void ListSigningPlatforms_TooManyRequestsExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("ListSigningPlatforms");
 
@@ -866,13 +1376,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("ListSigningPlatforms", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
                 }
             };
 
@@ -1015,7 +1525,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Signer")]
-        public void ListSigningProfiles_ThrottlingExceptionMarshallTest()
+        public void ListSigningProfiles_TooManyRequestsExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("ListSigningProfiles");
 
@@ -1025,13 +1535,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("ListSigningProfiles", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
                 }
             };
 
@@ -1174,6 +1684,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Signer")]
+        public void ListTagsForResource_TooManyRequestsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
         public void PutSigningProfileMarshallTest()
         {
             var operation = service_model.FindOperation("PutSigningProfile");
@@ -1301,7 +1843,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Signer")]
-        public void PutSigningProfile_ThrottlingExceptionMarshallTest()
+        public void PutSigningProfile_TooManyRequestsExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("PutSigningProfile");
 
@@ -1311,13 +1853,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("PutSigningProfile", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
                 }
             };
 
@@ -1357,6 +1899,581 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = PutSigningProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RemoveProfilePermissionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveProfilePermission");
+
+            var request = InstantiateClassGenerator.Execute<RemoveProfilePermissionRequest>();
+            var marshaller = new RemoveProfilePermissionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("RemoveProfilePermission", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = RemoveProfilePermissionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as RemoveProfilePermissionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RemoveProfilePermission_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveProfilePermission");
+
+            var request = InstantiateClassGenerator.Execute<RemoveProfilePermissionRequest>();
+            var marshaller = new RemoveProfilePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RemoveProfilePermission", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RemoveProfilePermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RemoveProfilePermission_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveProfilePermission");
+
+            var request = InstantiateClassGenerator.Execute<RemoveProfilePermissionRequest>();
+            var marshaller = new RemoveProfilePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RemoveProfilePermission", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RemoveProfilePermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RemoveProfilePermission_InternalServiceErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveProfilePermission");
+
+            var request = InstantiateClassGenerator.Execute<RemoveProfilePermissionRequest>();
+            var marshaller = new RemoveProfilePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RemoveProfilePermission", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServiceErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServiceErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RemoveProfilePermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RemoveProfilePermission_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveProfilePermission");
+
+            var request = InstantiateClassGenerator.Execute<RemoveProfilePermissionRequest>();
+            var marshaller = new RemoveProfilePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RemoveProfilePermission", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RemoveProfilePermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RemoveProfilePermission_TooManyRequestsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveProfilePermission");
+
+            var request = InstantiateClassGenerator.Execute<RemoveProfilePermissionRequest>();
+            var marshaller = new RemoveProfilePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RemoveProfilePermission", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RemoveProfilePermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RemoveProfilePermission_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveProfilePermission");
+
+            var request = InstantiateClassGenerator.Execute<RemoveProfilePermissionRequest>();
+            var marshaller = new RemoveProfilePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RemoveProfilePermission", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RemoveProfilePermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RevokeSignatureMarshallTest()
+        {
+            var operation = service_model.FindOperation("RevokeSignature");
+
+            var request = InstantiateClassGenerator.Execute<RevokeSignatureRequest>();
+            var marshaller = new RevokeSignatureRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("RevokeSignature", request, internalRequest, service_model);            
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RevokeSignature_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RevokeSignature");
+
+            var request = InstantiateClassGenerator.Execute<RevokeSignatureRequest>();
+            var marshaller = new RevokeSignatureRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RevokeSignature", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RevokeSignatureResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RevokeSignature_InternalServiceErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RevokeSignature");
+
+            var request = InstantiateClassGenerator.Execute<RevokeSignatureRequest>();
+            var marshaller = new RevokeSignatureRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RevokeSignature", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServiceErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServiceErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RevokeSignatureResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RevokeSignature_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RevokeSignature");
+
+            var request = InstantiateClassGenerator.Execute<RevokeSignatureRequest>();
+            var marshaller = new RevokeSignatureRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RevokeSignature", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RevokeSignatureResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RevokeSignature_TooManyRequestsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RevokeSignature");
+
+            var request = InstantiateClassGenerator.Execute<RevokeSignatureRequest>();
+            var marshaller = new RevokeSignatureRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RevokeSignature", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RevokeSignatureResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RevokeSignature_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RevokeSignature");
+
+            var request = InstantiateClassGenerator.Execute<RevokeSignatureRequest>();
+            var marshaller = new RevokeSignatureRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RevokeSignature", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RevokeSignatureResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RevokeSigningProfileMarshallTest()
+        {
+            var operation = service_model.FindOperation("RevokeSigningProfile");
+
+            var request = InstantiateClassGenerator.Execute<RevokeSigningProfileRequest>();
+            var marshaller = new RevokeSigningProfileRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("RevokeSigningProfile", request, internalRequest, service_model);            
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RevokeSigningProfile_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RevokeSigningProfile");
+
+            var request = InstantiateClassGenerator.Execute<RevokeSigningProfileRequest>();
+            var marshaller = new RevokeSigningProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RevokeSigningProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RevokeSigningProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RevokeSigningProfile_InternalServiceErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RevokeSigningProfile");
+
+            var request = InstantiateClassGenerator.Execute<RevokeSigningProfileRequest>();
+            var marshaller = new RevokeSigningProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RevokeSigningProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServiceErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServiceErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RevokeSigningProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RevokeSigningProfile_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RevokeSigningProfile");
+
+            var request = InstantiateClassGenerator.Execute<RevokeSigningProfileRequest>();
+            var marshaller = new RevokeSigningProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RevokeSigningProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RevokeSigningProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RevokeSigningProfile_TooManyRequestsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RevokeSigningProfile");
+
+            var request = InstantiateClassGenerator.Execute<RevokeSigningProfileRequest>();
+            var marshaller = new RevokeSigningProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RevokeSigningProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RevokeSigningProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void RevokeSigningProfile_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RevokeSigningProfile");
+
+            var request = InstantiateClassGenerator.Execute<RevokeSigningProfileRequest>();
+            var marshaller = new RevokeSigningProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RevokeSigningProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RevokeSigningProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -1509,6 +2626,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
                     {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartSigningJobResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void StartSigningJob_TooManyRequestsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartSigningJob");
+
+            var request = InstantiateClassGenerator.Execute<StartSigningJobRequest>();
+            var marshaller = new StartSigningJobRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartSigningJob", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
                 }
             };
 
@@ -1683,6 +2832,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Signer")]
+        public void TagResource_TooManyRequestsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("TagResource");
+
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var marshaller = new TagResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = TagResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
         public void UntagResourceMarshallTest()
         {
             var operation = service_model.FindOperation("UntagResource");
@@ -1795,6 +2976,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
                     {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UntagResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Signer")]
+        public void UntagResource_TooManyRequestsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UntagResource");
+
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var marshaller = new UntagResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UntagResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
                 }
             };
 

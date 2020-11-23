@@ -44,6 +44,8 @@ namespace Amazon.Signer.Model
         private bool? _includeCanceled;
         private int? _maxResults;
         private string _nextToken;
+        private string _platformId;
+        private List<string> _statuses = new List<string>();
 
         /// <summary>
         /// Gets and sets the property IncludeCanceled. 
@@ -100,6 +102,42 @@ namespace Amazon.Signer.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformId. 
+        /// <para>
+        /// Filters results to return only signing jobs initiated for a specified signing platform.
+        /// </para>
+        /// </summary>
+        public string PlatformId
+        {
+            get { return this._platformId; }
+            set { this._platformId = value; }
+        }
+
+        // Check to see if PlatformId property is set
+        internal bool IsSetPlatformId()
+        {
+            return this._platformId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Statuses. 
+        /// <para>
+        /// Filters results to return only signing jobs with statuses in the specified list.
+        /// </para>
+        /// </summary>
+        public List<string> Statuses
+        {
+            get { return this._statuses; }
+            set { this._statuses = value; }
+        }
+
+        // Check to see if Statuses property is set
+        internal bool IsSetStatuses()
+        {
+            return this._statuses != null && this._statuses.Count > 0; 
         }
 
     }

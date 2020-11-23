@@ -94,9 +94,9 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 {
                     return InternalServiceErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
                 {
-                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonSignerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

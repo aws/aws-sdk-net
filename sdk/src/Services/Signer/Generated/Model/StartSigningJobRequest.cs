@@ -73,6 +73,7 @@ namespace Amazon.Signer.Model
         private string _clientRequestToken;
         private Destination _destination;
         private string _profileName;
+        private string _profileOwner;
         private Source _source;
 
         /// <summary>
@@ -120,7 +121,7 @@ namespace Amazon.Signer.Model
         /// The name of the signing profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Required=true, Min=2, Max=64)]
         public string ProfileName
         {
             get { return this._profileName; }
@@ -131,6 +132,25 @@ namespace Amazon.Signer.Model
         internal bool IsSetProfileName()
         {
             return this._profileName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileOwner. 
+        /// <para>
+        /// The AWS account ID of the signing profile owner.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string ProfileOwner
+        {
+            get { return this._profileOwner; }
+            set { this._profileOwner = value; }
+        }
+
+        // Check to see if ProfileOwner property is set
+        internal bool IsSetProfileOwner()
+        {
+            return this._profileOwner != null;
         }
 
         /// <summary>

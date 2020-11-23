@@ -37,6 +37,7 @@ namespace Amazon.Signer.Model
     #endif
     public partial class BadRequestException : AmazonSignerException
     {
+        private string _code;
 
         /// <summary>
         /// Constructs a new BadRequestException with the specified error
@@ -98,6 +99,7 @@ namespace Amazon.Signer.Model
         protected BadRequestException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Code = (string)info.GetValue("Code", typeof(string));
         }
 
         /// <summary>
@@ -118,8 +120,24 @@ namespace Amazon.Signer.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Code", this.Code);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Code.
+        /// </summary>
+        public string Code
+        {
+            get { return this._code; }
+            set { this._code = value; }
+        }
+
+        // Check to see if Code property is set
+        internal bool IsSetCode()
+        {
+            return this._code != null;
+        }
 
     }
 }

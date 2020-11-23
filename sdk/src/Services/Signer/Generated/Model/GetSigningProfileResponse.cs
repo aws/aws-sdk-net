@@ -35,11 +35,17 @@ namespace Amazon.Signer.Model
     {
         private string _arn;
         private SigningPlatformOverrides _overrides;
+        private string _platformDisplayName;
         private string _platformId;
         private string _profileName;
+        private string _profileVersion;
+        private string _profileVersionArn;
+        private SigningProfileRevocationRecord _revocationRecord;
+        private SignatureValidityPeriod _signatureValidityPeriod;
         private SigningMaterial _signingMaterial;
         private Dictionary<string, string> _signingParameters = new Dictionary<string, string>();
         private SigningProfileStatus _status;
+        private string _statusReason;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -79,6 +85,24 @@ namespace Amazon.Signer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PlatformDisplayName. 
+        /// <para>
+        /// A human-readable name for the signing platform associated with the signing profile.
+        /// </para>
+        /// </summary>
+        public string PlatformDisplayName
+        {
+            get { return this._platformDisplayName; }
+            set { this._platformDisplayName = value; }
+        }
+
+        // Check to see if PlatformDisplayName property is set
+        internal bool IsSetPlatformDisplayName()
+        {
+            return this._platformDisplayName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PlatformId. 
         /// <para>
         /// The ID of the platform that is used by the target signing profile.
@@ -113,6 +137,74 @@ namespace Amazon.Signer.Model
         internal bool IsSetProfileName()
         {
             return this._profileName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileVersion. 
+        /// <para>
+        /// The current version of the signing profile.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=10)]
+        public string ProfileVersion
+        {
+            get { return this._profileVersion; }
+            set { this._profileVersion = value; }
+        }
+
+        // Check to see if ProfileVersion property is set
+        internal bool IsSetProfileVersion()
+        {
+            return this._profileVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileVersionArn. 
+        /// <para>
+        /// The signing profile ARN, including the profile version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ProfileVersionArn
+        {
+            get { return this._profileVersionArn; }
+            set { this._profileVersionArn = value; }
+        }
+
+        // Check to see if ProfileVersionArn property is set
+        internal bool IsSetProfileVersionArn()
+        {
+            return this._profileVersionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RevocationRecord.
+        /// </summary>
+        public SigningProfileRevocationRecord RevocationRecord
+        {
+            get { return this._revocationRecord; }
+            set { this._revocationRecord = value; }
+        }
+
+        // Check to see if RevocationRecord property is set
+        internal bool IsSetRevocationRecord()
+        {
+            return this._revocationRecord != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SignatureValidityPeriod.
+        /// </summary>
+        public SignatureValidityPeriod SignatureValidityPeriod
+        {
+            get { return this._signatureValidityPeriod; }
+            set { this._signatureValidityPeriod = value; }
+        }
+
+        // Check to see if SignatureValidityPeriod property is set
+        internal bool IsSetSignatureValidityPeriod()
+        {
+            return this._signatureValidityPeriod != null;
         }
 
         /// <summary>
@@ -168,6 +260,24 @@ namespace Amazon.Signer.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// Reason for the status of the target signing profile.
+        /// </para>
+        /// </summary>
+        public string StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
         /// <summary>

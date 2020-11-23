@@ -94,6 +94,12 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ProfileName);
                 }
 
+                if(publicRequest.IsSetProfileOwner())
+                {
+                    context.Writer.WritePropertyName("profileOwner");
+                    context.Writer.Write(publicRequest.ProfileOwner);
+                }
+
                 if(publicRequest.IsSetSource())
                 {
                     context.Writer.WritePropertyName("source");

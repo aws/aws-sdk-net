@@ -86,6 +86,17 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PlatformId);
                 }
 
+                if(publicRequest.IsSetSignatureValidityPeriod())
+                {
+                    context.Writer.WritePropertyName("signatureValidityPeriod");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SignatureValidityPeriodMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SignatureValidityPeriod, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSigningMaterial())
                 {
                     context.Writer.WritePropertyName("signingMaterial");

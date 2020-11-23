@@ -35,6 +35,7 @@ namespace Amazon.Signer.Model
     public partial class GetSigningProfileRequest : AmazonSignerRequest
     {
         private string _profileName;
+        private string _profileOwner;
 
         /// <summary>
         /// Gets and sets the property ProfileName. 
@@ -53,6 +54,25 @@ namespace Amazon.Signer.Model
         internal bool IsSetProfileName()
         {
             return this._profileName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileOwner. 
+        /// <para>
+        /// The AWS account ID of the profile owner.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string ProfileOwner
+        {
+            get { return this._profileOwner; }
+            set { this._profileOwner = value; }
+        }
+
+        // Check to see if ProfileOwner property is set
+        internal bool IsSetProfileOwner()
+        {
+            return this._profileOwner != null;
         }
 
     }

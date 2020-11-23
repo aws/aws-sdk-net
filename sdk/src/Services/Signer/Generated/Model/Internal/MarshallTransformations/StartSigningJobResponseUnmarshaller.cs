@@ -57,6 +57,12 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                     response.JobId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("jobOwner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.JobOwner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
@@ -95,6 +101,10 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
+                {
+                    return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {

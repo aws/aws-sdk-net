@@ -34,7 +34,15 @@ namespace Amazon.Signer.Model
     public partial class SigningJob
     {
         private DateTime? _createdAt;
+        private bool? _isRevoked;
         private string _jobId;
+        private string _jobInvoker;
+        private string _jobOwner;
+        private string _platformDisplayName;
+        private string _platformId;
+        private string _profileName;
+        private string _profileVersion;
+        private DateTime? _signatureExpiresAt;
         private SignedObject _signedObject;
         private SigningMaterial _signingMaterial;
         private Source _source;
@@ -59,6 +67,24 @@ namespace Amazon.Signer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsRevoked. 
+        /// <para>
+        /// Indicates whether the signing job is revoked.
+        /// </para>
+        /// </summary>
+        public bool IsRevoked
+        {
+            get { return this._isRevoked.GetValueOrDefault(); }
+            set { this._isRevoked = value; }
+        }
+
+        // Check to see if IsRevoked property is set
+        internal bool IsSetIsRevoked()
+        {
+            return this._isRevoked.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
         /// The ID of the signing job.
@@ -74,6 +100,136 @@ namespace Amazon.Signer.Model
         internal bool IsSetJobId()
         {
             return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobInvoker. 
+        /// <para>
+        /// The AWS account ID of the job invoker.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string JobInvoker
+        {
+            get { return this._jobInvoker; }
+            set { this._jobInvoker = value; }
+        }
+
+        // Check to see if JobInvoker property is set
+        internal bool IsSetJobInvoker()
+        {
+            return this._jobInvoker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobOwner. 
+        /// <para>
+        /// The AWS account ID of the job owner.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string JobOwner
+        {
+            get { return this._jobOwner; }
+            set { this._jobOwner = value; }
+        }
+
+        // Check to see if JobOwner property is set
+        internal bool IsSetJobOwner()
+        {
+            return this._jobOwner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformDisplayName. 
+        /// <para>
+        /// The name of a signing platform.
+        /// </para>
+        /// </summary>
+        public string PlatformDisplayName
+        {
+            get { return this._platformDisplayName; }
+            set { this._platformDisplayName = value; }
+        }
+
+        // Check to see if PlatformDisplayName property is set
+        internal bool IsSetPlatformDisplayName()
+        {
+            return this._platformDisplayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformId. 
+        /// <para>
+        /// The unique identifier for a signing platform.
+        /// </para>
+        /// </summary>
+        public string PlatformId
+        {
+            get { return this._platformId; }
+            set { this._platformId = value; }
+        }
+
+        // Check to see if PlatformId property is set
+        internal bool IsSetPlatformId()
+        {
+            return this._platformId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileName. 
+        /// <para>
+        /// The name of the signing profile that created a signing job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=64)]
+        public string ProfileName
+        {
+            get { return this._profileName; }
+            set { this._profileName = value; }
+        }
+
+        // Check to see if ProfileName property is set
+        internal bool IsSetProfileName()
+        {
+            return this._profileName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileVersion. 
+        /// <para>
+        /// The version of the signing profile that created a signing job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=10)]
+        public string ProfileVersion
+        {
+            get { return this._profileVersion; }
+            set { this._profileVersion = value; }
+        }
+
+        // Check to see if ProfileVersion property is set
+        internal bool IsSetProfileVersion()
+        {
+            return this._profileVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SignatureExpiresAt. 
+        /// <para>
+        /// The time when the signature of a signing job expires.
+        /// </para>
+        /// </summary>
+        public DateTime SignatureExpiresAt
+        {
+            get { return this._signatureExpiresAt.GetValueOrDefault(); }
+            set { this._signatureExpiresAt = value; }
+        }
+
+        // Check to see if SignatureExpiresAt property is set
+        internal bool IsSetSignatureExpiresAt()
+        {
+            return this._signatureExpiresAt.HasValue; 
         }
 
         /// <summary>

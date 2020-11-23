@@ -39,6 +39,7 @@ namespace Amazon.Signer.Model
         private int? _maxSizeInMB;
         private string _partner;
         private string _platformId;
+        private bool? _revocationSupported;
         private SigningConfiguration _signingConfiguration;
         private SigningImageFormat _signingImageFormat;
         private string _target;
@@ -131,6 +132,24 @@ namespace Amazon.Signer.Model
         internal bool IsSetPlatformId()
         {
             return this._platformId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RevocationSupported. 
+        /// <para>
+        /// Indicates whether revocation is supported for the platform.
+        /// </para>
+        /// </summary>
+        public bool RevocationSupported
+        {
+            get { return this._revocationSupported.GetValueOrDefault(); }
+            set { this._revocationSupported = value; }
+        }
+
+        // Check to see if RevocationSupported property is set
+        internal bool IsSetRevocationSupported()
+        {
+            return this._revocationSupported.HasValue; 
         }
 
         /// <summary>

@@ -34,6 +34,7 @@ namespace Amazon.Signer.Model
     public partial class StartSigningJobResponse : AmazonWebServiceResponse
     {
         private string _jobId;
+        private string _jobOwner;
 
         /// <summary>
         /// Gets and sets the property JobId. 
@@ -51,6 +52,25 @@ namespace Amazon.Signer.Model
         internal bool IsSetJobId()
         {
             return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobOwner. 
+        /// <para>
+        /// The AWS account ID of the signing job owner.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string JobOwner
+        {
+            get { return this._jobOwner; }
+            set { this._jobOwner = value; }
+        }
+
+        // Check to see if JobOwner property is set
+        internal bool IsSetJobOwner()
+        {
+            return this._jobOwner != null;
         }
 
     }

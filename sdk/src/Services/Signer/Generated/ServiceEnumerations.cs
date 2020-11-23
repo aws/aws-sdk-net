@@ -238,6 +238,10 @@ namespace Amazon.Signer
         /// Constant Canceled for SigningProfileStatus
         /// </summary>
         public static readonly SigningProfileStatus Canceled = new SigningProfileStatus("Canceled");
+        /// <summary>
+        /// Constant Revoked for SigningProfileStatus
+        /// </summary>
+        public static readonly SigningProfileStatus Revoked = new SigningProfileStatus("Revoked");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -322,6 +326,60 @@ namespace Amazon.Signer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SigningStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ValidityType.
+    /// </summary>
+    public class ValidityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAYS for ValidityType
+        /// </summary>
+        public static readonly ValidityType DAYS = new ValidityType("DAYS");
+        /// <summary>
+        /// Constant MONTHS for ValidityType
+        /// </summary>
+        public static readonly ValidityType MONTHS = new ValidityType("MONTHS");
+        /// <summary>
+        /// Constant YEARS for ValidityType
+        /// </summary>
+        public static readonly ValidityType YEARS = new ValidityType("YEARS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValidityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidityType FindValue(string value)
+        {
+            return FindValue<ValidityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidityType(string value)
         {
             return FindValue(value);
         }
