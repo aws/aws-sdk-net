@@ -348,7 +348,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property LoadBalancerNames. 
         /// <para>
         /// A list of Classic Load Balancers associated with this Auto Scaling group. For Application
-        /// Load Balancers and Network Load Balancers, specify <code>TargetGroupARNs</code> instead.
+        /// Load Balancers, Network Load Balancers, and Gateway Load Balancers, specify the <code>TargetGroupARNs</code>
+        /// property instead.
         /// </para>
         /// </summary>
         public List<string> LoadBalancerNames
@@ -450,12 +451,6 @@ namespace Amazon.AutoScaling.Model
         /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
         /// Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon
         /// EC2 Auto Scaling User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Conditional: You must specify either a launch template (<code>LaunchTemplate</code>
-        /// or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code>
-        /// or <code>InstanceId</code>).
         /// </para>
         /// </summary>
         public MixedInstancesPolicy MixedInstancesPolicy

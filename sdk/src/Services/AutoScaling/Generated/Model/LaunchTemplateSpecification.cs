@@ -51,7 +51,11 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The ID of the launch template. To get the template ID, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
         /// API operation. New launch templates can be created using the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-        /// API. You must specify either a <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.
+        /// API. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Conditional: You must specify either a <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -72,7 +76,11 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The name of the launch template. To get the template name, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a>
         /// API operation. New launch templates can be created using the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a>
-        /// API. You must specify either a <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.
+        /// API. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Conditional: You must specify either a <code>LaunchTemplateId</code> or a <code>LaunchTemplateName</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]

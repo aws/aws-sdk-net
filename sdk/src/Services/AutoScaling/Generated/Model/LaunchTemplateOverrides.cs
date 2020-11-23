@@ -97,11 +97,7 @@ namespace Amazon.AutoScaling.Model
         /// an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned,
         /// and the desired capacity is exceeded by 3 units. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
         /// weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Range: Minimum value of 1. Maximum value of 999.
+        /// Value must be in the range of 1 to 999.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]

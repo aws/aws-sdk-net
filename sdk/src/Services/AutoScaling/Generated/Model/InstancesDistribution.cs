@@ -128,12 +128,12 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property SpotAllocationStrategy. 
         /// <para>
         /// Indicates how to allocate instances across Spot Instance pools. If the allocation
-        /// strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using
-        /// the Spot pools with the lowest price, and evenly allocates your instances across the
-        /// number of Spot pools that you specify. If the allocation strategy is <code>capacity-optimized</code>,
-        /// the Auto Scaling group launches instances using Spot pools that are optimally chosen
-        /// based on the available Spot capacity. Defaults to <code>lowest-price</code> if not
-        /// specified.
+        /// strategy is <code>capacity-optimized</code> (recommended), the Auto Scaling group
+        /// launches instances using Spot pools that are optimally chosen based on the available
+        /// Spot capacity. If the allocation strategy is <code>lowest-price</code>, the Auto Scaling
+        /// group launches instances using the Spot pools with the lowest price, and evenly allocates
+        /// your instances across the number of Spot pools that you specify. Defaults to <code>lowest-price</code>
+        /// if not specified.
         /// </para>
         /// </summary>
         public string SpotAllocationStrategy
@@ -152,12 +152,9 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property SpotInstancePools. 
         /// <para>
         /// The number of Spot Instance pools across which to allocate your Spot Instances. The
-        /// Spot pools are determined from the different instance types in the overrides. Defaults
-        /// to 2 if not specified. Valid only when the Spot allocation strategy is <code>lowest-price</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Range: Minimum value of 1. Maximum value of 20.
+        /// Spot pools are determined from the different instance types in the overrides. Valid
+        /// only when the Spot allocation strategy is <code>lowest-price</code>. Value must be
+        /// in the range of 1 to 20. Defaults to 2 if not specified.
         /// </para>
         /// </summary>
         public int SpotInstancePools
@@ -176,9 +173,9 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property SpotMaxPrice. 
         /// <para>
         /// The maximum price per unit hour that you are willing to pay for a Spot Instance. If
-        /// you leave the value of this parameter blank (which is the default), the maximum Spot
-        /// price is set at the On-Demand price. To remove a value that you previously set, include
-        /// the parameter but leave the value blank.
+        /// you leave the value at its default (empty), Amazon EC2 Auto Scaling uses the On-Demand
+        /// price as the maximum Spot price. To remove a value that you previously set, include
+        /// the property but specify an empty string ("") for the value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]

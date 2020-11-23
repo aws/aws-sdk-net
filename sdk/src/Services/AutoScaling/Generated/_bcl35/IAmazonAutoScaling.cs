@@ -128,8 +128,8 @@ namespace Amazon.AutoScaling
         /// <summary>
         /// <note> 
         /// <para>
-        /// To attach an Application Load Balancer or a Network Load Balancer, use the <a>AttachLoadBalancerTargetGroups</a>
-        /// API operation instead.
+        /// To attach an Application Load Balancer, Network Load Balancer, or Gateway Load Balancer,
+        /// use the <a>AttachLoadBalancerTargetGroups</a> API operation instead.
         /// </para>
         ///  </note> 
         /// <para>
@@ -144,9 +144,9 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
-        /// a load balancer to your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User
-        /// Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
+        /// Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+        /// Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancers service method.</param>
@@ -198,17 +198,33 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
+        /// This operation is used with the following load balancer types: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  Application Load Balancer - Operates at the application layer (layer 7) and supports
+        /// HTTP and HTTPS. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Network Load Balancer - Operates at the transport layer (layer 4) and supports TCP,
+        /// TLS, and UDP. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Gateway Load Balancer - Operates at the network layer (layer 3).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// To describe the target groups for an Auto Scaling group, call the <a>DescribeLoadBalancerTargetGroups</a>
         /// API. To detach the target group from the Auto Scaling group, call the <a>DetachLoadBalancerTargetGroups</a>
         /// API.
         /// </para>
         ///  
         /// <para>
-        /// With Application Load Balancers and Network Load Balancers, instances are registered
-        /// as targets with a target group. With Classic Load Balancers, instances are registered
-        /// with the load balancer. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
-        /// a load balancer to your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User
-        /// Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
+        /// Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+        /// Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancerTargetGroups service method.</param>
@@ -1679,7 +1695,7 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// This operation describes only Classic Load Balancers. If you have Application Load
-        /// Balancers or Network Load Balancers, use the <a>DescribeLoadBalancerTargetGroups</a>
+        /// Balancers, Network Load Balancers, or Gateway Load Balancers, use the <a>DescribeLoadBalancerTargetGroups</a>
         /// API instead.
         /// </para>
         /// </summary>
@@ -2393,7 +2409,7 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// This operation detaches only Classic Load Balancers. If you have Application Load
-        /// Balancers or Network Load Balancers, use the <a>DetachLoadBalancerTargetGroups</a>
+        /// Balancers, Network Load Balancers, or Gateway Load Balancers, use the <a>DetachLoadBalancerTargetGroups</a>
         /// API instead.
         /// </para>
         ///  
