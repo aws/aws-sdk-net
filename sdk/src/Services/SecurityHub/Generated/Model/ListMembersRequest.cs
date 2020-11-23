@@ -31,6 +31,12 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the ListMembers operation.
     /// Lists details about all member accounts for the current Security Hub master account.
+    /// 
+    ///  
+    /// <para>
+    /// The results include both member accounts that belong to an organization and member
+    /// accounts that were invited manually.
+    /// </para>
     /// </summary>
     public partial class ListMembersRequest : AmazonSecurityHubRequest
     {
@@ -44,7 +50,7 @@ namespace Amazon.SecurityHub.Model
         /// The maximum number of items to return in the response. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -90,8 +96,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes
-        /// member accounts whose relationship status with the master is set to <code>ENABLED</code>
-        /// or <code>DISABLED</code>.
+        /// member accounts whose relationship status with the master is set to <code>ENABLED</code>.
         /// </para>
         ///  
         /// <para>

@@ -29,17 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisassociateFromMasterAccount operation.
-    /// Disassociates the current Security Hub member account from the associated master account.
-    /// 
-    ///  
-    /// <para>
-    /// This operation is only used by accounts that are not part of an organization. For
-    /// organization accounts, only the master account (the designated Security Hub administrator)
-    /// can disassociate a member account.
-    /// </para>
+    /// This is the response object from the EnableOrganizationAdminAccount operation.
     /// </summary>
-    public partial class DisassociateFromMasterAccountRequest : AmazonSecurityHubRequest
+    public partial class EnableOrganizationAdminAccountResponse : AmazonWebServiceResponse
     {
 
     }

@@ -29,28 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeStandardsControls operation.
-    /// Returns a list of security standards controls.
-    /// 
-    ///  
-    /// <para>
-    /// For each control, the results include information about whether it is currently enabled,
-    /// the severity, and a link to remediation information.
-    /// </para>
+    /// Container for the parameters to the ListOrganizationAdminAccounts operation.
+    /// Lists the Security Hub administrator accounts. Can only be called by the organization
+    /// management account.
     /// </summary>
-    public partial class DescribeStandardsControlsRequest : AmazonSecurityHubRequest
+    public partial class ListOrganizationAdminAccountsRequest : AmazonSecurityHubRequest
     {
         private int? _maxResults;
         private string _nextToken;
-        private string _standardsSubscriptionArn;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of security standard controls to return.
+        /// The maximum number of items to return in the response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=10)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -66,13 +60,10 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code>
-        /// operation, set the value of this parameter to <code>NULL</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For subsequent calls to the operation, to continue listing data, set the value of
-        /// this parameter to the value returned from the previous response.
+        /// The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code>
+        /// operation, set the value of this parameter to <code>NULL</code>. For subsequent calls
+        /// to the operation, to continue listing data, set the value of this parameter to the
+        /// value returned from the previous response. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -85,27 +76,6 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property StandardsSubscriptionArn. 
-        /// <para>
-        /// The ARN of a resource that represents your subscription to a supported standard. To
-        /// get the subscription ARNs of the standards you have enabled, use the <code> <a>GetEnabledStandards</a>
-        /// </code> operation.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string StandardsSubscriptionArn
-        {
-            get { return this._standardsSubscriptionArn; }
-            set { this._standardsSubscriptionArn = value; }
-        }
-
-        // Check to see if StandardsSubscriptionArn property is set
-        internal bool IsSetStandardsSubscriptionArn()
-        {
-            return this._standardsSubscriptionArn != null;
         }
 
     }

@@ -29,48 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The details of an AWS account.
+    /// This is the response object from the ListOrganizationAdminAccounts operation.
     /// </summary>
-    public partial class AccountDetails
+    public partial class ListOrganizationAdminAccountsResponse : AmazonWebServiceResponse
     {
-        private string _accountId;
-        private string _email;
+        private List<AdminAccount> _adminAccounts = new List<AdminAccount>();
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
+        /// Gets and sets the property AdminAccounts. 
         /// <para>
-        /// The ID of an AWS account.
+        /// The list of Security Hub administrator accounts.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string AccountId
+        public List<AdminAccount> AdminAccounts
         {
-            get { return this._accountId; }
-            set { this._accountId = value; }
+            get { return this._adminAccounts; }
+            set { this._adminAccounts = value; }
         }
 
-        // Check to see if AccountId property is set
-        internal bool IsSetAccountId()
+        // Check to see if AdminAccounts property is set
+        internal bool IsSetAdminAccounts()
         {
-            return this._accountId != null;
+            return this._adminAccounts != null && this._adminAccounts.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property Email. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The email of an AWS account.
+        /// The pagination token to use to request the next page of results.
         /// </para>
         /// </summary>
-        public string Email
+        public string NextToken
         {
-            get { return this._email; }
-            set { this._email = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Email property is set
-        internal bool IsSetEmail()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._email != null;
+            return this._nextToken != null;
         }
 
     }

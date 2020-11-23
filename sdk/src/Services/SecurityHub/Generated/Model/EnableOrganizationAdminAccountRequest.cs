@@ -29,36 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteMembers operation.
-    /// Deletes the specified member accounts from Security Hub.
-    /// 
-    ///  
-    /// <para>
-    /// Can be used to delete member accounts that belong to an organization as well as member
-    /// accounts that were invited manually.
-    /// </para>
+    /// Container for the parameters to the EnableOrganizationAdminAccount operation.
+    /// Designates the Security Hub administrator account for an organization. Can only be
+    /// called by the organization management account.
     /// </summary>
-    public partial class DeleteMembersRequest : AmazonSecurityHubRequest
+    public partial class EnableOrganizationAdminAccountRequest : AmazonSecurityHubRequest
     {
-        private List<string> _accountIds = new List<string>();
+        private string _adminAccountId;
 
         /// <summary>
-        /// Gets and sets the property AccountIds. 
+        /// Gets and sets the property AdminAccountId. 
         /// <para>
-        /// The list of account IDs for the member accounts to delete.
+        /// The AWS account identifier of the account to designate as the Security Hub administrator
+        /// account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<string> AccountIds
+        public string AdminAccountId
         {
-            get { return this._accountIds; }
-            set { this._accountIds = value; }
+            get { return this._adminAccountId; }
+            set { this._adminAccountId = value; }
         }
 
-        // Check to see if AccountIds property is set
-        internal bool IsSetAccountIds()
+        // Check to see if AdminAccountId property is set
+        internal bool IsSetAdminAccountId()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._adminAccountId != null;
         }
 
     }

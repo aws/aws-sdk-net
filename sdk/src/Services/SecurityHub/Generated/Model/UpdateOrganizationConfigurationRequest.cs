@@ -29,36 +29,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteMembers operation.
-    /// Deletes the specified member accounts from Security Hub.
-    /// 
-    ///  
-    /// <para>
-    /// Can be used to delete member accounts that belong to an organization as well as member
-    /// accounts that were invited manually.
-    /// </para>
+    /// Container for the parameters to the UpdateOrganizationConfiguration operation.
+    /// Used to update the configuration related to Organizations. Can only be called from
+    /// a Security Hub administrator account.
     /// </summary>
-    public partial class DeleteMembersRequest : AmazonSecurityHubRequest
+    public partial class UpdateOrganizationConfigurationRequest : AmazonSecurityHubRequest
     {
-        private List<string> _accountIds = new List<string>();
+        private bool? _autoEnable;
 
         /// <summary>
-        /// Gets and sets the property AccountIds. 
+        /// Gets and sets the property AutoEnable. 
         /// <para>
-        /// The list of account IDs for the member accounts to delete.
+        /// Whether to automatically enable Security Hub for new accounts in the organization.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, this is <code>false</code>, and new accounts are not added automatically.
+        /// </para>
+        ///  
+        /// <para>
+        /// To automatically enable Security Hub for new accounts, set this to <code>true</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<string> AccountIds
+        public bool AutoEnable
         {
-            get { return this._accountIds; }
-            set { this._accountIds = value; }
+            get { return this._autoEnable.GetValueOrDefault(); }
+            set { this._autoEnable = value; }
         }
 
-        // Check to see if AccountIds property is set
-        internal bool IsSetAccountIds()
+        // Check to see if AutoEnable property is set
+        internal bool IsSetAutoEnable()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._autoEnable.HasValue; 
         }
 
     }

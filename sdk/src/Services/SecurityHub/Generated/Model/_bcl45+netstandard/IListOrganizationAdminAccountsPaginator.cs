@@ -1,3 +1,4 @@
+#if !NETSTANDARD13
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -16,31 +17,19 @@
 /*
  * Do not modify this file. This file is generated from the securityhub-2018-10-26.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.Net;
-
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisassociateFromMasterAccount operation.
-    /// Disassociates the current Security Hub member account from the associated master account.
-    /// 
-    ///  
-    /// <para>
-    /// This operation is only used by accounts that are not part of an organization. For
-    /// organization accounts, only the master account (the designated Security Hub administrator)
-    /// can disassociate a member account.
-    /// </para>
-    /// </summary>
-    public partial class DisassociateFromMasterAccountRequest : AmazonSecurityHubRequest
+    /// Paginator for the ListOrganizationAdminAccounts operation
+    ///</summary>
+    public interface IListOrganizationAdminAccountsPaginator
     {
-
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListOrganizationAdminAccountsResponse> Responses { get; }
     }
 }
+#endif

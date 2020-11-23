@@ -29,20 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The details of an AWS account.
+    /// Represents a Security Hub administrator account designated by an organization management
+    /// account.
     /// </summary>
-    public partial class AccountDetails
+    public partial class AdminAccount
     {
         private string _accountId;
-        private string _email;
+        private AdminStatus _status;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The ID of an AWS account.
+        /// The AWS account identifier of the Security Hub administrator account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -56,21 +56,22 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Email. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// The email of an AWS account.
+        /// The current status of the Security Hub administrator account. Indicates whether the
+        /// account is currently enabled as a Security Hub administrator.
         /// </para>
         /// </summary>
-        public string Email
+        public AdminStatus Status
         {
-            get { return this._email; }
-            set { this._email = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if Email property is set
-        internal bool IsSetEmail()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._email != null;
+            return this._status != null;
         }
 
     }

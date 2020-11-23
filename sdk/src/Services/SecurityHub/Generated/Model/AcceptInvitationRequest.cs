@@ -35,6 +35,10 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
+    /// This operation is only used by member accounts that are not added through Organizations.
+    /// </para>
+    ///  
+    /// <para>
     /// When the member account accepts the invitation, permission is granted to the master
     /// account to view findings generated in the member account.
     /// </para>

@@ -31,6 +31,12 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the GetMasterAccount operation.
     /// Provides the details for the Security Hub master account for the current member account.
+    /// 
+    ///  
+    /// <para>
+    /// Can be used by both member accounts that are in an organization and accounts that
+    /// were invited manually.
+    /// </para>
     /// </summary>
     public partial class GetMasterAccountRequest : AmazonSecurityHubRequest
     {

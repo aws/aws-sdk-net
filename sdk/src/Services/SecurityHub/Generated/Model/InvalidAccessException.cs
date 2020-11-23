@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// AWS Security Hub isn't enabled for the account used to make this request.
+    /// There is an issue with the account used to make the request. Either Security Hub is
+    /// not enabled for the account, or the account does not have permission to perform this
+    /// action.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
