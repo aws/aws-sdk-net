@@ -295,8 +295,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code>
-        /// 
+        /// Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All
+        /// Upfront"|"Partial Upfront"| "No Upfront"</code> 
         /// </para>
         /// </summary>
         public string OfferingType
