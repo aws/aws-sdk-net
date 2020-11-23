@@ -151,6 +151,10 @@ namespace Amazon.CodeArtifact.Model
         ///  <code>maven</code>: A Maven package that contains compiled code in a distributable
         /// format, such as a JAR file. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>nuget</code>: A NuGet package. 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -204,6 +208,11 @@ namespace Amazon.CodeArtifact.Model
         ///  </li> <li> 
         /// <para>
         ///  A Python package does not contain a corresponding component, so Python packages do
+        /// not have a namespace. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  A NuGet package does not contain a corresponding component, so NuGet packages do
         /// not have a namespace. 
         /// </para>
         ///  </li> </ul>
@@ -297,6 +306,7 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=100)]
         public List<string> Versions
         {
             get { return this._versions; }

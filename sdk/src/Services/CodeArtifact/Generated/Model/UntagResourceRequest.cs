@@ -40,7 +40,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource to which you want to remove tags.
+        /// The Amazon Resource Name (ARN) of the resource that you want to remove tags from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

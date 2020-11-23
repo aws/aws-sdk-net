@@ -78,6 +78,11 @@ namespace Amazon.CodeArtifact.Model
         ///  A Python package does not contain a corresponding component, so Python packages do
         /// not have a namespace. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  A NuGet package does not contain a corresponding component, so NuGet packages do
+        /// not have a namespace. 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

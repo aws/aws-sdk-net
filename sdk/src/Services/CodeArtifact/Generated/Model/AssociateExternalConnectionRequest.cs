@@ -115,6 +115,10 @@ namespace Amazon.CodeArtifact.Model
         /// <para>
         ///  <code>public:maven-commonsware</code> - for the CommonsWare Android repository. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>public:nuget-org</code> - for the NuGet Gallery. 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
