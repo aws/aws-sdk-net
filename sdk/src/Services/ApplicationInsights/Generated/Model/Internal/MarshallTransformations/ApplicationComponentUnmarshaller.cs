@@ -70,10 +70,28 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComponentName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ComponentRemarks", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ComponentRemarks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DetectedWorkload", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
+                    unmarshalledObject.DetectedWorkload = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Monitor", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.Monitor = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OsType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OsType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ResourceType", targetDepth))

@@ -41,6 +41,10 @@ namespace Amazon.ApplicationInsights.Model
         private string _codeDeployDeploymentId;
         private string _codeDeployInstanceGroupId;
         private string _codeDeployState;
+        private string _ebsCause;
+        private string _ebsEvent;
+        private string _ebsRequestId;
+        private string _ebsResult;
         private string _ec2State;
         private DateTime? _endTime;
         private string _healthEventArn;
@@ -55,9 +59,16 @@ namespace Amazon.ApplicationInsights.Model
         private string _logText;
         private string _metricName;
         private string _metricNamespace;
+        private string _rdsEventCategories;
+        private string _rdsEventMessage;
+        private string _s3EventName;
         private string _sourceARN;
         private string _sourceType;
         private DateTime? _startTime;
+        private string _statesArn;
+        private string _statesExecutionArn;
+        private string _statesInput;
+        private string _statesStatus;
         private string _unit;
         private double? _value;
         private int? _xRayErrorPercent;
@@ -214,6 +225,80 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetCodeDeployState()
         {
             return this._codeDeployState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EbsCause. 
+        /// <para>
+        ///  The cause of an EBS CloudWatch event. 
+        /// </para>
+        /// </summary>
+        public string EbsCause
+        {
+            get { return this._ebsCause; }
+            set { this._ebsCause = value; }
+        }
+
+        // Check to see if EbsCause property is set
+        internal bool IsSetEbsCause()
+        {
+            return this._ebsCause != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EbsEvent. 
+        /// <para>
+        ///  The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code>
+        /// or <code>attachVolume</code>. 
+        /// </para>
+        /// </summary>
+        public string EbsEvent
+        {
+            get { return this._ebsEvent; }
+            set { this._ebsEvent = value; }
+        }
+
+        // Check to see if EbsEvent property is set
+        internal bool IsSetEbsEvent()
+        {
+            return this._ebsEvent != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EbsRequestId. 
+        /// <para>
+        ///  The request ID of an EBS CloudWatch event. 
+        /// </para>
+        /// </summary>
+        public string EbsRequestId
+        {
+            get { return this._ebsRequestId; }
+            set { this._ebsRequestId = value; }
+        }
+
+        // Check to see if EbsRequestId property is set
+        internal bool IsSetEbsRequestId()
+        {
+            return this._ebsRequestId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EbsResult. 
+        /// <para>
+        ///  The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public string EbsResult
+        {
+            get { return this._ebsResult; }
+            set { this._ebsResult = value; }
+        }
+
+        // Check to see if EbsResult property is set
+        internal bool IsSetEbsResult()
+        {
+            return this._ebsResult != null;
         }
 
         /// <summary>
@@ -473,6 +558,60 @@ namespace Amazon.ApplicationInsights.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RdsEventCategories. 
+        /// <para>
+        ///  The category of an RDS event. 
+        /// </para>
+        /// </summary>
+        public string RdsEventCategories
+        {
+            get { return this._rdsEventCategories; }
+            set { this._rdsEventCategories = value; }
+        }
+
+        // Check to see if RdsEventCategories property is set
+        internal bool IsSetRdsEventCategories()
+        {
+            return this._rdsEventCategories != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RdsEventMessage. 
+        /// <para>
+        ///  The message of an RDS event. 
+        /// </para>
+        /// </summary>
+        public string RdsEventMessage
+        {
+            get { return this._rdsEventMessage; }
+            set { this._rdsEventMessage = value; }
+        }
+
+        // Check to see if RdsEventMessage property is set
+        internal bool IsSetRdsEventMessage()
+        {
+            return this._rdsEventMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3EventName. 
+        /// <para>
+        ///  The name of the S3 CloudWatch Event-based observation. 
+        /// </para>
+        /// </summary>
+        public string S3EventName
+        {
+            get { return this._s3EventName; }
+            set { this._s3EventName = value; }
+        }
+
+        // Check to see if S3EventName property is set
+        internal bool IsSetS3EventName()
+        {
+            return this._s3EventName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceARN. 
         /// <para>
         /// The source resource ARN of the observation.
@@ -524,6 +663,79 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatesArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the step function-based observation. 
+        /// </para>
+        /// </summary>
+        public string StatesArn
+        {
+            get { return this._statesArn; }
+            set { this._statesArn = value; }
+        }
+
+        // Check to see if StatesArn property is set
+        internal bool IsSetStatesArn()
+        {
+            return this._statesArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatesExecutionArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the step function execution-based observation.
+        /// 
+        /// </para>
+        /// </summary>
+        public string StatesExecutionArn
+        {
+            get { return this._statesExecutionArn; }
+            set { this._statesExecutionArn = value; }
+        }
+
+        // Check to see if StatesExecutionArn property is set
+        internal bool IsSetStatesExecutionArn()
+        {
+            return this._statesExecutionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatesInput. 
+        /// <para>
+        ///  The input to the step function-based observation. 
+        /// </para>
+        /// </summary>
+        public string StatesInput
+        {
+            get { return this._statesInput; }
+            set { this._statesInput = value; }
+        }
+
+        // Check to see if StatesInput property is set
+        internal bool IsSetStatesInput()
+        {
+            return this._statesInput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatesStatus. 
+        /// <para>
+        ///  The status of the step function-related observation. 
+        /// </para>
+        /// </summary>
+        public string StatesStatus
+        {
+            get { return this._statesStatus; }
+            set { this._statesStatus = value; }
+        }
+
+        // Check to see if StatesStatus property is set
+        internal bool IsSetStatesStatus()
+        {
+            return this._statesStatus != null;
         }
 
         /// <summary>

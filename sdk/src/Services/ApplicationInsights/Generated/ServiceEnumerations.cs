@@ -42,6 +42,10 @@ namespace Amazon.ApplicationInsights
         /// Constant HEALTH for CloudWatchEventSource
         /// </summary>
         public static readonly CloudWatchEventSource HEALTH = new CloudWatchEventSource("HEALTH");
+        /// <summary>
+        /// Constant RDS for CloudWatchEventSource
+        /// </summary>
+        public static readonly CloudWatchEventSource RDS = new CloudWatchEventSource("RDS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -92,6 +96,10 @@ namespace Amazon.ApplicationInsights
         /// Constant CLOUDWATCH_ALARM for ConfigurationEventResourceType
         /// </summary>
         public static readonly ConfigurationEventResourceType CLOUDWATCH_ALARM = new ConfigurationEventResourceType("CLOUDWATCH_ALARM");
+        /// <summary>
+        /// Constant CLOUDWATCH_LOG for ConfigurationEventResourceType
+        /// </summary>
+        public static readonly ConfigurationEventResourceType CLOUDWATCH_LOG = new ConfigurationEventResourceType("CLOUDWATCH_LOG");
         /// <summary>
         /// Constant SSM_ASSOCIATION for ConfigurationEventResourceType
         /// </summary>
@@ -341,6 +349,56 @@ namespace Amazon.ApplicationInsights
 
 
     /// <summary>
+    /// Constants used for properties of type OsType.
+    /// </summary>
+    public class OsType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LINUX for OsType
+        /// </summary>
+        public static readonly OsType LINUX = new OsType("LINUX");
+        /// <summary>
+        /// Constant WINDOWS for OsType
+        /// </summary>
+        public static readonly OsType WINDOWS = new OsType("WINDOWS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OsType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OsType FindValue(string value)
+        {
+            return FindValue<OsType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OsType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SeverityLevel.
     /// </summary>
     public class SeverityLevel : ConstantClass
@@ -455,6 +513,10 @@ namespace Amazon.ApplicationInsights
     {
 
         /// <summary>
+        /// Constant CUSTOM for Tier
+        /// </summary>
+        public static readonly Tier CUSTOM = new Tier("CUSTOM");
+        /// <summary>
         /// Constant DEFAULT for Tier
         /// </summary>
         public static readonly Tier DEFAULT = new Tier("DEFAULT");
@@ -467,13 +529,37 @@ namespace Amazon.ApplicationInsights
         /// </summary>
         public static readonly Tier DOT_NET_WEB = new Tier("DOT_NET_WEB");
         /// <summary>
+        /// Constant DOT_NET_WEB_TIER for Tier
+        /// </summary>
+        public static readonly Tier DOT_NET_WEB_TIER = new Tier("DOT_NET_WEB_TIER");
+        /// <summary>
         /// Constant DOT_NET_WORKER for Tier
         /// </summary>
         public static readonly Tier DOT_NET_WORKER = new Tier("DOT_NET_WORKER");
         /// <summary>
+        /// Constant JAVA_JMX for Tier
+        /// </summary>
+        public static readonly Tier JAVA_JMX = new Tier("JAVA_JMX");
+        /// <summary>
+        /// Constant MYSQL for Tier
+        /// </summary>
+        public static readonly Tier MYSQL = new Tier("MYSQL");
+        /// <summary>
+        /// Constant ORACLE for Tier
+        /// </summary>
+        public static readonly Tier ORACLE = new Tier("ORACLE");
+        /// <summary>
+        /// Constant POSTGRESQL for Tier
+        /// </summary>
+        public static readonly Tier POSTGRESQL = new Tier("POSTGRESQL");
+        /// <summary>
         /// Constant SQL_SERVER for Tier
         /// </summary>
         public static readonly Tier SQL_SERVER = new Tier("SQL_SERVER");
+        /// <summary>
+        /// Constant SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP for Tier
+        /// </summary>
+        public static readonly Tier SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP = new Tier("SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
