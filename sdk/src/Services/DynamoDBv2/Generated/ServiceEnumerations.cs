@@ -245,6 +245,92 @@ namespace Amazon.DynamoDBv2
 
 
     /// <summary>
+    /// Constants used for properties of type BatchStatementErrorCodeEnum.
+    /// </summary>
+    public class BatchStatementErrorCodeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessDenied for BatchStatementErrorCodeEnum
+        /// </summary>
+        public static readonly BatchStatementErrorCodeEnum AccessDenied = new BatchStatementErrorCodeEnum("AccessDenied");
+        /// <summary>
+        /// Constant ConditionalCheckFailed for BatchStatementErrorCodeEnum
+        /// </summary>
+        public static readonly BatchStatementErrorCodeEnum ConditionalCheckFailed = new BatchStatementErrorCodeEnum("ConditionalCheckFailed");
+        /// <summary>
+        /// Constant DuplicateItem for BatchStatementErrorCodeEnum
+        /// </summary>
+        public static readonly BatchStatementErrorCodeEnum DuplicateItem = new BatchStatementErrorCodeEnum("DuplicateItem");
+        /// <summary>
+        /// Constant InternalServerError for BatchStatementErrorCodeEnum
+        /// </summary>
+        public static readonly BatchStatementErrorCodeEnum InternalServerError = new BatchStatementErrorCodeEnum("InternalServerError");
+        /// <summary>
+        /// Constant ItemCollectionSizeLimitExceeded for BatchStatementErrorCodeEnum
+        /// </summary>
+        public static readonly BatchStatementErrorCodeEnum ItemCollectionSizeLimitExceeded = new BatchStatementErrorCodeEnum("ItemCollectionSizeLimitExceeded");
+        /// <summary>
+        /// Constant ProvisionedThroughputExceeded for BatchStatementErrorCodeEnum
+        /// </summary>
+        public static readonly BatchStatementErrorCodeEnum ProvisionedThroughputExceeded = new BatchStatementErrorCodeEnum("ProvisionedThroughputExceeded");
+        /// <summary>
+        /// Constant RequestLimitExceeded for BatchStatementErrorCodeEnum
+        /// </summary>
+        public static readonly BatchStatementErrorCodeEnum RequestLimitExceeded = new BatchStatementErrorCodeEnum("RequestLimitExceeded");
+        /// <summary>
+        /// Constant ResourceNotFound for BatchStatementErrorCodeEnum
+        /// </summary>
+        public static readonly BatchStatementErrorCodeEnum ResourceNotFound = new BatchStatementErrorCodeEnum("ResourceNotFound");
+        /// <summary>
+        /// Constant ThrottlingError for BatchStatementErrorCodeEnum
+        /// </summary>
+        public static readonly BatchStatementErrorCodeEnum ThrottlingError = new BatchStatementErrorCodeEnum("ThrottlingError");
+        /// <summary>
+        /// Constant TransactionConflict for BatchStatementErrorCodeEnum
+        /// </summary>
+        public static readonly BatchStatementErrorCodeEnum TransactionConflict = new BatchStatementErrorCodeEnum("TransactionConflict");
+        /// <summary>
+        /// Constant ValidationError for BatchStatementErrorCodeEnum
+        /// </summary>
+        public static readonly BatchStatementErrorCodeEnum ValidationError = new BatchStatementErrorCodeEnum("ValidationError");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchStatementErrorCodeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchStatementErrorCodeEnum FindValue(string value)
+        {
+            return FindValue<BatchStatementErrorCodeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchStatementErrorCodeEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BillingMode.
     /// </summary>
     public class BillingMode : ConstantClass
@@ -594,6 +680,68 @@ namespace Amazon.DynamoDBv2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ContributorInsightsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DestinationStatus.
+    /// </summary>
+    public class DestinationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for DestinationStatus
+        /// </summary>
+        public static readonly DestinationStatus ACTIVE = new DestinationStatus("ACTIVE");
+        /// <summary>
+        /// Constant DISABLED for DestinationStatus
+        /// </summary>
+        public static readonly DestinationStatus DISABLED = new DestinationStatus("DISABLED");
+        /// <summary>
+        /// Constant DISABLING for DestinationStatus
+        /// </summary>
+        public static readonly DestinationStatus DISABLING = new DestinationStatus("DISABLING");
+        /// <summary>
+        /// Constant ENABLE_FAILED for DestinationStatus
+        /// </summary>
+        public static readonly DestinationStatus ENABLE_FAILED = new DestinationStatus("ENABLE_FAILED");
+        /// <summary>
+        /// Constant ENABLING for DestinationStatus
+        /// </summary>
+        public static readonly DestinationStatus ENABLING = new DestinationStatus("ENABLING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DestinationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DestinationStatus FindValue(string value)
+        {
+            return FindValue<DestinationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DestinationStatus(string value)
         {
             return FindValue(value);
         }
