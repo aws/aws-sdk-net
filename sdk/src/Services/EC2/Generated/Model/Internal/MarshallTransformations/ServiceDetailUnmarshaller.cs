@@ -92,6 +92,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.PrivateDnsName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("privateDnsNameSet/item", targetDepth))
+                    {
+                        var unmarshaller = PrivateDnsDetailsUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PrivateDnsNames.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("privateDnsNameVerificationState", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
