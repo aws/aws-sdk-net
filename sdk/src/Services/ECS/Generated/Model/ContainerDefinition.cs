@@ -1287,16 +1287,21 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// The user name to use inside the container. This parameter maps to <code>User</code>
-        /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+        /// The user to use inside the container. This parameter maps to <code>User</code> in
+        /// the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>.
         /// </para>
-        ///  
+        ///  <important> 
         /// <para>
-        /// You can use the following formats. If specifying a UID or GID, you must specify it
-        /// as a positive integer.
+        /// When running tasks using the <code>host</code> network mode, you should not run containers
+        /// using the root user (UID 0). It is considered best practice to use a non-root user.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// You can specify the <code>user</code> using the following formats. If specifying a
+        /// UID or GID, you must specify it as a positive integer.
         /// </para>
         ///  <ul> <li> 
         /// <para>

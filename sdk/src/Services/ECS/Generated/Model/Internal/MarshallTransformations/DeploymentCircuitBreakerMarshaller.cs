@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeploymentConfiguration Marshaller
+    /// DeploymentCircuitBreaker Marshaller
     /// </summary>       
-    public class DeploymentConfigurationMarshaller : IRequestMarshaller<DeploymentConfiguration, JsonMarshallerContext> 
+    public class DeploymentCircuitBreakerMarshaller : IRequestMarshaller<DeploymentCircuitBreaker, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,18 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DeploymentConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(DeploymentCircuitBreaker requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDeploymentCircuitBreaker())
+            if(requestObject.IsSetEnable())
             {
-                context.Writer.WritePropertyName("deploymentCircuitBreaker");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DeploymentCircuitBreakerMarshaller.Instance;
-                marshaller.Marshall(requestObject.DeploymentCircuitBreaker, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("enable");
+                context.Writer.Write(requestObject.Enable);
             }
 
-            if(requestObject.IsSetMaximumPercent())
+            if(requestObject.IsSetRollback())
             {
-                context.Writer.WritePropertyName("maximumPercent");
-                context.Writer.Write(requestObject.MaximumPercent);
-            }
-
-            if(requestObject.IsSetMinimumHealthyPercent())
-            {
-                context.Writer.WritePropertyName("minimumHealthyPercent");
-                context.Writer.Write(requestObject.MinimumHealthyPercent);
+                context.Writer.WritePropertyName("rollback");
+                context.Writer.Write(requestObject.Rollback);
             }
 
         }
@@ -73,7 +62,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static DeploymentConfigurationMarshaller Instance = new DeploymentConfigurationMarshaller();
+        public readonly static DeploymentCircuitBreakerMarshaller Instance = new DeploymentCircuitBreakerMarshaller();
 
     }
 }

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeploymentConfiguration Marshaller
+    /// AutoScalingGroupProviderUpdate Marshaller
     /// </summary>       
-    public class DeploymentConfigurationMarshaller : IRequestMarshaller<DeploymentConfiguration, JsonMarshallerContext> 
+    public class AutoScalingGroupProviderUpdateMarshaller : IRequestMarshaller<AutoScalingGroupProviderUpdate, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,23 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DeploymentConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(AutoScalingGroupProviderUpdate requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDeploymentCircuitBreaker())
+            if(requestObject.IsSetManagedScaling())
             {
-                context.Writer.WritePropertyName("deploymentCircuitBreaker");
+                context.Writer.WritePropertyName("managedScaling");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = DeploymentCircuitBreakerMarshaller.Instance;
-                marshaller.Marshall(requestObject.DeploymentCircuitBreaker, context);
+                var marshaller = ManagedScalingMarshaller.Instance;
+                marshaller.Marshall(requestObject.ManagedScaling, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetMaximumPercent())
+            if(requestObject.IsSetManagedTerminationProtection())
             {
-                context.Writer.WritePropertyName("maximumPercent");
-                context.Writer.Write(requestObject.MaximumPercent);
-            }
-
-            if(requestObject.IsSetMinimumHealthyPercent())
-            {
-                context.Writer.WritePropertyName("minimumHealthyPercent");
-                context.Writer.Write(requestObject.MinimumHealthyPercent);
+                context.Writer.WritePropertyName("managedTerminationProtection");
+                context.Writer.Write(requestObject.ManagedTerminationProtection);
             }
 
         }
@@ -73,7 +67,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static DeploymentConfigurationMarshaller Instance = new DeploymentConfigurationMarshaller();
+        public readonly static AutoScalingGroupProviderUpdateMarshaller Instance = new AutoScalingGroupProviderUpdateMarshaller();
 
     }
 }

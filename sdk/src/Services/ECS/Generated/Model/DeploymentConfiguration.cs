@@ -34,8 +34,36 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class DeploymentConfiguration
     {
+        private DeploymentCircuitBreaker _deploymentCircuitBreaker;
         private int? _maximumPercent;
         private int? _minimumHealthyPercent;
+
+        /// <summary>
+        /// Gets and sets the property DeploymentCircuitBreaker. <note> 
+        /// <para>
+        /// The deployment circuit breaker can only be used for services using the rolling update
+        /// (<code>ECS</code>) deployment type.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The <b>deployment circuit breaker</b> determines whether a service deployment will
+        /// fail if the service can't reach a steady state. If deployment circuit breaker is enabled,
+        /// a service deployment will transition to a failed state and stop launching new tasks.
+        /// If rollback is enabled, when a service deployment fails, the service is rolled back
+        /// to the last deployment that completed successfully.
+        /// </para>
+        /// </summary>
+        public DeploymentCircuitBreaker DeploymentCircuitBreaker
+        {
+            get { return this._deploymentCircuitBreaker; }
+            set { this._deploymentCircuitBreaker = value; }
+        }
+
+        // Check to see if DeploymentCircuitBreaker property is set
+        internal bool IsSetDeploymentCircuitBreaker()
+        {
+            return this._deploymentCircuitBreaker != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaximumPercent. 

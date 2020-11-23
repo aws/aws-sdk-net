@@ -48,28 +48,11 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CredentialsParameter. 
         /// <para>
-        /// The authorization credential option to use.
+        /// The authorization credential option to use. The authorization credential options can
+        /// be provided using either the Amazon Resource Name (ARN) of an AWS Secrets Manager
+        /// secret or AWS Systems Manager Parameter Store parameter. The ARNs refer to the stored
+        /// credentials.
         /// </para>
-        ///  
-        /// <para>
-        /// The authorization credential options can be provided using either the AWS Secrets
-        /// Manager ARN or the AWS Systems Manager ARN. The ARNs refer to the stored credentials.
-        /// </para>
-        ///  <p class="title"> <b>options:</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-        /// of an <a href="https://docs.aws.amazon.com/secretsmanager">AWS Secrets Manager</a>
-        /// secret.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-        /// of an <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html">AWS
-        /// Systems Manager</a> parameter.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string CredentialsParameter
@@ -88,7 +71,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Domain. 
         /// <para>
         /// A fully qualified domain name hosted by an <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
-        /// Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted EC2 AD.
+        /// Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on
+        /// Amazon EC2.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

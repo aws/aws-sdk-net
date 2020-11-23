@@ -254,6 +254,18 @@ namespace Amazon.ECS
         /// Constant DELETE_IN_PROGRESS for CapacityProviderUpdateStatus
         /// </summary>
         public static readonly CapacityProviderUpdateStatus DELETE_IN_PROGRESS = new CapacityProviderUpdateStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant UPDATE_COMPLETE for CapacityProviderUpdateStatus
+        /// </summary>
+        public static readonly CapacityProviderUpdateStatus UPDATE_COMPLETE = new CapacityProviderUpdateStatus("UPDATE_COMPLETE");
+        /// <summary>
+        /// Constant UPDATE_FAILED for CapacityProviderUpdateStatus
+        /// </summary>
+        public static readonly CapacityProviderUpdateStatus UPDATE_FAILED = new CapacityProviderUpdateStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for CapacityProviderUpdateStatus
+        /// </summary>
+        public static readonly CapacityProviderUpdateStatus UPDATE_IN_PROGRESS = new CapacityProviderUpdateStatus("UPDATE_IN_PROGRESS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -708,6 +720,60 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DeploymentControllerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeploymentRolloutState.
+    /// </summary>
+    public class DeploymentRolloutState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for DeploymentRolloutState
+        /// </summary>
+        public static readonly DeploymentRolloutState COMPLETED = new DeploymentRolloutState("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for DeploymentRolloutState
+        /// </summary>
+        public static readonly DeploymentRolloutState FAILED = new DeploymentRolloutState("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for DeploymentRolloutState
+        /// </summary>
+        public static readonly DeploymentRolloutState IN_PROGRESS = new DeploymentRolloutState("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentRolloutState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentRolloutState FindValue(string value)
+        {
+            return FindValue<DeploymentRolloutState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentRolloutState(string value)
         {
             return FindValue(value);
         }

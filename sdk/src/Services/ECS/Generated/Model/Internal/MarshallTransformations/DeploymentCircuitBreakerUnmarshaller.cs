@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeploymentConfiguration Object
+    /// Response Unmarshaller for DeploymentCircuitBreaker Object
     /// </summary>  
-    public class DeploymentConfigurationUnmarshaller : IUnmarshaller<DeploymentConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DeploymentConfiguration, JsonUnmarshallerContext>
+    public class DeploymentCircuitBreakerUnmarshaller : IUnmarshaller<DeploymentCircuitBreaker, XmlUnmarshallerContext>, IUnmarshaller<DeploymentCircuitBreaker, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DeploymentConfiguration IUnmarshaller<DeploymentConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DeploymentCircuitBreaker IUnmarshaller<DeploymentCircuitBreaker, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DeploymentConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public DeploymentCircuitBreaker Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DeploymentConfiguration unmarshalledObject = new DeploymentConfiguration();
+            DeploymentCircuitBreaker unmarshalledObject = new DeploymentCircuitBreaker();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("deploymentCircuitBreaker", targetDepth))
+                if (context.TestExpression("enable", targetDepth))
                 {
-                    var unmarshaller = DeploymentCircuitBreakerUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentCircuitBreaker = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Enable = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("maximumPercent", targetDepth))
+                if (context.TestExpression("rollback", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaximumPercent = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("minimumHealthyPercent", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MinimumHealthyPercent = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Rollback = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static DeploymentConfigurationUnmarshaller _instance = new DeploymentConfigurationUnmarshaller();        
+        private static DeploymentCircuitBreakerUnmarshaller _instance = new DeploymentCircuitBreakerUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeploymentConfigurationUnmarshaller Instance
+        public static DeploymentCircuitBreakerUnmarshaller Instance
         {
             get
             {
