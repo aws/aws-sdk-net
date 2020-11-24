@@ -1,3 +1,44 @@
+### 3.5.62.0 (2020-11-24 21:37 UTC)
+* Appflow (3.5.2.0)
+	* Upsolver as a destination connector and documentation update.
+* Batch (3.5.4.0)
+	* Add Ec2Configuration in ComputeEnvironment.ComputeResources. Use in CreateComputeEnvironment API to enable AmazonLinux2 support.
+* CloudFormation (3.5.2.0)
+	* Adds support for the new Modules feature for CloudFormation. A module encapsulates one or more resources and their respective configurations for reuse across your organization.
+* CloudTrail (3.5.1.0)
+	* CloudTrail now includes advanced event selectors, which give you finer-grained control over the events that are logged to your trail.
+* CodeBuild (3.5.3.0)
+	* Adding GetReportGroupTrend API for Test Reports.
+* CognitoIdentityProvider (3.5.1.0)
+	* This release adds ability to configure Cognito User Pools with third party sms and email providers for sending notifications to users.
+* Comprehend (3.5.3.0)
+	* Support Comprehend events detection APIs
+* ElasticBeanstalk (3.5.2.0)
+	* Updates the Integer constraint of DescribeEnvironmentManagedActionHistory's MaxItems parameter to [1, 100].
+* FSx (3.5.2.0)
+	* This release adds the capability to increase storage capacity of Amazon FSx for Lustre file systems, providing the flexibility to meet evolving storage needs over time.
+* GameLift (3.5.2.0)
+	* GameLift FlexMatch is now available as a standalone matchmaking solution. FlexMatch now provides customizable matchmaking for games hosted peer-to-peer, on-premises, or on cloud compute primitives.
+* IoTSiteWise (3.5.5.0)
+	* This release adds support for customer managed customer master key (CMK) based encryption in IoT SiteWise.
+* LexModelBuildingService (3.5.5.0)
+	* Lex now supports es-419, de-DE locales
+* MediaConvert (3.5.4.0)
+	* AWS Elemental MediaConvert SDK has added support for Vorbis and Opus audio in OGG/OGA containers.
+* MWAA (3.5.0.0)
+	* (New Service) Amazon MWAA is a managed service for Apache Airflow that makes it easy for data engineers and data scientists to execute data processing workflows in the cloud.
+* QuickSight (3.5.7.0)
+	* Support for embedding without user registration. New enum EmbeddingIdentityType. A potential breaking change. Affects code that refers IdentityType enum type directly instead of literal string value.
+* StepFunctions (3.5.3.0)
+	* This release of the AWS Step Functions SDK introduces support for Synchronous Express Workflows
+* TimestreamWrite (3.5.1.0)
+	* Adds support of upserts for idempotent updates to Timestream.
+* Core 3.5.1.42
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.61.0 (2020-11-23 19:22 UTC)
 * ApplicationInsights (3.5.1.0)
 	* Add Detected Workload to ApplicationComponent which shows the workloads that installed in the component
