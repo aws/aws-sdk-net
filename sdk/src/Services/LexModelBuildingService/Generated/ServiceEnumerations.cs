@@ -471,6 +471,10 @@ namespace Amazon.LexModelBuildingService
         /// </summary>
         public static readonly Locale EnUS = new Locale("en-US");
         /// <summary>
+        /// Constant Es419 for Locale
+        /// </summary>
+        public static readonly Locale Es419 = new Locale("es-419");
+        /// <summary>
         /// Constant EsES for Locale
         /// </summary>
         public static readonly Locale EsES = new Locale("es-ES");
