@@ -100,6 +100,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetUpsolver())
+            {
+                context.Writer.WritePropertyName("Upsolver");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = UpsolverDestinationPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Upsolver, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

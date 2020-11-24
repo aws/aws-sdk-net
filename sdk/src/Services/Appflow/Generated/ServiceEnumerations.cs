@@ -237,6 +237,10 @@ namespace Amazon.Appflow
         /// </summary>
         public static readonly ConnectorType Trendmicro = new ConnectorType("Trendmicro");
         /// <summary>
+        /// Constant Upsolver for ConnectorType
+        /// </summary>
+        public static readonly ConnectorType Upsolver = new ConnectorType("Upsolver");
+        /// <summary>
         /// Constant Veeva for ConnectorType
         /// </summary>
         public static readonly ConnectorType Veeva = new ConnectorType("Veeva");

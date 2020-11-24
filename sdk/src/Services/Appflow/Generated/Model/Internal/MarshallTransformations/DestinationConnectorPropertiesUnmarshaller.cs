@@ -94,6 +94,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.Snowflake = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Upsolver", targetDepth))
+                {
+                    var unmarshaller = UpsolverDestinationPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.Upsolver = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

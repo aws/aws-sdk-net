@@ -154,6 +154,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.Trendmicro = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Upsolver", targetDepth))
+                {
+                    var unmarshaller = UpsolverMetadataUnmarshaller.Instance;
+                    unmarshalledObject.Upsolver = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Veeva", targetDepth))
                 {
                     var unmarshaller = VeevaMetadataUnmarshaller.Instance;

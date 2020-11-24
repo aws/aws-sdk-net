@@ -722,6 +722,17 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Appflow.Model.UpsolverDestinationProperties.BucketName</property>
+    <min>16</min>
+    <max>63</max>
+    <pattern>^(upsolver-appflow)\S*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.UpsolverDestinationProperties.BucketPrefix</property>
+    <max>512</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Appflow.Model.VeevaConnectorProfileCredentials.Password</property>
     <max>512</max>
     <pattern>.*</pattern>

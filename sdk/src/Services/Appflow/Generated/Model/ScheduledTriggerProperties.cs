@@ -80,7 +80,8 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        ///  The scheduling expression that determines when and how often the rule runs. 
+        ///  The scheduling expression that determines the rate at which the schedule will run,
+        /// for example <code>rate(5minutes)</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

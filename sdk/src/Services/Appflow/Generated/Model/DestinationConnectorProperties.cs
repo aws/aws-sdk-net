@@ -38,6 +38,7 @@ namespace Amazon.Appflow.Model
         private S3DestinationProperties _s3;
         private SalesforceDestinationProperties _salesforce;
         private SnowflakeDestinationProperties _snowflake;
+        private UpsolverDestinationProperties _upsolver;
 
         /// <summary>
         /// Gets and sets the property EventBridge. 
@@ -127,6 +128,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetSnowflake()
         {
             return this._snowflake != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Upsolver. 
+        /// <para>
+        ///  The properties required to query Upsolver. 
+        /// </para>
+        /// </summary>
+        public UpsolverDestinationProperties Upsolver
+        {
+            get { return this._upsolver; }
+            set { this._upsolver = value; }
+        }
+
+        // Check to see if Upsolver property is set
+        internal bool IsSetUpsolver()
+        {
+            return this._upsolver != null;
         }
 
     }
