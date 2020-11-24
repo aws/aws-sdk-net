@@ -39,6 +39,11 @@ namespace Amazon.TimestreamWrite.Model
     /// All tables in the database must be deleted first, or a ValidationException error will
     /// be thrown. 
     /// </para>
+    ///  
+    /// <para>
+    /// Due to the nature of distributed retries, the operation can return either success
+    /// or a ResourceNotFoundException. Clients should consider them equivalent.
+    /// </para>
     /// </summary>
     public partial class DeleteDatabaseRequest : AmazonTimestreamWriteRequest
     {

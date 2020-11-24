@@ -517,6 +517,11 @@ namespace Amazon.TimestreamWrite
         /// All tables in the database must be deleted first, or a ValidationException error will
         /// be thrown. 
         /// </para>
+        ///  
+        /// <para>
+        /// Due to the nature of distributed retries, the operation can return either success
+        /// or a ResourceNotFoundException. Clients should consider them equivalent.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDatabase service method.</param>
         /// 
@@ -563,6 +568,11 @@ namespace Amazon.TimestreamWrite
         /// <para>
         /// All tables in the database must be deleted first, or a ValidationException error will
         /// be thrown. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Due to the nature of distributed retries, the operation can return either success
+        /// or a ResourceNotFoundException. Clients should consider them equivalent.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDatabase service method.</param>
@@ -611,6 +621,13 @@ namespace Amazon.TimestreamWrite
         /// <summary>
         /// Deletes a given Timestream table. This is an irreversible operation. After a Timestream
         /// database table is deleted, the time series data stored in the table cannot be recovered.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Due to the nature of distributed retries, the operation can return either success
+        /// or a ResourceNotFoundException. Clients should consider them equivalent.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTable service method.</param>
         /// 
@@ -651,6 +668,13 @@ namespace Amazon.TimestreamWrite
         /// <summary>
         /// Deletes a given Timestream table. This is an irreversible operation. After a Timestream
         /// database table is deleted, the time series data stored in the table cannot be recovered.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Due to the nature of distributed retries, the operation can return either success
+        /// or a ResourceNotFoundException. Clients should consider them equivalent.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTable service method.</param>
         /// <param name="cancellationToken">
@@ -1159,6 +1183,9 @@ namespace Amazon.TimestreamWrite
         /// The operation tried to access a nonexistent resource. The resource might not be specified
         /// correctly, or its status might not be ACTIVE.
         /// </exception>
+        /// <exception cref="Amazon.TimestreamWrite.Model.ThrottlingException">
+        /// Too many requests were made by a user exceeding service quotas. The request was throttled.
+        /// </exception>
         /// <exception cref="Amazon.TimestreamWrite.Model.ValidationException">
         /// Invalid or malformed request.
         /// </exception>
@@ -1190,6 +1217,9 @@ namespace Amazon.TimestreamWrite
         /// <exception cref="Amazon.TimestreamWrite.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent resource. The resource might not be specified
         /// correctly, or its status might not be ACTIVE.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamWrite.Model.ThrottlingException">
+        /// Too many requests were made by a user exceeding service quotas. The request was throttled.
         /// </exception>
         /// <exception cref="Amazon.TimestreamWrite.Model.ValidationException">
         /// Invalid or malformed request.
@@ -1229,6 +1259,9 @@ namespace Amazon.TimestreamWrite
         /// <exception cref="Amazon.TimestreamWrite.Model.ServiceQuotaExceededException">
         /// Instance quota of resource exceeded for this account.
         /// </exception>
+        /// <exception cref="Amazon.TimestreamWrite.Model.ThrottlingException">
+        /// Too many requests were made by a user exceeding service quotas. The request was throttled.
+        /// </exception>
         /// <exception cref="Amazon.TimestreamWrite.Model.ValidationException">
         /// Invalid or malformed request.
         /// </exception>
@@ -1266,6 +1299,9 @@ namespace Amazon.TimestreamWrite
         /// <exception cref="Amazon.TimestreamWrite.Model.ServiceQuotaExceededException">
         /// Instance quota of resource exceeded for this account.
         /// </exception>
+        /// <exception cref="Amazon.TimestreamWrite.Model.ThrottlingException">
+        /// Too many requests were made by a user exceeding service quotas. The request was throttled.
+        /// </exception>
         /// <exception cref="Amazon.TimestreamWrite.Model.ValidationException">
         /// Invalid or malformed request.
         /// </exception>
@@ -1302,6 +1338,9 @@ namespace Amazon.TimestreamWrite
         /// <exception cref="Amazon.TimestreamWrite.Model.ServiceQuotaExceededException">
         /// Instance quota of resource exceeded for this account.
         /// </exception>
+        /// <exception cref="Amazon.TimestreamWrite.Model.ThrottlingException">
+        /// Too many requests were made by a user exceeding service quotas. The request was throttled.
+        /// </exception>
         /// <exception cref="Amazon.TimestreamWrite.Model.ValidationException">
         /// Invalid or malformed request.
         /// </exception>
@@ -1336,6 +1375,9 @@ namespace Amazon.TimestreamWrite
         /// </exception>
         /// <exception cref="Amazon.TimestreamWrite.Model.ServiceQuotaExceededException">
         /// Instance quota of resource exceeded for this account.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamWrite.Model.ThrottlingException">
+        /// Too many requests were made by a user exceeding service quotas. The request was throttled.
         /// </exception>
         /// <exception cref="Amazon.TimestreamWrite.Model.ValidationException">
         /// Invalid or malformed request.

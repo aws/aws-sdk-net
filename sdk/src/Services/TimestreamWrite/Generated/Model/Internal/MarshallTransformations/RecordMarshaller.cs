@@ -91,6 +91,12 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TimeUnit);
             }
 
+            if(requestObject.IsSetVersion())
+            {
+                context.Writer.WritePropertyName("Version");
+                context.Writer.Write(requestObject.Version);
+            }
+
         }
 
         /// <summary>

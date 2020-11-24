@@ -34,8 +34,28 @@ namespace Amazon.TimestreamWrite.Model
     /// </summary>
     public partial class RejectedRecord
     {
+        private long? _existingVersion;
         private string _reason;
         private int? _recordIndex;
+
+        /// <summary>
+        /// Gets and sets the property ExistingVersion. 
+        /// <para>
+        /// The existing version of the record. This value is populated in scenarios where an
+        /// identical record exists with a higher version than the version in the write request.
+        /// </para>
+        /// </summary>
+        public long ExistingVersion
+        {
+            get { return this._existingVersion.GetValueOrDefault(); }
+            set { this._existingVersion = value; }
+        }
+
+        // Check to see if ExistingVersion property is set
+        internal bool IsSetExistingVersion()
+        {
+            return this._existingVersion.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Reason. 
@@ -53,7 +73,16 @@ namespace Amazon.TimestreamWrite.Model
         ///  Records with timestamps that lie outside the retention duration of the memory store
         /// 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// When the retention window is updated, you will receive a <code>RejectedRecords</code>
+        /// exception if you immediately try to ingest data within the new window. To avoid a
+        /// <code>RejectedRecords</code> exception, wait until the duration of the new window
+        /// to ingest new data. For further information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
+        /// Best Practices for Configuring Timestream</a> and <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">the
+        /// explanation of how storage works in Timestream</a>.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  Records with dimensions or measures that exceed the Timestream defined limits. 
         /// </para>

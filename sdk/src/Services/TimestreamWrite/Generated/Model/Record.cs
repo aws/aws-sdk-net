@@ -46,6 +46,7 @@ namespace Amazon.TimestreamWrite.Model
         private MeasureValueType _measureValueType;
         private string _time;
         private TimeUnit _timeUnit;
+        private long? _version;
 
         /// <summary>
         /// Gets and sets the property Dimensions. 
@@ -126,7 +127,10 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property Time. 
         /// <para>
-        ///  Contains the time at which the measure value for the data point was collected. 
+        ///  Contains the time at which the measure value for the data point was collected. The
+        /// time value plus the unit provides the time elapsed since the epoch. For example, if
+        /// the time value is <code>12345</code> and the unit is <code>ms</code>, then <code>12345
+        /// ms</code> have elapsed since the epoch. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -159,6 +163,27 @@ namespace Amazon.TimestreamWrite.Model
         internal bool IsSetTimeUnit()
         {
             return this._timeUnit != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// 64-bit attribute used for record updates. Write requests for duplicate data with a
+        /// higher version number will update the existing measure value and version. In cases
+        /// where the measure value is the same, <code>Version</code> will still be updated .
+        /// Default value is to 1.
+        /// </para>
+        /// </summary>
+        public long Version
+        {
+            get { return this._version.GetValueOrDefault(); }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version.HasValue; 
         }
 
     }

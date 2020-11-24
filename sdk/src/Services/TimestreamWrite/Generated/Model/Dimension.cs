@@ -62,8 +62,12 @@ namespace Amazon.TimestreamWrite.Model
         /// <para>
         ///  Dimension represents the meta data attributes of the time series. For example, the
         /// name and availability zone of an EC2 instance or the name of the manufacturer of a
-        /// wind turbine are dimensions. <i>Dimension names can only contain alphanumeric characters
-        /// and underscores. Dimension names cannot end with an underscore.</i> 
+        /// wind turbine are dimensions. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For constraints on Dimension names, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
+        /// Constraints</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

@@ -32,6 +32,13 @@ namespace Amazon.TimestreamWrite.Model
     /// Container for the parameters to the DeleteTable operation.
     /// Deletes a given Timestream table. This is an irreversible operation. After a Timestream
     /// database table is deleted, the time series data stored in the table cannot be recovered.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// Due to the nature of distributed retries, the operation can return either success
+    /// or a ResourceNotFoundException. Clients should consider them equivalent.
+    /// </para>
     /// </summary>
     public partial class DeleteTableRequest : AmazonTimestreamWriteRequest
     {
